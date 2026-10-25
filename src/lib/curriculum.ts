@@ -1,6 +1,7 @@
 import { z } from "zod";
 import source from "../../curriculum/AI技术课程目录_V1.0.json";
 import { courseDisplayNames } from "./course-labels";
+import { readablePublications, lessonHref } from "../content/publication-manifest";
 
 const schema = z.object({
   id: z.string().regex(/^[A-Z]+\d{3}$/),
@@ -80,7 +81,7 @@ export function filterCourses(
 }
 export const firstRelease = courses.filter((c) => c.priority === "P0");
 export const SAMPLE_URL = "/learn/ML201/ML201-C04-L01";
-export const coursePreviews: Readonly<Partial<Record<string, { href: string; title: string }>>> = {
-  ML201: { href: SAMPLE_URL, title: "线性回归与梯度下降" },
-};
+export const coursePreviews: Readonly<Partial<Record<string, { href: string; title: string }>>> = Object.fromEntries(
+  [...readablePublications].reverse().map(entry => [entry.courseId, { href: lessonHref(entry), title: entry.title }]),
+);
 export const getCoursePreview = (id: string) => coursePreviews[id];

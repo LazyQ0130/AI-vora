@@ -42,7 +42,7 @@ export function PathsExplorer() {
         <span className="eyebrow">YOUR FOUNDATION. YOUR DIRECTION.</span>
         <h1>从你的起点，走向新的可能。</h1>
         <p>用先修能力连接知识，找到清晰、适合自己的学习顺序。</p>
-        <span className="subtle-tag">课程筹备中 ·《监督学习》含可阅读样章</span>
+        <span className="subtle-tag">课程筹备中 · 编程、数学与机器学习样章可试读</span>
       </div>
       <div className="path-selector" role="tablist" aria-label="选择已有基础">
         {learningPaths.map((item, i) => (
@@ -158,7 +158,7 @@ export function PathsExplorer() {
       <div className="info-inline">
         <Info size={18} />
         <p>
-          课程正在筹备中，目前可先试读《监督学习》的样章。路径用于帮助选择学习顺序，可根据已有基础调整起点，并查看各课程的具体先修要求。
+          课程正在筹备中，部分节点提供可阅读样章。路径用于帮助选择学习顺序，可根据已有基础调整起点，并查看各课程的具体先修要求。
         </p>
       </div>
       <div className="path-end">

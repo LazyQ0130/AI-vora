@@ -9,15 +9,35 @@ import {
   Route,
   ArrowUpRight,
 } from "lucide-react";
-import { useLocalProgress } from "@/lib/use-progress";
-import { SAMPLE_URL } from "@/lib/curriculum";
-import { sampleLesson } from "@/content/sample";
+import type { LessonSummary } from "@/content/models";
+import { useLearningRecords } from "@/lib/use-learning-progress";
 import { ProgressRing } from "./lesson/blocks";
 import { EmptyState, Reveal } from "./ui";
 
-export function Dashboard() {
-  const progress = useLocalProgress();
-  const nextUrl = progress ? `${SAMPLE_URL}#${progress.section}` : SAMPLE_URL;
+export function Dashboard({ lessons }: { lessons: LessonSummary[] }) {
+  const records = useLearningRecords(lessons);
+  const latest = records[0];
+  const nextUrl = latest
+    ? `${latest.lesson.href}#${latest.progress.section}`
+    : undefined;
+  const courseGroups = [
+    ...new Set(lessons.map((lesson) => lesson.courseId)),
+  ].map((courseId) => {
+    const available = lessons.filter((lesson) => lesson.courseId === courseId);
+    const visited = records.filter(
+      (record) => record.lesson.courseId === courseId,
+    );
+    return {
+      courseId,
+      name: available[0].courseName,
+      available: available.length,
+      completed: visited.filter((record) => record.progress.completed).length,
+      percent: Math.round(
+        visited.reduce((sum, record) => sum + record.progress.percent, 0) /
+          available.length,
+      ),
+    };
+  });
   return (
     <div className="container page-container">
       <div className="page-intro">
@@ -33,7 +53,7 @@ export function Dashboard() {
         <div>
           <BookOpen />
           <strong>
-            {progress ? "1" : "0"}
+            {records.length}
             <small>节</small>
           </strong>
           <span>已开始阅读的样章</span>
@@ -41,10 +61,10 @@ export function Dashboard() {
         <div>
           <CheckCircle2 />
           <strong>
-            {progress?.completed ? "1" : "0"}
+            {records.filter((record) => record.progress.completed).length}
             <small>节</small>
           </strong>
-          <span>已标记读完</span>
+          <span>已标记读完 · 共 {lessons.length} 节可试读</span>
         </div>
       </div>
       <div className="dashboard-layout">
@@ -52,31 +72,33 @@ export function Dashboard() {
           <div className="section-heading">
             <div>
               <span className="eyebrow">PICK UP WHERE YOU LEFT OFF</span>
-              <h2>{progress ? "继续你的探索" : "从一次阅读开始"}</h2>
+              <h2>继续自己的探索</h2>
             </div>
-            <BookOpen size={19} className="muted" />
+            <BookOpen size={20} className="muted" />
           </div>
-          {progress ? (
+          {latest && nextUrl ? (
             <Reveal className="continue-card">
               <div className="continue-card-visual">
-                <ProgressRing value={progress.percent} />
+                <ProgressRing value={latest.progress.percent} />
                 <span>
-                  {progress.completed ? "本节已读完" : "样章阅读进度"}
+                  {latest.progress.completed ? "本节已读完" : "样章阅读进度"}
                 </span>
               </div>
               <div className="continue-card-copy">
-                <span className="level level-L2">试读样章 · L2 机器学习</span>
-                <h3>{sampleLesson.title}</h3>
+                <span className={`level level-${latest.lesson.level}`}>
+                  试读样章 · {latest.lesson.level}
+                </span>
+                <h3>{latest.lesson.title}</h3>
                 <p>
                   当前停留：
                   {
-                    sampleLesson.sections.find(
-                      (section) => section.id === progress.section,
+                    latest.lesson.sectionTitles.find(
+                      (section) => section.id === latest.progress.section,
                     )?.title
                   }
                 </p>
                 <Link href={nextUrl} className="button button-primary">
-                  {progress.completed ? "再次阅读" : "继续阅读"}
+                  {latest.progress.completed ? "再次阅读" : "继续阅读"}
                   <ArrowRight size={15} />
                 </Link>
               </div>
@@ -85,14 +107,34 @@ export function Dashboard() {
             <EmptyState
               icon={<BookOpen size={31} />}
               title="还没有阅读记录"
-              description="试读线性回归与梯度下降，探索图文、公式与代码结合的学习方式。"
+              description="从编程、数学或机器学习样章开始。每节阅读进度都会独立记录。"
             >
-              <Link className="button button-primary" href={SAMPLE_URL}>
-                阅读样章
+              <a href="#available-lessons" className="button button-primary">
+                选择试读样章
                 <ArrowRight size={16} />
-              </Link>
+              </a>
             </EmptyState>
           )}
+          <section className="detail-section" id="available-lessons">
+            <div className="section-heading">
+              <div>
+                <span className="eyebrow">START WITH A CHAPTER</span>
+                <h2>选择一节，开始理解</h2>
+              </div>
+            </div>
+            <div className="dashboard-samples">
+              {lessons.map((lesson) => (
+                <Link key={lesson.lessonId} href={lesson.href}>
+                  <BookOpen size={19} />
+                  <span>
+                    <small>{lesson.courseName} · 试读</small>
+                    <strong>{lesson.title}</strong>
+                  </span>
+                  <ArrowUpRight size={18} />
+                </Link>
+              ))}
+            </div>
+          </section>
           <section className="detail-section">
             <div className="section-heading">
               <div>
@@ -101,39 +143,67 @@ export function Dashboard() {
               </div>
               <History size={18} className="muted" />
             </div>
-            {progress ? (
-              <Link href={nextUrl} className="history-row">
-                <div className="history-icon">
-                  <BookOpen size={20} />
-                </div>
-                <div>
-                  <h3>{sampleLesson.title}</h3>
-                  <p>
-                    试读样章 ·{" "}
-                    {progress.completed
-                      ? "手动标记已读完"
-                      : `已浏览 ${progress.percent}%`}
-                  </p>
-                  <time dateTime={new Date(progress.updatedAt).toISOString()}>
-                    {new Intl.DateTimeFormat("zh-CN", {
-                      month: "long",
-                      day: "numeric",
-                      hour: "2-digit",
-                      minute: "2-digit",
-                      timeZone: "Asia/Shanghai",
-                    }).format(progress.updatedAt)}
-                  </time>
-                </div>
-                <ArrowUpRight size={18} />
-              </Link>
+            {records.length ? (
+              records.map(({ lesson, progress }) => (
+                <Link
+                  key={lesson.lessonId}
+                  href={`${lesson.href}#${progress.section}`}
+                  className="history-row"
+                >
+                  <div className="history-icon">
+                    <BookOpen size={20} />
+                  </div>
+                  <div>
+                    <h3>{lesson.title}</h3>
+                    <p>
+                      {lesson.courseName} ·{" "}
+                      {progress.completed
+                        ? "手动标记已读完"
+                        : `已浏览 ${progress.percent}%`}
+                    </p>
+                    <time dateTime={new Date(progress.updatedAt).toISOString()}>
+                      {new Intl.DateTimeFormat("zh-CN", {
+                        month: "long",
+                        day: "numeric",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        timeZone: "Asia/Shanghai",
+                      }).format(progress.updatedAt)}
+                    </time>
+                  </div>
+                  <ArrowUpRight size={18} />
+                </Link>
+              ))
             ) : (
               <div className="history-empty">
-                尚无记录。完成一次样章访问后，将在这里显示。
+                尚无记录。访问任意样章后，将在这里显示。
               </div>
             )}
           </section>
         </section>
         <aside className="dashboard-aside">
+          <div className="panel course-progress-summary">
+            <BookOpen size={23} />
+            <h3>各课程的可读样章</h3>
+            <p>只统计当前可读教材，完整课程仍在筹备中。</p>
+            {courseGroups.map((course) => (
+              <div className="course-progress-row" key={course.courseId}>
+                <Link href={`/courses/${course.courseId}`}>{course.name}</Link>
+                <span>
+                  {course.completed} / {course.available} 节已标记读完
+                </span>
+                <div
+                  role="progressbar"
+                  aria-label={`${course.name}的可读样章阅读比例`}
+                  aria-valuenow={course.percent}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                >
+                  <i style={{ width: `${course.percent}%` }} />
+                </div>
+              </div>
+            ))}
+          </div>
           <div className="panel">
             <Route size={25} />
             <span className="eyebrow">A CLEARER DIRECTION</span>
@@ -151,7 +221,7 @@ export function Dashboard() {
               记录仅保存在当前浏览器，不跨设备同步。更换浏览器或清除站点数据后，记录可能丢失。
             </p>
             <p>
-              浏览器限制保存时，记录仅在本次访问期间有效。阅读比例与读完标记用于安排学习，不代表已经掌握课程。
+              浏览器限制保存时，记录仅在本次访问期间有效。浏览比例与读完标记不代表已经掌握课程。更新教材后，新修订会独立记录进度。
             </p>
           </div>
         </aside>

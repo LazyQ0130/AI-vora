@@ -1,0 +1,144 @@
+{
+  "checkedAt": "2026-10-25T10:10:43.875Z",
+  "server": "http://127.0.0.1:3001",
+  "results": [
+    {
+      "path": "/",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "path": "/courses",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "path": "/courses/PY101",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "path": "/courses/MA101",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "path": "/courses/ML201",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L01",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L01",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L01",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "path": "/learn/PY101/ML201-C04-L01",
+      "expected": 404,
+      "actual": 404,
+      "pass": true
+    },
+    {
+      "path": "/learn/ML201/ML201-C01-L01",
+      "expected": 404,
+      "actual": 404,
+      "pass": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L99",
+      "expected": 404,
+      "actual": 404,
+      "pass": true
+    },
+    {
+      "path": "/learn/UNKNOWN/PY101-C05-L01",
+      "expected": 404,
+      "actual": 404,
+      "pass": true
+    },
+    {
+      "path": "/courses/UNKNOWN",
+      "expected": 404,
+      "actual": 404,
+      "pass": true
+    },
+    {
+      "path": "/downloads/linear_regression.py",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "path": "/downloads/linear_regression.ipynb",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "path": "/downloads/python_functions.py",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "path": "/downloads/python_functions.ipynb",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "path": "/downloads/vector_matrix.py",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "path": "/downloads/vector_matrix.ipynb",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "path": "/learning/python-function-call.png",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "path": "/learning/python-function-call-mobile.png",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "path": "/learning/vector-addition.png",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "path": "/learning/vector-addition-mobile.png",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    }
+  ]
+}

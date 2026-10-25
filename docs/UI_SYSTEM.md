@@ -1,5 +1,7 @@
 # Aivora 前端设计系统
 
+通用阅读器的当前模型、样式边界与扩展规范见 [COURSE_AUTHORING.md](./COURSE_AUTHORING.md)，本轮实测见 [COURSE_ENGINE_ACCEPTANCE.md](./COURSE_ENGINE_ACCEPTANCE.md)。reader.css 集中维护阅读布局和内容组件，learning-system.css 维护课程入口与学习中心。
+
 ## 品牌与视觉
 
 品牌工作名 Aivora，未核验域名或商标。`design-tokens.json` 为原始依据，CSS 变量定义于 `src/app/globals.css`。

@@ -1,0 +1,257 @@
+import { z } from "zod";
+import type { Course as CatalogCourse } from "../lib/curriculum";
+
+const text = z.string().min(1);
+const anchor = text.regex(/^[a-z][a-z0-9-]*$/);
+const localAsset = text.regex(
+  /^\/(?:learning|downloads)\/[a-zA-Z0-9/_-]+\.(?:png|webp|jpg|py|ipynb|pdf|zip)$/,
+);
+export const publicationStates = [
+  "planned",
+  "draft",
+  "pending-validation",
+  "tech-verified",
+  "pending-review",
+  "reviewed",
+  "pilot",
+  "published",
+  "deprecated",
+] as const;
+export const publicationSchema = z
+  .object({
+    lessonId: text.regex(/^[A-Z]+\d{3}-C\d{2}-L\d{2}$/),
+    courseId: text.regex(/^[A-Z]+\d{3}$/),
+    chapterId: text.regex(/^[A-Z]+\d{3}-C\d{2}$/),
+    title: text,
+    contentVersion: z.number().int().positive(),
+    order: z.number().int().positive(),
+    status: z.enum(publicationStates),
+    access: z.enum(["private", "preview", "public"]),
+    technicalEvidence: text.optional(),
+    reviewEvidence: text.optional(),
+  })
+  .superRefine((entry, ctx) => {
+    if (
+      [
+        "tech-verified",
+        "pending-review",
+        "reviewed",
+        "pilot",
+        "published",
+      ].includes(entry.status) &&
+      !entry.technicalEvidence
+    )
+      ctx.addIssue({ code: "custom", message: "技术校验状态必须提供证据" });
+    if (
+      ["reviewed", "pilot", "published"].includes(entry.status) &&
+      !entry.reviewEvidence
+    )
+      ctx.addIssue({ code: "custom", message: "人工审核状态必须提供审核证据" });
+    if (entry.access === "public" && entry.status !== "published")
+      ctx.addIssue({
+        code: "custom",
+        message: "只有正式发布教材可设置 public",
+      });
+    if (
+      ![
+        "tech-verified",
+        "pending-review",
+        "reviewed",
+        "pilot",
+        "published",
+      ].includes(entry.status) &&
+      entry.access !== "private"
+    )
+      ctx.addIssue({
+        code: "custom",
+        message: "未校验、草稿或下线教材不能公开试读",
+      });
+  });
+export type Publication = z.infer<typeof publicationSchema>;
+export function isReadable(entry: Publication) {
+  return (
+    (entry.access === "preview" || entry.access === "public") &&
+    [
+      "tech-verified",
+      "pending-review",
+      "reviewed",
+      "pilot",
+      "published",
+    ].includes(entry.status) &&
+    Boolean(entry.technicalEvidence) &&
+    (!["reviewed", "pilot", "published"].includes(entry.status) ||
+      Boolean(entry.reviewEvidence))
+  );
+}
+export function publicationLabel(entry: Publication) {
+  return entry.status === "published"
+    ? "正式教材"
+    : entry.status === "pilot"
+      ? "试学教材"
+      : entry.status === "reviewed"
+        ? "试读 · 已审核"
+        : "试读 · 待人工审核";
+}
+export function publicationNotice(entry: Publication) {
+  if (entry.status === "published") return "本节教材已完成发布审核。";
+  if (entry.status === "pilot")
+    return "本节处于教学试学阶段，完整课程尚未正式发布。";
+  if (entry.status === "reviewed")
+    return "本节已完成内容审核，可先试读；完整课程尚未正式发布。";
+  return "本节可试读，已进行技术校验，仍待人工内容审核。完整课程尚未正式发布。";
+}
+export const resourceSchema = z.object({
+  id: anchor,
+  title: text,
+  href: localAsset,
+  format: z.enum(["Python", "Notebook", "PDF", "ZIP"]),
+  description: text,
+});
+export type LearningResource = z.infer<typeof resourceSchema>;
+const quizSchema = z
+  .object({
+    type: z.literal("quiz"),
+    id: anchor,
+    question: text,
+    options: z.array(text).min(2).max(8),
+    correct: z.number().int().nonnegative(),
+    explanations: z.array(text),
+  })
+  .superRefine((quiz, ctx) => {
+    if (
+      quiz.correct >= quiz.options.length ||
+      quiz.options.length !== quiz.explanations.length
+    )
+      ctx.addIssue({
+        code: "custom",
+        message: "测验需要有效答案与每个选项的解析",
+      });
+  });
+export const contentBlockSchema = z.discriminatedUnion("type", [
+  z.object({ type: z.literal("paragraph"), text }),
+  z.object({ type: z.literal("heading"), text }),
+  z.object({
+    type: z.literal("image"),
+    src: localAsset,
+    alt: text,
+    caption: text,
+    width: z.number().int().positive(),
+    height: z.number().int().positive(),
+    mobile: z
+      .object({
+        src: localAsset,
+        width: z.number().int().positive(),
+        height: z.number().int().positive(),
+      })
+      .optional(),
+  }),
+  z.object({ type: z.literal("math"), latex: text, explanation: text }),
+  z.object({
+    type: z.literal("code"),
+    code: text,
+    filename: text,
+    language: z.enum(["python", "javascript", "bash", "json", "text"]),
+  }),
+  z.object({ type: z.literal("callout"), title: text, text }),
+  quizSchema,
+  z.object({
+    type: z.literal("downloads"),
+    resourceIds: z.array(anchor).min(1),
+  }),
+  z.object({
+    type: z.literal("diagram"),
+    kind: z.literal("linear-regression"),
+    caption: text,
+  }),
+  z.object({
+    type: z.literal("experiment"),
+    kind: z.literal("linear-regression"),
+  }),
+  z.object({ type: z.literal("summary"), points: z.array(text).min(1) }),
+]);
+export type ContentBlock = z.infer<typeof contentBlockSchema>;
+export const lessonSchema = z
+  .object({
+    id: text.regex(/^[A-Z]+\d{3}-C\d{2}-L\d{2}$/),
+    courseId: text,
+    chapterId: text,
+    contentVersion: z.number().int().positive(),
+    title: text,
+    subtitle: text,
+    durationMinutes: z.number().int().positive(),
+    prerequisites: text,
+    objectives: z.array(text).min(2).max(4),
+    sections: z
+      .array(
+        z.object({
+          id: anchor,
+          title: text,
+          navGroup: anchor,
+          navLabel: text,
+          layout: z.enum(["stack", "intro"]).optional(),
+          blocks: z.array(contentBlockSchema).min(1),
+        }),
+      )
+      .min(1),
+    resources: z.array(resourceSchema),
+    references: z
+      .array(
+        z.object({
+          title: text,
+          href: z.url().refine((url) => url.startsWith("https://")),
+          note: text,
+        }),
+      )
+      .min(1),
+  })
+  .superRefine((lesson, ctx) => {
+    const unique = (ids: string[], name: string) => {
+      if (new Set(ids).size !== ids.length)
+        ctx.addIssue({ code: "custom", message: `${name}不能重复` });
+    };
+    unique(
+      lesson.sections.map((s) => s.id),
+      "段落 ID",
+    );
+    unique(
+      lesson.resources.map((r) => r.id),
+      "资源 ID",
+    );
+    const blocks = lesson.sections.flatMap((s) => s.blocks);
+    unique(
+      blocks.filter((b) => b.type === "quiz").map((b) => b.id),
+      "题目 ID",
+    );
+    for (const block of blocks)
+      if (
+        block.type === "downloads" &&
+        block.resourceIds.some(
+          (id) => !lesson.resources.some((r) => r.id === id),
+        )
+      )
+        ctx.addIssue({ code: "custom", message: "下载组件引用未知资源" });
+    const groups = new Map<string, string>();
+    for (const section of lesson.sections) {
+      if (
+        groups.has(section.navGroup) &&
+        groups.get(section.navGroup) !== section.navLabel
+      )
+        ctx.addIssue({ code: "custom", message: "同一导航分组需要一致的名称" });
+      groups.set(section.navGroup, section.navLabel);
+    }
+  });
+export type Lesson = z.infer<typeof lessonSchema>;
+export type Chapter = {
+  id: string;
+  courseId: string;
+  order: number;
+  title: string;
+  lessons: Publication[];
+};
+export type Course = Omit<CatalogCourse, "chapters"> & { chapters: Chapter[] };
+export type LessonSummary = Publication & {
+  href: string;
+  courseName: string;
+  level: string;
+  sectionTitles: { id: string; title: string }[];
+};

@@ -22,7 +22,7 @@ export function Projects() {
       <div className="info-inline">
         <FlaskConical size={18} />
         <p>
-          项目仍在规划中，完整实验资料尚未开放。可先在《线性回归与梯度下降》样章页下载示例代码，在自己的电脑上练习。
+          项目仍在规划中，完整实验资料尚未开放。可先在编程、数学或机器学习样章页下载示例代码，在自己的电脑上练习。
         </p>
       </div>
       <div className="project-toolbar">

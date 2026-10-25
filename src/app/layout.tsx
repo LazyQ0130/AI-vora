@@ -3,6 +3,8 @@ import "./globals.css";
 import "./visual-v2.css";
 import "./usability.css";
 import "./course-covers-v5.css";
+import "./reader.css";
+import "./learning-system.css";
 import { Header, Footer } from "@/components/site-shell";
 import { Providers } from "@/components/ui";
 

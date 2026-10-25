@@ -8,12 +8,8 @@
   --type-supporting: 12px;
   --touch-target: 44px;
 }
-.footer-bottom, .chapter-state, .path-course-footer,
-.reader-v2 .demo-content-note, .code-comment {
+.footer-bottom, .chapter-state, .path-course-footer, .code-comment {
   color: var(--text-supporting);
-}
-.reader-v2 .code-scroll .token.comment {
-  color: var(--text-code-comment);
 }
 .brand small {
   font-size: var(--type-supporting);
@@ -23,9 +19,7 @@
 .footer-bottom, .footer-links a, .site-footer p, .chapter-state {
   font-size: var(--type-supporting);
 }
-.footer-links a, .search-link, .dashboard-link, .desktop-nav > a,
-.button, .icon-button, .level-filter button, .search-clear,
-.chapter-preview, .prereq-links a, .reader-v2 .copy-button {
+.footer-links a, .search-link, .dashboard-link, .desktop-nav > a, .button, .icon-button, .level-filter button, .search-clear, .chapter-preview, .prereq-links a {
   min-height: var(--touch-target);
 }
 .icon-button, .level-filter button, .search-clear {
@@ -42,8 +36,7 @@
 .course-card { display: flex; flex-direction: column; }
 .course-card:focus-within { border-color: #a1b4ff; }
 .course-card .course-card-body { flex: 1; }
-.course-card .card-meta, .course-card .planned,
-.course-card .card-facts, .catalog-grid .course-card .card-facts, .course-card .course-prereq {
+.course-card .card-meta, .course-card .planned, .course-card .card-facts, .catalog-grid .course-card .card-facts, .course-card .course-prereq {
   font-size: var(--type-supporting);
 }
 .course-card .card-meta { flex-wrap: wrap; gap: 8px 12px; }
@@ -70,11 +63,9 @@
 }
 .prereq-links a { max-width: 100%; font-size: 12px; }
 .path-course > span:first-child { font-family: var(--font-sans); }
-.toc-course-level { display: block; font-size: 12px; color: var(--text-supporting); }
 .release-route a { font-family: var(--font-sans); }
 .release-route { font-size: 12px; }
-.project-card .card-meta, .project-evidence > span,
-.project-toolbar, .project-toolbar > span:last-child { font-size: 12px; }
+.project-card .card-meta, .project-evidence > span, .project-toolbar, .project-toolbar > span:last-child { font-size: 12px; }
 .course-preview-link, .path-preview-link {
   position: relative;
   z-index: 2;
@@ -109,26 +100,14 @@
   color: var(--text-supporting);
 }
 .dashboard-layout .section-heading { display: flex; align-items: center; gap: 16px; }
-.reader-v2 .reader-section-nav a { min-width: 44px; min-height: 48px; font-size: 12px; }
-.reader-v2 .demo-content-note { font-size: 12px; }
-.drawer :is(.toc-chapter-number, .toc-chapter-state, .toc-chapter-locked, .toc-lesson-meta) { font-size: 12px; color: var(--text-supporting); }
-.chapter-toc summary, .lesson-toc-items a { min-height: 44px; font-size: 12px; }
-.toc-planned, .toc-footnote, .toc-sample-label { font-size: 12px; color: var(--text-supporting); }
-.reader-v2 .reader-local-note, .drawer .reader-local-note { font-size: 12px; color: var(--text-supporting); }
-.reader-right :is(.local-status, .reader-progress span, .reader-knowledge p) { font-size: 12px; color: var(--text-supporting); }
-.reader-right .learning-objectives li, .drawer .learning-objectives li { font-size: 14px; }
 .drawer h3 { font-size: 18px; }
-.reader-v2 :is(.lesson-downloads small, .lesson-completion p, .reader-end a) { font-size: 12px; color: var(--text-supporting); }
 
 @media (max-width: 700px) {
-  .hero-v2 .hero-description, .section-heading p, .method-card p,
-  .end-cta p, .sample-banner-copy > p { font-size: 14px; }
+  .hero-v2 .hero-description, .section-heading p, .method-card p, .end-cta p, .sample-banner-copy > p { font-size: 14px; }
   .hero-v2 .hero-description { text-wrap: pretty; }
   .hero-v2 .hero-description br { display: none; }
   .hero-v2 .hero-buttons { flex-wrap: wrap; }
-  .hero-v2 .button, .hero-v2 .hero-note, .principle-strip small,
-  .journey-caption, .journey-count, .release-route,
-  .sample-notice { font-size: 12px; }
+  .hero-v2 .button, .hero-v2 .hero-note, .principle-strip small, .journey-caption, .journey-count, .release-route, .sample-notice { font-size: 12px; }
   .hero-v2 .hero-note { flex-wrap: wrap; gap: 10px; }
   .journey-node h3 { font-size: 16px; }
   .section-heading .text-link { font-size: 12px; min-height: 44px; }
@@ -160,10 +139,8 @@
   .detail-side-card { display: block; }
   .detail-side-card .course-art { height: auto; min-height: 0; aspect-ratio: 16 / 9; }
   .detail-side-inner h3 { font-size: 18px; }
-  .detail-side-inner :is(p, small), .detail-facts,
-  .detail-heading .card-meta, .chapter-state, .chapter-number, .chapter-preview { font-size: 12px; }
-  .detail-heading > p, .detail-panel p, .prerequisite-panel p,
-  .practice-grid p, .info-inline p { font-size: 14px; line-height: 1.9; }
+  .detail-side-inner :is(p, small), .detail-facts, .detail-heading .card-meta, .chapter-state, .chapter-number, .chapter-preview { font-size: 12px; }
+  .detail-heading > p, .detail-panel p, .prerequisite-panel p, .practice-grid p, .info-inline p { font-size: 14px; line-height: 1.9; }
   .chapter-row { font-size: 14px; gap: 10px; padding: 18px 12px; }
   .chapter-state { align-self: start; margin-top: 3px; }
   .chapter-state svg { display: none; }
@@ -196,11 +173,9 @@
   .path-stage .stage-arrow { display: none; }
   .path-course, .branch-courses .path-course { padding: 16px; }
   .path-course h3, .branch-courses .path-course h3 { font-size: 16px; min-height: 0; margin-top: 12px; }
-  .path-course > span:first-child, .path-course-footer,
-  .branch-courses .path-course-footer { font-size: 12px; }
+  .path-course > span:first-child, .path-course-footer, .branch-courses .path-course-footer { font-size: 12px; }
   .path-course-footer { margin-top: 12px; }
-  .path-panel-heading p, .branch-panel > p, .path-selector small,
-  .research-branch p { font-size: 12px; color: var(--text-supporting); }
+  .path-panel-heading p, .branch-panel > p, .path-selector small, .research-branch p { font-size: 12px; color: var(--text-supporting); }
   .path-panel-heading h2, .branch-panel h3 { font-size: 18px; }
   .branch-courses { display: grid; grid-template-columns: minmax(0, 1fr); }
   .dashboard-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
@@ -209,8 +184,7 @@
   .dashboard-layout .section-heading > svg { align-self: center; }
   .continue-card { grid-template-columns: minmax(0, 1fr); }
   .continue-card-visual { min-height: 150px; }
-  .continue-card-visual > span, .continue-card-copy .level,
-  .continue-card-copy p, .history-row p, .history-row time { font-size: 12px; }
+  .continue-card-visual > span, .continue-card-copy .level, .continue-card-copy p, .history-row p, .history-row time { font-size: 12px; }
   .dashboard-aside p, .history-empty, .empty-state p { font-size: 14px; line-height: 1.9; }
   .project-card > p, .project-evidence p { font-size: 14px; }
   .project-toolbar select { min-height: 44px; font-size: 12px; }
@@ -219,39 +193,5 @@
   .footer-links { flex-wrap: wrap; gap: 6px 20px; }
   .site-footer p { font-size: 14px; }
   .button { font-size: 14px; }
-  .reader-v2 .reader-mobile-bar { top: 69px; padding-block: 10px; }
-  .reader-v2 .reader-mobile-bar > .button { min-height: 44px; font-size: 12px; }
-  .reader-v2 .reader-section-nav { top: 134px; }
-  .reader-v2 .reader-section-nav a { font-size: 12px; padding: 10px 2px; gap: 4px; min-height: 48px; }
-  html:has(.reader-v2) { scroll-padding-top: 198px; }
-  .reader-v2 .reader-heading > p, .reader-v2 .lesson-paragraph { font-size: 15px; }
-  .reader-v2 :is(.reader-meta, .sample-badge, .reader-chapter-line,
-    .math-block figcaption, .diagram-card figcaption, .lesson-callout p,
-    .lesson-callout strong, .lesson-code-title, .lesson-code-title small,
-    .copy-button, .experiment-controls label, .experiment-controls output,
-    .experiment-values, .experiment-values strong, .experiment-note,
-    .quiz-feedback p, .quiz-disclaimer) { font-size: 12px; }
-  .reader-v2 .reader-chapter-line > span:first-child { font-size: 12px; }
-  .reader-v2 .reader-title-row { flex-wrap: wrap; }
-  .reader-v2 .code-scroll pre { font-size: 12px; }
-  .reader-v2 .lesson-code-title { flex-wrap: wrap; gap: 8px; }
-  .reader-v2 .experiment-values { flex-wrap: wrap; }
-  .reader-v2 .experiment-controls input[type="range"] { min-height: 44px; }
-  .reader-v2 .quiz-option, .reader-v2 .quiz-block legend { font-size: 14px; min-height: 44px; }
-  .reader-v2 .lesson-summary li { font-size: 14px; }
-  .reader-v2 .quiz-option .option-letter { font-size: 12px; }
-  .reader-breadcrumb { font-size: 12px; flex-wrap: wrap; gap: 6px; }
-  .reader-v2 .lesson-section h2 > span { font-size: 12px; }
-  .reader-v2 :is(.chart-label, .quiz-label) { font-size: 12px; }
-  .reader-v2 .reader-end { flex-wrap: wrap; }
-  .reader-v2 .lesson-downloads .button, .reader-v2 .lesson-completion .button,
-  .reader-v2 .lesson-navigation .button { font-size: 12px; }
-  .reader-v2 .lesson-downloads > div { flex-wrap: wrap; }
-  .drawer .chapter-toc summary { font-size: 14px; }
-  .drawer .lesson-toc-items a { font-size: 14px; }
   .progress-ring small { font-size: 12px; }
-  .drawer .toc-course :is(.eyebrow, .subtle-tag), .drawer .toc-footnote,
-  .drawer .lesson-toc-items a > span { font-size: 12px; }
-  .drawer .toc-chapter-number { max-width: none; }
-  .drawer .toc-planned, .drawer .toc-sample-label { font-size: 12px; }
 }

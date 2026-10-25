@@ -1,5 +1,7 @@
 # 前端验收记录
 
+当前系统状态以 [通用课程引擎验收](./COURSE_ENGINE_ACCEPTANCE.md) 为准：三个样章共用阅读器，新增按课程/课时/修订的进度与发布清单。本文件保留此前各轮实际验收历史。
+
 最新四门课程封面重做及桌面/手机截图见 [COURSE_COVERS_V3.md](./COURSE_COVERS_V3.md)。
 
 最新视觉迭代及截图见 [VISUAL_REFINEMENT_V2.md](./VISUAL_REFINEMENT_V2.md)，配图与提示词见 [IMAGE_GENERATION_V2.json](./IMAGE_GENERATION_V2.json)。以下保留初版分阶段记录。

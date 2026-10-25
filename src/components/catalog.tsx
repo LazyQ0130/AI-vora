@@ -16,7 +16,7 @@ import {
   filterCourses,
   levels,
   levelNames,
-  SAMPLE_URL,
+  coursePreviews,
 } from "@/lib/curriculum";
 import { CourseCard } from "./course-card";
 import { Drawer, EmptyState } from "./ui";
@@ -40,7 +40,11 @@ export function Catalog() {
     focusCourseSearch();
     const next = new URLSearchParams(window.location.search);
     next.delete("focus");
-    window.history.replaceState(null, "", `/courses${next.size ? `?${next}` : ""}`);
+    window.history.replaceState(
+      null,
+      "",
+      `/courses${next.size ? `?${next}` : ""}`,
+    );
   }, [params]);
   const results = useMemo(
     () => filterCourses(query, level, category),
@@ -98,19 +102,26 @@ export function Catalog() {
           课程筹备中 · 可先体验试读样章
         </span>
       </div>
-      <Link href={SAMPLE_URL} className="catalog-sample">
-        <span>
+      <div className="catalog-sample catalog-previews">
+        <span className="catalog-preview-heading">
           <BookIcon />
           先体验一次完整的图文学习
           <span className="catalog-sample-caption">
-            线性回归与梯度下降 · 试读样章
+            选择一节样章 · 内容待人工审核
           </span>
         </span>
-        <span>
-          开始阅读
-          <ArrowRight size={15} />
-        </span>
-      </Link>
+        <div className="catalog-preview-choices">
+          {Object.values(coursePreviews).map(
+            (preview) =>
+              preview && (
+                <Link key={preview.href} href={preview.href}>
+                  {preview.title}
+                  <ArrowRight size={15} />
+                </Link>
+              ),
+          )}
+        </div>
+      </div>
       <div className="catalog-layout">
         <aside className="catalog-sidebar" aria-label="方向筛选">
           {filters}
@@ -203,9 +214,7 @@ export function Catalog() {
               </button>
             </EmptyState>
           )}
-          <p className="section-footnote">
-            预计学时包含阅读、练习与项目实践。
-          </p>
+          <p className="section-footnote">预计学时包含阅读、练习与项目实践。</p>
         </div>
       </div>
     </div>

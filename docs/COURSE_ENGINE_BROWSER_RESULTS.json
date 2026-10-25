@@ -1,0 +1,800 @@
+{
+  "checkedAt": "2026-10-25T10:34:20.575Z",
+  "environment": "Next.js production http://127.0.0.1:3001; IAB Chromium; Windows; viewport emulation",
+  "checks": [
+    {
+      "name": "Python 目录定位与焦点",
+      "pass": true,
+      "details": "mobile binding top 209.68, sticky nav bottom 182.33; dialog closed and h2 focused; Escape returns trigger"
+    },
+    {
+      "name": "Python 练习反馈",
+      "pass": true,
+      "details": "错误选项给出原因与参考答案；改选后重置提交状态，正确选项显示理解正确"
+    },
+    {
+      "name": "代码复制",
+      "pass": true,
+      "details": "snippet and complete python_functions.py clipboard checked; no line numbers copied"
+    },
+    {
+      "name": "Python 实际下载",
+      "pass": true,
+      "details": "browser download bytes equal public/downloads/python_functions.py"
+    },
+    {
+      "name": "v1 ML 阅读记录兼容",
+      "pass": true,
+      "details": "新引擎首次访问学习中心即显示此前 ML 已读完记录（16:46），PY 独立完成（17:55）；MA 仍 0/1"
+    },
+    {
+      "name": "数学公式键盘横向阅读",
+      "pass": true,
+      "details": {
+        "formulaScrollLeft": 80,
+        "pageOverflow": false
+      }
+    },
+    {
+      "name": "数学样章练习",
+      "pass": true,
+      "details": "理解正确\n\n正确。内部维度 3 匹配，外侧维度 2 和 4 决定结果形状。"
+    },
+    {
+      "name": "保留的 ML 交互实验",
+      "pass": true,
+      "details": "学习率滑块 End→1.00 显示发散警告；重置回0.10/100次，MSE有限且收敛"
+    },
+    {
+      "name": "三个课时刷新后独立恢复",
+      "pass": true,
+      "details": [
+        "线性回归与梯度下降机器学习基础：监督学习 · 手动标记已读完10月25日 18:06",
+        "Python 函数与参数Python 编程与工程入门 · 手动标记已读完10月25日 18:04",
+        "向量与矩阵的基本运算AI 数学 I：线性代数与微积分 · 已浏览 88%10月25日 18:03"
+      ]
+    },
+    {
+      "name": "从历史记录恢复数学阅读位置",
+      "pass": true,
+      "details": {
+        "active": "练习",
+        "hash": "#quiz",
+        "navBottom": 143.33333587646484,
+        "sectionTop": 176.0729217529297,
+        "title": "向量与矩阵的基本运算"
+      }
+    },
+    {
+      "name": "Ctrl+K 与课程搜索回归",
+      "pass": true,
+      "details": "从阅读页跳转后聚焦 course-search；课程页再次 Ctrl+K 保持搜索焦点；Python 编程仅匹配一门并含真实样章入口"
+    },
+    {
+      "name": "PY 详情页真实章节入口",
+      "pass": true,
+      "details": {
+        "cover": "/artwork/courses-v5/py101-python-programming.webp",
+        "preview": [
+          {
+            "chapter": "05",
+            "href": "/learn/PY101/PY101-C05-L01",
+            "text": "试读 · Python 函数与参数"
+          }
+        ],
+        "status": "本课程正在筹备，下方为章节规划。目前包含可阅读样章，教材仍待人工审核。",
+        "title": "Python 编程与工程入门"
+      }
+    },
+    {
+      "name": "MA 详情页真实章节入口",
+      "pass": true,
+      "details": {
+        "chapter": "03",
+        "href": "/learn/MA101/MA101-C03-L01",
+        "title": "AI 数学 I：线性代数与微积分"
+      }
+    },
+    {
+      "name": "错误课程归属的阅读路径",
+      "pass": true,
+      "details": "PY101 / ML201-C04-L01 显示品牌404，未回退到ML教材"
+    },
+    {
+      "name": "正常与 reduced-motion",
+      "pass": true,
+      "details": {
+        "normal": {
+          "htmlScroll": "smooth",
+          "pageTransitionObservedOpacity": 0.591877
+        },
+        "reduced": {
+          "htmlScroll": "auto",
+          "imageTransition": "1e-05s",
+          "navTransition": "1e-05s",
+          "pageOpacity": "1",
+          "pageTransform": "none"
+        }
+      }
+    },
+    {
+      "name": "浏览器错误日志",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "最终 ML 图表复查",
+      "pass": true,
+      "details": {
+        "axes": [
+          "横轴 x纵轴 y",
+          "横轴 x纵轴 y"
+        ],
+        "effectiveFonts": [
+          13.482758620689657,
+          12.232184206206224,
+          12.232184206206224
+        ],
+        "overflow": false,
+        "values": "w 1.711b 1.155MSE 7.325e-3"
+      }
+    },
+    {
+      "name": "响应式图片与查看原图",
+      "pass": true,
+      "details": "手机实际选择640px专用构图；点击原图在独立标签打开1200×600原始PNG；原阅读器保留位置。所有验收产生的图片标签已关闭。"
+    },
+    {
+      "name": "代码局部键盘滚动",
+      "pass": true,
+      "details": {
+        "pageOverflow": false,
+        "scrollLeft": 40,
+        "scrollWidth": 632,
+        "width": 308
+      }
+    }
+  ],
+  "layouts": [
+    {
+      "bodySize": "16px",
+      "captionSize": "14px",
+      "clientWidth": 1425,
+      "mathErrors": 0,
+      "mobileTargets": [
+        {
+          "height": 0,
+          "label": "章节目录"
+        },
+        {
+          "height": 0,
+          "label": "进度与目标"
+        }
+      ],
+      "navTargets": [
+        {
+          "height": 48,
+          "label": "向量",
+          "width": 204.6666717529297
+        },
+        {
+          "height": 48,
+          "label": "矩阵",
+          "width": 204.6666717529297
+        },
+        {
+          "height": 48,
+          "label": "代码",
+          "width": 204.6666717529297
+        },
+        {
+          "height": 48,
+          "label": "练习",
+          "width": 204.6666717529297
+        }
+      ],
+      "overflow": false,
+      "path": "/learn/MA101/MA101-C03-L01",
+      "quizCount": 2,
+      "scrollWidth": 1425,
+      "sectionCount": 6,
+      "status": "试读 · 待人工审核",
+      "title": "向量与矩阵的基本运算",
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      }
+    },
+    {
+      "bodySize": "16px",
+      "captionSize": "14px",
+      "clientWidth": 753,
+      "mathErrors": 0,
+      "mobileTargets": [
+        {
+          "height": 44,
+          "label": "章节目录"
+        },
+        {
+          "height": 44,
+          "label": "进度与目标"
+        }
+      ],
+      "navTargets": [
+        {
+          "height": 48,
+          "label": "向量",
+          "width": 177.83334350585938
+        },
+        {
+          "height": 48,
+          "label": "矩阵",
+          "width": 177.83334350585938
+        },
+        {
+          "height": 48,
+          "label": "代码",
+          "width": 177.83334350585938
+        },
+        {
+          "height": 48,
+          "label": "练习",
+          "width": 177.83334350585938
+        }
+      ],
+      "overflow": false,
+      "path": "/learn/MA101/MA101-C03-L01",
+      "quizCount": 2,
+      "scrollWidth": 753,
+      "sectionCount": 6,
+      "status": "试读 · 待人工审核",
+      "title": "向量与矩阵的基本运算",
+      "viewport": {
+        "height": 1024,
+        "width": 768
+      }
+    },
+    {
+      "bodySize": "16px",
+      "captionSize": "14px",
+      "clientWidth": 375,
+      "mathErrors": 0,
+      "mobileTargets": [
+        {
+          "height": 44,
+          "label": "章节目录"
+        },
+        {
+          "height": 44,
+          "label": "进度与目标"
+        }
+      ],
+      "navTargets": [
+        {
+          "height": 48,
+          "label": "向量",
+          "width": 86.33333587646484
+        },
+        {
+          "height": 48,
+          "label": "矩阵",
+          "width": 86.33333587646484
+        },
+        {
+          "height": 48,
+          "label": "代码",
+          "width": 86.33333587646484
+        },
+        {
+          "height": 48,
+          "label": "练习",
+          "width": 86.33333587646484
+        }
+      ],
+      "overflow": false,
+      "path": "/learn/MA101/MA101-C03-L01",
+      "quizCount": 2,
+      "scrollWidth": 375,
+      "sectionCount": 6,
+      "status": "试读 · 待人工审核",
+      "title": "向量与矩阵的基本运算",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      }
+    },
+    {
+      "bodySize": "16px",
+      "captionSize": "14px",
+      "clientWidth": 1425,
+      "mathErrors": 0,
+      "mobileTargets": [
+        {
+          "height": 0,
+          "label": "章节目录"
+        },
+        {
+          "height": 0,
+          "label": "进度与目标"
+        }
+      ],
+      "navTargets": [
+        {
+          "height": 48,
+          "label": "概念",
+          "width": 204.6666717529297
+        },
+        {
+          "height": 48,
+          "label": "参数",
+          "width": 204.6666717529297
+        },
+        {
+          "height": 48,
+          "label": "代码",
+          "width": 204.6666717529297
+        },
+        {
+          "height": 48,
+          "label": "练习",
+          "width": 204.6666717529297
+        }
+      ],
+      "overflow": false,
+      "path": "/learn/PY101/PY101-C05-L01",
+      "quizCount": 2,
+      "scrollWidth": 1425,
+      "sectionCount": 6,
+      "status": "试读 · 待人工审核",
+      "title": "Python 函数与参数",
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      }
+    },
+    {
+      "bodySize": "16px",
+      "captionSize": "14px",
+      "clientWidth": 753,
+      "mathErrors": 0,
+      "mobileTargets": [
+        {
+          "height": 44,
+          "label": "章节目录"
+        },
+        {
+          "height": 44,
+          "label": "进度与目标"
+        }
+      ],
+      "navTargets": [
+        {
+          "height": 48,
+          "label": "概念",
+          "width": 177.83334350585938
+        },
+        {
+          "height": 48,
+          "label": "参数",
+          "width": 177.83334350585938
+        },
+        {
+          "height": 48,
+          "label": "代码",
+          "width": 177.83334350585938
+        },
+        {
+          "height": 48,
+          "label": "练习",
+          "width": 177.83334350585938
+        }
+      ],
+      "overflow": false,
+      "path": "/learn/PY101/PY101-C05-L01",
+      "quizCount": 2,
+      "scrollWidth": 753,
+      "sectionCount": 6,
+      "status": "试读 · 待人工审核",
+      "title": "Python 函数与参数",
+      "viewport": {
+        "height": 1024,
+        "width": 768
+      }
+    },
+    {
+      "bodySize": "16px",
+      "captionSize": "14px",
+      "clientWidth": 375,
+      "mathErrors": 0,
+      "mobileTargets": [
+        {
+          "height": 44,
+          "label": "章节目录"
+        },
+        {
+          "height": 44,
+          "label": "进度与目标"
+        }
+      ],
+      "navTargets": [
+        {
+          "height": 48,
+          "label": "概念",
+          "width": 86.33333587646484
+        },
+        {
+          "height": 48,
+          "label": "参数",
+          "width": 86.33333587646484
+        },
+        {
+          "height": 48,
+          "label": "代码",
+          "width": 86.33333587646484
+        },
+        {
+          "height": 48,
+          "label": "练习",
+          "width": 86.33333587646484
+        }
+      ],
+      "overflow": false,
+      "path": "/learn/PY101/PY101-C05-L01",
+      "quizCount": 2,
+      "scrollWidth": 375,
+      "sectionCount": 6,
+      "status": "试读 · 待人工审核",
+      "title": "Python 函数与参数",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      }
+    },
+    {
+      "bodySize": "16px",
+      "captionSize": "14px",
+      "clientWidth": 305,
+      "mathErrors": 0,
+      "mobileTargets": [
+        {
+          "height": 44,
+          "label": "章节目录"
+        },
+        {
+          "height": 44,
+          "label": "进度与目标"
+        }
+      ],
+      "navTargets": [
+        {
+          "height": 48,
+          "label": "概念",
+          "width": 70.83333587646484
+        },
+        {
+          "height": 48,
+          "label": "参数",
+          "width": 70.83333587646484
+        },
+        {
+          "height": 48,
+          "label": "代码",
+          "width": 70.83333587646484
+        },
+        {
+          "height": 48,
+          "label": "练习",
+          "width": 70.83333587646484
+        }
+      ],
+      "overflow": false,
+      "path": "/learn/PY101/PY101-C05-L01",
+      "quizCount": 2,
+      "scrollWidth": 305,
+      "sectionCount": 6,
+      "status": "试读 · 待人工审核",
+      "title": "Python 函数与参数",
+      "viewport": {
+        "height": 844,
+        "width": 320
+      }
+    },
+    {
+      "bodySize": "16px",
+      "captionSize": "14px",
+      "clientWidth": 1425,
+      "mathErrors": 0,
+      "mobileTargets": [
+        {
+          "height": 0,
+          "label": "章节目录"
+        },
+        {
+          "height": 0,
+          "label": "进度与目标"
+        }
+      ],
+      "navTargets": [
+        {
+          "height": 48,
+          "label": "概念",
+          "width": 163.7291717529297
+        },
+        {
+          "height": 48,
+          "label": "公式",
+          "width": 163.73959350585938
+        },
+        {
+          "height": 48,
+          "label": "实验",
+          "width": 163.7291717529297
+        },
+        {
+          "height": 48,
+          "label": "代码",
+          "width": 163.73959350585938
+        },
+        {
+          "height": 48,
+          "label": "练习",
+          "width": 163.7291717529297
+        }
+      ],
+      "overflow": false,
+      "path": "/learn/ML201/ML201-C04-L01",
+      "quizCount": 2,
+      "scrollWidth": 1425,
+      "sectionCount": 7,
+      "status": "试读 · 待人工审核",
+      "title": "线性回归与梯度下降",
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      }
+    },
+    {
+      "bodySize": "16px",
+      "captionSize": "14px",
+      "clientWidth": 753,
+      "mathErrors": 0,
+      "mobileTargets": [
+        {
+          "height": 44,
+          "label": "章节目录"
+        },
+        {
+          "height": 44,
+          "label": "进度与目标"
+        }
+      ],
+      "navTargets": [
+        {
+          "height": 48,
+          "label": "概念",
+          "width": 142.2604217529297
+        },
+        {
+          "height": 48,
+          "label": "公式",
+          "width": 142.27084350585938
+        },
+        {
+          "height": 48,
+          "label": "实验",
+          "width": 142.2604217529297
+        },
+        {
+          "height": 48,
+          "label": "代码",
+          "width": 142.27084350585938
+        },
+        {
+          "height": 48,
+          "label": "练习",
+          "width": 142.27084350585938
+        }
+      ],
+      "overflow": false,
+      "path": "/learn/ML201/ML201-C04-L01",
+      "quizCount": 2,
+      "scrollWidth": 753,
+      "sectionCount": 7,
+      "status": "试读 · 待人工审核",
+      "title": "线性回归与梯度下降",
+      "viewport": {
+        "height": 1024,
+        "width": 768
+      }
+    },
+    {
+      "bodySize": "16px",
+      "captionSize": "14px",
+      "clientWidth": 375,
+      "mathErrors": 0,
+      "mobileTargets": [
+        {
+          "height": 44,
+          "label": "章节目录"
+        },
+        {
+          "height": 44,
+          "label": "进度与目标"
+        }
+      ],
+      "navTargets": [
+        {
+          "height": 48,
+          "label": "概念",
+          "width": 69.0625
+        },
+        {
+          "height": 48,
+          "label": "公式",
+          "width": 69.07292175292969
+        },
+        {
+          "height": 48,
+          "label": "实验",
+          "width": 69.0625
+        },
+        {
+          "height": 48,
+          "label": "代码",
+          "width": 69.07292175292969
+        },
+        {
+          "height": 48,
+          "label": "练习",
+          "width": 69.0625
+        }
+      ],
+      "overflow": false,
+      "path": "/learn/ML201/ML201-C04-L01",
+      "quizCount": 2,
+      "scrollWidth": 375,
+      "sectionCount": 7,
+      "status": "试读 · 待人工审核",
+      "title": "线性回归与梯度下降",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      }
+    },
+    {
+      "bodySize": "16px",
+      "captionSize": "14px",
+      "clientWidth": 305,
+      "mathErrors": 0,
+      "mobileTargets": [
+        {
+          "height": 44,
+          "label": "章节目录"
+        },
+        {
+          "height": 44,
+          "label": "进度与目标"
+        }
+      ],
+      "navTargets": [
+        {
+          "height": 48,
+          "label": "概念",
+          "width": 56.66666793823242
+        },
+        {
+          "height": 48,
+          "label": "公式",
+          "width": 56.66666793823242
+        },
+        {
+          "height": 48,
+          "label": "实验",
+          "width": 56.66666793823242
+        },
+        {
+          "height": 48,
+          "label": "代码",
+          "width": 56.66666793823242
+        },
+        {
+          "height": 48,
+          "label": "练习",
+          "width": 56.66666793823242
+        }
+      ],
+      "overflow": false,
+      "path": "/learn/ML201/ML201-C04-L01",
+      "quizCount": 2,
+      "scrollWidth": 305,
+      "sectionCount": 7,
+      "status": "试读 · 待人工审核",
+      "title": "线性回归与梯度下降",
+      "viewport": {
+        "height": 844,
+        "width": 320
+      }
+    },
+    {
+      "bodySize": "16px",
+      "captionSize": "14px",
+      "clientWidth": 305,
+      "mathErrors": 0,
+      "mobileTargets": [
+        {
+          "height": 44,
+          "label": "章节目录"
+        },
+        {
+          "height": 44,
+          "label": "进度与目标"
+        }
+      ],
+      "navTargets": [
+        {
+          "height": 48,
+          "label": "向量",
+          "width": 70.83333587646484
+        },
+        {
+          "height": 48,
+          "label": "矩阵",
+          "width": 70.83333587646484
+        },
+        {
+          "height": 48,
+          "label": "代码",
+          "width": 70.83333587646484
+        },
+        {
+          "height": 48,
+          "label": "练习",
+          "width": 70.83333587646484
+        }
+      ],
+      "overflow": false,
+      "path": "/learn/MA101/MA101-C03-L01",
+      "quizCount": 2,
+      "scrollWidth": 305,
+      "sectionCount": 6,
+      "status": "试读 · 待人工审核",
+      "title": "向量与矩阵的基本运算",
+      "viewport": {
+        "height": 844,
+        "width": 320
+      }
+    }
+  ],
+  "screenshots": [
+    "catalog-preview-desktop-1440.png",
+    "dashboard-desktop-1440.png",
+    "dashboard-mobile-390.png",
+    "home-regression-desktop-1440.png",
+    "home-regression-mobile-390.png",
+    "invalid-course-mobile-390.png",
+    "math-desktop-1440.png",
+    "math-detail-mobile-390.png",
+    "math-diagram-mobile-390.png",
+    "math-formula-mobile-390.png",
+    "math-mobile-390.png",
+    "math-narrow-320.png",
+    "math-quiz-mobile-390.png",
+    "math-tablet-768.png",
+    "ml-desktop-1440.png",
+    "ml-experiment-desktop.png",
+    "ml-experiment-narrow-320.png",
+    "ml-mobile-390.png",
+    "ml-narrow-320.png",
+    "ml-quiz-mobile-390.png",
+    "ml-tablet-768.png",
+    "python-code-mobile-390.png",
+    "python-desktop-1440.png",
+    "python-diagram-mobile-390.png",
+    "python-mobile-390.png",
+    "python-narrow-320.png",
+    "python-progress-mobile-390.png",
+    "python-quiz-desktop.png",
+    "python-tablet-768.png",
+    "python-toc-mobile-390.png"
+  ]
+}

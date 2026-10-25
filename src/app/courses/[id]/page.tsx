@@ -10,9 +10,14 @@ import {
   FolderKanban,
   Info,
 } from "lucide-react";
-import { courses, getCourse, SAMPLE_URL } from "@/lib/curriculum";
+import { courses, getCourse, getCoursePreview } from "@/lib/curriculum";
+import { getLearningCourse } from "@/lib/course-engine";
+import { lessonHref } from "@/content/publication-manifest";
 import { CourseArt } from "@/components/course-card";
-import { formatCourseReferences, getCourseDisplayName } from "@/lib/course-presentation";
+import {
+  formatCourseReferences,
+  getCourseDisplayName,
+} from "@/lib/course-presentation";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -33,6 +38,8 @@ export default async function CoursePage({
 }) {
   const course = getCourse((await params).id);
   if (!course) notFound();
+  const learningCourse = getLearningCourse(course.id)!;
+  const preview = getCoursePreview(course.id);
   const prereqs = courses.filter(
     (c) => c.id !== course.id && course.req.includes(c.id),
   );
@@ -67,7 +74,7 @@ export default async function CoursePage({
             <Info size={17} />
             <p>
               本课程正在筹备，下方为章节规划。
-              {course.id === "ML201" && "目前可先阅读一节试读样章。"}
+              {preview && "目前包含可阅读样章，教材仍待人工审核。"}
             </p>
           </div>
           <section className="detail-section">
@@ -89,19 +96,23 @@ export default async function CoursePage({
               </span>
             </div>
             <div className="chapter-list">
-              {course.chapters.map((chapter, i) => (
-                <div key={chapter} className="chapter-row">
+              {learningCourse.chapters.map((chapter, i) => (
+                <div key={chapter.id} className="chapter-row">
                   <span className="chapter-number">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span>
-                    {chapter.replace(/^\d+\s/, "")}
-                    {course.id === "ML201" && i === 3 && (
-                      <Link href={SAMPLE_URL} className="chapter-preview">
-                        阅读样章
+                    {chapter.title}
+                    {chapter.lessons.map((entry) => (
+                      <Link
+                        key={entry.lessonId}
+                        href={lessonHref(entry)}
+                        className="chapter-preview"
+                      >
+                        试读 · {entry.title}
                         <ArrowRight size={13} />
                       </Link>
-                    )}
+                    ))}
                   </span>
                 </div>
               ))}
@@ -136,8 +147,8 @@ export default async function CoursePage({
               </span>
               <h3>从理解到可复现的实践</h3>
               <p>图文 · 公式 · 代码 · 小测 · 项目</p>
-              {course.id === "ML201" ? (
-                <Link href={SAMPLE_URL} className="button button-primary">
+              {preview ? (
+                <Link href={preview.href} className="button button-primary">
                   阅读样章
                   <ArrowRight size={16} />
                 </Link>

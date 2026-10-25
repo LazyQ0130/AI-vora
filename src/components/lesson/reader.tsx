@@ -1,176 +1,92 @@
 "use client";
-import { memo, useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useReducedMotion } from "motion/react";
 import {
-  ArrowLeft,
   ArrowRight,
   BookOpen,
   ChevronDown,
   ChevronRight,
-  Download,
   ListTree,
-  LockKeyhole,
   Target,
   CheckCircle2,
-  Code2,
-  Sigma,
   FlaskConical,
   Layers3,
+  Clock3,
 } from "lucide-react";
-import { getCourse } from "@/lib/curriculum";
-import { sampleLesson, type LessonBlock } from "@/content/sample";
+import {
+  publicationLabel,
+  publicationNotice,
+  type Course,
+  type Chapter,
+  type Lesson,
+  type Publication,
+} from "@/content/models";
 import { Drawer, useToast } from "../ui";
-import { useLocalProgress, saveLocalProgress } from "@/lib/use-progress";
-import { CourseArt } from "../course-card";
+import {
+  learningProgressStore,
+  lessonProgressScope,
+  useLessonProgress,
+} from "@/lib/use-learning-progress";
 import {
   LessonHeading,
-  Paragraph,
   LearningObjectives,
-  InfoCallout,
-  MathBlock,
-  DiagramCard,
-  RegressionDiagram,
-  CodeBlock,
-  QuizBlock,
-  RegressionExperiment,
   ProgressRing,
   LessonNavigation,
 } from "./blocks";
+import { ChapterToc } from "./chapter-toc";
+import { ContentRenderer, ResourceDownloads } from "./content-renderer";
 import "katex/dist/katex.min.css";
 
-const RenderBlock = memo(function RenderBlock({
-  block,
-}: {
-  block: LessonBlock;
-}) {
-  switch (block.type) {
-    case "paragraph":
-      return <Paragraph>{block.text}</Paragraph>;
-    case "callout":
-      return <InfoCallout title={block.title}>{block.text}</InfoCallout>;
-    case "math":
-      return <MathBlock latex={block.latex} explanation={block.explanation} />;
-    case "diagram":
-      return (
-        <DiagramCard caption="合成数据示例：y = 2x + 1。">
-          <RegressionDiagram />
-        </DiagramCard>
-      );
-    case "code":
-      return <CodeBlock code={block.code} />;
-    case "experiment":
-      return <RegressionExperiment />;
-    case "quiz":
-      return <QuizBlock block={block} />;
-    case "summary":
-      return (
-        <ul className="lesson-summary">
-          {block.points.map((point) => (
-            <li key={point}>
-              <CheckCircle2 size={16} />
-              {point}
-            </li>
-          ))}
-        </ul>
-      );
-  }
-});
-export function ChapterToc({
-  active,
-  onNavigate,
-}: {
-  active: string;
-  onNavigate?: (sectionId: string) => void;
-}) {
-  const course = getCourse("ML201")!;
-  return (
-    <>
-      <Link href="/courses/ML201" className="text-link reader-back">
-        <ArrowLeft size={14} />
-        返回课程详情
-      </Link>
-      <div className="toc-course">
-        <div className="toc-course-cover">
-          <CourseArt course={course} compact />
-        </div>
-        <div className="toc-course-copy">
-          <span className="toc-course-level">L2 · 机器学习</span>
-          <h2>
-            机器学习基础：
-            <br />
-            监督学习
-          </h2>
-          <span className="subtle-tag">课程筹备中 · 本节可试读</span>
-        </div>
-      </div>
-      <nav className="chapter-toc" aria-label="章节目录">
-        {course.chapters.map((chapter, i) => (
-          <details key={chapter} open={i === 3 ? true : undefined}>
-            <summary>
-              <ChevronRight size={13} />
-              <span className="toc-chapter-number">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <span>{chapter.replace(/^\d+\s/, "")}</span>
-              {i !== 3 && <LockKeyhole size={11} />}
-            </summary>
-            {i === 3 ? (
-              <div className="lesson-toc-items">
-                <span className="toc-sample-label">
-                  试读 · 线性回归与梯度下降
-                </span>
-                {sampleLesson.sections.map((section, index) => (
-                  <a
-                    key={section.id}
-                    href={`#${section.id}`}
-                    className={active === section.id ? "active" : ""}
-                    aria-current={
-                      active === section.id ? "location" : undefined
-                    }
-                    onClick={
-                      onNavigate
-                        ? (event) => {
-                            event.preventDefault();
-                            onNavigate(section.id);
-                          }
-                        : undefined
-                    }
-                  >
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    {section.title}
-                  </a>
-                ))}
-              </div>
-            ) : (
-              <p className="toc-planned">本章内容尚未开放。</p>
-            )}
-          </details>
-        ))}
-      </nav>
-      <p className="toc-footnote">
-        本课程正在筹备，目前仅本节样章可试读。
-      </p>
-    </>
-  );
-}
-export function Reader() {
-  const [active, setActive] = useState("intuition"),
-    [progress, setProgress] = useState(0);
-  const saved = useLocalProgress();
+type ReaderProps = {
+  course: Course;
+  chapter: Chapter;
+  lesson: Lesson;
+  publication: Publication;
+  adjacent: { previous?: Publication; next?: Publication };
+};
+export function Reader({
+  course,
+  chapter,
+  lesson,
+  publication,
+  adjacent,
+}: ReaderProps) {
+  const firstSection = lesson.sections[0].id;
+  const [active, setActive] = useState(firstSection);
+  const [progress, setProgress] = useState(0);
+  const scope = useMemo(() => lessonProgressScope(lesson), [lesson]);
+  const saved = useLessonProgress(scope);
   const completed = saved?.completed ?? false;
   const displayProgress = Math.max(progress, saved?.percent ?? 0);
-  const latest = useRef({ percent: 0, section: "intuition" });
+  const latest = useRef({ percent: 0, section: firstSection });
   const [tocOpen, setTocOpen] = useState(false);
   const pendingSection = useRef<string | null>(null);
   const article = useRef<HTMLElement>(null);
   const sidebar = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
   const toast = useToast();
-  const activeNav =
-    active === "gradient" ? "loss" : active === "summary" ? "quiz" : active;
+  const activeGroup = lesson.sections.find((s) => s.id === active)?.navGroup;
+  const groups = lesson.sections.filter(
+    (section, index, sections) =>
+      sections.findIndex((s) => s.navGroup === section.navGroup) === index,
+  );
+  const blocks = lesson.sections.flatMap((s) => s.blocks);
+  const quizCount = blocks.filter((b) => b.type === "quiz").length;
+  const experimentCount = blocks.filter((b) => b.type === "experiment").length;
+
+  function navigate(sectionId: string) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+    window.history.replaceState(null, "", `#${sectionId}`);
+    section.scrollIntoView({
+      block: "start",
+      behavior: reduce ? "instant" : "smooth",
+    });
+    section.querySelector<HTMLElement>("h2")?.focus({ preventScroll: true });
+  }
   useEffect(() => {
-    const rail = sidebar.current;
+    const rail = sidebar.current?.querySelector<HTMLElement>(".chapter-toc");
     const current = rail?.querySelector<HTMLElement>(
       '[aria-current="location"]',
     );
@@ -191,33 +107,39 @@ export function Reader() {
   useEffect(() => {
     latest.current = { percent: progress, section: active };
     const timer = window.setTimeout(
-      () => saveLocalProgress(progress, active),
+      () => learningProgressStore.save(scope, progress, active),
       450,
     );
     return () => window.clearTimeout(timer);
-  }, [progress, active]);
+  }, [progress, active, scope]);
   useEffect(() => {
     const flush = () =>
-      saveLocalProgress(latest.current.percent, latest.current.section);
+      learningProgressStore.save(
+        scope,
+        latest.current.percent,
+        latest.current.section,
+      );
     window.addEventListener("pagehide", flush);
     return () => {
       window.removeEventListener("pagehide", flush);
       flush();
     };
-  }, []);
+  }, [scope]);
   useEffect(() => {
     let frame = 0;
     const sections = Array.from(
-      document.querySelectorAll<HTMLElement>(".lesson-section"),
+      article.current?.querySelectorAll<HTMLElement>(".lesson-section") ?? [],
     );
     const update = () => {
       if (!article.current) return;
       const rect = article.current.getBoundingClientRect();
       const available = rect.height - innerHeight + 130;
       setProgress(
-        Math.max(
-          0,
-          Math.min(100, ((-rect.top + 115) / Math.max(available, 1)) * 100),
+        Math.round(
+          Math.max(
+            0,
+            Math.min(100, ((-rect.top + 115) / Math.max(available, 1)) * 100),
+          ),
         ),
       );
       const navigation = document.querySelector(".reader-section-nav");
@@ -227,7 +149,7 @@ export function Reader() {
       const current = sections.findLast(
         (section) => section.getBoundingClientRect().top <= checkpoint,
       );
-      setActive(current?.id ?? "intuition");
+      setActive(current?.id ?? firstSection);
       frame = 0;
     };
     const onScroll = () => {
@@ -241,14 +163,15 @@ export function Reader() {
       window.removeEventListener("resize", onScroll);
       cancelAnimationFrame(frame);
     };
-  }, []);
+  }, [firstSection]);
+
   const goals = (
     <>
       <h3>
         <Target size={16} />
         本节学习目标
       </h3>
-      <LearningObjectives objectives={sampleLesson.objectives} />
+      <LearningObjectives objectives={lesson.objectives} />
     </>
   );
   return (
@@ -260,13 +183,20 @@ export function Reader() {
         <div className="reader-breadcrumb">
           <Link href="/courses">课程体系</Link>
           <ChevronRight size={11} />
-          <Link href="/courses/ML201">监督学习</Link>
+          <Link href={`/courses/${course.id}`}>{course.name}</Link>
           <ChevronRight size={11} />
-          <span>第 04 章 · 梯度下降</span>
+          <span>
+            第 {chapter.order} 章 · {chapter.title}
+          </span>
         </div>
       </div>
       <aside className="reader-sidebar" ref={sidebar}>
-        <ChapterToc active={active} />
+        <ChapterToc
+          course={course}
+          lesson={lesson}
+          active={active}
+          onNavigate={navigate}
+        />
       </aside>
       <div className="reader-main">
         <div className="reader-mobile-bar">
@@ -279,18 +209,7 @@ export function Reader() {
               if (!sectionId) return;
               event.preventDefault();
               pendingSection.current = null;
-              requestAnimationFrame(() => {
-                const section = document.getElementById(sectionId);
-                if (!section) return;
-                window.history.replaceState(null, "", `#${sectionId}`);
-                section.scrollIntoView({
-                  block: "start",
-                  behavior: reduce ? "instant" : "smooth",
-                });
-                section
-                  .querySelector<HTMLElement>("h2")
-                  ?.focus({ preventScroll: true });
-              });
+              requestAnimationFrame(() => navigate(sectionId));
             }}
             trigger={
               <button className="button button-small button-secondary">
@@ -300,6 +219,8 @@ export function Reader() {
             }
           >
             <ChapterToc
+              course={course}
+              lesson={lesson}
               active={active}
               onNavigate={(sectionId) => {
                 pendingSection.current = sectionId;
@@ -318,143 +239,149 @@ export function Reader() {
           >
             <ProgressRing value={completed ? 100 : displayProgress} />
             {goals}
-            <p className="reader-local-note">阅读记录仅保存在当前浏览器，不跨设备同步。</p>
+            <p className="reader-local-note">
+              阅读记录仅保存在当前浏览器，不跨设备同步。
+            </p>
           </Drawer>
         </div>
         <header className="reader-heading">
-          <span className="eyebrow">UNDERSTAND THE FIRST PRINCIPLE</span>
+          <span className="eyebrow">LEARN THROUGH UNDERSTANDING</span>
           <div className="reader-chapter-line">
-            <span>第 4 章</span>
-            <span>从零实现线性回归</span>
+            <span>第 {chapter.order} 章</span>
+            <span>{chapter.title}</span>
           </div>
           <div className="reader-title-row">
-            <h1>{sampleLesson.title}</h1>
-            <span className="sample-badge">试读样章</span>
+            <h1>{lesson.title}</h1>
+            <span className="sample-badge">
+              {publicationLabel(publication)}
+            </span>
           </div>
-          <p>{sampleLesson.subtitle}</p>
+          <p>{lesson.subtitle}</p>
           <div className="reader-meta">
             <span>
               <BookOpen size={14} />
               图文教程
             </span>
-            <span>难度 L2 · 机器学习</span>
             <span>
-              <CheckCircle2 size={14} />2 道自查题
+              {course.lvl} · {course.direction}
             </span>
             <span>
-              <FlaskConical size={14} />1 个交互实验
+              <Clock3 size={14} />约 {lesson.durationMinutes} 分钟
             </span>
+            {quizCount > 0 && (
+              <span>
+                <CheckCircle2 size={14} />
+                {quizCount} 道自查题
+              </span>
+            )}
+            {experimentCount > 0 && (
+              <span>
+                <FlaskConical size={14} />
+                {experimentCount} 个交互实验
+              </span>
+            )}
           </div>
+          {saved && saved.percent > 0 && (
+            <a
+              className="reader-resume text-link"
+              href={`#${saved.section}`}
+              onClick={(event) => {
+                event.preventDefault();
+                navigate(saved.section);
+              }}
+            >
+              回到上次位置
+              <ArrowRight size={14} />
+            </a>
+          )}
         </header>
-        <div className="reader-section-nav" aria-label="本节内容导航">
-          <a
-            href="#intuition"
-            className={activeNav === "intuition" ? "active" : ""}
-            aria-current={activeNav === "intuition" ? "location" : undefined}
-          >
-            <BookOpen size={14} />
-            概念
-          </a>
-          <a
-            href="#loss"
-            className={activeNav === "loss" ? "active" : ""}
-            aria-current={activeNav === "loss" ? "location" : undefined}
-          >
-            <Sigma size={15} />
-            <span>公式</span>
-          </a>
-          <a
-            href="#experiment"
-            className={activeNav === "experiment" ? "active" : ""}
-            aria-current={activeNav === "experiment" ? "location" : undefined}
-          >
-            <FlaskConical size={14} />
-            <span>实验</span>
-          </a>
-          <a
-            href="#code"
-            className={activeNav === "code" ? "active" : ""}
-            aria-current={activeNav === "code" ? "location" : undefined}
-          >
-            <Code2 size={15} />
-            <span>代码</span>
-          </a>
-          <a
-            href="#quiz"
-            className={activeNav === "quiz" ? "active" : ""}
-            aria-current={activeNav === "quiz" ? "location" : undefined}
-          >
-            <CheckCircle2 size={14} />
-            练习
-          </a>
-        </div>
+        <nav className="reader-section-nav" aria-label="本节内容导航">
+          {groups.map((section) => (
+            <a
+              key={section.navGroup}
+              href={`#${section.id}`}
+              className={activeGroup === section.navGroup ? "active" : ""}
+              aria-current={
+                activeGroup === section.navGroup ? "location" : undefined
+              }
+              onClick={(event) => {
+                event.preventDefault();
+                navigate(section.id);
+              }}
+            >
+              {section.navLabel}
+            </a>
+          ))}
+        </nav>
         <div className="demo-content-note">
-          本节为试读样章，完整课程尚未正式发布。
+          {publicationNotice(publication)}
         </div>
         <article ref={article} className="lesson-content">
-          {sampleLesson.sections.map((section, i) => (
+          {lesson.sections.map((section, index) => (
             <section
               key={section.id}
               className="lesson-section"
               id={section.id}
             >
-              <LessonHeading index={i + 1}>{section.title}</LessonHeading>
+              <LessonHeading index={index + 1}>{section.title}</LessonHeading>
               <div
                 className={
-                  section.id === "intuition"
+                  section.layout === "intro"
                     ? "lesson-intro-grid"
                     : "lesson-section-body"
                 }
               >
-                {section.blocks.map((block, j) => (
+                {section.blocks.map((block, blockIndex) => (
                   <div
                     className={`lesson-block lesson-block-${block.type}`}
-                    key={j}
+                    key={blockIndex}
                   >
-                    <RenderBlock block={block} />
+                    <ContentRenderer
+                      block={block}
+                      resources={lesson.resources}
+                    />
                   </div>
                 ))}
               </div>
             </section>
           ))}
         </article>
-        <div className="lesson-downloads">
-          <div>
-            <Download size={20} />
-            <span>
-              把实验带到自己的环境
-              <small>完整 Python 源码与 Notebook · 仅需 NumPy</small>
-            </span>
-          </div>
-          <div>
-            <a
-              href="/downloads/linear_regression.py"
-              download
-              className="button button-small button-secondary"
-            >
-              Python 源码
-              <Download size={14} />
-            </a>
-            <a
-              href="/downloads/linear_regression.ipynb"
-              download
-              className="button button-small button-secondary"
-            >
-              Notebook
-              <Download size={14} />
-            </a>
-          </div>
-        </div>
+        <section
+          className="lesson-references"
+          aria-labelledby="lesson-reference-title"
+        >
+          <h2 id="lesson-reference-title">参考与进一步阅读</h2>
+          <p>
+            正文、练习与示意图为原创教学材料。以下官方资料用于核对定义与行为。
+          </p>
+          <ul>
+            {lesson.references.map((reference) => (
+              <li key={reference.href}>
+                <a href={reference.href} target="_blank" rel="noreferrer">
+                  {reference.title}
+                  <ArrowRight size={14} />
+                </a>
+                <p>{reference.note}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+        <ResourceDownloads resources={lesson.resources} />
         <div className="lesson-completion">
-          <p>理解源于反复思考，也源于亲自实践。</p>
+          <p>阅读比例帮助安排学习，不代表已经掌握。</p>
           <button
             className={`button ${completed ? "button-secondary" : "button-primary"}`}
             onClick={() => {
-              const persisted = saveLocalProgress(100, active, true);
+              const persisted = learningProgressStore.save(
+                scope,
+                100,
+                active,
+                true,
+              );
               toast(
                 persisted
                   ? "本节已读完，进度已保存在当前浏览器"
-                  : "已标记读完；当前浏览器无法长期保存，记录仅保留到本次访问结束",
+                  : "已标记读完；浏览器无法长期保存，记录仅保留在本次访问",
               );
             }}
           >
@@ -462,9 +389,9 @@ export function Reader() {
             {completed ? "本节已读完" : "标记本节已读完"}
           </button>
         </div>
-        <LessonNavigation />
+        <LessonNavigation {...adjacent} />
         <div className="reader-end">
-          <Link href="/courses/ML201">
+          <Link href={`/courses/${course.id}`}>
             查看课程详情
             <ArrowRight size={14} />
           </Link>
@@ -482,7 +409,7 @@ export function Reader() {
             <ProgressRing value={completed ? 100 : displayProgress} />
             <div>
               <strong>{completed ? "已读完" : "在理解中前进"}</strong>
-              <span>试读样章 · 1 节</span>
+              <span>当前课时 · 独立记录</span>
             </div>
           </div>
           <div className="local-status">
@@ -497,12 +424,16 @@ export function Reader() {
             本节内容地图
           </h3>
           <nav aria-label="本节段落">
-            {sampleLesson.sections.map((section, index) => (
+            {lesson.sections.map((section, index) => (
               <a
                 key={section.id}
                 href={`#${section.id}`}
                 className={active === section.id ? "active" : ""}
                 aria-current={active === section.id ? "location" : undefined}
+                onClick={(event) => {
+                  event.preventDefault();
+                  navigate(section.id);
+                }}
               >
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 {section.title}
@@ -513,16 +444,13 @@ export function Reader() {
         <details className="reader-knowledge" open>
           <summary>
             <span>
-              <LightbulbIcon />
+              <BookOpen size={15} />
               先修知识提示
             </span>
             <ChevronDown size={15} />
           </summary>
-          <p>
-            Python 数组与函数、基础导数与偏导、NumPy
-            广播。本节使用一维合成数据，聚焦损失与更新过程。
-          </p>
-          <Link href="/courses/ML201" className="text-link">
+          <p>{lesson.prerequisites}</p>
+          <Link href={`/courses/${course.id}`} className="text-link">
             查看完整先修要求
             <ArrowRight size={12} />
           </Link>
@@ -530,7 +458,4 @@ export function Reader() {
       </aside>
     </div>
   );
-}
-function LightbulbIcon() {
-  return <BookOpen size={15} />;
 }

@@ -1,5 +1,6 @@
 "use client";
-import { useId, useState, type ReactNode } from "react";
+import { useEffect, useId, useRef, useState, type ReactNode } from "react";
+import Link from "next/link";
 import katex from "katex";
 import { Highlight, themes } from "prism-react-renderer";
 import {
@@ -8,19 +9,21 @@ import {
   Lightbulb,
   ArrowLeft,
   ArrowRight,
-  RotateCcw,
   CheckCircle2,
   XCircle,
 } from "lucide-react";
 import { useToast } from "../ui";
-import { samples, train } from "@/lib/regression";
-import { type LessonBlock } from "@/content/sample";
+import { samples } from "@/lib/regression";
+import { type ContentBlock, type Publication } from "@/content/models";
+import { lessonHref } from "@/content/publication-manifest";
 
 const readableCodeTheme = {
   ...themes.nightOwl,
-  styles: themes.nightOwl.styles.map((rule) => rule.types.includes("comment")
-    ? { ...rule, style: { ...rule.style, color: "var(--text-code-comment)" } }
-    : rule),
+  styles: themes.nightOwl.styles.map((rule) =>
+    rule.types.includes("comment")
+      ? { ...rule, style: { ...rule.style, color: "var(--text-code-comment)" } }
+      : rule,
+  ),
 };
 
 export function LessonHeading({
@@ -125,95 +128,97 @@ export function RegressionDiagram({
   interactive?: boolean;
   diverged?: boolean;
 }) {
+  const clipId = useId();
   return (
-    <svg
-      fill="none"
-      viewBox="0 0 580 275"
-      role="img"
-      aria-label={
-        interactive
-          ? `拟合图：当前斜率 ${w.toFixed(2)}，截距 ${b.toFixed(2)}，合成数据的真实直线为 y 等于 2x 加 1`
-          : "合成数据散点位于 y 等于 2x 加 1 的直线上；横轴 x 从 0 到 1，纵轴 y 从 0 到 4"
-      }
-      className="regression-chart"
-    >
-      <defs>
-        <clipPath id={interactive ? "fit-clip" : "intro-clip"}>
-          <rect x="58" y="25" width="485" height="200" />
-        </clipPath>
-      </defs>
-      {[0, 1, 2, 3, 4].map((y) => (
-        <g key={y}>
-          <path d={`M58 ${225 - y * 50}H543`} stroke="#94a3b817" />
-          <text x="40" y={229 - y * 50} textAnchor="end">
-            {y}
-          </text>
-        </g>
-      ))}
-      {[0, 0.25, 0.5, 0.75, 1].map((x) => (
-        <g key={x}>
-          <path d={`M${58 + x * 485} 25V225`} stroke="#94a3b817" />
-          <text x={58 + x * 485} y="247" textAnchor="middle">
-            {x}
-          </text>
-        </g>
-      ))}
-      <path d="M58 25V225H543" stroke="#56678f" />
-      <text x="20" y="23">
-        y
-      </text>
-      <text x="558" y="228">
-        x
-      </text>
-      <g clipPath={`url(#${interactive ? "fit-clip" : "intro-clip"})`}>
-        {samples
-          .filter((_, i) => i % 3 === 0)
-          .map((p, i) => (
-            <circle
-              key={i}
-              cx={58 + p.x * 485}
-              cy={225 - p.y * 50}
-              r="4"
-              fill="#8c80ef"
-              stroke="#0d152c"
-            />
-          ))}
-        {!diverged && (
-          <path
-            d={`M58 ${(225 - b * 50).toFixed(3)}L543 ${(225 - (w + b) * 50).toFixed(3)}`}
-            stroke="#4dd8e9"
-            strokeWidth="2"
-          />
-        )}
-      </g>
-      <g transform="translate(327 13)">
-        <circle cx="0" cy="0" r="3" fill="#8c80ef" />
-        <text x="9" y="4">
-          合成数据
-        </text>
-        <path d="M95 0h17" stroke="#4dd8e9" strokeWidth="2" />
-        <text x="120" y="4">
+    <>
+      <div className="diagram-legend">
+        <span className="legend-data">合成数据</span>
+        <span className="legend-fit">
           {interactive ? "当前拟合" : "y = 2x + 1"}
-        </text>
-      </g>
-    </svg>
+        </span>
+      </div>
+      <svg
+        fill="none"
+        viewBox="0 -15 580 290"
+        role="img"
+        aria-label={
+          interactive
+            ? `拟合图：当前斜率 ${w.toFixed(2)}，截距 ${b.toFixed(2)}，合成数据的真实直线为 y 等于 2x 加 1`
+            : "合成数据散点位于 y 等于 2x 加 1 的直线上；横轴 x 从 0 到 1，纵轴 y 从 0 到 4"
+        }
+        className="regression-chart"
+      >
+        <defs>
+          <clipPath id={clipId}>
+            <rect x="58" y="25" width="485" height="200" />
+          </clipPath>
+        </defs>
+        {[0, 1, 2, 3, 4].map((y) => (
+          <g key={y}>
+            <path d={`M58 ${225 - y * 50}H543`} stroke="#94a3b817" />
+            <text x="40" y={229 - y * 50} textAnchor="end">
+              {y}
+            </text>
+          </g>
+        ))}
+        {[0, 0.25, 0.5, 0.75, 1].map((x) => (
+          <g key={x}>
+            <path d={`M${58 + x * 485} 25V225`} stroke="#94a3b817" />
+            <text x={58 + x * 485} y="247" textAnchor="middle">
+              {x}
+            </text>
+          </g>
+        ))}
+        <path d="M58 25V225H543" stroke="#56678f" />
+        <g clipPath={`url(#${clipId})`}>
+          {samples
+            .filter((_, i) => i % 3 === 0)
+            .map((p, i) => (
+              <circle
+                key={i}
+                cx={58 + p.x * 485}
+                cy={225 - p.y * 50}
+                r="4"
+                fill="#8c80ef"
+                stroke="#0d152c"
+              />
+            ))}
+          {!diverged && (
+            <path
+              d={`M58 ${(225 - b * 50).toFixed(3)}L543 ${(225 - (w + b) * 50).toFixed(3)}`}
+              stroke="#4dd8e9"
+              strokeWidth="2"
+            />
+          )}
+        </g>
+      </svg>
+      <div className="chart-axes">
+        <span>横轴 x</span>
+        <span>纵轴 y</span>
+      </div>
+    </>
   );
 }
 export function CodeBlock({
   code,
+  filename,
   language = "python",
 }: {
   code: string;
-  language?: "python";
+  filename: string;
+  language?: "python" | "javascript" | "bash" | "json" | "text";
 }) {
   const [copied, setCopied] = useState(false);
+  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  useEffect(() => () => clearTimeout(timer.current), []);
   const toast = useToast();
   async function copy() {
     try {
       await navigator.clipboard.writeText(code);
       setCopied(true);
-      toast("代码已复制，可在本地 Python 环境运行");
-      window.setTimeout(() => setCopied(false), 2500);
+      toast("代码已复制");
+      clearTimeout(timer.current);
+      timer.current = setTimeout(() => setCopied(false), 2500);
     } catch {
       toast("浏览器未允许复制，请选中代码手动复制");
     }
@@ -223,7 +228,8 @@ export function CodeBlock({
       <div className="lesson-code-title">
         <span>
           <span className="python-dot" />
-          Python <small>linear_regression.py</small>
+          {language === "python" ? "Python" : language}{" "}
+          <small>{filename}</small>
         </span>
         <button className="copy-button" onClick={copy}>
           {copied ? <Check size={13} /> : <Copy size={13} />}
@@ -233,7 +239,8 @@ export function CodeBlock({
       <div
         className="code-scroll"
         tabIndex={0}
-        aria-label="Python 示例代码，可横向滚动"
+        role="region"
+        aria-label={`${filename} 示例代码，可横向滚动`}
       >
         <Highlight
           theme={readableCodeTheme}
@@ -264,15 +271,14 @@ export function CodeBlock({
 export function QuizBlock({
   block,
 }: {
-  block: Extract<LessonBlock, { type: "quiz" }>;
+  block: Extract<ContentBlock, { type: "quiz" }>;
 }) {
+  const groupId = useId();
   const [selected, setSelected] = useState<number | null>(null),
     [submitted, setSubmitted] = useState(false);
   return (
     <div className="quiz-block">
-      <span className="quiz-label">
-        知识自查 · {block.id === "q1" ? "01" : "02"}
-      </span>
+      <span className="quiz-label">知识自查</span>
       <fieldset>
         <legend>{block.question}</legend>
         <div className="quiz-options">
@@ -283,7 +289,7 @@ export function QuizBlock({
             >
               <input
                 type="radio"
-                name={block.id}
+                name={groupId}
                 value={i}
                 checked={selected === i}
                 onChange={() => {
@@ -335,124 +341,6 @@ export function QuizBlock({
     </div>
   );
 }
-export function RegressionExperiment() {
-  const [rate, setRate] = useState(0.1),
-    [iterations, setIterations] = useState(100);
-  const result = train(rate, iterations);
-  const logs = result.history.map((value) =>
-    Math.log10(Math.max(value, 1e-12)),
-  );
-  const min = Math.min(...logs),
-    max = Math.max(...logs),
-    range = Math.max(max - min, 0.1);
-  const points = logs
-    .map(
-      (value, i) =>
-        `${(50 + (i / Math.max(logs.length - 1, 1)) * 470).toFixed(3)},${(190 - ((value - min) / range) * 150).toFixed(3)}`,
-    )
-    .join(" ");
-  return (
-    <div className="experiment">
-      <div className="experiment-controls">
-        <label>
-          学习率 η<output>{rate.toFixed(2)}</output>
-          <input
-            type="range"
-            min=".01"
-            max="1"
-            step=".01"
-            value={rate}
-            aria-label="学习率"
-            onChange={(event) => setRate(Number(event.target.value))}
-          />
-        </label>
-        <label>
-          迭代次数<output>{iterations}</output>
-          <input
-            type="range"
-            min="0"
-            max="300"
-            step="10"
-            value={iterations}
-            aria-label="迭代次数"
-            onChange={(event) => setIterations(Number(event.target.value))}
-          />
-        </label>
-        <button
-          className="icon-button"
-          aria-label="重置实验参数"
-          onClick={() => {
-            setRate(0.1);
-            setIterations(100);
-          }}
-        >
-          <RotateCcw size={15} />
-        </button>
-      </div>
-      <div className="experiment-values">
-        <span>
-          w <strong>{result.w.toFixed(3)}</strong>
-        </span>
-        <span>
-          b <strong>{result.b.toFixed(3)}</strong>
-        </span>
-        <span>
-          MSE <strong>{result.history.at(-1)!.toExponential(3)}</strong>
-        </span>
-      </div>
-      {result.diverged && (
-        <div className="experiment-warning" role="status">
-          当前学习率导致发散，已在 MSE 超过 10¹² 时停止计算。请减小学习率。
-        </div>
-      )}
-      <div className="experiment-chart-grid">
-        <figure>
-          <span className="chart-label">当前模型与合成数据</span>
-          <RegressionDiagram
-            w={result.w}
-            b={result.b}
-            diverged={result.diverged}
-            interactive
-          />
-        </figure>
-        <figure>
-          <span className="chart-label">损失变化 · log₁₀(MSE)</span>
-          <svg
-            viewBox="0 0 580 250"
-            className="regression-chart"
-            role="img"
-            aria-label={`经过 ${result.history.length - 1} 步更新，MSE 从 ${result.history[0].toFixed(3)} 变为 ${result.history.at(-1)!.toExponential(3)}`}
-          >
-            <path d="M50 30V190H520" stroke="#56678f" fill="none" />
-            {[0, 0.5, 1].map((t) => (
-              <g key={t}>
-                <path d={`M50 ${190 - t * 150}H520`} stroke="#94a3b817" />
-                <text x="39" y={194 - t * 150} textAnchor="end">
-                  {(min + t * range).toFixed(1)}
-                </text>
-              </g>
-            ))}
-            <polyline
-              points={points}
-              fill="none"
-              stroke="#a68bf6"
-              strokeWidth="2.5"
-            />
-            <text x="50" y="217">
-              0
-            </text>
-            <text x="520" y="217" textAnchor="end">
-              {result.history.length - 1} 次迭代
-            </text>
-          </svg>
-        </figure>
-      </div>
-      <p className="experiment-note">
-        60 个固定合成样本 · x ∈ [0, 1] · 生成关系 y = 2x + 1
-      </p>
-    </div>
-  );
-}
 export function ProgressRing({ value }: { value: number }) {
   const gradientId = useId();
   const safe = Math.max(0, Math.min(100, Math.round(value)));
@@ -498,17 +386,37 @@ export function ProgressRing({ value }: { value: number }) {
     </div>
   );
 }
-export function LessonNavigation() {
+export function LessonNavigation({
+  previous,
+  next,
+}: {
+  previous?: Publication;
+  next?: Publication;
+}) {
   return (
     <nav className="lesson-navigation" aria-label="相邻知识单元">
-      <button className="button button-secondary" disabled>
-        <ArrowLeft size={15} />
-        上一节 · 尚未提供
-      </button>
-      <button className="button button-secondary" disabled>
-        下一节 · 规划中
-        <ArrowRight size={15} />
-      </button>
+      {previous ? (
+        <Link className="button button-secondary" href={lessonHref(previous)}>
+          <ArrowLeft size={15} />
+          上一节 · {previous.title}
+        </Link>
+      ) : (
+        <button className="button button-secondary" disabled>
+          <ArrowLeft size={15} />
+          上一节 · 尚未提供
+        </button>
+      )}
+      {next ? (
+        <Link className="button button-secondary" href={lessonHref(next)}>
+          下一节 · {next.title}
+          <ArrowRight size={15} />
+        </Link>
+      ) : (
+        <button className="button button-secondary" disabled>
+          下一节 · 尚未提供
+          <ArrowRight size={15} />
+        </button>
+      )}
     </nav>
   );
 }

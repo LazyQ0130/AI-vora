@@ -52,9 +52,11 @@ test("首发路线与源文件一致；未知 ID 不回退到真实课程", () =
 });
 
 test("仅真实演示样章提供直达入口，不能把整门课程标记为已发布", () => {
-  assert.deepEqual(Object.keys(coursePreviews), ["ML201"]);
+  assert.deepEqual(Object.keys(coursePreviews).sort(), ["MA101", "ML201", "PY101"]);
   assert.equal(getCoursePreview("ML201")?.href, SAMPLE_URL);
   assert.equal(getCourse("ML201")?.status, "planned");
-  assert.equal(getCoursePreview("PY101"), undefined);
+  assert.equal(getCoursePreview("PY101")?.href, "/learn/PY101/PY101-C05-L01");
+  assert.equal(getCoursePreview("MA101")?.href, "/learn/MA101/MA101-C03-L01");
+  assert.equal(getCourse("PY101")?.status, "planned");
   assert.equal(getCoursePreview("unknown"), undefined);
 });

@@ -10,6 +10,8 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "test": "tsx --test tests/*.test.ts",
+    "test:python": "tsx scripts/validate-python.ts",
+    "prepare:diagrams": "python scripts/render-lesson-diagrams.py",
     "prepare:downloads": "tsx scripts/prepare-downloads.ts",
     "prepare:covers": "node scripts/prepare-course-covers.mjs"
   },
