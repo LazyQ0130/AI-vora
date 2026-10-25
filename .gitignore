@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+.env*
+!.env.example
+*.log
+.playwright-cli/
+.workbuddy/
+__pycache__/
+.pytest_cache/

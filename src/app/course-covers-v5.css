@@ -1,0 +1,27 @@
+/* Finished course-specific raster assets, shared across every cover placement. */
+.course-raster-art,
+.catalog-grid .course-raster-art,
+.featured-grid .course-raster-art,
+.detail-side-card .course-raster-art {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+  flex-shrink: 0;
+  isolation: isolate;
+  background: #0b1428;
+}
+.course-raster-art .course-cover {
+  display: block;
+  opacity: 1;
+  object-fit: cover;
+  object-position: 50% 50%;
+  filter: none;
+}
+.course-raster-art .course-art-shade {
+  background: linear-gradient(180deg, #03081720, transparent 25%, transparent 80%, #0b142818);
+  pointer-events: none;
+}
+.course-raster-art.art-compact {
+  height: 100%;
+  aspect-ratio: auto;
+}

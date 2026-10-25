@@ -1,0 +1,68 @@
+/* Course-specific cover layers: generated material + accurate SVG content. */
+.course-topic-art {
+  background: #0b1428;
+}
+.course-topic-art .course-cover {
+  opacity: 0.42;
+}
+.course-topic-art .course-art-shade {
+  background: linear-gradient(0deg, #0d172e24, transparent 55%);
+}
+.course-art > .course-topic-illustration {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  filter: none;
+  transition: transform 0.35s var(--ease-out);
+}
+.course-topic-illustration text {
+  font-family: var(--font-sans);
+}
+.course-topic-illustration .cover-heading {
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  fill: #d7e4f8;
+}
+.course-topic-illustration .cover-acronym {
+  font-size: 27px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+.course-topic-illustration .cover-label {
+  font-size: 19px;
+  fill: #d4dff1;
+}
+.course-topic-illustration .cover-chart-title {
+  font-size: 19px;
+  font-weight: 500;
+  fill: #b8cae5;
+}
+.course-topic-illustration .cover-code {
+  font-size: 25px;
+  font-family: var(--font-mono);
+}
+.course-topic-illustration .cover-code tspan {
+  font-family: var(--font-mono);
+}
+.course-topic-art .art-code {
+  font-size: 9px;
+  top: 12px;
+  left: 13px;
+  background: #15243bc4;
+  border-color: #a2b6d838;
+}
+.course-card:hover .course-topic-illustration {
+  transform: translateY(-2px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .course-topic-illustration {
+    transition: none;
+  }
+  .course-card:hover .course-topic-illustration {
+    transform: none;
+  }
+}

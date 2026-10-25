@@ -1,0 +1,92 @@
+[
+  {
+    "path": "/courses/ML201",
+    "selector": ".footer-bottom",
+    "foreground": [
+      162,
+      179,
+      206
+    ],
+    "background": [
+      9,
+      14,
+      33
+    ],
+    "ratio": 9.01
+  },
+  {
+    "path": "/courses/ML201",
+    "selector": ".chapter-state",
+    "foreground": [
+      162,
+      179,
+      206
+    ],
+    "background": [
+      16,
+      25,
+      47
+    ],
+    "ratio": 8.22
+  },
+  {
+    "path": "/paths",
+    "selector": ".footer-bottom",
+    "foreground": [
+      162,
+      179,
+      206
+    ],
+    "background": [
+      9,
+      14,
+      33
+    ],
+    "ratio": 9.01
+  },
+  {
+    "path": "/paths",
+    "selector": ".path-course-footer",
+    "foreground": [
+      162,
+      179,
+      206
+    ],
+    "background": [
+      18,
+      28,
+      52
+    ],
+    "ratio": 7.96
+  },
+  {
+    "path": "/learn/ML201/ML201-C04-L01",
+    "selector": ".footer-bottom",
+    "foreground": [
+      162,
+      179,
+      206
+    ],
+    "background": [
+      9,
+      14,
+      33
+    ],
+    "ratio": 9.01
+  },
+  {
+    "path": "/learn/ML201/ML201-C04-L01",
+    "selector": ".code-scroll .token.comment",
+    "foreground": [
+      162,
+      181,
+      185
+    ],
+    "background": [
+      10,
+      19,
+      38
+    ],
+    "ratio": 8.68
+  }
+]

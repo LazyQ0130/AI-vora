@@ -1,0 +1,86 @@
+[
+  {
+    "opacity": "1",
+    "reduced": true,
+    "route": "/",
+    "scrollWidth": 305,
+    "width": 320
+  },
+  {
+    "opacity": "1",
+    "reduced": true,
+    "route": "/learn/ML201/ML201-C04-L01",
+    "scrollWidth": 305,
+    "width": 320
+  },
+  {
+    "opacity": "1",
+    "reduced": true,
+    "route": "/",
+    "scrollWidth": 360,
+    "width": 375
+  },
+  {
+    "opacity": "1",
+    "reduced": true,
+    "route": "/learn/ML201/ML201-C04-L01",
+    "scrollWidth": 360,
+    "width": 375
+  },
+  {
+    "opacity": "1",
+    "reduced": true,
+    "route": "/",
+    "scrollWidth": 753,
+    "width": 768
+  },
+  {
+    "opacity": "1",
+    "reduced": true,
+    "route": "/learn/ML201/ML201-C04-L01",
+    "scrollWidth": 753,
+    "width": 768
+  },
+  {
+    "opacity": "1",
+    "reduced": true,
+    "route": "/",
+    "scrollWidth": 1009,
+    "width": 1024
+  },
+  {
+    "opacity": "1",
+    "reduced": true,
+    "route": "/learn/ML201/ML201-C04-L01",
+    "scrollWidth": 1009,
+    "width": 1024
+  },
+  {
+    "opacity": "1",
+    "reduced": true,
+    "route": "/",
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "opacity": "1",
+    "reduced": true,
+    "route": "/learn/ML201/ML201-C04-L01",
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "opacity": "1",
+    "reduced": true,
+    "route": "/",
+    "scrollWidth": 1905,
+    "width": 1920
+  },
+  {
+    "opacity": "1",
+    "reduced": true,
+    "route": "/learn/ML201/ML201-C04-L01",
+    "scrollWidth": 1905,
+    "width": 1920
+  }
+]

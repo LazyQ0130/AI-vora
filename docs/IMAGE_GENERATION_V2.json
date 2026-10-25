@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-25",
+  "mode": "built-in image_gen",
+  "usage": "Original decorative concept art only; not screenshots, teaching diagrams, or evidence of learning outcomes.",
+  "assets": [
+    {
+      "name": "hero-horizon-v2",
+      "prompt": "Use case: stylized-concept. Asset type: original raster illustration for Aivora, a premium AI technical education website, not a UI screenshot. Cohesive cinematic high-end 3D concept art, deep midnight navy #080d21, electric cobalt blue, restrained cyan and violet rim lighting, beautiful volumetric depth, precision materials, generous dark negative space. No text, no letters, no numbers, no logos, no watermark, no UI frames, no labels, no generic flat vector icons. Landscape 16:9 composition. Primary request: a breathtaking blue planetary dawn seen from a dark alien lunar landscape. A huge detailed azure planet occupies the right two-thirds, curving horizon, radiant blue-white atmospheric crescent, discreet violet light on the edge. Low jagged obsidian ridgelines in the lower foreground with realistic geological texture and subtle reflected blue light. The left 40 percent fades into almost-black navy, sparse stars, quiet empty space suitable for live overlaid website copy. Frame the entire planet or most of the sphere, high on the right, horizon low. Extremely refined science fiction editorial art, photographic detail, spatial depth, no people, no spacecraft. Light concentrated at right center, dark outer edges. This is only a decorative background image; all interface, brand and copy will be live HTML.",
+      "source": "references/generated-v2/hero-horizon-v2.png",
+      "output": "public/artwork/hero-horizon-v2.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 216628
+    },
+    {
+      "name": "course-ai-map-v2",
+      "prompt": "Use case: stylized-concept. Asset type: original raster illustration for Aivora, a premium AI technical education website, not a UI screenshot. Cohesive cinematic high-end 3D concept art, deep midnight navy #080d21, electric cobalt blue, restrained cyan and violet rim lighting, beautiful volumetric depth, precision materials, generous dark negative space. No text, no letters, no numbers, no logos, no watermark, no UI frames, no labels, no generic flat vector icons. Landscape 16:9 composition. Primary request: a luminous sculptural celestial compass suspended above a small dark otherworldly terrain, a polished transparent glass navigation needle with metallic indigo edges inside three tilted orbital rings. Cyan energy point at the center, large blue planetary crescent far behind, sparse tiny stars. Central object with elegant perspective, detailed materials, grounded cinematic environment and luminous spatial depth. This visual represents orientation in the AI knowledge universe; abstract conceptual artwork, not a factual scientific diagram. Keep the focal object comfortably within central 60 percent for thumbnail crop.",
+      "source": "references/generated-v2/course-ai-map-v2.png",
+      "output": "public/artwork/course-ai-map-v2.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 93658
+    },
+    {
+      "name": "course-programming-v2",
+      "prompt": "Use case: stylized-concept. Asset type: original raster illustration for Aivora, a premium AI technical education website, not a UI screenshot. Cohesive cinematic high-end 3D concept art, deep midnight navy #080d21, electric cobalt blue, restrained cyan and violet rim lighting, beautiful volumetric depth, precision materials, generous dark negative space. No text, no letters, no numbers, no logos, no watermark, no UI frames, no labels, no generic flat vector icons. Landscape 16:9 composition. Primary request: a beautiful floating precision-engineered translucent cobalt microprocessor on a dark miniature crystalline terrain. Interlocking glass modular blocks connect to it through fine cyan circuit pathways. A few thin luminous light ribbons arch over the processor like flowing logic. Polished beveled edges, realistic glass refraction, indigo and blue metallic surfaces, low camera angle, dramatic rim light, premium hardware editorial aesthetic. Center object readable at small card thumbnail size, no recognizable brand marks, no code or text. Conceptual programming and data engineering illustration.",
+      "source": "references/generated-v2/course-programming-v2.png",
+      "output": "public/artwork/course-programming-v2.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 115438
+    },
+    {
+      "name": "course-mathematics-v2",
+      "prompt": "Use case: stylized-concept. Asset type: original raster illustration for Aivora, a premium AI technical education website, not a UI screenshot. Cohesive cinematic high-end 3D concept art, deep midnight navy #080d21, electric cobalt blue, restrained cyan and violet rim lighting, beautiful volumetric depth, precision materials, generous dark negative space. No text, no letters, no numbers, no logos, no watermark, no UI frames, no labels, no generic flat vector icons. Landscape 16:9 composition. Primary request: an elegant translucent violet mathematical sculpture, a continuous smooth saddle-shaped glass surface hovering inside a tilted thin three-dimensional lattice frame above a reflective midnight-blue plane. A few glowing cyan points trace a sweeping smooth curve across the surface. Highly refined geometry, lilac to electric blue glass refraction, subtle metallic edges and very restrained star-like dust. Central sculptural object readable as a single form even in a small course thumbnail. Artistic representation of linear algebra and calculus, no formulas, no writing, no axes labels.",
+      "source": "references/generated-v2/course-mathematics-v2.png",
+      "output": "public/artwork/course-mathematics-v2.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 69918
+    },
+    {
+      "name": "course-machine-learning-v2",
+      "prompt": "Use case: stylized-concept. Asset type: original raster illustration for Aivora, a premium AI technical education website, not a UI screenshot. Cohesive cinematic high-end 3D concept art, deep midnight navy #080d21, electric cobalt blue, restrained cyan and violet rim lighting, beautiful volumetric depth, precision materials, generous dark negative space. No text, no letters, no numbers, no logos, no watermark, no UI frames, no labels, no generic flat vector icons. Landscape 16:9 composition. Primary request: a sculptural landscape of glowing cyan and violet data spheres and a beautifully fitted luminous sweeping plane, arranged in perspective above a polished dark precision grid. A small central faceted crystal is connected to the surrounding data by fine blue light lines, suggesting a model finding structure. Dramatic depth of field, sharp central glass geometry, luxurious restrained illumination, midnight navy environment. A clear single central composition readable in a small thumbnail. Conceptual representation of machine learning, not a real result or scientific plot, no words, no symbols.",
+      "source": "references/generated-v2/course-machine-learning-v2.png",
+      "output": "public/artwork/course-machine-learning-v2.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 86044
+    },
+    {
+      "name": "course-neural-network-v2",
+      "prompt": "Use case: stylized-concept. Asset type: original raster illustration for Aivora, a premium AI technical education website, not a UI screenshot. Cohesive cinematic high-end 3D concept art, deep midnight navy #080d21, electric cobalt blue, restrained cyan and violet rim lighting, beautiful volumetric depth, precision materials, generous dark negative space. No text, no letters, no numbers, no logos, no watermark, no UI frames, no labels, no generic flat vector icons. Landscape 16:9 composition. Primary request: a sophisticated three-dimensional neural architecture formed by floating clear glass and violet crystal nodes connected by very fine illuminated cyan filaments, a sculptural central orb with a layered network extending elegantly into depth. Controlled blue-violet light blooms at intersections, polished metallic arcs, dark velvet navy void with a faint planetary horizon low in background. Precision macro photography feel, optically plausible glass, layered spatial depth, no literal human brain, no cyberpunk clutter. Clearly readable central silhouette for small thumbnails. Conceptual neural network artwork.",
+      "source": "references/generated-v2/course-neural-network-v2.png",
+      "output": "public/artwork/course-neural-network-v2.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 89458
+    }
+  ]
+}

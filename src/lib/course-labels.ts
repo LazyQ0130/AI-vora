@@ -1,0 +1,23 @@
+// Readable aliases shared by learner-facing links and course search.
+export const courseDisplayNames: Readonly<Partial<Record<string, string>>> = {
+  AI000: "AI 认知与技术地图",
+  PY101: "Python 编程",
+  MA101: "线性代数与微积分",
+  ST101: "概率统计与优化",
+  DS101: "科学计算与数据分析",
+  ML201: "监督学习",
+  ML202: "经典机器学习算法",
+  ML203: "模型评估与实验方法",
+  DL301: "神经网络与反向传播",
+  DL302: "PyTorch 深度学习实战",
+  DL303: "深度学习核心架构",
+  NLP401: "自然语言处理",
+  LLM401: "大语言模型原理",
+  LLM402: "大模型微调与推理工程",
+  CV401: "计算机视觉",
+  MM401: "多模态学习",
+  RL401: "强化学习",
+  GM401: "生成式模型",
+  SYS501: "MLOps 与部署",
+  RES501: "论文复现",
+};

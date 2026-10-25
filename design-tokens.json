@@ -1,0 +1,57 @@
+{
+  "brand": {
+    "workingName": "Aivora",
+    "tagline": "系统化 AI 技术学习平台",
+    "status": "暂定，尚未核验域名/商标"
+  },
+  "colors": {
+    "background": "#0B1026",
+    "panel": "#111A33",
+    "elevated": "#1E293B",
+    "primary": "#6366F1",
+    "cyan": "#06B6D4",
+    "violet": "#A855F7",
+    "text": "#E2E8F0",
+    "textMuted": "#94A3B8",
+    "border": "rgba(148,163,184,0.18)"
+  },
+  "typography": {
+    "zh": "Noto Sans SC / Source Han Sans / system Chinese sans-serif",
+    "latin": "Inter / system sans-serif",
+    "code": "JetBrains Mono / ui-monospace"
+  },
+  "layout": {
+    "desktopMaxWidthPx": 1440,
+    "readingColumnMaxWidthPx": 820,
+    "spacingSystemPx": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32,
+      48,
+      64
+    ],
+    "radiusPx": [
+      8,
+      12,
+      16,
+      24
+    ]
+  },
+  "animation": {
+    "hoverMs": [
+      160,
+      220
+    ],
+    "pageMs": [
+      240,
+      420
+    ],
+    "useOnly": "opacity,transform",
+    "respectReducedMotion": true,
+    "avoid": "heavyWebGL/3D,scrollHijacking,uncontrolledGlobalBlur"
+  },
+  "notes": "视觉参考图并非产品规格。禁止照抄虚构统计、人物/好评、视频入口、内置AI聊天、承诺在线运行的按钮。"
+}

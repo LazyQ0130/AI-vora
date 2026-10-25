@@ -1,0 +1,124 @@
+[
+  {
+    "path": "/courses/ML201",
+    "samples": [
+      {
+        "backgrounds": [
+          {
+            "cls": "site-footer",
+            "color": "rgb(9, 14, 33)",
+            "tag": "FOOTER"
+          },
+          {
+            "cls": "",
+            "color": "rgb(11, 16, 38)",
+            "tag": "BODY"
+          }
+        ],
+        "color": "rgb(162, 179, 206)",
+        "opacity": "1",
+        "selector": ".footer-bottom"
+      },
+      {
+        "backgrounds": [
+          {
+            "cls": "chapter-row",
+            "color": "rgb(16, 25, 47)",
+            "tag": "DIV"
+          },
+          {
+            "cls": "",
+            "color": "rgb(11, 16, 38)",
+            "tag": "BODY"
+          }
+        ],
+        "color": "rgb(162, 179, 206)",
+        "opacity": "1",
+        "selector": ".chapter-state"
+      }
+    ]
+  },
+  {
+    "path": "/paths",
+    "samples": [
+      {
+        "backgrounds": [
+          {
+            "cls": "site-footer",
+            "color": "rgb(9, 14, 33)",
+            "tag": "FOOTER"
+          },
+          {
+            "cls": "",
+            "color": "rgb(11, 16, 38)",
+            "tag": "BODY"
+          }
+        ],
+        "color": "rgb(162, 179, 206)",
+        "opacity": "1",
+        "selector": ".footer-bottom"
+      },
+      {
+        "backgrounds": [
+          {
+            "cls": "path-course level-L0",
+            "color": "rgb(18, 28, 52)",
+            "tag": "A"
+          },
+          {
+            "cls": "",
+            "color": "rgb(11, 16, 38)",
+            "tag": "BODY"
+          }
+        ],
+        "color": "rgb(162, 179, 206)",
+        "opacity": "1",
+        "selector": ".path-course-footer"
+      }
+    ]
+  },
+  {
+    "path": "/learn/ML201/ML201-C04-L01",
+    "samples": [
+      {
+        "backgrounds": [
+          {
+            "cls": "site-footer",
+            "color": "rgb(9, 14, 33)",
+            "tag": "FOOTER"
+          },
+          {
+            "cls": "",
+            "color": "rgb(11, 16, 38)",
+            "tag": "BODY"
+          }
+        ],
+        "color": "rgb(162, 179, 206)",
+        "opacity": "1",
+        "selector": ".footer-bottom"
+      },
+      {
+        "backgrounds": [
+          {
+            "cls": "lesson-code",
+            "color": "rgb(10, 19, 38)",
+            "tag": "DIV"
+          },
+          {
+            "cls": "lesson-section",
+            "color": "rgb(14, 23, 42)",
+            "tag": "SECTION"
+          },
+          {
+            "cls": "",
+            "color": "rgb(11, 16, 38)",
+            "tag": "BODY"
+          }
+        ],
+        "color": "rgb(162, 181, 185)",
+        "opacity": "1",
+        "selector": ".code-scroll .token.comment"
+      }
+    ]
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "coverSvg": 0,
+    "imageDisplay": "block",
+    "rect": {
+      "bottom": 230.45834350585935,
+      "height": 84,
+      "left": 57.33333587646485,
+      "right": 116.00000381469728,
+      "top": 146.45834350585938,
+      "width": 58.66666793823242,
+      "x": 57.33333587646485,
+      "y": 146.45834350585938
+    },
+    "src": "/artwork/courses-v5/ml201-supervised-learning.webp",
+    "width": 320
+  },
+  {
+    "coverSvg": 0,
+    "imageDisplay": "block",
+    "rect": {
+      "bottom": 230.45834350585935,
+      "height": 84,
+      "left": 64.33333587646484,
+      "right": 123.00000381469728,
+      "top": 146.45834350585938,
+      "width": 58.66666793823242,
+      "x": 64.33333587646484,
+      "y": 146.45834350585938
+    },
+    "src": "/artwork/courses-v5/ml201-supervised-learning.webp",
+    "width": 390
+  },
+  {
+    "coverSvg": 0,
+    "imageDisplay": "block",
+    "rect": {
+      "bottom": 224.45834350585935,
+      "height": 84,
+      "left": 413.3333435058594,
+      "right": 464.0000114440918,
+      "top": 140.45834350585938,
+      "width": 50.66666793823242,
+      "x": 413.3333435058594,
+      "y": 140.45834350585938
+    },
+    "src": "/artwork/courses-v5/ml201-supervised-learning.webp",
+    "width": 768
+  },
+  {
+    "coverSvg": 0,
+    "imageDisplay": "block",
+    "rect": {
+      "bottom": 224.45834350585935,
+      "height": 84,
+      "left": 669.3333740234375,
+      "right": 720.0000419616699,
+      "top": 140.45834350585938,
+      "width": 50.66666793823242,
+      "x": 669.3333740234375,
+      "y": 140.45834350585938
+    },
+    "src": "/artwork/courses-v5/ml201-supervised-learning.webp",
+    "width": 1024
+  }
+]

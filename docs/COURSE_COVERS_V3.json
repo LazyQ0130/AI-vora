@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-25",
+  "mode": "built-in image_gen",
+  "composition": "Generated material/light layer + deterministic SVG concepts and code. Applies only to AI000, PY101, MA101, ML201.",
+  "assets": [
+    {
+      "name": "ai-map-v3",
+      "prompt": "Use case: stylized-concept. Asset type: background material layer for an Aivora technical course cover, wide 16:9, intended at 320px thumbnail width. Style: restrained premium technical editorial illustration, front-facing orthographic composition, midnight navy #0b1428, cyan #55cfea, periwinkle #9295f5, clean precise lines, soft glass edge lighting, subtle depth, extremely low visual noise. The actual readable course labels, mathematical graphs and Python code will be added separately as precise SVG/HTML on top, so leave the central 80% quiet, dark and free of drawn content. No text, numbers, symbols, logos, formulas or pseudo-code. No planets, stars, landscapes, mountains, floating jewels, crystal spheres, hardware chips or generic network globes. No frame containing a full website UI, no watermark. Subject: a very subtle knowledge-map substrate made of three large thin nested translucent rectangular glass sheets, each slightly offset, with a few short right-angle connectors along the outer edges. Front-facing, no perspective distortion. The central rectangle remains dark and empty for an accurate layered AI/ML/DL concept map overlay. Cool blue glass accents at perimeter only, elegant flat scientific publication cover. Keep glass highlights below 25% brightness and no complex secondary objects.",
+      "generationFile": "C:\\Users\\QYF\\.codex\\generated_images\\01a1717b-fb5a-7ae1-9dc5-cd660ab6917f\\exec-fbda9093-b91a-4de4-a69d-d2415b44c39b.png",
+      "source": "references/generated-v3/ai-map-v3.png",
+      "output": "public/artwork/ai-map-v3.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 7718
+    },
+    {
+      "name": "python-workbench-v3",
+      "prompt": "Use case: stylized-concept. Asset type: background material layer for an Aivora technical course cover, wide 16:9, intended at 320px thumbnail width. Style: restrained premium technical editorial illustration, front-facing orthographic composition, midnight navy #0b1428, cyan #55cfea, periwinkle #9295f5, clean precise lines, soft glass edge lighting, subtle depth, extremely low visual noise. The actual readable course labels, mathematical graphs and Python code will be added separately as precise SVG/HTML on top, so leave the central 80% quiet, dark and free of drawn content. No text, numbers, symbols, logos, formulas or pseudo-code. No planets, stars, landscapes, mountains, floating jewels, crystal spheres, hardware chips or generic network globes. No frame containing a full website UI, no watermark. Subject: a dark minimalist programming workbench. A single flat navy editor-like glass panel takes most of the frame, blank and without any code. A low-profile keyboard is barely visible only along the bottom 10%, a couple of neatly stacked file-folder silhouettes sit at the far right edge. Tiny blue and warm yellow edge highlights subtly reference Python, highly restrained. Keep the center blank for a readable real code example overlay, not a GPU or microprocessor illustration.",
+      "generationFile": "C:\\Users\\QYF\\.codex\\generated_images\\01a1717b-fb5a-7ae1-9dc5-cd660ab6917f\\exec-10330aaf-9d49-45d4-be1b-acf65e3d5476.png",
+      "source": "references/generated-v3/python-workbench-v3.png",
+      "output": "public/artwork/python-workbench-v3.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 14096
+    },
+    {
+      "name": "math-foundations-v3",
+      "prompt": "Use case: stylized-concept. Asset type: background material layer for an Aivora technical course cover, wide 16:9, intended at 320px thumbnail width. Style: restrained premium technical editorial illustration, front-facing orthographic composition, midnight navy #0b1428, cyan #55cfea, periwinkle #9295f5, clean precise lines, soft glass edge lighting, subtle depth, extremely low visual noise. The actual readable course labels, mathematical graphs and Python code will be added separately as precise SVG/HTML on top, so leave the central 80% quiet, dark and free of drawn content. No text, numbers, symbols, logos, formulas or pseudo-code. No planets, stars, landscapes, mountains, floating jewels, crystal spheres, hardware chips or generic network globes. No frame containing a full website UI, no watermark. Subject: a subtle mathematical drafting surface: fine rectilinear graph-paper grid, two flat dark translucent drawing boards side by side, with lightly glowing cyan and lilac edges. Faint ruler-like precision marks along the far lower edge only, no numbers or writing, no drawn graph inside. Main area is reserved for accurate vector arrows, function plot and tangent overlay. Quiet scientific illustration, not an abstract saddle sculpture.",
+      "generationFile": "C:\\Users\\QYF\\.codex\\generated_images\\01a1717b-fb5a-7ae1-9dc5-cd660ab6917f\\exec-fe1435cc-c79e-42f2-91de-753ad330d999.png",
+      "source": "references/generated-v3/math-foundations-v3.png",
+      "output": "public/artwork/math-foundations-v3.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 11802
+    },
+    {
+      "name": "supervised-learning-v3",
+      "prompt": "Use case: stylized-concept. Asset type: background material layer for an Aivora technical course cover, wide 16:9, intended at 320px thumbnail width. Style: restrained premium technical editorial illustration, front-facing orthographic composition, midnight navy #0b1428, cyan #55cfea, periwinkle #9295f5, clean precise lines, soft glass edge lighting, subtle depth, extremely low visual noise. The actual readable course labels, mathematical graphs and Python code will be added separately as precise SVG/HTML on top, so leave the central 80% quiet, dark and free of drawn content. No text, numbers, symbols, logos, formulas or pseudo-code. No planets, stars, landscapes, mountains, floating jewels, crystal spheres, hardware chips or generic network globes. No frame containing a full website UI, no watermark. Subject: a clean flat data-analysis plotting surface: two blank dark navy square plotting panels side by side, subtle faint grid lines, with a narrow glass divider. Very few small cyan and lilac marks at the perimeter, leaving the central plotting areas empty for deterministic regression data and a classification boundary SVG overlay. Precise educational editorial art, extremely restrained lighting, no global network, no 3D bubbles.",
+      "generationFile": "C:\\Users\\QYF\\.codex\\generated_images\\01a1717b-fb5a-7ae1-9dc5-cd660ab6917f\\exec-4b5fc036-aced-4533-911f-7e42c53d1b31.png",
+      "source": "references/generated-v3/supervised-learning-v3.png",
+      "output": "public/artwork/supervised-learning-v3.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 8490
+    }
+  ]
+}
