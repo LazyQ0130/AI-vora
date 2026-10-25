@@ -13,6 +13,8 @@ npm run dev
 
 打开 http://127.0.0.1:3000 。仅监听本机，不向公网发布。
 
+新增课时或重构内容模块后，若长时间运行的开发进程仍显示旧目录或 404，请停止该进程再运行 npm run dev，使静态课时列表与模块缓存重新载入。生产构建会重新生成发布路径。
+
 ```powershell
 npm run typecheck
 npm run lint
