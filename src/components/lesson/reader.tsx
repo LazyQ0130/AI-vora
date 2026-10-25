@@ -37,13 +37,21 @@ import {
 import { ChapterToc } from "./chapter-toc";
 import { ContentRenderer, ResourceDownloads } from "./content-renderer";
 import "katex/dist/katex.min.css";
+import {
+  chapterNumber,
+  lessonNumber,
+  sectionNumber,
+} from "@/lib/course-numbering";
 
 type ReaderProps = {
   course: Course;
   chapter: Chapter;
   lesson: Lesson;
   publication: Publication;
-  adjacent: { previous?: Publication; next?: Publication };
+  adjacent: {
+    previous?: Publication & { displayNumber?: string };
+    next?: Publication & { displayNumber?: string };
+  };
 };
 export function Reader({
   course,
@@ -53,6 +61,10 @@ export function Reader({
   adjacent,
 }: ReaderProps) {
   const firstSection = lesson.sections[0].id;
+  const legacy = publication.catalogRole === "legacy";
+  const displayNumber = legacy
+    ? undefined
+    : lessonNumber(chapter.order, publication.order);
   const [active, setActive] = useState(firstSection);
   const [progress, setProgress] = useState(0);
   const scope = useMemo(() => lessonProgressScope(lesson), [lesson]);
@@ -185,9 +197,11 @@ export function Reader({
           <ChevronRight size={11} />
           <Link href={`/courses/${course.id}`}>{course.name}</Link>
           <ChevronRight size={11} />
-          <span>
-            第 {chapter.order} 章 · {chapter.title}
-          </span>
+          <Link href={`/courses/${course.id}#${chapter.id}`}>
+            {chapterNumber(chapter.order)}
+          </Link>
+          <ChevronRight size={11} />
+          <span>{displayNumber ?? "旧版综合试读"}</span>
         </div>
       </div>
       <aside className="reader-sidebar" ref={sidebar}>
@@ -247,11 +261,19 @@ export function Reader({
         <header className="reader-heading">
           <span className="eyebrow">LEARN THROUGH UNDERSTANDING</span>
           <div className="reader-chapter-line">
-            <span>第 {chapter.order} 章</span>
+            <span>
+              {chapterNumber(chapter.order)}
+              {displayNumber ? ` · ${displayNumber}` : " · 旧版试读"}
+            </span>
             <span>{chapter.title}</span>
           </div>
           <div className="reader-title-row">
-            <h1>{lesson.title}</h1>
+            <h1>
+              {displayNumber && (
+                <span className="reader-lesson-number">{displayNumber} </span>
+              )}
+              {lesson.title}
+            </h1>
             <span className="sample-badge">
               {publicationLabel(publication)}
             </span>
@@ -316,6 +338,50 @@ export function Reader({
         <div className="demo-content-note">
           {publicationNotice(publication)}
         </div>
+        {lesson.prerequisiteLinks.length > 0 && (
+          <details className="lesson-preflight">
+            <summary>本节目标、先修检查与补修入口</summary>
+            <LearningObjectives objectives={lesson.objectives} />
+            <p>{lesson.prerequisites}</p>
+            <ul>
+              {lesson.prerequisiteLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    target={
+                      link.href.startsWith("https://") ? "_blank" : undefined
+                    }
+                    rel={
+                      link.href.startsWith("https://")
+                        ? "noreferrer"
+                        : undefined
+                    }
+                  >
+                    {link.title}
+                  </a>
+                  <p>{link.note}</p>
+                </li>
+              ))}
+            </ul>
+          </details>
+        )}
+        {legacy && (
+          <aside className="legacy-reading-note">
+            <strong>旧版综合试读</strong>
+            <p>
+              本页保留原有正文、书签和阅读记录。新版已按章与节拆分，旧版“已读完”不代表新版课时已完成。
+            </p>
+            <Link
+              href={
+                course.chapters.flatMap((c) => c.lessons).find((l) => l.href)
+                  ?.href ?? `/courses/${course.id}`
+              }
+            >
+              从新版课程开始
+              <ArrowRight size={14} />
+            </Link>
+          </aside>
+        )}
         <article ref={article} className="lesson-content">
           {lesson.sections.map((section, index) => (
             <section
@@ -323,7 +389,15 @@ export function Reader({
               className="lesson-section"
               id={section.id}
             >
-              <LessonHeading index={index + 1}>{section.title}</LessonHeading>
+              <LessonHeading
+                number={
+                  legacy
+                    ? undefined
+                    : sectionNumber(chapter.order, publication.order, index + 1)
+                }
+              >
+                {section.title}
+              </LessonHeading>
               <div
                 className={
                   section.layout === "intro"
@@ -435,7 +509,11 @@ export function Reader({
                   navigate(section.id);
                 }}
               >
-                <span>{String(index + 1).padStart(2, "0")}</span>
+                {!legacy && (
+                  <span>
+                    {sectionNumber(chapter.order, publication.order, index + 1)}
+                  </span>
+                )}
                 {section.title}
               </a>
             ))}
@@ -450,6 +528,27 @@ export function Reader({
             <ChevronDown size={15} />
           </summary>
           <p>{lesson.prerequisites}</p>
+          {lesson.prerequisiteLinks.length > 0 && (
+            <ul className="reader-prereq-links">
+              {lesson.prerequisiteLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    target={
+                      link.href.startsWith("https://") ? "_blank" : undefined
+                    }
+                    rel={
+                      link.href.startsWith("https://")
+                        ? "noreferrer"
+                        : undefined
+                    }
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
           <Link href={`/courses/${course.id}`} className="text-link">
             查看完整先修要求
             <ArrowRight size={12} />

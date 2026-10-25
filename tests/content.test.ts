@@ -8,7 +8,7 @@ import { programs } from "../src/content/resources/programs";
 import { readablePublications } from "../src/content/publication-manifest";
 
 test("三门不同类型教材用同一模型，公式可严格解析，图片有正确尺寸和可读替代文字", async () => {
-  assert.equal(readablePublications.length, 3);
+  assert.equal(readablePublications.length, 10);
   for (const publication of readablePublications) {
     const { lesson } = resolveLesson(
       publication.courseId,
@@ -44,11 +44,10 @@ test("三门不同类型教材用同一模型，公式可严格解析，图片�
     for (const resource of lesson.resources)
       assert.ok((await stat(`public${resource.href}`)).size > 0);
   }
-  assert.deepEqual([...lessonRegistry.values()].map((l) => l.courseId).sort(), [
-    "MA101",
-    "ML201",
-    "PY101",
-  ]);
+  assert.deepEqual(
+    [...new Set([...lessonRegistry.values()].map((l) => l.courseId))].sort(),
+    ["MA101", "ML201", "PY101"],
+  );
 });
 test("全部下载脚本、Notebook 和网页完整代码同源，Notebook 不伪造执行结果", async () => {
   const codeBlocks = [...lessonRegistry.values()]

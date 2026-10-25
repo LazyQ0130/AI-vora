@@ -17,6 +17,7 @@ import {
   levels,
   levelNames,
   coursePreviews,
+  findLessonEntries,
 } from "@/lib/curriculum";
 import { CourseCard } from "./course-card";
 import { Drawer, EmptyState } from "./ui";
@@ -48,6 +49,10 @@ export function Catalog() {
   }, [params]);
   const results = useMemo(
     () => filterCourses(query, level, category),
+    [query, level, category],
+  );
+  const lessonResults = useMemo(
+    () => findLessonEntries(query, level, category),
     [query, level, category],
   );
   function update(key: string, value: string) {
@@ -115,6 +120,7 @@ export function Catalog() {
             (preview) =>
               preview && (
                 <Link key={preview.href} href={preview.href}>
+                  {preview.displayNumber ? `${preview.displayNumber} ` : ""}
                   {preview.title}
                   <ArrowRight size={15} />
                 </Link>
@@ -188,6 +194,35 @@ export function Catalog() {
               </button>
             ))}
           </div>
+          {lessonResults.length > 0 && (
+            <section
+              className="lesson-search-results"
+              aria-label="课时搜索结果"
+            >
+              <h2>
+                匹配的课时 <span>{lessonResults.length}</span>
+              </h2>
+              {lessonResults.map((entry) => (
+                <div key={entry.lessonId} className="lesson-search-row">
+                  <small>
+                    {entry.courseName} · {entry.chapterLabel}
+                  </small>
+                  {entry.href ? (
+                    <Link href={entry.href}>
+                      {entry.displayNumber ? `${entry.displayNumber} ` : ""}
+                      {entry.title}
+                      <ArrowRight size={15} />
+                    </Link>
+                  ) : (
+                    <p>
+                      {entry.displayNumber} {entry.title}
+                      <span>筹备中</span>
+                    </p>
+                  )}
+                </div>
+              ))}
+            </section>
+          )}
           <div className="results-label">
             <span role="status" aria-live="polite">
               找到 <strong>{results.length}</strong> 门规划课程

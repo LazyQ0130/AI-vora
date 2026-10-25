@@ -23,7 +23,11 @@ test("课程引擎保留规划章节，真实教材按课程和章节关联", ()
     assert.equal(resolved.chapter.id, entry.chapterId);
     assert.equal(resolved.course.status, "planned");
     assert.ok(
-      resolved.chapter.lessons.some((l) => l.lessonId === entry.lessonId),
+      entry.catalogRole === "legacy"
+        ? resolved.course.legacyLessons.some(
+            (l) => l.lessonId === entry.lessonId,
+          )
+        : resolved.chapter.lessons.some((l) => l.lessonId === entry.lessonId),
     );
   }
   assert.equal(getLearningCourse("unknown"), undefined);
@@ -129,12 +133,18 @@ test("统一内容校验拒绝重复段落、无解析题目、任意实验和�
 });
 test("相邻导航仅使用同课程真实可读教材，并按章节与课时顺序排列", () => {
   const course = getLearningCourse("ML201")!;
-  const base = publicationManifest.find((e) => e.courseId === course.id)!;
+  const legacy = publicationManifest.find((e) => e.catalogRole === "legacy")!;
+  const base = {
+    ...legacy,
+    catalogRole: "current" as const,
+    displayNumber: "4.1",
+  };
   const next = {
     ...base,
     lessonId: "ML201-C04-L02",
     order: 2,
     title: "测试夹具",
+    displayNumber: "4.2",
   };
   const fixture = {
     ...course,
@@ -150,6 +160,6 @@ test("相邻导航仅使用同课程真实可读教材，并按章节与课时�
     getAdjacentLessons(fixture, next.lessonId).previous?.lessonId,
     base.lessonId,
   );
-  assert.equal(getAdjacentLessons(course, base.lessonId).next, undefined);
+  assert.equal(getAdjacentLessons(course, legacy.lessonId).next, undefined);
   assert.deepEqual(getAdjacentLessons(course, "unknown"), {});
 });

@@ -146,7 +146,7 @@ html:has(.reader-v2) {
 .chapter-toc summary > svg {
   flex-shrink: 0;
 }
-.chapter-toc summary > span:not(.toc-chapter-number) {
+.chapter-toc summary > .chapter-title {
   flex: 1;
 }
 .chapter-toc details[open] > summary {

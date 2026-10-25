@@ -16,6 +16,7 @@ import { useToast } from "../ui";
 import { samples } from "@/lib/regression";
 import { type ContentBlock, type Publication } from "@/content/models";
 import { lessonHref } from "@/content/publication-manifest";
+import { numberedLessonTitle } from "@/lib/course-numbering";
 
 const readableCodeTheme = {
   ...themes.nightOwl,
@@ -27,15 +28,15 @@ const readableCodeTheme = {
 };
 
 export function LessonHeading({
-  index,
+  number,
   children,
 }: {
-  index: number;
+  number?: string;
   children: ReactNode;
 }) {
   return (
     <h2 tabIndex={-1}>
-      <span>{String(index).padStart(2, "0")}</span>
+      {number && <span>{number} </span>}
       {children}
     </h2>
   );
@@ -390,15 +391,15 @@ export function LessonNavigation({
   previous,
   next,
 }: {
-  previous?: Publication;
-  next?: Publication;
+  previous?: Publication & { displayNumber?: string };
+  next?: Publication & { displayNumber?: string };
 }) {
   return (
     <nav className="lesson-navigation" aria-label="相邻知识单元">
       {previous ? (
         <Link className="button button-secondary" href={lessonHref(previous)}>
           <ArrowLeft size={15} />
-          上一节 · {previous.title}
+          上一节 · {numberedLessonTitle(previous)}
         </Link>
       ) : (
         <button className="button button-secondary" disabled>
@@ -408,7 +409,7 @@ export function LessonNavigation({
       )}
       {next ? (
         <Link className="button button-secondary" href={lessonHref(next)}>
-          下一节 · {next.title}
+          下一节 · {numberedLessonTitle(next)}
           <ArrowRight size={15} />
         </Link>
       ) : (

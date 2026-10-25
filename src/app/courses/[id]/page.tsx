@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { courses, getCourse, getCoursePreview } from "@/lib/curriculum";
 import { getLearningCourse } from "@/lib/course-engine";
-import { lessonHref } from "@/content/publication-manifest";
+import { CourseContents } from "@/components/lesson/course-contents";
 import { CourseArt } from "@/components/course-card";
 import {
   formatCourseReferences,
@@ -95,28 +95,7 @@ export default async function CoursePage({
                 {course.chapters.length} 章 · 规划中
               </span>
             </div>
-            <div className="chapter-list">
-              {learningCourse.chapters.map((chapter, i) => (
-                <div key={chapter.id} className="chapter-row">
-                  <span className="chapter-number">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span>
-                    {chapter.title}
-                    {chapter.lessons.map((entry) => (
-                      <Link
-                        key={entry.lessonId}
-                        href={lessonHref(entry)}
-                        className="chapter-preview"
-                      >
-                        试读 · {entry.title}
-                        <ArrowRight size={13} />
-                      </Link>
-                    ))}
-                  </span>
-                </div>
-              ))}
-            </div>
+            <CourseContents course={learningCourse} variant="detail" />
           </section>
           <section className="detail-section">
             <span className="eyebrow">LEARN BY DOING</span>

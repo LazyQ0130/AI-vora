@@ -4,6 +4,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { CheckCircle2, Download, Expand } from "lucide-react";
 import type { ContentBlock, LearningResource } from "@/content/models";
+import { GuidedExercise } from "./guided-exercise";
 import {
   Paragraph,
   InfoCallout,
@@ -118,6 +119,63 @@ export const ContentRenderer = memo(function ContentRenderer({
       return <Paragraph>{block.text}</Paragraph>;
     case "heading":
       return <h3 className="lesson-subheading">{block.text}</h3>;
+    case "exercise":
+      return <GuidedExercise block={block} />;
+    case "reading-links":
+      return (
+        <aside className="lesson-reading-links">
+          <h3>{block.title}</h3>
+          <ul>
+            {block.links.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  target={
+                    link.href.startsWith("https://") ? "_blank" : undefined
+                  }
+                  rel={
+                    link.href.startsWith("https://") ? "noreferrer" : undefined
+                  }
+                >
+                  {link.title}
+                </a>
+                <p>{link.note}</p>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      );
+    case "table":
+      return (
+        <div
+          className="lesson-table-scroll"
+          role="region"
+          aria-label={block.caption}
+          tabIndex={0}
+        >
+          <table>
+            <caption>{block.caption}</caption>
+            <thead>
+              <tr>
+                {block.columns.map((column) => (
+                  <th key={column} scope="col">
+                    {column}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {block.rows.map((row, index) => (
+                <tr key={index}>
+                  {row.map((cell, cellIndex) => (
+                    <td key={cellIndex}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
     case "image":
       return <LessonImage block={block} />;
     case "callout":

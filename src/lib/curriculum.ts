@@ -1,7 +1,9 @@
 import { z } from "zod";
 import source from "../../curriculum/AI技术课程目录_V1.0.json";
 import { courseDisplayNames } from "./course-labels";
-import { readablePublications, lessonHref } from "../content/publication-manifest";
+import { lessonHref } from "../content/publication-manifest";
+import { getCourseDirectory } from "./course-directory";
+import { chapterNumber } from "./course-numbering";
 
 const schema = z.object({
   id: z.string().regex(/^[A-Z]+\d{3}$/),
@@ -70,18 +72,88 @@ export function filterCourses(
   level = "all",
   category = "全部方向",
 ) {
-  const normalize = (value: string) => value.toLocaleLowerCase().replace(/[\s、，,：:《》·]/g, "");
+  const normalize = (value: string) =>
+    value.toLocaleLowerCase().replace(/[\s、，,：:《》·]/g, "");
   const term = normalize(query);
   return courses.filter(
     (course) =>
       (level === "all" || course.lvl === level) &&
       (category === "全部方向" || course.direction === category) &&
-      normalize(`${course.name} ${course.id} ${course.goal} ${courseDisplayNames[course.id] ?? ""}`).includes(term),
+      normalize(
+        `${course.name} ${course.id} ${course.goal} ${courseDisplayNames[course.id] ?? ""} ${getCourseIndexRows(
+          course,
+        )
+          .map((row) => `${row.displayNumber ?? ""} ${row.title}`)
+          .join(" ")}`,
+      ).includes(term),
   );
 }
 export const firstRelease = courses.filter((c) => c.priority === "P0");
-export const SAMPLE_URL = "/learn/ML201/ML201-C04-L01";
-export const coursePreviews: Readonly<Partial<Record<string, { href: string; title: string }>>> = Object.fromEntries(
-  [...readablePublications].reverse().map(entry => [entry.courseId, { href: lessonHref(entry), title: entry.title }]),
+export const SAMPLE_URL = "/learn/ML201/ML201-C03-L01";
+export function getCourseIndexRows(course: Course) {
+  const directory = getCourseDirectory(course);
+  return [
+    ...directory.chapters.flatMap((chapter) =>
+      chapter.lessons.map((entry) => ({
+        ...entry,
+        chapterLabel: chapterNumber(chapter.order),
+        courseName: course.name,
+      })),
+    ),
+    ...directory.legacyLessons.map((entry) => ({
+      ...entry,
+      displayNumber: undefined,
+      href: lessonHref(entry),
+      chapterLabel: "旧版综合试读",
+      courseName: course.name,
+    })),
+  ];
+}
+export function findLessonEntries(
+  query: string,
+  level = "all",
+  category = "全部方向",
+) {
+  const normalize = (value: string) =>
+    value.toLocaleLowerCase().replace(/[\s、，,：:《》·]/g, "");
+  const term = normalize(query);
+  if (!term) return [];
+  return courses
+    .filter(
+      (c) =>
+        (level === "all" || c.lvl === level) &&
+        (category === "全部方向" || c.direction === category),
+    )
+    .flatMap(getCourseIndexRows)
+    .filter((row) =>
+      normalize(
+        `${row.displayNumber ?? ""} ${row.title} ${row.courseName}`,
+      ).includes(term),
+    )
+    .sort((a, b) => Number(Boolean(b.href)) - Number(Boolean(a.href)));
+}
+export const coursePreviews: Readonly<
+  Partial<
+    Record<string, { href: string; title: string; displayNumber?: string }>
+  >
+> = Object.fromEntries(
+  courses.flatMap((course) => {
+    const rows = getCourseIndexRows(course);
+    const first =
+      rows.find((row) => row.catalogRole !== "legacy" && row.href) ??
+      rows.find((row) => row.href);
+    return first?.href
+      ? [
+          [
+            course.id,
+            {
+              href: first.href,
+              title: first.title,
+              displayNumber: first.displayNumber,
+            },
+          ],
+        ]
+      : [];
+  }),
 );
 export const getCoursePreview = (id: string) => coursePreviews[id];

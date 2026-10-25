@@ -21,7 +21,11 @@ export function CourseArt({
         className="course-cover"
         src={cover.src}
         alt={cover.alt}
-        style={compact ? { objectPosition: cover.compactPosition ?? "50% 50%" } : undefined}
+        style={
+          compact
+            ? { objectPosition: cover.compactPosition ?? "50% 50%" }
+            : undefined
+        }
         fill
         unoptimized
         sizes={
@@ -73,11 +77,19 @@ export function CourseCard({
             预计 {course.hours} 小时
           </span>
         </div>
-        <div className="course-prereq">先修：{formatCourseReferences(course.req)}</div>
+        <div className="course-prereq">
+          先修：{formatCourseReferences(course.req)}
+        </div>
         {preview && (
           <Link href={preview.href} className="course-preview-link">
             <BookOpen size={15} />
-            <span>含可阅读样章<small>{preview.title}</small></span>
+            <span>
+              含可阅读样章
+              <small>
+                {preview.displayNumber ? `${preview.displayNumber} ` : ""}
+                {preview.title}
+              </small>
+            </span>
             <ArrowRight size={16} />
           </Link>
         )}

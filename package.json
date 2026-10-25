@@ -11,7 +11,9 @@
     "lint": "eslint .",
     "test": "tsx --test tests/*.test.ts",
     "test:python": "tsx scripts/validate-python.ts",
+    "test:routes": "tsx scripts/validate-routes.ts",
     "prepare:diagrams": "python scripts/render-lesson-diagrams.py",
+    "prepare:ml-diagrams": "python scripts/render-ml-v2-diagrams.py",
     "prepare:downloads": "tsx scripts/prepare-downloads.ts",
     "prepare:covers": "node scripts/prepare-course-covers.mjs"
   },

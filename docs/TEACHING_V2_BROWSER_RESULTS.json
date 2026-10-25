@@ -1,0 +1,397 @@
+{
+  "checkedAt": "2026-10-25T15:39:06.157Z",
+  "environment": "IAB Chromium · production http://127.0.0.1:3001",
+  "measurements": [
+    {
+      "bodyFont": "16px",
+      "exercises": 2,
+      "h1": "3.1 从现实问题认识回归",
+      "mathErrors": 0,
+      "plannedLinks": 0,
+      "scrollWidth": 1425,
+      "sections": [
+        "3.1.1 为什么需要从示例中建立关系？",
+        "3.1.2 先画点，再提出可检查的假设",
+        "3.1.3 输入、标签、模型各自是什么？",
+        "3.1.4 用最小代码确认数据含义",
+        "3.1.5 先把问题定义清楚，再选择模型"
+      ],
+      "url": "/learn/ML201/ML201-C03-L01",
+      "width": 1440
+    },
+    {
+      "bodyFont": "16px",
+      "exercises": 2,
+      "h1": "3.2 线性回归模型：权重与偏置",
+      "mathErrors": 0,
+      "plannedLinks": 0,
+      "scrollWidth": 1425,
+      "sections": [
+        "3.2.1 把增量关系写成一条规则",
+        "3.2.2 用三行手算区分三组参数",
+        "3.2.3 把参数留在接口中",
+        "3.2.4 数据与参数不要混淆",
+        "3.2.5 下一步：什么叫拟合得更好？"
+      ],
+      "url": "/learn/ML201/ML201-C03-L02",
+      "width": 1440
+    },
+    {
+      "bodyFont": "16px",
+      "exercises": 2,
+      "h1": "3.3 预测误差、MAE 与 MSE",
+      "mathErrors": 0,
+      "plannedLinks": 0,
+      "scrollWidth": 1425,
+      "sections": [
+        "3.3.1 先明确误差的方向",
+        "3.3.2 绝对值与平方分别怎样聚合？",
+        "3.3.3 为什么大误差会被更强地强调？",
+        "3.3.4 让代码顺序和手算顺序一致",
+        "3.3.5 明确损失，才能讨论优化"
+      ],
+      "url": "/learn/ML201/ML201-C03-L03",
+      "width": 1440
+    },
+    {
+      "bodyFont": "16px",
+      "exercises": 2,
+      "h1": "4.1 从导数理解优化方向",
+      "mathErrors": 0,
+      "plannedLinks": 0,
+      "scrollWidth": 1425,
+      "sections": [
+        "4.1.1 知道损失以后，下一步往哪走？",
+        "4.1.2 从平均变化率走到局部变化率",
+        "4.1.3 把方向变成一次具体更新",
+        "4.1.4 什么情况下，这个直觉会误导？",
+        "4.1.5 用可运行的小程序复核"
+      ],
+      "url": "/learn/ML201/ML201-C04-L02",
+      "width": 1440
+    },
+    {
+      "bodyFont": "16px",
+      "exercises": 2,
+      "h1": "4.2 梯度下降的数学原理",
+      "mathErrors": 0,
+      "plannedLinks": 0,
+      "scrollWidth": 1425,
+      "sections": [
+        "4.2.1 把要优化的量和固定的量分开",
+        "4.2.2 先推导一个样本对 w 的贡献",
+        "4.2.3 再推导 b，并写出梯度向量",
+        "4.2.4 先计算梯度，再同时更新两个参数",
+        "4.2.5 用少量数字检查公式是否落地"
+      ],
+      "url": "/learn/ML201/ML201-C04-L03",
+      "width": 1440
+    },
+    {
+      "bodyFont": "16px",
+      "exercises": 2,
+      "h1": "4.3 手动计算一次参数更新",
+      "mathErrors": 0,
+      "plannedLinks": 0,
+      "scrollWidth": 1425,
+      "sections": [
+        "4.3.1 固定实验条件，先算旧损失",
+        "4.3.2 把各样本的贡献平均，再同步更新",
+        "4.3.3 重新预测，不能沿用旧误差",
+        "4.3.4 两种看似合理、却改变算法的写法",
+        "4.3.5 让程序逐项复算，再自己复述"
+      ],
+      "url": "/learn/ML201/ML201-C04-L04",
+      "width": 1440
+    },
+    {
+      "bodyFont": "16px",
+      "exercises": 2,
+      "h1": "4.4 使用 NumPy 实现线性回归",
+      "mathErrors": 0,
+      "plannedLinks": 0,
+      "scrollWidth": 1425,
+      "sections": [
+        "4.4.1 先让最小预测片段运行起来",
+        "4.4.2 先检查形状，再写训练循环",
+        "4.4.3 完整脚本：先复现首步，再检查终点",
+        "4.4.4 带着问题改变一个变量",
+        "4.4.5 核对理解，再决定是否标记已读完"
+      ],
+      "url": "/learn/ML201/ML201-C04-L05",
+      "width": 1440
+    },
+    {
+      "bodyFont": "16px",
+      "h1": "3.1 从现实问题认识回归",
+      "mathErrors": 0,
+      "scrollWidth": 375,
+      "touchTargets": [
+        {
+          "height": 48,
+          "text": "问题"
+        },
+        {
+          "height": 48,
+          "text": "直觉"
+        },
+        {
+          "height": 48,
+          "text": "定义"
+        },
+        {
+          "height": 48,
+          "text": "练习"
+        }
+      ],
+      "url": "/learn/ML201/ML201-C03-L01",
+      "width": 390
+    },
+    {
+      "bodyFont": "16px",
+      "h1": "3.2 线性回归模型：权重与偏置",
+      "mathErrors": 0,
+      "scrollWidth": 375,
+      "touchTargets": [
+        {
+          "height": 48,
+          "text": "模型"
+        },
+        {
+          "height": 48,
+          "text": "手算"
+        },
+        {
+          "height": 48,
+          "text": "代码"
+        },
+        {
+          "height": 48,
+          "text": "自查"
+        }
+      ],
+      "url": "/learn/ML201/ML201-C03-L02",
+      "width": 390
+    },
+    {
+      "bodyFont": "16px",
+      "h1": "3.3 预测误差、MAE 与 MSE",
+      "mathErrors": 0,
+      "scrollWidth": 375,
+      "touchTargets": [
+        {
+          "height": 48,
+          "text": "误差"
+        },
+        {
+          "height": 48,
+          "text": "演算"
+        },
+        {
+          "height": 48,
+          "text": "选择"
+        },
+        {
+          "height": 48,
+          "text": "代码"
+        }
+      ],
+      "url": "/learn/ML201/ML201-C03-L03",
+      "width": 390
+    },
+    {
+      "bodyFont": "16px",
+      "h1": "4.1 从导数理解优化方向",
+      "mathErrors": 0,
+      "scrollWidth": 375,
+      "touchTargets": [
+        {
+          "height": 48,
+          "text": "问题"
+        },
+        {
+          "height": 48,
+          "text": "推导"
+        },
+        {
+          "height": 48,
+          "text": "更新"
+        },
+        {
+          "height": 48,
+          "text": "边界"
+        },
+        {
+          "height": 48,
+          "text": "代码"
+        }
+      ],
+      "url": "/learn/ML201/ML201-C04-L02",
+      "width": 390
+    },
+    {
+      "bodyFont": "16px",
+      "h1": "4.2 梯度下降的数学原理",
+      "mathErrors": 0,
+      "scrollWidth": 375,
+      "touchTargets": [
+        {
+          "height": 48,
+          "text": "设定"
+        },
+        {
+          "height": 48,
+          "text": "推导"
+        },
+        {
+          "height": 48,
+          "text": "更新"
+        },
+        {
+          "height": 48,
+          "text": "练习"
+        }
+      ],
+      "url": "/learn/ML201/ML201-C04-L03",
+      "width": 390
+    },
+    {
+      "bodyFont": "16px",
+      "h1": "4.3 手动计算一次参数更新",
+      "mathErrors": 0,
+      "scrollWidth": 375,
+      "touchTargets": [
+        {
+          "height": 48,
+          "text": "设定"
+        },
+        {
+          "height": 48,
+          "text": "手算"
+        },
+        {
+          "height": 48,
+          "text": "排错"
+        },
+        {
+          "height": 48,
+          "text": "练习"
+        }
+      ],
+      "url": "/learn/ML201/ML201-C04-L04",
+      "width": 390
+    },
+    {
+      "bodyFont": "16px",
+      "h1": "4.4 使用 NumPy 实现线性回归",
+      "mathErrors": 0,
+      "scrollWidth": 375,
+      "touchTargets": [
+        {
+          "height": 48,
+          "text": "准备"
+        },
+        {
+          "height": 48,
+          "text": "实现"
+        },
+        {
+          "height": 48,
+          "text": "实验"
+        },
+        {
+          "height": 48,
+          "text": "回顾"
+        }
+      ],
+      "url": "/learn/ML201/ML201-C04-L05",
+      "width": 390
+    },
+    {
+      "bodyFont": "16px",
+      "h1": "4.4 使用 NumPy 实现线性回归",
+      "scrollWidth": 305,
+      "url": "/learn/ML201/ML201-C04-L05",
+      "width": 320
+    },
+    {
+      "h1": "3.1 向量与矩阵的基本运算",
+      "scrollWidth": 375,
+      "sections": [
+        "3.1.1 向量：一组有顺序的分量",
+        "3.1.2 矩阵的形状是运算的前提",
+        "3.1.3 矩阵乘法：行与列的内积",
+        "3.1.4 把公式与 NumPy 一一对应",
+        "3.1.5 用维度和数值共同自查",
+        "3.1.6 把形状写在公式旁边"
+      ],
+      "url": "/learn/MA101/MA101-C03-L01",
+      "width": 390
+    },
+    {
+      "h1": "5.1 Python 函数与参数",
+      "scrollWidth": 375,
+      "sections": [
+        "5.1.1 函数是一份可以调用的约定",
+        "5.1.2 一次调用中，参数如何对应？",
+        "5.1.3 默认值为什么会跨调用共享？",
+        "5.1.4 运行完整脚本，核对接口行为",
+        "5.1.5 把接口约定说清楚",
+        "5.1.6 用一份清晰接口减少意外"
+      ],
+      "url": "/learn/PY101/PY101-C05-L01",
+      "width": 390
+    }
+  ],
+  "interactions": {
+    "mobileDrawerAnchor": "4.3.2 -> closes dialog and focuses h2",
+    "escapeFocus": "章节目录",
+    "crossChapter": "3.3 -> 4.1; previous -> 3.3",
+    "planned": "3.4 absent href + direct route branded 404",
+    "copyDownload": "full NumPy source copied; actual downloaded .py matched clipboard exactly",
+    "quiz": "wrong B feedback; change to A reset feedback; no automatic completion",
+    "localTableKeyboard": "390px viewport; table client308/scroll640; ArrowRight twice -> scrollLeft80",
+    "mobileFigure": "parameter-lines-mobile.png; loaded 308×327.25",
+    "legacy": "existing old sample completed preserved; #gradient exists; new3.1 initially not complete",
+    "independentProgress": "manually completed3.1; 3.2 remains incomplete; dashboard new1/7",
+    "search": "Ctrl+K focuses 搜索课程; 4.3 -> stable ML201-C04-L04 route",
+    "reducedMotion": "emulated reduce=true, computed scroll-behavior:auto; emulation reset",
+    "console": "no application warn/error at checkpoint"
+  },
+  "screenshots": [
+    "desktop-3-1-figure-before-fix.jpg",
+    "desktop-3-1.jpg",
+    "desktop-3-2.jpg",
+    "desktop-3-3.jpg",
+    "desktop-4-1.jpg",
+    "desktop-4-2.jpg",
+    "desktop-4-3.jpg",
+    "desktop-4-4-code.jpg",
+    "desktop-4-4.jpg",
+    "desktop-course-directory.jpg",
+    "desktop-planned-404.jpg",
+    "desktop-quiz-feedback.jpg",
+    "mobile-3-1.jpg",
+    "mobile-3-2.jpg",
+    "mobile-3-3.jpg",
+    "mobile-4-1.jpg",
+    "mobile-4-2.jpg",
+    "mobile-4-3-math.jpg",
+    "mobile-4-3.jpg",
+    "mobile-4-4.jpg",
+    "mobile-course-progress.jpg",
+    "mobile-directory-before-fix.jpg",
+    "mobile-directory.jpg",
+    "mobile-exercise.jpg",
+    "mobile-legacy-bookmark.jpg",
+    "mobile-math-existing.jpg",
+    "mobile-progress.jpg",
+    "mobile-python-existing.jpg",
+    "mobile-search.jpg",
+    "mobile-table-keyboard.jpg",
+    "mobile-teaching-figure.jpg",
+    "narrow-320-reader.jpg",
+    "tablet-4-2-derivation.jpg",
+    "tablet-course-directory.jpg"
+  ]
+}

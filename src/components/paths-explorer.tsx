@@ -29,7 +29,7 @@ function Node({ id }: { id: string }) {
         <ArrowUpRight size={14} />
       </span>
     </Link>
-    {preview && <Link href={preview.href} className="path-preview-link">含可阅读样章 · 开始阅读<ArrowRight size={14}/></Link>}
+    {preview && <Link href={preview.href} className="path-preview-link">{preview.displayNumber ? `${preview.displayNumber} ` : ""}试读 · 开始阅读<ArrowRight size={14}/></Link>}
     </div>
   );
 }

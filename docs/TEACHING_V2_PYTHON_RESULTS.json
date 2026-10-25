@@ -1,0 +1,132 @@
+{
+  "checkedAt": "2026-10-25T15:42:27.590Z",
+  "environment": "3.14.2\r\nNumPy 2.5.2",
+  "unittest": {
+    "exitCode": 0,
+    "stdout": "initial MSE=17.000000\r\nfirst w=1.300, b=0.800, MSE=1.685000\r\nfinal w=2.000000, b=1.000000, MSE=0.0000000000\r\nw=2.000000, b=1.000000, MSE=0.00000000\r\nw=2.000000, b=1.000000, MSE=0.00000000\r\n6.0 13 5.0\r\nkeyword-only: TypeError (expected)\r\n['A'] ['B'] ['start', 'next'] ['start']\r\nshared default: ['A', 'B']\r\nshape mismatch: ValueError (expected)\r\nsum: [4 3] scaled: [2 4] dot: 5\r\nA @ B:\r\n [[4 6]\r\n [1 3]] \r\nB @ A:\r\n [[2 4]\r\n [1 5]]\r\nA * B:\r\n [[2 0]\r\n [0 3]] \r\nM @ N:\r\n [[4 5]\r\n [2 3]]\r\n6.0 13 5.0\r\nkeyword-only: TypeError (expected)\r\n['A'] ['B'] ['start', 'next'] ['start']\r\nshared default: ['A', 'B']\r\nshape mismatch: ValueError (expected)\r\nsum: [4 3] scaled: [2 4] dot: 5\r\nA @ B:\r\n [[4 6]\r\n [1 3]] \r\nB @ A:\r\n [[2 4]\r\n [1 5]]\r\nA * B:\r\n [[2 0]\r\n [0 3]] \r\nM @ N:\r\n [[4 5]\r\n [2 3]]\r\n6.0 13 5.0\r\nkeyword-only: TypeError (expected)\r\n['A'] ['B'] ['start', 'next'] ['start']\r\nshared default: ['A', 'B']",
+    "stderr": "test_complete_program_oracle_and_input_rejection (test_ml_v2.TeachingV2Tests.test_complete_program_oracle_and_input_rejection) ... ok\r\ntest_gradient_finite_difference (test_ml_v2.TeachingV2Tests.test_gradient_finite_difference) ... ok\r\ntest_hand_update_and_wrong_variants (test_ml_v2.TeachingV2Tests.test_hand_update_and_wrong_variants) ... ok\r\ntest_losses_exact (test_ml_v2.TeachingV2Tests.test_losses_exact) ... ok\r\ntest_new_downloads_match_notebooks (test_ml_v2.TeachingV2Tests.test_new_downloads_match_notebooks) ... ok\r\ntest_rate_experiment_fixed_budget (test_ml_v2.TeachingV2Tests.test_rate_experiment_fixed_budget) ... ok\r\ntest_scalar_direction (test_ml_v2.TeachingV2Tests.test_scalar_direction) ... ok\r\ntest_gradient_finite_difference (test_sample.SampleTests.test_gradient_finite_difference) ... ok\r\ntest_script_and_notebook (test_sample.SampleTests.test_script_and_notebook) ... ok\r\ntest_defaults_and_mutation_contract (test_teaching_samples.TeachingSampleTests.test_defaults_and_mutation_contract) ... ok\r\ntest_matrix_values_and_shapes (test_teaching_samples.TeachingSampleTests.test_matrix_values_and_shapes) ... ok\r\ntest_new_notebooks_execute_and_match_scripts (test_teaching_samples.TeachingSampleTests.test_new_notebooks_execute_and_match_scripts) ... ok\r\ntest_python_binding_and_return (test_teaching_samples.TeachingSampleTests.test_python_binding_and_return) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 13 tests in 0.294s\r\n\r\nOK"
+  },
+  "examples": [
+    {
+      "lessonId": "ML201-C03-L01",
+      "sectionId": "practice",
+      "filename": "calibration_pairs.py",
+      "exitCode": 0,
+      "stdout": "1 0.0 1.0\r\n2 1.0 3.0\r\n3 2.0 5.0",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C03-L02",
+      "sectionId": "code",
+      "filename": "linear_prediction.py",
+      "exitCode": 0,
+      "stdout": "[1.0, 3.0, 5.0]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C03-L03",
+      "sectionId": "code",
+      "filename": "ml_losses.py",
+      "exitCode": 0,
+      "stdout": "errors: [1.0, -1.0, -3.0]\r\nMAE=1.666667, MSE=3.666667",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L02",
+      "sectionId": "code",
+      "filename": "scalar_descent.py",
+      "exitCode": 0,
+      "stdout": "0.1 0.4 2.56\r\n1.2 4.8 7.84",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L03",
+      "sectionId": "practice",
+      "filename": "mse_gradients.py",
+      "exitCode": 0,
+      "stdout": "-13.0 -8.0",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L04",
+      "sectionId": "code",
+      "filename": "one_update.py",
+      "exitCode": 0,
+      "stdout": "-13.0 -8.0 1.3 0.8 1.685",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L05",
+      "sectionId": "environment",
+      "filename": "predict_arrays.py",
+      "exitCode": 0,
+      "stdout": "(2,) [0. 0.] [-3. -5.]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L05",
+      "sectionId": "full-code",
+      "filename": "ml_gradient_descent.py",
+      "exitCode": 0,
+      "stdout": "initial MSE=17.000000\r\nfirst w=1.300, b=0.800, MSE=1.685000\r\nfinal w=2.000000, b=1.000000, MSE=0.0000000000",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L05",
+      "sectionId": "experiment",
+      "filename": "compare_rates.py",
+      "exitCode": 0,
+      "stdout": "rate=0.01, w=1.921161, b=1.127561, MSE=0.00164044\r\nrate=0.10, w=1.994416, b=1.009035, MSE=0.00000823",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L01",
+      "sectionId": "code",
+      "filename": "linear_regression.py",
+      "exitCode": 0,
+      "stdout": "w=2.000000, b=1.000000, MSE=0.00000000",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L01",
+      "sectionId": "concept",
+      "filename": "first_function.py",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L01",
+      "sectionId": "binding",
+      "filename": "parameter_binding.py",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L01",
+      "sectionId": "defaults",
+      "filename": "shared_default.py",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L01",
+      "sectionId": "code",
+      "filename": "python_functions.py",
+      "exitCode": 0,
+      "stdout": "6.0 13 5.0\r\nkeyword-only: TypeError (expected)\r\n['A'] ['B'] ['start', 'next'] ['start']\r\nshared default: ['A', 'B']",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C03-L01",
+      "sectionId": "code",
+      "filename": "vector_matrix.py",
+      "exitCode": 0,
+      "stdout": "shape mismatch: ValueError (expected)\r\nsum: [4 3] scaled: [2 4] dot: 5\r\nA @ B:\r\n [[4 6]\r\n [1 3]] \r\nB @ A:\r\n [[2 4]\r\n [1 5]]\r\nA * B:\r\n [[2 0]\r\n [0 3]] \r\nM @ N:\r\n [[4 5]\r\n [2 3]]",
+      "stderr": ""
+    }
+  ],
+  "note": "技术校验通过；不代表人工内容审核、试学或正式发布。代码来自仓库静态教材，仅开发阶段执行。"
+}

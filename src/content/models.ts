@@ -25,6 +25,7 @@ export const publicationSchema = z
     title: text,
     contentVersion: z.number().int().positive(),
     order: z.number().int().positive(),
+    catalogRole: z.enum(["current", "legacy"]).default("current"),
     status: z.enum(publicationStates),
     access: z.enum(["private", "preview", "public"]),
     technicalEvidence: text.optional(),
@@ -108,6 +109,13 @@ export const resourceSchema = z.object({
   description: text,
 });
 export type LearningResource = z.infer<typeof resourceSchema>;
+export const learningLinkSchema = z.object({
+  title: text,
+  href: text.refine(
+    (value) => /^https:\/\//.test(value) || /^\/(courses|learn)\//.test(value),
+  ),
+  note: text,
+});
 const quizSchema = z
   .object({
     type: z.literal("quiz"),
@@ -130,6 +138,32 @@ const quizSchema = z
 export const contentBlockSchema = z.discriminatedUnion("type", [
   z.object({ type: z.literal("paragraph"), text }),
   z.object({ type: z.literal("heading"), text }),
+  z
+    .object({
+      type: z.literal("table"),
+      caption: text,
+      columns: z.array(text).min(1),
+      rows: z.array(z.array(text)).min(1),
+    })
+    .superRefine((table, ctx) => {
+      if (table.rows.some((row) => row.length !== table.columns.length))
+        ctx.addIssue({ code: "custom", message: "表格每行必须与列数一致" });
+    }),
+  z.object({
+    type: z.literal("reading-links"),
+    title: text,
+    links: z.array(learningLinkSchema).min(1),
+  }),
+  z.object({
+    type: z.literal("exercise"),
+    id: anchor,
+    title: text,
+    kind: z.enum(["理解", "计算", "代码", "迁移", "实验"]),
+    prompt: text,
+    hints: z.array(text).min(1),
+    solution: z.array(text).min(1),
+    rubric: z.array(text).min(1),
+  }),
   z.object({
     type: z.literal("image"),
     src: localAsset,
@@ -180,6 +214,7 @@ export const lessonSchema = z
     subtitle: text,
     durationMinutes: z.number().int().positive(),
     prerequisites: text,
+    prerequisiteLinks: z.array(learningLinkSchema).default([]),
     objectives: z.array(text).min(2).max(4),
     sections: z
       .array(
@@ -222,6 +257,10 @@ export const lessonSchema = z
       blocks.filter((b) => b.type === "quiz").map((b) => b.id),
       "题目 ID",
     );
+    unique(
+      blocks.filter((b) => b.type === "exercise").map((b) => b.id),
+      "开放练习 ID",
+    );
     for (const block of blocks)
       if (
         block.type === "downloads" &&
@@ -246,12 +285,20 @@ export type Chapter = {
   courseId: string;
   order: number;
   title: string;
-  lessons: Publication[];
+  lessons: DirectoryLesson[];
 };
-export type Course = Omit<CatalogCourse, "chapters"> & { chapters: Chapter[] };
+export type DirectoryLesson = Publication & {
+  displayNumber: string;
+  href?: string;
+};
+export type Course = Omit<CatalogCourse, "chapters"> & {
+  chapters: Chapter[];
+  legacyLessons: Publication[];
+};
 export type LessonSummary = Publication & {
   href: string;
   courseName: string;
   level: string;
+  displayNumber?: string;
   sectionTitles: { id: string; title: string }[];
 };

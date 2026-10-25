@@ -13,6 +13,8 @@ import type { LessonSummary } from "@/content/models";
 import { useLearningRecords } from "@/lib/use-learning-progress";
 import { ProgressRing } from "./lesson/blocks";
 import { EmptyState, Reveal } from "./ui";
+import { summarizeCourseReading } from "@/lib/course-reading-summary";
+import { numberedLessonTitle } from "@/lib/course-numbering";
 
 export function Dashboard({ lessons }: { lessons: LessonSummary[] }) {
   const records = useLearningRecords(lessons);
@@ -20,24 +22,7 @@ export function Dashboard({ lessons }: { lessons: LessonSummary[] }) {
   const nextUrl = latest
     ? `${latest.lesson.href}#${latest.progress.section}`
     : undefined;
-  const courseGroups = [
-    ...new Set(lessons.map((lesson) => lesson.courseId)),
-  ].map((courseId) => {
-    const available = lessons.filter((lesson) => lesson.courseId === courseId);
-    const visited = records.filter(
-      (record) => record.lesson.courseId === courseId,
-    );
-    return {
-      courseId,
-      name: available[0].courseName,
-      available: available.length,
-      completed: visited.filter((record) => record.progress.completed).length,
-      percent: Math.round(
-        visited.reduce((sum, record) => sum + record.progress.percent, 0) /
-          available.length,
-      ),
-    };
-  });
+  const courseGroups = summarizeCourseReading(lessons, records);
   return (
     <div className="container page-container">
       <div className="page-intro">
@@ -64,7 +49,7 @@ export function Dashboard({ lessons }: { lessons: LessonSummary[] }) {
             {records.filter((record) => record.progress.completed).length}
             <small>节</small>
           </strong>
-          <span>已标记读完 · 共 {lessons.length} 节可试读</span>
+          <span>已标记读完（含旧版记录）</span>
         </div>
       </div>
       <div className="dashboard-layout">
@@ -88,7 +73,7 @@ export function Dashboard({ lessons }: { lessons: LessonSummary[] }) {
                 <span className={`level level-${latest.lesson.level}`}>
                   试读样章 · {latest.lesson.level}
                 </span>
-                <h3>{latest.lesson.title}</h3>
+                <h3>{numberedLessonTitle(latest.lesson)}</h3>
                 <p>
                   当前停留：
                   {
@@ -123,16 +108,18 @@ export function Dashboard({ lessons }: { lessons: LessonSummary[] }) {
               </div>
             </div>
             <div className="dashboard-samples">
-              {lessons.map((lesson) => (
-                <Link key={lesson.lessonId} href={lesson.href}>
-                  <BookOpen size={19} />
-                  <span>
-                    <small>{lesson.courseName} · 试读</small>
-                    <strong>{lesson.title}</strong>
-                  </span>
-                  <ArrowUpRight size={18} />
-                </Link>
-              ))}
+              {lessons
+                .filter((lesson) => lesson.catalogRole !== "legacy")
+                .map((lesson) => (
+                  <Link key={lesson.lessonId} href={lesson.href}>
+                    <BookOpen size={19} />
+                    <span>
+                      <small>{lesson.courseName} · 试读</small>
+                      <strong>{numberedLessonTitle(lesson)}</strong>
+                    </span>
+                    <ArrowUpRight size={18} />
+                  </Link>
+                ))}
             </div>
           </section>
           <section className="detail-section">
@@ -154,7 +141,7 @@ export function Dashboard({ lessons }: { lessons: LessonSummary[] }) {
                     <BookOpen size={20} />
                   </div>
                   <div>
-                    <h3>{lesson.title}</h3>
+                    <h3>{numberedLessonTitle(lesson)}</h3>
                     <p>
                       {lesson.courseName} ·{" "}
                       {progress.completed
@@ -185,7 +172,9 @@ export function Dashboard({ lessons }: { lessons: LessonSummary[] }) {
           <div className="panel course-progress-summary">
             <BookOpen size={23} />
             <h3>各课程的可读样章</h3>
-            <p>只统计当前可读教材，完整课程仍在筹备中。</p>
+            <p>
+              只统计当前可读教材，旧版试读完成记录不计入新版进度。完整课程仍在筹备中。
+            </p>
             {courseGroups.map((course) => (
               <div className="course-progress-row" key={course.courseId}>
                 <Link href={`/courses/${course.courseId}`}>{course.name}</Link>

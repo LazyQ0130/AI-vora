@@ -1,7 +1,18 @@
 import { isReadable, publicationSchema } from "./models";
+import { courseOutline, mlV2LessonIds } from "./course-outline";
 
 // 发布权限独立于原始课程规划。技术证据不替代人工审核。
 export const publicationManifest = [
+  ...courseOutline
+    .filter((slot) => mlV2LessonIds.some((id) => id === slot.lessonId))
+    .map((slot) => ({
+      ...slot,
+      contentVersion: 1,
+      catalogRole: "current",
+      status: "pending-review",
+      access: "preview",
+      technicalEvidence: "docs/TEACHING_V2_PYTHON_RESULTS.json",
+    })),
   {
     lessonId: "ML201-C04-L01",
     courseId: "ML201",
@@ -9,6 +20,7 @@ export const publicationManifest = [
     title: "线性回归与梯度下降",
     contentVersion: 1,
     order: 1,
+    catalogRole: "legacy",
     status: "pending-review",
     access: "preview",
     technicalEvidence: "docs/COURSE_ENGINE_PYTHON_RESULTS.json",

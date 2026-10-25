@@ -308,7 +308,7 @@ export function Home() {
               <p>
                 为什么梯度下降能让模型不断接近答案？
                 <br />
-                从原理、公式到 NumPy，用一节样章亲自探索。
+                从预测任务开始，循序阅读模型、公式与 NumPy 实现。
               </p>
               <Link className="button button-primary" href={SAMPLE_URL}>
                 阅读样章
