@@ -72,7 +72,7 @@ type Source = Pick<
   "subtitle" | "objectives" | "prerequisites"
 > &
   { sections: (Omit<Lesson["sections"][number], "tier"> & { tier?: Lesson["sections"][number]["tier"] })[] } &
-  Partial<Pick<Lesson, "resources" | "references" | "prerequisiteLinks">>;
+  Partial<Pick<Lesson, "resources" | "references" | "prerequisiteLinks" | "objectiveDisplay">>;
 export function defineMlLesson(id: string, source: Source): Lesson {
   const slot = courseOutline.find((s) => s.lessonId === id);
   if (!slot) throw new Error(`未规划的 ML 课时：${id}`);

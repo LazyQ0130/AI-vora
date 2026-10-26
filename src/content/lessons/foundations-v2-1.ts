@@ -16,7 +16,7 @@ type Spec = {
   id: string; title: string; subtitle: string; prerequisites: string;
   contentVersion?: number; assessmentMap?: Lesson["assessmentMap"]; prerequisiteLinks?: Lesson["prerequisiteLinks"];
   previous?: ReturnType<typeof link>; next?: ReturnType<typeof link>;
-  objectives: string[]; program: keyof typeof corePrograms;
+  objectives: string[]; objectiveDisplay?: Lesson["objectiveDisplay"]; program: keyof typeof corePrograms;
   sections: Section[]; exercises: ContentBlock[]; quizzes: ContentBlock[];
   summary: string[]; time: [number, number, number, number, number, number];
 };
@@ -28,6 +28,10 @@ const specs: Spec[] = [
     prerequisites: "已能在本机运行 Python，理解变量赋值和数值乘法。自查：value=3 后，value*2 是多少？答 6 即可继续；函数的写法与缩进在正文解释。",
     prerequisiteLinks: [{title:"Python 官方教程：运行解释器",href:"https://docs.python.org/3.14/tutorial/interpreter.html",note:"本地运行环境的补修；仓库第1章目前只有规划。"},{title:"Python 官方教程：数值与赋值",href:"https://docs.python.org/3.14/tutorial/introduction.html#numbers",note:"复习变量、乘法和用 print 显示结果。"}],
     objectives: ["按执行顺序解释定义与调用", "独立编写一个接收数值并返回计算结果的单参数函数"],
+    objectiveDisplay: [
+      { objective: "按执行顺序解释定义与调用", title: "分清定义与调用", description: "按执行顺序解释函数如何运行。" },
+      { objective: "独立编写一个接收数值并返回计算结果的单参数函数", title: "独立编写单参数函数", description: "接收一个数值，返回计算结果。" },
+    ],
     assessmentMap: [{objective:1,exerciseIds:["define-double"]},{objective:2,exerciseIds:["minutes-to-seconds"]}],
     next: link("PY101-C05-L02", "5.2 参数如何绑定", "先掌握一次调用，再增加第二个输入。"),
     program: "function-basics", time: [6, 10, 8, 12, 5, 10],
@@ -147,6 +151,7 @@ function makeLesson(spec: Spec) {
     title: spec.title, subtitle: spec.subtitle, prerequisites: spec.prerequisites,
     prerequisiteLinks: spec.prerequisiteLinks ?? (spec.previous ? [spec.previous] : []),
     objectives: spec.objectives,
+    objectiveDisplay: spec.objectiveDisplay,
     assessmentMap: spec.assessmentMap ?? spec.objectives.map((_, index) => ({ objective: index + 1, exerciseIds: exercises.map((e) => e.id) })),
     learningTime: { reading: [r0,r1], practice: [p0,p1], coding: [c0,c1], basis: "editorial-estimate" },
     sections: [

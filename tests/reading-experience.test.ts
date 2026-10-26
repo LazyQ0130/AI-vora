@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import type { Lesson } from "../src/content/models";
+import { lessonSchema, type Lesson } from "../src/content/models";
 import { lessonRegistry } from "../src/lib/course-engine";
 import { lessonExerciseLinks } from "../src/lib/lesson-exercises";
 import { LearningPanel } from "../src/components/lesson/learning-support";
@@ -24,9 +24,12 @@ test("学习面板把 AI 两道达标题按正文顺序显示一次，保留一�
   const html = panel(ai);
   assert.equal((html.match(/href="#exercise-product-review"/g) ?? []).length, 1);
   assert.equal((html.match(/href="#exercise-identify-systems"/g) ?? []).length, 1);
-  assert.match(html, /对应目标 1、3/);
+  assert.doesNotMatch(html, /对应目标/);
+  assert.match(html, /迁移练习/);
   assert.match(html, /尚未标记读完/);
-  assert.match(html, /本节已阅读 100%/);
+  assert.match(html, /aria-label="本节已浏览比例"/);
+  assert.match(html, /aria-valuenow="100"/);
+  assert.match(html, /浏览比例不代表练习完成或掌握程度/);
   assert.doesNotMatch(html, /练习通过|已掌握|文章目录/);
   assert.match(panel(ai, true), /已手动标记读完/);
   assert.doesNotMatch(html, /<details[^>]*\sopen/);
@@ -46,7 +49,7 @@ test("所有教材面板入口对应真实练习，核心与可选层级不混�
     for (const objective of lesson.objectives) assert.ok(html.includes(objective.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")));
     if (lesson.optionalLesson) {
       assert.match(html, /可选挑战/);
-      assert.doesNotMatch(html, /达标练习/);
+      assert.doesNotMatch(html, /核心练习/);
     }
   }
   const scaling = lessonRegistry.get("MA101-C02-L06")!;
@@ -57,6 +60,34 @@ test("所有教材面板入口对应真实练习，核心与可选层级不混�
   assert.match(html, /href="#exercise-one-factor"/);
   assert.match(html, /可选进阶/);
   assert.match(panel(lessonRegistry.get("ML201-C04-L04")!), /可选验证/);
+});
+
+test("目标短文案绑定正式原文，拒绝未知、重复及过期绑定", () => {
+  assert.equal(ai.objectiveDisplay?.length, ai.objectives.length);
+  for (const entry of ai.objectiveDisplay ?? []) {
+    assert.ok(ai.objectives.includes(entry.objective));
+    assert.ok(panel(ai).includes(entry.title));
+    assert.ok(panel(ai).includes(entry.description));
+  }
+  const entry = ai.objectiveDisplay![0];
+  assert.equal(lessonSchema.safeParse({ ...ai, objectiveDisplay: [{ ...entry, objective: "不存在的目标" }] }).success, false);
+  assert.equal(lessonSchema.safeParse({ ...ai, objectiveDisplay: [entry, entry] }).success, false);
+  assert.equal(lessonSchema.safeParse({ ...ai, objectives: ai.objectives.map((goal, i) => i ? goal : `${goal}（修订）`) }).success, false);
+  const fallback = panel({ ...ai, objectiveDisplay: undefined });
+  for (const objective of ai.objectives) assert.ok(fallback.includes(objective));
+  assert.doesNotMatch(fallback, /查看完整目标/);
+});
+
+test("面板展示类型与正文相同，阅读比例与手动标记可独立呈现", () => {
+  for (const lesson of lessonRegistry.values()) for (const exercise of lessonExerciseLinks(lesson)) {
+    const block = lesson.sections.flatMap((section) => section.blocks).find((block) => block.type === "exercise" && block.id === exercise.id);
+    assert.ok(block?.type === "exercise");
+    assert.equal(exercise.kind, block.kind);
+  }
+  const html = renderToStaticMarkup(createElement(LearningPanel, { lesson: ai, progress: 37, completed: true, onNavigate: () => {} }));
+  assert.match(html, /aria-valuenow="37"/);
+  assert.match(html, /已手动标记读完/);
+  assert.doesNotMatch(html, /progress-ring/);
 });
 
 test("AI 教学表达改编保留全部题干、提示、解答、自查标准及旧修订书签", () => {

@@ -10,7 +10,7 @@ export const figure = (kind:Extract<ContentBlock,{type:"vector-figure"}>["kind"]
 export const section = (id:string,title:string,blocks:ContentBlock[],tier:MathSection["tier"]="core"):MathSection => ({id,title,navGroup:id,navLabel:({scene:"问题",intuition:"理解",worked:"例题",definition:"定义",diagram:"图解",application:"应用",mistakes:"误区",practice:"练习",challenge:"挑战",code:"代码",summary:"总结"} as Record<string,string>)[id] ?? title,blocks,tier});
 export const exercise = (id:string,title:string,kind:"理解"|"计算"|"迁移",prompt:string,hints:[string,string],solution:string[],rubric:string[]):ContentBlock => ({type:"exercise",id,title,kind,prompt,hints,solution,rubric});
 export const localLink = (id:string,title:string,note:string) => ({title,href:`/learn/MA101/${id}`,note});
-type Source = Pick<Lesson,"subtitle"|"prerequisites"|"objectives"|"assessmentMap"|"learningTime"> & {sections:MathSection[];prerequisiteLinks?:Lesson["prerequisiteLinks"];contentVersion?:number};
+type Source = Pick<Lesson,"subtitle"|"prerequisites"|"objectives"|"assessmentMap"|"learningTime"> & {sections:MathSection[];prerequisiteLinks?:Lesson["prerequisiteLinks"];objectiveDisplay?:Lesson["objectiveDisplay"];contentVersion?:number};
 export function mathLesson(id:string,source:Source):Lesson {
   const slot=mathCourseOutline.find((s)=>s.lessonId===id);
   if(!slot) throw new Error(id);

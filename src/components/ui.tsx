@@ -71,6 +71,7 @@ export function Drawer({
   open,
   onOpenChange,
   onCloseAutoFocus,
+  className,
 }: {
   trigger: ReactNode;
   title: string;
@@ -78,13 +79,14 @@ export function Drawer({
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
   onCloseAutoFocus?: (event: Event) => void;
+  className?: string;
 }) {
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Trigger asChild>{trigger}</Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="drawer-overlay" />
-        <Dialog.Content className="drawer" onCloseAutoFocus={onCloseAutoFocus}>
+        <Dialog.Content className={`drawer${className ? ` ${className}` : ""}`} onCloseAutoFocus={onCloseAutoFocus}>
           <div className="drawer-title">
             <Dialog.Title>{title}</Dialog.Title>
             <Dialog.Close className="icon-button" aria-label="关闭面板">

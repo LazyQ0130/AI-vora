@@ -1,0 +1,217 @@
+{
+  "elements": [
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(226, 232, 240)",
+      "fontSize": "14px",
+      "gap": "24px",
+      "lineHeight": "23.8px",
+      "overflow": "visible",
+      "padding": "0px 0px 80px",
+      "selector": ".reader-layout",
+      "text": "课程体系人工智能导论与技术地图第 1 章1.1返回课程详情COURSE CONTENTS人工智能导论与技术地图7 章 · 1 节核心课已制作已制作课时阅读比例0",
+      "width": "1368.67px",
+      "zoom": "1"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(226, 232, 240)",
+      "fontSize": "14px",
+      "gap": "normal",
+      "lineHeight": "23.8px",
+      "overflow": "visible",
+      "padding": "0px",
+      "selector": ".reader-main",
+      "text": "章节目录本节导航LEARN THROUGH UNDERSTANDING第 1 章 · 1.1人工智能是什么：能力、边界与常见误区人工智能究竟是什么？从整理收件箱",
+      "width": "760px",
+      "zoom": "1"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(226, 232, 240)",
+      "fontSize": "14px",
+      "gap": "normal",
+      "lineHeight": "23.8px",
+      "overflow": "auto",
+      "padding": "0px",
+      "selector": ".reader-right",
+      "text": "本节学习目标用自己的话说清 AI 是什么，能帮人做什么说清系统接收什么、做什么、给出什么；判断是否用到 AI，或说明还缺什么信息举例说明 AI 会在哪里出错，想",
+      "width": "264px",
+      "zoom": "1"
+    },
+    {
+      "background": "rgb(14, 23, 42)",
+      "border": "0.666667px solid rgba(143, 159, 188, 0.196)",
+      "fontSize": "14px",
+      "gap": "normal",
+      "lineHeight": "23.8px",
+      "overflow": "visible",
+      "padding": "22px 18px",
+      "selector": ".learning-panel",
+      "text": "本节学习目标用自己的话说清 AI 是什么，能帮人做什么说清系统接收什么、做什么、给出什么；判断是否用到 AI，或说明还缺什么信息举例说明 AI 会在哪里出错，想",
+      "width": "254px",
+      "zoom": "1"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(223, 229, 250)",
+      "fontSize": "15px",
+      "gap": "8px",
+      "lineHeight": "27px",
+      "overflow": "visible",
+      "padding": "0px",
+      "selector": ".learning-panel h3",
+      "text": "本节学习目标",
+      "width": "216.667px",
+      "zoom": "1"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(223, 229, 250)",
+      "fontSize": "15px",
+      "gap": "8px",
+      "lineHeight": "27px",
+      "overflow": "visible",
+      "padding": "0px",
+      "selector": ".learning-panel h3",
+      "text": "达标练习",
+      "width": "216.667px",
+      "zoom": "1"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(223, 229, 250)",
+      "fontSize": "15px",
+      "gap": "8px",
+      "lineHeight": "27px",
+      "overflow": "visible",
+      "padding": "0px",
+      "selector": ".learning-panel h3",
+      "text": "本节阅读进度",
+      "width": "216.667px",
+      "zoom": "1"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(178, 192, 216)",
+      "fontSize": "14px",
+      "gap": "normal",
+      "lineHeight": "26.6px",
+      "overflow": "visible",
+      "padding": "0px 0px 0px 3px",
+      "selector": ".learning-panel-goals li",
+      "text": "用自己的话说清 AI 是什么，能帮人做什么",
+      "width": "196.667px",
+      "zoom": "1"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(178, 192, 216)",
+      "fontSize": "14px",
+      "gap": "normal",
+      "lineHeight": "26.6px",
+      "overflow": "visible",
+      "padding": "0px 0px 0px 3px",
+      "selector": ".learning-panel-goals li",
+      "text": "说清系统接收什么、做什么、给出什么；判断是否用到 AI，或说明还缺什么信息",
+      "width": "196.667px",
+      "zoom": "1"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(178, 192, 216)",
+      "fontSize": "14px",
+      "gap": "normal",
+      "lineHeight": "26.6px",
+      "overflow": "visible",
+      "padding": "0px 0px 0px 3px",
+      "selector": ".learning-panel-goals li",
+      "text": "举例说明 AI 会在哪里出错，想出可以实际核查的办法",
+      "width": "196.667px",
+      "zoom": "1"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(198, 201, 255)",
+      "fontSize": "14px",
+      "gap": "normal",
+      "lineHeight": "25.2px",
+      "overflow": "visible",
+      "padding": "0px",
+      "selector": ".learning-panel-exercises a",
+      "text": "哪些系统涉及 AI？还缺什么证据？",
+      "width": "216.667px",
+      "zoom": "1"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(198, 201, 255)",
+      "fontSize": "14px",
+      "gap": "normal",
+      "lineHeight": "25.2px",
+      "overflow": "visible",
+      "padding": "0px",
+      "selector": ".learning-panel-exercises a",
+      "text": "给商品照片分类，怎样使用结果？",
+      "width": "216.667px",
+      "zoom": "1"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(178, 192, 216)",
+      "fontSize": "14px",
+      "gap": "14px",
+      "lineHeight": "23.8px",
+      "overflow": "visible",
+      "padding": "0px",
+      "selector": ".reader-progress",
+      "text": "0%尚未标记读完阅读比例不代表掌握程度",
+      "width": "216.667px",
+      "zoom": "1"
+    }
+  ],
+  "matched": [
+    ".learning-panel { border: 1px solid var(--reader-border, #8f9fbc32); background: var(--reader-surface, #0e172a); color: var(--text-secondary); border-radius: 10px; padding: 22px 18px; }",
+    ".learning-panel > section + section, .learning-panel-prerequisites { border-top: 1px solid rgba(143, 159, 188, 0.16); margin-top: 22px; padding-top: 20px; }",
+    ".learning-panel h3 { color: rgb(223, 229, 250); align-items: center; gap: 8px; font-size: 15px; font-weight: 500; line-height: 1.8; display: flex; }",
+    ".learning-panel h3 svg { color: rgb(183, 176, 255); flex-shrink: 0; }",
+    ".learning-panel-goals { margin-top: 14px; padding-left: 20px; }",
+    ".learning-panel-goals li { padding-left: 3px; font-size: 14px; line-height: 1.9; list-style: decimal; }",
+    ".learning-panel-goals li + li { margin-top: 12px; }",
+    ".learning-panel-goals li::marker { color: rgb(170, 166, 233); font-size: 12px; }",
+    ".learning-panel-exercises { margin-top: 10px; padding: 0px; list-style: none; }",
+    ".learning-panel-exercises li + li { margin-top: 10px; }",
+    ".learning-panel a { color: rgb(198, 201, 255); overflow-wrap: anywhere; align-items: center; min-height: 44px; font-size: 14px; line-height: 1.8; display: flex; }",
+    ".learning-panel a:hover { color: rgb(225, 230, 255); text-underline-offset: 4px; text-decoration: underline; }",
+    ".learning-panel-exercises li > span, .learning-panel-optional > div > span { color: var(--text-supporting); font-size: 12px; line-height: 1.8; display: block; }",
+    ".learning-panel .learning-panel-note { color: var(--text-supporting); margin-top: 12px; font-size: 12px; line-height: 1.9; }",
+    ".learning-panel summary { cursor: pointer; color: rgb(209, 220, 241); min-height: 44px; font-size: 14px; line-height: 1.9; }",
+    ".learning-panel-prerequisites > summary, .learning-panel-prerequisites > summary > span { align-items: center; gap: 8px; display: flex; }",
+    ".learning-panel-prerequisites > summary { justify-content: space-between; list-style: none; }",
+    ".learning-panel-prerequisites[open] > summary > svg { transform: rotate(180deg); }",
+    ".learning-panel-prerequisites p { margin-top: 12px; font-size: 14px; line-height: 1.9; }",
+    ".learning-panel-optional, .learning-panel-optional > div { margin-top: 14px; }",
+    ".learning-panel-optional ul { padding-left: 18px; }",
+    ".drawer .learning-panel { margin-bottom: 20px; }"
+  ],
+  "sheets": [
+    {
+      "href": "http://127.0.0.1:3000/_next/static/chunks/src_app_0z7wdu6i26r9a._.css",
+      "rules": 955
+    },
+    {
+      "href": "http://127.0.0.1:3000/_next/static/chunks/node_modules_katex_dist_katex_min_0mcg5a-susias.css",
+      "rules": 250
+    },
+    {
+      "href": null,
+      "rules": 4
+    }
+  ],
+  "viewport": {
+    "dpr": 1.0000000298023224,
+    "height": 1000,
+    "scale": 1,
+    "width": 1440
+  }
+}

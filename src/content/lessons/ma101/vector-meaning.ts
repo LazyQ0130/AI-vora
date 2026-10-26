@@ -5,6 +5,11 @@ export const vectorMeaningLesson = mathLesson("MA101-C02-L03",{
   prerequisites:"能区分东、西、南、北，会整数加减并能数方格。不要求 Python、内积、矩阵或向量长度公式。自查：从东移 3 米再向北 2 米，能否只用一个“5”完整说明最终位置变化？",
   learningTime:{reading:[12,18],practice:[15,25],coding:[0,0],basis:"editorial-estimate"},
   objectives:["判断一个实际描述需要标量还是向量，并说明依据","区分整体位移与实际行走路线、路程","通过平移判断两支箭头是否代表同一位移向量"],
+  objectiveDisplay: [
+    { objective: "判断一个实际描述需要标量还是向量，并说明依据", title: "选择标量或向量", description: "判断实际描述需要哪种量，并说明依据。" },
+    { objective: "区分整体位移与实际行走路线、路程", title: "区分位移、路线与路程", description: "分清整体位置变化、行走路径与长度。" },
+    { objective: "通过平移判断两支箭头是否代表同一位移向量", title: "判断位移向量相等", description: "平移两支箭头，比较是否代表同一位移。" },
+  ],
   assessmentMap:[{objective:1,exerciseIds:["quantity-choice"]},{objective:2,exerciseIds:["quantity-choice","same-displacement"]},{objective:3,exerciseIds:["same-displacement","displacement-transfer"]}],
   sections:[
     section("scene","只有一个数，机器人为什么无法执行？",[

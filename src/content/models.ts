@@ -237,6 +237,12 @@ export const lessonSchema = z
     prerequisites: text,
     prerequisiteLinks: z.array(learningLinkSchema).default([]),
     objectives: z.array(text).min(2).max(4),
+    // 展示文案绑定正式目标原文；原文改变后必须重新审核，不能静默沿用。
+    objectiveDisplay: z.array(z.object({
+      objective: text,
+      title: text.max(18),
+      description: text.max(48),
+    })).max(4).optional(),
     sections: z
       .array(
         z.object({
@@ -275,6 +281,11 @@ export const lessonSchema = z
       "资源 ID",
     );
     const blocks = lesson.sections.flatMap((s) => s.blocks);
+    unique((lesson.objectiveDisplay ?? []).map((entry) => entry.objective), "目标展示绑定");
+    for (const entry of lesson.objectiveDisplay ?? []) {
+      if (!lesson.objectives.includes(entry.objective))
+        ctx.addIssue({ code: "custom", message: "目标展示文案必须绑定现行正式目标原文" });
+    }
     unique(lesson.assessmentMap.map((row) => String(row.objective)), "目标映射");
     for (let objective = 1; objective <= lesson.objectives.length; objective++)
       if (!lesson.assessmentMap.some((row) => row.objective === objective))

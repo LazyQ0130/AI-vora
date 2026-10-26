@@ -1,0 +1,85 @@
+[
+  {
+    "check": "keyboard-card-focus",
+    "focusVisible": true,
+    "insideDialog": true,
+    "outline": "rgb(103, 232, 249) solid 2px",
+    "text": "计算练习找出 db 被悄悄换了位置的错误"
+  },
+  {
+    "check": "drawer-keyboard-anchor",
+    "focus": "H3",
+    "hash": "#exercise-sequential",
+    "navBottom": 192.33333587646484,
+    "targetTop": 210.20834350585935,
+    "text": "找出 db 被悄悄换了位置的错误"
+  },
+  {
+    "check": "escape-restores-trigger",
+    "dialog": false,
+    "focus": "本节导航",
+    "tag": "BUTTON"
+  },
+  {
+    "check": "full-objectives-visible",
+    "text": "查看完整目标\n逐样本计算误差、平方与梯度贡献\n完成一次同步参数更新并重新计算损失\n用反例定位归一化和顺序更新错误"
+  },
+  {
+    "check": "optional-section-revealed",
+    "focus": "H2",
+    "hash": "#verification",
+    "open": true,
+    "text": "可选验证：保留完整计算与容差检查"
+  },
+  {
+    "check": "article-outline-navigation",
+    "focus": "H2",
+    "hash": "#setup",
+    "text": "固定实验条件，先算旧损失"
+  },
+  {
+    "check": "hover",
+    "before": {
+      "bg": "rgb(22, 34, 58)",
+      "border": "rgba(134, 153, 192, 0.19)"
+    },
+    "after": {
+      "bg": "rgb(29, 43, 72)",
+      "border": "rgba(155, 158, 242, 0.5)",
+      "hover": true
+    }
+  },
+  {
+    "check": "reduced-motion",
+    "scrollBehavior": "auto",
+    "transition": "1e-05s"
+  },
+  {
+    "check": "scrolled-to-end-unmarked",
+    "text": "已浏览\n100%\n·\n尚未标记读完"
+  },
+  {
+    "check": "manual-completion",
+    "status": "已浏览\n100%\n·\n已手动标记读完"
+  },
+  {
+    "check": "completion-persists-after-reload",
+    "status": "已浏览\n100%\n·\n已手动标记读完"
+  },
+  {
+    "check": "legacy-assessment-title-bookmark-1366",
+    "visible": true
+  },
+  {
+    "check": "drawer-focus-trap-shift-tab",
+    "focus": "先修知识",
+    "inside": true
+  },
+  {
+    "check": "direct-exercise-bookmark",
+    "focus": "H3",
+    "hash": "#exercise-sequential",
+    "text": "找出 db 被悄悄换了位置的错误",
+    "top": 174.21875
+  }
+]

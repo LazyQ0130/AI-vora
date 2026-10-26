@@ -22,6 +22,11 @@ export const whatIsAiLesson = lessonSchema.parse({
     { objective: 2, exerciseIds: ["identify-systems"] },
     { objective: 3, exerciseIds: ["product-review"] },
   ],
+  objectiveDisplay: [
+    { objective: "用自己的话说清 AI 是什么，能帮人做什么", title: "解释 AI 的作用", description: "用自己的话说明它是什么、能做什么。" },
+    { objective: "说清系统接收什么、做什么、给出什么；判断是否用到 AI，或说明还缺什么信息", title: "分析系统与判断依据", description: "说清输入、任务与输出；判断是否用到 AI，或指出缺少的信息。" },
+    { objective: "举例说明 AI 会在哪里出错，想出可以实际核查的办法", title: "识别错误并核查", description: "举出出错的例子，设计可执行的核查办法。" },
+  ],
   sections: [
     {
       id: "mail-task", title: "收件箱里的一个小麻烦", navGroup: "mail", navLabel: "邮件问题",

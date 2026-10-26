@@ -96,7 +96,7 @@ export function Reader({
     const reveal = () => {
       let hash = window.location.hash.slice(1);
       try { hash = decodeURIComponent(hash); } catch { return; }
-      if (hash === "assessment-title" && window.matchMedia("(max-width: 1350px)").matches) {
+      if (hash === "assessment-title" && window.matchMedia("(max-width: 1399px)").matches) {
         setArticleOpen(true);
         return;
       }
@@ -242,6 +242,7 @@ export function Reader({
           </Drawer>
           <Drawer
             title="本节导航"
+            className="reader-learning-drawer"
             open={articleOpen}
             onOpenChange={setArticleOpen}
             onCloseAutoFocus={(event) => {
@@ -258,8 +259,10 @@ export function Reader({
               </button>
             }
           >
-            <ArticleContents lesson={lesson} active={active} collapsible onNavigate={(id) => { pendingSection.current = id; setArticleOpen(false); }} />
-            <LearningPanel lesson={lesson} progress={displayProgress} completed={completed} onNavigate={(id) => { pendingSection.current = id; setArticleOpen(false); }} />
+            <div className="reader-drawer-scroll">
+              <ArticleContents lesson={lesson} active={active} collapsible onNavigate={(id) => { pendingSection.current = id; setArticleOpen(false); }} />
+              <LearningPanel lesson={lesson} progress={displayProgress} completed={completed} onNavigate={(id) => { pendingSection.current = id; setArticleOpen(false); }} />
+            </div>
           </Drawer>
         </div>
         <header className="reader-heading">

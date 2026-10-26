@@ -1,6 +1,6 @@
 "use client";
 import type { Lesson } from "@/content/models";
-import { ListTree } from "lucide-react";
+import { ChevronDown, ListTree } from "lucide-react";
 export function ArticleContents({ lesson, active, onNavigate, collapsible = false }: {
   lesson: Lesson; active: string; onNavigate: (id: string) => void; collapsible?: boolean;
 }) {
@@ -8,7 +8,7 @@ export function ArticleContents({ lesson, active, onNavigate, collapsible = fals
       {section.title}{section.tier !== "core" && !section.title.startsWith("可选") && <small>可选</small>}
     </a>)}</nav>;
   if (collapsible) return <details className="reader-outline-panel article-contents">
-    <summary><ListTree size={16} />文章目录</summary>
+    <summary><ListTree size={16} aria-hidden="true" />文章目录<span className="article-contents-count">{lesson.sections.length} 节点</span><ChevronDown size={14} aria-hidden="true" /></summary>
     {contents}
   </details>;
   return <div className="reader-outline-panel article-contents">

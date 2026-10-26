@@ -20,6 +20,11 @@ export const manualUpdateLesson = defineMlLesson("ML201-C04-L04", {
     "完成一次同步参数更新并重新计算损失",
     "用反例定位归一化和顺序更新错误",
   ],
+  objectiveDisplay: [
+    { objective: "逐样本计算误差、平方与梯度贡献", title: "逐样本计算", description: "算出误差、误差平方与梯度贡献。" },
+    { objective: "完成一次同步参数更新并重新计算损失", title: "同步更新并复核", description: "完成一次参数更新，重新计算损失。" },
+    { objective: "用反例定位归一化和顺序更新错误", title: "用反例定位错误", description: "检查归一化与顺序更新的问题。" },
+  ],
   sections: [
     {
       id: "setup",

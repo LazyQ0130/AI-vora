@@ -7,6 +7,7 @@ export function lessonExerciseLinks(lesson: Lesson) {
     .map((block) => ({
       id: block.id,
       title: block.title,
+      kind: block.kind,
       tier: lesson.optionalLesson && section.tier === "core" ? "advanced" : section.tier,
       objectives: lesson.assessmentMap.filter((row) => row.exerciseIds.includes(block.id)).map((row) => row.objective),
     })));
