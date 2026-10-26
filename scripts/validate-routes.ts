@@ -32,6 +32,8 @@ const paths: [string, number][] = [
   ["/learn/AI000/AI000-C01-L02", 404],
   ["/learn/AI000/AI000-C01-L03", 404],
   ["/learn/PY101/AI000-C01-L01", 404],
+  ["/learn/AI000/AI000-C02-L02", 404],
+  ["/learn/PY101/AI000-C02-L01", 404],
 ];
 const results = await Promise.all(
   paths.map(async ([path, expected]) => {

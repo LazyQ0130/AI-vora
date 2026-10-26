@@ -1,0 +1,326 @@
+{
+  "checkedAt": "2026-10-26T16:06:01.590Z",
+  "base": "http://127.0.0.1:3006",
+  "browser": "Chromium in-app browser",
+  "viewports": [
+    [
+      1440,
+      1000
+    ],
+    [
+      1024,
+      900
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      320,
+      900
+    ]
+  ],
+  "note": "同一 Chromium 视口模拟、本机独立来源的工具验收，不是学生试学；未覆盖实体设备、多浏览器或读屏。测试媒体偏好及临时视口已恢复。",
+  "observations": [
+    {
+      "check": "desktop-first-screen",
+      "size": [
+        1440,
+        1000
+      ],
+      "result": {
+        "bodyFont": "16px",
+        "h1": "AI、机器学习与深度学习，到底是什么关系？",
+        "overflow": false,
+        "panelVisible": true,
+        "width": 1440
+      }
+    },
+    {
+      "check": "hierarchy-desktop",
+      "nested": true
+    },
+    {
+      "check": "desktop-exercise-link-after-scroll",
+      "result": {
+        "focus": "画出属于自己的 AI 技术关系图",
+        "hash": "#exercise-draw-method-map",
+        "top": 232.17709350585935
+      }
+    },
+    {
+      "check": "desktop-method-task-figure",
+      "result": {
+        "columns": "331px 331px",
+        "overflow": false
+      }
+    },
+    {
+      "check": "exercise-disclosures",
+      "result": [
+        {
+          "id": "exercise-draw-method-map",
+          "open": 3
+        },
+        {
+          "id": "exercise-classify-new-systems",
+          "open": 3
+        }
+      ]
+    },
+    {
+      "check": "refresh-clears-transient-input-and-disclosures",
+      "result": {
+        "hash": "#exercise-draw-method-map",
+        "inputs": [
+          "",
+          ""
+        ],
+        "open": 0
+      }
+    },
+    {
+      "check": "adjacent-navigation-roundtrip-and-intro-progress",
+      "result": {
+        "lesson": "AI、机器学习与深度学习，到底是什么关系？",
+        "introRecord": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C01-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793030236743}"
+      }
+    },
+    {
+      "check": "independent-progress-before-mark",
+      "result": {
+        "result": {
+          "type": "string",
+          "value": "{\"aivora:learning:v2:AI000:AI000-C02-L01:r1\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"AI000\\\",\\\"lessonId\\\":\\\"AI000-C02-L01\\\",\\\"contentVersion\\\":1,\\\"percent\\\":100,\\\"completed\\\":false,\\\"section\\\":\\\"generation\\\",\\\"updatedAt\\\":1793030237288}\",\"aivora:learning:v2:AI000:AI000-C01-L01:r1\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"AI000\\\",\\\"lessonId\\\":\\\"AI000-C01-L01\\\",\\\"contentVersion\\\":1,\\\"percent\\\":100,\\\"completed\\\":true,\\\"section\\\":\\\"takeaways\\\",\\\"updatedAt\\\":1793030236743}\"}"
+        }
+      }
+    },
+    {
+      "check": "manual-complete-refresh-and-intro-preserved",
+      "result": {
+        "introUnchanged": true,
+        "records": {
+          "aivora:learning:v2:AI000:AI000-C02-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C02-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793030271303}",
+          "aivora:learning:v2:AI000:AI000-C01-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C01-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793030236743}"
+        }
+      }
+    },
+    {
+      "check": "tablet-layout",
+      "size": [
+        768,
+        1024
+      ],
+      "result": {
+        "figures": [
+          {
+            "scroll": 650,
+            "width": 650
+          },
+          {
+            "scroll": 650,
+            "width": 650
+          }
+        ],
+        "grid": "295px 295px",
+        "overflow": false,
+        "width": 768
+      }
+    },
+    {
+      "check": "tablet-drawer-exercise-target",
+      "result": {
+        "dialog": false,
+        "focus": "给新系统分类，写出能确定与不能确定的部分",
+        "hash": "#exercise-classify-new-systems",
+        "top": 278.15625
+      }
+    },
+    {
+      "check": "mobile-objectives-prerequisites",
+      "result": {
+        "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n7 节点\n本节学习目标\n3 项\n01\n解释三层包含关系\n\n画出 AI、ML、DL 的范围，并用例子说明边界。\n\n02\n分清方法与生成任务\n\n说明生成式 AI 与深度学习怎样联系。\n\n03\n根据证据给系统归类\n\n说清方法、任务和仍缺少的信息。\n\n查看完整目标\n用自己的话解释 AI、机器学习和深度学习的包含关系，并举例说明为什么不能反过来等同\n区分生成内容的任务与实现方法，说明现代生成式 AI 与深度学习的联系\n根据新系统给出的技术信息合理归类，说明任务与判断依据；信息不足时指出缺口\n核心练习\n2 道\n理解练习\n画出属于自己的 AI 技术关系图\n迁移练习\n给新系统分类，写出能确定与不能确定的部分\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n100%\n·\n已手动标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n已读完 1.1，能比较人写规则与从例子学习两种办法，并能指出系统的输入、任务和输出。无需编程、高等数学或神经网络基础；用纸笔或练习框记录判断即可。\n\n1.1 人工智能究竟是什么？\n\n如果对规则、模型或分类还有疑问，可回看“看到‘免费’就拦下，行得通吗？”一段。",
+        "prerequisite": "/learn/AI000/AI000-C01-L01"
+      }
+    },
+    {
+      "check": "mobile-escape-focus",
+      "result": {
+        "dialog": false,
+        "focus": "本节导航"
+      }
+    },
+    {
+      "check": "mobile-article-contents-target",
+      "result": {
+        "dialog": false,
+        "focus": "三个范围，应该怎样套在一起？",
+        "hash": "#method-map",
+        "top": 234.375
+      }
+    },
+    {
+      "check": "mobile-390-figures",
+      "result": {
+        "columns": "284px",
+        "figures": [
+          {
+            "scroll": 308,
+            "width": 308
+          },
+          {
+            "scroll": 308,
+            "width": 308
+          }
+        ],
+        "fonts": [
+          "18px",
+          "16px",
+          "14px",
+          "18px",
+          "16px",
+          "14px",
+          "18px",
+          "16px",
+          "14px",
+          "14px",
+          "16px",
+          "18px",
+          "18px",
+          "14px",
+          "14px"
+        ],
+        "overflow": false,
+        "width": 390
+      }
+    },
+    {
+      "check": "mobile-chapter-directory",
+      "result": {
+        "text": "课程章节与独立课时\n\n课程章节与独立课时，按 Escape 关闭面板。\n\n返回课程详情\nCOURSE CONTENTS\n人工智能导论与技术地图\n\n7 章 · 2 节核心课已制作\n\n已制作课时阅读比例\n100%\n2 / 2 节已标记读完 · 仅当前浏览器\n筹备、可选与旧版课时不计入比例；已读不代表掌握。\n第 1 章：\n人工智能是什么：能力、边界与常见误区\n第 2 章：\nAI、机器学习、深度学习与生成式 AI 的包含关系\n2.1\nAI、机器学习与深度学习，到底是什么关系？\n第 3 章：\n监督学习、无监督学习、自监督学习与强化学习\n第 4 章：\n数据、参数、模型、训练、验证、测试与推理\n第 5 章：\n主要技术方向：NLP、LLM、CV、多模态、RL、生成式模型\n第 6 章：\nAI 风险与责任：隐私、偏差、版权、幻觉与误用\n第 7 章：\n如何阅读课程先修图与选择学习路径",
+        "currentHref": "/learn/AI000/AI000-C02-L01"
+      }
+    },
+    {
+      "check": "mobile-exercise-target",
+      "result": {
+        "dialog": false,
+        "focus": "给新系统分类，写出能确定与不能确定的部分",
+        "hash": "#exercise-classify-new-systems",
+        "top": 260.0833435058594
+      }
+    },
+    {
+      "check": "mobile-exercise-disclosures",
+      "result": {
+        "open": 6,
+        "overflow": false
+      }
+    },
+    {
+      "check": "small-phone-320",
+      "result": {
+        "figures": [
+          {
+            "scroll": 254,
+            "width": 254
+          },
+          {
+            "scroll": 254,
+            "width": 254
+          }
+        ],
+        "fonts": [
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px"
+        ],
+        "overflow": false,
+        "width": 320
+      }
+    },
+    {
+      "check": "small-desktop-1024",
+      "result": {
+        "columns": "295px 295px",
+        "figures": [
+          {
+            "scroll": 650,
+            "width": 650
+          },
+          {
+            "scroll": 650,
+            "width": 650
+          }
+        ],
+        "overflow": false,
+        "width": 1024
+      }
+    },
+    {
+      "check": "browser-console",
+      "result": []
+    },
+    {
+      "check": "default-motion-exercise-focus-after-settling",
+      "result": {
+        "focus": "画出属于自己的 AI 技术关系图",
+        "hash": "#exercise-draw-method-map",
+        "top": 232.17709350585935
+      }
+    },
+    {
+      "check": "resume-reading-after-reopening-without-hash",
+      "before": {
+        "version": 2,
+        "courseId": "AI000",
+        "lessonId": "AI000-C02-L01",
+        "contentVersion": 1,
+        "percent": 100,
+        "completed": true,
+        "section": "practice",
+        "updatedAt": 1793030405383
+      },
+      "result": {
+        "focus": "自己画一张图，再给新系统归类",
+        "hash": "#practice"
+      }
+    },
+    {
+      "check": "final-build-refresh-after-concept-edit",
+      "result": {
+        "nested": true,
+        "overflow": false,
+        "updatedParagraph": true
+      },
+      "consoleWarningsAndErrors": []
+    }
+  ]
+}

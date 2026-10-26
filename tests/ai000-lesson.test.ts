@@ -14,17 +14,17 @@ const resolved = resolveLesson("AI000", "AI000-C01-L01")!;
 const lesson = resolved.lesson;
 const blocks = lesson.sections.flatMap((section) => section.blocks);
 
-test("AI000 只开放 1.1 待审试读，保留七章规划且没有虚构后续路由", () => {
+test("AI000 1.1 保留待审与七章规划，相邻导航由已制作的 2.1 承接", () => {
   assert.equal(resolved.publication.status, "pending-review");
   assert.equal(resolved.publication.access, "preview");
   assert.equal(resolved.publication.reviewEvidence, undefined);
   assert.equal(resolved.course.status, "planned");
   assert.equal(resolved.course.chapters.length, 7);
   const entries = resolved.course.chapters.flatMap((chapter) => chapter.lessons);
-  assert.equal(entries.length, 1);
+  assert.equal(entries.length, 2);
   assert.equal(entries[0].displayNumber, "1.1");
   assert.equal(entries[0].href, "/learn/AI000/AI000-C01-L01");
-  assert.equal(getAdjacentLessons(resolved.course, lesson.id).next, undefined);
+  assert.equal(getAdjacentLessons(resolved.course, lesson.id).next?.lessonId, "AI000-C02-L01");
   assert.equal(getAdjacentLessons(resolved.course, lesson.id).previous, undefined);
   assert.equal(resolveLesson("AI000", "AI000-C01-L02"), undefined);
   assert.equal(resolveLesson("AI000", "AI000-C01-L03"), undefined);

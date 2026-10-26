@@ -1,0 +1,13 @@
+
+> aivora-web@0.1.0 build
+> next build
+
+▲ Next.js 16.4.3 (Turbopack)
+✓ Running next.config.ts took 29ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1296ms
+  Running TypeScript ...
+tests/ai000-relationships.test.ts(8,37): error TS2307: Cannot find module '../src/lib/storage' or its corresponding type declarations.
+tests/ai000-relationships.test.ts(9,37): error TS2307: Cannot find module '../src/lib/learning-catalog' or its corresponding type declarations.
+Failed to type check.

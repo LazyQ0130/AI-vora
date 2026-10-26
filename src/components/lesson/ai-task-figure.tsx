@@ -2,6 +2,7 @@ import { useId } from "react";
 import { ArrowRight, ArrowDown, Check, X } from "lucide-react";
 import type { ContentBlock } from "@/content/models";
 import { keywordMailDecision, mailExamples } from "@/content/lessons/ai000/mail-example";
+import { AiRelationshipFigure } from "./ai-relationship-figure";
 
 type FigureBlock = Extract<ContentBlock, { type: "ai-task-figure" }>;
 
@@ -14,6 +15,8 @@ function FlowArrow() {
 
 export function AiTaskFigure({ block }: { block: FigureBlock }) {
   const id = useId();
+  if (block.kind === "method-hierarchy" || block.kind === "method-and-task")
+    return <AiRelationshipFigure block={block} />;
   return <figure className="ai-figure" aria-labelledby={`${id}-caption`} aria-describedby={`${id}-description`}>
     <p id={`${id}-description`} className="ai-srOnly">{block.alt}</p>
     {block.kind === "mail-flow" ? <>

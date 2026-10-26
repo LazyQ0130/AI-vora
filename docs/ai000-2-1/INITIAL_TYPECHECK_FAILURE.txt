@@ -1,0 +1,6 @@
+
+> aivora-web@0.1.0 typecheck
+> tsc --noEmit
+
+tests/ai000-relationships.test.ts(8,37): error TS2307: Cannot find module '../src/lib/storage' or its corresponding type declarations.
+tests/ai000-relationships.test.ts(9,37): error TS2307: Cannot find module '../src/lib/learning-catalog' or its corresponding type declarations.

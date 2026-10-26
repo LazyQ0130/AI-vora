@@ -43,6 +43,25 @@
 .ai-reason { margin: 8px 0 0; }
 .ai-figure figcaption { margin-top: 18px; color: #b9c4dd; font-size: 14px; line-height: 1.8; }
 .ai-srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.ai-relationship { overflow-wrap: anywhere; }
+.ai-nested { min-width: 0; padding: 20px; border: 2px solid #747dcc; border-radius: 14px; background: #1a2140; }
+.ai-nested > strong { display: block; font-size: 18px; line-height: 1.6; }
+.ai-nested > p { font-size: 16px; line-height: 1.8; margin: 6px 0 12px; color: #d0d8ed; }
+.ai-scope-example { font-size: 14px; line-height: 1.8; color: #d0d8ed; }
+.ai-nested > .ai-nested { margin-top: 18px; }
+.ai-scope-ml { border-color: #4eafb9; background: #12313e; }
+.ai-scope-dl { border-color: #b088e9; background: #302449; }
+.ai-compare-premise { font-size: 16px; line-height: 1.8; margin: 0 0 18px; color: #d9ddff; }
+.ai-method-tasks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.ai-task-case { min-width: 0; padding: 18px; border: 1px solid #4eafb9; border-radius: 12px; background: #12313e; }
+.ai-task-case > strong { font-size: 18px; line-height: 1.6; }
+.ai-task-case dl { display: grid; gap: 16px; margin: 18px 0 0; }
+.ai-task-case dt { font-size: 14px; color: #c7d2ec; margin-bottom: 6px; }
+.ai-task-case dd { margin: 0; font-size: 16px; line-height: 1.8; }
+.ai-task-case dd span { display: block; font-size: 14px; line-height: 1.8; color: #c7d2ec; }
+.ai-task-result { padding-block: 14px; border-block: 1px dashed #749097; }
+.ai-generating-case { border-color: #b088e9; background: #302449; }
+.ai-compare-reading { font-size: 14px; line-height: 1.8; color: #c7d2ec; margin: 18px 0 0; }
 @media (max-width: 767px) {
   .ai-figure { padding: 16px; }
   .ai-flow { grid-template-columns: minmax(0, 1fr); gap: 8px; }
@@ -50,4 +69,8 @@
   .ai-down { display: block; }
   .ai-outcomes { grid-template-columns: minmax(0, 1fr); }
   .ai-mailTitle { min-height: 0; }
+  .ai-relationship { padding: 12px; }
+  .ai-nested { padding: 12px; }
+  .ai-nested > .ai-nested { margin-top: 14px; }
+  .ai-method-tasks { grid-template-columns: minmax(0, 1fr); }
 }

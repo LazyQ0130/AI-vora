@@ -19,9 +19,11 @@ assert.equal(keywordMailDecision("你报名的免费讲座明晚开始"), "垃�
 assert.equal(blocks.some((block) => ["math", "code", "downloads", "experiment"].includes(block.type)), false);
 assert.equal(blocks.filter((block) => block.type === "exercise").length, 2);
 assert.equal(course.status, "planned");
-assert.equal(course.chapters.flatMap((chapter) => chapter.lessons).length, 1);
+assert.equal(course.chapters.flatMap((chapter) => chapter.lessons).filter((entry) => entry.href).length,
+  publicationManifest.filter((entry) => entry.courseId === "AI000" && isReadable(entry)).length);
 assert.equal(resolveLesson("AI000", "AI000-C01-L02"), undefined);
-assert.equal(getAdjacentLessons(course, lesson.id).next, undefined);
+const adjacent = getAdjacentLessons(course, lesson.id);
+assert.equal(adjacent.next?.lessonId, resolveLesson("AI000", "AI000-C02-L01")?.lesson.id);
 assert.equal(getAdjacentLessons(course, lesson.id).previous, undefined);
 if (!isReadable(publication)) {
   assert.equal(publication.access, "private");
@@ -32,7 +34,7 @@ const result = {
   checkedAt: new Date().toISOString(),
   lessonId: lesson.id, status: publication.status, access: publication.access,
   readable: isReadable(publication),
-  courseStatus: course.status, next: null, previous: null, futureLessonResolves: false,
+  courseStatus: course.status, next: adjacent.next?.lessonId ?? null, previous: null, futureLessonResolves: false,
   ruleChecks: mailExamples.map((mail) => ({ id: mail.id, subject: mail.subject, givenCategory: mail.expected, ruleOutput: keywordMailDecision(mail.subject), correct: mail.expected === keywordMailDecision(mail.subject) })),
   exercises: blocks.filter((block) => block.type === "exercise").map((block) => ({ id: block.id, hints: block.hints.length, answerSteps: block.solution.length, rubric: block.rubric })),
   note: "规则输出由独立常量预期核对；开放题语义另见审查报告。本脚本不运行学习模型，不代表人工审核或学生试学。",

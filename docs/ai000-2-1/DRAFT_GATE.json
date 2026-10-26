@@ -1,0 +1,50 @@
+{
+  "checkedAt": "2026-10-26T15:50:58.776Z",
+  "unchangedRegisteredLessons": 24,
+  "lessonId": "AI000-C02-L01",
+  "status": "draft",
+  "access": "private",
+  "readable": false,
+  "courseStatus": "planned",
+  "displayNumber": "2.1",
+  "introNext": null,
+  "previous": null,
+  "next": null,
+  "futureLessonResolves": false,
+  "wrongCourseResolves": false,
+  "objectives": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "draw-method-map"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "classify-new-systems"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "classify-new-systems"
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "type": "ai-task-figure",
+      "kind": "method-hierarchy",
+      "alt": "人工智能 AI 是最外层，包含机器学习 ML；机器学习又包含深度学习 DL。AI 内、ML 外的例子是只用人工知识和规则推理的专家系统；ML 内、DL 外是从数据学得的普通决策树；DL 内是用深度神经网络识别猫的模型。所有例子的位置均按题设方法确定，框的大小不代表数量。",
+      "caption": "图一：AI ⊃ ML ⊃ DL。每个内框整体位于外框之中；图中只画本节要比较的三个范围，面积不表示占比。"
+    },
+    {
+      "type": "ai-task-figure",
+      "kind": "method-and-task",
+      "alt": "两个教学构造系统并排比较。左侧接收照片，判断是否有猫，输出类别“有猫”，任务是分类；右侧接收“画一只戴蓝色围巾的猫”，生成新图像内容，任务是图像生成。题设明确二者都使用深度神经网络，因此都属于 AI、ML、DL。相同方法可以承担不同任务，不能只凭输出形式倒推算法。",
+      "caption": "图二：方法相同，任务不同。两侧使用深度神经网络是题设提供的信息，不能只从类别或图片的输出中猜出。"
+    }
+  ],
+  "note": "24篇既有注册稿逐字节摘要一致，包括 AI000 1.1。图与题的概念、答案另由题干重做核对，见审查报告；结构断言不代表人工审稿或试学。"
+}

@@ -12,6 +12,7 @@ import { manualUpdateLesson } from "../content/lessons/ml201/manual-update";
 import { numpyRegressionLesson } from "../content/lessons/ml201/numpy-regression";
 import { maV22Lessons } from "../content/lessons/ma101";
 import { whatIsAiLesson } from "../content/lessons/ai000/what-is-ai";
+import { aiMlDlLesson } from "../content/lessons/ai000/ai-ml-dl";
 import {
   publicationManifest,
   readablePublications,
@@ -27,6 +28,7 @@ import {
 
 const contents: Lesson[] = [
   whatIsAiLesson,
+  aiMlDlLesson,
   ...maV22Lessons,
   regressionTaskLesson,
   linearModelLesson,

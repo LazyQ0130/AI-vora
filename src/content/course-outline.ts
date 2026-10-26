@@ -29,6 +29,9 @@ export const courseOutline = [
   ...chapterSlots("AI000", 1, [
     ["L01", "人工智能究竟是什么？"],
   ]),
+  ...chapterSlots("AI000", 2, [
+    ["L01", "AI、机器学习与深度学习，到底是什么关系？"],
+  ]),
   ...chapterSlots("ML201", 1, [
     ["L01", "什么是机器学习"],
     ["L02", "如何定义预测任务"],
