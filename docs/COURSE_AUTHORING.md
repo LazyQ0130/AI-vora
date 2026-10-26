@@ -1,5 +1,11 @@
 # 静态课程编写与维护
 
+## 与教学编辑规范配合使用
+
+[课程内容编写与编辑规范 V1.0](COURSE_EDITORIAL_STANDARD_V1.md) 负责教学设计、中文表达、事实来源和专业审校；本指南负责现有数据模型、组件、资源、路由、兼容与技术发布。先按编辑规范填写 [课前简报](COURSE_EDITORIAL_STANDARD_V1.md#editorial-brief) 和目标任务映射，再按本指南接入工程。课程体系事实以 `curriculum/` 为准，两份规范均须满足；遇到冲突记录具体条目与处理决定，不默默牺牲教学准确性或技术兼容。
+
+每次单课生产可引用 [分轮工作流](COURSE_PRODUCTION_WORKFLOW.md) 与 [可复制提示词](COURSE_GENERATION_PROMPT.md)。复用 `lessonSchema`、`assessmentMap`、`review:teaching`、发布清单和现有测试；不新建内容系统。结构映射和技术检查通过仅证明相应契约，正式教学审查与目标学生试学单独交接。本轮 MA101 证据与待办见 [编辑审查 V1](MA101_EDITORIAL_REVIEW_V1.md)。
+
 ## 数据边界
 
 原 curriculum/ 的 Markdown、JSON 是 20 门课程、等级、目标、学时、先修、章节与项目的事实来源。教材不能反过来改写这些事实。lib/curriculum 的 Course 是目录适配类型；content/models 的 Course 组合相同事实与结构化 Chapter。每个 Chapter 有稳定 ID、顺序和真实可读课时，不为规划章节伪造课时。
@@ -91,4 +97,4 @@ V2.1 样式集中在 teaching-v2-1.css；既有品牌、动画和 reader.css 保
 
 当前数学 2.2 的一般 n/i、列写法、属性与单位对齐为可选，2.4 的统一倍率反求、共线、复杂位置缩放为可选。原 section/exercise ID、URL、r1 保留；旧哈希进入折叠内容时应自动展开。目标与题目以 TEACHING_V2_3_CONTENT_MATRIX.json 为准，V2.2 规划表是当时的历史版本。
 
-不设强制字数或段落数量目标，不用字符减少推算学习时间收益。review:teaching 输出结构矩阵，review:editing 输出四节前后全文；自动测试只验收技术、数学与兼容契约，教学效果需真实学生试学。详见 TEACHING_V2_3_REVIEW.md。
+不设强制字数或段落数量目标，不用字符减少推算学习时间收益。review:teaching 输出结构矩阵，review:editing 输出四节前后全文；自动测试只验收技术、数学与兼容契约，教学效果需真实学生试学。详见 TEACHING_V2_3_REVIEW.md。本轮之后用 `AIVORA_EVIDENCE_DIR` 另存每轮检查结果，`AIVORA_EDITING_BASELINE` 指定本轮实际改前稿；完整用法与覆盖限制见 [工作流](COURSE_PRODUCTION_WORKFLOW.md)。历史 V2.3 快照不是以后每一轮的改前稿。

@@ -1,0 +1,396 @@
+{
+  "checkedAt": "2026-10-26T06:41:05.583030+00:00",
+  "baselineRevision": "51a03bf1c00440c6deeb66300175389cd2b7238b",
+  "localLinksChecked": 79,
+  "quoteExcerptsMatched": 9,
+  "originalStandardOnlyDocumentedAdaptations": true,
+  "lessonContracts": [
+    {
+      "lessonId": "MA101-C02-L03",
+      "sectionIdsPreserved": 10,
+      "exerciseIdsPreserved": 3,
+      "version": 1,
+      "unchanged": [
+        "objectives",
+        "assessmentMap",
+        "learningTime",
+        "tiers",
+        "formulas",
+        "code",
+        "exercises",
+        "tables",
+        "figures"
+      ]
+    },
+    {
+      "lessonId": "MA101-C02-L04",
+      "sectionIdsPreserved": 10,
+      "exerciseIdsPreserved": 4,
+      "version": 1,
+      "unchanged": [
+        "objectives",
+        "assessmentMap",
+        "learningTime",
+        "tiers",
+        "formulas",
+        "code",
+        "exercises",
+        "tables",
+        "figures"
+      ]
+    },
+    {
+      "lessonId": "MA101-C02-L05",
+      "sectionIdsPreserved": 10,
+      "exerciseIdsPreserved": 3,
+      "version": 1,
+      "unchanged": [
+        "objectives",
+        "assessmentMap",
+        "learningTime",
+        "tiers",
+        "formulas",
+        "code",
+        "exercises",
+        "tables",
+        "figures"
+      ]
+    },
+    {
+      "lessonId": "MA101-C02-L06",
+      "sectionIdsPreserved": 10,
+      "exerciseIdsPreserved": 4,
+      "version": 1,
+      "unchanged": [
+        "objectives",
+        "assessmentMap",
+        "learningTime",
+        "tiers",
+        "formulas",
+        "code",
+        "exercises",
+        "tables",
+        "figures"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "document": "README.md",
+      "target": "docs/COURSE_EDITORIAL_STANDARD_V1.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/COURSE_AUTHORING.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/COURSE_EDITORIAL_STANDARD_V1.md#editorial-brief"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/COURSE_GENERATION_PROMPT.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/COURSE_PRODUCTION_WORKFLOW.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/MA101_EDITORIAL_REVIEW_V1.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/COURSE_AUTHORING.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/TEACHING_V2_3_REVIEW.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/TEACHING_V2_3_AUDIT.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/TEACHING_V2_3_CONTENT_MATRIX.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/TEACHING_V2_3_BROWSER_RESULTS.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/TEACHING_V2_2_REVIEW.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/MA101_V2_2_OUTLINE.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/TEACHING_V2_1_REVIEW.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/TEACHING_V2_1_AUDIT.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/TEACHING_V2_1_PYTHON_RESULTS.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/TEACHING_V2_1_BROWSER_RESULTS.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/TEACHING_V2_ACCEPTANCE.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/TEACHING_V2_PLAN.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/TEACHING_V2_CONTENT_REVIEW.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/TEACHING_V2_PYTHON_RESULTS.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/TEACHING_V2_BROWSER_RESULTS.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/COURSE_ENGINE_ACCEPTANCE.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/FRONTEND_ACCEPTANCE.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/UI_SYSTEM.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/USABILITY_REFINEMENT_V4.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/COURSE_COVERS_V5.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/LEARNER_INTERFACE_V6.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/MA101_EDITORIAL_REVIEW_V1.md"
+    },
+    {
+      "document": "docs/COURSE_AUTHORING.md",
+      "target": "COURSE_EDITORIAL_STANDARD_V1.md"
+    },
+    {
+      "document": "docs/COURSE_AUTHORING.md",
+      "target": "COURSE_EDITORIAL_STANDARD_V1.md#editorial-brief"
+    },
+    {
+      "document": "docs/COURSE_AUTHORING.md",
+      "target": "COURSE_PRODUCTION_WORKFLOW.md"
+    },
+    {
+      "document": "docs/COURSE_AUTHORING.md",
+      "target": "COURSE_GENERATION_PROMPT.md"
+    },
+    {
+      "document": "docs/COURSE_AUTHORING.md",
+      "target": "MA101_EDITORIAL_REVIEW_V1.md"
+    },
+    {
+      "document": "docs/COURSE_AUTHORING.md",
+      "target": "COURSE_PRODUCTION_WORKFLOW.md"
+    },
+    {
+      "document": "docs/COURSE_EDITORIAL_STANDARD_V1.md",
+      "target": "COURSE_PRODUCTION_WORKFLOW.md"
+    },
+    {
+      "document": "docs/COURSE_EDITORIAL_STANDARD_V1.md",
+      "target": "COURSE_GENERATION_PROMPT.md"
+    },
+    {
+      "document": "docs/COURSE_EDITORIAL_STANDARD_V1.md",
+      "target": "COURSE_AUTHORING.md"
+    },
+    {
+      "document": "docs/COURSE_PRODUCTION_WORKFLOW.md",
+      "target": "COURSE_EDITORIAL_STANDARD_V1.md"
+    },
+    {
+      "document": "docs/COURSE_PRODUCTION_WORKFLOW.md",
+      "target": "COURSE_AUTHORING.md"
+    },
+    {
+      "document": "docs/COURSE_PRODUCTION_WORKFLOW.md",
+      "target": "COURSE_GENERATION_PROMPT.md"
+    },
+    {
+      "document": "docs/COURSE_PRODUCTION_WORKFLOW.md",
+      "target": "MA101_EDITORIAL_REVIEW_V1.md"
+    },
+    {
+      "document": "docs/COURSE_PRODUCTION_WORKFLOW.md",
+      "target": "COURSE_EDITORIAL_STANDARD_V1.md#editorial-brief"
+    },
+    {
+      "document": "docs/COURSE_GENERATION_PROMPT.md",
+      "target": "COURSE_EDITORIAL_STANDARD_V1.md#editorial-brief"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "COURSE_EDITORIAL_STANDARD_V1.md"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "COURSE_AUTHORING.md"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "COURSE_PRODUCTION_WORKFLOW.md"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "COURSE_GENERATION_PROMPT.md"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "editorial-v1/TEACHING_V2_3_BEFORE.json"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "TEACHING_V2_3_REVIEW.md"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "editorial-v1/TEACHING_V2_3_COMPARISON.json"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "editorial-v1/TEACHING_V2_3_CONTENT_MATRIX.json"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "../src/content/lessons/ma101/vector-meaning.ts"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "../src/content/lessons/ma101/vector-representation.ts"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "../src/content/lessons/ma101/vector-meaning.ts"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "../src/content/lessons/ma101/vector-addition.ts"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "../src/content/lessons/ma101/vector-scaling.ts"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "../src/content/lessons/ma101/vector-meaning.ts#L22"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "../src/content/lessons/ma101/vector-representation.ts#L24"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "../src/content/lessons/ma101/vector-scaling.ts#L57"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "../src/content/lessons/ma101/vector-representation.ts#L57"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "../src/content/lessons/ma101/vector-addition.ts#L51"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "../src/content/lessons/ma101/vector-scaling.ts#L54"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "../src/content/lessons/ma101/vector-addition.ts#L55"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "../src/content/lessons/ma101/vector-meaning.ts#L42"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "../src/content/lessons/ma101/vector-scaling.ts#L29"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "editorial-v1/TYPECHECK.txt"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "editorial-v1/LINT.txt"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "editorial-v1/TEST_RESULTS.txt"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "editorial-v1/DOWNLOADS.txt"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "editorial-v1/TEACHING_V2_3_PYTHON_RESULTS.json"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "editorial-v1/INDEPENDENT_CHECKS.json"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "editorial-v1/TEACHING_V2_3_MATH_EVIDENCE.json"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "editorial-v1/BUILD.txt"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "editorial-v1/TEACHING_V2_3_ROUTE_RESULTS.json"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "editorial-v1/BROWSER_RESULTS.json"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "editorial-v1/PIPELINE_CONTRACT.json"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "editorial-v1/desktop-components.png"
+    },
+    {
+      "document": "docs/MA101_EDITORIAL_REVIEW_V1.md",
+      "target": "editorial-v1/mobile-scaling-code.png"
+    }
+  ],
+  "note": "File/link/quote and compatibility checks only; not a teaching quality score or human sign-off"
+}

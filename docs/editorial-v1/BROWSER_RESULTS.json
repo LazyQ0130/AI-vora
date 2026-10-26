@@ -1,0 +1,327 @@
+{
+  "checkedAt": "2026-10-26T06:32:35.924Z",
+  "baselineRevision": "51a03bf1c00440c6deeb66300175389cd2b7238b",
+  "base": "http://127.0.0.1:3001",
+  "environment": "Codex in-app Chromium; viewport emulation; no real learner or device trial",
+  "layout": [
+    {
+      "badHashes": [],
+      "changedPassage": true,
+      "clientWidth": 1425,
+      "h1": [
+        "什么是向量？"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 1425,
+      "status": true,
+      "url": "/learn/MA101/MA101-C02-L03#worked",
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      },
+      "label": "desktop 2.1 worked",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "changedPassage": true,
+      "clientWidth": 1425,
+      "h1": [
+        "向量的表示、维度与分量"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 1425,
+      "status": true,
+      "url": "/learn/MA101/MA101-C02-L04#worked",
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      },
+      "label": "desktop 2.2 worked",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "changedPassage": true,
+      "clientWidth": 1425,
+      "h1": [
+        "向量加法：计算方法与几何意义"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 1425,
+      "status": true,
+      "url": "/learn/MA101/MA101-C02-L05#code",
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      },
+      "label": "desktop 2.3 optional code",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "changedPassage": true,
+      "clientWidth": 1425,
+      "h1": [
+        "向量数乘：长度与方向变化"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 1425,
+      "status": true,
+      "url": "/learn/MA101/MA101-C02-L06#diagram",
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      },
+      "label": "desktop 2.4 diagram",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "changedPassage": true,
+      "clientWidth": 753,
+      "h1": [
+        "什么是向量？"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 753,
+      "status": true,
+      "url": "/learn/MA101/MA101-C02-L03",
+      "viewport": {
+        "height": 1024,
+        "width": 768
+      },
+      "label": "tablet MA101-C02-L03",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "changedPassage": true,
+      "clientWidth": 753,
+      "h1": [
+        "向量的表示、维度与分量"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 753,
+      "status": true,
+      "url": "/learn/MA101/MA101-C02-L04",
+      "viewport": {
+        "height": 1024,
+        "width": 768
+      },
+      "label": "tablet MA101-C02-L04",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "changedPassage": true,
+      "clientWidth": 753,
+      "h1": [
+        "向量加法：计算方法与几何意义"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 753,
+      "status": true,
+      "url": "/learn/MA101/MA101-C02-L05",
+      "viewport": {
+        "height": 1024,
+        "width": 768
+      },
+      "label": "tablet MA101-C02-L05",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "changedPassage": true,
+      "clientWidth": 753,
+      "h1": [
+        "向量数乘：长度与方向变化"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 753,
+      "status": true,
+      "url": "/learn/MA101/MA101-C02-L06",
+      "viewport": {
+        "height": 1024,
+        "width": 768
+      },
+      "label": "tablet MA101-C02-L06",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "changedPassage": true,
+      "clientWidth": 375,
+      "h1": [
+        "什么是向量？"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 375,
+      "status": true,
+      "url": "/learn/MA101/MA101-C02-L03",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      },
+      "label": "mobile 2.1",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "changedPassage": true,
+      "clientWidth": 375,
+      "h1": [
+        "向量的表示、维度与分量"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 375,
+      "status": true,
+      "url": "/learn/MA101/MA101-C02-L04",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      },
+      "label": "mobile 2.2 course drawer navigation",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "changedPassage": true,
+      "clientWidth": 375,
+      "h1": [
+        "向量加法：计算方法与几何意义"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 375,
+      "status": true,
+      "url": "/learn/MA101/MA101-C02-L05",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      },
+      "label": "mobile 2.3 adjacent lesson",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "changedPassage": true,
+      "clientWidth": 375,
+      "h1": [
+        "向量数乘：长度与方向变化"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 375,
+      "status": true,
+      "url": "/learn/MA101/MA101-C02-L06",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      },
+      "label": "mobile 2.4 adjacent lesson",
+      "passed": true
+    }
+  ],
+  "interactions": [
+    {
+      "test": "desktop course navigation 2.1 -> 2.2 -> 2.3 -> 2.4 and within-article worked/code/diagram links",
+      "passed": true
+    },
+    {
+      "test": "2.3 #code opens verification and displays local environment and input prediction task",
+      "passed": true
+    },
+    {
+      "test": "mobile article drawer worked link closes drawer and reaches #worked",
+      "passed": true
+    },
+    {
+      "test": "mobile Escape closes article drawer and restores trigger focus",
+      "actual": {
+        "dialogs": 0,
+        "focusText": "文章目录"
+      },
+      "passed": true
+    },
+    {
+      "test": "mobile #code automatically expands verification; actual -1 diagram and -2 code comparison visible",
+      "actual": {
+        "clientWidth": 375,
+        "codeOpen": true,
+        "hasFactorComparison": true,
+        "scrollWidth": 375
+      },
+      "passed": true
+    },
+    {
+      "test": "copy optional scaling code without line numbers",
+      "actual": "u = [3, 2]\nc = -2\nresult = [c * u[0], c * u[1]]\nprint(result)\n",
+      "passed": true,
+      "initialRead": "",
+      "note": "Initial clipboard read was empty before asynchronous write settled; the subsequent copy and read confirmed exact source text."
+    },
+    {
+      "test": "mobile keyboard Enter opens two hints and reference solution/rubric",
+      "actual": {
+        "open": [
+          true,
+          true,
+          true
+        ],
+        "text": "理解练习 · 自主核对解释两份计算记录对 u=(3,2)，甲说 2u=(5,4)，乙说 2u=(6,2)。分别指出他们做了什么运算，并给出正确结果。另有非零向量 b，已知长度为 5 米，求 −2b 的长度并说明方向。先记录你的思路或计算输入仅用于当前页面思考，不自动评分，也不改变阅读完成标记。提示 1把数乘定义写成 (2×3,2×2)。提示 2长度使用 |−2|，方向另看倍数的正负。参考解答与自查标准甲给两个分量各加 2；乙只把第一分量乘 2。正确结果是 (6,4)。|−2|=2，−2b 长 5×2=10 米，与 b 方向相反。检查自己的解答分辨两类运算错误同一倍数作用于两项长度与方向解释正确"
+      },
+      "passed": true
+    },
+    {
+      "test": "existing optional exercise hash expands application",
+      "actual": {
+        "applicationOpen": true,
+        "exerciseExists": true,
+        "hash": "#exercise-one-factor"
+      },
+      "passed": true
+    },
+    {
+      "test": "refresh preserves optional hash and offers reading restore link",
+      "actual": {
+        "applicationOpen": true,
+        "hash": "#exercise-one-factor",
+        "restoreLink": [
+          "#application"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test": "mobile course drawer navigation retains 2.1/2.2 numbering and planned lessons without links",
+      "passed": true
+    },
+    {
+      "test": "mobile adjacent navigation 2.2 -> 2.3 -> 2.4",
+      "passed": true
+    }
+  ],
+  "console": [],
+  "screenshots": [
+    "desktop-components.png",
+    "mobile-scaling-code.png"
+  ],
+  "limitations": [
+    "One in-app Chromium engine; viewport simulation, not physical devices or screen readers.",
+    "No real human content sign-off or learner trial.",
+    "DOM inspection was adjusted to the read-only evaluation scope; an initially early clipboard read was rechecked after copy completed.",
+    "No synthetic completion records created; existing progress compatibility also covered by the 52 TS tests."
+  ],
+  "passed": true
+}

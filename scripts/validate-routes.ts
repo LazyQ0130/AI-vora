@@ -1,4 +1,5 @@
 import { writeFile } from "node:fs/promises";
+import { evidencePath } from "./evidence-path";
 import { courses } from "../src/lib/curriculum";
 import { getLearningCourse } from "../src/lib/course-engine";
 import {
@@ -46,7 +47,7 @@ const results = await Promise.all(
   }),
 );
 await writeFile(
-  "docs/TEACHING_V2_3_ROUTE_RESULTS.json",
+  evidencePath("TEACHING_V2_3_ROUTE_RESULTS.json"),
   JSON.stringify(
     { checkedAt: new Date().toISOString(), base, results },
     null,

@@ -2,6 +2,12 @@
 
 可运行、可扩展的静态课程学习系统。课程事实来自课程体系 V1.0 的原始 JSON / Markdown，20 门课程与对应项目仍为规划。当前提供 17 节现行试读教材（16 节核心与 1 节可选进阶），并保留 6 节旧版试读，共用同一个阅读器，均已技术校验、待人工内容审核。Aivora 是品牌工作名，域名与商标尚未核验。
 
+## 编写课程从这里开始
+
+先读 [课程内容编写与编辑规范 V1.0](docs/COURSE_EDITORIAL_STANDARD_V1.md)，确定“教谁、教什么、怎么讲、怎样审”；再按 [工程编写指南](docs/COURSE_AUTHORING.md) 接入模型、组件、资源、路由并完成技术验收。课程事实以 `curriculum/` 为准，教学规范与工程规范均须满足，不能以测试通过代替专业内容审核。
+
+可直接复制 [课前编辑简报模板](docs/COURSE_EDITORIAL_STANDARD_V1.md#editorial-brief) 和 [单课生成/精修提示词](docs/COURSE_GENERATION_PROMPT.md)，按 [生产与审校工作流](docs/COURSE_PRODUCTION_WORKFLOW.md) 分轮留证、校验和交接。当前 MA101 2.1–2.4 的增量审读、句式前后对照及待人工工作见 [编辑审查 V1](docs/MA101_EDITORIAL_REVIEW_V1.md)；V2.3 报告保留为此前修订的证据。
+
 ## 启动与检查
 
 要求 Node.js 20.9+、npm；本机实测 Node.js 24.16.0 / npm 11.13.0。以 package-lock.json 为可复现安装依据。
@@ -68,7 +74,7 @@ Next.js 16.4.3（App Router）、React 19.3.1、TypeScript 5.9.3 strict、Tailwi
 | /projects | 原始 project 字段衍生的规划项目 |
 | 未知课程、课时或错误课程归属 | 品牌化 404 |
 
-课程编码仅用于稳定数据键和地址。课程目录统一为“第 n 章 → n.m 独立课时”；文章内知识点移至右栏或移动端文章抽屉，正文仍可使用 n.m.k 编号，展示编号与内部 ID 分离。无真实登录、支付、数据库、后台 CMS、视频、AI 助手、运行时 AI API 或在线 Python 服务，不虚构学员、评价和课程上线数据。
+课程编码仅用于稳定数据键和地址。课程目录统一为“第 n 章 → n.m 独立课时”；文章内知识点移至右栏或移动端文章抽屉，正文 H1/H2/H3 与文章目录使用不编号的自然标题，展示编号与内部 ID 分离。无真实登录、支付、数据库、后台 CMS、视频、AI 助手、运行时 AI API 或在线 Python 服务，不虚构学员、评价和课程上线数据。
 
 ## 课程引擎与扩展
 
@@ -116,7 +122,7 @@ V2.2 历史交付：[独立课时与目录报告](docs/TEACHING_V2_2_REVIEW.md)�
 
 上一轮记录：[教材 V2 与分层目录验收](docs/TEACHING_V2_ACCEPTANCE.md)、[分阶段计划](docs/TEACHING_V2_PLAN.md)、[逐节质量与来源审查](docs/TEACHING_V2_CONTENT_REVIEW.md)、[Python 执行证据](docs/TEACHING_V2_PYTHON_RESULTS.json)、[真实浏览器验收](docs/TEACHING_V2_BROWSER_RESULTS.json)。
 
-历史记录：[通用课程引擎](docs/COURSE_ENGINE_ACCEPTANCE.md)、[前端基础验收](docs/FRONTEND_ACCEPTANCE.md)、[设计系统](docs/UI_SYSTEM.md)、[V4 可用性](docs/USABILITY_REFINEMENT_V4.md)、[V5 独立封面](docs/COURSE_COVERS_V5.md)、[V6 学员界面](docs/LEARNER_INTERFACE_V6.md)。旧报告描述的是当时版本，以最新 V2.3 报告为当前状态。
+历史记录：[通用课程引擎](docs/COURSE_ENGINE_ACCEPTANCE.md)、[前端基础验收](docs/FRONTEND_ACCEPTANCE.md)、[设计系统](docs/UI_SYSTEM.md)、[V4 可用性](docs/USABILITY_REFINEMENT_V4.md)、[V5 独立封面](docs/COURSE_COVERS_V5.md)、[V6 学员界面](docs/LEARNER_INTERFACE_V6.md)。旧报告描述的是当时版本，MA101 当前精修状态以 [编辑审查 V1](docs/MA101_EDITORIAL_REVIEW_V1.md) 为准，V2.3 的分层与导航约定继续有效。
 
 仍需后续专业人工审校、真实教学试学和更多课程内容生产。本轮没有将技术校验或生产构建当作正式教材发布、浏览器验收或真实用户测试。
 

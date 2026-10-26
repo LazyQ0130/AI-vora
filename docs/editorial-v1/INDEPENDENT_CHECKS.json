@@ -1,0 +1,117 @@
+{
+  "checkedAt": "2026-10-26T06:38:36.471190+00:00",
+  "method": "Separate arithmetic from editorial givens; no vector-teaching.ts import; no learning effectiveness claim",
+  "checks": [
+    {
+      "name": "E02: keep second component unchanged",
+      "actual": [
+        0,
+        2
+      ],
+      "expected": [
+        0,
+        2
+      ],
+      "method": "Copy u=(3,2), assign only index 0 to zero; second component remains 2, different from w=(0,4)",
+      "passed": true
+    },
+    {
+      "name": "E05: changed addition input",
+      "actual": [
+        4,
+        1
+      ],
+      "expected": [
+        4,
+        1
+      ],
+      "method": "Recompute directions from new input without TS helpers",
+      "passed": true
+    },
+    {
+      "name": "E03: diagram and code squared lengths",
+      "actual": [
+        13,
+        52
+      ],
+      "expected": [
+        13,
+        52
+      ],
+      "method": "Pythagorean squared lengths give ratio 4, so length ratio 2; signs oppose positive u",
+      "passed": true
+    },
+    {
+      "name": "E06: proposed trial ((2, -1), (4, 2))",
+      "actual": [
+        2,
+        3
+      ],
+      "expected": [
+        2,
+        3
+      ],
+      "method": "Endpoint minus own start; proposed task, no student trial",
+      "passed": true
+    },
+    {
+      "name": "E06: proposed trial ((-1, 0), (1, 3))",
+      "actual": [
+        2,
+        3
+      ],
+      "expected": [
+        2,
+        3
+      ],
+      "method": "Endpoint minus own start; proposed task, no student trial",
+      "passed": true
+    },
+    {
+      "name": "E06: proposed trial ((4, 2), (2, -1))",
+      "actual": [
+        -2,
+        -3
+      ],
+      "expected": [
+        -2,
+        -3
+      ],
+      "method": "Endpoint minus own start; proposed task, no student trial",
+      "passed": true
+    },
+    {
+      "name": "Core addition with reordered centimetres",
+      "actual": [
+        "-1",
+        "3"
+      ],
+      "expected": [
+        -1,
+        3
+      ],
+      "method": "Reorder north/east to east/north, convert cm to m before adding",
+      "passed": true
+    },
+    {
+      "name": "Fractional negative scaling",
+      "actual": [
+        "-1",
+        "1/2"
+      ],
+      "expected": [
+        "-1",
+        "1/2"
+      ],
+      "method": "Exact rational arithmetic for a=(2,-1)",
+      "passed": true
+    },
+    {
+      "name": "Known length under negative factor",
+      "actual": "10",
+      "expected": 10,
+      "method": "Absolute factor times known nonnegative length",
+      "passed": true
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import { writeFile } from "node:fs/promises";
+import { evidencePath } from "./evidence-path";
 import { lessonRegistry } from "../src/lib/course-engine";
 import { publicationManifest, lessonHref } from "../src/content/publication-manifest";
 import { lessonSchema } from "../src/content/models";
@@ -25,12 +26,12 @@ const lessons = [...lessonRegistry.values()].map((lesson) => {
     })),
   };
 });
-await writeFile("docs/TEACHING_V2_3_CONTENT_MATRIX.json", JSON.stringify({
+await writeFile(evidencePath("TEACHING_V2_3_CONTENT_MATRIX.json"), JSON.stringify({
   checkedAt: new Date().toISOString(),
   note: "结构覆盖与编辑估计快照；映射通过不证明题目效度或独立自学效果，需人工与目标学生验证。",
   lessons,
 }, null, 2)+"\n");
-await writeFile("docs/TEACHING_V2_3_MATH_EVIDENCE.json",JSON.stringify({
+await writeFile(evidencePath("TEACHING_V2_3_MATH_EVIDENCE.json"),JSON.stringify({
   note:"图解实际使用的数值与坐标比例；独立核验见 tests/test_math_v2_2.py、test_teaching_v2_3.py 与 TS 测试，不代表学生试学。",
   u:teachingU,v:teachingV,sum:add2(teachingU,teachingV),
   translatedDisplacement:displacement2([1,1],[4,3]),

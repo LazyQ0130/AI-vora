@@ -1,0 +1,19 @@
+
+> aivora-web@0.1.0 review:editing
+> tsx scripts/review-v2-3.ts --baseline
+
+node:internal/fs/promises:640
+  return new FileHandle(await PromisePrototypeThen(
+                        ^
+
+Error: EEXIST: file already exists, open 'C:\Users\QYF\Desktop\Aivora-Web\docs\editorial-v1\TEACHING_V2_3_BEFORE.json'
+    at async open (node:internal/fs/promises:640:25)
+    at async writeFile (node:internal/fs/promises:1257:14)
+    at async <anonymous> (C:\Users\QYF\Desktop\Aivora-Web\scripts\review-v2-3.ts:11:3) {
+  errno: -4075,
+  code: 'EEXIST',
+  syscall: 'open',
+  path: 'C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\editorial-v1\\TEACHING_V2_3_BEFORE.json'
+}
+
+Node.js v24.16.0

@@ -1,5 +1,6 @@
 import { spawnSync } from "node:child_process";
 import { writeFile } from "node:fs/promises";
+import { evidencePath } from "./evidence-path";
 import { lessonRegistry } from "../src/lib/course-engine";
 import { corePrograms, regressionCoreCode } from "../src/content/resources/core-programs";
 import { programs, gradientDescentCode } from "../src/content/resources/programs";
@@ -84,10 +85,11 @@ const report = {
   trainingComparison,
   note: "技术校验通过；不代表人工内容审核、试学或正式发布。代码来自仓库静态教材，仅开发阶段执行。",
 };
+const reportPath = evidencePath("TEACHING_V2_3_PYTHON_RESULTS.json");
 await writeFile(
-  "docs/TEACHING_V2_3_PYTHON_RESULTS.json",
+  reportPath,
   JSON.stringify(report, null, 2) + "\n",
 );
 console.log(
-  `Python 单元测试通过，${examples.length} 个网页代码块全部实际执行通过，11 组核心/完整版一致。证据：docs/TEACHING_V2_3_PYTHON_RESULTS.json`,
+  `Python 单元测试通过，${examples.length} 个网页代码块全部实际执行通过，11 组核心/完整版一致。证据：${reportPath}`,
 );
