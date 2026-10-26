@@ -1,0 +1,1021 @@
+{
+  "checkedAt": "2026-10-26T15:01:10.761Z",
+  "base": "http://127.0.0.1:3004",
+  "viewports": [
+    "1440x1000",
+    "768x1024",
+    "390x844"
+  ],
+  "records": [
+    {
+      "label": "AI000 mobile initial",
+      "coreLinks": [
+        {
+          "hash": "#exercise-identify-systems",
+          "title": "哪些系统涉及 AI？还缺什么证据？"
+        },
+        {
+          "hash": "#exercise-product-review",
+          "title": "给商品照片分类，怎样使用结果？"
+        }
+      ],
+      "firstParagraphTop": 782.4375,
+      "focus": "跳到主要内容Aivora系统化 AI 技术学习平台首页课程体系学习路径实践项目探索知识Ctrl K学习中心开始试读课程体系人工智能导论与技术地图第 1 章1.1返回课程详情COUR",
+      "goals": [
+        "用自己的话说清 AI 是什么，能帮人做什么",
+        "说清系统接收什么、做什么、给出什么；判断是否用到 AI，或说明还缺什么信息",
+        "举例说明 AI 会在哪里出错，想出可以实际核查的办法"
+      ],
+      "hash": "",
+      "height": 844,
+      "mainGoals": 0,
+      "nav": [
+        "邮件问题"
+      ],
+      "overflow": false,
+      "prerequisitesOpen": false,
+      "rightOutline": 0,
+      "rightVisible": false,
+      "url": "http://127.0.0.1:3004/learn/AI000/AI000-C01-L01",
+      "width": 390
+    },
+    {
+      "label": "AI mobile panel",
+      "articleAtTop": 92,
+      "articleCollapsed": true,
+      "drawer": true,
+      "exerciseLinks": [
+        "#exercise-identify-systems",
+        "#exercise-product-review"
+      ],
+      "goals": 3
+    },
+    {
+      "label": "AI mobile core exercise through drawer",
+      "active": "独立练习",
+      "dialogOpen": false,
+      "focus": "哪些系统涉及 AI？还缺什么证据？",
+      "hash": "#exercise-identify-systems",
+      "navBottom": 192.33333587646484,
+      "solutionOpen": false,
+      "top": 209.67709350585935
+    },
+    {
+      "label": "AI mobile Escape",
+      "dialogOpen": false,
+      "focus": "本节导航"
+    },
+    {
+      "label": "AI mobile article section navigation",
+      "active": "邮件问题",
+      "dialogOpen": false,
+      "focus": "看到“免费”就拦下，行得通吗？",
+      "hash": "#rule-and-learning",
+      "navBottom": 192.33333587646484,
+      "top": 209.80209350585935
+    },
+    {
+      "label": "AI two-level hints and solutions",
+      "answerLength": 24,
+      "completion": "标记本节已读完",
+      "hash": "#exercise-product-review",
+      "openDetails": 6
+    },
+    {
+      "label": "AI refresh clears temporary answers only",
+      "answer": "",
+      "completion": "标记本节已读完",
+      "hash": "#exercise-product-review",
+      "openDetails": 0
+    },
+    {
+      "label": "AI exercise hash survives refresh",
+      "active": "独立练习",
+      "dialogOpen": false,
+      "focus": "给商品照片分类，怎样使用结果？",
+      "hash": "#exercise-product-review",
+      "navBottom": 192.33333587646484,
+      "solutionOpen": false,
+      "top": 209.7604217529297
+    },
+    {
+      "label": "AI000 desktop final",
+      "coreLinks": [
+        {
+          "hash": "#exercise-identify-systems",
+          "title": "哪些系统涉及 AI？还缺什么证据？"
+        },
+        {
+          "hash": "#exercise-product-review",
+          "title": "给商品照片分类，怎样使用结果？"
+        }
+      ],
+      "firstParagraphTop": 774.0416870117188,
+      "focus": "跳到主要内容Aivora系统化 AI 技术学习平台首页课程体系学习路径实践项目探索知识Ctrl K学习中心开始试读课程体系人工智能导论与技术地图第 1 章1.1返回课程详情COUR",
+      "goals": [
+        "用自己的话说清 AI 是什么，能帮人做什么",
+        "说清系统接收什么、做什么、给出什么；判断是否用到 AI，或说明还缺什么信息",
+        "举例说明 AI 会在哪里出错，想出可以实际核查的办法"
+      ],
+      "hash": "",
+      "height": 1000,
+      "mainGoals": 0,
+      "nav": [
+        "邮件问题"
+      ],
+      "overflow": false,
+      "prerequisitesOpen": false,
+      "rightOutline": 0,
+      "rightVisible": true,
+      "url": "http://127.0.0.1:3004/learn/AI000/AI000-C01-L01",
+      "width": 1440
+    },
+    {
+      "label": "AI desktop #exercise-identify-systems",
+      "active": "独立练习",
+      "dialogOpen": false,
+      "focus": "哪些系统涉及 AI？还缺什么证据？",
+      "hash": "#exercise-identify-systems",
+      "navBottom": 143.33333587646484,
+      "solutionOpen": false,
+      "top": 176.0104217529297
+    },
+    {
+      "label": "AI desktop #exercise-product-review",
+      "active": "独立练习",
+      "dialogOpen": false,
+      "focus": "给商品照片分类，怎样使用结果？",
+      "hash": "#exercise-product-review",
+      "navBottom": 143.33333587646484,
+      "solutionOpen": false,
+      "top": 176.1041717529297
+    },
+    {
+      "label": "MA101 2.1 desktop",
+      "coreLinks": [
+        {
+          "hash": "#exercise-quantity-choice",
+          "title": "该用一个数还是一个向量？"
+        },
+        {
+          "hash": "#exercise-same-displacement",
+          "title": "不同起点的箭头是否相同？"
+        },
+        {
+          "hash": "#exercise-displacement-transfer",
+          "title": "换起终点后，哪些位移相等？"
+        }
+      ],
+      "firstParagraphTop": 718.0416870117188,
+      "focus": "跳到主要内容Aivora系统化 AI 技术学习平台首页课程体系学习路径实践项目探索知识Ctrl K学习中心开始试读课程体系AI 数学 I：线性代数与微积分第 2 章2.1返回课程详",
+      "goals": [
+        "判断一个实际描述需要标量还是向量，并说明依据",
+        "区分整体位移与实际行走路线、路程",
+        "通过平移判断两支箭头是否代表同一位移向量"
+      ],
+      "hash": "",
+      "height": 1000,
+      "mainGoals": 0,
+      "nav": [
+        "问题"
+      ],
+      "overflow": false,
+      "prerequisitesOpen": false,
+      "rightOutline": 0,
+      "rightVisible": true,
+      "url": "http://127.0.0.1:3004/learn/MA101/MA101-C02-L03",
+      "width": 1440
+    },
+    {
+      "label": "MA101 2.1 #exercise-quantity-choice",
+      "active": "练习",
+      "dialogOpen": false,
+      "focus": "该用一个数还是一个向量？",
+      "hash": "#exercise-quantity-choice",
+      "navBottom": 143.33333587646484,
+      "solutionOpen": false,
+      "top": 176.20834350585938
+    },
+    {
+      "label": "MA101 2.1 #exercise-same-displacement",
+      "active": "练习",
+      "dialogOpen": false,
+      "focus": "不同起点的箭头是否相同？",
+      "hash": "#exercise-same-displacement",
+      "navBottom": 143.33333587646484,
+      "solutionOpen": false,
+      "top": 175.96875
+    },
+    {
+      "label": "MA101 2.1 #exercise-displacement-transfer",
+      "active": "练习",
+      "dialogOpen": false,
+      "focus": "换起终点后，哪些位移相等？",
+      "hash": "#exercise-displacement-transfer",
+      "navBottom": 143.33333587646484,
+      "solutionOpen": false,
+      "top": 175.7291717529297
+    },
+    {
+      "label": "PY101 5.1 desktop",
+      "coreLinks": [
+        {
+          "hash": "#exercise-define-double",
+          "title": "自己写一个函数"
+        },
+        {
+          "hash": "#exercise-minutes-to-seconds",
+          "title": "不看示例，写一个分钟换秒的函数"
+        }
+      ],
+      "firstParagraphTop": 863.2708740234375,
+      "focus": "跳到主要内容Aivora系统化 AI 技术学习平台首页课程体系学习路径实践项目探索知识Ctrl K学习中心开始试读课程体系Python 编程与工程入门第 5 章5.1返回课程详情C",
+      "goals": [
+        "按执行顺序解释定义与调用",
+        "独立编写一个接收数值并返回计算结果的单参数函数"
+      ],
+      "hash": "",
+      "height": 1000,
+      "mainGoals": 0,
+      "nav": [
+        "概念"
+      ],
+      "overflow": false,
+      "prerequisitesOpen": false,
+      "rightOutline": 0,
+      "rightVisible": true,
+      "url": "http://127.0.0.1:3004/learn/PY101/PY101-C05-L01",
+      "width": 1440
+    },
+    {
+      "label": "PY101 5.1 #exercise-define-double",
+      "active": "练习",
+      "dialogOpen": false,
+      "focus": "自己写一个函数",
+      "hash": "#exercise-define-double",
+      "navBottom": 143.33333587646484,
+      "solutionOpen": false,
+      "top": 175.77084350585938
+    },
+    {
+      "label": "PY101 5.1 #exercise-minutes-to-seconds",
+      "active": "练习",
+      "dialogOpen": false,
+      "focus": "不看示例，写一个分钟换秒的函数",
+      "hash": "#exercise-minutes-to-seconds",
+      "navBottom": 143.33333587646484,
+      "solutionOpen": false,
+      "top": 176.1979217529297
+    },
+    {
+      "label": "ML201 4.3 desktop",
+      "coreLinks": [
+        {
+          "hash": "#exercise-sequential",
+          "title": "找出 db 被悄悄换了位置的错误"
+        },
+        {
+          "hash": "#exercise-repeat-data",
+          "title": "数据复制会改变这一步吗？"
+        },
+        {
+          "hash": "#exercise-hand-update",
+          "title": "用新目标独立完成一轮"
+        }
+      ],
+      "firstParagraphTop": 814.5729370117188,
+      "focus": "跳到主要内容Aivora系统化 AI 技术学习平台首页课程体系学习路径实践项目探索知识Ctrl K学习中心开始试读课程体系机器学习基础：监督学习第 4 章4.3返回课程详情COUR",
+      "goals": [
+        "逐样本计算误差、平方与梯度贡献",
+        "完成一次同步参数更新并重新计算损失",
+        "用反例定位归一化和顺序更新错误"
+      ],
+      "hash": "",
+      "height": 1000,
+      "mainGoals": 0,
+      "nav": [
+        "设定"
+      ],
+      "overflow": false,
+      "prerequisitesOpen": false,
+      "rightOutline": 0,
+      "rightVisible": true,
+      "url": "http://127.0.0.1:3004/learn/ML201/ML201-C04-L04",
+      "width": 1440
+    },
+    {
+      "label": "ML201 4.3 #exercise-sequential",
+      "active": "排错",
+      "dialogOpen": false,
+      "focus": "找出 db 被悄悄换了位置的错误",
+      "hash": "#exercise-sequential",
+      "navBottom": 143.33333587646484,
+      "solutionOpen": false,
+      "top": 176.0104217529297
+    },
+    {
+      "label": "ML201 4.3 #exercise-repeat-data",
+      "active": "练习",
+      "dialogOpen": false,
+      "focus": "数据复制会改变这一步吗？",
+      "hash": "#exercise-repeat-data",
+      "navBottom": 143.33333587646484,
+      "solutionOpen": false,
+      "top": 175.6875
+    },
+    {
+      "label": "ML201 4.3 #exercise-hand-update",
+      "active": "练习",
+      "dialogOpen": false,
+      "focus": "用新目标独立完成一轮",
+      "hash": "#exercise-hand-update",
+      "navBottom": 143.33333587646484,
+      "solutionOpen": false,
+      "top": 176.11459350585938
+    },
+    {
+      "label": "AI000 1.1 tablet",
+      "coreLinks": [
+        {
+          "hash": "#exercise-identify-systems",
+          "title": "哪些系统涉及 AI？还缺什么证据？"
+        },
+        {
+          "hash": "#exercise-product-review",
+          "title": "给商品照片分类，怎样使用结果？"
+        }
+      ],
+      "firstParagraphTop": 815.4479370117188,
+      "focus": "跳到主要内容Aivora系统化 AI 技术学习平台首页课程体系学习路径实践项目探索知识Ctrl K学习中心开始试读课程体系人工智能导论与技术地图第 1 章1.1返回课程详情COUR",
+      "goals": [
+        "用自己的话说清 AI 是什么，能帮人做什么",
+        "说清系统接收什么、做什么、给出什么；判断是否用到 AI，或说明还缺什么信息",
+        "举例说明 AI 会在哪里出错，想出可以实际核查的办法"
+      ],
+      "hash": "",
+      "height": 1024,
+      "mainGoals": 0,
+      "nav": [
+        "邮件问题"
+      ],
+      "overflow": false,
+      "prerequisitesOpen": false,
+      "rightOutline": 0,
+      "rightVisible": false,
+      "url": "http://127.0.0.1:3004/learn/AI000/AI000-C01-L01",
+      "width": 768
+    },
+    {
+      "label": "AI000 1.1 tablet drawer",
+      "articleCollapsed": true,
+      "coreCount": 2,
+      "goals": [
+        "用自己的话说清 AI 是什么，能帮人做什么",
+        "说清系统接收什么、做什么、给出什么；判断是否用到 AI，或说明还缺什么信息",
+        "举例说明 AI 会在哪里出错，想出可以实际核查的办法"
+      ],
+      "overflow": false
+    },
+    {
+      "label": "AI000 1.1 tablet exercise",
+      "active": "独立练习",
+      "dialogOpen": false,
+      "focus": "哪些系统涉及 AI？还缺什么证据？",
+      "hash": "#exercise-identify-systems",
+      "navBottom": 194.33333587646484,
+      "solutionOpen": false,
+      "top": 222.08334350585935
+    },
+    {
+      "label": "MA101 2.1 tablet",
+      "coreLinks": [
+        {
+          "hash": "#exercise-quantity-choice",
+          "title": "该用一个数还是一个向量？"
+        },
+        {
+          "hash": "#exercise-same-displacement",
+          "title": "不同起点的箭头是否相同？"
+        },
+        {
+          "hash": "#exercise-displacement-transfer",
+          "title": "换起终点后，哪些位移相等？"
+        }
+      ],
+      "firstParagraphTop": 815.4479370117188,
+      "focus": "跳到主要内容Aivora系统化 AI 技术学习平台首页课程体系学习路径实践项目探索知识Ctrl K学习中心开始试读课程体系AI 数学 I：线性代数与微积分第 2 章2.1返回课程详",
+      "goals": [
+        "判断一个实际描述需要标量还是向量，并说明依据",
+        "区分整体位移与实际行走路线、路程",
+        "通过平移判断两支箭头是否代表同一位移向量"
+      ],
+      "hash": "",
+      "height": 1024,
+      "mainGoals": 0,
+      "nav": [
+        "问题"
+      ],
+      "overflow": false,
+      "prerequisitesOpen": false,
+      "rightOutline": 0,
+      "rightVisible": false,
+      "url": "http://127.0.0.1:3004/learn/MA101/MA101-C02-L03",
+      "width": 768
+    },
+    {
+      "label": "MA101 2.1 tablet drawer",
+      "articleCollapsed": true,
+      "coreCount": 3,
+      "goals": [
+        "判断一个实际描述需要标量还是向量，并说明依据",
+        "区分整体位移与实际行走路线、路程",
+        "通过平移判断两支箭头是否代表同一位移向量"
+      ],
+      "overflow": false
+    },
+    {
+      "label": "MA101 2.1 tablet exercise",
+      "active": "练习",
+      "dialogOpen": false,
+      "focus": "该用一个数还是一个向量？",
+      "hash": "#exercise-quantity-choice",
+      "navBottom": 194.33333587646484,
+      "solutionOpen": false,
+      "top": 222.28125
+    },
+    {
+      "label": "PY101 5.1 tablet",
+      "coreLinks": [
+        {
+          "hash": "#exercise-define-double",
+          "title": "自己写一个函数"
+        },
+        {
+          "hash": "#exercise-minutes-to-seconds",
+          "title": "不看示例，写一个分钟换秒的函数"
+        }
+      ],
+      "firstParagraphTop": 960.6771240234376,
+      "focus": "跳到主要内容Aivora系统化 AI 技术学习平台首页课程体系学习路径实践项目探索知识Ctrl K学习中心开始试读课程体系Python 编程与工程入门第 5 章5.1返回课程详情C",
+      "goals": [
+        "按执行顺序解释定义与调用",
+        "独立编写一个接收数值并返回计算结果的单参数函数"
+      ],
+      "hash": "",
+      "height": 1024,
+      "mainGoals": 0,
+      "nav": [
+        "概念"
+      ],
+      "overflow": false,
+      "prerequisitesOpen": false,
+      "rightOutline": 0,
+      "rightVisible": false,
+      "url": "http://127.0.0.1:3004/learn/PY101/PY101-C05-L01",
+      "width": 768
+    },
+    {
+      "label": "PY101 5.1 tablet drawer",
+      "articleCollapsed": true,
+      "coreCount": 2,
+      "goals": [
+        "按执行顺序解释定义与调用",
+        "独立编写一个接收数值并返回计算结果的单参数函数"
+      ],
+      "overflow": false
+    },
+    {
+      "label": "PY101 5.1 tablet exercise",
+      "active": "练习",
+      "dialogOpen": false,
+      "focus": "自己写一个函数",
+      "hash": "#exercise-define-double",
+      "navBottom": 194.33333587646484,
+      "solutionOpen": false,
+      "top": 221.7916717529297
+    },
+    {
+      "label": "ML201 4.3 tablet",
+      "coreLinks": [
+        {
+          "hash": "#exercise-sequential",
+          "title": "找出 db 被悄悄换了位置的错误"
+        },
+        {
+          "hash": "#exercise-repeat-data",
+          "title": "数据复制会改变这一步吗？"
+        },
+        {
+          "hash": "#exercise-hand-update",
+          "title": "用新目标独立完成一轮"
+        }
+      ],
+      "firstParagraphTop": 911.9791870117188,
+      "focus": "跳到主要内容Aivora系统化 AI 技术学习平台首页课程体系学习路径实践项目探索知识Ctrl K学习中心开始试读课程体系机器学习基础：监督学习第 4 章4.3返回课程详情COUR",
+      "goals": [
+        "逐样本计算误差、平方与梯度贡献",
+        "完成一次同步参数更新并重新计算损失",
+        "用反例定位归一化和顺序更新错误"
+      ],
+      "hash": "",
+      "height": 1024,
+      "mainGoals": 0,
+      "nav": [
+        "设定"
+      ],
+      "overflow": false,
+      "prerequisitesOpen": false,
+      "rightOutline": 0,
+      "rightVisible": false,
+      "url": "http://127.0.0.1:3004/learn/ML201/ML201-C04-L04",
+      "width": 768
+    },
+    {
+      "label": "ML201 4.3 tablet drawer",
+      "articleCollapsed": true,
+      "coreCount": 3,
+      "goals": [
+        "逐样本计算误差、平方与梯度贡献",
+        "完成一次同步参数更新并重新计算损失",
+        "用反例定位归一化和顺序更新错误"
+      ],
+      "overflow": false
+    },
+    {
+      "label": "ML201 4.3 tablet exercise",
+      "active": "排错",
+      "dialogOpen": false,
+      "focus": "找出 db 被悄悄换了位置的错误",
+      "hash": "#exercise-sequential",
+      "navBottom": 194.33333587646484,
+      "solutionOpen": false,
+      "top": 222
+    },
+    {
+      "label": "AI000 1.1 mobile",
+      "coreLinks": [
+        {
+          "hash": "#exercise-identify-systems",
+          "title": "哪些系统涉及 AI？还缺什么证据？"
+        },
+        {
+          "hash": "#exercise-product-review",
+          "title": "给商品照片分类，怎样使用结果？"
+        }
+      ],
+      "firstParagraphTop": 782.4375,
+      "focus": "跳到主要内容Aivora系统化 AI 技术学习平台首页课程体系学习路径实践项目探索知识Ctrl K学习中心开始试读课程体系人工智能导论与技术地图第 1 章1.1返回课程详情COUR",
+      "goals": [
+        "用自己的话说清 AI 是什么，能帮人做什么",
+        "说清系统接收什么、做什么、给出什么；判断是否用到 AI，或说明还缺什么信息",
+        "举例说明 AI 会在哪里出错，想出可以实际核查的办法"
+      ],
+      "hash": "",
+      "height": 844,
+      "mainGoals": 0,
+      "nav": [
+        "邮件问题"
+      ],
+      "overflow": false,
+      "prerequisitesOpen": false,
+      "rightOutline": 0,
+      "rightVisible": false,
+      "url": "http://127.0.0.1:3004/learn/AI000/AI000-C01-L01",
+      "width": 390
+    },
+    {
+      "label": "AI000 1.1 mobile drawer",
+      "articleCollapsed": true,
+      "coreCount": 2,
+      "goals": [
+        "用自己的话说清 AI 是什么，能帮人做什么",
+        "说清系统接收什么、做什么、给出什么；判断是否用到 AI，或说明还缺什么信息",
+        "举例说明 AI 会在哪里出错，想出可以实际核查的办法"
+      ],
+      "overflow": false
+    },
+    {
+      "label": "AI000 1.1 mobile exercise",
+      "active": "独立练习",
+      "dialogOpen": false,
+      "focus": "哪些系统涉及 AI？还缺什么证据？",
+      "hash": "#exercise-identify-systems",
+      "navBottom": 192.33333587646484,
+      "solutionOpen": false,
+      "top": 209.67709350585935
+    },
+    {
+      "label": "MA101 2.1 mobile",
+      "coreLinks": [
+        {
+          "hash": "#exercise-quantity-choice",
+          "title": "该用一个数还是一个向量？"
+        },
+        {
+          "hash": "#exercise-same-displacement",
+          "title": "不同起点的箭头是否相同？"
+        },
+        {
+          "hash": "#exercise-displacement-transfer",
+          "title": "换起终点后，哪些位移相等？"
+        }
+      ],
+      "firstParagraphTop": 817.0833740234375,
+      "focus": "跳到主要内容Aivora系统化 AI 技术学习平台首页课程体系学习路径实践项目探索知识Ctrl K学习中心开始试读课程体系AI 数学 I：线性代数与微积分第 2 章2.1返回课程详",
+      "goals": [
+        "判断一个实际描述需要标量还是向量，并说明依据",
+        "区分整体位移与实际行走路线、路程",
+        "通过平移判断两支箭头是否代表同一位移向量"
+      ],
+      "hash": "",
+      "height": 844,
+      "mainGoals": 0,
+      "nav": [
+        "问题"
+      ],
+      "overflow": false,
+      "prerequisitesOpen": false,
+      "rightOutline": 0,
+      "rightVisible": false,
+      "url": "http://127.0.0.1:3004/learn/MA101/MA101-C02-L03",
+      "width": 390
+    },
+    {
+      "label": "MA101 2.1 mobile drawer",
+      "articleCollapsed": true,
+      "coreCount": 3,
+      "goals": [
+        "判断一个实际描述需要标量还是向量，并说明依据",
+        "区分整体位移与实际行走路线、路程",
+        "通过平移判断两支箭头是否代表同一位移向量"
+      ],
+      "overflow": false
+    },
+    {
+      "label": "MA101 2.1 mobile exercise",
+      "active": "练习",
+      "dialogOpen": false,
+      "focus": "该用一个数还是一个向量？",
+      "hash": "#exercise-quantity-choice",
+      "navBottom": 192.33333587646484,
+      "solutionOpen": false,
+      "top": 209.84375
+    },
+    {
+      "label": "PY101 5.1 mobile",
+      "coreLinks": [
+        {
+          "hash": "#exercise-define-double",
+          "title": "自己写一个函数"
+        },
+        {
+          "hash": "#exercise-minutes-to-seconds",
+          "title": "不看示例，写一个分钟换秒的函数"
+        }
+      ],
+      "firstParagraphTop": 1014.8541870117188,
+      "focus": "跳到主要内容Aivora系统化 AI 技术学习平台首页课程体系学习路径实践项目探索知识Ctrl K学习中心开始试读课程体系Python 编程与工程入门第 5 章5.1返回课程详情C",
+      "goals": [
+        "按执行顺序解释定义与调用",
+        "独立编写一个接收数值并返回计算结果的单参数函数"
+      ],
+      "hash": "",
+      "height": 844,
+      "mainGoals": 0,
+      "nav": [
+        "概念"
+      ],
+      "overflow": false,
+      "prerequisitesOpen": false,
+      "rightOutline": 0,
+      "rightVisible": false,
+      "url": "http://127.0.0.1:3004/learn/PY101/PY101-C05-L01",
+      "width": 390
+    },
+    {
+      "label": "PY101 5.1 mobile drawer",
+      "articleCollapsed": true,
+      "coreCount": 2,
+      "goals": [
+        "按执行顺序解释定义与调用",
+        "独立编写一个接收数值并返回计算结果的单参数函数"
+      ],
+      "overflow": false
+    },
+    {
+      "label": "PY101 5.1 mobile exercise",
+      "active": "练习",
+      "dialogOpen": false,
+      "focus": "自己写一个函数",
+      "hash": "#exercise-define-double",
+      "navBottom": 192.33333587646484,
+      "solutionOpen": false,
+      "top": 210.2916717529297
+    },
+    {
+      "label": "ML201 4.3 mobile",
+      "coreLinks": [
+        {
+          "hash": "#exercise-sequential",
+          "title": "找出 db 被悄悄换了位置的错误"
+        },
+        {
+          "hash": "#exercise-repeat-data",
+          "title": "数据复制会改变这一步吗？"
+        },
+        {
+          "hash": "#exercise-hand-update",
+          "title": "用新目标独立完成一轮"
+        }
+      ],
+      "firstParagraphTop": 935.4583740234376,
+      "focus": "跳到主要内容Aivora系统化 AI 技术学习平台首页课程体系学习路径实践项目探索知识Ctrl K学习中心开始试读课程体系机器学习基础：监督学习第 4 章4.3返回课程详情COUR",
+      "goals": [
+        "逐样本计算误差、平方与梯度贡献",
+        "完成一次同步参数更新并重新计算损失",
+        "用反例定位归一化和顺序更新错误"
+      ],
+      "hash": "",
+      "height": 844,
+      "mainGoals": 0,
+      "nav": [
+        "设定"
+      ],
+      "overflow": false,
+      "prerequisitesOpen": false,
+      "rightOutline": 0,
+      "rightVisible": false,
+      "url": "http://127.0.0.1:3004/learn/ML201/ML201-C04-L04",
+      "width": 390
+    },
+    {
+      "label": "ML201 4.3 mobile drawer",
+      "articleCollapsed": true,
+      "coreCount": 3,
+      "goals": [
+        "逐样本计算误差、平方与梯度贡献",
+        "完成一次同步参数更新并重新计算损失",
+        "用反例定位归一化和顺序更新错误"
+      ],
+      "overflow": false
+    },
+    {
+      "label": "ML201 4.3 mobile exercise",
+      "active": "排错",
+      "dialogOpen": false,
+      "focus": "找出 db 被悄悄换了位置的错误",
+      "hash": "#exercise-sequential",
+      "navBottom": 182.33333587646484,
+      "solutionOpen": false,
+      "top": 210.23959350585935
+    },
+    {
+      "label": "MA optional exercise opens ancestor",
+      "active": "应用",
+      "dialogOpen": false,
+      "focus": "能否只改一个倍数？",
+      "hash": "#exercise-one-factor",
+      "navBottom": 143.33333587646484,
+      "optionalOpen": true,
+      "solutionOpen": false,
+      "top": 175.7291717529297
+    },
+    {
+      "label": "MA old optional exercise bookmark reload",
+      "active": "应用",
+      "dialogOpen": false,
+      "focus": "能否只改一个倍数？",
+      "hash": "#exercise-one-factor",
+      "navBottom": 143.33333587646484,
+      "optionalOpen": true,
+      "solutionOpen": false,
+      "top": 175.7291717529297
+    },
+    {
+      "label": "MA mobile optional exercise",
+      "active": "应用",
+      "dialogOpen": false,
+      "focus": "能否只改一个倍数？",
+      "hash": "#exercise-one-factor",
+      "navBottom": 192.33333587646484,
+      "optionalOpen": true,
+      "solutionOpen": false,
+      "top": 209.8854217529297
+    },
+    {
+      "label": "MA mobile optional title checked against current lesson",
+      "active": "应用",
+      "dialogOpen": false,
+      "focus": "能否只改一个倍数？",
+      "hash": "#exercise-one-factor",
+      "navBottom": 192.33333587646484,
+      "optionalOpen": true,
+      "solutionOpen": false,
+      "top": 209.8854217529297
+    },
+    {
+      "label": "Mobile chapter drawer retained",
+      "current": "2.4向量数乘：长度与方向变化",
+      "title": "课程章节与独立课时",
+      "dialog": false,
+      "focus": "章节目录"
+    },
+    {
+      "label": "ML verification remains optional",
+      "core": 3,
+      "focus": "可选验证：保留完整计算与容差检查",
+      "hash": "#verification",
+      "open": true
+    },
+    {
+      "label": "Manual completion, refresh and idempotent save",
+      "before": false,
+      "after": true,
+      "restored": {
+        "button": "本节已读完",
+        "status": "已手动标记读完"
+      },
+      "otherRecordsPreserved": true,
+      "note": "导航离开 ML 时正常刷新其 updatedAt；隔离比较以进入 AI 后的稳定快照为准。"
+    },
+    {
+      "label": "Old assessment-title mobile bookmark",
+      "dialog": true,
+      "goals": 3,
+      "hash": "#assessment-title"
+    },
+    {
+      "label": "Old assessment-title desktop bookmark",
+      "active": "邮件问题",
+      "dialogOpen": false,
+      "focus": "本节学习目标",
+      "hash": "#assessment-title",
+      "navBottom": 617.6354598999023,
+      "top": 162
+    },
+    {
+      "label": "Default motion settles at section",
+      "active": "检查输出",
+      "dialogOpen": false,
+      "focus": "判错一封邮件，会发生什么？",
+      "hash": "#mistakes",
+      "navBottom": 143.33333587646484,
+      "top": 175.67709350585938
+    },
+    {
+      "label": "Existing 3003 origin after refinement",
+      "beforeVersion": 1,
+      "afterVersion": 1,
+      "beforeCompleted": true,
+      "afterCompleted": true,
+      "ui": {
+        "completion": "本节已读完",
+        "entry": [
+          "章节目录",
+          "本节导航"
+        ],
+        "heading": "人工智能究竟是什么？",
+        "objectiveCards": 0
+      }
+    },
+    {
+      "label": "AI000 1.1 resume target set",
+      "active": "回看要点",
+      "dialogOpen": false,
+      "focus": "把“它有多智能”换成可以检查的问题",
+      "hash": "#takeaways",
+      "navBottom": 143.33333587646484,
+      "top": 176.28125
+    },
+    {
+      "label": "AI000 1.1 resume link clicked",
+      "active": "回看要点",
+      "dialogOpen": false,
+      "focus": "把“它有多智能”换成可以检查的问题",
+      "hash": "#takeaways",
+      "navBottom": 143.33333587646484,
+      "top": 176.28125
+    },
+    {
+      "label": "AI000 1.1 no-hash reopen preserves previous position",
+      "baseState": {
+        "hash": "",
+        "resume": "#takeaways",
+        "scrollY": 0
+      },
+      "storedSection": "takeaways",
+      "contentVersion": 1
+    },
+    {
+      "label": "MA101 2.1 resume target set",
+      "active": "总结",
+      "dialogOpen": false,
+      "focus": "把箭头读清楚，再学习写法",
+      "hash": "#summary",
+      "navBottom": 143.33333587646484,
+      "top": 175.80209350585938
+    },
+    {
+      "label": "MA101 2.1 resume link clicked",
+      "active": "总结",
+      "dialogOpen": false,
+      "focus": "把箭头读清楚，再学习写法",
+      "hash": "#summary",
+      "navBottom": 143.33333587646484,
+      "top": 175.80209350585938
+    },
+    {
+      "label": "MA101 2.1 no-hash reopen preserves previous position",
+      "baseState": {
+        "hash": "",
+        "resume": "#summary",
+        "scrollY": 0
+      },
+      "storedSection": "summary",
+      "contentVersion": 2
+    },
+    {
+      "label": "PY101 5.1 resume target set",
+      "active": "总结",
+      "dialogOpen": false,
+      "focus": "本节总结与下一步",
+      "hash": "#summary",
+      "navBottom": 143.33333587646484,
+      "top": 175.9791717529297
+    },
+    {
+      "label": "PY101 5.1 resume link clicked",
+      "active": "总结",
+      "dialogOpen": false,
+      "focus": "本节总结与下一步",
+      "hash": "#summary",
+      "navBottom": 143.33333587646484,
+      "top": 175.9791717529297
+    },
+    {
+      "label": "PY101 5.1 no-hash reopen preserves previous position",
+      "baseState": {
+        "hash": "",
+        "resume": "#summary",
+        "scrollY": 0
+      },
+      "storedSection": "summary",
+      "contentVersion": 2
+    },
+    {
+      "label": "ML201 4.3 resume target set",
+      "active": "验证",
+      "dialogOpen": false,
+      "focus": "可选验证：保留完整计算与容差检查",
+      "hash": "#verification",
+      "navBottom": 143.33333587646484,
+      "top": 176.02084350585938
+    },
+    {
+      "label": "ML201 4.3 resume link clicked",
+      "active": "验证",
+      "dialogOpen": false,
+      "focus": "可选验证：保留完整计算与容差检查",
+      "hash": "#verification",
+      "navBottom": 143.33333587646484,
+      "top": 176.02084350585938
+    },
+    {
+      "label": "ML201 4.3 no-hash reopen preserves previous position",
+      "baseState": {
+        "hash": "",
+        "resume": "#verification",
+        "scrollY": 0
+      },
+      "storedSection": "verification",
+      "contentVersion": 1
+    },
+    {
+      "label": "All four resume positions remain after idle/header reopen",
+      "rows": [
+        {
+          "key": "aivora:learning:v2:AI000:AI000-C01-L01:r1",
+          "expected": "takeaways",
+          "actual": "takeaways"
+        },
+        {
+          "key": "aivora:learning:v2:MA101:MA101-C02-L03:r2",
+          "expected": "summary",
+          "actual": "summary"
+        },
+        {
+          "key": "aivora:learning:v2:PY101:PY101-C05-L01:r2",
+          "expected": "summary",
+          "actual": "summary"
+        },
+        {
+          "key": "aivora:learning:v2:ML201:ML201-C04-L04:r1",
+          "expected": "verification",
+          "actual": "verification"
+        }
+      ]
+    }
+  ],
+  "consoleEntries": [],
+  "note": "Chromium 视口模拟；3004 为工具验收记录，非学生试学。最终追加四课无 hash 重开、恢复阅读链接和稳定计时器后的位置保护检查。"
+}

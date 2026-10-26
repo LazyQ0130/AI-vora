@@ -36,7 +36,7 @@ export function AiTaskFigure({ block }: { block: FigureBlock }) {
           <p>“正常”或“垃圾”<br />判断仍可能出错</p>
         </div>
       </div>
-      <p className="ai-usage">输出之后：按邮箱设置保留或移动邮件，必要时由人复核。后面的关键词演示只读取标题。</p>
+      <p className="ai-usage">输出之后：按邮箱设置保留或移动邮件，必要时由人复核。刚才的关键词规则只读取标题。</p>
     </> : <>
       <p className="ai-rule">本图规则：标题含“免费” → 垃圾；否则 → 正常</p>
       <div className="ai-outcomes">

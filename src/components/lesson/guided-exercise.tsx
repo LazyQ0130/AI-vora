@@ -11,7 +11,7 @@ export function GuidedExercise({
   return (
     <section className="guided-exercise" id={`exercise-${block.id}`} aria-labelledby={`${id}-title`}>
       <span className="exercise-kind">{block.kind}练习 · 自主核对</span>
-      <h3 id={`${id}-title`}>{block.title}</h3>
+      <h3 id={`${id}-title`} tabIndex={-1}>{block.title}</h3>
       <p>{block.prompt}</p>
       <label htmlFor={`${id}-answer`}>先记录你的思路或计算</label>
       <textarea

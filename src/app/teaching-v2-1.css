@@ -3,13 +3,7 @@
 .learning-time b { font-weight:500; color:var(--text-primary); }
 .reader-section-nav a { flex:1 0 auto; min-width:64px; }
 .learning-time small { flex-basis:100%; line-height:1.8; font-size:12px; }
-.objective-assessment { margin:28px 0 20px; padding:24px; border:1px solid var(--border-subtle, #2c3346); border-radius:16px; background:var(--surface-card, #151b29); }
-.objective-assessment h2 { font-size:17px; margin:0 0 14px; }
-.objective-assessment p, .assessment-note { font-size:13px; line-height:1.9; color:var(--text-secondary); }
-.objective-assessment ol { padding-left:23px; }
-.objective-assessment li { margin:14px 0; line-height:1.8; font-size:14px; }
-.objective-assessment li span { display:flex; flex-wrap:wrap; gap:8px 16px; }
-.objective-assessment a { color:var(--accent, #b5a1ff); text-decoration:underline; text-underline-offset:4px; }
+.assessment-note { font-size:13px; line-height:1.9; color:var(--text-secondary); }
 .lesson-glossary { margin:20px 0 30px; border:1px solid var(--border-subtle, #2c3346); border-radius:12px; padding:16px 20px; font-size:14px; }
 .lesson-glossary summary, .lesson-optional > summary { cursor:pointer; line-height:1.8; padding:6px 0; font-weight:500; }
 .lesson-glossary p { color:var(--text-secondary); line-height:1.9; }
@@ -21,9 +15,9 @@
 .lesson-optional > .lesson-section-body { min-width:0; }
 .lesson-optional:has(summary:focus-visible), .lesson-glossary:has(summary:focus-visible) { outline:2px solid var(--accent, #b5a1ff); outline-offset:4px; }
 .lesson-section-list .optional-label { font-size:11px; color:var(--text-secondary); }
-.guided-exercise, [id^="term-"] { scroll-margin-top:180px; }
+.guided-exercise { scroll-margin-top:12px; }
+[id^="term-"] { scroll-margin-top:180px; }
 @media(max-width:767px) {
-  .objective-assessment { padding:18px; }
   .lesson-glossary dl { grid-template-columns:minmax(0,1fr); }
   .lesson-optional { padding:10px 12px; }
   .learning-time { gap:8px 15px; }

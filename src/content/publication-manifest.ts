@@ -15,7 +15,7 @@ export const publicationManifest = [
     order: 1,
     status: "pending-review",
     access: "preview",
-    technicalEvidence: "docs/AI000_LESSON_1_1_REVIEW.md",
+    technicalEvidence: "docs/AI000_READING_EXPERIENCE_REFINEMENT.md",
   },
   ...courseOutline
     .filter((slot) => mlV2LessonIds.some((id) => id === slot.lessonId) || slot.courseId === "PY101" || maV22LessonIds.some((id) => id === slot.lessonId))

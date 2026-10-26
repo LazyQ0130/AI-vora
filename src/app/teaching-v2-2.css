@@ -51,7 +51,7 @@
   .course-contents > details::details-content { block-size:0; opacity:0; overflow:hidden; transition:block-size .24s ease,opacity .18s ease,content-visibility .24s allow-discrete; }
   .course-contents > details[open]::details-content { block-size:auto; opacity:1; }
 }
-@media(min-width:1351px) { .reader-layout { grid-template-columns:270px minmax(0,760px) 236px; gap:24px; } }
+@media(min-width:1351px) { .reader-layout { grid-template-columns:270px minmax(0,760px) 264px; gap:24px; } }
 @media(min-width:1001px) and (max-width:1350px) { .reader-layout { grid-template-columns:260px minmax(0,820px); } .reader-mobile-bar { justify-content:flex-end; } }
 @media(max-width:1000px) { .reader-mobile-bar > .button:first-child { display:inline-flex; } }
 @media(prefers-reduced-motion:reduce) {

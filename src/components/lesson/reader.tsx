@@ -5,7 +5,6 @@ import { useReducedMotion } from "motion/react";
 import {
   ArrowRight,
   BookOpen,
-  ChevronDown,
   ChevronRight,
   ListTree,
   Target,
@@ -28,15 +27,13 @@ import {
   useLessonProgress,
 } from "@/lib/use-learning-progress";
 import {
-  LearningObjectives,
-  ProgressRing,
   LessonNavigation,
 } from "./blocks";
 import { ArticleContents } from "./article-contents";
 import { ChapterToc } from "./chapter-toc";
 import { ResourceDownloads } from "./content-renderer";
 import { TeachingSection } from "./teaching-section";
-import { LearningTime, ObjectiveAssessment, Glossary } from "./learning-support";
+import { LearningTime, LearningPanel, Glossary } from "./learning-support";
 import "katex/dist/katex.min.css";
 import {
   chapterNumber,
@@ -90,31 +87,20 @@ export function Reader({
   const quizCount = blocks.filter((b) => b.type === "quiz").length;
   const experimentCount = blocks.filter((b) => b.type === "experiment").length;
 
-  function navigate(sectionId: string) {
-    const section = document.getElementById(sectionId);
-    if (!section) return;
-    section.querySelector<HTMLDetailsElement>("details.lesson-optional")?.setAttribute("open", "");
-    window.history.replaceState(null, "", `#${sectionId}`);
+  function navigate(targetId: string) {
+    window.history.replaceState(null, "", `#${targetId}`);
     const reduceMotion = reduce || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    section.scrollIntoView({
-      block: "start",
-      behavior: reduceMotion ? "instant" : "smooth",
-    });
-    section.querySelector<HTMLElement>("h2")?.focus({ preventScroll: true });
+    revealTarget(targetId, reduceMotion ? "instant" : "smooth");
   }
   useEffect(() => {
     const reveal = () => {
       let hash = window.location.hash.slice(1);
       try { hash = decodeURIComponent(hash); } catch { return; }
-      const target = document.getElementById(hash);
-      if (!target) return;
-      let parent: HTMLElement | null = target;
-      while (parent) {
-        if (parent instanceof HTMLDetailsElement) parent.open = true;
-        parent = parent.parentElement;
+      if (hash === "assessment-title" && window.matchMedia("(max-width: 1350px)").matches) {
+        setArticleOpen(true);
+        return;
       }
-      target.querySelector<HTMLDetailsElement>("details.lesson-optional")?.setAttribute("open", "");
-      requestAnimationFrame(() => target.scrollIntoView({ block: "start", behavior: "instant" }));
+      revealTarget(hash, "instant");
     };
     reveal();
     window.addEventListener("hashchange", reveal);
@@ -141,25 +127,29 @@ export function Reader({
   }, [lesson.id, reduce]);
   useEffect(() => {
     latest.current = { percent: progress, section: active };
+    // 无 hash 重开页面时仍在标题区，不能把旧书签覆盖成首段。
+    if (progress === 0 && active === firstSection) return;
     const timer = window.setTimeout(
       () => learningProgressStore.save(scope, progress, active),
       450,
     );
     return () => window.clearTimeout(timer);
-  }, [progress, active, scope]);
+  }, [progress, active, firstSection, scope]);
   useEffect(() => {
-    const flush = () =>
+    const flush = () => {
+      if (latest.current.percent === 0 && latest.current.section === firstSection) return;
       learningProgressStore.save(
         scope,
         latest.current.percent,
         latest.current.section,
       );
+    };
     window.addEventListener("pagehide", flush);
     return () => {
       window.removeEventListener("pagehide", flush);
       flush();
     };
-  }, [scope]);
+  }, [firstSection, scope]);
   useEffect(() => {
     let frame = 0;
     const sections = Array.from(
@@ -203,15 +193,6 @@ export function Reader({
     };
   }, [firstSection]);
 
-  const goals = (
-    <>
-      <h3>
-        <Target size={16} />
-        本节学习目标
-      </h3>
-      <LearningObjectives objectives={lesson.objectives} />
-    </>
-  );
   return (
     <div className="reader-layout reader-v2">
       <div className="reading-progress-track" aria-hidden="true">
@@ -260,7 +241,7 @@ export function Reader({
             <ChapterToc course={course} lesson={lesson} progressLessons={progressLessons} />
           </Drawer>
           <Drawer
-            title="文章目录与本节进度"
+            title="本节导航"
             open={articleOpen}
             onOpenChange={setArticleOpen}
             onCloseAutoFocus={(event) => {
@@ -273,16 +254,12 @@ export function Reader({
             trigger={
               <button className="button button-small button-secondary">
                 <Target size={15} />
-                文章目录
+                本节导航
               </button>
             }
           >
-            <ArticleContents lesson={lesson} active={active} onNavigate={(id) => { pendingSection.current = id; setArticleOpen(false); }} />
-            <ProgressRing value={completed ? 100 : displayProgress} />
-            {goals}
-            <p className="reader-local-note">
-              阅读记录仅保存在当前浏览器，不跨设备同步。
-            </p>
+            <ArticleContents lesson={lesson} active={active} collapsible onNavigate={(id) => { pendingSection.current = id; setArticleOpen(false); }} />
+            <LearningPanel lesson={lesson} progress={displayProgress} completed={completed} onNavigate={(id) => { pendingSection.current = id; setArticleOpen(false); }} />
           </Drawer>
         </div>
         <header className="reader-heading">
@@ -296,9 +273,6 @@ export function Reader({
           </div>
           <div className="reader-title-row">
             <h1>{lesson.title}</h1>
-            <span className="sample-badge">
-              {publicationLabel(publication)}
-            </span>
           </div>
           <p>{lesson.subtitle}</p>
           <div className="reader-meta">
@@ -309,6 +283,7 @@ export function Reader({
             <span>
               {course.lvl} · {course.direction}
             </span>
+            <span className="sample-badge">{publicationLabel(publication)}</span>
             {quizCount > 0 && (
               <span>
                 <CheckCircle2 size={14} />
@@ -359,36 +334,8 @@ export function Reader({
           {publicationNotice(publication)}
         </div>
         {lesson.optionalLesson && <p className="demo-content-note">本节整体为可选进阶，不作为基础课程达标条件。</p>}
-        <ObjectiveAssessment lesson={lesson} />
         {course.lvl !== "L0" && (lesson.courseId !== "MA101" || legacy) && <Glossary />}
-        {(lesson.id === "PY101-C05-L01" || lesson.id === "MA101-C03-L01") && <p className="assessment-note">本节已按 V2.1 细分。既有书签与阅读历史保留；旧“已读完”不代表新增目标已达标，请按上方练习重新自查。</p>}
-        {lesson.prerequisiteLinks.length > 0 && (
-          <details className="lesson-preflight">
-            <summary>本节目标、先修检查与补修入口</summary>
-            <LearningObjectives objectives={lesson.objectives} />
-            <p>{lesson.prerequisites}</p>
-            <ul>
-              {lesson.prerequisiteLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    target={
-                      link.href.startsWith("https://") ? "_blank" : undefined
-                    }
-                    rel={
-                      link.href.startsWith("https://")
-                        ? "noreferrer"
-                        : undefined
-                    }
-                  >
-                    {link.title}
-                  </a>
-                  <p>{link.note}</p>
-                </li>
-              ))}
-            </ul>
-          </details>
-        )}
+        {(lesson.id === "PY101-C05-L01" || lesson.id === "MA101-C03-L01") && <p className="assessment-note">本节已按 V2.1 细分。既有书签与阅读历史保留；旧“已读完”不代表新增目标已达标，可从学习面板进入练习自查。</p>}
         {legacy && (
           <aside className="legacy-reading-note">
             <strong>旧版教材试读</strong>
@@ -466,61 +413,26 @@ export function Reader({
           </Link>
         </div>
       </div>
-      <aside className="reader-right">
-        <ArticleContents lesson={lesson} active={active} onNavigate={navigate} />
-        <div className="reader-info-panel">
-          <span className="eyebrow">YOUR LEARNING JOURNEY</span>
-          <h3>本节阅读进度</h3>
-          <div className="reader-progress">
-            <ProgressRing value={completed ? 100 : displayProgress} />
-            <div>
-              <strong>{completed ? "已读完" : "在理解中前进"}</strong>
-              <span>当前课时 · 独立记录</span>
-            </div>
-          </div>
-          <div className="local-status">
-            <i className="status-dot" />
-            仅当前浏览器保存 · 不跨设备同步
-          </div>
-        </div>
-        <div className="reader-info-panel">{goals}</div>
-
-        <details className="reader-knowledge" open>
-          <summary>
-            <span>
-              <BookOpen size={15} />
-              先修知识提示
-            </span>
-            <ChevronDown size={15} />
-          </summary>
-          <p>{lesson.prerequisites}</p>
-          {lesson.prerequisiteLinks.length > 0 && (
-            <ul className="reader-prereq-links">
-              {lesson.prerequisiteLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    target={
-                      link.href.startsWith("https://") ? "_blank" : undefined
-                    }
-                    rel={
-                      link.href.startsWith("https://")
-                        ? "noreferrer"
-                        : undefined
-                    }
-                  >
-                    {link.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
-          <Link href={`/courses/${course.id}`} className="text-link">
-            查看完整先修要求
-            <ArrowRight size={12} />
-          </Link>
-        </details>
+      <aside className="reader-right" id="assessment-title" aria-label="本节学习面板">
+        <LearningPanel lesson={lesson} progress={displayProgress} completed={completed} onNavigate={navigate} />
       </aside>
     </div>
   );
+}
+
+// 练习可能在可选折叠内；点击、Drawer 和旧书签共用同一路径。
+function revealTarget(targetId: string, behavior: ScrollBehavior) {
+  const target = document.getElementById(targetId);
+  if (!target) return;
+  let parent: HTMLElement | null = target;
+  while (parent) {
+    if (parent instanceof HTMLDetailsElement) parent.open = true;
+    parent = parent.parentElement;
+  }
+  target.querySelector<HTMLDetailsElement>("details.lesson-optional")?.setAttribute("open", "");
+  requestAnimationFrame(() => {
+    target.scrollIntoView({ block: "start", behavior });
+    const heading = target.matches("h2, h3") ? target : target.querySelector<HTMLElement>("h2, h3");
+    heading?.focus({ preventScroll: true });
+  });
 }

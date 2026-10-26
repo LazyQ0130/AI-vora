@@ -1,5 +1,7 @@
 # AI000 1.1《人工智能究竟是什么？》开发与审查
 
+> 本文保留首次开发记录与当时证据。后续教学表达、阅读器布局和当前技术验收见 [阅读体验精修报告](AI000_READING_EXPERIENCE_REFINEMENT.md)；核心考核未变，内容作用域仍为 r1。
+
 日期：2026-10-26（Asia/Shanghai）。基线：`e355836f98e3bebdf1f85bd6c92de6e47bc3ef03`。开始时 `git fetch origin main` 后 HEAD 与 origin/main 差异为 0/0。原有 `next-env.d.ts` 开发路径修改、`.codex-remote-attachments/` 与根目录 ML/PY 浏览器文件均属于已有工作，本轮不提交、不删除。
 
 采用现行编辑规范 V1.0；V1.1 仅参考其有证据支持的迁移练习、组装内容适配建议，未宣布定版。完整阅读任务指定的规范、三类现行标杆及最近跨学科审查；原始 AI000 规划见 `curriculum/AI技术课程体系_V1.0.md` 的 AI000 条目和对应 JSON。只开发第 1 章第 1 节，不改变七章规划、6–10 小时课程学时与整课 planned 状态。

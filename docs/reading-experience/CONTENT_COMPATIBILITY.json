@@ -1,0 +1,779 @@
+{
+  "checkedAt": "2026-10-26T15:01:02.037Z",
+  "unchangedOtherLessons": 23,
+  "allVersionsAnchorsAndAssessmentsPreserved": true,
+  "entries": [
+    {
+      "id": "AI000-C01-L01",
+      "version": 1,
+      "digest": "64e7f3d3b7bcbc5a53129f66ff06097bb45eeaeb61473f1a1e08bf92dc4e5dbc",
+      "sections": [
+        "mail-task",
+        "rule-and-learning",
+        "ai-meaning",
+        "many-tasks",
+        "automation",
+        "mistakes",
+        "check-output",
+        "practice",
+        "takeaways"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "product-review"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "identify-systems"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "product-review"
+          ]
+        }
+      ],
+      "exercises": "1bec82e009c458bf288a2e8f29e3eeacdd8057d262c78de79e1fcaa9c34e6994"
+    },
+    {
+      "id": "MA101-C02-L03",
+      "version": 2,
+      "digest": "8f0967b0a0a03b95158e3fc078341410a680d8ba053c4e297ab58da8d80193fd",
+      "sections": [
+        "scene",
+        "intuition",
+        "worked",
+        "definition",
+        "diagram",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "quantity-choice"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "quantity-choice",
+            "same-displacement"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "same-displacement",
+            "displacement-transfer"
+          ]
+        }
+      ],
+      "exercises": "45c31075e64bd38593f39ead8e47e11c579fa4130df9af8e2734dcb6ea7b8d49"
+    },
+    {
+      "id": "MA101-C02-L04",
+      "version": 1,
+      "digest": "4ed8fd14a580511106503adbbdad6241c24fef48663904c3016147ca0d5bde25",
+      "sections": [
+        "scene",
+        "intuition",
+        "worked",
+        "definition",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "read-components",
+            "build-record"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "read-components"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "build-record"
+          ]
+        }
+      ],
+      "exercises": "effda47ff63f0d2b66976928727668fff4a08ed9e38fac2fb758a78253c7e8ec"
+    },
+    {
+      "id": "MA101-C02-L05",
+      "version": 1,
+      "digest": "2e710caf4345d49ec860bf2fe1c304e8cf6e0a4e1aa7b5eccf8b9fee35006095",
+      "sections": [
+        "scene",
+        "worked",
+        "diagram",
+        "definition",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "addition-new",
+            "addition-check"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "addition-new"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "addition-check"
+          ]
+        }
+      ],
+      "exercises": "a513bbbe3c2889dc7a588ac875fce42d596c262c96cd5d6105c0d9767767a03c"
+    },
+    {
+      "id": "MA101-C02-L06",
+      "version": 1,
+      "digest": "2fe1d35d3597fc62d049c700b484aa36982edfde813c408605f7d4e5d071cf38",
+      "sections": [
+        "scene",
+        "worked",
+        "definition",
+        "diagram",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "scale-values",
+            "scale-explain"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "scale-values"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "scale-values",
+            "scale-explain"
+          ]
+        }
+      ],
+      "exercises": "851edcfb9a7a11a11fe0daf6deeb1f554df630236c952f66dc0eb4bd647a5f43"
+    },
+    {
+      "id": "ML201-C03-L01",
+      "version": 1,
+      "digest": "7675d8830b5432d1387fc18591883e7e43f55f73dc2d9e0afdfa45678b9e73e0",
+      "sections": [
+        "problem",
+        "intuition",
+        "definition",
+        "practice",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "transfer-task"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "task-kind"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "task-interpolation"
+          ]
+        }
+      ],
+      "exercises": "70edaa3c8b6955630b837b5410b98387c4ac3c0024a37a96699dbcadf21b1a6c"
+    },
+    {
+      "id": "ML201-C03-L02",
+      "version": 1,
+      "digest": "53820bd813d01ba59a237d1218a1966f16d0c49f04ec4cd7b21b6016525b4530",
+      "sections": [
+        "model",
+        "calculate",
+        "code",
+        "check",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "model-calculate"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "model-calculate"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "data-roles"
+          ]
+        }
+      ],
+      "exercises": "40a92c6c1e1866355024b55b06c099e6286ce9c4eee33db63b6d5126729460eb"
+    },
+    {
+      "id": "ML201-C03-L03",
+      "version": 1,
+      "digest": "92091377137a4c3062d9c1d74f1825562c168526bd539efbf5dc01ff8b3889c0",
+      "sections": [
+        "errors",
+        "calculate",
+        "choice",
+        "code",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "loss-manual"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "loss-transfer"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "loss-transfer"
+          ]
+        }
+      ],
+      "exercises": "12864c62cd3f0dfe1f5439c64b22353407c2ba5c8829cb747ad4538a403b4ad1"
+    },
+    {
+      "id": "ML201-C04-L02",
+      "version": 1,
+      "digest": "d9758378cb21e5786bd3c21b142c3f8063859bfc4d3f30a4f5efd4019f173f5d",
+      "sections": [
+        "question",
+        "derive",
+        "step",
+        "boundaries",
+        "code"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "derive-new"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "scalar-step"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "rate-experiment"
+          ]
+        }
+      ],
+      "exercises": "7b5336bbbf3f379c137762ee5a26d63ac91ea225f9c154a30dead24b97b88a3f"
+    },
+    {
+      "id": "ML201-C04-L03",
+      "version": 1,
+      "digest": "7675813c6dbf06e2eaae249f2468c6a632807208dc51d5857b072468e783efef",
+      "sections": [
+        "setup",
+        "weight",
+        "bias",
+        "update",
+        "practice"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "partial-fixed"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "gradient-derive"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "same-error"
+          ]
+        }
+      ],
+      "exercises": "484f04d22943d990ae819bf93ce686c31086b45c3813843a6082a95de8e18d53"
+    },
+    {
+      "id": "ML201-C04-L04",
+      "version": 1,
+      "digest": "2e71800119eda36d47ef44b39b5f19d1aacc7efbc49ad57cfcb0b262c3b1f668",
+      "sections": [
+        "setup",
+        "gradients",
+        "verify",
+        "debug",
+        "code",
+        "verification"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "hand-update"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "hand-update"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "sequential",
+            "repeat-data"
+          ]
+        }
+      ],
+      "exercises": "8c4d89458f9782ba086d6413176dca90a1c9caf5b8910852dc28357de2c7e52a"
+    },
+    {
+      "id": "ML201-C04-L05",
+      "version": 1,
+      "digest": "e0547cd116e39acacceea45bd8cac6a1a2c13bc7df91066007db53fbe716287e",
+      "sections": [
+        "environment",
+        "shapes",
+        "training",
+        "full-code",
+        "experiment",
+        "review"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "code-map"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "train-complete"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "loss-read"
+          ]
+        }
+      ],
+      "exercises": "e1ebdbbfbfef1314fdbb455a3f5f3964ded676bfe4166777f9952acdfb913918"
+    },
+    {
+      "id": "ML201-C04-L01",
+      "version": 1,
+      "digest": "60ff0636fa10563eef3fa1a16dc4935a63ac73ac524181d2902eefb1c917decf",
+      "sections": [
+        "intuition",
+        "loss",
+        "gradient",
+        "experiment",
+        "code",
+        "quiz",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "legacy-roles"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "legacy-gradient"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "legacy-code"
+          ]
+        },
+        {
+          "objective": 4,
+          "exerciseIds": [
+            "legacy-rate"
+          ]
+        }
+      ],
+      "exercises": "1443abb8fc16e830a0261c0c341a880aa9747b7c37a0c3aa037b9b80f58aa890"
+    },
+    {
+      "id": "PY101-C05-L01",
+      "version": 2,
+      "digest": "cfe7b25cbe1bdd00a7e8bd53a2130218a64a2a76613508e1a65e56c065882017",
+      "sections": [
+        "concept",
+        "binding",
+        "defaults",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "define-double"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "minutes-to-seconds"
+          ]
+        }
+      ],
+      "exercises": "b619559c85389eff815d68be128eaedb85a27e48258761058f7afd710f390912"
+    },
+    {
+      "id": "PY101-C05-L02",
+      "version": 1,
+      "digest": "1efaabac8ba11a3ae26b554131c34e917fd4ce2536705ac4c610ec818bdc807d",
+      "sections": [
+        "binding",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "bind-scale"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "bind-scale"
+          ]
+        }
+      ],
+      "exercises": "2961c41ea5fc4a837864e95e49278a0d960aadac0ac0816ee8da9bd05cde0af0"
+    },
+    {
+      "id": "PY101-C05-L03",
+      "version": 1,
+      "digest": "464401c5d3def09f82a43a764f47bba66bb5a7a1354b8e3b90c985c386669874",
+      "sections": [
+        "return",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "return-chain"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "return-chain"
+          ]
+        }
+      ],
+      "exercises": "0a195bfcbf935c0b6a18baf535c7bfe8242604ce4bd6423797fd6d4364701abe"
+    },
+    {
+      "id": "PY101-C05-L04",
+      "version": 1,
+      "digest": "0195e241298b62d9c690e9548b7882c29f47a08c72f84aa75989c5cf47f4e4ab",
+      "sections": [
+        "scope",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "scope-trace"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "scope-trace"
+          ]
+        }
+      ],
+      "exercises": "d7781504eb4745e341b753beb9131fd28764aa3b0496ab4c8e476b754c829b8c"
+    },
+    {
+      "id": "PY101-C05-L05",
+      "version": 1,
+      "digest": "4879e722b463c049da187e291284b7864fce427cfff7da5ea7f0091a2ff2c1bd",
+      "sections": [
+        "defaults",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "default-calls"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "default-calls"
+          ]
+        }
+      ],
+      "exercises": "a1d9fce6dc9d61d4b6892eb693825d3e1f328dca8ce74250e9c6223dfa4411f1"
+    },
+    {
+      "id": "MA101-C02-L01",
+      "version": 1,
+      "digest": "0697e683df11d31942e05aa714adf6813f0bb62854cde24c900e36d4e0911734",
+      "sections": [
+        "vectors",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "vector-new"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "vector-new"
+          ]
+        }
+      ],
+      "exercises": "f066cf6b4d61a43f36a2913bc28e2d0a120fa9eb993be2d5540e92f0f65e7856"
+    },
+    {
+      "id": "MA101-C02-L02",
+      "version": 1,
+      "digest": "87e4ffe53218a1b2ef4d94f736fb42f414c1db0b2752a73d5b41d93bc274992f",
+      "sections": [
+        "dot",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "dot-new"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "dot-new"
+          ]
+        }
+      ],
+      "exercises": "bed568032864ded0559760af90df8abbdf7d49229b65e1b689de38f805d893d0"
+    },
+    {
+      "id": "MA101-C03-L01",
+      "version": 1,
+      "digest": "39410918d20e8cba4ff8a7f6fe49e072a54d4a10408af4514f8e906e3466a2c7",
+      "sections": [
+        "vectors",
+        "matrices",
+        "multiply",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "transpose-new"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "transpose-new"
+          ]
+        }
+      ],
+      "exercises": "bf75cf70ab4715c2951d6b0360690c88762b9bacca9960eeae024f4ad5e8a3b5"
+    },
+    {
+      "id": "MA101-C03-L02",
+      "version": 1,
+      "digest": "0941f935abd9bd1dbe9a50e698eeaf70ef3da2d1bcb195d057be9f6ffda50b52",
+      "sections": [
+        "multiply",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "product-new"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "product-new"
+          ]
+        }
+      ],
+      "exercises": "16c40a73aab516e17211ccc05fc172147fff779ad7195c3b869c634799dd1b4c"
+    },
+    {
+      "id": "MA101-C03-L03",
+      "version": 1,
+      "digest": "66f4d7586db4f6ebf9d1b8474d9802965154e8c02a2bf8210959baf6d5d84585",
+      "sections": [
+        "shapes",
+        "code",
+        "quiz",
+        "verification",
+        "legacy-validation",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "array-choose"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "array-choose"
+          ]
+        }
+      ],
+      "exercises": "7e450af48386c406abc337468ae8f6705d076764737415b749fa4354229f4f9b"
+    },
+    {
+      "id": "PY101-C05-L06",
+      "version": 1,
+      "digest": "8ac18f1b83b6a6610a18493d80d0eac2fc6e447d4a70b24331a9eacd2eb3b7be",
+      "sections": [
+        "defaults",
+        "binding",
+        "code",
+        "quiz",
+        "summary"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "safe-list"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "interface-rules"
+          ]
+        }
+      ],
+      "exercises": "db84bdb6f08b38f2ef2213f5841494962bd2671d535f2975b66474145cc01b11"
+    }
+  ]
+}
