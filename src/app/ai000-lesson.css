@@ -1,0 +1,53 @@
+.ai-figure {
+  margin: 28px 0;
+  padding: 22px;
+  background: #10182b;
+  border: 1px solid #353d67;
+  border-radius: 18px;
+  color: #e8edf9;
+}
+.ai-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22px minmax(0, 1fr) 22px minmax(0, 1fr);
+  align-items: stretch;
+  gap: 10px;
+}
+.ai-step, .ai-mail {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #525baa;
+  border-radius: 12px;
+  background: #1a2140;
+}
+.ai-label { display: block; color: #bcc2ff; font-size: 14px; margin-bottom: 10px; }
+.ai-step strong, .ai-mailTitle strong { display: block; font-size: 16px; line-height: 1.6; }
+.ai-step p, .ai-usage, .ai-reason { font-size: 14px; line-height: 1.8; color: #c1cbe1; }
+.ai-step p { margin: 10px 0 0; }
+.ai-task { border-color: #247886; background: #112d39; }
+.ai-task .ai-label { color: #7de1ef; }
+.ai-output { border-color: #7856aa; background: #2a203e; }
+.ai-output .ai-label { color: #d4b4ff; }
+.ai-arrow { display: flex; align-items: center; justify-content: center; color: #78d9ef; }
+.ai-down { display: none; }
+.ai-usage { margin: 18px 0 0; padding-top: 14px; border-top: 1px dashed #414d6c; }
+.ai-rule { font-size: 16px; line-height: 1.8; margin: 0 0 16px; color: #d9ddff; }
+.ai-outcomes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.ai-mailTitle { min-height: 84px; }
+.ai-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+.ai-comparison dt { color: #bbc6df; font-size: 14px; margin-bottom: 6px; }
+.ai-comparison dd { font-size: 16px; margin: 0; }
+.ai-correct, .ai-incorrect { display: flex; gap: 7px; align-items: center; font-size: 14px; line-height: 1.6; margin: 0; }
+.ai-correct { color: #7ee5d3; }
+.ai-incorrect { color: #ffd197; }
+.ai-correct svg, .ai-incorrect svg { flex-shrink: 0; }
+.ai-reason { margin: 8px 0 0; }
+.ai-figure figcaption { margin-top: 18px; color: #b9c4dd; font-size: 14px; line-height: 1.8; }
+.ai-srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 767px) {
+  .ai-figure { padding: 16px; }
+  .ai-flow { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .ai-right { display: none; }
+  .ai-down { display: block; }
+  .ai-outcomes { grid-template-columns: minmax(0, 1fr); }
+  .ai-mailTitle { min-height: 0; }
+}

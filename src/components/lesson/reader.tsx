@@ -360,7 +360,7 @@ export function Reader({
         </div>
         {lesson.optionalLesson && <p className="demo-content-note">本节整体为可选进阶，不作为基础课程达标条件。</p>}
         <ObjectiveAssessment lesson={lesson} />
-        {(lesson.courseId !== "MA101" || legacy) && <Glossary />}
+        {course.lvl !== "L0" && (lesson.courseId !== "MA101" || legacy) && <Glossary />}
         {(lesson.id === "PY101-C05-L01" || lesson.id === "MA101-C03-L01") && <p className="assessment-note">本节已按 V2.1 细分。既有书签与阅读历史保留；旧“已读完”不代表新增目标已达标，请按上方练习重新自查。</p>}
         {lesson.prerequisiteLinks.length > 0 && (
           <details className="lesson-preflight">

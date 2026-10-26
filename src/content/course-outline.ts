@@ -26,6 +26,9 @@ function chapterSlots(
 }
 // 节级编辑蓝图；不修改 V1.0 章级事实，也不表示这些课时已写完。
 export const courseOutline = [
+  ...chapterSlots("AI000", 1, [
+    ["L01", "人工智能究竟是什么？"],
+  ]),
   ...chapterSlots("ML201", 1, [
     ["L01", "什么是机器学习"],
     ["L02", "如何定义预测任务"],

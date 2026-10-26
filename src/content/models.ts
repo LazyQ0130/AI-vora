@@ -137,6 +137,12 @@ const quizSchema = z
       });
   });
 export const contentBlockSchema = z.discriminatedUnion("type", [
+  z.object({
+    type: z.literal("ai-task-figure"),
+    kind: z.enum(["mail-flow", "mail-outcomes"]),
+    alt: text,
+    caption: text,
+  }),
   z.object({ type: z.literal("vector-figure"), kind: z.enum(["meaning", "components", "addition", "scaling"]) }),
   z.object({ type: z.literal("paragraph"), text }),
   z.object({ type: z.literal("heading"), text }),

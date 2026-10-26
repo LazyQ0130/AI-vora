@@ -1,0 +1,265 @@
+{
+  "checkedAt": "2026-10-26T14:14:17.328Z",
+  "base": "http://127.0.0.1:3003",
+  "browser": "Codex in-app Chromium",
+  "note": "真实生产页面与视口模拟；由同一 AI 操作工具验收，不是实体设备或真实学习者试学。测试文字与已读仅用于隔离的 3003 origin。",
+  "results": [
+    {
+      "label": "AI000 desktop 1440x1000",
+      "code": 0,
+      "completion": "标记本节已读完",
+      "figures": [
+        {
+          "description": true,
+          "font": "14px",
+          "left": 387.6666870117187,
+          "right": 1086.3333740234375,
+          "scrollWidth": 697,
+          "width": 698.6666870117188
+        },
+        {
+          "description": true,
+          "font": "16px",
+          "left": 387.6666870117187,
+          "right": 1086.3333740234375,
+          "scrollWidth": 697,
+          "width": 698.6666870117188
+        }
+      ],
+      "glossary": false,
+      "h1": "人工智能究竟是什么？",
+      "height": 1000,
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "label": "AI000 tablet 768x1024",
+      "code": 0,
+      "completion": "标记本节已读完",
+      "figures": [
+        {
+          "description": true,
+          "font": "14px",
+          "left": 50.66666793823242,
+          "right": 702.0000419616699,
+          "scrollWidth": 650,
+          "width": 651.3333740234375
+        },
+        {
+          "description": true,
+          "font": "16px",
+          "left": 50.66666793823242,
+          "right": 702.0000419616699,
+          "scrollWidth": 650,
+          "width": 651.3333740234375
+        }
+      ],
+      "glossary": false,
+      "h1": "人工智能究竟是什么？",
+      "height": 1024,
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "label": "AI000 mobile 390x844",
+      "code": 0,
+      "completion": "标记本节已读完",
+      "figures": [
+        {
+          "description": true,
+          "font": "14px",
+          "left": 32.66666793823242,
+          "right": 342.0000114440918,
+          "scrollWidth": 308,
+          "width": 309.3333435058594
+        },
+        {
+          "description": true,
+          "font": "16px",
+          "left": 32.66666793823242,
+          "right": 342.0000114440918,
+          "scrollWidth": 308,
+          "width": 309.3333435058594
+        }
+      ],
+      "glossary": false,
+      "h1": "人工智能究竟是什么？",
+      "height": 844,
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "label": "mobile article navigation",
+      "dialog": false,
+      "focus": "换一个系统，独立说明你的判断",
+      "hash": "#practice"
+    },
+    {
+      "label": "mobile chapter hierarchy",
+      "links": [
+        "返回课程详情",
+        "1.1人工智能究竟是什么？"
+      ]
+    },
+    {
+      "label": "mobile exercise",
+      "hasRubric": true,
+      "id": "exercise-identify-systems",
+      "input": "浏览器验收记录：输入、任务、输出；核对依据。非学生试学答案。",
+      "open": 3
+    },
+    {
+      "label": "mobile exercise",
+      "hasRubric": true,
+      "id": "exercise-product-review",
+      "input": "浏览器验收记录：输入、任务、输出；核对依据。非学生试学答案。",
+      "open": 3
+    },
+    {
+      "label": "before explicit completion",
+      "storage": {
+        "aivora:learning:v2:AI000:AI000-C01-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C01-L01\",\"contentVersion\":1,\"percent\":89,\"completed\":false,\"section\":\"practice\",\"updatedAt\":1793023943260}"
+      }
+    },
+    {
+      "label": "refresh before explicit completion",
+      "completed": "标记本节已读完",
+      "inputs": [
+        "",
+        ""
+      ],
+      "open": 0
+    },
+    {
+      "label": "explicit completion survives reload",
+      "storage": {
+        "aivora:learning:v2:AI000:AI000-C01-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C01-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793023959754}"
+      },
+      "button": "本节已读完"
+    },
+    {
+      "label": "AI000 course directory",
+      "h1": "人工智能导论与技术地图",
+      "hasUnpublishedNotice": true,
+      "lessonLinks": [
+        {
+          "href": "/learn/AI000/AI000-C01-L01",
+          "text": "1.1人工智能究竟是什么？"
+        },
+        {
+          "href": "/learn/AI000/AI000-C01-L01",
+          "text": "阅读样章"
+        }
+      ],
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "label": "PY101 desktop regression",
+      "code": 4,
+      "completion": "标记本节已读完",
+      "figures": [],
+      "glossary": true,
+      "h1": "Python 函数与参数",
+      "height": 1000,
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "label": "PY101 code copy",
+      "matches": true
+    },
+    {
+      "label": "PY101 Python download",
+      "sameBytes": true
+    },
+    {
+      "label": "PY101 next lesson",
+      "title": "位置与关键字参数绑定"
+    },
+    {
+      "label": "MA101 desktop regression",
+      "code": 0,
+      "completion": "标记本节已读完",
+      "figures": [],
+      "glossary": false,
+      "h1": "什么是向量？",
+      "height": 1000,
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "label": "ML201 desktop regression",
+      "code": 2,
+      "completion": "标记本节已读完",
+      "figures": [],
+      "glossary": true,
+      "h1": "手动计算一次参数更新",
+      "height": 1000,
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "label": "MA101 mobile regression",
+      "code": 0,
+      "completion": "标记本节已读完",
+      "figures": [],
+      "glossary": false,
+      "h1": "什么是向量？",
+      "height": 844,
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "label": "PY101 mobile regression",
+      "code": 4,
+      "completion": "标记本节已读完",
+      "figures": [],
+      "glossary": true,
+      "h1": "Python 函数与参数",
+      "height": 844,
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "label": "ML201 mobile regression",
+      "code": 2,
+      "completion": "标记本节已读完",
+      "figures": [],
+      "glossary": true,
+      "h1": "手动计算一次参数更新",
+      "height": 844,
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "label": "AI000 directory after hydration",
+      "lessonLinks": [
+        "/learn/AI000/AI000-C01-L01",
+        "/learn/AI000/AI000-C01-L01"
+      ],
+      "planned": true,
+      "text": "COURSE CONTENTS\n人工智能导论与技术地图\n\n7 章 · 1 节核心课已制作\n\n已制作课时阅读比例\n100%\n1 / 1 节已标记读完 · 仅当前浏览器\n筹备、可选与旧版课时不计入比例；已读不代表掌握。\n第 1 章：\n人工智能是什么：能力、边界与常见误区\n1.1\n人工智能究竟是什么？\n第 2 章：\nAI、机器学习、深度学习与生成式 AI 的包含关系\n第 3 章：\n监督学习、无监督学习、自监督学习与强化学习\n第 4 章：\n数据、参数、模型、训练、验证、测试与推理\n第 5 章：\n主要技术方向：NLP、LLM、CV、多模态、RL、生成式模型\n第 6 章：\nAI 风险与责任：隐私、偏差、版权、幻觉与误用\n第 7 章：\n如何阅读课程先修图与选择学习路径"
+    },
+    {
+      "label": "reduced motion navigation",
+      "focus": "自动完成一件事，就一定用到了 AI 吗？",
+      "hash": "#automation",
+      "reduced": true
+    }
+  ],
+  "consoleWarningsAndErrors": [],
+  "toolNotes": [
+    "DOMStorage.getDOMStorageItems 不受工具支持，改用受支持的 Runtime.evaluate 读取测试 origin 进度。",
+    "Windows DPI 与 captureBeyondViewport=true 曾导致截图比例/滚动区域异常；最终六张证据均用明确 CSS 视口且 captureBeyondViewport=false 重新采集，并查看结果。",
+    "目录最初读到服务端 0/1 状态；等待已读链接可见后确认水合恢复为 1/1。"
+  ],
+  "finalScreenshots": [
+    "mail-flow-desktop.png",
+    "mail-outcomes-desktop.png",
+    "mail-flow-tablet.png",
+    "mail-flow-mobile.png",
+    "mail-outcomes-mobile.png",
+    "exercise-mobile.png"
+  ]
+}

@@ -7,6 +7,7 @@ import "./reader.css";
 import "./learning-system.css";
 import "./teaching-v2-1.css";
 import "./teaching-v2-2.css";
+import "./ai000-lesson.css";
 import { Header, Footer } from "@/components/site-shell";
 import { Providers } from "@/components/ui";
 

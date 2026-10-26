@@ -6,6 +6,17 @@ const revisedCoreLessons: Record<string, number> = { "MA101-C02-L03": 2, "PY101-
 
 // 发布权限独立于原始课程规划。技术证据不替代人工审核。
 export const publicationManifest = [
+  {
+    lessonId: "AI000-C01-L01",
+    courseId: "AI000",
+    chapterId: "AI000-C01",
+    title: "人工智能究竟是什么？",
+    contentVersion: 1,
+    order: 1,
+    status: "pending-review",
+    access: "preview",
+    technicalEvidence: "docs/AI000_LESSON_1_1_REVIEW.md",
+  },
   ...courseOutline
     .filter((slot) => mlV2LessonIds.some((id) => id === slot.lessonId) || slot.courseId === "PY101" || maV22LessonIds.some((id) => id === slot.lessonId))
     .map((slot) => ({

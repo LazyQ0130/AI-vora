@@ -1,0 +1,67 @@
+{
+  "checkedAt": "2026-10-26T14:08:34.736Z",
+  "lessonId": "AI000-C01-L01",
+  "status": "pending-review",
+  "access": "preview",
+  "readable": true,
+  "courseStatus": "planned",
+  "next": null,
+  "previous": null,
+  "futureLessonResolves": false,
+  "ruleChecks": [
+    {
+      "id": "A",
+      "subject": "免费领奖，立即登记",
+      "givenCategory": "垃圾",
+      "ruleOutput": "垃圾",
+      "correct": true
+    },
+    {
+      "id": "B",
+      "subject": "你报名的免费讲座明晚开始",
+      "givenCategory": "正常",
+      "ruleOutput": "垃圾",
+      "correct": false
+    },
+    {
+      "id": "C",
+      "subject": "项目会议改到周三",
+      "givenCategory": "正常",
+      "ruleOutput": "正常",
+      "correct": true
+    },
+    {
+      "id": "D",
+      "subject": "领取礼品，立即登记",
+      "givenCategory": "垃圾",
+      "ruleOutput": "正常",
+      "correct": false
+    }
+  ],
+  "exercises": [
+    {
+      "id": "identify-systems",
+      "hints": 2,
+      "answerSteps": 6,
+      "rubric": [
+        "四个场景都写清输入、任务、输出，三者没有混淆；措辞可以不同。",
+        "甲乙判断对应题设的明确步骤，丙判断使用题设给出的学习方法证据。",
+        "丁的答案保留方法上的不确定性，并提出能够区分简单查表与知识推理的问题；接受说明条件的‘可能是’。",
+        "能解释按时备份为何通常直接自动化即可；没有把复杂、快速或固定规则当成唯一分类标准。"
+      ]
+    },
+    {
+      "id": "product-review",
+      "hints": 2,
+      "answerSteps": 7,
+      "rubric": [
+        "用自己的话说明 AI 的任务和作用，并联系照片分类；不能只写‘像人一样思考’或只背缩写。",
+        "写清照片输入、类别建议输出，以及工作人员核对的后续动作。",
+        "至少一个可能正确的例子和两个具体错误机制，解释输入、示例或类别限制如何影响判断。",
+        "核查方案包含可靠对照依据、不同条件的新照片、逐项比较及判错/不确定后的处理，能够照着执行。",
+        "承认核查范围有限，不虚构实测数字，不把系统的语气或重复回答当作外部证据。"
+      ]
+    }
+  ],
+  "note": "规则输出由独立常量预期核对；开放题语义另见审查报告。本脚本不运行学习模型，不代表人工审核或学生试学。"
+}

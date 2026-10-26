@@ -7,15 +7,19 @@ import { lessonRegistry, resolveLesson } from "../src/lib/course-engine";
 import { programs } from "../src/content/resources/programs";
 import { readablePublications } from "../src/content/publication-manifest";
 
-test("三门不同类型教材用同一模型，公式可严格解析，图片有正确尺寸和可读替代文字", async () => {
-  assert.equal(readablePublications.length, 23);
+test("四门不同类型教材用同一模型，公式可严格解析，图片有正确尺寸和可读替代文字", async () => {
+  assert.equal(readablePublications.length, 24);
   for (const publication of readablePublications) {
     const { lesson } = resolveLesson(
       publication.courseId,
       publication.lessonId,
     )!;
     const blocks = lesson.sections.flatMap((s) => s.blocks);
-    if (lesson.courseId === "MA101" && publication.catalogRole !== "legacy") {
+    if (lesson.courseId === "AI000") {
+      assert.equal(blocks.filter((block) => block.type === "exercise").length, 2);
+      assert.equal(blocks.filter((block) => block.type === "ai-task-figure").length, 2);
+      assert.ok(blocks.every((block) => !["code", "math", "experiment"].includes(block.type)));
+    } else if (lesson.courseId === "MA101" && publication.catalogRole !== "legacy") {
       assert.ok(lesson.sections.filter((section) => section.tier === "core").flatMap((section) => section.blocks).filter((block) => block.type === "exercise").length >= 2);
       assert.ok(blocks.some((block) => block.type === "vector-figure"));
       assert.ok(lesson.sections.filter((section) => section.tier === "core").every((section) => !section.blocks.some((block) => block.type === "code")));
@@ -52,7 +56,7 @@ test("三门不同类型教材用同一模型，公式可严格解析，图片�
   }
   assert.deepEqual(
     [...new Set([...lessonRegistry.values()].map((l) => l.courseId))].sort(),
-    ["MA101", "ML201", "PY101"],
+    ["AI000", "MA101", "ML201", "PY101"],
   );
 });
 test("全部下载脚本、Notebook 和网页完整代码同源，Notebook 不伪造执行结果", async () => {

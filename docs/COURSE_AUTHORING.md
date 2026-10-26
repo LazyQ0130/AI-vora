@@ -10,7 +10,7 @@
 
 原 curriculum/ 的 Markdown、JSON 是 20 门课程、等级、目标、学时、先修、章节与项目的事实来源。教材不能反过来改写这些事实。lib/curriculum 的 Course 是目录适配类型；content/models 的 Course 组合相同事实与结构化 Chapter。每个 Chapter 有稳定 ID、顺序和真实可读课时，不为规划章节伪造课时。
 
-Lesson 数据位于 content/lessons，资源程序位于 content/resources/programs，发布状态位于 publication-manifest；course-engine 负责关联与解析。Reader 不导入某一节教材。17 节现行教材与 6 节旧版试读全部经过同一 ContentRenderer。旧 sample.ts 与 v1 progress API 保留兼容和既有测试；新 UI 不直接消费它们。
+Lesson 数据位于 content/lessons，资源程序位于 content/resources/programs，发布状态位于 publication-manifest；course-engine 负责关联与解析。Reader 不导入某一节教材。18 节现行教材与 6 节旧版试读全部经过同一 ContentRenderer。旧 sample.ts 与 v1 progress API 保留兼容和既有测试；新 UI 不直接消费它们。
 
 ## 添加一节教材
 
@@ -35,11 +35,12 @@ Lesson 数据位于 content/lessons，资源程序位于 content/resources/progr
 | published | 正式教材 | public / preview / private；技术与审核证据齐全 |
 | deprecated | 下线 | private |
 
-technicalEvidence / reviewEvidence 是仓库审核证据引用，不是权限系统或数字签名。维护者负责审查证据的真实性与适用修订；schema 检查字段和状态门禁，不能替代专业审核。当前 23 节均为 pending-review/preview（含旧综合试读），整门课程仍 planned。
+technicalEvidence / reviewEvidence 是仓库审核证据引用，不是权限系统或数字签名。维护者负责审查证据的真实性与适用修订；schema 检查字段和状态门禁，不能替代专业审核。当前 24 节均为 pending-review/preview（含旧综合试读及 AI000 1.1），整门课程仍 planned。
 
 ## 内容组件
 
 - paragraph / heading：React 文字节点，不注入任意 HTML。
+- ai-task-figure：受控的邮件流程或判断对照图，使用原创教学数据；必须提供 alt 和图注，通过可访问描述关联，窄屏纵向排列。AI000 无代码课直接用 lessonSchema，不套用强制附加程序的工厂；L0 不注入共享回归术语表。示例与证据见 [AI000 1.1 审查](AI000_LESSON_1_1_REVIEW.md)。
 - image：本地 PNG/WebP/JPG、解释性 alt、图注和固有尺寸；可选 mobile 对象提供 src/width/height。通用 picture 根据视口选择构图，无需新增页面；提供原图入口。
 - math：LaTeX 与中文解释。KaTeX trust=false，测试使用 strict/error 解析；长公式只在自己的 region 中滚动。
 - code：code / filename / language，支持 Python、JavaScript、Bash、JSON、text，复制不包含行号。不提供在线运行按钮。

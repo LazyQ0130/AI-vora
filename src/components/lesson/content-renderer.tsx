@@ -6,6 +6,7 @@ import { CheckCircle2, Download, Expand } from "lucide-react";
 import type { ContentBlock, LearningResource } from "@/content/models";
 import { GuidedExercise } from "./guided-exercise";
 import { VectorFigure } from "./vector-figure";
+import { AiTaskFigure } from "./ai-task-figure";
 import {
   Paragraph,
   InfoCallout,
@@ -116,6 +117,8 @@ export const ContentRenderer = memo(function ContentRenderer({
   resources: LearningResource[];
 }) {
   switch (block.type) {
+    case "ai-task-figure":
+      return <AiTaskFigure block={block} />;
     case "vector-figure":
       return <VectorFigure kind={block.kind} />;
     case "paragraph":
