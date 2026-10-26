@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Reader } from "@/components/lesson/reader";
-import { getAdjacentLessons, resolveLesson } from "@/lib/course-engine";
+import { getAdjacentLessons, resolveLesson, lessonSummaries } from "@/lib/course-engine";
 import { readablePublications } from "@/content/publication-manifest";
 export const dynamicParams = false;
 type Params = { params: Promise<{ courseId: string; lessonId: string }> };
@@ -31,6 +31,7 @@ export default async function LearnPage({
     <Reader
       key={`${courseId}:${lessonId}`}
       {...resolved}
+      progressLessons={lessonSummaries.filter((entry) => entry.courseId === courseId)}
       adjacent={getAdjacentLessons(resolved.course, lessonId)}
     />
   );

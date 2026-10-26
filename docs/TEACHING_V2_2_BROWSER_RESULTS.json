@@ -1,0 +1,1120 @@
+{
+  "checkedAt": "2026-10-26T04:37:55.863Z",
+  "base": "http://127.0.0.1:3001",
+  "environment": "Codex in-app Chromium; viewport emulation, not real devices",
+  "layout": [
+    {
+      "path": "/learn/ML201/ML201-C03-L01",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L02",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L03",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L02",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L03",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L04",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L05",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L01",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L02",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L03",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L04",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L05",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L06",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L03",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L04",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L05",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L06",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L01",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L02",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L01",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L02",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L03",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L01",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1425,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L01",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L02",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L03",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L02",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L03",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L04",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L05",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L01",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L02",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L03",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L04",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L05",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L06",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L03",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L04",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L05",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L06",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L01",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L02",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L01",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L02",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L03",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L01",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 753,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L01",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L02",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L03",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L02",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L03",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L04",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L05",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L01",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L02",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L03",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L04",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L05",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L06",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L03",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L04",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L05",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L06",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L01",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L02",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L01",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L02",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L03",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L01",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L01",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L02",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L03",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L02",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L03",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L04",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L05",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L01",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L02",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L03",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L04",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L05",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L06",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L03",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L04",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L05",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L06",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L01",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L02",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L01",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L02",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L03",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L01",
+      "width": 320,
+      "height": 800,
+      "clientWidth": 305,
+      "formulaErrors": 0,
+      "leftArticleLinks": 0,
+      "missingHashes": [],
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    }
+  ],
+  "interactions": [
+    {
+      "case": "five-legacy-completed-new-uncompleted",
+      "origin": "http://localhost:3001",
+      "overview": "COURSE CONTENTS\nAI 数学 I：线性代数与微积分\n\n10 章 · 4 节核心课已制作\n\n已制作课时阅读比例\n0%\n0 / 4 节已标记读完 · 仅当前浏览器\n筹备、可选与旧版课时不计入比例；已读不代表掌握。",
+      "newCompleteIcons": 0
+    },
+    {
+      "case": "complete-one-and-reload",
+      "overview": "COURSE CONTENTS\nAI 数学 I：线性代数与微积分\n\n10 章 · 4 节核心课已制作\n\n已制作课时阅读比例\n25%\n1 / 4 节已标记读完 · 仅当前浏览器\n筹备、可选与旧版课时不计入比例；已读不代表掌握。",
+      "completeIcons": 1
+    },
+    {
+      "case": "next-lesson-independent",
+      "heading": "2.2 向量的表示、维度与分量",
+      "buttonUncompleted": true,
+      "completeIcons": 1
+    },
+    {
+      "case": "chapter-enter-collapse",
+      "open": null
+    },
+    {
+      "case": "chapter-space-expand",
+      "open": ""
+    },
+    {
+      "case": "reduced-motion",
+      "result": {
+        "matches": true,
+        "transition": "0s"
+      }
+    },
+    {
+      "case": "reduced-motion-navigation",
+      "result": {
+        "focus": "2.1.4 向量相等，不要求箭尾在同一点",
+        "hash": "#definition",
+        "reduce": true,
+        "top": 175.6666717529297
+      }
+    },
+    {
+      "case": "mobile-course-drawer-only-lessons",
+      "articleLinks": 0
+    },
+    {
+      "case": "mobile-escape-focus-return",
+      "focus": "章节目录"
+    },
+    {
+      "case": "mobile-article-focus",
+      "focus": "2.3.3 把第二支箭头接到第一支的箭尖"
+    },
+    {
+      "case": "two-hints-and-reference",
+      "openDetails": 3
+    },
+    {
+      "case": "code-closed-by-default",
+      "open": null
+    },
+    {
+      "case": "code-copy",
+      "matches": true
+    },
+    {
+      "case": "code-space-closes",
+      "open": null
+    },
+    {
+      "case": "320px-svg-keyboard-scroll",
+      "client": 230,
+      "focus": "向量加法首尾相接坐标图，可横向滚动",
+      "left": 40,
+      "pageOverflow": false,
+      "scroll": 300
+    },
+    {
+      "case": "legacy-ma31-matrices-anchor",
+      "hash": "#matrices",
+      "heading": "向量与矩阵的基本运算",
+      "legacyBanner": true,
+      "targetExists": true
+    }
+  ],
+  "screenshots": [
+    "docs/screenshots/teaching-v2-2/before-ma31.jpg",
+    "docs/screenshots/teaching-v2-2/desktop-course-outline.jpg",
+    "docs/screenshots/teaching-v2-2/desktop-course-outline.png",
+    "docs/screenshots/teaching-v2-2/desktop-lesson21-isolated.jpg",
+    "docs/screenshots/teaching-v2-2/desktop-lesson21.jpg",
+    "docs/screenshots/teaching-v2-2/desktop-vector-meaning.jpg",
+    "docs/screenshots/teaching-v2-2/legacy-complete-new-empty.jpg",
+    "docs/screenshots/teaching-v2-2/mobile-addition-diagram.jpg",
+    "docs/screenshots/teaching-v2-2/mobile-article-directory.jpg",
+    "docs/screenshots/teaching-v2-2/mobile-course-directory.jpg",
+    "docs/screenshots/teaching-v2-2/mobile-scaling-diagram.jpg",
+    "docs/screenshots/teaching-v2-2/real-completion-icon.jpg"
+  ],
+  "consoleAtFinalCheck": []
+}

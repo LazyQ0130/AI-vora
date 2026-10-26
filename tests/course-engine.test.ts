@@ -133,7 +133,7 @@ test("统一内容校验拒绝重复段落、无解析题目、任意实验和�
 });
 test("相邻导航仅使用同课程真实可读教材，并按章节与课时顺序排列", () => {
   const course = getLearningCourse("ML201")!;
-  const legacy = publicationManifest.find((e) => e.catalogRole === "legacy")!;
+  const legacy = publicationManifest.find((e) => e.catalogRole === "legacy" && e.courseId === "ML201")!;
   const base = {
     ...legacy,
     catalogRole: "current" as const,

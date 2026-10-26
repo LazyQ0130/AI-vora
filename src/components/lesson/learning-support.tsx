@@ -1,13 +1,13 @@
 import type { Lesson } from "@/content/models";
 import { glossary } from "@/content/glossary";
 
-export function LearningTime({ time, optional }: { time: Lesson["learningTime"]; optional: boolean }) {
-  const range = ([min,max]: [number,number]) => `${min}–${max} 分钟`;
+export function LearningTime({ time, optional, codingOptional = false }: { time: Lesson["learningTime"]; optional: boolean; codingOptional?: boolean }) {
+  const range = ([min,max]: [number,number]) => max === 0 ? "本节不安排" : `${min}–${max} 分钟`;
   return <div className="learning-time" aria-label="分项预计学习时间">
     <span>预计阅读 <b>{range(time.reading)}</b></span>
     <span>预计练习 <b>{range(time.practice)}</b></span>
-    <span>预计代码实践 <b>{range(time.coding)}</b></span>
-    <small>编辑估计，尚未经过目标学生试学校准。{optional ? "本节整体可选。" : "以上仅估计核心活动，可选进阶另需时间。"}</small>
+    <span>{codingOptional ? "可选代码实践" : "预计代码实践"} <b>{range(time.coding)}</b></span>
+    <small>编辑估计，尚未经过目标学生试学校准。{optional ? "本节整体可选。" : codingOptional ? "阅读与基础练习为核心，代码可以跳过，挑战另需时间。" : "以上仅估计核心活动，可选进阶另需时间。"}</small>
   </div>;
 }
 

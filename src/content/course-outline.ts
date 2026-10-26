@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { mathCourseOutline } from "./math-outline";
 
 const slotSchema = z.object({
   courseId: z.string().regex(/^[A-Z]+\d{3}$/),
@@ -57,15 +58,7 @@ export const courseOutline = [
     ["L05", "简单默认参数"],
     ["L06", "可选进阶：共享对象与接口陷阱"],
   ]),
-  ...chapterSlots("MA101", 2, [
-    ["L01", "向量、加法与数乘"],
-    ["L02", "内积与求和符号"],
-  ]),
-  ...chapterSlots("MA101", 3, [
-    ["L01", "向量与矩阵的基本运算"],
-    ["L02", "矩阵乘法：行与列的内积"],
-    ["L03", "NumPy 表示与数组形状"],
-  ]),
+  ...mathCourseOutline,
 ];
 if (
   new Set(courseOutline.map((slot) => slot.lessonId)).size !==

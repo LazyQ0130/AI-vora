@@ -1,0 +1,68 @@
+{
+  "note": "图解实际使用的数值与坐标比例；独立核验见 tests/test_math_v2_2.py 与 teaching-v2-2.test.ts，不代表学生试学。",
+  "u": [
+    3,
+    2
+  ],
+  "v": [
+    -1,
+    1
+  ],
+  "sum": [
+    2,
+    3
+  ],
+  "translatedDisplacement": [
+    3,
+    2
+  ],
+  "scaling": [
+    {
+      "factor": 2,
+      "result": [
+        6,
+        4
+      ],
+      "lengthFactor": 2,
+      "direction": "same"
+    },
+    {
+      "factor": 0.5,
+      "result": [
+        1.5,
+        1
+      ],
+      "lengthFactor": 0.5,
+      "direction": "same"
+    },
+    {
+      "factor": -1,
+      "result": [
+        -3,
+        -2
+      ],
+      "lengthFactor": 1,
+      "direction": "opposite"
+    },
+    {
+      "factor": 0,
+      "result": [
+        0,
+        0
+      ],
+      "lengthFactor": 0,
+      "direction": "undefined"
+    }
+  ],
+  "coordinateView": {
+    "width": 400,
+    "height": 320,
+    "minX": -4,
+    "maxX": 7,
+    "minY": -3,
+    "maxY": 5,
+    "scale": 29,
+    "left": 44,
+    "bottom": 278
+  }
+}

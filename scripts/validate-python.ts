@@ -38,11 +38,15 @@ const examples = [...lessonRegistry.values()].flatMap((lesson) =>
     section.blocks.flatMap((block) => {
       if (block.type !== "code" || block.language !== "python") return [];
       const result = run(["-c", block.code]);
+      const expected = ({ "read_vector_components.py": "4 0 7", "add_two_vectors.py": "[2, 3]", "scale_vector.py": "[-6, -4]" } as Record<string,string>)[block.filename];
+      if (expected !== undefined && result.stdout !== expected)
+        throw new Error(`教材输出与预期不一致：${block.filename}`);
       return [
         {
           lessonId: lesson.id,
           sectionId: section.id,
           filename: block.filename,
+          ...(expected !== undefined ? { expected } : {}),
           ...result,
         },
       ];
@@ -81,9 +85,9 @@ const report = {
   note: "技术校验通过；不代表人工内容审核、试学或正式发布。代码来自仓库静态教材，仅开发阶段执行。",
 };
 await writeFile(
-  "docs/TEACHING_V2_1_PYTHON_RESULTS.json",
+  "docs/TEACHING_V2_2_PYTHON_RESULTS.json",
   JSON.stringify(report, null, 2) + "\n",
 );
 console.log(
-  `Python 单元测试通过，${examples.length} 个网页代码块全部实际执行通过，11 组核心/完整版一致。证据：docs/TEACHING_V2_1_PYTHON_RESULTS.json`,
+  `Python 单元测试通过，${examples.length} 个网页代码块全部实际执行通过，11 组核心/完整版一致。证据：docs/TEACHING_V2_2_PYTHON_RESULTS.json`,
 );

@@ -8,15 +8,21 @@ import { programs } from "../src/content/resources/programs";
 import { readablePublications } from "../src/content/publication-manifest";
 
 test("三门不同类型教材用同一模型，公式可严格解析，图片有正确尺寸和可读替代文字", async () => {
-  assert.equal(readablePublications.length, 19);
+  assert.equal(readablePublications.length, 23);
   for (const publication of readablePublications) {
     const { lesson } = resolveLesson(
       publication.courseId,
       publication.lessonId,
     )!;
     const blocks = lesson.sections.flatMap((s) => s.blocks);
-    assert.ok(blocks.filter((b) => b.type === "quiz").length >= 2);
-    assert.ok(blocks.some((b) => b.type === "code"));
+    if (lesson.courseId === "MA101" && publication.catalogRole !== "legacy") {
+      assert.ok(lesson.sections.filter((section) => section.tier === "core").flatMap((section) => section.blocks).filter((block) => block.type === "exercise").length >= 2);
+      assert.ok(blocks.some((block) => block.type === "vector-figure"));
+      assert.ok(lesson.sections.filter((section) => section.tier === "core").every((section) => !section.blocks.some((block) => block.type === "code")));
+    } else {
+      assert.ok(blocks.filter((b) => b.type === "quiz").length >= 2);
+      assert.ok(blocks.some((b) => b.type === "code"));
+    }
     assert.equal(publication.status, "pending-review");
     assert.equal(publication.reviewEvidence, undefined);
     for (const block of blocks) {

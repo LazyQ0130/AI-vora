@@ -4,7 +4,7 @@
 
 原 curriculum/ 的 Markdown、JSON 是 20 门课程、等级、目标、学时、先修、章节与项目的事实来源。教材不能反过来改写这些事实。lib/curriculum 的 Course 是目录适配类型；content/models 的 Course 组合相同事实与结构化 Chapter。每个 Chapter 有稳定 ID、顺序和真实可读课时，不为规划章节伪造课时。
 
-Lesson 数据位于 content/lessons，资源程序位于 content/resources/programs，发布状态位于 publication-manifest；course-engine 负责关联与解析。Reader 不导入某一节教材。18 节现行教材与 1 节旧综合试读全部经过同一 ContentRenderer。旧 sample.ts 与 v1 progress API 保留兼容和既有测试；新 UI 不直接消费它们。
+Lesson 数据位于 content/lessons，资源程序位于 content/resources/programs，发布状态位于 publication-manifest；course-engine 负责关联与解析。Reader 不导入某一节教材。17 节现行教材与 6 节旧版试读全部经过同一 ContentRenderer。旧 sample.ts 与 v1 progress API 保留兼容和既有测试；新 UI 不直接消费它们。
 
 ## 添加一节教材
 
@@ -29,7 +29,7 @@ Lesson 数据位于 content/lessons，资源程序位于 content/resources/progr
 | published | 正式教材 | public / preview / private；技术与审核证据齐全 |
 | deprecated | 下线 | private |
 
-technicalEvidence / reviewEvidence 是仓库审核证据引用，不是权限系统或数字签名。维护者负责审查证据的真实性与适用修订；schema 检查字段和状态门禁，不能替代专业审核。当前 19 节均为 pending-review/preview（含旧综合试读），整门课程仍 planned。
+technicalEvidence / reviewEvidence 是仓库审核证据引用，不是权限系统或数字签名。维护者负责审查证据的真实性与适用修订；schema 检查字段和状态门禁，不能替代专业审核。当前 23 节均为 pending-review/preview（含旧综合试读），整门课程仍 planned。
 
 ## 内容组件
 
@@ -72,3 +72,13 @@ reader.css 管理阅读器基础布局；learning-system.css 管理共享分层�
 core-programs.ts 的基础片段被完整下载直接复用；ML 更新核 regressionStepCode 同源嵌入核心与完整训练脚本。新增代码需同时更新 validate-python.ts 的独立预期，并实际执行。新数学图用 prepare:v21-diagrams 生成，numeric-evidence.json 记录数值；教学图不能用装饰性生图代替。
 
 V2.1 样式集中在 teaching-v2-1.css；既有品牌、动画和 reader.css 保留。报告见 TEACHING_V2_1_REVIEW.md；技术测试、浏览器验收与教学试学分开记录。
+
+## V2.2 独立课时规范
+
+课程左栏只显示章和独立课时，不再嵌入 section 链接。正文 section 属于文章目录，统一通过 ArticleContents 放右栏和移动 Drawer。CourseContents 需要服务端传入 progressLessons，只用真实 completed 标记绘制完成图标；筹备课不能生成链接。
+
+大幅重编的数学课使用全新 ID：原五篇 MA 课保留 legacy / r1，不做完成记录迁移。已制作新课只占 2.1–2.4，余下规划在 math-outline.ts；不要把全部 blueprint 自动登记为可读 Publication。其他已存在课程仍保留原版本状态，不能因为采用新目录就宣称其达到 V2.2 教材质量。
+
+新数学课参考 ma101/ 四篇：正文用自然段连贯解释，先实例后符号，必要推导不可省略；核心不要求 Python。每个可操作目标对应核心开放题，另有分层提示、参考解答、rubric 和可选挑战。SVG 使用 vector-teaching.ts 的实际输入和等比例坐标映射，零向量不画方向箭头。
+
+字符统计只用于发现过短概述，不是教学质量门禁。后续课的制作前提、图解、例题和验收见 MA101_V2_2_OUTLINE.md；技术结果不能替代独立人工审阅与学生试学。V2.2 样式位于 teaching-v2-2.css，保持品牌资产与已有动效，并核对实时切换的 prefers-reduced-motion。

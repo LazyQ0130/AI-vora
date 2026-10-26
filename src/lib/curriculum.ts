@@ -104,7 +104,7 @@ export function getCourseIndexRows(course: Course) {
       ...entry,
       displayNumber: undefined,
       href: lessonHref(entry),
-      chapterLabel: "旧版综合试读",
+      chapterLabel: "旧版教材试读",
       courseName: course.name,
     })),
   ];

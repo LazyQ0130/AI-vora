@@ -11,7 +11,6 @@ import {
   Target,
   CheckCircle2,
   FlaskConical,
-  Layers3,
 } from "lucide-react";
 import {
   publicationLabel,
@@ -20,6 +19,7 @@ import {
   type Chapter,
   type Lesson,
   type Publication,
+  type LessonSummary,
 } from "@/content/models";
 import { Drawer, useToast } from "../ui";
 import {
@@ -32,6 +32,7 @@ import {
   ProgressRing,
   LessonNavigation,
 } from "./blocks";
+import { ArticleContents } from "./article-contents";
 import { ChapterToc } from "./chapter-toc";
 import { ResourceDownloads } from "./content-renderer";
 import { TeachingSection } from "./teaching-section";
@@ -48,6 +49,7 @@ type ReaderProps = {
   chapter: Chapter;
   lesson: Lesson;
   publication: Publication;
+  progressLessons: LessonSummary[];
   adjacent: {
     previous?: Publication & { displayNumber?: string };
     next?: Publication & { displayNumber?: string };
@@ -59,6 +61,7 @@ export function Reader({
   lesson,
   publication,
   adjacent,
+  progressLessons,
 }: ReaderProps) {
   const firstSection = lesson.sections[0].id;
   const legacy = publication.catalogRole === "legacy";
@@ -73,6 +76,7 @@ export function Reader({
   const displayProgress = Math.max(progress, saved?.percent ?? 0);
   const latest = useRef({ percent: 0, section: firstSection });
   const [tocOpen, setTocOpen] = useState(false);
+  const [articleOpen, setArticleOpen] = useState(false);
   const pendingSection = useRef<string | null>(null);
   const article = useRef<HTMLElement>(null);
   const sidebar = useRef<HTMLElement>(null);
@@ -92,9 +96,10 @@ export function Reader({
     if (!section) return;
     section.querySelector<HTMLDetailsElement>("details.lesson-optional")?.setAttribute("open", "");
     window.history.replaceState(null, "", `#${sectionId}`);
+    const reduceMotion = reduce || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     section.scrollIntoView({
       block: "start",
-      behavior: reduce ? "instant" : "smooth",
+      behavior: reduceMotion ? "instant" : "smooth",
     });
     section.querySelector<HTMLElement>("h2")?.focus({ preventScroll: true });
   }
@@ -119,7 +124,7 @@ export function Reader({
   useEffect(() => {
     const rail = sidebar.current?.querySelector<HTMLElement>(".chapter-toc");
     const current = rail?.querySelector<HTMLElement>(
-      '[aria-current="location"]',
+      '[aria-current="page"]',
     );
     if (!rail || !current || rail.getBoundingClientRect().height === 0) return;
     const railRect = rail.getBoundingClientRect(),
@@ -134,7 +139,7 @@ export function Reader({
         top: rail.scrollTop + itemRect.top - railRect.top - 36,
         behavior: reduce ? "instant" : "smooth",
       });
-  }, [active, reduce]);
+  }, [lesson.id, reduce]);
   useEffect(() => {
     latest.current = { percent: progress, section: active };
     const timer = window.setTimeout(
@@ -223,21 +228,20 @@ export function Reader({
             {chapterNumber(chapter.order)}
           </Link>
           <ChevronRight size={11} />
-          <span>{displayNumber ?? "旧版综合试读"}</span>
+          <span>{displayNumber ?? "旧版试读"}</span>
         </div>
       </div>
       <aside className="reader-sidebar" ref={sidebar}>
         <ChapterToc
           course={course}
           lesson={lesson}
-          active={active}
-          onNavigate={navigate}
+          progressLessons={progressLessons}
         />
       </aside>
       <div className="reader-main">
         <div className="reader-mobile-bar">
           <Drawer
-            title="课程章节与本节目录"
+            title="课程章节与独立课时"
             open={tocOpen}
             onOpenChange={setTocOpen}
             onCloseAutoFocus={(event) => {
@@ -254,25 +258,27 @@ export function Reader({
               </button>
             }
           >
-            <ChapterToc
-              course={course}
-              lesson={lesson}
-              active={active}
-              onNavigate={(sectionId) => {
-                pendingSection.current = sectionId;
-                setTocOpen(false);
-              }}
-            />
+            <ChapterToc course={course} lesson={lesson} progressLessons={progressLessons} />
           </Drawer>
           <Drawer
-            title="本节进度与目标"
+            title="文章目录与本节进度"
+            open={articleOpen}
+            onOpenChange={setArticleOpen}
+            onCloseAutoFocus={(event) => {
+              const target = pendingSection.current;
+              if (!target) return;
+              event.preventDefault();
+              pendingSection.current = null;
+              requestAnimationFrame(() => navigate(target));
+            }}
             trigger={
               <button className="button button-small button-secondary">
                 <Target size={15} />
-                进度与目标
+                文章目录
               </button>
             }
           >
+            <ArticleContents lesson={lesson} active={active} onNavigate={(id) => { pendingSection.current = id; setArticleOpen(false); }} />
             <ProgressRing value={completed ? 100 : displayProgress} />
             {goals}
             <p className="reader-local-note">
@@ -322,7 +328,7 @@ export function Reader({
               </span>
             )}
           </div>
-          <LearningTime time={lesson.learningTime} optional={lesson.optionalLesson} />
+          <LearningTime time={lesson.learningTime} optional={lesson.optionalLesson} codingOptional={lesson.sections.some((s) => s.blocks.some((b) => b.type === "code")) && lesson.sections.filter((s) => s.blocks.some((b) => b.type === "code")).every((s) => s.tier !== "core")} />
           {saved && saved.percent > 0 && (
             <a
               className="reader-resume text-link"
@@ -360,7 +366,7 @@ export function Reader({
         </div>
         {lesson.optionalLesson && <p className="demo-content-note">本节整体为可选进阶，不作为基础课程达标条件。</p>}
         <ObjectiveAssessment lesson={lesson} />
-        <Glossary />
+        {(lesson.courseId !== "MA101" || legacy) && <Glossary />}
         {(lesson.id === "PY101-C05-L01" || lesson.id === "MA101-C03-L01") && <p className="assessment-note">本节已按 V2.1 细分。既有书签与阅读历史保留；旧“已读完”不代表新增目标已达标，请按上方练习重新自查。</p>}
         {lesson.prerequisiteLinks.length > 0 && (
           <details className="lesson-preflight">
@@ -391,9 +397,9 @@ export function Reader({
         )}
         {legacy && (
           <aside className="legacy-reading-note">
-            <strong>旧版综合试读</strong>
+            <strong>旧版教材试读</strong>
             <p>
-              本页保留原有正文、书签和阅读记录。新版已按章与节拆分，旧版“已读完”不代表新版课时已完成。
+              本页保留原有正文、书签和阅读记录，文中节号沿用旧编排。新版使用独立课时与新 ID；这里的“已读完”不代表新版课时完成。
             </p>
             <Link
               href={
@@ -468,6 +474,7 @@ export function Reader({
         </div>
       </div>
       <aside className="reader-right">
+        <ArticleContents lesson={lesson} active={active} onNavigate={navigate} />
         <div className="reader-info-panel">
           <span className="eyebrow">YOUR LEARNING JOURNEY</span>
           <h3>本节阅读进度</h3>
@@ -484,33 +491,7 @@ export function Reader({
           </div>
         </div>
         <div className="reader-info-panel">{goals}</div>
-        <div className="reader-outline-panel">
-          <h3>
-            <Layers3 size={16} />
-            本节内容地图
-          </h3>
-          <nav aria-label="本节段落">
-            {lesson.sections.map((section, index) => (
-              <a
-                key={section.id}
-                href={`#${section.id}`}
-                className={active === section.id ? "active" : ""}
-                aria-current={active === section.id ? "location" : undefined}
-                onClick={(event) => {
-                  event.preventDefault();
-                  navigate(section.id);
-                }}
-              >
-                {!legacy && (
-                  <span>
-                    {sectionNumber(chapter.order, publication.order, index + 1)}
-                  </span>
-                )}
-                {section.title}
-              </a>
-            ))}
-          </nav>
-        </div>
+
         <details className="reader-knowledge" open>
           <summary>
             <span>

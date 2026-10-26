@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { CheckCircle2, Download, Expand } from "lucide-react";
 import type { ContentBlock, LearningResource } from "@/content/models";
 import { GuidedExercise } from "./guided-exercise";
+import { VectorFigure } from "./vector-figure";
 import {
   Paragraph,
   InfoCallout,
@@ -115,6 +116,8 @@ export const ContentRenderer = memo(function ContentRenderer({
   resources: LearningResource[];
 }) {
   switch (block.type) {
+    case "vector-figure":
+      return <VectorFigure kind={block.kind} />;
     case "paragraph":
       return <Paragraph>{block.text}</Paragraph>;
     case "heading":

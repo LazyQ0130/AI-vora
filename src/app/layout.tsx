@@ -6,6 +6,7 @@ import "./course-covers-v5.css";
 import "./reader.css";
 import "./learning-system.css";
 import "./teaching-v2-1.css";
+import "./teaching-v2-2.css";
 import { Header, Footer } from "@/components/site-shell";
 import { Providers } from "@/components/ui";
 

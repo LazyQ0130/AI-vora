@@ -10,6 +10,7 @@ import { derivativeDirectionLesson } from "../content/lessons/ml201/derivative-d
 import { mseGradientLesson } from "../content/lessons/ml201/mse-gradient";
 import { manualUpdateLesson } from "../content/lessons/ml201/manual-update";
 import { numpyRegressionLesson } from "../content/lessons/ml201/numpy-regression";
+import { maV22Lessons } from "../content/lessons/ma101";
 import {
   publicationManifest,
   readablePublications,
@@ -24,6 +25,7 @@ import {
 } from "../content/models";
 
 const contents: Lesson[] = [
+  ...maV22Lessons,
   regressionTaskLesson,
   linearModelLesson,
   lossFunctionsLesson,

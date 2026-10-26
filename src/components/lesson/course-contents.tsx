@@ -1,159 +1,44 @@
 "use client";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
-import type { Course, Lesson } from "@/content/models";
+import { CheckCircle2, Circle, ChevronRight } from "lucide-react";
+import type { Course, Lesson, LessonSummary } from "@/content/models";
 import { chapterNumber } from "@/lib/course-numbering";
 import { lessonHref } from "@/content/publication-manifest";
+import { useLearningRecords } from "@/lib/use-learning-progress";
+import { summarizeCourseReading } from "@/lib/course-reading-summary";
 
-function SectionLinks({
-  lesson,
-  prefix,
-  active,
-  onNavigate,
-}: {
-  lesson: Lesson;
-  prefix?: string;
-  active?: string;
-  onNavigate?: (section: string) => void;
-}) {
-  return (
-    <ol className="lesson-section-list">
-      {lesson.sections.map((section, index) => (
-        <li key={section.id}>
-          <a
-            href={`#${section.id}`}
-            className={active === section.id ? "active" : ""}
-            aria-current={active === section.id ? "location" : undefined}
-            onClick={
-              onNavigate
-                ? (event) => {
-                    event.preventDefault();
-                    onNavigate(section.id);
-                  }
-                : undefined
-            }
-          >
-            {prefix && (
-              <span className="section-number">
-                {prefix}.{index + 1}
-              </span>
-            )}
-            <span>{section.title}{section.tier !== "core" && <small className="optional-label"> · 可选</small>}</span>
-          </a>
-        </li>
-      ))}
-    </ol>
-  );
-}
-export function CourseContents({
-  course,
-  currentLesson,
-  activeSection,
-  onNavigate,
-  variant = "reader",
-}: {
-  course: Course;
-  currentLesson?: Lesson;
-  activeSection?: string;
-  onNavigate?: (section: string) => void;
+export function CourseContents({ course, currentLesson, progressLessons, variant = "reader" }: {
+  course: Course; currentLesson?: Lesson; progressLessons: LessonSummary[];
   variant?: "reader" | "detail";
 }) {
-  return (
-    <nav
-      className={`chapter-toc course-contents course-contents-${variant}`}
-      aria-label={variant === "reader" ? "章节目录" : "课程章节目录"}
-    >
-      {course.chapters.map((chapter) => (
-        <details
-          key={chapter.id}
-          id={variant === "detail" ? chapter.id : undefined}
-          open={
-            currentLesson?.chapterId === chapter.id ||
-            (variant === "detail" &&
-              (chapter.order === 1 || chapter.lessons.some((l) => l.href)))
-              ? true
-              : undefined
-          }
-        >
-          <summary>
-            <ChevronRight size={14} />
-            <span className="chapter-label">
-              {chapterNumber(chapter.order)}
-            </span>
-            <span className="chapter-title">{chapter.title}</span>
-          </summary>
-          {chapter.lessons.length ? (
-            <ol className="course-lesson-list">
-              {chapter.lessons.map((entry) => (
-                <li key={entry.lessonId}>
-                  {entry.href ? (
-                    <Link
-                      href={entry.href}
-                      className={`course-lesson-link ${currentLesson?.id === entry.lessonId ? "current-lesson" : ""}`}
-                      aria-current={
-                        currentLesson?.id === entry.lessonId
-                          ? "page"
-                          : undefined
-                      }
-                    >
-                      <span className="lesson-number">
-                        {entry.displayNumber}
-                      </span>
-                      <span className="lesson-title">{entry.title}</span>
-                      <span className="lesson-state">
-                        {entry.optionalLesson ? "可选" : entry.status === "published" ? "教材" : "试读"}
-                      </span>
-                    </Link>
-                  ) : (
-                    <div className="course-lesson-planned">
-                      <span className="lesson-number">
-                        {entry.displayNumber}
-                      </span>
-                      <span className="lesson-title">{entry.title}</span>
-                      <span className="lesson-state">筹备中</span>
-                    </div>
-                  )}
-                  {currentLesson?.id === entry.lessonId && (
-                    <SectionLinks
-                      lesson={currentLesson}
-                      prefix={entry.displayNumber}
-                      active={activeSection}
-                      onNavigate={onNavigate}
-                    />
-                  )}
-                </li>
-              ))}
-            </ol>
-          ) : (
-            <p className="toc-planned">节次规划中 · 本章教材尚未开放。</p>
-          )}
-        </details>
-      ))}
-      {course.legacyLessons.length > 0 && (
-        <div className="legacy-directory">
-          <p>保留的旧版试读</p>
-          {course.legacyLessons.map((entry) => (
-            <div key={entry.lessonId}>
-              <Link
-                href={lessonHref(entry)}
-                aria-current={
-                  currentLesson?.id === entry.lessonId ? "page" : undefined
-                }
-              >
-                {entry.title}
-                <small>旧版综合试读 · 不计入新版课时完成率</small>
-              </Link>
-              {currentLesson?.id === entry.lessonId && (
-                <SectionLinks
-                  lesson={currentLesson}
-                  active={activeSection}
-                  onNavigate={onNavigate}
-                />
-              )}
-            </div>
-          ))}
-        </div>
-      )}
-    </nav>
-  );
+  const records = useLearningRecords(progressLessons);
+  const summary = summarizeCourseReading(progressLessons, records).find((row) => row.courseId === course.id);
+  const completed = new Set(records.filter((row) => row.progress.completed).map((row) => row.lesson.lessonId));
+  const available = summary?.available ?? 0;
+  return <nav className={`chapter-toc course-contents course-contents-${variant}`} aria-label={variant === "reader" ? "章节目录" : "课程章节目录"}>
+    <div className="course-directory-overview">
+      <span className="eyebrow">COURSE CONTENTS</span>
+      <h2>{course.name}</h2>
+      <p>{course.chapters.length} 章 · {available} 节核心课已制作</p>
+      <div className="directory-progress-copy"><span>已制作课时阅读比例</span><b>{summary?.percent ?? 0}%</b></div>
+      <div className="directory-progress-track" role="progressbar" aria-label={`${course.name}已制作核心课阅读比例`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={summary?.percent ?? 0}><i style={{ width: `${summary?.percent ?? 0}%` }} /></div>
+      <small>{summary?.completed ?? 0} / {available} 节已标记读完 · 仅当前浏览器</small>
+      <small>筹备、可选与旧版课时不计入比例；已读不代表掌握。</small>
+    </div>
+    {course.chapters.map((chapter) => <details key={chapter.id} id={variant === "detail" ? chapter.id : undefined} open={currentLesson?.chapterId === chapter.id || (variant === "detail" && chapter.lessons.some((l) => l.href)) ? true : undefined}>
+      <summary><ChevronRight size={15} aria-hidden="true" /><span className="chapter-label">{chapterNumber(chapter.order)}：</span><span className="chapter-title">{chapter.title}</span></summary>
+      {chapter.lessons.length ? <ol className="course-lesson-list">{chapter.lessons.map((entry) => <li key={entry.lessonId}>
+        {entry.href ? <Link href={entry.href} className={`course-lesson-link ${currentLesson?.id === entry.lessonId ? "current-lesson" : ""}`} aria-current={currentLesson?.id === entry.lessonId ? "page" : undefined}>
+          {completed.has(entry.lessonId) ? <CheckCircle2 className="lesson-complete-icon" size={16} aria-label="已读完" /> : <Circle className="lesson-pending-icon" size={16} aria-label="未读完" />}
+          <span className="lesson-number">{entry.displayNumber}</span><span className="lesson-title">{entry.title}</span>
+          {entry.optionalLesson && <small className="lesson-state">可选</small>}
+        </Link> : <div className="course-lesson-planned"><span className="planned-marker" aria-hidden="true">·</span><span className="lesson-number">{entry.displayNumber}</span><span className="lesson-title">{entry.title}</span><small className="lesson-state">筹备中</small></div>}
+      </li>)}</ol> : <p className="toc-planned">节次规划中 · 本章教材尚未开放。</p>}
+    </details>)}
+    {course.legacyLessons.length > 0 && <details className="legacy-directory" open={currentLesson && course.legacyLessons.some((entry) => entry.lessonId === currentLesson.id) ? true : undefined}>
+      <summary><ChevronRight size={15} aria-hidden="true" /><span>旧版教材与阅读历史</span></summary>
+      <p>原链接与记录保留，不计新版课程进度。</p>
+      {course.legacyLessons.map((entry) => <Link key={entry.lessonId} href={lessonHref(entry)} className={currentLesson?.id === entry.lessonId ? "current-lesson" : undefined} aria-current={currentLesson?.id === entry.lessonId ? "page" : undefined}>{entry.title}<small>旧版试读{completed.has(entry.lessonId) ? " · 历史已读完" : ""}</small></Link>)}
+    </details>}
+  </nav>;
 }

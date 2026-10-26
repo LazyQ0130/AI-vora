@@ -47,8 +47,8 @@ test("V2.1 旧可分享 URL、全部历史锚点、存储键和完成记录保�
 });
 test("V2.1 先修顺序连通，扩展课不计基础完成分母", () => {
   assert.equal(getLearningCourse("PY101")!.chapters[4].lessons.length, 6);
-  assert.equal(getLearningCourse("MA101")!.chapters[1].lessons.length, 2);
-  assert.equal(getLearningCourse("MA101")!.chapters[2].lessons.length, 3);
+  assert.equal(getLearningCourse("MA101")!.chapters[1].lessons.length, 8);
+  assert.equal(getLearningCourse("MA101")!.chapters[2].lessons.length, 6);
   const optional = lessonSummaries.find((l) => l.lessonId === "PY101-C05-L06")!;
   const summary = summarizeCourseReading(lessonSummaries, [{ lesson: optional, progress: { version: 2, courseId: optional.courseId, lessonId: optional.lessonId, contentVersion: 1, percent: 100, completed: true, section: "summary", updatedAt: 1 } }]).find((c) => c.courseId === "PY101")!;
   assert.equal(summary.available, 5);

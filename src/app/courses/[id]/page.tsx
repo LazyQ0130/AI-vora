@@ -11,7 +11,7 @@ import {
   Info,
 } from "lucide-react";
 import { courses, getCourse, getCoursePreview } from "@/lib/curriculum";
-import { getLearningCourse } from "@/lib/course-engine";
+import { getLearningCourse, lessonSummaries } from "@/lib/course-engine";
 import { CourseContents } from "@/components/lesson/course-contents";
 import { CourseArt } from "@/components/course-card";
 import {
@@ -95,7 +95,7 @@ export default async function CoursePage({
                 {course.chapters.length} 章 · 规划中
               </span>
             </div>
-            <CourseContents course={learningCourse} variant="detail" />
+            <CourseContents course={learningCourse} progressLessons={lessonSummaries.filter((entry) => entry.courseId === course.id)} variant="detail" />
           </section>
           <section className="detail-section">
             <span className="eyebrow">LEARN BY DOING</span>
