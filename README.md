@@ -6,7 +6,7 @@
 
 先读 [课程内容编写与编辑规范 V1.0](docs/COURSE_EDITORIAL_STANDARD_V1.md)，确定“教谁、教什么、怎么讲、怎样审”；再按 [工程编写指南](docs/COURSE_AUTHORING.md) 接入模型、组件、资源、路由并完成技术验收。课程事实以 `curriculum/` 为准，教学规范与工程规范均须满足，不能以测试通过代替专业内容审核。
 
-可直接复制 [课前编辑简报模板](docs/COURSE_EDITORIAL_STANDARD_V1.md#editorial-brief) 和 [单课生成/精修提示词](docs/COURSE_GENERATION_PROMPT.md)，按 [生产与审校工作流](docs/COURSE_PRODUCTION_WORKFLOW.md) 分轮留证、校验和交接。当前 MA101 2.1–2.4 的增量审读、句式前后对照及待人工工作见 [编辑审查 V1](docs/MA101_EDITORIAL_REVIEW_V1.md)；V2.3 报告保留为此前修订的证据。
+可直接复制 [课前编辑简报模板](docs/COURSE_EDITORIAL_STANDARD_V1.md#editorial-brief) 和 [单课生成/精修提示词](docs/COURSE_GENERATION_PROMPT.md)，按 [生产与审校工作流](docs/COURSE_PRODUCTION_WORKFLOW.md) 分轮留证、校验和交接。当前数学、Python、ML 标杆的修改与待办见 [跨学科验证 V1](docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md)，[V1.1 规范建议](docs/COURSE_EDITORIAL_STANDARD_V1_1_PROPOSAL.md) 尚未定版，继续采用 V1.0。此前 MA101 四篇的 [编辑审查 V1](docs/MA101_EDITORIAL_REVIEW_V1.md) 与 V2.3 报告均保留。
 
 ## 启动与检查
 
@@ -122,7 +122,7 @@ V2.2 历史交付：[独立课时与目录报告](docs/TEACHING_V2_2_REVIEW.md)�
 
 上一轮记录：[教材 V2 与分层目录验收](docs/TEACHING_V2_ACCEPTANCE.md)、[分阶段计划](docs/TEACHING_V2_PLAN.md)、[逐节质量与来源审查](docs/TEACHING_V2_CONTENT_REVIEW.md)、[Python 执行证据](docs/TEACHING_V2_PYTHON_RESULTS.json)、[真实浏览器验收](docs/TEACHING_V2_BROWSER_RESULTS.json)。
 
-历史记录：[通用课程引擎](docs/COURSE_ENGINE_ACCEPTANCE.md)、[前端基础验收](docs/FRONTEND_ACCEPTANCE.md)、[设计系统](docs/UI_SYSTEM.md)、[V4 可用性](docs/USABILITY_REFINEMENT_V4.md)、[V5 独立封面](docs/COURSE_COVERS_V5.md)、[V6 学员界面](docs/LEARNER_INTERFACE_V6.md)。旧报告描述的是当时版本，MA101 当前精修状态以 [编辑审查 V1](docs/MA101_EDITORIAL_REVIEW_V1.md) 为准，V2.3 的分层与导航约定继续有效。
+历史记录：[通用课程引擎](docs/COURSE_ENGINE_ACCEPTANCE.md)、[前端基础验收](docs/FRONTEND_ACCEPTANCE.md)、[设计系统](docs/UI_SYSTEM.md)、[V4 可用性](docs/USABILITY_REFINEMENT_V4.md)、[V5 独立封面](docs/COURSE_COVERS_V5.md)、[V6 学员界面](docs/LEARNER_INTERFACE_V6.md)。旧报告描述的是当时版本，当前三类标杆以 [跨学科验证 V1](docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md) 为准；MA101 2.2–2.4 的 [编辑审查 V1](docs/MA101_EDITORIAL_REVIEW_V1.md) 及 V2.3 分层/导航约定继续有效。
 
 仍需后续专业人工审校、真实教学试学和更多课程内容生产。本轮没有将技术校验或生产构建当作正式教材发布、浏览器验收或真实用户测试。
 
@@ -139,3 +139,9 @@ MA 第 2 章规划八节，第 3 章规划六节。本轮完整制作 2.1–2.4�
 H1 只显示课时标题，H2 与文章目录不再叠加显示编号；课时编号仍保留在课程目录、面包屑、元信息和上下节导航。四篇 MA 教材沿用全部 section/exercise ID 与 r1 阅读键，旧记录不重置。
 
 2.2 的 n/i 一般记号、竖写与复杂数据对齐，以及 2.4 的反求倍数、共线和非原点位置缩放均转为可选拓展；核心目标与基础题同步精修。运行 npm run review:editing 可重建四篇前后全文对比；没有字数、段数或预计节省时间的质量分数，教学效果仍待独立人工审阅及真实学生试学。
+
+## 跨学科标杆与内容修订
+
+MA101 2.1 与 PY101 5.1 保留熟例自查并新增独立任务，现为 contentVersion=2；原 r1 记录保留，当前课不继承旧“已读完”。ML201 4.3 仅精修数学到代码的解释、分离同源断言验证，目标和算法不变，保留 r1。没有新增课时。
+
+本轮证据独立保存在 `docs/cross-discipline-v1/`。`review:editing` 仅比较 MA101 四篇；遇到按工程规则确认的版本递增，显式运行 `npm run review:editing -- --allow-version-increase`，报告前后版本与旧完成隔离，同时继续拒绝版本倒退及锚点丢失。实际本轮改前稿、三类目标映射、测试与未完成人工审校/试学见跨学科报告。

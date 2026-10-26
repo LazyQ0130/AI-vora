@@ -1,0 +1,12 @@
+
+> aivora-web@0.1.0 review:editing
+> tsx scripts/review-v2-3.ts
+
+C:\Users\QYF\Desktop\Aivora-Web\scripts\review-v2-3.ts:43
+    throw new Error("内容版本变化须先按工程规则确认，再显式传入 --allow-version-increase；旧完成不迁移");
+          ^
+
+Error: 内容版本变化须先按工程规则确认，再显式传入 --allow-version-increase；旧完成不迁移
+    at <anonymous> (C:\Users\QYF\Desktop\Aivora-Web\scripts\review-v2-3.ts:43:11)
+
+Node.js v24.16.0

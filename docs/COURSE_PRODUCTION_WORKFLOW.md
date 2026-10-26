@@ -65,6 +65,7 @@ New-Item -ItemType Directory -Path $env:AIVORA_EVIDENCE_DIR -Force | Out-Null
 $env:AIVORA_EDITING_BASELINE = "$env:AIVORA_EVIDENCE_DIR/TEACHING_V2_3_BEFORE.json"
 npm run review:editing -- --baseline
 # 在这里编辑教材；--baseline 采用独占创建，已有快照不会被覆盖。
+# 若本轮按工程规则确认内容版本递增，将下一行改为：npm run review:editing -- --allow-version-increase
 npm run review:editing
 npm run review:teaching
 npm run prepare:downloads
@@ -80,6 +81,8 @@ Remove-Item Env:AIVORA_EDITING_BASELINE
 ```
 
 `review:editing` 当前专门导出 MA101 四篇的完整前后文及 ID 兼容结果；其他课程用 `review:teaching` 和 Git diff 留证，不宣称这个脚本覆盖其他课。按 `COURSE_AUTHORING.md` 补齐生产浏览器验收，将实际命令、环境、时间、退出码、失败修复、覆盖与限制写入本轮报告；只保留有助于复核的截图。`prepare:downloads` 会重建资源，检查生成差异，不手改下载文件。
+
+新增核心任务或实质改变达标要求时，先按工程指南决定内容版本并同步清单，保留旧修订记录而不继承新版完成。对比脚本需显式声明 `--allow-version-increase` 才接受递增，仍拒绝倒退与旧锚点丢失。本次三类课的实例见 [跨学科验证](CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md)；V1.1仅为讨论建议，现行教学标准仍是V1.0。
 
 ## 人工审稿、试学与发布交接
 

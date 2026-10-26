@@ -76,6 +76,7 @@ type Source = Pick<
 export function defineMlLesson(id: string, source: Source): Lesson {
   const slot = courseOutline.find((s) => s.lessonId === id);
   if (!slot) throw new Error(`未规划的 ML 课时：${id}`);
+  const assessmentSectionIndex = source.sections.findLastIndex((section) => (section.tier ?? "core") === "core");
   return lessonSchema.parse({
     ...slot,
     id: slot.lessonId,
@@ -86,7 +87,7 @@ export function defineMlLesson(id: string, source: Source): Lesson {
     ...mlTeachingProfiles[id],
     ...source,
     sections: source.sections.map((section, index) => {
-      if (index !== source.sections.length - 1) return section;
+      if (index !== assessmentSectionIndex) return section;
       const blocks = [...section.blocks];
       const summaryIndex = blocks.findIndex((block) => block.type === "summary");
       blocks.splice(summaryIndex < 0 ? blocks.length : summaryIndex, 0, ...(coreAssessments[id] ?? []));

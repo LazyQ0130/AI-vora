@@ -31,24 +31,30 @@ test("V2.3 全部教材 H2 与文章目录只显示标题，保持原 hash 与�
   }
 });
 
-test("V2.3 四篇旧书签、练习锚点、r1 完成和阅读位置继续有效，代码未变", () => {
+test("V2.3 四篇旧书签、练习锚点与 r1 历史仍有效，核心修订隔离旧完成，代码未变", () => {
   for (const before of baseline.lessons) {
     const after = get(before.id);
-    assert.equal(after.contentVersion, before.contentVersion);
+    assert.equal(after.contentVersion, before.id === "MA101-C02-L03" ? 2 : before.contentVersion);
     assert.deepEqual(after.sections.map((section) => section.id), before.sections.map((section) => section.id));
     const oldBlocks = before.sections.flatMap((section) => section.blocks);
     const newBlocks = after.sections.flatMap((section) => section.blocks);
     for (const exercise of oldBlocks.filter((block) => block.type === "exercise"))
       assert.ok(newBlocks.some((block) => block.type === "exercise" && block.id === exercise.id));
     assert.deepEqual(newBlocks.filter((block) => block.type === "code"), oldBlocks.filter((block) => block.type === "code"));
-    const scope = { courseId: after.courseId, lessonId: after.id, contentVersion: after.contentVersion, sectionIds: after.sections.map((section) => section.id) };
-    assert.equal(progressKey(scope), `aivora:learning:v2:MA101:${before.id}:r1`);
+    const oldScope = { courseId: before.courseId, lessonId: before.id, contentVersion: before.contentVersion, sectionIds: before.sections.map((section) => section.id) };
+    const currentScope = { courseId: after.courseId, lessonId: after.id, contentVersion: after.contentVersion, sectionIds: after.sections.map((section) => section.id) };
+    assert.equal(progressKey(oldScope), `aivora:learning:v2:MA101:${before.id}:r1`);
+    assert.equal(progressKey(currentScope), `aivora:learning:v2:MA101:${before.id}:r${after.contentVersion}`);
     for (const section of before.sections) for (const completed of [false, true]) {
       const raw = JSON.stringify({ version: 2, courseId: before.courseId, lessonId: before.id, contentVersion: 1, percent: completed ? 100 : 47, section: section.id, completed, updatedAt: 1792972800000 });
-      const saved = parseReadingProgress(raw, scope);
+      const saved = parseReadingProgress(raw, oldScope);
       assert.equal(saved?.completed, completed);
       assert.equal(saved?.percent, completed ? 100 : 47);
       assert.equal(saved?.section, section.id);
+      if (after.contentVersion !== before.contentVersion)
+        assert.equal(parseReadingProgress(raw, currentScope), null);
+      else
+        assert.deepEqual(parseReadingProgress(raw, currentScope), saved);
     }
   }
 });

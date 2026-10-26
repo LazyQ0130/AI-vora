@@ -1,0 +1,505 @@
+{
+  "baselineRevision": "acefc4bde50f765b500bae7b94b0f129b88cb537",
+  "base": "http://127.0.0.1:3002",
+  "note": "Dedicated QA origin; completion clicks are tool checks, not learner records or assessment passes.",
+  "before": [
+    {
+      "lessonId": "MA101-C02-L03",
+      "contentVersion": 1,
+      "completed": true
+    },
+    {
+      "lessonId": "PY101-C05-L01",
+      "contentVersion": 1,
+      "completed": true
+    }
+  ],
+  "afterRevision": [
+    {
+      "lessonId": "PY101-C05-L01",
+      "contentVersion": 2,
+      "oldVersionWasCompleted": true,
+      "uncompleted": true,
+      "newExercise": true
+    },
+    {
+      "lessonId": "MA101-C02-L03",
+      "contentVersion": 2,
+      "oldVersionWasCompleted": true,
+      "uncompleted": true,
+      "anchors": {
+        "hash": "#exercise-same-displacement",
+        "newExercise": true,
+        "oldExercise": true
+      }
+    }
+  ],
+  "layout": [
+    {
+      "badHashes": [],
+      "clientWidth": 1425,
+      "h1": [
+        "什么是向量？"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 1425,
+      "status": true,
+      "url": "/learn/MA101/MA101-C02-L03",
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      },
+      "wrongMathPrerequisite": false,
+      "label": "desktop",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "clientWidth": 1425,
+      "h1": [
+        "Python 函数与参数"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 1425,
+      "status": true,
+      "url": "/learn/PY101/PY101-C05-L01",
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      },
+      "wrongMathPrerequisite": false,
+      "label": "desktop",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "clientWidth": 1425,
+      "h1": [
+        "手动计算一次参数更新"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 1425,
+      "status": true,
+      "url": "/learn/ML201/ML201-C04-L04",
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      },
+      "wrongMathPrerequisite": false,
+      "label": "desktop",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "clientWidth": 1425,
+      "h1": [
+        "位置与关键字参数绑定"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 1425,
+      "status": true,
+      "url": "/learn/PY101/PY101-C05-L02",
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      },
+      "wrongMathPrerequisite": false,
+      "label": "desktop",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "clientWidth": 1425,
+      "h1": [
+        "返回值与 print 的区别"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 1425,
+      "status": true,
+      "url": "/learn/PY101/PY101-C05-L03",
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      },
+      "wrongMathPrerequisite": false,
+      "label": "desktop",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "clientWidth": 1425,
+      "h1": [
+        "函数内外的变量与作用域"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 1425,
+      "status": true,
+      "url": "/learn/PY101/PY101-C05-L04",
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      },
+      "wrongMathPrerequisite": false,
+      "label": "desktop",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "clientWidth": 1425,
+      "h1": [
+        "简单默认参数"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 1425,
+      "status": true,
+      "url": "/learn/PY101/PY101-C05-L05",
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      },
+      "wrongMathPrerequisite": false,
+      "label": "desktop",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "clientWidth": 375,
+      "h1": [
+        "什么是向量？"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 375,
+      "status": true,
+      "url": "/learn/MA101/MA101-C02-L03",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      },
+      "wrongMathPrerequisite": false,
+      "label": "mobile",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "clientWidth": 375,
+      "h1": [
+        "Python 函数与参数"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 375,
+      "status": true,
+      "url": "/learn/PY101/PY101-C05-L01",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      },
+      "wrongMathPrerequisite": false,
+      "label": "mobile",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "clientWidth": 375,
+      "h1": [
+        "手动计算一次参数更新"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 375,
+      "status": true,
+      "url": "/learn/ML201/ML201-C04-L04",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      },
+      "wrongMathPrerequisite": false,
+      "label": "mobile",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "clientWidth": 375,
+      "h1": [
+        "位置与关键字参数绑定"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 375,
+      "status": true,
+      "url": "/learn/PY101/PY101-C05-L02",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      },
+      "wrongMathPrerequisite": false,
+      "label": "mobile",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "clientWidth": 375,
+      "h1": [
+        "返回值与 print 的区别"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 375,
+      "status": true,
+      "url": "/learn/PY101/PY101-C05-L03",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      },
+      "wrongMathPrerequisite": false,
+      "label": "mobile",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "clientWidth": 375,
+      "h1": [
+        "函数内外的变量与作用域"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 375,
+      "status": true,
+      "url": "/learn/PY101/PY101-C05-L04",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      },
+      "wrongMathPrerequisite": false,
+      "label": "mobile",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "clientWidth": 375,
+      "h1": [
+        "简单默认参数"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 375,
+      "status": true,
+      "url": "/learn/PY101/PY101-C05-L05",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      },
+      "wrongMathPrerequisite": false,
+      "label": "mobile",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "clientWidth": 753,
+      "h1": [
+        "什么是向量？"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 753,
+      "status": true,
+      "url": "/learn/MA101/MA101-C02-L03",
+      "viewport": {
+        "height": 1024,
+        "width": 768
+      },
+      "wrongMathPrerequisite": false,
+      "label": "tablet",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "clientWidth": 753,
+      "h1": [
+        "Python 函数与参数"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 753,
+      "status": true,
+      "url": "/learn/PY101/PY101-C05-L01",
+      "viewport": {
+        "height": 1024,
+        "width": 768
+      },
+      "wrongMathPrerequisite": false,
+      "label": "tablet",
+      "passed": true
+    },
+    {
+      "badHashes": [],
+      "clientWidth": 753,
+      "h1": [
+        "手动计算一次参数更新"
+      ],
+      "katexErrors": 0,
+      "numberedH2": [],
+      "scrollWidth": 753,
+      "status": true,
+      "url": "/learn/ML201/ML201-C04-L04",
+      "viewport": {
+        "height": 1024,
+        "width": 768
+      },
+      "wrongMathPrerequisite": false,
+      "label": "tablet",
+      "passed": true
+    }
+  ],
+  "interactions": [
+    {
+      "test": "desktop course directory opens current5.1 and concept anchor exposes definition/syntax",
+      "passed": true
+    },
+    {
+      "test": "retained PY #defaults bookmark opens optional continuation",
+      "actual": {
+        "hash": "#defaults",
+        "open": true
+      },
+      "passed": true
+    },
+    {
+      "test": "PY source download through actual resource link",
+      "passed": true
+    },
+    {
+      "test": "copy retained Python core without line numbers",
+      "initialRead": "",
+      "passed": true,
+      "note": "Initial read was empty; subsequent UI copy and structured clipboard read checked against source with CRLF normalized."
+    },
+    {
+      "test": "browser-downloaded Python source equals repository-generated download",
+      "passed": true
+    },
+    {
+      "test": "mobile new vector task opens both hints and complete answer/rubric using Enter",
+      "actual": {
+        "hasResult": true,
+        "hash": "#exercise-displacement-transfer",
+        "open": [
+          true,
+          true,
+          true
+        ],
+        "pageWidth": 375,
+        "viewportWidth": 375
+      },
+      "passed": true
+    },
+    {
+      "test": "mobile article drawer links to retained practice anchor and closes",
+      "passed": true
+    },
+    {
+      "test": "mobile numbered course drawer and previous lesson preserve 2.1/2.2 navigation",
+      "passed": true
+    },
+    {
+      "test": "mobile Escape closes article drawer and restores trigger focus",
+      "actual": {
+        "dialogs": 0,
+        "focusText": "文章目录"
+      },
+      "passed": true
+    },
+    {
+      "test": "mobile new Python task hints/answer accepts equivalent code and opening answer does not complete lesson",
+      "actual": {
+        "acceptsEquivalent": true,
+        "open": [
+          true,
+          true,
+          true
+        ],
+        "pageWidth": 375,
+        "viewportWidth": 375,
+        "notMarkedCompleted": true
+      },
+      "passed": true
+    },
+    {
+      "test": "mobile math-code table keyboard focus and width containment",
+      "actual": {
+        "before": {
+          "clientWidth": 308,
+          "scrollLeft": 0,
+          "scrollWidth": 308,
+          "tabIndex": 0
+        },
+        "after": {
+          "clientWidth": 308,
+          "pageWidth": 375,
+          "scrollLeft": 0,
+          "scrollWidth": 308,
+          "viewportWidth": 375
+        },
+        "note": "Table wraps within container at 390px; no overflow to scroll."
+      },
+      "passed": true
+    },
+    {
+      "test": "ML optional verification navigation opens complete checks",
+      "actual": {
+        "hasChecks": true,
+        "hash": "#verification",
+        "open": true,
+        "pageWidth": 375,
+        "viewportWidth": 375
+      },
+      "passed": true
+    },
+    {
+      "test": "ML core task independent of optional verification with new-number answer",
+      "actual": {
+        "coreTaskVisible": true,
+        "hash": "#exercise-hand-update",
+        "optionalClosed": true,
+        "optionalDoesNotContainTask": true,
+        "hasAnswer": true,
+        "open": true
+      },
+      "passed": true,
+      "note": "First attempted navigation changed only the hash, preserving the expanded optional section; explicit reload confirmed the default collapsed state. Corrected answer selector to direct .exercise-solution."
+    }
+  ],
+  "console": [],
+  "environment": {
+    "browser": "Chromium via Codex in-app browser",
+    "viewports": [
+      {
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "limitation": "Viewport emulation on one browser, not real device or screen-reader testing. QA clicks do not demonstrate student learning."
+  },
+  "summary": {
+    "layoutChecks": 17,
+    "interactionChecks": 13,
+    "allInteractionsPassed": true,
+    "consoleWarningsOrErrors": 0
+  }
+}

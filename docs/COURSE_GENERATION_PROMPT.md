@@ -60,6 +60,8 @@ lessonId：<已有稳定 ID 或经蓝图核对的新 ID>
 - 当前稿件只进入有证据支持的 pending-review/preview，technicalEvidence 指向本轮证据；
   未有人类审核证据不填 reviewEvidence，不标记 reviewed/pilot/published。
 - 保留有效链接、课时/练习/section ID、旧锚点与进度；说明是否需要新修订键及理由。
+  新核心考核或达标要求实质变化时同步 Lesson/Publication 版本，保留旧键，不继承旧完成；
+  MA对比脚本确认递增后显式加 --allow-version-increase，仍检查旧锚点与版本不得倒退。
 - Aivora 与 AI Foundry 独立；不制作视频，不内置 AI 或调用运行时模型 API，
   不新增支付、账号、后台 CMS 或在线 Python 执行。
 - 按该次任务明确的提交/推送范围交付；禁止批量删除文件或目录。

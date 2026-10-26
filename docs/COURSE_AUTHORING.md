@@ -98,3 +98,11 @@ V2.1 样式集中在 teaching-v2-1.css；既有品牌、动画和 reader.css 保
 当前数学 2.2 的一般 n/i、列写法、属性与单位对齐为可选，2.4 的统一倍率反求、共线、复杂位置缩放为可选。原 section/exercise ID、URL、r1 保留；旧哈希进入折叠内容时应自动展开。目标与题目以 TEACHING_V2_3_CONTENT_MATRIX.json 为准，V2.2 规划表是当时的历史版本。
 
 不设强制字数或段落数量目标，不用字符减少推算学习时间收益。review:teaching 输出结构矩阵，review:editing 输出四节前后全文；自动测试只验收技术、数学与兼容契约，教学效果需真实学生试学。详见 TEACHING_V2_3_REVIEW.md。本轮之后用 `AIVORA_EVIDENCE_DIR` 另存每轮检查结果，`AIVORA_EDITING_BASELINE` 指定本轮实际改前稿；完整用法与覆盖限制见 [工作流](COURSE_PRODUCTION_WORKFLOW.md)。历史 V2.3 快照不是以后每一轮的改前稿。
+
+## 跨学科标杆修订
+
+[跨学科验证 V1](CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md) 为当前 MA2.1、PY5.1、ML4.3 的审查入口。MA2.1 与 PY5.1 因新增核心迁移任务使用 r2；Lesson 与 Publication 同步递增，旧 r1 键留存，不能迁移成新版完成。ML4.3 保留原目标、算法与任务，仅补解释和分离原验证，仍为 r1。前文 V2.3 所述四篇 r1 保留是当时修订的事实，不阻止后续按规则升版。
+
+数学工厂 Source 与基础课 Spec 支持可选 `contentVersion`，默认仍为1，只为实际变更课指定修订。ML工厂将核心考核插入最后一个core section，后续追加verification不能把核心题带入可选区。继续使用现有schema/assessmentMap/清单/进度作用域，不新建内容或评分系统。
+
+`review:editing` 默认拒绝版本变化；已在简报和报告解释合法递增时，显式加 `--allow-version-increase`。它只允许递增，仍拒绝倒退、丢失section或练习ID，输出前后版本及旧完成不迁移的说明。新任务的效度与真实学习表现仍需人工和学生证据；[V1.1建议稿](COURSE_EDITORIAL_STANDARD_V1_1_PROPOSAL.md) 尚未替换V1.0。

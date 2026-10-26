@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-26T09:59:57.126Z",
+  "baselineRevision": "acefc4bde50f765b500bae7b94b0f129b88cb537",
+  "base": "http://127.0.0.1:3002",
+  "note": "Dedicated QA origin; completion clicks are tool checks, not learner records or assessment passes.",
+  "before": [
+    {
+      "lessonId": "MA101-C02-L03",
+      "contentVersion": 1,
+      "completed": true
+    },
+    {
+      "lessonId": "PY101-C05-L01",
+      "contentVersion": 1,
+      "completed": true
+    }
+  ],
+  "afterRevision": [],
+  "layout": [],
+  "interactions": []
+}

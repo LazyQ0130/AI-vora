@@ -52,12 +52,12 @@ test("V2.2 五篇旧稿全部完成也不会产生一篇新版已读，新记录
   assert.equal(before.available,4);assert.equal(before.completed,0);assert.equal(before.percent,0);
   for(const id of maV22LessonIds) {
     const l=resolveLesson("MA101",id)!.lesson;
-    const scope={courseId:l.courseId,lessonId:id,contentVersion:1,sectionIds:l.sections.map(s=>s.id)};
+    const scope={courseId:l.courseId,lessonId:id,contentVersion:l.contentVersion,sectionIds:l.sections.map(s=>s.id)};
     assert.equal(store.getSnapshot(scope),null);
     assert.ok(!memory.has(progressKey(scope)));
   }
   const first=lessons.find(l=>l.lessonId===maV22LessonIds[0])!;
-  const scope={courseId:first.courseId,lessonId:first.lessonId,contentVersion:1,sectionIds:first.sectionTitles.map(s=>s.id)};
+  const scope={courseId:first.courseId,lessonId:first.lessonId,contentVersion:first.contentVersion,sectionIds:first.sectionTitles.map(s=>s.id)};
   store.save(scope,100,scope.sectionIds[0],true);
   const after=summarizeCourseReading(lessons,[...records,{lesson:first,progress:parseReadingProgress(store.getSnapshot(scope),scope)!}])[0];
   assert.equal(after.completed,1);assert.equal(after.percent,25);

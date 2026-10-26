@@ -1,0 +1,986 @@
+{
+  "revision": "acefc4bde50f765b500bae7b94b0f129b88cb537",
+  "checkedAt": "2026-10-26T09:51:36.927Z",
+  "note": "Actual registered lessons before this round; no human approval or learner result",
+  "lessons": [
+    {
+      "id": "MA101-C02-L03",
+      "courseId": "MA101",
+      "chapterId": "MA101-C02",
+      "contentVersion": 1,
+      "title": "什么是向量？",
+      "subtitle": "配送机器人接到“移动三米”的指令，为什么还不能出发？从有方向的移动认识向量。",
+      "learningTime": {
+        "reading": [
+          12,
+          18
+        ],
+        "practice": [
+          15,
+          25
+        ],
+        "coding": [
+          0,
+          0
+        ],
+        "basis": "editorial-estimate"
+      },
+      "optionalLesson": false,
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "quantity-choice"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "quantity-choice",
+            "same-displacement"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "same-displacement"
+          ]
+        }
+      ],
+      "prerequisites": "能区分东、西、南、北，会整数加减并能数方格。不要求 Python、内积、矩阵或向量长度公式。自查：从东移 3 米再向北 2 米，能否只用一个“5”完整说明最终位置变化？",
+      "prerequisiteLinks": [],
+      "objectives": [
+        "判断一个实际描述需要标量还是向量，并说明依据",
+        "区分整体位移与实际行走路线、路程",
+        "通过平移判断两支箭头是否代表同一位移向量"
+      ],
+      "sections": [
+        {
+          "id": "scene",
+          "title": "只有一个数，机器人为什么无法执行？",
+          "navGroup": "scene",
+          "navLabel": "问题",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "想象一台配送机器人停在仓库门口。屏幕收到“移动 3 米”，它知道要移动多远，却不知道该朝哪边走。向东 3 米、向西 3 米都满足这个数值，但会到达不同地点。指令缺少的不是更多小数位，而是方向。这个小问题说明，有些量仅靠一个数和单位就能表达，有些量还必须带上方向。"
+            },
+            {
+              "type": "paragraph",
+              "text": "再把指令说完整：“向东 3 米，再向北 2 米。”现在机器人可以确定整体位置怎样改变。数学用向量记录这类既有大小又有方向的量。先把它理解成一支指明移动的箭头，看看它怎样把出发点和终点联系起来。"
+            }
+          ]
+        },
+        {
+          "id": "intuition",
+          "title": "一个数与一支箭头分别保留什么信息？",
+          "navGroup": "intuition",
+          "navLabel": "理解",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "仓库温度是 20 摄氏度、机器人运行了 8 秒，这些量在给定单位后不需要附加空间方向。我们称它们为标量。标量可以是负数，例如低于零度的温度；带负号并不会自动让一个数变成向量。关键要看这个量是否还需要方向信息，而不是它长得像正数还是负数。"
+            },
+            {
+              "type": "paragraph",
+              "text": "位移则需要说明从起点朝哪里、整体移动多大。画箭头时，箭尾是起点，箭头尖端是终点；箭头的朝向保留方向，长度在规定比例下表示位移大小。例如图中每格代表一米，横向一格与纵向一格画得一样长，就能在同一比例下比较箭头。"
+            },
+            {
+              "type": "table",
+              "caption": "同样描述机器人，信息的种类不同",
+              "columns": [
+                "描述",
+                "是否需要方向",
+                "合适的数学量"
+              ],
+              "rows": [
+                [
+                  "运行时间 8 秒",
+                  "不需要空间方向",
+                  "标量"
+                ],
+                [
+                  "累计走过 5 米",
+                  "不需要说明终点朝哪边",
+                  "路程：标量"
+                ],
+                [
+                  "整体向东 3 米、向北 2 米",
+                  "需要方向",
+                  "位移：向量"
+                ],
+                [
+                  "此刻向西运动，速度大小 2 米/秒",
+                  "需要朝向",
+                  "速度：向量"
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "表中带方向的“速度”与只说每秒多快的“速率”也有同样区别：前者需要朝向，后者只记录快慢。接下来仍用位移例子，把一支箭头具体画出来。"
+            }
+          ]
+        },
+        {
+          "id": "worked",
+          "title": "把出发点、终点和整体变化读出来",
+          "navGroup": "worked",
+          "navLabel": "例题",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "在地面建立一张方格地图：向东为水平方向的正方向，向北为竖直方向的正方向。原点是我们约定的参考位置。位置写成两个数时，先写东西方向的数，再写南北方向的数；(0,0) 表示两个方向都位于参考位置。每格一米，位置 (3,2) 就在原点以东 3 米、以北 2 米处。"
+            },
+            {
+              "type": "paragraph",
+              "text": "机器人从 A=(0,0) 出发，东移 3 格后到 (3,0)，再北移 2 格到 B=(3,2)。虽然实际走法分成两段，整体位移可画成从 A 直接指向 B 的箭头。我们用 u 给这支位移箭头起名，用 (3,2) 记录它向东、向北的变化。"
+            },
+            {
+              "type": "math",
+              "latex": "A=(0,0),\\quad B=(3,2),\\qquad \\mathbf u=(3,2)",
+              "explanation": "A、B 是位置点；粗体 u 是位移向量的名字。(3,2) 按东、北顺序记录变化，单位都是米。"
+            },
+            {
+              "type": "paragraph",
+              "text": "这里有三个相关但不同的量。路线是机器人沿途怎样走；路程是沿着路线累计走过的长度，本例为 3+2=5 米；位移则是从出发点直接指向终点的整体变化。若改为先北移 2 米再东移 3 米，路线改变了，终点和位移仍相同；若绕路再到 B，路程还可能增加。位移箭头只由起终点决定，它的斜线长度也不等于折线路程 5 米。"
+            }
+          ]
+        },
+        {
+          "id": "definition",
+          "title": "起点不同的箭头也可以相等",
+          "navGroup": "definition",
+          "navLabel": "定义",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "对于本章研究的平面位移，向量可以用有方向的线段表示，大小和方向都相同就代表同一向量。把整支箭头平行移动，不旋转、不拉伸，所表示的位移不变。这种约定叫自由向量：箭头所在的位置可以换，它表示的移动保持相同。"
+            },
+            {
+              "type": "paragraph",
+              "text": "例如另一台机器人从 C=(1,1) 到 D=(4,3)，它在东西方向仍增加 3，在南北方向仍增加 2。将这支箭头平移回原点，会与从 A 到 B 的箭头重合，所以表示同一位移。相反，从 B 回到 A 的箭头虽然跨过相同两点，却朝相反方向，不能与原向量判为相同。"
+            }
+          ]
+        },
+        {
+          "id": "diagram",
+          "title": "在同一比例的坐标图里核对",
+          "navGroup": "diagram",
+          "navLabel": "图解",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "vector-figure",
+              "kind": "meaning"
+            },
+            {
+              "type": "paragraph",
+              "text": "先看左图的箭尾、箭尖，再沿虚线数格子：水平方向 3 格，竖直方向 2 格。右图从不同的位置出发，也能数出同样的两个变化。比较的是每支箭头从自身起点到终点的变化，所以把右图的箭头完整移回原点，就会与左图的实线箭头重合。"
+            }
+          ]
+        },
+        {
+          "id": "application",
+          "title": "为什么这种表示值得学习？",
+          "navGroup": "application",
+          "navLabel": "应用",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "在配送任务中，我们可能反复遇到“向东 3、向北 2”的移动：从门口到货架如此，从另一条通道出发也如此。把出发点与移动指令分开，同一种移动就能在不同地方复用。上面两幅图正好给出了两次执行：出发点不同，指令 u 相同，得到的终点各自随起点改变。"
+            }
+          ]
+        },
+        {
+          "id": "mistakes",
+          "title": "走回原点时，什么变成了零？",
+          "navGroup": "mistakes",
+          "navLabel": "误区",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "再想一条特殊路线：先向东走 3 米，再向西走 3 米回到起点。沿途累计的路程为 3+3=6 米，整体位移却为零。这是“路程”与“位移”差别最鲜明的例子：前者把两段实际移动都算进去，后者比较最终与最初的位置。"
+            },
+            {
+              "type": "paragraph",
+              "text": "起终点重合时，位移箭头退化为一个点，大小为零，没有确定方向，称为零向量。因此“位移为零”表示回到了起点，并不表示途中一直静止。这个例子让零位移也有了清楚的实际含义。"
+            }
+          ]
+        },
+        {
+          "id": "practice",
+          "title": "基础练习：解释你保留的信息",
+          "navGroup": "practice",
+          "navLabel": "练习",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "exercise",
+              "id": "quantity-choice",
+              "title": "该用一个数还是一个向量？",
+              "kind": "理解",
+              "prompt": "判断“温度 −3 摄氏度”“累计走了 5 米”“向东 3 米再向北 2 米的整体位移”“向西 2 米/秒的速度”分别用标量还是向量。再解释机器人走一圈回原点时，路程与位移为什么不能互换。",
+              "hints": [
+                "判断依据是是否需要方向，而不是数有没有负号。",
+                "回到原点并未抹去实际走过的路线，但整体位置没有改变。"
+              ],
+              "solution": [
+                "温度与路程是标量；整体位移与带向西方向的速度是向量。",
+                "走一圈的路程大于零，位移为零；只报告其中一个会丢失另一个所描述的信息。"
+              ],
+              "rubric": [
+                "四项分类正确且给出方向依据",
+                "区分路程与位移",
+                "没有把负温度误判为向量"
+              ]
+            },
+            {
+              "type": "exercise",
+              "id": "same-displacement",
+              "title": "不同起点的箭头是否相同？",
+              "kind": "计算",
+              "prompt": "在同一等比例地图上，甲从 (0,0) 到 (3,2)，乙从 (1,1) 到 (4,3)，丙从 (3,2) 到 (0,0)。判断哪些箭头代表同一位移，写出每次东西、南北的变化；若甲途中绕路但终点不变，判断是否改变。",
+              "hints": [
+                "每次从自己的起点数到自己的终点。",
+                "甲乙都东 3、北 2；丙西 3、南 2。"
+              ],
+              "solution": [
+                "甲、乙表示同一位移；丙方向相反，不相同。",
+                "绕路但起终点不变，整体位移不变；实际路程可能改变。"
+              ],
+              "rubric": [
+                "分别比较两个方向的变化",
+                "相等判断不依赖绝对起点",
+                "能说明绕路与位移的边界"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "challenge",
+          "title": "可选挑战：为任务选择表示",
+          "navGroup": "challenge",
+          "navLabel": "挑战",
+          "tier": "advanced",
+          "blocks": [
+            {
+              "type": "exercise",
+              "id": "route-record",
+              "title": "规划路线还需要什么？",
+              "kind": "迁移",
+              "prompt": "若要让机器人避开货架，只有起点和位移是否足够？列出还需记录的一类信息，并解释它为何没有被位移向量包含。",
+              "hints": [
+                "同一起终点可以对应多条路线。",
+                "考虑障碍物位置、经过点或分段路径。"
+              ],
+              "solution": [
+                "仅有位移不够，还需要障碍物与可通行区域、经过点或分段路线等信息。",
+                "位移只表达起终点的整体变化，不记录途中如何行走；不应把一种表示的局限当成计算错误。"
+              ],
+              "rubric": [
+                "给出具体额外信息",
+                "解释它与位移的区别"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "summary",
+          "title": "把箭头读清楚，再学习写法",
+          "navGroup": "summary",
+          "navLabel": "总结",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "summary",
+              "points": [
+                "标量用数值和单位描述；位移向量还需要方向。",
+                "整体位移由起终点决定，不记录实际路线。",
+                "平移不改变自由向量；相等需要大小和方向都相同，零位移没有确定方向。"
+              ]
+            },
+            {
+              "type": "reading-links",
+              "title": "下一步",
+              "links": [
+                {
+                  "title": "2.2 向量的表示、维度与分量",
+                  "href": "/learn/MA101/MA101-C02-L04",
+                  "note": "把本节“东 3、北 2”的含义写成有顺序的数学记录。"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [],
+      "references": [
+        {
+          "title": "OpenStax：向量及其运算",
+          "href": "https://openstax.org/books/calculus-volume-3/pages/2-2-vectors-in-three-dimensions",
+          "note": "核对向量相等、分量运算与数乘；本课采用平面配送例子，文字、图和练习独立编写。"
+        }
+      ]
+    },
+    {
+      "id": "PY101-C05-L01",
+      "courseId": "PY101",
+      "chapterId": "PY101-C05",
+      "contentVersion": 1,
+      "title": "Python 函数与参数",
+      "subtitle": "5.1 聚焦函数基础：把重复步骤命名，再用一个输入完成一次调用。",
+      "learningTime": {
+        "reading": [
+          6,
+          10
+        ],
+        "practice": [
+          8,
+          12
+        ],
+        "coding": [
+          5,
+          10
+        ],
+        "basis": "editorial-estimate"
+      },
+      "optionalLesson": false,
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "define-double"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "define-double"
+          ]
+        }
+      ],
+      "prerequisites": "会变量、数值乘法与缩进。自查：value=3 后，value*2 是多少？答 6 即可继续。",
+      "prerequisiteLinks": [],
+      "objectives": [
+        "按执行顺序解释定义与调用",
+        "独立编写一个接收数值并返回两倍的函数"
+      ],
+      "sections": [
+        {
+          "id": "concept",
+          "title": "先定义，再调用",
+          "navGroup": "concept",
+          "navLabel": "概念",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "你需要把 3、4 和 7 分别乘 2。每次重复写同样的步骤容易漏改；可以先把“乘 2”这件事命名为 double。def 定义这份步骤，尚未为某个数字计算。double(3) 才会进入函数体执行。"
+            },
+            {
+              "type": "table",
+              "caption": "跟踪 double(3)",
+              "columns": [
+                "步骤",
+                "发生什么"
+              ],
+              "rows": [
+                [
+                  "定义",
+                  "记住 double 的函数体"
+                ],
+                [
+                  "调用",
+                  "输入 3 交给名字 value"
+                ],
+                [
+                  "执行",
+                  "计算 3×2=6"
+                ],
+                [
+                  "返回",
+                  "return 把 6 交回 result"
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "定义括号里的 value 叫形参，是接收输入的名字；调用中的 3 叫实参，是这次给出的值。return 交回结果。先把它当作一次完整流程，5.3 再比较返回与显示。"
+            },
+            {
+              "type": "image",
+              "src": "/learning/v2-1/function-flow.png",
+              "alt": "double(3) 把实参 3 绑定给形参 value，执行 value 乘 2 得到 6，再通过 return 交给调用处的 result。",
+              "caption": "本图只追踪一个数值调用：输入 3，返回 6；没有提前引入默认参数或高级语法。",
+              "width": 1200,
+              "height": 500,
+              "mobile": {
+                "src": "/learning/v2-1/function-flow-mobile.png",
+                "width": 640,
+                "height": 900
+              }
+            }
+          ]
+        },
+        {
+          "id": "binding",
+          "title": "一次输入对应一个名字",
+          "navGroup": "binding",
+          "navLabel": "参数",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "double(4) 会让这次调用中的 value 为 4，因此返回 8。下一次 double(7) 使用新的输入 7，返回 14。多个输入如何按位置或名字对应，见 5.2；本节无需先学默认值、星号或类型注解。"
+            }
+          ]
+        },
+        {
+          "id": "defaults",
+          "title": "接下来再增加接口规则",
+          "navGroup": "defaults",
+          "navLabel": "默认值",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "reading-links",
+              "title": "原默认值书签的衔接入口",
+              "links": [
+                {
+                  "title": "5.5 默认参数",
+                  "href": "/learn/PY101/PY101-C05-L05",
+                  "note": "先学简单数字默认值。"
+                },
+                {
+                  "title": "5.6 可选高级陷阱",
+                  "href": "/learn/PY101/PY101-C05-L06",
+                  "note": "旧版共享列表、注解与异常内容移至这里。基础达标不要求完成。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "code",
+          "title": "最小代码：先预测再运行",
+          "navGroup": "code",
+          "navLabel": "代码",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Python 3.10+ · 标准库。以下片段可单独保存运行；先按前面的步骤预测输出，再用终端 python function_basics.py 核对。数学课代码部分需基础 Python 的列表、下标和循环；可先手算，再补修后运行。"
+            },
+            {
+              "type": "code",
+              "code": "def double(value):\n    return value * 2\n\nresult = double(3)\nprint(result)\n",
+              "filename": "function_basics.py",
+              "language": "python"
+            },
+            {
+              "type": "paragraph",
+              "text": "value 接收这次输入，result 接收返回值。输出为 6；改用 double(4) 前先预测 8。"
+            }
+          ]
+        },
+        {
+          "id": "quiz",
+          "title": "基础达标：独立完成",
+          "navGroup": "quiz",
+          "navLabel": "练习",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "exercise",
+              "id": "define-double",
+              "title": "自己写一个函数",
+              "kind": "代码",
+              "prompt": "合上示例，定义 double(value)，返回 value 的两倍。用 4 和 -2 调用并写出预期结果，再说明 def 与调用分别何时执行。",
+              "hints": [
+                "定义行以 def 开始；函数体需要缩进。",
+                "函数体写 return value * 2；调用要在函数体外。"
+              ],
+              "solution": [
+                "定义 double(value)，函数体为 return value * 2。double(4)=8，double(-2)=-4。",
+                "执行 def 只创建函数；执行 double(4) 才计算该次结果。"
+              ],
+              "rubric": [
+                "输入名称与计算一致",
+                "使用 return 交回数值",
+                "两个新输入结果正确",
+                "区分定义和执行"
+              ]
+            },
+            {
+              "type": "quiz",
+              "id": "binding-check",
+              "question": "double(5) 的形参和实参分别是什么？",
+              "options": [
+                "value 和 5",
+                "5 和 value"
+              ],
+              "correct": 0,
+              "explanations": [
+                "value 是定义的名字，5 是调用给出的值。",
+                "定义名字是形参，具体输入是实参。"
+              ]
+            },
+            {
+              "type": "quiz",
+              "id": "defaults-check",
+              "question": "仅执行 def double(value): … 时会算出 double(3) 吗？",
+              "options": [
+                "不会，还需要调用",
+                "会自动以 3 调用"
+              ],
+              "correct": 0,
+              "explanations": [
+                "定义保留步骤，调用才执行。",
+                "定义没有指定这个实参。"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "verification",
+          "title": "完整代码与独立检查",
+          "navGroup": "verification",
+          "navLabel": "验证",
+          "tier": "verification",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "此处只追加结果检查，不改变正文算法。断言、循环对照与边界检查是可选验证；基础达标按上方开放练习自查。"
+            },
+            {
+              "type": "code",
+              "code": "def double(value):\n    return value * 2\n\nresult = double(3)\nprint(result)\n\n# 可选：结果与边界验证\nassert result == 6\nassert double(4) == 8\nassert double(-2) == -4\n",
+              "filename": "function_basics.py",
+              "language": "python"
+            },
+            {
+              "type": "downloads",
+              "resourceIds": [
+                "function-basics-python",
+                "function-basics-notebook"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "summary",
+          "title": "本节总结与下一步",
+          "navGroup": "summary",
+          "navLabel": "总结",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "summary",
+              "points": [
+                "定义保存步骤，调用执行步骤。",
+                "形参是名字，实参是这次输入。",
+                "本节能写一个数值函数即可达标；多个参数留到下一节。"
+              ]
+            },
+            {
+              "type": "reading-links",
+              "title": "继续学习",
+              "links": [
+                {
+                  "title": "5.2 参数如何绑定",
+                  "href": "/learn/PY101/PY101-C05-L02",
+                  "note": "先掌握一次调用，再增加第二个输入。"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "id": "function-basics-python",
+          "title": "Python 源码",
+          "href": "/downloads/function_basics.py",
+          "format": "Python",
+          "description": "Python 3.10+ · 标准库"
+        },
+        {
+          "id": "function-basics-notebook",
+          "title": "Notebook",
+          "href": "/downloads/function_basics.ipynb",
+          "format": "Notebook",
+          "description": "与页面完整脚本同源，需在本地运行"
+        }
+      ],
+      "references": [
+        {
+          "title": "Python 官方教程：函数",
+          "href": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
+          "note": "用于核对接口与数组规则；正文算例、练习与解释为原创。"
+        }
+      ]
+    },
+    {
+      "id": "ML201-C04-L04",
+      "courseId": "ML201",
+      "chapterId": "ML201-C04",
+      "contentVersion": 1,
+      "title": "手动计算一次参数更新",
+      "subtitle": "拿出纸笔，从两个样本算到新参数，再用新的预测证明这一步是否真的改善了训练损失。",
+      "learningTime": {
+        "reading": [
+          10,
+          15
+        ],
+        "practice": [
+          15,
+          25
+        ],
+        "coding": [
+          5,
+          10
+        ],
+        "basis": "editorial-estimate"
+      },
+      "optionalLesson": false,
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "hand-update"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "hand-update"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "sequential",
+            "repeat-data"
+          ]
+        }
+      ],
+      "prerequisites": "完成 3.2、3.3 与 4.2，能用 wx+b 预测，理解平均平方误差及两个梯度公式。自查：误差是预测减目标；两个梯度必须使用同一次旧参数预测。",
+      "prerequisiteLinks": [
+        {
+          "title": "5.1 Python 函数与参数",
+          "href": "/learn/PY101/PY101-C05-L01",
+          "note": "真实可读样章，复习形参、返回值与函数调用。"
+        },
+        {
+          "title": "4.2 梯度下降的数学原理",
+          "href": "/learn/ML201/ML201-C04-L03",
+          "note": "若看不懂 2ex 与 2e，先补齐链式法则推导。"
+        }
+      ],
+      "objectives": [
+        "逐样本计算误差、平方与梯度贡献",
+        "完成一次同步参数更新并重新计算损失",
+        "用反例定位归一化和顺序更新错误"
+      ],
+      "sections": [
+        {
+          "id": "setup",
+          "title": "固定实验条件，先算旧损失",
+          "navGroup": "setup",
+          "navLabel": "设定",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "为了减少手算量，本节只取前面虚拟传感器数据中的后两个点：(1,3)、(2,5)。这是特意选取的两点教学子集，不是另换一套真实数据。x、y 都是无量纲合成刻度；n=2，初始 w=0、b=0，学习率 η=0.1。目标是核对一次更新，不是证明泛化能力。"
+            },
+            {
+              "type": "math",
+              "latex": "\\begin{aligned}\\hat y_i&=0x_i+0=0\\\\e_i&=\\hat y_i-y_i\\end{aligned}",
+              "explanation": "所有旧预测均为 0，所以误差是 −3 与 −5。负号表示低估目标，平方后用于计算损失。"
+            },
+            {
+              "type": "table",
+              "caption": "先固定旧参数 w=b=0，逐行计算",
+              "columns": [
+                "样本",
+                "x",
+                "y",
+                "预测",
+                "e",
+                "e²",
+                "2ex",
+                "2e"
+              ],
+              "rows": [
+                [
+                  "1",
+                  "1",
+                  "3",
+                  "0",
+                  "−3",
+                  "9",
+                  "−6",
+                  "−6"
+                ],
+                [
+                  "2",
+                  "2",
+                  "5",
+                  "0",
+                  "−5",
+                  "25",
+                  "−20",
+                  "−10"
+                ]
+              ]
+            },
+            {
+              "type": "math",
+              "latex": "L_0=\\frac{9+25}{2}=17",
+              "explanation": "平均的是两个样本的平方误差，分母不是参数个数；在本例中它们恰巧都为 2，换数据时不能混淆。"
+            }
+          ]
+        },
+        {
+          "id": "gradients",
+          "title": "把各样本的贡献平均，再同步更新",
+          "navGroup": "calculate",
+          "navLabel": "手算",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "math",
+              "latex": "\\begin{aligned}d_w&=\\frac{-6-20}{2}=-13\\\\d_b&=\\frac{-6-10}{2}=-8\\end{aligned}",
+              "explanation": "表格已经计算了含系数 2 的贡献，此处只除以 n，不再额外乘 2。两个负梯度提示：这组参数附近，稍微增大 w 和 b 有助于减小损失。"
+            },
+            {
+              "type": "math",
+              "latex": "\\begin{aligned}w_1&=0-0.1(-13)=1.3\\\\b_1&=0-0.1(-8)=0.8\\end{aligned}",
+              "explanation": "两个更新都从旧值 0 出发，使用刚才的同一份误差。乘学习率后得到参数变化量；−13、−8 本身不是新参数。"
+            },
+            {
+              "type": "paragraph",
+              "text": "现在停下来检查符号：减去负数使参数增加。不能因为误差为负，就把新参数也写成负数。更新幅度由梯度和学习率共同决定。"
+            }
+          ]
+        },
+        {
+          "id": "verify",
+          "title": "重新预测，不能沿用旧误差",
+          "navGroup": "calculate",
+          "navLabel": "手算",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "table",
+              "caption": "新参数 w=1.3、b=0.8 下的独立复核",
+              "columns": [
+                "x",
+                "y",
+                "新预测",
+                "新误差",
+                "新误差²"
+              ],
+              "rows": [
+                [
+                  "1",
+                  "3",
+                  "2.1",
+                  "−0.9",
+                  "0.81"
+                ],
+                [
+                  "2",
+                  "5",
+                  "3.4",
+                  "−1.6",
+                  "2.56"
+                ]
+              ]
+            },
+            {
+              "type": "math",
+              "latex": "L_1=\\frac{0.81+2.56}{2}=1.685<17",
+              "explanation": "训练损失下降，但还不是 0，参数也尚未等于这两个点的精确直线 w=2、b=1。一次更新不是训练完成。"
+            },
+            {
+              "type": "image",
+              "src": "/learning/ml-v2/first-update.png",
+              "alt": "两个合成数据点为一和三、二和五。旧预测是一条零水平线，新预测为一点三乘输入加零点八；新直线更接近两个目标，但仍在目标下方。",
+              "caption": "同一组样本上的前后比较：点是固定目标，线是模型预测。图形帮助检查方向，损失数值仍需按定义计算。",
+              "width": 1200,
+              "height": 640,
+              "mobile": {
+                "src": "/learning/ml-v2/first-update-mobile.png",
+                "width": 640,
+                "height": 680
+              }
+            },
+            {
+              "type": "quiz",
+              "id": "new-loss",
+              "question": "更新后应使用哪组误差计算新损失？",
+              "options": [
+                "−0.9、−1.6",
+                "−3、−5",
+                "−13、−8"
+              ],
+              "correct": 0,
+              "explanations": [
+                "正确，要用新参数重新预测再减目标。",
+                "这是旧误差，无法反映参数更新的效果。",
+                "这是两个旧梯度，不是样本误差。"
+              ]
+            },
+            {
+              "type": "quiz",
+              "id": "complete",
+              "question": "L 从 17 降到 1.685 能说明什么？",
+              "options": [
+                "在这两个训练点上，这一步降低了 MSE",
+                "模型已能准确预测任意真实传感器",
+                "所有后续步长都能保证损失下降"
+              ],
+              "correct": 0,
+              "explanations": [
+                "正确，结论要限定数据、定义和本次更新。",
+                "合成训练点没有提供真实数据的泛化证据。",
+                "还要考虑后续梯度、步长和数值条件。"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "debug",
+          "title": "两种看似合理、却改变算法的写法",
+          "navGroup": "debug",
+          "navLabel": "排错",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "callout",
+              "title": "忘记平均，损失下降也未必算对",
+              "text": "如果把两个梯度都忘记除以 2，会得到 dw=−26、db=−16，新参数为 2.6、1.6，MSE=2.34。它仍然低于 17，但不等于标准同步更新的 1.685。因此“损失下降”不能独自验证公式。"
+            },
+            {
+              "type": "exercise",
+              "id": "sequential",
+              "title": "找出 db 被悄悄换了位置的错误",
+              "kind": "计算",
+              "prompt": "某人先按正确 dw 得到 w=1.3，却用新 w 和旧 b=0 重算误差，再更新 b。请算这时的误差、db、b 与最终 MSE，并指出差别。",
+              "hints": [
+                "此时两次预测为 1.3、2.6，先减 3、5。",
+                "db=2×平均误差，b 从 0 减去 0.1×db。"
+              ],
+              "solution": [
+                "新 w、旧 b 对应误差 −1.7、−2.4，db=−4.1，更新得 b=0.41。",
+                "最终参数 (1.3,0.41) 的预测为 1.71、3.01，误差 −1.29、−1.99，MSE=(1.6641+3.9601)/2=2.8121。",
+                "这不是在同一点求得的两个偏导。若想实现本节同步算法，必须在修改 w 之前保存 dw、db。"
+              ],
+              "rubric": [
+                "标明每一组误差对应哪组参数",
+                "最终损失使用两个最终参数",
+                "能解释算法差异而不只比较大小"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "code",
+          "title": "让程序逐项复算，再自己复述",
+          "navGroup": "practice",
+          "navLabel": "练习",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "code",
+              "code": "xs, ys = [1.0, 2.0], [3.0, 5.0]\nw, b, rate = 0.0, 0.0, 0.1\nerrors = [w * x + b - y for x, y in zip(xs, ys)]\nold_loss = sum(e ** 2 for e in errors) / len(xs)\ndw = 2 * sum(e * x for e, x in zip(errors, xs)) / len(xs)\ndb = 2 * sum(errors) / len(xs)\nw, b = w - rate * dw, b - rate * db\nnew_errors = [w * x + b - y for x, y in zip(xs, ys)]\nnew_loss = sum(e ** 2 for e in new_errors) / len(xs)\nprint(dw, db, round(w, 3), round(b, 3), round(new_loss, 6))\nassert old_loss == 17.0\nfor actual, expected in zip([dw, db, w, b, new_loss], [-13, -8, 1.3, 0.8, 1.685]):\n    assert abs(actual - expected) < 1e-12\n",
+              "filename": "one_update.py",
+              "language": "python"
+            },
+            {
+              "type": "paragraph",
+              "text": "Python 3.10+，无需第三方库。输出为 −13.0 −8.0 1.3 0.8 1.685（终端负号样式可能不同）。元组赋值右侧先计算完再赋值；new_errors 与 errors 分开命名，避免误用旧预测。断言比较的是未四舍五入的数，并允许浮点微小误差。"
+            },
+            {
+              "type": "exercise",
+              "id": "repeat-data",
+              "title": "数据复制会改变这一步吗？",
+              "kind": "迁移",
+              "prompt": "将这两点各复制一次，得到四个样本，其他设定不变。无需重跑训练，解释第一次更新是否变化，再用程序核对。",
+              "hints": [
+                "每项求和与样本数同时扩大为原来的两倍。",
+                "本教材用的是平均损失和平均梯度。"
+              ],
+              "solution": [
+                "MSE、dw、db 都不变：分子和分母同比增加。因此第一次新参数仍为 (1.3,0.8)，新 MSE 仍为 1.685。",
+                "可将 xs、ys 分别改成原列表重复两次，保留原断言。若梯度变成两倍，说明漏掉平均或又多乘了 n。",
+                "复制没有增加独立信息，也不能代替新的测试数据。"
+              ],
+              "rubric": [
+                "说明归一化抵消的原因",
+                "代码核对仍保留容差与预期值",
+                "区分样本条数和独立信息"
+              ]
+            },
+            {
+              "type": "exercise",
+              "id": "hand-update",
+              "title": "用新目标独立完成一轮",
+              "kind": "计算",
+              "prompt": "x=[1,2]，目标改为 y=[2,4]，w=b=0，η=0.1。逐样本写误差及两种梯度贡献，算平均梯度、同步更新和新 MSE。",
+              "hints": [
+                "初始误差 [-2,-4]。每项对 dw 的贡献为 2ex，对 db 为 2e。",
+                "dw=(-4-16)/2=-10，db=(-4-8)/2=-6。"
+              ],
+              "solution": [
+                "旧 MSE=10；dw=-10、db=-6，新 w=1、b=0.6。",
+                "新预测 [1.6,2.6]，误差 [-0.4,-1.4]，MSE=(0.16+1.96)/2=1.06。"
+              ],
+              "rubric": [
+                "逐样本贡献正确",
+                "两个梯度先算完再更新",
+                "用新参数重算损失"
+              ]
+            },
+            {
+              "type": "summary",
+              "points": [
+                "旧预测→旧误差→两个平均梯度→同步更新→新预测→新损失。",
+                "本例标准首步是 (w,b)=(1.3,0.8)，MSE 从 17 降至 1.685。",
+                "用已知手算和复制数据不变性，比只看损失下降更能定位实现错误。"
+              ]
+            },
+            {
+              "type": "reading-links",
+              "title": "继续学习",
+              "links": [
+                {
+                  "title": "4.4 使用 NumPy 实现线性回归",
+                  "href": "/learn/ML201/ML201-C04-L05",
+                  "note": "保持同样的数据与首步，把一次更新变成可验证的训练循环。"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [],
+      "references": [
+        {
+          "title": "Google ML Crash Course：线性回归",
+          "href": "https://developers.google.com/machine-learning/crash-course/linear-regression",
+          "note": "参考按概念、损失、优化组织知识的方式。本站虚拟传感器案例、文字、图表与代码均另行原创。"
+        }
+      ]
+    }
+  ]
+}

@@ -137,6 +137,23 @@ assert u @ np.array([3, 1]) == 5
 } as const;
 
 // 同一更新核嵌入主代码与完整脚本，避免两个实现逐渐分叉。
+// 手算课只呈现计算链；同一核心片段也嵌入可选的完整断言复核。
+export const manualUpdateCoreCode = `xs, ys = [1.0, 2.0], [3.0, 5.0]
+w, b, rate = 0.0, 0.0, 0.1
+errors = [w * x + b - y for x, y in zip(xs, ys)]
+old_loss = sum(e ** 2 for e in errors) / len(xs)
+dw = 2 * sum(e * x for e, x in zip(errors, xs)) / len(xs)
+db = 2 * sum(errors) / len(xs)
+w, b = w - rate * dw, b - rate * db
+new_errors = [w * x + b - y for x, y in zip(xs, ys)]
+new_loss = sum(e ** 2 for e in new_errors) / len(xs)
+print(dw, db, round(w, 3), round(b, 3), round(new_loss, 6))
+`;
+export const manualUpdateChecks = `assert old_loss == 17.0
+for actual, expected in zip([dw, db, w, b, new_loss], [-13, -8, 1.3, 0.8, 1.685]):
+    assert abs(actual - expected) < 1e-12
+`;
+
 export const regressionStepCode = `prediction = w * x + b
 error = prediction - y
 dw = 2.0 * np.mean(error * x)

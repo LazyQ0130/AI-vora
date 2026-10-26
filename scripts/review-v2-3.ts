@@ -7,6 +7,7 @@ import { resolveLesson } from "../src/lib/course-engine";
 // 留存完整编辑前后数据，供人工逐段比较；不设字数或段落数量门槛。
 const lessons = maV22LessonIds.map((id) => resolveLesson("MA101", id)!.lesson);
 const baselinePath = process.env.AIVORA_EDITING_BASELINE ?? "docs/TEACHING_V2_3_BEFORE.json";
+const allowVersionIncrease = process.argv.includes("--allow-version-increase");
 if (process.argv.includes("--baseline")) {
   await writeFile(baselinePath, JSON.stringify({
     revision: execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim(),
@@ -25,16 +26,24 @@ if (process.argv.includes("--baseline")) {
     return {
       id: after.id,
       contentVersionUnchanged: original.contentVersion === after.contentVersion,
+      beforeVersion: original.contentVersion,
+      afterVersion: after.contentVersion,
+      readingHistory: original.contentVersion === after.contentVersion ? "same revision key" : "separate revision keys; do not migrate old completion",
       preservedSectionIds: original.sections.every((section) => afterIds.has(section.id)),
       preservedExerciseIds: exercises(original).every((exercise) => afterExercises.has(exercise.id)),
       beforeExercises: exercises(original), afterExercises: exercises(after),
       before: original, after,
     };
   });
-  if (comparisons.some((row) => !row.contentVersionUnchanged || !row.preservedSectionIds || !row.preservedExerciseIds))
-    throw new Error("原有版本键、section 或练习锚点发生不兼容变化");
+  if (comparisons.some((row) => !row.preservedSectionIds || !row.preservedExerciseIds))
+    throw new Error("原有 section 或练习锚点丢失");
+  if (comparisons.some((row) => row.afterVersion < row.beforeVersion))
+    throw new Error("内容版本不得倒退");
+  if (!allowVersionIncrease && comparisons.some((row) => !row.contentVersionUnchanged))
+    throw new Error("内容版本变化须先按工程规则确认，再显式传入 --allow-version-increase；旧完成不迁移");
   await writeFile(evidencePath("TEACHING_V2_3_COMPARISON.json"), JSON.stringify({
     baselineRevision: before.revision,
+    allowVersionIncrease,
     note: "编辑差异与兼容快照；无字数质量分数，不代表教学效果验证。",
     comparisons,
   }, null, 2) + "\n");

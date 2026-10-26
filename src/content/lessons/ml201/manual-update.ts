@@ -1,11 +1,14 @@
 import { defineMlLesson, p, m, note, links, prep, summary } from "./shared";
+import { manualUpdateCoreCode, manualUpdateChecks } from "../../resources/core-programs";
 export const manualUpdateLesson = defineMlLesson("ML201-C04-L04", {
   subtitle:
     "拿出纸笔，从两个样本算到新参数，再用新的预测证明这一步是否真的改善了训练损失。",
   prerequisites:
-    "完成 3.2、3.3 与 4.2，能用 wx+b 预测，理解平均平方误差及两个梯度公式。自查：误差是预测减目标；两个梯度必须使用同一次旧参数预测。",
+    "完成 3.2、3.3 与 4.2，能用 wx+b 预测，理解平均平方误差及两个梯度公式。代码复核沿用 3.3 的列表、zip 配对、sum 与 len；不熟悉时可先重读该节代码说明。自查：误差是预测减目标；两个梯度必须使用同一次旧参数预测。",
   prerequisiteLinks: [
     prep.python,
+    {title:"3.2 线性回归模型：权重与偏置",href:"/learn/ML201/ML201-C03-L02",note:"复习数据、参数与预测，以及 wx+b 的数值代入。"},
+    {title:"3.3 预测误差、MAE 与 MSE",href:"/learn/ML201/ML201-C03-L03",note:"复习平均损失，及代码里 zip、列表推导式、sum 与 len 的对应含义。"},
     {
       title: "4.2 梯度下降的数学原理",
       href: "/learn/ML201/ML201-C04-L03",
@@ -82,7 +85,7 @@ export const manualUpdateLesson = defineMlLesson("ML201-C04-L04", {
         },
         m(
           "L_1=\\frac{0.81+2.56}{2}=1.685<17",
-          "训练损失下降，但还不是 0，参数也尚未等于这两个点的精确直线 w=2、b=1。一次更新不是训练完成。",
+          "新预测仍分别低于两个目标 0.9 和 1.6，平均平方误差降到 1.685。若继续训练，就从 w=1.3、b=0.8 重新计算下一步梯度；这两个教学点对应的精确直线仍是 w=2、b=1。",
         ),
         {
           type: "image",
@@ -164,19 +167,28 @@ export const manualUpdateLesson = defineMlLesson("ML201-C04-L04", {
     },
     {
       id: "code",
-      title: "让程序逐项复算，再自己复述",
+      title: "把手算的每一步交给程序复核",
       navGroup: "practice",
       navLabel: "练习",
       blocks: [
+        p("下面把刚才的手算过程逐项写入程序。使用本机 Python 3.10+，无需第三方库；保存为 one_update.py，在文件所在目录的终端运行 python one_update.py。先把预期的 dw、db、新 w、新 b 和新损失写在纸上，再与程序输出比较。"),
         {
           type: "code",
           filename: "one_update.py",
           language: "python",
-          code: "xs, ys = [1.0, 2.0], [3.0, 5.0]\nw, b, rate = 0.0, 0.0, 0.1\nerrors = [w * x + b - y for x, y in zip(xs, ys)]\nold_loss = sum(e ** 2 for e in errors) / len(xs)\ndw = 2 * sum(e * x for e, x in zip(errors, xs)) / len(xs)\ndb = 2 * sum(errors) / len(xs)\nw, b = w - rate * dw, b - rate * db\nnew_errors = [w * x + b - y for x, y in zip(xs, ys)]\nnew_loss = sum(e ** 2 for e in new_errors) / len(xs)\nprint(dw, db, round(w, 3), round(b, 3), round(new_loss, 6))\nassert old_loss == 17.0\nfor actual, expected in zip([dw, db, w, b, new_loss], [-13, -8, 1.3, 0.8, 1.685]):\n    assert abs(actual - expected) < 1e-12\n",
+          code: manualUpdateCoreCode,
         },
         p(
-          "Python 3.10+，无需第三方库。输出为 −13.0 −8.0 1.3 0.8 1.685（终端负号样式可能不同）。元组赋值右侧先计算完再赋值；new_errors 与 errors 分开命名，避免误用旧预测。断言比较的是未四舍五入的数，并允许浮点微小误差。",
+          "输出为 -13.0 -8.0 1.3 0.8 1.685，五项依次对应两个旧梯度、两个新参数和新损失。程序中的 rate 对应学习率 η，len(xs) 给出样本数 n=2；round 只控制打印的小数位，不改变存下来的参数和损失。",
         ),
+        {type:"table",caption:"把手算步骤与代码一一对照",columns:["手算量","程序中的操作","本例核对值"],rows:[
+          ["旧误差 eᵢ","zip(xs, ys) 按相同位置配对；errors 保存每个 w*x+b-y","[-3.0, -5.0]"],
+          ["旧 MSE","old_loss 先求误差平方和，再除 len(xs)","17.0"],
+          ["两个平均梯度","dw 对 errors 与 xs 的对应乘积求和；db 对 errors 求和；各乘2再除 n","dw=-13.0，db=-8.0"],
+          ["同步更新","先保存 dw、db；w,b 赋值的右侧计算完后才写入两个新参数","w=1.3，b=0.8"],
+          ["新预测对应的误差","new_errors 使用更新后的 w、b；目标 ys 保持不变","[-0.9, -1.6]（显示值）"],
+          ["新 MSE","new_loss 对新误差的平方求平均","1.685"],
+        ]},
         {
           type: "exercise",
           id: "repeat-data",
@@ -190,12 +202,12 @@ export const manualUpdateLesson = defineMlLesson("ML201-C04-L04", {
           ],
           solution: [
             "MSE、dw、db 都不变：分子和分母同比增加。因此第一次新参数仍为 (1.3,0.8)，新 MSE 仍为 1.685。",
-            "可将 xs、ys 分别改成原列表重复两次，保留原断言。若梯度变成两倍，说明漏掉平均或又多乘了 n。",
+            "可把 xs、ys 分别写成 [1.0,2.0,1.0,2.0]、[3.0,5.0,3.0,5.0]，运行核心片段，比较五项输出。若梯度变成两倍，说明漏掉平均或又多乘了 n。可选验证区另有容差断言，但这道基础题先用手算与输出核对即可。",
             "复制没有增加独立信息，也不能代替新的测试数据。",
           ],
           rubric: [
             "说明归一化抵消的原因",
-            "代码核对仍保留容差与预期值",
+            "用平均式说明结果，并将核心代码输出与手算预期核对",
             "区分样本条数和独立信息",
           ],
         },
@@ -211,6 +223,13 @@ export const manualUpdateLesson = defineMlLesson("ML201-C04-L04", {
             note: "保持同样的数据与首步，把一次更新变成可验证的训练循环。",
           },
         ]),
+      ],
+    },
+    {
+      id:"verification",title:"可选验证：保留完整计算与容差检查",navGroup:"verification",navLabel:"验证",tier:"verification",
+      blocks:[
+        p("完成上面的手算与输出核对后，可再运行这份完整版本。它使用同一段核心计算，只追加断言；先用 abs(actual-expected) 求未四舍五入的结果与预期值之间的绝对偏差，再检查偏差是否小于 1e-12。若更改教学数据，应先独立重算预期，不能为了消除报错直接删掉检查。"),
+        {type:"code",filename:"one_update_checks.py",language:"python",code:manualUpdateCoreCode+manualUpdateChecks},
       ],
     },
   ],

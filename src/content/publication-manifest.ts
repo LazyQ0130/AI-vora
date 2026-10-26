@@ -2,18 +2,22 @@ import { isReadable, publicationSchema } from "./models";
 import { legacyMathSlots, maV22LessonIds } from "./math-outline";
 import { courseOutline, mlV2LessonIds } from "./course-outline";
 
+const revisedCoreLessons: Record<string, number> = { "MA101-C02-L03": 2, "PY101-C05-L01": 2 };
+
 // 发布权限独立于原始课程规划。技术证据不替代人工审核。
 export const publicationManifest = [
   ...courseOutline
     .filter((slot) => mlV2LessonIds.some((id) => id === slot.lessonId) || slot.courseId === "PY101" || maV22LessonIds.some((id) => id === slot.lessonId))
     .map((slot) => ({
       ...slot,
-      contentVersion: 1,
+      contentVersion: revisedCoreLessons[slot.lessonId] ?? 1,
       optionalLesson: slot.lessonId === "PY101-C05-L06",
       catalogRole: "current",
       status: "pending-review",
       access: "preview",
-      technicalEvidence: slot.courseId === "MA101" ? "docs/MA101_EDITORIAL_REVIEW_V1.md" : "docs/TEACHING_V2_1_PYTHON_RESULTS.json",
+      technicalEvidence: slot.lessonId === "MA101-C02-L03" || slot.lessonId === "ML201-C04-L04" || (slot.courseId === "PY101" && slot.lessonId !== "PY101-C05-L06")
+        ? "docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md"
+        : slot.courseId === "MA101" ? "docs/MA101_EDITORIAL_REVIEW_V1.md" : "docs/TEACHING_V2_1_PYTHON_RESULTS.json",
     })),
   ...legacyMathSlots.map((slot) => ({ ...slot, catalogRole: "legacy", contentVersion: 1, status: "pending-review", access: "preview", technicalEvidence: "docs/TEACHING_V2_1_PYTHON_RESULTS.json" })),
   {

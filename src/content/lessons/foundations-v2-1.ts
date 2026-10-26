@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { lessonSchema, type ContentBlock } from "../models";
+import { lessonSchema, type ContentBlock, type Lesson } from "../models";
 import { corePrograms } from "../resources/core-programs";
 import { programs, resourcesForProgram, pythonFunctionsCode, vectorMatrixCode } from "../resources/programs";
 
@@ -14,6 +14,7 @@ const exercise = (id: string, title: string, kind: "理解" | "计算" | "代码
 const quick = (id: string, question: string, options: string[], correct: number, explanations: string[]): ContentBlock => ({ type: "quiz", id, question, options, correct, explanations });
 type Spec = {
   id: string; title: string; subtitle: string; prerequisites: string;
+  contentVersion?: number; assessmentMap?: Lesson["assessmentMap"]; prerequisiteLinks?: Lesson["prerequisiteLinks"];
   previous?: ReturnType<typeof link>; next?: ReturnType<typeof link>;
   objectives: string[]; program: keyof typeof corePrograms;
   sections: Section[]; exercises: ContentBlock[]; quizzes: ContentBlock[];
@@ -23,18 +24,34 @@ type Spec = {
 const specs: Spec[] = [
   {
     id: "PY101-C05-L01", title: "Python 函数与参数", subtitle: "5.1 聚焦函数基础：把重复步骤命名，再用一个输入完成一次调用。",
-    prerequisites: "会变量、数值乘法与缩进。自查：value=3 后，value*2 是多少？答 6 即可继续。",
-    objectives: ["按执行顺序解释定义与调用", "独立编写一个接收数值并返回两倍的函数"],
+    contentVersion: 2,
+    prerequisites: "已能在本机运行 Python，理解变量赋值和数值乘法。自查：value=3 后，value*2 是多少？答 6 即可继续；函数的写法与缩进在正文解释。",
+    prerequisiteLinks: [{title:"Python 官方教程：运行解释器",href:"https://docs.python.org/3.14/tutorial/interpreter.html",note:"本地运行环境的补修；仓库第1章目前只有规划。"},{title:"Python 官方教程：数值与赋值",href:"https://docs.python.org/3.14/tutorial/introduction.html#numbers",note:"复习变量、乘法和用 print 显示结果。"}],
+    objectives: ["按执行顺序解释定义与调用", "独立编写一个接收数值并返回计算结果的单参数函数"],
+    assessmentMap: [{objective:1,exerciseIds:["define-double"]},{objective:2,exerciseIds:["minutes-to-seconds"]}],
     next: link("PY101-C05-L02", "5.2 参数如何绑定", "先掌握一次调用，再增加第二个输入。"),
     program: "function-basics", time: [6, 10, 8, 12, 5, 10],
     sections: [
-      section("concept", "先定义，再调用", [p("你需要把 3、4 和 7 分别乘 2。每次重复写同样的步骤容易漏改；可以先把“乘 2”这件事命名为 double。def 定义这份步骤，尚未为某个数字计算。double(3) 才会进入函数体执行。"), table("跟踪 double(3)", ["步骤", "发生什么"], [["定义", "记住 double 的函数体"], ["调用", "输入 3 交给名字 value"], ["执行", "计算 3×2=6"], ["返回", "return 把 6 交回 result"]]), p("定义括号里的 value 叫形参，是接收输入的名字；调用中的 3 叫实参，是这次给出的值。return 交回结果。先把它当作一次完整流程，5.3 再比较返回与显示。")]),
-      section("binding", "一次输入对应一个名字", [p("double(4) 会让这次调用中的 value 为 4，因此返回 8。下一次 double(7) 使用新的输入 7，返回 14。多个输入如何按位置或名字对应，见 5.2；本节无需先学默认值、星号或类型注解。")]),
-      section("defaults", "接下来再增加接口规则", [{ type: "reading-links", title: "原默认值书签的衔接入口", links: [link("PY101-C05-L05", "5.5 默认参数", "先学简单数字默认值。"), link("PY101-C05-L06", "5.6 可选高级陷阱", "旧版共享列表、注解与异常内容移至这里。基础达标不要求完成。")] }]),
+      section("concept", "把重复计算写成一个函数", [
+        p("先把输入 3 乘以 2，再显示结果。下面三行分别准备输入、计算、显示；print 会把括号里的值显示到终端。代码使用本机 Python 3.10+，无需第三方库，可保存为 double_without_function.py 后运行 python double_without_function.py。"),
+        {type:"code",filename:"double_without_function.py",language:"python",code:"value = 3\nresult = value * 2\nprint(result)\n"},
+        p("输出为 6。若还要处理 4 和 7，可以把同样的三行再写两遍，也可以把“接收一个数，返回它的两倍”保存成一份可重复调用的步骤。给这份步骤起名 double，输入改变时，乘法规则保持不变。"),
+        {type:"code",filename:"double_definition.py",language:"python",code:corePrograms["function-basics"].core.split("\n\n")[0]+"\n"},
+        p("def 表示定义函数，后面的 double 是函数名。圆括号里写接收输入的名字 value，称为形参；括号后的冒号表示函数体从下一行开始。第二行向右缩进四个空格，说明 return value * 2 属于这个函数。return 把计算结果交回调用处。这里只执行定义，终端不会显示 6，也还没有为某个输入做乘法。"),
+        p("需要处理 3 时，在函数体外写 result = double(3)。调用行不缩进：double(3) 把实参 3 交给 value，执行函数体，再让 result 接住返回的 6。随后 print(result) 显示它。等号把返回值交给左边的变量；定义时的括号接收名字，调用时的括号提供这次输入。"),
+        table("跟踪 double(3)", ["步骤", "发生什么"], [["定义", "记住 double 的函数体"], ["调用", "输入 3 交给名字 value"], ["执行", "计算 3×2=6"], ["返回", "return 把 6 交回 result"]]),
+      ]),
+      section("binding", "一次输入对应一个名字", [p("double(4) 会让这次调用中的 value 为 4，因此返回 8。下一次 double(7) 使用新的输入 7，返回 14。两次都使用同一个乘法规则，变化的是每次交给 value 的数；无需为每个数重新定义一个函数。")]),
+      {...section("defaults", "可选衔接：默认值与更多参数", [{ type: "reading-links", title: "完成本节后按需继续", links: [link("PY101-C05-L05", "5.5 默认参数", "先完成5.2–5.4，再增加数字默认值。"), link("PY101-C05-L06", "5.6 可选高级陷阱", "完成基础五节后再读，不计本节达标。")] }]),tier:"advanced"},
     ],
-    exercises: [exercise("define-double", "自己写一个函数", "代码", "合上示例，定义 double(value)，返回 value 的两倍。用 4 和 -2 调用并写出预期结果，再说明 def 与调用分别何时执行。", ["定义行以 def 开始；函数体需要缩进。", "函数体写 return value * 2；调用要在函数体外。"], ["定义 double(value)，函数体为 return value * 2。double(4)=8，double(-2)=-4。", "执行 def 只创建函数；执行 double(4) 才计算该次结果。"], ["输入名称与计算一致", "使用 return 交回数值", "两个新输入结果正确", "区分定义和执行"] )],
+    exercises: [exercise("define-double", "自己写一个函数", "代码", "合上示例，定义 double(value)，返回 value 的两倍。用 4 和 -2 调用并写出预期结果，再说明 def 与调用分别何时执行。", ["定义行以 def 开始；函数体需要缩进。", "函数体写 return value * 2；调用要在函数体外。"], ["定义 double(value)，函数体为 return value * 2。double(4)=8，double(-2)=-4。", "执行 def 只创建函数；执行 double(4) 才计算该次结果。"], ["输入名称与计算一致", "使用 return 交回数值", "两个新输入结果正确", "区分定义和执行"] ),
+      exercise("minutes-to-seconds","不看示例，写一个分钟换秒的函数","迁移","已知 1 分钟等于 60 秒。先预测 2 分钟和 0.5 分钟各是多少秒，再独立定义 minutes_to_seconds(minutes)，接收分钟数并返回秒数；用这两个输入调用并运行核对，再检查输入 0 的结果。说明两次调用中 minutes 分别接到什么值，以及 return 把结果交给哪里。不要在函数体内把输入写死成 2。",
+        ["先确定输入的单位、换算规则和要交回的数值。新函数只需一个形参；调用行放在函数定义之外。","定义行写 def minutes_to_seconds(minutes):，下一行缩进四个空格，返回 minutes 乘以每分钟的秒数。调用后可用 result 接收返回值，再用 print 显示。"],
+        ["2 分钟为 120 秒，0.5 分钟为 30 秒，0 分钟为 0 秒。定义行是 def minutes_to_seconds(minutes):；缩进的函数体是 return minutes * 60。","定义之外分别调用 minutes_to_seconds(2)、minutes_to_seconds(0.5)、minutes_to_seconds(0)，返回 120、30.0、0。每次的 minutes 接收该次输入；例如 result = minutes_to_seconds(2) 让 result 接到 120，再用 print(result) 显示。","典型错误：minutes + 60 是加数而非换算；return 2 * 60 把输入写死；只用 print 而没有 return，调用处拿不到这里需要的秒数；把调用缩进到函数体内会改变执行过程。"],
+        ["2 分：一个形参接收本次分钟数，返回正确换算结果，输入未写死；minutes * 60、60 * minutes 等等价写法都可。","1 分：定义、冒号与函数体缩进正确，调用在函数体外。","1 分：先预测并运行三个输入，结果为 120、30.0、0。","1 分：解释实参进入 minutes、返回值交回调用处的过程。"]),
+    ],
     quizzes: [quick("binding-check", "double(5) 的形参和实参分别是什么？", ["value 和 5", "5 和 value"], 0, ["value 是定义的名字，5 是调用给出的值。", "定义名字是形参，具体输入是实参。"]), quick("defaults-check", "仅执行 def double(value): … 时会算出 double(3) 吗？", ["不会，还需要调用", "会自动以 3 调用"], 0, ["定义保留步骤，调用才执行。", "定义没有指定这个实参。"] )],
-    summary: ["定义保存步骤，调用执行步骤。", "形参是名字，实参是这次输入。", "本节能写一个数值函数即可达标；多个参数留到下一节。"],
+    summary: ["定义保存步骤，调用执行步骤。", "形参是接收输入的名字，实参是这次给出的值。", "return 把计算结果交回调用处，接收结果的变量可以继续使用它。"],
   },
   {
     id: "PY101-C05-L02", title: "位置与关键字参数绑定", subtitle: "只增加一个技能：把两个实参交给正确的形参。",
@@ -103,12 +120,12 @@ const specs: Spec[] = [
 ];
 
 const figures: Record<string, ContentBlock> = {
-  "PY101-C05-L01": { type: "image", src: "/learning/v2-1/function-flow.png", width: 1200, height: 500, mobile: { src: "/learning/v2-1/function-flow-mobile.png", width: 640, height: 900 }, alt: "double(3) 把实参 3 绑定给形参 value，执行 value 乘 2 得到 6，再通过 return 交给调用处的 result。", caption: "本图只追踪一个数值调用：输入 3，返回 6；没有提前引入默认参数或高级语法。" },
+  "PY101-C05-L01": { type: "image", src: "/learning/v2-1/function-flow.png", width: 1200, height: 500, mobile: { src: "/learning/v2-1/function-flow-mobile.png", width: 640, height: 900 }, alt: "double(3) 把实参 3 绑定给形参 value，执行 value 乘 2 得到 6，再通过 return 交给调用处的 result。", caption: "输入 3 交给 value，乘以 2 得到 6，再通过 return 交回调用处的 result。" },
   "MA101-C03-L02": { type: "image", src: "/learning/v2-1/matrix-product.png", width: 1200, height: 720, mobile: { src: "/learning/v2-1/matrix-product-mobile.png", width: 640, height: 1080 }, alt: "矩阵乘法逐格展示：第一行两个内积分别为 1乘2加2乘1等于4、1乘0加2乘3等于6；第二行结果为1和3。", caption: "四个格子的表达式由 A、B 对应行列实际生成，并与 NumPy 矩阵乘积 [[4,6],[1,3]] 核对。" },
   "MA101-C03-L03": { type: "image", src: "/learning/v2-1/array-shapes.png", width: 1200, height: 560, mobile: { src: "/learning/v2-1/array-shapes-mobile.png", width: 640, height: 900 }, alt: "相同的两个数在一维数组、二维列向量和二维行矩阵中分别具有 (2,)、(2,1)、(1,2) 的形状；一维数组转置仍为 (2,)。", caption: "图中形状已由实际 NumPy 数组核对；reshape 增加了二维表示，转置本身不会为一维数组增加轴。" },
 };
 const codeWalkthroughs: Record<keyof typeof corePrograms, string> = {
-  "function-basics": "value 接收这次输入，result 接收返回值。输出为 6；改用 double(4) 前先预测 8。",
+  "function-basics": "value 接收这次输入，result 接收返回值，初次运行输出 6。再把调用改成 double(6)，先写出预期结果，再运行核对；若不一致，就从传入 value 的数开始追踪。",
   "function-binding": "两个 print 分别调用一次函数；factor=4 与 value=3 按名字绑定。两行都输出 12。",
   "function-return": "先由 show_one 打印 4，再由最后一行打印 4 None。result 是可继续计算的数值，shown 是 None。",
   "function-scope": "函数内 result 是局部名字；两个 print 分别输出 5、10。外部 value 没有被写回。",
@@ -126,15 +143,15 @@ function makeLesson(spec: Spec) {
   const [r0, r1, p0, p1, c0, c1] = spec.time;
   const exercises = spec.exercises.filter((b) => b.type === "exercise");
   return lessonSchema.parse({
-    id: spec.id, courseId, chapterId: spec.id.slice(0, -4), contentVersion: 1,
+    id: spec.id, courseId, chapterId: spec.id.slice(0, -4), contentVersion: spec.contentVersion ?? 1,
     title: spec.title, subtitle: spec.subtitle, prerequisites: spec.prerequisites,
-    prerequisiteLinks: spec.previous ? [spec.previous] : [],
+    prerequisiteLinks: spec.prerequisiteLinks ?? (spec.previous ? [spec.previous] : []),
     objectives: spec.objectives,
-    assessmentMap: spec.objectives.map((_, index) => ({ objective: index + 1, exerciseIds: exercises.map((e) => e.id) })),
+    assessmentMap: spec.assessmentMap ?? spec.objectives.map((_, index) => ({ objective: index + 1, exerciseIds: exercises.map((e) => e.id) })),
     learningTime: { reading: [r0,r1], practice: [p0,p1], coding: [c0,c1], basis: "editorial-estimate" },
     sections: [
       ...spec.sections.map((part,index) => index === 0 && figures[spec.id] ? { ...part, blocks: [...part.blocks, figures[spec.id]] } : part),
-      section("code", "最小代码：先预测再运行", [p(`${sample.environment}。以下片段可单独保存运行；先按前面的步骤预测输出，再用终端 python ${sample.filename}.py 核对。数学课代码部分需基础 Python 的列表、下标和循环；可先手算，再补修后运行。`), { type: "code", code: sample.core, filename: `${sample.filename}.py`, language: "python" }, p(codeWalkthroughs[spec.program])]),
+      section("code", "最小代码：先预测再运行", [p(`${sample.environment}。以下片段可单独保存运行；先按前面的步骤预测输出，再用终端 python ${sample.filename}.py 核对。${courseId === "MA101" ? "数学课代码部分需基础 Python 的列表、下标和循环；可先手算，再补修后运行。" : ""}`), { type: "code", code: sample.core, filename: `${sample.filename}.py`, language: "python" }, p(codeWalkthroughs[spec.program])]),
       section("quiz", "基础达标：独立完成", [...spec.exercises, ...spec.quizzes]),
       { ...section("verification", "完整代码与独立检查", [p("此处只追加结果检查，不改变正文算法。断言、循环对照与边界检查是可选验证；基础达标按上方开放练习自查。"), { type: "code", code: complete.code, filename: `${complete.filename}.py`, language: "python" }, { type: "downloads", resourceIds: [`${spec.program}-python`, `${spec.program}-notebook`] }]), tier: "verification" },
       section("summary", "本节总结与下一步", [{ type: "summary", points: spec.summary }, ...(spec.next ? [{ type: "reading-links" as const, title: "继续学习", links: [spec.next] }] : [])]),

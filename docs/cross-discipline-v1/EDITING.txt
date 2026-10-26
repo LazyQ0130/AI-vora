@@ -1,0 +1,5 @@
+
+> aivora-web@0.1.0 review:editing
+> tsx scripts/review-v2-3.ts --allow-version-increase
+
+四节教材前后全文与锚点兼容对比已输出
