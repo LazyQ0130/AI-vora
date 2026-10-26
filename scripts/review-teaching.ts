@@ -11,7 +11,6 @@ const lessons = [...lessonRegistry.values()].map((lesson) => {
     catalogRole: publication.catalogRole, optionalLesson: lesson.optionalLesson,
     status: publication.status, contentVersion: lesson.contentVersion,
     learningTime: lesson.learningTime,
-    coreProseCharacters: lesson.sections.filter((s) => s.tier === "core").flatMap((s) => s.blocks).filter((b) => b.type === "paragraph").map((b) => b.text).join("").length,
     objectives: lesson.assessmentMap.map((row) => ({
       objective: row.objective, text: lesson.objectives[row.objective-1],
       exercises: row.exerciseIds.map((id) => {
@@ -26,16 +25,17 @@ const lessons = [...lessonRegistry.values()].map((lesson) => {
     })),
   };
 });
-await writeFile("docs/TEACHING_V2_2_CONTENT_MATRIX.json", JSON.stringify({
+await writeFile("docs/TEACHING_V2_3_CONTENT_MATRIX.json", JSON.stringify({
   checkedAt: new Date().toISOString(),
   note: "结构覆盖与编辑估计快照；映射通过不证明题目效度或独立自学效果，需人工与目标学生验证。",
   lessons,
 }, null, 2)+"\n");
-await writeFile("docs/TEACHING_V2_2_MATH_EVIDENCE.json",JSON.stringify({
-  note:"图解实际使用的数值与坐标比例；独立核验见 tests/test_math_v2_2.py 与 teaching-v2-2.test.ts，不代表学生试学。",
+await writeFile("docs/TEACHING_V2_3_MATH_EVIDENCE.json",JSON.stringify({
+  note:"图解实际使用的数值与坐标比例；独立核验见 tests/test_math_v2_2.py、test_teaching_v2_3.py 与 TS 测试，不代表学生试学。",
   u:teachingU,v:teachingV,sum:add2(teachingU,teachingV),
   translatedDisplacement:displacement2([1,1],[4,3]),
   scaling:scalingFactors.map((factor)=>({factor,result:scale2(factor,teachingU),lengthFactor:Math.abs(factor),direction:factor===0?"undefined":factor>0?"same":"opposite"})),
+  orderedRatio: { order: ["east", "north"], original: teachingU, doubled: scale2(2,teachingU), simplified: [3,2] },
   coordinateView:vectorView,
 },null,2)+"\n");
 console.log(`${lessons.length} 节教材的目标映射、时间估计与分层代码清单已输出`);

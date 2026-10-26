@@ -85,9 +85,9 @@ const report = {
   note: "技术校验通过；不代表人工内容审核、试学或正式发布。代码来自仓库静态教材，仅开发阶段执行。",
 };
 await writeFile(
-  "docs/TEACHING_V2_2_PYTHON_RESULTS.json",
+  "docs/TEACHING_V2_3_PYTHON_RESULTS.json",
   JSON.stringify(report, null, 2) + "\n",
 );
 console.log(
-  `Python 单元测试通过，${examples.length} 个网页代码块全部实际执行通过，11 组核心/完整版一致。证据：docs/TEACHING_V2_2_PYTHON_RESULTS.json`,
+  `Python 单元测试通过，${examples.length} 个网页代码块全部实际执行通过，11 组核心/完整版一致。证据：docs/TEACHING_V2_3_PYTHON_RESULTS.json`,
 );

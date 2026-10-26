@@ -31,7 +31,7 @@ npm run prepare:downloads
 npm run test:python
 ```
 
-test:python 会执行全部 Python 单元测试、网页每个 Python 代码块，并核对下载脚本与 Notebook；结果写入 docs/TEACHING_V2_2_PYTHON_RESULTS.json，旧 V2/V2.1/COURSE_ENGINE 证据保留。本机实测 Python 3.14.2 / NumPy 2.5.2。教材面向 Python 3.10+；未声称所有解释器和 NumPy 版本均已验证。
+test:python 会执行全部 Python 单元测试、网页每个 Python 代码块，并核对下载脚本与 Notebook；结果写入 docs/TEACHING_V2_3_PYTHON_RESULTS.json，旧 V2/V2.1/V2.2/COURSE_ENGINE 证据保留。本机实测 Python 3.14.2 / NumPy 2.5.2。教材面向 Python 3.10+；未声称所有解释器和 NumPy 版本均已验证。
 
 精确教学图已作为 PNG 入库，重新生成时另需 matplotlib（本机 3.11.2）：
 
@@ -108,13 +108,15 @@ docs/                                 实施计划、架构、验收与真实截
 
 ## 验收记录
 
-最新结果：[V2.2 交付与验收报告](docs/TEACHING_V2_2_REVIEW.md)、[MA 第 2–3 章完整规划](docs/MA101_V2_2_OUTLINE.md)、[目标与练习矩阵](docs/TEACHING_V2_2_CONTENT_MATRIX.json)、[浏览器验收](docs/TEACHING_V2_2_BROWSER_RESULTS.json)。
+最新结果：[V2.3 教学精修报告与前后对比](docs/TEACHING_V2_3_REVIEW.md)、[编辑前审核](docs/TEACHING_V2_3_AUDIT.md)、[目标与练习矩阵](docs/TEACHING_V2_3_CONTENT_MATRIX.json)、[浏览器验收](docs/TEACHING_V2_3_BROWSER_RESULTS.json)。
+
+V2.2 历史交付：[独立课时与目录报告](docs/TEACHING_V2_2_REVIEW.md)、[MA 第 2–3 章完整规划](docs/MA101_V2_2_OUTLINE.md)。课时 ID 和规划保持；2.2、2.4 的核心目标与可选内容划分以 V2.3 为准。
 
 上一轮记录：[V2.1 完整内容质量审查](docs/TEACHING_V2_1_REVIEW.md)、[知识负荷清单](docs/TEACHING_V2_1_AUDIT.md)、[Python 执行证据](docs/TEACHING_V2_1_PYTHON_RESULTS.json)、[浏览器验收](docs/TEACHING_V2_1_BROWSER_RESULTS.json)。
 
 上一轮记录：[教材 V2 与分层目录验收](docs/TEACHING_V2_ACCEPTANCE.md)、[分阶段计划](docs/TEACHING_V2_PLAN.md)、[逐节质量与来源审查](docs/TEACHING_V2_CONTENT_REVIEW.md)、[Python 执行证据](docs/TEACHING_V2_PYTHON_RESULTS.json)、[真实浏览器验收](docs/TEACHING_V2_BROWSER_RESULTS.json)。
 
-历史记录：[通用课程引擎](docs/COURSE_ENGINE_ACCEPTANCE.md)、[前端基础验收](docs/FRONTEND_ACCEPTANCE.md)、[设计系统](docs/UI_SYSTEM.md)、[V4 可用性](docs/USABILITY_REFINEMENT_V4.md)、[V5 独立封面](docs/COURSE_COVERS_V5.md)、[V6 学员界面](docs/LEARNER_INTERFACE_V6.md)。旧报告描述的是当时版本，以最新 V2.2 报告为当前状态。
+历史记录：[通用课程引擎](docs/COURSE_ENGINE_ACCEPTANCE.md)、[前端基础验收](docs/FRONTEND_ACCEPTANCE.md)、[设计系统](docs/UI_SYSTEM.md)、[V4 可用性](docs/USABILITY_REFINEMENT_V4.md)、[V5 独立封面](docs/COURSE_COVERS_V5.md)、[V6 学员界面](docs/LEARNER_INTERFACE_V6.md)。旧报告描述的是当时版本，以最新 V2.3 报告为当前状态。
 
 仍需后续专业人工审校、真实教学试学和更多课程内容生产。本轮没有将技术校验或生产构建当作正式教材发布、浏览器验收或真实用户测试。
 
@@ -124,4 +126,10 @@ docs/                                 实施计划、架构、验收与真实截
 
 MA 第 2 章规划八节，第 3 章规划六节。本轮完整制作 2.1–2.4，其 ID 为 C02-L03…L06；旧 C02-L01/L02、C03-L01/L02/L03 标记 legacy，原 URL、r1 和全部锚点保留。旧完成记录不会产生新课完成。后续 2.5–2.8 和第 3 章只有详细编辑规划，不生成短占位文。
 
-数学核心不要求 Python；可选代码与挑战折叠，SVG 图由相同数值规则绘制，保持横纵轴等比例。更新结构审查快照运行 npm run review:teaching；Python、HTTP 与内容矩阵现在写入 TEACHING_V2_2_* 文件，历史报告保留。
+数学核心不要求 Python；可选代码与挑战折叠，SVG 图由相同数值规则绘制，保持横纵轴等比例。更新结构审查快照运行 npm run review:teaching；Python、HTTP 与内容矩阵现在写入 TEACHING_V2_3_* 文件，历史报告保留。
+
+## V2.3 阅读节奏精修
+
+H1 只显示课时标题，H2 与文章目录不再叠加显示编号；课时编号仍保留在课程目录、面包屑、元信息和上下节导航。四篇 MA 教材沿用全部 section/exercise ID 与 r1 阅读键，旧记录不重置。
+
+2.2 的 n/i 一般记号、竖写与复杂数据对齐，以及 2.4 的反求倍数、共线和非原点位置缩放均转为可选拓展；核心目标与基础题同步精修。运行 npm run review:editing 可重建四篇前后全文对比；没有字数、段数或预计节省时间的质量分数，教学效果仍待独立人工审阅及真实学生试学。

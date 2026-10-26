@@ -28,15 +28,12 @@ const readableCodeTheme = {
 };
 
 export function LessonHeading({
-  number,
   children,
 }: {
-  number?: string;
   children: ReactNode;
 }) {
   return (
     <h2 tabIndex={-1}>
-      {number && <span>{number} </span>}
       {children}
     </h2>
   );

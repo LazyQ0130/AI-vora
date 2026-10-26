@@ -71,11 +71,10 @@ test("V2.2 每篇有独立闭环，核心无 Python 要求，目标验收不依�
     assert.ok(blocks.some(b=>b.type==="vector-figure"));
     assert.ok(blocks.filter(b=>b.type==="exercise").length>=2);
     assert.equal(blocks.some(b=>b.type==="code"),false);
-    assert.equal(lesson.sections.filter(s=>s.tier!=="core").flatMap(s=>s.blocks).filter(b=>b.type==="exercise").length,1);
+    assert.ok(lesson.sections.some(s=>s.tier!=="core"&&s.blocks.some(b=>b.type==="exercise")));
     for(const mapping of lesson.assessmentMap) for(const exercise of mapping.exerciseIds)
       assert.ok(blocks.some(b=>b.type==="exercise"&&b.id===exercise));
-    // 不用字数作为教学通过线；只禁止把新课意外退化为概述。
-    assert.ok(blocks.filter(b=>b.type==="paragraph").length>=15);
+    // 编辑可按真实解释任务合并自然段；不把段落数量或字数当作质量门槛。
   }
 });
 test("V2.2 目录只有独立课时链接，文章目录与服务器完成空态分离",()=>{

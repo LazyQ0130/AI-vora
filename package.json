@@ -13,6 +13,7 @@
     "test:python": "tsx scripts/validate-python.ts",
     "test:routes": "tsx scripts/validate-routes.ts",
     "review:teaching": "tsx scripts/review-teaching.ts",
+    "review:editing": "tsx scripts/review-v2-3.ts",
     "prepare:diagrams": "python scripts/render-lesson-diagrams.py",
     "prepare:ml-diagrams": "python scripts/render-ml-v2-diagrams.py",
     "prepare:v21-diagrams": "python scripts/render-v2-1-diagrams.py",

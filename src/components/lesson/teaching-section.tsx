@@ -2,8 +2,8 @@ import type { Lesson } from "@/content/models";
 import { LessonHeading } from "./blocks";
 import { ContentRenderer } from "./content-renderer";
 
-export function TeachingSection({ section, number, resources }: {
-  section: Lesson["sections"][number]; number?: string; resources: Lesson["resources"];
+export function TeachingSection({ section, resources }: {
+  section: Lesson["sections"][number]; resources: Lesson["resources"];
 }) {
   const body = <div className={section.layout === "intro" ? "lesson-intro-grid" : "lesson-section-body"}>
     {section.blocks.map((block, index) => <div className={`lesson-block lesson-block-${block.type}`} key={index}>
@@ -11,7 +11,7 @@ export function TeachingSection({ section, number, resources }: {
     </div>)}
   </div>;
   return <section className={`lesson-section lesson-tier-${section.tier}`} id={section.id}>
-    <LessonHeading number={number}>{section.title}</LessonHeading>
+    <LessonHeading>{section.title}</LessonHeading>
     {section.tier === "core" ? body : <details className="lesson-optional">
       <summary>{section.tier === "verification" ? "可选代码验证" : "可选进阶"} · 展开阅读（不计基础达标）</summary>
       {body}

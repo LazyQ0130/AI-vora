@@ -28,7 +28,7 @@ export function VectorFigure({ kind }: {kind: Extract<ContentBlock,{type:"vector
   if(kind==="scaling") return <figure className="vector-teaching-figure"><div className="vector-plot-grid">{scalingFactors.map(factor=>{
     const end=scale2(factor,teachingU);
     return <div key={factor} className="vector-plot-card"><h3>{factor}u = ({end.join(", ")})</h3><VectorPlot label={`${factor} 倍向量`} description={`u=(3,2)，${factor}u=(${end.join(",")})${factor===0?"，零向量无确定方向":""}`} vectors={factor===0?[]:[{start:origin,end:teachingU,color:colors.muted,dashed:true},{start:origin,end,color:factor<0?colors.purple:colors.cyan}]} point={factor===0?origin:undefined}/><p>{factor>0?"方向相同":factor<0?"方向相反":"没有确定方向"} · {factor===0?"长度为 0":`长度为原来的 ${Math.abs(factor)} 倍`}</p></div>;
-  })}</div><figcaption>灰色虚线为原向量 u=(3,2)。正倍数保持方向，负倍数反向；0u 只在原点画一个点。坐标与倍数结果由同一计算函数生成。</figcaption></figure>;
+  })}</div><figcaption>前三幅图的灰色虚线为原向量 u=(3,2)，东向分量 : 北向分量 = 3 : 2。正倍数保持方向，负倍数反向；0u 只在原点画一个点。各图横纵轴使用相同比例。</figcaption></figure>;
   if(kind==="meaning") return <figure className="vector-teaching-figure"><div className="vector-plot-grid">
     <div className="vector-plot-card"><h3>从 (0,0) 到 (3,2)</h3><VectorPlot label="位移与路线" description="向东3、向北2的位移由原点指向(3,2)；虚线先东后北，表示一种实际路线" vectors={[{start:origin,end:teachingU,color:colors.cyan}]} route={[origin,[3,0],teachingU]}/><p>实线：整体位移；虚线：一种走法。</p></div>
     <div className="vector-plot-card"><h3>从 (1,1) 到 (4,3)</h3><VectorPlot label="平移后相同的位移" description="箭头从(1,1)指向(4,3)，仍向东3、向北2" vectors={[{start:[1,1],end:add2([1,1],teachingU),color:colors.cyan}]}/><p>起点改变，向东与向北的变化没变。</p></div>

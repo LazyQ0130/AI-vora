@@ -1,0 +1,2921 @@
+{
+  "checkedAt": "2026-10-26T05:16:08.634Z",
+  "baselineRevision": "0f6fa0fffd6d52970413fd9f2cd0b3c2f546e60b",
+  "base": "http://127.0.0.1:3001",
+  "environment": "Codex in-app Chromium; viewport emulation, not real device or student trial",
+  "layout": [
+    {
+      "requestedViewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "articleLinks": [
+        {
+          "href": "#scene",
+          "text": "只有一个数，机器人为什么无法执行？"
+        },
+        {
+          "href": "#intuition",
+          "text": "一个数与一支箭头分别保留什么信息？"
+        },
+        {
+          "href": "#worked",
+          "text": "把出发点、终点和整体变化读出来"
+        },
+        {
+          "href": "#definition",
+          "text": "起点不同的箭头也可以相等"
+        },
+        {
+          "href": "#diagram",
+          "text": "在同一比例的坐标图里核对"
+        },
+        {
+          "href": "#application",
+          "text": "为什么这种表示值得学习？"
+        },
+        {
+          "href": "#mistakes",
+          "text": "走回原点时，什么变成了零？"
+        },
+        {
+          "href": "#practice",
+          "text": "基础练习：解释你保留的信息"
+        },
+        {
+          "href": "#challenge",
+          "text": "可选挑战：为任务选择表示"
+        },
+        {
+          "href": "#summary",
+          "text": "把箭头读清楚，再学习写法"
+        }
+      ],
+      "badHashes": [],
+      "clientWidth": 1425,
+      "closedOptional": [
+        "challenge"
+      ],
+      "h1": [
+        "什么是向量？"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "只有一个数，机器人为什么无法执行？"
+        },
+        {
+          "tag": "H2",
+          "text": "一个数与一支箭头分别保留什么信息？"
+        },
+        {
+          "tag": "H2",
+          "text": "把出发点、终点和整体变化读出来"
+        },
+        {
+          "tag": "H2",
+          "text": "起点不同的箭头也可以相等"
+        },
+        {
+          "tag": "H2",
+          "text": "在同一比例的坐标图里核对"
+        },
+        {
+          "tag": "H3",
+          "text": "从 (0,0) 到 (3,2)"
+        },
+        {
+          "tag": "H3",
+          "text": "从 (1,1) 到 (4,3)"
+        },
+        {
+          "tag": "H2",
+          "text": "为什么这种表示值得学习？"
+        },
+        {
+          "tag": "H2",
+          "text": "走回原点时，什么变成了零？"
+        },
+        {
+          "tag": "H2",
+          "text": "基础练习：解释你保留的信息"
+        },
+        {
+          "tag": "H3",
+          "text": "该用一个数还是一个向量？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "不同起点的箭头是否相同？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选挑战：为任务选择表示"
+        },
+        {
+          "tag": "H3",
+          "text": "规划路线还需要什么？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "把箭头读清楚，再学习写法"
+        },
+        {
+          "tag": "H3",
+          "text": "下一步"
+        }
+      ],
+      "leftNumber": "2.1",
+      "mathErrors": 0,
+      "numberedBodyHeadings": [],
+      "path": "/learn/MA101/MA101-C02-L03",
+      "scrollWidth": 1425,
+      "sectionIds": [
+        "scene",
+        "intuition",
+        "worked",
+        "definition",
+        "diagram",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "summary"
+      ]
+    },
+    {
+      "requestedViewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "articleLinks": [
+        {
+          "href": "#scene",
+          "text": "同样两个数，为什么顺序很重要？"
+        },
+        {
+          "href": "#intuition",
+          "text": "分量是有固定位置的记录项"
+        },
+        {
+          "href": "#worked",
+          "text": "从负方向和零值中读取含义"
+        },
+        {
+          "href": "#definition",
+          "text": "用下标点名一个分量"
+        },
+        {
+          "href": "#application",
+          "text": "可选拓展：更多分量与数据记录"
+        },
+        {
+          "href": "#mistakes",
+          "text": "相等是对应位置相等，不是数字碰巧相同"
+        },
+        {
+          "href": "#practice",
+          "text": "基础练习：写清编号、值和含义"
+        },
+        {
+          "href": "#challenge",
+          "text": "可选挑战：为高维记录设计说明"
+        },
+        {
+          "href": "#code",
+          "text": "可选代码：读取一份记录"
+        },
+        {
+          "href": "#summary",
+          "text": "从有序记录走向运算"
+        }
+      ],
+      "badHashes": [],
+      "clientWidth": 1425,
+      "closedOptional": [
+        "application",
+        "challenge",
+        "code"
+      ],
+      "h1": [
+        "向量的表示、维度与分量"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "同样两个数，为什么顺序很重要？"
+        },
+        {
+          "tag": "H2",
+          "text": "分量是有固定位置的记录项"
+        },
+        {
+          "tag": "H2",
+          "text": "从负方向和零值中读取含义"
+        },
+        {
+          "tag": "H2",
+          "text": "用下标点名一个分量"
+        },
+        {
+          "tag": "H2",
+          "text": "可选拓展：更多分量与数据记录"
+        },
+        {
+          "tag": "H3",
+          "text": "用 n 和 i 表示一般位置"
+        },
+        {
+          "tag": "H3",
+          "text": "把同一组分量竖着列出"
+        },
+        {
+          "tag": "H3",
+          "text": "为实际数据补上属性与单位"
+        },
+        {
+          "tag": "H3",
+          "text": "把库存记录对齐"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "相等是对应位置相等，不是数字碰巧相同"
+        },
+        {
+          "tag": "H2",
+          "text": "基础练习：写清编号、值和含义"
+        },
+        {
+          "tag": "H3",
+          "text": "分别说出维度、编号与值"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "把移动写成两个分量"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选挑战：为高维记录设计说明"
+        },
+        {
+          "tag": "H3",
+          "text": "别人能否读懂你的向量？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选代码：读取一份记录"
+        },
+        {
+          "tag": "H2",
+          "text": "从有序记录走向运算"
+        },
+        {
+          "tag": "H3",
+          "text": "下一步"
+        }
+      ],
+      "leftNumber": "2.2",
+      "mathErrors": 0,
+      "numberedBodyHeadings": [],
+      "path": "/learn/MA101/MA101-C02-L04",
+      "scrollWidth": 1425,
+      "sectionIds": [
+        "scene",
+        "intuition",
+        "worked",
+        "definition",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ]
+    },
+    {
+      "requestedViewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "articleLinks": [
+        {
+          "href": "#scene",
+          "text": "两条移动指令，能否合成一条？"
+        },
+        {
+          "href": "#worked",
+          "text": "分开追踪两个方向，不漏掉负号"
+        },
+        {
+          "href": "#diagram",
+          "text": "把第二支箭头接到第一支的箭尖"
+        },
+        {
+          "href": "#definition",
+          "text": "为什么一般规则也是逐分量相加？"
+        },
+        {
+          "href": "#application",
+          "text": "换一组数据，并检查交换顺序"
+        },
+        {
+          "href": "#mistakes",
+          "text": "加法成立之前，先确认是在加同一种量"
+        },
+        {
+          "href": "#practice",
+          "text": "基础练习：既算数字，也解释终点"
+        },
+        {
+          "href": "#challenge",
+          "text": "可选挑战：补偿位移与路线边界"
+        },
+        {
+          "href": "#code",
+          "text": "可选代码：把两次配对写出来"
+        },
+        {
+          "href": "#summary",
+          "text": "把两种解法连成同一条理由"
+        }
+      ],
+      "badHashes": [],
+      "clientWidth": 1425,
+      "closedOptional": [
+        "challenge",
+        "code"
+      ],
+      "h1": [
+        "向量加法：计算方法与几何意义"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "两条移动指令，能否合成一条？"
+        },
+        {
+          "tag": "H2",
+          "text": "分开追踪两个方向，不漏掉负号"
+        },
+        {
+          "tag": "H2",
+          "text": "把第二支箭头接到第一支的箭尖"
+        },
+        {
+          "tag": "H2",
+          "text": "为什么一般规则也是逐分量相加？"
+        },
+        {
+          "tag": "H2",
+          "text": "换一组数据，并检查交换顺序"
+        },
+        {
+          "tag": "H2",
+          "text": "加法成立之前，先确认是在加同一种量"
+        },
+        {
+          "tag": "H2",
+          "text": "基础练习：既算数字，也解释终点"
+        },
+        {
+          "tag": "H3",
+          "text": "新的两次移动"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "修复有问题的配对"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选挑战：补偿位移与路线边界"
+        },
+        {
+          "tag": "H3",
+          "text": "怎样回到目标点？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选代码：把两次配对写出来"
+        },
+        {
+          "tag": "H2",
+          "text": "把两种解法连成同一条理由"
+        },
+        {
+          "tag": "H3",
+          "text": "下一步"
+        }
+      ],
+      "leftNumber": "2.3",
+      "mathErrors": 0,
+      "numberedBodyHeadings": [],
+      "path": "/learn/MA101/MA101-C02-L05",
+      "scrollWidth": 1425,
+      "sectionIds": [
+        "scene",
+        "worked",
+        "diagram",
+        "definition",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ]
+    },
+    {
+      "requestedViewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "articleLinks": [
+        {
+          "href": "#scene",
+          "text": "重复同一指令，也能直接描述为一个倍数"
+        },
+        {
+          "href": "#worked",
+          "text": "两个分量必须乘同一个数"
+        },
+        {
+          "href": "#definition",
+          "text": "从具体倍数归纳数乘定义"
+        },
+        {
+          "href": "#diagram",
+          "text": "长度看倍数大小，方向另外判断"
+        },
+        {
+          "href": "#application",
+          "text": "可选拓展：反求倍数与缩放的对象"
+        },
+        {
+          "href": "#mistakes",
+          "text": "分清乘一个数与加一个数"
+        },
+        {
+          "href": "#practice",
+          "text": "基础练习：把坐标、长度和方向分别回答"
+        },
+        {
+          "href": "#challenge",
+          "text": "可选挑战：缩放与相加能否交换步骤？"
+        },
+        {
+          "href": "#code",
+          "text": "可选代码：同一个 c 作用于每个分量"
+        },
+        {
+          "href": "#summary",
+          "text": "把计算、方向和长度连起来"
+        }
+      ],
+      "badHashes": [],
+      "clientWidth": 1425,
+      "closedOptional": [
+        "application",
+        "challenge",
+        "code"
+      ],
+      "h1": [
+        "向量数乘：长度与方向变化"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "重复同一指令，也能直接描述为一个倍数"
+        },
+        {
+          "tag": "H2",
+          "text": "两个分量必须乘同一个数"
+        },
+        {
+          "tag": "H2",
+          "text": "从具体倍数归纳数乘定义"
+        },
+        {
+          "tag": "H2",
+          "text": "长度看倍数大小，方向另外判断"
+        },
+        {
+          "tag": "H3",
+          "text": "2u = (6, 4)"
+        },
+        {
+          "tag": "H3",
+          "text": "0.5u = (1.5, 1)"
+        },
+        {
+          "tag": "H3",
+          "text": "-1u = (-3, -2)"
+        },
+        {
+          "tag": "H3",
+          "text": "0u = (0, 0)"
+        },
+        {
+          "tag": "H2",
+          "text": "可选拓展：反求倍数与缩放的对象"
+        },
+        {
+          "tag": "H3",
+          "text": "目标是否能由一个统一倍数得到？"
+        },
+        {
+          "tag": "H3",
+          "text": "能否只改一个倍数？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "位移与位置，分别围绕哪里缩放？"
+        },
+        {
+          "tag": "H2",
+          "text": "分清乘一个数与加一个数"
+        },
+        {
+          "tag": "H2",
+          "text": "基础练习：把坐标、长度和方向分别回答"
+        },
+        {
+          "tag": "H3",
+          "text": "正、负与零的三个倍数"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "解释两份计算记录"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选挑战：缩放与相加能否交换步骤？"
+        },
+        {
+          "tag": "H3",
+          "text": "用新数字核对分配关系"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选代码：同一个 c 作用于每个分量"
+        },
+        {
+          "tag": "H2",
+          "text": "把计算、方向和长度连起来"
+        },
+        {
+          "tag": "H3",
+          "text": "下一步"
+        }
+      ],
+      "leftNumber": "2.4",
+      "mathErrors": 0,
+      "numberedBodyHeadings": [],
+      "path": "/learn/MA101/MA101-C02-L06",
+      "scrollWidth": 1425,
+      "sectionIds": [
+        "scene",
+        "worked",
+        "definition",
+        "diagram",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ]
+    },
+    {
+      "requestedViewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "articleLinks": [
+        {
+          "href": "#scene",
+          "text": "只有一个数，机器人为什么无法执行？"
+        },
+        {
+          "href": "#intuition",
+          "text": "一个数与一支箭头分别保留什么信息？"
+        },
+        {
+          "href": "#worked",
+          "text": "把出发点、终点和整体变化读出来"
+        },
+        {
+          "href": "#definition",
+          "text": "起点不同的箭头也可以相等"
+        },
+        {
+          "href": "#diagram",
+          "text": "在同一比例的坐标图里核对"
+        },
+        {
+          "href": "#application",
+          "text": "为什么这种表示值得学习？"
+        },
+        {
+          "href": "#mistakes",
+          "text": "走回原点时，什么变成了零？"
+        },
+        {
+          "href": "#practice",
+          "text": "基础练习：解释你保留的信息"
+        },
+        {
+          "href": "#challenge",
+          "text": "可选挑战：为任务选择表示"
+        },
+        {
+          "href": "#summary",
+          "text": "把箭头读清楚，再学习写法"
+        }
+      ],
+      "badHashes": [],
+      "clientWidth": 753,
+      "closedOptional": [
+        "challenge"
+      ],
+      "h1": [
+        "什么是向量？"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "只有一个数，机器人为什么无法执行？"
+        },
+        {
+          "tag": "H2",
+          "text": "一个数与一支箭头分别保留什么信息？"
+        },
+        {
+          "tag": "H2",
+          "text": "把出发点、终点和整体变化读出来"
+        },
+        {
+          "tag": "H2",
+          "text": "起点不同的箭头也可以相等"
+        },
+        {
+          "tag": "H2",
+          "text": "在同一比例的坐标图里核对"
+        },
+        {
+          "tag": "H3",
+          "text": "从 (0,0) 到 (3,2)"
+        },
+        {
+          "tag": "H3",
+          "text": "从 (1,1) 到 (4,3)"
+        },
+        {
+          "tag": "H2",
+          "text": "为什么这种表示值得学习？"
+        },
+        {
+          "tag": "H2",
+          "text": "走回原点时，什么变成了零？"
+        },
+        {
+          "tag": "H2",
+          "text": "基础练习：解释你保留的信息"
+        },
+        {
+          "tag": "H3",
+          "text": "该用一个数还是一个向量？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "不同起点的箭头是否相同？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选挑战：为任务选择表示"
+        },
+        {
+          "tag": "H3",
+          "text": "规划路线还需要什么？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "把箭头读清楚，再学习写法"
+        },
+        {
+          "tag": "H3",
+          "text": "下一步"
+        }
+      ],
+      "leftNumber": "2.1",
+      "mathErrors": 0,
+      "numberedBodyHeadings": [],
+      "path": "/learn/MA101/MA101-C02-L03",
+      "scrollWidth": 753,
+      "sectionIds": [
+        "scene",
+        "intuition",
+        "worked",
+        "definition",
+        "diagram",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "summary"
+      ]
+    },
+    {
+      "requestedViewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "articleLinks": [
+        {
+          "href": "#scene",
+          "text": "同样两个数，为什么顺序很重要？"
+        },
+        {
+          "href": "#intuition",
+          "text": "分量是有固定位置的记录项"
+        },
+        {
+          "href": "#worked",
+          "text": "从负方向和零值中读取含义"
+        },
+        {
+          "href": "#definition",
+          "text": "用下标点名一个分量"
+        },
+        {
+          "href": "#application",
+          "text": "可选拓展：更多分量与数据记录"
+        },
+        {
+          "href": "#mistakes",
+          "text": "相等是对应位置相等，不是数字碰巧相同"
+        },
+        {
+          "href": "#practice",
+          "text": "基础练习：写清编号、值和含义"
+        },
+        {
+          "href": "#challenge",
+          "text": "可选挑战：为高维记录设计说明"
+        },
+        {
+          "href": "#code",
+          "text": "可选代码：读取一份记录"
+        },
+        {
+          "href": "#summary",
+          "text": "从有序记录走向运算"
+        }
+      ],
+      "badHashes": [],
+      "clientWidth": 753,
+      "closedOptional": [
+        "application",
+        "challenge",
+        "code"
+      ],
+      "h1": [
+        "向量的表示、维度与分量"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "同样两个数，为什么顺序很重要？"
+        },
+        {
+          "tag": "H2",
+          "text": "分量是有固定位置的记录项"
+        },
+        {
+          "tag": "H2",
+          "text": "从负方向和零值中读取含义"
+        },
+        {
+          "tag": "H2",
+          "text": "用下标点名一个分量"
+        },
+        {
+          "tag": "H2",
+          "text": "可选拓展：更多分量与数据记录"
+        },
+        {
+          "tag": "H3",
+          "text": "用 n 和 i 表示一般位置"
+        },
+        {
+          "tag": "H3",
+          "text": "把同一组分量竖着列出"
+        },
+        {
+          "tag": "H3",
+          "text": "为实际数据补上属性与单位"
+        },
+        {
+          "tag": "H3",
+          "text": "把库存记录对齐"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "相等是对应位置相等，不是数字碰巧相同"
+        },
+        {
+          "tag": "H2",
+          "text": "基础练习：写清编号、值和含义"
+        },
+        {
+          "tag": "H3",
+          "text": "分别说出维度、编号与值"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "把移动写成两个分量"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选挑战：为高维记录设计说明"
+        },
+        {
+          "tag": "H3",
+          "text": "别人能否读懂你的向量？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选代码：读取一份记录"
+        },
+        {
+          "tag": "H2",
+          "text": "从有序记录走向运算"
+        },
+        {
+          "tag": "H3",
+          "text": "下一步"
+        }
+      ],
+      "leftNumber": "2.2",
+      "mathErrors": 0,
+      "numberedBodyHeadings": [],
+      "path": "/learn/MA101/MA101-C02-L04",
+      "scrollWidth": 753,
+      "sectionIds": [
+        "scene",
+        "intuition",
+        "worked",
+        "definition",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ]
+    },
+    {
+      "requestedViewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "articleLinks": [
+        {
+          "href": "#scene",
+          "text": "两条移动指令，能否合成一条？"
+        },
+        {
+          "href": "#worked",
+          "text": "分开追踪两个方向，不漏掉负号"
+        },
+        {
+          "href": "#diagram",
+          "text": "把第二支箭头接到第一支的箭尖"
+        },
+        {
+          "href": "#definition",
+          "text": "为什么一般规则也是逐分量相加？"
+        },
+        {
+          "href": "#application",
+          "text": "换一组数据，并检查交换顺序"
+        },
+        {
+          "href": "#mistakes",
+          "text": "加法成立之前，先确认是在加同一种量"
+        },
+        {
+          "href": "#practice",
+          "text": "基础练习：既算数字，也解释终点"
+        },
+        {
+          "href": "#challenge",
+          "text": "可选挑战：补偿位移与路线边界"
+        },
+        {
+          "href": "#code",
+          "text": "可选代码：把两次配对写出来"
+        },
+        {
+          "href": "#summary",
+          "text": "把两种解法连成同一条理由"
+        }
+      ],
+      "badHashes": [],
+      "clientWidth": 753,
+      "closedOptional": [
+        "challenge",
+        "code"
+      ],
+      "h1": [
+        "向量加法：计算方法与几何意义"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "两条移动指令，能否合成一条？"
+        },
+        {
+          "tag": "H2",
+          "text": "分开追踪两个方向，不漏掉负号"
+        },
+        {
+          "tag": "H2",
+          "text": "把第二支箭头接到第一支的箭尖"
+        },
+        {
+          "tag": "H2",
+          "text": "为什么一般规则也是逐分量相加？"
+        },
+        {
+          "tag": "H2",
+          "text": "换一组数据，并检查交换顺序"
+        },
+        {
+          "tag": "H2",
+          "text": "加法成立之前，先确认是在加同一种量"
+        },
+        {
+          "tag": "H2",
+          "text": "基础练习：既算数字，也解释终点"
+        },
+        {
+          "tag": "H3",
+          "text": "新的两次移动"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "修复有问题的配对"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选挑战：补偿位移与路线边界"
+        },
+        {
+          "tag": "H3",
+          "text": "怎样回到目标点？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选代码：把两次配对写出来"
+        },
+        {
+          "tag": "H2",
+          "text": "把两种解法连成同一条理由"
+        },
+        {
+          "tag": "H3",
+          "text": "下一步"
+        }
+      ],
+      "leftNumber": "2.3",
+      "mathErrors": 0,
+      "numberedBodyHeadings": [],
+      "path": "/learn/MA101/MA101-C02-L05",
+      "scrollWidth": 753,
+      "sectionIds": [
+        "scene",
+        "worked",
+        "diagram",
+        "definition",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ]
+    },
+    {
+      "requestedViewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "articleLinks": [
+        {
+          "href": "#scene",
+          "text": "重复同一指令，也能直接描述为一个倍数"
+        },
+        {
+          "href": "#worked",
+          "text": "两个分量必须乘同一个数"
+        },
+        {
+          "href": "#definition",
+          "text": "从具体倍数归纳数乘定义"
+        },
+        {
+          "href": "#diagram",
+          "text": "长度看倍数大小，方向另外判断"
+        },
+        {
+          "href": "#application",
+          "text": "可选拓展：反求倍数与缩放的对象"
+        },
+        {
+          "href": "#mistakes",
+          "text": "分清乘一个数与加一个数"
+        },
+        {
+          "href": "#practice",
+          "text": "基础练习：把坐标、长度和方向分别回答"
+        },
+        {
+          "href": "#challenge",
+          "text": "可选挑战：缩放与相加能否交换步骤？"
+        },
+        {
+          "href": "#code",
+          "text": "可选代码：同一个 c 作用于每个分量"
+        },
+        {
+          "href": "#summary",
+          "text": "把计算、方向和长度连起来"
+        }
+      ],
+      "badHashes": [],
+      "clientWidth": 753,
+      "closedOptional": [
+        "application",
+        "challenge",
+        "code"
+      ],
+      "h1": [
+        "向量数乘：长度与方向变化"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "重复同一指令，也能直接描述为一个倍数"
+        },
+        {
+          "tag": "H2",
+          "text": "两个分量必须乘同一个数"
+        },
+        {
+          "tag": "H2",
+          "text": "从具体倍数归纳数乘定义"
+        },
+        {
+          "tag": "H2",
+          "text": "长度看倍数大小，方向另外判断"
+        },
+        {
+          "tag": "H3",
+          "text": "2u = (6, 4)"
+        },
+        {
+          "tag": "H3",
+          "text": "0.5u = (1.5, 1)"
+        },
+        {
+          "tag": "H3",
+          "text": "-1u = (-3, -2)"
+        },
+        {
+          "tag": "H3",
+          "text": "0u = (0, 0)"
+        },
+        {
+          "tag": "H2",
+          "text": "可选拓展：反求倍数与缩放的对象"
+        },
+        {
+          "tag": "H3",
+          "text": "目标是否能由一个统一倍数得到？"
+        },
+        {
+          "tag": "H3",
+          "text": "能否只改一个倍数？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "位移与位置，分别围绕哪里缩放？"
+        },
+        {
+          "tag": "H2",
+          "text": "分清乘一个数与加一个数"
+        },
+        {
+          "tag": "H2",
+          "text": "基础练习：把坐标、长度和方向分别回答"
+        },
+        {
+          "tag": "H3",
+          "text": "正、负与零的三个倍数"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "解释两份计算记录"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选挑战：缩放与相加能否交换步骤？"
+        },
+        {
+          "tag": "H3",
+          "text": "用新数字核对分配关系"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选代码：同一个 c 作用于每个分量"
+        },
+        {
+          "tag": "H2",
+          "text": "把计算、方向和长度连起来"
+        },
+        {
+          "tag": "H3",
+          "text": "下一步"
+        }
+      ],
+      "leftNumber": "2.4",
+      "mathErrors": 0,
+      "numberedBodyHeadings": [],
+      "path": "/learn/MA101/MA101-C02-L06",
+      "scrollWidth": 753,
+      "sectionIds": [
+        "scene",
+        "worked",
+        "definition",
+        "diagram",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ]
+    },
+    {
+      "requestedViewport": {
+        "width": 390,
+        "height": 844
+      },
+      "articleLinks": [
+        {
+          "href": "#scene",
+          "text": "只有一个数，机器人为什么无法执行？"
+        },
+        {
+          "href": "#intuition",
+          "text": "一个数与一支箭头分别保留什么信息？"
+        },
+        {
+          "href": "#worked",
+          "text": "把出发点、终点和整体变化读出来"
+        },
+        {
+          "href": "#definition",
+          "text": "起点不同的箭头也可以相等"
+        },
+        {
+          "href": "#diagram",
+          "text": "在同一比例的坐标图里核对"
+        },
+        {
+          "href": "#application",
+          "text": "为什么这种表示值得学习？"
+        },
+        {
+          "href": "#mistakes",
+          "text": "走回原点时，什么变成了零？"
+        },
+        {
+          "href": "#practice",
+          "text": "基础练习：解释你保留的信息"
+        },
+        {
+          "href": "#challenge",
+          "text": "可选挑战：为任务选择表示"
+        },
+        {
+          "href": "#summary",
+          "text": "把箭头读清楚，再学习写法"
+        }
+      ],
+      "badHashes": [],
+      "clientWidth": 375,
+      "closedOptional": [
+        "challenge"
+      ],
+      "h1": [
+        "什么是向量？"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "只有一个数，机器人为什么无法执行？"
+        },
+        {
+          "tag": "H2",
+          "text": "一个数与一支箭头分别保留什么信息？"
+        },
+        {
+          "tag": "H2",
+          "text": "把出发点、终点和整体变化读出来"
+        },
+        {
+          "tag": "H2",
+          "text": "起点不同的箭头也可以相等"
+        },
+        {
+          "tag": "H2",
+          "text": "在同一比例的坐标图里核对"
+        },
+        {
+          "tag": "H3",
+          "text": "从 (0,0) 到 (3,2)"
+        },
+        {
+          "tag": "H3",
+          "text": "从 (1,1) 到 (4,3)"
+        },
+        {
+          "tag": "H2",
+          "text": "为什么这种表示值得学习？"
+        },
+        {
+          "tag": "H2",
+          "text": "走回原点时，什么变成了零？"
+        },
+        {
+          "tag": "H2",
+          "text": "基础练习：解释你保留的信息"
+        },
+        {
+          "tag": "H3",
+          "text": "该用一个数还是一个向量？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "不同起点的箭头是否相同？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选挑战：为任务选择表示"
+        },
+        {
+          "tag": "H3",
+          "text": "规划路线还需要什么？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "把箭头读清楚，再学习写法"
+        },
+        {
+          "tag": "H3",
+          "text": "下一步"
+        }
+      ],
+      "leftNumber": "2.1",
+      "mathErrors": 0,
+      "numberedBodyHeadings": [],
+      "path": "/learn/MA101/MA101-C02-L03",
+      "scrollWidth": 375,
+      "sectionIds": [
+        "scene",
+        "intuition",
+        "worked",
+        "definition",
+        "diagram",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "summary"
+      ]
+    },
+    {
+      "requestedViewport": {
+        "width": 390,
+        "height": 844
+      },
+      "articleLinks": [
+        {
+          "href": "#scene",
+          "text": "同样两个数，为什么顺序很重要？"
+        },
+        {
+          "href": "#intuition",
+          "text": "分量是有固定位置的记录项"
+        },
+        {
+          "href": "#worked",
+          "text": "从负方向和零值中读取含义"
+        },
+        {
+          "href": "#definition",
+          "text": "用下标点名一个分量"
+        },
+        {
+          "href": "#application",
+          "text": "可选拓展：更多分量与数据记录"
+        },
+        {
+          "href": "#mistakes",
+          "text": "相等是对应位置相等，不是数字碰巧相同"
+        },
+        {
+          "href": "#practice",
+          "text": "基础练习：写清编号、值和含义"
+        },
+        {
+          "href": "#challenge",
+          "text": "可选挑战：为高维记录设计说明"
+        },
+        {
+          "href": "#code",
+          "text": "可选代码：读取一份记录"
+        },
+        {
+          "href": "#summary",
+          "text": "从有序记录走向运算"
+        }
+      ],
+      "badHashes": [],
+      "clientWidth": 375,
+      "closedOptional": [
+        "application",
+        "challenge",
+        "code"
+      ],
+      "h1": [
+        "向量的表示、维度与分量"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "同样两个数，为什么顺序很重要？"
+        },
+        {
+          "tag": "H2",
+          "text": "分量是有固定位置的记录项"
+        },
+        {
+          "tag": "H2",
+          "text": "从负方向和零值中读取含义"
+        },
+        {
+          "tag": "H2",
+          "text": "用下标点名一个分量"
+        },
+        {
+          "tag": "H2",
+          "text": "可选拓展：更多分量与数据记录"
+        },
+        {
+          "tag": "H3",
+          "text": "用 n 和 i 表示一般位置"
+        },
+        {
+          "tag": "H3",
+          "text": "把同一组分量竖着列出"
+        },
+        {
+          "tag": "H3",
+          "text": "为实际数据补上属性与单位"
+        },
+        {
+          "tag": "H3",
+          "text": "把库存记录对齐"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "相等是对应位置相等，不是数字碰巧相同"
+        },
+        {
+          "tag": "H2",
+          "text": "基础练习：写清编号、值和含义"
+        },
+        {
+          "tag": "H3",
+          "text": "分别说出维度、编号与值"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "把移动写成两个分量"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选挑战：为高维记录设计说明"
+        },
+        {
+          "tag": "H3",
+          "text": "别人能否读懂你的向量？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选代码：读取一份记录"
+        },
+        {
+          "tag": "H2",
+          "text": "从有序记录走向运算"
+        },
+        {
+          "tag": "H3",
+          "text": "下一步"
+        }
+      ],
+      "leftNumber": "2.2",
+      "mathErrors": 0,
+      "numberedBodyHeadings": [],
+      "path": "/learn/MA101/MA101-C02-L04",
+      "scrollWidth": 375,
+      "sectionIds": [
+        "scene",
+        "intuition",
+        "worked",
+        "definition",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ]
+    },
+    {
+      "requestedViewport": {
+        "width": 390,
+        "height": 844
+      },
+      "articleLinks": [
+        {
+          "href": "#scene",
+          "text": "两条移动指令，能否合成一条？"
+        },
+        {
+          "href": "#worked",
+          "text": "分开追踪两个方向，不漏掉负号"
+        },
+        {
+          "href": "#diagram",
+          "text": "把第二支箭头接到第一支的箭尖"
+        },
+        {
+          "href": "#definition",
+          "text": "为什么一般规则也是逐分量相加？"
+        },
+        {
+          "href": "#application",
+          "text": "换一组数据，并检查交换顺序"
+        },
+        {
+          "href": "#mistakes",
+          "text": "加法成立之前，先确认是在加同一种量"
+        },
+        {
+          "href": "#practice",
+          "text": "基础练习：既算数字，也解释终点"
+        },
+        {
+          "href": "#challenge",
+          "text": "可选挑战：补偿位移与路线边界"
+        },
+        {
+          "href": "#code",
+          "text": "可选代码：把两次配对写出来"
+        },
+        {
+          "href": "#summary",
+          "text": "把两种解法连成同一条理由"
+        }
+      ],
+      "badHashes": [],
+      "clientWidth": 375,
+      "closedOptional": [
+        "challenge",
+        "code"
+      ],
+      "h1": [
+        "向量加法：计算方法与几何意义"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "两条移动指令，能否合成一条？"
+        },
+        {
+          "tag": "H2",
+          "text": "分开追踪两个方向，不漏掉负号"
+        },
+        {
+          "tag": "H2",
+          "text": "把第二支箭头接到第一支的箭尖"
+        },
+        {
+          "tag": "H2",
+          "text": "为什么一般规则也是逐分量相加？"
+        },
+        {
+          "tag": "H2",
+          "text": "换一组数据，并检查交换顺序"
+        },
+        {
+          "tag": "H2",
+          "text": "加法成立之前，先确认是在加同一种量"
+        },
+        {
+          "tag": "H2",
+          "text": "基础练习：既算数字，也解释终点"
+        },
+        {
+          "tag": "H3",
+          "text": "新的两次移动"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "修复有问题的配对"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选挑战：补偿位移与路线边界"
+        },
+        {
+          "tag": "H3",
+          "text": "怎样回到目标点？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选代码：把两次配对写出来"
+        },
+        {
+          "tag": "H2",
+          "text": "把两种解法连成同一条理由"
+        },
+        {
+          "tag": "H3",
+          "text": "下一步"
+        }
+      ],
+      "leftNumber": "2.3",
+      "mathErrors": 0,
+      "numberedBodyHeadings": [],
+      "path": "/learn/MA101/MA101-C02-L05",
+      "scrollWidth": 375,
+      "sectionIds": [
+        "scene",
+        "worked",
+        "diagram",
+        "definition",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ]
+    },
+    {
+      "requestedViewport": {
+        "width": 390,
+        "height": 844
+      },
+      "articleLinks": [
+        {
+          "href": "#scene",
+          "text": "重复同一指令，也能直接描述为一个倍数"
+        },
+        {
+          "href": "#worked",
+          "text": "两个分量必须乘同一个数"
+        },
+        {
+          "href": "#definition",
+          "text": "从具体倍数归纳数乘定义"
+        },
+        {
+          "href": "#diagram",
+          "text": "长度看倍数大小，方向另外判断"
+        },
+        {
+          "href": "#application",
+          "text": "可选拓展：反求倍数与缩放的对象"
+        },
+        {
+          "href": "#mistakes",
+          "text": "分清乘一个数与加一个数"
+        },
+        {
+          "href": "#practice",
+          "text": "基础练习：把坐标、长度和方向分别回答"
+        },
+        {
+          "href": "#challenge",
+          "text": "可选挑战：缩放与相加能否交换步骤？"
+        },
+        {
+          "href": "#code",
+          "text": "可选代码：同一个 c 作用于每个分量"
+        },
+        {
+          "href": "#summary",
+          "text": "把计算、方向和长度连起来"
+        }
+      ],
+      "badHashes": [],
+      "clientWidth": 375,
+      "closedOptional": [
+        "application",
+        "challenge",
+        "code"
+      ],
+      "h1": [
+        "向量数乘：长度与方向变化"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "重复同一指令，也能直接描述为一个倍数"
+        },
+        {
+          "tag": "H2",
+          "text": "两个分量必须乘同一个数"
+        },
+        {
+          "tag": "H2",
+          "text": "从具体倍数归纳数乘定义"
+        },
+        {
+          "tag": "H2",
+          "text": "长度看倍数大小，方向另外判断"
+        },
+        {
+          "tag": "H3",
+          "text": "2u = (6, 4)"
+        },
+        {
+          "tag": "H3",
+          "text": "0.5u = (1.5, 1)"
+        },
+        {
+          "tag": "H3",
+          "text": "-1u = (-3, -2)"
+        },
+        {
+          "tag": "H3",
+          "text": "0u = (0, 0)"
+        },
+        {
+          "tag": "H2",
+          "text": "可选拓展：反求倍数与缩放的对象"
+        },
+        {
+          "tag": "H3",
+          "text": "目标是否能由一个统一倍数得到？"
+        },
+        {
+          "tag": "H3",
+          "text": "能否只改一个倍数？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "位移与位置，分别围绕哪里缩放？"
+        },
+        {
+          "tag": "H2",
+          "text": "分清乘一个数与加一个数"
+        },
+        {
+          "tag": "H2",
+          "text": "基础练习：把坐标、长度和方向分别回答"
+        },
+        {
+          "tag": "H3",
+          "text": "正、负与零的三个倍数"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "解释两份计算记录"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选挑战：缩放与相加能否交换步骤？"
+        },
+        {
+          "tag": "H3",
+          "text": "用新数字核对分配关系"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选代码：同一个 c 作用于每个分量"
+        },
+        {
+          "tag": "H2",
+          "text": "把计算、方向和长度连起来"
+        },
+        {
+          "tag": "H3",
+          "text": "下一步"
+        }
+      ],
+      "leftNumber": "2.4",
+      "mathErrors": 0,
+      "numberedBodyHeadings": [],
+      "path": "/learn/MA101/MA101-C02-L06",
+      "scrollWidth": 375,
+      "sectionIds": [
+        "scene",
+        "worked",
+        "definition",
+        "diagram",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ]
+    },
+    {
+      "requestedViewport": {
+        "width": 320,
+        "height": 800
+      },
+      "articleLinks": [
+        {
+          "href": "#scene",
+          "text": "只有一个数，机器人为什么无法执行？"
+        },
+        {
+          "href": "#intuition",
+          "text": "一个数与一支箭头分别保留什么信息？"
+        },
+        {
+          "href": "#worked",
+          "text": "把出发点、终点和整体变化读出来"
+        },
+        {
+          "href": "#definition",
+          "text": "起点不同的箭头也可以相等"
+        },
+        {
+          "href": "#diagram",
+          "text": "在同一比例的坐标图里核对"
+        },
+        {
+          "href": "#application",
+          "text": "为什么这种表示值得学习？"
+        },
+        {
+          "href": "#mistakes",
+          "text": "走回原点时，什么变成了零？"
+        },
+        {
+          "href": "#practice",
+          "text": "基础练习：解释你保留的信息"
+        },
+        {
+          "href": "#challenge",
+          "text": "可选挑战：为任务选择表示"
+        },
+        {
+          "href": "#summary",
+          "text": "把箭头读清楚，再学习写法"
+        }
+      ],
+      "badHashes": [],
+      "clientWidth": 305,
+      "closedOptional": [
+        "challenge"
+      ],
+      "h1": [
+        "什么是向量？"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "只有一个数，机器人为什么无法执行？"
+        },
+        {
+          "tag": "H2",
+          "text": "一个数与一支箭头分别保留什么信息？"
+        },
+        {
+          "tag": "H2",
+          "text": "把出发点、终点和整体变化读出来"
+        },
+        {
+          "tag": "H2",
+          "text": "起点不同的箭头也可以相等"
+        },
+        {
+          "tag": "H2",
+          "text": "在同一比例的坐标图里核对"
+        },
+        {
+          "tag": "H3",
+          "text": "从 (0,0) 到 (3,2)"
+        },
+        {
+          "tag": "H3",
+          "text": "从 (1,1) 到 (4,3)"
+        },
+        {
+          "tag": "H2",
+          "text": "为什么这种表示值得学习？"
+        },
+        {
+          "tag": "H2",
+          "text": "走回原点时，什么变成了零？"
+        },
+        {
+          "tag": "H2",
+          "text": "基础练习：解释你保留的信息"
+        },
+        {
+          "tag": "H3",
+          "text": "该用一个数还是一个向量？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "不同起点的箭头是否相同？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选挑战：为任务选择表示"
+        },
+        {
+          "tag": "H3",
+          "text": "规划路线还需要什么？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "把箭头读清楚，再学习写法"
+        },
+        {
+          "tag": "H3",
+          "text": "下一步"
+        }
+      ],
+      "leftNumber": "2.1",
+      "mathErrors": 0,
+      "numberedBodyHeadings": [],
+      "path": "/learn/MA101/MA101-C02-L03",
+      "scrollWidth": 305,
+      "sectionIds": [
+        "scene",
+        "intuition",
+        "worked",
+        "definition",
+        "diagram",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "summary"
+      ]
+    },
+    {
+      "requestedViewport": {
+        "width": 320,
+        "height": 800
+      },
+      "articleLinks": [
+        {
+          "href": "#scene",
+          "text": "同样两个数，为什么顺序很重要？"
+        },
+        {
+          "href": "#intuition",
+          "text": "分量是有固定位置的记录项"
+        },
+        {
+          "href": "#worked",
+          "text": "从负方向和零值中读取含义"
+        },
+        {
+          "href": "#definition",
+          "text": "用下标点名一个分量"
+        },
+        {
+          "href": "#application",
+          "text": "可选拓展：更多分量与数据记录"
+        },
+        {
+          "href": "#mistakes",
+          "text": "相等是对应位置相等，不是数字碰巧相同"
+        },
+        {
+          "href": "#practice",
+          "text": "基础练习：写清编号、值和含义"
+        },
+        {
+          "href": "#challenge",
+          "text": "可选挑战：为高维记录设计说明"
+        },
+        {
+          "href": "#code",
+          "text": "可选代码：读取一份记录"
+        },
+        {
+          "href": "#summary",
+          "text": "从有序记录走向运算"
+        }
+      ],
+      "badHashes": [],
+      "clientWidth": 305,
+      "closedOptional": [
+        "application",
+        "challenge",
+        "code"
+      ],
+      "h1": [
+        "向量的表示、维度与分量"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "同样两个数，为什么顺序很重要？"
+        },
+        {
+          "tag": "H2",
+          "text": "分量是有固定位置的记录项"
+        },
+        {
+          "tag": "H2",
+          "text": "从负方向和零值中读取含义"
+        },
+        {
+          "tag": "H2",
+          "text": "用下标点名一个分量"
+        },
+        {
+          "tag": "H2",
+          "text": "可选拓展：更多分量与数据记录"
+        },
+        {
+          "tag": "H3",
+          "text": "用 n 和 i 表示一般位置"
+        },
+        {
+          "tag": "H3",
+          "text": "把同一组分量竖着列出"
+        },
+        {
+          "tag": "H3",
+          "text": "为实际数据补上属性与单位"
+        },
+        {
+          "tag": "H3",
+          "text": "把库存记录对齐"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "相等是对应位置相等，不是数字碰巧相同"
+        },
+        {
+          "tag": "H2",
+          "text": "基础练习：写清编号、值和含义"
+        },
+        {
+          "tag": "H3",
+          "text": "分别说出维度、编号与值"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "把移动写成两个分量"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选挑战：为高维记录设计说明"
+        },
+        {
+          "tag": "H3",
+          "text": "别人能否读懂你的向量？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选代码：读取一份记录"
+        },
+        {
+          "tag": "H2",
+          "text": "从有序记录走向运算"
+        },
+        {
+          "tag": "H3",
+          "text": "下一步"
+        }
+      ],
+      "leftNumber": "2.2",
+      "mathErrors": 0,
+      "numberedBodyHeadings": [],
+      "path": "/learn/MA101/MA101-C02-L04",
+      "scrollWidth": 305,
+      "sectionIds": [
+        "scene",
+        "intuition",
+        "worked",
+        "definition",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ]
+    },
+    {
+      "requestedViewport": {
+        "width": 320,
+        "height": 800
+      },
+      "articleLinks": [
+        {
+          "href": "#scene",
+          "text": "两条移动指令，能否合成一条？"
+        },
+        {
+          "href": "#worked",
+          "text": "分开追踪两个方向，不漏掉负号"
+        },
+        {
+          "href": "#diagram",
+          "text": "把第二支箭头接到第一支的箭尖"
+        },
+        {
+          "href": "#definition",
+          "text": "为什么一般规则也是逐分量相加？"
+        },
+        {
+          "href": "#application",
+          "text": "换一组数据，并检查交换顺序"
+        },
+        {
+          "href": "#mistakes",
+          "text": "加法成立之前，先确认是在加同一种量"
+        },
+        {
+          "href": "#practice",
+          "text": "基础练习：既算数字，也解释终点"
+        },
+        {
+          "href": "#challenge",
+          "text": "可选挑战：补偿位移与路线边界"
+        },
+        {
+          "href": "#code",
+          "text": "可选代码：把两次配对写出来"
+        },
+        {
+          "href": "#summary",
+          "text": "把两种解法连成同一条理由"
+        }
+      ],
+      "badHashes": [],
+      "clientWidth": 305,
+      "closedOptional": [
+        "challenge",
+        "code"
+      ],
+      "h1": [
+        "向量加法：计算方法与几何意义"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "两条移动指令，能否合成一条？"
+        },
+        {
+          "tag": "H2",
+          "text": "分开追踪两个方向，不漏掉负号"
+        },
+        {
+          "tag": "H2",
+          "text": "把第二支箭头接到第一支的箭尖"
+        },
+        {
+          "tag": "H2",
+          "text": "为什么一般规则也是逐分量相加？"
+        },
+        {
+          "tag": "H2",
+          "text": "换一组数据，并检查交换顺序"
+        },
+        {
+          "tag": "H2",
+          "text": "加法成立之前，先确认是在加同一种量"
+        },
+        {
+          "tag": "H2",
+          "text": "基础练习：既算数字，也解释终点"
+        },
+        {
+          "tag": "H3",
+          "text": "新的两次移动"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "修复有问题的配对"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选挑战：补偿位移与路线边界"
+        },
+        {
+          "tag": "H3",
+          "text": "怎样回到目标点？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选代码：把两次配对写出来"
+        },
+        {
+          "tag": "H2",
+          "text": "把两种解法连成同一条理由"
+        },
+        {
+          "tag": "H3",
+          "text": "下一步"
+        }
+      ],
+      "leftNumber": "2.3",
+      "mathErrors": 0,
+      "numberedBodyHeadings": [],
+      "path": "/learn/MA101/MA101-C02-L05",
+      "scrollWidth": 305,
+      "sectionIds": [
+        "scene",
+        "worked",
+        "diagram",
+        "definition",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ]
+    },
+    {
+      "requestedViewport": {
+        "width": 320,
+        "height": 800
+      },
+      "articleLinks": [
+        {
+          "href": "#scene",
+          "text": "重复同一指令，也能直接描述为一个倍数"
+        },
+        {
+          "href": "#worked",
+          "text": "两个分量必须乘同一个数"
+        },
+        {
+          "href": "#definition",
+          "text": "从具体倍数归纳数乘定义"
+        },
+        {
+          "href": "#diagram",
+          "text": "长度看倍数大小，方向另外判断"
+        },
+        {
+          "href": "#application",
+          "text": "可选拓展：反求倍数与缩放的对象"
+        },
+        {
+          "href": "#mistakes",
+          "text": "分清乘一个数与加一个数"
+        },
+        {
+          "href": "#practice",
+          "text": "基础练习：把坐标、长度和方向分别回答"
+        },
+        {
+          "href": "#challenge",
+          "text": "可选挑战：缩放与相加能否交换步骤？"
+        },
+        {
+          "href": "#code",
+          "text": "可选代码：同一个 c 作用于每个分量"
+        },
+        {
+          "href": "#summary",
+          "text": "把计算、方向和长度连起来"
+        }
+      ],
+      "badHashes": [],
+      "clientWidth": 305,
+      "closedOptional": [
+        "application",
+        "challenge",
+        "code"
+      ],
+      "h1": [
+        "向量数乘：长度与方向变化"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "重复同一指令，也能直接描述为一个倍数"
+        },
+        {
+          "tag": "H2",
+          "text": "两个分量必须乘同一个数"
+        },
+        {
+          "tag": "H2",
+          "text": "从具体倍数归纳数乘定义"
+        },
+        {
+          "tag": "H2",
+          "text": "长度看倍数大小，方向另外判断"
+        },
+        {
+          "tag": "H3",
+          "text": "2u = (6, 4)"
+        },
+        {
+          "tag": "H3",
+          "text": "0.5u = (1.5, 1)"
+        },
+        {
+          "tag": "H3",
+          "text": "-1u = (-3, -2)"
+        },
+        {
+          "tag": "H3",
+          "text": "0u = (0, 0)"
+        },
+        {
+          "tag": "H2",
+          "text": "可选拓展：反求倍数与缩放的对象"
+        },
+        {
+          "tag": "H3",
+          "text": "目标是否能由一个统一倍数得到？"
+        },
+        {
+          "tag": "H3",
+          "text": "能否只改一个倍数？"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "位移与位置，分别围绕哪里缩放？"
+        },
+        {
+          "tag": "H2",
+          "text": "分清乘一个数与加一个数"
+        },
+        {
+          "tag": "H2",
+          "text": "基础练习：把坐标、长度和方向分别回答"
+        },
+        {
+          "tag": "H3",
+          "text": "正、负与零的三个倍数"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H3",
+          "text": "解释两份计算记录"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选挑战：缩放与相加能否交换步骤？"
+        },
+        {
+          "tag": "H3",
+          "text": "用新数字核对分配关系"
+        },
+        {
+          "tag": "H4",
+          "text": "检查自己的解答"
+        },
+        {
+          "tag": "H2",
+          "text": "可选代码：同一个 c 作用于每个分量"
+        },
+        {
+          "tag": "H2",
+          "text": "把计算、方向和长度连起来"
+        },
+        {
+          "tag": "H3",
+          "text": "下一步"
+        }
+      ],
+      "leftNumber": "2.4",
+      "mathErrors": 0,
+      "numberedBodyHeadings": [],
+      "path": "/learn/MA101/MA101-C02-L06",
+      "scrollWidth": 305,
+      "sectionIds": [
+        "scene",
+        "worked",
+        "definition",
+        "diagram",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ]
+    }
+  ],
+  "interactions": [
+    {
+      "case": "tablet-definition-link",
+      "focus": "用下标点名一个分量",
+      "h2": "用下标点名一个分量",
+      "hash": "#definition",
+      "top": 222.11459350585935
+    },
+    {
+      "case": "mobile-article-only-titles",
+      "links": [
+        "同样两个数，为什么顺序很重要？",
+        "分量是有固定位置的记录项",
+        "从负方向和零值中读取含义",
+        "用下标点名一个分量",
+        "可选拓展：更多分量与数据记录",
+        "相等是对应位置相等，不是数字碰巧相同",
+        "基础练习：写清编号、值和含义",
+        "可选挑战：为高维记录设计说明",
+        "可选代码：读取一份记录",
+        "从有序记录走向运算"
+      ],
+      "numberSpans": 0
+    },
+    {
+      "case": "mobile-select-moved-optional",
+      "focus": "可选拓展：更多分量与数据记录",
+      "hash": "#application",
+      "open": true,
+      "top": 210.21875
+    },
+    {
+      "case": "old-one-factor-bookmark-reveals-optional",
+      "hash": "#exercise-one-factor",
+      "open": true,
+      "title": "能否只改一个倍数？",
+      "top": 375.8645935058594
+    },
+    {
+      "case": "new-basic-exercise-keyboard-hints",
+      "answer": "参考解答与自查标准甲给两个分量各加 2；乙只把第一分量乘 2。正确结果是 (6,4)。|−2|=2，−2b 长 5×2=10 米，与 b 方向相反。检查自己的解答分辨两类运算错误同一倍数作用于两项长度与方向解释正确",
+      "basicExerciseIds": [
+        "exercise-scale-values",
+        "exercise-scale-explain"
+      ],
+      "open": 3
+    },
+    {
+      "case": "existing-v22-completion-retained",
+      "button": "本节已读完",
+      "completedIcons": 1,
+      "origin": "http://localhost:3001",
+      "overview": "COURSE CONTENTSAI 数学 I：线性代数与微积分10 章 · 4 节核心课已制作已制作课时阅读比例25%1 / 4 节已标记读完 · 仅当前浏览器筹备、可选与旧版课时不计入比例；已读不代表掌握。"
+    },
+    {
+      "case": "next-lesson-independent",
+      "button": "标记本节已读完",
+      "completedIcons": 1,
+      "h1": "向量的表示、维度与分量",
+      "path": "/learn/MA101/MA101-C02-L04",
+      "selected": "2.2向量的表示、维度与分量"
+    },
+    {
+      "case": "chapter-enter-space-toggle",
+      "closedAgain": true
+    },
+    {
+      "case": "reading-position-after-reload",
+      "button": "标记本节已读完",
+      "hash": "#definition",
+      "resume": "#definition",
+      "top": 173.34375
+    },
+    {
+      "case": "legacy-link-and-completion-retained",
+      "button": "本节已读完",
+      "hash": "#matrices",
+      "legacyBanner": "旧版教材试读本页保留原有正文、书签和阅读记录，文中节号沿用旧编排。新版使用独立课时与新 ID；这里的“已读完”不代表新版课时完成。从新版课程开始",
+      "overview": "COURSE CONTENTSAI 数学 I：线性代数与微积分10 章 · 4 节核心课已制作已制作课时阅读比例36%1 / 4 节已标记读完 · 仅当前浏览器筹备、可选与旧版课时不计入比例；已读不代表掌握。",
+      "path": "/learn/MA101/MA101-C03-L01",
+      "target": "两行三列的数据表",
+      "top": 174.45834350585938
+    },
+    {
+      "case": "mobile-course-numbering-retained",
+      "articleHashLinks": 0,
+      "numbers": [
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "2.6",
+        "2.7",
+        "2.8",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6"
+      ],
+      "selected": "2.2向量的表示、维度与分量"
+    },
+    {
+      "case": "mobile-escape-restores-trigger",
+      "dialog": false,
+      "focus": "章节目录"
+    },
+    {
+      "case": "narrow-svg-keyboard-scroll",
+      "client": 205,
+      "focus": "2 倍向量坐标图，可横向滚动",
+      "left": 40,
+      "pageOverflow": false,
+      "scroll": 300
+    }
+  ],
+  "screenshots": [
+    "docs/screenshots/teaching-v2-3/after-desktop-22.jpg",
+    "docs/screenshots/teaching-v2-3/after-desktop-definition-22.jpg",
+    "docs/screenshots/teaching-v2-3/after-mobile-article-22.jpg",
+    "docs/screenshots/teaching-v2-3/after-mobile-core-answer-24.jpg",
+    "docs/screenshots/teaching-v2-3/after-mobile-course-22.jpg",
+    "docs/screenshots/teaching-v2-3/after-mobile-old-exercise-24.jpg",
+    "docs/screenshots/teaching-v2-3/after-mobile-optional-22.jpg",
+    "docs/screenshots/teaching-v2-3/after-scaling-ratio.jpg",
+    "docs/screenshots/teaching-v2-3/after-tablet-definition-22.jpg",
+    "docs/screenshots/teaching-v2-3/before-desktop-22.jpg",
+    "docs/screenshots/teaching-v2-3/before-scaling-diagram.jpg",
+    "docs/screenshots/teaching-v2-3/existing-v22-completion-retained.jpg"
+  ],
+  "headingRegression": [
+    {
+      "empty": 0,
+      "h1": [
+        "什么是向量？"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/MA101/MA101-C02-L03",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "向量的表示、维度与分量"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/MA101/MA101-C02-L04",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "向量加法：计算方法与几何意义"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/MA101/MA101-C02-L05",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "向量数乘：长度与方向变化"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/MA101/MA101-C02-L06",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "从现实问题认识回归"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/ML201/ML201-C03-L01",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "线性回归模型：权重与偏置"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/ML201/ML201-C03-L02",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "预测误差、MAE 与 MSE"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/ML201/ML201-C03-L03",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "从导数理解优化方向"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/ML201/ML201-C04-L02",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "梯度下降的数学原理"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/ML201/ML201-C04-L03",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "手动计算一次参数更新"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/ML201/ML201-C04-L04",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "使用 NumPy 实现线性回归"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/ML201/ML201-C04-L05",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "线性回归与梯度下降"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/ML201/ML201-C04-L01",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "Python 函数与参数"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/PY101/PY101-C05-L01",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "位置与关键字参数绑定"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/PY101/PY101-C05-L02",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "返回值与 print 的区别"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/PY101/PY101-C05-L03",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "函数内外的变量与作用域"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/PY101/PY101-C05-L04",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "简单默认参数"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/PY101/PY101-C05-L05",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "向量、加法与数乘"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/MA101/MA101-C02-L01",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "内积与求和符号"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/MA101/MA101-C02-L02",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "向量与矩阵的基本运算"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/MA101/MA101-C03-L01",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "矩阵乘法：行与列的内积"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/MA101/MA101-C03-L02",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "NumPy 表示与数组形状"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/MA101/MA101-C03-L03",
+      "skippedLevels": []
+    },
+    {
+      "empty": 0,
+      "h1": [
+        "可选进阶：共享对象与接口陷阱"
+      ],
+      "mathErrors": 0,
+      "numbered": [],
+      "path": "/learn/PY101/PY101-C05-L06",
+      "skippedLevels": []
+    }
+  ],
+  "consoleFinal": []
+}

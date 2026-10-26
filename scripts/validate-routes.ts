@@ -46,7 +46,7 @@ const results = await Promise.all(
   }),
 );
 await writeFile(
-  "docs/TEACHING_V2_2_ROUTE_RESULTS.json",
+  "docs/TEACHING_V2_3_ROUTE_RESULTS.json",
   JSON.stringify(
     { checkedAt: new Date().toISOString(), base, results },
     null,

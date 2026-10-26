@@ -13,7 +13,7 @@ export const publicationManifest = [
       catalogRole: "current",
       status: "pending-review",
       access: "preview",
-      technicalEvidence: slot.courseId === "MA101" ? "docs/TEACHING_V2_2_PYTHON_RESULTS.json" : "docs/TEACHING_V2_1_PYTHON_RESULTS.json",
+      technicalEvidence: slot.courseId === "MA101" ? "docs/TEACHING_V2_3_PYTHON_RESULTS.json" : "docs/TEACHING_V2_1_PYTHON_RESULTS.json",
     })),
   ...legacyMathSlots.map((slot) => ({ ...slot, catalogRole: "legacy", contentVersion: 1, status: "pending-review", access: "preview", technicalEvidence: "docs/TEACHING_V2_1_PYTHON_RESULTS.json" })),
   {

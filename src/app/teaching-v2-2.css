@@ -30,6 +30,10 @@
 .article-contents > p { color:#9facc9; font-size:12px; margin:8px 0 14px; }
 .article-contents nav a { align-items:flex-start; line-height:1.8; }
 .article-contents a small { font-size:10px; color:#a1a9cc; }
+/* V2.3：文章依靠文字层级组织，显示编号只保留在课程导航与元信息。 */
+.lesson-content .lesson-section > h2 { display:block; font-weight:650; }
+.article-contents nav a { display:block; }
+.article-contents a small { margin-left:8px; }
 .vector-teaching-figure { margin:30px 0; padding:18px; border:1px solid #8896c338; border-radius:12px; background:#0c192d; }
 .vector-plot-region { width:min(100%,540px); margin:auto; overflow-x:auto; scrollbar-width:thin; border-radius:5px; }
 .vector-plot-region svg { display:block; width:100%; min-width:300px; }

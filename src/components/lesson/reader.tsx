@@ -41,7 +41,6 @@ import "katex/dist/katex.min.css";
 import {
   chapterNumber,
   lessonNumber,
-  sectionNumber,
 } from "@/lib/course-numbering";
 
 type ReaderProps = {
@@ -296,12 +295,7 @@ export function Reader({
             <span>{chapter.title}</span>
           </div>
           <div className="reader-title-row">
-            <h1>
-              {displayNumber && (
-                <span className="reader-lesson-number">{displayNumber} </span>
-              )}
-              {lesson.title}
-            </h1>
+            <h1>{lesson.title}</h1>
             <span className="sample-badge">
               {publicationLabel(publication)}
             </span>
@@ -413,9 +407,8 @@ export function Reader({
           </aside>
         )}
         <article ref={article} className="lesson-content">
-          {lesson.sections.map((section, index) => (
-            <TeachingSection key={section.id} section={section} resources={lesson.resources}
-              number={legacy ? undefined : sectionNumber(chapter.order, publication.order, index + 1)} />
+          {lesson.sections.map((section) => (
+            <TeachingSection key={section.id} section={section} resources={lesson.resources} />
           ))}
         </article>
         <section
