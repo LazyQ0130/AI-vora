@@ -62,6 +62,14 @@
 .ai-task-result { padding-block: 14px; border-block: 1px dashed #749097; }
 .ai-generating-case { border-color: #b088e9; background: #302449; }
 .ai-compare-reading { font-size: 14px; line-height: 1.8; color: #c7d2ec; margin: 18px 0 0; }
+.ai-trace { display: grid; gap: 18px; padding-left: 24px; margin: 20px 0; }
+.ai-trace li { padding-left: 8px; color: #b8c4ff; }
+.ai-trace strong { font-size: 18px; line-height: 1.6; color: #e8edf9; }
+.ai-trace p { font-size: 16px; line-height: 1.8; color: #d0d8ed; }
+.ai-trace span { font-size: 14px; line-height: 1.8; color: #c7d2ec; }
+.lesson-reading-links[aria-label="旧版书签与内容去向"] summary,
+.lesson-reading-links[aria-label="旧版书签与内容去向"] a { min-height: 44px; display: flex; align-items: center; }
+.lesson-reading-links[aria-label="旧版书签与内容去向"] section { scroll-margin-top: 16px; padding-block: 14px; }
 @media (max-width: 767px) {
   .ai-figure { padding: 16px; }
   .ai-flow { grid-template-columns: minmax(0, 1fr); gap: 8px; }

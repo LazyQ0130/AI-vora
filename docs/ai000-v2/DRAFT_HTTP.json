@@ -1,0 +1,27 @@
+[
+  {
+    "actual": 404,
+    "id": "AI000-C01-L01",
+    "passed": true
+  },
+  {
+    "actual": 404,
+    "id": "AI000-C01-L02",
+    "passed": true
+  },
+  {
+    "actual": 404,
+    "id": "AI000-C01-L03",
+    "passed": true
+  },
+  {
+    "actual": 404,
+    "id": "AI000-C02-L01",
+    "passed": true
+  },
+  {
+    "actual": 404,
+    "id": "AI000-C02-L02",
+    "passed": true
+  }
+]

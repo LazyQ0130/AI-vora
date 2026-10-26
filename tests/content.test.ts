@@ -8,7 +8,7 @@ import { programs } from "../src/content/resources/programs";
 import { readablePublications } from "../src/content/publication-manifest";
 
 test("四门不同类型教材用同一模型，公式可严格解析，图片有正确尺寸和可读替代文字", async () => {
-  assert.equal(readablePublications.length, 25);
+  assert.equal(readablePublications.length, 28);
   for (const publication of readablePublications) {
     const { lesson } = resolveLesson(
       publication.courseId,
@@ -17,7 +17,7 @@ test("四门不同类型教材用同一模型，公式可严格解析，图片�
     const blocks = lesson.sections.flatMap((s) => s.blocks);
     if (lesson.courseId === "AI000") {
       assert.equal(blocks.filter((block) => block.type === "exercise").length, 2);
-      assert.equal(blocks.filter((block) => block.type === "ai-task-figure").length, 2);
+      assert.ok(blocks.some((block) => block.type === "ai-task-figure"));
       assert.ok(blocks.every((block) => !["code", "math", "experiment"].includes(block.type)));
     } else if (lesson.courseId === "MA101" && publication.catalogRole !== "legacy") {
       assert.ok(lesson.sections.filter((section) => section.tier === "core").flatMap((section) => section.blocks).filter((block) => block.type === "exercise").length >= 2);

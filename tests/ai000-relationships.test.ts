@@ -19,10 +19,10 @@ test("2.1 通过现有蓝图与清单承接 1.1，草稿不可读、预览没有
   assert.equal(resolved.course.status, "planned");
   assert.equal(resolved.chapter.order, 2);
   assert.equal(resolved.chapter.lessons[0].displayNumber, "2.1");
-  assert.equal(getAdjacentLessons(resolved.course, "AI000-C01-L01").next?.lessonId, lesson.id);
-  assert.equal(getAdjacentLessons(resolved.course, lesson.id).previous?.lessonId, "AI000-C01-L01");
-  assert.equal(getAdjacentLessons(resolved.course, lesson.id).next, undefined);
-  assert.equal(resolveLesson("AI000", "AI000-C02-L02"), undefined);
+  assert.equal(getAdjacentLessons(resolved.course, "AI000-C01-L03").next?.lessonId, lesson.id);
+  assert.equal(getAdjacentLessons(resolved.course, lesson.id).previous?.lessonId, "AI000-C01-L03");
+  assert.equal(getAdjacentLessons(resolved.course, lesson.id).next?.lessonId, "AI000-C02-L02");
+  assert.equal(resolveLesson("AI000", "AI000-C02-L03"), undefined);
   assert.equal(resolveLesson("PY101", lesson.id), undefined);
   const draft = publicationSchema.parse({ ...resolved.publication, status: "draft", access: "private", technicalEvidence: undefined });
   assert.equal(isReadable(draft), false);
@@ -31,7 +31,7 @@ test("2.1 通过现有蓝图与清单承接 1.1，草稿不可读、预览没有
 });
 
 test("关系图的内外范围使用真嵌套，任务对照呈现相同方法与不同任务，均经通用渲染器", () => {
-  const figures = lesson.sections.flatMap((section) => section.blocks).filter((block) => block.type === "ai-task-figure");
+  const figures = [lesson, lessonRegistry.get("AI000-C02-L02")!].flatMap(l=>l.sections.flatMap((section) => section.blocks)).filter((block) => block.type === "ai-task-figure").filter(block=>block.kind!=="generation-map");
   assert.deepEqual(figures.map((block) => block.kind), ["method-hierarchy", "method-and-task"]);
   for (const figure of figures) {
     const html = renderToStaticMarkup(createElement(ContentRenderer, { block: figure, resources: [] }));
@@ -53,7 +53,7 @@ test("关系图的内外范围使用真嵌套，任务对照呈现相同方法�
 
 test("三个目标绑定真实核心开放题，展示目标与正式原文对应，解答默认折叠", () => {
   const links = lessonExerciseLinks(lesson);
-  assert.deepEqual(links.map((link) => [link.id, link.objectives]), [["draw-method-map", [1]], ["classify-new-systems", [2, 3]]]);
+  assert.deepEqual(links.map((link) => [link.id, link.objectives]), [["draw-method-map", [1,2]], ["method-evidence", [3]]]);
   assert.equal(lesson.objectiveDisplay?.length, 3);
   for (const display of lesson.objectiveDisplay ?? []) assert.ok(lesson.objectives.includes(display.objective));
   for (const section of lesson.sections) {
@@ -84,6 +84,6 @@ test("2.1 阅读 100% 不等于完成，刷新恢复与手动读完使用新键�
   assert.equal(parseReadingProgress(restored.getSnapshot(scope), scope)?.section, "practice");
   restored.save(scope, 100, "takeaways", true);
   assert.equal(parseReadingProgress(restored.getSnapshot(scope), scope)?.completed, true);
-  assert.equal(progressKey(scope), "aivora:learning:v2:AI000:AI000-C02-L01:r1");
+  assert.equal(progressKey(scope), "aivora:learning:v2:AI000:AI000-C02-L01:r2");
   for (const [key, bytes] of existing) assert.equal(memory.get(key), bytes);
 });

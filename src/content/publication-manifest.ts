@@ -6,27 +6,28 @@ const revisedCoreLessons: Record<string, number> = { "MA101-C02-L03": 2, "PY101-
 
 // 发布权限独立于原始课程规划。技术证据不替代人工审核。
 export const publicationManifest = [
+  ...courseOutline.filter(slot => slot.courseId === "AI000" && ["AI000-C01-L02","AI000-C01-L03","AI000-C02-L02"].includes(slot.lessonId)).map(slot => ({...slot,contentVersion:1,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_CHAPTER_1_2_DELIVERY.md"})),
   {
     lessonId: "AI000-C02-L01",
     courseId: "AI000",
     chapterId: "AI000-C02",
     title: "AI、机器学习与深度学习，到底是什么关系？",
-    contentVersion: 1,
+    contentVersion: 2,
     order: 1,
     status: "pending-review",
     access: "preview",
-    technicalEvidence: "docs/AI000_LESSON_2_1_REVIEW.md",
+    technicalEvidence:"docs/AI000_CHAPTER_1_2_DELIVERY.md",
   },
   {
     lessonId: "AI000-C01-L01",
     courseId: "AI000",
     chapterId: "AI000-C01",
     title: "人工智能究竟是什么？",
-    contentVersion: 1,
+    contentVersion: 2,
     order: 1,
     status: "pending-review",
     access: "preview",
-    technicalEvidence: "docs/AI000_READING_EXPERIENCE_REFINEMENT.md",
+    technicalEvidence:"docs/AI000_CHAPTER_1_2_DELIVERY.md",
   },
   ...courseOutline
     .filter((slot) => mlV2LessonIds.some((id) => id === slot.lessonId) || slot.courseId === "PY101" || maV22LessonIds.some((id) => id === slot.lessonId))

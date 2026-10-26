@@ -1,0 +1,200 @@
+{
+  "checkedAt": "2026-10-26T17:01:09.685Z",
+  "unchangedOtherLessons": 23,
+  "curriculumUnchanged": true,
+  "checks": [
+    {
+      "id": "AI000-C01-L01",
+      "version": 2,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "describe-task"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "describe-task",
+            "design-task"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "design-task"
+          ]
+        }
+      ],
+      "sections": [
+        "mail-task",
+        "rule-and-learning",
+        "ai-meaning",
+        "many-tasks",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "describe-task",
+        "design-task"
+      ]
+    },
+    {
+      "id": "AI000-C01-L02",
+      "version": 1,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "product-review"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "check-library"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "product-review"
+          ]
+        }
+      ],
+      "sections": [
+        "task-comparison",
+        "mistakes",
+        "why-errors",
+        "check-output",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "check-library",
+        "product-review"
+      ]
+    },
+    {
+      "id": "AI000-C01-L03",
+      "version": 1,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "identify-systems"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "identify-systems",
+            "trace-method"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "trace-method"
+          ]
+        }
+      ],
+      "sections": [
+        "automation",
+        "knowledge",
+        "compare-methods",
+        "evidence",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "identify-systems",
+        "trace-method"
+      ]
+    },
+    {
+      "id": "AI000-C02-L01",
+      "version": 2,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "draw-method-map"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "draw-method-map"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "method-evidence"
+          ]
+        }
+      ],
+      "sections": [
+        "learning-from-mail",
+        "deep-learning",
+        "method-map",
+        "read-system",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "draw-method-map",
+        "method-evidence"
+      ]
+    },
+    {
+      "id": "AI000-C02-L02",
+      "version": 1,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "classify-new-systems"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "product-model-map"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "classify-new-systems",
+            "product-model-map"
+          ]
+        }
+      ],
+      "sections": [
+        "generation",
+        "generative-model",
+        "llm",
+        "product",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "classify-new-systems",
+        "product-model-map"
+      ]
+    }
+  ]
+}

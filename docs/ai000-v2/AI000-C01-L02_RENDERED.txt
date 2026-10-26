@@ -1,0 +1,363 @@
+- link "跳到主要内容":
+  - /url: "#main-content"
+- banner:
+  - link "Aivora 系统化 AI 技术学习平台":
+    - /url: /
+    - text: Aivora
+    - generic: 系统化 AI 技术学习平台
+  - navigation "主导航":
+    - link "首页":
+      - /url: /
+    - link "课程体系":
+      - /url: /courses
+    - link "学习路径":
+      - /url: /paths
+    - link "实践项目":
+      - /url: /projects
+  - link "探索知识 Ctrl K，搜索课程":
+    - /url: /courses?focus=search
+    - generic: 探索知识
+    - generic: Ctrl K
+  - link "学习中心":
+    - /url: /dashboard
+    - text: 学习中心
+  - link "开始试读":
+    - /url: /learn/ML201/ML201-C03-L01
+    - text: 开始试读
+- main:
+  - link "课程体系":
+    - /url: /courses
+  - link "人工智能导论与技术地图":
+    - /url: /courses/AI000
+  - link "第 1 章":
+    - /url: /courses/AI000#AI000-C01
+  - generic: "1.2"
+  - complementary:
+    - link "返回课程详情":
+      - /url: /courses/AI000
+      - text: 返回课程详情
+    - navigation "章节目录":
+      - generic: COURSE CONTENTS
+      - heading "人工智能导论与技术地图" [level=2]
+      - paragraph: 7 章 · 5 节核心课已制作
+      - generic: 已制作课时阅读比例
+      - generic: 20%
+      - progressbar "人工智能导论与技术地图已制作核心课阅读比例"
+      - generic: 0 / 5 节已标记读完 · 仅当前浏览器
+      - generic: 筹备、可选与旧版课时不计入比例；已读不代表掌握。
+      - generic "第 1 章： 人工智能是什么：能力、边界与常见误区":
+        - generic: 第 1 章：
+        - generic: 人工智能是什么：能力、边界与常见误区
+      - list:
+        - link "未读完 1.1 人工智能究竟是什么？":
+          - /url: /learn/AI000/AI000-C01-L01
+          - img "未读完"
+          - generic: "1.1"
+          - generic: 人工智能究竟是什么？
+        - link "未读完 1.2 AI 能做什么，为什么也会出错？":
+          - /url: /learn/AI000/AI000-C01-L02
+          - img "未读完"
+          - generic: "1.2"
+          - generic: AI 能做什么，为什么也会出错？
+        - link "未读完 1.3 普通自动化和 AI 有什么区别？":
+          - /url: /learn/AI000/AI000-C01-L03
+          - img "未读完"
+          - generic: "1.3"
+          - generic: 普通自动化和 AI 有什么区别？
+      - generic "第 2 章： AI、机器学习、深度学习与生成式 AI 的包含关系":
+        - generic: 第 2 章：
+        - generic: AI、机器学习、深度学习与生成式 AI 的包含关系
+      - generic "第 3 章： 监督学习、无监督学习、自监督学习与强化学习":
+        - generic: 第 3 章：
+        - generic: 监督学习、无监督学习、自监督学习与强化学习
+      - generic "第 4 章： 数据、参数、模型、训练、验证、测试与推理":
+        - generic: 第 4 章：
+        - generic: 数据、参数、模型、训练、验证、测试与推理
+      - generic "第 5 章： 主要技术方向：NLP、LLM、CV、多模态、RL、生成式模型":
+        - generic: 第 5 章：
+        - generic: 主要技术方向：NLP、LLM、CV、多模态、RL、生成式模型
+      - generic "第 6 章： AI 风险与责任：隐私、偏差、版权、幻觉与误用":
+        - generic: 第 6 章：
+        - generic: AI 风险与责任：隐私、偏差、版权、幻觉与误用
+      - generic "第 7 章： 如何阅读课程先修图与选择学习路径":
+        - generic: 第 7 章：
+        - generic: 如何阅读课程先修图与选择学习路径
+  - generic: LEARN THROUGH UNDERSTANDING
+  - generic: 第 1 章 · 1.2
+  - generic: 人工智能是什么：能力、边界与常见误区
+  - heading "AI 能做什么，为什么也会出错？" [level=1]
+  - paragraph: 先看它被安排做什么，再找到判断对错的依据。
+  - text: 图文教程
+  - generic: L0 · AI 认知
+  - generic: 试读 · 待人工审核
+  - generic "分项预计学习时间":
+    - text: 预计阅读
+    - generic: 16–23 分钟
+    - text: 预计练习
+    - generic: 15–22 分钟
+    - generic: 编辑估计，待目标学生试学校准。可选进阶另需时间。
+  - navigation "本节内容导航":
+    - link "能力与任务":
+      - /url: "#task-comparison"
+    - link "看清错误":
+      - /url: "#mistakes"
+    - link "实际核查":
+      - /url: "#check-output"
+    - link "独立练习":
+      - /url: "#practice"
+    - link "回看要点":
+      - /url: "#takeaways"
+  - generic: 本节可试读，已进行技术校验，仍待人工内容审核。完整课程尚未正式发布。
+  - article:
+    - heading "都在帮忙，做的工作一样吗？" [level=2]
+    - paragraph: 上一节把邮件整理说成了一个分类任务。假如你还希望软件把语音记下来、推荐一本书，或者写一则通知，它就需要交回不同的结果。“使用AI”这个标签很宽，我们要进一步说清具体能力。
+    - region "用输入和输出比较能力，情境均为教学构造":
+      - table "用输入和输出比较能力，情境均为教学构造":
+        - caption: 用输入和输出比较能力，情境均为教学构造
+        - rowgroup:
+          - row "请求与输入 处理任务 应交回什么":
+            - columnheader "请求与输入"
+            - columnheader "处理任务"
+            - columnheader "应交回什么"
+        - rowgroup:
+          - row "听一段留言 识别：辨认说了哪些话 转写文字":
+            - cell "听一段留言"
+            - cell "识别：辨认说了哪些话"
+            - cell "转写文字"
+          - row "看一封新邮件 分类：判断属于哪类 正常/垃圾的建议":
+            - cell "看一封新邮件"
+            - cell "分类：判断属于哪类"
+            - cell "正常/垃圾的建议"
+          - row "提供喜欢的书和可借书目 推荐：估计哪些书值得优先看 候选书及顺序":
+            - cell "提供喜欢的书和可借书目"
+            - cell "推荐：估计哪些书值得优先看"
+            - cell "候选书及顺序"
+          - row "提供读书会要点 生成：按要求组织内容 一则新写的通知":
+            - cell "提供读书会要点"
+            - cell "生成：按要求组织内容"
+            - cell "一则新写的通知"
+    - paragraph: 这些名称并非互不相交的四个盒子。分类也可以是识别工作的一种具体安排：识别照片里的物品时，可以要求只交回“杯子”或“碗”。这里并排比较，是为了看清输出的用途，不是规定每个产品只能有一个能力名称。
+    - paragraph: 推荐系统交回的是候选顺序。它可能根据过去选择估计偏好，却不知道你今天是不是想换一种书看。“排在前面”和“你必定喜欢”有距离。生成通知则要组织句子，检查时需要逐项核对材料。两种结果都要由人使用，但对照依据不同。
+    - paragraph: 再想想录音转写：它即使准确写出了“这本书最好看”，也只是记录说话者的意见。想推荐书，需要另做推荐任务；想确认书名和作者，得查看书目。某项工作做好了，不会自动替其他工作提供正确答案。
+    - heading "把两封新邮件放进来，规则还行吗？" [level=2]
+    - paragraph: 继续使用上一节的标题规则：含“免费”就判垃圾，否则判正常。原先两封A、C都分对了。现在加两封：B是你已报名的免费讲座提醒；D来自陌生推广，标题写“领取礼品，立即登记”。背景和规则分开摆，先自己判断一次。
+    - region "规则只能看标题，背景供我们核对":
+      - table "规则只能看标题，背景供我们核对":
+        - caption: 规则只能看标题，背景供我们核对
+        - rowgroup:
+          - row "邮件标题 已知背景 按约定应归为":
+            - columnheader "邮件标题"
+            - columnheader "已知背景"
+            - columnheader "按约定应归为"
+        - rowgroup:
+          - row "A｜免费领奖，立即登记 陌生来源、未经请求的诱导推广 垃圾":
+            - cell "A｜免费领奖，立即登记"
+            - cell "陌生来源、未经请求的诱导推广"
+            - cell "垃圾"
+          - row "B｜你报名的免费讲座明晚开始 本人已报名、来自活动组织者的通知 正常":
+            - cell "B｜你报名的免费讲座明晚开始"
+            - cell "本人已报名、来自活动组织者的通知"
+            - cell "正常"
+          - row "C｜项目会议改到周三 同事发来的工作通知 正常":
+            - cell "C｜项目会议改到周三"
+            - cell "同事发来的工作通知"
+            - cell "正常"
+          - row "D｜领取礼品，立即登记 陌生来源、未经请求的诱导推广 垃圾":
+            - cell "D｜领取礼品，立即登记"
+            - cell "陌生来源、未经请求的诱导推广"
+            - cell "垃圾"
+    - paragraph: 逐封只查标题，你会得到“垃圾、垃圾、正常、正常”。再对照背景，A、C正确；B该留下却被拦住，叫误拦；D该拦住却留下，叫漏掉。两种错法方向相反，不能只说“有两封错了”就结束。
+    - figure "图一：先各自算规则输出，再与题设类别比较。没有训练邮件模型，也没有真实准确率数据。":
+      - paragraph: 按四封教学邮件背景，A与D为垃圾，B与C为正常。标题关键词规则输出垃圾、垃圾、正常、正常，所以A/C正确、B误拦、D漏掉。
+      - paragraph: 本图规则：标题含“免费” → 垃圾；否则 → 正常
+      - generic: 邮件 A
+      - strong: 免费领奖，立即登记
+      - term: 题设类别
+      - definition: 垃圾
+      - term: 规则判断
+      - definition: 垃圾
+      - paragraph:
+        - generic: 判断正确
+      - paragraph: 含“免费”，拦到了本例的垃圾邮件
+      - generic: 邮件 B
+      - strong: 你报名的免费讲座明晚开始
+      - term: 题设类别
+      - definition: 正常
+      - term: 规则判断
+      - definition: 垃圾
+      - paragraph:
+        - generic: 误拦正常邮件
+      - paragraph: 含“免费”，却误拦了需要的通知
+      - generic: 邮件 C
+      - strong: 项目会议改到周三
+      - term: 题设类别
+      - definition: 正常
+      - term: 规则判断
+      - definition: 正常
+      - paragraph:
+        - generic: 判断正确
+      - paragraph: 不含“免费”，保留了本例的正常邮件
+      - generic: 邮件 D
+      - strong: 领取礼品，立即登记
+      - term: 题设类别
+      - definition: 垃圾
+      - term: 规则判断
+      - definition: 正常
+      - paragraph:
+        - generic: 漏掉垃圾邮件
+      - paragraph: 不含“免费”，漏掉了本例的垃圾邮件
+      - generic: 图一：先各自算规则输出，再与题设类别比较。没有训练邮件模型，也没有真实准确率数据。
+    - paragraph: 误拦B，你可能错过已报名的活动；漏掉D，你还会看到不想收的推广。若直接永久删除被拦的邮件，误拦更难挽回；先放入可恢复的文件夹，就留出了核对机会。同一个分类建议，接到不同的后续动作上，造成的后果也不同。
+    - heading "多看一些例子，为什么仍可能判断错？" [level=2]
+    - paragraph: 关键词规则把情况压成了一个线索。“免费讲座”与“免费领奖”共享一个词，背景却不同；换个说法的推广又避开了它。我们能指出错误怎样发生，就能提出更相关的检查，譬如补看发件人和报名信息。
+    - paragraph: 用从数据学得的模型，也有线索和使用范围的问题。假如它见到的正常邮件几乎都是简短工作通知，很少有活动提醒，学到的判断方式可能不适合后者。它可能把共同出现的某个词当成可靠线索，而新邮件恰好不符合这种联系。
+    - paragraph: 信息本身也可能不够。照片中把手被遮住，杯子就可能看起来像碗；录音中多人同时说话，转写更难辨清。换模型未必能补回完全没有录下或拍到的信息。我们要同时看任务要求、实际输入和输出，才知道该改进哪一步。
+    - paragraph: 可以先找类别已经核实、又接近日常使用的新例子，逐项检查结果。既放普通通知，也放活动提醒和换过措辞的推广。全部做对只说明处理了这批例子，以后使用条件变化还需要再看。如何系统安排数据与评估留在第4章；这里先练会观察具体错法。
+    - heading "新写的一段话，该用什么核对？" [level=2]
+    - paragraph: 分类有约定类别作对照，生成文字的检查则要回到每个说法。给写作系统的材料只有“读书会周五下午三点开始”，假设它写出“读书会周五下午三点在二楼举行”。这是教学构造的输出，未调用任何产品测试。
+    - region "把一句话拆成能逐项核对的说法":
+      - table "把一句话拆成能逐项核对的说法":
+        - caption: 把一句话拆成能逐项核对的说法
+        - rowgroup:
+          - row "输出里的说法 材料中能否找到 目前怎样处理":
+            - columnheader "输出里的说法"
+            - columnheader "材料中能否找到"
+            - columnheader "目前怎样处理"
+        - rowgroup:
+          - row "周五下午三点开始 能：材料明确给出 保留，并确认材料本身有效":
+            - cell "周五下午三点开始"
+            - cell "能：材料明确给出"
+            - cell "保留，并确认材料本身有效"
+          - row "地点在二楼 不能：材料没有地点 标为待确认，查原通知或问组织者":
+            - cell "地点在二楼"
+            - cell "不能：材料没有地点"
+            - cell "标为待确认，查原通知或问组织者"
+    - paragraph: 写得顺，不等于每项信息都有依据。让同一系统再回答一次“我确定”，并没有增加新的来源。我们可以保留有出处的时间，把地点留空，等原通知或组织者确认后再补。第6章会继续研究不可靠回答及来源核验的机制，这里先把初查动作做实。
+    - paragraph: 一个可执行的核查方案至少能回答：拿什么可靠材料比较？比较哪些情况？逐项检查什么？遇到错误或无法确定时交给谁处理？邮件看已知背景，照片看实物或核实过的目录，录音回听原声。依据要跟着任务换。
+    - heading "换成图书和商品，独立分析一次" [level=2]
+    - paragraph: 先写判断理由和处理动作，再看提示。输入只在当前页面暂存，不自动评分。课堂示例能帮助思考，答案需要使用这道题给出的新信息。
+    - region "归还提醒的两种错误":
+      - generic: 迁移练习 · 自主核对
+      - heading "归还提醒的两种错误" [level=3]
+      - paragraph: 图书馆系统把记录分为“需要提醒归还”和“无需提醒”。教学记录为：A已逾期→系统需要提醒；B已按时归还→系统需要提醒；C仍在借期内→系统无需提醒；D已逾期→系统无需提醒。以题设记录为可靠对照，逐项判断对错，指出误提醒和漏提醒，说明各一个后果。再写一个在发送提醒前可执行的核对步骤。无需计算准确率。
+      - generic: 先记录你的思路或计算
+      - textbox "先记录你的思路或计算":
+        - /placeholder: 写下依据，再查看提示与解析…
+      - paragraph: 输入仅用于当前页面思考，不自动评分，也不改变阅读完成标记。
+      - generic "提示 1"
+      - generic "提示 2"
+      - generic "参考解答与自查标准"
+    - region "给商品照片分类，怎样检查并使用结果？":
+      - generic: 迁移练习 · 自主核对
+      - heading "给商品照片分类，怎样检查并使用结果？" [level=3]
+      - paragraph: 小店准备给商品照片分成杯子、碗、盘子，分类器从已分类照片中学习。新照片可能是把手被遮住的杯子、俯拍浅碗，也会出现未见过的器具。另一项请求是按商品记录写一段介绍。比较这两项任务的输入和输出；为分类举一个可能做对的情况和两个具体错误原因；设计初步核查方案，写清依据、要覆盖的照片、比较项目和错了或不确定时的处理。最后说明介绍文字应另核查什么。
+      - generic: 先记录你的思路或计算
+      - textbox "先记录你的思路或计算":
+        - /placeholder: 写下依据，再查看提示与解析…
+      - paragraph: 输入仅用于当前页面思考，不自动评分，也不改变阅读完成标记。
+      - generic "提示 1"
+      - generic "提示 2"
+      - generic "参考解答与自查标准"
+    - heading "从一句“可能会错”，走到可以核对的动作" [level=2]
+    - paragraph: 回看商品答案，如果交给同学，他能不能照着找到对照记录、选出要检查的照片、记下错法并处理？如果只能看到“AI可能不准”，还需要把动作补具体。
+    - list:
+      - text: 能力要联系具体输入、任务与输出；同一产品可以接起多项工作。
+      - text: 误拦和漏掉的方向、后果不同，检查时应分别观察。
+      - text: 依据随任务选择；核对具体结果后再决定怎样使用。
+    - paragraph: 我们用了关键词规则，也讨论了从数据学到的模型。下一节把注意力转到方法：自动完成就一定用了AI吗？人工写的规则又能不能参与AI？
+  - region "参考与进一步阅读":
+    - heading "参考与进一步阅读" [level=2]
+    - paragraph: 正文、练习与示意图为原创教学材料。以下官方资料用于核对定义与行为。
+    - list:
+      - link "Google：什么是机器学习（英文）":
+        - /url: https://developers.google.com/machine-learning/intro-to-ml/what-is-ml
+        - text: Google：什么是机器学习（英文）
+      - paragraph: 核对从数据形成模型及分类/生成等任务。访问于2026-10-27，不复用示例或代码。
+      - link "NIST：生成式AI概况（AI 600-1，2024）":
+        - /url: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf
+        - text: NIST：生成式AI概况（AI 600-1，2024）
+      - paragraph: 核对生成数字内容的能力描述及事实可靠性边界；不作法律或性能结论。访问于2026-10-27。
+      - link "Google：分类评价（英文）":
+        - /url: https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall
+        - text: Google：分类评价（英文）
+      - paragraph: 仅参考两类错误及不同后果，不教指标公式。访问2026-10-27。
+      - link "Google：推荐系统入门（英文）":
+        - /url: https://developers.google.com/machine-learning/recommendation/overview
+        - text: Google：推荐系统入门（英文）
+      - paragraph: 参考候选与排序任务；不搬运案例或代码。访问2026-10-27。
+  - paragraph: 阅读比例帮助安排学习，不代表已经掌握。
+  - button "标记本节已读完":
+    - text: 标记本节已读完
+  - navigation "相邻知识单元":
+    - link "上一节 · 1.1 人工智能究竟是什么？":
+      - /url: /learn/AI000/AI000-C01-L01
+      - text: 上一节 · 1.1 人工智能究竟是什么？
+    - link "下一节 · 1.3 普通自动化和 AI 有什么区别？":
+      - /url: /learn/AI000/AI000-C01-L03
+      - text: 下一节 · 1.3 普通自动化和 AI 有什么区别？
+  - link "查看课程详情":
+    - /url: /courses/AI000
+    - text: 查看课程详情
+  - link "返回学习中心":
+    - /url: /dashboard
+    - text: 返回学习中心
+  - complementary "本节学习面板":
+    - region "本节学习目标":
+      - heading "本节学习目标" [level=3]:
+        - text: 本节学习目标
+      - generic: 3 项
+      - list:
+        - generic: "01"
+        - strong: 比较不同任务
+        - paragraph: 说明输入、输出和任务范围有何差别。
+        - generic: "02"
+        - strong: 解释判断错误
+        - paragraph: 区分误拦与漏掉，联系实际后果。
+        - generic: "03"
+        - strong: 设计核查方案
+        - paragraph: 选可靠依据，逐项比较并安排后续处理。
+      - generic "查看完整目标":
+        - text: 查看完整目标
+    - region "核心练习":
+      - heading "核心练习" [level=3]
+      - generic: 2 道
+      - list:
+        - link "迁移练习 归还提醒的两种错误":
+          - /url: "#exercise-check-library"
+          - generic: 迁移练习
+          - generic: 归还提醒的两种错误
+        - link "迁移练习 给商品照片分类，怎样检查并使用结果？":
+          - /url: "#exercise-product-review"
+          - generic: 迁移练习
+          - generic: 给商品照片分类，怎样检查并使用结果？
+      - paragraph: 自主核对 · 不自动评分
+    - region "阅读进度":
+      - heading "阅读进度" [level=3]
+      - generic: 仅当前浏览器
+      - paragraph:
+        - text: 已浏览
+        - strong: 0%
+        - generic: ·
+        - generic: 尚未标记读完
+      - progressbar "本节已浏览比例"
+      - paragraph: 浏览比例不代表练习完成或掌握程度。
+    - generic "先修知识":
+      - text: 先修知识
+- contentinfo:
+  - link "Aivora 系统化 AI 技术学习平台":
+    - /url: /
+    - text: Aivora
+    - generic: 系统化 AI 技术学习平台
+  - paragraph: 让 AI 知识，成为可掌握的未来。
+  - link "探索课程":
+    - /url: /courses
+  - link "学习路径":
+    - /url: /paths
+  - link "实践项目":
+    - /url: /projects
+  - link "试读样章":
+    - /url: /learn/ML201/ML201-C03-L01
+  - generic: © 2026 Aivora
+  - generic: 课程筹备中 · 可体验试读样章
+- status
+- alert: AI 能做什么，为什么也会出错？ · 试读样章 · Aivora

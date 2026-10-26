@@ -10,7 +10,7 @@
 
 原 curriculum/ 的 Markdown、JSON 是 20 门课程、等级、目标、学时、先修、章节与项目的事实来源。教材不能反过来改写这些事实。lib/curriculum 的 Course 是目录适配类型；content/models 的 Course 组合相同事实与结构化 Chapter。每个 Chapter 有稳定 ID、顺序和真实可读课时，不为规划章节伪造课时。
 
-Lesson 数据位于 content/lessons，资源程序位于 content/resources/programs，发布状态位于 publication-manifest；course-engine 负责关联与解析。Reader 不导入某一节教材。19 节现行教材与 6 节旧版试读全部经过同一 ContentRenderer。旧 sample.ts 与 v1 progress API 保留兼容和既有测试；新 UI 不直接消费它们。
+Lesson 数据位于 content/lessons，资源程序位于 content/resources/programs，发布状态位于 publication-manifest；course-engine 负责关联与解析。Reader 不导入某一节教材。22 节现行教材与 6 节旧版试读全部经过同一 ContentRenderer。旧 sample.ts 与 v1 progress API 保留兼容和既有测试；新 UI 不直接消费它们。
 
 ## 添加一节教材
 
@@ -35,7 +35,7 @@ Lesson 数据位于 content/lessons，资源程序位于 content/resources/progr
 | published | 正式教材 | public / preview / private；技术与审核证据齐全 |
 | deprecated | 下线 | private |
 
-technicalEvidence / reviewEvidence 是仓库审核证据引用，不是权限系统或数字签名。维护者负责审查证据的真实性与适用修订；schema 检查字段和状态门禁，不能替代专业审核。当前 25 节均为 pending-review/preview（含旧综合试读及 AI000 1.1、2.1），整门课程仍 planned。
+technicalEvidence / reviewEvidence 是仓库审核证据引用，不是权限系统或数字签名。维护者负责审查证据的真实性与适用修订；schema 检查字段和状态门禁，不能替代专业审核。当前 28 节均为 pending-review/preview（含旧综合试读及 AI000 前两章五节），整门课程仍 planned。
 
 ## 内容组件
 
@@ -111,3 +111,7 @@ V2.1 样式集中在 teaching-v2-1.css；既有品牌、动画和 reader.css 保
 数学工厂 Source 与基础课 Spec 支持可选 `contentVersion`，默认仍为1，只为实际变更课指定修订。ML工厂将核心考核插入最后一个core section，后续追加verification不能把核心题带入可选区。继续使用现有schema/assessmentMap/清单/进度作用域，不新建内容或评分系统。
 
 `review:editing` 默认拒绝版本变化；已在简报和报告解释合法递增时，显式加 `--allow-version-increase`。它只允许递增，仍拒绝倒退、丢失section或练习ID，输出前后版本及旧完成不迁移的说明。新任务的效度与真实学习表现仍需人工和学生证据；[V1.1建议稿](COURSE_EDITORIAL_STANDARD_V1_1_PROPOSAL.md) 尚未替换V1.0。
+
+## AI000 系统化节级规划与修订
+
+AI000 的24节蓝图见 ai000-outline.ts 与 AI000_CURRICULUM_V2_PLAN.md，只有已制作的五节进入发布清单。1.1和2.1核心目标/考核重编为r2，原r1键不删除、不迁移为新版完成。Lesson可选legacyAnchors只存迁出书签的id、标题、说明与真实课时深链接；Reader在页尾折叠衔接入口，原hash通过既有定位逻辑展开并聚焦。它不属于当前核心目标或assessmentMap，不把迁出题再算作本节达标。其余23节数据不因该可选字段增加空值。两份旧AI000专题核验脚本入口现委托review-ai000-v2.ts，历史输出保留，本轮证据使用docs/ai000-v2。

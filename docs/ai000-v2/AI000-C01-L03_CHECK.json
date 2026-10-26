@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-26T16:41:05.322Z",
+  "unchangedOtherLessons": 23,
+  "curriculumUnchanged": true,
+  "checks": [
+    {
+      "id": "AI000-C01-L03",
+      "version": 1,
+      "status": "draft",
+      "access": "private",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "identify-systems"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "identify-systems",
+            "trace-method"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "trace-method"
+          ]
+        }
+      ],
+      "sections": [
+        "automation",
+        "knowledge",
+        "compare-methods",
+        "evidence",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "identify-systems",
+        "trace-method"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-26T16:46:28.755Z",
+  "unchangedOtherLessons": 23,
+  "curriculumUnchanged": true,
+  "checks": [
+    {
+      "id": "AI000-C02-L02",
+      "version": 1,
+      "status": "draft",
+      "access": "private",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "classify-new-systems"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "product-model-map"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "classify-new-systems",
+            "product-model-map"
+          ]
+        }
+      ],
+      "sections": [
+        "generation",
+        "generative-model",
+        "llm",
+        "product",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "classify-new-systems",
+        "product-model-map"
+      ]
+    }
+  ]
+}

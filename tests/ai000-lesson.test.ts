@@ -14,28 +14,29 @@ const resolved = resolveLesson("AI000", "AI000-C01-L01")!;
 const lesson = resolved.lesson;
 const blocks = lesson.sections.flatMap((section) => section.blocks);
 
-test("AI000 1.1 保留待审与七章规划，相邻导航由已制作的 2.1 承接", () => {
+test("AI000 1.1 r2保留七章规划，相邻导航由1.2承接", () => {
   assert.equal(resolved.publication.status, "pending-review");
   assert.equal(resolved.publication.access, "preview");
   assert.equal(resolved.publication.reviewEvidence, undefined);
   assert.equal(resolved.course.status, "planned");
   assert.equal(resolved.course.chapters.length, 7);
   const entries = resolved.course.chapters.flatMap((chapter) => chapter.lessons);
-  assert.equal(entries.length, 2);
+  assert.equal(entries.length, 24);
+  assert.equal(entries.filter(e => e.href).length, 5);
   assert.equal(entries[0].displayNumber, "1.1");
   assert.equal(entries[0].href, "/learn/AI000/AI000-C01-L01");
-  assert.equal(getAdjacentLessons(resolved.course, lesson.id).next?.lessonId, "AI000-C02-L01");
+  assert.equal(getAdjacentLessons(resolved.course, lesson.id).next?.lessonId, "AI000-C01-L02");
   assert.equal(getAdjacentLessons(resolved.course, lesson.id).previous, undefined);
-  assert.equal(resolveLesson("AI000", "AI000-C01-L02"), undefined);
-  assert.equal(resolveLesson("AI000", "AI000-C01-L03"), undefined);
+  assert.equal(resolveLesson("AI000", "AI000-C03-L01"), undefined);
+  assert.equal(resolveLesson("AI000", "AI000-C07-L03"), undefined);
   assert.equal(resolveLesson("PY101", lesson.id), undefined);
 });
 
 test("L0 核心考核覆盖三个目标，且无需代码、公式、实验或隐藏先修", () => {
   assert.deepEqual(lesson.assessmentMap, [
-    { objective: 1, exerciseIds: ["product-review"] },
-    { objective: 2, exerciseIds: ["identify-systems"] },
-    { objective: 3, exerciseIds: ["product-review"] },
+    { objective: 1, exerciseIds: ["describe-task"] },
+    { objective: 2, exerciseIds: ["describe-task","design-task"] },
+    { objective: 3, exerciseIds: ["design-task"] },
   ]);
   assert.deepEqual(lesson.learningTime.coding, [0, 0]);
   assert.equal(lesson.resources.length, 0);
@@ -89,7 +90,7 @@ test("AI000 阅读作用域独立，保存/恢复和标记读完不改写 MA、P
   restored.save(scope, 100, "takeaways", true);
   const saved = parseReadingProgress(restored.getSnapshot(scope), scope)!;
   assert.equal(saved.completed, true);
-  assert.equal(progressKey(scope), "aivora:learning:v2:AI000:AI000-C01-L01:r1");
+  assert.equal(progressKey(scope), "aivora:learning:v2:AI000:AI000-C01-L01:r2");
   for (const [key, bytes] of existing) assert.equal(memory.get(key), bytes);
   const summary = lessonSummaries.find((entry) => entry.lessonId === lesson.id)!;
   const courses = summarizeCourseReading(lessonSummaries, [{ lesson: summary, progress: saved }]);

@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-10-26T17:01:11.944Z",
+  "unchangedOtherLessons": 23,
+  "curriculumUnchanged": true,
+  "checks": [
+    {
+      "id": "AI000-C02-L01",
+      "version": 2,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "draw-method-map"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "draw-method-map"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "method-evidence"
+          ]
+        }
+      ],
+      "sections": [
+        "learning-from-mail",
+        "deep-learning",
+        "method-map",
+        "read-system",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "draw-method-map",
+        "method-evidence"
+      ]
+    }
+  ]
+}

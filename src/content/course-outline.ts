@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { mathCourseOutline } from "./math-outline";
+import { ai000ChapterLessons } from "./ai000-outline";
 
 const slotSchema = z.object({
   courseId: z.string().regex(/^[A-Z]+\d{3}$/),
@@ -26,12 +27,8 @@ function chapterSlots(
 }
 // 节级编辑蓝图；不修改 V1.0 章级事实，也不表示这些课时已写完。
 export const courseOutline = [
-  ...chapterSlots("AI000", 1, [
-    ["L01", "人工智能究竟是什么？"],
-  ]),
-  ...chapterSlots("AI000", 2, [
-    ["L01", "AI、机器学习与深度学习，到底是什么关系？"],
-  ]),
+  ...ai000ChapterLessons.flatMap((titles, index) => chapterSlots("AI000", index + 1,
+    titles.map((title, order) => [`L${String(order + 1).padStart(2, "0")}`, title]))),
   ...chapterSlots("ML201", 1, [
     ["L01", "什么是机器学习"],
     ["L02", "如何定义预测任务"],

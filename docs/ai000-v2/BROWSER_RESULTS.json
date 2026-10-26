@@ -1,0 +1,1458 @@
+{
+  "checkedAt": "2026-10-26T17:07:22.966Z",
+  "base": "http://127.0.0.1:3007",
+  "browser": "Chromium in-app browser",
+  "viewports": [
+    [
+      1440,
+      1000
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      320,
+      900
+    ]
+  ],
+  "note": "工具验收；仅在独立来源为空时添加两条r1合成夹具，不覆盖用户记录。没有真实学生试学。媒体偏好/临时视口结束时恢复。",
+  "observations": [
+    {
+      "check": "r1-fixture-does-not-complete-r2",
+      "result": {
+        "progress": "0",
+        "status": "已浏览 0%·尚未标记读完"
+      },
+      "fixtures": {
+        "result": {
+          "type": "string",
+          "value": "{\"aivora:learning:v2:AI000:AI000-C02-L01:r1\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"AI000\\\",\\\"lessonId\\\":\\\"AI000-C02-L01\\\",\\\"contentVersion\\\":1,\\\"percent\\\":100,\\\"completed\\\":true,\\\"section\\\":\\\"takeaways\\\",\\\"updatedAt\\\":1793033592953}\",\"aivora:learning:v2:AI000:AI000-C01-L01:r1\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"AI000\\\",\\\"lessonId\\\":\\\"AI000-C01-L01\\\",\\\"contentVersion\\\":1,\\\"percent\\\":100,\\\"completed\\\":true,\\\"section\\\":\\\"takeaways\\\",\\\"updatedAt\\\":1793033592953}\"}"
+        }
+      }
+    },
+    {
+      "check": "desktop-continuous-reading",
+      "lessonId": "AI000-C01-L01",
+      "result": {
+        "adjacent": "上一节 · 尚未提供下一节 · 1.2 AI 能做什么，为什么也会出错？",
+        "figures": [
+          {
+            "scroll": 722,
+            "width": 722
+          }
+        ],
+        "goals": 3,
+        "h1": "人工智能究竟是什么？",
+        "links": [
+          {
+            "href": "#exercise-describe-task",
+            "text": "理解练习向同学解释录音转文字"
+          },
+          {
+            "href": "#exercise-design-task",
+            "text": "迁移练习给失物照片目录安排一项任务"
+          }
+        ],
+        "overflow": false,
+        "path": "/learn/AI000/AI000-C01-L01",
+        "width": 1440
+      }
+    },
+    {
+      "check": "desktop-core-exercise-target",
+      "lessonId": "AI000-C01-L01",
+      "result": {
+        "focus": "向同学解释录音转文字",
+        "hash": "#exercise-describe-task",
+        "top": 232.3125
+      }
+    },
+    {
+      "check": "desktop-core-exercise-target",
+      "lessonId": "AI000-C01-L01",
+      "result": {
+        "focus": "给失物照片目录安排一项任务",
+        "hash": "#exercise-design-task",
+        "top": 231.98959350585935
+      }
+    },
+    {
+      "check": "desktop-feedback",
+      "lessonId": "AI000-C01-L01",
+      "result": {
+        "completed": "已浏览 86%·尚未标记读完",
+        "open": 6
+      }
+    },
+    {
+      "check": "desktop-continuous-reading",
+      "lessonId": "AI000-C01-L02",
+      "result": {
+        "adjacent": "上一节 · 1.1 人工智能究竟是什么？下一节 · 1.3 普通自动化和 AI 有什么区别？",
+        "figures": [
+          {
+            "scroll": 722,
+            "width": 722
+          }
+        ],
+        "goals": 3,
+        "h1": "AI 能做什么，为什么也会出错？",
+        "links": [
+          {
+            "href": "#exercise-check-library",
+            "text": "迁移练习归还提醒的两种错误"
+          },
+          {
+            "href": "#exercise-product-review",
+            "text": "迁移练习给商品照片分类，怎样检查并使用结果？"
+          }
+        ],
+        "overflow": false,
+        "path": "/learn/AI000/AI000-C01-L02",
+        "width": 1440
+      }
+    },
+    {
+      "check": "desktop-core-exercise-target",
+      "lessonId": "AI000-C01-L02",
+      "result": {
+        "focus": "归还提醒的两种错误",
+        "hash": "#exercise-check-library",
+        "top": 231.8854217529297
+      }
+    },
+    {
+      "check": "desktop-core-exercise-target",
+      "lessonId": "AI000-C01-L02",
+      "result": {
+        "focus": "给商品照片分类，怎样检查并使用结果？",
+        "hash": "#exercise-product-review",
+        "top": 232.14584350585935
+      }
+    },
+    {
+      "check": "desktop-feedback",
+      "lessonId": "AI000-C01-L02",
+      "result": {
+        "completed": "已浏览 89%·尚未标记读完",
+        "open": 6
+      }
+    },
+    {
+      "check": "desktop-continuous-reading",
+      "lessonId": "AI000-C01-L03",
+      "result": {
+        "adjacent": "上一节 · 1.2 AI 能做什么，为什么也会出错？下一节 · 2.1 AI、机器学习与深度学习，到底是什么关系？",
+        "figures": [
+          {
+            "scroll": 722,
+            "width": 722
+          }
+        ],
+        "goals": 3,
+        "h1": "普通自动化和 AI 有什么区别？",
+        "links": [
+          {
+            "href": "#exercise-identify-systems",
+            "text": "迁移练习四种系统，哪条信息支持你的判断？"
+          },
+          {
+            "href": "#exercise-trace-method",
+            "text": "理解练习沿着水泵规则走两步"
+          }
+        ],
+        "overflow": false,
+        "path": "/learn/AI000/AI000-C01-L03",
+        "width": 1440
+      }
+    },
+    {
+      "check": "desktop-core-exercise-target",
+      "lessonId": "AI000-C01-L03",
+      "result": {
+        "focus": "四种系统，哪条信息支持你的判断？",
+        "hash": "#exercise-identify-systems",
+        "top": 232.28125
+      }
+    },
+    {
+      "check": "desktop-core-exercise-target",
+      "lessonId": "AI000-C01-L03",
+      "result": {
+        "focus": "沿着水泵规则走两步",
+        "hash": "#exercise-trace-method",
+        "top": 231.7916717529297
+      }
+    },
+    {
+      "check": "desktop-feedback",
+      "lessonId": "AI000-C01-L03",
+      "result": {
+        "completed": "已浏览 88%·尚未标记读完",
+        "open": 6
+      }
+    },
+    {
+      "check": "desktop-continuous-reading",
+      "lessonId": "AI000-C02-L01",
+      "result": {
+        "adjacent": "上一节 · 1.3 普通自动化和 AI 有什么区别？下一节 · 2.2 生成式 AI 是什么？它和 LLM 有什么关系？",
+        "figures": [
+          {
+            "scroll": 722,
+            "width": 722
+          }
+        ],
+        "goals": 3,
+        "h1": "AI、机器学习与深度学习，到底是什么关系？",
+        "links": [
+          {
+            "href": "#exercise-draw-method-map",
+            "text": "理解练习画出属于自己的 AI 技术关系图"
+          },
+          {
+            "href": "#exercise-method-evidence",
+            "text": "迁移练习只凭给出的技术信息，能归到哪一层？"
+          }
+        ],
+        "overflow": false,
+        "path": "/learn/AI000/AI000-C02-L01",
+        "width": 1440
+      }
+    },
+    {
+      "check": "desktop-core-exercise-target",
+      "lessonId": "AI000-C02-L01",
+      "result": {
+        "focus": "画出属于自己的 AI 技术关系图",
+        "hash": "#exercise-draw-method-map",
+        "top": 232.21875
+      }
+    },
+    {
+      "check": "desktop-core-exercise-target",
+      "lessonId": "AI000-C02-L01",
+      "result": {
+        "focus": "只凭给出的技术信息，能归到哪一层？",
+        "hash": "#exercise-method-evidence",
+        "top": 231.7291717529297
+      }
+    },
+    {
+      "check": "desktop-feedback",
+      "lessonId": "AI000-C02-L01",
+      "result": {
+        "completed": "已浏览 89%·尚未标记读完",
+        "open": 6
+      }
+    },
+    {
+      "check": "desktop-continuous-reading",
+      "lessonId": "AI000-C02-L02",
+      "result": {
+        "adjacent": "上一节 · 2.1 AI、机器学习与深度学习，到底是什么关系？下一节 · 尚未提供",
+        "figures": [
+          {
+            "scroll": 722,
+            "width": 722
+          },
+          {
+            "scroll": 722,
+            "width": 722
+          }
+        ],
+        "goals": 3,
+        "h1": "生成式 AI 是什么？它和 LLM 有什么关系？",
+        "links": [
+          {
+            "href": "#exercise-classify-new-systems",
+            "text": "迁移练习这次是在找、改、判断，还是生成？"
+          },
+          {
+            "href": "#exercise-product-model-map",
+            "text": "迁移练习为展览服务画一张分工图"
+          }
+        ],
+        "overflow": false,
+        "path": "/learn/AI000/AI000-C02-L02",
+        "width": 1440
+      }
+    },
+    {
+      "check": "desktop-core-exercise-target",
+      "lessonId": "AI000-C02-L02",
+      "result": {
+        "focus": "这次是在找、改、判断，还是生成？",
+        "hash": "#exercise-classify-new-systems",
+        "top": 231.89584350585935
+      }
+    },
+    {
+      "check": "desktop-core-exercise-target",
+      "lessonId": "AI000-C02-L02",
+      "result": {
+        "focus": "为展览服务画一张分工图",
+        "hash": "#exercise-product-model-map",
+        "top": 232.15625
+      }
+    },
+    {
+      "check": "desktop-feedback",
+      "lessonId": "AI000-C02-L02",
+      "result": {
+        "completed": "已浏览 88%·尚未标记读完",
+        "open": 6
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C01-L01",
+      "anchor": "mail-task",
+      "result": {
+        "focus": "收件箱里的一个小麻烦",
+        "hash": "#mail-task",
+        "heading": "收件箱里的一个小麻烦",
+        "height": 573.1146240234375,
+        "links": [],
+        "openAncestors": false
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C01-L01",
+      "anchor": "rule-and-learning",
+      "result": {
+        "focus": "电脑需要一个怎样的判断办法？",
+        "hash": "#rule-and-learning",
+        "heading": "电脑需要一个怎样的判断办法？",
+        "height": 577.28125,
+        "links": [],
+        "openAncestors": false
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C01-L01",
+      "anchor": "ai-meaning",
+      "result": {
+        "focus": "把刚才的动作，放进“人工智能”这个名称",
+        "hash": "#ai-meaning",
+        "heading": "把刚才的动作，放进“人工智能”这个名称",
+        "height": 545.28125,
+        "links": [],
+        "openAncestors": false
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C01-L01",
+      "anchor": "many-tasks",
+      "result": {
+        "focus": "沿着输入、任务和输出看一遍",
+        "hash": "#many-tasks",
+        "heading": "沿着输入、任务和输出看一遍",
+        "height": 1098.5,
+        "links": [],
+        "openAncestors": false
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C01-L01",
+      "anchor": "automation",
+      "result": {
+        "focus": "普通自动化与知识推理已移至1.3",
+        "hash": "#automation",
+        "heading": "普通自动化与知识推理已移至1.3",
+        "height": 131.84375,
+        "links": [
+          "/learn/AI000/AI000-C01-L03#automation"
+        ],
+        "openAncestors": true
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C01-L01",
+      "anchor": "mistakes",
+      "result": {
+        "focus": "邮件误判的完整对照已移至1.2",
+        "hash": "#mistakes",
+        "heading": "邮件误判的完整对照已移至1.2",
+        "height": 131.84375,
+        "links": [
+          "/learn/AI000/AI000-C01-L02#mistakes"
+        ],
+        "openAncestors": true
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C01-L01",
+      "anchor": "check-output",
+      "result": {
+        "focus": "逐项核对生成文字已移至1.2",
+        "hash": "#check-output",
+        "heading": "逐项核对生成文字已移至1.2",
+        "height": 131.84375,
+        "links": [
+          "/learn/AI000/AI000-C01-L02#check-output"
+        ],
+        "openAncestors": true
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C01-L01",
+      "anchor": "practice",
+      "result": {
+        "focus": "换一个需求，试着说具体",
+        "hash": "#practice",
+        "heading": "换一个需求，试着说具体",
+        "height": 1409.96875,
+        "links": [],
+        "openAncestors": false
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C01-L01",
+      "anchor": "takeaways",
+      "result": {
+        "focus": "能把AI的作用讲成一句完整的话",
+        "hash": "#takeaways",
+        "heading": "能把AI的作用讲成一句完整的话",
+        "height": 456.2083435058594,
+        "links": [],
+        "openAncestors": false
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C01-L01",
+      "anchor": "exercise-identify-systems",
+      "result": {
+        "focus": "旧版系统判断题已移至1.3",
+        "hash": "#exercise-identify-systems",
+        "heading": "旧版系统判断题已移至1.3",
+        "height": 131.84375,
+        "links": [
+          "/learn/AI000/AI000-C01-L03#exercise-identify-systems"
+        ],
+        "openAncestors": true
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C01-L01",
+      "anchor": "exercise-product-review",
+      "result": {
+        "focus": "旧版商品核查题已移至1.2",
+        "hash": "#exercise-product-review",
+        "heading": "旧版商品核查题已移至1.2",
+        "height": 131.84375,
+        "links": [
+          "/learn/AI000/AI000-C01-L02#exercise-product-review"
+        ],
+        "openAncestors": true
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C02-L01",
+      "anchor": "learning-from-mail",
+      "result": {
+        "focus": "邮件还是那些邮件，判断办法从哪里来？",
+        "hash": "#learning-from-mail",
+        "heading": "邮件还是那些邮件，判断办法从哪里来？",
+        "height": 773.28125,
+        "links": [],
+        "openAncestors": false
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C02-L01",
+      "anchor": "deep-learning",
+      "result": {
+        "focus": "深度学习多出来的“深度”是什么？",
+        "hash": "#deep-learning",
+        "heading": "深度学习多出来的“深度”是什么？",
+        "height": 919.28125,
+        "links": [],
+        "openAncestors": false
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C02-L01",
+      "anchor": "method-map",
+      "result": {
+        "focus": "三个范围，应该怎样套在一起？",
+        "hash": "#method-map",
+        "heading": "三个范围，应该怎样套在一起？",
+        "height": 1224.15625,
+        "links": [],
+        "openAncestors": false
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C02-L01",
+      "anchor": "generation",
+      "result": {
+        "focus": "生成式AI与LLM的讲解已移至2.2",
+        "hash": "#generation",
+        "heading": "生成式AI与LLM的讲解已移至2.2",
+        "height": 131.84375,
+        "links": [
+          "/learn/AI000/AI000-C02-L02#generation"
+        ],
+        "openAncestors": true
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C02-L01",
+      "anchor": "read-system",
+      "result": {
+        "focus": "读一段产品说明，先找哪三条信息？",
+        "hash": "#read-system",
+        "heading": "读一段产品说明，先找哪三条信息？",
+        "height": 860.03125,
+        "links": [],
+        "openAncestors": false
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C02-L01",
+      "anchor": "practice",
+      "result": {
+        "focus": "自己画一张图，再给新系统归类",
+        "hash": "#practice",
+        "heading": "自己画一张图，再给新系统归类",
+        "height": 1526.96875,
+        "links": [],
+        "openAncestors": false
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C02-L01",
+      "anchor": "takeaways",
+      "result": {
+        "focus": "把几个名称放进一句有依据的话",
+        "hash": "#takeaways",
+        "heading": "把几个名称放进一句有依据的话",
+        "height": 456.2083435058594,
+        "links": [],
+        "openAncestors": false
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C02-L01",
+      "anchor": "exercise-draw-method-map",
+      "result": {
+        "focus": "画出属于自己的 AI 技术关系图",
+        "hash": "#exercise-draw-method-map",
+        "heading": "画出属于自己的 AI 技术关系图",
+        "height": 634.84375,
+        "links": [],
+        "openAncestors": false
+      }
+    },
+    {
+      "check": "historical-anchor",
+      "lessonId": "AI000-C02-L01",
+      "anchor": "exercise-classify-new-systems",
+      "result": {
+        "focus": "旧版生成系统综合题已移至2.2",
+        "hash": "#exercise-classify-new-systems",
+        "heading": "旧版生成系统综合题已移至2.2",
+        "height": 131.84375,
+        "links": [
+          "/learn/AI000/AI000-C02-L02#exercise-classify-new-systems"
+        ],
+        "openAncestors": true
+      }
+    },
+    {
+      "check": "follow-legacy-exercise-link",
+      "result": {
+        "hash": "#exercise-classify-new-systems",
+        "heading": "这次是在找、改、判断，还是生成？",
+        "path": "/learn/AI000/AI000-C02-L02"
+      }
+    },
+    {
+      "check": "responsive-layout",
+      "lessonId": "AI000-C01-L01",
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "result": {
+        "figures": [
+          {
+            "scroll": 650,
+            "width": 650
+          }
+        ],
+        "fonts": [
+          "14px",
+          "14px",
+          "14px",
+          "14px",
+          "14px"
+        ],
+        "overflow": false,
+        "width": 768
+      }
+    },
+    {
+      "check": "responsive-panel-goals-prerequisites",
+      "lessonId": "AI000-C01-L01",
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n6 节点\n本节学习目标\n3 项\n01\n解释AI的作用\n\n联系一个任务，用自己的话说明AI在做什么。\n\n02\n说清输入、任务和输出\n\n指出系统拿到什么、处理什么、交回什么。\n\n03\n把需求写成具体任务\n\n限定输出和范围，让结果能够被检查。\n\n查看完整目标\n用自己的话解释人工智能在一个具体任务中起什么作用\n指出系统的输入、处理任务与输出，并说明三者怎样联系\n把一个日常需求改写成范围清楚、能检查结果的AI任务\n核心练习\n2 道\n理解练习\n向同学解释录音转文字\n迁移练习\n给失物照片目录安排一项任务\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n100%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n只需日常阅读、比较信息并说明理由；无需编程、数学或安装软件。"
+    },
+    {
+      "check": "responsive-exercise-target",
+      "lessonId": "AI000-C01-L01",
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "result": {
+        "dialog": false,
+        "focus": "向同学解释录音转文字",
+        "hash": "#exercise-describe-task",
+        "top": 278.38543701171875
+      }
+    },
+    {
+      "check": "responsive-layout",
+      "lessonId": "AI000-C01-L02",
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "result": {
+        "figures": [
+          {
+            "scroll": 650,
+            "width": 650
+          }
+        ],
+        "fonts": [
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px",
+          "14px"
+        ],
+        "overflow": false,
+        "width": 768
+      }
+    },
+    {
+      "check": "responsive-panel-goals-prerequisites",
+      "lessonId": "AI000-C01-L02",
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n6 节点\n本节学习目标\n3 项\n01\n比较不同任务\n\n说明输入、输出和任务范围有何差别。\n\n02\n解释判断错误\n\n区分误拦与漏掉，联系实际后果。\n\n03\n设计核查方案\n\n选可靠依据，逐项比较并安排后续处理。\n\n查看完整目标\n比较识别、分类、推荐和生成任务的输入、输出与适用范围\n结合给定例子解释误拦、漏掉等错误及其后果\n为新任务设计有可靠对照、可执行的初步核查办法\n核心练习\n2 道\n迁移练习\n归还提醒的两种错误\n迁移练习\n给商品照片分类，怎样检查并使用结果？\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n100%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n已读1.1，能指出输入、任务和输出，知道从例子形成判断方式的基本含义。无需编程或统计公式。\n\n1.1 人工智能究竟是什么？\n\n回看三要素与邮件需求。"
+    },
+    {
+      "check": "responsive-exercise-target",
+      "lessonId": "AI000-C01-L02",
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "result": {
+        "dialog": false,
+        "focus": "归还提醒的两种错误",
+        "hash": "#exercise-check-library",
+        "top": 277.9583435058594
+      }
+    },
+    {
+      "check": "responsive-layout",
+      "lessonId": "AI000-C01-L03",
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "result": {
+        "figures": [
+          {
+            "scroll": 650,
+            "width": 650
+          }
+        ],
+        "fonts": [
+          "16px",
+          "16px",
+          "16px",
+          "14px",
+          "14px"
+        ],
+        "overflow": false,
+        "width": 768
+      }
+    },
+    {
+      "check": "responsive-panel-goals-prerequisites",
+      "lessonId": "AI000-C01-L03",
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n6 节点\n本节学习目标\n3 项\n01\n比较得到结果的办法\n\n区分明确步骤、知识推理与从数据学习。\n\n02\n按方法证据判断\n\n给出有条件的结论，指出未说明的信息。\n\n03\n跟着规则推出结论\n\n写出中间步骤，说明还不能确定什么。\n\n查看完整目标\n比较普通自动化、知识推理和数据学习在得到结果时的区别\n根据系统已给出的方法证据判断是否涉及AI，信息不足时说明条件与追问\n沿着简单知识规则推出结论，并说明结论的范围\n核心练习\n2 道\n迁移练习\n四种系统，哪条信息支持你的判断？\n理解练习\n沿着水泵规则走两步\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n100%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n能使用1.1的输入/任务/输出分析，并知道从例子学习形成模型；1.2已讨论任务结果的检查。\n\n1.1 三要素与学习的直觉\n\n本节不要求任何编程知识。"
+    },
+    {
+      "check": "responsive-exercise-target",
+      "lessonId": "AI000-C01-L03",
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "result": {
+        "dialog": false,
+        "focus": "四种系统，哪条信息支持你的判断？",
+        "hash": "#exercise-identify-systems",
+        "top": 278.2083435058594
+      }
+    },
+    {
+      "check": "responsive-layout",
+      "lessonId": "AI000-C02-L01",
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "result": {
+        "figures": [
+          {
+            "scroll": 650,
+            "width": 650
+          }
+        ],
+        "fonts": [
+          "16px",
+          "16px",
+          "16px",
+          "14px"
+        ],
+        "overflow": false,
+        "width": 768
+      }
+    },
+    {
+      "check": "responsive-panel-goals-prerequisites",
+      "lessonId": "AI000-C02-L01",
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n6 节点\n本节学习目标\n3 项\n01\n画出包含关系\n\n用具体例子说明两个不能反推的边界。\n\n02\n说明多层表示\n\n解释深度学习的学习方式与范围。\n\n03\n根据证据归类\n\n给结论写依据，保留未说明的信息。\n\n查看完整目标\n解释AI、ML、DL的包含关系，并用两个反例说明不能等同\n用多层表示的直觉说明深度学习为何属于机器学习及其与其他方法的差别\n根据新系统给出的方法证据归类，区别明确排除与仍然未知的信息\n核心练习\n2 道\n理解练习\n画出属于自己的 AI 技术关系图\n迁移练习\n只凭给出的技术信息，能归到哪一层？\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n100%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n已读1.1与1.3，能说明输入/任务/输出，并区分知识推理与从数据学习的基本办法。无需数学或编程。\n\n1.3 普通自动化和 AI 有什么区别？\n\n回顾知识方法与数据学习，避免仅凭功能判断方法。"
+    },
+    {
+      "check": "responsive-exercise-target",
+      "lessonId": "AI000-C02-L01",
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "result": {
+        "dialog": false,
+        "focus": "画出属于自己的 AI 技术关系图",
+        "hash": "#exercise-draw-method-map",
+        "top": 278.0833435058594
+      }
+    },
+    {
+      "check": "responsive-layout",
+      "lessonId": "AI000-C02-L02",
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "result": {
+        "figures": [
+          {
+            "scroll": 650,
+            "width": 650
+          },
+          {
+            "scroll": 650,
+            "width": 650
+          }
+        ],
+        "fonts": [
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px"
+        ],
+        "overflow": false,
+        "width": 768
+      }
+    },
+    {
+      "check": "responsive-panel-goals-prerequisites",
+      "lessonId": "AI000-C02-L02",
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n6 节点\n本节学习目标\n3 项\n01\n辨认四类处理任务\n\n根据过程区分类别判断、查找、编辑和生成。\n\n02\n联系生成、DL与LLM\n\n分别说明能力、方法、模型和产品。\n\n03\n分析产品说明\n\n列出方法证据、成立条件与未知信息。\n\n查看完整目标\n根据具体输入输出和处理过程区分分类、检索、编辑与生成任务\n解释现代生成式AI、深度学习与LLM的关系，区分模型和产品\n分析新产品的任务与方法证据，说明能确定的内容和仍需追问的信息\n核心练习\n2 道\n迁移练习\n这次是在找、改、判断，还是生成？\n迁移练习\n为展览服务画一张分工图\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n88%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n已读1.2的任务/核查与2.1的AI、ML、DL包含关系，知道模型从数据中学习。无需神经网络结构、编程或概率公式。\n\n2.1 AI、机器学习与深度学习的关系\n\n回看方法范围与多层表示。"
+    },
+    {
+      "check": "responsive-exercise-target",
+      "lessonId": "AI000-C02-L02",
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "result": {
+        "dialog": false,
+        "focus": "这次是在找、改、判断，还是生成？",
+        "hash": "#exercise-classify-new-systems",
+        "top": 277.9583435058594
+      }
+    },
+    {
+      "check": "responsive-layout",
+      "lessonId": "AI000-C01-L01",
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "result": {
+        "figures": [
+          {
+            "scroll": 308,
+            "width": 308
+          }
+        ],
+        "fonts": [
+          "14px",
+          "14px",
+          "14px",
+          "14px",
+          "14px"
+        ],
+        "overflow": false,
+        "width": 390
+      }
+    },
+    {
+      "check": "responsive-panel-goals-prerequisites",
+      "lessonId": "AI000-C01-L01",
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n6 节点\n本节学习目标\n3 项\n01\n解释AI的作用\n\n联系一个任务，用自己的话说明AI在做什么。\n\n02\n说清输入、任务和输出\n\n指出系统拿到什么、处理什么、交回什么。\n\n03\n把需求写成具体任务\n\n限定输出和范围，让结果能够被检查。\n\n查看完整目标\n用自己的话解释人工智能在一个具体任务中起什么作用\n指出系统的输入、处理任务与输出，并说明三者怎样联系\n把一个日常需求改写成范围清楚、能检查结果的AI任务\n核心练习\n2 道\n理解练习\n向同学解释录音转文字\n迁移练习\n给失物照片目录安排一项任务\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n100%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n只需日常阅读、比较信息并说明理由；无需编程、数学或安装软件。"
+    },
+    {
+      "check": "responsive-exercise-target",
+      "lessonId": "AI000-C01-L01",
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "result": {
+        "dialog": false,
+        "focus": "向同学解释录音转文字",
+        "hash": "#exercise-describe-task",
+        "top": 260.25
+      }
+    },
+    {
+      "check": "responsive-layout",
+      "lessonId": "AI000-C01-L02",
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "result": {
+        "figures": [
+          {
+            "scroll": 308,
+            "width": 308
+          }
+        ],
+        "fonts": [
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px",
+          "14px"
+        ],
+        "overflow": false,
+        "width": 390
+      }
+    },
+    {
+      "check": "responsive-panel-goals-prerequisites",
+      "lessonId": "AI000-C01-L02",
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n6 节点\n本节学习目标\n3 项\n01\n比较不同任务\n\n说明输入、输出和任务范围有何差别。\n\n02\n解释判断错误\n\n区分误拦与漏掉，联系实际后果。\n\n03\n设计核查方案\n\n选可靠依据，逐项比较并安排后续处理。\n\n查看完整目标\n比较识别、分类、推荐和生成任务的输入、输出与适用范围\n结合给定例子解释误拦、漏掉等错误及其后果\n为新任务设计有可靠对照、可执行的初步核查办法\n核心练习\n2 道\n迁移练习\n归还提醒的两种错误\n迁移练习\n给商品照片分类，怎样检查并使用结果？\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n100%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n已读1.1，能指出输入、任务和输出，知道从例子形成判断方式的基本含义。无需编程或统计公式。\n\n1.1 人工智能究竟是什么？\n\n回看三要素与邮件需求。"
+    },
+    {
+      "check": "responsive-exercise-target",
+      "lessonId": "AI000-C01-L02",
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "result": {
+        "dialog": false,
+        "focus": "归还提醒的两种错误",
+        "hash": "#exercise-check-library",
+        "top": 259.75
+      }
+    },
+    {
+      "check": "responsive-layout",
+      "lessonId": "AI000-C01-L03",
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "result": {
+        "figures": [
+          {
+            "scroll": 308,
+            "width": 308
+          }
+        ],
+        "fonts": [
+          "16px",
+          "16px",
+          "16px",
+          "14px",
+          "14px"
+        ],
+        "overflow": false,
+        "width": 390
+      }
+    },
+    {
+      "check": "responsive-panel-goals-prerequisites",
+      "lessonId": "AI000-C01-L03",
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n6 节点\n本节学习目标\n3 项\n01\n比较得到结果的办法\n\n区分明确步骤、知识推理与从数据学习。\n\n02\n按方法证据判断\n\n给出有条件的结论，指出未说明的信息。\n\n03\n跟着规则推出结论\n\n写出中间步骤，说明还不能确定什么。\n\n查看完整目标\n比较普通自动化、知识推理和数据学习在得到结果时的区别\n根据系统已给出的方法证据判断是否涉及AI，信息不足时说明条件与追问\n沿着简单知识规则推出结论，并说明结论的范围\n核心练习\n2 道\n迁移练习\n四种系统，哪条信息支持你的判断？\n理解练习\n沿着水泵规则走两步\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n100%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n能使用1.1的输入/任务/输出分析，并知道从例子学习形成模型；1.2已讨论任务结果的检查。\n\n1.1 三要素与学习的直觉\n\n本节不要求任何编程知识。"
+    },
+    {
+      "check": "responsive-exercise-target",
+      "lessonId": "AI000-C01-L03",
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "result": {
+        "dialog": false,
+        "focus": "四种系统，哪条信息支持你的判断？",
+        "hash": "#exercise-identify-systems",
+        "top": 260.3333435058594
+      }
+    },
+    {
+      "check": "responsive-layout",
+      "lessonId": "AI000-C02-L01",
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "result": {
+        "figures": [
+          {
+            "scroll": 308,
+            "width": 308
+          }
+        ],
+        "fonts": [
+          "16px",
+          "16px",
+          "16px",
+          "14px"
+        ],
+        "overflow": false,
+        "width": 390
+      }
+    },
+    {
+      "check": "responsive-panel-goals-prerequisites",
+      "lessonId": "AI000-C02-L01",
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n6 节点\n本节学习目标\n3 项\n01\n画出包含关系\n\n用具体例子说明两个不能反推的边界。\n\n02\n说明多层表示\n\n解释深度学习的学习方式与范围。\n\n03\n根据证据归类\n\n给结论写依据，保留未说明的信息。\n\n查看完整目标\n解释AI、ML、DL的包含关系，并用两个反例说明不能等同\n用多层表示的直觉说明深度学习为何属于机器学习及其与其他方法的差别\n根据新系统给出的方法证据归类，区别明确排除与仍然未知的信息\n核心练习\n2 道\n理解练习\n画出属于自己的 AI 技术关系图\n迁移练习\n只凭给出的技术信息，能归到哪一层？\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n100%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n已读1.1与1.3，能说明输入/任务/输出，并区分知识推理与从数据学习的基本办法。无需数学或编程。\n\n1.3 普通自动化和 AI 有什么区别？\n\n回顾知识方法与数据学习，避免仅凭功能判断方法。"
+    },
+    {
+      "check": "responsive-exercise-target",
+      "lessonId": "AI000-C02-L01",
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "result": {
+        "dialog": false,
+        "focus": "画出属于自己的 AI 技术关系图",
+        "hash": "#exercise-draw-method-map",
+        "top": 259.9583435058594
+      }
+    },
+    {
+      "check": "responsive-layout",
+      "lessonId": "AI000-C02-L02",
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "result": {
+        "figures": [
+          {
+            "scroll": 308,
+            "width": 308
+          },
+          {
+            "scroll": 308,
+            "width": 308
+          }
+        ],
+        "fonts": [
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px"
+        ],
+        "overflow": false,
+        "width": 390
+      }
+    },
+    {
+      "check": "responsive-panel-goals-prerequisites",
+      "lessonId": "AI000-C02-L02",
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n6 节点\n本节学习目标\n3 项\n01\n辨认四类处理任务\n\n根据过程区分类别判断、查找、编辑和生成。\n\n02\n联系生成、DL与LLM\n\n分别说明能力、方法、模型和产品。\n\n03\n分析产品说明\n\n列出方法证据、成立条件与未知信息。\n\n查看完整目标\n根据具体输入输出和处理过程区分分类、检索、编辑与生成任务\n解释现代生成式AI、深度学习与LLM的关系，区分模型和产品\n分析新产品的任务与方法证据，说明能确定的内容和仍需追问的信息\n核心练习\n2 道\n迁移练习\n这次是在找、改、判断，还是生成？\n迁移练习\n为展览服务画一张分工图\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n88%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n已读1.2的任务/核查与2.1的AI、ML、DL包含关系，知道模型从数据中学习。无需神经网络结构、编程或概率公式。\n\n2.1 AI、机器学习与深度学习的关系\n\n回看方法范围与多层表示。"
+    },
+    {
+      "check": "responsive-exercise-target",
+      "lessonId": "AI000-C02-L02",
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "result": {
+        "dialog": false,
+        "focus": "这次是在找、改、判断，还是生成？",
+        "hash": "#exercise-classify-new-systems",
+        "top": 260
+      }
+    },
+    {
+      "check": "mobile-feedback",
+      "result": {
+        "answers": [
+          "工具验收临时输入，不是学生答案。",
+          ""
+        ],
+        "open": 6
+      }
+    },
+    {
+      "check": "refresh-transient-answer",
+      "result": {
+        "answers": [
+          "",
+          ""
+        ],
+        "open": 0
+      }
+    },
+    {
+      "check": "manual-complete-and-version-isolation",
+      "before": {
+        "aivora:learning:v2:AI000:AI000-C01-L01:r2": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C01-L01\",\"contentVersion\":2,\"percent\":100,\"completed\":false,\"section\":\"practice\",\"updatedAt\":1793033766699}",
+        "aivora:learning:v2:AI000:AI000-C01-L02:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C01-L02\",\"contentVersion\":1,\"percent\":100,\"completed\":false,\"section\":\"mistakes\",\"updatedAt\":1793033767779}",
+        "aivora:learning:v2:AI000:AI000-C02-L01:r2": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C02-L01\",\"contentVersion\":2,\"percent\":100,\"completed\":false,\"section\":\"practice\",\"updatedAt\":1793033769931}",
+        "aivora:learning:v2:AI000:AI000-C01-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C01-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793033592953}",
+        "aivora:learning:v2:AI000:AI000-C01-L03:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C01-L03\",\"contentVersion\":1,\"percent\":100,\"completed\":false,\"section\":\"knowledge\",\"updatedAt\":1793033768887}",
+        "aivora:learning:v2:AI000:AI000-C02-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C02-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793033592953}",
+        "aivora:learning:v2:AI000:AI000-C02-L02:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C02-L02\",\"contentVersion\":1,\"percent\":88,\"completed\":false,\"section\":\"practice\",\"updatedAt\":1793033845721}"
+      },
+      "after": {
+        "aivora:learning:v2:AI000:AI000-C01-L01:r2": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C01-L01\",\"contentVersion\":2,\"percent\":100,\"completed\":false,\"section\":\"practice\",\"updatedAt\":1793033766699}",
+        "aivora:learning:v2:AI000:AI000-C01-L02:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C01-L02\",\"contentVersion\":1,\"percent\":100,\"completed\":false,\"section\":\"mistakes\",\"updatedAt\":1793033767779}",
+        "aivora:learning:v2:AI000:AI000-C02-L01:r2": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C02-L01\",\"contentVersion\":2,\"percent\":100,\"completed\":false,\"section\":\"practice\",\"updatedAt\":1793033769931}",
+        "aivora:learning:v2:AI000:AI000-C01-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C01-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793033592953}",
+        "aivora:learning:v2:AI000:AI000-C01-L03:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C01-L03\",\"contentVersion\":1,\"percent\":100,\"completed\":false,\"section\":\"knowledge\",\"updatedAt\":1793033768887}",
+        "aivora:learning:v2:AI000:AI000-C02-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C02-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793033592953}",
+        "aivora:learning:v2:AI000:AI000-C02-L02:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C02-L02\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793033846170}"
+      },
+      "oldFixtureUnchanged": true
+    },
+    {
+      "check": "mobile-escape",
+      "result": {
+        "dialog": false,
+        "focus": "本节导航"
+      }
+    },
+    {
+      "check": "mobile-follow-legacy-section",
+      "result": {
+        "hash": "#automation",
+        "heading": "到七点响铃，需要先学会什么吗？",
+        "path": "/learn/AI000/AI000-C01-L03"
+      }
+    },
+    {
+      "check": "mobile-planned-directory",
+      "text": "课程章节与独立课时\n\n课程章节与独立课时，按 Escape 关闭面板。\n\n返回课程详情\nCOURSE CONTENTS\n人工智能导论与技术地图\n\n7 章 · 5 节核心课已制作\n\n已制作课时阅读比例\n100%\n1 / 5 节已标记读完 · 仅当前浏览器\n筹备、可选与旧版课时不计入比例；已读不代表掌握。\n第 1 章：\n人工智能是什么：能力、边界与常见误区\n1.1\n人工智能究竟是什么？\n1.2\nAI 能做什么，为什么也会出错？\n1.3\n普通自动化和 AI 有什么区别？\n第 2 章：\nAI、机器学习、深度学习与生成式 AI 的包含关系\n第 3 章：\n监督学习、无监督学习、自监督学习与强化学习\n第 4 章：\n数据、参数、模型、训练、验证、测试与推理\n第 5 章：\n主要技术方向：NLP、LLM、CV、多模态、RL、生成式模型\n·\n5.1\n自然语言处理与大语言模型\n筹备中\n·\n5.2\n计算机视觉：让机器理解图像\n筹备中\n·\n5.3\n多模态 AI：连接文字、图片与声音\n筹备中\n·\n5.4\n生成模型：从要求到可核对的作品\n筹备中\n·\n5.5\n强化学习适合哪些应用问题？\n筹备中\n第 6 章：\nAI 风险与责任：隐私、偏差、版权、幻觉与误用\n第 7 章：\n如何阅读课程先修图与选择学习路径",
+      "result": [
+        {
+          "links": [],
+          "text": "第 5 章：主要技术方向：NLP、LLM、CV、多模态、RL、生成式模型·5.1自然语言处理与大语言模型筹备中·5.2计算机视觉：让机器理解图像筹备中·5.3多模态 AI：连接文字、图片与声音筹备中·5.4生成模型：从要求到可核对的作品筹备中·5.5强化学习适合哪些应用问题？筹备中"
+        }
+      ]
+    },
+    {
+      "check": "narrow-layout",
+      "lessonId": "AI000-C01-L01",
+      "result": {
+        "figures": [
+          {
+            "scroll": 254,
+            "width": 254
+          }
+        ],
+        "fonts": [
+          "14px",
+          "14px",
+          "14px",
+          "14px",
+          "14px"
+        ],
+        "overflow": false,
+        "width": 320
+      }
+    },
+    {
+      "check": "narrow-layout",
+      "lessonId": "AI000-C01-L02",
+      "result": {
+        "figures": [
+          {
+            "scroll": 254,
+            "width": 254
+          }
+        ],
+        "fonts": [
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px",
+          "14px"
+        ],
+        "overflow": false,
+        "width": 320
+      }
+    },
+    {
+      "check": "narrow-layout",
+      "lessonId": "AI000-C01-L03",
+      "result": {
+        "figures": [
+          {
+            "scroll": 254,
+            "width": 254
+          }
+        ],
+        "fonts": [
+          "16px",
+          "16px",
+          "16px",
+          "14px",
+          "14px"
+        ],
+        "overflow": false,
+        "width": 320
+      }
+    },
+    {
+      "check": "narrow-layout",
+      "lessonId": "AI000-C02-L01",
+      "result": {
+        "figures": [
+          {
+            "scroll": 254,
+            "width": 254
+          }
+        ],
+        "fonts": [
+          "16px",
+          "16px",
+          "16px",
+          "14px"
+        ],
+        "overflow": false,
+        "width": 320
+      }
+    },
+    {
+      "check": "narrow-layout",
+      "lessonId": "AI000-C02-L02",
+      "result": {
+        "figures": [
+          {
+            "scroll": 254,
+            "width": 254
+          },
+          {
+            "scroll": 254,
+            "width": 254
+          }
+        ],
+        "fonts": [
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "16px",
+          "14px",
+          "14px"
+        ],
+        "overflow": false,
+        "width": 320
+      }
+    },
+    {
+      "check": "default-motion-target",
+      "result": {
+        "focus": "为展览服务画一张分工图",
+        "hash": "#exercise-product-model-map",
+        "top": 232.15625
+      }
+    },
+    {
+      "check": "resume-reading",
+      "result": {
+        "focus": "把任务、方法与产品分工写清楚",
+        "hash": "#practice"
+      }
+    },
+    {
+      "check": "console",
+      "result": []
+    },
+    {
+      "check": "shared-reader-other-course-smoke",
+      "lessonId": "MA101-C02-L03",
+      "result": {
+        "codeBlocks": 0,
+        "exercises": 4,
+        "h1": "什么是向量？",
+        "legacyBridge": false,
+        "overflow": false
+      }
+    },
+    {
+      "check": "shared-reader-other-course-smoke",
+      "lessonId": "PY101-C05-L01",
+      "result": {
+        "codeBlocks": 4,
+        "exercises": 2,
+        "h1": "Python 函数与参数",
+        "legacyBridge": false,
+        "overflow": false
+      }
+    },
+    {
+      "check": "shared-reader-other-course-smoke",
+      "lessonId": "ML201-C04-L04",
+      "result": {
+        "codeBlocks": 2,
+        "exercises": 3,
+        "h1": "手动计算一次参数更新",
+        "legacyBridge": false,
+        "overflow": false
+      }
+    }
+  ]
+}

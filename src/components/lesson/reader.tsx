@@ -33,6 +33,7 @@ import { ArticleContents } from "./article-contents";
 import { ChapterToc } from "./chapter-toc";
 import { ResourceDownloads } from "./content-renderer";
 import { TeachingSection } from "./teaching-section";
+import { LegacyAnchors } from "./legacy-anchors";
 import { LearningTime, LearningPanel, Glossary } from "./learning-support";
 import "katex/dist/katex.min.css";
 import {
@@ -337,6 +338,7 @@ export function Reader({
           {publicationNotice(publication)}
         </div>
         {lesson.optionalLesson && <p className="demo-content-note">本节整体为可选进阶，不作为基础课程达标条件。</p>}
+        {!!lesson.legacyAnchors?.length && <p className="assessment-note">本节已重编为 r{lesson.contentVersion}，旧版阅读记录保留，完成状态按修订分别记录。旧书签可从原位置找到内容去向。</p>}
         {course.lvl !== "L0" && (lesson.courseId !== "MA101" || legacy) && <Glossary />}
         {(lesson.id === "PY101-C05-L01" || lesson.id === "MA101-C03-L01") && <p className="assessment-note">本节已按 V2.1 细分。既有书签与阅读历史保留；旧“已读完”不代表新增目标已达标，可从学习面板进入练习自查。</p>}
         {legacy && (
@@ -360,6 +362,7 @@ export function Reader({
           {lesson.sections.map((section) => (
             <TeachingSection key={section.id} section={section} resources={lesson.resources} />
           ))}
+          <LegacyAnchors lesson={lesson} />
         </article>
         <section
           className="lesson-references"

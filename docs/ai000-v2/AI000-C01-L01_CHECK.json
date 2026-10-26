@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-26T17:01:10.971Z",
+  "unchangedOtherLessons": 23,
+  "curriculumUnchanged": true,
+  "checks": [
+    {
+      "id": "AI000-C01-L01",
+      "version": 2,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "describe-task"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "describe-task",
+            "design-task"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "design-task"
+          ]
+        }
+      ],
+      "sections": [
+        "mail-task",
+        "rule-and-learning",
+        "ai-meaning",
+        "many-tasks",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "describe-task",
+        "design-task"
+      ]
+    }
+  ]
+}

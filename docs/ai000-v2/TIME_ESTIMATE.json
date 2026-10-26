@@ -1,0 +1,24 @@
+{
+  "lessons": 24,
+  "reading": [
+    282,
+    427
+  ],
+  "practice": [
+    245,
+    394
+  ],
+  "project": [
+    35,
+    55
+  ],
+  "totalMinutes": [
+    562,
+    876
+  ],
+  "hours": [
+    9.37,
+    14.6
+  ],
+  "basis": "editorial-estimate; not learner measurements"
+}

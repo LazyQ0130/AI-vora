@@ -139,7 +139,7 @@ const quizSchema = z
 export const contentBlockSchema = z.discriminatedUnion("type", [
   z.object({
     type: z.literal("ai-task-figure"),
-    kind: z.enum(["mail-flow", "mail-outcomes", "method-hierarchy", "method-and-task"]),
+    kind: z.enum(["mail-flow", "mail-outcomes", "method-hierarchy", "method-and-task", "knowledge-trace", "generation-map"]),
     alt: text,
     caption: text,
   }),
@@ -236,6 +236,7 @@ export const lessonSchema = z
     })).min(1),
     prerequisites: text,
     prerequisiteLinks: z.array(learningLinkSchema).default([]),
+    legacyAnchors: z.array(z.object({ id: anchor, title: text, note: text, href: text.regex(/^\/learn\/[A-Z]+\d{3}\/[A-Z]+\d{3}-C\d{2}-L\d{2}#[a-z][a-z0-9-]*$/) })).optional(),
     objectives: z.array(text).min(2).max(4),
     // 展示文案绑定正式目标原文；原文改变后必须重新审核，不能静默沿用。
     objectiveDisplay: z.array(z.object({
@@ -281,6 +282,8 @@ export const lessonSchema = z
       "资源 ID",
     );
     const blocks = lesson.sections.flatMap((s) => s.blocks);
+    const currentAnchors = [...lesson.sections.map(s => s.id), ...blocks.filter(b => b.type === "exercise").map(b => `exercise-${b.id}`)];
+    unique([...currentAnchors, ...(lesson.legacyAnchors ?? []).map(a => a.id)], "正文与兼容锚点");
     unique((lesson.objectiveDisplay ?? []).map((entry) => entry.objective), "目标展示绑定");
     for (const entry of lesson.objectiveDisplay ?? []) {
       if (!lesson.objectives.includes(entry.objective))

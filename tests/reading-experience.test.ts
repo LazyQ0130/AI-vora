@@ -17,11 +17,11 @@ const panel = (lesson: Lesson, completed = false) => renderToStaticMarkup(create
 }));
 
 test("学习面板把 AI 两道达标题按正文顺序显示一次，保留一题对应多个目标", () => {
-  assert.deepEqual(lessonExerciseLinks(ai).map(({ id, objectives }) => ({ id, objectives })), [
+  assert.deepEqual(lessonExerciseLinks(originalAi).map(({ id, objectives }) => ({ id, objectives })), [
     { id: "identify-systems", objectives: [2] },
     { id: "product-review", objectives: [1, 3] },
   ]);
-  const html = panel(ai);
+  const html = panel(originalAi);
   assert.equal((html.match(/href="#exercise-product-review"/g) ?? []).length, 1);
   assert.equal((html.match(/href="#exercise-identify-systems"/g) ?? []).length, 1);
   assert.doesNotMatch(html, /对应目标/);
@@ -90,17 +90,17 @@ test("面板展示类型与正文相同，阅读比例与手动标记可独立�
   assert.doesNotMatch(html, /progress-ring/);
 });
 
-test("AI 教学表达改编保留全部题干、提示、解答、自查标准及旧修订书签", () => {
+test("AI r2考核重编保留r1历史，迁出锚点有明确去向且不继承完成", () => {
   const exercises = (lesson: Lesson) => lesson.sections.flatMap((section) => section.blocks.filter((block) => block.type === "exercise"));
-  assert.deepEqual(exercises(ai), exercises(originalAi));
-  assert.deepEqual(ai.assessmentMap, originalAi.assessmentMap);
-  assert.deepEqual(lessonProgressScope(ai), lessonProgressScope(originalAi));
+  assert.notDeepEqual(exercises(ai), exercises(originalAi));
+  assert.notDeepEqual(ai.assessmentMap, originalAi.assessmentMap);
   const scope = lessonProgressScope(ai);
-  assert.equal(progressKey(scope), "aivora:learning:v2:AI000:AI000-C01-L01:r1");
+  assert.equal(progressKey(scope), "aivora:learning:v2:AI000:AI000-C01-L01:r2");
   for (const section of originalAi.sections) {
     const raw = JSON.stringify({ version: 2, courseId: ai.courseId, lessonId: ai.id, contentVersion: 1,
       percent: 100, completed: true, section: section.id, updatedAt: 1792972800000 });
-    assert.equal(parseReadingProgress(raw, scope)?.section, section.id);
-    assert.equal(parseReadingProgress(raw, scope)?.completed, true);
+    assert.equal(parseReadingProgress(raw, scope), null);
+    assert.equal(parseReadingProgress(raw, lessonProgressScope(originalAi))?.completed, true);
+    assert.ok(ai.sections.some(s => s.id === section.id) || ai.legacyAnchors?.some(a=>a.id===section.id));
   }
 });

@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-10-26T16:38:04.204Z",
+  "unchangedOtherLessons": 23,
+  "curriculumUnchanged": true,
+  "checks": [
+    {
+      "id": "AI000-C01-L02",
+      "version": 1,
+      "status": "draft",
+      "access": "private",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "product-review"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "check-library"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "product-review"
+          ]
+        }
+      ],
+      "sections": [
+        "task-comparison",
+        "mistakes",
+        "why-errors",
+        "check-output",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "check-library",
+        "product-review"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+
+> aivora-web@0.1.0 build
+> next build
+
+▲ Next.js 16.4.3 (Turbopack)
+✓ Running next.config.ts took 23ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 851ms
+  Running TypeScript ...
+tests/ai000-relationships.test.ts(35,49): error TS2339: Property 'kind' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; } | { type: "ai-task-figure"; kind: "mail-flow" | "mail-outcomes" | "method-hierarchy" | "method-and-task" | "knowledge-trace" | "generation-map"; alt: string; caption: string; } | ... 13 more ... | { ...; }'.
+  Property 'kind' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; }'.
+tests/ai000-relationships.test.ts(39,36): error TS2339: Property 'alt' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; } | { type: "ai-task-figure"; kind: "mail-flow" | "mail-outcomes" | "method-hierarchy" | "method-and-task" | "knowledge-trace" | "generation-map"; alt: string; caption: string; } | ... 13 more ... | { ...; }'.
+  Property 'alt' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; }'.
+tests/ai000-relationships.test.ts(40,36): error TS2339: Property 'caption' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; } | { type: "ai-task-figure"; kind: "mail-flow" | "mail-outcomes" | "method-hierarchy" | "method-and-task" | "knowledge-trace" | "generation-map"; alt: string; caption: string; } | ... 13 more ... | { ...; }'.
+  Property 'caption' does not exist on type '{ type: "vector-figure"; kind: "meaning" | "components" | "addition" | "scaling"; }'.
+tests/ai000-relationships.test.ts(41,16): error TS2339: Property 'kind' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; } | { type: "ai-task-figure"; kind: "mail-flow" | "mail-outcomes" | "method-hierarchy" | "method-and-task" | "knowledge-trace" | "generation-map"; alt: string; caption: string; } | ... 13 more ... | { ...; }'.
+  Property 'kind' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; }'.
+Failed to type check.
