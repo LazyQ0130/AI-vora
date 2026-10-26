@@ -4,7 +4,7 @@ export function summarizeCourseReading(
   lessons: LessonSummary[],
   records: { lesson: LessonSummary; progress: ReadingProgress }[],
 ) {
-  const current = lessons.filter((lesson) => lesson.catalogRole !== "legacy");
+  const current = lessons.filter((lesson) => lesson.catalogRole !== "legacy" && !lesson.optionalLesson);
   return [...new Set(current.map((lesson) => lesson.courseId))].map(
     (courseId) => {
       const available = current.filter(
@@ -13,7 +13,7 @@ export function summarizeCourseReading(
       const visited = records.filter(
         (record) =>
           record.lesson.courseId === courseId &&
-          record.lesson.catalogRole !== "legacy",
+          record.lesson.catalogRole !== "legacy" && !record.lesson.optionalLesson,
       );
       return {
         courseId,

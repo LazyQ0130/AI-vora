@@ -2,7 +2,6 @@ import { defineMlLesson, p, m, note, links, prep, summary } from "./shared";
 export const manualUpdateLesson = defineMlLesson("ML201-C04-L04", {
   subtitle:
     "拿出纸笔，从两个样本算到新参数，再用新的预测证明这一步是否真的改善了训练损失。",
-  durationMinutes: 35,
   prerequisites:
     "完成 3.2、3.3 与 4.2，能用 wx+b 预测，理解平均平方误差及两个梯度公式。自查：误差是预测减目标；两个梯度必须使用同一次旧参数预测。",
   prerequisiteLinks: [

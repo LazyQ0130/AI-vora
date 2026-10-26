@@ -173,7 +173,7 @@ export function Dashboard({ lessons }: { lessons: LessonSummary[] }) {
             <BookOpen size={23} />
             <h3>各课程的可读样章</h3>
             <p>
-              只统计当前可读教材，旧版试读完成记录不计入新版进度。完整课程仍在筹备中。
+              只统计当前核心可读教材；可选进阶与旧版记录保留在历史中，不计入基础阅读比例。完整课程仍在筹备中。
             </p>
             {courseGroups.map((course) => (
               <div className="course-progress-row" key={course.courseId}>

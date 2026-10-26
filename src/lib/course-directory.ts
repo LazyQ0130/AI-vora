@@ -23,6 +23,7 @@ export function getCourseDirectory(catalog: CatalogCourse): Course {
           status: "planned",
           access: "private",
           catalogRole: "current",
+          optionalLesson: false,
         };
         return {
           ...entry,

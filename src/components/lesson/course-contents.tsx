@@ -38,7 +38,7 @@ function SectionLinks({
                 {prefix}.{index + 1}
               </span>
             )}
-            <span>{section.title}</span>
+            <span>{section.title}{section.tier !== "core" && <small className="optional-label"> · 可选</small>}</span>
           </a>
         </li>
       ))}
@@ -101,7 +101,7 @@ export function CourseContents({
                       </span>
                       <span className="lesson-title">{entry.title}</span>
                       <span className="lesson-state">
-                        {entry.status === "published" ? "教材" : "试读"}
+                        {entry.optionalLesson ? "可选" : entry.status === "published" ? "教材" : "试读"}
                       </span>
                     </Link>
                   ) : (

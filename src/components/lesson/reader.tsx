@@ -12,7 +12,6 @@ import {
   CheckCircle2,
   FlaskConical,
   Layers3,
-  Clock3,
 } from "lucide-react";
 import {
   publicationLabel,
@@ -29,13 +28,14 @@ import {
   useLessonProgress,
 } from "@/lib/use-learning-progress";
 import {
-  LessonHeading,
   LearningObjectives,
   ProgressRing,
   LessonNavigation,
 } from "./blocks";
 import { ChapterToc } from "./chapter-toc";
-import { ContentRenderer, ResourceDownloads } from "./content-renderer";
+import { ResourceDownloads } from "./content-renderer";
+import { TeachingSection } from "./teaching-section";
+import { LearningTime, ObjectiveAssessment, Glossary } from "./learning-support";
 import "katex/dist/katex.min.css";
 import {
   chapterNumber,
@@ -90,6 +90,7 @@ export function Reader({
   function navigate(sectionId: string) {
     const section = document.getElementById(sectionId);
     if (!section) return;
+    section.querySelector<HTMLDetailsElement>("details.lesson-optional")?.setAttribute("open", "");
     window.history.replaceState(null, "", `#${sectionId}`);
     section.scrollIntoView({
       block: "start",
@@ -97,6 +98,24 @@ export function Reader({
     });
     section.querySelector<HTMLElement>("h2")?.focus({ preventScroll: true });
   }
+  useEffect(() => {
+    const reveal = () => {
+      let hash = window.location.hash.slice(1);
+      try { hash = decodeURIComponent(hash); } catch { return; }
+      const target = document.getElementById(hash);
+      if (!target) return;
+      let parent: HTMLElement | null = target;
+      while (parent) {
+        if (parent instanceof HTMLDetailsElement) parent.open = true;
+        parent = parent.parentElement;
+      }
+      target.querySelector<HTMLDetailsElement>("details.lesson-optional")?.setAttribute("open", "");
+      requestAnimationFrame(() => target.scrollIntoView({ block: "start", behavior: "instant" }));
+    };
+    reveal();
+    window.addEventListener("hashchange", reveal);
+    return () => window.removeEventListener("hashchange", reveal);
+  }, [lesson.id]);
   useEffect(() => {
     const rail = sidebar.current?.querySelector<HTMLElement>(".chapter-toc");
     const current = rail?.querySelector<HTMLElement>(
@@ -169,10 +188,13 @@ export function Reader({
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
+    const currentArticle = article.current;
+    currentArticle?.addEventListener("toggle", onScroll, true);
     update();
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
+      currentArticle?.removeEventListener("toggle", onScroll, true);
       cancelAnimationFrame(frame);
     };
   }, [firstSection]);
@@ -287,9 +309,6 @@ export function Reader({
             <span>
               {course.lvl} · {course.direction}
             </span>
-            <span>
-              <Clock3 size={14} />约 {lesson.durationMinutes} 分钟
-            </span>
             {quizCount > 0 && (
               <span>
                 <CheckCircle2 size={14} />
@@ -303,6 +322,7 @@ export function Reader({
               </span>
             )}
           </div>
+          <LearningTime time={lesson.learningTime} optional={lesson.optionalLesson} />
           {saved && saved.percent > 0 && (
             <a
               className="reader-resume text-link"
@@ -338,6 +358,10 @@ export function Reader({
         <div className="demo-content-note">
           {publicationNotice(publication)}
         </div>
+        {lesson.optionalLesson && <p className="demo-content-note">本节整体为可选进阶，不作为基础课程达标条件。</p>}
+        <ObjectiveAssessment lesson={lesson} />
+        <Glossary />
+        {(lesson.id === "PY101-C05-L01" || lesson.id === "MA101-C03-L01") && <p className="assessment-note">本节已按 V2.1 细分。既有书签与阅读历史保留；旧“已读完”不代表新增目标已达标，请按上方练习重新自查。</p>}
         {lesson.prerequisiteLinks.length > 0 && (
           <details className="lesson-preflight">
             <summary>本节目标、先修检查与补修入口</summary>
@@ -384,40 +408,8 @@ export function Reader({
         )}
         <article ref={article} className="lesson-content">
           {lesson.sections.map((section, index) => (
-            <section
-              key={section.id}
-              className="lesson-section"
-              id={section.id}
-            >
-              <LessonHeading
-                number={
-                  legacy
-                    ? undefined
-                    : sectionNumber(chapter.order, publication.order, index + 1)
-                }
-              >
-                {section.title}
-              </LessonHeading>
-              <div
-                className={
-                  section.layout === "intro"
-                    ? "lesson-intro-grid"
-                    : "lesson-section-body"
-                }
-              >
-                {section.blocks.map((block, blockIndex) => (
-                  <div
-                    className={`lesson-block lesson-block-${block.type}`}
-                    key={blockIndex}
-                  >
-                    <ContentRenderer
-                      block={block}
-                      resources={lesson.resources}
-                    />
-                  </div>
-                ))}
-              </div>
-            </section>
+            <TeachingSection key={section.id} section={section} resources={lesson.resources}
+              number={legacy ? undefined : sectionNumber(chapter.order, publication.order, index + 1)} />
           ))}
         </article>
         <section

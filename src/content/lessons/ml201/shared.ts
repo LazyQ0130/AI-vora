@@ -1,5 +1,7 @@
 import { lessonSchema, type Lesson, type ContentBlock } from "../../models";
 import { courseOutline } from "../../course-outline";
+import { mlTeachingProfiles } from "./teaching-profiles";
+import { coreAssessments } from "./core-assessments";
 
 export const refs = {
   google: {
@@ -45,9 +47,9 @@ export const prep = {
     note: "真实可读样章，复习形参、返回值与函数调用。",
   },
   math: {
-    title: "3.1 向量与矩阵的基本运算",
-    href: "/learn/MA101/MA101-C03-L01",
-    note: "真实可读样章，复习向量分量、矩阵形状和内积。",
+    title: "2.2 内积与求和符号",
+    href: "/learn/MA101/MA101-C02-L02",
+    note: "复习向量分量、内积与 Σ；后续链接到 3.1 矩阵与转置。",
   },
   calculus: {
     title: "导数与偏导补修（D2L）",
@@ -55,9 +57,9 @@ export const prep = {
     note: "外部正文可阅读；本地微积分章节仍为规划，不伪装已有教材。",
   },
   arrays: {
-    title: "NumPy 数组与广播补修（官方）",
-    href: refs.numpy.href,
-    note: "若不能区分 (2,) 与 (2,1)，先复习数组形状与基本运算。",
+    title: "3.3 NumPy 表示与数组形状",
+    href: "/learn/MA101/MA101-C03-L03",
+    note: "先区分 (2,) 与 (2,1)、@ 与 *；广播排错放在可选验证。",
   },
   data: {
     title: "数据处理先修课程规划",
@@ -67,8 +69,9 @@ export const prep = {
 };
 type Source = Pick<
   Lesson,
-  "subtitle" | "objectives" | "sections" | "durationMinutes" | "prerequisites"
+  "subtitle" | "objectives" | "prerequisites"
 > &
+  { sections: (Omit<Lesson["sections"][number], "tier"> & { tier?: Lesson["sections"][number]["tier"] })[] } &
   Partial<Pick<Lesson, "resources" | "references" | "prerequisiteLinks">>;
 export function defineMlLesson(id: string, source: Source): Lesson {
   const slot = courseOutline.find((s) => s.lessonId === id);
@@ -80,7 +83,15 @@ export function defineMlLesson(id: string, source: Source): Lesson {
     resources: [],
     references: [refs.google],
     prerequisiteLinks: [prep.python],
+    ...mlTeachingProfiles[id],
     ...source,
+    sections: source.sections.map((section, index) => {
+      if (index !== source.sections.length - 1) return section;
+      const blocks = [...section.blocks];
+      const summaryIndex = blocks.findIndex((block) => block.type === "summary");
+      blocks.splice(summaryIndex < 0 ? blocks.length : summaryIndex, 0, ...(coreAssessments[id] ?? []));
+      return { ...section, blocks };
+    }),
   });
 }
 export const p = (text: string): ContentBlock => ({ type: "paragraph", text });

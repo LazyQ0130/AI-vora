@@ -10,7 +10,6 @@ import {
 } from "./shared";
 export const linearModelLesson = defineMlLesson("ML201-C03-L02", {
   subtitle: "让一条直线变成可执行的规则，逐个计算输入、权重、偏置与预测。",
-  durationMinutes: 25,
   prerequisites:
     "完成 3.1，理解特征与目标；能进行乘法、加法并调用 Python 函数。检查：输入 x=1、目标 y=3 时，预测值是否一定等于 3？答案是否定的，它取决于模型参数。",
   prerequisiteLinks: [

@@ -2,7 +2,6 @@ import { defineMlLesson, p, note, links, prep, refs, summary } from "./shared";
 export const regressionTaskLesson = defineMlLesson("ML201-C03-L01", {
   subtitle:
     "从一组配对读数出发，区分我们知道的数据、想预测的目标，以及暂时采用的假设。",
-  durationMinutes: 25,
   prerequisites:
     "能阅读 Python 列表与函数，理解坐标点和简单代数。先检查：能否解释一个 (x,y) 数对，而不把 y 当成输入？本节不要求先会求导。",
   prerequisiteLinks: [prep.python, prep.math],

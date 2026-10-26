@@ -2,8 +2,7 @@ import { courses, getCourse } from "./curriculum";
 import { getCourseDirectory } from "./course-directory";
 import { courseOutline } from "../content/course-outline";
 import { linearRegressionLesson } from "../content/lessons/linear-regression";
-import { pythonFunctionsLesson } from "../content/lessons/python-functions";
-import { vectorMatrixLesson } from "../content/lessons/vector-matrix";
+import { foundationLessons, pythonAdvancedLesson } from "../content/lessons/foundations-v2-1";
 import { regressionTaskLesson } from "../content/lessons/ml201/regression-task";
 import { linearModelLesson } from "../content/lessons/ml201/linear-model";
 import { lossFunctionsLesson } from "../content/lessons/ml201/loss-functions";
@@ -33,8 +32,8 @@ const contents: Lesson[] = [
   manualUpdateLesson,
   numpyRegressionLesson,
   linearRegressionLesson,
-  pythonFunctionsLesson,
-  vectorMatrixLesson,
+  ...foundationLessons,
+  pythonAdvancedLesson,
 ];
 export const lessonRegistry: ReadonlyMap<string, Lesson> = new Map(
   contents.map((lesson) => [lesson.id, lesson]),

@@ -1,0 +1,1350 @@
+{
+  "checkedAt": "2026-10-25T17:10:04.742Z",
+  "base": "http://127.0.0.1:3001",
+  "environment": "Codex in-app Chromium browser; viewport emulation, not physical devices or cross-engine testing",
+  "layout": [
+    {
+      "path": "/learn/ML201/ML201-C03-L01",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "3.1 从现实问题认识回归",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L02",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "3.2 线性回归模型：权重与偏置",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L03",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "3.3 预测误差、MAE 与 MSE",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L02",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "4.1 从导数理解优化方向",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L03",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "4.2 梯度下降的数学原理",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L04",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "4.3 手动计算一次参数更新",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L05",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [
+        {
+          "id": "full-code",
+          "open": false
+        },
+        {
+          "id": "experiment",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "4.4 使用 NumPy 实现线性回归",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L01",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.1 Python 函数与参数",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L02",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.2 位置与关键字参数绑定",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L03",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.3 返回值与 print 的区别",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L04",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.4 函数内外的变量与作用域",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L05",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.5 简单默认参数",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L06",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [
+        {
+          "id": "defaults",
+          "open": false
+        },
+        {
+          "id": "binding",
+          "open": false
+        },
+        {
+          "id": "code",
+          "open": false
+        },
+        {
+          "id": "quiz",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.6 可选进阶：共享对象与接口陷阱",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L01",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "2.1 向量、加法与数乘",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L02",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "2.2 内积与求和符号",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L01",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "3.1 向量与矩阵的基本运算",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L02",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "3.2 矩阵乘法：行与列的内积",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L03",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        },
+        {
+          "id": "legacy-validation",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "3.3 NumPy 表示与数组形状",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L01",
+      "width": 1440,
+      "height": 1000,
+      "brokenHashLinks": [],
+      "clientWidth": 1425,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "线性回归与梯度下降",
+      "navTextOverflow": [],
+      "scrollWidth": 1425
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L01",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "3.1 从现实问题认识回归",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L02",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "3.2 线性回归模型：权重与偏置",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L03",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "3.3 预测误差、MAE 与 MSE",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L02",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "4.1 从导数理解优化方向",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L03",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "4.2 梯度下降的数学原理",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L04",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "4.3 手动计算一次参数更新",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L05",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [
+        {
+          "id": "full-code",
+          "open": false
+        },
+        {
+          "id": "experiment",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "4.4 使用 NumPy 实现线性回归",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L01",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.1 Python 函数与参数",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L02",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.2 位置与关键字参数绑定",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L03",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.3 返回值与 print 的区别",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L04",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.4 函数内外的变量与作用域",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L05",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.5 简单默认参数",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L06",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [
+        {
+          "id": "defaults",
+          "open": false
+        },
+        {
+          "id": "binding",
+          "open": false
+        },
+        {
+          "id": "code",
+          "open": false
+        },
+        {
+          "id": "quiz",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.6 可选进阶：共享对象与接口陷阱",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L01",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "2.1 向量、加法与数乘",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L02",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "2.2 内积与求和符号",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L01",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "3.1 向量与矩阵的基本运算",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L02",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "3.2 矩阵乘法：行与列的内积",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L03",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        },
+        {
+          "id": "legacy-validation",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "3.3 NumPy 表示与数组形状",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L01",
+      "width": 768,
+      "height": 1024,
+      "brokenHashLinks": [],
+      "clientWidth": 753,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "线性回归与梯度下降",
+      "navTextOverflow": [],
+      "scrollWidth": 753
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L01",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "3.1 从现实问题认识回归",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L02",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "3.2 线性回归模型：权重与偏置",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L03",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "3.3 预测误差、MAE 与 MSE",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L02",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "4.1 从导数理解优化方向",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L03",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "4.2 梯度下降的数学原理",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L04",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "4.3 手动计算一次参数更新",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L05",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [
+        {
+          "id": "full-code",
+          "open": false
+        },
+        {
+          "id": "experiment",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "4.4 使用 NumPy 实现线性回归",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L01",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.1 Python 函数与参数",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L02",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.2 位置与关键字参数绑定",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L03",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.3 返回值与 print 的区别",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L04",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.4 函数内外的变量与作用域",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L05",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.5 简单默认参数",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L06",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [
+        {
+          "id": "defaults",
+          "open": false
+        },
+        {
+          "id": "binding",
+          "open": false
+        },
+        {
+          "id": "code",
+          "open": false
+        },
+        {
+          "id": "quiz",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.6 可选进阶：共享对象与接口陷阱",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L01",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "2.1 向量、加法与数乘",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L02",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "2.2 内积与求和符号",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L01",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "3.1 向量与矩阵的基本运算",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L02",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "3.2 矩阵乘法：行与列的内积",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L03",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        },
+        {
+          "id": "legacy-validation",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "3.3 NumPy 表示与数组形状",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L01",
+      "width": 390,
+      "height": 844,
+      "brokenHashLinks": [],
+      "clientWidth": 375,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "线性回归与梯度下降",
+      "navTextOverflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L01",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "3.1 从现实问题认识回归",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L02",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "3.2 线性回归模型：权重与偏置",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/ML201/ML201-C03-L03",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "3.3 预测误差、MAE 与 MSE",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L02",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "4.1 从导数理解优化方向",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L03",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "4.2 梯度下降的数学原理",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L04",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "4.3 手动计算一次参数更新",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L05",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [
+        {
+          "id": "full-code",
+          "open": false
+        },
+        {
+          "id": "experiment",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "4.4 使用 NumPy 实现线性回归",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L01",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.1 Python 函数与参数",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L02",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.2 位置与关键字参数绑定",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L03",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.3 返回值与 print 的区别",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L04",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.4 函数内外的变量与作用域",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L05",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.5 简单默认参数",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/PY101/PY101-C05-L06",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [
+        {
+          "id": "defaults",
+          "open": false
+        },
+        {
+          "id": "binding",
+          "open": false
+        },
+        {
+          "id": "code",
+          "open": false
+        },
+        {
+          "id": "quiz",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "5.6 可选进阶：共享对象与接口陷阱",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L01",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "2.1 向量、加法与数乘",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/MA101/MA101-C02-L02",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "2.2 内积与求和符号",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L01",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "3.1 向量与矩阵的基本运算",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L02",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "3.2 矩阵乘法：行与列的内积",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/MA101/MA101-C03-L03",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [
+        {
+          "id": "verification",
+          "open": false
+        },
+        {
+          "id": "legacy-validation",
+          "open": false
+        }
+      ],
+      "formulaErrors": 0,
+      "heading": "3.3 NumPy 表示与数组形状",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    },
+    {
+      "path": "/learn/ML201/ML201-C04-L01",
+      "width": 320,
+      "height": 800,
+      "brokenHashLinks": [],
+      "clientWidth": 305,
+      "folds": [],
+      "formulaErrors": 0,
+      "heading": "线性回归与梯度下降",
+      "navTextOverflow": [],
+      "scrollWidth": 305
+    }
+  ],
+  "interactions": [
+    {
+      "case": "desktop-default-folds",
+      "result": [
+        {
+          "id": "full-code",
+          "open": false
+        },
+        {
+          "id": "experiment",
+          "open": false
+        }
+      ]
+    },
+    {
+      "case": "keyboard-enter-opens-validation",
+      "result": ""
+    },
+    {
+      "case": "keyboard-space-closes-validation",
+      "result": null
+    },
+    {
+      "case": "copy-core-code",
+      "result": true,
+      "initialImmediateRead": false,
+      "note": "等待异步复制完成的页面反馈后核对剪贴板，结果一致。"
+    },
+    {
+      "case": "exercise-hints-answer",
+      "result": {
+        "answer": "首步 w=1，b=0.6，MSE=1.06；最终接近 y=2x。",
+        "opened": 3
+      }
+    },
+    {
+      "case": "old-validation-deep-link",
+      "result": ""
+    },
+    {
+      "case": "mobile-directory-focus",
+      "result": {
+        "focus": "5.1.4 最小代码：先预测再运行",
+        "hash": "#code"
+      }
+    },
+    {
+      "case": "drawer-escape-focus-return",
+      "result": "章节目录"
+    },
+    {
+      "case": "deep-link-after-hydration",
+      "result": {
+        "open": true,
+        "top": 207.94955444335935
+      }
+    },
+    {
+      "case": "formula-keyboard-scroll",
+      "before": {
+        "content": 371,
+        "left": 0,
+        "width": 254
+      },
+      "after": 30
+    },
+    {
+      "case": "code-keyboard-scroll",
+      "result": {
+        "content": 482,
+        "left": 34.66666793823242,
+        "width": 254
+      }
+    },
+    {
+      "case": "mobile-numeric-image",
+      "result": {
+        "loaded": true,
+        "source": "http://127.0.0.1:3001/learning/v2-1/matrix-product-mobile.png"
+      }
+    },
+    {
+      "case": "math-directory-hierarchy",
+      "result": true
+    },
+    {
+      "case": "core-python-download",
+      "result": "C:\\Users\\QYF\\Downloads\\function_basics.py"
+    },
+    {
+      "case": "dashboard-core-only-copy",
+      "result": true
+    }
+  ],
+  "screenshots": [
+    "desktop-course-ma101.jpg",
+    "desktop-ml44-exercise.jpg",
+    "desktop-ml44-validation.jpg",
+    "desktop-ml44.jpg",
+    "desktop-py51.jpg",
+    "mobile-array-shapes.jpg",
+    "mobile-dashboard.jpg",
+    "mobile-directory.jpg",
+    "mobile-matrix-product.jpg",
+    "mobile-ml44-validation.jpg",
+    "mobile-py51.jpg",
+    "narrow-ml42-formula.jpg",
+    "narrow-ml44-code.jpg",
+    "tablet-ma31.jpg"
+  ],
+  "consoleErrors": []
+}

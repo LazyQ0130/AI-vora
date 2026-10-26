@@ -1,6 +1,6 @@
 # Aivora · 系统化 AI 技术学习平台
 
-可运行、可扩展的静态课程学习系统。课程事实来自课程体系 V1.0 的原始 JSON / Markdown，20 门课程与对应项目仍为规划。当前提供 9 节现行试读教材，并保留 1 节旧综合试读，共用同一个阅读器，均已技术校验、待人工内容审核。Aivora 是品牌工作名，域名与商标尚未核验。
+可运行、可扩展的静态课程学习系统。课程事实来自课程体系 V1.0 的原始 JSON / Markdown，20 门课程与对应项目仍为规划。当前提供 18 节现行试读教材（17 节核心与 1 节可选进阶），并保留 1 节旧综合试读，共用同一个阅读器，均已技术校验、待人工内容审核。Aivora 是品牌工作名，域名与商标尚未核验。
 
 ## 启动与检查
 
@@ -31,7 +31,7 @@ npm run prepare:downloads
 npm run test:python
 ```
 
-test:python 会执行全部 Python 单元测试、网页每个 Python 代码块，并核对下载脚本与 Notebook；结果写入 docs/TEACHING_V2_PYTHON_RESULTS.json，旧 COURSE_ENGINE 证据保留。本机实测 Python 3.14.2 / NumPy 2.5.2。教材面向 Python 3.10+；未声称所有解释器和 NumPy 版本均已验证。
+test:python 会执行全部 Python 单元测试、网页每个 Python 代码块，并核对下载脚本与 Notebook；结果写入 docs/TEACHING_V2_1_PYTHON_RESULTS.json，旧 COURSE_ENGINE 证据保留。本机实测 Python 3.14.2 / NumPy 2.5.2。教材面向 Python 3.10+；未声称所有解释器和 NumPy 版本均已验证。
 
 精确教学图已作为 PNG 入库，重新生成时另需 matplotlib（本机 3.11.2）：
 
@@ -39,6 +39,7 @@ test:python 会执行全部 Python 单元测试、网页每个 Python 代码块�
 python -m pip install matplotlib
 npm run prepare:diagrams
 npm run prepare:ml-diagrams
+npm run prepare:v21-diagrams
 ```
 
 ## 技术与视觉
@@ -60,8 +61,9 @@ Next.js 16.4.3（App Router）、React 19.3.1、TypeScript 5.9.3 strict、Tailwi
 | /learn/ML201/ML201-C03-L01 至 L03 | 新版 3.1–3.3：回归任务、模型与损失 |
 | /learn/ML201/ML201-C04-L02 至 L05 | 新版 4.1–4.4：导数、梯度、手算与 NumPy |
 | /learn/ML201/ML201-C04-L01 | 旧版综合试读，原链接 / 锚点 / 记录保留 |
-| /learn/PY101/PY101-C05-L01 | Python 函数与参数 |
-| /learn/MA101/MA101-C03-L01 | 向量与矩阵的基本运算 |
+| /learn/PY101/PY101-C05-L01 至 L06 | 函数基础、绑定、返回、作用域、默认值及可选高级陷阱（原 L01 保留） |
+| /learn/MA101/MA101-C02-L01 至 L02 | 向量、加法数乘、内积与求和符号 |
+| /learn/MA101/MA101-C03-L01 至 L03 | 矩阵与转置、矩阵乘法、NumPy 表示（原 L01 保留） |
 | /dashboard | 独立课时进度、最近阅读与各课程的可读样章统计 |
 | /projects | 原始 project 字段衍生的规划项目 |
 | 未知课程、课时或错误课程归属 | 品牌化 404 |
@@ -92,22 +94,24 @@ references/                           原始视觉参考与已有生图原图
 docs/                                 实施计划、架构、验收与真实截图
 ```
 
-新增课时只需编写 Lesson 数据、登记节级蓝图、内容注册表与发布清单、配置本地资源，不需要新增或修改 React 页面。支持文字、子标题、表格、图片、数学、代码、提示、测验、分层提示练习、补修链接、下载、总结及受控交互实验；不执行教材中的任意脚本。
+新增课时只需编写 Lesson 数据、登记节级蓝图、内容注册表与发布清单、配置本地资源，不需要新增或修改 React 页面。每节必须提供 reading/practice/coding 分项预计时间与 assessmentMap。section.tier 支持 core/advanced/verification，后两者默认折叠且支持键盘与深链接。共享 glossary.ts 统一误差符号与训练术语。支持文字、子标题、表格、图片、数学、代码、提示、测验、分层提示练习、补修链接、下载、总结及受控交互实验；不执行教材中的任意脚本。
 
-当前真实可读内容为 9 节现行教材（ML 七节、PY/MA 各一节），另保留 1 节旧 ML 综合试读，全部为待人工审核试读。3.4、4.5、4.6 等未制作课时只显示规划，无正文链接。生成 V2 教学图运行 `npm run prepare:ml-diagrams`；生产服务启动后可运行 `npm run test:routes`（默认 3001，可设 AIVORA_BASE_URL）。
+当前真实可读内容为 18 节现行教材（ML 七节、PY 六节、MA 五节，其中 PY 5.6 整节可选），另保留 1 节旧 ML 综合试读，全部为待人工审核试读。3.4、4.5、4.6 等未制作课时只显示规划，无正文链接。生成 V2 教学图运行 `npm run prepare:ml-diagrams`；生产服务启动后可运行 `npm run test:routes`（默认 3001，可设 AIVORA_BASE_URL）。
 
 发布生命周期包括规划、草稿、待验证、技术已验证、待审核、已审核、试学、正式发布与下线。状态与访问权限分开，草稿和未验证内容保持私有，只有具备证据的内容可试读；正式发布还需人工审核证据。整门课程的规划状态不会因一节样章改变。详细流程、校验要求和新增组件方法见 [课程编写指南](docs/COURSE_AUTHORING.md)。
 
 ## 阅读记录与兼容
 
-新键为 aivora:learning:v2:<courseId>:<lessonId>:r<contentVersion>。按课程、课时与教材修订分别记录最高浏览比例、当前段落、读完标记和时间。旧版记录保留在历史中，课程完成率只统计现行可读教材；旧样章读完不会变成新版七节读完。浏览比例、手动读完和测验反馈各自独立，均不代表掌握程度。开放练习输入只在当前页面暂存，离开页面不保存。
+新键为 aivora:learning:v2:<courseId>:<lessonId>:r<contentVersion>。按课程、课时与教材修订分别记录最高浏览比例、当前段落、读完标记和时间。旧版记录保留在历史中，基础阅读比例只统计现行核心可读教材，排除整节可选进阶；旧样章读完不会变成新版七节读完。浏览比例、手动读完和测验反馈各自独立，均不代表掌握程度。开放练习输入只在当前页面暂存，离开页面不保存。
 
-旧 aivora:learning:v1 仅兼容迁移至原 ML 样章 r1。合法 v2 优先，迁移幂等；不删除旧键，迁移也不会自动覆盖已有但无法识别的 v2。内容升级使用新修订键，保留旧记录；写入失败时按键保留会话内存。更换浏览器、设备或清理站点数据不会同步恢复。
+旧 aivora:learning:v1 仅兼容迁移至原 ML 样章 r1。合法 v2 优先，迁移幂等；不删除旧键，迁移也不会自动覆盖已有但无法识别的 v2。V2.1 为保留既有阅读历史，沿用原课时 r1 和全部旧段落 ID，并在 PY/MA 原页注明内容细分与重新自查；新增课时使用新 ID，旧读完不表示新增目标已达标。未来不兼容内容升级使用新修订键并保留旧记录；写入失败时按键保留会话内存。更换浏览器、设备或清理站点数据不会同步恢复。
 
 ## 验收记录
 
-最新结果：[教材 V2 与分层目录验收](docs/TEACHING_V2_ACCEPTANCE.md)、[分阶段计划](docs/TEACHING_V2_PLAN.md)、[逐节质量与来源审查](docs/TEACHING_V2_CONTENT_REVIEW.md)、[Python 执行证据](docs/TEACHING_V2_PYTHON_RESULTS.json)、[真实浏览器验收](docs/TEACHING_V2_BROWSER_RESULTS.json)。
+最新结果：[V2.1 完整内容质量审查](docs/TEACHING_V2_1_REVIEW.md)、[知识负荷清单](docs/TEACHING_V2_1_AUDIT.md)、[Python 执行证据](docs/TEACHING_V2_1_PYTHON_RESULTS.json)、[浏览器验收](docs/TEACHING_V2_1_BROWSER_RESULTS.json)。
 
-历史记录：[通用课程引擎](docs/COURSE_ENGINE_ACCEPTANCE.md)、[前端基础验收](docs/FRONTEND_ACCEPTANCE.md)、[设计系统](docs/UI_SYSTEM.md)、[V4 可用性](docs/USABILITY_REFINEMENT_V4.md)、[V5 独立封面](docs/COURSE_COVERS_V5.md)、[V6 学员界面](docs/LEARNER_INTERFACE_V6.md)。旧报告描述的是当时版本，以最新 V2 报告为当前状态。
+上一轮记录：[教材 V2 与分层目录验收](docs/TEACHING_V2_ACCEPTANCE.md)、[分阶段计划](docs/TEACHING_V2_PLAN.md)、[逐节质量与来源审查](docs/TEACHING_V2_CONTENT_REVIEW.md)、[Python 执行证据](docs/TEACHING_V2_PYTHON_RESULTS.json)、[真实浏览器验收](docs/TEACHING_V2_BROWSER_RESULTS.json)。
+
+历史记录：[通用课程引擎](docs/COURSE_ENGINE_ACCEPTANCE.md)、[前端基础验收](docs/FRONTEND_ACCEPTANCE.md)、[设计系统](docs/UI_SYSTEM.md)、[V4 可用性](docs/USABILITY_REFINEMENT_V4.md)、[V5 独立封面](docs/COURSE_COVERS_V5.md)、[V6 学员界面](docs/LEARNER_INTERFACE_V6.md)。旧报告描述的是当时版本，以最新 V2.1 报告为当前状态。
 
 仍需后续专业人工审校、真实教学试学和更多课程内容生产。本轮没有将技术校验或生产构建当作正式教材发布、浏览器验收或真实用户测试。

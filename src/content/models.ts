@@ -26,6 +26,7 @@ export const publicationSchema = z
     contentVersion: z.number().int().positive(),
     order: z.number().int().positive(),
     catalogRole: z.enum(["current", "legacy"]).default("current"),
+    optionalLesson: z.boolean().default(false),
     status: z.enum(publicationStates),
     access: z.enum(["private", "preview", "public"]),
     technicalEvidence: text.optional(),
@@ -160,7 +161,7 @@ export const contentBlockSchema = z.discriminatedUnion("type", [
     title: text,
     kind: z.enum(["理解", "计算", "代码", "迁移", "实验"]),
     prompt: text,
-    hints: z.array(text).min(1),
+    hints: z.array(text).min(2),
     solution: z.array(text).min(1),
     rubric: z.array(text).min(1),
   }),
@@ -212,7 +213,20 @@ export const lessonSchema = z
     contentVersion: z.number().int().positive(),
     title: text,
     subtitle: text,
-    durationMinutes: z.number().int().positive(),
+    learningTime: z.object({
+      reading: z.tuple([z.number().int().nonnegative(), z.number().int().nonnegative()]),
+      practice: z.tuple([z.number().int().nonnegative(), z.number().int().nonnegative()]),
+      coding: z.tuple([z.number().int().nonnegative(), z.number().int().nonnegative()]),
+      basis: z.literal("editorial-estimate"),
+    }).superRefine((time, ctx) => {
+      for (const key of ["reading", "practice", "coding"] as const)
+        if (time[key][0] > time[key][1]) ctx.addIssue({ code: "custom", message: "预计时间区间顺序错误" });
+    }),
+    optionalLesson: z.boolean().default(false),
+    assessmentMap: z.array(z.object({
+      objective: z.number().int().positive(),
+      exerciseIds: z.array(anchor).min(1),
+    })).min(1),
     prerequisites: text,
     prerequisiteLinks: z.array(learningLinkSchema).default([]),
     objectives: z.array(text).min(2).max(4),
@@ -223,6 +237,7 @@ export const lessonSchema = z
           title: text,
           navGroup: anchor,
           navLabel: text,
+          tier: z.enum(["core", "advanced", "verification"]).default("core"),
           layout: z.enum(["stack", "intro"]).optional(),
           blocks: z.array(contentBlockSchema).min(1),
         }),
@@ -253,6 +268,19 @@ export const lessonSchema = z
       "资源 ID",
     );
     const blocks = lesson.sections.flatMap((s) => s.blocks);
+    unique(lesson.assessmentMap.map((row) => String(row.objective)), "目标映射");
+    for (let objective = 1; objective <= lesson.objectives.length; objective++)
+      if (!lesson.assessmentMap.some((row) => row.objective === objective))
+        ctx.addIssue({ code: "custom", message: `目标 ${objective} 缺少练习` });
+    for (const row of lesson.assessmentMap) {
+      if (row.objective > lesson.objectives.length)
+        ctx.addIssue({ code: "custom", message: "映射引用未知目标" });
+      for (const id of row.exerciseIds) {
+        const section = lesson.sections.find((section) => section.blocks.some((b) => b.type === "exercise" && b.id === id));
+        if (!section || (!lesson.optionalLesson && section.tier !== "core"))
+          ctx.addIssue({ code: "custom", message: `必学目标必须对应核心开放练习：${id}` });
+      }
+    }
     unique(
       blocks.filter((b) => b.type === "quiz").map((b) => b.id),
       "题目 ID",

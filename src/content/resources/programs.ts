@@ -1,5 +1,6 @@
 import { sampleCode } from "../sample";
 import type { LearningResource } from "../models";
+import { corePrograms, regressionStepCode } from "./core-programs";
 
 export const pythonFunctionsCode = `# Python 3.10+；仅使用标准库
 def transform(value: float, scale: float = 2.0, *, shift: float = 0.0) -> float:
@@ -133,11 +134,7 @@ losses = [float(np.mean((w * x + b - y) ** 2))]
 first_step = None
 
 for step in range(2000):
-    prediction = w * x + b       # shape: (2,)
-    error = prediction - y      # shape: (2,)
-    dw = 2.0 * np.mean(error * x)  # 标量；已除以样本数
-    db = 2.0 * np.mean(error)      # 标量；与 dw 使用同一份 error
-    w, b = w - learning_rate * dw, b - learning_rate * db
+${regressionStepCode.split("\n").map((line) => `    ${line}`).join("\n")}
     current_loss = float(np.mean((w * x + b - y) ** 2))
     if not np.isfinite(current_loss) or current_loss > 1e12:
         raise FloatingPointError("loss diverged; check learning rate and data scale")
@@ -160,6 +157,9 @@ assert np.isfinite(losses).all()
 `;
 
 export const programs = {
+  ...Object.fromEntries(Object.entries(corePrograms).map(([id, sample]) => [id, {
+    ...sample, code: sample.core + "\n# 可选：结果与边界验证\n" + sample.checks,
+  }])) as unknown as Record<keyof typeof corePrograms, { filename: string; title: string; environment: string; code: string }>,
   "ml-losses": {
     filename: "ml_losses",
     title: "预测误差、MAE 与 MSE",

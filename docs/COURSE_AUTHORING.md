@@ -4,13 +4,13 @@
 
 原 curriculum/ 的 Markdown、JSON 是 20 门课程、等级、目标、学时、先修、章节与项目的事实来源。教材不能反过来改写这些事实。lib/curriculum 的 Course 是目录适配类型；content/models 的 Course 组合相同事实与结构化 Chapter。每个 Chapter 有稳定 ID、顺序和真实可读课时，不为规划章节伪造课时。
 
-Lesson 数据位于 content/lessons，资源程序位于 content/resources/programs，发布状态位于 publication-manifest；course-engine 负责关联与解析。Reader 不导入某一节教材。9 节现行教材与 1 节旧综合试读全部经过同一 ContentRenderer。旧 sample.ts 与 v1 progress API 保留兼容和既有测试；新 UI 不直接消费它们。
+Lesson 数据位于 content/lessons，资源程序位于 content/resources/programs，发布状态位于 publication-manifest；course-engine 负责关联与解析。Reader 不导入某一节教材。18 节现行教材与 1 节旧综合试读全部经过同一 ContentRenderer。旧 sample.ts 与 v1 progress API 保留兼容和既有测试；新 UI 不直接消费它们。
 
 ## 添加一节教材
 
 1. 从原目录确定 courseId 与章节顺序，在 course-outline 登记节级蓝图（title、order、稳定 ID）。ID 格式为 COURSE-Cxx-Lxx，章节 ID 为 COURSE-Cxx；稳定 ID 不因显示名称变化而改变。显示号由原章顺序与 slot.order 生成，不解析 Lxx。当前 C04-L01 留给旧版，因此 C04-L05 显示为 4.4。
-2. 新建 content/lessons/<topic>.ts，用 lessonSchema.parse 包裹数据。提供 contentVersion、标题、副标题、预计本节阅读分钟数、先修、2–4 个目标、段落、参考资料和下载资源。不要把本节分钟数冒充原课程总学时。
-3. 每个 section 有稳定 id、title、navGroup、navLabel、blocks，可选 intro 布局。相同导航分组使用相同名称，顶栏会自动选该组首段作为入口。段落用于目录、锚点与进度，发布后应保持稳定。
+2. 新建 content/lessons/<topic>.ts，用 lessonSchema.parse 包裹数据。提供 contentVersion、标题、副标题、learningTime 分项预计区间（reading/practice/coding，basis=editorial-estimate）、assessmentMap 目标—开放练习映射、先修、2–4 个目标、段落、参考资料和下载资源。不要把本节分钟数冒充原课程总学时。
+3. 每个 section 有稳定 id、title、navGroup、navLabel、blocks、tier（core/advanced/verification），可选 intro 布局。相同导航分组使用相同名称，顶栏会自动选该组首段作为入口。段落用于目录、锚点与进度，发布后应保持稳定。
 4. 将 Lesson 导入 course-engine 的 contents。这里只登记数据，不增加 React 页面；注册表校验课程/章节归属、唯一 ID、同章顺序和内容版本一致。
 5. 在发布清单登记 lessonId/courseId/chapterId/title/contentVersion/order，初始 draft/private 或 pending-validation/private。私有内容不生成阅读地址、卡片入口或学习统计。
 6. 如有完整程序，登记 programs，正文直接引用同一 code 字符串，resourcesForProgram 生成资源描述。运行 prepare:downloads，不能手改生成的下载内容。Notebook 保持未运行的空输出与 null 执行编号。
@@ -29,7 +29,7 @@ Lesson 数据位于 content/lessons，资源程序位于 content/resources/progr
 | published | 正式教材 | public / preview / private；技术与审核证据齐全 |
 | deprecated | 下线 | private |
 
-technicalEvidence / reviewEvidence 是仓库审核证据引用，不是权限系统或数字签名。维护者负责审查证据的真实性与适用修订；schema 检查字段和状态门禁，不能替代专业审核。当前 10 节均为 pending-review/preview（含旧综合试读），整门课程仍 planned。
+technicalEvidence / reviewEvidence 是仓库审核证据引用，不是权限系统或数字签名。维护者负责审查证据的真实性与适用修订；schema 检查字段和状态门禁，不能替代专业审核。当前 19 节均为 pending-review/preview（含旧综合试读），整门课程仍 planned。
 
 ## 内容组件
 
@@ -47,7 +47,7 @@ technicalEvidence / reviewEvidence 是仓库审核证据引用，不是权限系
 
 ## 进度、修订与导航
 
-v2 以 courseId/lessonId/contentVersion 分键。内容实质改变时递增 contentVersion，并同时更新 Lesson 与 manifest；旧修订键保留，新版从未读开始。只修错字且不改变结构时可保持版本，但不能随意删改段落 ID。单纯重命名课时标题不会改 ID。
+v2 以 courseId/lessonId/contentVersion 分键。通常内容实质改变时递增 contentVersion，并同时更新 Lesson 与 manifest；V2.1 按保留阅读历史的产品要求采用兼容重编：保留原 r1 和全部旧段落 ID，以新增课时 ID 承接细分内容，并明确旧读完不代表新目标达标。后续不兼容改版应另建修订键；旧修订键保留，新版从未读开始。只修错字且不改变结构时可保持版本，但不能随意删改段落 ID。单纯重命名课时标题不会改 ID。
 
 v1 兼容仅适用于原 ML201-C04-L01 r1 的既有 7 段；匹配后读取兼容，挂载后迁移，不删除旧键。有 v2 时不自动用旧值覆盖，包括未知/损坏 v2。存储失败时本次会话仍能继续阅读，跨标签的 storage 通知会刷新可落盘记录。恢复本地存储权限后，下一次保存会重试。
 
@@ -60,3 +60,15 @@ reader.css 管理阅读器基础布局；learning-system.css 管理共享分层�
 滚动监听使用 passive + requestAnimationFrame，浏览比例取整以减少 React 更新，内容块 memo；目录自动滚动局限在目录容器。动效继承 MotionConfig 和 reduced-motion，不增加无必要的动画库。
 
 每次教材变更运行 README 列出的检查，尤其 prepare:downloads → test:python。新增素材确认文件、尺寸、alt 和下载一致性；生产浏览器测试至少覆盖桌面/平板/手机、目录与焦点、题目反馈、复制/下载、刷新恢复、独立进度、状态和 404。构建成功不等同于浏览器或专业内容验收。
+
+## V2.1 内容约束
+
+核心目标必须映射到真实核心开放练习，不能仅以选择题或隐藏的进阶挑战验收。每题至少两级提示、参考解答和评分标准；映射的语义充分性仍须人工审阅。整节可选进阶需同时在 Lesson 与 Publication 标记 optionalLesson=true，不计基础阅读分母，但保留历史记录。
+
+预计时间分为阅读、练习、代码实践三个区间。页面明确说明是编辑估计；核心课时间不含可选拓展，禁止标成学生实测。通用术语维护在 src/content/glossary.ts；新符号仍须在正文首次出现处说明和代入，术语折叠区不承担必要首次教学。
+
+正文只展示最小实现；复杂断言与输入拒绝放在 tier=verification，拓展实验放在 tier=advanced。通用 TeachingSection 用原生 details/summary 折叠；保持所有 section.id，导航/旧 hash 必须展开对应内容并滚动定位。
+
+core-programs.ts 的基础片段被完整下载直接复用；ML 更新核 regressionStepCode 同源嵌入核心与完整训练脚本。新增代码需同时更新 validate-python.ts 的独立预期，并实际执行。新数学图用 prepare:v21-diagrams 生成，numeric-evidence.json 记录数值；教学图不能用装饰性生图代替。
+
+V2.1 样式集中在 teaching-v2-1.css；既有品牌、动画和 reader.css 保留。报告见 TEACHING_V2_1_REVIEW.md；技术测试、浏览器验收与教学试学分开记录。

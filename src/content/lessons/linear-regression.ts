@@ -1,13 +1,15 @@
 import { sampleLesson } from "../sample";
 import { lessonSchema, type ContentBlock } from "../models";
 import { resourcesForProgram } from "../resources/programs";
+import { legacyAssessments } from "./ml201/core-assessments";
 
 // 兼容原样章 DTO：旧段落 ID、教材和下载代码保持不变。
 export const linearRegressionLesson = lessonSchema.parse({
   ...sampleLesson,
   chapterId: "ML201-C04",
   contentVersion: 1,
-  durationMinutes: 30,
+  learningTime: { reading: [15,25], practice: [20,30], coding: [15,25], basis: "editorial-estimate" },
+  assessmentMap: ["legacy-roles", "legacy-gradient", "legacy-code", "legacy-rate"].map((id,index) => ({ objective: index+1, exerciseIds: [id] })),
   prerequisites:
     "Python 数组与函数、基础导数与偏导、NumPy 广播。使用无噪声合成数据，聚焦损失与更新过程。",
   sections: sampleLesson.sections.map((section, index) => ({
@@ -44,7 +46,7 @@ export const linearRegressionLesson = lessonSchema.parse({
           language: "python",
         };
       return block;
-    }),
+    }).concat(section.id === "quiz" ? legacyAssessments : []),
   })),
   resources: resourcesForProgram("linear-regression"),
   references: [

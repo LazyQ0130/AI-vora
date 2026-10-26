@@ -19,10 +19,10 @@ losses = [float(np.mean((w * x + b - y) ** 2))]
 first_step = None
 
 for step in range(2000):
-    prediction = w * x + b       # shape: (2,)
-    error = prediction - y      # shape: (2,)
-    dw = 2.0 * np.mean(error * x)  # 标量；已除以样本数
-    db = 2.0 * np.mean(error)      # 标量；与 dw 使用同一份 error
+    prediction = w * x + b
+    error = prediction - y
+    dw = 2.0 * np.mean(error * x)
+    db = 2.0 * np.mean(error)
     w, b = w - learning_rate * dw, b - learning_rate * db
     current_loss = float(np.mean((w * x + b - y) ** 2))
     if not np.isfinite(current_loss) or current_loss > 1e12:

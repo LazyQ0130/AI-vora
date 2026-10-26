@@ -9,7 +9,7 @@ export function GuidedExercise({
   const id = useId();
   const [answer, setAnswer] = useState("");
   return (
-    <section className="guided-exercise" aria-labelledby={`${id}-title`}>
+    <section className="guided-exercise" id={`exercise-${block.id}`} aria-labelledby={`${id}-title`}>
       <span className="exercise-kind">{block.kind}练习 · 自主核对</span>
       <h3 id={`${id}-title`}>{block.title}</h3>
       <p>{block.prompt}</p>

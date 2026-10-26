@@ -1,3 +1,4 @@
+import { regressionCoreCode } from "../../resources/core-programs";
 import { defineMlLesson, p, note, links, prep, refs, summary } from "./shared";
 import {
   gradientDescentCode,
@@ -5,8 +6,7 @@ import {
 } from "../../resources/programs";
 export const numpyRegressionLesson = defineMlLesson("ML201-C04-L05", {
   subtitle:
-    "从一维数组的一次预测，到有形状检查、损失记录和独立结果对照的完整训练程序。",
-  durationMinutes: 45,
+    "从两条数组误差到一个短训练循环；工程防护与独立对照按需展开。",
   prerequisites:
     "完成 4.3；会定义 Python 函数、使用循环，理解 NumPy 一维数组、shape、逐元素运算与 mean。自查：两个形状均为 (2,) 的数组相减是什么形状？若不能回答，请先补修数组与广播。",
   prerequisiteLinks: [
@@ -22,8 +22,8 @@ export const numpyRegressionLesson = defineMlLesson("ML201-C04-L05", {
   ],
   objectives: [
     "将预测、误差和梯度公式逐项映射到 NumPy",
-    "执行完整脚本并核对首步及最终结果",
-    "控制一个变量开展实验，定位形状或更新错误",
+    "独立补全同步训练循环并核对首步与终点",
+    "区分训练损失下降与未见数据上的表现",
   ],
   resources: resourcesForProgram("ml-gradient-descent"),
   references: [refs.numpy, refs.lstsq, refs.d2l],
@@ -34,27 +34,12 @@ export const numpyRegressionLesson = defineMlLesson("ML201-C04-L05", {
       navGroup: "environment",
       navLabel: "准备",
       blocks: [
-        p(
-          "本节在自己的 Python 环境运行；网页展示静态教材与下载，不在浏览器执行 Python。使用 Python 3.10+ 与 NumPy；代码不读文件、不联网、不使用随机数。首次准备建议在项目外的新练习目录建立虚拟环境。Windows 将下面的 python 命令用于已安装的 Python 解释器；若系统使用 py 启动器，可相应替换。",
-        ),
+        p("在本地 Python 3.10+ 环境运行，先用同一个解释器执行 python -m pip install numpy。网页只展示代码和下载；先确认 MA 3.3 的一维数组知识，再继续。这里固定 x=[1,2]、y=[3,5]、w=b=0，与 4.3 同样两点。"),
         {
-          type: "code",
-          filename: "environment.txt",
-          language: "bash",
-          code: 'python -m venv .venv\n# Windows PowerShell 使用虚拟环境内的解释器，无需修改脚本执行策略\n.venv/Scripts/python.exe -m pip install numpy\n.venv/Scripts/python.exe -c "import sys,numpy; print(sys.version); print(numpy.__version__)"\n# macOS / Linux 对应解释器路径为 .venv/bin/python\n',
+          type: "code", filename: "predict_arrays.py", language: "python",
+          code: "import numpy as np\n\nx = np.array([1.0, 2.0])\ny = np.array([3.0, 5.0])\nw, b = 0.0, 0.0\nprediction = w * x + b\nerror = prediction - y\nprint(x.shape, prediction, error)\n",
         },
-        p(
-          "先保存下面片段为 predict_arrays.py，用虚拟环境解释器运行。测试环境的具体 Python/NumPy 版本见验收报告；教材不承诺所有未来版本都已验证。若提示 ModuleNotFoundError，请用执行脚本的同一个解释器运行 -m pip install numpy，而不是切换到另一个 pip。",
-        ),
-        {
-          type: "code",
-          filename: "predict_arrays.py",
-          language: "python",
-          code: "import numpy as np\n\nx = np.array([1.0, 2.0])\ny = np.array([3.0, 5.0])\nw, b = 0.0, 0.0\nprediction = w * x + b\nerror = prediction - y\nprint(x.shape, prediction, error)\nassert x.shape == y.shape == prediction.shape == error.shape == (2,)\nassert np.array_equal(error, [-3.0, -5.0])\n",
-        },
-        p(
-          "预期 shape 是 (2,)，预测为 [0. 0.]，误差为 [-3. -5.]。浮点数显示格式可随版本变化，断言检查内容。w、b 是标量，会作用于 x 的每个元素；这里的 * 是逐元素乘法，不是矩阵乘法 @。",
-        ),
+        p("先预测输出，再运行：形状为 (2,)，预测 [0,0]，误差 [-3,-5]。w、b 是标量；* 对每个 x 元素乘 w。小数与空格显示可能不同，数值应一致。安装与环境隔离的排错入口在下方可选区。"),
       ],
     },
     {
@@ -77,21 +62,26 @@ export const numpyRegressionLesson = defineMlLesson("ML201-C04-L05", {
             ["MSE", "np.mean(error**2)", "标量：每个误差先平方再平均"],
           ],
         },
-        note(
-          "静默广播比报错更容易漏检",
-          "若 x 是 (2,1)，y 是 (2,)，prediction-y 可能得到 (2,2)，程序仍可算出一个数，却不再是一一对应的两条误差。本节选择明确拒绝这种输入，而不是盲目 reshape 掩盖上游错误。多特征模型需要另行设计形状约定。",
-        ),
-        p(
-          "循环外完成数据校验和初始化。循环内只做：预测、误差、两个梯度、同步更新、重新计算损失。losses 的第 0 项是更新前损失，之后每一项对应一次更新后的损失；运行 2000 步后长度为 2001。w 和 b 的改动不会原地修改数组 error，所以先保存 error 再算两个梯度符合推导。",
-        ),
+        p("本节约定 x、y 为等长一维数组。一个样本对应一条预测和误差。循环内依次计算预测、误差、两个梯度，再同步更新。np.mean 是平均；**2 是逐项平方。第一次更新应得到 dw=-13、db=-8，再得到 w=1.3、b=0.8。"),
+      ],
+    },
+    {
+      id: "training", title: "核心代码：反复执行同一次更新", navGroup: "implementation", navLabel: "实现",
+      blocks: [
+        p("range(2000) 让循环执行 2000 次，step 从 0 开始编号。每轮的 dw、db 都由同一份 error 计算；w,b=… 的右侧先求值再赋值，因此同步更新。if step==0 只显示首步；f 字符串里的 .3f、.6f 表示显示 3、6 位小数，不改变内部计算精度；float 把单个 NumPy 数值转成 Python 浮点数。先运行默认设定，再做下方新目标练习。"),
+        { type: "code", filename: "train_core.py", language: "python", code: regressionCoreCode },
+        p("首步输出 first w=1.300, b=0.800；由 4.3 知首步 MSE=1.685。最后 w≈2、b≈1，MSE<10⁻¹⁰。最后一行必须用新参数重新预测，不能沿用更新前的 error。这些输出只针对默认两点、学习率 0.1 和 2000 步。"),
+        note("结果的适用范围", "这两个干净合成点服从 y=2x+1。近零训练损失说明拟合了这两个点；现实任务需要独立数据评价泛化，不能据此说模型对所有输入更准确。"),
       ],
     },
     {
       id: "full-code",
-      title: "完整脚本：先复现首步，再检查终点",
+      tier: "verification",
+      title: "可选验证：防护、日志与独立求解器",
       navGroup: "implementation",
       navLabel: "实现",
       blocks: [
+        note("环境与安装排错", "仍用同一 Python 3.10+ 解释器：python -m pip install numpy，再运行 python ml_gradient_descent.py。遇到 ModuleNotFoundError，先确认安装包与运行脚本用的是同一个 python。若希望隔离项目，可先 python -m venv .venv；Windows 随后统一使用 .venv/Scripts/python.exe，macOS/Linux 使用 .venv/bin/python，分别通过 -m pip 安装并运行脚本。"),
         {
           type: "code",
           filename: "ml_gradient_descent.py",
@@ -106,7 +96,7 @@ export const numpyRegressionLesson = defineMlLesson("ML201-C04-L05", {
           ],
         },
         p(
-          "保存为 ml_gradient_descent.py 后运行 .venv/Scripts/python.exe ml_gradient_descent.py；macOS/Linux 替换解释器路径。Notebook 需要本地 Jupyter 环境，下载文件没有伪造执行输出。它与完整脚本使用同一份代码。",
+          "保存为 ml_gradient_descent.py 后运行 python ml_gradient_descent.py；如选用虚拟环境，统一替换解释器路径。Notebook 需要本地 Jupyter 环境，下载文件没有伪造执行输出。它与完整脚本使用同一份代码。",
         ),
         {
           type: "table",
@@ -152,6 +142,7 @@ export const numpyRegressionLesson = defineMlLesson("ML201-C04-L05", {
     },
     {
       id: "experiment",
+      tier: "advanced",
       title: "带着问题改变一个变量",
       navGroup: "experiment",
       navLabel: "实验",
@@ -245,8 +236,8 @@ export const numpyRegressionLesson = defineMlLesson("ML201-C04-L05", {
           ],
         },
         summary([
-          "每个数组形状对应一个明确数学量，拒绝意外广播。",
-          "最小片段→第一轮手算→完整循环→独立最小二乘对照，逐层建立可信度。",
+          "先保证一维数组逐样本对应，再计算误差、两个梯度和同步更新。",
+          "核心达标是解释并独立编写短循环；输入拒绝、完整日志与最小二乘对照属于可选验证。",
           "先写实验问题和控制条件，再改参数；阅读完成与实际掌握是两件事。",
         ]),
         links("后续与复习", [

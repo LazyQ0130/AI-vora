@@ -4,14 +4,15 @@ import { courseOutline, mlV2LessonIds } from "./course-outline";
 // 发布权限独立于原始课程规划。技术证据不替代人工审核。
 export const publicationManifest = [
   ...courseOutline
-    .filter((slot) => mlV2LessonIds.some((id) => id === slot.lessonId))
+    .filter((slot) => mlV2LessonIds.some((id) => id === slot.lessonId) || /^(PY101-C05|MA101-C0[23])/.test(slot.lessonId))
     .map((slot) => ({
       ...slot,
       contentVersion: 1,
+      optionalLesson: slot.lessonId === "PY101-C05-L06",
       catalogRole: "current",
       status: "pending-review",
       access: "preview",
-      technicalEvidence: "docs/TEACHING_V2_PYTHON_RESULTS.json",
+      technicalEvidence: "docs/TEACHING_V2_1_PYTHON_RESULTS.json",
     })),
   {
     lessonId: "ML201-C04-L01",
@@ -23,29 +24,7 @@ export const publicationManifest = [
     catalogRole: "legacy",
     status: "pending-review",
     access: "preview",
-    technicalEvidence: "docs/COURSE_ENGINE_PYTHON_RESULTS.json",
-  },
-  {
-    lessonId: "PY101-C05-L01",
-    courseId: "PY101",
-    chapterId: "PY101-C05",
-    title: "Python 函数与参数",
-    contentVersion: 1,
-    order: 1,
-    status: "pending-review",
-    access: "preview",
-    technicalEvidence: "docs/COURSE_ENGINE_PYTHON_RESULTS.json",
-  },
-  {
-    lessonId: "MA101-C03-L01",
-    courseId: "MA101",
-    chapterId: "MA101-C03",
-    title: "向量与矩阵的基本运算",
-    contentVersion: 1,
-    order: 1,
-    status: "pending-review",
-    access: "preview",
-    technicalEvidence: "docs/COURSE_ENGINE_PYTHON_RESULTS.json",
+    technicalEvidence: "docs/TEACHING_V2_1_PYTHON_RESULTS.json",
   },
 ].map((entry) => publicationSchema.parse(entry));
 
