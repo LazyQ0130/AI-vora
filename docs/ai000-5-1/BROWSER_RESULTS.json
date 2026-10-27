@@ -1,0 +1,672 @@
+{
+  "checkedAt": "2026-10-27T16:45:07.900Z",
+  "base": "http://127.0.0.1:3016",
+  "environment": "IAB viewport simulation; no physical devices or student pilot",
+  "checks": [
+    {
+      "articleFont": "16px",
+      "client": 1425,
+      "feedback": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "h1": "自然语言处理与大语言模型",
+      "images": 0,
+      "scroll": 1425,
+      "tables": [
+        {
+          "caption": "收到的五条咨询",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 5,
+          "width": 722
+        },
+        {
+          "caption": "一种分类方案：先看每条主要询问的事情",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 5,
+          "width": 722
+        },
+        {
+          "caption": "可查的服务资料R1–R3",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 3,
+          "width": 722
+        },
+        {
+          "caption": "同一主题、同一出处，具体条件决定下一步",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 2,
+          "width": 722
+        },
+        {
+          "caption": "逐条检查：原资料能支持到哪里？",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 5,
+          "width": 722
+        },
+        {
+          "caption": "五条咨询的主题概况",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 4,
+          "width": 722
+        },
+        {
+          "caption": "围绕B的三种工作",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 3,
+          "width": 722
+        },
+        {
+          "caption": "器材借用服务资料S1–S3",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 3,
+          "width": 722
+        },
+        {
+          "caption": "四条新的器材咨询",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 4,
+          "width": 722
+        },
+        {
+          "caption": "四份文字处理需求",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 4,
+          "width": 722
+        },
+        {
+          "caption": "丙提供的十条原始工作记录",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 10,
+          "width": 722
+        }
+      ],
+      "width": 1440
+    },
+    {
+      "articleFont": "16px",
+      "client": 753,
+      "feedback": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "h1": "自然语言处理与大语言模型",
+      "images": 0,
+      "scroll": 753,
+      "tables": [
+        {
+          "caption": "收到的五条咨询",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 5,
+          "width": 650
+        },
+        {
+          "caption": "一种分类方案：先看每条主要询问的事情",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 5,
+          "width": 650
+        },
+        {
+          "caption": "可查的服务资料R1–R3",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 3,
+          "width": 650
+        },
+        {
+          "caption": "同一主题、同一出处，具体条件决定下一步",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 2,
+          "width": 650
+        },
+        {
+          "caption": "逐条检查：原资料能支持到哪里？",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 5,
+          "width": 650
+        },
+        {
+          "caption": "五条咨询的主题概况",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 4,
+          "width": 650
+        },
+        {
+          "caption": "围绕B的三种工作",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 3,
+          "width": 650
+        },
+        {
+          "caption": "器材借用服务资料S1–S3",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 3,
+          "width": 650
+        },
+        {
+          "caption": "四条新的器材咨询",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 4,
+          "width": 650
+        },
+        {
+          "caption": "四份文字处理需求",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 4,
+          "width": 650
+        },
+        {
+          "caption": "丙提供的十条原始工作记录",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 10,
+          "width": 650
+        }
+      ],
+      "width": 768
+    },
+    {
+      "articleFont": "16px",
+      "client": 375,
+      "feedback": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "h1": "自然语言处理与大语言模型",
+      "images": 0,
+      "scroll": 375,
+      "tables": [
+        {
+          "caption": "收到的五条咨询",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 5,
+          "width": 308
+        },
+        {
+          "caption": "一种分类方案：先看每条主要询问的事情",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 5,
+          "width": 308
+        },
+        {
+          "caption": "可查的服务资料R1–R3",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 3,
+          "width": 308
+        },
+        {
+          "caption": "同一主题、同一出处，具体条件决定下一步",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 2,
+          "width": 308
+        },
+        {
+          "caption": "逐条检查：原资料能支持到哪里？",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 5,
+          "width": 308
+        },
+        {
+          "caption": "五条咨询的主题概况",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 4,
+          "width": 308
+        },
+        {
+          "caption": "围绕B的三种工作",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 3,
+          "width": 308
+        },
+        {
+          "caption": "器材借用服务资料S1–S3",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 3,
+          "width": 308
+        },
+        {
+          "caption": "四条新的器材咨询",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 4,
+          "width": 308
+        },
+        {
+          "caption": "四份文字处理需求",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 4,
+          "width": 308
+        },
+        {
+          "caption": "丙提供的十条原始工作记录",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 10,
+          "width": 308
+        }
+      ],
+      "width": 390
+    },
+    {
+      "articleFont": "16px",
+      "client": 305,
+      "feedback": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "h1": "自然语言处理与大语言模型",
+      "images": 0,
+      "scroll": 305,
+      "tables": [
+        {
+          "caption": "收到的五条咨询",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 5,
+          "width": 254
+        },
+        {
+          "caption": "一种分类方案：先看每条主要询问的事情",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 5,
+          "width": 254
+        },
+        {
+          "caption": "可查的服务资料R1–R3",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 3,
+          "width": 254
+        },
+        {
+          "caption": "同一主题、同一出处，具体条件决定下一步",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 2,
+          "width": 254
+        },
+        {
+          "caption": "逐条检查：原资料能支持到哪里？",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 5,
+          "width": 254
+        },
+        {
+          "caption": "五条咨询的主题概况",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 4,
+          "width": 254
+        },
+        {
+          "caption": "围绕B的三种工作",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 3,
+          "width": 254
+        },
+        {
+          "caption": "器材借用服务资料S1–S3",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 3,
+          "width": 254
+        },
+        {
+          "caption": "四条新的器材咨询",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 4,
+          "width": 254
+        },
+        {
+          "caption": "四份文字处理需求",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 4,
+          "width": 254
+        },
+        {
+          "caption": "丙提供的十条原始工作记录",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 10,
+          "width": 254
+        }
+      ],
+      "width": 320
+    }
+  ],
+  "tableViews": [
+    {
+      "cellFont": "14px",
+      "firstRow": "A\t我报名以后页面显示成功，但一直没收到确认通知，应该怎么办？",
+      "scrollY": 640.6666870117188,
+      "width": 1440
+    },
+    {
+      "cellFont": "14px",
+      "firstRow": "A\t我报名以后页面显示成功，但一直没收到确认通知，应该怎么办？",
+      "scrollY": 714,
+      "width": 768
+    },
+    {
+      "cellFont": "14px",
+      "firstRow": "A\t我报名以后页面显示成功，但一直没收到确认通知，应该怎么办？",
+      "scrollY": 798,
+      "width": 390
+    },
+    {
+      "cellFont": "14px",
+      "firstRow": "A\t我报名以后页面显示成功，但一直没收到确认通知，应该怎么办？",
+      "scrollY": 1019.3333129882812,
+      "width": 320
+    }
+  ],
+  "finalViews": [
+    {
+      "allTablesFit": true,
+      "client": 1425,
+      "exercisePromptLengths": [
+        74,
+        73
+      ],
+      "scroll": 1425,
+      "stepParagraphs": [],
+      "width": 1440
+    },
+    {
+      "allTablesFit": true,
+      "client": 753,
+      "exercisePromptLengths": [
+        74,
+        73
+      ],
+      "scroll": 753,
+      "stepParagraphs": [],
+      "width": 768
+    },
+    {
+      "allTablesFit": true,
+      "client": 375,
+      "exercisePromptLengths": [
+        74,
+        73
+      ],
+      "scroll": 375,
+      "stepParagraphs": [],
+      "width": 390
+    },
+    {
+      "allTablesFit": true,
+      "client": 305,
+      "exercisePromptLengths": [
+        74,
+        73
+      ],
+      "scroll": 305,
+      "stepParagraphs": [],
+      "width": 320
+    }
+  ],
+  "drawerChecks": [
+    {
+      "width": 768,
+      "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n13 节点\n本节学习目标\n3 项\n01\n分清文字任务\n\n从交付结果区分类别判断、查资料与摘要。\n\n02\n找出每项结论的依据\n\n写清输入、输出和出处，保留未确认的信息。\n\n03\n设计服务处理步骤\n\n安排查找、回复与核查，判断方法证据是否充分。\n\n查看完整目标\n核心练习\n2 道\n迁移练习\n为器材服务交付一份可核查的处理记录\n迁移练习\n写出输入、交付物、处理方式与核查办法\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n83%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识"
+    },
+    {
+      "width": 390,
+      "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n13 节点\n本节学习目标\n3 项\n01\n分清文字任务\n\n从交付结果区分类别判断、查资料与摘要。\n\n02\n找出每项结论的依据\n\n写清输入、输出和出处，保留未确认的信息。\n\n03\n设计服务处理步骤\n\n安排查找、回复与核查，判断方法证据是否充分。\n\n查看完整目标\n核心练习\n2 道\n迁移练习\n为器材服务交付一份可核查的处理记录\n迁移练习\n写出输入、交付物、处理方式与核查办法\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n83%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识"
+    },
+    {
+      "width": 320,
+      "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n13 节点\n本节学习目标\n3 项\n01\n分清文字任务\n\n从交付结果区分类别判断、查资料与摘要。\n\n02\n找出每项结论的依据\n\n写清输入、输出和出处，保留未确认的信息。\n\n03\n设计服务处理步骤\n\n安排查找、回复与核查，判断方法证据是否充分。\n\n查看完整目标\n核心练习\n2 道\n迁移练习\n为器材服务交付一份可核查的处理记录\n迁移练习\n写出输入、交付物、处理方式与核查办法\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n83%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识"
+    }
+  ],
+  "stepLayouts": [
+    {
+      "display": "block",
+      "marginBottom": "18px",
+      "start": "先分类：逐条写主要在"
+    },
+    {
+      "display": "block",
+      "marginBottom": "18px",
+      "start": "再安排处理：逐条写要"
+    },
+    {
+      "display": "block",
+      "marginBottom": "18px",
+      "start": "最后写两三句给工作人"
+    },
+    {
+      "display": "block",
+      "marginBottom": "18px",
+      "start": "先分析交付：为甲、乙"
+    },
+    {
+      "display": "block",
+      "marginBottom": "18px",
+      "start": "再实际处理：为甲交付"
+    },
+    {
+      "display": "block",
+      "marginBottom": "18px",
+      "start": "最后比较方法：逐项说"
+    }
+  ],
+  "finalInteraction": [
+    {
+      "id": "design-equipment-service",
+      "stages": [
+        [
+          true,
+          false,
+          false
+        ],
+        [
+          true,
+          true,
+          false
+        ],
+        [
+          true,
+          true,
+          true
+        ]
+      ],
+      "layout": {
+        "activeTag": "SUMMARY",
+        "client": 305,
+        "focusOutline": "solid",
+        "scroll": 305
+      }
+    },
+    {
+      "id": "choose-language-work",
+      "stages": [
+        [
+          true,
+          false,
+          false
+        ],
+        [
+          true,
+          true,
+          false
+        ],
+        [
+          true,
+          true,
+          true
+        ]
+      ],
+      "layout": {
+        "activeTag": "SUMMARY",
+        "client": 305,
+        "focusOutline": "solid",
+        "scroll": 305
+      }
+    }
+  ],
+  "restoredView": {
+    "focus": "四种需求，该交回怎样的语言处理结果？",
+    "hash": "#choose-language-task",
+    "inputs": [
+      "",
+      ""
+    ],
+    "open": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "completion": {
+    "result": {
+      "type": "string",
+      "value": "{\"aivora:learning:v2:AI000:AI000-C04-L04:r1\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"AI000\\\",\\\"lessonId\\\":\\\"AI000-C04-L04\\\",\\\"contentVersion\\\":1,\\\"percent\\\":100,\\\"completed\\\":true,\\\"section\\\":\\\"takeaways\\\",\\\"updatedAt\\\":1793119171356}\",\"aivora:learning:v2:AI000:AI000-C05-L01:r1\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"AI000\\\",\\\"lessonId\\\":\\\"AI000-C05-L01\\\",\\\"contentVersion\\\":1,\\\"percent\\\":100,\\\"completed\\\":true,\\\"section\\\":\\\"takeaways\\\",\\\"updatedAt\\\":1793119485823}\"}"
+    }
+  },
+  "backNav": "http://127.0.0.1:3016/learn/AI000/AI000-C04-L04",
+  "continuity": [
+    {
+      "lesson": "AI000-C02-L02",
+      "passage": "一个聊天窗口，可能接起哪些工作？\n\n模型不是整个产品。设想一个展馆问答服务：界面接收问题，检索模块从展馆资料中找相关段落，LLM按找到的材料组织回答，规则再检查回答是否带上资料链接。保存对话、显示按钮等则可以是普通软件功能。这个流程是教学设计，不代表某个真实产品一定这样实现。\n\n如果拿掉检索，LLM仍可能组织流畅文字，却未必掌握最新开放时间；加上检索，找错材料或用错内容也仍可能出错。我们可以分别核对检索来源和回答是否忠于材料，而不是因为界面叫“知识助手”就认为自动查过所有事实。\n\n分析新产品时，可以列三行：这次做什么任务；资料已明确采用什么模型或方法；哪些部分尚未说明。例如“会生成图片”提供能力描述，“采用深度图像生成模型”补了方法信息，“里面一定有LLM”则需要另外的证据。\n\n这些区分也能帮助提出更清楚的请求。把原材料、需要的输出、哪些信息缺失时要留空写明，往往比只说“帮我处理”更容易检查结果。它能改善任务说明，但不能代替实际核查。"
+    },
+    {
+      "lesson": "AI000-C04-L04",
+      "passage": "先把这次要交给模型的信息准备清楚\n\n先明确任务：估计从N到件到完成登记并归架的总分钟数，包含等待。再确认排队数量：3件是到件时排在N前面、尚未开始处理的其他包裹，不含N和正在处理的包裹。\n\n记录可以写“前面有三件”，但这个模型需要一个表示件数的数值，就整理成3，并保留单位“件”和记录名N。若把“等了3分钟”也抄成3，数字虽然相同，含义已经换了，不能交给同一个位置计算。\n\n这里仅把排队数作为模型输入。N的尺寸等其他资料仍可以存作工作记录，但这次计算没有使用它们；也没有要求先填N的实际时长。整理输入时要保持模型约定的含义，不能看见一列就随意加进去。"
+    },
+    {
+      "lesson": "AI000-C05-L01",
+      "passage": "知道是取消咨询，还要找到什么？回到B：“活动还有30小时开始，想取消报名。”分类已经完成。要回答能怎样取消，还需要取消规则。假设平台目前提供以下三份内部服务说明，查找范围先限定在这三份。可查的服务资料R1–R3资料编号与标题内容R1：取消报名距离活动开始至少24小时，报名者可以在报名记录页面自行取消。距离活动开始不足24小时，需要联系工作人员确认是否还能取消。R2：确认通知如果报名记录页面显示报名成功，但没有收到确认通知，可以先核对报名状态；状态确认成功后，可以联系工作人员申请补发通知。R3：活动地点具体活动地点以相应活动的详情页面为准。这份通用说明没有提供某个具体活动的楼栋和教室。从已有资料中找到与问题相关的内容，是信息检索。在这个文字任务里，可交回资料编号、相关段落和位置，让工作人员能够回查。B需要的是R1；交回“取消报名”这个类别，还不足以替代R1里的具体条件。先看标题，或用“取消”这样的关键词查找，就能在这三份资料中找到R1。简单的文字匹配可以完成这次查找，未必需要LLM。资料很多、说法不同的时候，检索可能更难；无论采用什么办法，都要核对找到的内容是否真的回答了当前问题。"
+    }
+  ],
+  "courseDrawer": "课程章节与独立课时\n\n课程章节与独立课时，按 Escape 关闭面板。\n\n返回课程详情\nCOURSE CONTENTS\n人工智能导论与技术地图\n\n7 章 · 14 节核心课已制作\n\n已制作课时阅读比例\n13%\n1 / 14 节已标记读完 · 仅当前浏览器\n筹备、可选与旧版课时不计入比例；已读不代表掌握。\n第 1 章：\n人工智能是什么：能力、边界与常见误区\n第 2 章：\nAI、机器学习、深度学习与生成式 AI 的包含关系\n第 3 章：\n监督学习、无监督学习、自监督学习与强化学习\n第 4 章：\n数据、参数、模型、训练、验证、测试与推理\n第 5 章：\n主要技术方向：NLP、LLM、CV、多模态、RL、生成式模型\n5.1\n自然语言处理与大语言模型\n·\n5.2\n计算机视觉：让机器理解图像\n筹备中\n·\n5.3\n多模态 AI：连接文字、图片与声音\n筹备中\n·\n5.4\n生成模型：从要求到可核对的作品\n筹备中\n·\n5.5\n强化学习适合哪些应用问题？\n筹备中\n第 6 章：\nAI 风险与责任：隐私、偏差、版权、幻觉与误用\n第 7 章：\n如何阅读课程先修图与选择学习路径",
+  "anchorAudit": {
+    "coreExerciseIds": [
+      "exercise-design-equipment-service",
+      "exercise-choose-language-work"
+    ],
+    "headings": [
+      "五条咨询，工作人员先做什么？",
+      "按服务需要给消息归类",
+      "知道是取消咨询，还要找到什么？",
+      "同样找到R1，为什么建议会不同？",
+      "找到的规则，怎样变成给B的回复？",
+      "资料缺了一块，怎样继续处理？",
+      "负责人只想看一段简报，怎样写？",
+      "同一条文字，任务变了，交付也变",
+      "NLP是任务领域，LLM可以承担其中多种工作",
+      "把不同工作接成一个服务方案",
+      "换到器材室，设计你自己的处理方案",
+      "为器材服务交付一份可核查的处理记录",
+      "四种需求，该交回怎样的语言处理结果？",
+      "写出输入、交付物、处理方式与核查办法",
+      "拿一组新的文字，先写这份任务单"
+    ],
+    "hrefAnchors": [
+      {
+        "exists": true,
+        "href": "#main-content"
+      },
+      {
+        "exists": true,
+        "href": "#find-rules"
+      },
+      {
+        "exists": true,
+        "href": "#read-messages"
+      },
+      {
+        "exists": true,
+        "href": "#find-rules"
+      },
+      {
+        "exists": true,
+        "href": "#keep-unknown"
+      },
+      {
+        "exists": true,
+        "href": "#summarize-messages"
+      },
+      {
+        "exists": true,
+        "href": "#task-outputs"
+      },
+      {
+        "exists": true,
+        "href": "#combine-steps"
+      },
+      {
+        "exists": true,
+        "href": "#equipment-service-task"
+      },
+      {
+        "exists": true,
+        "href": "#takeaways"
+      },
+      {
+        "exists": true,
+        "href": "#exercise-design-equipment-service"
+      },
+      {
+        "exists": true,
+        "href": "#exercise-choose-language-work"
+      }
+    ],
+    "images": 0
+  },
+  "consoleErrors": []
+}

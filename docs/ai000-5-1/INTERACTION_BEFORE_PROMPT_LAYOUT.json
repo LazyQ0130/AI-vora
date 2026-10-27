@@ -1,0 +1,458 @@
+{
+  "interaction": [
+    {
+      "id": "design-equipment-service",
+      "stages": [
+        [
+          true,
+          false,
+          false
+        ],
+        [
+          true,
+          true,
+          false
+        ],
+        [
+          true,
+          true,
+          true
+        ]
+      ]
+    },
+    {
+      "id": "choose-language-work",
+      "stages": [
+        [
+          true,
+          false,
+          false
+        ],
+        [
+          true,
+          true,
+          false
+        ],
+        [
+          true,
+          true,
+          true
+        ]
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "articleFont": "16px",
+      "client": 1425,
+      "feedback": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "h1": "自然语言处理与大语言模型",
+      "images": 0,
+      "scroll": 1425,
+      "tables": [
+        {
+          "caption": "收到的五条咨询",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 5,
+          "width": 722
+        },
+        {
+          "caption": "一种分类方案：先看每条主要询问的事情",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 5,
+          "width": 722
+        },
+        {
+          "caption": "可查的服务资料R1–R3",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 3,
+          "width": 722
+        },
+        {
+          "caption": "同一主题、同一出处，具体条件决定下一步",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 2,
+          "width": 722
+        },
+        {
+          "caption": "逐条检查：原资料能支持到哪里？",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 5,
+          "width": 722
+        },
+        {
+          "caption": "五条咨询的主题概况",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 4,
+          "width": 722
+        },
+        {
+          "caption": "围绕B的三种工作",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 3,
+          "width": 722
+        },
+        {
+          "caption": "器材借用服务资料S1–S3",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 3,
+          "width": 722
+        },
+        {
+          "caption": "四条新的器材咨询",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 4,
+          "width": 722
+        },
+        {
+          "caption": "四份文字处理需求",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 4,
+          "width": 722
+        },
+        {
+          "caption": "丙提供的十条原始工作记录",
+          "regionScroll": 722,
+          "regionWidth": 722,
+          "rows": 10,
+          "width": 722
+        }
+      ],
+      "width": 1440
+    },
+    {
+      "articleFont": "16px",
+      "client": 753,
+      "feedback": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "h1": "自然语言处理与大语言模型",
+      "images": 0,
+      "scroll": 753,
+      "tables": [
+        {
+          "caption": "收到的五条咨询",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 5,
+          "width": 650
+        },
+        {
+          "caption": "一种分类方案：先看每条主要询问的事情",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 5,
+          "width": 650
+        },
+        {
+          "caption": "可查的服务资料R1–R3",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 3,
+          "width": 650
+        },
+        {
+          "caption": "同一主题、同一出处，具体条件决定下一步",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 2,
+          "width": 650
+        },
+        {
+          "caption": "逐条检查：原资料能支持到哪里？",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 5,
+          "width": 650
+        },
+        {
+          "caption": "五条咨询的主题概况",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 4,
+          "width": 650
+        },
+        {
+          "caption": "围绕B的三种工作",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 3,
+          "width": 650
+        },
+        {
+          "caption": "器材借用服务资料S1–S3",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 3,
+          "width": 650
+        },
+        {
+          "caption": "四条新的器材咨询",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 4,
+          "width": 650
+        },
+        {
+          "caption": "四份文字处理需求",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 4,
+          "width": 650
+        },
+        {
+          "caption": "丙提供的十条原始工作记录",
+          "regionScroll": 650,
+          "regionWidth": 650,
+          "rows": 10,
+          "width": 650
+        }
+      ],
+      "width": 768
+    },
+    {
+      "articleFont": "16px",
+      "client": 375,
+      "feedback": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "h1": "自然语言处理与大语言模型",
+      "images": 0,
+      "scroll": 375,
+      "tables": [
+        {
+          "caption": "收到的五条咨询",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 5,
+          "width": 308
+        },
+        {
+          "caption": "一种分类方案：先看每条主要询问的事情",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 5,
+          "width": 308
+        },
+        {
+          "caption": "可查的服务资料R1–R3",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 3,
+          "width": 308
+        },
+        {
+          "caption": "同一主题、同一出处，具体条件决定下一步",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 2,
+          "width": 308
+        },
+        {
+          "caption": "逐条检查：原资料能支持到哪里？",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 5,
+          "width": 308
+        },
+        {
+          "caption": "五条咨询的主题概况",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 4,
+          "width": 308
+        },
+        {
+          "caption": "围绕B的三种工作",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 3,
+          "width": 308
+        },
+        {
+          "caption": "器材借用服务资料S1–S3",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 3,
+          "width": 308
+        },
+        {
+          "caption": "四条新的器材咨询",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 4,
+          "width": 308
+        },
+        {
+          "caption": "四份文字处理需求",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 4,
+          "width": 308
+        },
+        {
+          "caption": "丙提供的十条原始工作记录",
+          "regionScroll": 308,
+          "regionWidth": 308,
+          "rows": 10,
+          "width": 308
+        }
+      ],
+      "width": 390
+    },
+    {
+      "articleFont": "16px",
+      "client": 305,
+      "feedback": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "h1": "自然语言处理与大语言模型",
+      "images": 0,
+      "scroll": 305,
+      "tables": [
+        {
+          "caption": "收到的五条咨询",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 5,
+          "width": 254
+        },
+        {
+          "caption": "一种分类方案：先看每条主要询问的事情",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 5,
+          "width": 254
+        },
+        {
+          "caption": "可查的服务资料R1–R3",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 3,
+          "width": 254
+        },
+        {
+          "caption": "同一主题、同一出处，具体条件决定下一步",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 2,
+          "width": 254
+        },
+        {
+          "caption": "逐条检查：原资料能支持到哪里？",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 5,
+          "width": 254
+        },
+        {
+          "caption": "五条咨询的主题概况",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 4,
+          "width": 254
+        },
+        {
+          "caption": "围绕B的三种工作",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 3,
+          "width": 254
+        },
+        {
+          "caption": "器材借用服务资料S1–S3",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 3,
+          "width": 254
+        },
+        {
+          "caption": "四条新的器材咨询",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 4,
+          "width": 254
+        },
+        {
+          "caption": "四份文字处理需求",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 4,
+          "width": 254
+        },
+        {
+          "caption": "丙提供的十条原始工作记录",
+          "regionScroll": 254,
+          "regionWidth": 254,
+          "rows": 10,
+          "width": 254
+        }
+      ],
+      "width": 320
+    }
+  ],
+  "tableViews": [
+    {
+      "cellFont": "14px",
+      "firstRow": "A\t我报名以后页面显示成功，但一直没收到确认通知，应该怎么办？",
+      "scrollY": 640.6666870117188,
+      "width": 1440
+    },
+    {
+      "cellFont": "14px",
+      "firstRow": "A\t我报名以后页面显示成功，但一直没收到确认通知，应该怎么办？",
+      "scrollY": 714,
+      "width": 768
+    },
+    {
+      "cellFont": "14px",
+      "firstRow": "A\t我报名以后页面显示成功，但一直没收到确认通知，应该怎么办？",
+      "scrollY": 798,
+      "width": 390
+    },
+    {
+      "cellFont": "14px",
+      "firstRow": "A\t我报名以后页面显示成功，但一直没收到确认通知，应该怎么办？",
+      "scrollY": 1019.3333129882812,
+      "width": 320
+    }
+  ],
+  "oldStorage": {
+    "result": {
+      "type": "string",
+      "value": "{\"aivora:learning:v2:AI000:AI000-C04-L04:r1\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"AI000\\\",\\\"lessonId\\\":\\\"AI000-C04-L04\\\",\\\"contentVersion\\\":1,\\\"percent\\\":100,\\\"completed\\\":true,\\\"section\\\":\\\"takeaways\\\",\\\"updatedAt\\\":1793119053638}\"}"
+    }
+  }
+}

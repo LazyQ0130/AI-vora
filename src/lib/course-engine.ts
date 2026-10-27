@@ -22,6 +22,7 @@ import { reinforcementLearningLesson } from "../content/lessons/ai000/reinforcem
 import { dataFeaturesLabelsLesson } from "../content/lessons/ai000/data-features-labels";
 import { modelsAndParametersLesson } from "../content/lessons/ai000/models-and-parameters";
 import { usingFixedModelLesson } from "../content/lessons/ai000/using-a-fixed-model";
+import { naturalLanguageLesson } from "../content/lessons/ai000/natural-language-and-llm";
 import { trainingValidationTestLesson } from "../content/lessons/ai000/training-validation-test";
 import { aiMlDlLesson } from "../content/lessons/ai000/ai-ml-dl";
 import {
@@ -51,6 +52,7 @@ const contents: Lesson[] = [
   modelsAndParametersLesson,
   trainingValidationTestLesson,
   usingFixedModelLesson,
+  naturalLanguageLesson,
   ...maV22Lessons,
   regressionTaskLesson,
   linearModelLesson,

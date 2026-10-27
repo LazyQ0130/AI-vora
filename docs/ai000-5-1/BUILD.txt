@@ -1,0 +1,40 @@
+
+> aivora-web@0.1.0 build
+> next build
+
+▲ Next.js 16.4.3 (Turbopack)
+✓ Running next.config.ts took 25ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 761ms
+  Running TypeScript ...
+  Finished TypeScript in 2.1s ...
+  Collecting page data using 10 workers ...
+  Generating static pages using 10 workers (0/64) ...
+  Generating static pages using 10 workers (16/64)
+  Generating static pages using 10 workers (32/64)
+  Generating static pages using 10 workers (48/64)
+✓ Generating static pages using 10 workers (64/64) in 993ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /courses
+├   /courses/[id]
+│ ├ ● /courses/AI000
+│ ├ ● /courses/PY101
+│ ├ ● /courses/MA101
+│ └ ● [+17 more paths]
+├ ○ /dashboard
+├   /learn/[courseId]/[lessonId]
+│ ├ ● /learn/AI000/AI000-C05-L01
+│ ├ ● /learn/AI000/AI000-C04-L04
+│ ├ ● /learn/AI000/AI000-C04-L03
+│ └ ● [+34 more paths]
+├ ○ /paths
+└ ○ /projects
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)

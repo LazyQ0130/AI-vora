@@ -1,0 +1,50 @@
+{
+  "checkedAt": "2026-10-27T16:49:38.652Z",
+  "base": "5a7ab18851e68c833c9a9aa891e3aac8064ec326",
+  "unchangedOldLessons": 36,
+  "unchangedPublications": 36,
+  "protectedFileCount": 219,
+  "preservedPreciseFigures": 14,
+  "publication": {
+    "lessonId": "AI000-C05-L01",
+    "courseId": "AI000",
+    "chapterId": "AI000-C05",
+    "title": "自然语言处理与大语言模型",
+    "contentVersion": 1,
+    "order": 1,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "pending-review",
+    "access": "preview",
+    "technicalEvidence": "docs/AI000_LESSON_5_1_REVIEW.md"
+  },
+  "assessmentMap": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "design-equipment-service",
+        "choose-language-work"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "design-equipment-service",
+        "choose-language-work"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "design-equipment-service",
+        "choose-language-work"
+      ]
+    }
+  ],
+  "plannedChapterFive": [
+    "AI000-C05-L02",
+    "AI000-C05-L03",
+    "AI000-C05-L04",
+    "AI000-C05-L05"
+  ]
+}

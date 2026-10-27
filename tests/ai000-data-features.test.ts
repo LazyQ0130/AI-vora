@@ -85,7 +85,7 @@ test("两个独立开放任务覆盖三目标、两级提示、完整反馈，�
   assert.ok(lesson.sections.every(s => s.tier === "core" && !/^\d/.test(s.title)));
 });
 
-test("4.1独立r1、3.4/4.2相邻导航；4.4和后续章节仍仅规划", () => {
+test("4.1独立r1、3.4/4.2相邻导航；5.2及后续章节仍仅规划", () => {
   assert.equal(lessonRegistry.get(lesson.id), lesson); assert.equal(lesson.contentVersion, 1);
   const entry = resolveLesson("AI000", lesson.id)!.publication;
   assert.equal(entry.status, "pending-review"); assert.equal(entry.access, "preview"); assert.equal(entry.reviewEvidence, undefined);
@@ -94,7 +94,7 @@ test("4.1独立r1、3.4/4.2相邻导航；4.4和后续章节仍仅规划", () =>
   assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, "AI000-C03-L04");
   assert.equal(getAdjacentLessons(course, lesson.id).next?.lessonId, "AI000-C04-L02");
   assert.equal(resolveLesson("PY101", lesson.id), undefined);
-  for (const slot of course.chapters.flatMap(c => c.lessons).filter(l => l.lessonId > "AI000-C04-L04")) {
+  for (const slot of course.chapters.flatMap(c => c.lessons).filter(l => l.lessonId > "AI000-C05-L01")) {
     assert.equal(slot.status, "planned"); assert.equal(slot.href, undefined); assert.equal(lessonRegistry.has(slot.lessonId), false);
     assert.equal(resolveLesson("AI000", slot.lessonId), undefined);
   }
