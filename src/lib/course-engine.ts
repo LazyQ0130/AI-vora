@@ -20,6 +20,7 @@ import { unsupervisedLearningLesson } from "../content/lessons/ai000/unsupervise
 import { selfSupervisedLesson } from "../content/lessons/ai000/self-supervised-learning";
 import { reinforcementLearningLesson } from "../content/lessons/ai000/reinforcement-learning";
 import { dataFeaturesLabelsLesson } from "../content/lessons/ai000/data-features-labels";
+import { modelsAndParametersLesson } from "../content/lessons/ai000/models-and-parameters";
 import { aiMlDlLesson } from "../content/lessons/ai000/ai-ml-dl";
 import {
   publicationManifest,
@@ -45,6 +46,7 @@ const contents: Lesson[] = [
   selfSupervisedLesson,
   reinforcementLearningLesson,
   dataFeaturesLabelsLesson,
+  modelsAndParametersLesson,
   ...maV22Lessons,
   regressionTaskLesson,
   linearModelLesson,

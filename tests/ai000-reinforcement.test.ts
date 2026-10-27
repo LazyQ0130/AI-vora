@@ -13,7 +13,7 @@ import { ContentRenderer } from "../src/components/lesson/content-renderer";
 import { lessonExerciseLinks } from "../src/lib/lesson-exercises";
 import { createProgressStore, parseReadingProgress, progressKey } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
-import { assertStudyTime41Only } from "../scripts/ai000-study-time-compatibility";
+import { assertStudyTimeChanges } from "../scripts/ai000-study-time-compatibility";
 
 const before=JSON.parse(readFileSync("docs/ai000-3-4/BEFORE.json","utf8")) as {lessons:Lesson[];publications:Publication[];protectedFiles:{path:string;hash:string}[]};
 const blocks=lesson.sections.flatMap(s=>s.blocks);
@@ -64,7 +64,7 @@ test("强化内容：浇水逐步状态独立执行，四步与三步奖励及�
  assert.equal(ex.type,"exercise");if(ex.type==="exercise") {assert.ok(ex.solution.some(s=>s.includes("2−5+0+9=6")&&s.includes("0+2+9=11")));assert.ok(ex.solution.some(s=>s.includes("没有逐步告诉")));}
  assert.equal(signedReward(-6),"−6");assert.equal(signedReward(0),"0");
 });
-test("3.4注册r1、三目标映射两道核心题，3.3/4.1相邻可读，4.2以后无虚假入口",()=>{
+test("3.4注册r1、三目标映射两道核心题，3.3/4.1相邻可读，4.3以后无虚假入口",()=>{
  assert.equal(lessonRegistry.get(lesson.id),lesson);assert.equal(lesson.contentVersion,1);
  assert.equal(resolveLesson("AI000",lesson.id)?.publication.status,"pending-review");
  assert.equal(resolveLesson("AI000",lesson.id)?.publication.reviewEvidence,undefined);
@@ -72,7 +72,7 @@ test("3.4注册r1、三目标映射两道核心题，3.3/4.1相邻可读，4.2�
  assert.equal(getAdjacentLessons(course,"AI000-C03-L03").next?.lessonId,lesson.id);
  assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C03-L03");
  assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C04-L01");
- for(const slot of course.chapters[3].lessons.slice(1)) {assert.equal(slot.href,undefined);assert.equal(resolveLesson("AI000",slot.lessonId),undefined);assert.equal(lessonRegistry.has(slot.lessonId),false);}
+ for(const slot of course.chapters[3].lessons.slice(2)) {assert.equal(slot.href,undefined);assert.equal(resolveLesson("AI000",slot.lessonId),undefined);assert.equal(lessonRegistry.has(slot.lessonId),false);}
  assert.deepEqual(lessonExerciseLinks(lesson).map(e=>[e.id,e.tier,e.objectives]),[["trace-watering","core",[1,2]],["assess-feedback","core",[1,3]]]);
  for(const ex of blocks.filter(b=>b.type==="exercise")) {
   assert.equal(ex.hints.length,2);assert.ok(ex.solution.some(s=>s.includes("常见错误")));
@@ -86,7 +86,7 @@ test("全部31节旧注册全文、清单及受保护文件不变，包括3.1r1/
  for(const old of before.lessons) assert.equal(hash(lessonRegistry.get(old.id)),hash(old),old.id);
  for(const old of before.publications) assert.deepEqual(publicationManifest.find(p=>p.lessonId===old.lessonId),old,old.lessonId);
  for(const f of before.protectedFiles) {
-  if(f.path==="src/content/ai000-study-time.ts") assertStudyTime41Only(f.hash);
+  if(f.path==="src/content/ai000-study-time.ts") assertStudyTimeChanges(f.hash);
   else assert.equal(createHash("sha256").update(readFileSync(f.path)).digest("hex"),f.hash,f.path);
  }
 });

@@ -139,7 +139,7 @@ const quizSchema = z
 export const contentBlockSchema = z.discriminatedUnion("type", [
   z.object({
     type: z.literal("ai-task-figure"),
-    kind: z.enum(["mail-flow", "mail-outcomes", "method-hierarchy", "method-and-task", "knowledge-trace", "generation-map", "supervised-flow", "borrowing-groups", "self-supervised-flow", "reinforcement-flow", "features-target-flow"]),
+    kind: z.enum(["mail-flow", "mail-outcomes", "method-hierarchy", "method-and-task", "knowledge-trace", "generation-map", "supervised-flow", "borrowing-groups", "self-supervised-flow", "reinforcement-flow", "features-target-flow", "parameters-compare"]),
     alt: text,
     caption: text,
   }),

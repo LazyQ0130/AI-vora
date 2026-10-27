@@ -1,0 +1,121 @@
+{
+  "method": "同源数据计算后，与测试中独立的逐件累加及手算预期比对；未运行训练程序",
+  "main": [
+    {
+      "parameters": {
+        "name": "甲",
+        "baseMinutes": 2,
+        "minutesPerItem": 2
+      },
+      "predictions": [
+        2,
+        6,
+        4
+      ],
+      "gaps": [
+        2,
+        1,
+        6
+      ]
+    },
+    {
+      "parameters": {
+        "name": "乙",
+        "baseMinutes": 4,
+        "minutesPerItem": 2
+      },
+      "predictions": [
+        4,
+        8,
+        6
+      ],
+      "gaps": [
+        0,
+        1,
+        4
+      ]
+    }
+  ],
+  "print": [
+    {
+      "parameters": {
+        "name": "甲",
+        "baseMinutes": 2,
+        "minutesPerItem": 2
+      },
+      "predictions": [
+        8,
+        4
+      ],
+      "gaps": [
+        0,
+        1
+      ]
+    },
+    {
+      "parameters": {
+        "name": "乙",
+        "baseMinutes": 4,
+        "minutesPerItem": 1
+      },
+      "predictions": [
+        7,
+        5
+      ],
+      "gaps": [
+        1,
+        0
+      ]
+    }
+  ],
+  "library": [
+    {
+      "parameters": {
+        "baseMinutes": 3,
+        "minutesPerItem": 2
+      },
+      "predictions": [
+        5,
+        7,
+        11
+      ],
+      "gaps": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "parameters": {
+        "baseMinutes": 4,
+        "minutesPerItem": 2
+      },
+      "predictions": [
+        6,
+        8,
+        12
+      ],
+      "gaps": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "parameters": {
+        "baseMinutes": 5,
+        "minutesPerItem": 1
+      },
+      "predictions": [
+        6,
+        7,
+        9
+      ],
+      "gaps": [
+        0,
+        1,
+        1
+      ]
+    }
+  ]
+}

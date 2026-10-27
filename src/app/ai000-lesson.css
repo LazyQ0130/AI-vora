@@ -107,7 +107,27 @@
 .ai-self-task { overflow-wrap: anywhere; }
 .ai-data-figure { overflow-wrap: anywhere; }
 #exercise-build-print-records > p:first-of-type,
-#exercise-audit-library-records > p:first-of-type { white-space: pre-line; }
+#exercise-audit-library-records > p:first-of-type,
+#exercise-compare-print-settings > p:first-of-type,
+#exercise-adjust-library-settings > p:first-of-type { white-space: pre-line; }
+.ai-param-figure { overflow-wrap: anywhere; }
+.ai-param-input { padding-left: 14px; border-left: 3px solid #65cfe3; }
+.ai-param-label { display: block; font-size: 14px; line-height: 1.8; color: #c7d2ec; }
+.ai-param-input strong, .ai-param-target strong { display: block; font-size: 18px; line-height: 1.8; margin-top: 8px; }
+.ai-param-relation { font-size: 16px; line-height: 1.9; padding-block: 18px; border-bottom: 1px dashed #64718e; }
+.ai-param-settings { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; padding-block: 16px; }
+.ai-param-setting { min-width: 0; padding-left: 14px; border-left: 3px solid #65cfe3; }
+.ai-param-setting + .ai-param-setting { border-color: #ba9ce1; }
+.ai-param-title { display: block; font-size: 18px; line-height: 1.8; }
+.ai-param-setting dl { display: grid; gap: 12px; margin-block: 14px; }
+.ai-param-setting dt { font-size: 14px; line-height: 1.8; color: #c7d2ec; }
+.ai-param-setting dd { font-size: 16px; line-height: 1.8; margin: 0; }
+.ai-param-arrow { display: flex; align-items: center; gap: 8px; color: #c7d2ec; font-size: 14px; line-height: 1.8; }
+.ai-param-arrow svg { flex-shrink: 0; }
+.ai-param-calculation { font-size: 16px; line-height: 1.9; }
+.ai-param-prediction, .ai-param-gap, .ai-param-target p { font-size: 14px; line-height: 1.8; color: #d0d8ed; }
+.ai-param-prediction b { font-size: 20px; color: #e3e6ff; margin-left: 8px; }
+.ai-param-target { margin-top: 18px; padding: 18px 0 0 14px; border-top: 1px dashed #64718e; border-left: 3px solid #e9b56f; }
 .ai-data-stage + .ai-data-stage { margin-top: 24px; padding-top: 24px; border-top: 1px dashed #64718e; }
 .ai-data-title { display: block; font-size: 18px; line-height: 1.8; }
 .ai-data-pair { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; margin-top: 18px; }
@@ -175,6 +195,7 @@
   .ai-borrowing-groups { grid-template-columns: minmax(0,1fr); gap: 20px; }
   .ai-self-pair { grid-template-columns: minmax(0,1fr); gap: 8px; }
   .ai-data-pair { grid-template-columns: minmax(0,1fr); gap: 20px; }
+  .ai-param-settings { grid-template-columns: minmax(0,1fr); gap: 28px; }
   .ai-rl-trace > li { grid-template-columns: minmax(0,1fr); gap: 16px; }
   .ai-rl-action { padding-left: 16px; }
   .ai-rl-action svg { transform: rotate(90deg); }

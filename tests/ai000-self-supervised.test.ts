@@ -15,7 +15,7 @@ import { lessonExerciseLinks } from "../src/lib/lesson-exercises";
 import { createProgressStore, progressKey, parseReadingProgress } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
 import { assertStatusOnly31, assertExerciseRevision32, assertPublicationRefinement } from "../scripts/ai000-refinement-compatibility";
-import { assertStudyTime41Only } from "../scripts/ai000-study-time-compatibility";
+import { assertStudyTimeChanges } from "../scripts/ai000-study-time-compatibility";
 
 const before=JSON.parse(readFileSync("docs/ai000-3-3/BEFORE.json","utf8")) as {lessons:Lesson[];publications:Publication[];protectedFiles:{path:string;hash:string}[];data:{borrowingRecords:unknown;borrowingObservations:unknown}};
 const blocks=lesson.sections.flatMap(s=>s.blocks);
@@ -55,7 +55,7 @@ test("自监督内容：图区分两阶段，预测区域的实际输入不泄�
  assert.match(html,/假设的模型预测/);assert.match(html,/本次没有还原原词/);
 });
 
-test("3.3注册独立r1与核心目标入口，3.2/3.4相邻可读，4.2仍无教材",()=>{
+test("3.3注册独立r1与核心目标入口，3.2/3.4相邻可读，4.3仍无教材",()=>{
  assert.equal(lessonRegistry.get(lesson.id),lesson);assert.equal(lesson.contentVersion,1);
  const pub=resolveLesson("AI000",lesson.id)!.publication;
  assert.equal(pub.status,"pending-review");assert.equal(pub.access,"preview");assert.equal(pub.reviewEvidence,undefined);
@@ -64,7 +64,7 @@ test("3.3注册独立r1与核心目标入口，3.2/3.4相邻可读，4.2仍无�
  assert.equal(getAdjacentLessons(course,"AI000-C03-L02").next?.lessonId,lesson.id);
  assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C03-L02");
  assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C03-L04");
- assert.equal(resolveLesson("AI000","AI000-C04-L02"),undefined);assert.equal(lessonRegistry.has("AI000-C04-L02"),false);
+ assert.equal(resolveLesson("AI000","AI000-C04-L03"),undefined);assert.equal(lessonRegistry.has("AI000-C04-L03"),false);
  assert.ok(blocks.every(b=>!["code","math","experiment","downloads"].includes(b.type)));
 });
 
@@ -79,7 +79,7 @@ test("精确兼容：3.1仅状态句、3.2仅首题/版本/状态句，其他28�
  }
  for(const old of before.publications) assertPublicationRefinement(old,publicationManifest.find(p=>p.lessonId===old.lessonId)!);
  for(const file of before.protectedFiles) {
-  if(file.path==="src/content/ai000-study-time.ts") assertStudyTime41Only(file.hash);
+  if(file.path==="src/content/ai000-study-time.ts") assertStudyTimeChanges(file.hash);
   else assert.equal(createHash("sha256").update(readFileSync(file.path)).digest("hex"),file.hash,file.path);
  }
  assert.deepEqual(borrowingRecords,before.data.borrowingRecords);assert.deepEqual(borrowingObservations,before.data.borrowingObservations);

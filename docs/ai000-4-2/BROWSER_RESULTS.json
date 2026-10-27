@@ -1,0 +1,244 @@
+{
+  "checkedAt": "2026-10-27T13:40:27.957Z",
+  "base": "http://127.0.0.1:3013",
+  "browser": "Codex内置Chromium",
+  "method": "真实生产服务的浏览器视口模拟，非实体设备；只通过普通UI建立本轮测试记录，未注入存储",
+  "viewports": [
+    {
+      "bodyFont": "16px",
+      "figureColumns": "327px 327px",
+      "figureValueFont": "16px",
+      "pageWidth": 1425,
+      "tables": [
+        {
+          "caption": "先试两组参数设置",
+          "content": 722,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 722
+        },
+        {
+          "caption": "三条历史记录的逐条比较，时间单位均为分钟",
+          "content": 722,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 722
+        },
+        {
+          "caption": "打印模型的两组参数",
+          "content": 722,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 722
+        },
+        {
+          "caption": "两条已完成的打印任务",
+          "content": 722,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 722
+        },
+        {
+          "caption": "用来检查调整的三批图书",
+          "content": 722,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 722
+        }
+      ],
+      "width": 1440
+    },
+    {
+      "bodyFont": "16px",
+      "figureColumns": "291px 291px",
+      "figureValueFont": "16px",
+      "pageWidth": 753,
+      "tables": [
+        {
+          "caption": "先试两组参数设置",
+          "content": 650,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 650
+        },
+        {
+          "caption": "三条历史记录的逐条比较，时间单位均为分钟",
+          "content": 650,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 650
+        },
+        {
+          "caption": "打印模型的两组参数",
+          "content": 650,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 650
+        },
+        {
+          "caption": "两条已完成的打印任务",
+          "content": 650,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 650
+        },
+        {
+          "caption": "用来检查调整的三批图书",
+          "content": 650,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 650
+        }
+      ],
+      "width": 768
+    },
+    {
+      "bodyFont": "16px",
+      "figureColumns": "276px",
+      "figureValueFont": "16px",
+      "pageWidth": 375,
+      "tables": [
+        {
+          "caption": "先试两组参数设置",
+          "content": 308,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 308
+        },
+        {
+          "caption": "三条历史记录的逐条比较，时间单位均为分钟",
+          "content": 320,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 308
+        },
+        {
+          "caption": "打印模型的两组参数",
+          "content": 308,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 308
+        },
+        {
+          "caption": "两条已完成的打印任务",
+          "content": 308,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 308
+        },
+        {
+          "caption": "用来检查调整的三批图书",
+          "content": 308,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 308
+        }
+      ],
+      "width": 390
+    },
+    {
+      "bodyFont": "16px",
+      "figureColumns": "222px",
+      "figureValueFont": "16px",
+      "pageWidth": 305,
+      "tables": [
+        {
+          "caption": "先试两组参数设置",
+          "content": 254,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 254
+        },
+        {
+          "caption": "三条历史记录的逐条比较，时间单位均为分钟",
+          "content": 320,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 254
+        },
+        {
+          "caption": "打印模型的两组参数",
+          "content": 254,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 254
+        },
+        {
+          "caption": "两条已完成的打印任务",
+          "content": 254,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 254
+        },
+        {
+          "caption": "用来检查调整的三批图书",
+          "content": 254,
+          "role": "region",
+          "tabIndex": 0,
+          "viewport": 254
+        }
+      ],
+      "width": 320
+    }
+  ],
+  "checks": {
+    "refined41Caption": "六条包裹处理记录",
+    "refined41FigureRetainsHypothetical12": true,
+    "refined41PromptNoSourceDeclaration": true,
+    "completion41RestoredAcrossRebuild": true,
+    "adjacent41To42": true,
+    "new42DidNotInherit41Completion": true,
+    "objectives": 3,
+    "coreExercises": 2,
+    "fullArticleContents": 11,
+    "bothExercisesKeyboardHintsAndSolution": true,
+    "exerciseHashAndHeadingFocus": true,
+    "drawerClosesAndFocusesExercise": true,
+    "escapeRestoresTriggerFocus": true,
+    "temporaryInputClearedAfterReload": true,
+    "detailsClosedAfterReload": true,
+    "openingAnswersDoesNotComplete": true,
+    "manual42CompletionRestoredAfterReload": true,
+    "return41StillCompleted": true,
+    "comparisonKeyboardScroll": {
+      "width": 320,
+      "viewport": 254,
+      "content": 320,
+      "scrollLeft": 66
+    },
+    "studentNumericalRoles": {
+      "input": 2,
+      "parameters": [
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "predictions": [
+        6,
+        8
+      ],
+      "actual": 7
+    }
+  },
+  "console": [],
+  "screenshots": [
+    "REFINED_41.jpg",
+    "DESKTOP.jpg",
+    "DESKTOP_FIGURE.jpg",
+    "TABLET.jpg",
+    "MOBILE_FIGURE.jpg",
+    "MOBILE_TARGET.jpg",
+    "MOBILE_DRAWER.jpg",
+    "NARROW_TABLE.jpg"
+  ],
+  "limitations": [
+    "未使用实体手机、其他浏览器或读屏软件",
+    "旧r1进度键、旧锚点及全部旧键字节不变由真实存储适配器测试验证；浏览器检查实际显示的恢复和隔离",
+    "不是教师审核、真实学生答题或学习耗时测试"
+  ]
+}

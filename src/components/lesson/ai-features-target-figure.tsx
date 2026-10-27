@@ -3,6 +3,8 @@ import { ArrowDown } from "lucide-react";
 import type { ContentBlock } from "@/content/models";
 import { parcelTimeRecords, newParcelTimeRecord, parcelFeatureValues } from "@/content/lessons/ai000/parcel-time-example";
 
+// 原创教学示意，12分钟为手工指定的假设输出，没有运行或训练模型；制作事实见4.2精修报告。
+
 export function AiFeaturesTargetFigure({ block }: { block: Extract<ContentBlock, { type: "ai-task-figure" }> }) {
   const id = useId();
   const historical = parcelTimeRecords[2];
@@ -30,7 +32,7 @@ export function AiFeaturesTargetFigure({ block }: { block: Extract<ContentBlock,
     <div className="ai-data-stage" aria-label="假设预测与以后核实的实际结果">
       <span className="ai-data-model"><ArrowDown size={20} aria-hidden="true" /> 将当前输入交给模型，得到估计</span>
       <div className="ai-data-pair">
-        <div className="ai-data-prediction"><span className="ai-data-label">单独保存 · 预测时长</span><strong>假设的模型输出 {current.hypotheticalPredictionMinutes}分钟</strong><p>这是示意数字，没有训练或运行模型。</p></div>
+        <div className="ai-data-prediction"><span className="ai-data-label">单独保存 · 预测时长</span><strong>假设的模型输出 {current.hypotheticalPredictionMinutes}分钟</strong><p>先把这个数记在预测列。</p></div>
         <div className="ai-data-unknown"><span className="ai-data-label">以后核实 · 实际处理时长</span><strong>按G自己的到件与归架记录确认</strong><p>确认后填实际列，再与预测比较；现在继续保留未知。</p></div>
       </div>
     </div>

@@ -1,0 +1,132 @@
+{
+  "baseline": "6c88e0adb27da78738c8e05dce6580e87176bfda",
+  "scope": "1.1–3.4仅记录候选位置，按教学作用人工判断，未自动改稿",
+  "registeredFields": [
+    {
+      "lessonId": "AI000-C01-L01",
+      "sectionId": "mail-task",
+      "path": "sections.0.blocks.3.text",
+      "text": "邮件与背景均为教学构造。本人报名的活动、工作通知算正常；陌生来源、未经请求的诱导推广算垃圾。这里先用两封说明任务，不是某邮箱产品的实测。"
+    },
+    {
+      "lessonId": "AI000-C01-L02",
+      "sectionId": "task-comparison",
+      "path": "sections.0.blocks.1.caption",
+      "text": "用输入和输出比较能力，情境均为教学构造"
+    },
+    {
+      "lessonId": "AI000-C01-L02",
+      "sectionId": "mistakes",
+      "path": "sections.1.blocks.3.caption",
+      "text": "图一：先各自算规则输出，再与题设类别比较。没有训练邮件模型，也没有真实准确率数据。"
+    },
+    {
+      "lessonId": "AI000-C01-L02",
+      "sectionId": "check-output",
+      "path": "sections.3.blocks.0.text",
+      "text": "分类有约定类别作对照，生成文字的检查则要回到每个说法。给写作系统的材料只有“读书会周五下午三点开始”，假设它写出“读书会周五下午三点在二楼举行”。这是教学构造的输出，未调用任何产品测试。"
+    },
+    {
+      "lessonId": "AI000-C02-L01",
+      "sectionId": "deep-learning",
+      "path": "sections.1.blocks.0.text",
+      "text": "现在我们知道，机器学习是在说判断方式可以从数据中得到。接着要问的是：用哪一种模型、怎样从输入中找到有用的线索？深度学习就在回答这个问题。为了看清线索怎样形成，我们换成一个直观的任务：判断照片里有没有猫。下面仍是教学构造的比较，没有训练或评测真实模型。"
+    },
+    {
+      "lessonId": "AI000-C02-L02",
+      "sectionId": "practice",
+      "path": "sections.4.blocks.0.text",
+      "text": "下面的情境都为教学构造。先写自己的理由，再打开提示。输入仅当前页面暂存，不自动判分。"
+    },
+    {
+      "lessonId": "AI000-C03-L01",
+      "sectionId": "parcel-examples",
+      "path": "sections.0.blocks.2.caption",
+      "text": "四个为教学构造的例子：文字只帮助想象照片，实际设想交给模型的是照片"
+    },
+    {
+      "lessonId": "AI000-C03-L01",
+      "sectionId": "learning-and-prediction",
+      "path": "sections.1.blocks.4.caption",
+      "text": "图一：上半部分的答案用于学习；下半部分先得到预测，再另行核实。图中没有实际训练模型。"
+    },
+    {
+      "lessonId": "AI000-C03-L02",
+      "sectionId": "borrowing-records",
+      "path": "sections.0.blocks.1.text",
+      "text": "图书馆想据此研究书籍怎样摆放更方便浏览。我们先只看同一个月里科普类、文学类的借阅次数，暂时不提供“科普爱好者”“文学爱好者”等读者类别。下面六条记录全部为教学构造，不来自真实学生，也没有个人身份信息。"
+    },
+    {
+      "lessonId": "AI000-C03-L02",
+      "sectionId": "compare-records",
+      "path": "sections.1.blocks.3.text",
+      "text": "本页仍由我们手工按“哪类次数更多”提出候选观察，用来理解聚类思路，未运行聚类程序。实际程序会按所选方法处理数据；不同方法怎样计算相似程度，这一节不需要公式。"
+    },
+    {
+      "lessonId": "AI000-C03-L02",
+      "sectionId": "uncertain-records",
+      "path": "sections.2.blocks.3.caption",
+      "text": "图一：输入数字、比较依据和候选观察分开呈现。这里展示手工分析，未训练或运行聚类算法。"
+    },
+    {
+      "lessonId": "AI000-C03-L02",
+      "sectionId": "practice",
+      "path": "sections.6.blocks.1.solution.1",
+      "text": "这里没有预先提供每条记录应该归哪组的目标标签，是根据输入之间的相似情况探索分组，所以可以用无监督聚类的思路分析。我们手工提出方案，没有运行真实算法；运动、艺术及相应次数是输入信息，不是已确认的参加者群答案。"
+    },
+    {
+      "lessonId": "AI000-C03-L03",
+      "sectionId": "hide-a-piece",
+      "path": "sections.0.blocks.1.text",
+      "text": "先看这条为教学构造的原句：“星期五下午，读书会在图书馆举行。”试着把地点遮住，再读一次：“星期五下午，读书会在____举行。”如果请程序补空格，它实际上能看到什么，又该拿什么检查它补出的内容？"
+    },
+    {
+      "lessonId": "AI000-C03-L03",
+      "sectionId": "another-task",
+      "path": "sections.4.blocks.1.caption",
+      "text": "另一条原创记录：根据前文预测后续片段"
+    },
+    {
+      "lessonId": "AI000-C03-L04",
+      "sectionId": "delivery-problem",
+      "path": "sections.0.blocks.2.text",
+      "text": "下面是一个为纸笔教学构造的简化环境。任务规则规定：本次首次到甲检查点得+3分；因直行门关闭而改走侧通道扣6分，表示绕行的任务资源损失；完成送达得+10分，本次结束。普通前进和原处等待记0分。检查点与送达的加分各只记一次。"
+    },
+    {
+      "lessonId": "AI000-C03-L04",
+      "sectionId": "delivery-problem",
+      "path": "sections.0.blocks.3.text",
+      "text": "我们只安排前进、原处等待和门前交付，不设返回岔口的动作。每次新任务从相同岔口开始。地图、通行变化和计分都由这个教学情境规定；机器人还需要通过经历，才知道某个选择后面会遇到什么。这里没有运行真实机器人或学习算法。"
+    },
+    {
+      "lessonId": "AI000-C03-L04",
+      "sectionId": "follow-actions",
+      "path": "sections.1.blocks.3.alt",
+      "text": "记录1：当前在岔口，物品未送达，前方门的通行情况未知；行动走甲路到检查点；随后到达甲检查点，取得本次检查点分；发现直行门关闭；环境按规则反馈+3分；现在可改走侧通道或等待；本次接着选绕行。 记录2：当前在甲检查点，已看到直行门关闭；行动改走侧通道；随后绕过关闭的门，到达收件门前；绕行消耗任务资源；环境按规则反馈−6分；现在可交付物品或等待；本次接着选交付。 记录3：当前在收件门前，物品仍在机器人上；行动交付物品；随后收件点确认收到物品，本次送物结束；环境按规则反馈+10分；本次结束；新一次任务从岔口重新开始。这是一段教学构造的事后记录，不是算法训练结果。"
+    },
+    {
+      "lessonId": "AI000-C03-L04",
+      "sectionId": "compare-routes",
+      "path": "sections.2.blocks.1.caption",
+      "text": "教学构造的事后记录；每行都从岔口开始，到送达结束"
+    },
+    {
+      "lessonId": "AI000-C03-L04",
+      "sectionId": "name-the-method",
+      "path": "sections.6.blocks.1.text",
+      "text": "按当前信息选择行动的办法，叫策略。例如，在这个通行安排下，结合已有记录优先选乙；到了收件门前再选择交付。这是描述一种策略的方式。强化学习希望通过经验改善这样的选择办法；这一页的手工比较只帮助看清问题，并未训练出一套策略。"
+    }
+  ],
+  "figureComponents": [
+    {
+      "path": "src/components/lesson/ai-self-supervised-figure.tsx",
+      "line": 27,
+      "text": "<p className=\"ai-self-note\">学习过程利用这个对照调整模型。以上是教学构造的预测，未实际运行模型。</p>"
+    },
+    {
+      "path": "src/components/lesson/ai-reinforcement-figure.tsx",
+      "line": 19,
+      "text": "<p className=\"ai-rl-note\">这是按教学规则编写的事后记录。没有运行机器人，也没有训练出策略。</p>"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "checkedAt": "2026-10-27T13:27:02.232Z",
+  "unchangedLessons": 32,
+  "unchangedPublications": 32,
+  "refinement41": [
+    "sections.0.blocks.0.text",
+    "sections.0.blocks.2.caption",
+    "sections.3.blocks.4.alt",
+    "sections.3.blocks.4.caption",
+    "sections.3.blocks.5.text",
+    "sections.6.blocks.0.text",
+    "sections.6.blocks.1.text",
+    "sections.6.blocks.2.prompt",
+    "sections.6.blocks.2.solution.1",
+    "sections.6.blocks.2.solution.2",
+    "sections.6.blocks.2.rubric.0",
+    "sections.6.blocks.2.rubric.3",
+    "sections.7.blocks.0.text",
+    "sections.7.blocks.1.caption",
+    "sections.7.blocks.3.caption",
+    "references.0.note",
+    "references.1.note",
+    "references.2.note",
+    "references.3.note"
+  ],
+  "protectedFilesUnchanged": true,
+  "publication": {
+    "lessonId": "AI000-C04-L02",
+    "courseId": "AI000",
+    "chapterId": "AI000-C04",
+    "title": "模型和参数是怎样得到的？",
+    "contentVersion": 1,
+    "order": 2,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "draft",
+    "access": "private"
+  },
+  "objectives": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "compare-print-settings",
+        "adjust-library-settings"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "compare-print-settings"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "adjust-library-settings"
+      ]
+    }
+  ]
+}
