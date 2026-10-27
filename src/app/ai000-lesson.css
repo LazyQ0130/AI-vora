@@ -83,6 +83,27 @@
 .ai-verification { border-left: 3px solid #ffd197; padding: 12px; background: #322e2c; }
 .ai-verification strong { display: block; color: #ffd197; font-size: 16px; line-height: 1.8; }
 .ai-verification span { display: block; color: #d6d8df; font-size: 14px; line-height: 1.8; margin-top: 6px; }
+.ai-borrowing { overflow-wrap: anywhere; }
+.ai-borrowing-title { display: block; font-size: 18px; line-height: 1.7; }
+.ai-borrowing-key { display: flex; flex-wrap: wrap; gap: 12px 18px; color: #c1cbe1; font-size: 14px; line-height: 1.8; }
+.ai-borrowing-key span { display: inline-flex; align-items: center; gap: 7px; }
+.ai-borrowing-key i { width: 16px; height: 16px; border-radius: 3px; }
+.ai-borrowing-records, .ai-borrowing-groups { list-style: none; margin: 18px 0; padding: 0; display: grid; gap: 12px; }
+.ai-borrowing-records li { display: grid; grid-template-columns: 58px minmax(0,1fr) auto; align-items: center; gap: 14px; border-bottom: 1px solid #384661; padding-block: 10px; }
+.ai-borrowing-records strong { font-size: 16px; line-height: 1.8; }
+.ai-borrowing-records span { font-size: 14px; line-height: 1.8; color: #d0d8ed; }
+.ai-borrowing-bar { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 4px; }
+.ai-borrowing-bar i { display: block; height: 20px; border-radius: 3px; }
+.ai-count-science { background: #65cfe3; }
+.ai-count-literature { background: #e9b56f; }
+.ai-count-empty { border: 1px dashed #748099; background: #202a3b; }
+.ai-borrowing-basis { padding: 16px 0; margin: 20px 0; border-block: 1px dashed #7883a3; }
+.ai-borrowing-basis strong, .ai-borrowing-groups strong { display: block; font-size: 16px; line-height: 1.8; }
+.ai-borrowing-basis p, .ai-borrowing-groups p, .ai-borrowing-limit { font-size: 14px; line-height: 1.8; color: #d0d8ed; }
+.ai-borrowing-basis p { margin: 8px 0 0; }
+.ai-borrowing-groups { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
+.ai-borrowing-groups li { padding-left: 14px; border-left: 3px solid #8b93df; }
+.ai-record-ids { display: block; color: #c7cdff; font-size: 16px; line-height: 1.8; margin-top: 8px; }
 .lesson-reading-links[aria-label="旧版书签与内容去向"] summary,
 .lesson-reading-links[aria-label="旧版书签与内容去向"] a { min-height: 44px; display: flex; align-items: center; }
 .lesson-reading-links[aria-label="旧版书签与内容去向"] section { scroll-margin-top: 16px; padding-block: 14px; }
@@ -102,4 +123,7 @@
   .ai-known-label { grid-column: 2; }
   .ai-prediction-row { grid-template-columns: minmax(0,1fr); }
   .ai-prediction-row > svg { margin-inline: auto; }
+  .ai-borrowing-records li { grid-template-columns: 58px minmax(0,1fr); gap: 6px 10px; }
+  .ai-borrowing-records li > span { grid-column: 2; }
+  .ai-borrowing-groups { grid-template-columns: minmax(0,1fr); gap: 20px; }
 }

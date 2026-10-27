@@ -8,7 +8,7 @@ import { programs } from "../src/content/resources/programs";
 import { readablePublications } from "../src/content/publication-manifest";
 
 test("四门不同类型教材用同一模型，公式可严格解析，图片有正确尺寸和可读替代文字", async () => {
-  assert.equal(readablePublications.length, 29);
+  assert.equal(readablePublications.length, 30);
   for (const publication of readablePublications) {
     const { lesson } = resolveLesson(
       publication.courseId,

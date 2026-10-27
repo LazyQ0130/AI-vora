@@ -1,0 +1,239 @@
+{
+  "checkedAt": "2026-10-27T10:00:50.044Z",
+  "base": "http://127.0.0.1:3009",
+  "observations": [
+    {
+      "test": "initial-storage",
+      "state": "empty 127.0.0.1:3009, no injected records"
+    },
+    {
+      "test": "desktop-goals-and-links",
+      "panel": "本节学习目标\n3 项\n01\n辨认没有目标标签的学习\n\n分清描述记录的信息和预先给出的答案。\n\n02\n提出有依据的分组\n\n比较新记录，并说明换个依据会怎样。\n\n03\n解释分组能说明多少\n\n保留未决情况，给出相关的核查动作。\n\n查看完整目标\n用具体例子解释无监督学习，区分输入字段与当前任务预先确认的目标标签\n根据给定记录和明确的比较依据提出合理分组，并解释更换依据可能带来的变化\n区分相似记录组与已确认的真实类别，说明分组的用途、限制与需要核查的内容\n核心练习\n2 道\n迁移练习\n给六条活动记录提出一个分组方案\n迁移练习\n先找当前任务的目标信息，再判断学习方式\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n0%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n已读3.1，能分清样本、输入和标签，知道已知目标可以帮助学习，预测结果需要核实。无需编程、距离公式或算法基础。\n\n3.1 样本、输入与标签\n\n只需回看这三个名称分别指什么，不必重学算法。",
+      "chapter": "COURSE CONTENTS\n人工智能导论与技术地图\n\n7 章 · 7 节核心课已制作\n\n已制作课时阅读比例\n0%\n0 / 7 节已标记读完 · 仅当前浏览器\n筹备、可选与旧版课时不计入比例；已读不代表掌握。\n第 1 章：\n人工智能是什么：能力、边界与常见误区\n第 2 章：\nAI、机器学习、深度学习与生成式 AI 的包含关系\n第 3 章：\n监督学习、无监督学习、自监督学习与强化学习\n3.1\n监督学习：从有答案的例子中学习\n3.2\n无监督学习：没有标签也能发现规律吗？\n·\n3.3\n自监督学习：怎样从数据本身构造学习任务？\n筹备中\n·\n3.4\n强化学习：通过行动与反馈学习\n筹备中\n第 4 章：\n数据、参数、模型、训练、验证、测试与推理\n第 5 章：\n主要技术方向：NLP、LLM、CV、多模态、RL、生成式模型\n第 6 章：\nAI 风险与责任：隐私、偏差、版权、幻觉与误用\n第 7 章：\n如何阅读课程先修图与选择学习路径"
+    },
+    {
+      "test": "desktop-layout",
+      "details": {
+        "figureHeight": 940,
+        "figureScroll": 722,
+        "figureWidth": 722,
+        "minFigureTextPx": 14,
+        "pageScroll": 1425,
+        "tables": [
+          {
+            "caption": "先观察，再提出你的比较办法；单位都是借阅次数",
+            "scroll": 722,
+            "width": 722
+          },
+          {
+            "caption": "同一批输入，换一个观察问题",
+            "scroll": 722,
+            "width": 722
+          }
+        ],
+        "width": 1440
+      }
+    },
+    {
+      "test": "desktop-first-exercise-target",
+      "details": {
+        "focus": "给六条活动记录提出一个分组方案",
+        "hash": "#exercise-propose-groups",
+        "top": 232
+      }
+    },
+    {
+      "test": "desktop-first-feedback",
+      "open": 3
+    },
+    {
+      "test": "desktop-second-exercise-target",
+      "details": {
+        "focus": "先找当前任务的目标信息，再判断学习方式",
+        "hash": "#exercise-identify-learning-signals",
+        "top": 232.21875
+      }
+    },
+    {
+      "test": "desktop-second-feedback",
+      "open": 3,
+      "text": "迁移练习 · 自主核对\n先找当前任务的目标信息，再判断学习方式\n\n甲准备器材照片及工作人员确认的器材类别，计划利用这些配对学习，预测新照片的类别。乙只有行为记录中的活动类型（运动/艺术）及参与次数，没有人群组别；计划不使用预先确认的人群答案，让程序从行为相似处寻找分组。丙有历史订单信息及逐单记录的实际配送分钟数，计划据此学习并预测新订单时长。丁只宣传“智能发现规律”，没有数据或方法说明。逐项写任务、输入、是否给了当前任务的已知目标标签、可以判断的学习方式及成立条件、还缺什么资料。若乙得到“组1”，能否据编号确认固定兴趣或能力？解释并给一个实际核查步骤。对丁写出有区分力的追问。\n\n先记录你的思路或计算\n\n输入仅用于当前页面思考，不自动评分，也不改变阅读完成标记。\n\n提示 1\n\n看已知目标是否被用于当前学习任务，不按有没有“类别”两个字或是否有人手填判断。计划采用的学习安排与产品已实现的算法也要分开。\n\n提示 2\n\n甲的器材类别、丙的实际分钟数是目标；乙的活动类型/次数描述行为，尚未给人群答案。丁连具体任务都不明。\n\n参考解答与自查标准\n甲是器材分类；输入照片，目标为对应的已确认器材类别。按题设用这些输入目标配对学习，属于监督学习安排；还需检查类别约定、配对正确性和数据是否适合新照片，不能保证效果。\n乙是探索相似行为组；输入为活动类型与次数，没有预先确认的人群目标标签。按题设不使用群标签、从相似性学习分组，可以按无监督聚类来设计。活动类型是输入字段，不是这个分组任务的标签。还需明确观察时段、比较依据、数据覆盖和具体方法；仅知道计划不能断定某产品实际用了哪个聚类算法。接受保留这一实现缺口的答案。\n丙是数值预测；订单中预测时能取得的信息是输入，实际配送分钟数是对应已知目标。用配对记录学习估时属于监督学习安排；目标来自业务实绩也可以，不要求人工逐条写答案。仍需核对单位、对应关系和可用输入。\n丁只给宣传语，任务、输入和目标信息都未说清，不能判为某种学习方式。可问“实际拿到什么数据，想交回什么结果？”“学习时有没有使用已知目标，若没有，程序按哪些信息寻找什么结构？”接受其他能补足学习安排证据的追问。\n乙的组1只是组号，无法确认固定兴趣或能力。可先回查原记录、时段与漏记情况，再按实际用途收集自愿反馈；若想检查能力，需要另外明确适合的评价，不能用参与次数替代。常见错误：因为乙有运动/艺术文字就认定有监督；因为丙没有人工填标签就认定无监督；由丁的名称猜方法；把组1当成已核实身份。\n检查自己的解答\n逐项说清任务、输入与当前目标，有目标和未知分别保留。\n甲/丙按目标配对说明监督，乙按题设说明无监督聚类的条件及方法缺口。\n解释活动类型字段为何不是人群标签，不以人工填写与否判断。\n乙的组号不附带身份/能力，核查动作具体；丁的追问能补充任务和学习证据。"
+    },
+    {
+      "test": "refresh-clears-draft",
+      "details": {
+        "open": 0,
+        "values": [
+          "",
+          ""
+        ]
+      }
+    },
+    {
+      "test": "progress-after-refresh",
+      "data": {
+        "result": {
+          "type": "string",
+          "value": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C03-L02\",\"contentVersion\":1,\"percent\":94,\"completed\":false,\"section\":\"practice\",\"updatedAt\":1793094720817}"
+        }
+      }
+    },
+    {
+      "test": "3.1-complete-not-inherited-by-3.2",
+      "old31": {
+        "version": 2,
+        "courseId": "AI000",
+        "lessonId": "AI000-C03-L01",
+        "contentVersion": 1,
+        "percent": 100,
+        "completed": true,
+        "section": "takeaways",
+        "updatedAt": 1793094747126
+      },
+      "new32Button": 1,
+      "h1": "无监督学习：没有标签也能发现规律吗？"
+    },
+    {
+      "test": "tablet-full-goals-prerequisite",
+      "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n8 节点\n本节学习目标\n3 项\n01\n辨认没有目标标签的学习\n\n分清描述记录的信息和预先给出的答案。\n\n02\n提出有依据的分组\n\n比较新记录，并说明换个依据会怎样。\n\n03\n解释分组能说明多少\n\n保留未决情况，给出相关的核查动作。\n\n查看完整目标\n用具体例子解释无监督学习，区分输入字段与当前任务预先确认的目标标签\n根据给定记录和明确的比较依据提出合理分组，并解释更换依据可能带来的变化\n区分相似记录组与已确认的真实类别，说明分组的用途、限制与需要核查的内容\n核心练习\n2 道\n迁移练习\n给六条活动记录提出一个分组方案\n迁移练习\n先找当前任务的目标信息，再判断学习方式\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n100%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n已读3.1，能分清样本、输入和标签，知道已知目标可以帮助学习，预测结果需要核实。无需编程、距离公式或算法基础。\n\n3.1 样本、输入与标签\n\n只需回看这三个名称分别指什么，不必重学算法。"
+    },
+    {
+      "test": "tablet-exercise-target",
+      "details": {
+        "focus": "给六条活动记录提出一个分组方案",
+        "hash": "#exercise-propose-groups",
+        "top": 277.9270935058594
+      }
+    },
+    {
+      "test": "tablet-layout",
+      "details": {
+        "figureScroll": 650,
+        "figureWidth": 650,
+        "pageScroll": 753,
+        "tables": [
+          {
+            "scroll": 650,
+            "width": 650
+          },
+          {
+            "scroll": 650,
+            "width": 650
+          }
+        ],
+        "width": 768
+      }
+    },
+    {
+      "test": "phone-full-goals",
+      "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n8 节点\n本节学习目标\n3 项\n01\n辨认没有目标标签的学习\n\n分清描述记录的信息和预先给出的答案。\n\n02\n提出有依据的分组\n\n比较新记录，并说明换个依据会怎样。\n\n03\n解释分组能说明多少\n\n保留未决情况，给出相关的核查动作。\n\n查看完整目标\n用具体例子解释无监督学习，区分输入字段与当前任务预先确认的目标标签\n根据给定记录和明确的比较依据提出合理分组，并解释更换依据可能带来的变化\n区分相似记录组与已确认的真实类别，说明分组的用途、限制与需要核查的内容\n核心练习\n2 道\n迁移练习\n给六条活动记录提出一个分组方案\n迁移练习\n先找当前任务的目标信息，再判断学习方式\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n100%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识"
+    },
+    {
+      "test": "phone-exercise-target",
+      "details": {
+        "dialog": false,
+        "focus": "给六条活动记录提出一个分组方案",
+        "hash": "#exercise-propose-groups",
+        "top": 259.7395935058594
+      }
+    },
+    {
+      "test": "phone-exercise-feedback",
+      "open": 3
+    },
+    {
+      "test": "phone-layout",
+      "details": {
+        "figureScroll": 308,
+        "figureWidth": 308,
+        "minFigureTextPx": 14,
+        "pageScroll": 375,
+        "tables": [
+          {
+            "scroll": 308,
+            "width": 308
+          },
+          {
+            "scroll": 308,
+            "width": 308
+          }
+        ],
+        "width": 390
+      }
+    },
+    {
+      "test": "narrow-layout",
+      "details": {
+        "figureScroll": 254,
+        "figureWidth": 254,
+        "pageScroll": 305,
+        "tables": [
+          {
+            "scroll": 254,
+            "width": 254
+          },
+          {
+            "scroll": 254,
+            "width": 254
+          }
+        ],
+        "width": 320
+      }
+    },
+    {
+      "test": "narrow-escape-focus",
+      "details": {
+        "dialog": false,
+        "focus": "本节导航"
+      }
+    },
+    {
+      "test": "narrow-article-target",
+      "details": {
+        "focus": "只看总次数，刚才的两组还明显吗？",
+        "hash": "#change-the-question",
+        "top": 234.5104217529297
+      }
+    },
+    {
+      "test": "narrow-reduced-motion-exercise",
+      "details": {
+        "focus": "先找当前任务的目标信息，再判断学习方式",
+        "hash": "#exercise-identify-learning-signals",
+        "top": 259.88543701171875
+      }
+    },
+    {
+      "test": "narrow-second-feedback",
+      "open": 3
+    },
+    {
+      "test": "manual-complete-restored-and-isolated",
+      "new32": {
+        "version": 2,
+        "courseId": "AI000",
+        "lessonId": "AI000-C03-L02",
+        "contentVersion": 1,
+        "percent": 100,
+        "completed": true,
+        "section": "takeaways",
+        "updatedAt": 1793094936406
+      },
+      "old31BytesUnchanged": true,
+      "keys": [
+        "aivora:learning:v2:AI000:AI000-C03-L02:r1",
+        "aivora:learning:v2:AI000:AI000-C03-L01:r1"
+      ]
+    },
+    {
+      "test": "course-count-and-time",
+      "text": "怎样安排学习时间\n\n原规划学时为 6–10 小时。按当前 24 节完整路线，连同阅读、开放练习与综合实践，编辑预计约 9.4–14.6 小时；这不是学生实测时间。\n\n目前有 7 节可阅读，其他课时仍在筹备。完整路线的预计时间包含这些尚未制作的内容，后续制作与实际试学后还会调整。每篇教材另列本节的阅读和练习预计时间。"
+    },
+    {
+      "test": "final-build-language-and-goals",
+      "panel": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n8 节点\n本节学习目标\n3 项\n01\n辨认没有目标标签的学习\n\n分清描述记录的信息和预先给出的答案。\n\n02\n提出有依据的分组\n\n比较新记录，并说明换个依据会怎样。\n\n03\n解释分组能说明多少\n\n保留未决情况，给出相关的核查动作。\n\n查看完整目标\n用具体例子解释无监督学习，区分记录中的输入信息与当前任务预先确认的目标标签\n根据给定记录和明确的比较依据提出合理分组，并解释更换依据可能带来的变化\n区分相似记录组与已确认的真实类别，说明分组的用途、限制与需要核查的内容\n核心练习\n2 道\n迁移练习\n给六条活动记录提出一个分组方案\n迁移练习\n先找当前任务的目标信息，再判断学习方式\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n100%\n·\n已手动标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识"
+    }
+  ],
+  "console": [],
+  "limits": "Chromium viewport simulation only; empty new origin, no storage injection; 3.1 and 3.2 completed flags created through ordinary UI are tool fixtures, not learner evidence; old 3.1 bytes unchanged while saving 3.2; other ports untouched; media and viewport restored; final build reloaded after wording refinement"
+}
