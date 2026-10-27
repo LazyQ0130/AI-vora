@@ -17,7 +17,7 @@ export const borrowingObservations = [
 ] as const;
 
 export const activityRecords = [
-  {id:"P",sport:5,art:1},{id:"Q",sport:4,art:0},
-  {id:"R",sport:1,art:5},{id:"S",sport:0,art:4},
-  {id:"T",sport:3,art:3},{id:"U",sport:0,art:0},
+  {id:"P",sport:5,art:1},{id:"Q",sport:3,art:2},
+  {id:"R",sport:1,art:4},{id:"S",sport:0,art:2},
+  {id:"T",sport:4,art:4},{id:"U",sport:1,art:0},
 ] as const;

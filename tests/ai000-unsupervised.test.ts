@@ -13,22 +13,23 @@ import { lessonExerciseLinks } from "../src/lib/lesson-exercises";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
 import { createProgressStore, parseReadingProgress, progressKey } from "../src/lib/learning-progress";
 import { getCourseStudyEstimate } from "../src/lib/course-learning-time";
+import { assertStatusOnly31, assertPublicationRefinement } from "../scripts/ai000-refinement-compatibility";
 
 const before=JSON.parse(readFileSync(new URL("../docs/ai000-3-2/BEFORE.json",import.meta.url),"utf8")) as {lessons:Lesson[];publications:Publication[];curriculum:{path:string;digest:string}[]};
 const lesson=lessonRegistry.get("AI000-C03-L02")!;
 const blocks=lesson.sections.flatMap(s=>s.blocks);
 const digest=(v:unknown)=>createHash("sha256").update(JSON.stringify(v)).digest("hex");
 
-test("3.2独立r1，目标真实映射两个去重核心入口，3.1相邻可读而3.3/3.4仍规划",()=>{
+test("3.2修订r2，目标真实映射两个去重核心入口，3.1/3.3相邻可读而3.4仍规划",()=>{
  const course=getLearningCourse("AI000")!;
- assert.equal(lesson.contentVersion,1);
+ assert.equal(lesson.contentVersion,2);
  assert.equal(resolveLesson("AI000",lesson.id)?.publication.status,"pending-review");
  assert.equal(resolveLesson("AI000",lesson.id)?.publication.reviewEvidence,undefined);
  assert.equal(getAdjacentLessons(course,"AI000-C03-L01").next?.lessonId,lesson.id);
  assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C03-L01");
- assert.equal(getAdjacentLessons(course,lesson.id).next,undefined);
+ assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C03-L03");
  assert.equal(resolveLesson("PY101",lesson.id),undefined);
- for(const id of ["AI000-C03-L03","AI000-C03-L04"]) {
+ for(const id of ["AI000-C03-L04"]) {
   assert.equal(resolveLesson("AI000",id),undefined);assert.equal(lessonRegistry.has(id),false);
  }
  assert.deepEqual(lesson.assessmentMap,[{objective:1,exerciseIds:["propose-groups","identify-learning-signals"]},{objective:2,exerciseIds:["propose-groups"]},{objective:3,exerciseIds:["propose-groups","identify-learning-signals"]}]);
@@ -66,17 +67,20 @@ test("主例与图的每个计数格一致，F四个空格不是缺失值；手�
 });
 
 test("练习用不同输入，按倾向与总数得到不同观察；这里只核算示例，不限定学生唯一分法",()=>{
- assert.deepEqual(activityRecords.map(r=>[r.id,r.sport,r.art]),[["P",5,1],["Q",4,0],["R",1,5],["S",0,4],["T",3,3],["U",0,0]]);
- assert.deepEqual(activityRecords.filter(r=>r.sport>r.art).map(r=>r.id),["P","Q"]);
+ assert.deepEqual(activityRecords.map(r=>[r.id,r.sport,r.art]),[["P",5,1],["Q",3,2],["R",1,4],["S",0,2],["T",4,4],["U",1,0]]);
+ assert.deepEqual(activityRecords.filter(r=>r.sport>r.art).map(r=>r.id),["P","Q","U"]);
  assert.deepEqual(activityRecords.filter(r=>r.art>r.sport).map(r=>r.id),["R","S"]);
- assert.deepEqual(activityRecords.map(r=>r.sport+r.art),[6,4,6,4,6,0]);
- assert.deepEqual(activityRecords.filter(r=>r.sport+r.art===6).map(r=>r.id),["P","R","T"]);
- assert.deepEqual(activityRecords.filter(r=>r.sport+r.art===4).map(r=>r.id),["Q","S"]);
+ assert.deepEqual(activityRecords.map(r=>r.sport+r.art),[6,5,5,2,8,1]);
+ assert.deepEqual(activityRecords.filter(r=>r.sport+r.art===5).map(r=>r.id),["Q","R"]);
+ assert.deepEqual(activityRecords.filter(r=>r.sport+r.art===8).map(r=>r.id),["T"]);
 });
 
-test("全部29节旧教材/发布条目/原课程事实原样保留；3.2不继承3.1且保存不改任何旧键",()=>{
- for(const old of before.lessons) assert.equal(digest(lessonRegistry.get(old.id)),digest(old),old.id);
- for(const old of before.publications) assert.deepEqual(publicationManifest.find(p=>p.lessonId===old.lessonId),old);
+test("旧29节中仅3.1状态句更新，其余28节及原课程事实保留；3.2独立保存不改旧键",()=>{
+ for(const old of before.lessons) {
+  if(old.id==="AI000-C03-L01") assertStatusOnly31(old,lessonRegistry.get(old.id)!);
+  else assert.equal(digest(lessonRegistry.get(old.id)),digest(old),old.id);
+ }
+ for(const old of before.publications) assertPublicationRefinement(old,publicationManifest.find(p=>p.lessonId===old.lessonId)!);
  for(const file of before.curriculum) assert.equal(createHash("sha256").update(readFileSync(file.path)).digest("hex"),file.digest);
  const memory=new Map<string,string>();
  const port={getItem:(k:string)=>memory.get(k)??null,setItem:(k:string,v:string)=>{memory.set(k,v);}};
@@ -88,7 +92,7 @@ test("全部29节旧教材/发布条目/原课程事实原样保留；3.2不继�
  assert.equal(parseReadingProgress(restored.getSnapshot(scope),scope)?.section,"unsupervised");
  assert.equal(parseReadingProgress(restored.getSnapshot(scope),scope)?.completed,false);
  restored.save(scope,100,"takeaways",true);
- assert.equal(progressKey(scope),"aivora:learning:v2:AI000:AI000-C03-L02:r1");
+ assert.equal(progressKey(scope),"aivora:learning:v2:AI000:AI000-C03-L02:r2");
  assert.equal(parseReadingProgress(restored.getSnapshot(scope),scope)?.completed,true);
  for(const [k,v] of existing) assert.equal(memory.get(k),v,k);
 });

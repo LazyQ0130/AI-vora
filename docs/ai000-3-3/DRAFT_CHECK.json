@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-10-27T11:25:09.184Z",
+  "unchangedLessons": 28,
+  "refined": true,
+  "protectedFilesUnchanged": true,
+  "mainBorrowingDataUnchanged": true,
+  "objectives": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "design-self-task",
+        "compare-learning-tasks"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "design-self-task",
+        "compare-learning-tasks"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "compare-learning-tasks"
+      ]
+    }
+  ]
+}

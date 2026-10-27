@@ -6,8 +6,9 @@ const revisedCoreLessons: Record<string, number> = { "MA101-C02-L03": 2, "PY101-
 
 // 发布权限独立于原始课程规划。技术证据不替代人工审核。
 export const publicationManifest = [
-  {lessonId:"AI000-C03-L02",courseId:"AI000",chapterId:"AI000-C03",title:"无监督学习：没有标签也能发现规律吗？",contentVersion:1,order:2,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_3_2_REVIEW.md"},
-  {lessonId:"AI000-C03-L01",courseId:"AI000",chapterId:"AI000-C03",title:"监督学习：从有答案的例子中学习",contentVersion:1,order:1,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_3_1_AND_EDITORIAL_REFINEMENT.md"},
+  {lessonId:"AI000-C03-L03",courseId:"AI000",chapterId:"AI000-C03",title:"自监督学习：怎样从数据本身构造学习任务？",contentVersion:1,order:3,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_3_3_AND_REFINEMENT.md"},
+  {lessonId:"AI000-C03-L02",courseId:"AI000",chapterId:"AI000-C03",title:"无监督学习：没有标签也能发现规律吗？",contentVersion:2,order:2,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_3_3_AND_REFINEMENT.md"},
+  {lessonId:"AI000-C03-L01",courseId:"AI000",chapterId:"AI000-C03",title:"监督学习：从有答案的例子中学习",contentVersion:1,order:1,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_3_3_AND_REFINEMENT.md"},
   ...courseOutline.filter(slot => slot.courseId === "AI000" && ["AI000-C01-L02","AI000-C01-L03","AI000-C02-L02"].includes(slot.lessonId)).map(slot => ({...slot,contentVersion:1,status:"pending-review",access:"preview",technicalEvidence:slot.lessonId==="AI000-C01-L03"?"docs/AI000_3_1_AND_EDITORIAL_REFINEMENT.md":"docs/AI000_CHAPTER_1_2_DELIVERY.md"})),
   {
     lessonId: "AI000-C02-L01",

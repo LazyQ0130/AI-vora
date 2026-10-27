@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-27T11:32:38.970Z",
+  "unchangedLessons": 28,
+  "statusOnly31": true,
+  "publicationRefinementsChecked": true,
+  "curriculumUnchanged": true,
+  "stage": "preview",
+  "objectives": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "propose-groups",
+        "identify-learning-signals"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "propose-groups"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "propose-groups",
+        "identify-learning-signals"
+      ]
+    }
+  ],
+  "sections": [
+    "borrowing-records",
+    "compare-records",
+    "uncertain-records",
+    "unsupervised",
+    "change-the-question",
+    "interpret-groups",
+    "practice",
+    "takeaways"
+  ]
+}
