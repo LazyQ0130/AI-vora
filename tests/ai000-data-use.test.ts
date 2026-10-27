@@ -1,7 +1,7 @@
+import { visualComparableJson, assertIllustrationPublication, assertIllustrationCompatibleFile } from "../scripts/ai000-illustration-compatibility";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { createHash } from "node:crypto";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import type { Lesson, Publication } from "../src/content/models";
@@ -95,21 +95,21 @@ test("三目标由两道独立核心题检验，真实锚点/两级提示/答案
   assert.ok(blocks.every(b => !["code","math","experiment","downloads"].includes(b.type)));
 });
 
-test("全部34节旧教材/清单及原有图/通用组件/课程事实逐字节不变", () => {
-  for (const old of before.lessons) assert.equal(JSON.stringify(lessonRegistry.get(old.id)),JSON.stringify(old),old.id);
-  for (const old of before.publications) assert.deepEqual(publicationManifest.find(p => p.lessonId === old.lessonId),old,old.lessonId);
-  for (const file of before.protectedFiles) assert.equal(createHash("sha256").update(readFileSync(file.path)).digest("hex"),file.hash,file.path);
+test("全部34节旧教材（反向移除登记插画后）/清单及原有图/通用组件/课程事实逐字节不变", () => {
+  for (const old of before.lessons) assert.equal(visualComparableJson(lessonRegistry.get(old.id)),JSON.stringify(old),old.id);
+  for (const old of before.publications) assertIllustrationPublication(old,publicationManifest.find(p => p.lessonId === old.lessonId)!);
+  for (const file of before.protectedFiles) assertIllustrationCompatibleFile(file.path, file.hash);
 });
 
-test("发布门禁与4.2→4.3连续导航，4.4及后续课没有注册正文", () => {
+test("发布门禁与4.2→4.3连续导航，4.4相邻可读，第五章仍无正文", () => {
   assert.equal(lessonRegistry.get(lesson.id),lesson); assert.equal(lesson.contentVersion,1);
   const entry = publicationManifest.find(p => p.lessonId === lesson.id)!;
   assert.equal(entry.reviewEvidence,undefined);
   const final = entry.status === "pending-review";
   assert.equal(entry.access,final ? "preview" : "private"); assert.equal(Boolean(resolveLesson("AI000",lesson.id)),final);
   const course = getLearningCourse("AI000")!;
-  if (final) { assert.equal(getAdjacentLessons(course,"AI000-C04-L02").next?.lessonId,lesson.id); assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C04-L02"); assert.equal(getAdjacentLessons(course,lesson.id).next,undefined); }
-  for (const slot of course.chapters.flatMap(c => c.lessons).filter(l => l.lessonId > lesson.id)) { assert.equal(slot.href,undefined); assert.equal(lessonRegistry.has(slot.lessonId),false); }
+  if (final) { assert.equal(getAdjacentLessons(course,"AI000-C04-L02").next?.lessonId,lesson.id); assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C04-L02"); assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C04-L04"); }
+  for (const slot of course.chapters.flatMap(c => c.lessons).filter(l => l.lessonId > "AI000-C04-L04")) { assert.equal(slot.href,undefined); assert.equal(lessonRegistry.has(slot.lessonId),false); }
   assert.equal(resolveLesson("PY101",lesson.id),undefined);
 });
 

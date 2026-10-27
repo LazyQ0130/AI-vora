@@ -1,3 +1,4 @@
+import { withoutAi000Illustrations, assertIllustrationPublication } from "./ai000-illustration-compatibility";
 import assert from "node:assert/strict";
 import type { Lesson, Publication } from "../src/content/models";
 
@@ -9,7 +10,7 @@ const finalBlock = (lesson:Lesson) => lesson.sections.find(s=>s.id==="takeaways"
 export function assertStatusOnly31(before:Lesson, after:Lesson) {
   assert.equal(before.contentVersion,1);assert.equal(after.contentVersion,1);
   assert.deepEqual(finalBlock(after),{type:"paragraph",text:transition31});
-  const normalized=structuredClone(after);
+  const normalized=structuredClone(withoutAi000Illustrations(after) as Lesson);
   const section=normalized.sections.find(s=>s.id==="takeaways")!;
   section.blocks[section.blocks.length-1]=structuredClone(finalBlock(before));
   assert.deepEqual(normalized,before,"3.1只允许最后状态段落更新");
@@ -19,7 +20,7 @@ export function assertExerciseRevision32(before:Lesson, after:Lesson) {
   const firstExercise=(lesson:Lesson)=>lesson.sections.find(s=>s.id==="practice")!.blocks.find(b=>b.type==="exercise"&&b.id==="propose-groups")!;
   assert.notDeepEqual(firstExercise(after),firstExercise(before));
   assert.deepEqual(finalBlock(after),{type:"paragraph",text:transition32});
-  const normalized=structuredClone(after);
+  const normalized=structuredClone(withoutAi000Illustrations(after) as Lesson);
   normalized.contentVersion=1;
   const practice=normalized.sections.find(s=>s.id==="practice")!;
   const index=practice.blocks.findIndex(b=>b.type==="exercise"&&b.id==="propose-groups");
@@ -30,6 +31,6 @@ export function assertExerciseRevision32(before:Lesson, after:Lesson) {
 }
 export function assertPublicationRefinement(before:Publication, after:Publication) {
   if(before.lessonId==="AI000-C03-L01" || before.lessonId==="AI000-C03-L02") {
-    assert.deepEqual(after,{...before,contentVersion:before.lessonId==="AI000-C03-L02"?2:1,technicalEvidence:refinementEvidence});
-  } else assert.deepEqual(after,before);
+    assertIllustrationPublication({...before,contentVersion:before.lessonId==="AI000-C03-L02"?2:1,technicalEvidence:refinementEvidence},after);
+  } else assertIllustrationPublication(before,after);
 }

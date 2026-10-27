@@ -1,3 +1,4 @@
+import { illustration } from "./illustrations";
 import { lessonSchema } from "../../models";
 import { p } from "./shared";
 import { parcelExamples } from "./parcel-example";
@@ -33,6 +34,7 @@ export const supervisedLearningLesson = lessonSchema.parse({
     { id: "parcel-examples", title: "照片旁边，为什么还要写类别？", navGroup: "examples", navLabel: "从包裹开始", blocks: [
       p("上一章我们知道，机器学习可以利用已有数据形成模型。但如果想让电脑判断一个包裹是纸箱还是文件袋，仅仅交给它一批照片，是否已经把任务说清楚了？"),
       p("想象学校收发室要按包装类别整理包裹。工作人员挑出几张照片，并逐一确认类别。我们希望程序利用这些例子学会判断，以后遇到新照片时，也能给出类别建议。"),
+      illustration("AI000-C03-L01"),
       { type: "table", caption: "四个为教学构造的例子：文字只帮助想象照片，实际设想交给模型的是照片", columns: ["照片", "画面的大致样子", "工作人员已确认的类别"], rows: parcelExamples.map(e => [e.id, e.description, e.label]) },
       p("先看A：照片提供了包装的外观，“纸箱”则告诉程序，这个例子应该得到什么结果。再看B，它的结果是“文件袋”。照片和类别一一对应，程序才有机会比较：哪些画面信息与哪种结果有关。"),
       p("右侧这一列尤其有用。同一批照片也可以用来判断包装是否破损、能否放进某个柜格，那就需要别的答案。现在的类别把学习方向限定为“判断纸箱还是文件袋”。照片多，并不会自动告诉程序我们想解决哪一个问题。"),

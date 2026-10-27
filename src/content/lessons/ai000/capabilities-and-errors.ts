@@ -1,3 +1,4 @@
+import { illustration } from "./illustrations";
 import { lessonSchema } from "../../models";
 import { p, aiSources } from "./shared";
 import { mailExamples } from "./mail-example";
@@ -24,6 +25,7 @@ export const capabilitiesLesson=lessonSchema.parse({
  p("再想想录音转写：它即使准确写出了“这本书最好看”，也只是记录说话者的意见。想推荐书，需要另做推荐任务；想确认书名和作者，得查看书目。某项工作做好了，不会自动替其他工作提供正确答案。")]},
  {id:"mistakes",title:"把两封新邮件放进来，规则还行吗？",navGroup:"errors",navLabel:"看清错误",blocks:[
  p("继续使用上一节的标题规则：含“免费”就判垃圾，否则判正常。原先两封A、C都分对了。现在加两封：B是你已报名的免费讲座提醒；D来自陌生推广，标题写“领取礼品，立即登记”。背景和规则分开摆，先自己判断一次。"),
+ illustration("AI000-C01-L02"),
  {type:"table",caption:"规则只能看标题，背景供我们核对",columns:["邮件标题","已知背景","按约定应归为"],rows:mailExamples.map(m=>[m.id+"｜"+m.subject,m.context,m.expected])},
  p("逐封只查标题，你会得到“垃圾、垃圾、正常、正常”。再对照背景，A、C正确；B该留下却被拦住，叫误拦；D该拦住却留下，叫漏掉。两种错法方向相反，不能只说“有两封错了”就结束。"),
  {type:"ai-task-figure",kind:"mail-outcomes",alt:"按四封教学邮件背景，A与D为垃圾，B与C为正常。标题关键词规则输出垃圾、垃圾、正常、正常，所以A/C正确、B误拦、D漏掉。",caption:"图一：先各自算规则输出，再与题设类别比较。没有训练邮件模型，也没有真实准确率数据。"},

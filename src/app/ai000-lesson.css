@@ -113,6 +113,20 @@
 #exercise-plan-print-evaluation > p:first-of-type,
 #exercise-audit-evaluation-flow > p:first-of-type { white-space: pre-line; }
 .ai-use-figure { overflow-wrap: anywhere; }
+#exercise-use-print-model > p:first-of-type,
+#exercise-audit-current-inputs > p:first-of-type { white-space: pre-line; }
+.ai-inference-figure { overflow-wrap: anywhere; }
+.ai-inference-steps { list-style: none; padding: 0; margin: 0; }
+.ai-inference-steps > li { padding: 20px 0 20px 14px; border-left: 3px solid #65cfe3; }
+.ai-inference-steps > li + li { margin-top: 20px; border-top: 1px dashed #64718e; border-color: #ba9ce1; }
+.ai-inference-steps > li:last-child { border-left-color: #e9b56f; }
+.ai-inference-label { display: block; font-size: 14px; line-height: 1.8; color: #c7d2ec; }
+.ai-inference-steps strong { display: block; font-size: 16px; line-height: 1.9; margin-top: 8px; }
+.ai-inference-steps p, .ai-inference-later { font-size: 14px; line-height: 1.9; color: #d0d8ed; }
+.ai-inference-steps .ai-inference-calculation { font-size: 20px; color: #e3e6ff; }
+.ai-inference-arrow { display: flex; align-items: center; gap: 8px; font-size: 14px; line-height: 1.8; color: #c7d2ec; }
+.ai-inference-results { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.ai-inference-later { padding-top: 18px; border-top: 1px dashed #64718e; }
 .ai-use-start strong { display: block; font-size: 18px; line-height: 1.8; }
 .ai-use-start p, .ai-use-records p, .ai-use-work p, .ai-use-work li, .ai-use-boundary { font-size: 14px; line-height: 1.9; color: #d0d8ed; }
 .ai-use-stages { list-style: none; padding: 0; margin: 20px 0; }
@@ -195,6 +209,7 @@
 .lesson-reading-links[aria-label="旧版书签与内容去向"] a { min-height: 44px; display: flex; align-items: center; }
 .lesson-reading-links[aria-label="旧版书签与内容去向"] section { scroll-margin-top: 16px; padding-block: 14px; }
 @media (max-width: 767px) {
+  .ai-inference-results { grid-template-columns: minmax(0,1fr); }
   .ai-use-stages > li { grid-template-columns: minmax(0,1fr); gap: 16px; }
   .ai-figure { padding: 16px; }
   .ai-flow { grid-template-columns: minmax(0, 1fr); gap: 8px; }

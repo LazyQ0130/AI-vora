@@ -1,0 +1,834 @@
+{
+  "checkedAt": "2026-10-27T15:39:18.331Z",
+  "environment": "Local production server 3015; IAB viewport simulation, not physical devices or student pilot",
+  "orderedLessons": [
+    "AI000-C01-L01",
+    "AI000-C01-L02",
+    "AI000-C01-L03",
+    "AI000-C02-L01",
+    "AI000-C02-L02",
+    "AI000-C03-L01",
+    "AI000-C03-L02",
+    "AI000-C03-L03",
+    "AI000-C03-L04",
+    "AI000-C04-L01",
+    "AI000-C04-L02",
+    "AI000-C04-L03",
+    "AI000-C04-L04"
+  ],
+  "reader": [
+    {
+      "client": 1425,
+      "image": [
+        {
+          "alt": "一个学生坐在整洁书桌旁查看邮件；屏幕上有封套形状和分组卡片，不显示文字。",
+          "complete": true,
+          "height": 481,
+          "loading": "lazy",
+          "natural": 800,
+          "width": 722
+        }
+      ],
+      "lesson": "AI000-C01-L01",
+      "oldCompleteButton": true,
+      "preciseFigures": 1,
+      "scroll": 1425,
+      "viewport": 1440
+    },
+    {
+      "client": 1425,
+      "image": [
+        {
+          "alt": "工作人员对照笔记材料核查电脑中的邮件卡片，建议区和待复核区分开，无文字。",
+          "complete": true,
+          "height": 481,
+          "loading": "lazy",
+          "natural": 800,
+          "width": 722
+        }
+      ],
+      "lesson": "AI000-C01-L02",
+      "oldCompleteButton": false,
+      "preciseFigures": 1,
+      "scroll": 1425,
+      "viewport": 1440
+    },
+    {
+      "client": 1425,
+      "image": [
+        {
+          "alt": "并置的两个工作角落：备份设备旁有无字钟面；另一处工作人员检查打印机与连接。",
+          "complete": true,
+          "height": 481,
+          "loading": "lazy",
+          "natural": 800,
+          "width": 722
+        }
+      ],
+      "lesson": "AI000-C01-L03",
+      "oldCompleteButton": false,
+      "preciseFigures": 1,
+      "scroll": 1425,
+      "viewport": 1440
+    },
+    {
+      "client": 1425,
+      "image": [
+        {
+          "alt": "桌面摆着不同角度的猫照片，电脑旁留有待核对照片，不画技术包含关系。",
+          "complete": true,
+          "height": 481,
+          "loading": "lazy",
+          "natural": 800,
+          "width": 722
+        }
+      ],
+      "lesson": "AI000-C02-L01",
+      "oldCompleteButton": false,
+      "preciseFigures": 1,
+      "scroll": 1425,
+      "viewport": 1440
+    },
+    {
+      "client": 1425,
+      "image": [
+        {
+          "alt": "读书会创作桌上摆着现成图片卡片，显示屏呈现新组织的猫与阅览室图像，无字海报。",
+          "complete": true,
+          "height": 481,
+          "loading": "lazy",
+          "natural": 800,
+          "width": 722
+        }
+      ],
+      "lesson": "AI000-C02-L02",
+      "oldCompleteButton": false,
+      "preciseFigures": 2,
+      "scroll": 1425,
+      "viewport": 1440
+    },
+    {
+      "client": 1425,
+      "image": [
+        {
+          "alt": "工作人员将纸箱和文件袋照片与对应实物逐一核对，资料夹上无文字。",
+          "complete": true,
+          "height": 481,
+          "loading": "lazy",
+          "natural": 800,
+          "width": 722
+        }
+      ],
+      "lesson": "AI000-C03-L01",
+      "oldCompleteButton": false,
+      "preciseFigures": 1,
+      "scroll": 1425,
+      "viewport": 1440
+    },
+    {
+      "client": 1425,
+      "image": [
+        {
+          "alt": "图书馆桌上摆着匿名借阅卡和不同主题的书，馆员在观察资料；不画已确定人群。",
+          "complete": true,
+          "height": 481,
+          "loading": "lazy",
+          "natural": 800,
+          "width": 722
+        }
+      ],
+      "lesson": "AI000-C03-L02",
+      "oldCompleteButton": false,
+      "preciseFigures": 1,
+      "scroll": 1425,
+      "viewport": 1440
+    },
+    {
+      "client": 1425,
+      "image": [
+        {
+          "alt": "桌上保留完整资料，另一份相同版式资料的一小段被纸条遮住；纸面只用抽象行线。",
+          "complete": true,
+          "height": 481,
+          "loading": "lazy",
+          "natural": 800,
+          "width": 722
+        }
+      ],
+      "lesson": "AI000-C03-L03",
+      "oldCompleteButton": false,
+      "preciseFigures": 1,
+      "scroll": 1425,
+      "viewport": 1440
+    },
+    {
+      "client": 1425,
+      "image": [
+        {
+          "alt": "小型轮式送物机器人携带普通包裹停在学校走廊岔口，侧通道与一扇关闭的门清楚可见。",
+          "complete": true,
+          "height": 481,
+          "loading": "lazy",
+          "natural": 800,
+          "width": 722
+        }
+      ],
+      "lesson": "AI000-C03-L04",
+      "oldCompleteButton": false,
+      "preciseFigures": 1,
+      "scroll": 1425,
+      "viewport": 1440
+    },
+    {
+      "client": 1425,
+      "image": [
+        {
+          "alt": "收发室登记台旁摆着不同大小包裹，工作人员记录到件信息；不显示完成时长。",
+          "complete": true,
+          "height": 481,
+          "loading": "lazy",
+          "natural": 800,
+          "width": 722
+        }
+      ],
+      "lesson": "AI000-C04-L01",
+      "oldCompleteButton": false,
+      "preciseFigures": 1,
+      "scroll": 1425,
+      "viewport": 1440
+    },
+    {
+      "client": 1425,
+      "image": [
+        {
+          "alt": "工作人员观察一排等待处理的相近尺寸包裹，旁边放着估时便签，画面无具体数字。",
+          "complete": true,
+          "height": 481,
+          "loading": "lazy",
+          "natural": 800,
+          "width": 722
+        }
+      ],
+      "lesson": "AI000-C04-L02",
+      "oldCompleteButton": false,
+      "preciseFigures": 1,
+      "scroll": 1425,
+      "viewport": 1440
+    },
+    {
+      "client": 1425,
+      "image": [
+        {
+          "alt": "桌面有打开的学习资料和比较用夹板，较远处留着闭合资料夹；不画文字标签和数据箭头。",
+          "complete": true,
+          "height": 481,
+          "loading": "lazy",
+          "natural": 800,
+          "width": 722
+        }
+      ],
+      "lesson": "AI000-C04-L03",
+      "oldCompleteButton": false,
+      "preciseFigures": 1,
+      "scroll": 1425,
+      "viewport": 1440
+    },
+    {
+      "client": 1425,
+      "image": [
+        {
+          "alt": "新包裹摆在登记台，工作人员核对当前信息并查看屏幕中的估计卡片，卡片不含文字或数字。",
+          "complete": true,
+          "height": 481,
+          "loading": "lazy",
+          "natural": 800,
+          "width": 722
+        }
+      ],
+      "lesson": "AI000-C04-L04",
+      "oldCompleteButton": false,
+      "preciseFigures": 1,
+      "scroll": 1425,
+      "viewport": 1440
+    },
+    {
+      "client": 375,
+      "image": [
+        {
+          "complete": true,
+          "height": 205,
+          "loading": "lazy",
+          "natural": 370,
+          "width": 308
+        }
+      ],
+      "lesson": "AI000-C01-L01",
+      "preciseFigures": 1,
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "client": 375,
+      "image": [
+        {
+          "complete": true,
+          "height": 205,
+          "loading": "lazy",
+          "natural": 370,
+          "width": 308
+        }
+      ],
+      "lesson": "AI000-C01-L02",
+      "preciseFigures": 1,
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "client": 375,
+      "image": [
+        {
+          "complete": true,
+          "height": 205,
+          "loading": "lazy",
+          "natural": 370,
+          "width": 308
+        }
+      ],
+      "lesson": "AI000-C01-L03",
+      "preciseFigures": 1,
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "client": 375,
+      "image": [
+        {
+          "complete": true,
+          "height": 205,
+          "loading": "lazy",
+          "natural": 370,
+          "width": 308
+        }
+      ],
+      "lesson": "AI000-C02-L01",
+      "preciseFigures": 1,
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "client": 375,
+      "image": [
+        {
+          "complete": true,
+          "height": 205,
+          "loading": "lazy",
+          "natural": 370,
+          "width": 308
+        }
+      ],
+      "lesson": "AI000-C02-L02",
+      "preciseFigures": 2,
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "client": 375,
+      "image": [
+        {
+          "complete": true,
+          "height": 205,
+          "loading": "lazy",
+          "natural": 370,
+          "width": 308
+        }
+      ],
+      "lesson": "AI000-C03-L01",
+      "preciseFigures": 1,
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "client": 375,
+      "image": [
+        {
+          "complete": true,
+          "height": 205,
+          "loading": "lazy",
+          "natural": 370,
+          "width": 308
+        }
+      ],
+      "lesson": "AI000-C03-L02",
+      "preciseFigures": 1,
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "client": 375,
+      "image": [
+        {
+          "complete": true,
+          "height": 205,
+          "loading": "lazy",
+          "natural": 370,
+          "width": 308
+        }
+      ],
+      "lesson": "AI000-C03-L03",
+      "preciseFigures": 1,
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "client": 375,
+      "image": [
+        {
+          "complete": true,
+          "height": 205,
+          "loading": "lazy",
+          "natural": 370,
+          "width": 308
+        }
+      ],
+      "lesson": "AI000-C03-L04",
+      "preciseFigures": 1,
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "client": 375,
+      "image": [
+        {
+          "complete": true,
+          "height": 205,
+          "loading": "lazy",
+          "natural": 370,
+          "width": 308
+        }
+      ],
+      "lesson": "AI000-C04-L01",
+      "preciseFigures": 1,
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "client": 375,
+      "image": [
+        {
+          "complete": true,
+          "height": 205,
+          "loading": "lazy",
+          "natural": 370,
+          "width": 308
+        }
+      ],
+      "lesson": "AI000-C04-L02",
+      "preciseFigures": 1,
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "client": 375,
+      "image": [
+        {
+          "complete": true,
+          "height": 205,
+          "loading": "lazy",
+          "natural": 370,
+          "width": 308
+        }
+      ],
+      "lesson": "AI000-C04-L03",
+      "preciseFigures": 1,
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "client": 375,
+      "image": [
+        {
+          "complete": true,
+          "height": 205,
+          "loading": "lazy",
+          "natural": 370,
+          "width": 308
+        }
+      ],
+      "lesson": "AI000-C04-L04",
+      "preciseFigures": 1,
+      "scroll": 375,
+      "viewport": 390
+    }
+  ],
+  "originalViews": [
+    {
+      "lesson": "AI000-C01-L01",
+      "width": 1440,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c01-l01-mail-sorting.webp"
+    },
+    {
+      "lesson": "AI000-C01-L02",
+      "width": 1440,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c01-l02-mail-review.webp"
+    },
+    {
+      "lesson": "AI000-C01-L03",
+      "width": 1440,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c01-l03-automation-diagnosis.webp"
+    },
+    {
+      "lesson": "AI000-C02-L01",
+      "width": 1440,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c02-l01-photo-recognition.webp"
+    },
+    {
+      "lesson": "AI000-C02-L02",
+      "width": 1440,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c02-l02-poster-creation.webp"
+    },
+    {
+      "lesson": "AI000-C03-L01",
+      "width": 1440,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c03-l01-photo-label-pairing.webp"
+    },
+    {
+      "lesson": "AI000-C03-L02",
+      "width": 1440,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c03-l02-library-observation.webp"
+    },
+    {
+      "lesson": "AI000-C03-L03",
+      "width": 1440,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c03-l03-masked-document.webp"
+    },
+    {
+      "lesson": "AI000-C03-L04",
+      "width": 1440,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c03-l04-delivery-robot.webp"
+    },
+    {
+      "lesson": "AI000-C04-L01",
+      "width": 1440,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c04-l01-parcel-registration.webp"
+    },
+    {
+      "lesson": "AI000-C04-L02",
+      "width": 1440,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c04-l02-queue-estimate.webp"
+    },
+    {
+      "lesson": "AI000-C04-L03",
+      "width": 1440,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c04-l03-records-reserved.webp"
+    },
+    {
+      "lesson": "AI000-C04-L04",
+      "width": 1440,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c04-l04-model-inference.webp"
+    },
+    {
+      "lesson": "AI000-C01-L01",
+      "width": 390,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c01-l01-mail-sorting.webp"
+    },
+    {
+      "lesson": "AI000-C01-L02",
+      "width": 390,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c01-l02-mail-review.webp"
+    },
+    {
+      "lesson": "AI000-C01-L03",
+      "width": 390,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c01-l03-automation-diagnosis.webp"
+    },
+    {
+      "lesson": "AI000-C02-L01",
+      "width": 390,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c02-l01-photo-recognition.webp"
+    },
+    {
+      "lesson": "AI000-C02-L02",
+      "width": 390,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c02-l02-poster-creation.webp"
+    },
+    {
+      "lesson": "AI000-C03-L01",
+      "width": 390,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c03-l01-photo-label-pairing.webp"
+    },
+    {
+      "lesson": "AI000-C03-L02",
+      "width": 390,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c03-l02-library-observation.webp"
+    },
+    {
+      "lesson": "AI000-C03-L03",
+      "width": 390,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c03-l03-masked-document.webp"
+    },
+    {
+      "lesson": "AI000-C03-L04",
+      "width": 390,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c03-l04-delivery-robot.webp"
+    },
+    {
+      "lesson": "AI000-C04-L01",
+      "width": 390,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c04-l01-parcel-registration.webp"
+    },
+    {
+      "lesson": "AI000-C04-L02",
+      "width": 390,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c04-l02-queue-estimate.webp"
+    },
+    {
+      "lesson": "AI000-C04-L03",
+      "width": 390,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c04-l03-records-reserved.webp"
+    },
+    {
+      "lesson": "AI000-C04-L04",
+      "width": 390,
+      "complete": true,
+      "naturalHeight": 800,
+      "naturalWidth": 1200,
+      "url": "http://127.0.0.1:3015/images/lessons/ai000/ai000-c04-l04-model-inference.webp"
+    }
+  ],
+  "widthChecks": [
+    {
+      "active": "沿着新任务，看预测和实际各放在哪里",
+      "client": 1425,
+      "figure": [
+        {
+          "scroll": 722,
+          "text": "新包裹N到件时排队3件，当前实际时长未知。使用固定的基础4分钟和每件2分钟，按基础加每件增加值乘排队数计算：4加2乘3等于10分钟。预测列单独记录预计10分钟，实际列仍待处理完成。以后从N自己的到件与归架台账核实实际，再与原预测比较；本次没有调整参数。当前输入 · 新包裹N排队3件到件时取得，先核对定义和单位。沿用固定模型基础4分钟 · 每件2分钟预计分钟数 = 基础 + 每件增加值 × 排队件数代入本次输入4 + 2 × 3 = 10分钟分别保存预测：10分钟已有模型输出，供工作参考。实际：仍未知完成后按N自己的到件与归架记录确认。以后用确认的实际值与原预测比较；本次计算没有调整参数。图一：先检查当前输入，再用固定模型计算；预测先保存，实际结果等完成后另查。",
+          "width": 722
+        }
+      ],
+      "hash": "#inference-flow",
+      "scroll": 1425,
+      "viewport": 1440
+    },
+    {
+      "active": "沿着新任务，看预测和实际各放在哪里",
+      "client": 753,
+      "figure": [
+        {
+          "scroll": 650,
+          "text": "新包裹N到件时排队3件，当前实际时长未知。使用固定的基础4分钟和每件2分钟，按基础加每件增加值乘排队数计算：4加2乘3等于10分钟。预测列单独记录预计10分钟，实际列仍待处理完成。以后从N自己的到件与归架台账核实实际，再与原预测比较；本次没有调整参数。当前输入 · 新包裹N排队3件到件时取得，先核对定义和单位。沿用固定模型基础4分钟 · 每件2分钟预计分钟数 = 基础 + 每件增加值 × 排队件数代入本次输入4 + 2 × 3 = 10分钟分别保存预测：10分钟已有模型输出，供工作参考。实际：仍未知完成后按N自己的到件与归架记录确认。以后用确认的实际值与原预测比较；本次计算没有调整参数。图一：先检查当前输入，再用固定模型计算；预测先保存，实际结果等完成后另查。",
+          "width": 650
+        }
+      ],
+      "hash": "#inference-flow",
+      "scroll": 753,
+      "viewport": 768
+    },
+    {
+      "active": "沿着新任务，看预测和实际各放在哪里",
+      "client": 375,
+      "figure": [
+        {
+          "scroll": 308,
+          "text": "新包裹N到件时排队3件，当前实际时长未知。使用固定的基础4分钟和每件2分钟，按基础加每件增加值乘排队数计算：4加2乘3等于10分钟。预测列单独记录预计10分钟，实际列仍待处理完成。以后从N自己的到件与归架台账核实实际，再与原预测比较；本次没有调整参数。当前输入 · 新包裹N排队3件到件时取得，先核对定义和单位。沿用固定模型基础4分钟 · 每件2分钟预计分钟数 = 基础 + 每件增加值 × 排队件数代入本次输入4 + 2 × 3 = 10分钟分别保存预测：10分钟已有模型输出，供工作参考。实际：仍未知完成后按N自己的到件与归架记录确认。以后用确认的实际值与原预测比较；本次计算没有调整参数。图一：先检查当前输入，再用固定模型计算；预测先保存，实际结果等完成后另查。",
+          "width": 308
+        }
+      ],
+      "hash": "#inference-flow",
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "active": "沿着新任务，看预测和实际各放在哪里",
+      "client": 305,
+      "figure": [
+        {
+          "scroll": 254,
+          "text": "新包裹N到件时排队3件，当前实际时长未知。使用固定的基础4分钟和每件2分钟，按基础加每件增加值乘排队数计算：4加2乘3等于10分钟。预测列单独记录预计10分钟，实际列仍待处理完成。以后从N自己的到件与归架台账核实实际，再与原预测比较；本次没有调整参数。当前输入 · 新包裹N排队3件到件时取得，先核对定义和单位。沿用固定模型基础4分钟 · 每件2分钟预计分钟数 = 基础 + 每件增加值 × 排队件数代入本次输入4 + 2 × 3 = 10分钟分别保存预测：10分钟已有模型输出，供工作参考。实际：仍未知完成后按N自己的到件与归架记录确认。以后用确认的实际值与原预测比较；本次计算没有调整参数。图一：先检查当前输入，再用固定模型计算；预测先保存，实际结果等完成后另查。",
+          "width": 254
+        }
+      ],
+      "hash": "#inference-flow",
+      "scroll": 305,
+      "viewport": 320
+    }
+  ],
+  "exercises": [
+    {
+      "active": "新任务来了，模型怎样给出预测？",
+      "client": 305,
+      "dialogs": 0,
+      "hash": "#exercise-use-print-model",
+      "openDetails": 0,
+      "scroll": 305,
+      "step": "drawer-jump"
+    },
+    {
+      "client": 305,
+      "openDetails": 3,
+      "scroll": 305,
+      "step": "print-feedback",
+      "stillUncompleted": true,
+      "typed": "D→B→C→A→E。固定参数2和3，输入4份；2+3×4=14分钟。提交时实际未知，结束后16分钟，少估2分钟。本次未改参数。"
+    },
+    {
+      "active": "参考解答与自查标准",
+      "client": 305,
+      "hash": "#exercise-audit-current-inputs",
+      "openDetails": 3,
+      "scroll": 305,
+      "step": "audit-feedback",
+      "stillUncompleted": true
+    }
+  ],
+  "progress": [
+    {
+      "resume": "#input-audit-task",
+      "step": "refresh-before-manual-complete",
+      "textareaValues": [
+        "",
+        ""
+      ],
+      "uncompleted": true
+    },
+    {
+      "active": "面对五份资料，先判断能不能照常用",
+      "hash": "#input-audit-task",
+      "step": "resume-action"
+    },
+    {
+      "completed": true,
+      "step": "manual-complete-refresh"
+    }
+  ],
+  "navigation": [
+    {
+      "adjacent": "上一节 · 4.2 模型和参数是怎样得到的？下一节 · 4.4 模型训练好以后，如何完成预测？",
+      "url": "http://127.0.0.1:3015/learn/AI000/AI000-C04-L03"
+    },
+    {
+      "completed": true,
+      "nextDisabled": true,
+      "title": "模型训练好以后，如何完成预测？",
+      "url": "http://127.0.0.1:3015/learn/AI000/AI000-C04-L04"
+    }
+  ],
+  "imageGeometry": {
+    "normal": {
+      "declared": [
+        "1200",
+        "800"
+      ],
+      "height": 205.33334350585935,
+      "width": 308
+    },
+    "withheld": {
+      "client": 375,
+      "complete": true,
+      "height": 205.33334350585935,
+      "naturalWidth": 0,
+      "scroll": 375,
+      "width": 308
+    },
+    "coreTextUnchanged": true,
+    "restored": {
+      "height": 205.48959350585935,
+      "naturalWidth": 370,
+      "width": 308
+    }
+  },
+  "extraImageWidths": [
+    {
+      "client": 753,
+      "currentSrc": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c04-l04-model-inference.webp&w=640&q=75",
+      "height": 433.6666870117187,
+      "scroll": 753,
+      "viewport": 768,
+      "width": 650
+    },
+    {
+      "client": 305,
+      "currentSrc": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c04-l04-model-inference.webp&w=640&q=75",
+      "height": 169.45834350585938,
+      "scroll": 305,
+      "viewport": 320,
+      "width": 254
+    }
+  ],
+  "consoleErrorsAfterRestore": []
+}

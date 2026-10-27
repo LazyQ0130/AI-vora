@@ -3,12 +3,13 @@ import assert from "node:assert/strict";
 import { readFile, stat } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import katex from "katex";
+import sharp from "sharp";
 import { lessonRegistry, resolveLesson } from "../src/lib/course-engine";
 import { programs } from "../src/content/resources/programs";
 import { readablePublications } from "../src/content/publication-manifest";
 
 test("四门不同类型教材用同一模型，公式可严格解析，图片有正确尺寸和可读替代文字", async () => {
-  assert.equal(readablePublications.length, 35);
+  assert.equal(readablePublications.length, 36);
   for (const publication of readablePublications) {
     const { lesson } = resolveLesson(
       publication.courseId,
@@ -40,14 +41,17 @@ test("四门不同类型教材用同一模型，公式可严格解析，图片�
         );
       if (block.type === "image") {
         const bytes = await readFile(`public${block.src}`);
-        assert.equal(bytes.subarray(1, 4).toString(), "PNG");
-        assert.equal(bytes.readUInt32BE(16), block.width);
-        assert.equal(bytes.readUInt32BE(20), block.height);
+        const metadata = await sharp(bytes).metadata();
+        assert.equal(metadata.format, block.src.endsWith(".webp") ? "webp" : "png");
+        assert.equal(metadata.width, block.width);
+        assert.equal(metadata.height, block.height);
         assert.ok(block.alt.length > 30);
         if (block.mobile) {
           const mobileBytes = await readFile(`public${block.mobile.src}`);
-          assert.equal(mobileBytes.readUInt32BE(16), block.mobile.width);
-          assert.equal(mobileBytes.readUInt32BE(20), block.mobile.height);
+          const mobileMetadata = await sharp(mobileBytes).metadata();
+          assert.equal(mobileMetadata.format, block.mobile.src.endsWith(".webp") ? "webp" : "png");
+          assert.equal(mobileMetadata.width, block.mobile.width);
+          assert.equal(mobileMetadata.height, block.mobile.height);
         }
       }
     }

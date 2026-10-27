@@ -1,0 +1,41 @@
+C:\Users\QYF\Desktop\Aivora-Web\src\content\lessons\ai000\using-a-fixed-model.ts:12
+export const usingFixedModelLesson = lessonSchema.parse({
+                                                  ^
+
+ZodError: [
+  {
+    "origin": "string",
+    "code": "invalid_format",
+    "format": "regex",
+    "pattern": "/^\\/(?:learning|downloads)\\/[a-zA-Z0-9/_-]+\\.(?:png|webp|jpg|py|ipynb|pdf|zip)$/",
+    "path": [
+      "sections",
+      0,
+      "blocks",
+      1,
+      "src"
+    ],
+    "message": "Invalid string: must match pattern /^\\/(?:learning|downloads)\\/[a-zA-Z0-9/_-]+\\.(?:png|webp|jpg|py|ipynb|pdf|zip)$/"
+  }
+]
+    at <anonymous> (C:\Users\QYF\Desktop\Aivora-Web\src\content\lessons\ai000\using-a-fixed-model.ts:12:51)
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:633:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.16.0
+✖ tests\ai000-inference.test.ts (1005.5647ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1012.9594
+
+✖ failing tests:
+
+test at tests\ai000-inference.test.ts:1:1
+✖ tests\ai000-inference.test.ts (1005.5647ms)
+  'test failed'

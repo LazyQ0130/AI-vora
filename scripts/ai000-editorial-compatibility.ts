@@ -1,3 +1,4 @@
+import { withoutAi000Illustrations } from "./ai000-illustration-compatibility";
 import assert from "node:assert/strict";
 import type { Lesson } from "../src/content/models";
 
@@ -24,7 +25,7 @@ export function contentDifferences(before: unknown, after: unknown, path = ""): 
 export function assertEditorialRefinement41(before: Lesson, after: Lesson) {
   assert.equal(before.id, "AI000-C04-L01");
   assert.equal(after.contentVersion, 1);
-  const differences = contentDifferences(before, after);
+  const differences = contentDifferences(before, withoutAi000Illustrations(after));
   for (const difference of differences) assert.ok(allowed41Paths.has(difference.path), `4.1未授权变更：${difference.path}`);
   assert.ok(differences.length > 0, "应有真实的学生端语言精修");
   return differences;

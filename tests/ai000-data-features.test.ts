@@ -1,3 +1,4 @@
+import { visualComparableJson, assertIllustrationPublication, assertIllustrationCompatibleFile } from "../scripts/ai000-illustration-compatibility";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -93,17 +94,17 @@ test("4.1独立r1、3.4/4.2相邻导航；4.4和后续章节仍仅规划", () =>
   assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, "AI000-C03-L04");
   assert.equal(getAdjacentLessons(course, lesson.id).next?.lessonId, "AI000-C04-L02");
   assert.equal(resolveLesson("PY101", lesson.id), undefined);
-  for (const slot of course.chapters.flatMap(c => c.lessons).filter(l => l.lessonId > "AI000-C04-L03")) {
+  for (const slot of course.chapters.flatMap(c => c.lessons).filter(l => l.lessonId > "AI000-C04-L04")) {
     assert.equal(slot.status, "planned"); assert.equal(slot.href, undefined); assert.equal(lessonRegistry.has(slot.lessonId), false);
     assert.equal(resolveLesson("AI000", slot.lessonId), undefined);
   }
 });
 
-test("32节旧注册全文、清单、锚点和版本不变，第三章原图及通用阅读器不变", () => {
-  const hash = (v: unknown) => createHash("sha256").update(JSON.stringify(v)).digest("hex");
+test("32节旧注册全文（反向移除登记插画后）、清单、锚点和版本不变，第三章原图及通用阅读器不变", () => {
+  const hash = (v: unknown) => createHash("sha256").update(visualComparableJson(v)).digest("hex");
   for (const old of before.lessons) assert.equal(hash(lessonRegistry.get(old.id)), hash(old), old.id);
-  for (const old of before.publications) assert.deepEqual(publicationManifest.find(p => p.lessonId === old.lessonId), old, old.lessonId);
-  for (const f of before.protectedFiles) assert.equal(createHash("sha256").update(readFileSync(f.path)).digest("hex"), f.hash, f.path);
+  for (const old of before.publications) assertIllustrationPublication(old, publicationManifest.find(p => p.lessonId === old.lessonId)!);
+  for (const f of before.protectedFiles) assertIllustrationCompatibleFile(f.path, f.hash);
 });
 
 test("真实进度适配器：4.1不继承旧课完成，保存/恢复不改第三章及3.2r1/r2历史", () => {

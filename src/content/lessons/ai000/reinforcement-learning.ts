@@ -1,3 +1,4 @@
+import { illustration } from "./illustrations";
 import { lessonSchema } from "../../models";
 import { p } from "./shared";
 import { deliveryRewards, deliveryRoutes, wateringRewards, wateringRecords, routeTotal, signedReward } from "./delivery-example";
@@ -32,6 +33,7 @@ export const reinforcementLearningLesson=lessonSchema.parse({
   {id:"delivery-problem",title:"走到岔路口，先选哪一条路？",navGroup:"delivery",navLabel:"送物的选择",blocks:[
    p("前面几节，我们让模型认包裹、比较借阅记录，也从完整句子里取出被遮住的词作目标。现在换一件需要连续作决定的事：学校的送物机器人，要把物品交到走廊另一头的收件点。"),
    p("机器人来到岔路口，可以走甲路、走乙路，或暂时等待。走过去以后，它的位置和接下来能走的路都会变化。假如甲路入口有一个能加分的检查点，机器人是否应该立刻选它？先留着你的判断，看看后面会发生什么。"),
+      illustration("AI000-C03-L04"),
    p(`下面是一个为纸笔教学构造的简化环境。任务规则规定：本次首次到甲检查点得${signedReward(deliveryRewards.checkpoint)}分；因直行门关闭而改走侧通道扣${Math.abs(deliveryRewards.detour)}分，表示绕行的任务资源损失；完成送达得${signedReward(deliveryRewards.delivered)}分，本次结束。普通前进和原处等待记0分。检查点与送达的加分各只记一次。`),
    p("我们只安排前进、原处等待和门前交付，不设返回岔口的动作。每次新任务从相同岔口开始。地图、通行变化和计分都由这个教学情境规定；机器人还需要通过经历，才知道某个选择后面会遇到什么。这里没有运行真实机器人或学习算法。"),
   ]},

@@ -1,0 +1,81 @@
+{
+  "checkedAt": "2026-10-27T15:09:00.472Z",
+  "unchangedOtherLessons": 23,
+  "oldAI000OnlyRegisteredImageAdded": 12,
+  "oldVersionsAndAssessmentPreserved": true,
+  "protectedFiles": true,
+  "illustrations": [
+    {
+      "lessonId": "AI000-C01-L01",
+      "section": "mail-task",
+      "index": 1,
+      "src": "/images/lessons/ai000/ai000-c01-l01-mail-sorting.webp",
+      "alt": "一个学生坐在整洁书桌旁查看邮件；屏幕上有封套形状和分组卡片，不显示文字。",
+      "caption": "先给每封邮件一个类别建议，再决定怎样整理；画面中的屏幕只帮助想象收件情境。",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "lessonId": "AI000-C03-L04",
+      "section": "delivery-problem",
+      "index": 2,
+      "src": "/images/lessons/ai000/ai000-c03-l04-delivery-robot.webp",
+      "alt": "小型轮式送物机器人携带普通包裹停在学校走廊岔口，侧通道与一扇关闭的门清楚可见。",
+      "caption": "走过岔口会改变位置和后面的选择；入口看得见的情况还不是整段结果。",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "lessonId": "AI000-C04-L03",
+      "section": "assign-roles",
+      "index": 1,
+      "src": "/images/lessons/ai000/ai000-c04-l03-records-reserved.webp",
+      "alt": "桌面有打开的学习资料和比较用夹板，较远处留着闭合资料夹；不画文字标签和数据箭头。",
+      "caption": "有的记录正用于学习或比较，有的先保留；关键在于是否影响过前面的决定。",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "lessonId": "AI000-C04-L04",
+      "section": "new-arrival",
+      "index": 1,
+      "src": "/images/lessons/ai000/ai000-c04-l04-model-inference.webp",
+      "alt": "新包裹摆在登记台，工作人员核对当前信息并查看屏幕中的估计卡片，卡片不含文字或数字。",
+      "caption": "新包裹先提供当时可取得的信息，系统给出估计；实际时长仍要等处理结束后核对。",
+      "width": 1200,
+      "height": 800
+    }
+  ],
+  "publication": {
+    "lessonId": "AI000-C04-L04",
+    "courseId": "AI000",
+    "chapterId": "AI000-C04",
+    "title": "模型训练好以后，如何完成预测？",
+    "contentVersion": 1,
+    "order": 4,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "draft",
+    "access": "private"
+  },
+  "assessment": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "use-print-model"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "use-print-model"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "audit-current-inputs"
+      ]
+    }
+  ]
+}

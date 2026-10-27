@@ -1,0 +1,188 @@
+{
+  "checkedAt": "2026-10-27T15:28:27.015Z",
+  "scope": "路径/真实编码/尺寸/体积/非空白/完整提示词，不替代人工视觉与事实核查",
+  "results": [
+    {
+      "lessonId": "AI000-C01-L01",
+      "src": "/images/lessons/ai000/ai000-c01-l01-mail-sorting.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 77642,
+      "encoding": "webp",
+      "channelStddev": [
+        73.30995374847296,
+        53.4294226528402,
+        45.98205104624103
+      ],
+      "passed": true
+    },
+    {
+      "lessonId": "AI000-C01-L02",
+      "src": "/images/lessons/ai000/ai000-c01-l02-mail-review.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 55080,
+      "encoding": "webp",
+      "channelStddev": [
+        80.97741442795989,
+        70.67931360785603,
+        66.55363028042845
+      ],
+      "passed": true
+    },
+    {
+      "lessonId": "AI000-C01-L03",
+      "src": "/images/lessons/ai000/ai000-c01-l03-automation-diagnosis.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 84354,
+      "encoding": "webp",
+      "channelStddev": [
+        72.3864024834686,
+        63.645319316690895,
+        60.023917597200835
+      ],
+      "passed": true
+    },
+    {
+      "lessonId": "AI000-C02-L01",
+      "src": "/images/lessons/ai000/ai000-c02-l01-photo-recognition.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 80210,
+      "encoding": "webp",
+      "channelStddev": [
+        68.85266163933188,
+        63.530028967828926,
+        63.09691044764597
+      ],
+      "passed": true
+    },
+    {
+      "lessonId": "AI000-C02-L02",
+      "src": "/images/lessons/ai000/ai000-c02-l02-poster-creation.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 99960,
+      "encoding": "webp",
+      "channelStddev": [
+        79.63556291633877,
+        59.73735291282195,
+        48.591270595661236
+      ],
+      "passed": true
+    },
+    {
+      "lessonId": "AI000-C03-L01",
+      "src": "/images/lessons/ai000/ai000-c03-l01-photo-label-pairing.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 79706,
+      "encoding": "webp",
+      "channelStddev": [
+        73.27842321181348,
+        56.97909274544083,
+        58.05508770350918
+      ],
+      "passed": true
+    },
+    {
+      "lessonId": "AI000-C03-L02",
+      "src": "/images/lessons/ai000/ai000-c03-l02-library-observation.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 87468,
+      "encoding": "webp",
+      "channelStddev": [
+        76.51794928872147,
+        58.78609486456616,
+        49.29581344146915
+      ],
+      "passed": true
+    },
+    {
+      "lessonId": "AI000-C03-L03",
+      "src": "/images/lessons/ai000/ai000-c03-l03-masked-document.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 53436,
+      "encoding": "webp",
+      "channelStddev": [
+        89.39930203617479,
+        77.45886442258853,
+        67.68271580051129
+      ],
+      "passed": true
+    },
+    {
+      "lessonId": "AI000-C03-L04",
+      "src": "/images/lessons/ai000/ai000-c03-l04-delivery-robot.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 72484,
+      "encoding": "webp",
+      "channelStddev": [
+        62.24779935229743,
+        53.458430672101485,
+        49.03761370507412
+      ],
+      "passed": true
+    },
+    {
+      "lessonId": "AI000-C04-L01",
+      "src": "/images/lessons/ai000/ai000-c04-l01-parcel-registration.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 72242,
+      "encoding": "webp",
+      "channelStddev": [
+        67.50650350920044,
+        61.40522821669834,
+        59.76845531405197
+      ],
+      "passed": true
+    },
+    {
+      "lessonId": "AI000-C04-L02",
+      "src": "/images/lessons/ai000/ai000-c04-l02-queue-estimate.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 62506,
+      "encoding": "webp",
+      "channelStddev": [
+        72.94111546375039,
+        56.395142820563805,
+        47.62227380383748
+      ],
+      "passed": true
+    },
+    {
+      "lessonId": "AI000-C04-L03",
+      "src": "/images/lessons/ai000/ai000-c04-l03-records-reserved.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 71280,
+      "encoding": "webp",
+      "channelStddev": [
+        79.49901341221444,
+        62.69086722378748,
+        55.975588582275485
+      ],
+      "passed": true
+    },
+    {
+      "lessonId": "AI000-C04-L04",
+      "src": "/images/lessons/ai000/ai000-c04-l04-model-inference.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 77032,
+      "encoding": "webp",
+      "channelStddev": [
+        83.15542797212014,
+        75.31056948125293,
+        68.05251015153311
+      ],
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "stage": "representative-scenes-before-remaining-generation",
+  "reviewer": "AI-assisted visual self-review, not teacher review or student pilot",
+  "results": [
+    {
+      "lesson": "AI000-C01-L01",
+      "width": 1440,
+      "loaded": true
+    },
+    {
+      "image": [
+        {
+          "complete": true,
+          "height": 205,
+          "loading": "lazy",
+          "naturalWidth": 370,
+          "width": 308
+        }
+      ],
+      "lesson": "AI000-C01-L01",
+      "pageWidth": 375,
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "image": [
+        {
+          "complete": true,
+          "height": 482,
+          "loading": "lazy",
+          "naturalWidth": 370,
+          "width": 722
+        }
+      ],
+      "lesson": "AI000-C03-L04",
+      "pageWidth": 1425,
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "image": [
+        {
+          "complete": true,
+          "height": 205,
+          "loading": "lazy",
+          "naturalWidth": 370,
+          "width": 308
+        }
+      ],
+      "lesson": "AI000-C03-L04",
+      "pageWidth": 375,
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "image": [
+        {
+          "complete": true,
+          "height": 481,
+          "loading": "lazy",
+          "naturalWidth": 800,
+          "width": 722
+        }
+      ],
+      "lesson": "AI000-C04-L03",
+      "pageWidth": 1425,
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "image": [
+        {
+          "complete": true,
+          "height": 205,
+          "loading": "lazy",
+          "naturalWidth": 370,
+          "width": 308
+        }
+      ],
+      "lesson": "AI000-C04-L03",
+      "pageWidth": 375,
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "image": [
+        {
+          "complete": true,
+          "height": 481,
+          "loading": "lazy",
+          "naturalWidth": 800,
+          "width": 722
+        }
+      ],
+      "lesson": "AI000-C04-L04",
+      "pageWidth": 1425,
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "image": [
+        {
+          "complete": true,
+          "height": 205,
+          "loading": "lazy",
+          "naturalWidth": 370,
+          "width": 308
+        }
+      ],
+      "lesson": "AI000-C04-L04",
+      "pageWidth": 375,
+      "scrollWidth": 375,
+      "width": 390
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import { illustration } from "./illustrations";
 import { lessonSchema } from "../../models";
 import { p } from "./shared";
 import { durationRelation } from "./model-parameter-example";
@@ -46,6 +47,7 @@ export const trainingValidationTestLesson = lessonSchema.parse({
     ] },
     { id: "assign-roles", title: "先安排用途，再看结果", navGroup: "roles", navLabel: "学习、选择与检查", blocks: [
       p("先拿出T1–T4供学习过程使用；另拿V1–V2比较候选方案；最后留下S1–S2，等方案确定以后才检查。下面把每批的工作写清，字母只是这次的记录名。"),
+      illustration("AI000-C04-L03"),
       { type: "table", caption: "同一种记录，承担三种不同工作", columns: ["这批记录", "什么时候、用来做什么", "名称"], rows: [
         ["T1–T4", "学习时提供输入与实际目标，帮助调整模型", "训练数据（训练集）"],
         ["V1–V2", "比较候选表现，决定选哪组或怎样继续开发", "验证数据（验证集）"],

@@ -6,6 +6,8 @@ const anchor = text.regex(/^[a-z][a-z0-9-]*$/);
 const localAsset = text.regex(
   /^\/(?:learning|downloads)\/[a-zA-Z0-9/_-]+\.(?:png|webp|jpg|py|ipynb|pdf|zip)$/,
 );
+// 新情境插画只扩展image的受控本地WebP目录，不扩大下载资源路径。
+const lessonImageAsset = localAsset.or(text.regex(/^\/images\/lessons\/ai000\/[a-z0-9-]+\.webp$/));
 export const publicationStates = [
   "planned",
   "draft",
@@ -139,7 +141,7 @@ const quizSchema = z
 export const contentBlockSchema = z.discriminatedUnion("type", [
   z.object({
     type: z.literal("ai-task-figure"),
-    kind: z.enum(["mail-flow", "mail-outcomes", "method-hierarchy", "method-and-task", "knowledge-trace", "generation-map", "supervised-flow", "borrowing-groups", "self-supervised-flow", "reinforcement-flow", "features-target-flow", "parameters-compare", "data-use-flow"]),
+    kind: z.enum(["mail-flow", "mail-outcomes", "method-hierarchy", "method-and-task", "knowledge-trace", "generation-map", "supervised-flow", "borrowing-groups", "self-supervised-flow", "reinforcement-flow", "features-target-flow", "parameters-compare", "data-use-flow", "inference-flow"]),
     alt: text,
     caption: text,
   }),
@@ -174,14 +176,14 @@ export const contentBlockSchema = z.discriminatedUnion("type", [
   }),
   z.object({
     type: z.literal("image"),
-    src: localAsset,
+    src: lessonImageAsset,
     alt: text,
     caption: text,
     width: z.number().int().positive(),
     height: z.number().int().positive(),
     mobile: z
       .object({
-        src: localAsset,
+        src: lessonImageAsset,
         width: z.number().int().positive(),
         height: z.number().int().positive(),
       })

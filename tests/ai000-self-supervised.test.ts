@@ -1,6 +1,6 @@
+import { visualComparableJson, assertIllustrationCompatibleFile } from "../scripts/ai000-illustration-compatibility";
 import test from "node:test";
 import assert from "node:assert/strict";
-import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -55,7 +55,7 @@ test("自监督内容：图区分两阶段，预测区域的实际输入不泄�
  assert.match(html,/假设的模型预测/);assert.match(html,/本次没有还原原词/);
 });
 
-test("3.3注册独立r1与核心目标入口，3.2/3.4相邻可读，4.4仍无教材",()=>{
+test("3.3注册独立r1与核心目标入口，3.2/3.4相邻可读，第五章仍无教材",()=>{
  assert.equal(lessonRegistry.get(lesson.id),lesson);assert.equal(lesson.contentVersion,1);
  const pub=resolveLesson("AI000",lesson.id)!.publication;
  assert.equal(pub.status,"pending-review");assert.equal(pub.access,"preview");assert.equal(pub.reviewEvidence,undefined);
@@ -64,7 +64,7 @@ test("3.3注册独立r1与核心目标入口，3.2/3.4相邻可读，4.4仍无�
  assert.equal(getAdjacentLessons(course,"AI000-C03-L02").next?.lessonId,lesson.id);
  assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C03-L02");
  assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C03-L04");
- assert.equal(resolveLesson("AI000","AI000-C04-L04"),undefined);assert.equal(lessonRegistry.has("AI000-C04-L04"),false);
+ assert.equal(resolveLesson("AI000","AI000-C05-L01"),undefined);assert.equal(lessonRegistry.has("AI000-C05-L01"),false);
  assert.ok(blocks.every(b=>!["code","math","experiment","downloads"].includes(b.type)));
 });
 
@@ -73,14 +73,14 @@ test("精确兼容：3.1仅状态句、3.2仅首题/版本/状态句，其他28�
   const after=lessonRegistry.get(old.id)!;
   if(old.id==="AI000-C03-L01") assertStatusOnly31(old,after);
   else if(old.id==="AI000-C03-L02") assertExerciseRevision32(old,after);
-  else assert.deepEqual(JSON.parse(JSON.stringify(after)),old,old.id);
+  else assert.deepEqual(JSON.parse(visualComparableJson(after)),old,old.id);
   assert.deepEqual(after.sections.map(s=>s.id),old.sections.map(s=>s.id));
   assert.deepEqual(after.sections.flatMap(s=>s.blocks).filter(b=>b.type==="exercise").map(b=>b.id),old.sections.flatMap(s=>s.blocks).filter(b=>b.type==="exercise").map(b=>b.id));
  }
  for(const old of before.publications) assertPublicationRefinement(old,publicationManifest.find(p=>p.lessonId===old.lessonId)!);
  for(const file of before.protectedFiles) {
   if(file.path==="src/content/ai000-study-time.ts") assertStudyTimeChanges(file.hash);
-  else assert.equal(createHash("sha256").update(readFileSync(file.path)).digest("hex"),file.hash,file.path);
+  else assertIllustrationCompatibleFile(file.path, file.hash);
  }
  assert.deepEqual(borrowingRecords,before.data.borrowingRecords);assert.deepEqual(borrowingObservations,before.data.borrowingObservations);
 });

@@ -1,0 +1,292 @@
+{
+  "checkedAt": "2026-10-27T15:40:20.791Z",
+  "scope": "Local production Next/Image responses, concurrent warm/local transport sample; not device/network benchmark or measured learning time",
+  "results": [
+    {
+      "lessonId": "AI000-C01-L01",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c01-l01-mail-sorting.webp&w=384&q=75",
+      "status": 200,
+      "requestedWidth": 384,
+      "encodedWidth": 384,
+      "encodedHeight": 256,
+      "encoding": "webp",
+      "bytes": 12512,
+      "elapsedMs": 116
+    },
+    {
+      "lessonId": "AI000-C01-L01",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c01-l01-mail-sorting.webp&w=828&q=75",
+      "status": 200,
+      "requestedWidth": 828,
+      "encodedWidth": 828,
+      "encodedHeight": 552,
+      "encoding": "webp",
+      "bytes": 33964,
+      "elapsedMs": 27
+    },
+    {
+      "lessonId": "AI000-C01-L02",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c01-l02-mail-review.webp&w=384&q=75",
+      "status": 200,
+      "requestedWidth": 384,
+      "encodedWidth": 384,
+      "encodedHeight": 256,
+      "encoding": "webp",
+      "bytes": 10344,
+      "elapsedMs": 101
+    },
+    {
+      "lessonId": "AI000-C01-L02",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c01-l02-mail-review.webp&w=828&q=75",
+      "status": 200,
+      "requestedWidth": 828,
+      "encodedWidth": 828,
+      "encodedHeight": 552,
+      "encoding": "webp",
+      "bytes": 25708,
+      "elapsedMs": 26
+    },
+    {
+      "lessonId": "AI000-C01-L03",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c01-l03-automation-diagnosis.webp&w=384&q=75",
+      "status": 200,
+      "requestedWidth": 384,
+      "encodedWidth": 384,
+      "encodedHeight": 256,
+      "encoding": "webp",
+      "bytes": 15126,
+      "elapsedMs": 101
+    },
+    {
+      "lessonId": "AI000-C01-L03",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c01-l03-automation-diagnosis.webp&w=828&q=75",
+      "status": 200,
+      "requestedWidth": 828,
+      "encodedWidth": 828,
+      "encodedHeight": 552,
+      "encoding": "webp",
+      "bytes": 38298,
+      "elapsedMs": 26
+    },
+    {
+      "lessonId": "AI000-C02-L01",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c02-l01-photo-recognition.webp&w=384&q=75",
+      "status": 200,
+      "requestedWidth": 384,
+      "encodedWidth": 384,
+      "encodedHeight": 256,
+      "encoding": "webp",
+      "bytes": 14442,
+      "elapsedMs": 100
+    },
+    {
+      "lessonId": "AI000-C02-L01",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c02-l01-photo-recognition.webp&w=828&q=75",
+      "status": 200,
+      "requestedWidth": 828,
+      "encodedWidth": 828,
+      "encodedHeight": 552,
+      "encoding": "webp",
+      "bytes": 37272,
+      "elapsedMs": 25
+    },
+    {
+      "lessonId": "AI000-C02-L02",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c02-l02-poster-creation.webp&w=384&q=75",
+      "status": 200,
+      "requestedWidth": 384,
+      "encodedWidth": 384,
+      "encodedHeight": 256,
+      "encoding": "webp",
+      "bytes": 16064,
+      "elapsedMs": 101
+    },
+    {
+      "lessonId": "AI000-C02-L02",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c02-l02-poster-creation.webp&w=828&q=75",
+      "status": 200,
+      "requestedWidth": 828,
+      "encodedWidth": 828,
+      "encodedHeight": 552,
+      "encoding": "webp",
+      "bytes": 44492,
+      "elapsedMs": 42
+    },
+    {
+      "lessonId": "AI000-C03-L01",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c03-l01-photo-label-pairing.webp&w=384&q=75",
+      "status": 200,
+      "requestedWidth": 384,
+      "encodedWidth": 384,
+      "encodedHeight": 256,
+      "encoding": "webp",
+      "bytes": 13434,
+      "elapsedMs": 100
+    },
+    {
+      "lessonId": "AI000-C03-L01",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c03-l01-photo-label-pairing.webp&w=828&q=75",
+      "status": 200,
+      "requestedWidth": 828,
+      "encodedWidth": 828,
+      "encodedHeight": 552,
+      "encoding": "webp",
+      "bytes": 35570,
+      "elapsedMs": 42
+    },
+    {
+      "lessonId": "AI000-C03-L02",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c03-l02-library-observation.webp&w=384&q=75",
+      "status": 200,
+      "requestedWidth": 384,
+      "encodedWidth": 384,
+      "encodedHeight": 256,
+      "encoding": "webp",
+      "bytes": 16378,
+      "elapsedMs": 101
+    },
+    {
+      "lessonId": "AI000-C03-L02",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c03-l02-library-observation.webp&w=828&q=75",
+      "status": 200,
+      "requestedWidth": 828,
+      "encodedWidth": 828,
+      "encodedHeight": 552,
+      "encoding": "webp",
+      "bytes": 41248,
+      "elapsedMs": 44
+    },
+    {
+      "lessonId": "AI000-C03-L03",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c03-l03-masked-document.webp&w=384&q=75",
+      "status": 200,
+      "requestedWidth": 384,
+      "encodedWidth": 384,
+      "encodedHeight": 256,
+      "encoding": "webp",
+      "bytes": 8108,
+      "elapsedMs": 99
+    },
+    {
+      "lessonId": "AI000-C03-L03",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c03-l03-masked-document.webp&w=828&q=75",
+      "status": 200,
+      "requestedWidth": 828,
+      "encodedWidth": 828,
+      "encodedHeight": 552,
+      "encoding": "webp",
+      "bytes": 21402,
+      "elapsedMs": 44
+    },
+    {
+      "lessonId": "AI000-C03-L04",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c03-l04-delivery-robot.webp&w=384&q=75",
+      "status": 200,
+      "requestedWidth": 384,
+      "encodedWidth": 384,
+      "encodedHeight": 256,
+      "encoding": "webp",
+      "bytes": 10086,
+      "elapsedMs": 101
+    },
+    {
+      "lessonId": "AI000-C03-L04",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c03-l04-delivery-robot.webp&w=828&q=75",
+      "status": 200,
+      "requestedWidth": 828,
+      "encodedWidth": 828,
+      "encodedHeight": 552,
+      "encoding": "webp",
+      "bytes": 29292,
+      "elapsedMs": 45
+    },
+    {
+      "lessonId": "AI000-C04-L01",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c04-l01-parcel-registration.webp&w=384&q=75",
+      "status": 200,
+      "requestedWidth": 384,
+      "encodedWidth": 384,
+      "encodedHeight": 256,
+      "encoding": "webp",
+      "bytes": 13750,
+      "elapsedMs": 101
+    },
+    {
+      "lessonId": "AI000-C04-L01",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c04-l01-parcel-registration.webp&w=828&q=75",
+      "status": 200,
+      "requestedWidth": 828,
+      "encodedWidth": 828,
+      "encodedHeight": 552,
+      "encoding": "webp",
+      "bytes": 33904,
+      "elapsedMs": 45
+    },
+    {
+      "lessonId": "AI000-C04-L02",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c04-l02-queue-estimate.webp&w=384&q=75",
+      "status": 200,
+      "requestedWidth": 384,
+      "encodedWidth": 384,
+      "encodedHeight": 256,
+      "encoding": "webp",
+      "bytes": 12202,
+      "elapsedMs": 99
+    },
+    {
+      "lessonId": "AI000-C04-L02",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c04-l02-queue-estimate.webp&w=828&q=75",
+      "status": 200,
+      "requestedWidth": 828,
+      "encodedWidth": 828,
+      "encodedHeight": 552,
+      "encoding": "webp",
+      "bytes": 29594,
+      "elapsedMs": 47
+    },
+    {
+      "lessonId": "AI000-C04-L03",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c04-l03-records-reserved.webp&w=384&q=75",
+      "status": 200,
+      "requestedWidth": 384,
+      "encodedWidth": 384,
+      "encodedHeight": 256,
+      "encoding": "webp",
+      "bytes": 12152,
+      "elapsedMs": 110
+    },
+    {
+      "lessonId": "AI000-C04-L03",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c04-l03-records-reserved.webp&w=828&q=75",
+      "status": 200,
+      "requestedWidth": 828,
+      "encodedWidth": 828,
+      "encodedHeight": 552,
+      "encoding": "webp",
+      "bytes": 31706,
+      "elapsedMs": 47
+    },
+    {
+      "lessonId": "AI000-C04-L04",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c04-l04-model-inference.webp&w=384&q=75",
+      "status": 200,
+      "requestedWidth": 384,
+      "encodedWidth": 384,
+      "encodedHeight": 256,
+      "encoding": "webp",
+      "bytes": 13874,
+      "elapsedMs": 102
+    },
+    {
+      "lessonId": "AI000-C04-L04",
+      "url": "http://127.0.0.1:3015/_next/image?url=%2Fimages%2Flessons%2Fai000%2Fai000-c04-l04-model-inference.webp&w=828&q=75",
+      "status": 200,
+      "requestedWidth": 828,
+      "encodedWidth": 828,
+      "encodedHeight": 552,
+      "encoding": "webp",
+      "bytes": 35372,
+      "elapsedMs": 50
+    }
+  ]
+}

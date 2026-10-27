@@ -21,6 +21,7 @@ import { selfSupervisedLesson } from "../content/lessons/ai000/self-supervised-l
 import { reinforcementLearningLesson } from "../content/lessons/ai000/reinforcement-learning";
 import { dataFeaturesLabelsLesson } from "../content/lessons/ai000/data-features-labels";
 import { modelsAndParametersLesson } from "../content/lessons/ai000/models-and-parameters";
+import { usingFixedModelLesson } from "../content/lessons/ai000/using-a-fixed-model";
 import { trainingValidationTestLesson } from "../content/lessons/ai000/training-validation-test";
 import { aiMlDlLesson } from "../content/lessons/ai000/ai-ml-dl";
 import {
@@ -49,6 +50,7 @@ const contents: Lesson[] = [
   dataFeaturesLabelsLesson,
   modelsAndParametersLesson,
   trainingValidationTestLesson,
+  usingFixedModelLesson,
   ...maV22Lessons,
   regressionTaskLesson,
   linearModelLesson,

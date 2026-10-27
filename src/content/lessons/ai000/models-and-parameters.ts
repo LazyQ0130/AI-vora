@@ -1,3 +1,4 @@
+import { illustration } from "./illustrations";
 import { lessonSchema } from "../../models";
 import { p } from "./shared";
 import { durationRelation, parcelParameterSettings, comparisonParcels, durationEstimate, minuteGap, printParameterSettings, printParameterRecords, libraryParameterRecords } from "./model-parameter-example";
@@ -33,6 +34,7 @@ export const modelsAndParametersLesson = lessonSchema.parse({
     { id: "need-a-model", title: "有了记录表，怎样算出预计时间？", navGroup: "model", navLabel: "从记录到计算", blocks: [
       p("4.1已经把包裹的输入信息和历史结果整理成表。可就算把一张完整表交给电脑，它也不会自动知道新包裹还要多久才能归架。我们还需要一种办法，把当时已知的信息变成预计分钟数。"),
       p("先把问题缩小一点：暂时只使用到件时的排队件数。前面没有其他包裹等待时，先给一个基础估计；每多一件等待的包裹，再增加一些预计时间。这样就能写出一个可以直接计算的简单模型。"),
+      illustration("AI000-C04-L02"),
       { type: "callout", title: "先约定一种计算关系", text: durationRelation },
       p("这里的排队件数沿用4.1的定义：到件时排在本件前面、尚未开始处理的其他包裹数，不含本件和正在处理的包裹。预计时间仍从到件算到完成登记并归架，包含等待。尺寸和是否需要小心处理暂时没有放进这个简化模型。"),
     ] },

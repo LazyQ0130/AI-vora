@@ -1,3 +1,4 @@
+import { visualComparableJson, assertIllustrationPublication, assertIllustrationCompatibleFile } from "../scripts/ai000-illustration-compatibility";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -99,20 +100,20 @@ test("兼容：4.1只改19处限定说明且r1不变；其他32节全文、旧�
   const old41 = before.lessons.find(l => l.id === "AI000-C04-L01")!;
   const after41 = lessonRegistry.get(old41.id)!;
   assert.equal(assertEditorialRefinement41(old41, after41).length, 19);
-  const hash = (v: unknown) => createHash("sha256").update(JSON.stringify(v)).digest("hex");
+  const hash = (v: unknown) => createHash("sha256").update(visualComparableJson(v)).digest("hex");
   for (const old of before.lessons.filter(l => l.id !== old41.id)) assert.equal(hash(lessonRegistry.get(old.id)), hash(old), old.id);
-  for (const old of before.publications) assert.deepEqual(publicationManifest.find(p => p.lessonId === old.lessonId), old.lessonId === old41.id ? { ...old, technicalEvidence: "docs/AI000_LESSON_4_2_AND_EDITORIAL_REFINEMENT.md" } : old, old.lessonId);
-  for (const file of before.protectedFiles) assert.equal(createHash("sha256").update(readFileSync(file.path)).digest("hex"), file.hash, file.path);
+  for (const old of before.publications) assertIllustrationPublication(old.lessonId === old41.id ? { ...old, technicalEvidence: "docs/AI000_LESSON_4_2_AND_EDITORIAL_REFINEMENT.md" } : old, publicationManifest.find(p => p.lessonId === old.lessonId)!);
+  for (const file of before.protectedFiles) assertIllustrationCompatibleFile(file.path, file.hash);
 });
 
-test("独立r1可读和4.1→4.2导航，4.2→4.3导航且4.4及后续章节仍未注册", () => {
+test("独立r1可读和4.1→4.2导航，4.2→4.3导航且第五章及后续章节仍未注册", () => {
   assert.equal(lessonRegistry.get(lesson.id), lesson); assert.equal(lesson.contentVersion, 1);
   const entry = resolveLesson("AI000", lesson.id)!.publication;
   assert.equal(entry.status, "pending-review"); assert.equal(entry.access, "preview"); assert.equal(entry.reviewEvidence, undefined);
   const course = getLearningCourse("AI000")!;
   assert.equal(getAdjacentLessons(course, "AI000-C04-L01").next?.lessonId, lesson.id);
   assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, "AI000-C04-L01"); assert.equal(getAdjacentLessons(course, lesson.id).next?.lessonId, "AI000-C04-L03");
-  for (const slot of course.chapters.flatMap(c => c.lessons).filter(l => l.lessonId > "AI000-C04-L03")) { assert.equal(slot.status, "planned"); assert.equal(slot.href, undefined); assert.equal(lessonRegistry.has(slot.lessonId), false); }
+  for (const slot of course.chapters.flatMap(c => c.lessons).filter(l => l.lessonId > "AI000-C04-L04")) { assert.equal(slot.status, "planned"); assert.equal(slot.href, undefined); assert.equal(lessonRegistry.has(slot.lessonId), false); }
   assert.equal(resolveLesson("PY101", lesson.id), undefined);
 });
 
