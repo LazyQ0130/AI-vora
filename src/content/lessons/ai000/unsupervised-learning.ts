@@ -1,4 +1,3 @@
-import { illustration } from "./illustrations";
 import { lessonSchema } from "../../models";
 import { p } from "./shared";
 import { borrowingRecords, activityRecords } from "./borrowing-example";
@@ -31,7 +30,6 @@ export const unsupervisedLearningLesson = lessonSchema.parse({
     {id:"borrowing-records",title:"这次没有写好答案，还能从哪里看起？",navGroup:"records",navLabel:"观察借阅记录",blocks:[
       p("上一节的包裹照片旁边，写着工作人员确认过的纸箱或文件袋类别。现在换一个问题：图书馆想了解读者的借阅习惯，手里只有借阅记录，没有提前给每位读者标好所属人群。还能从这些记录中发现什么？"),
       p("图书馆想据此研究书籍怎样摆放更方便浏览。我们先只看同一个月里科普类、文学类的借阅次数，暂时不提供“科普爱好者”“文学爱好者”等读者类别。下面六条记录全部为教学构造，不来自真实学生，也没有个人身份信息。"),
-      illustration("AI000-C03-L02"),
       {type:"table",caption:"先观察，再提出你的比较办法；单位都是借阅次数",columns:["匿名记录","科普类借阅次数","文学类借阅次数"],rows:borrowingRecords.map(r=>[r.id,String(r.science),String(r.literature)])},
       p("先停一下，自己找两条看起来接近的记录。你比较的是两列各有多少次，还是把两列加起来看总数？再找一条不容易放进你所想分组的记录，记下理由。现在不必给每一条都安排好位置。"),
     ]},

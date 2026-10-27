@@ -1,0 +1,18 @@
+[
+  {
+    "completed": true,
+    "id": "AI000-C01-L01",
+    "preciseFigures": 1,
+    "resume": "#takeaways",
+    "sceneImages": 1,
+    "url": "http://127.0.0.1:3015/learn/AI000/AI000-C01-L01"
+  },
+  {
+    "completed": true,
+    "id": "AI000-C04-L04",
+    "preciseFigures": 1,
+    "resume": "#new-arrival",
+    "sceneImages": 1,
+    "url": "http://127.0.0.1:3015/learn/AI000/AI000-C04-L04"
+  }
+]

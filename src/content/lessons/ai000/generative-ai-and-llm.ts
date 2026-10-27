@@ -1,4 +1,3 @@
-import { illustration } from "./illustrations";
 import { lessonSchema } from "../../models";
 import { p, aiSources } from "./shared";
 const objectives=["根据具体输入输出和处理过程区分分类、检索、编辑与生成任务","解释现代生成式AI、深度学习与LLM的关系，区分模型和产品","分析新产品的任务与方法证据，说明能确定的内容和仍需追问的信息"];
@@ -16,7 +15,6 @@ export const generativeLesson=lessonSchema.parse({
  sections:[
  {id:"generation",title:"找一张海报，和画一张海报一样吗？",navGroup:"tasks",navLabel:"先看任务",blocks:[
  p("读书会需要一张海报。你可以在素材库搜“读书会”，找到一张已有作品；也可以把已有图片缩小、加上活动日期；还可以向一个系统描述“画一间有猫趴在窗边的阅览室”，让它按要求产生图像内容。最后都能得到图片，做的工作却不同。"),
- illustration("AI000-C02-L02"),
  p("从现成内容中查找并返回符合条件的项目，叫检索。改变已有图片的尺寸、裁剪范围或文字，是编辑。按要求组织新的文本、图像或声音内容，是生成。新的输出不一定独创，也不意味着每项细节准确；“新”在这里说的是本次组织出的内容。"),
  {type:"table",caption:"同一活动，四种要求与不同的完成条件（教学情境）",columns:["要求","处理任务","怎样知道交付了什么"],rows:[
  ["把一张海报判为活动通知/其他","分类","从给定类别中选判断"],

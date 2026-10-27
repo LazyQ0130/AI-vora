@@ -1,6 +1,6 @@
 # Aivora · 系统化 AI 技术学习平台
 
-可运行、可扩展的静态课程学习系统。课程事实来自课程体系 V1.0 的原始 JSON / Markdown，20 门课程与对应项目仍为规划。当前提供 30 节现行试读教材（29 节核心与 1 节可选进阶），并保留 6 节旧版试读，共用同一个阅读器，均已技术校验、待人工内容审核。AI000 已提供前四章十三节，其余11节仅规划；4.4与十三课插画验收见 [本轮报告](docs/AI000_LESSON_4_4_AND_VISUAL_REFINEMENT.md)、[图片清单](docs/AI000_ILLUSTRATION_MANIFEST.md)，4.3原审查见 [4.3报告](docs/AI000_LESSON_4_3_REVIEW.md)，4.1学生端语言精修见 [4.2报告](docs/AI000_LESSON_4_2_AND_EDITORIAL_REFINEMENT.md)，第三章待人工事项仍见 [3.4报告](docs/AI000_LESSON_3_4_AND_CHAPTER_3_REVIEW.md)，首批目录及重编兼容见 [前两章交付报告](docs/AI000_CHAPTER_1_2_DELIVERY.md)。Aivora 是品牌工作名，域名与商标尚未核验。
+可运行、可扩展的静态课程学习系统。课程事实来自课程体系 V1.0 的原始 JSON / Markdown，20 门课程与对应项目仍为规划。当前提供 30 节现行试读教材（29 节核心与 1 节可选进阶），并保留 6 节旧版试读，共用同一个阅读器，均已技术校验、待人工内容审核。AI000 已提供前四章十三节，其余11节仅规划；当前图文去冗余见 [审查报告](docs/AI000_VISUAL_CONTENT_REFINEMENT.md)：移除13处场景图引用、保留14幅精确教学图；4.4开发历史见 [原报告](docs/AI000_LESSON_4_4_AND_VISUAL_REFINEMENT.md)，原素材见 [归档清单](docs/AI000_ILLUSTRATION_MANIFEST.md)，4.3原审查见 [4.3报告](docs/AI000_LESSON_4_3_REVIEW.md)，4.1学生端语言精修见 [4.2报告](docs/AI000_LESSON_4_2_AND_EDITORIAL_REFINEMENT.md)，第三章待人工事项仍见 [3.4报告](docs/AI000_LESSON_3_4_AND_CHAPTER_3_REVIEW.md)，首批目录及重编兼容见 [前两章交付报告](docs/AI000_CHAPTER_1_2_DELIVERY.md)。Aivora 是品牌工作名，域名与商标尚未核验。
 
 ## 编写课程从这里开始
 

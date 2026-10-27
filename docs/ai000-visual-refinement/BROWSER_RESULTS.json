@@ -1,0 +1,1034 @@
+{
+  "checkedAt": "2026-10-27T16:03:39.463Z",
+  "environment": "IAB viewport simulation on local production 3015, not physical devices or student learning trial",
+  "before": [
+    {
+      "completed": true,
+      "id": "AI000-C01-L01",
+      "preciseFigures": 1,
+      "resume": "#takeaways",
+      "sceneImages": 1,
+      "url": "http://127.0.0.1:3015/learn/AI000/AI000-C01-L01"
+    },
+    {
+      "completed": true,
+      "id": "AI000-C04-L04",
+      "preciseFigures": 1,
+      "resume": "#new-arrival",
+      "sceneImages": 1,
+      "url": "http://127.0.0.1:3015/learn/AI000/AI000-C04-L04"
+    }
+  ],
+  "orderedPages": [
+    {
+      "client": 1425,
+      "completed": true,
+      "figures": [
+        {
+          "caption": "图一：先分清系统拿到什么、做什么、交回什么，再讨论怎样使用建议。",
+          "scroll": 722,
+          "width": 722
+        }
+      ],
+      "id": "AI000-C01-L01",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 1425,
+      "title": "人工智能究竟是什么？",
+      "width": 1440
+    },
+    {
+      "client": 1425,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：先各自算规则输出，再与题设类别比较。没有训练邮件模型，也没有真实准确率数据。",
+          "scroll": 722,
+          "width": 722
+        }
+      ],
+      "id": "AI000-C01-L02",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 1425,
+      "title": "AI 能做什么，为什么也会出错？",
+      "width": 1440
+    },
+    {
+      "client": 1425,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：从事实到中间结论，再到排查方向。两步各自用到了哪条规则，都能检查。",
+          "scroll": 722,
+          "width": 722
+        }
+      ],
+      "id": "AI000-C01-L03",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 1425,
+      "title": "普通自动化和 AI 有什么区别？",
+      "width": 1440
+    },
+    {
+      "client": 1425,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：AI ⊃ ML ⊃ DL。每个内框整体位于外框之中；图中只画本节要比较的三个范围，面积不表示占比。",
+          "scroll": 722,
+          "width": 722
+        }
+      ],
+      "id": "AI000-C02-L01",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 1425,
+      "title": "AI、机器学习与深度学习，到底是什么关系？",
+      "width": 1440
+    },
+    {
+      "client": 1425,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：同属深度学习，分别承担分类和生成。不能只从输出形式倒推内部方法。",
+          "scroll": 722,
+          "width": 722
+        },
+        {
+          "caption": "图二：方法、模型和产品分别说明。这里比较常见实现，不是给所有生成方法规定第四层。",
+          "scroll": 722,
+          "width": 722
+        }
+      ],
+      "id": "AI000-C02-L02",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 1425,
+      "title": "生成式 AI 是什么？它和 LLM 有什么关系？",
+      "width": 1440
+    },
+    {
+      "client": 1425,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：上半部分的答案用于学习；下半部分先得到预测，再另行核实。图中没有实际训练模型。",
+          "scroll": 722,
+          "width": 722
+        }
+      ],
+      "id": "AI000-C03-L01",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 1425,
+      "title": "监督学习：从有答案的例子中学习",
+      "width": 1440
+    },
+    {
+      "client": 1425,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：输入数字、比较依据和候选观察分开呈现。这里展示手工分析，未训练或运行聚类算法。",
+          "scroll": 722,
+          "width": 722
+        }
+      ],
+      "id": "AI000-C03-L02",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 1425,
+      "title": "无监督学习：没有标签也能发现规律吗？",
+      "width": 1440
+    },
+    {
+      "client": 1425,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：先从原文准备输入与目标，再让预测与目标对照。目标从原句取得，不由预测反写。",
+          "scroll": 722,
+          "width": 722
+        }
+      ],
+      "id": "AI000-C03-L03",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 1425,
+      "title": "自监督学习：怎样从数据本身构造学习任务？",
+      "width": 1440
+    },
+    {
+      "client": 1425,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：沿着甲路的一次完整记录读。新观察接上下一次选择，送达后本次结束。",
+          "scroll": 722,
+          "width": 722
+        }
+      ],
+      "id": "AI000-C03-L04",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 1425,
+      "title": "强化学习：通过行动与反馈学习",
+      "width": 1440
+    },
+    {
+      "client": 1425,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：历史目标用于学习对照，当前输入用于预测；假设的12分钟与G待确认的实际时长分开保存。",
+          "scroll": 722,
+          "width": 722
+        }
+      ],
+      "id": "AI000-C04-L01",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 1425,
+      "title": "数据、特征与标签",
+      "width": 1440
+    },
+    {
+      "client": 1425,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：同一输入、同一计算形式，换参数后预测改变。B的实际7分钟留作对照，两组都相差1分钟。",
+          "scroll": 722,
+          "width": 722
+        }
+      ],
+      "id": "AI000-C04-L02",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 1425,
+      "title": "模型和参数是怎样得到的？",
+      "width": 1440
+    },
+    {
+      "client": 1425,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：训练帮助学习，验证帮助选择，保留测试检查选好的方案。数据的用途与参与时机共同决定这次检查能说明什么。",
+          "scroll": 722,
+          "width": 722
+        }
+      ],
+      "id": "AI000-C04-L03",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 1425,
+      "title": "训练、验证与测试各有什么作用？",
+      "width": 1440
+    },
+    {
+      "client": 1425,
+      "completed": true,
+      "figures": [
+        {
+          "caption": "图一：先检查当前输入，再用固定模型计算；预测先保存，实际结果等完成后另查。",
+          "scroll": 722,
+          "width": 722
+        }
+      ],
+      "id": "AI000-C04-L04",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 1425,
+      "title": "模型训练好以后，如何完成预测？",
+      "width": 1440
+    },
+    {
+      "client": 753,
+      "completed": true,
+      "figures": [
+        {
+          "caption": "图一：先分清系统拿到什么、做什么、交回什么，再讨论怎样使用建议。",
+          "scroll": 650,
+          "width": 650
+        }
+      ],
+      "id": "AI000-C01-L01",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 753,
+      "title": "人工智能究竟是什么？",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：先各自算规则输出，再与题设类别比较。没有训练邮件模型，也没有真实准确率数据。",
+          "scroll": 650,
+          "width": 650
+        }
+      ],
+      "id": "AI000-C01-L02",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 753,
+      "title": "AI 能做什么，为什么也会出错？",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：从事实到中间结论，再到排查方向。两步各自用到了哪条规则，都能检查。",
+          "scroll": 650,
+          "width": 650
+        }
+      ],
+      "id": "AI000-C01-L03",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 753,
+      "title": "普通自动化和 AI 有什么区别？",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：AI ⊃ ML ⊃ DL。每个内框整体位于外框之中；图中只画本节要比较的三个范围，面积不表示占比。",
+          "scroll": 650,
+          "width": 650
+        }
+      ],
+      "id": "AI000-C02-L01",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 753,
+      "title": "AI、机器学习与深度学习，到底是什么关系？",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：同属深度学习，分别承担分类和生成。不能只从输出形式倒推内部方法。",
+          "scroll": 650,
+          "width": 650
+        },
+        {
+          "caption": "图二：方法、模型和产品分别说明。这里比较常见实现，不是给所有生成方法规定第四层。",
+          "scroll": 650,
+          "width": 650
+        }
+      ],
+      "id": "AI000-C02-L02",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 753,
+      "title": "生成式 AI 是什么？它和 LLM 有什么关系？",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：上半部分的答案用于学习；下半部分先得到预测，再另行核实。图中没有实际训练模型。",
+          "scroll": 650,
+          "width": 650
+        }
+      ],
+      "id": "AI000-C03-L01",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 753,
+      "title": "监督学习：从有答案的例子中学习",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：输入数字、比较依据和候选观察分开呈现。这里展示手工分析，未训练或运行聚类算法。",
+          "scroll": 650,
+          "width": 650
+        }
+      ],
+      "id": "AI000-C03-L02",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 753,
+      "title": "无监督学习：没有标签也能发现规律吗？",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：先从原文准备输入与目标，再让预测与目标对照。目标从原句取得，不由预测反写。",
+          "scroll": 650,
+          "width": 650
+        }
+      ],
+      "id": "AI000-C03-L03",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 753,
+      "title": "自监督学习：怎样从数据本身构造学习任务？",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：沿着甲路的一次完整记录读。新观察接上下一次选择，送达后本次结束。",
+          "scroll": 650,
+          "width": 650
+        }
+      ],
+      "id": "AI000-C03-L04",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 753,
+      "title": "强化学习：通过行动与反馈学习",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：历史目标用于学习对照，当前输入用于预测；假设的12分钟与G待确认的实际时长分开保存。",
+          "scroll": 650,
+          "width": 650
+        }
+      ],
+      "id": "AI000-C04-L01",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 753,
+      "title": "数据、特征与标签",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：同一输入、同一计算形式，换参数后预测改变。B的实际7分钟留作对照，两组都相差1分钟。",
+          "scroll": 650,
+          "width": 650
+        }
+      ],
+      "id": "AI000-C04-L02",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 753,
+      "title": "模型和参数是怎样得到的？",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：训练帮助学习，验证帮助选择，保留测试检查选好的方案。数据的用途与参与时机共同决定这次检查能说明什么。",
+          "scroll": 650,
+          "width": 650
+        }
+      ],
+      "id": "AI000-C04-L03",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 753,
+      "title": "训练、验证与测试各有什么作用？",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "completed": true,
+      "figures": [
+        {
+          "caption": "图一：先检查当前输入，再用固定模型计算；预测先保存，实际结果等完成后另查。",
+          "scroll": 650,
+          "width": 650
+        }
+      ],
+      "id": "AI000-C04-L04",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 753,
+      "title": "模型训练好以后，如何完成预测？",
+      "width": 768
+    },
+    {
+      "client": 375,
+      "completed": true,
+      "figures": [
+        {
+          "caption": "图一：先分清系统拿到什么、做什么、交回什么，再讨论怎样使用建议。",
+          "scroll": 308,
+          "width": 308
+        }
+      ],
+      "id": "AI000-C01-L01",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 375,
+      "title": "人工智能究竟是什么？",
+      "width": 390
+    },
+    {
+      "client": 375,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：先各自算规则输出，再与题设类别比较。没有训练邮件模型，也没有真实准确率数据。",
+          "scroll": 308,
+          "width": 308
+        }
+      ],
+      "id": "AI000-C01-L02",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 375,
+      "title": "AI 能做什么，为什么也会出错？",
+      "width": 390
+    },
+    {
+      "client": 375,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：从事实到中间结论，再到排查方向。两步各自用到了哪条规则，都能检查。",
+          "scroll": 308,
+          "width": 308
+        }
+      ],
+      "id": "AI000-C01-L03",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 375,
+      "title": "普通自动化和 AI 有什么区别？",
+      "width": 390
+    },
+    {
+      "client": 375,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：AI ⊃ ML ⊃ DL。每个内框整体位于外框之中；图中只画本节要比较的三个范围，面积不表示占比。",
+          "scroll": 308,
+          "width": 308
+        }
+      ],
+      "id": "AI000-C02-L01",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 375,
+      "title": "AI、机器学习与深度学习，到底是什么关系？",
+      "width": 390
+    },
+    {
+      "client": 375,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：同属深度学习，分别承担分类和生成。不能只从输出形式倒推内部方法。",
+          "scroll": 308,
+          "width": 308
+        },
+        {
+          "caption": "图二：方法、模型和产品分别说明。这里比较常见实现，不是给所有生成方法规定第四层。",
+          "scroll": 308,
+          "width": 308
+        }
+      ],
+      "id": "AI000-C02-L02",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 375,
+      "title": "生成式 AI 是什么？它和 LLM 有什么关系？",
+      "width": 390
+    },
+    {
+      "client": 375,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：上半部分的答案用于学习；下半部分先得到预测，再另行核实。图中没有实际训练模型。",
+          "scroll": 308,
+          "width": 308
+        }
+      ],
+      "id": "AI000-C03-L01",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 375,
+      "title": "监督学习：从有答案的例子中学习",
+      "width": 390
+    },
+    {
+      "client": 375,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：输入数字、比较依据和候选观察分开呈现。这里展示手工分析，未训练或运行聚类算法。",
+          "scroll": 308,
+          "width": 308
+        }
+      ],
+      "id": "AI000-C03-L02",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 375,
+      "title": "无监督学习：没有标签也能发现规律吗？",
+      "width": 390
+    },
+    {
+      "client": 375,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：先从原文准备输入与目标，再让预测与目标对照。目标从原句取得，不由预测反写。",
+          "scroll": 308,
+          "width": 308
+        }
+      ],
+      "id": "AI000-C03-L03",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 375,
+      "title": "自监督学习：怎样从数据本身构造学习任务？",
+      "width": 390
+    },
+    {
+      "client": 375,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：沿着甲路的一次完整记录读。新观察接上下一次选择，送达后本次结束。",
+          "scroll": 308,
+          "width": 308
+        }
+      ],
+      "id": "AI000-C03-L04",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 375,
+      "title": "强化学习：通过行动与反馈学习",
+      "width": 390
+    },
+    {
+      "client": 375,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：历史目标用于学习对照，当前输入用于预测；假设的12分钟与G待确认的实际时长分开保存。",
+          "scroll": 308,
+          "width": 308
+        }
+      ],
+      "id": "AI000-C04-L01",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 375,
+      "title": "数据、特征与标签",
+      "width": 390
+    },
+    {
+      "client": 375,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：同一输入、同一计算形式，换参数后预测改变。B的实际7分钟留作对照，两组都相差1分钟。",
+          "scroll": 308,
+          "width": 308
+        }
+      ],
+      "id": "AI000-C04-L02",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 375,
+      "title": "模型和参数是怎样得到的？",
+      "width": 390
+    },
+    {
+      "client": 375,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：训练帮助学习，验证帮助选择，保留测试检查选好的方案。数据的用途与参与时机共同决定这次检查能说明什么。",
+          "scroll": 308,
+          "width": 308
+        }
+      ],
+      "id": "AI000-C04-L03",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 375,
+      "title": "训练、验证与测试各有什么作用？",
+      "width": 390
+    },
+    {
+      "client": 375,
+      "completed": true,
+      "figures": [
+        {
+          "caption": "图一：先检查当前输入，再用固定模型计算；预测先保存，实际结果等完成后另查。",
+          "scroll": 308,
+          "width": 308
+        }
+      ],
+      "id": "AI000-C04-L04",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 375,
+      "title": "模型训练好以后，如何完成预测？",
+      "width": 390
+    },
+    {
+      "client": 305,
+      "completed": true,
+      "figures": [
+        {
+          "caption": "图一：先分清系统拿到什么、做什么、交回什么，再讨论怎样使用建议。",
+          "scroll": 254,
+          "width": 254
+        }
+      ],
+      "id": "AI000-C01-L01",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 305,
+      "title": "人工智能究竟是什么？",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：先各自算规则输出，再与题设类别比较。没有训练邮件模型，也没有真实准确率数据。",
+          "scroll": 254,
+          "width": 254
+        }
+      ],
+      "id": "AI000-C01-L02",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 305,
+      "title": "AI 能做什么，为什么也会出错？",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：从事实到中间结论，再到排查方向。两步各自用到了哪条规则，都能检查。",
+          "scroll": 254,
+          "width": 254
+        }
+      ],
+      "id": "AI000-C01-L03",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 305,
+      "title": "普通自动化和 AI 有什么区别？",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：AI ⊃ ML ⊃ DL。每个内框整体位于外框之中；图中只画本节要比较的三个范围，面积不表示占比。",
+          "scroll": 254,
+          "width": 254
+        }
+      ],
+      "id": "AI000-C02-L01",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 305,
+      "title": "AI、机器学习与深度学习，到底是什么关系？",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：同属深度学习，分别承担分类和生成。不能只从输出形式倒推内部方法。",
+          "scroll": 254,
+          "width": 254
+        },
+        {
+          "caption": "图二：方法、模型和产品分别说明。这里比较常见实现，不是给所有生成方法规定第四层。",
+          "scroll": 254,
+          "width": 254
+        }
+      ],
+      "id": "AI000-C02-L02",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 305,
+      "title": "生成式 AI 是什么？它和 LLM 有什么关系？",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：上半部分的答案用于学习；下半部分先得到预测，再另行核实。图中没有实际训练模型。",
+          "scroll": 254,
+          "width": 254
+        }
+      ],
+      "id": "AI000-C03-L01",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 305,
+      "title": "监督学习：从有答案的例子中学习",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：输入数字、比较依据和候选观察分开呈现。这里展示手工分析，未训练或运行聚类算法。",
+          "scroll": 254,
+          "width": 254
+        }
+      ],
+      "id": "AI000-C03-L02",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 305,
+      "title": "无监督学习：没有标签也能发现规律吗？",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：先从原文准备输入与目标，再让预测与目标对照。目标从原句取得，不由预测反写。",
+          "scroll": 254,
+          "width": 254
+        }
+      ],
+      "id": "AI000-C03-L03",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 305,
+      "title": "自监督学习：怎样从数据本身构造学习任务？",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：沿着甲路的一次完整记录读。新观察接上下一次选择，送达后本次结束。",
+          "scroll": 254,
+          "width": 254
+        }
+      ],
+      "id": "AI000-C03-L04",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 305,
+      "title": "强化学习：通过行动与反馈学习",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：历史目标用于学习对照，当前输入用于预测；假设的12分钟与G待确认的实际时长分开保存。",
+          "scroll": 254,
+          "width": 254
+        }
+      ],
+      "id": "AI000-C04-L01",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 305,
+      "title": "数据、特征与标签",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：同一输入、同一计算形式，换参数后预测改变。B的实际7分钟留作对照，两组都相差1分钟。",
+          "scroll": 254,
+          "width": 254
+        }
+      ],
+      "id": "AI000-C04-L02",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 305,
+      "title": "模型和参数是怎样得到的？",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "completed": false,
+      "figures": [
+        {
+          "caption": "图一：训练帮助学习，验证帮助选择，保留测试检查选好的方案。数据的用途与参与时机共同决定这次检查能说明什么。",
+          "scroll": 254,
+          "width": 254
+        }
+      ],
+      "id": "AI000-C04-L03",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 305,
+      "title": "训练、验证与测试各有什么作用？",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "completed": true,
+      "figures": [
+        {
+          "caption": "图一：先检查当前输入，再用固定模型计算；预测先保存，实际结果等完成后另查。",
+          "scroll": 254,
+          "width": 254
+        }
+      ],
+      "id": "AI000-C04-L04",
+      "orphanCaption": false,
+      "rawSceneReferences": 0,
+      "sceneImages": 0,
+      "scroll": 305,
+      "title": "模型训练好以后，如何完成预测？",
+      "width": 320
+    }
+  ],
+  "interactions": [
+    {
+      "active": "普通自动化与知识推理已移至1.3",
+      "continuationLinks": [
+        "前往现在的完整讲解与练习"
+      ],
+      "expandedAncestors": 2,
+      "hash": "#automation",
+      "oldAnchor": true,
+      "step": "legacy-bookmark"
+    },
+    {
+      "active": "换一组参数，预测会怎样变化？",
+      "dialogs": 0,
+      "hash": "#exercise-compare-print-settings",
+      "openDetails": 0,
+      "step": "exercise-jump"
+    },
+    {
+      "client": 305,
+      "openDetails": 3,
+      "scroll": 305,
+      "step": "exercise-feedback",
+      "stillUncompleted": true,
+      "typed": "P：甲2+2×3=8，乙4+1×3=7；Q：甲4，乙5。P上甲近，Q上乙近；这两条不能保证新任务，固定参数换输入并非重训。"
+    },
+    {
+      "resume": "#print-parameters-task",
+      "step": "refresh-resume",
+      "stillUncompleted": true,
+      "values": [
+        "",
+        ""
+      ]
+    },
+    {
+      "active": "换成打印任务，自己比较两组设置",
+      "hash": "#print-parameters-task",
+      "step": "resume-click"
+    },
+    {
+      "step": "adjacent-43",
+      "title": "训练、验证与测试各有什么作用？",
+      "url": "http://127.0.0.1:3015/learn/AI000/AI000-C04-L03"
+    },
+    {
+      "nextDisabled": true,
+      "oldCompleteRestored": true,
+      "step": "adjacent-44",
+      "title": "模型训练好以后，如何完成预测？",
+      "url": "http://127.0.0.1:3015/learn/AI000/AI000-C04-L04"
+    }
+  ],
+  "consoleErrors": []
+}

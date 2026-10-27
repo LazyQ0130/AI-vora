@@ -1,4 +1,3 @@
-import { illustration } from "./illustrations";
 import { lessonSchema } from "../../models";
 
 export const aiMlDlLesson = lessonSchema.parse({
@@ -119,7 +118,6 @@ export const aiMlDlLesson = lessonSchema.parse({
           "type": "paragraph",
           "text": "现在我们知道，机器学习是在说判断方式可以从数据中得到。接着要问的是：用哪一种模型、怎样从输入中找到有用的线索？深度学习就在回答这个问题。为了看清线索怎样形成，我们换成一个直观的任务：判断照片里有没有猫。下面仍是教学构造的比较，没有训练或评测真实模型。"
         },
-        illustration("AI000-C02-L01"),
         {
           "type": "paragraph",
           "text": "可以先由人设计一些描述图片的办法，例如把颜色分布、边缘形状整理成一组数，再用一种不采用深度神经网络的机器学习方法，从这些数和已知类别之间学习判断规律。这里人事先选了怎样描述图片；后面的判断关系仍由数据学得，所以属于机器学习。"

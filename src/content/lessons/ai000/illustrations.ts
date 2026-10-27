@@ -1,6 +1,7 @@
 import type { ContentBlock } from "../../models";
 
-// 情境插画清单；制作与视觉核查见docs/AI000_ILLUSTRATION_MANIFEST.md，不替代精确技术图。
+// 历史归档元数据：十三张场景图已退出正文；仅用于旧快照比较与素材追溯，不是当前配图要求。
+// 当前决策见docs/AI000_VISUAL_CONTENT_REFINEMENT.md；教材不得依本清单自动接入。
 export const ai000Illustrations = [
   {
     "lessonId": "AI000-C01-L01",

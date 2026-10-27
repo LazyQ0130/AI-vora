@@ -1,0 +1,84 @@
+{
+  "checkedAt": "2026-10-27T16:04:26.009Z",
+  "scope": "Historical manifest image URLs remain accessible; no student article reference required",
+  "results": [
+    {
+      "src": "/images/lessons/ai000/ai000-c01-l01-mail-sorting.webp",
+      "status": 200,
+      "bytes": 77642,
+      "sameRetainedFile": true
+    },
+    {
+      "src": "/images/lessons/ai000/ai000-c01-l02-mail-review.webp",
+      "status": 200,
+      "bytes": 55080,
+      "sameRetainedFile": true
+    },
+    {
+      "src": "/images/lessons/ai000/ai000-c01-l03-automation-diagnosis.webp",
+      "status": 200,
+      "bytes": 84354,
+      "sameRetainedFile": true
+    },
+    {
+      "src": "/images/lessons/ai000/ai000-c02-l01-photo-recognition.webp",
+      "status": 200,
+      "bytes": 80210,
+      "sameRetainedFile": true
+    },
+    {
+      "src": "/images/lessons/ai000/ai000-c02-l02-poster-creation.webp",
+      "status": 200,
+      "bytes": 99960,
+      "sameRetainedFile": true
+    },
+    {
+      "src": "/images/lessons/ai000/ai000-c03-l01-photo-label-pairing.webp",
+      "status": 200,
+      "bytes": 79706,
+      "sameRetainedFile": true
+    },
+    {
+      "src": "/images/lessons/ai000/ai000-c03-l02-library-observation.webp",
+      "status": 200,
+      "bytes": 87468,
+      "sameRetainedFile": true
+    },
+    {
+      "src": "/images/lessons/ai000/ai000-c03-l03-masked-document.webp",
+      "status": 200,
+      "bytes": 53436,
+      "sameRetainedFile": true
+    },
+    {
+      "src": "/images/lessons/ai000/ai000-c03-l04-delivery-robot.webp",
+      "status": 200,
+      "bytes": 72484,
+      "sameRetainedFile": true
+    },
+    {
+      "src": "/images/lessons/ai000/ai000-c04-l01-parcel-registration.webp",
+      "status": 200,
+      "bytes": 72242,
+      "sameRetainedFile": true
+    },
+    {
+      "src": "/images/lessons/ai000/ai000-c04-l02-queue-estimate.webp",
+      "status": 200,
+      "bytes": 62506,
+      "sameRetainedFile": true
+    },
+    {
+      "src": "/images/lessons/ai000/ai000-c04-l03-records-reserved.webp",
+      "status": 200,
+      "bytes": 71280,
+      "sameRetainedFile": true
+    },
+    {
+      "src": "/images/lessons/ai000/ai000-c04-l04-model-inference.webp",
+      "status": 200,
+      "bytes": 77032,
+      "sameRetainedFile": true
+    }
+  ]
+}

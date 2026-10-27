@@ -21,9 +21,10 @@ export function withoutAi000Illustrations(value: unknown): unknown {
 export const visualComparableJson = (value: unknown) => JSON.stringify(withoutAi000Illustrations(value));
 
 export const illustrationEvidence = "docs/AI000_LESSON_4_4_AND_VISUAL_REFINEMENT.md";
+export const visualRefinementEvidence = "docs/AI000_VISUAL_CONTENT_REFINEMENT.md";
 export function assertIllustrationPublication(before: Publication, after: Publication) {
   const illustrated = ai000Illustrations.some(a => a.lessonId === before.lessonId);
-  assert.deepEqual(after, illustrated && after.technicalEvidence === illustrationEvidence ? { ...before, technicalEvidence: illustrationEvidence } : before, before.lessonId);
+  assert.deepEqual(after, illustrated && [illustrationEvidence,visualRefinementEvidence].includes(after.technicalEvidence ?? "") ? { ...before, technicalEvidence: after.technicalEvidence } : before, before.lessonId);
 }
 
 // 旧源码只允许新增精确import及已登记调用；撤销后必须命中原SHA。
@@ -31,7 +32,9 @@ export function assertIllustrationPublication(before: Publication, after: Public
 export function assertIllustrationCompatibleFile(path: string, previousHash: string) {
   const source = readFileSync(path, "utf8");
   const hash = (text: string) => createHash("sha256").update(text).digest("hex");
-  if (hash(source) === previousHash) return;
+  const originalLf = source.replaceAll("\r\n", "\n");
+  // 场景引用移除后可能已还原到旧源码；仍需全文摘要匹配，只兼容换行组合。
+  if ([source,originalLf,originalLf.replaceAll("\n","\r\n"),originalLf.replace(/\n$/,"\r\n")].some(text=>hash(text)===previousHash)) return;
   if (path === "src/components/lesson/ai-task-figure.tsx") {
     const addedImport = 'import { AiInferenceFigure } from "./ai-inference-figure";';
     const addedDispatch = '  if (block.kind === "inference-flow") return <AiInferenceFigure block={block} />;';

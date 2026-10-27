@@ -1,0 +1,175 @@
+{
+  "reviewer": "AI辅助内容审读；非教师或学生验证",
+  "base": "905aa46ed379ef2b7e33f671bbbb9596147223d0",
+  "entries": [
+    {
+      "lessonId": "AI000-C01-L01",
+      "objectiveNumbers": [
+        1,
+        2
+      ],
+      "visibleInformation": "学生、封套和文件夹能指认收件环境，不能读出实际输入、处理办法或输出内容。",
+      "lossIfRemoved": "只失去书桌场景；没有独有的任务关系或判断依据。",
+      "clearerExistingExplanation": "many-tasks的mail-flow明确三角色，正文两封邮件和任务表更具体。",
+      "spaceDecision": "画面占据一个正文宽度区域，却没有新增可核对的核心信息；不值得为此中断这两段讲解。",
+      "decision": "remove-from-body",
+      "assetDisposition": "retain-for-history"
+    },
+    {
+      "lessonId": "AI000-C01-L02",
+      "objectiveNumbers": [
+        2,
+        3
+      ],
+      "visibleInformation": "人物对照无字材料，无法看见B误拦、D漏掉或可靠背景。",
+      "lossIfRemoved": "没有丢失判错依据；原图没有给出可核对邮件内容。",
+      "clearerExistingExplanation": "mistakes的四封表与mail-outcomes分别呈现应归类别、规则输出及两类后果。",
+      "spaceDecision": "画面占据一个正文宽度区域，却没有新增可核对的核心信息；不值得为此中断这两段讲解。",
+      "decision": "remove-from-body",
+      "assetDisposition": "retain-for-history"
+    },
+    {
+      "lessonId": "AI000-C01-L03",
+      "objectiveNumbers": [
+        1,
+        3
+      ],
+      "visibleInformation": "备份设备、钟面与打印机只能区分设备场景，不能显示规则来源、中间结论和推理机制。",
+      "lossIfRemoved": "失去两处工作环境；不失去自动执行与知识推理的区别。",
+      "clearerExistingExplanation": "compare-methods表与knowledge-trace把形成方式、事实、规则和结论逐步联系。",
+      "spaceDecision": "画面占据一个正文宽度区域，却没有新增可核对的核心信息；不值得为此中断这两段讲解。",
+      "decision": "remove-from-body",
+      "assetDisposition": "retain-for-history"
+    },
+    {
+      "lessonId": "AI000-C02-L01",
+      "objectiveNumbers": [
+        1,
+        2
+      ],
+      "visibleInformation": "猫照片是任务对象；照片外观不能说明采用了ML还是DL，也没有多层表示或包含边界。",
+      "lossIfRemoved": "没有丢失方法证据；识别猫不是本课要求学生做的视觉分类题。",
+      "clearerExistingExplanation": "method-hierarchy明确DL在ML内、ML在AI内，并用专家系统/决策树反例解释范围。",
+      "spaceDecision": "画面占据一个正文宽度区域，却没有新增可核对的核心信息；不值得为此中断这两段讲解。",
+      "decision": "remove-from-body",
+      "assetDisposition": "retain-for-history"
+    },
+    {
+      "lessonId": "AI000-C02-L02",
+      "objectiveNumbers": [
+        1
+      ],
+      "visibleInformation": "现成卡片与屏幕新构图并置，但静态画面无法证明哪一步检索、编辑或生成，缺少受控的输入与实际结果对照。",
+      "lossIfRemoved": "不失去可验证的过程差异；图本身不能确定作品的产生过程。",
+      "clearerExistingExplanation": "generation四类任务表、method-and-task及generation-map按已给条件区分任务/方法/产品。",
+      "spaceDecision": "画面占据一个正文宽度区域，却没有新增可核对的核心信息；不值得为此中断这两段讲解。",
+      "decision": "remove-from-body",
+      "assetDisposition": "retain-for-history"
+    },
+    {
+      "lessonId": "AI000-C03-L01",
+      "objectiveNumbers": [
+        1,
+        2
+      ],
+      "visibleInformation": "实物和照片外观可辨，但无字资料夹没有清楚标出输入、已知标签、学习及新预测的不同作用。",
+      "lossIfRemoved": "只失去包装外观情境；本课要求解释目标角色，不要求靠该画面核实照片类别。",
+      "clearerExistingExplanation": "A–D配对表、sample-and-label表及supervised-flow明确学习目标与E的待核预测。",
+      "spaceDecision": "画面占据一个正文宽度区域，却没有新增可核对的核心信息；不值得为此中断这两段讲解。",
+      "decision": "remove-from-body",
+      "assetDisposition": "retain-for-history"
+    },
+    {
+      "lessonId": "AI000-C03-L02",
+      "objectiveNumbers": [
+        2,
+        3
+      ],
+      "visibleInformation": "借阅卡和主题书不能读出六人记录的次数、相似依据或换依据的变化。",
+      "lossIfRemoved": "没有丢失任何具体相似性或分组证据。",
+      "clearerExistingExplanation": "borrowing-records数据表及borrowing-groups逐项展示A–F的4/0等计数和所选观察依据。",
+      "spaceDecision": "画面占据一个正文宽度区域，却没有新增可核对的核心信息；不值得为此中断这两段讲解。",
+      "decision": "remove-from-body",
+      "assetDisposition": "retain-for-history"
+    },
+    {
+      "lessonId": "AI000-C03-L03",
+      "objectiveNumbers": [
+        1,
+        2
+      ],
+      "visibleInformation": "纸条遮住抽象灰线，只能示意遮盖动作，看不到原词、实际输入、目标及预测差异。",
+      "lossIfRemoved": "不失去任何可恢复片段或目标来源信息。",
+      "clearerExistingExplanation": "hide-a-piece的真实中文原句与self-supervised-flow清楚展示图书馆目标、体育馆预测及阶段分工。",
+      "spaceDecision": "画面占据一个正文宽度区域，却没有新增可核对的核心信息；不值得为此中断这两段讲解。",
+      "decision": "remove-from-body",
+      "assetDisposition": "retain-for-history"
+    },
+    {
+      "lessonId": "AI000-C03-L04",
+      "objectiveNumbers": [
+        1,
+        2
+      ],
+      "visibleInformation": "岔口、小车和关门可见，却没有真实动作记录、后续观察或奖励数值，不能比较两段后果。",
+      "lossIfRemoved": "失去通道外观；本题通行规则、动作与后果仍有完整文字定义。",
+      "clearerExistingExplanation": "reinforcement-flow与两路事后表保留+3/−6/+10、累计7对10及当前观察到后续选择。",
+      "spaceDecision": "画面占据一个正文宽度区域，却没有新增可核对的核心信息；不值得为此中断这两段讲解。",
+      "decision": "remove-from-body",
+      "assetDisposition": "retain-for-history"
+    },
+    {
+      "lessonId": "AI000-C04-L01",
+      "objectiveNumbers": [
+        1,
+        2
+      ],
+      "visibleInformation": "包裹与登记动作没有列出记录字段、取值时刻、输入与目标的角色。",
+      "lossIfRemoved": "没有丢失样本/字段/特征/标签定义或实绩证据。",
+      "clearerExistingExplanation": "六记录表、字段约定表及features-target-flow明确历史C、新G、假设预测与未知实绩。",
+      "spaceDecision": "画面占据一个正文宽度区域，却没有新增可核对的核心信息；不值得为此中断这两段讲解。",
+      "decision": "remove-from-body",
+      "assetDisposition": "retain-for-history"
+    },
+    {
+      "lessonId": "AI000-C04-L02",
+      "objectiveNumbers": [
+        1,
+        2
+      ],
+      "visibleInformation": "等待包裹和估时便签不能看见计算形式、参数控制作用或同输入预测变化。",
+      "lossIfRemoved": "没有丢失计算关系、参数值或数值比较。",
+      "clearerExistingExplanation": "parameters-compare及三记录表保留同输入B下6/8、实际7及两组差距。",
+      "spaceDecision": "画面占据一个正文宽度区域，却没有新增可核对的核心信息；不值得为此中断这两段讲解。",
+      "decision": "remove-from-body",
+      "assetDisposition": "retain-for-history"
+    },
+    {
+      "lessonId": "AI000-C04-L03",
+      "objectiveNumbers": [
+        1,
+        2,
+        3
+      ],
+      "visibleInformation": "三处资料摆放只能显示空间分离，不能说明信息何时参与训练、选择或测试，闭合文件夹也不是独立性证据。",
+      "lossIfRemoved": "不失去任何数据用途/时序信息，文件摆放无需猜成技术关系。",
+      "clearerExistingExplanation": "assign-roles用途表与data-use-flow逐批追踪T/V/S、验证2对1选乙、保留测试差3。",
+      "spaceDecision": "画面占据一个正文宽度区域，却没有新增可核对的核心信息；不值得为此中断这两段讲解。",
+      "decision": "remove-from-body",
+      "assetDisposition": "retain-for-history"
+    },
+    {
+      "lessonId": "AI000-C04-L04",
+      "objectiveNumbers": [
+        1,
+        2
+      ],
+      "visibleInformation": "新包裹、屏幕和钟形没有可读参数、输入或两类结果，不能从画面区分训练与使用。",
+      "lossIfRemoved": "没有丢失固定4/2、当次3、预测10、实绩未知的关系。",
+      "clearerExistingExplanation": "calculate-n角色表与inference-flow明确代入、预测先存和事后台账核对。",
+      "spaceDecision": "画面占据一个正文宽度区域，却没有新增可核对的核心信息；不值得为此中断这两段讲解。",
+      "decision": "remove-from-body",
+      "assetDisposition": "retain-for-history"
+    }
+  ]
+}

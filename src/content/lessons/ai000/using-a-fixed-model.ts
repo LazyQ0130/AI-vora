@@ -1,6 +1,5 @@
 import { lessonSchema } from "../../models";
 import { p } from "./shared";
-import { illustration } from "./illustrations";
 import { durationRelation } from "./model-parameter-example";
 import { fixedParcelModel, inferenceAuditCases, libraryInferenceModel } from "./fixed-model-example";
 
@@ -34,7 +33,6 @@ export const usingFixedModelLesson = lessonSchema.parse({
   sections: [
     { id: "new-arrival", title: "模型已经准备好，新包裹这时才到", navGroup: "task", navLabel: "接到新任务", blocks: [
       p("收发室想在包裹到件时，告诉工作人员预计还要多久才能完成登记并归架。假设现在来了新包裹N，前面有3件在等待开始处理。我们还不知道N最终会花多少分钟，但可以先把当时能取得的信息交给已经确定的模型。"),
-      illustration("AI000-C04-L04"),
       p("上一节用乙理解数据怎样分工。这次另给一组固定设置来走完一次使用过程：基础4分钟，每件增加2分钟。这里用新的N计算，不把4.1中G的假设12分钟接过来，也不把上一节的候选比较当成这组设置的效果保证。"),
       { type: "callout", title: "本次沿用的计算关系与固定参数", text: `${durationRelation}；基础${fixedParcelModel.baseMinutes}分钟，每件增加${fixedParcelModel.minutesPerItem}分钟/件。` },
     ] },

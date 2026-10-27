@@ -1,0 +1,644 @@
+{
+  "checkedAt": "2026-10-27T16:06:15.038Z",
+  "base": "905aa46ed379ef2b7e33f671bbbb9596147223d0",
+  "removedSceneReferences": 13,
+  "preservedPreciseFigures": 14,
+  "unchangedOtherLessons": 23,
+  "versionsAndAllNonSceneContentUnchanged": true,
+  "protectedFileCount": 169,
+  "lessons": [
+    {
+      "id": "AI000-C01-L01",
+      "contentVersion": 2,
+      "beforeImages": 1,
+      "afterImages": 0,
+      "preciseFigures": [
+        "mail-flow"
+      ],
+      "tables": 1,
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "describe-task"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "describe-task",
+            "design-task"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "design-task"
+          ]
+        }
+      ],
+      "sections": [
+        "mail-task",
+        "rule-and-learning",
+        "ai-meaning",
+        "many-tasks",
+        "practice",
+        "takeaways"
+      ]
+    },
+    {
+      "id": "AI000-C01-L02",
+      "contentVersion": 1,
+      "beforeImages": 1,
+      "afterImages": 0,
+      "preciseFigures": [
+        "mail-outcomes"
+      ],
+      "tables": 3,
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "product-review"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "check-library"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "product-review"
+          ]
+        }
+      ],
+      "sections": [
+        "task-comparison",
+        "mistakes",
+        "why-errors",
+        "check-output",
+        "practice",
+        "takeaways"
+      ]
+    },
+    {
+      "id": "AI000-C01-L03",
+      "contentVersion": 1,
+      "beforeImages": 1,
+      "afterImages": 0,
+      "preciseFigures": [
+        "knowledge-trace"
+      ],
+      "tables": 1,
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "identify-systems"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "identify-systems",
+            "trace-method"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "trace-method"
+          ]
+        }
+      ],
+      "sections": [
+        "automation",
+        "knowledge",
+        "compare-methods",
+        "evidence",
+        "practice",
+        "takeaways"
+      ]
+    },
+    {
+      "id": "AI000-C02-L01",
+      "contentVersion": 2,
+      "beforeImages": 1,
+      "afterImages": 0,
+      "preciseFigures": [
+        "method-hierarchy"
+      ],
+      "tables": 1,
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "draw-method-map"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "draw-method-map"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "method-evidence"
+          ]
+        }
+      ],
+      "sections": [
+        "learning-from-mail",
+        "deep-learning",
+        "method-map",
+        "read-system",
+        "practice",
+        "takeaways"
+      ]
+    },
+    {
+      "id": "AI000-C02-L02",
+      "contentVersion": 1,
+      "beforeImages": 1,
+      "afterImages": 0,
+      "preciseFigures": [
+        "method-and-task",
+        "generation-map"
+      ],
+      "tables": 1,
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "classify-new-systems"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "product-model-map"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "classify-new-systems",
+            "product-model-map"
+          ]
+        }
+      ],
+      "sections": [
+        "generation",
+        "generative-model",
+        "llm",
+        "product",
+        "practice",
+        "takeaways"
+      ]
+    },
+    {
+      "id": "AI000-C03-L01",
+      "contentVersion": 1,
+      "beforeImages": 1,
+      "afterImages": 0,
+      "preciseFigures": [
+        "supervised-flow"
+      ],
+      "tables": 2,
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "prepare-examples"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "prepare-examples",
+            "missing-targets"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "missing-targets"
+          ]
+        }
+      ],
+      "sections": [
+        "parcel-examples",
+        "learning-and-prediction",
+        "name-the-method",
+        "sample-and-label",
+        "label-sources",
+        "number-target",
+        "data-preparation",
+        "practice",
+        "takeaways"
+      ]
+    },
+    {
+      "id": "AI000-C03-L02",
+      "contentVersion": 2,
+      "beforeImages": 1,
+      "afterImages": 0,
+      "preciseFigures": [
+        "borrowing-groups"
+      ],
+      "tables": 2,
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "propose-groups",
+            "identify-learning-signals"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "propose-groups"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "propose-groups",
+            "identify-learning-signals"
+          ]
+        }
+      ],
+      "sections": [
+        "borrowing-records",
+        "compare-records",
+        "uncertain-records",
+        "unsupervised",
+        "change-the-question",
+        "interpret-groups",
+        "practice",
+        "takeaways"
+      ]
+    },
+    {
+      "id": "AI000-C03-L03",
+      "contentVersion": 1,
+      "beforeImages": 1,
+      "afterImages": 0,
+      "preciseFigures": [
+        "self-supervised-flow"
+      ],
+      "tables": 3,
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "design-self-task",
+            "compare-learning-tasks"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "design-self-task",
+            "compare-learning-tasks"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "compare-learning-tasks"
+          ]
+        }
+      ],
+      "sections": [
+        "hide-a-piece",
+        "four-roles",
+        "name-the-method",
+        "many-records",
+        "another-task",
+        "task-and-use",
+        "compare-arrangements",
+        "practice",
+        "takeaways"
+      ]
+    },
+    {
+      "id": "AI000-C03-L04",
+      "contentVersion": 1,
+      "beforeImages": 1,
+      "afterImages": 0,
+      "preciseFigures": [
+        "reinforcement-flow"
+      ],
+      "tables": 5,
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "trace-watering",
+            "assess-feedback"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "trace-watering"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "assess-feedback"
+          ]
+        }
+      ],
+      "sections": [
+        "delivery-problem",
+        "follow-actions",
+        "compare-routes",
+        "reward-and-target",
+        "reward-design",
+        "experience",
+        "name-the-method",
+        "compare-tasks",
+        "watering-task",
+        "feedback-task",
+        "takeaways"
+      ]
+    },
+    {
+      "id": "AI000-C04-L01",
+      "contentVersion": 1,
+      "beforeImages": 1,
+      "afterImages": 0,
+      "preciseFigures": [
+        "features-target-flow"
+      ],
+      "tables": 6,
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "build-print-records"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "build-print-records",
+            "audit-library-records"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "audit-library-records"
+          ]
+        }
+      ],
+      "sections": [
+        "parcel-records",
+        "rows-and-fields",
+        "features-and-target",
+        "new-record",
+        "choose-fields",
+        "check-records",
+        "print-task",
+        "library-task",
+        "takeaways"
+      ]
+    },
+    {
+      "id": "AI000-C04-L02",
+      "contentVersion": 1,
+      "beforeImages": 1,
+      "afterImages": 0,
+      "preciseFigures": [
+        "parameters-compare"
+      ],
+      "tables": 5,
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "compare-print-settings",
+            "adjust-library-settings"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "compare-print-settings"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "adjust-library-settings"
+          ]
+        }
+      ],
+      "sections": [
+        "need-a-model",
+        "calculate-first",
+        "name-parameters",
+        "compare-one",
+        "compare-records",
+        "change-a-parameter",
+        "training",
+        "use-fixed-model",
+        "print-parameters-task",
+        "adjust-parameters-task",
+        "takeaways"
+      ]
+    },
+    {
+      "id": "AI000-C04-L03",
+      "contentVersion": 1,
+      "beforeImages": 1,
+      "afterImages": 0,
+      "preciseFigures": [
+        "data-use-flow"
+      ],
+      "tables": 8,
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "plan-print-evaluation"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "plan-print-evaluation",
+            "audit-evaluation-flow"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "plan-print-evaluation",
+            "audit-evaluation-flow"
+          ]
+        }
+      ],
+      "sections": [
+        "familiar-records",
+        "new-history",
+        "assign-roles",
+        "training-records",
+        "validation-choice",
+        "test-records",
+        "data-use-flow",
+        "generalization",
+        "future-information",
+        "duplicate-records",
+        "test-feedback",
+        "print-evaluation-task",
+        "audit-evaluation-task",
+        "takeaways"
+      ]
+    },
+    {
+      "id": "AI000-C04-L04",
+      "contentVersion": 1,
+      "beforeImages": 1,
+      "afterImages": 0,
+      "preciseFigures": [
+        "inference-flow"
+      ],
+      "tables": 3,
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "use-print-model"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "use-print-model"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "audit-current-inputs"
+          ]
+        }
+      ],
+      "sections": [
+        "new-arrival",
+        "one-prediction",
+        "calculate-n",
+        "inference-flow",
+        "name-inference",
+        "after-completion",
+        "check-inputs",
+        "print-use-task",
+        "input-audit-task",
+        "takeaways"
+      ]
+    },
+    {
+      "id": "MA101-C02-L03",
+      "unchanged": true
+    },
+    {
+      "id": "MA101-C02-L04",
+      "unchanged": true
+    },
+    {
+      "id": "MA101-C02-L05",
+      "unchanged": true
+    },
+    {
+      "id": "MA101-C02-L06",
+      "unchanged": true
+    },
+    {
+      "id": "ML201-C03-L01",
+      "unchanged": true
+    },
+    {
+      "id": "ML201-C03-L02",
+      "unchanged": true
+    },
+    {
+      "id": "ML201-C03-L03",
+      "unchanged": true
+    },
+    {
+      "id": "ML201-C04-L02",
+      "unchanged": true
+    },
+    {
+      "id": "ML201-C04-L03",
+      "unchanged": true
+    },
+    {
+      "id": "ML201-C04-L04",
+      "unchanged": true
+    },
+    {
+      "id": "ML201-C04-L05",
+      "unchanged": true
+    },
+    {
+      "id": "ML201-C04-L01",
+      "unchanged": true
+    },
+    {
+      "id": "PY101-C05-L01",
+      "unchanged": true
+    },
+    {
+      "id": "PY101-C05-L02",
+      "unchanged": true
+    },
+    {
+      "id": "PY101-C05-L03",
+      "unchanged": true
+    },
+    {
+      "id": "PY101-C05-L04",
+      "unchanged": true
+    },
+    {
+      "id": "PY101-C05-L05",
+      "unchanged": true
+    },
+    {
+      "id": "MA101-C02-L01",
+      "unchanged": true
+    },
+    {
+      "id": "MA101-C02-L02",
+      "unchanged": true
+    },
+    {
+      "id": "MA101-C03-L01",
+      "unchanged": true
+    },
+    {
+      "id": "MA101-C03-L02",
+      "unchanged": true
+    },
+    {
+      "id": "MA101-C03-L03",
+      "unchanged": true
+    },
+    {
+      "id": "PY101-C05-L06",
+      "unchanged": true
+    }
+  ]
+}

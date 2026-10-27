@@ -140,3 +140,7 @@ AI000 的24节蓝图见 ai000-outline.ts 与 AI000_CURRICULUM_V2_PLAN.md，只�
 4.3初始r1，数据用途图区分训练调整、验证选择与保留测试检查，案例/两题不要求代码。4.1、4.2及全部34节旧稿/清单保持不变；4.2→4.3自动衔接，4.4仍规划。证据见docs/AI000_LESSON_4_3_REVIEW.md及docs/ai000-4-3。阅读12–18、练习16–24、代码0是编辑估计，完整路线580–898分钟（9.7–15.0小时），原curriculum与旧学时证据保留。
 
 4.4初始r1，先draft/private完成草稿校验，再pending-review/preview。inference-flow用HTML分开当前输入3件、固定4/2、预测10及未知实绩；事后12另取台账。前十二课仅增登记情境图，旧全文/目标/核心题/锚点/版本保留，清单仅technicalEvidence更新；旧报告为历史修订证据，不据旧发布边界覆盖现状。十三课插画复用image/LessonImage/Next/Image，受控新增本地WebP目录不扩大下载路径。制作与完整提示见AI000_ILLUSTRATION_MANIFEST.md，建议规范见COURSE_ILLUSTRATION_STANDARD_V1_DRAFT.md，全部技术及AI自查见AI000_LESSON_4_4_AND_VISUAL_REFINEMENT.md。第五章及以后仍规划；本轮未完成教师、中文编辑与真实试学。新课阅读10–16、练习14–22、代码0均为编辑估计，完整路线586–906分钟，历史时间证据保留。
+
+## 教学可视化的当前准入
+
+后续各课程按[教学可视化标准V1草案](COURSE_ILLUSTRATION_STANDARD_V1_DRAFT.md)先审查目标、可见信息、独有贡献、已有讲解和阅读空间。允许无图，优先准确关系/数据/结构表达；生图不是默认步骤，取消每课配图指标。AI000的13张场景图已移除正文引用，14幅精确图及全部非场景正文/考核/版本保留。前文4.4插画接入说明是历史开发记录，当前结论与技术证据以[去冗余报告](AI000_VISUAL_CONTENT_REFINEMENT.md)为准。历史图文件和清单保留，旧批量接入/优化重建脚本已停用；通用image Schema与LessonImage不变。不按版面删减调整学时，不宣称学生理解效果已提升。

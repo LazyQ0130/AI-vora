@@ -1,4 +1,3 @@
-import { illustration } from "./illustrations";
 import { lessonSchema } from "../../models";
 import { p } from "./shared";
 import { parcelTimeDefinition, parcelTimeRecords, newParcelTimeRecord, incompleteParcelTimeRecord, parcelTimeColumns, printReferenceRecords, libraryAuditRows, librarySourceLogs } from "./parcel-time-example";
@@ -33,7 +32,6 @@ export const dataFeaturesLabelsLesson = lessonSchema.parse({
   sections: [
     { id: "parcel-records", title: "包裹刚送到，能估计还要等多久吗？", navGroup: "records", navLabel: "读懂一条记录", blocks: [
       p("第三章比较了学习时可以使用哪些目标或反馈。现在，学校收发室想在包裹刚送到时，估计它还要多少分钟才能完成登记并归架。假设工作人员整理了下面这张登记表，我们先看看每一行记录了什么，又有哪些信息可以帮助估计处理时间。"),
-      illustration("AI000-C04-L01"),
       p(`这里的实际处理时长，统一指${parcelTimeDefinition.duration}。例如A在09:00到件，09:04归架，实际时长就是4分钟。它回答的是从到件到归架要多久，单独动手操作了几分钟并不是这次的目标。`),
       { type: "table", caption: "六条包裹处理记录", columns: parcelTimeColumns, rows: parcelTimeRecords.map(r => [r.id, r.size, String(r.waiting), r.careful, String(r.actualMinutes)]) },
       p("先沿着A读一遍：这是一件小包裹；它到件时，前面没有其他包裹等待开始处理；按接收规则无需小心处理；后来从到件到归架共花了4分钟。这几个词和数放在同一行，因为它们说的是同一件包裹的这一次处理。"),

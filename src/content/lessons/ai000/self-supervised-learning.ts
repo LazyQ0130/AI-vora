@@ -1,4 +1,3 @@
-import { illustration } from "./illustrations";
 import { lessonSchema } from "../../models";
 import { p } from "./shared";
 import { maskingExample, continuationExample } from "./self-supervised-example";
@@ -32,7 +31,6 @@ export const selfSupervisedLesson=lessonSchema.parse({
     {id:"hide-a-piece",title:"把一句话藏起一部分，答案从哪里来？",navGroup:"example",navLabel:"先动手遮盖",blocks:[
       p("上一节，我们没有提前给读者分好人群，仍能从借阅记录中提出相似分组。现在手里换成一批文字：没有人逐句另外写答案，能不能利用文字本身，准备一种有答案可比较的学习任务？"),
       p(`先看这条为教学构造的原句：“${maskingExample.original}”试着把地点遮住，再读一次：“${maskingExample.input}”如果请程序补空格，它实际上能看到什么，又该拿什么检查它补出的内容？`),
-      illustration("AI000-C03-L03"),
       p("你可能想到图书馆，也可能想到教室。我们先不急着讨论哪一个更像真的活动地点。刚才保留的完整原句里，这个位置写的是“图书馆”。只要把那部分取出来，就有了这一次学习任务可以使用的目标。"),
       p("准备时可以做两件事：把地点替换成空格，得到交给模型的句子；把原来被替换的文字另存为目标。它们来自同一条原始文本，不需要再请人逐句另编一个补词答案。这里按词语或片段遮盖，方便观察输入与目标的关系。"),
     ]},
