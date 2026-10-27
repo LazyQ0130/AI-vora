@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-27T14:10:00.617Z",
+  "unchangedLessons": 34,
+  "unchangedPublications": 34,
+  "protectedFilesUnchanged": true,
+  "publication": {
+    "lessonId": "AI000-C04-L03",
+    "courseId": "AI000",
+    "chapterId": "AI000-C04",
+    "title": "训练、验证与测试各有什么作用？",
+    "contentVersion": 1,
+    "order": 3,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "draft",
+    "access": "private"
+  },
+  "objectives": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "plan-print-evaluation"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "plan-print-evaluation",
+        "audit-evaluation-flow"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "plan-print-evaluation",
+        "audit-evaluation-flow"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+
+> aivora-web@0.1.0 typecheck
+> tsc --noEmit
+
+scripts/review-ai000-4-3.ts(50,473): error TS2345: Argument of type 'readonly [{ readonly id: "T1"; readonly count: 0; readonly actualMinutes: 4; readonly role: "training"; }, { readonly id: "T2"; readonly count: 1; readonly actualMinutes: 6; readonly role: "training"; }, ... 5 more ..., { ...; }] | readonly [...]' is not assignable to parameter of type 'readonly ({ readonly id: "T1"; readonly count: 0; readonly actualMinutes: 4; readonly role: "training"; } | { readonly id: "T2"; readonly count: 1; readonly actualMinutes: 6; readonly role: "training"; } | ... 5 more ... | { ...; })[]'.
+  Type 'readonly [{ readonly id: "P1"; readonly count: 1; readonly actualMinutes: 5; readonly role: "training"; }, { readonly id: "P2"; readonly count: 3; readonly actualMinutes: 9; readonly role: "training"; }, { ...; }, { ...; }, { ...; }, { ...; }]' is not assignable to type 'readonly ({ readonly id: "T1"; readonly count: 0; readonly actualMinutes: 4; readonly role: "training"; } | { readonly id: "T2"; readonly count: 1; readonly actualMinutes: 6; readonly role: "training"; } | ... 5 more ... | { ...; })[]'.
+    Type '{ readonly id: "P1"; readonly count: 1; readonly actualMinutes: 5; readonly role: "training"; } | { readonly id: "P2"; readonly count: 3; readonly actualMinutes: 9; readonly role: "training"; } | { ...; } | { ...; } | { ...; } | { ...; }' is not assignable to type '{ readonly id: "T1"; readonly count: 0; readonly actualMinutes: 4; readonly role: "training"; } | { readonly id: "T2"; readonly count: 1; readonly actualMinutes: 6; readonly role: "training"; } | ... 5 more ... | { ...; }'.
+      Type '{ readonly id: "P1"; readonly count: 1; readonly actualMinutes: 5; readonly role: "training"; }' is not assignable to type '{ readonly id: "T1"; readonly count: 0; readonly actualMinutes: 4; readonly role: "training"; } | { readonly id: "T2"; readonly count: 1; readonly actualMinutes: 6; readonly role: "training"; } | ... 5 more ... | { ...; }'.
+        Type '{ readonly id: "P1"; readonly count: 1; readonly actualMinutes: 5; readonly role: "training"; }' is not assignable to type '{ readonly id: "T2"; readonly count: 1; readonly actualMinutes: 6; readonly role: "training"; }'.
+          Types of property 'id' are incompatible.
+            Type '"P1"' is not assignable to type '"T2"'.

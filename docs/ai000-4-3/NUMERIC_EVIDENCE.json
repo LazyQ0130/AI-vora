@@ -1,0 +1,211 @@
+{
+  "method": "同源数据逐条计算；测试另用逐件累加及独立手算预期核对。完整候选测试计算仅供维护核验，不参与选择。未运行训练程序",
+  "main": {
+    "records": [
+      {
+        "id": "T1",
+        "count": 0,
+        "actualMinutes": 4,
+        "role": "training"
+      },
+      {
+        "id": "T2",
+        "count": 1,
+        "actualMinutes": 6,
+        "role": "training"
+      },
+      {
+        "id": "T3",
+        "count": 2,
+        "actualMinutes": 8,
+        "role": "training"
+      },
+      {
+        "id": "T4",
+        "count": 3,
+        "actualMinutes": 10,
+        "role": "training"
+      },
+      {
+        "id": "V1",
+        "count": 1,
+        "actualMinutes": 7,
+        "role": "validation"
+      },
+      {
+        "id": "V2",
+        "count": 2,
+        "actualMinutes": 9,
+        "role": "validation"
+      },
+      {
+        "id": "S1",
+        "count": 0,
+        "actualMinutes": 5,
+        "role": "test"
+      },
+      {
+        "id": "S2",
+        "count": 3,
+        "actualMinutes": 13,
+        "role": "test"
+      }
+    ],
+    "candidates": [
+      {
+        "name": "甲",
+        "baseMinutes": 4,
+        "minutesPerItem": 2,
+        "predictions": [
+          4,
+          6,
+          8,
+          10,
+          6,
+          8,
+          4,
+          10
+        ],
+        "gaps": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          3
+        ],
+        "totals": {
+          "training": 0,
+          "validation": 2,
+          "test": 4
+        }
+      },
+      {
+        "name": "乙",
+        "baseMinutes": 3,
+        "minutesPerItem": 3,
+        "predictions": [
+          3,
+          6,
+          9,
+          12,
+          6,
+          9,
+          3,
+          12
+        ],
+        "gaps": [
+          1,
+          0,
+          1,
+          2,
+          1,
+          0,
+          2,
+          1
+        ],
+        "totals": {
+          "training": 4,
+          "validation": 1,
+          "test": 3
+        }
+      }
+    ]
+  },
+  "print": {
+    "records": [
+      {
+        "id": "P1",
+        "count": 1,
+        "actualMinutes": 5,
+        "role": "training"
+      },
+      {
+        "id": "P2",
+        "count": 3,
+        "actualMinutes": 9,
+        "role": "training"
+      },
+      {
+        "id": "P3",
+        "count": 2,
+        "actualMinutes": 8,
+        "role": "validation"
+      },
+      {
+        "id": "P4",
+        "count": 4,
+        "actualMinutes": 11,
+        "role": "validation"
+      },
+      {
+        "id": "P5",
+        "count": 1,
+        "actualMinutes": 6,
+        "role": "test"
+      },
+      {
+        "id": "P6",
+        "count": 5,
+        "actualMinutes": 15,
+        "role": "test"
+      }
+    ],
+    "candidates": [
+      {
+        "name": "丙",
+        "baseMinutes": 3,
+        "minutesPerItem": 2,
+        "predictions": [
+          5,
+          9,
+          7,
+          11,
+          5,
+          13
+        ],
+        "gaps": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          2
+        ],
+        "totals": {
+          "training": 0,
+          "validation": 1,
+          "test": 3
+        }
+      },
+      {
+        "name": "丁",
+        "baseMinutes": 5,
+        "minutesPerItem": 1,
+        "predictions": [
+          6,
+          8,
+          7,
+          9,
+          6,
+          10
+        ],
+        "gaps": [
+          1,
+          1,
+          1,
+          2,
+          0,
+          5
+        ],
+        "totals": {
+          "training": 2,
+          "validation": 3,
+          "test": 5
+        }
+      }
+    ]
+  }
+}

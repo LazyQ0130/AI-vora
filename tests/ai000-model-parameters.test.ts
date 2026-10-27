@@ -105,14 +105,14 @@ test("兼容：4.1只改19处限定说明且r1不变；其他32节全文、旧�
   for (const file of before.protectedFiles) assert.equal(createHash("sha256").update(readFileSync(file.path)).digest("hex"), file.hash, file.path);
 });
 
-test("独立r1可读和4.1→4.2导航，4.3/4.4及后续章节仍未注册", () => {
+test("独立r1可读和4.1→4.2导航，4.2→4.3导航且4.4及后续章节仍未注册", () => {
   assert.equal(lessonRegistry.get(lesson.id), lesson); assert.equal(lesson.contentVersion, 1);
   const entry = resolveLesson("AI000", lesson.id)!.publication;
   assert.equal(entry.status, "pending-review"); assert.equal(entry.access, "preview"); assert.equal(entry.reviewEvidence, undefined);
   const course = getLearningCourse("AI000")!;
   assert.equal(getAdjacentLessons(course, "AI000-C04-L01").next?.lessonId, lesson.id);
-  assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, "AI000-C04-L01"); assert.equal(getAdjacentLessons(course, lesson.id).next, undefined);
-  for (const slot of course.chapters.flatMap(c => c.lessons).filter(l => l.lessonId > lesson.id)) { assert.equal(slot.status, "planned"); assert.equal(slot.href, undefined); assert.equal(lessonRegistry.has(slot.lessonId), false); }
+  assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, "AI000-C04-L01"); assert.equal(getAdjacentLessons(course, lesson.id).next?.lessonId, "AI000-C04-L03");
+  for (const slot of course.chapters.flatMap(c => c.lessons).filter(l => l.lessonId > "AI000-C04-L03")) { assert.equal(slot.status, "planned"); assert.equal(slot.href, undefined); assert.equal(lessonRegistry.has(slot.lessonId), false); }
   assert.equal(resolveLesson("PY101", lesson.id), undefined);
 });
 

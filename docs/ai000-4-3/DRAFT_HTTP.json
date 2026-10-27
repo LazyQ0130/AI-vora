@@ -1,0 +1,20 @@
+[
+  {
+    "url": "http://127.0.0.1:3014/learn/AI000/AI000-C04-L02",
+    "expected": 200,
+    "actual": 200,
+    "passed": true
+  },
+  {
+    "url": "http://127.0.0.1:3014/learn/AI000/AI000-C04-L03",
+    "expected": 404,
+    "actual": 404,
+    "passed": true
+  },
+  {
+    "url": "http://127.0.0.1:3014/learn/AI000/AI000-C04-L04",
+    "expected": 404,
+    "actual": 404,
+    "passed": true
+  }
+]

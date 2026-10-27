@@ -1,0 +1,54 @@
+✔ 三批用途事先分开，完整记录表先于用途表，旧A–G未混入新情境 (1.0999ms)
+✔ 主例全部预测/差距另轮核算，验证2/1选乙，固定乙的测试为3/12差2/1 (0.3036ms)
+✔ 改变保留测试的目标不改变验证选择；图中只有确定乙后才检查测试，无测试候选排名 (6.9439ms)
+✔ 新打印题验证丙7/11丁7/9，合计1/3；训练/验证/测试用途与反馈一致 (0.2372ms)
+✔ 查错题覆盖事后输入、训练效果、重复事件、测试反馈；合理验证选择有条件接受 (0.1538ms)
+✔ 三目标由两道独立核心题检验，真实锚点/两级提示/答案默认折叠，不增加代码先修 (2.336ms)
+✖ 全部34节旧教材/清单及原有图/通用组件/课程事实逐字节不变 (3.3647ms)
+✔ 发布门禁与4.2→4.3连续导航，4.4及后续课没有注册正文 (0.2346ms)
+✔ 真实进度适配器：新课初始空、刷新独立恢复；所有旧完成键及3.2r1/r2不变 (3.4141ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 8
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 973.9082
+
+✖ failing tests:
+
+test at tests\ai000-data-use.test.ts:98:1
+✖ 全部34节旧教材/清单及原有图/通用组件/课程事实逐字节不变 (3.3647ms)
+  AssertionError [ERR_ASSERTION]: PY101-C05-L02
+  + actual - expected
+  ... Skipped lines
+
+    {
+      assessmentMap: [
+        {
+          exerciseIds: [
+            'bind-scale'
+  ...
+      },
+  +   objectiveDisplay: undefined,
+      objectives: [
+        '为位置和关键字调用写出绑定表',
+        '编写两种等价的双参数调用'
+      ],
+      optionalLesson: false,
+
+      at TestContext.<anonymous> (C:\Users\QYF\Desktop\Aivora-Web\tests\ai000-data-use.test.ts:99:44)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: { id: 'PY101-C05-L02', courseId: 'PY101', chapterId: 'PY101-C05', contentVersion: 1, title: '位置与关键字参数绑定', subtitle: '只增加一个技能：把两个实参交给正确的形参。', learningTime: { reading: [Array], practice: [Array], coding: [Array], basis: 'editorial-estimate' }, optionalLesson: false, assessmentMap: [ [Object], [Object] ], prerequisites: '能定义并调用 double(value)。自查：double(4) 返回 8。', prerequisiteLinks: [ [Object] ], objectives: [ '为位置和关键字调用写出绑定表', '编写两种等价的双参数调用' ], objectiveDisplay: undefined, sections: [ [Object], [Object], [Object], [Object], [Object] ], resources: [ [Object], [Object] ], references: [ [Object] ] },
+    expected: { id: 'PY101-C05-L02', courseId: 'PY101', chapterId: 'PY101-C05', contentVersion: 1, title: '位置与关键字参数绑定', subtitle: '只增加一个技能：把两个实参交给正确的形参。', learningTime: { reading: [Array], practice: [Array], coding: [Array], basis: 'editorial-estimate' }, optionalLesson: false, assessmentMap: [ [Object], [Object] ], prerequisites: '能定义并调用 double(value)。自查：double(4) 返回 8。', prerequisiteLinks: [ [Object] ], objectives: [ '为位置和关键字调用写出绑定表', '编写两种等价的双参数调用' ], sections: [ [Object], [Object], [Object], [Object], [Object] ], resources: [ [Object], [Object] ], references: [ [Object] ] },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

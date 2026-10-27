@@ -18,7 +18,7 @@ const lesson=lessonRegistry.get("AI000-C03-L01")!;
 const blocks=lesson.sections.flatMap(s=>s.blocks);
 const hash=(value:unknown)=>createHash("sha256").update(JSON.stringify(value)).digest("hex");
 
-test("3.1独立r1、真实目标映射与反馈；2.2可进入3.1并接3.2，4.3仍规划",()=>{
+test("3.1独立r1、真实目标映射与反馈；2.2可进入3.1并接3.2，4.4仍规划",()=>{
  assert.equal(lesson.contentVersion,1);
  assert.equal(resolveLesson("AI000",lesson.id)?.publication.status,"pending-review");
  assert.equal(resolveLesson("AI000",lesson.id)?.publication.reviewEvidence,undefined);
@@ -26,7 +26,7 @@ test("3.1独立r1、真实目标映射与反馈；2.2可进入3.1并接3.2，4.3
  assert.equal(getAdjacentLessons(course,"AI000-C02-L02").next?.lessonId,lesson.id);
  assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C02-L02");
  assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C03-L02");
- for(const id of ["AI000-C04-L03"]) {
+ for(const id of ["AI000-C04-L04"]) {
   assert.equal(resolveLesson("AI000",id),undefined);assert.equal(lessonRegistry.has(id),false);
  }
  assert.equal(resolveLesson("PY101",lesson.id),undefined);
@@ -78,7 +78,7 @@ test("1.3保留r1结构和考核；27节其他教材及原始课程事实不变�
  for(const [key,value] of existing) assert.equal(memory.get(key),value,key);
 });
 
-test("学时单一维护表逐行匹配24节规划，合计574–890分钟，其他19门展示不变",()=>{
+test("学时单一维护表逐行匹配24节规划，合计580–898分钟，其他19门展示不变",()=>{
  const estimate=getCourseStudyEstimate("AI000")!;
  const plan=readFileSync("docs/AI000_CURRICULUM_V2_PLAN.md","utf8");
  const rows=plan.split("\n").filter(l=>/^\| \d\.\d /.test(l));
@@ -88,9 +88,9 @@ test("学时单一维护表逐行匹配24节规划，合计574–890分钟，其
   const parts=range.split("/").map(r=>r.split("-").map(Number)).map(r=>r.length===1?[r[0],r[0]]:r);
   assert.deepEqual([estimate.lessons[i].reading,estimate.lessons[i].practice,estimate.lessons[i].project],parts);
  });
- assert.deepEqual(estimate.totalMinutes,[574,890]);assert.equal(estimate.hours,"9.6–14.8");
+ assert.deepEqual(estimate.totalMinutes,[580,898]);assert.equal(estimate.hours,"9.7–15.0");
  assert.equal(estimate.basis,"editorial-estimate");assert.equal(estimate.includesPlannedLessons,true);
- assert.equal(getCourseTimeLabel(courses.find(c=>c.id==="AI000")!),"编辑预计 9.6–14.8 小时");
+ assert.equal(getCourseTimeLabel(courses.find(c=>c.id==="AI000")!),"编辑预计 9.7–15.0 小时");
  for(const c of courses.filter(c=>c.id!=="AI000")) {
   assert.equal(getCourseStudyEstimate(c.id),undefined);assert.equal(getCourseTimeLabel(c),`预计 ${c.hours} 小时`);
  }

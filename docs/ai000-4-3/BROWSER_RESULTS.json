@@ -1,0 +1,315 @@
+{
+  "checkedAt": "2026-10-27T14:14:13.531Z",
+  "origin": "http://127.0.0.1:3014",
+  "viewports": [
+    {
+      "documentWidth": 1425,
+      "figureColumns": "228.896px 425.104px",
+      "figureFont": "16px",
+      "height": 1000,
+      "scrollWidth": 1425,
+      "tables": [
+        {
+          "label": "八条已完成的包裹记录",
+          "scrollWidth": 722,
+          "tabIndex": 0,
+          "width": 722
+        },
+        {
+          "label": "同一种记录，承担三种不同工作",
+          "scrollWidth": 722,
+          "tabIndex": 0,
+          "width": 722
+        },
+        {
+          "label": "待比较的两组候选参数",
+          "scrollWidth": 722,
+          "tabIndex": 0,
+          "width": 722
+        },
+        {
+          "label": "只在V1、V2上比较；预测和差距的单位均为分钟",
+          "scrollWidth": 722,
+          "tabIndex": 0,
+          "width": 722
+        },
+        {
+          "label": "对已选定的乙作测试，时间单位均为分钟",
+          "scrollWidth": 722,
+          "tabIndex": 0,
+          "width": 722
+        },
+        {
+          "label": "先约定的打印数据用途",
+          "scrollWidth": 722,
+          "tabIndex": 0,
+          "width": 722
+        },
+        {
+          "label": "本题提供的候选设置",
+          "scrollWidth": 722,
+          "tabIndex": 0,
+          "width": 722
+        },
+        {
+          "label": "三份图书估时流程",
+          "scrollWidth": 722,
+          "tabIndex": 0,
+          "width": 722
+        }
+      ],
+      "width": 1440
+    },
+    {
+      "documentWidth": 753,
+      "figureColumns": "203.698px 378.292px",
+      "figureFont": "16px",
+      "height": 1024,
+      "scrollWidth": 753,
+      "tables": [
+        {
+          "label": "八条已完成的包裹记录",
+          "scrollWidth": 650,
+          "tabIndex": 0,
+          "width": 650
+        },
+        {
+          "label": "同一种记录，承担三种不同工作",
+          "scrollWidth": 650,
+          "tabIndex": 0,
+          "width": 650
+        },
+        {
+          "label": "待比较的两组候选参数",
+          "scrollWidth": 650,
+          "tabIndex": 0,
+          "width": 650
+        },
+        {
+          "label": "只在V1、V2上比较；预测和差距的单位均为分钟",
+          "scrollWidth": 650,
+          "tabIndex": 0,
+          "width": 650
+        },
+        {
+          "label": "对已选定的乙作测试，时间单位均为分钟",
+          "scrollWidth": 650,
+          "tabIndex": 0,
+          "width": 650
+        },
+        {
+          "label": "先约定的打印数据用途",
+          "scrollWidth": 650,
+          "tabIndex": 0,
+          "width": 650
+        },
+        {
+          "label": "本题提供的候选设置",
+          "scrollWidth": 650,
+          "tabIndex": 0,
+          "width": 650
+        },
+        {
+          "label": "三份图书估时流程",
+          "scrollWidth": 650,
+          "tabIndex": 0,
+          "width": 650
+        }
+      ],
+      "width": 768
+    },
+    {
+      "documentWidth": 375,
+      "figureColumns": "276px",
+      "figureFont": "16px",
+      "height": 844,
+      "scrollWidth": 375,
+      "tables": [
+        {
+          "label": "八条已完成的包裹记录",
+          "scrollWidth": 308,
+          "tabIndex": 0,
+          "width": 308
+        },
+        {
+          "label": "同一种记录，承担三种不同工作",
+          "scrollWidth": 308,
+          "tabIndex": 0,
+          "width": 308
+        },
+        {
+          "label": "待比较的两组候选参数",
+          "scrollWidth": 308,
+          "tabIndex": 0,
+          "width": 308
+        },
+        {
+          "label": "只在V1、V2上比较；预测和差距的单位均为分钟",
+          "scrollWidth": 400,
+          "tabIndex": 0,
+          "width": 308
+        },
+        {
+          "label": "对已选定的乙作测试，时间单位均为分钟",
+          "scrollWidth": 320,
+          "tabIndex": 0,
+          "width": 308
+        },
+        {
+          "label": "先约定的打印数据用途",
+          "scrollWidth": 320,
+          "tabIndex": 0,
+          "width": 308
+        },
+        {
+          "label": "本题提供的候选设置",
+          "scrollWidth": 308,
+          "tabIndex": 0,
+          "width": 308
+        },
+        {
+          "label": "三份图书估时流程",
+          "scrollWidth": 308,
+          "tabIndex": 0,
+          "width": 308
+        }
+      ],
+      "width": 390
+    },
+    {
+      "documentWidth": 305,
+      "figureColumns": "222px",
+      "figureFont": "16px",
+      "height": 800,
+      "keyboardTable": {
+        "clientWidth": 254,
+        "focus": "只在V1、V2上比较；预测和差距的单位均为分钟",
+        "scrollLeft": 146,
+        "scrollWidth": 400
+      },
+      "scrollWidth": 305,
+      "tables": [
+        {
+          "label": "八条已完成的包裹记录",
+          "scrollWidth": 254,
+          "tabIndex": 0,
+          "width": 254
+        },
+        {
+          "label": "同一种记录，承担三种不同工作",
+          "scrollWidth": 254,
+          "tabIndex": 0,
+          "width": 254
+        },
+        {
+          "label": "待比较的两组候选参数",
+          "scrollWidth": 254,
+          "tabIndex": 0,
+          "width": 254
+        },
+        {
+          "label": "只在V1、V2上比较；预测和差距的单位均为分钟",
+          "scrollWidth": 400,
+          "tabIndex": 0,
+          "width": 254
+        },
+        {
+          "label": "对已选定的乙作测试，时间单位均为分钟",
+          "scrollWidth": 320,
+          "tabIndex": 0,
+          "width": 254
+        },
+        {
+          "label": "先约定的打印数据用途",
+          "scrollWidth": 320,
+          "tabIndex": 0,
+          "width": 254
+        },
+        {
+          "label": "本题提供的候选设置",
+          "scrollWidth": 254,
+          "tabIndex": 0,
+          "width": 254
+        },
+        {
+          "label": "三份图书估时流程",
+          "scrollWidth": 254,
+          "tabIndex": 0,
+          "width": 254
+        }
+      ],
+      "width": 320
+    }
+  ],
+  "interactions": {
+    "old42RestoredAfterRebuild": true,
+    "new43InitiallyUncompleted": true,
+    "desktopFirstExercise": {
+      "details": [
+        true,
+        true,
+        true
+      ],
+      "hash": "#exercise-plan-print-evaluation",
+      "promptWhiteSpace": "pre-line"
+    },
+    "refresh": {
+      "temporaryInputCleared": true,
+      "hintsAndSolutionClosed": true,
+      "noAutomaticCompletion": true
+    },
+    "mobileDrawer": {
+      "objectives": 3,
+      "exercises": 2,
+      "articleNodes": 14,
+      "articleLinks": [
+        "#familiar-records",
+        "#new-history",
+        "#assign-roles",
+        "#training-records",
+        "#validation-choice",
+        "#test-records",
+        "#data-use-flow",
+        "#generalization",
+        "#future-information",
+        "#duplicate-records",
+        "#test-feedback",
+        "#print-evaluation-task",
+        "#audit-evaluation-task",
+        "#takeaways"
+      ]
+    },
+    "mobileExerciseJump": {
+      "dialogs": 0,
+      "focused": "这些结果能证明什么，该怎样修改？",
+      "hash": "#exercise-audit-evaluation-flow"
+    },
+    "mobileSecondExercise": {
+      "details": [
+        true,
+        true,
+        true
+      ],
+      "hash": "#exercise-audit-evaluation-flow",
+      "whiteSpace": "pre-line"
+    },
+    "drawerEscape": {
+      "dialogs": 0,
+      "focus": "本节导航"
+    },
+    "new43CompletedRestored": true,
+    "old42StillComplete": true,
+    "returned43StillComplete": true,
+    "continuousNavigation": [
+      "4.1→4.2",
+      "4.2→4.3",
+      "4.3→4.2"
+    ]
+  },
+  "console": [],
+  "finalCopyCheck": {
+    "checkedAt": "2026-10-27T14:26:19.211Z",
+    "label": "未直接用于本次训练",
+    "progressRestoredAfterFinalBuild": true
+  }
+}

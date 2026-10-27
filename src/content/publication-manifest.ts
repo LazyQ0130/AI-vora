@@ -6,6 +6,7 @@ const revisedCoreLessons: Record<string, number> = { "MA101-C02-L03": 2, "PY101-
 
 // 发布权限独立于原始课程规划。技术证据不替代人工审核。
 export const publicationManifest = [
+  {lessonId:"AI000-C04-L03",courseId:"AI000",chapterId:"AI000-C04",title:"训练、验证与测试各有什么作用？",contentVersion:1,order:3,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_4_3_REVIEW.md"},
   {lessonId:"AI000-C04-L02",courseId:"AI000",chapterId:"AI000-C04",title:"模型和参数是怎样得到的？",contentVersion:1,order:2,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_4_2_AND_EDITORIAL_REFINEMENT.md"},
   {lessonId:"AI000-C04-L01",courseId:"AI000",chapterId:"AI000-C04",title:"数据、特征与标签",contentVersion:1,order:1,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_4_2_AND_EDITORIAL_REFINEMENT.md"},
   {lessonId:"AI000-C03-L04",courseId:"AI000",chapterId:"AI000-C03",title:"强化学习：通过行动与反馈学习",contentVersion:1,order:4,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_3_4_AND_CHAPTER_3_REVIEW.md"},

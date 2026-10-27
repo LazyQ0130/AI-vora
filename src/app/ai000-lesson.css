@@ -110,6 +110,26 @@
 #exercise-audit-library-records > p:first-of-type,
 #exercise-compare-print-settings > p:first-of-type,
 #exercise-adjust-library-settings > p:first-of-type { white-space: pre-line; }
+#exercise-plan-print-evaluation > p:first-of-type,
+#exercise-audit-evaluation-flow > p:first-of-type { white-space: pre-line; }
+.ai-use-figure { overflow-wrap: anywhere; }
+.ai-use-start strong { display: block; font-size: 18px; line-height: 1.8; }
+.ai-use-start p, .ai-use-records p, .ai-use-work p, .ai-use-work li, .ai-use-boundary { font-size: 14px; line-height: 1.9; color: #d0d8ed; }
+.ai-use-stages { list-style: none; padding: 0; margin: 20px 0; }
+.ai-use-stages > li { display: grid; grid-template-columns: minmax(0,.7fr) minmax(0,1.3fr); gap: 24px; padding: 22px 0; border-top: 1px dashed #64718e; }
+.ai-use-records { min-width: 0; padding-left: 14px; border-left: 3px solid #65cfe3; }
+.ai-use-records span { display: block; font-size: 14px; line-height: 1.8; color: #c7d2ec; }
+.ai-use-records strong { display: block; font-size: 16px; line-height: 1.9; margin-top: 10px; }
+.ai-use-stages > li:nth-child(2) .ai-use-records { border-color: #ba9ce1; }
+.ai-use-stages > li:nth-child(3) .ai-use-records { border-color: #e9b56f; }
+.ai-use-work { min-width: 0; }
+.ai-use-work h3 { font-size: 16px; line-height: 1.8; margin: 0; }
+.ai-use-work ul { padding-left: 20px; margin: 10px 0; }
+.ai-use-work .ai-use-candidates li { font-size: 16px; line-height: 1.9; }
+.ai-use-arrow { display: flex; align-items: center; gap: 8px; font-size: 14px; line-height: 1.8; color: #c7d2ec; }
+.ai-use-arrow svg { flex-shrink: 0; }
+.ai-use-choice b { color: #e3d3ff; font-size: 18px; }
+.ai-use-boundary { padding-top: 16px; border-top: 1px dashed #64718e; }
 .ai-param-figure { overflow-wrap: anywhere; }
 .ai-param-input { padding-left: 14px; border-left: 3px solid #65cfe3; }
 .ai-param-label { display: block; font-size: 14px; line-height: 1.8; color: #c7d2ec; }
@@ -175,6 +195,7 @@
 .lesson-reading-links[aria-label="旧版书签与内容去向"] a { min-height: 44px; display: flex; align-items: center; }
 .lesson-reading-links[aria-label="旧版书签与内容去向"] section { scroll-margin-top: 16px; padding-block: 14px; }
 @media (max-width: 767px) {
+  .ai-use-stages > li { grid-template-columns: minmax(0,1fr); gap: 16px; }
   .ai-figure { padding: 16px; }
   .ai-flow { grid-template-columns: minmax(0, 1fr); gap: 8px; }
   .ai-right { display: none; }
