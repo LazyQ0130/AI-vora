@@ -9,6 +9,7 @@ import { AiSupervisedFigure } from "./ai-supervised-figure";
 import { AiBorrowingFigure } from "./ai-borrowing-figure";
 import { AiSelfSupervisedFigure } from "./ai-self-supervised-figure";
 import { AiReinforcementFigure } from "./ai-reinforcement-figure";
+import { AiFeaturesTargetFigure } from "./ai-features-target-figure";
 
 type FigureBlock = Extract<ContentBlock, { type: "ai-task-figure" }>;
 
@@ -21,6 +22,7 @@ function FlowArrow() {
 
 export function AiTaskFigure({ block }: { block: FigureBlock }) {
   const id = useId();
+  if (block.kind === "features-target-flow") return <AiFeaturesTargetFigure block={block} />;
   if (block.kind === "reinforcement-flow") return <AiReinforcementFigure block={block} />;
   if (block.kind === "self-supervised-flow") return <AiSelfSupervisedFigure block={block} />;
   if (block.kind === "borrowing-groups") return <AiBorrowingFigure block={block} />;

@@ -1,0 +1,109 @@
+{
+  "checkedAt": "2026-10-27T13:03:08.904Z",
+  "base": "http://127.0.0.1:3012",
+  "browser": "Codex in-app Chromium",
+  "method": "真实生产页上的浏览器视口模拟，非实体设备；普通UI形成测试进度，未注入localStorage",
+  "viewports": [
+    {
+      "bodyFont": "16px",
+      "figureColumns": [
+        "329px 329px",
+        "329px 329px",
+        "329px 329px"
+      ],
+      "figureFont": "16px",
+      "firstTable": {
+        "content": 722,
+        "tabIndex": 0,
+        "viewport": 722
+      },
+      "pageWidth": 1425,
+      "width": 1440
+    },
+    {
+      "bodyFont": "16px",
+      "figureColumns": [
+        "293px 293px",
+        "293px 293px",
+        "293px 293px"
+      ],
+      "figureFont": "16px",
+      "firstTable": {
+        "content": 650,
+        "tabIndex": 0,
+        "viewport": 650
+      },
+      "pageWidth": 753,
+      "width": 768
+    },
+    {
+      "bodyFont": "16px",
+      "figureColumns": [
+        "276px",
+        "276px",
+        "276px"
+      ],
+      "figureFont": "16px",
+      "firstTable": {
+        "content": 400,
+        "tabIndex": 0,
+        "viewport": 308
+      },
+      "pageWidth": 375,
+      "width": 390
+    },
+    {
+      "bodyFont": "16px",
+      "figureColumns": [
+        "222px",
+        "222px",
+        "222px"
+      ],
+      "figureFont": "16px",
+      "firstTable": {
+        "content": 400,
+        "tabIndex": 0,
+        "viewport": 254
+      },
+      "pageWidth": 305,
+      "width": 320
+    }
+  ],
+  "checks": {
+    "desktopThreeColumns": true,
+    "objectives": 3,
+    "deduplicatedCoreExercises": 2,
+    "exerciseHashAndHeadingFocus": true,
+    "twoHintsAndSolutionKeyboard": true,
+    "mobileDrawerClosesOnLink": true,
+    "fullArticleContents": 9,
+    "escapeRestoresTriggerFocus": true,
+    "temporaryTextEmptyAfterReload": true,
+    "detailsClosedAfterReload": true,
+    "thirdChapterCompletionNotInherited": true,
+    "manualCompletionRestoredAfterReload": true,
+    "chapter34StillCompletedAfter41Save": true,
+    "firstTableKeyboardScroll": {
+      "width": 320,
+      "viewport": 254,
+      "content": 400,
+      "observedScrollLeft": 120
+    },
+    "predictionAndUnknownActualSeparate": true,
+    "finalPromptSteps": 4
+  },
+  "logs": [],
+  "screenshots": [
+    "DESKTOP.jpg",
+    "TABLET.jpg",
+    "MOBILE_FIGURE.jpg",
+    "MOBILE_OUTPUT.jpg",
+    "MOBILE_DRAWER.jpg",
+    "NARROW_TABLE.jpg"
+  ],
+  "limitations": [
+    "未用实体手机、读屏软件或其他浏览器复核",
+    "浏览器验收与AI另轮核验不能替代教师签署或学生试学",
+    "DOMStorage原始协议读取未受浏览器工具支持，旧键逐字节保护由真实createProgressStore适配器单测验证"
+  ]
+}

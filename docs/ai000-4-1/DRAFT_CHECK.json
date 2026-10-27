@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-10-27T12:55:04.580Z",
+  "unchangedLessons": 32,
+  "unchangedPublications": 32,
+  "protectedFilesUnchanged": true,
+  "objectives": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "build-print-records"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "build-print-records",
+        "audit-library-records"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "audit-library-records"
+      ]
+    }
+  ],
+  "publication": {
+    "lessonId": "AI000-C04-L01",
+    "courseId": "AI000",
+    "chapterId": "AI000-C04",
+    "title": "数据、特征与标签",
+    "contentVersion": 1,
+    "order": 1,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "draft",
+    "access": "private"
+  }
+}

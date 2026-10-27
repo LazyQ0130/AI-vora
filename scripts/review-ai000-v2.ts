@@ -17,9 +17,11 @@ if (process.argv.includes("--baseline")) {
   }, null, 2)+"\n", {flag:"wx"});
   console.log("25节实际注册全文、清单及原始课程体系摘要已独占保存");
 } else {
-  const before = JSON.parse(readFileSync(baselinePath,"utf8")) as {lessons:Lesson[]; curriculum:{path:string;digest:string}[]};
+  const before = JSON.parse(readFileSync(baselinePath,"utf8")) as {lessons:Lesson[]; curriculum?:{path:string;digest:string}[]; protectedFiles?:{path:string;hash:string}[]};
   for (const old of before.lessons.filter(l=>l.courseId!=="AI000")) assert.equal(digest(lessonRegistry.get(old.id)),digest(old),old.id);
-  for (const file of before.curriculum) assert.equal(createHash("sha256").update(readFileSync(file.path)).digest("hex"),file.digest,file.path);
+  const curriculum = before.curriculum ?? before.protectedFiles?.filter(f=>f.path.startsWith("curriculum/")).map(f=>({path:f.path,digest:f.hash}));
+  assert.equal(curriculum?.length,2,"需要本轮两份原始课程事实的真实基线摘要");
+  for (const file of curriculum!) assert.equal(createHash("sha256").update(readFileSync(file.path)).digest("hex"),file.digest,file.path);
   const requested = process.argv.indexOf("--lesson");
   const ids = requested>=0 ? [process.argv[requested+1]] : [...lessonRegistry.values()].filter(l=>l.courseId==="AI000").map(l=>l.id);
   const checks = ids.map(id=>{
@@ -43,7 +45,7 @@ if (process.argv.includes("--baseline")) {
   assert.equal(course.status,"planned");
   if(process.argv.includes("--final")) {
     assert.equal(course.chapters.flatMap(c=>c.lessons).length,24);
-    const ordered=["AI000-C01-L01","AI000-C01-L02","AI000-C01-L03","AI000-C02-L01","AI000-C02-L02","AI000-C03-L01","AI000-C03-L02","AI000-C03-L03","AI000-C03-L04"];
+    const ordered=["AI000-C01-L01","AI000-C01-L02","AI000-C01-L03","AI000-C02-L01","AI000-C02-L02","AI000-C03-L01","AI000-C03-L02","AI000-C03-L03","AI000-C03-L04","AI000-C04-L01"];
     assert.deepEqual(course.chapters.flatMap(c=>c.lessons).filter(l=>l.href).map(l=>l.lessonId),ordered);
     ordered.forEach((id,index)=>{
       const next=getAdjacentLessons(course,id);

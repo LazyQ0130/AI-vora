@@ -1,0 +1,384 @@
+{
+  "basis": "editorial-estimate",
+  "includesPlannedLessons": true,
+  "lessons": [
+    {
+      "lessonId": "AI000-C01-L01",
+      "reading": [
+        14,
+        20
+      ],
+      "practice": [
+        12,
+        18
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C01-L02",
+      "reading": [
+        16,
+        23
+      ],
+      "practice": [
+        15,
+        22
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C01-L03",
+      "reading": [
+        16,
+        22
+      ],
+      "practice": [
+        15,
+        22
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C02-L01",
+      "reading": [
+        16,
+        22
+      ],
+      "practice": [
+        16,
+        24
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C02-L02",
+      "reading": [
+        18,
+        25
+      ],
+      "practice": [
+        16,
+        24
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C03-L01",
+      "reading": [
+        10,
+        16
+      ],
+      "practice": [
+        8,
+        14
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C03-L02",
+      "reading": [
+        10,
+        16
+      ],
+      "practice": [
+        8,
+        14
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C03-L03",
+      "reading": [
+        10,
+        16
+      ],
+      "practice": [
+        8,
+        14
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C03-L04",
+      "reading": [
+        12,
+        18
+      ],
+      "practice": [
+        10,
+        16
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C04-L01",
+      "reading": [
+        10,
+        16
+      ],
+      "practice": [
+        16,
+        24
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C04-L02",
+      "reading": [
+        12,
+        18
+      ],
+      "practice": [
+        10,
+        16
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C04-L03",
+      "reading": [
+        12,
+        18
+      ],
+      "practice": [
+        10,
+        16
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C04-L04",
+      "reading": [
+        10,
+        16
+      ],
+      "practice": [
+        8,
+        14
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C05-L01",
+      "reading": [
+        10,
+        16
+      ],
+      "practice": [
+        8,
+        14
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C05-L02",
+      "reading": [
+        10,
+        16
+      ],
+      "practice": [
+        8,
+        14
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C05-L03",
+      "reading": [
+        10,
+        16
+      ],
+      "practice": [
+        8,
+        14
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C05-L04",
+      "reading": [
+        10,
+        16
+      ],
+      "practice": [
+        8,
+        14
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C05-L05",
+      "reading": [
+        10,
+        16
+      ],
+      "practice": [
+        8,
+        14
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C06-L01",
+      "reading": [
+        12,
+        18
+      ],
+      "practice": [
+        10,
+        16
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C06-L02",
+      "reading": [
+        12,
+        18
+      ],
+      "practice": [
+        10,
+        16
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C06-L03",
+      "reading": [
+        12,
+        18
+      ],
+      "practice": [
+        10,
+        16
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C07-L01",
+      "reading": [
+        10,
+        16
+      ],
+      "practice": [
+        8,
+        14
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C07-L02",
+      "reading": [
+        10,
+        16
+      ],
+      "practice": [
+        8,
+        14
+      ],
+      "project": [
+        0,
+        0
+      ]
+    },
+    {
+      "lessonId": "AI000-C07-L03",
+      "reading": [
+        10,
+        15
+      ],
+      "practice": [
+        15,
+        20
+      ],
+      "project": [
+        35,
+        55
+      ]
+    }
+  ],
+  "reading": [
+    282,
+    427
+  ],
+  "practice": [
+    253,
+    404
+  ],
+  "project": [
+    35,
+    55
+  ],
+  "totalMinutes": [
+    570,
+    886
+  ],
+  "hours": "9.5–14.8",
+  "reason": "4.1两道独立开放题练习由8–14改为16–24分钟；非学生实测"
+}
