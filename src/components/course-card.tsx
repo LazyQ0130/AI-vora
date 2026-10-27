@@ -4,6 +4,7 @@ import { ArrowUpRight, ArrowRight, Clock3, BookOpen } from "lucide-react";
 import { type Course, getCoursePreview } from "@/lib/curriculum";
 import { getCourseCover } from "@/lib/artwork";
 import { formatCourseReferences } from "@/lib/course-presentation";
+import { getCourseTimeLabel } from "@/lib/course-learning-time";
 
 export function CourseArt({
   course,
@@ -74,7 +75,7 @@ export function CourseCard({
           </span>
           <span>
             <Clock3 size={13} />
-            预计 {course.hours} 小时
+            {getCourseTimeLabel(course)}
           </span>
         </div>
         <div className="course-prereq">

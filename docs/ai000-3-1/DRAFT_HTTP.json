@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "expected": 404,
+  "actual": 404,
+  "path": "/learn/AI000/AI000-C03-L01",
+  "base": "http://127.0.0.1:3008",
+  "checkedAt": "2026-10-27T16:29:59.6980357+08:00"
+}

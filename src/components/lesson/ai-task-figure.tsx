@@ -5,6 +5,7 @@ import { keywordMailDecision, mailExamples } from "@/content/lessons/ai000/mail-
 import { AiRelationshipFigure } from "./ai-relationship-figure";
 import { AiKnowledgeFigure } from "./ai-knowledge-figure";
 import { AiGenerationFigure } from "./ai-generation-figure";
+import { AiSupervisedFigure } from "./ai-supervised-figure";
 
 type FigureBlock = Extract<ContentBlock, { type: "ai-task-figure" }>;
 
@@ -17,6 +18,7 @@ function FlowArrow() {
 
 export function AiTaskFigure({ block }: { block: FigureBlock }) {
   const id = useId();
+  if (block.kind === "supervised-flow") return <AiSupervisedFigure block={block} />;
   if (block.kind === "generation-map") return <AiGenerationFigure block={block} />;
   if (block.kind === "knowledge-trace") return <AiKnowledgeFigure block={block} />;
   if (block.kind === "method-hierarchy" || block.kind === "method-and-task")

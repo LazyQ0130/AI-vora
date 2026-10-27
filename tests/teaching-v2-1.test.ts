@@ -57,8 +57,14 @@ test("V2.1 先修顺序连通，扩展课不计基础完成分母", () => {
   for (const lesson of lessonRegistry.values()) {
     const links = [...lesson.prerequisiteLinks, ...lesson.sections.flatMap((s) => s.blocks.flatMap((b) => b.type === "reading-links" ? b.links : []))];
     for (const link of links) if (link.href.startsWith("/learn/")) {
-      const [, , course, id] = link.href.split("/");
-      assert.ok(resolveLesson(course,id), `${lesson.id}: ${link.href}`);
+      const url = new URL(link.href,"https://aivora.test");
+      const [, , course, id] = url.pathname.split("/");
+      const target = resolveLesson(course,id)?.lesson;
+      assert.ok(target, `${lesson.id}: ${link.href}`);
+      if(url.hash) {
+        const anchor=url.hash.slice(1);
+        assert.ok(target.sections.some(s=>s.id===anchor) || target.sections.flatMap(s=>s.blocks).some(b=>b.type==="exercise" && `exercise-${b.id}`===anchor) || target.legacyAnchors?.some(a=>a.id===anchor),`${lesson.id}: ${link.href}`);
+      }
     }
   }
 });

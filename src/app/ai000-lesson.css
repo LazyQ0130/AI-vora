@@ -67,6 +67,22 @@
 .ai-trace strong { font-size: 18px; line-height: 1.6; color: #e8edf9; }
 .ai-trace p { font-size: 16px; line-height: 1.8; color: #d0d8ed; }
 .ai-trace span { font-size: 14px; line-height: 1.8; color: #c7d2ec; }
+.ai-supervised { overflow-wrap: anywhere; }
+.ai-supervised-stage + .ai-supervised-stage { margin-top: 24px; padding-top: 24px; border-top: 1px dashed #64718e; }
+.ai-supervised-title { display: block; font-size: 18px; line-height: 1.7; }
+.ai-paired-examples { list-style: none; padding: 0; margin: 18px 0; display: grid; gap: 12px; }
+.ai-paired-examples li { display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 12px 0; border-bottom: 1px solid #384661; }
+.ai-paired-examples strong, .ai-prediction-row strong { display: block; font-size: 16px; line-height: 1.7; }
+.ai-paired-examples span { display: block; font-size: 14px; line-height: 1.8; color: #c1cbe1; }
+.ai-known-label { padding: 8px 12px; border-left: 3px solid #7ee5d3; background: #142f39; }
+.ai-known-label strong { color: #7ee5d3; }
+.ai-supervised-adjust { display: flex; align-items: center; justify-content: center; gap: 12px; color: #7ee5d3; font-size: 16px; line-height: 1.8; }
+.ai-prediction-row { display: grid; grid-template-columns: minmax(0,1fr) 22px minmax(0,1fr) 22px minmax(0,1fr); gap: 12px; align-items: center; margin-top: 20px; }
+.ai-prediction-row p { font-size: 14px; line-height: 1.8; color: #c1cbe1; }
+.ai-trained-model { border-block: 2px solid #9d93e5; padding: 14px 0; }
+.ai-verification { border-left: 3px solid #ffd197; padding: 12px; background: #322e2c; }
+.ai-verification strong { display: block; color: #ffd197; font-size: 16px; line-height: 1.8; }
+.ai-verification span { display: block; color: #d6d8df; font-size: 14px; line-height: 1.8; margin-top: 6px; }
 .lesson-reading-links[aria-label="旧版书签与内容去向"] summary,
 .lesson-reading-links[aria-label="旧版书签与内容去向"] a { min-height: 44px; display: flex; align-items: center; }
 .lesson-reading-links[aria-label="旧版书签与内容去向"] section { scroll-margin-top: 16px; padding-block: 14px; }
@@ -81,4 +97,9 @@
   .ai-nested { padding: 12px; }
   .ai-nested > .ai-nested { margin-top: 14px; }
   .ai-method-tasks { grid-template-columns: minmax(0, 1fr); }
+  .ai-paired-examples li { grid-template-columns: 54px minmax(0,1fr); gap: 10px; }
+  .ai-paired-examples svg { width: 54px; height: auto; }
+  .ai-known-label { grid-column: 2; }
+  .ai-prediction-row { grid-template-columns: minmax(0,1fr); }
+  .ai-prediction-row > svg { margin-inline: auto; }
 }

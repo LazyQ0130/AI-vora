@@ -14,6 +14,7 @@ import { courses, getCourse, getCoursePreview } from "@/lib/curriculum";
 import { getLearningCourse, lessonSummaries } from "@/lib/course-engine";
 import { CourseContents } from "@/components/lesson/course-contents";
 import { CourseArt } from "@/components/course-card";
+import { getCourseStudyEstimate, getCourseTimeLabel } from "@/lib/course-learning-time";
 import {
   formatCourseReferences,
   getCourseDisplayName,
@@ -40,6 +41,8 @@ export default async function CoursePage({
   if (!course) notFound();
   const learningCourse = getLearningCourse(course.id)!;
   const preview = getCoursePreview(course.id);
+  const estimate = getCourseStudyEstimate(course.id);
+  const readableCount = learningCourse.chapters.flatMap(ch=>ch.lessons).filter(l=>l.href).length;
   const prereqs = courses.filter(
     (c) => c.id !== course.id && course.req.includes(c.id),
   );
@@ -66,7 +69,7 @@ export default async function CoursePage({
               </span>
               <span>
                 <Clock3 size={15} />
-                预计 {course.hours} 小时
+                {getCourseTimeLabel(course)}
               </span>
             </div>
           </div>
@@ -77,6 +80,11 @@ export default async function CoursePage({
               {preview && "目前包含可阅读样章，教材仍待人工审核。"}
             </p>
           </div>
+          {estimate && <section className="detail-section" aria-labelledby="course-study-time">
+            <h2 id="course-study-time">怎样安排学习时间</h2>
+            <p>原规划学时为 {course.hours} 小时。按当前 {estimate.lessonCount} 节完整路线，连同阅读、开放练习与综合实践，编辑预计约 {estimate.hours} 小时；这不是学生实测时间。</p>
+            <p>目前有 {readableCount} 节可阅读，其他课时仍在筹备。完整路线的预计时间包含这些尚未制作的内容，后续制作与实际试学后还会调整。每篇教材另列本节的阅读和练习预计时间。</p>
+          </section>}
           <section className="detail-section">
             <span className="eyebrow">LEARNING OUTCOME</span>
             <h2>学会什么，如何验证</h2>

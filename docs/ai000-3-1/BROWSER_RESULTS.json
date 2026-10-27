@@ -1,0 +1,355 @@
+{
+  "checkedAt": "2026-10-27T08:45:52.880Z",
+  "base": "http://127.0.0.1:3008",
+  "observations": [
+    {
+      "test": "initial-storage",
+      "value": "empty origin 127.0.0.1:3008; no fixtures injected"
+    },
+    {
+      "test": "desktop-layout",
+      "details": {
+        "figureHeight": 889,
+        "figureScroll": 722,
+        "figureWidth": 722,
+        "headings": [
+          "照片旁边，为什么还要写类别？",
+          "有答案的例子用来学，新照片用来判断",
+          "现在给这种学习方式起个名字",
+          "一条例子里，分别装着什么？",
+          "答案从哪里来，值得信任吗？",
+          "已知答案，也可以是一个数",
+          "只有一堆照片，下一步能做什么？",
+          "换一项工作，自己把例子准备好",
+          "看见一条例子，也要找到它的目标"
+        ],
+        "minTextPx": 14,
+        "scroll": 1425,
+        "width": 1440
+      }
+    },
+    {
+      "test": "desktop-exercise-link",
+      "id": "prepare-examples",
+      "details": {
+        "focus": "为图书分类准备一组有答案的例子",
+        "hash": "#exercise-prepare-examples",
+        "top": 4273.33349609375
+      }
+    },
+    {
+      "test": "exercise-feedback",
+      "id": "prepare-examples",
+      "open": 3
+    },
+    {
+      "test": "desktop-exercise-link",
+      "id": "missing-targets",
+      "details": {
+        "focus": "四份资料，离开展监督学习还差什么？",
+        "hash": "#exercise-missing-targets",
+        "top": 1475.5521240234375
+      }
+    },
+    {
+      "test": "exercise-feedback",
+      "id": "missing-targets",
+      "open": 3
+    },
+    {
+      "test": "desktop-exercise-settled",
+      "details": {
+        "focus": "参考解答与自查标准",
+        "hash": "#exercise-missing-targets",
+        "top": 558
+      }
+    },
+    {
+      "test": "desktop-first-target-settled",
+      "details": {
+        "hash": "#exercise-prepare-examples",
+        "headingTop": 309.3333435058594,
+        "input": "浏览器验收临时输入，不是学生作答。"
+      }
+    },
+    {
+      "test": "refresh-clears-draft-and-disclosures",
+      "details": {
+        "inputs": [
+          "",
+          ""
+        ],
+        "open": 0
+      }
+    },
+    {
+      "test": "tablet-layout",
+      "details": {
+        "figureScroll": 650,
+        "figureWidth": 650,
+        "scroll": 753,
+        "width": 768
+      }
+    },
+    {
+      "test": "tablet-full-goals-prerequisites",
+      "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n9 节点\n本节学习目标\n3 项\n01\n分清输入和标签\n\n用自己准备的例子解释监督学习。\n\n02\n区别学习与预测\n\n说明答案何时可用，预测怎样核实。\n\n03\n判断数据还缺什么\n\n为新任务补齐输入、目标及核实办法。\n\n查看完整目标\n用具体例子解释监督学习，区分一条样本中的输入信息与标签\n解释学习时已知目标的作用，以及新输入的预测为何需要另行核实\n判断新任务是否具备监督学习所需的输入与目标信息，并提出合理的数据准备方案\n核心练习\n2 道\n迁移练习\n为图书分类准备一组有答案的例子\n迁移练习\n四份资料，离开展监督学习还差什么？\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n89%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n已完成前两章，能区分输入、任务和输出，知道机器学习利用数据形成模型。无需编程、数学或算法基础。\n\n1.1 输入、任务与输出\n\n回看系统实际拿到什么、要交回什么。\n\n2.1 从例子形成模型\n\n回顾训练与使用学好的模型的区别。"
+    },
+    {
+      "test": "mobile-drawer-target",
+      "dialogClosed": true
+    },
+    {
+      "test": "mobile-target-settled",
+      "details": {
+        "focus": "为图书分类准备一组有答案的例子",
+        "hash": "#exercise-prepare-examples",
+        "top": 260.25
+      }
+    },
+    {
+      "test": "mobile-exercise-feedback",
+      "open": 3
+    },
+    {
+      "test": "mobile-layout",
+      "details": {
+        "figureScroll": 308,
+        "figureWidth": 308,
+        "minTextPx": 14,
+        "scroll": 375,
+        "width": 390
+      }
+    },
+    {
+      "test": "narrow-phone-layout",
+      "details": {
+        "figureScroll": 254,
+        "figureWidth": 254,
+        "scroll": 305,
+        "width": 320
+      }
+    },
+    {
+      "test": "escape-return",
+      "details": {
+        "dialog": false,
+        "focused": "本节导航"
+      }
+    },
+    {
+      "test": "manual-complete",
+      "button": 1
+    },
+    {
+      "test": "2.2-adjacent-navigation",
+      "text": "上一节 · 2.1 AI、机器学习与深度学习，到底是什么关系？\n下一节 · 3.1 监督学习：从有答案的例子中学习"
+    },
+    {
+      "test": "3.1-completion-restored-after-hydration",
+      "button": 1,
+      "h1": "监督学习：从有答案的例子中学习"
+    },
+    {
+      "test": "1.3-desktop-refinement",
+      "details": {
+        "exerciseCount": 2,
+        "figureCount": 1,
+        "firstParagraphs": [
+          "把闹钟设在早上七点，到了设定的时间就会响铃；让备份软件每天晚上自动复制指定文件，到了设定的时间，它也会开始工作。",
+          "这类任务有一个共同点：我们已经提前告诉电脑，什么时候做、要做什么。电脑只需要按照设定好的规则执行，不必通过学习大量数据来决定下一步怎么做。",
+          "我们把按设定完成工作、减少人逐步操作的做法叫自动化。普通计算器按选定的加法算出和，备份程序按时间和路径复制文件，都是用明确步骤完成要求的例子。工作有用、运行很快，和是否采用AI方法，是不同的问题。"
+        ],
+        "pageWidth": 1425,
+        "versionNotice": 0,
+        "width": 1440
+      }
+    },
+    {
+      "test": "1.3-mobile",
+      "details": {
+        "headingTop": 234.45834350585935,
+        "ids": [
+          "automation",
+          "knowledge",
+          "compare-methods",
+          "evidence",
+          "practice",
+          "exercise-identify-systems",
+          "exercise-trace-method",
+          "takeaways"
+        ],
+        "scroll": 375,
+        "width": 390
+      }
+    },
+    {
+      "test": "hours-detail-mobile",
+      "text": "怎样安排学习时间\n\n原规划学时为 6–10 小时。按当前 24 节完整路线，连同阅读、开放练习与综合实践，编辑预计约 9.4–14.6 小时；这不是学生实测时间。\n\n目前有 6 节可阅读，其他课时仍在筹备。完整路线的预计时间包含这些尚未制作的内容，后续制作与实际试学后还会调整。每篇教材另列本节的阅读和练习预计时间。",
+      "dimensions": {
+        "scroll": 375,
+        "width": 390
+      }
+    },
+    {
+      "test": "hours-detail-desktop",
+      "facts": "7 章规划\n编辑预计 9.4–14.6 小时",
+      "readableLinks": [
+        "/learn/AI000/AI000-C01-L01",
+        "/learn/AI000/AI000-C01-L02",
+        "/learn/AI000/AI000-C01-L03",
+        "/learn/AI000/AI000-C02-L01",
+        "/learn/AI000/AI000-C02-L02",
+        "/learn/AI000/AI000-C03-L01",
+        "/learn/AI000/AI000-C01-L01"
+      ],
+      "overflow": false
+    },
+    {
+      "test": "all-course-card-times-desktop",
+      "cards": [
+        {
+          "time": "7 章规划编辑预计 9.4–14.6 小时",
+          "title": "人工智能导论与技术地图"
+        },
+        {
+          "time": "10 章规划预计 26–36 小时",
+          "title": "Python 编程与工程入门"
+        },
+        {
+          "time": "10 章规划预计 30–42 小时",
+          "title": "AI 数学 I：线性代数与微积分"
+        },
+        {
+          "time": "9 章规划预计 24–34 小时",
+          "title": "AI 数学 II：概率、统计与优化基础"
+        },
+        {
+          "time": "9 章规划预计 24–34 小时",
+          "title": "Python 科学计算与数据分析"
+        },
+        {
+          "time": "10 章规划预计 32–44 小时",
+          "title": "机器学习基础：监督学习"
+        },
+        {
+          "time": "10 章规划预计 28–40 小时",
+          "title": "机器学习进阶：经典算法"
+        },
+        {
+          "time": "8 章规划预计 18–26 小时",
+          "title": "模型评估与实验方法"
+        },
+        {
+          "time": "10 章规划预计 30–40 小时",
+          "title": "神经网络原理与反向传播"
+        },
+        {
+          "time": "9 章规划预计 28–40 小时",
+          "title": "PyTorch 深度学习实战"
+        },
+        {
+          "time": "10 章规划预计 32–44 小时",
+          "title": "深度学习核心架构"
+        },
+        {
+          "time": "8 章规划预计 24–34 小时",
+          "title": "自然语言处理 NLP"
+        },
+        {
+          "time": "10 章规划预计 32–44 小时",
+          "title": "大语言模型原理与基础实验"
+        },
+        {
+          "time": "10 章规划预计 30–46 小时",
+          "title": "LLM 微调、评测与推理工程"
+        },
+        {
+          "time": "10 章规划预计 32–44 小时",
+          "title": "计算机视觉 CV"
+        },
+        {
+          "time": "9 章规划预计 26–38 小时",
+          "title": "多模态学习与视觉语言模型"
+        },
+        {
+          "time": "10 章规划预计 34–48 小时",
+          "title": "强化学习与深度强化学习"
+        },
+        {
+          "time": "9 章规划预计 30–44 小时",
+          "title": "生成式模型：VAE、GAN 与 Diffusion"
+        },
+        {
+          "time": "9 章规划预计 26–38 小时",
+          "title": "机器学习系统、MLOps 与部署"
+        },
+        {
+          "time": "9 章规划预计 26–38 小时",
+          "title": "AI 论文阅读、复现与科学实验"
+        }
+      ],
+      "widths": {
+        "scroll": 1425,
+        "width": 1440
+      }
+    },
+    {
+      "test": "all-course-card-times-mobile",
+      "count": 20,
+      "widths": {
+        "scroll": 375,
+        "width": 390
+      },
+      "aiTime": "7 章规划\n编辑预计 9.4–14.6 小时"
+    },
+    {
+      "test": "other-course-detail-smoke",
+      "path": "/courses/MA101",
+      "title": "AI 数学 I：线性代数与微积分",
+      "facts": "10 章规划\n预计 30–42 小时",
+      "aiOnlyNoteCount": 0,
+      "overflow": false
+    },
+    {
+      "test": "other-course-detail-smoke",
+      "path": "/courses/PY101",
+      "title": "Python 编程与工程入门",
+      "facts": "10 章规划\n预计 26–36 小时",
+      "aiOnlyNoteCount": 0,
+      "overflow": false
+    },
+    {
+      "test": "other-course-detail-smoke",
+      "path": "/courses/ML201",
+      "title": "机器学习基础：监督学习",
+      "facts": "10 章规划\n预计 32–44 小时",
+      "aiOnlyNoteCount": 0,
+      "overflow": false
+    },
+    {
+      "test": "tablet-figure-prediction",
+      "details": {
+        "figureScroll": 650,
+        "figureWidth": 650,
+        "predictionText": "使用时：先判断，再核实新输入 · 照片 E一件带折痕的薄纸包装没有把正确类别交给模型学好的模型使用已经学到的判断方式假设的预测文件袋是类别建议，尚非确认答案真实类别：尚未核实，真实类别未知工作人员另查实物或可靠记录，才能比较这次预测是否正确。",
+        "scroll": 753,
+        "width": 768
+      }
+    },
+    {
+      "test": "tablet-reduced-motion-target",
+      "details": {
+        "focus": "四份资料，离开展监督学习还差什么？",
+        "hash": "#exercise-missing-targets",
+        "top": 278.16668701171875
+      }
+    },
+    {
+      "test": "final-text-rebuilt-and-reloaded",
+      "text": "我们希望模型学到的联系能用在多张照片上。例如，纸箱有大有小，文件袋也有不同形状，模型可以利用外形等信息与已知类别之间的联系形成判断方式。以后换一张照片，仍能用这套学到的关系作计算，不必先见过完全相同的画面。能给出新判断，是我们想获得的能力；判断得对不对，还要另行核对。"
+    }
+  ],
+  "console": [],
+  "limits": "Chromium viewport simulation, no physical device, human review or student trial; empty new origin; only ordinary reader interactions, no injected storage; 3.1 manual completed record is a tool fixture, not learner evidence; temporary viewport/media restored"
+}

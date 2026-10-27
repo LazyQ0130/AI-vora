@@ -15,6 +15,7 @@ import { whatIsAiLesson } from "../content/lessons/ai000/what-is-ai";
 import { capabilitiesLesson } from "../content/lessons/ai000/capabilities-and-errors";
 import { automationLesson } from "../content/lessons/ai000/automation-and-ai";
 import { generativeLesson } from "../content/lessons/ai000/generative-ai-and-llm";
+import { supervisedLearningLesson } from "../content/lessons/ai000/supervised-learning";
 import { aiMlDlLesson } from "../content/lessons/ai000/ai-ml-dl";
 import {
   publicationManifest,
@@ -35,6 +36,7 @@ const contents: Lesson[] = [
   automationLesson,
   aiMlDlLesson,
   generativeLesson,
+  supervisedLearningLesson,
   ...maV22Lessons,
   regressionTaskLesson,
   linearModelLesson,
