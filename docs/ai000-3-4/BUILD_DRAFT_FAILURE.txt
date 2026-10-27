@@ -1,0 +1,14 @@
+
+> aivora-web@0.1.0 build
+> next build
+
+▲ Next.js 16.4.3 (Turbopack)
+✓ Running next.config.ts took 30ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1248ms
+  Running TypeScript ...
+tests/ai000-reinforcement.test.ts(61,35): error TS2339: Property 'rows' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; } | { type: "quiz"; id: string; question: string; options: string[]; correct: number; explanations: string[]; } | { type: "ai-task-figure"; kind: "mail-flow" | ... 8 more ... | "reinforcement-flow"; alt: string; caption: string; } | ... 12 more ....'.
+  Property 'rows' does not exist on type '{ type: "quiz"; id: string; question: string; options: string[]; correct: number; explanations: string[]; }'.
+tests/ai000-reinforcement.test.ts(61,44): error TS7006: Parameter 'row' implicitly has an 'any' type.
+Failed to type check.

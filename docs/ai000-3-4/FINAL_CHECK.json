@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-27T12:34:13.844Z",
+  "unchangedLessons": 31,
+  "unchangedPublications": 31,
+  "protectedFilesUnchanged": true,
+  "objectives": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "trace-watering",
+        "assess-feedback"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "trace-watering"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "assess-feedback"
+      ]
+    }
+  ],
+  "status": {
+    "lessonId": "AI000-C03-L04",
+    "courseId": "AI000",
+    "chapterId": "AI000-C03",
+    "title": "强化学习：通过行动与反馈学习",
+    "contentVersion": 1,
+    "order": 4,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "pending-review",
+    "access": "preview",
+    "technicalEvidence": "docs/AI000_LESSON_3_4_AND_CHAPTER_3_REVIEW.md"
+  }
+}

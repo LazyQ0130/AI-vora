@@ -18,6 +18,7 @@ import { generativeLesson } from "../content/lessons/ai000/generative-ai-and-llm
 import { supervisedLearningLesson } from "../content/lessons/ai000/supervised-learning";
 import { unsupervisedLearningLesson } from "../content/lessons/ai000/unsupervised-learning";
 import { selfSupervisedLesson } from "../content/lessons/ai000/self-supervised-learning";
+import { reinforcementLearningLesson } from "../content/lessons/ai000/reinforcement-learning";
 import { aiMlDlLesson } from "../content/lessons/ai000/ai-ml-dl";
 import {
   publicationManifest,
@@ -41,6 +42,7 @@ const contents: Lesson[] = [
   supervisedLearningLesson,
   unsupervisedLearningLesson,
   selfSupervisedLesson,
+  reinforcementLearningLesson,
   ...maV22Lessons,
   regressionTaskLesson,
   linearModelLesson,

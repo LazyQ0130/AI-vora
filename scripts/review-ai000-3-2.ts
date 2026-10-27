@@ -36,7 +36,7 @@ if(process.argv.includes("--baseline")) {
   }
   const course=getLearningCourse("AI000")!;
   assert.equal(course.chapters.flatMap(c=>c.lessons).length,24);
-  for(const id of ["AI000-C03-L04"]) {
+  for(const id of ["AI000-C04-L01"]) {
     assert.equal(resolveLesson("AI000",id),undefined);assert.equal(lessonRegistry.has(id),false);
   }
   const final=process.argv.includes("--final");
@@ -44,7 +44,7 @@ if(process.argv.includes("--baseline")) {
     assert.equal(getAdjacentLessons(course,"AI000-C03-L01").next?.lessonId,lesson.id);
     assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C03-L01");
     assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C03-L03");
-    assert.equal(course.chapters.flatMap(c=>c.lessons).filter(l=>l.href).length,8);
+    assert.equal(course.chapters.flatMap(c=>c.lessons).filter(l=>l.href).length,9);
     assert.ok(resolveLesson("AI000",lesson.id));
   } else {
     assert.equal(resolveLesson("AI000",lesson.id),undefined);

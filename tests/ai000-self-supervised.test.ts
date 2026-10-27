@@ -54,7 +54,7 @@ test("自监督内容：图区分两阶段，预测区域的实际输入不泄�
  assert.match(html,/假设的模型预测/);assert.match(html,/本次没有还原原词/);
 });
 
-test("3.3注册独立r1与核心目标入口，3.2相邻可读，3.4仍无教材",()=>{
+test("3.3注册独立r1与核心目标入口，3.2/3.4相邻可读，4.1仍无教材",()=>{
  assert.equal(lessonRegistry.get(lesson.id),lesson);assert.equal(lesson.contentVersion,1);
  const pub=resolveLesson("AI000",lesson.id)!.publication;
  assert.equal(pub.status,"pending-review");assert.equal(pub.access,"preview");assert.equal(pub.reviewEvidence,undefined);
@@ -62,8 +62,8 @@ test("3.3注册独立r1与核心目标入口，3.2相邻可读，3.4仍无教材
  const course=getLearningCourse("AI000")!;
  assert.equal(getAdjacentLessons(course,"AI000-C03-L02").next?.lessonId,lesson.id);
  assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C03-L02");
- assert.equal(getAdjacentLessons(course,lesson.id).next,undefined);
- assert.equal(resolveLesson("AI000","AI000-C03-L04"),undefined);assert.equal(lessonRegistry.has("AI000-C03-L04"),false);
+ assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C03-L04");
+ assert.equal(resolveLesson("AI000","AI000-C04-L01"),undefined);assert.equal(lessonRegistry.has("AI000-C04-L01"),false);
  assert.ok(blocks.every(b=>!["code","math","experiment","downloads"].includes(b.type)));
 });
 

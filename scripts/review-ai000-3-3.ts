@@ -45,14 +45,14 @@ if(process.argv.includes("--baseline")) {
   const final=process.argv.includes("--final");
   if(final) {
     const course=getLearningCourse("AI000")!;
-    assert.equal(course.chapters.flatMap(c=>c.lessons).filter(l=>l.href).length,8);
+    assert.equal(course.chapters.flatMap(c=>c.lessons).filter(l=>l.href).length,9);
     assert.equal(getAdjacentLessons(course,"AI000-C03-L02").next?.lessonId,lesson.id);
     assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C03-L02");
-    assert.equal(getAdjacentLessons(course,lesson.id).next,undefined);
+    assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C03-L04");
     assert.ok(resolveLesson("AI000",lesson.id));
   } else assert.equal(resolveLesson("AI000",lesson.id),undefined);
-  assert.equal(resolveLesson("AI000","AI000-C03-L04"),undefined);
-  assert.equal(lessonRegistry.has("AI000-C03-L04"),false);
+  assert.equal(resolveLesson("AI000","AI000-C04-L01"),undefined);
+  assert.equal(lessonRegistry.has("AI000-C04-L01"),false);
   const stage=final?"FINAL":refined?"DRAFT":"CONTENT";
   writeFileSync(evidencePath(stage+"_CHECK.json"),JSON.stringify({checkedAt:new Date().toISOString(),unchangedLessons:refined?28:30,refined,protectedFilesUnchanged:true,mainBorrowingDataUnchanged:true,objectives:lesson.assessmentMap},null,2)+"\n");
   writeFileSync(evidencePath(stage+"_LESSON.json"),JSON.stringify(lesson,null,2)+"\n");

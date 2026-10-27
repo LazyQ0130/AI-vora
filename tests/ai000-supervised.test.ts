@@ -18,7 +18,7 @@ const lesson=lessonRegistry.get("AI000-C03-L01")!;
 const blocks=lesson.sections.flatMap(s=>s.blocks);
 const hash=(value:unknown)=>createHash("sha256").update(JSON.stringify(value)).digest("hex");
 
-test("3.1独立r1、真实目标映射与反馈；2.2可进入3.1并接3.2，3.4仍规划",()=>{
+test("3.1独立r1、真实目标映射与反馈；2.2可进入3.1并接3.2，4.1仍规划",()=>{
  assert.equal(lesson.contentVersion,1);
  assert.equal(resolveLesson("AI000",lesson.id)?.publication.status,"pending-review");
  assert.equal(resolveLesson("AI000",lesson.id)?.publication.reviewEvidence,undefined);
@@ -26,7 +26,7 @@ test("3.1独立r1、真实目标映射与反馈；2.2可进入3.1并接3.2，3.4
  assert.equal(getAdjacentLessons(course,"AI000-C02-L02").next?.lessonId,lesson.id);
  assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C02-L02");
  assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C03-L02");
- for(const id of ["AI000-C03-L04"]) {
+ for(const id of ["AI000-C04-L01"]) {
   assert.equal(resolveLesson("AI000",id),undefined);assert.equal(lessonRegistry.has(id),false);
  }
  assert.equal(resolveLesson("PY101",lesson.id),undefined);
