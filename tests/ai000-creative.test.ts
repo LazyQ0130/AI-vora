@@ -125,5 +125,5 @@ test("5.4清单门禁和相邻导航一致，5.5承接且第六章仍规划", ()
   assert.equal(course.status, "planned"); assert.equal(pub.reviewEvidence, undefined); assert.equal(lesson.contentVersion, 1);
   assert.equal(Boolean(resolveLesson("AI000", lesson.id)), isReadable(pub));
   if (isReadable(pub)) { assert.equal(getAdjacentLessons(course, "AI000-C05-L03").next?.lessonId, lesson.id); assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, "AI000-C05-L03"); assert.equal(getAdjacentLessons(course, lesson.id).next?.lessonId, "AI000-C05-L05"); }
-  for (const slot of course.chapters.slice(5).flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C06-L02")) { assert.equal(slot.status, "planned"); assert.equal(slot.href, undefined); assert.equal(lessonRegistry.has(slot.lessonId), false); }
+  for (const slot of course.chapters.slice(5).flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C06-L03")) { assert.equal(slot.status, "planned"); assert.equal(slot.href, undefined); assert.equal(lessonRegistry.has(slot.lessonId), false); }
 });

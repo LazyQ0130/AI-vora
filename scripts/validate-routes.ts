@@ -29,7 +29,7 @@ const paths: [string, number][] = [
   ["/courses/unknown", 404],
   ["/learn/ML201/ML201-C99-L01", 404],
   ["/learn/PY101/ML201-C04-L01", 404],
-  ["/learn/AI000/AI000-C06-L03", 404],
+  ["/learn/AI000/AI000-C07-L01", 404],
   ["/learn/AI000/AI000-C07-L03", 404],
   ["/learn/PY101/AI000-C01-L01", 404],
   ["/learn/AI000/AI000-C02-L03", 404],

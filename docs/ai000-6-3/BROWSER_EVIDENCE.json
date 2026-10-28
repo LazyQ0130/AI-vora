@@ -1,0 +1,1151 @@
+{
+  "draft404": true,
+  "widths": [
+    {
+      "width": 1440,
+      "layout": {
+        "bodyWidth": 1425,
+        "documentWidth": 1425,
+        "exerciseIds": [
+          "exercise-audit-recruitment-assets",
+          "exercise-review-lecture-release"
+        ],
+        "prompts": [
+          "pre-line",
+          "pre-line"
+        ],
+        "tables": [
+          {
+            "caption": "本次宣传的统一活动资料",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 6,
+            "tabIndex": 0,
+            "width": 722
+          },
+          {
+            "caption": "S1–S6：现有来源记录与拟用方式，尚未给出审核决定",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 6,
+            "tabIndex": 0,
+            "width": 722
+          },
+          {
+            "caption": "把同一句“能用吗”拆成可查的问题",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 4,
+            "tabIndex": 0,
+            "width": 722
+          },
+          {
+            "caption": "按具体许可比较，不凭“免费”猜范围",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 2,
+            "tabIndex": 0,
+            "width": 722
+          },
+          {
+            "caption": "六项素材的审查反馈",
+            "columns": 4,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 6,
+            "tabIndex": 0,
+            "width": 722
+          },
+          {
+            "caption": "同一作品，分别查事实、背书与发布权限",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 4,
+            "tabIndex": 0,
+            "width": 722
+          },
+          {
+            "caption": "本例的一种责任分工",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 4,
+            "tabIndex": 0,
+            "width": 722
+          },
+          {
+            "caption": "可以交给团队执行的发布前顺序",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 6,
+            "tabIndex": 0,
+            "width": 722
+          },
+          {
+            "caption": "招新手册的两种发布用途",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 2,
+            "tabIndex": 0,
+            "width": 722
+          },
+          {
+            "caption": "A–E候选素材：逐项对照计划",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 5,
+            "tabIndex": 0,
+            "width": 722
+          },
+          {
+            "caption": "公益讲座：主办方已确认的完整题设",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 8,
+            "tabIndex": 0,
+            "width": 722
+          }
+        ],
+        "width": 1440
+      },
+      "tasks": [
+        {
+          "width": 1440,
+          "id": "audit-recruitment-assets",
+          "states": [
+            {
+              "drawer": false,
+              "focus": "H3",
+              "open": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                true
+              ]
+            }
+          ],
+          "solutionVisible": true,
+          "input": "验收笔记：逐项留用途、依据、待办、负责人及版本渠道。"
+        },
+        {
+          "width": 1440,
+          "id": "review-lecture-release",
+          "states": [
+            {
+              "drawer": false,
+              "focus": "H3",
+              "open": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                true
+              ]
+            }
+          ],
+          "solutionVisible": true,
+          "input": "验收笔记：逐项留用途、依据、待办、负责人及版本渠道。"
+        }
+      ],
+      "goals": 3,
+      "prerequisites": 4
+    },
+    {
+      "width": 768,
+      "layout": {
+        "bodyWidth": 753,
+        "documentWidth": 753,
+        "exerciseIds": [
+          "exercise-audit-recruitment-assets",
+          "exercise-review-lecture-release"
+        ],
+        "prompts": [
+          "pre-line",
+          "pre-line"
+        ],
+        "tables": [
+          {
+            "caption": "本次宣传的统一活动资料",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 6,
+            "tabIndex": 0,
+            "width": 650
+          },
+          {
+            "caption": "S1–S6：现有来源记录与拟用方式，尚未给出审核决定",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 6,
+            "tabIndex": 0,
+            "width": 650
+          },
+          {
+            "caption": "把同一句“能用吗”拆成可查的问题",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 4,
+            "tabIndex": 0,
+            "width": 650
+          },
+          {
+            "caption": "按具体许可比较，不凭“免费”猜范围",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 2,
+            "tabIndex": 0,
+            "width": 650
+          },
+          {
+            "caption": "六项素材的审查反馈",
+            "columns": 4,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 6,
+            "tabIndex": 0,
+            "width": 650
+          },
+          {
+            "caption": "同一作品，分别查事实、背书与发布权限",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 4,
+            "tabIndex": 0,
+            "width": 650
+          },
+          {
+            "caption": "本例的一种责任分工",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 4,
+            "tabIndex": 0,
+            "width": 650
+          },
+          {
+            "caption": "可以交给团队执行的发布前顺序",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 6,
+            "tabIndex": 0,
+            "width": 650
+          },
+          {
+            "caption": "招新手册的两种发布用途",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 2,
+            "tabIndex": 0,
+            "width": 650
+          },
+          {
+            "caption": "A–E候选素材：逐项对照计划",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 5,
+            "tabIndex": 0,
+            "width": 650
+          },
+          {
+            "caption": "公益讲座：主办方已确认的完整题设",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 8,
+            "tabIndex": 0,
+            "width": 650
+          }
+        ],
+        "width": 768
+      },
+      "tasks": [
+        {
+          "width": 768,
+          "id": "audit-recruitment-assets",
+          "states": [
+            {
+              "drawer": false,
+              "focus": "H3",
+              "open": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                true
+              ]
+            }
+          ],
+          "solutionVisible": true,
+          "input": "验收笔记：逐项留用途、依据、待办、负责人及版本渠道。"
+        },
+        {
+          "width": 768,
+          "id": "review-lecture-release",
+          "states": [
+            {
+              "drawer": false,
+              "focus": "H3",
+              "open": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                true
+              ]
+            }
+          ],
+          "solutionVisible": true,
+          "input": "验收笔记：逐项留用途、依据、待办、负责人及版本渠道。"
+        }
+      ],
+      "escapeFocus": "本节导航"
+    },
+    {
+      "width": 390,
+      "layout": {
+        "bodyWidth": 375,
+        "documentWidth": 375,
+        "exerciseIds": [
+          "exercise-audit-recruitment-assets",
+          "exercise-review-lecture-release"
+        ],
+        "prompts": [
+          "pre-line",
+          "pre-line"
+        ],
+        "tables": [
+          {
+            "caption": "本次宣传的统一活动资料",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 308,
+            "regionWidth": 308,
+            "rows": 6,
+            "tabIndex": 0,
+            "width": 308
+          },
+          {
+            "caption": "S1–S6：现有来源记录与拟用方式，尚未给出审核决定",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 308,
+            "regionWidth": 308,
+            "rows": 6,
+            "tabIndex": 0,
+            "width": 308
+          },
+          {
+            "caption": "把同一句“能用吗”拆成可查的问题",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 308,
+            "regionWidth": 308,
+            "rows": 4,
+            "tabIndex": 0,
+            "width": 308
+          },
+          {
+            "caption": "按具体许可比较，不凭“免费”猜范围",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 308,
+            "regionWidth": 308,
+            "rows": 2,
+            "tabIndex": 0,
+            "width": 308
+          },
+          {
+            "caption": "六项素材的审查反馈",
+            "columns": 4,
+            "font": "14px",
+            "regionScrollWidth": 320,
+            "regionWidth": 308,
+            "rows": 6,
+            "tabIndex": 0,
+            "width": 320
+          },
+          {
+            "caption": "同一作品，分别查事实、背书与发布权限",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 308,
+            "regionWidth": 308,
+            "rows": 4,
+            "tabIndex": 0,
+            "width": 308
+          },
+          {
+            "caption": "本例的一种责任分工",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 308,
+            "regionWidth": 308,
+            "rows": 4,
+            "tabIndex": 0,
+            "width": 308
+          },
+          {
+            "caption": "可以交给团队执行的发布前顺序",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 308,
+            "regionWidth": 308,
+            "rows": 6,
+            "tabIndex": 0,
+            "width": 308
+          },
+          {
+            "caption": "招新手册的两种发布用途",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 308,
+            "regionWidth": 308,
+            "rows": 2,
+            "tabIndex": 0,
+            "width": 308
+          },
+          {
+            "caption": "A–E候选素材：逐项对照计划",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 308,
+            "regionWidth": 308,
+            "rows": 5,
+            "tabIndex": 0,
+            "width": 308
+          },
+          {
+            "caption": "公益讲座：主办方已确认的完整题设",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 308,
+            "regionWidth": 308,
+            "rows": 8,
+            "tabIndex": 0,
+            "width": 308
+          }
+        ],
+        "width": 390
+      },
+      "tasks": [
+        {
+          "width": 390,
+          "id": "audit-recruitment-assets",
+          "states": [
+            {
+              "drawer": false,
+              "focus": "H3",
+              "open": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                true
+              ]
+            }
+          ],
+          "solutionVisible": true,
+          "input": "验收笔记：逐项留用途、依据、待办、负责人及版本渠道。"
+        },
+        {
+          "width": 390,
+          "id": "review-lecture-release",
+          "states": [
+            {
+              "drawer": false,
+              "focus": "H3",
+              "open": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                true
+              ]
+            }
+          ],
+          "solutionVisible": true,
+          "input": "验收笔记：逐项留用途、依据、待办、负责人及版本渠道。"
+        }
+      ],
+      "escapeFocus": "本节导航",
+      "panelText": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n12 节点\n本节学习目标\n3 项\n01\n逐项查素材能否这样用\n\n对应来源、许可版本、实际用途与待履行条件。\n\n02\n纠正误导与无据背书\n\n分开事实、机构认可和真实人物声音的问题。\n\n03\n把发布和纠错安排到人\n\n留下补查、修改、最终确认和逐渠道更正步骤。\n\n查看完整目标\n根据作品的具体用途和传播渠道，逐项核查素材来源、有权许可者与使用条件，区分可按条件使用、范围不符和证据不足的情况\n审查AI辅助作品中的事实、机构认可与人物声音使用，指出具体误导和待核依据，写出不增加无据承诺的完整修正版\n为新作品制定素材处理、补查与人工复核清单，明确最终版本和渠道的发布决定，并安排传播后的逐项纠错\n核心练习\n2 道\n迁移练习\n交一份按用途作决定的素材审查表\n迁移练习\n交完整修正版与有负责人接手的发布清单\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n77%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n已完成6.2，能按资料核对事实、区分当前任务与其他用途。用纸笔即可；无需法律条文、编程或真实制作音视频。\n\n5.4 内容和呈现的验收\n\n回看作品符合要求与来源/发布条件尚待核查的区别。\n\n5.3 原始声音与文字稿\n\n文稿可查文字，真实声音仍要另听、另核。\n\n6.1 按来源和条件核查\n\n沿用逐项留依据与未知的习惯，不重新学习整套证据链。\n\n6.2 数据用途和管理\n\n回看资料有明确用途，不自动延伸到其他使用。"
+    },
+    {
+      "width": 320,
+      "layout": {
+        "bodyWidth": 305,
+        "documentWidth": 305,
+        "exerciseIds": [
+          "exercise-audit-recruitment-assets",
+          "exercise-review-lecture-release"
+        ],
+        "prompts": [
+          "pre-line",
+          "pre-line"
+        ],
+        "tables": [
+          {
+            "caption": "本次宣传的统一活动资料",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 254,
+            "regionWidth": 254,
+            "rows": 6,
+            "tabIndex": 0,
+            "width": 254
+          },
+          {
+            "caption": "S1–S6：现有来源记录与拟用方式，尚未给出审核决定",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 254,
+            "regionWidth": 254,
+            "rows": 6,
+            "tabIndex": 0,
+            "width": 254
+          },
+          {
+            "caption": "把同一句“能用吗”拆成可查的问题",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 254,
+            "regionWidth": 254,
+            "rows": 4,
+            "tabIndex": 0,
+            "width": 254
+          },
+          {
+            "caption": "按具体许可比较，不凭“免费”猜范围",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 254,
+            "regionWidth": 254,
+            "rows": 2,
+            "tabIndex": 0,
+            "width": 254
+          },
+          {
+            "caption": "六项素材的审查反馈",
+            "columns": 4,
+            "font": "14px",
+            "regionScrollWidth": 320,
+            "regionWidth": 254,
+            "rows": 6,
+            "tabIndex": 0,
+            "width": 320
+          },
+          {
+            "caption": "同一作品，分别查事实、背书与发布权限",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 254,
+            "regionWidth": 254,
+            "rows": 4,
+            "tabIndex": 0,
+            "width": 254
+          },
+          {
+            "caption": "本例的一种责任分工",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 254,
+            "regionWidth": 254,
+            "rows": 4,
+            "tabIndex": 0,
+            "width": 254
+          },
+          {
+            "caption": "可以交给团队执行的发布前顺序",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 254,
+            "regionWidth": 254,
+            "rows": 6,
+            "tabIndex": 0,
+            "width": 254
+          },
+          {
+            "caption": "招新手册的两种发布用途",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 254,
+            "regionWidth": 254,
+            "rows": 2,
+            "tabIndex": 0,
+            "width": 254
+          },
+          {
+            "caption": "A–E候选素材：逐项对照计划",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 254,
+            "regionWidth": 254,
+            "rows": 5,
+            "tabIndex": 0,
+            "width": 254
+          },
+          {
+            "caption": "公益讲座：主办方已确认的完整题设",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 254,
+            "regionWidth": 254,
+            "rows": 8,
+            "tabIndex": 0,
+            "width": 254
+          }
+        ],
+        "width": 320
+      },
+      "tasks": [
+        {
+          "width": 320,
+          "id": "audit-recruitment-assets",
+          "states": [
+            {
+              "drawer": false,
+              "focus": "H3",
+              "open": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                true
+              ]
+            }
+          ],
+          "solutionVisible": true,
+          "input": "验收笔记：逐项留用途、依据、待办、负责人及版本渠道。"
+        },
+        {
+          "width": 320,
+          "id": "review-lecture-release",
+          "states": [
+            {
+              "drawer": false,
+              "focus": "H3",
+              "open": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                true
+              ]
+            }
+          ],
+          "solutionVisible": true,
+          "input": "验收笔记：逐项留用途、依据、待办、负责人及版本渠道。"
+        }
+      ],
+      "escapeFocus": "本节导航",
+      "panelText": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n12 节点\n本节学习目标\n3 项\n01\n逐项查素材能否这样用\n\n对应来源、许可版本、实际用途与待履行条件。\n\n02\n纠正误导与无据背书\n\n分开事实、机构认可和真实人物声音的问题。\n\n03\n把发布和纠错安排到人\n\n留下补查、修改、最终确认和逐渠道更正步骤。\n\n查看完整目标\n核心练习\n2 道\n迁移练习\n交一份按用途作决定的素材审查表\n迁移练习\n交完整修正版与有负责人接手的发布清单\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n81%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n已完成6.2，能按资料核对事实、区分当前任务与其他用途。用纸笔即可；无需法律条文、编程或真实制作音视频。\n\n5.4 内容和呈现的验收\n\n回看作品符合要求与来源/发布条件尚待核查的区别。\n\n5.3 原始声音与文字稿\n\n文稿可查文字，真实声音仍要另听、另核。\n\n6.1 按来源和条件核查\n\n沿用逐项留依据与未知的习惯，不重新学习整套证据链。\n\n6.2 数据用途和管理\n\n回看资料有明确用途，不自动延伸到其他使用。"
+    }
+  ],
+  "progress": {
+    "initial": {
+      "aivora:learning:v2:AI000:AI000-C05-L05:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L05\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793202682158}",
+      "aivora:learning:v2:AI000:AI000-C06-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793205889977}",
+      "aivora:learning:v2:AI000:AI000-C06-L02:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L02\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"compare-results\",\"updatedAt\":1793205879844}",
+      "aivora:learning:v2:AI000:AI000-C04-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C04-L01\",\"contentVersion\":1,\"percent\":49,\"completed\":false,\"section\":\"choose-fields\",\"updatedAt\":1793205889023}",
+      "aivora:learning:v2:AI000:AI000-C05-L03:r2": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L03\",\"contentVersion\":2,\"percent\":37,\"completed\":false,\"section\":\"audio-and-transcript\",\"updatedAt\":1793205889386}"
+    },
+    "beforeComplete": {
+      "aivora:learning:v2:AI000:AI000-C05-L05:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L05\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793202682158}",
+      "aivora:learning:v2:AI000:AI000-C06-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793205889977}",
+      "aivora:learning:v2:AI000:AI000-C06-L02:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L02\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"compare-results\",\"updatedAt\":1793205879844}",
+      "aivora:learning:v2:AI000:AI000-C06-L03:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L03\",\"contentVersion\":1,\"percent\":82,\"completed\":false,\"section\":\"compare-licenses\",\"updatedAt\":1793207826316}",
+      "aivora:learning:v2:AI000:AI000-C04-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C04-L01\",\"contentVersion\":1,\"percent\":49,\"completed\":false,\"section\":\"choose-fields\",\"updatedAt\":1793205889023}",
+      "aivora:learning:v2:AI000:AI000-C05-L03:r2": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L03\",\"contentVersion\":2,\"percent\":37,\"completed\":false,\"section\":\"audio-and-transcript\",\"updatedAt\":1793205889386}"
+    },
+    "afterCompleteAtPosition": {
+      "aivora:learning:v2:AI000:AI000-C05-L05:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L05\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793202682158}",
+      "aivora:learning:v2:AI000:AI000-C06-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793205889977}",
+      "aivora:learning:v2:AI000:AI000-C06-L02:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L02\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"compare-results\",\"updatedAt\":1793205879844}",
+      "aivora:learning:v2:AI000:AI000-C06-L03:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L03\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"before-and-after\",\"updatedAt\":1793207852148}",
+      "aivora:learning:v2:AI000:AI000-C04-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C04-L01\",\"contentVersion\":1,\"percent\":49,\"completed\":false,\"section\":\"choose-fields\",\"updatedAt\":1793205889023}",
+      "aivora:learning:v2:AI000:AI000-C05-L03:r2": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L03\",\"contentVersion\":2,\"percent\":37,\"completed\":false,\"section\":\"audio-and-transcript\",\"updatedAt\":1793205889386}"
+    },
+    "resumeHref": "#before-and-after",
+    "completedButton": true,
+    "inputsAfterReload": [
+      "",
+      ""
+    ],
+    "afterReload": {
+      "aivora:learning:v2:AI000:AI000-C05-L05:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L05\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793202682158}",
+      "aivora:learning:v2:AI000:AI000-C06-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793205889977}",
+      "aivora:learning:v2:AI000:AI000-C06-L02:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L02\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"compare-results\",\"updatedAt\":1793205879844}",
+      "aivora:learning:v2:AI000:AI000-C06-L03:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L03\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"before-and-after\",\"updatedAt\":1793207879154}",
+      "aivora:learning:v2:AI000:AI000-C04-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C04-L01\",\"contentVersion\":1,\"percent\":49,\"completed\":false,\"section\":\"choose-fields\",\"updatedAt\":1793205889023}",
+      "aivora:learning:v2:AI000:AI000-C05-L03:r2": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L03\",\"contentVersion\":2,\"percent\":37,\"completed\":false,\"section\":\"audio-and-transcript\",\"updatedAt\":1793205889386}"
+    },
+    "resumeFocus": {
+      "focus": "发之前留版本，出问题后追到各个渠道",
+      "hash": "#before-and-after",
+      "tag": "H2"
+    },
+    "afterResume": {
+      "aivora:learning:v2:AI000:AI000-C05-L05:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L05\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793202682158}",
+      "aivora:learning:v2:AI000:AI000-C06-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793205889977}",
+      "aivora:learning:v2:AI000:AI000-C06-L02:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L02\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"compare-results\",\"updatedAt\":1793205879844}",
+      "aivora:learning:v2:AI000:AI000-C06-L03:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L03\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"before-and-after\",\"updatedAt\":1793207879154}",
+      "aivora:learning:v2:AI000:AI000-C04-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C04-L01\",\"contentVersion\":1,\"percent\":49,\"completed\":false,\"section\":\"choose-fields\",\"updatedAt\":1793205889023}",
+      "aivora:learning:v2:AI000:AI000-C05-L03:r2": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L03\",\"contentVersion\":2,\"percent\":37,\"completed\":false,\"section\":\"audio-and-transcript\",\"updatedAt\":1793205889386}"
+    },
+    "oldRecordsUnchanged": true,
+    "noInitialKey": true
+  },
+  "tableKeyboard": {
+    "clientWidth": 254,
+    "focused": true,
+    "scrollLeft": 40,
+    "scrollWidth": 320
+  },
+  "chapters": {
+    "text": "课程章节与独立课时\n\n课程章节与独立课时，按 Escape 关闭面板。\n\n返回课程详情\nCOURSE CONTENTS\n人工智能导论与技术地图\n\n7 章 · 21 节核心课已制作\n\n已制作课时阅读比例\n22%\n3 / 21 节已标记读完 · 仅当前浏览器\n筹备、可选与旧版课时不计入比例；已读不代表掌握。\n第 1 章：\n人工智能是什么：能力、边界与常见误区\n第 2 章：\nAI、机器学习、深度学习与生成式 AI 的包含关系\n第 3 章：\n监督学习、无监督学习、自监督学习与强化学习\n第 4 章：\n数据、参数、模型、训练、验证、测试与推理\n第 5 章：\n主要技术方向：NLP、LLM、CV、多模态、RL、生成式模型\n第 6 章：\nAI 风险与责任：隐私、偏差、版权、幻觉与误用\n6.1\n为什么 AI 会产生不可靠的回答？\n6.2\n数据隐私、偏差与公平性\n6.3\n版权、误用与负责任地使用 AI\n第 7 章：\n如何阅读课程先修图与选择学习路径\n·\n7.1\n为什么学习 Python、数学与数据分析？\n筹备中\n·\n7.2\nAI 不同技术方向需要哪些基础？\n筹备中\n·\n7.3\n综合实践：分析 AI 问题并制定学习计划\n筹备中",
+    "links": [
+      "/courses/AI000",
+      "/learn/AI000/AI000-C01-L01",
+      "/learn/AI000/AI000-C01-L02",
+      "/learn/AI000/AI000-C01-L03",
+      "/learn/AI000/AI000-C02-L01",
+      "/learn/AI000/AI000-C02-L02",
+      "/learn/AI000/AI000-C03-L01",
+      "/learn/AI000/AI000-C03-L02",
+      "/learn/AI000/AI000-C03-L03",
+      "/learn/AI000/AI000-C03-L04",
+      "/learn/AI000/AI000-C04-L01",
+      "/learn/AI000/AI000-C04-L02",
+      "/learn/AI000/AI000-C04-L03",
+      "/learn/AI000/AI000-C04-L04",
+      "/learn/AI000/AI000-C05-L01",
+      "/learn/AI000/AI000-C05-L02",
+      "/learn/AI000/AI000-C05-L03",
+      "/learn/AI000/AI000-C05-L04",
+      "/learn/AI000/AI000-C05-L05",
+      "/learn/AI000/AI000-C06-L01",
+      "/learn/AI000/AI000-C06-L02",
+      "/learn/AI000/AI000-C06-L03"
+    ]
+  },
+  "chapterEscape": "章节目录",
+  "articleNav": {
+    "drawer": false,
+    "hash": "#before-and-after",
+    "tag": "H2",
+    "text": "发之前留版本，出问题后追到各个渠道"
+  },
+  "expandedNarrow": [
+    {
+      "bodyWidth": 305,
+      "documentWidth": 305,
+      "exerciseWidth": 254,
+      "id": "exercise-audit-recruitment-assets",
+      "open": [
+        false,
+        false,
+        true
+      ],
+      "viewport": 320,
+      "wrap": "anywhere"
+    },
+    {
+      "bodyWidth": 305,
+      "documentWidth": 305,
+      "exerciseWidth": 254,
+      "id": "exercise-review-lecture-release",
+      "open": [
+        false,
+        false,
+        true
+      ],
+      "viewport": 320,
+      "wrap": "anywhere"
+    }
+  ],
+  "wrapChecks": [
+    {
+      "bodyWidth": 305,
+      "documentWidth": 305,
+      "exerciseWidth": 254,
+      "id": "exercise-audit-recruitment-assets",
+      "open": [
+        false,
+        false,
+        true
+      ],
+      "viewport": 320,
+      "wrap": "anywhere"
+    },
+    {
+      "bodyWidth": 305,
+      "documentWidth": 305,
+      "exerciseWidth": 254,
+      "id": "exercise-review-lecture-release",
+      "open": [
+        false,
+        false,
+        true
+      ],
+      "viewport": 320,
+      "wrap": "anywhere"
+    },
+    {
+      "bodyWidth": 375,
+      "documentWidth": 375,
+      "exerciseWidth": 308,
+      "id": "exercise-audit-recruitment-assets",
+      "open": [
+        false,
+        false,
+        true
+      ],
+      "viewport": 390,
+      "wrap": "anywhere"
+    },
+    {
+      "bodyWidth": 375,
+      "documentWidth": 375,
+      "exerciseWidth": 308,
+      "id": "exercise-review-lecture-release",
+      "open": [
+        false,
+        false,
+        true
+      ],
+      "viewport": 390,
+      "wrap": "anywhere"
+    },
+    {
+      "bodyWidth": 753,
+      "documentWidth": 753,
+      "exerciseWidth": 650,
+      "id": "exercise-audit-recruitment-assets",
+      "open": [
+        false,
+        false,
+        true
+      ],
+      "viewport": 768,
+      "wrap": "anywhere"
+    },
+    {
+      "bodyWidth": 753,
+      "documentWidth": 753,
+      "exerciseWidth": 650,
+      "id": "exercise-review-lecture-release",
+      "open": [
+        false,
+        false,
+        true
+      ],
+      "viewport": 768,
+      "wrap": "anywhere"
+    },
+    {
+      "bodyWidth": 1425,
+      "documentWidth": 1425,
+      "exerciseWidth": 722,
+      "id": "exercise-audit-recruitment-assets",
+      "open": [
+        false,
+        false,
+        true
+      ],
+      "viewport": 1440,
+      "wrap": "anywhere"
+    },
+    {
+      "bodyWidth": 1425,
+      "documentWidth": 1425,
+      "exerciseWidth": 722,
+      "id": "exercise-review-lecture-release",
+      "open": [
+        false,
+        false,
+        true
+      ],
+      "viewport": 1440,
+      "wrap": "anywhere"
+    }
+  ],
+  "prerequisiteVisit": {
+    "url": "http://127.0.0.1:3021/learn/AI000/AI000-C05-L04#name-constraints",
+    "text": "有些条件看内容，有些要看呈现\n\n刚才查时间、地点、参与方式，查的是作品必须包含哪些内容、哪些事实不能改。这类要求叫内容约束。看标题层级、信息分组和手机阅读效果，查的是这些内容怎样交到读者面前，叫呈现约束。约束在这里就是事先说清、交付时要遵守的条件。\n\n“好看一点”表达了偏好，但还不够完整。可以继续问：“谁会看？最先要找到什么？在哪种屏幕上用？”这次由此得到“标题后独立放时间和地点”的约定。其他任务也可约定字号、对比和阅读顺序；不必假装所有美感都能用同一个分数衡量。\n\n把检查结论和所需证据配在一起\n要查什么\t依据和当前结论\nB的时间对吗？\t对照活动资料：未满足，15:00应为14:00。\nA是否按约定分组？\t看实际海报：未满足，时间地点未独立放标题后。\n手机上读起来怎样？\t用实际显示逐行查看字号、断行和阅读顺序；指出具体位置。\n正式信息、素材许可、打印效果呢？\t当前海报单独不能证明；分别要负责人确认、素材来源/使用资料、实际打印检查。\n\n“暂时无法确认”也要接下一步。例如，没有素材来源记录，就请提供者说明来源与使用要求；没有打印样张，就做实际尺寸试印。仅凭生成方式不能保证作品原创或已经取得必要许可。这里先记住要查什么，版权和使用责任留到第六章进一步讨论。"
+  },
+  "continuity": [
+    {
+      "url": "http://127.0.0.1:3021/learn/AI000/AI000-C06-L01#takeaways",
+      "text": "检查你的每一句确定说法，都能回到哪里\n\n把自己写的场地答复与审查记录并排放好。能否指出每个日期、时段、费用和条件的原文？未知处是否写清还缺哪份资料？若换一个人接手，他能照着你的记录继续查，才算留下了可用依据。练习输入只在本页暂存，可将自己的答复复制到笔记中。\n\n拆主张时保留对象与条件；一段话里部分正确，不能替其他说法过关。\n分别记录事实支持、矛盾、未知与引用问题；来源存在，还要相关、适用并支持当前结论。\n纠正有明确反证的说法，对缺资料的部分保留未知；重写或检索后仍需逐项核查。\n\n即使一份回答有了可靠资料，收集和使用这些资料的过程是否也可能带来问题？下一节将沿着这个问题，讨论个人信息、偏差与公平性。"
+    },
+    {
+      "url": "http://127.0.0.1:3021/learn/AI000/AI000-C06-L02",
+      "text": "拿着新方案，检查数据与服务是否都说清了\n\n回看自己的活动方案，每个保留字段能否指向一项工作，条件性信息是否写明何时才需要？再看图书馆记录，别人能否根据你的编号复算各组结果，并照着计划找到转写与分类之间还缺的证据？把答案复制到笔记中；本页输入仅临时保存，不自动评分。\n\n按明确目的决定必要信息与管理范围；原始声音、文字和关联记录分别考虑，不以删姓名或一句匿名承诺结束检查。\n开发资料的覆盖与独立检查的结果分开读；分条件数对错与分母，小样本差异提示补查，尚未证明原因。\n按步骤查错误、合理补覆盖、提供人工和替代路径，再以新独立材料检查；不以机械等量或单个数字宣布公平。\n\n即使我们合理收集了数据，也检查了模型的结果，当这些结果或素材准备对外发布时，还需要核查什么？下一节将继续讨论素材来源、使用与责任。"
+    },
+    {
+      "url": "http://127.0.0.1:3021/learn/AI000/AI000-C06-L03",
+      "text": "留下别人能接着执行的使用决定\n\n拿出两份新方案：每个“可以”能回到哪项用途和依据，每个“待核”有没有接手人和具体证据？把完整稿和素材表复制到笔记中，本页输入只在当前页面暂存，不自动评分。\n\n先列素材与实际用途，再查来源、许可范围及条件；署名、下载免费和AI生成都不能单独放行。\n分开事实、声音/人物、机构认可和最终发布权限，修改与替换后重查实际成品。\n由实际负责人确认版本与渠道；传播后发现问题，沿发布位置更正并记录，必要时告知受影响者。\n\n第六章的三次检查分别追问：回答有依据吗，数据与服务设计合理吗，这份内容有充分依据公开使用吗？接下来制定自己的学习计划时，可以从想完成的任务反查还缺编程、数学或数据分析中的哪些基础；第七章将继续讨论怎样安排这些先修。"
+    }
+  ],
+  "initialExpandedProbe": {
+    "observations": [
+      {
+        "documentWidth": 425,
+        "exerciseWidth": 400,
+        "id": "exercise-audit-recruitment-assets",
+        "open": false,
+        "viewport": 320
+      },
+      {
+        "documentWidth": 305,
+        "exerciseWidth": 254,
+        "id": "exercise-review-lecture-release",
+        "open": false,
+        "viewport": 320
+      }
+    ],
+    "note": "修复前探索；open使用last-of-type取错了提示节点，不作最终展开断言。真实修复前details数组另留JSON。"
+  },
+  "timeDisplay": "编辑预计 12.2–18.5 小时",
+  "console": []
+}

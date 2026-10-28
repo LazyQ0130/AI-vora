@@ -109,7 +109,7 @@ test("发布门禁与4.2→4.3连续导航，4.4相邻可读，第六章仍无�
   assert.equal(entry.access,final ? "preview" : "private"); assert.equal(Boolean(resolveLesson("AI000",lesson.id)),final);
   const course = getLearningCourse("AI000")!;
   if (final) { assert.equal(getAdjacentLessons(course,"AI000-C04-L02").next?.lessonId,lesson.id); assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C04-L02"); assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C04-L04"); }
-  for (const slot of course.chapters.flatMap(c => c.lessons).filter(l => l.lessonId > "AI000-C06-L02")) { assert.equal(slot.href,undefined); assert.equal(lessonRegistry.has(slot.lessonId),false); }
+  for (const slot of course.chapters.flatMap(c => c.lessons).filter(l => l.lessonId > "AI000-C06-L03")) { assert.equal(slot.href,undefined); assert.equal(lessonRegistry.has(slot.lessonId),false); }
   assert.equal(resolveLesson("PY101",lesson.id),undefined);
 });
 

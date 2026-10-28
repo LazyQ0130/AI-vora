@@ -22,13 +22,13 @@ test("AI000 1.1 r2保留七章规划，相邻导航由1.2承接", () => {
   assert.equal(resolved.course.chapters.length, 7);
   const entries = resolved.course.chapters.flatMap((chapter) => chapter.lessons);
   assert.equal(entries.length, 24);
-  assert.equal(entries.filter(e => e.href).length, 20);
+  assert.equal(entries.filter(e => e.href).length, 21);
   assert.equal(entries[0].displayNumber, "1.1");
   assert.equal(entries[0].href, "/learn/AI000/AI000-C01-L01");
   assert.equal(getAdjacentLessons(resolved.course, lesson.id).next?.lessonId, "AI000-C01-L02");
   assert.equal(getAdjacentLessons(resolved.course, lesson.id).previous, undefined);
   assert.equal(resolveLesson("AI000", "AI000-C05-L05")?.lesson.contentVersion, 1);
-  assert.equal(resolveLesson("AI000", "AI000-C06-L03"), undefined);
+  assert.equal(resolveLesson("AI000", "AI000-C07-L01"), undefined);
   assert.equal(resolveLesson("AI000", "AI000-C07-L03"), undefined);
   assert.equal(resolveLesson("PY101", lesson.id), undefined);
 });

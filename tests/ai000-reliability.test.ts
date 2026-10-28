@@ -24,7 +24,7 @@ const sha=(s:Buffer)=>createHash("sha256").update(s).digest("hex");
 
 test("6.1增加之外41旧课/发布与240文件精确保留，额外修改仍被拒绝",()=>{
   assert.equal(before.lessons.length,41); assert.equal(before.publications.length,41); assert.equal(before.files.length,240);
-  assert.equal(lessonRegistry.size,43); assert.equal(publicationManifest.length,43);
+  assert.equal(lessonRegistry.size,44); assert.equal(publicationManifest.length,44);
   for(const old of before.lessons)assert.equal(JSON.stringify(lessonRegistry.get(old.id)),JSON.stringify(old),old.id);
   for(const old of before.publications)assert.deepEqual(publicationManifest.find(p=>p.lessonId===old.lessonId),old);
   for(const file of before.files){const bytes=readFileSync(file.path);if(sha(bytes)===file.sha256)continue;const reversed=beforeReliabilitySource(file.path,bytes.toString("utf8")).replaceAll("\r\n","\n");assert.ok([reversed,reversed.replaceAll("\n","\r\n")].some(s=>sha(Buffer.from(s))===file.sha256),file.path);}
@@ -137,7 +137,7 @@ test("draft私有与preview门禁正确，5.5和6.1衔接，其余规划无假�
   assert.equal(Boolean(resolveLesson("AI000",lesson.id)),isReadable(pub));
   if(isReadable(pub)){assert.equal(pub.status,"pending-review");assert.equal(getAdjacentLessons(course,"AI000-C05-L05").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C05-L05");assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C06-L02");}
   else {assert.equal(pub.status,"draft");assert.equal(pub.access,"private");}
-  for(const slot of course.chapters.flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C06-L02")){assert.equal(slot.href,undefined);assert.equal(slot.status,"planned");assert.equal(lessonRegistry.has(slot.lessonId),false);}
+  for(const slot of course.chapters.flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C06-L03")){assert.equal(slot.href,undefined);assert.equal(slot.status,"planned");assert.equal(lessonRegistry.has(slot.lessonId),false);}
 });
 
 test("真实存储适配器保留41旧课及1.2/5.3旧r1，6.1初始空态且刷新独立恢复",()=>{
@@ -153,6 +153,6 @@ test("真实存储适配器保留41旧课及1.2/5.3旧r1，6.1初始空态且刷
 
 test("6.1实际任务量同步唯一学时与24节规划，旧668–1022证据保留",()=>{
   assert.deepEqual(lesson.learningTime,{reading:[12,18],practice:[30,44],coding:[0,0],basis:"editorial-estimate"});
-  const estimate=getCourseStudyEstimate("AI000")!;assert.deepEqual(estimate.totalMinutes,[710,1080]);assert.equal(estimate.hours,"11.8–18.0");
+  const estimate=getCourseStudyEstimate("AI000")!;assert.deepEqual(estimate.totalMinutes,[734,1112]);assert.equal(estimate.hours,"12.2–18.5");
   const previous=JSON.parse(readFileSync("docs/ai000-5-5/TIME_ESTIMATE.json","utf8"));assert.deepEqual(previous.totalMinutes,[668,1022]);
 });

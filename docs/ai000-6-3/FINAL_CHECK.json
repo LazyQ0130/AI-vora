@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-10-28T17:19:13.023Z",
+  "base": "ab79b359befb1a905a56b8c95f38c803de0de7d2",
+  "unchangedOldLessons": 43,
+  "unchangedPublications": 43,
+  "protectedFiles": 244,
+  "preservedPreciseFigures": 23,
+  "publication": {
+    "lessonId": "AI000-C06-L03",
+    "courseId": "AI000",
+    "chapterId": "AI000-C06",
+    "title": "版权、误用与负责任地使用 AI",
+    "contentVersion": 1,
+    "order": 3,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "pending-review",
+    "access": "preview",
+    "technicalEvidence": "docs/AI000_LESSON_6_3_AND_CHAPTER_6_REVIEW.md"
+  },
+  "assessmentMap": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "audit-recruitment-assets"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "review-lecture-release"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "audit-recruitment-assets",
+        "review-lecture-release"
+      ]
+    }
+  ]
+}

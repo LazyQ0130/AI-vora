@@ -1,0 +1,44 @@
+✔ 6.3保留43旧课全文/清单、244文件及23精确图，未登记变更仍拒绝 (18.5771ms)
+✔ S1活动六项精确，六素材初始只列记录/用法，先试判再反馈 (0.2529ms)
+✔ S2同意限本次，无人物不等于其他权利和无限用法已解决 (0.1196ms)
+✔ S3及S5只知道取得文件，审核暂缓具体查范围，不宣布一切违法 (0.1281ms)
+✔ BY4可商业和改编，NC4明确商业广告不由当前许可支持 (0.2624ms)
+✔ S4作者/原页/版本/裁剪调亮对应条件，署名不替代许可或背书 (0.1738ms)
+✔ S6条款与实际输出均待核，使用许可不同于版权保护资格且限定法域 (0.1361ms)
+✔ 误用逐项回原资料、分开机构批准及人物声音与推荐 (0.1567ms)
+✔ 四职责各有对象，最终版本/渠道由人确认，事后按传播位置纠正 (0.1719ms)
+✔ 招新新题五项决策按范围，有商业/招新分离和合影双层依据 (0.3103ms)
+✔ 讲座完整改稿独立对照五事实，不残留无据承诺/背书或编造新信息 (0.1454ms)
+✖ 讲座新题跨文稿/声音/成品/三渠道决策，不以只改文字或AI标识放行 (0.5747ms)
+✔ 两种迁移产出映射三目标，提示只给动作不交字段决定或修正稿 (1.0849ms)
+✔ 只用表格和文字，三折叠与真实先修，6.2到6.3末端和第七章规划门禁 (13.7334ms)
+✔ 6.3 r1空态与43旧课及1.2/5.3历史键隔离，独立恢复位置/完成 (0.6451ms)
+✔ 6.3任务量编辑估计同步24节734–1112，710–1080历史留存 (0.4168ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 15
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 928.454
+
+✖ failing tests:
+
+test at tests\ai000-responsible-use.test.ts:116:1
+✖ 讲座新题跨文稿/声音/成品/三渠道决策，不以只改文字或AI标识放行 (0.5747ms)
+  AssertionError [ERR_ASSERTION]: 条件假设
+      at TestContext.<anonymous> (C:\Users\QYF\Desktop\Aivora-Web\tests\ai000-responsible-use.test.ts:118:150)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

@@ -1,0 +1,12 @@
+{
+  "widths": 4,
+  "exerciseRuns": 8,
+  "expandedAnswerWrapChecks": 8,
+  "allPassed": true,
+  "oldBrowserKeysPreserved": 5,
+  "resumeAnchor": "#before-and-after",
+  "limitations": [
+    "viewport simulation, not physical devices",
+    "not teacher/legal review or student study"
+  ]
+}

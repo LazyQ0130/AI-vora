@@ -121,6 +121,10 @@
 #exercise-write-venue-answer > p:first-of-type { white-space: pre-line; }
 #exercise-audit-event-data > p:first-of-type,
 #exercise-compare-library-results > p:first-of-type { white-space: pre-line; }
+#exercise-audit-recruitment-assets > p:first-of-type,
+#exercise-review-lecture-release > p:first-of-type { white-space: pre-line; }
+#exercise-audit-recruitment-assets,
+#exercise-review-lecture-release { overflow-wrap: anywhere; }
 .ai-inference-figure { overflow-wrap: anywhere; }
 .ai-inference-steps { list-style: none; padding: 0; margin: 0; }
 .ai-inference-steps > li { padding: 20px 0 20px 14px; border-left: 3px solid #65cfe3; }

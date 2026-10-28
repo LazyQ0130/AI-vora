@@ -21,7 +21,7 @@
 
 原 curriculum/ 的 Markdown、JSON 是 20 门课程、等级、目标、学时、先修、章节与项目的事实来源。教材不能反过来改写这些事实。lib/curriculum 的 Course 是目录适配类型；content/models 的 Course 组合相同事实与结构化 Chapter。每个 Chapter 有稳定 ID、顺序和真实可读课时，不为规划章节伪造课时。
 
-Lesson 数据位于 content/lessons，资源程序位于 content/resources/programs，发布状态位于 publication-manifest；course-engine 负责关联与解析。Reader 不导入某一节教材。37 节现行教材与 6 节旧版试读全部经过同一 ContentRenderer。旧 sample.ts 与 v1 progress API 保留兼容和既有测试；新 UI 不直接消费它们。
+Lesson 数据位于 content/lessons，资源程序位于 content/resources/programs，发布状态位于 publication-manifest；course-engine 负责关联与解析。Reader 不导入某一节教材。38 节现行教材与 6 节旧版试读全部经过同一 ContentRenderer。旧 sample.ts 与 v1 progress API 保留兼容和既有测试；新 UI 不直接消费它们。
 
 ## 添加一节教材
 
@@ -46,7 +46,7 @@ Lesson 数据位于 content/lessons，资源程序位于 content/resources/progr
 | published | 正式教材 | public / preview / private；技术与审核证据齐全 |
 | deprecated | 下线 | private |
 
-technicalEvidence / reviewEvidence 是仓库审核证据引用，不是权限系统或数字签名。维护者负责审查证据的真实性与适用修订；schema 检查字段和状态门禁，不能替代专业审核。当前 43 节均为 pending-review/preview（含旧综合试读及 AI000 二十节），整门课程仍 planned。
+technicalEvidence / reviewEvidence 是仓库审核证据引用，不是权限系统或数字签名。维护者负责审查证据的真实性与适用修订；schema 检查字段和状态门禁，不能替代专业审核。当前 44 节均为 pending-review/preview（含旧综合试读及 AI000 二十一节），整门课程仍 planned。
 
 ## 内容组件
 
@@ -162,3 +162,5 @@ AI000跨课质量修订：1.2新增四任务独立比较题升r2，5.3将宣传�
 6.1初始r1，以虚构展馆的完整答复拆分主张、检查原文/适用条件及引用；新题分别审查软件作品提交规则和从有限资料独立答场地咨询。只用HTML表格，零新图/代码/下载，41旧课/发布和23幅精确图完整保留。先draft/private核验再pending-review/preview；5.5→6.1衔接，6.2/6.3与第七章继续规划，整门planned。阅读12–18、练习30–44、代码0为编辑估计，完整路线688–1050分钟（11.5–17.5小时），原668–1022与curriculum的6–10小时保留。见[6.1审查](AI000_LESSON_6_1_REVIEW.md)及ai000-6-1；教师、中文教学编辑和真实学生试学仍待办。
 
 6.2初始r1，用报修字段审查、开发覆盖12/3与独立8条结果区分最小必要信息、资料管理、代表性与公平性线索。活动问答新题审11字段，图书馆新题按10条交错记录算4/5、2/5、6/10，并核查混杂条件/处理环节与独立评价。零新图/录音/接口，42旧课/发布与23精确图保持。先draft/private核验，再pending-review/preview；6.1→6.2接通，6.3和第七章仍规划。阅读14–20、练习30–44、代码0为编辑估计，完整路线710–1080分钟（11.8–18.0小时），旧688–1050及curriculum的6–10小时保留。见[6.2审查](AI000_LESSON_6_2_REVIEW.md)及ai000-6-2；教师/中文教学编辑/真实学生试学仍待办。
+
+6.3初始r1，按S1–S6来源卡与实际用途判断许可/条件，分开事实、声音、背书及发布权限。招新手册新题逐项区分免费招新与明确商业广告，公益讲座新题交完整稿、声音替代及三渠道发布/纠错。先draft/private验证，再pending-review/preview；43旧课/发布、23精确图及历史版本不变。6.2→6.3衔接，第七章仅规划，整门planned。阅读14–20、练习32–46、代码0为编辑估计，完整路线734–1112分钟（12.2–18.5小时），旧710–1080证据与curriculum的6–10小时保留。见[6.3及第六章审查](AI000_LESSON_6_3_AND_CHAPTER_6_REVIEW.md)及ai000-6-3；不构成教师/法律审核，中文编辑与目标学生试学待办。
