@@ -45,7 +45,7 @@ if (process.argv.includes("--baseline")) {
   assert.equal(course.status,"planned");
   if(process.argv.includes("--final")) {
     assert.equal(course.chapters.flatMap(c=>c.lessons).length,24);
-    const ordered=["AI000-C01-L01","AI000-C01-L02","AI000-C01-L03","AI000-C02-L01","AI000-C02-L02","AI000-C03-L01","AI000-C03-L02","AI000-C03-L03","AI000-C03-L04","AI000-C04-L01","AI000-C04-L02","AI000-C04-L03","AI000-C04-L04","AI000-C05-L01","AI000-C05-L02","AI000-C05-L03"];
+    const ordered=["AI000-C01-L01","AI000-C01-L02","AI000-C01-L03","AI000-C02-L01","AI000-C02-L02","AI000-C03-L01","AI000-C03-L02","AI000-C03-L03","AI000-C03-L04","AI000-C04-L01","AI000-C04-L02","AI000-C04-L03","AI000-C04-L04","AI000-C05-L01","AI000-C05-L02","AI000-C05-L03","AI000-C05-L04"];
     assert.deepEqual(course.chapters.flatMap(c=>c.lessons).filter(l=>l.href).map(l=>l.lessonId),ordered);
     ordered.forEach((id,index)=>{
       const next=getAdjacentLessons(course,id);

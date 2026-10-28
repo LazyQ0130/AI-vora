@@ -1,0 +1,1014 @@
+[
+  {
+    "width": 1440,
+    "client": 1425,
+    "details": [
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "innerWidth": 1440,
+    "posters": [
+      {
+        "fields": [
+          {
+            "client": 287,
+            "field": "name",
+            "font": "24px",
+            "scroll": 287,
+            "text": "校园旧物交换日",
+            "userSelect": "auto"
+          },
+          {
+            "client": 287,
+            "field": "content",
+            "font": "16px",
+            "scroll": 287,
+            "text": "交换闲置书籍和学习用品",
+            "userSelect": "auto"
+          },
+          {
+            "client": 287,
+            "field": "participation",
+            "font": "16px",
+            "scroll": 287,
+            "text": "免费参加，无需提前报名",
+            "userSelect": "auto"
+          },
+          {
+            "client": 287,
+            "field": "time",
+            "font": "16px",
+            "scroll": 287,
+            "text": "周六14:00–16:00",
+            "userSelect": "auto"
+          },
+          {
+            "client": 287,
+            "field": "place",
+            "font": "16px",
+            "scroll": 287,
+            "text": "图书馆一楼共享区",
+            "userSelect": "auto"
+          }
+        ],
+        "id": "A",
+        "scroll": 327,
+        "width": 327,
+        "x": 341.3333435058594,
+        "y": 318.625
+      },
+      {
+        "fields": [
+          {
+            "client": 287,
+            "field": "name",
+            "font": "24px",
+            "scroll": 287,
+            "text": "校园旧物交换日",
+            "userSelect": "auto"
+          },
+          {
+            "client": 287,
+            "field": "time",
+            "font": "18px",
+            "scroll": 287,
+            "text": "周六15:00–16:00",
+            "userSelect": "auto"
+          },
+          {
+            "client": 287,
+            "field": "place",
+            "font": "18px",
+            "scroll": 287,
+            "text": "图书馆一楼共享区",
+            "userSelect": "auto"
+          },
+          {
+            "client": 287,
+            "field": "content",
+            "font": "16px",
+            "scroll": 287,
+            "text": "交换闲置书籍和学习用品",
+            "userSelect": "auto"
+          },
+          {
+            "client": 287,
+            "field": "participation",
+            "font": "16px",
+            "scroll": 287,
+            "text": "免费参加，无需提前报名",
+            "userSelect": "auto"
+          }
+        ],
+        "id": "B",
+        "scroll": 327,
+        "width": 327,
+        "x": 688.3333740234375,
+        "y": 318.625
+      },
+      {
+        "fields": [
+          {
+            "client": 287,
+            "field": "name",
+            "font": "24px",
+            "scroll": 287,
+            "text": "校园科技体验日",
+            "userSelect": "auto"
+          },
+          {
+            "client": 287,
+            "field": "time",
+            "font": "18px",
+            "scroll": 287,
+            "text": "周日13:30–16:30",
+            "userSelect": "auto"
+          },
+          {
+            "client": 287,
+            "field": "place",
+            "font": "18px",
+            "scroll": 287,
+            "text": "综合楼二楼体验区",
+            "userSelect": "auto"
+          },
+          {
+            "client": 287,
+            "field": "content",
+            "font": "16px",
+            "scroll": 287,
+            "text": "机器人演示与科学小实验",
+            "userSelect": "auto"
+          },
+          {
+            "client": 287,
+            "field": "participation",
+            "font": "16px",
+            "scroll": 287,
+            "text": "需要提前登记",
+            "userSelect": "auto"
+          }
+        ],
+        "id": "C",
+        "scroll": 327,
+        "width": 327,
+        "x": 341.3333435058594,
+        "y": 5232.3857421875
+      },
+      {
+        "fields": [
+          {
+            "client": 287,
+            "field": "name",
+            "font": "24px",
+            "scroll": 287,
+            "text": "校园科技体验日",
+            "userSelect": "auto"
+          },
+          {
+            "client": 287,
+            "field": "time",
+            "font": "18px",
+            "scroll": 287,
+            "text": "周日13:30–16:30",
+            "userSelect": "auto"
+          },
+          {
+            "client": 287,
+            "field": "place",
+            "font": "18px",
+            "scroll": 287,
+            "text": "综合楼一楼体验区",
+            "userSelect": "auto"
+          },
+          {
+            "client": 287,
+            "field": "content",
+            "font": "16px",
+            "scroll": 287,
+            "text": "机器人演示科学小实验",
+            "userSelect": "auto"
+          },
+          {
+            "client": 287,
+            "field": "participation",
+            "font": "16px",
+            "scroll": 287,
+            "text": "无需提前登记",
+            "userSelect": "auto"
+          }
+        ],
+        "id": "D",
+        "scroll": 327,
+        "width": 327,
+        "x": 688.3333740234375,
+        "y": 5232.3857421875
+      }
+    ],
+    "scroll": 1425,
+    "tableOverflow": [
+      {
+        "caption": "校园旧物交换日的统一资料",
+        "container": 722,
+        "width": 722
+      },
+      {
+        "caption": "对照原资料和约定的分组，复核你的判断",
+        "container": 722,
+        "width": 722
+      },
+      {
+        "caption": "把检查结论和所需证据配在一起",
+        "container": 722,
+        "width": 722
+      },
+      {
+        "caption": "分别写下已经核对和接下来要做的事",
+        "container": 722,
+        "width": 722
+      },
+      {
+        "caption": "科技体验日的题设资料与交付要求",
+        "container": 722,
+        "width": 722
+      },
+      {
+        "caption": "展馆配音的新要求",
+        "container": 722,
+        "width": 722
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "client": 753,
+    "details": [
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "innerWidth": 768,
+    "posters": [
+      {
+        "fields": [
+          {
+            "client": 251,
+            "field": "name",
+            "font": "24px",
+            "scroll": 251,
+            "text": "校园旧物交换日",
+            "userSelect": "auto"
+          },
+          {
+            "client": 251,
+            "field": "content",
+            "font": "16px",
+            "scroll": 251,
+            "text": "交换闲置书籍和学习用品",
+            "userSelect": "auto"
+          },
+          {
+            "client": 251,
+            "field": "participation",
+            "font": "16px",
+            "scroll": 251,
+            "text": "免费参加，无需提前报名",
+            "userSelect": "auto"
+          },
+          {
+            "client": 251,
+            "field": "time",
+            "font": "16px",
+            "scroll": 251,
+            "text": "周六14:00–16:00",
+            "userSelect": "auto"
+          },
+          {
+            "client": 251,
+            "field": "place",
+            "font": "16px",
+            "scroll": 251,
+            "text": "图书馆一楼共享区",
+            "userSelect": "auto"
+          }
+        ],
+        "id": "A",
+        "scroll": 291,
+        "width": 291,
+        "x": 73.33333587646484,
+        "y": -4526.6357421875
+      },
+      {
+        "fields": [
+          {
+            "client": 251,
+            "field": "name",
+            "font": "24px",
+            "scroll": 251,
+            "text": "校园旧物交换日",
+            "userSelect": "auto"
+          },
+          {
+            "client": 251,
+            "field": "time",
+            "font": "18px",
+            "scroll": 251,
+            "text": "周六15:00–16:00",
+            "userSelect": "auto"
+          },
+          {
+            "client": 251,
+            "field": "place",
+            "font": "18px",
+            "scroll": 251,
+            "text": "图书馆一楼共享区",
+            "userSelect": "auto"
+          },
+          {
+            "client": 251,
+            "field": "content",
+            "font": "16px",
+            "scroll": 251,
+            "text": "交换闲置书籍和学习用品",
+            "userSelect": "auto"
+          },
+          {
+            "client": 251,
+            "field": "participation",
+            "font": "16px",
+            "scroll": 251,
+            "text": "免费参加，无需提前报名",
+            "userSelect": "auto"
+          }
+        ],
+        "id": "B",
+        "scroll": 291,
+        "width": 291,
+        "x": 384.3333435058594,
+        "y": -4526.6357421875
+      },
+      {
+        "fields": [
+          {
+            "client": 251,
+            "field": "name",
+            "font": "24px",
+            "scroll": 251,
+            "text": "校园科技体验日",
+            "userSelect": "auto"
+          },
+          {
+            "client": 251,
+            "field": "time",
+            "font": "18px",
+            "scroll": 251,
+            "text": "周日13:30–16:30",
+            "userSelect": "auto"
+          },
+          {
+            "client": 251,
+            "field": "place",
+            "font": "18px",
+            "scroll": 251,
+            "text": "综合楼二楼体验区",
+            "userSelect": "auto"
+          },
+          {
+            "client": 251,
+            "field": "content",
+            "font": "16px",
+            "scroll": 251,
+            "text": "机器人演示与科学小实验",
+            "userSelect": "auto"
+          },
+          {
+            "client": 251,
+            "field": "participation",
+            "font": "16px",
+            "scroll": 251,
+            "text": "需要提前登记",
+            "userSelect": "auto"
+          }
+        ],
+        "id": "C",
+        "scroll": 291,
+        "width": 291,
+        "x": 73.33333587646484,
+        "y": 579.125
+      },
+      {
+        "fields": [
+          {
+            "client": 251,
+            "field": "name",
+            "font": "24px",
+            "scroll": 251,
+            "text": "校园科技体验日",
+            "userSelect": "auto"
+          },
+          {
+            "client": 251,
+            "field": "time",
+            "font": "18px",
+            "scroll": 251,
+            "text": "周日13:30–16:30",
+            "userSelect": "auto"
+          },
+          {
+            "client": 251,
+            "field": "place",
+            "font": "18px",
+            "scroll": 251,
+            "text": "综合楼一楼体验区",
+            "userSelect": "auto"
+          },
+          {
+            "client": 251,
+            "field": "content",
+            "font": "16px",
+            "scroll": 251,
+            "text": "机器人演示科学小实验",
+            "userSelect": "auto"
+          },
+          {
+            "client": 251,
+            "field": "participation",
+            "font": "16px",
+            "scroll": 251,
+            "text": "无需提前登记",
+            "userSelect": "auto"
+          }
+        ],
+        "id": "D",
+        "scroll": 291,
+        "width": 291,
+        "x": 384.3333435058594,
+        "y": 579.125
+      }
+    ],
+    "scroll": 753,
+    "tableOverflow": [
+      {
+        "caption": "校园旧物交换日的统一资料",
+        "container": 650,
+        "width": 650
+      },
+      {
+        "caption": "对照原资料和约定的分组，复核你的判断",
+        "container": 650,
+        "width": 650
+      },
+      {
+        "caption": "把检查结论和所需证据配在一起",
+        "container": 650,
+        "width": 650
+      },
+      {
+        "caption": "分别写下已经核对和接下来要做的事",
+        "container": 650,
+        "width": 650
+      },
+      {
+        "caption": "科技体验日的题设资料与交付要求",
+        "container": 650,
+        "width": 650
+      },
+      {
+        "caption": "展馆配音的新要求",
+        "container": 650,
+        "width": 650
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "client": 375,
+    "details": [
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "innerWidth": 390,
+    "posters": [
+      {
+        "fields": [
+          {
+            "client": 232,
+            "field": "name",
+            "font": "24px",
+            "scroll": 232,
+            "text": "校园旧物交换日",
+            "userSelect": "auto"
+          },
+          {
+            "client": 232,
+            "field": "content",
+            "font": "16px",
+            "scroll": 232,
+            "text": "交换闲置书籍和学习用品",
+            "userSelect": "auto"
+          },
+          {
+            "client": 232,
+            "field": "participation",
+            "font": "16px",
+            "scroll": 232,
+            "text": "免费参加，无需提前报名",
+            "userSelect": "auto"
+          },
+          {
+            "client": 232,
+            "field": "time",
+            "font": "16px",
+            "scroll": 232,
+            "text": "周六14:00–16:00",
+            "userSelect": "auto"
+          },
+          {
+            "client": 232,
+            "field": "place",
+            "font": "16px",
+            "scroll": 232,
+            "text": "图书馆一楼共享区",
+            "userSelect": "auto"
+          }
+        ],
+        "id": "A",
+        "scroll": 272,
+        "width": 272,
+        "x": 49.33333587646485,
+        "y": -4195.89599609375
+      },
+      {
+        "fields": [
+          {
+            "client": 232,
+            "field": "name",
+            "font": "24px",
+            "scroll": 232,
+            "text": "校园旧物交换日",
+            "userSelect": "auto"
+          },
+          {
+            "client": 232,
+            "field": "time",
+            "font": "18px",
+            "scroll": 232,
+            "text": "周六15:00–16:00",
+            "userSelect": "auto"
+          },
+          {
+            "client": 232,
+            "field": "place",
+            "font": "18px",
+            "scroll": 232,
+            "text": "图书馆一楼共享区",
+            "userSelect": "auto"
+          },
+          {
+            "client": 232,
+            "field": "content",
+            "font": "16px",
+            "scroll": 232,
+            "text": "交换闲置书籍和学习用品",
+            "userSelect": "auto"
+          },
+          {
+            "client": 232,
+            "field": "participation",
+            "font": "16px",
+            "scroll": 232,
+            "text": "免费参加，无需提前报名",
+            "userSelect": "auto"
+          }
+        ],
+        "id": "B",
+        "scroll": 272,
+        "width": 272,
+        "x": 49.33333587646485,
+        "y": -3885.11474609375
+      },
+      {
+        "fields": [
+          {
+            "client": 232,
+            "field": "name",
+            "font": "24px",
+            "scroll": 232,
+            "text": "校园科技体验日",
+            "userSelect": "auto"
+          },
+          {
+            "client": 232,
+            "field": "time",
+            "font": "18px",
+            "scroll": 232,
+            "text": "周日13:30–16:30",
+            "userSelect": "auto"
+          },
+          {
+            "client": 232,
+            "field": "place",
+            "font": "18px",
+            "scroll": 232,
+            "text": "综合楼二楼体验区",
+            "userSelect": "auto"
+          },
+          {
+            "client": 232,
+            "field": "content",
+            "font": "16px",
+            "scroll": 232,
+            "text": "机器人演示与科学小实验",
+            "userSelect": "auto"
+          },
+          {
+            "client": 232,
+            "field": "participation",
+            "font": "16px",
+            "scroll": 232,
+            "text": "需要提前登记",
+            "userSelect": "auto"
+          }
+        ],
+        "id": "C",
+        "scroll": 272,
+        "width": 272,
+        "x": 49.33333587646485,
+        "y": 3060.42724609375
+      },
+      {
+        "fields": [
+          {
+            "client": 232,
+            "field": "name",
+            "font": "24px",
+            "scroll": 232,
+            "text": "校园科技体验日",
+            "userSelect": "auto"
+          },
+          {
+            "client": 232,
+            "field": "time",
+            "font": "18px",
+            "scroll": 232,
+            "text": "周日13:30–16:30",
+            "userSelect": "auto"
+          },
+          {
+            "client": 232,
+            "field": "place",
+            "font": "18px",
+            "scroll": 232,
+            "text": "综合楼一楼体验区",
+            "userSelect": "auto"
+          },
+          {
+            "client": 232,
+            "field": "content",
+            "font": "16px",
+            "scroll": 232,
+            "text": "机器人演示科学小实验",
+            "userSelect": "auto"
+          },
+          {
+            "client": 232,
+            "field": "participation",
+            "font": "16px",
+            "scroll": 232,
+            "text": "无需提前登记",
+            "userSelect": "auto"
+          }
+        ],
+        "id": "D",
+        "scroll": 272,
+        "width": 272,
+        "x": 49.33333587646485,
+        "y": 3414.14599609375
+      }
+    ],
+    "scroll": 375,
+    "tableOverflow": [
+      {
+        "caption": "校园旧物交换日的统一资料",
+        "container": 308,
+        "width": 308
+      },
+      {
+        "caption": "对照原资料和约定的分组，复核你的判断",
+        "container": 308,
+        "width": 308
+      },
+      {
+        "caption": "把检查结论和所需证据配在一起",
+        "container": 308,
+        "width": 308
+      },
+      {
+        "caption": "分别写下已经核对和接下来要做的事",
+        "container": 308,
+        "width": 308
+      },
+      {
+        "caption": "科技体验日的题设资料与交付要求",
+        "container": 308,
+        "width": 308
+      },
+      {
+        "caption": "展馆配音的新要求",
+        "container": 308,
+        "width": 308
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "client": 305,
+    "details": [
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "innerWidth": 320,
+    "posters": [
+      {
+        "fields": [
+          {
+            "client": 178,
+            "field": "name",
+            "font": "24px",
+            "scroll": 178,
+            "text": "校园旧物交换日",
+            "userSelect": "auto"
+          },
+          {
+            "client": 178,
+            "field": "content",
+            "font": "16px",
+            "scroll": 178,
+            "text": "交换闲置书籍和学习用品",
+            "userSelect": "auto"
+          },
+          {
+            "client": 178,
+            "field": "participation",
+            "font": "16px",
+            "scroll": 178,
+            "text": "免费参加，无需提前报名",
+            "userSelect": "auto"
+          },
+          {
+            "client": 178,
+            "field": "time",
+            "font": "16px",
+            "scroll": 178,
+            "text": "周六14:00–16:00",
+            "userSelect": "auto"
+          },
+          {
+            "client": 178,
+            "field": "place",
+            "font": "16px",
+            "scroll": 178,
+            "text": "图书馆一楼共享区",
+            "userSelect": "auto"
+          }
+        ],
+        "id": "A",
+        "scroll": 218,
+        "width": 218,
+        "x": 41.33333587646485,
+        "y": -6603.58349609375
+      },
+      {
+        "fields": [
+          {
+            "client": 178,
+            "field": "name",
+            "font": "24px",
+            "scroll": 178,
+            "text": "校园旧物交换日",
+            "userSelect": "auto"
+          },
+          {
+            "client": 178,
+            "field": "time",
+            "font": "18px",
+            "scroll": 178,
+            "text": "周六15:00–16:00",
+            "userSelect": "auto"
+          },
+          {
+            "client": 178,
+            "field": "place",
+            "font": "18px",
+            "scroll": 178,
+            "text": "图书馆一楼共享区",
+            "userSelect": "auto"
+          },
+          {
+            "client": 178,
+            "field": "content",
+            "font": "16px",
+            "scroll": 178,
+            "text": "交换闲置书籍和学习用品",
+            "userSelect": "auto"
+          },
+          {
+            "client": 178,
+            "field": "participation",
+            "font": "16px",
+            "scroll": 178,
+            "text": "免费参加，无需提前报名",
+            "userSelect": "auto"
+          }
+        ],
+        "id": "B",
+        "scroll": 218,
+        "width": 218,
+        "x": 41.33333587646485,
+        "y": -6292.80224609375
+      },
+      {
+        "fields": [
+          {
+            "client": 178,
+            "field": "name",
+            "font": "24px",
+            "scroll": 178,
+            "text": "校园科技体验日",
+            "userSelect": "auto"
+          },
+          {
+            "client": 178,
+            "field": "time",
+            "font": "18px",
+            "scroll": 178,
+            "text": "周日13:30–16:30",
+            "userSelect": "auto"
+          },
+          {
+            "client": 178,
+            "field": "place",
+            "font": "18px",
+            "scroll": 178,
+            "text": "综合楼二楼体验区",
+            "userSelect": "auto"
+          },
+          {
+            "client": 178,
+            "field": "content",
+            "font": "16px",
+            "scroll": 178,
+            "text": "机器人演示与科学小实验",
+            "userSelect": "auto"
+          },
+          {
+            "client": 178,
+            "field": "participation",
+            "font": "16px",
+            "scroll": 178,
+            "text": "需要提前登记",
+            "userSelect": "auto"
+          }
+        ],
+        "id": "C",
+        "scroll": 218,
+        "width": 218,
+        "x": 41.33333587646485,
+        "y": 1914.510498046875
+      },
+      {
+        "fields": [
+          {
+            "client": 178,
+            "field": "name",
+            "font": "24px",
+            "scroll": 178,
+            "text": "校园科技体验日",
+            "userSelect": "auto"
+          },
+          {
+            "client": 178,
+            "field": "time",
+            "font": "18px",
+            "scroll": 178,
+            "text": "周日13:30–16:30",
+            "userSelect": "auto"
+          },
+          {
+            "client": 178,
+            "field": "place",
+            "font": "18px",
+            "scroll": 178,
+            "text": "综合楼一楼体验区",
+            "userSelect": "auto"
+          },
+          {
+            "client": 178,
+            "field": "content",
+            "font": "16px",
+            "scroll": 178,
+            "text": "机器人演示科学小实验",
+            "userSelect": "auto"
+          },
+          {
+            "client": 178,
+            "field": "participation",
+            "font": "16px",
+            "scroll": 178,
+            "text": "无需提前登记",
+            "userSelect": "auto"
+          }
+        ],
+        "id": "D",
+        "scroll": 218,
+        "width": 218,
+        "x": 41.33333587646485,
+        "y": 2268.229248046875
+      }
+    ],
+    "scroll": 305,
+    "tableOverflow": [
+      {
+        "caption": "校园旧物交换日的统一资料",
+        "container": 254,
+        "width": 254
+      },
+      {
+        "caption": "对照原资料和约定的分组，复核你的判断",
+        "container": 254,
+        "width": 254
+      },
+      {
+        "caption": "把检查结论和所需证据配在一起",
+        "container": 254,
+        "width": 254
+      },
+      {
+        "caption": "分别写下已经核对和接下来要做的事",
+        "container": 254,
+        "width": 254
+      },
+      {
+        "caption": "科技体验日的题设资料与交付要求",
+        "container": 254,
+        "width": 254
+      },
+      {
+        "caption": "展馆配音的新要求",
+        "container": 254,
+        "width": 254
+      }
+    ]
+  }
+]

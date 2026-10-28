@@ -64,7 +64,7 @@ test("3.3注册独立r1与核心目标入口，3.2/3.4相邻可读，5.4仍无�
  assert.equal(getAdjacentLessons(course,"AI000-C03-L02").next?.lessonId,lesson.id);
  assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C03-L02");
  assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C03-L04");
- assert.equal(resolveLesson("AI000","AI000-C05-L04"),undefined);assert.equal(lessonRegistry.has("AI000-C05-L04"),false);
+ assert.equal(resolveLesson("AI000","AI000-C05-L05"),undefined);assert.equal(lessonRegistry.has("AI000-C05-L05"),false);
  assert.ok(blocks.every(b=>!["code","math","experiment","downloads"].includes(b.type)));
 });
 

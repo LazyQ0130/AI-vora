@@ -24,6 +24,7 @@ import { modelsAndParametersLesson } from "../content/lessons/ai000/models-and-p
 import { usingFixedModelLesson } from "../content/lessons/ai000/using-a-fixed-model";
 import { naturalLanguageLesson } from "../content/lessons/ai000/natural-language-and-llm";
 import { computerVisionLesson } from "../content/lessons/ai000/computer-vision";
+import { generativeWorkLesson } from "../content/lessons/ai000/generative-work";
 import { multimodalLesson } from "../content/lessons/ai000/multimodal-ai";
 import { trainingValidationTestLesson } from "../content/lessons/ai000/training-validation-test";
 import { aiMlDlLesson } from "../content/lessons/ai000/ai-ml-dl";
@@ -57,6 +58,7 @@ const contents: Lesson[] = [
   naturalLanguageLesson,
   computerVisionLesson,
   multimodalLesson,
+  generativeWorkLesson,
   ...maV22Lessons,
   regressionTaskLesson,
   linearModelLesson,

@@ -14,6 +14,7 @@ import { AiParametersFigure } from "./ai-parameters-figure";
 import { AiInferenceFigure } from "./ai-inference-figure";
 import { AiDataUseFigure } from "./ai-data-use-figure";
 import { AiVisionFigure } from "./ai-vision-figure";
+import { AiCreativeFigure } from "./ai-creative-figure";
 import { AiMultimodalFigure } from "./ai-multimodal-figure";
 
 type FigureBlock = Extract<ContentBlock, { type: "ai-task-figure" }>;
@@ -27,6 +28,7 @@ function FlowArrow() {
 
 export function AiTaskFigure({ block }: { block: FigureBlock }) {
   const id = useId();
+  if (block.kind.startsWith("creative-")) return <AiCreativeFigure block={block} />;
   if (block.kind.startsWith("multimodal-")) return <AiMultimodalFigure block={block} />;
   if (block.kind.startsWith("vision-")) return <AiVisionFigure block={block} />;
   if (block.kind === "inference-flow") return <AiInferenceFigure block={block} />;

@@ -1,0 +1,258 @@
+[
+  {
+    "width": 1440,
+    "title": "科技体验日海报可以交付了吗？",
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ],
+    "layout": {
+      "bodyWidth": 1425,
+      "client": 722,
+      "pageScroll": 1425,
+      "scroll": 722
+    }
+  },
+  {
+    "width": 1440,
+    "title": "给展馆配音写一份验收方案",
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ],
+    "layout": {
+      "bodyWidth": 1425,
+      "client": 722,
+      "pageScroll": 1425,
+      "scroll": 722
+    }
+  },
+  {
+    "width": 768,
+    "title": "科技体验日海报可以交付了吗？",
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ],
+    "layout": {
+      "bodyWidth": 753,
+      "client": 650,
+      "pageScroll": 753,
+      "scroll": 650
+    }
+  },
+  {
+    "width": 768,
+    "title": "给展馆配音写一份验收方案",
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ],
+    "layout": {
+      "bodyWidth": 753,
+      "client": 650,
+      "pageScroll": 753,
+      "scroll": 650
+    }
+  },
+  {
+    "width": 390,
+    "title": "科技体验日海报可以交付了吗？",
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ],
+    "layout": {
+      "bodyWidth": 375,
+      "client": 308,
+      "pageScroll": 375,
+      "scroll": 308
+    }
+  },
+  {
+    "width": 390,
+    "title": "给展馆配音写一份验收方案",
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ],
+    "layout": {
+      "bodyWidth": 375,
+      "client": 308,
+      "pageScroll": 375,
+      "scroll": 308
+    }
+  },
+  {
+    "width": 320,
+    "title": "科技体验日海报可以交付了吗？",
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ],
+    "layout": {
+      "bodyWidth": 305,
+      "client": 254,
+      "pageScroll": 305,
+      "scroll": 254
+    }
+  },
+  {
+    "width": 320,
+    "title": "给展馆配音写一份验收方案",
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ],
+    "layout": {
+      "bodyWidth": 305,
+      "client": 254,
+      "pageScroll": 305,
+      "scroll": 254
+    }
+  }
+]

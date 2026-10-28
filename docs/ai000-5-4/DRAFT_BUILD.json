@@ -1,0 +1,7 @@
+{
+  "command": "npm run build",
+  "exitCode": 0,
+  "readableLessonPaths": 39,
+  "generatedStaticPages": 66,
+  "build": "Next.js 16.4.3 production; checked before preview promotion"
+}

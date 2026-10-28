@@ -78,5 +78,5 @@ test("4.3接4.4再接5.1，5.2及后续仍规划且无注册正文",()=>{
   assert.equal(getAdjacentLessons(course,"AI000-C04-L03").next?.lessonId,"AI000-C04-L04");
   assert.equal(getAdjacentLessons(course,"AI000-C04-L04").previous?.lessonId,"AI000-C04-L03");
   assert.equal(getAdjacentLessons(course,"AI000-C04-L04").next?.lessonId,"AI000-C05-L01");
-  for(const slot of course.chapters.slice(4).flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C05-L03")){assert.equal(slot.href,undefined);assert.equal(lessonRegistry.has(slot.lessonId),false);}
+  for(const slot of course.chapters.slice(4).flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C05-L04")){assert.equal(slot.href,undefined);assert.equal(lessonRegistry.has(slot.lessonId),false);}
 });

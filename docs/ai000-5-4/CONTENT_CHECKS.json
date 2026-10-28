@@ -1,0 +1,730 @@
+{
+  "checkedAt": "2026-10-28T05:20:28.057Z",
+  "unchangedOtherLessons": 23,
+  "curriculumUnchanged": true,
+  "checks": [
+    {
+      "id": "AI000-C01-L01",
+      "version": 2,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "describe-task"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "describe-task",
+            "design-task"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "design-task"
+          ]
+        }
+      ],
+      "sections": [
+        "mail-task",
+        "rule-and-learning",
+        "ai-meaning",
+        "many-tasks",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "describe-task",
+        "design-task"
+      ]
+    },
+    {
+      "id": "AI000-C01-L02",
+      "version": 1,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "product-review"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "check-library"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "product-review"
+          ]
+        }
+      ],
+      "sections": [
+        "task-comparison",
+        "mistakes",
+        "why-errors",
+        "check-output",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "check-library",
+        "product-review"
+      ]
+    },
+    {
+      "id": "AI000-C01-L03",
+      "version": 1,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "identify-systems"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "identify-systems",
+            "trace-method"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "trace-method"
+          ]
+        }
+      ],
+      "sections": [
+        "automation",
+        "knowledge",
+        "compare-methods",
+        "evidence",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "identify-systems",
+        "trace-method"
+      ]
+    },
+    {
+      "id": "AI000-C02-L01",
+      "version": 2,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "draw-method-map"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "draw-method-map"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "method-evidence"
+          ]
+        }
+      ],
+      "sections": [
+        "learning-from-mail",
+        "deep-learning",
+        "method-map",
+        "read-system",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "draw-method-map",
+        "method-evidence"
+      ]
+    },
+    {
+      "id": "AI000-C02-L02",
+      "version": 1,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "classify-new-systems"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "product-model-map"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "classify-new-systems",
+            "product-model-map"
+          ]
+        }
+      ],
+      "sections": [
+        "generation",
+        "generative-model",
+        "llm",
+        "product",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "classify-new-systems",
+        "product-model-map"
+      ]
+    },
+    {
+      "id": "AI000-C03-L01",
+      "version": 1,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "prepare-examples"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "prepare-examples",
+            "missing-targets"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "missing-targets"
+          ]
+        }
+      ],
+      "sections": [
+        "parcel-examples",
+        "learning-and-prediction",
+        "name-the-method",
+        "sample-and-label",
+        "label-sources",
+        "number-target",
+        "data-preparation",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "prepare-examples",
+        "missing-targets"
+      ]
+    },
+    {
+      "id": "AI000-C03-L02",
+      "version": 2,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "propose-groups",
+            "identify-learning-signals"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "propose-groups"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "propose-groups",
+            "identify-learning-signals"
+          ]
+        }
+      ],
+      "sections": [
+        "borrowing-records",
+        "compare-records",
+        "uncertain-records",
+        "unsupervised",
+        "change-the-question",
+        "interpret-groups",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "propose-groups",
+        "identify-learning-signals"
+      ]
+    },
+    {
+      "id": "AI000-C03-L03",
+      "version": 1,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "design-self-task",
+            "compare-learning-tasks"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "design-self-task",
+            "compare-learning-tasks"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "compare-learning-tasks"
+          ]
+        }
+      ],
+      "sections": [
+        "hide-a-piece",
+        "four-roles",
+        "name-the-method",
+        "many-records",
+        "another-task",
+        "task-and-use",
+        "compare-arrangements",
+        "practice",
+        "takeaways"
+      ],
+      "exercises": [
+        "design-self-task",
+        "compare-learning-tasks"
+      ]
+    },
+    {
+      "id": "AI000-C03-L04",
+      "version": 1,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "trace-watering",
+            "assess-feedback"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "trace-watering"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "assess-feedback"
+          ]
+        }
+      ],
+      "sections": [
+        "delivery-problem",
+        "follow-actions",
+        "compare-routes",
+        "reward-and-target",
+        "reward-design",
+        "experience",
+        "name-the-method",
+        "compare-tasks",
+        "watering-task",
+        "feedback-task",
+        "takeaways"
+      ],
+      "exercises": [
+        "trace-watering",
+        "assess-feedback"
+      ]
+    },
+    {
+      "id": "AI000-C04-L01",
+      "version": 1,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "build-print-records"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "build-print-records",
+            "audit-library-records"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "audit-library-records"
+          ]
+        }
+      ],
+      "sections": [
+        "parcel-records",
+        "rows-and-fields",
+        "features-and-target",
+        "new-record",
+        "choose-fields",
+        "check-records",
+        "print-task",
+        "library-task",
+        "takeaways"
+      ],
+      "exercises": [
+        "build-print-records",
+        "audit-library-records"
+      ]
+    },
+    {
+      "id": "AI000-C04-L02",
+      "version": 1,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "compare-print-settings",
+            "adjust-library-settings"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "compare-print-settings"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "adjust-library-settings"
+          ]
+        }
+      ],
+      "sections": [
+        "need-a-model",
+        "calculate-first",
+        "name-parameters",
+        "compare-one",
+        "compare-records",
+        "change-a-parameter",
+        "training",
+        "use-fixed-model",
+        "print-parameters-task",
+        "adjust-parameters-task",
+        "takeaways"
+      ],
+      "exercises": [
+        "compare-print-settings",
+        "adjust-library-settings"
+      ]
+    },
+    {
+      "id": "AI000-C04-L03",
+      "version": 1,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "plan-print-evaluation"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "plan-print-evaluation",
+            "audit-evaluation-flow"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "plan-print-evaluation",
+            "audit-evaluation-flow"
+          ]
+        }
+      ],
+      "sections": [
+        "familiar-records",
+        "new-history",
+        "assign-roles",
+        "training-records",
+        "validation-choice",
+        "test-records",
+        "data-use-flow",
+        "generalization",
+        "future-information",
+        "duplicate-records",
+        "test-feedback",
+        "print-evaluation-task",
+        "audit-evaluation-task",
+        "takeaways"
+      ],
+      "exercises": [
+        "plan-print-evaluation",
+        "audit-evaluation-flow"
+      ]
+    },
+    {
+      "id": "AI000-C04-L04",
+      "version": 1,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "use-print-model"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "use-print-model"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "audit-current-inputs"
+          ]
+        }
+      ],
+      "sections": [
+        "new-arrival",
+        "one-prediction",
+        "calculate-n",
+        "inference-flow",
+        "name-inference",
+        "after-completion",
+        "check-inputs",
+        "print-use-task",
+        "input-audit-task",
+        "takeaways"
+      ],
+      "exercises": [
+        "use-print-model",
+        "audit-current-inputs"
+      ]
+    },
+    {
+      "id": "AI000-C05-L01",
+      "version": 1,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "design-equipment-service",
+            "choose-language-work"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "design-equipment-service",
+            "choose-language-work"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "design-equipment-service",
+            "choose-language-work"
+          ]
+        }
+      ],
+      "sections": [
+        "read-messages",
+        "sort-messages",
+        "find-rules",
+        "compare-conditions",
+        "write-reply",
+        "keep-unknown",
+        "summarize-messages",
+        "task-outputs",
+        "nlp-and-llm",
+        "combine-steps",
+        "equipment-service-task",
+        "choose-language-task",
+        "takeaways"
+      ],
+      "exercises": [
+        "design-equipment-service",
+        "choose-language-work"
+      ]
+    },
+    {
+      "id": "AI000-C05-L02",
+      "version": 1,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "design-visual-outputs",
+            "choose-vision-task"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "design-visual-outputs",
+            "choose-vision-task"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "design-visual-outputs",
+            "choose-vision-task"
+          ]
+        }
+      ],
+      "sections": [
+        "look-at-shelf",
+        "whole-image",
+        "find-each-box",
+        "mark-regions",
+        "regions-and-instances",
+        "check-visual-output",
+        "methods-and-targets",
+        "workbench-task",
+        "choose-vision-task",
+        "takeaways"
+      ],
+      "exercises": [
+        "design-visual-outputs",
+        "choose-vision-task"
+      ]
+    },
+    {
+      "id": "AI000-C05-L03",
+      "version": 1,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "link-lost-property",
+            "analyse-multimodal-services"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "link-lost-property",
+            "analyse-multimodal-services"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "link-lost-property",
+            "analyse-multimodal-services"
+          ]
+        }
+      ],
+      "sections": [
+        "see-exhibits",
+        "join-records",
+        "name-modalities",
+        "input-output",
+        "audio-and-transcript",
+        "check-links",
+        "system-and-model",
+        "lost-property-task",
+        "analyse-services",
+        "takeaways"
+      ],
+      "exercises": [
+        "link-lost-property",
+        "analyse-multimodal-services"
+      ]
+    },
+    {
+      "id": "AI000-C05-L04",
+      "version": 1,
+      "status": "pending-review",
+      "access": "preview",
+      "objectives": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "check-tech-posters",
+            "plan-gallery-voice"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "check-tech-posters",
+            "plan-gallery-voice"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "check-tech-posters",
+            "plan-gallery-voice"
+          ]
+        }
+      ],
+      "sections": [
+        "a-vague-request",
+        "clear-requirements",
+        "compare-posters",
+        "name-constraints",
+        "revise-and-recheck",
+        "generation-in-a-system",
+        "read-the-script",
+        "tech-poster-task",
+        "gallery-voice-task",
+        "takeaways"
+      ],
+      "exercises": [
+        "check-tech-posters",
+        "plan-gallery-voice"
+      ]
+    }
+  ]
+}

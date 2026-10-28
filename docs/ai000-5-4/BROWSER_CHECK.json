@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "widths": [
+    1440,
+    768,
+    390,
+    320
+  ],
+  "posterMinimumFont": 16,
+  "allPostersTextSelectable": true,
+  "noContentOverflow": true,
+  "independentDisclosureTransitions": 8,
+  "isolatedProgress": true,
+  "hashAndFocusRestored": true,
+  "consoleWarningsOrErrors": 0
+}
