@@ -1,0 +1,36 @@
+✔ 货架对象与独立几何预期一致：两个纸箱在上层，框角有背景而内部在纸箱里 (7.4477ms)
+✔ 四次使用完全同一底图；分类只有图级标签，检测两个独立框，语义区域共享类别 (3.6729ms)
+✖ 工作台新题独立位置与轮廓：两帽在对角，其他物品在另两角，不预放答案层 (2.9526ms)
+✔ 图示有可访问说明、HTML标签与非颜色区别；SVG无小号中文图中文字，核心无代码/位图 (9.0981ms)
+✔ 两核心开放题映射三目标，包含任务理由/未知、两级提示和完整自查，反馈默认关闭 (2.9083ms)
+✔ 37旧课全文及清单不变，原14幅图渲染保持；只允许两个旧源码文件的精确扩展 (46.1748ms)
+✔ 5.2独立r1阅读/完成可恢复，不继承或修改37旧课与旧修订记录 (0.668ms)
+✔ 发布门禁与相邻导航一致，5.3–5.5继续规划 (0.188ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1528.5951
+
+✖ failing tests:
+
+test at tests\ai000-vision.test.ts:1:4180
+✖ 工作台新题独立位置与轮廓：两帽在对角，其他物品在另两角，不预放答案层 (2.9526ms)
+  AssertionError [ERR_ASSERTION]: 台账
+      at TestContext.<anonymous> (C:\Users\QYF\Desktop\Aivora-Web\tests\ai000-vision.test.ts:62:119)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

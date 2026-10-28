@@ -1,0 +1,49 @@
+{
+  "checkedAt": "2026-10-28T04:19:10.599Z",
+  "base": "7c1af786dbf5ab5153ef55a8cf931d57bc33a936",
+  "unchangedOldLessons": 37,
+  "unchangedPublications": 37,
+  "protectedFileCount": 221,
+  "preservedPreciseFigures": 14,
+  "publication": {
+    "lessonId": "AI000-C05-L02",
+    "courseId": "AI000",
+    "chapterId": "AI000-C05",
+    "title": "计算机视觉：让机器理解图像",
+    "contentVersion": 1,
+    "order": 2,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "pending-review",
+    "access": "preview",
+    "technicalEvidence": "docs/AI000_LESSON_5_2_REVIEW.md"
+  },
+  "assessmentMap": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "design-visual-outputs",
+        "choose-vision-task"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "design-visual-outputs",
+        "choose-vision-task"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "design-visual-outputs",
+        "choose-vision-task"
+      ]
+    }
+  ],
+  "plannedChapterFive": [
+    "AI000-C05-L03",
+    "AI000-C05-L04",
+    "AI000-C05-L05"
+  ]
+}

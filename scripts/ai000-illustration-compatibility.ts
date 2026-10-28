@@ -3,6 +3,7 @@ import type { Lesson, Publication } from "../src/content/models";
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { ai000Illustrations, illustration } from "../src/content/lessons/ai000/illustrations";
+import { beforeVisionExtension } from "./ai000-vision-compatibility";
 
 // 只反向移除维护清单指定位置、内容完全匹配的新增情境图；不是放行任意image变化。
 export function withoutAi000Illustrations(value: unknown): unknown {
@@ -30,7 +31,7 @@ export function assertIllustrationPublication(before: Publication, after: Public
 // 旧源码只允许新增精确import及已登记调用；撤销后必须命中原SHA。
 // 兼容LF、CRLF及历史末行CRLF组合；不忽略其他空白或内容。
 export function assertIllustrationCompatibleFile(path: string, previousHash: string) {
-  const source = readFileSync(path, "utf8");
+  const source = beforeVisionExtension(path, readFileSync(path, "utf8"));
   const hash = (text: string) => createHash("sha256").update(text).digest("hex");
   const originalLf = source.replaceAll("\r\n", "\n");
   // 场景引用移除后可能已还原到旧源码；仍需全文摘要匹配，只兼容换行组合。

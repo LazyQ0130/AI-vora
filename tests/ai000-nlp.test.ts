@@ -109,14 +109,14 @@ test("新r1独立进度，无旧完成继承，保存/刷新恢复不改旧键�
   for (const [key,value] of oldKeys) assert.equal(memory.get(key), value);
 });
 
-test("清单控制草稿与预览路径，前后导航自动衔接，5.2–5.5没有伪造正文", () => {
+test("清单控制草稿与预览路径，前后导航自动衔接，5.3–5.5没有伪造正文", () => {
   const publication = publicationManifest.find(p => p.lessonId === lesson.id)!, course = getLearningCourse("AI000")!;
   assert.equal(course.status, "planned"); assert.equal(publication.reviewEvidence, undefined);
   assert.equal(Boolean(resolveLesson("AI000", lesson.id)), isReadable(publication));
   if (isReadable(publication)) {
     assert.equal(getAdjacentLessons(course,"AI000-C04-L04").next?.lessonId, lesson.id);
     assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C04-L04");
-    assert.equal(getAdjacentLessons(course,lesson.id).next,undefined);
+    assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C05-L02");
   }
-  for (const slot of course.chapters[4].lessons.slice(1)) { assert.equal(slot.status,"planned"); assert.equal(slot.href,undefined); assert.equal(lessonRegistry.has(slot.lessonId),false); }
+  for (const slot of course.chapters[4].lessons.slice(2)) { assert.equal(slot.status,"planned"); assert.equal(slot.href,undefined); assert.equal(lessonRegistry.has(slot.lessonId),false); }
 });

@@ -6,6 +6,7 @@ import { lessonRegistry, getLearningCourse, getAdjacentLessons, resolveLesson } 
 import { publicationManifest } from "../src/content/publication-manifest";
 import type { Lesson, Publication } from "../src/content/models";
 import { getCourseStudyEstimate } from "../src/lib/course-learning-time";
+import { beforeVisionExtension } from "./ai000-vision-compatibility";
 
 const dir = "docs/ai000-5-1";
 const sha = (bytes: Buffer) => createHash("sha256").update(bytes).digest("hex");
@@ -15,7 +16,7 @@ export type NlpBaseline = { base: string; lessons: Lesson[]; publications: Publi
 export function matchesProtectedDigest(bytes: Buffer, expected: string, path: string) {
   if (sha(bytes) === expected) return true;
   if (!/\.(?:tsx?|css|json|md|py|mjs|ipynb)$/.test(path)) return false;
-  const lf = bytes.toString("utf8").replaceAll("\r\n", "\n");
+  const lf = beforeVisionExtension(path, bytes.toString("utf8")).replaceAll("\r\n", "\n");
   return [lf, lf.replaceAll("\n", "\r\n")].some(text => sha(Buffer.from(text)) === expected);
 }
 // 可供测试读取；仅命令行入口写证据。

@@ -21,7 +21,7 @@ const lesson=lessonRegistry.get("AI000-C03-L02")!;
 const blocks=lesson.sections.flatMap(s=>s.blocks);
 const digest=(v:unknown)=>createHash("sha256").update(visualComparableJson(v)).digest("hex");
 
-test("3.2修订r2，目标真实映射两个去重核心入口，3.1/3.3相邻可读而5.2及后续仍规划",()=>{
+test("3.2修订r2，目标真实映射两个去重核心入口，3.1/3.3相邻可读而5.3及后续仍规划",()=>{
  const course=getLearningCourse("AI000")!;
  assert.equal(lesson.contentVersion,2);
  assert.equal(resolveLesson("AI000",lesson.id)?.publication.status,"pending-review");
@@ -30,7 +30,7 @@ test("3.2修订r2，目标真实映射两个去重核心入口，3.1/3.3相邻�
  assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C03-L01");
  assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C03-L03");
  assert.equal(resolveLesson("PY101",lesson.id),undefined);
- for(const id of ["AI000-C05-L02"]) {
+ for(const id of ["AI000-C05-L03"]) {
   assert.equal(resolveLesson("AI000",id),undefined);assert.equal(lessonRegistry.has(id),false);
  }
  assert.deepEqual(lesson.assessmentMap,[{objective:1,exerciseIds:["propose-groups","identify-learning-signals"]},{objective:2,exerciseIds:["propose-groups"]},{objective:3,exerciseIds:["propose-groups","identify-learning-signals"]}]);

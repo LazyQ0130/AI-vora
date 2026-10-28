@@ -1,0 +1,267 @@
+{
+  "base": "http://127.0.0.1:3017",
+  "initialNewLessonIncomplete": true,
+  "oldLessonRestored": true,
+  "widths": [
+    {
+      "figures": [
+        {
+          "detectors": 0,
+          "kind": "vision-shelf",
+          "masks": 0,
+          "scroll": 254,
+          "svg": 222,
+          "width": 254
+        },
+        {
+          "detectors": 0,
+          "kind": "vision-classification",
+          "masks": 0,
+          "scroll": 254,
+          "svg": 222,
+          "width": 254
+        },
+        {
+          "detectors": 2,
+          "kind": "vision-detection",
+          "masks": 0,
+          "scroll": 254,
+          "svg": 222,
+          "width": 254
+        },
+        {
+          "detectors": 0,
+          "kind": "vision-segmentation",
+          "masks": 2,
+          "scroll": 254,
+          "svg": 222,
+          "width": 254
+        },
+        {
+          "detectors": 0,
+          "kind": "vision-workbench",
+          "masks": 0,
+          "scroll": 254,
+          "svg": 222,
+          "width": 254
+        }
+      ],
+      "page": 305,
+      "viewport": 320
+    },
+    {
+      "figures": [
+        {
+          "detectors": 0,
+          "kind": "vision-shelf",
+          "masks": 0,
+          "scroll": 308,
+          "svg": 276,
+          "width": 308
+        },
+        {
+          "detectors": 0,
+          "kind": "vision-classification",
+          "masks": 0,
+          "scroll": 308,
+          "svg": 276,
+          "width": 308
+        },
+        {
+          "detectors": 2,
+          "kind": "vision-detection",
+          "masks": 0,
+          "scroll": 308,
+          "svg": 276,
+          "width": 308
+        },
+        {
+          "detectors": 0,
+          "kind": "vision-segmentation",
+          "masks": 2,
+          "scroll": 308,
+          "svg": 276,
+          "width": 308
+        },
+        {
+          "detectors": 0,
+          "kind": "vision-workbench",
+          "masks": 0,
+          "scroll": 308,
+          "svg": 276,
+          "width": 308
+        }
+      ],
+      "page": 375,
+      "viewport": 390
+    },
+    {
+      "figures": [
+        {
+          "detectors": 0,
+          "kind": "vision-shelf",
+          "masks": 0,
+          "scroll": 650,
+          "svg": 606,
+          "width": 650
+        },
+        {
+          "detectors": 0,
+          "kind": "vision-classification",
+          "masks": 0,
+          "scroll": 650,
+          "svg": 606,
+          "width": 650
+        },
+        {
+          "detectors": 2,
+          "kind": "vision-detection",
+          "masks": 0,
+          "scroll": 650,
+          "svg": 606,
+          "width": 650
+        },
+        {
+          "detectors": 0,
+          "kind": "vision-segmentation",
+          "masks": 2,
+          "scroll": 650,
+          "svg": 606,
+          "width": 650
+        },
+        {
+          "detectors": 0,
+          "kind": "vision-workbench",
+          "masks": 0,
+          "scroll": 650,
+          "svg": 606,
+          "width": 650
+        }
+      ],
+      "page": 753,
+      "viewport": 768
+    },
+    {
+      "figures": [
+        {
+          "detectors": 0,
+          "kind": "vision-shelf",
+          "masks": 0,
+          "scroll": 722,
+          "svg": 678,
+          "width": 722
+        },
+        {
+          "detectors": 0,
+          "kind": "vision-classification",
+          "masks": 0,
+          "scroll": 722,
+          "svg": 678,
+          "width": 722
+        },
+        {
+          "detectors": 2,
+          "kind": "vision-detection",
+          "masks": 0,
+          "scroll": 722,
+          "svg": 678,
+          "width": 722
+        },
+        {
+          "detectors": 0,
+          "kind": "vision-segmentation",
+          "masks": 2,
+          "scroll": 722,
+          "svg": 678,
+          "width": 722
+        },
+        {
+          "detectors": 0,
+          "kind": "vision-workbench",
+          "masks": 0,
+          "scroll": 722,
+          "svg": 678,
+          "width": 722
+        }
+      ],
+      "page": 1425,
+      "viewport": 1440
+    }
+  ],
+  "drawer320": {
+    "goalCount": 3,
+    "exerciseCount": 2,
+    "sections": 10,
+    "enterHash": "#exercise-design-visual-outputs",
+    "focusTag": "H3",
+    "closesAfterLink": true
+  },
+  "exerciseChecks": [
+    {
+      "name": "交一份能对照新图检查的视觉任务单",
+      "states": [
+        [
+          true,
+          false,
+          false
+        ],
+        [
+          true,
+          true,
+          false
+        ],
+        [
+          true,
+          true,
+          true
+        ]
+      ]
+    },
+    {
+      "name": "说明为什么需要这种输出，再给核查办法",
+      "states": [
+        [
+          true,
+          false,
+          false
+        ],
+        [
+          true,
+          true,
+          false
+        ],
+        [
+          true,
+          true,
+          true
+        ]
+      ]
+    }
+  ],
+  "refresh": {
+    "hash": "http://127.0.0.1:3017/learn/AI000/AI000-C05-L02#exercise-choose-vision-task",
+    "inputsCleared": true,
+    "feedbackClosed": true,
+    "notCompleted": true
+  },
+  "completedRefresh": true,
+  "drawer390": {
+    "closed": true,
+    "focus": "本节导航"
+  },
+  "drawer768": {
+    "closed": true,
+    "focus": "本节导航"
+  },
+  "console": [],
+  "progressFinal": {
+    "result": {
+      "type": "string",
+      "value": "{\"aivora:learning:v2:AI000:AI000-C05-L02:r1\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"AI000\\\",\\\"lessonId\\\":\\\"AI000-C05-L02\\\",\\\"contentVersion\\\":1,\\\"percent\\\":100,\\\"completed\\\":true,\\\"section\\\":\\\"check-visual-output\\\",\\\"updatedAt\\\":1793161319328}\",\"aivora:learning:v2:AI000:AI000-C05-L01:r1\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"AI000\\\",\\\"lessonId\\\":\\\"AI000-C05-L01\\\",\\\"contentVersion\\\":1,\\\"percent\\\":100,\\\"completed\\\":true,\\\"section\\\":\\\"takeaways\\\",\\\"updatedAt\\\":1793161209161}\"}"
+    }
+  },
+  "resumeLink": {
+    "hash": "http://127.0.0.1:3017/learn/AI000/AI000-C05-L02#methods-and-targets",
+    "works": true
+  }
+}
