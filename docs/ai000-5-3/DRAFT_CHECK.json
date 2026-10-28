@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-10-28T04:44:47.127Z",
+  "base": "9131ae89b4b0810b6d429a4ebde7474bec40171d",
+  "unchangedOldLessons": 38,
+  "unchangedPublications": 38,
+  "protectedFileCount": 224,
+  "preservedPreciseFigures": 19,
+  "publication": {
+    "lessonId": "AI000-C05-L03",
+    "courseId": "AI000",
+    "chapterId": "AI000-C05",
+    "title": "多模态 AI：连接文字、图片与声音",
+    "contentVersion": 1,
+    "order": 3,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "draft",
+    "access": "private"
+  },
+  "assessmentMap": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "link-lost-property",
+        "analyse-multimodal-services"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "link-lost-property",
+        "analyse-multimodal-services"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "link-lost-property",
+        "analyse-multimodal-services"
+      ]
+    }
+  ],
+  "plannedChapterFive": [
+    "AI000-C05-L04",
+    "AI000-C05-L05"
+  ]
+}

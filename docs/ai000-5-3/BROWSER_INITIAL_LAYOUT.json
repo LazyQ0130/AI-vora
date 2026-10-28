@@ -1,0 +1,98 @@
+{
+  "width390": {
+    "client": 375,
+    "figures": [
+      {
+        "client": 308,
+        "kind": "multimodal-exhibits",
+        "photos": [
+          {
+            "id": "A",
+            "label": "图片 A",
+            "left": 49.33333587646485,
+            "svg": 250.6666717529297,
+            "top": -5034.52099609375,
+            "width": 276
+          },
+          {
+            "id": "B",
+            "label": "图片 B",
+            "left": 49.33333587646485,
+            "svg": 250.6666717529297,
+            "top": -4771.98974609375,
+            "width": 276
+          }
+        ],
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "kind": "multimodal-lost-property",
+        "photos": [
+          {
+            "id": "P7",
+            "label": "原图 P7",
+            "left": 49.33333587646485,
+            "svg": 250.6666717529297,
+            "top": 2927.42724609375,
+            "width": 276
+          },
+          {
+            "id": "P8",
+            "label": "原图 P8",
+            "left": 49.33333587646485,
+            "svg": 250.6666717529297,
+            "top": 3189.95849609375,
+            "width": 276
+          }
+        ],
+        "scroll": 308
+      }
+    ],
+    "page": 375,
+    "paragraphFont": "16px",
+    "tables": [
+      {
+        "caption": "题设中的展品登记",
+        "client": 308,
+        "scroll": 320
+      },
+      {
+        "caption": "把一句答案拆开，分别找依据",
+        "client": 308,
+        "scroll": 308
+      },
+      {
+        "caption": "先分输入与输出，再看信息怎样参与任务",
+        "client": 308,
+        "scroll": 308
+      },
+      {
+        "caption": "缺什么、错在哪里，就补查哪里",
+        "client": 308,
+        "scroll": 308
+      },
+      {
+        "caption": "本题登记：已核对的原图关联，行序与图序不同",
+        "client": 308,
+        "scroll": 308
+      },
+      {
+        "caption": "四份需求及已知条件",
+        "client": 308,
+        "scroll": 308
+      }
+    ],
+    "viewport": 390
+  },
+  "table320": {
+    "client": 254,
+    "columns": [
+      "编号",
+      "登记名称",
+      "登记材料",
+      "展厅"
+    ],
+    "scroll": 320
+  }
+}

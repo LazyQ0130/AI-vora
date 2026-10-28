@@ -1,0 +1,5 @@
+
+> aivora-web@0.1.0 test:python
+> tsx scripts/validate-python.ts
+
+Python 单元测试通过，40 个网页代码块全部实际执行通过，11 组核心/完整版一致。证据：docs\ai000-5-3\TEACHING_V2_3_PYTHON_RESULTS.json

@@ -1,0 +1,14 @@
+[
+  {
+    "lessonId": "AI000-C05-L02",
+    "status": 200
+  },
+  {
+    "lessonId": "AI000-C05-L03",
+    "status": 404
+  },
+  {
+    "lessonId": "AI000-C05-L04",
+    "status": 404
+  }
+]

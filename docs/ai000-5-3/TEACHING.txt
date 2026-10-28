@@ -1,0 +1,5 @@
+
+> aivora-web@0.1.0 review:teaching
+> tsx scripts/review-teaching.ts
+
+39 节教材的目标映射、时间估计与分层代码清单已输出

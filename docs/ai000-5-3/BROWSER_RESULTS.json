@@ -1,0 +1,462 @@
+{
+  "base": "http://127.0.0.1:3018",
+  "continuousNavigation": [
+    "5.1",
+    "5.2",
+    "5.3"
+  ],
+  "old52Restored": true,
+  "new53InitiallyIncomplete": true,
+  "widths": [
+    {
+      "client": 305,
+      "figures": [
+        {
+          "client": 254,
+          "kind": "multimodal-exhibits",
+          "photos": [
+            {
+              "id": "A",
+              "label": "图片 A",
+              "left": 41.33333587646485,
+              "svg": 196.6666717529297,
+              "top": -880.7469482421875,
+              "width": 222
+            },
+            {
+              "id": "B",
+              "label": "图片 B",
+              "left": 41.33333587646485,
+              "svg": 196.6666717529297,
+              "top": -658.7156982421875,
+              "width": 222
+            }
+          ],
+          "scroll": 254
+        },
+        {
+          "client": 254,
+          "kind": "multimodal-lost-property",
+          "photos": [
+            {
+              "id": "P7",
+              "label": "原图 P7",
+              "left": 41.33333587646485,
+              "svg": 196.6666717529297,
+              "top": 8440.3994140625,
+              "width": 222
+            },
+            {
+              "id": "P8",
+              "label": "原图 P8",
+              "left": 41.33333587646485,
+              "svg": 196.6666717529297,
+              "top": 8662.4306640625,
+              "width": 222
+            }
+          ],
+          "scroll": 254
+        }
+      ],
+      "page": 305,
+      "paragraphFont": "16px",
+      "tables": [
+        {
+          "caption": "题设中的展品登记",
+          "client": 254,
+          "scroll": 254
+        },
+        {
+          "caption": "把一句答案拆开，分别找依据",
+          "client": 254,
+          "scroll": 254
+        },
+        {
+          "caption": "先分输入与输出，再看信息怎样参与任务",
+          "client": 254,
+          "scroll": 254
+        },
+        {
+          "caption": "缺什么、错在哪里，就补查哪里",
+          "client": 254,
+          "scroll": 254
+        },
+        {
+          "caption": "本题登记：已核对的原图关联，行序与图序不同",
+          "client": 254,
+          "scroll": 254
+        },
+        {
+          "caption": "四份需求及已知条件",
+          "client": 254,
+          "scroll": 254
+        }
+      ],
+      "viewport": 320
+    },
+    {
+      "client": 375,
+      "figures": [
+        {
+          "client": 308,
+          "kind": "multimodal-exhibits",
+          "photos": [
+            {
+              "id": "A",
+              "label": "图片 A",
+              "left": 49.33333587646485,
+              "svg": 250.6666717529297,
+              "top": -1080.5208740234375,
+              "width": 276
+            },
+            {
+              "id": "B",
+              "label": "图片 B",
+              "left": 49.33333587646485,
+              "svg": 250.6666717529297,
+              "top": -817.9896240234375,
+              "width": 276
+            }
+          ],
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "kind": "multimodal-lost-property",
+          "photos": [
+            {
+              "id": "P7",
+              "label": "原图 P7",
+              "left": 49.33333587646485,
+              "svg": 250.6666717529297,
+              "top": 6951.20849609375,
+              "width": 276
+            },
+            {
+              "id": "P8",
+              "label": "原图 P8",
+              "left": 49.33333587646485,
+              "svg": 250.6666717529297,
+              "top": 7213.73974609375,
+              "width": 276
+            }
+          ],
+          "scroll": 308
+        }
+      ],
+      "page": 375,
+      "paragraphFont": "16px",
+      "tables": [
+        {
+          "caption": "题设中的展品登记",
+          "client": 308,
+          "scroll": 308
+        },
+        {
+          "caption": "把一句答案拆开，分别找依据",
+          "client": 308,
+          "scroll": 308
+        },
+        {
+          "caption": "先分输入与输出，再看信息怎样参与任务",
+          "client": 308,
+          "scroll": 308
+        },
+        {
+          "caption": "缺什么、错在哪里，就补查哪里",
+          "client": 308,
+          "scroll": 308
+        },
+        {
+          "caption": "本题登记：已核对的原图关联，行序与图序不同",
+          "client": 308,
+          "scroll": 308
+        },
+        {
+          "caption": "四份需求及已知条件",
+          "client": 308,
+          "scroll": 308
+        }
+      ],
+      "viewport": 390
+    },
+    {
+      "client": 753,
+      "figures": [
+        {
+          "client": 650,
+          "kind": "multimodal-exhibits",
+          "photos": [
+            {
+              "id": "A",
+              "label": "图片 A",
+              "left": 73.33333587646484,
+              "svg": 269.66668701171875,
+              "top": -7987.21875,
+              "width": 295
+            },
+            {
+              "id": "B",
+              "label": "图片 B",
+              "left": 384.3333435058594,
+              "svg": 269.66668701171875,
+              "top": -7987.21875,
+              "width": 295
+            }
+          ],
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "kind": "multimodal-lost-property",
+          "photos": [
+            {
+              "id": "P7",
+              "label": "原图 P7",
+              "left": 73.33333587646484,
+              "svg": 269.66668701171875,
+              "top": -2577.947998046875,
+              "width": 295
+            },
+            {
+              "id": "P8",
+              "label": "原图 P8",
+              "left": 384.3333435058594,
+              "svg": 269.66668701171875,
+              "top": -2577.947998046875,
+              "width": 295
+            }
+          ],
+          "scroll": 650
+        }
+      ],
+      "page": 753,
+      "paragraphFont": "16px",
+      "tables": [
+        {
+          "caption": "题设中的展品登记",
+          "client": 650,
+          "scroll": 650
+        },
+        {
+          "caption": "把一句答案拆开，分别找依据",
+          "client": 650,
+          "scroll": 650
+        },
+        {
+          "caption": "先分输入与输出，再看信息怎样参与任务",
+          "client": 650,
+          "scroll": 650
+        },
+        {
+          "caption": "缺什么、错在哪里，就补查哪里",
+          "client": 650,
+          "scroll": 650
+        },
+        {
+          "caption": "本题登记：已核对的原图关联，行序与图序不同",
+          "client": 650,
+          "scroll": 650
+        },
+        {
+          "caption": "四份需求及已知条件",
+          "client": 650,
+          "scroll": 650
+        }
+      ],
+      "viewport": 768
+    },
+    {
+      "client": 1425,
+      "figures": [
+        {
+          "client": 722,
+          "kind": "multimodal-exhibits",
+          "photos": [
+            {
+              "id": "A",
+              "label": "图片 A",
+              "left": 341.3333435058594,
+              "svg": 305.66668701171875,
+              "top": -4253.95849609375,
+              "width": 331
+            },
+            {
+              "id": "B",
+              "label": "图片 B",
+              "left": 688.3333740234375,
+              "svg": 305.66668701171875,
+              "top": -4253.95849609375,
+              "width": 331
+            }
+          ],
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "kind": "multimodal-lost-property",
+          "photos": [
+            {
+              "id": "P7",
+              "label": "原图 P7",
+              "left": 341.3333435058594,
+              "svg": 305.66668701171875,
+              "top": 937.125,
+              "width": 331
+            },
+            {
+              "id": "P8",
+              "label": "原图 P8",
+              "left": 688.3333740234375,
+              "svg": 305.66668701171875,
+              "top": 937.125,
+              "width": 331
+            }
+          ],
+          "scroll": 722
+        }
+      ],
+      "page": 1425,
+      "paragraphFont": "16px",
+      "tables": [
+        {
+          "caption": "题设中的展品登记",
+          "client": 722,
+          "scroll": 722
+        },
+        {
+          "caption": "把一句答案拆开，分别找依据",
+          "client": 722,
+          "scroll": 722
+        },
+        {
+          "caption": "先分输入与输出，再看信息怎样参与任务",
+          "client": 722,
+          "scroll": 722
+        },
+        {
+          "caption": "缺什么、错在哪里，就补查哪里",
+          "client": 722,
+          "scroll": 722
+        },
+        {
+          "caption": "本题登记：已核对的原图关联，行序与图序不同",
+          "client": 722,
+          "scroll": 722
+        },
+        {
+          "caption": "四份需求及已知条件",
+          "client": 722,
+          "scroll": 722
+        }
+      ],
+      "viewport": 1440
+    }
+  ],
+  "drawer768": {
+    "closed": true,
+    "focus": "本节导航"
+  },
+  "drawer390": {
+    "closed": true,
+    "focus": "本节导航"
+  },
+  "firstExerciseNavigation": {
+    "dialog": false,
+    "focus": "交一份有来源、保留缺口的领物答复",
+    "hash": "#exercise-link-lost-property",
+    "tag": "H3"
+  },
+  "exerciseChecks": [
+    {
+      "name": "交一份有来源、保留缺口的领物答复",
+      "states": [
+        [
+          true,
+          false,
+          false
+        ],
+        [
+          true,
+          true,
+          false
+        ],
+        [
+          true,
+          true,
+          true
+        ]
+      ],
+      "stillIncomplete": true
+    },
+    {
+      "name": "写清输入、输出、步骤与尚缺的证据",
+      "states": [
+        [
+          true,
+          false,
+          false
+        ],
+        [
+          true,
+          true,
+          false
+        ],
+        [
+          true,
+          true,
+          true
+        ]
+      ],
+      "stillIncomplete": true
+    }
+  ],
+  "chapterEscape320": {
+    "closed": true,
+    "focus": "章节目录"
+  },
+  "secondExerciseNavigation": {
+    "dialog": false,
+    "focus": "写清输入、输出、步骤与尚缺的证据",
+    "hash": "#exercise-analyse-multimodal-services",
+    "tag": "H3"
+  },
+  "refresh": {
+    "exercises": [
+      {
+        "id": "exercise-link-lost-property",
+        "input": "",
+        "open": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "id": "exercise-analyse-multimodal-services",
+        "input": "",
+        "open": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "focus": "写清输入、输出、步骤与尚缺的证据",
+    "hash": "#exercise-analyse-multimodal-services",
+    "tag": "H3"
+  },
+  "resume": {
+    "focus": "四份新需求，各步骤实际拿到了什么？",
+    "hash": "#analyse-services",
+    "tag": "H2"
+  },
+  "completedRefresh": true,
+  "progressFinal": {
+    "result": {
+      "type": "string",
+      "value": "{\"aivora:learning:v2:AI000:AI000-C05-L02:r1\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"AI000\\\",\\\"lessonId\\\":\\\"AI000-C05-L02\\\",\\\"contentVersion\\\":1,\\\"percent\\\":100,\\\"completed\\\":true,\\\"section\\\":\\\"takeaways\\\",\\\"updatedAt\\\":1793162899565}\",\"aivora:learning:v2:AI000:AI000-C05-L03:r1\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"AI000\\\",\\\"lessonId\\\":\\\"AI000-C05-L03\\\",\\\"contentVersion\\\":1,\\\"percent\\\":100,\\\"completed\\\":true,\\\"section\\\":\\\"takeaways\\\",\\\"updatedAt\\\":1793163151497}\",\"aivora:learning:v2:AI000:AI000-C05-L01:r1\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"AI000\\\",\\\"lessonId\\\":\\\"AI000-C05-L01\\\",\\\"contentVersion\\\":1,\\\"percent\\\":100,\\\"completed\\\":false,\\\"section\\\":\\\"takeaways\\\",\\\"updatedAt\\\":1793162894318}\"}"
+    }
+  },
+  "console": []
+}
