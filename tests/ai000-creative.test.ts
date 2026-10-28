@@ -1,3 +1,4 @@
+import { qualityComparableJson, beforeQualityRevision } from "../scripts/ai000-quality-compatibility";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -92,8 +93,8 @@ test("三目标真实映射两道核心题，各有完整反馈；候选原生�
 });
 
 test("39旧课全文/清单与227保护文件保持，21幅原图渲染不变，精确逆变换仍拒绝其他修改", () => {
-  for (const old of before.lessons) assert.equal(JSON.stringify(lessonRegistry.get(old.id)), JSON.stringify(old), old.id);
-  for (const old of before.publications) assert.deepEqual(publicationManifest.find(p => p.lessonId === old.lessonId), old);
+  for (const old of before.lessons) assert.equal(qualityComparableJson(lessonRegistry.get(old.id)), JSON.stringify(old), old.id);
+  for (const old of before.publications) assert.deepEqual(beforeQualityRevision(publicationManifest.find(p => p.lessonId === old.lessonId)), old);
   for (const f of before.protectedFiles) assert.ok(matchesProtectedDigest(readFileSync(f.path), f.sha256, f.path), f.path);
   let count = 0;
   for (const old of before.lessons.filter(l => l.courseId === "AI000")) for (const b of old.sections.flatMap(s => s.blocks).filter(b => b.type === "ai-task-figure")) {

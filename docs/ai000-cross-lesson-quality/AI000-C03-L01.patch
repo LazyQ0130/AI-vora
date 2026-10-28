@@ -1,0 +1,13 @@
+diff --git a/src/content/lessons/ai000/supervised-learning.ts b/src/content/lessons/ai000/supervised-learning.ts
+index 4aa156c..0fd0832 100644
+--- a/src/content/lessons/ai000/supervised-learning.ts
++++ b/src/content/lessons/ai000/supervised-learning.ts
+@@ -34 +34 @@ export const supervisedLearningLesson = lessonSchema.parse({
+-      p("上一章我们知道，机器学习可以利用已有数据形成模型。但如果想让电脑判断一个包裹是纸箱还是文件袋，仅仅交给它一批照片，是否已经把任务说清楚了？"),
++      p("前面我们用邮件理解了从例子形成判断办法的思路。现在换成包裹照片，看看输入变成图片时，还要为学习准备什么。只有一批照片，就能让电脑学会区分纸箱和文件袋吗？"),
+@@ -84 +84 @@ export const supervisedLearningLesson = lessonSchema.parse({
+-        hints: ["先选工作人员能够核实的类别，再为每个例子把照片信息与已确认类别配成一对。想想核对答案是否要另查资料。", "可以用文学/科普/其他三类。封面照片是输入，查书的内容或核实过的馆藏记录得到类别；新照片先交给模型，类别建议与核实结果分开写。"],
++        hints: ["先选工作人员能够核实的类别，再为每个例子把照片信息与已确认类别配成一对。想想核对答案是否要另查资料。", "先完成你自拟的一条样本，检查照片中可见的信息与确认类别用的资料是否被混写。然后把它改成一条还没有核实结果的新记录：哪些内容仍能交给模型，哪些要等工作人员检查？"],
+@@ -95 +95 @@ export const supervisedLearningLesson = lessonSchema.parse({
+-        hints: ["把“有输入”“有明确目标”“两者能否对应”分别检查。缺少目标时可以准备目标，不用先猜另一种学习算法。", "丙的分钟数是数值目标，新单发出时还不知道实际耗时。乙可先定类别并核实标签；丁需要具体输入输出和已知目标来源/学习说明。"],
++        hints: ["把“有输入”“有明确目标”“两者能否对应”分别检查。缺少目标时可以准备目标，不用先猜另一种学习算法。", "先逐项写出一条记录的形式，给尚缺的部分留空。再把预测时刻与目标取得时刻画在一条时间线上：你拟定的输入能在预测之前得到吗？补数据方案应填哪一个空格？"],

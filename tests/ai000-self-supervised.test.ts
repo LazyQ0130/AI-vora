@@ -75,7 +75,8 @@ test("精确兼容：3.1仅状态句、3.2仅首题/版本/状态句，其他28�
   else if(old.id==="AI000-C03-L02") assertExerciseRevision32(old,after);
   else assert.deepEqual(JSON.parse(visualComparableJson(after)),old,old.id);
   assert.deepEqual(after.sections.map(s=>s.id),old.sections.map(s=>s.id));
-  assert.deepEqual(after.sections.flatMap(s=>s.blocks).filter(b=>b.type==="exercise").map(b=>b.id),old.sections.flatMap(s=>s.blocks).filter(b=>b.type==="exercise").map(b=>b.id));
+  const oldExerciseIds=old.sections.flatMap(s=>s.blocks).filter(b=>b.type==="exercise").map(b=>b.id);
+  assert.deepEqual(after.sections.flatMap(s=>s.blocks).filter(b=>b.type==="exercise").map(b=>b.id),old.id==="AI000-C01-L02"?["compare-service-tasks",...oldExerciseIds]:oldExerciseIds);
  }
  for(const old of before.publications) assertPublicationRefinement(old,publicationManifest.find(p=>p.lessonId===old.lessonId)!);
  for(const file of before.protectedFiles) {

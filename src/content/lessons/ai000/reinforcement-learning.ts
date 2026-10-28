@@ -79,7 +79,7 @@ export const reinforcementLearningLesson=lessonSchema.parse({
   ]},
   {id:"watering-task",title:"换成浇水，自己追踪每一步",navGroup:"practice",navLabel:"独立练习",blocks:[
    p("下面换到一个虚构的温室模拟器。控制程序要浇完A、B两块地，每块需要1单位水。开始水箱只有1单位；“补满”会把剩余水量变成2单位。可选动作是补满、浇一块尚未完成的地或等待。水箱无水时仍发出浇水动作，该地保持未完成。两块都完成就结束，环境设定在两次记录中相同。"),
-   p(`规则是：首次浇完一块地得${signedReward(wateringRewards.firstBed)}分，仅一次；水箱无水仍尝试浇另一块，记${signedReward(wateringRewards.dryAttempt)}分；两块均完成时得${signedReward(wateringRewards.completed)}分；补水或等待为0。本题是模拟记录，没有在设备上执行无水尝试。`),
+   p(`规则是：在每次完整的浇水任务中，第一次成功浇完任意一块地时奖励${signedReward(wateringRewards.firstBed)}分。这项奖励只发一次，另一块地随后完成时不重复获得；两块全部完成时另外奖励${signedReward(wateringRewards.completed)}分。水箱无水仍尝试浇另一块，记${signedReward(wateringRewards.dryAttempt)}分；补水或等待为0。本题是模拟记录，没有在设备上执行无水尝试。`),
    ...wateringRecords.map(r=>({type:"table" as const,caption:`过程：${r.id}（事后记录）`,columns:["实际动作","行动后的新情况","本步奖励"],rows:r.steps.map(s=>[s.action,s.after,signedReward(s.reward)])})),
    {type:"exercise",id:"trace-watering",title:"先浇水还是先补水，差别出现在哪一步？",kind:"迁移",
     prompt:"用本题上方的规则和两条记录完成分析。先指出智能体与环境，把开始时的观察、可选动作及第一步后的新情况分开写，再追踪后面的水量与任务变化。分别计算两段累计奖励，解释第一步得分较高的一段为什么整体未必更好。最后说明奖励为什么没有直接给出每步正确动作，并写出至少一项这些记录无法确定的信息。可用逐步表格或连贯文字，不需公式或代码。",

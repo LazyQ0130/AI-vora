@@ -1,0 +1,426 @@
+{
+  "checkedAt": "2026-10-28T08:53:12.508Z",
+  "environment": "3.14.2\nNumPy 2.5.2",
+  "unittest": {
+    "exitCode": 0,
+    "stdout": "initial MSE=17.000000\nfirst w=1.300, b=0.800, MSE=1.685000\nfinal w=2.000000, b=1.000000, MSE=0.0000000000\nw=2.000000, b=1.000000, MSE=0.00000000\nw=2.000000, b=1.000000, MSE=0.00000000\n6.0 13 5.0\nkeyword-only: TypeError (expected)\n['A'] ['B'] ['start', 'next'] ['start']\nshared default: ['A', 'B']\nshape mismatch: ValueError (expected)\nsum: [4 3] scaled: [2 4] dot: 5\nA @ B:\n [[4 6]\n [1 3]] \nB @ A:\n [[2 4]\n [1 5]]\nA * B:\n [[2 0]\n [0 3]] \nM @ N:\n [[4 5]\n [2 3]]\n6.0 13 5.0\nkeyword-only: TypeError (expected)\n['A'] ['B'] ['start', 'next'] ['start']\nshared default: ['A', 'B']\nshape mismatch: ValueError (expected)\nsum: [4 3] scaled: [2 4] dot: 5\nA @ B:\n [[4 6]\n [1 3]] \nB @ A:\n [[2 4]\n [1 5]]\nA * B:\n [[2 0]\n [0 3]] \nM @ N:\n [[4 5]\n [2 3]]\n6.0 13 5.0\nkeyword-only: TypeError (expected)\n['A'] ['B'] ['start', 'next'] ['start']\nshared default: ['A', 'B']",
+    "stderr": "test_addition_hand_exercises_and_units (test_math_v2_2.VectorLessonTests.test_addition_hand_exercises_and_units) ... ok\ntest_displacement_and_translation (test_math_v2_2.VectorLessonTests.test_displacement_and_translation) ... ok\ntest_one_scalar_and_distributivity (test_math_v2_2.VectorLessonTests.test_one_scalar_and_distributivity) ... ok\ntest_scalar_values_and_geometry (test_math_v2_2.VectorLessonTests.test_scalar_values_and_geometry) ... ok\ntest_complete_program_oracle_and_input_rejection (test_ml_v2.TeachingV2Tests.test_complete_program_oracle_and_input_rejection) ... ok\ntest_gradient_finite_difference (test_ml_v2.TeachingV2Tests.test_gradient_finite_difference) ... ok\ntest_hand_update_and_wrong_variants (test_ml_v2.TeachingV2Tests.test_hand_update_and_wrong_variants) ... ok\ntest_losses_exact (test_ml_v2.TeachingV2Tests.test_losses_exact) ... ok\ntest_new_downloads_match_notebooks (test_ml_v2.TeachingV2Tests.test_new_downloads_match_notebooks) ... ok\ntest_rate_experiment_fixed_budget (test_ml_v2.TeachingV2Tests.test_rate_experiment_fixed_budget) ... ok\ntest_scalar_direction (test_ml_v2.TeachingV2Tests.test_scalar_direction) ... ok\ntest_gradient_finite_difference (test_sample.SampleTests.test_gradient_finite_difference) ... ok\ntest_script_and_notebook (test_sample.SampleTests.test_script_and_notebook) ... ok\ntest_defaults_and_mutation_contract (test_teaching_samples.TeachingSampleTests.test_defaults_and_mutation_contract) ... ok\ntest_matrix_values_and_shapes (test_teaching_samples.TeachingSampleTests.test_matrix_values_and_shapes) ... ok\ntest_new_notebooks_execute_and_match_scripts (test_teaching_samples.TeachingSampleTests.test_new_notebooks_execute_and_match_scripts) ... ok\ntest_python_binding_and_return (test_teaching_samples.TeachingSampleTests.test_python_binding_and_return) ... ok\ntest_figure_numbers_and_downloads (test_teaching_v2_1.TeachingV21Tests.test_figure_numbers_and_downloads) ... ok\ntest_functions_on_unseen_inputs (test_teaching_v2_1.TeachingV21Tests.test_functions_on_unseen_inputs) ... ok\ntest_new_gradient_and_update_examples (test_teaching_v2_1.TeachingV21Tests.test_new_gradient_and_update_examples) ... ok\ntest_new_hand_exercises (test_teaching_v2_1.TeachingV21Tests.test_new_hand_exercises) ... ok\ntest_added_calculations_and_unit_conversion (test_teaching_v2_3.EditingMathTests.test_added_calculations_and_unit_conversion) ... ok\ntest_components_dimensions_and_directions (test_teaching_v2_3.EditingMathTests.test_components_dimensions_and_directions) ... ok\ntest_explicit_ordered_ratio_and_similar_triangle (test_teaching_v2_3.EditingMathTests.test_explicit_ordered_ratio_and_similar_triangle) ... ok\ntest_scaling_error_analysis_and_new_length_answer (test_teaching_v2_3.EditingMathTests.test_scaling_error_analysis_and_new_length_answer) ... ok\n\n----------------------------------------------------------------------\nRan 25 tests in 0.484s\n\nOK"
+  },
+  "examples": [
+    {
+      "lessonId": "MA101-C02-L04",
+      "sectionId": "code",
+      "filename": "read_vector_components.py",
+      "expected": "4 0 7",
+      "exitCode": 0,
+      "stdout": "4 0 7",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C02-L05",
+      "sectionId": "code",
+      "filename": "add_two_vectors.py",
+      "expected": "[2, 3]",
+      "exitCode": 0,
+      "stdout": "[2, 3]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C02-L06",
+      "sectionId": "code",
+      "filename": "scale_vector.py",
+      "expected": "[-6, -4]",
+      "exitCode": 0,
+      "stdout": "[-6, -4]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C03-L01",
+      "sectionId": "practice",
+      "filename": "calibration_pairs.py",
+      "exitCode": 0,
+      "stdout": "1 0.0 1.0\n2 1.0 3.0\n3 2.0 5.0",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C03-L02",
+      "sectionId": "code",
+      "filename": "linear_prediction.py",
+      "exitCode": 0,
+      "stdout": "[1.0, 3.0, 5.0]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C03-L03",
+      "sectionId": "code",
+      "filename": "ml_losses.py",
+      "exitCode": 0,
+      "stdout": "errors: [1.0, -1.0, -3.0]\nMAE=1.666667, MSE=3.666667",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L02",
+      "sectionId": "code",
+      "filename": "scalar_descent.py",
+      "exitCode": 0,
+      "stdout": "0.1 0.4 2.56\n1.2 4.8 7.84",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L03",
+      "sectionId": "practice",
+      "filename": "mse_gradients.py",
+      "exitCode": 0,
+      "stdout": "-13.0 -8.0",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L04",
+      "sectionId": "code",
+      "filename": "one_update.py",
+      "expected": "-13.0 -8.0 1.3 0.8 1.685",
+      "exitCode": 0,
+      "stdout": "-13.0 -8.0 1.3 0.8 1.685",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L04",
+      "sectionId": "verification",
+      "filename": "one_update_checks.py",
+      "expected": "-13.0 -8.0 1.3 0.8 1.685",
+      "exitCode": 0,
+      "stdout": "-13.0 -8.0 1.3 0.8 1.685",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L05",
+      "sectionId": "environment",
+      "filename": "predict_arrays.py",
+      "exitCode": 0,
+      "stdout": "(2,) [0. 0.] [-3. -5.]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L05",
+      "sectionId": "training",
+      "filename": "train_core.py",
+      "exitCode": 0,
+      "stdout": "first w=1.300, b=0.800\nfinal w=2.000000, b=1.000000, MSE=0.0000000000",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L05",
+      "sectionId": "full-code",
+      "filename": "ml_gradient_descent.py",
+      "exitCode": 0,
+      "stdout": "initial MSE=17.000000\nfirst w=1.300, b=0.800, MSE=1.685000\nfinal w=2.000000, b=1.000000, MSE=0.0000000000",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L05",
+      "sectionId": "experiment",
+      "filename": "compare_rates.py",
+      "exitCode": 0,
+      "stdout": "rate=0.01, w=1.921161, b=1.127561, MSE=0.00164044\nrate=0.10, w=1.994416, b=1.009035, MSE=0.00000823",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L01",
+      "sectionId": "code",
+      "filename": "linear_regression.py",
+      "exitCode": 0,
+      "stdout": "w=2.000000, b=1.000000, MSE=0.00000000",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L01",
+      "sectionId": "concept",
+      "filename": "double_without_function.py",
+      "expected": "6",
+      "exitCode": 0,
+      "stdout": "6",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L01",
+      "sectionId": "concept",
+      "filename": "double_definition.py",
+      "expected": "",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L01",
+      "sectionId": "code",
+      "filename": "function_basics.py",
+      "exitCode": 0,
+      "stdout": "6",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L01",
+      "sectionId": "verification",
+      "filename": "function_basics.py",
+      "exitCode": 0,
+      "stdout": "6",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L02",
+      "sectionId": "code",
+      "filename": "function_binding.py",
+      "exitCode": 0,
+      "stdout": "12\n12",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L02",
+      "sectionId": "verification",
+      "filename": "function_binding.py",
+      "exitCode": 0,
+      "stdout": "12\n12",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L03",
+      "sectionId": "code",
+      "filename": "function_return.py",
+      "exitCode": 0,
+      "stdout": "4\n4 None",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L03",
+      "sectionId": "verification",
+      "filename": "function_return.py",
+      "exitCode": 0,
+      "stdout": "4\n4 None",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L04",
+      "sectionId": "code",
+      "filename": "function_scope.py",
+      "exitCode": 0,
+      "stdout": "5\n10",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L04",
+      "sectionId": "verification",
+      "filename": "function_scope.py",
+      "exitCode": 0,
+      "stdout": "5\n10",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L05",
+      "sectionId": "code",
+      "filename": "function_defaults.py",
+      "exitCode": 0,
+      "stdout": "6\n12",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L05",
+      "sectionId": "verification",
+      "filename": "function_defaults.py",
+      "exitCode": 0,
+      "stdout": "6\n12",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C02-L01",
+      "sectionId": "code",
+      "filename": "vector_basics.py",
+      "exitCode": 0,
+      "stdout": "[4, 3] [2, 4]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C02-L01",
+      "sectionId": "verification",
+      "filename": "vector_basics.py",
+      "exitCode": 0,
+      "stdout": "[4, 3] [2, 4]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C02-L02",
+      "sectionId": "code",
+      "filename": "vector_dot.py",
+      "exitCode": 0,
+      "stdout": "5",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C02-L02",
+      "sectionId": "verification",
+      "filename": "vector_dot.py",
+      "exitCode": 0,
+      "stdout": "5",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C03-L01",
+      "sectionId": "code",
+      "filename": "matrix_shape.py",
+      "exitCode": 0,
+      "stdout": "[[1, 4], [2, 5], [3, 6]]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C03-L01",
+      "sectionId": "verification",
+      "filename": "matrix_shape.py",
+      "exitCode": 0,
+      "stdout": "[[1, 4], [2, 5], [3, 6]]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C03-L02",
+      "sectionId": "code",
+      "filename": "matrix_product.py",
+      "exitCode": 0,
+      "stdout": "[[4 6]\n [1 3]]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C03-L02",
+      "sectionId": "verification",
+      "filename": "matrix_product.py",
+      "exitCode": 0,
+      "stdout": "[[4 6]\n [1 3]]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C03-L03",
+      "sectionId": "code",
+      "filename": "numpy_shapes.py",
+      "exitCode": 0,
+      "stdout": "(2,) (2,)\n(2, 1) (1, 2)\n5",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C03-L03",
+      "sectionId": "verification",
+      "filename": "numpy_shapes.py",
+      "exitCode": 0,
+      "stdout": "(2,) (2,)\n(2, 1) (1, 2)\n5",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C03-L03",
+      "sectionId": "legacy-validation",
+      "filename": "vector_matrix.py",
+      "exitCode": 0,
+      "stdout": "shape mismatch: ValueError (expected)\nsum: [4 3] scaled: [2 4] dot: 5\nA @ B:\n [[4 6]\n [1 3]] \nB @ A:\n [[2 4]\n [1 5]]\nA * B:\n [[2 0]\n [0 3]] \nM @ N:\n [[4 5]\n [2 3]]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L06",
+      "sectionId": "defaults",
+      "filename": "shared_default.py",
+      "exitCode": 0,
+      "stdout": "['A', 'B'] ['A', 'B'] True",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L06",
+      "sectionId": "code",
+      "filename": "python_functions.py",
+      "exitCode": 0,
+      "stdout": "6.0 13 5.0\nkeyword-only: TypeError (expected)\n['A'] ['B'] ['start', 'next'] ['start']\nshared default: ['A', 'B']",
+      "stderr": ""
+    }
+  ],
+  "coreComparisons": [
+    {
+      "id": "function-basics",
+      "expected": "6",
+      "exitCode": 0,
+      "stdout": "6",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "function-binding",
+      "expected": "12\n12",
+      "exitCode": 0,
+      "stdout": "12\n12",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "function-return",
+      "expected": "4\n4 None",
+      "exitCode": 0,
+      "stdout": "4\n4 None",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "function-scope",
+      "expected": "5\n10",
+      "exitCode": 0,
+      "stdout": "5\n10",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "function-defaults",
+      "expected": "6\n12",
+      "exitCode": 0,
+      "stdout": "6\n12",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "vector-basics",
+      "expected": "[4, 3] [2, 4]",
+      "exitCode": 0,
+      "stdout": "[4, 3] [2, 4]",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "vector-dot",
+      "expected": "5",
+      "exitCode": 0,
+      "stdout": "5",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "matrix-shape",
+      "expected": "[[1, 4], [2, 5], [3, 6]]",
+      "exitCode": 0,
+      "stdout": "[[1, 4], [2, 5], [3, 6]]",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "matrix-product",
+      "expected": "[[4 6]\n [1 3]]",
+      "exitCode": 0,
+      "stdout": "[[4 6]\n [1 3]]",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "numpy-shapes",
+      "expected": "(2,) (2,)\n(2, 1) (1, 2)\n5",
+      "exitCode": 0,
+      "stdout": "(2,) (2,)\n(2, 1) (1, 2)\n5",
+      "stderr": "",
+      "fullMatches": true
+    }
+  ],
+  "trainingComparison": {
+    "exitCode": 0,
+    "stdout": "first w=1.300, b=0.800\nfinal w=2.000000, b=1.000000, MSE=0.0000000000\ninitial MSE=17.000000\nfirst w=1.300, b=0.800, MSE=1.685000\nfinal w=2.000000, b=1.000000, MSE=0.0000000000\ncore/full training match; independent expected line y=2x+1",
+    "stderr": ""
+  },
+  "note": "技术校验通过；不代表人工内容审核、试学或正式发布。代码来自仓库静态教材，仅开发阶段执行。"
+}

@@ -1,0 +1,171 @@
+{
+  "checkedAt": "2026-10-28T09:35:12.181Z",
+  "base": "77a9025229f184e37f016b8b24c2ba901c10de92",
+  "lessonCount": 40,
+  "protectedFiles": 238,
+  "registeredChangedLessons": [
+    {
+      "lessonId": "AI000-C01-L01",
+      "before": 2,
+      "after": 2,
+      "objectiveChanged": false,
+      "coreChanged": false,
+      "changedPaths": [
+        "sections/4/blocks/1/hints/1",
+        "sections/4/blocks/2/hints/1",
+        "sections/5/blocks/2/text"
+      ]
+    },
+    {
+      "lessonId": "AI000-C01-L02",
+      "before": 1,
+      "after": 2,
+      "objectiveChanged": false,
+      "coreChanged": true,
+      "changedPaths": [
+        "contentVersion",
+        "learningTime/practice/0",
+        "learningTime/practice/1",
+        "assessmentMap/0/exerciseIds",
+        "sections/4/title",
+        "sections/4/blocks"
+      ]
+    },
+    {
+      "lessonId": "AI000-C01-L03",
+      "before": 1,
+      "after": 1,
+      "objectiveChanged": false,
+      "coreChanged": false,
+      "changedPaths": [
+        "prerequisiteLinks",
+        "sections/4/blocks/1/hints/1",
+        "sections/4/blocks/2/hints/1"
+      ]
+    },
+    {
+      "lessonId": "AI000-C02-L01",
+      "before": 2,
+      "after": 2,
+      "objectiveChanged": false,
+      "coreChanged": false,
+      "changedPaths": [
+        "prerequisiteLinks",
+        "sections/4/blocks/1/hints/1",
+        "sections/4/blocks/2/hints/1"
+      ]
+    },
+    {
+      "lessonId": "AI000-C02-L02",
+      "before": 1,
+      "after": 1,
+      "objectiveChanged": false,
+      "coreChanged": false,
+      "changedPaths": [
+        "prerequisiteLinks",
+        "sections/4/blocks/1/hints/1",
+        "sections/4/blocks/2/hints/1"
+      ]
+    },
+    {
+      "lessonId": "AI000-C03-L01",
+      "before": 1,
+      "after": 1,
+      "objectiveChanged": false,
+      "coreChanged": false,
+      "changedPaths": [
+        "sections/0/blocks/0/text",
+        "sections/7/blocks/1/hints/1",
+        "sections/7/blocks/2/hints/1"
+      ]
+    },
+    {
+      "lessonId": "AI000-C03-L02",
+      "before": 2,
+      "after": 2,
+      "objectiveChanged": false,
+      "coreChanged": false,
+      "changedPaths": [
+        "sections/6/blocks/2/hints/1"
+      ]
+    },
+    {
+      "lessonId": "AI000-C03-L03",
+      "before": 1,
+      "after": 1,
+      "objectiveChanged": false,
+      "coreChanged": false,
+      "changedPaths": [
+        "sections/7/blocks/2/hints/1"
+      ]
+    },
+    {
+      "lessonId": "AI000-C03-L04",
+      "before": 1,
+      "after": 1,
+      "objectiveChanged": false,
+      "coreChanged": false,
+      "changedPaths": [
+        "sections/8/blocks/1/text"
+      ]
+    },
+    {
+      "lessonId": "AI000-C04-L03",
+      "before": 1,
+      "after": 1,
+      "objectiveChanged": false,
+      "coreChanged": false,
+      "changedPaths": [
+        "sections/4/blocks/0/text",
+        "sections/12/blocks/2/hints/1"
+      ]
+    },
+    {
+      "lessonId": "AI000-C04-L04",
+      "before": 1,
+      "after": 1,
+      "objectiveChanged": false,
+      "coreChanged": false,
+      "changedPaths": [
+        "sections/0/blocks/1/text",
+        "sections/8/blocks/2/hints/1"
+      ]
+    },
+    {
+      "lessonId": "AI000-C05-L01",
+      "before": 1,
+      "after": 1,
+      "objectiveChanged": false,
+      "coreChanged": false,
+      "changedPaths": [
+        "sections/10/blocks/6/hints/1",
+        "sections/11/blocks/6/hints/0",
+        "sections/11/blocks/6/hints/1"
+      ]
+    },
+    {
+      "lessonId": "AI000-C05-L03",
+      "before": 1,
+      "after": 2,
+      "objectiveChanged": false,
+      "coreChanged": true,
+      "changedPaths": [
+        "contentVersion",
+        "sections/7/blocks/7/hints/1",
+        "sections/8/blocks"
+      ]
+    },
+    {
+      "lessonId": "AI000-C05-L04",
+      "before": 1,
+      "after": 1,
+      "objectiveChanged": false,
+      "coreChanged": false,
+      "changedPaths": [
+        "sections/7/blocks/3/hints/1",
+        "sections/8/blocks/4/hints/1"
+      ]
+    }
+  ],
+  "preservedPreciseFigures": 23
+}

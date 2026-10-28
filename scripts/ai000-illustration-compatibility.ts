@@ -1,3 +1,4 @@
+import { beforeQualityRevision } from "./ai000-quality-compatibility";
 import assert from "node:assert/strict";
 import type { Lesson, Publication } from "../src/content/models";
 import { readFileSync } from "node:fs";
@@ -7,6 +8,7 @@ import { beforeVisionExtension } from "./ai000-vision-compatibility";
 
 // 只反向移除维护清单指定位置、内容完全匹配的新增情境图；不是放行任意image变化。
 export function withoutAi000Illustrations(value: unknown): unknown {
+  value = beforeQualityRevision(value);
   if (!value || typeof value !== "object" || !("id" in value) || !("sections" in value)) return value;
   const lesson=value as Lesson, asset=ai000Illustrations.find(a=>a.lessonId===lesson.id);
   if (!asset) return value;
@@ -19,11 +21,12 @@ export function withoutAi000Illustrations(value: unknown): unknown {
   assert.ok(removed<=1,"每节此轮只增加一张登记插画");
   return removed ? {...lesson,sections} : value;
 }
-export const visualComparableJson = (value: unknown) => JSON.stringify(withoutAi000Illustrations(value));
+export const visualComparableJson = (value: unknown) => JSON.stringify(withoutAi000Illustrations(beforeQualityRevision(value)));
 
 export const illustrationEvidence = "docs/AI000_LESSON_4_4_AND_VISUAL_REFINEMENT.md";
 export const visualRefinementEvidence = "docs/AI000_VISUAL_CONTENT_REFINEMENT.md";
 export function assertIllustrationPublication(before: Publication, after: Publication) {
+  after = beforeQualityRevision(after);
   const illustrated = ai000Illustrations.some(a => a.lessonId === before.lessonId);
   assert.deepEqual(after, illustrated && [illustrationEvidence,visualRefinementEvidence].includes(after.technicalEvidence ?? "") ? { ...before, technicalEvidence: after.technicalEvidence } : before, before.lessonId);
 }

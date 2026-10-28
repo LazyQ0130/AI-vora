@@ -1,3 +1,4 @@
+import { qualityComparableJson, beforeQualityRevision } from "../scripts/ai000-quality-compatibility";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
@@ -84,8 +85,8 @@ test("三目标映射两道去重核心题，六项反馈默认关闭、无代�
 
 test("36旧教材/清单与219保护文件完全不变，原14精确图保留", () => {
   assert.equal(baseline.lessons.length, 36);
-  for (const old of baseline.lessons) assert.equal(JSON.stringify(lessonRegistry.get(old.id)), JSON.stringify(old), old.id);
-  for (const old of baseline.publications) assert.deepEqual(publicationManifest.find(p => p.lessonId === old.lessonId), old);
+  for (const old of baseline.lessons) assert.equal(qualityComparableJson(lessonRegistry.get(old.id)), JSON.stringify(old), old.id);
+  for (const old of baseline.publications) assert.deepEqual(beforeQualityRevision(publicationManifest.find(p => p.lessonId === old.lessonId)), old);
   for (const f of baseline.protectedFiles) assert.ok(matchesProtectedDigest(readFileSync(f.path), f.sha256, f.path), f.path);
   const lf = Buffer.from("first\nsecond\n"), crlf = Buffer.from("first\r\nsecond\r\n");
   const crlfHash = createHash("sha256").update(crlf).digest("hex");

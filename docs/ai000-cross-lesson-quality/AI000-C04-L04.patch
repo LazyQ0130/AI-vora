@@ -1,0 +1,10 @@
+diff --git a/src/content/lessons/ai000/using-a-fixed-model.ts b/src/content/lessons/ai000/using-a-fixed-model.ts
+index c04588e..e530231 100644
+--- a/src/content/lessons/ai000/using-a-fixed-model.ts
++++ b/src/content/lessons/ai000/using-a-fixed-model.ts
+@@ -36 +36 @@ export const usingFixedModelLesson = lessonSchema.parse({
+-      p("上一节用乙理解数据怎样分工。这次另给一组固定设置来走完一次使用过程：基础4分钟，每件增加2分钟。这里用新的N计算，不把4.1中G的假设12分钟接过来，也不把上一节的候选比较当成这组设置的效果保证。"),
++      p("上一节用两组候选说明怎样选择与测试。这里另给一组固定设置：基础4分钟，每件增加2分钟，只研究模型确定后怎样处理一次新的输入。我们用新包裹N计算，不沿用4.1中G的假设12分钟；上一节的候选排名也不能保证这组设置实际使用时的表现。"),
+@@ -103 +103 @@ export const usingFixedModelLesson = lessonSchema.parse({
+-        hints: ["先查必要数量、含义/单位和取得时刻，再看当前书籍与整理条件是否符合已检查的情境。资料齐全与适用依据充分，是两个问题。", "J从1+2×3计算；K的空缺不是0，L的秒数也不是册数。M中的9分钟是在结束后才知道的。R已给50册，但还改变了书的类型与搬运区域。"],
++        hints: ["先查必要数量、含义/单位和取得时刻，再看当前书籍与整理条件是否符合已检查的情境。资料齐全与适用依据充分，是两个问题。", "把五份资料逐一放进“模型需要的量、实际给出的量、取得时刻、已检查条件”四格。先给一份你认为可用的资料写代入式，再说明其余各份卡在哪一格、需补什么证据。"],

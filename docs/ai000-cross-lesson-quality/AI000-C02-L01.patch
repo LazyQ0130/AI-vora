@@ -1,0 +1,12 @@
+diff --git a/src/content/lessons/ai000/ai-ml-dl.ts b/src/content/lessons/ai000/ai-ml-dl.ts
+index bc5119e..d98b1c6 100644
+--- a/src/content/lessons/ai000/ai-ml-dl.ts
++++ b/src/content/lessons/ai000/ai-ml-dl.ts
+@@ -47,0 +48 @@ export const aiMlDlLesson = lessonSchema.parse({
++    {"title":"1.1 输入、任务与输出","href":"/learn/AI000/AI000-C01-L01#many-tasks","note":"回看系统拿到什么、交回什么，再把任务与本节的方法范围分开。"},
+@@ -252 +253 @@ export const aiMlDlLesson = lessonSchema.parse({
+-            "可以分别寻找：只依靠人工知识推理的系统；从数据学出普通决策树的模型；用多层神经网络学习识别的模型。检查它们应跨过哪几个边框。"
++            "先给一个自选例子写清判断关系的来源，再在图上试放位置：要进入内层，还需哪些方法条件？用同样办法检查另外两个区域，最后补全多层表示的解释。"
+@@ -279 +280 @@ export const aiMlDlLesson = lessonSchema.parse({
+-            "丁明确ML，却没给结构；输入形式是用途线索，不是模型方法说明。"
++            "先对每个范围标“有支持、已排除、尚无说明”，并在旁边圈原句证据。若某一栏未知，追问应能补那一栏的方法条件，而不是重复它的输入形式。"

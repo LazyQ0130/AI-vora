@@ -35,7 +35,7 @@ function progressFixture() {
 test("跨学科与AI000现行修订和发布清单一致，仍待人工审核", () => {
   assert.equal(before.revision, "acefc4bde50f765b500bae7b94b0f129b88cb537");
   for (const lesson of lessonRegistry.values()) {
-    const expectedVersion = revisedIds.some((id) => id === lesson.id) || ["AI000-C01-L01","AI000-C02-L01","AI000-C03-L02"].includes(lesson.id) ? 2 : 1;
+    const expectedVersion = revisedIds.some((id) => id === lesson.id) || ["AI000-C01-L01","AI000-C01-L02","AI000-C02-L01","AI000-C03-L02","AI000-C05-L03"].includes(lesson.id) ? 2 : 1;
     const publication = publicationManifest.find((entry) => entry.lessonId === lesson.id)!;
     assert.equal(lesson.contentVersion, expectedVersion, lesson.id);
     assert.equal(publication.contentVersion, expectedVersion, lesson.id);

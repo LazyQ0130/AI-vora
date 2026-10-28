@@ -1,3 +1,4 @@
+import { qualityComparableJson } from "../scripts/ai000-quality-compatibility";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -20,7 +21,7 @@ test("只移除13处审核场景图：36节非场景内容/目标/题/答案/锚
   let removed=0,precise=0;
   for(const old of before.lessons){
     const current=lessonRegistry.get(old.id)!;
-    assert.equal(JSON.stringify(current),JSON.stringify(expectedAfterSceneRemoval(old)),old.id);
+    assert.equal(qualityComparableJson(current),JSON.stringify(expectedAfterSceneRemoval(old)),old.id);
     const oldBlocks=old.sections.flatMap(s=>s.blocks),blocks=current.sections.flatMap(s=>s.blocks);
     removed+=oldBlocks.filter(b=>b.type==="image").length-blocks.filter(b=>b.type==="image").length;
     if(old.courseId!=="AI000")continue;
@@ -56,12 +57,19 @@ test("旧批量接入与素材重建命令显式停用，执行后不恢复正�
   const pkg=JSON.parse(readFileSync("package.json","utf8"));
   assert.ok(Object.values(pkg.scripts).every(command=>!/add-ai000-illustrations|prepare-ai000-illustrations/.test(String(command))));
 });
-test("移除场景图不改变阅读作用域：36节已有完成与阅读位置仍可恢复，存储字节不被改写",()=>{
+test("移除场景图不改变阅读作用域：同版本旧完成恢复、1.2后续r2隔离，存储字节不被改写",()=>{
   const memory=new Map<string,string>(), port={getItem:(k:string)=>memory.get(k)??null,setItem:(k:string,v:string)=>{memory.set(k,v);}}, store=createProgressStore(()=>port);
   for(const old of before.lessons)store.save(lessonProgressScope(old),100,old.sections.at(-1)!.id,true);
   const saved=new Map(memory),restored=createProgressStore(()=>port);
   for(const old of before.lessons){
-    const scope=lessonProgressScope(lessonRegistry.get(old.id)!);assert.deepEqual(scope,lessonProgressScope(old));
+    const current=lessonRegistry.get(old.id)!, scope=lessonProgressScope(current);
+    if(current.contentVersion!==old.contentVersion){
+      assert.equal(old.id,"AI000-C01-L02");assert.equal(current.contentVersion,2);
+      assert.equal(restored.getSnapshot(scope),null);
+      assert.equal(parseReadingProgress(restored.getSnapshot(lessonProgressScope(old)),lessonProgressScope(old))?.completed,true);
+      continue;
+    }
+    assert.deepEqual(scope,lessonProgressScope(old));
     const value=parseReadingProgress(restored.getSnapshot(scope),scope)!;assert.equal(value.completed,true);assert.equal(value.section,old.sections.at(-1)!.id);
   }
   assert.deepEqual(memory,saved);

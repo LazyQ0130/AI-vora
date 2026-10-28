@@ -17,7 +17,7 @@ test("四门不同类型教材用同一模型，公式可严格解析，图片�
     )!;
     const blocks = lesson.sections.flatMap((s) => s.blocks);
     if (lesson.courseId === "AI000") {
-      assert.equal(blocks.filter((block) => block.type === "exercise").length, 2);
+      assert.equal(blocks.filter((block) => block.type === "exercise").length, lesson.id === "AI000-C01-L02" ? 3 : 2);
       // 不设每课配图门槛；原14幅精确图由兼容测试逐幅保护，5.1采用可回查表格。
       assert.ok(blocks.some((block) => block.type === "table"));
       assert.ok(blocks.every((block) => !["code", "math", "experiment"].includes(block.type)));

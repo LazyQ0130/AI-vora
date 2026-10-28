@@ -1,3 +1,4 @@
+import { qualityComparableJson, beforeQualityRevision } from "../scripts/ai000-quality-compatibility";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -84,8 +85,8 @@ test("三目标对应两个去重核心题，提示与完整反馈关闭；图�
 });
 
 test("38旧课全文/清单与224保护文件保持，19幅原图渲染不变，精确逆变换仍拒绝其他修改", () => {
-  for (const old of before.lessons) assert.equal(JSON.stringify(lessonRegistry.get(old.id)), JSON.stringify(old), old.id);
-  for (const old of before.publications) assert.deepEqual(publicationManifest.find(p => p.lessonId === old.lessonId), old);
+  for (const old of before.lessons) assert.equal(qualityComparableJson(lessonRegistry.get(old.id)), JSON.stringify(old), old.id);
+  for (const old of before.publications) assert.deepEqual(beforeQualityRevision(publicationManifest.find(p => p.lessonId === old.lessonId)), old);
   for (const f of before.protectedFiles) assert.ok(matchesProtectedDigest(readFileSync(f.path), f.sha256, f.path), f.path);
   let count = 0;
   for (const old of before.lessons.filter(l => l.courseId === "AI000")) for (const b of old.sections.flatMap(s => s.blocks).filter(b => b.type === "ai-task-figure")) {
@@ -99,13 +100,13 @@ test("38旧课全文/清单与224保护文件保持，19幅原图渲染不变，
   }
 });
 
-test("5.3独立r1进度不继承旧38课或历史修订，位置与手动完成可恢复且旧键字节不变", () => {
+test("5.3现行r2进度不继承旧38课或历史修订，位置与手动完成可恢复且旧键字节不变", () => {
   const memory = new Map<string, string>(), port = { getItem: (k: string) => memory.get(k) ?? null, setItem: (k: string, v: string) => { memory.set(k, v); } };
   const store = createProgressStore(() => port);
   for (const old of before.lessons) store.save(lessonProgressScope(old), 100, old.sections.at(-1)!.id, true);
   const historical = { ...lessonProgressScope(before.lessons.find(l => l.id === "AI000-C01-L01")!), contentVersion: 1 };
   store.save(historical, 100, historical.sectionIds[0], true);
-  const oldKeys = new Map(memory), scope = lessonProgressScope(lesson); assert.equal(progressKey(scope), "aivora:learning:v2:AI000:AI000-C05-L03:r1"); assert.equal(store.getSnapshot(scope), null);
+  const oldKeys = new Map(memory), scope = lessonProgressScope(lesson); assert.equal(progressKey(scope), "aivora:learning:v2:AI000:AI000-C05-L03:r2"); assert.equal(store.getSnapshot(scope), null);
   store.save(scope, 61, "lost-property-task"); const restored = createProgressStore(() => port); assert.equal(parseReadingProgress(restored.getSnapshot(scope), scope)?.section, "lost-property-task"); assert.equal(parseReadingProgress(restored.getSnapshot(scope), scope)?.completed, false);
   restored.save(scope, 100, "takeaways", true); assert.equal(parseReadingProgress(createProgressStore(() => port).getSnapshot(scope), scope)?.completed, true);
   for (const [k, v] of oldKeys) assert.equal(memory.get(k), v);
@@ -113,7 +114,7 @@ test("5.3独立r1进度不继承旧38课或历史修订，位置与手动完成�
 
 test("5.3清单门禁和相邻导航一致，5.5仍规划无正文", () => {
   const pub = publicationManifest.find(p => p.lessonId === lesson.id)!, course = getLearningCourse("AI000")!;
-  assert.equal(course.status, "planned"); assert.equal(pub.reviewEvidence, undefined); assert.equal(lesson.contentVersion, 1);
+  assert.equal(course.status, "planned"); assert.equal(pub.reviewEvidence, undefined); assert.equal(lesson.contentVersion, 2);
   assert.equal(Boolean(resolveLesson("AI000", lesson.id)), isReadable(pub));
   if (isReadable(pub)) { assert.equal(getAdjacentLessons(course, "AI000-C05-L02").next?.lessonId, lesson.id); assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, "AI000-C05-L02"); assert.equal(getAdjacentLessons(course, lesson.id).next?.lessonId, "AI000-C05-L04"); }
   for (const slot of course.chapters[4].lessons.slice(4)) { assert.equal(slot.status, "planned"); assert.equal(slot.href, undefined); assert.equal(lessonRegistry.has(slot.lessonId), false); }

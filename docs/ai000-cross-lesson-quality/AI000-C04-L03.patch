@@ -1,0 +1,10 @@
+diff --git a/src/content/lessons/ai000/training-validation-test.ts b/src/content/lessons/ai000/training-validation-test.ts
+index 1fbf3c8..387e4fc 100644
+--- a/src/content/lessons/ai000/training-validation-test.ts
++++ b/src/content/lessons/ai000/training-validation-test.ts
+@@ -63 +63 @@ export const trainingValidationTestLesson = lessonSchema.parse({
+-      p("这里先给出两组候选设置。甲的基础为4分钟、每件增加2分钟；乙的基础为3分钟、每件增加3分钟。本节从候选已准备好的阶段开始，直接比较它们。先约定比较办法：把V1、V2各自相差的分钟数相加，合计较小的一组继续进入最终检查。"),
++      p("这一节重新准备了两组候选设置，甲、乙只是这次比较的名称，不沿用上一节的编号。甲的基础为4分钟、每件增加2分钟；乙的基础为3分钟、每件增加3分钟。本节从候选已准备好的阶段开始，直接比较它们。先约定比较办法：把V1、V2各自相差的分钟数相加，合计较小的一组继续进入最终检查。"),
+@@ -131 +131 @@ export const trainingValidationTestLesson = lessonSchema.parse({
+-        hints: ["先问预测开始时能否取得输入，再查用来报告效果的事件是否已参与训练或选择。改文件名、改记录名不会自动产生新事件。", "甲同时涉及事后输入和训练表现；丙同时涉及B2/B9的来源及测试反馈的作用。乙按验证选方案是预定用途，仍要追问保留记录是否符合实际使用任务。"],
++        hints: ["先问预测开始时能否取得输入，再查用来报告效果的事件是否已参与训练或选择。改文件名、改记录名不会自动产生新事件。", "给每个结论标上它使用了哪些记录、这些记录先前影响过什么决定。需要多个核查时分别列出，不要因发现一个问题就停止；再检查你提出的修正能否真正补回独立依据。"],

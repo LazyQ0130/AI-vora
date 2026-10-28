@@ -1,0 +1,7 @@
+diff --git a/src/content/lessons/ai000/reinforcement-learning.ts b/src/content/lessons/ai000/reinforcement-learning.ts
+index 2a94879..84dfe5c 100644
+--- a/src/content/lessons/ai000/reinforcement-learning.ts
++++ b/src/content/lessons/ai000/reinforcement-learning.ts
+@@ -82 +82 @@ export const reinforcementLearningLesson=lessonSchema.parse({
+-   p(`规则是：首次浇完一块地得${signedReward(wateringRewards.firstBed)}分，仅一次；水箱无水仍尝试浇另一块，记${signedReward(wateringRewards.dryAttempt)}分；两块均完成时得${signedReward(wateringRewards.completed)}分；补水或等待为0。本题是模拟记录，没有在设备上执行无水尝试。`),
++   p(`规则是：在每次完整的浇水任务中，第一次成功浇完任意一块地时奖励${signedReward(wateringRewards.firstBed)}分。这项奖励只发一次，另一块地随后完成时不重复获得；两块全部完成时另外奖励${signedReward(wateringRewards.completed)}分。水箱无水仍尝试浇另一块，记${signedReward(wateringRewards.dryAttempt)}分；补水或等待为0。本题是模拟记录，没有在设备上执行无水尝试。`),

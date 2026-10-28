@@ -1,0 +1,12 @@
+{
+  "matrixRows": 56,
+  "uniqueRows": 56,
+  "inputChecks": 116,
+  "pageAndExerciseOverflow": 0,
+  "focusAndDisclosureFailures": 0,
+  "oldR1BytesRetained": true,
+  "newR2InitiallyIncomplete": true,
+  "newR2CompletedAfterClickAndReload": true,
+  "sameVersionCompletionRetained": true,
+  "visibleBrowserPaintedScreenshots": 56
+}

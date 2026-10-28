@@ -1,0 +1,12 @@
+diff --git a/src/content/lessons/ai000/natural-language-and-llm.ts b/src/content/lessons/ai000/natural-language-and-llm.ts
+index f3af7d2..246450f 100644
+--- a/src/content/lessons/ai000/natural-language-and-llm.ts
++++ b/src/content/lessons/ai000/natural-language-and-llm.ts
+@@ -113 +113 @@ export const naturalLanguageLesson = lessonSchema.parse({
+-          "K3有“归还带什么”和“线断了找谁”两个问题，需要两份资料。K1缺数量及管理员确认结果；K4的“多留两天”不能从申请提前时间推出。统计时别把K3当两条收到的消息。",
++          "先选一条消息，把每个问句分别连到可回答它的原资料编号；连不上时写明缺的是条件、记录还是政策。回复只使用连线支持的内容；最后按消息编号复核摘要，看看有没有把同一消息重复计为两条。",
+@@ -149,2 +149,2 @@ export const naturalLanguageLesson = lessonSchema.parse({
+-          "先想对方验收时要看到类别、原段落还是更短的内容。甲的借用期限与申请提前时间含义不同；丙的“已联系”也不等于“已解决”。丁连实际任务都还缺资料。",
+-          "丙可按申请、归还、故障损坏、续借逐项找编号。只有明确记清点和登记完成的行支持“归还完成”；其余状态照原文保留。甲若查不到，应交代查过哪些资料，再提出补查对象。",
++          "先为每项写一份验收时要交出的东西，再看当前材料够不够，暂不替宣传语补功能。",
++          "从丙任选一条记录，先只摘出已发生的动作和仍未发生的动作，再用同样办法处理其余编号并压成两句。甲要把所问事项逐份对照规则原文，记录查找范围，别用主题相近代替已找到所问规定。",

@@ -1,0 +1,7 @@
+diff --git a/src/content/lessons/ai000/self-supervised-learning.ts b/src/content/lessons/ai000/self-supervised-learning.ts
+index 16c8fa8..faf321a 100644
+--- a/src/content/lessons/ai000/self-supervised-learning.ts
++++ b/src/content/lessons/ai000/self-supervised-learning.ts
+@@ -98 +98 @@ export const selfSupervisedLesson=lessonSchema.parse({
+-        hints:["先追踪目标来源：核实类别、没有预定群标签、从完整文本取出的片段。只看“自主”或谁填答案都不够。","丙若遮住“摆整齐”，这个片段应留作对照，不出现在模型实际收到的句子里。乙找相似组与丙预测原文有不同要求；广义分类与具体任务可以分别说明。"],
++        hints:["先追踪目标来源：核实类别、没有预定群标签、从完整文本取出的片段。只看“自主”或谁填答案都不够。","在丙的新句中圈出你选择的动作片段，先只写处理后的输入，检查剩余文字是否仍露出了答案。再分别填写目标和可能预测，追踪它们各自从哪里来。"],

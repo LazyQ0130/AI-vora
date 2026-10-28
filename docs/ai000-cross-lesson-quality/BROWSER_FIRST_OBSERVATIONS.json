@@ -1,0 +1,232 @@
+[
+  {
+    "id": "AI000-C01-L01",
+    "width": 1440,
+    "goals": "本节学习目标\n3 项\n01\n解释AI的作用\n\n联系一个任务，用自己的话说明AI在做什么。\n\n02\n说清输入、任务和输出\n\n指出系统拿到什么、处理什么、交回什么。\n\n03\n把需求写成具体任务\n\n限定输出和范围，让结果能够被检查。\n\n查看完整目标\n用自己的话解释人工智能在一个具体任务中起什么作用\n指出系统的输入、处理任务与输出，并说明三者怎样联系\n把一个日常需求改写成范围清楚、能检查结果的AI任务",
+    "entries": [
+      {
+        "text": "理解练习\n向同学解释录音转文字",
+        "href": "#exercise-describe-task"
+      },
+      {
+        "text": "迁移练习\n给失物照片目录安排一项任务",
+        "href": "#exercise-design-task"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-describe-task",
+      "tag": "A",
+      "text": "理解练习向同学解释录音转文字"
+    },
+    "exercises": [
+      {
+        "id": "exercise-describe-task",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-design-task",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      }
+    ],
+    "client": 1425,
+    "headings": [
+      "收件箱里的一个小麻烦",
+      "电脑需要一个怎样的判断办法？",
+      "把刚才的动作，放进“人工智能”这个名称",
+      "沿着输入、任务和输出看一遍",
+      "换一个需求，试着说具体",
+      "能把AI的作用讲成一句完整的话"
+    ],
+    "previousNext": [
+      "上一节 · 尚未提供下一节 · 1.2 AI 能做什么，为什么也会出错？"
+    ],
+    "scroll": 1425,
+    "title": "人工智能究竟是什么？"
+  },
+  {
+    "id": "AI000-C01-L02",
+    "width": 1440,
+    "goals": "本节学习目标\n3 项\n01\n比较不同任务\n\n说明输入、输出和任务范围有何差别。\n\n02\n解释判断错误\n\n区分误拦与漏掉，联系实际后果。\n\n03\n设计核查方案\n\n选可靠依据，逐项比较并安排后续处理。\n\n查看完整目标\n比较识别、分类、推荐和生成任务的输入、输出与适用范围\n结合给定例子解释误拦、漏掉等错误及其后果\n为新任务设计有可靠对照、可执行的初步核查办法",
+    "entries": [
+      {
+        "text": "迁移练习\n四份需求，各该交回什么？",
+        "href": "#exercise-compare-service-tasks"
+      },
+      {
+        "text": "迁移练习\n归还提醒的两种错误",
+        "href": "#exercise-check-library"
+      },
+      {
+        "text": "迁移练习\n给商品照片分类，怎样检查并使用结果？",
+        "href": "#exercise-product-review"
+      }
+    ],
+    "refs": [
+      {
+        "text": "1.1 人工智能究竟是什么？",
+        "href": "/learn/AI000/AI000-C01-L01"
+      }
+    ],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-compare-service-tasks",
+      "tag": "A",
+      "text": "迁移练习四份需求，各该交回什么？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-compare-service-tasks",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-check-library",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-product-review",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      }
+    ],
+    "client": 1425,
+    "headings": [
+      "都在帮忙，做的工作一样吗？",
+      "把两封新邮件放进来，规则还行吗？",
+      "多看一些例子，为什么仍可能判断错？",
+      "新写的一段话，该用什么核对？",
+      "先比较任务，再检查具体结果",
+      "从一句“可能会错”，走到可以核对的动作"
+    ],
+    "previousNext": [
+      "上一节 · 1.1 人工智能究竟是什么？下一节 · 1.3 普通自动化和 AI 有什么区别？"
+    ],
+    "scroll": 1425,
+    "title": "AI 能做什么，为什么也会出错？"
+  }
+]

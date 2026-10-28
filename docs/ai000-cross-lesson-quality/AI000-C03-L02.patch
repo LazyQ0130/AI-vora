@@ -1,0 +1,7 @@
+diff --git a/src/content/lessons/ai000/unsupervised-learning.ts b/src/content/lessons/ai000/unsupervised-learning.ts
+index ac9119d..6afd665 100644
+--- a/src/content/lessons/ai000/unsupervised-learning.ts
++++ b/src/content/lessons/ai000/unsupervised-learning.ts
+@@ -89 +89 @@ export const unsupervisedLearningLesson = lessonSchema.parse({
+-        hints:["看已知目标是否被用于当前学习任务，不按有没有“类别”两个字或是否有人手填判断。计划采用的学习安排与产品已实现的算法也要分开。","甲的器材类别、丙的实际分钟数是目标；乙的活动类型/次数描述行为，尚未给人群答案。丁连具体任务都不明。"],
++        hints:["看已知目标是否被用于当前学习任务，不按有没有“类别”两个字或是否有人手填判断。计划采用的学习安排与产品已实现的算法也要分开。","为每项另写“程序要学会交回什么”，再从给定记录里找有无对应答案。某列描述了活动，不等于它已经回答你刚写的学习问题；要逐项说明理由。"],

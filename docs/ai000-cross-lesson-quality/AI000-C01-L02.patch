@@ -1,0 +1,39 @@
+diff --git a/src/content/lessons/ai000/capabilities-and-errors.ts b/src/content/lessons/ai000/capabilities-and-errors.ts
+index 24d1cf7..c5a2ee6 100644
+--- a/src/content/lessons/ai000/capabilities-and-errors.ts
++++ b/src/content/lessons/ai000/capabilities-and-errors.ts
+@@ -6 +6 @@ export const capabilitiesLesson=lessonSchema.parse({
+- id:"AI000-C01-L02",courseId:"AI000",chapterId:"AI000-C01",contentVersion:1,
++ id:"AI000-C01-L02",courseId:"AI000",chapterId:"AI000-C01",contentVersion:2,
+@@ -10 +10 @@ export const capabilitiesLesson=lessonSchema.parse({
+- learningTime:{reading:[16,23],practice:[15,22],coding:[0,0],basis:"editorial-estimate"},
++ learningTime:{reading:[16,23],practice:[21,32],coding:[0,0],basis:"editorial-estimate"},
+@@ -15 +15 @@ export const capabilitiesLesson=lessonSchema.parse({
+- assessmentMap:[{objective:1,exerciseIds:["product-review"]},{objective:2,exerciseIds:["check-library"]},{objective:3,exerciseIds:["product-review"]}],
++ assessmentMap:[{objective:1,exerciseIds:["compare-service-tasks","product-review"]},{objective:2,exerciseIds:["check-library"]},{objective:3,exerciseIds:["product-review"]}],
+@@ -42 +42 @@ export const capabilitiesLesson=lessonSchema.parse({
+- {id:"practice",title:"换成图书和商品，独立分析一次",navGroup:"practice",navLabel:"独立练习",blocks:[
++ {id:"practice",title:"先比较任务，再检查具体结果",navGroup:"practice",navLabel:"独立练习",blocks:[
+@@ -43,0 +44,16 @@ export const capabilitiesLesson=lessonSchema.parse({
++ {type:"table",caption:"四份新的服务需求，分别需要交回什么？",columns:["需求","工作说明"],rows:[
++ ["甲","社团留下一段讨论录音，负责人希望拿到按原话记录的可编辑文档。"],
++ ["乙","值班台收到一条消息，工作人员约定咨询/报修/其他三类，希望据此分派。"],
++ ["丙","图书角提供一名读者过去借过的书和当前可借书目，希望先展示几本值得他优先考虑的书。"],
++ ["丁","主办方提供已确认的活动名称、时间和地点等要点，希望收到能发送给同学的一则新通知。"],
++ ]},
++ {type:"exercise",id:"compare-service-tasks",title:"四份需求，各该交回什么？",kind:"迁移",
++ prompt:"为甲至丁各写一行：实际输入、要做的任务及名称、期望输出、一个能判断是否达到要求的核查条件。说明四种输出为什么不能互相替代。再解释：丙排在前面的书能否保证读者一定喜欢？甲若准确记下某句话，能否证明那句话内容真实？分别给出理由。无需设计软件或算法。",
++ hints:["先写工作人员最后想拿到什么，再回看题目提供了哪些材料；让核查条件对应这份交付物。","选一项先补完‘拿到这些材料后，交回……，再与……比较’，其余三项也各写一次。若一个输出还被拿来作别的保证，检查那项保证是否属于原来的任务。"],
++ solution:[
++ "甲：输入讨论录音，任务是辨认说了哪些话，即语音识别/转写，输出可编辑文字。可将文字与原录音逐句对照，查有没有听错或漏句。转写出一句话不证明其中的事实真实；查事实还需与所谈事项有关的可靠资料。",
++ "乙：输入消息原文与咨询/报修/其他的类别约定，任务是文字分类，输出一个类别或按约定保留多类及依据。核查消息内容是否符合类别边界；一条消息有多个问题时应说明如何按约定处理。接受有理由的类别边界，不能只交一段泛泛回复代替分派结果。",
++ "丙：输入过去借阅记录和当前可借书目，任务是推荐，输出候选书及优先顺序。可核对书是否在可借范围、排序是否与本次约定依据相符，并收集读者反馈。过去选择只是偏好线索，读者此刻的需要可能改变，所以排前面不能保证一定喜欢；不要求背出某种推荐算法。",
++ "丁：输入已确认的活动资料与通知要求，任务是生成文字，输出一则按要点组织的新通知。逐项对照名称、时间、地点等，查遗漏、误写和新增无依据的信息。没有给出的条件应留待确认。",
++ "四种交付各服务不同用途：原话文档、分派类别、候选顺序、可发送通知。它们不能仅因都用文字展示就互换。分类也可视为识别的一种具体安排，接受说明这种联系、同时准确区分四项用途的答案。常见错误：把丙只写成一本必定喜欢的书；把甲准确转写等同核实原话；四项全写生成文字而不解释处理差别；核查只问同一系统是否确定。",
++ ],rubric:["四项均有与需求匹配的输入、任务和实际输出，四种用途有清楚区别。","每项有可执行且对应交付的核查条件，不只列任务名称。","解释推荐基于已有偏好线索仍不保证此刻喜欢，并给相关核查。","区分原话被准确记下与原话内容真实；接受任务名称的合理联系，不抹去用途差异。"]},
+@@ -46 +62 @@ export const capabilitiesLesson=lessonSchema.parse({
+- hints:["分开看记录本来需要什么和系统判了什么。","已归还却收到提醒与逾期却没收到提醒方向不同；核查可对照借还日期与归还状态。"],
++ hints:["分开看记录本来需要什么和系统判了什么。","给每行补一列“按已知记录应提醒吗”，再和系统列逐格比较。找到两列不一致的行后，分别说明系统多做了什么或少做了什么；核查要回到哪份原始记录？"],
+@@ -51 +67 @@ export const capabilitiesLesson=lessonSchema.parse({
+- hints:["先分别写照片→类别、商品记录→介绍，再分析条件变化。","可以用实物和核实目录作对照，把不同角度、遮挡和新器具纳入检查；生成的材质、容量等说法需要出处。"],
++ hints:["先分别写照片→类别、商品记录→介绍，再分析条件变化。","先选一张具有题设条件变化的新照片，写出它和可靠对照应怎样配对；再给核查表留出预期类别、系统输出、后续处理三列。介绍中的每个可核实说法，也要能指向某份记录。"],

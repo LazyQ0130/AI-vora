@@ -1,0 +1,13 @@
+diff --git a/src/content/lessons/ai000/automation-and-ai.ts b/src/content/lessons/ai000/automation-and-ai.ts
+index 869d13c..f103cda 100644
+--- a/src/content/lessons/ai000/automation-and-ai.ts
++++ b/src/content/lessons/ai000/automation-and-ai.ts
+@@ -8 +8 @@ export const automationLesson=lessonSchema.parse({
+- prerequisiteLinks:[{title:"1.1 三要素与学习的直觉",href:"/learn/AI000/AI000-C01-L01",note:"本节不要求任何编程知识。"}],
++ prerequisiteLinks:[{title:"1.1 三要素与学习的直觉",href:"/learn/AI000/AI000-C01-L01",note:"本节不要求任何编程知识。"},{title:"1.2 为结果找核查依据",href:"/learn/AI000/AI000-C01-L02#check-output",note:"回看怎样按任务选择对照，再用于本节的方法与结论核查。"}],
+@@ -45 +45 @@ export const automationLesson=lessonSchema.parse({
+- hints:["先找题干里明确说的步骤、知识推理或从数据学习，不以名称判断。","乙有知识关系和推理，不因没有学习就被排除；丁需要分别问具体做什么、怎样得到判断。"],
++ hints:["先找题干里明确说的步骤、知识推理或从数据学习，不以名称判断。","为每个情境圈出动作怎样执行、判断关系怎样形成的证据句，再检查你的结论是否用了题干没有给的条件。对丁，把任务证据和方法证据留在不同空格里。"],
+@@ -50 +50 @@ export const automationLesson=lessonSchema.parse({
+- hints:["先用第一条得到中间结论，再看第二条所需条件是否齐全。","结论是优先检查两个方向，不是已经确认损坏；规则多没有交代它怎样联系知识。"],
++ hints:["先用第一条得到中间结论，再看第二条所需条件是否齐全。","把第一步推出的词写到第二条规则的条件旁，检查还要哪一条现象才能继续。对题目问的两个确定结论，分别找一条能推出它的规则；找不到时想想结论该怎样表达。"],

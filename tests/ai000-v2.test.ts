@@ -1,3 +1,4 @@
+import { qualityComparableJson } from "../scripts/ai000-quality-compatibility";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -14,7 +15,7 @@ import { keywordMailDecision, mailExamples } from "../src/content/lessons/ai000/
 
 const before=JSON.parse(readFileSync(new URL("../docs/ai000-v2/BEFORE.json",import.meta.url),"utf8")) as {lessons:Lesson[];curriculum:{path:string;digest:string}[]};
 const ids=["AI000-C01-L01","AI000-C01-L02","AI000-C01-L03","AI000-C02-L01","AI000-C02-L02","AI000-C03-L01","AI000-C03-L02","AI000-C03-L03","AI000-C03-L04","AI000-C04-L01","AI000-C04-L02","AI000-C04-L03","AI000-C04-L04","AI000-C05-L01","AI000-C05-L02","AI000-C05-L03","AI000-C05-L04"];
-const hash=(v:unknown)=>createHash("sha256").update(JSON.stringify(v)).digest("hex");
+const hash=(v:unknown)=>createHash("sha256").update(qualityComparableJson(v)).digest("hex");
 
 test("24节规划对应七章原事实，十七节可读且连续导航，未制作课不伪造正文",()=>{
  const course=getLearningCourse("AI000")!;

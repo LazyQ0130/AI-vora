@@ -1,3 +1,4 @@
+import { qualityComparableJson, beforeQualityRevision } from "../scripts/ai000-quality-compatibility";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
@@ -78,8 +79,8 @@ test("两核心开放题映射三目标，包含任务理由/未知、两级提�
   assert.ok(lesson.sections.every(s=>s.tier==="core"&&!/^\d/.test(s.title)));
 });
 test("37旧课全文及清单不变，原14幅图渲染保持；只允许两个旧源码文件的精确扩展",()=>{
-  for(const old of before.lessons) assert.equal(JSON.stringify(lessonRegistry.get(old.id)),JSON.stringify(old),old.id);
-  for(const old of before.publications) assert.deepEqual(publicationManifest.find(p=>p.lessonId===old.lessonId),old);
+  for(const old of before.lessons) assert.equal(qualityComparableJson(lessonRegistry.get(old.id)),JSON.stringify(old),old.id);
+  for(const old of before.publications) assert.deepEqual(beforeQualityRevision(publicationManifest.find(p=>p.lessonId===old.lessonId)),old);
   for(const f of before.protectedFiles) assert.ok(matchesProtectedDigest(readFileSync(f.path),f.sha256,f.path),f.path);
   let count=0;
   for(const old of before.lessons.filter(l=>l.courseId==="AI000")) for(const b of old.sections.flatMap(s=>s.blocks).filter(b=>b.type==="ai-task-figure")) {

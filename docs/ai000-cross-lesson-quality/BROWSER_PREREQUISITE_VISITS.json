@@ -1,0 +1,17 @@
+[
+  {
+    "from": "AI000-C01-L03",
+    "url": "http://127.0.0.1:3020/learn/AI000/AI000-C01-L02#check-output",
+    "target": "新写的一段话，该用什么核对？"
+  },
+  {
+    "from": "AI000-C02-L01",
+    "url": "http://127.0.0.1:3020/learn/AI000/AI000-C01-L01#many-tasks",
+    "target": "沿着输入、任务和输出看一遍"
+  },
+  {
+    "from": "AI000-C02-L02",
+    "url": "http://127.0.0.1:3020/learn/AI000/AI000-C01-L02#check-output",
+    "target": "新写的一段话，该用什么核对？"
+  }
+]

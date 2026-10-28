@@ -1,0 +1,6307 @@
+[
+  {
+    "id": "AI000-C01-L03",
+    "width": 1440,
+    "goals": "本节学习目标\n3 项\n01\n比较得到结果的办法\n\n区分明确步骤、知识推理与从数据学习。\n\n02\n按方法证据判断\n\n给出有条件的结论，指出未说明的信息。\n\n03\n跟着规则推出结论\n\n写出中间步骤，说明还不能确定什么。\n\n查看完整目标\n比较普通自动化、知识推理和数据学习在得到结果时的区别\n根据系统已给出的方法证据判断是否涉及AI，信息不足时说明条件与追问\n沿着简单知识规则推出结论，并说明结论的范围",
+    "entries": [
+      {
+        "text": "迁移练习\n四种系统，哪条信息支持你的判断？",
+        "href": "#exercise-identify-systems"
+      },
+      {
+        "text": "理解练习\n沿着水泵规则走两步",
+        "href": "#exercise-trace-method"
+      }
+    ],
+    "refs": [
+      {
+        "text": "1.1 三要素与学习的直觉",
+        "href": "/learn/AI000/AI000-C01-L01"
+      },
+      {
+        "text": "1.2 为结果找核查依据",
+        "href": "/learn/AI000/AI000-C01-L02#check-output"
+      }
+    ],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-identify-systems",
+      "tag": "H3",
+      "text": "四种系统，哪条信息支持你的判断？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-identify-systems",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-trace-method",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      }
+    ],
+    "client": 1425,
+    "headings": [
+      "到七点响铃，需要先学会什么吗？",
+      "人写的规则，也可以用来推理",
+      "同样给建议，判断关系从哪里来？",
+      "只有一个“智能”按钮，能确定多少？",
+      "依据换了，你的判断会怎样变？",
+      "方法证据比“看起来智能”更有用"
+    ],
+    "scroll": 1425,
+    "title": "普通自动化和 AI 有什么区别？",
+    "screenshotPosition": {
+      "bottom": 991.0625,
+      "top": 356.21875
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 356.21875,
+      "width": 1440,
+      "y": 3350.666748046875
+    }
+  },
+  {
+    "id": "AI000-C02-L01",
+    "width": 1440,
+    "goals": "本节学习目标\n3 项\n01\n画出包含关系\n\n用具体例子说明两个不能反推的边界。\n\n02\n说明多层表示\n\n解释深度学习的学习方式与范围。\n\n03\n根据证据归类\n\n给结论写依据，保留未说明的信息。\n\n查看完整目标\n解释AI、ML、DL的包含关系，并用两个反例说明不能等同\n用多层表示的直觉说明深度学习为何属于机器学习及其与其他方法的差别\n根据新系统给出的方法证据归类，区别明确排除与仍然未知的信息",
+    "entries": [
+      {
+        "text": "理解练习\n画出属于自己的 AI 技术关系图",
+        "href": "#exercise-draw-method-map"
+      },
+      {
+        "text": "迁移练习\n只凭给出的技术信息，能归到哪一层？",
+        "href": "#exercise-method-evidence"
+      }
+    ],
+    "refs": [
+      {
+        "text": "1.1 输入、任务与输出",
+        "href": "/learn/AI000/AI000-C01-L01#many-tasks"
+      },
+      {
+        "text": "1.3 普通自动化和 AI 有什么区别？",
+        "href": "/learn/AI000/AI000-C01-L03"
+      }
+    ],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-draw-method-map",
+      "tag": "H3",
+      "text": "画出属于自己的 AI 技术关系图"
+    },
+    "exercises": [
+      {
+        "id": "exercise-draw-method-map",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-method-evidence",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      }
+    ],
+    "client": 1425,
+    "headings": [
+      "邮件还是那些邮件，判断办法从哪里来？",
+      "深度学习多出来的“深度”是什么？",
+      "三个范围，应该怎样套在一起？",
+      "读一段产品说明，先找哪三条信息？",
+      "自己画一张图，再给新系统归类",
+      "把几个名称放进一句有依据的话"
+    ],
+    "scroll": 1425,
+    "title": "AI、机器学习与深度学习，到底是什么关系？",
+    "screenshotPosition": {
+      "bottom": 991,
+      "top": 356.15625
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 356.15625,
+      "width": 1440,
+      "y": 4403.33349609375
+    }
+  },
+  {
+    "id": "AI000-C02-L02",
+    "width": 1440,
+    "goals": "本节学习目标\n3 项\n01\n辨认四类处理任务\n\n根据过程区分类别判断、查找、编辑和生成。\n\n02\n联系生成、DL与LLM\n\n分别说明能力、方法、模型和产品。\n\n03\n分析产品说明\n\n列出方法证据、成立条件与未知信息。\n\n查看完整目标\n根据具体输入输出和处理过程区分分类、检索、编辑与生成任务\n解释现代生成式AI、深度学习与LLM的关系，区分模型和产品\n分析新产品的任务与方法证据，说明能确定的内容和仍需追问的信息",
+    "entries": [
+      {
+        "text": "迁移练习\n这次是在找、改、判断，还是生成？",
+        "href": "#exercise-classify-new-systems"
+      },
+      {
+        "text": "迁移练习\n为展览服务画一张分工图",
+        "href": "#exercise-product-model-map"
+      }
+    ],
+    "refs": [
+      {
+        "text": "2.1 AI、机器学习与深度学习的关系",
+        "href": "/learn/AI000/AI000-C02-L01"
+      },
+      {
+        "text": "1.2 逐项核对生成文字",
+        "href": "/learn/AI000/AI000-C01-L02#check-output"
+      }
+    ],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-classify-new-systems",
+      "tag": "H3",
+      "text": "这次是在找、改、判断，还是生成？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-classify-new-systems",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-product-model-map",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      }
+    ],
+    "client": 1425,
+    "headings": [
+      "找一张海报，和画一张海报一样吗？",
+      "生成式AI怎样利用学过的规律？",
+      "聊天产品背后的LLM，指的是什么？",
+      "一个聊天窗口，可能接起哪些工作？",
+      "把任务、方法与产品分工写清楚",
+      "用三个问题读懂新的产品介绍"
+    ],
+    "scroll": 1425,
+    "title": "生成式 AI 是什么？它和 LLM 有什么关系？",
+    "screenshotPosition": {
+      "bottom": 961.4270935058594,
+      "top": 355.8333435058594
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 355.8333435058594,
+      "width": 1440,
+      "y": 4627.33349609375
+    }
+  },
+  {
+    "id": "AI000-C03-L01",
+    "width": 1440,
+    "goals": "本节学习目标\n3 项\n01\n分清输入和标签\n\n用自己准备的例子解释监督学习。\n\n02\n区别学习与预测\n\n说明答案何时可用，预测怎样核实。\n\n03\n判断数据还缺什么\n\n为新任务补齐输入、目标及核实办法。\n\n查看完整目标\n用具体例子解释监督学习，区分一条样本中的输入信息与标签\n解释学习时已知目标的作用，以及新输入的预测为何需要另行核实\n判断新任务是否具备监督学习所需的输入与目标信息，并提出合理的数据准备方案",
+    "entries": [
+      {
+        "text": "迁移练习\n为图书分类准备一组有答案的例子",
+        "href": "#exercise-prepare-examples"
+      },
+      {
+        "text": "迁移练习\n四份资料，离开展监督学习还差什么？",
+        "href": "#exercise-missing-targets"
+      }
+    ],
+    "refs": [
+      {
+        "text": "1.1 输入、任务与输出",
+        "href": "/learn/AI000/AI000-C01-L01#many-tasks"
+      },
+      {
+        "text": "2.1 从例子形成模型",
+        "href": "/learn/AI000/AI000-C02-L01#learning-from-mail"
+      }
+    ],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-prepare-examples",
+      "tag": "H3",
+      "text": "为图书分类准备一组有答案的例子"
+    },
+    "exercises": [
+      {
+        "id": "exercise-prepare-examples",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-missing-targets",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      }
+    ],
+    "client": 1425,
+    "headings": [
+      "照片旁边，为什么还要写类别？",
+      "有答案的例子用来学，新照片用来判断",
+      "现在给这种学习方式起个名字",
+      "一条例子里，分别装着什么？",
+      "答案从哪里来，值得信任吗？",
+      "已知答案，也可以是一个数",
+      "只有一堆照片，下一步能做什么？",
+      "换一项工作，自己把例子准备好",
+      "看见一条例子，也要找到它的目标"
+    ],
+    "scroll": 1425,
+    "title": "监督学习：从有答案的例子中学习",
+    "screenshotPosition": {
+      "bottom": 990.78125,
+      "top": 355.9375
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 355.9375,
+      "width": 1440,
+      "y": 5776.66650390625
+    }
+  },
+  {
+    "id": "AI000-C03-L02",
+    "width": 1440,
+    "goals": "本节学习目标\n3 项\n01\n辨认没有目标标签的学习\n\n分清描述记录的信息和预先给出的答案。\n\n02\n提出有依据的分组\n\n比较新记录，并说明换个依据会怎样。\n\n03\n解释分组能说明多少\n\n保留未决情况，给出相关的核查动作。\n\n查看完整目标\n用具体例子解释无监督学习，区分记录中的输入信息与当前任务预先确认的目标标签\n根据给定记录和明确的比较依据提出合理分组，并解释更换依据可能带来的变化\n区分相似记录组与已确认的真实类别，说明分组的用途、限制与需要核查的内容",
+    "entries": [
+      {
+        "text": "迁移练习\n给六条活动记录提出一个分组方案",
+        "href": "#exercise-propose-groups"
+      },
+      {
+        "text": "迁移练习\n先找当前任务的目标信息，再判断学习方式",
+        "href": "#exercise-identify-learning-signals"
+      }
+    ],
+    "refs": [
+      {
+        "text": "3.1 样本、输入与标签",
+        "href": "/learn/AI000/AI000-C03-L01#sample-and-label"
+      }
+    ],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-propose-groups",
+      "tag": "H3",
+      "text": "给六条活动记录提出一个分组方案"
+    },
+    "exercises": [
+      {
+        "id": "exercise-propose-groups",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-identify-learning-signals",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      }
+    ],
+    "client": 1425,
+    "headings": [
+      "这次没有写好答案，还能从哪里看起？",
+      "数字不同，也可能有相近的借阅倾向",
+      "E和F，也必须马上选一组吗？",
+      "没有标签，为什么仍然有东西可学？",
+      "只看总次数，刚才的两组还明显吗？",
+      "有了组号，怎样把观察用在图书馆？",
+      "换成活动记录，自己说明怎样分、为什么分",
+      "给分组写一句能经得起核对的说明"
+    ],
+    "scroll": 1425,
+    "title": "无监督学习：没有标签也能发现规律吗？",
+    "screenshotPosition": {
+      "bottom": 1049.28125,
+      "top": 355.9375
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 355.9375,
+      "width": 1440,
+      "y": 5652
+    }
+  },
+  {
+    "id": "AI000-C03-L03",
+    "width": 1440,
+    "goals": "本节学习目标\n3 项\n01\n从原数据准备目标\n\n亲手设计一项有来源可查的学习任务。\n\n02\n分清四个角色\n\n把原文、学习输入、目标和预测分别写出。\n\n03\n根据学习安排判断\n\n比较目标的来源，保留分类口径与实现缺口。\n\n查看完整目标\n用新例构造自监督学习任务，解释学习目标怎样从原始数据自身取得\n区分原始数据、处理后的学习输入、构造目标与模型预测，并说明怎样比较\n根据目标来源和具体学习安排比较监督、无监督聚类与自监督，说明分类联系及信息不足",
+    "entries": [
+      {
+        "text": "迁移练习\n把一则新通知变成学习样本",
+        "href": "#exercise-design-self-task"
+      },
+      {
+        "text": "迁移练习\n三种学习安排，答案各从哪里来？",
+        "href": "#exercise-compare-learning-tasks"
+      }
+    ],
+    "refs": [
+      {
+        "text": "3.1 输入、标签与预测",
+        "href": "/learn/AI000/AI000-C03-L01#sample-and-label"
+      },
+      {
+        "text": "3.2 无监督学习的具体安排",
+        "href": "/learn/AI000/AI000-C03-L02#unsupervised"
+      }
+    ],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-design-self-task",
+      "tag": "H3",
+      "text": "把一则新通知变成学习样本"
+    },
+    "exercises": [
+      {
+        "id": "exercise-design-self-task",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-compare-learning-tasks",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      }
+    ],
+    "client": 1425,
+    "headings": [
+      "把一句话藏起一部分，答案从哪里来？",
+      "模型收到的句子，和我们保留的原句不同",
+      "让数据为学习提供对照",
+      "换一句话，也要按同一办法准备",
+      "除了遮住中间，还能怎样利用原文？",
+      "学会这种任务，以后就只能补空格吗？",
+      "先问目标从哪里来，再比较学习安排",
+      "自己安排一次有来源可查的学习任务",
+      "目标有出处，比较才有依据"
+    ],
+    "scroll": 1425,
+    "title": "自监督学习：怎样从数据本身构造学习任务？",
+    "screenshotPosition": {
+      "bottom": 990.78125,
+      "top": 355.9375
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 355.9375,
+      "width": 1440,
+      "y": 5513.33349609375
+    }
+  },
+  {
+    "id": "AI000-C03-L04",
+    "width": 1440,
+    "goals": "本节学习目标\n3 项\n01\n追踪行动与反馈\n\n写清当前看到什么、做什么，以及随后怎样变化。\n\n02\n比较整段行动\n\n算累计奖励，解释为什么不能只看第一步。\n\n03\n判断任务是否合适\n\n查连续选择、环境反馈和仍然缺少的信息。\n\n查看完整目标\n用新例说明智能体、环境、当前观察、行动与奖励，追踪行动怎样带来新情况和后续选择\n计算两段完整行动的简单累计奖励，解释眼前奖励与整体结果的差别，区分奖励与正确动作标签\n根据实际决策和反馈判断能否按强化学习构造任务，提出所需信息、奖励核查及仍不能确定的内容",
+    "entries": [
+      {
+        "text": "迁移练习\n先浇水还是先补水，差别出现在哪一步？",
+        "href": "#exercise-trace-watering"
+      },
+      {
+        "text": "迁移练习\n哪些条件支持按行动反馈学习来分析？",
+        "href": "#exercise-assess-feedback"
+      }
+    ],
+    "refs": [
+      {
+        "text": "3.1 输入与标签",
+        "href": "/learn/AI000/AI000-C03-L01#sample-and-label"
+      },
+      {
+        "text": "3.3 原文、输入、目标与预测",
+        "href": "/learn/AI000/AI000-C03-L03#four-roles"
+      }
+    ],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-trace-watering",
+      "tag": "H3",
+      "text": "先浇水还是先补水，差别出现在哪一步？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-trace-watering",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-assess-feedback",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      }
+    ],
+    "client": 1425,
+    "headings": [
+      "走到岔路口，先选哪一条路？",
+      "第一步得分以后，事情还没有结束",
+      "第一步多得几分，整段就更好吗？",
+      "得到7分，会直接告诉它每一步怎么走吗？",
+      "计分办法，也在影响它愿意做什么",
+      "没走过的路，怎样知道后面有什么？",
+      "把经历变成以后选择行动的办法",
+      "回看第三章，四次任务究竟在学什么？",
+      "换成浇水，自己追踪每一步",
+      "看到“自动优化”，还要追问什么？",
+      "把一个决定放回它带来的后续过程"
+    ],
+    "scroll": 1425,
+    "title": "强化学习：通过行动与反馈学习",
+    "screenshotPosition": {
+      "bottom": 961.34375,
+      "top": 355.75
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 355.75,
+      "width": 1440,
+      "y": 6465.33349609375
+    }
+  },
+  {
+    "id": "AI000-C04-L03",
+    "width": 1440,
+    "goals": "本节学习目标\n3 项\n01\n给三批记录安排工作\n\n说清哪些用于学习、选择和最后检查。\n\n02\n根据验证结果作选择\n\n比较预测，并解释测试为何留到方案确定后。\n\n03\n检查评价流程是否合理\n\n追踪信息何时被使用，给出修正办法。\n\n查看完整目标\n用具体记录解释训练、验证和测试三种用途，说明它们分别支持学习、选择和最终检查中的什么工作\n比较候选模型在验证记录上的预测差距并作有依据的选择，解释为什么不能反复用最终测试数据挑选模型\n识别事后信息、重复记录或测试反馈造成的评估问题，为新任务提出数据使用顺序和可执行的核查办法",
+    "entries": [
+      {
+        "text": "迁移练习\n怎样合理安排训练、验证与测试？",
+        "href": "#exercise-plan-print-evaluation"
+      },
+      {
+        "text": "理解练习\n这些结果能证明什么，该怎样修改？",
+        "href": "#exercise-audit-evaluation-flow"
+      }
+    ],
+    "refs": [
+      {
+        "text": "4.2 用多条记录比较预测",
+        "href": "/learn/AI000/AI000-C04-L02#compare-records"
+      },
+      {
+        "text": "4.2 训练怎样利用差别",
+        "href": "/learn/AI000/AI000-C04-L02#training"
+      },
+      {
+        "text": "4.1 信息在预测时可得吗？",
+        "href": "/learn/AI000/AI000-C04-L01#choose-fields"
+      }
+    ],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-plan-print-evaluation",
+      "tag": "H3",
+      "text": "怎样合理安排训练、验证与测试？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-plan-print-evaluation",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-audit-evaluation-flow",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      }
+    ],
+    "client": 1425,
+    "headings": [
+      "练过的题全对了，换一套题呢？",
+      "先看一批新的包裹记录",
+      "先安排用途，再看结果",
+      "训练记录把学习所需的输入和目标配在一起",
+      "用验证记录比较，决定继续选谁",
+      "选好乙，再用保留记录检查",
+      "沿着图，追踪每批记录何时参与",
+      "我们希望学到的办法也能用于新记录",
+      "到件时拿不到的信息，为什么会让结果好看？",
+      "换一个编号，不会变成另一件包裹",
+      "看过测试以后，还能改模型吗？",
+      "换到打印点，写出你的数据使用计划",
+      "接手三个流程，找出信息在何时越界",
+      "回看你的计划，检查哪批记录影响过决定"
+    ],
+    "scroll": 1425,
+    "title": "训练、验证与测试各有什么作用？",
+    "screenshotPosition": {
+      "bottom": 1078.5,
+      "top": 355.90625
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 355.90625,
+      "width": 1440,
+      "y": 8285.3330078125
+    }
+  },
+  {
+    "id": "AI000-C04-L04",
+    "width": 1440,
+    "goals": "本节学习目标\n3 项\n01\n排出一次预测的步骤\n\n联系实际动作，区分使用、核对与再训练。\n\n02\n用固定模型算新任务\n\n指明参数与输入，另存预测和实际结果。\n\n03\n检查输入和适用条件\n\n找出具体问题，提出补查与谨慎处理办法。\n\n查看完整目标\n解释训练与使用已确定模型的区别，为一次新任务排出输入检查、模型计算、使用结果和事后核对的主要顺序\n根据固定模型、参数和新输入逐步得到预测，区分当时未知的实际结果与后来确认的目标\n分析必要输入缺失、单位或取值时刻错误、使用条件变化的问题，提出可执行的核查办法",
+    "entries": [
+      {
+        "text": "迁移练习\n新任务来了，模型怎样给出预测？",
+        "href": "#exercise-use-print-model"
+      },
+      {
+        "text": "迁移练习\n这条输入现在能直接使用吗？",
+        "href": "#exercise-audit-current-inputs"
+      }
+    ],
+    "refs": [
+      {
+        "text": "4.2 参数确定后的使用",
+        "href": "/learn/AI000/AI000-C04-L02#use-fixed-model"
+      },
+      {
+        "text": "4.1 新记录中的未知实际结果",
+        "href": "/learn/AI000/AI000-C04-L01#new-record"
+      },
+      {
+        "text": "4.3 测试以后继续开发",
+        "href": "/learn/AI000/AI000-C04-L03#test-feedback"
+      }
+    ],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-use-print-model",
+      "tag": "H3",
+      "text": "新任务来了，模型怎样给出预测？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-use-print-model",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-audit-current-inputs",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      }
+    ],
+    "client": 1425,
+    "headings": [
+      "模型已经准备好，新包裹这时才到",
+      "先把这次要交给模型的信息准备清楚",
+      "输入3件，沿用4和2算出10分钟",
+      "沿着新任务，看预测和实际各放在哪里",
+      "这段使用模型的计算，叫作推理",
+      "等归架完成，再核对这次估计",
+      "模型准备好了，输入仍然要检查",
+      "打印任务来了，自己走完一次使用过程",
+      "面对五份资料，先判断能不能照常用",
+      "把第四章连成一次可核查的使用"
+    ],
+    "scroll": 1425,
+    "title": "模型训练好以后，如何完成预测？",
+    "screenshotPosition": {
+      "bottom": 1049.46875,
+      "top": 356.125
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 356.125,
+      "width": 1440,
+      "y": 4995.33349609375
+    }
+  },
+  {
+    "id": "AI000-C05-L01",
+    "width": 1440,
+    "goals": "本节学习目标\n3 项\n01\n分清文字任务\n\n从交付结果区分类别判断、查资料与摘要。\n\n02\n找出每项结论的依据\n\n写清输入、输出和出处，保留未确认的信息。\n\n03\n设计服务处理步骤\n\n安排查找、回复与核查，判断方法证据是否充分。\n\n查看完整目标\n用具体文字任务解释自然语言处理的用途，根据服务需求区分文字分类、信息检索和内容摘要\n分析文字任务所需的输入与期望输出，区分有原始资料支持的结论、组织的回复和仍未知的信息\n为新的语言业务需求设计查找、组织与核查步骤，解释是否需要LLM，并为资料缺口提出核实路径",
+    "entries": [
+      {
+        "text": "迁移练习\n为器材服务交付一份可核查的处理记录",
+        "href": "#exercise-design-equipment-service"
+      },
+      {
+        "text": "迁移练习\n写出输入、交付物、处理方式与核查办法",
+        "href": "#exercise-choose-language-work"
+      }
+    ],
+    "refs": [
+      {
+        "text": "2.2 一个聊天产品里的不同工作",
+        "href": "/learn/AI000/AI000-C02-L02#product"
+      },
+      {
+        "text": "2.2 同一LLM可以承担不同任务",
+        "href": "/learn/AI000/AI000-C02-L02#llm"
+      },
+      {
+        "text": "4.4 先准备清楚这一次的输入",
+        "href": "/learn/AI000/AI000-C04-L04#one-prediction"
+      }
+    ],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-design-equipment-service",
+      "tag": "H3",
+      "text": "为器材服务交付一份可核查的处理记录"
+    },
+    "exercises": [
+      {
+        "id": "exercise-design-equipment-service",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-choose-language-work",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      }
+    ],
+    "client": 1425,
+    "headings": [
+      "五条咨询，工作人员先做什么？",
+      "按服务需要给消息归类",
+      "知道是取消咨询，还要找到什么？",
+      "同样找到R1，为什么建议会不同？",
+      "找到的规则，怎样变成给B的回复？",
+      "资料缺了一块，怎样继续处理？",
+      "负责人只想看一段简报，怎样写？",
+      "同一条文字，任务变了，交付也变",
+      "NLP是任务领域，LLM可以承担其中多种工作",
+      "把不同工作接成一个服务方案",
+      "换到器材室，设计你自己的处理方案",
+      "四种需求，该交回怎样的语言处理结果？",
+      "拿一组新的文字，先写这份任务单"
+    ],
+    "scroll": 1425,
+    "title": "自然语言处理与大语言模型",
+    "screenshotPosition": {
+      "bottom": 902.9791870117188,
+      "top": 355.88543701171875
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 355.88543701171875,
+      "width": 1440,
+      "y": 8598.6669921875
+    }
+  },
+  {
+    "id": "AI000-C05-L03",
+    "width": 1440,
+    "goals": "本节学习目标\n3 项\n01\n分清输入与输出模态\n\n按当前步骤区分文字、图片和原始声音。\n\n02\n对应资料并指出来源\n\n用可靠关联找同一对象，说明答案各部分的依据。\n\n03\n发现缺口并安排核查\n\n处理错配、缺失与冲突，保留方法未知。\n\n查看完整目标\n用具体任务区分文字、图像、声音的输入与输出，说明不同模态各自提供什么信息\n根据可靠编号或关联对应不同模态的资料，逐项说明答案由哪些图像观察和文字记录支持\n为新任务设计输入、输出和核查步骤，识别资料缺失、错配、不一致及实现方法的证据缺口",
+    "entries": [
+      {
+        "text": "迁移练习\n交一份有来源、保留缺口的领物答复",
+        "href": "#exercise-link-lost-property"
+      },
+      {
+        "text": "迁移练习\n写清输入、输出、步骤与尚缺的证据",
+        "href": "#exercise-analyse-multimodal-services"
+      }
+    ],
+    "refs": [
+      {
+        "text": "5.2 图像输入、任务与方法",
+        "href": "/learn/AI000/AI000-C05-L02#methods-and-targets"
+      },
+      {
+        "text": "5.1 输入、交付和核查",
+        "href": "/learn/AI000/AI000-C05-L01#task-outputs"
+      },
+      {
+        "text": "2.2 模型和产品的分工",
+        "href": "/learn/AI000/AI000-C02-L02#product"
+      }
+    ],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-link-lost-property",
+      "tag": "H3",
+      "text": "交一份有来源、保留缺口的领物答复"
+    },
+    "exercises": [
+      {
+        "id": "exercise-link-lost-property",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-analyse-multimodal-services",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      }
+    ],
+    "client": 1425,
+    "headings": [
+      "看得出有波浪纹，就知道它在哪个展厅吗？",
+      "沿着编号，把外观和登记资料接起来",
+      "图片和文字，各带来一种信息形式",
+      "答案是文字，输入也一定只有文字吗？",
+      "讲解录音，和已经写好的文字稿",
+      "答错展厅，可能错在看图之后",
+      "能接起这些步骤，就一定是一个多模态大模型吗？",
+      "换到失物招领处，自己完成对应和核查",
+      "四份新需求，各步骤实际拿到了什么？",
+      "拿走一种信息，你还剩哪些依据？"
+    ],
+    "scroll": 1425,
+    "title": "多模态 AI：连接文字、图片与声音",
+    "screenshotPosition": {
+      "bottom": 903.40625,
+      "top": 356.3125
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 356.3125,
+      "width": 1440,
+      "y": 6796.66650390625
+    }
+  },
+  {
+    "id": "AI000-C05-L04",
+    "width": 1440,
+    "goals": "本节学习目标\n3 项\n01\n把要求写到能检查\n\n列清事实与信息怎样呈现。\n\n02\n按证据比较候选\n\n逐项指出符合、缺陷和未知。\n\n03\n提出修改与验收办法\n\n改具体问题，再查内容、媒介效果与资料。\n\n查看完整目标\n将模糊的作品要求整理为明确、可核对的内容条件与呈现条件\n对照同一份要求检查不同候选作品，用可见证据指出满足、未满足及暂时无法确认的条件\n针对发现的问题提出修改或补查方案，为新的文字、图片或声音任务制定基本验收清单",
+    "entries": [
+      {
+        "text": "迁移练习\n科技体验日海报可以交付了吗？",
+        "href": "#exercise-check-tech-posters"
+      },
+      {
+        "text": "迁移练习\n给展馆配音写一份验收方案",
+        "href": "#exercise-plan-gallery-voice"
+      }
+    ],
+    "refs": [
+      {
+        "text": "2.2 检索、编辑和生成",
+        "href": "/learn/AI000/AI000-C02-L02#generation"
+      },
+      {
+        "text": "4.3 根据依据比较候选",
+        "href": "/learn/AI000/AI000-C04-L03#validation-choice"
+      },
+      {
+        "text": "5.3 声音和文字稿",
+        "href": "/learn/AI000/AI000-C05-L03#audio-and-transcript"
+      }
+    ],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-check-tech-posters",
+      "tag": "H3",
+      "text": "科技体验日海报可以交付了吗？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-check-tech-posters",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-plan-gallery-voice",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      }
+    ],
+    "client": 1425,
+    "headings": [
+      "只说“好看一点”，能拿到可用的海报吗？",
+      "先确定活动事实，再约定怎样展示",
+      "先看两张候选，再逐项核对",
+      "有些条件看内容，有些要看呈现",
+      "修改要指出位置，也要保住原来正确的内容",
+      "生成是其中一步，检查的是这份作品",
+      "文稿写对了，配音就已经合格了吗？",
+      "换一场活动，自己决定该改哪里",
+      "换成展馆配音，哪些结论还得等声音？",
+      "拿到候选以后，把决定写到有依据"
+    ],
+    "scroll": 1425,
+    "title": "生成模型：从要求到可核对的作品",
+    "screenshotPosition": {
+      "bottom": 961.4270935058594,
+      "top": 355.8333435058594
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 355.8333435058594,
+      "width": 1440,
+      "y": 7106.66650390625
+    }
+  },
+  {
+    "id": "AI000-C01-L01",
+    "width": 768,
+    "goals": "本节学习目标\n3 项\n01\n解释AI的作用\n\n联系一个任务，用自己的话说明AI在做什么。\n\n02\n说清输入、任务和输出\n\n指出系统拿到什么、处理什么、交回什么。\n\n03\n把需求写成具体任务\n\n限定输出和范围，让结果能够被检查。\n\n查看完整目标\n用自己的话解释人工智能在一个具体任务中起什么作用\n指出系统的输入、处理任务与输出，并说明三者怎样联系\n把一个日常需求改写成范围清楚、能检查结果的AI任务",
+    "entries": [
+      {
+        "text": "理解练习\n向同学解释录音转文字",
+        "href": "#exercise-describe-task"
+      },
+      {
+        "text": "迁移练习\n给失物照片目录安排一项任务",
+        "href": "#exercise-design-task"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-describe-task",
+      "tag": "H3",
+      "text": "向同学解释录音转文字"
+    },
+    "exercises": [
+      {
+        "id": "exercise-describe-task",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      },
+      {
+        "id": "exercise-design-task",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      }
+    ],
+    "client": 753,
+    "headings": [
+      "收件箱里的一个小麻烦",
+      "电脑需要一个怎样的判断办法？",
+      "把刚才的动作，放进“人工智能”这个名称",
+      "沿着输入、任务和输出看一遍",
+      "换一个需求，试着说具体",
+      "能把AI的作用讲成一句完整的话"
+    ],
+    "scroll": 753,
+    "title": "人工智能究竟是什么？",
+    "screenshotPosition": {
+      "bottom": 978.6666870117188,
+      "top": 402.3229370117187
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 402.3229370117187,
+      "width": 768,
+      "y": 3544
+    }
+  },
+  {
+    "id": "AI000-C01-L02",
+    "width": 768,
+    "goals": "本节学习目标\n3 项\n01\n比较不同任务\n\n说明输入、输出和任务范围有何差别。\n\n02\n解释判断错误\n\n区分误拦与漏掉，联系实际后果。\n\n03\n设计核查方案\n\n选可靠依据，逐项比较并安排后续处理。\n\n查看完整目标\n比较识别、分类、推荐和生成任务的输入、输出与适用范围\n结合给定例子解释误拦、漏掉等错误及其后果\n为新任务设计有可靠对照、可执行的初步核查办法",
+    "entries": [
+      {
+        "text": "迁移练习\n四份需求，各该交回什么？",
+        "href": "#exercise-compare-service-tasks"
+      },
+      {
+        "text": "迁移练习\n归还提醒的两种错误",
+        "href": "#exercise-check-library"
+      },
+      {
+        "text": "迁移练习\n给商品照片分类，怎样检查并使用结果？",
+        "href": "#exercise-product-review"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-compare-service-tasks",
+      "tag": "H3",
+      "text": "四份需求，各该交回什么？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-compare-service-tasks",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      },
+      {
+        "id": "exercise-check-library",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      },
+      {
+        "id": "exercise-product-review",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      }
+    ],
+    "client": 753,
+    "headings": [
+      "都在帮忙，做的工作一样吗？",
+      "把两封新邮件放进来，规则还行吗？",
+      "多看一些例子，为什么仍可能判断错？",
+      "新写的一段话，该用什么核对？",
+      "先比较任务，再检查具体结果",
+      "从一句“可能会错”，走到可以核对的动作"
+    ],
+    "scroll": 753,
+    "title": "AI 能做什么，为什么也会出错？",
+    "screenshotPosition": {
+      "bottom": 1007.5729370117188,
+      "top": 401.9791870117187
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 401.9791870117187,
+      "width": 768,
+      "y": 4723.33349609375
+    }
+  },
+  {
+    "id": "AI000-C01-L03",
+    "width": 768,
+    "goals": "本节学习目标\n3 项\n01\n比较得到结果的办法\n\n区分明确步骤、知识推理与从数据学习。\n\n02\n按方法证据判断\n\n给出有条件的结论，指出未说明的信息。\n\n03\n跟着规则推出结论\n\n写出中间步骤，说明还不能确定什么。\n\n查看完整目标\n比较普通自动化、知识推理和数据学习在得到结果时的区别\n根据系统已给出的方法证据判断是否涉及AI，信息不足时说明条件与追问\n沿着简单知识规则推出结论，并说明结论的范围",
+    "entries": [
+      {
+        "text": "迁移练习\n四种系统，哪条信息支持你的判断？",
+        "href": "#exercise-identify-systems"
+      },
+      {
+        "text": "理解练习\n沿着水泵规则走两步",
+        "href": "#exercise-trace-method"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-identify-systems",
+      "tag": "H3",
+      "text": "四种系统，哪条信息支持你的判断？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-identify-systems",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      },
+      {
+        "id": "exercise-trace-method",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      }
+    ],
+    "client": 753,
+    "headings": [
+      "到七点响铃，需要先学会什么吗？",
+      "人写的规则，也可以用来推理",
+      "同样给建议，判断关系从哪里来？",
+      "只有一个“智能”按钮，能确定多少？",
+      "依据换了，你的判断会怎样变？",
+      "方法证据比“看起来智能”更有用"
+    ],
+    "scroll": 753,
+    "title": "普通自动化和 AI 有什么区别？",
+    "screenshotPosition": {
+      "bottom": 1036.9895935058594,
+      "top": 402.1458435058594
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 402.1458435058594,
+      "width": 768,
+      "y": 3559.333251953125
+    }
+  },
+  {
+    "id": "AI000-C02-L01",
+    "width": 768,
+    "goals": "本节学习目标\n3 项\n01\n画出包含关系\n\n用具体例子说明两个不能反推的边界。\n\n02\n说明多层表示\n\n解释深度学习的学习方式与范围。\n\n03\n根据证据归类\n\n给结论写依据，保留未说明的信息。\n\n查看完整目标\n解释AI、ML、DL的包含关系，并用两个反例说明不能等同\n用多层表示的直觉说明深度学习为何属于机器学习及其与其他方法的差别\n根据新系统给出的方法证据归类，区别明确排除与仍然未知的信息",
+    "entries": [
+      {
+        "text": "理解练习\n画出属于自己的 AI 技术关系图",
+        "href": "#exercise-draw-method-map"
+      },
+      {
+        "text": "迁移练习\n只凭给出的技术信息，能归到哪一层？",
+        "href": "#exercise-method-evidence"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-draw-method-map",
+      "tag": "H3",
+      "text": "画出属于自己的 AI 技术关系图"
+    },
+    "exercises": [
+      {
+        "id": "exercise-draw-method-map",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      },
+      {
+        "id": "exercise-method-evidence",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      }
+    ],
+    "client": 753,
+    "headings": [
+      "邮件还是那些邮件，判断办法从哪里来？",
+      "深度学习多出来的“深度”是什么？",
+      "三个范围，应该怎样套在一起？",
+      "读一段产品说明，先找哪三条信息？",
+      "自己画一张图，再给新系统归类",
+      "把几个名称放进一句有依据的话"
+    ],
+    "scroll": 753,
+    "title": "AI、机器学习与深度学习，到底是什么关系？",
+    "screenshotPosition": {
+      "bottom": 1066.1145935058594,
+      "top": 402.0208435058594
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 402.0208435058594,
+      "width": 768,
+      "y": 4706.66650390625
+    }
+  },
+  {
+    "id": "AI000-C02-L02",
+    "width": 768,
+    "goals": "本节学习目标\n3 项\n01\n辨认四类处理任务\n\n根据过程区分类别判断、查找、编辑和生成。\n\n02\n联系生成、DL与LLM\n\n分别说明能力、方法、模型和产品。\n\n03\n分析产品说明\n\n列出方法证据、成立条件与未知信息。\n\n查看完整目标\n根据具体输入输出和处理过程区分分类、检索、编辑与生成任务\n解释现代生成式AI、深度学习与LLM的关系，区分模型和产品\n分析新产品的任务与方法证据，说明能确定的内容和仍需追问的信息",
+    "entries": [
+      {
+        "text": "迁移练习\n这次是在找、改、判断，还是生成？",
+        "href": "#exercise-classify-new-systems"
+      },
+      {
+        "text": "迁移练习\n为展览服务画一张分工图",
+        "href": "#exercise-product-model-map"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-classify-new-systems",
+      "tag": "H3",
+      "text": "这次是在找、改、判断，还是生成？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-classify-new-systems",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      },
+      {
+        "id": "exercise-product-model-map",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      }
+    ],
+    "client": 753,
+    "headings": [
+      "找一张海报，和画一张海报一样吗？",
+      "生成式AI怎样利用学过的规律？",
+      "聊天产品背后的LLM，指的是什么？",
+      "一个聊天窗口，可能接起哪些工作？",
+      "把任务、方法与产品分工写清楚",
+      "用三个问题读懂新的产品介绍"
+    ],
+    "scroll": 753,
+    "title": "生成式 AI 是什么？它和 LLM 有什么关系？",
+    "screenshotPosition": {
+      "bottom": 1036.7395935058594,
+      "top": 401.8958435058594
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 401.8958435058594,
+      "width": 768,
+      "y": 4836.66650390625
+    }
+  },
+  {
+    "id": "AI000-C03-L01",
+    "width": 768,
+    "goals": "本节学习目标\n3 项\n01\n分清输入和标签\n\n用自己准备的例子解释监督学习。\n\n02\n区别学习与预测\n\n说明答案何时可用，预测怎样核实。\n\n03\n判断数据还缺什么\n\n为新任务补齐输入、目标及核实办法。\n\n查看完整目标\n用具体例子解释监督学习，区分一条样本中的输入信息与标签\n解释学习时已知目标的作用，以及新输入的预测为何需要另行核实\n判断新任务是否具备监督学习所需的输入与目标信息，并提出合理的数据准备方案",
+    "entries": [
+      {
+        "text": "迁移练习\n为图书分类准备一组有答案的例子",
+        "href": "#exercise-prepare-examples"
+      },
+      {
+        "text": "迁移练习\n四份资料，离开展监督学习还差什么？",
+        "href": "#exercise-missing-targets"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-prepare-examples",
+      "tag": "H3",
+      "text": "为图书分类准备一组有答案的例子"
+    },
+    "exercises": [
+      {
+        "id": "exercise-prepare-examples",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      },
+      {
+        "id": "exercise-missing-targets",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      }
+    ],
+    "client": 753,
+    "headings": [
+      "照片旁边，为什么还要写类别？",
+      "有答案的例子用来学，新照片用来判断",
+      "现在给这种学习方式起个名字",
+      "一条例子里，分别装着什么？",
+      "答案从哪里来，值得信任吗？",
+      "已知答案，也可以是一个数",
+      "只有一堆照片，下一步能做什么？",
+      "换一项工作，自己把例子准备好",
+      "看见一条例子，也要找到它的目标"
+    ],
+    "scroll": 753,
+    "title": "监督学习：从有答案的例子中学习",
+    "screenshotPosition": {
+      "bottom": 1066.1041870117188,
+      "top": 402.0104370117187
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 402.0104370117187,
+      "width": 768,
+      "y": 6028
+    }
+  },
+  {
+    "id": "AI000-C03-L02",
+    "width": 768,
+    "goals": "本节学习目标\n3 项\n01\n辨认没有目标标签的学习\n\n分清描述记录的信息和预先给出的答案。\n\n02\n提出有依据的分组\n\n比较新记录，并说明换个依据会怎样。\n\n03\n解释分组能说明多少\n\n保留未决情况，给出相关的核查动作。\n\n查看完整目标\n用具体例子解释无监督学习，区分记录中的输入信息与当前任务预先确认的目标标签\n根据给定记录和明确的比较依据提出合理分组，并解释更换依据可能带来的变化\n区分相似记录组与已确认的真实类别，说明分组的用途、限制与需要核查的内容",
+    "entries": [
+      {
+        "text": "迁移练习\n给六条活动记录提出一个分组方案",
+        "href": "#exercise-propose-groups"
+      },
+      {
+        "text": "迁移练习\n先找当前任务的目标信息，再判断学习方式",
+        "href": "#exercise-identify-learning-signals"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-propose-groups",
+      "tag": "H3",
+      "text": "给六条活动记录提出一个分组方案"
+    },
+    "exercises": [
+      {
+        "id": "exercise-propose-groups",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      },
+      {
+        "id": "exercise-identify-learning-signals",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      }
+    ],
+    "client": 753,
+    "headings": [
+      "这次没有写好答案，还能从哪里看起？",
+      "数字不同，也可能有相近的借阅倾向",
+      "E和F，也必须马上选一组吗？",
+      "没有标签，为什么仍然有东西可学？",
+      "只看总次数，刚才的两组还明显吗？",
+      "有了组号，怎样把观察用在图书馆？",
+      "换成活动记录，自己说明怎样分、为什么分",
+      "给分组写一句能经得起核对的说明"
+    ],
+    "scroll": 753,
+    "title": "无监督学习：没有标签也能发现规律吗？",
+    "screenshotPosition": {
+      "bottom": 1124.4583435058594,
+      "top": 401.8645935058594
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 401.8645935058594,
+      "width": 768,
+      "y": 5956.66650390625
+    }
+  },
+  {
+    "id": "AI000-C03-L03",
+    "width": 768,
+    "goals": "本节学习目标\n3 项\n01\n从原数据准备目标\n\n亲手设计一项有来源可查的学习任务。\n\n02\n分清四个角色\n\n把原文、学习输入、目标和预测分别写出。\n\n03\n根据学习安排判断\n\n比较目标的来源，保留分类口径与实现缺口。\n\n查看完整目标\n用新例构造自监督学习任务，解释学习目标怎样从原始数据自身取得\n区分原始数据、处理后的学习输入、构造目标与模型预测，并说明怎样比较\n根据目标来源和具体学习安排比较监督、无监督聚类与自监督，说明分类联系及信息不足",
+    "entries": [
+      {
+        "text": "迁移练习\n把一则新通知变成学习样本",
+        "href": "#exercise-design-self-task"
+      },
+      {
+        "text": "迁移练习\n三种学习安排，答案各从哪里来？",
+        "href": "#exercise-compare-learning-tasks"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-design-self-task",
+      "tag": "H3",
+      "text": "把一则新通知变成学习样本"
+    },
+    "exercises": [
+      {
+        "id": "exercise-design-self-task",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      },
+      {
+        "id": "exercise-compare-learning-tasks",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      }
+    ],
+    "client": 753,
+    "headings": [
+      "把一句话藏起一部分，答案从哪里来？",
+      "模型收到的句子，和我们保留的原句不同",
+      "让数据为学习提供对照",
+      "换一句话，也要按同一办法准备",
+      "除了遮住中间，还能怎样利用原文？",
+      "学会这种任务，以后就只能补空格吗？",
+      "先问目标从哪里来，再比较学习安排",
+      "自己安排一次有来源可查的学习任务",
+      "目标有出处，比较才有依据"
+    ],
+    "scroll": 753,
+    "title": "自监督学习：怎样从数据本身构造学习任务？",
+    "screenshotPosition": {
+      "bottom": 1037.0104370117188,
+      "top": 402.1666870117187
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 402.1666870117187,
+      "width": 768,
+      "y": 5950.66650390625
+    }
+  },
+  {
+    "id": "AI000-C03-L04",
+    "width": 768,
+    "goals": "本节学习目标\n3 项\n01\n追踪行动与反馈\n\n写清当前看到什么、做什么，以及随后怎样变化。\n\n02\n比较整段行动\n\n算累计奖励，解释为什么不能只看第一步。\n\n03\n判断任务是否合适\n\n查连续选择、环境反馈和仍然缺少的信息。\n\n查看完整目标\n用新例说明智能体、环境、当前观察、行动与奖励，追踪行动怎样带来新情况和后续选择\n计算两段完整行动的简单累计奖励，解释眼前奖励与整体结果的差别，区分奖励与正确动作标签\n根据实际决策和反馈判断能否按强化学习构造任务，提出所需信息、奖励核查及仍不能确定的内容",
+    "entries": [
+      {
+        "text": "迁移练习\n先浇水还是先补水，差别出现在哪一步？",
+        "href": "#exercise-trace-watering"
+      },
+      {
+        "text": "迁移练习\n哪些条件支持按行动反馈学习来分析？",
+        "href": "#exercise-assess-feedback"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-trace-watering",
+      "tag": "H3",
+      "text": "先浇水还是先补水，差别出现在哪一步？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-trace-watering",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      },
+      {
+        "id": "exercise-assess-feedback",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      }
+    ],
+    "client": 753,
+    "headings": [
+      "走到岔路口，先选哪一条路？",
+      "第一步得分以后，事情还没有结束",
+      "第一步多得几分，整段就更好吗？",
+      "得到7分，会直接告诉它每一步怎么走吗？",
+      "计分办法，也在影响它愿意做什么",
+      "没走过的路，怎样知道后面有什么？",
+      "把经历变成以后选择行动的办法",
+      "回看第三章，四次任务究竟在学什么？",
+      "换成浇水，自己追踪每一步",
+      "看到“自动优化”，还要追问什么？",
+      "把一个决定放回它带来的后续过程"
+    ],
+    "scroll": 753,
+    "title": "强化学习：通过行动与反馈学习",
+    "screenshotPosition": {
+      "bottom": 1036.9791870117188,
+      "top": 402.1354370117187
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 402.1354370117187,
+      "width": 768,
+      "y": 6815.33349609375
+    }
+  },
+  {
+    "id": "AI000-C04-L03",
+    "width": 768,
+    "goals": "本节学习目标\n3 项\n01\n给三批记录安排工作\n\n说清哪些用于学习、选择和最后检查。\n\n02\n根据验证结果作选择\n\n比较预测，并解释测试为何留到方案确定后。\n\n03\n检查评价流程是否合理\n\n追踪信息何时被使用，给出修正办法。\n\n查看完整目标\n用具体记录解释训练、验证和测试三种用途，说明它们分别支持学习、选择和最终检查中的什么工作\n比较候选模型在验证记录上的预测差距并作有依据的选择，解释为什么不能反复用最终测试数据挑选模型\n识别事后信息、重复记录或测试反馈造成的评估问题，为新任务提出数据使用顺序和可执行的核查办法",
+    "entries": [
+      {
+        "text": "迁移练习\n怎样合理安排训练、验证与测试？",
+        "href": "#exercise-plan-print-evaluation"
+      },
+      {
+        "text": "理解练习\n这些结果能证明什么，该怎样修改？",
+        "href": "#exercise-audit-evaluation-flow"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-plan-print-evaluation",
+      "tag": "H3",
+      "text": "怎样合理安排训练、验证与测试？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-plan-print-evaluation",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      },
+      {
+        "id": "exercise-audit-evaluation-flow",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      }
+    ],
+    "client": 753,
+    "headings": [
+      "练过的题全对了，换一套题呢？",
+      "先看一批新的包裹记录",
+      "先安排用途，再看结果",
+      "训练记录把学习所需的输入和目标配在一起",
+      "用验证记录比较，决定继续选谁",
+      "选好乙，再用保留记录检查",
+      "沿着图，追踪每批记录何时参与",
+      "我们希望学到的办法也能用于新记录",
+      "到件时拿不到的信息，为什么会让结果好看？",
+      "换一个编号，不会变成另一件包裹",
+      "看过测试以后，还能改模型吗？",
+      "换到打印点，写出你的数据使用计划",
+      "接手三个流程，找出信息在何时越界",
+      "回看你的计划，检查哪批记录影响过决定"
+    ],
+    "scroll": 753,
+    "title": "训练、验证与测试各有什么作用？",
+    "screenshotPosition": {
+      "bottom": 1124.5729370117188,
+      "top": 401.9791870117187
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 401.9791870117187,
+      "width": 768,
+      "y": 8504.6669921875
+    }
+  },
+  {
+    "id": "AI000-C04-L04",
+    "width": 768,
+    "goals": "本节学习目标\n3 项\n01\n排出一次预测的步骤\n\n联系实际动作，区分使用、核对与再训练。\n\n02\n用固定模型算新任务\n\n指明参数与输入，另存预测和实际结果。\n\n03\n检查输入和适用条件\n\n找出具体问题，提出补查与谨慎处理办法。\n\n查看完整目标\n解释训练与使用已确定模型的区别，为一次新任务排出输入检查、模型计算、使用结果和事后核对的主要顺序\n根据固定模型、参数和新输入逐步得到预测，区分当时未知的实际结果与后来确认的目标\n分析必要输入缺失、单位或取值时刻错误、使用条件变化的问题，提出可执行的核查办法",
+    "entries": [
+      {
+        "text": "迁移练习\n新任务来了，模型怎样给出预测？",
+        "href": "#exercise-use-print-model"
+      },
+      {
+        "text": "迁移练习\n这条输入现在能直接使用吗？",
+        "href": "#exercise-audit-current-inputs"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-use-print-model",
+      "tag": "H3",
+      "text": "新任务来了，模型怎样给出预测？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-use-print-model",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      },
+      {
+        "id": "exercise-audit-current-inputs",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      }
+    ],
+    "client": 753,
+    "headings": [
+      "模型已经准备好，新包裹这时才到",
+      "先把这次要交给模型的信息准备清楚",
+      "输入3件，沿用4和2算出10分钟",
+      "沿着新任务，看预测和实际各放在哪里",
+      "这段使用模型的计算，叫作推理",
+      "等归架完成，再核对这次估计",
+      "模型准备好了，输入仍然要检查",
+      "打印任务来了，自己走完一次使用过程",
+      "面对五份资料，先判断能不能照常用",
+      "把第四章连成一次可核查的使用"
+    ],
+    "scroll": 753,
+    "title": "模型训练好以后，如何完成预测？",
+    "screenshotPosition": {
+      "bottom": 1124.7083435058594,
+      "top": 402.1145935058594
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 402.1145935058594,
+      "width": 768,
+      "y": 5148
+    }
+  },
+  {
+    "id": "AI000-C05-L01",
+    "width": 768,
+    "goals": "本节学习目标\n3 项\n01\n分清文字任务\n\n从交付结果区分类别判断、查资料与摘要。\n\n02\n找出每项结论的依据\n\n写清输入、输出和出处，保留未确认的信息。\n\n03\n设计服务处理步骤\n\n安排查找、回复与核查，判断方法证据是否充分。\n\n查看完整目标\n用具体文字任务解释自然语言处理的用途，根据服务需求区分文字分类、信息检索和内容摘要\n分析文字任务所需的输入与期望输出，区分有原始资料支持的结论、组织的回复和仍未知的信息\n为新的语言业务需求设计查找、组织与核查步骤，解释是否需要LLM，并为资料缺口提出核实路径",
+    "entries": [
+      {
+        "text": "迁移练习\n为器材服务交付一份可核查的处理记录",
+        "href": "#exercise-design-equipment-service"
+      },
+      {
+        "text": "迁移练习\n写出输入、交付物、处理方式与核查办法",
+        "href": "#exercise-choose-language-work"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-design-equipment-service",
+      "tag": "H3",
+      "text": "为器材服务交付一份可核查的处理记录"
+    },
+    "exercises": [
+      {
+        "id": "exercise-design-equipment-service",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      },
+      {
+        "id": "exercise-choose-language-work",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      }
+    ],
+    "client": 753,
+    "headings": [
+      "五条咨询，工作人员先做什么？",
+      "按服务需要给消息归类",
+      "知道是取消咨询，还要找到什么？",
+      "同样找到R1，为什么建议会不同？",
+      "找到的规则，怎样变成给B的回复？",
+      "资料缺了一块，怎样继续处理？",
+      "负责人只想看一段简报，怎样写？",
+      "同一条文字，任务变了，交付也变",
+      "NLP是任务领域，LLM可以承担其中多种工作",
+      "把不同工作接成一个服务方案",
+      "换到器材室，设计你自己的处理方案",
+      "四种需求，该交回怎样的语言处理结果？",
+      "拿一组新的文字，先写这份任务单"
+    ],
+    "scroll": 753,
+    "title": "自然语言处理与大语言模型",
+    "screenshotPosition": {
+      "bottom": 949.2083435058594,
+      "top": 402.1145935058594
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 402.1145935058594,
+      "width": 768,
+      "y": 9132
+    }
+  },
+  {
+    "id": "AI000-C05-L03",
+    "width": 768,
+    "goals": "本节学习目标\n3 项\n01\n分清输入与输出模态\n\n按当前步骤区分文字、图片和原始声音。\n\n02\n对应资料并指出来源\n\n用可靠关联找同一对象，说明答案各部分的依据。\n\n03\n发现缺口并安排核查\n\n处理错配、缺失与冲突，保留方法未知。\n\n查看完整目标\n用具体任务区分文字、图像、声音的输入与输出，说明不同模态各自提供什么信息\n根据可靠编号或关联对应不同模态的资料，逐项说明答案由哪些图像观察和文字记录支持\n为新任务设计输入、输出和核查步骤，识别资料缺失、错配、不一致及实现方法的证据缺口",
+    "entries": [
+      {
+        "text": "迁移练习\n交一份有来源、保留缺口的领物答复",
+        "href": "#exercise-link-lost-property"
+      },
+      {
+        "text": "迁移练习\n写清输入、输出、步骤与尚缺的证据",
+        "href": "#exercise-analyse-multimodal-services"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-link-lost-property",
+      "tag": "H3",
+      "text": "交一份有来源、保留缺口的领物答复"
+    },
+    "exercises": [
+      {
+        "id": "exercise-link-lost-property",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      },
+      {
+        "id": "exercise-analyse-multimodal-services",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      }
+    ],
+    "client": 753,
+    "headings": [
+      "看得出有波浪纹，就知道它在哪个展厅吗？",
+      "沿着编号，把外观和登记资料接起来",
+      "图片和文字，各带来一种信息形式",
+      "答案是文字，输入也一定只有文字吗？",
+      "讲解录音，和已经写好的文字稿",
+      "答错展厅，可能错在看图之后",
+      "能接起这些步骤，就一定是一个多模态大模型吗？",
+      "换到失物招领处，自己完成对应和核查",
+      "四份新需求，各步骤实际拿到了什么？",
+      "拿走一种信息，你还剩哪些依据？"
+    ],
+    "scroll": 753,
+    "title": "多模态 AI：连接文字、图片与声音",
+    "screenshotPosition": {
+      "bottom": 949.3333435058594,
+      "top": 402.2395935058594
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 402.2395935058594,
+      "width": 768,
+      "y": 7047.33349609375
+    }
+  },
+  {
+    "id": "AI000-C05-L04",
+    "width": 768,
+    "goals": "本节学习目标\n3 项\n01\n把要求写到能检查\n\n列清事实与信息怎样呈现。\n\n02\n按证据比较候选\n\n逐项指出符合、缺陷和未知。\n\n03\n提出修改与验收办法\n\n改具体问题，再查内容、媒介效果与资料。\n\n查看完整目标\n将模糊的作品要求整理为明确、可核对的内容条件与呈现条件\n对照同一份要求检查不同候选作品，用可见证据指出满足、未满足及暂时无法确认的条件\n针对发现的问题提出修改或补查方案，为新的文字、图片或声音任务制定基本验收清单",
+    "entries": [
+      {
+        "text": "迁移练习\n科技体验日海报可以交付了吗？",
+        "href": "#exercise-check-tech-posters"
+      },
+      {
+        "text": "迁移练习\n给展馆配音写一份验收方案",
+        "href": "#exercise-plan-gallery-voice"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-check-tech-posters",
+      "tag": "H3",
+      "text": "科技体验日海报可以交付了吗？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-check-tech-posters",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      },
+      {
+        "id": "exercise-plan-gallery-voice",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 650,
+          "scroll": 650
+        }
+      }
+    ],
+    "client": 753,
+    "headings": [
+      "只说“好看一点”，能拿到可用的海报吗？",
+      "先确定活动事实，再约定怎样展示",
+      "先看两张候选，再逐项核对",
+      "有些条件看内容，有些要看呈现",
+      "修改要指出位置，也要保住原来正确的内容",
+      "生成是其中一步，检查的是这份作品",
+      "文稿写对了，配音就已经合格了吗？",
+      "换一场活动，自己决定该改哪里",
+      "换成展馆配音，哪些结论还得等声音？",
+      "拿到候选以后，把决定写到有依据"
+    ],
+    "scroll": 753,
+    "title": "生成模型：从要求到可核对的作品",
+    "screenshotPosition": {
+      "bottom": 1036.75,
+      "top": 401.90625
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 401.90625,
+      "width": 768,
+      "y": 7294
+    }
+  },
+  {
+    "id": "AI000-C01-L01",
+    "width": 390,
+    "goals": "本节学习目标\n3 项\n01\n解释AI的作用\n\n联系一个任务，用自己的话说明AI在做什么。\n\n02\n说清输入、任务和输出\n\n指出系统拿到什么、处理什么、交回什么。\n\n03\n把需求写成具体任务\n\n限定输出和范围，让结果能够被检查。\n\n查看完整目标\n用自己的话解释人工智能在一个具体任务中起什么作用\n指出系统的输入、处理任务与输出，并说明三者怎样联系\n把一个日常需求改写成范围清楚、能检查结果的AI任务",
+    "entries": [
+      {
+        "text": "理解练习\n向同学解释录音转文字",
+        "href": "#exercise-describe-task"
+      },
+      {
+        "text": "迁移练习\n给失物照片目录安排一项任务",
+        "href": "#exercise-design-task"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-describe-task",
+      "tag": "H3",
+      "text": "向同学解释录音转文字"
+    },
+    "exercises": [
+      {
+        "id": "exercise-describe-task",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      },
+      {
+        "id": "exercise-design-task",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      }
+    ],
+    "client": 375,
+    "headings": [
+      "收件箱里的一个小麻烦",
+      "电脑需要一个怎样的判断办法？",
+      "把刚才的动作，放进“人工智能”这个名称",
+      "沿着输入、任务和输出看一遍",
+      "换一个需求，试着说具体",
+      "能把AI的作用讲成一句完整的话"
+    ],
+    "scroll": 375,
+    "title": "人工智能究竟是什么？",
+    "screenshotPosition": {
+      "bottom": 1094.9271240234375,
+      "top": 390.1875
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 390.1875,
+      "width": 390,
+      "y": 5355.33349609375
+    }
+  },
+  {
+    "id": "AI000-C01-L02",
+    "width": 390,
+    "goals": "本节学习目标\n3 项\n01\n比较不同任务\n\n说明输入、输出和任务范围有何差别。\n\n02\n解释判断错误\n\n区分误拦与漏掉，联系实际后果。\n\n03\n设计核查方案\n\n选可靠依据，逐项比较并安排后续处理。\n\n查看完整目标\n比较识别、分类、推荐和生成任务的输入、输出与适用范围\n结合给定例子解释误拦、漏掉等错误及其后果\n为新任务设计有可靠对照、可执行的初步核查办法",
+    "entries": [
+      {
+        "text": "迁移练习\n四份需求，各该交回什么？",
+        "href": "#exercise-compare-service-tasks"
+      },
+      {
+        "text": "迁移练习\n归还提醒的两种错误",
+        "href": "#exercise-check-library"
+      },
+      {
+        "text": "迁移练习\n给商品照片分类，怎样检查并使用结果？",
+        "href": "#exercise-product-review"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-compare-service-tasks",
+      "tag": "H3",
+      "text": "四份需求，各该交回什么？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-compare-service-tasks",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      },
+      {
+        "id": "exercise-check-library",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      },
+      {
+        "id": "exercise-product-review",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      }
+    ],
+    "client": 375,
+    "headings": [
+      "都在帮忙，做的工作一样吗？",
+      "把两封新邮件放进来，规则还行吗？",
+      "多看一些例子，为什么仍可能判断错？",
+      "新写的一段话，该用什么核对？",
+      "先比较任务，再检查具体结果",
+      "从一句“可能会错”，走到可以核对的动作"
+    ],
+    "scroll": 375,
+    "title": "AI 能做什么，为什么也会出错？",
+    "screenshotPosition": {
+      "bottom": 1094.7396240234375,
+      "top": 390
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 390,
+      "width": 390,
+      "y": 6986
+    }
+  },
+  {
+    "id": "AI000-C01-L03",
+    "width": 390,
+    "goals": "本节学习目标\n3 项\n01\n比较得到结果的办法\n\n区分明确步骤、知识推理与从数据学习。\n\n02\n按方法证据判断\n\n给出有条件的结论，指出未说明的信息。\n\n03\n跟着规则推出结论\n\n写出中间步骤，说明还不能确定什么。\n\n查看完整目标\n比较普通自动化、知识推理和数据学习在得到结果时的区别\n根据系统已给出的方法证据判断是否涉及AI，信息不足时说明条件与追问\n沿着简单知识规则推出结论，并说明结论的范围",
+    "entries": [
+      {
+        "text": "迁移练习\n四种系统，哪条信息支持你的判断？",
+        "href": "#exercise-identify-systems"
+      },
+      {
+        "text": "理解练习\n沿着水泵规则走两步",
+        "href": "#exercise-trace-method"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-identify-systems",
+      "tag": "H3",
+      "text": "四种系统，哪条信息支持你的判断？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-identify-systems",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      },
+      {
+        "id": "exercise-trace-method",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      }
+    ],
+    "client": 375,
+    "headings": [
+      "到七点响铃，需要先学会什么吗？",
+      "人写的规则，也可以用来推理",
+      "同样给建议，判断关系从哪里来？",
+      "只有一个“智能”按钮，能确定多少？",
+      "依据换了，你的判断会怎样变？",
+      "方法证据比“看起来智能”更有用"
+    ],
+    "scroll": 375,
+    "title": "普通自动化和 AI 有什么区别？",
+    "screenshotPosition": {
+      "bottom": 1242.6042175292969,
+      "top": 390.2708435058594
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 390.2708435058594,
+      "width": 390,
+      "y": 5128.66650390625
+    }
+  },
+  {
+    "id": "AI000-C02-L01",
+    "width": 390,
+    "goals": "本节学习目标\n3 项\n01\n画出包含关系\n\n用具体例子说明两个不能反推的边界。\n\n02\n说明多层表示\n\n解释深度学习的学习方式与范围。\n\n03\n根据证据归类\n\n给结论写依据，保留未说明的信息。\n\n查看完整目标\n解释AI、ML、DL的包含关系，并用两个反例说明不能等同\n用多层表示的直觉说明深度学习为何属于机器学习及其与其他方法的差别\n根据新系统给出的方法证据归类，区别明确排除与仍然未知的信息",
+    "entries": [
+      {
+        "text": "理解练习\n画出属于自己的 AI 技术关系图",
+        "href": "#exercise-draw-method-map"
+      },
+      {
+        "text": "迁移练习\n只凭给出的技术信息，能归到哪一层？",
+        "href": "#exercise-method-evidence"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-draw-method-map",
+      "tag": "H3",
+      "text": "画出属于自己的 AI 技术关系图"
+    },
+    "exercises": [
+      {
+        "id": "exercise-draw-method-map",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      },
+      {
+        "id": "exercise-method-evidence",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      }
+    ],
+    "client": 375,
+    "headings": [
+      "邮件还是那些邮件，判断办法从哪里来？",
+      "深度学习多出来的“深度”是什么？",
+      "三个范围，应该怎样套在一起？",
+      "读一段产品说明，先找哪三条信息？",
+      "自己画一张图，再给新系统归类",
+      "把几个名称放进一句有依据的话"
+    ],
+    "scroll": 375,
+    "title": "AI、机器学习与深度学习，到底是什么关系？",
+    "screenshotPosition": {
+      "bottom": 1240.8854675292969,
+      "top": 389.8958435058594
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 389.8958435058594,
+      "width": 390,
+      "y": 7093.33349609375
+    }
+  },
+  {
+    "id": "AI000-C02-L02",
+    "width": 390,
+    "goals": "本节学习目标\n3 项\n01\n辨认四类处理任务\n\n根据过程区分类别判断、查找、编辑和生成。\n\n02\n联系生成、DL与LLM\n\n分别说明能力、方法、模型和产品。\n\n03\n分析产品说明\n\n列出方法证据、成立条件与未知信息。\n\n查看完整目标\n根据具体输入输出和处理过程区分分类、检索、编辑与生成任务\n解释现代生成式AI、深度学习与LLM的关系，区分模型和产品\n分析新产品的任务与方法证据，说明能确定的内容和仍需追问的信息",
+    "entries": [
+      {
+        "text": "迁移练习\n这次是在找、改、判断，还是生成？",
+        "href": "#exercise-classify-new-systems"
+      },
+      {
+        "text": "迁移练习\n为展览服务画一张分工图",
+        "href": "#exercise-product-model-map"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-classify-new-systems",
+      "tag": "H3",
+      "text": "这次是在找、改、判断，还是生成？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-classify-new-systems",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      },
+      {
+        "id": "exercise-product-model-map",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      }
+    ],
+    "client": 375,
+    "headings": [
+      "找一张海报，和画一张海报一样吗？",
+      "生成式AI怎样利用学过的规律？",
+      "聊天产品背后的LLM，指的是什么？",
+      "一个聊天窗口，可能接起哪些工作？",
+      "把任务、方法与产品分工写清楚",
+      "用三个问题读懂新的产品介绍"
+    ],
+    "scroll": 375,
+    "title": "生成式 AI 是什么？它和 LLM 有什么关系？",
+    "screenshotPosition": {
+      "bottom": 1213.0208740234375,
+      "top": 389.9375
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 389.9375,
+      "width": 390,
+      "y": 7821.33349609375
+    }
+  },
+  {
+    "id": "AI000-C03-L01",
+    "width": 390,
+    "goals": "本节学习目标\n3 项\n01\n分清输入和标签\n\n用自己准备的例子解释监督学习。\n\n02\n区别学习与预测\n\n说明答案何时可用，预测怎样核实。\n\n03\n判断数据还缺什么\n\n为新任务补齐输入、目标及核实办法。\n\n查看完整目标\n用具体例子解释监督学习，区分一条样本中的输入信息与标签\n解释学习时已知目标的作用，以及新输入的预测为何需要另行核实\n判断新任务是否具备监督学习所需的输入与目标信息，并提出合理的数据准备方案",
+    "entries": [
+      {
+        "text": "迁移练习\n为图书分类准备一组有答案的例子",
+        "href": "#exercise-prepare-examples"
+      },
+      {
+        "text": "迁移练习\n四份资料，离开展监督学习还差什么？",
+        "href": "#exercise-missing-targets"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-prepare-examples",
+      "tag": "H3",
+      "text": "为图书分类准备一组有答案的例子"
+    },
+    "exercises": [
+      {
+        "id": "exercise-prepare-examples",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      },
+      {
+        "id": "exercise-missing-targets",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      }
+    ],
+    "client": 375,
+    "headings": [
+      "照片旁边，为什么还要写类别？",
+      "有答案的例子用来学，新照片用来判断",
+      "现在给这种学习方式起个名字",
+      "一条例子里，分别装着什么？",
+      "答案从哪里来，值得信任吗？",
+      "已知答案，也可以是一个数",
+      "只有一堆照片，下一步能做什么？",
+      "换一项工作，自己把例子准备好",
+      "看见一条例子，也要找到它的目标"
+    ],
+    "scroll": 375,
+    "title": "监督学习：从有答案的例子中学习",
+    "screenshotPosition": {
+      "bottom": 1241.1771240234375,
+      "top": 390.1875
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 390.1875,
+      "width": 390,
+      "y": 9462.6669921875
+    }
+  },
+  {
+    "id": "AI000-C03-L02",
+    "width": 390,
+    "goals": "本节学习目标\n3 项\n01\n辨认没有目标标签的学习\n\n分清描述记录的信息和预先给出的答案。\n\n02\n提出有依据的分组\n\n比较新记录，并说明换个依据会怎样。\n\n03\n解释分组能说明多少\n\n保留未决情况，给出相关的核查动作。\n\n查看完整目标\n用具体例子解释无监督学习，区分记录中的输入信息与当前任务预先确认的目标标签\n根据给定记录和明确的比较依据提出合理分组，并解释更换依据可能带来的变化\n区分相似记录组与已确认的真实类别，说明分组的用途、限制与需要核查的内容",
+    "entries": [
+      {
+        "text": "迁移练习\n给六条活动记录提出一个分组方案",
+        "href": "#exercise-propose-groups"
+      },
+      {
+        "text": "迁移练习\n先找当前任务的目标信息，再判断学习方式",
+        "href": "#exercise-identify-learning-signals"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-propose-groups",
+      "tag": "H3",
+      "text": "给六条活动记录提出一个分组方案"
+    },
+    "exercises": [
+      {
+        "id": "exercise-propose-groups",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      },
+      {
+        "id": "exercise-identify-learning-signals",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      }
+    ],
+    "client": 375,
+    "headings": [
+      "这次没有写好答案，还能从哪里看起？",
+      "数字不同，也可能有相近的借阅倾向",
+      "E和F，也必须马上选一组吗？",
+      "没有标签，为什么仍然有东西可学？",
+      "只看总次数，刚才的两组还明显吗？",
+      "有了组号，怎样把观察用在图书馆？",
+      "换成活动记录，自己说明怎样分、为什么分",
+      "给分组写一句能经得起核对的说明"
+    ],
+    "scroll": 375,
+    "title": "无监督学习：没有标签也能发现规律吗？",
+    "screenshotPosition": {
+      "bottom": 1386.9167175292969,
+      "top": 389.6770935058594
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 389.6770935058594,
+      "width": 390,
+      "y": 8930
+    }
+  },
+  {
+    "id": "AI000-C03-L03",
+    "width": 390,
+    "goals": "本节学习目标\n3 项\n01\n从原数据准备目标\n\n亲手设计一项有来源可查的学习任务。\n\n02\n分清四个角色\n\n把原文、学习输入、目标和预测分别写出。\n\n03\n根据学习安排判断\n\n比较目标的来源，保留分类口径与实现缺口。\n\n查看完整目标\n用新例构造自监督学习任务，解释学习目标怎样从原始数据自身取得\n区分原始数据、处理后的学习输入、构造目标与模型预测，并说明怎样比较\n根据目标来源和具体学习安排比较监督、无监督聚类与自监督，说明分类联系及信息不足",
+    "entries": [
+      {
+        "text": "迁移练习\n把一则新通知变成学习样本",
+        "href": "#exercise-design-self-task"
+      },
+      {
+        "text": "迁移练习\n三种学习安排，答案各从哪里来？",
+        "href": "#exercise-compare-learning-tasks"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-design-self-task",
+      "tag": "H3",
+      "text": "把一则新通知变成学习样本"
+    },
+    "exercises": [
+      {
+        "id": "exercise-design-self-task",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      },
+      {
+        "id": "exercise-compare-learning-tasks",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      }
+    ],
+    "client": 375,
+    "headings": [
+      "把一句话藏起一部分，答案从哪里来？",
+      "模型收到的句子，和我们保留的原句不同",
+      "让数据为学习提供对照",
+      "换一句话，也要按同一办法准备",
+      "除了遮住中间，还能怎样利用原文？",
+      "学会这种任务，以后就只能补空格吗？",
+      "先问目标从哪里来，再比较学习安排",
+      "自己安排一次有来源可查的学习任务",
+      "目标有出处，比较才有依据"
+    ],
+    "scroll": 375,
+    "title": "自监督学习：怎样从数据本身构造学习任务？",
+    "screenshotPosition": {
+      "bottom": 1240.6875610351562,
+      "top": 389.6979370117187
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 389.6979370117187,
+      "width": 390,
+      "y": 8937.3330078125
+    }
+  },
+  {
+    "id": "AI000-C03-L04",
+    "width": 390,
+    "goals": "本节学习目标\n3 项\n01\n追踪行动与反馈\n\n写清当前看到什么、做什么，以及随后怎样变化。\n\n02\n比较整段行动\n\n算累计奖励，解释为什么不能只看第一步。\n\n03\n判断任务是否合适\n\n查连续选择、环境反馈和仍然缺少的信息。\n\n查看完整目标\n用新例说明智能体、环境、当前观察、行动与奖励，追踪行动怎样带来新情况和后续选择\n计算两段完整行动的简单累计奖励，解释眼前奖励与整体结果的差别，区分奖励与正确动作标签\n根据实际决策和反馈判断能否按强化学习构造任务，提出所需信息、奖励核查及仍不能确定的内容",
+    "entries": [
+      {
+        "text": "迁移练习\n先浇水还是先补水，差别出现在哪一步？",
+        "href": "#exercise-trace-watering"
+      },
+      {
+        "text": "迁移练习\n哪些条件支持按行动反馈学习来分析？",
+        "href": "#exercise-assess-feedback"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-trace-watering",
+      "tag": "H3",
+      "text": "先浇水还是先补水，差别出现在哪一步？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-trace-watering",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      },
+      {
+        "id": "exercise-assess-feedback",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      }
+    ],
+    "client": 375,
+    "headings": [
+      "走到岔路口，先选哪一条路？",
+      "第一步得分以后，事情还没有结束",
+      "第一步多得几分，整段就更好吗？",
+      "得到7分，会直接告诉它每一步怎么走吗？",
+      "计分办法，也在影响它愿意做什么",
+      "没走过的路，怎样知道后面有什么？",
+      "把经历变成以后选择行动的办法",
+      "回看第三章，四次任务究竟在学什么？",
+      "换成浇水，自己追踪每一步",
+      "看到“自动优化”，还要追问什么？",
+      "把一个决定放回它带来的后续过程"
+    ],
+    "scroll": 375,
+    "title": "强化学习：通过行动与反馈学习",
+    "screenshotPosition": {
+      "bottom": 1183.6354675292969,
+      "top": 389.8020935058594
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 389.8020935058594,
+      "width": 390,
+      "y": 10626.6669921875
+    }
+  },
+  {
+    "id": "AI000-C04-L03",
+    "width": 390,
+    "goals": "本节学习目标\n3 项\n01\n给三批记录安排工作\n\n说清哪些用于学习、选择和最后检查。\n\n02\n根据验证结果作选择\n\n比较预测，并解释测试为何留到方案确定后。\n\n03\n检查评价流程是否合理\n\n追踪信息何时被使用，给出修正办法。\n\n查看完整目标\n用具体记录解释训练、验证和测试三种用途，说明它们分别支持学习、选择和最终检查中的什么工作\n比较候选模型在验证记录上的预测差距并作有依据的选择，解释为什么不能反复用最终测试数据挑选模型\n识别事后信息、重复记录或测试反馈造成的评估问题，为新任务提出数据使用顺序和可执行的核查办法",
+    "entries": [
+      {
+        "text": "迁移练习\n怎样合理安排训练、验证与测试？",
+        "href": "#exercise-plan-print-evaluation"
+      },
+      {
+        "text": "理解练习\n这些结果能证明什么，该怎样修改？",
+        "href": "#exercise-audit-evaluation-flow"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-plan-print-evaluation",
+      "tag": "H3",
+      "text": "怎样合理安排训练、验证与测试？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-plan-print-evaluation",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      },
+      {
+        "id": "exercise-audit-evaluation-flow",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      }
+    ],
+    "client": 375,
+    "headings": [
+      "练过的题全对了，换一套题呢？",
+      "先看一批新的包裹记录",
+      "先安排用途，再看结果",
+      "训练记录把学习所需的输入和目标配在一起",
+      "用验证记录比较，决定继续选谁",
+      "选好乙，再用保留记录检查",
+      "沿着图，追踪每批记录何时参与",
+      "我们希望学到的办法也能用于新记录",
+      "到件时拿不到的信息，为什么会让结果好看？",
+      "换一个编号，不会变成另一件包裹",
+      "看过测试以后，还能改模型吗？",
+      "换到打印点，写出你的数据使用计划",
+      "接手三个流程，找出信息在何时越界",
+      "回看你的计划，检查哪批记录影响过决定"
+    ],
+    "scroll": 375,
+    "title": "训练、验证与测试各有什么作用？",
+    "screenshotPosition": {
+      "bottom": 1357.9896240234375,
+      "top": 390
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 390,
+      "width": 390,
+      "y": 11569.3330078125
+    }
+  },
+  {
+    "id": "AI000-C04-L04",
+    "width": 390,
+    "goals": "本节学习目标\n3 项\n01\n排出一次预测的步骤\n\n联系实际动作，区分使用、核对与再训练。\n\n02\n用固定模型算新任务\n\n指明参数与输入，另存预测和实际结果。\n\n03\n检查输入和适用条件\n\n找出具体问题，提出补查与谨慎处理办法。\n\n查看完整目标\n解释训练与使用已确定模型的区别，为一次新任务排出输入检查、模型计算、使用结果和事后核对的主要顺序\n根据固定模型、参数和新输入逐步得到预测，区分当时未知的实际结果与后来确认的目标\n分析必要输入缺失、单位或取值时刻错误、使用条件变化的问题，提出可执行的核查办法",
+    "entries": [
+      {
+        "text": "迁移练习\n新任务来了，模型怎样给出预测？",
+        "href": "#exercise-use-print-model"
+      },
+      {
+        "text": "迁移练习\n这条输入现在能直接使用吗？",
+        "href": "#exercise-audit-current-inputs"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-use-print-model",
+      "tag": "H3",
+      "text": "新任务来了，模型怎样给出预测？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-use-print-model",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      },
+      {
+        "id": "exercise-audit-current-inputs",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      }
+    ],
+    "client": 375,
+    "headings": [
+      "模型已经准备好，新包裹这时才到",
+      "先把这次要交给模型的信息准备清楚",
+      "输入3件，沿用4和2算出10分钟",
+      "沿着新任务，看预测和实际各放在哪里",
+      "这段使用模型的计算，叫作推理",
+      "等归架完成，再核对这次估计",
+      "模型准备好了，输入仍然要检查",
+      "打印任务来了，自己走完一次使用过程",
+      "面对五份资料，先判断能不能照常用",
+      "把第四章连成一次可核查的使用"
+    ],
+    "scroll": 375,
+    "title": "模型训练好以后，如何完成预测？",
+    "screenshotPosition": {
+      "bottom": 1270.0729675292969,
+      "top": 389.8333435058594
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 389.8333435058594,
+      "width": 390,
+      "y": 7360
+    }
+  },
+  {
+    "id": "AI000-C05-L01",
+    "width": 390,
+    "goals": "本节学习目标\n3 项\n01\n分清文字任务\n\n从交付结果区分类别判断、查资料与摘要。\n\n02\n找出每项结论的依据\n\n写清输入、输出和出处，保留未确认的信息。\n\n03\n设计服务处理步骤\n\n安排查找、回复与核查，判断方法证据是否充分。\n\n查看完整目标\n用具体文字任务解释自然语言处理的用途，根据服务需求区分文字分类、信息检索和内容摘要\n分析文字任务所需的输入与期望输出，区分有原始资料支持的结论、组织的回复和仍未知的信息\n为新的语言业务需求设计查找、组织与核查步骤，解释是否需要LLM，并为资料缺口提出核实路径",
+    "entries": [
+      {
+        "text": "迁移练习\n为器材服务交付一份可核查的处理记录",
+        "href": "#exercise-design-equipment-service"
+      },
+      {
+        "text": "迁移练习\n写出输入、交付物、处理方式与核查办法",
+        "href": "#exercise-choose-language-work"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-design-equipment-service",
+      "tag": "H3",
+      "text": "为器材服务交付一份可核查的处理记录"
+    },
+    "exercises": [
+      {
+        "id": "exercise-design-equipment-service",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      },
+      {
+        "id": "exercise-choose-language-work",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      }
+    ],
+    "client": 375,
+    "headings": [
+      "五条咨询，工作人员先做什么？",
+      "按服务需要给消息归类",
+      "知道是取消咨询，还要找到什么？",
+      "同样找到R1，为什么建议会不同？",
+      "找到的规则，怎样变成给B的回复？",
+      "资料缺了一块，怎样继续处理？",
+      "负责人只想看一段简报，怎样写？",
+      "同一条文字，任务变了，交付也变",
+      "NLP是任务领域，LLM可以承担其中多种工作",
+      "把不同工作接成一个服务方案",
+      "换到器材室，设计你自己的处理方案",
+      "四种需求，该交回怎样的语言处理结果？",
+      "拿一组新的文字，先写这份任务单"
+    ],
+    "scroll": 375,
+    "title": "自然语言处理与大语言模型",
+    "screenshotPosition": {
+      "bottom": 1066.9167175292969,
+      "top": 390.0833435058594
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 390.0833435058594,
+      "width": 390,
+      "y": 12998
+    }
+  },
+  {
+    "id": "AI000-C05-L03",
+    "width": 390,
+    "goals": "本节学习目标\n3 项\n01\n分清输入与输出模态\n\n按当前步骤区分文字、图片和原始声音。\n\n02\n对应资料并指出来源\n\n用可靠关联找同一对象，说明答案各部分的依据。\n\n03\n发现缺口并安排核查\n\n处理错配、缺失与冲突，保留方法未知。\n\n查看完整目标\n用具体任务区分文字、图像、声音的输入与输出，说明不同模态各自提供什么信息\n根据可靠编号或关联对应不同模态的资料，逐项说明答案由哪些图像观察和文字记录支持\n为新任务设计输入、输出和核查步骤，识别资料缺失、错配、不一致及实现方法的证据缺口",
+    "entries": [
+      {
+        "text": "迁移练习\n交一份有来源、保留缺口的领物答复",
+        "href": "#exercise-link-lost-property"
+      },
+      {
+        "text": "迁移练习\n写清输入、输出、步骤与尚缺的证据",
+        "href": "#exercise-analyse-multimodal-services"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-link-lost-property",
+      "tag": "H3",
+      "text": "交一份有来源、保留缺口的领物答复"
+    },
+    "exercises": [
+      {
+        "id": "exercise-link-lost-property",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      },
+      {
+        "id": "exercise-analyse-multimodal-services",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      }
+    ],
+    "client": 375,
+    "headings": [
+      "看得出有波浪纹，就知道它在哪个展厅吗？",
+      "沿着编号，把外观和登记资料接起来",
+      "图片和文字，各带来一种信息形式",
+      "答案是文字，输入也一定只有文字吗？",
+      "讲解录音，和已经写好的文字稿",
+      "答错展厅，可能错在看图之后",
+      "能接起这些步骤，就一定是一个多模态大模型吗？",
+      "换到失物招领处，自己完成对应和核查",
+      "四份新需求，各步骤实际拿到了什么？",
+      "拿走一种信息，你还剩哪些依据？"
+    ],
+    "scroll": 375,
+    "title": "多模态 AI：连接文字、图片与声音",
+    "screenshotPosition": {
+      "bottom": 1066.8021240234375,
+      "top": 389.96875
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 389.96875,
+      "width": 390,
+      "y": 10526
+    }
+  },
+  {
+    "id": "AI000-C05-L04",
+    "width": 390,
+    "goals": "本节学习目标\n3 项\n01\n把要求写到能检查\n\n列清事实与信息怎样呈现。\n\n02\n按证据比较候选\n\n逐项指出符合、缺陷和未知。\n\n03\n提出修改与验收办法\n\n改具体问题，再查内容、媒介效果与资料。\n\n查看完整目标\n将模糊的作品要求整理为明确、可核对的内容条件与呈现条件\n对照同一份要求检查不同候选作品，用可见证据指出满足、未满足及暂时无法确认的条件\n针对发现的问题提出修改或补查方案，为新的文字、图片或声音任务制定基本验收清单",
+    "entries": [
+      {
+        "text": "迁移练习\n科技体验日海报可以交付了吗？",
+        "href": "#exercise-check-tech-posters"
+      },
+      {
+        "text": "迁移练习\n给展馆配音写一份验收方案",
+        "href": "#exercise-plan-gallery-voice"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-check-tech-posters",
+      "tag": "H3",
+      "text": "科技体验日海报可以交付了吗？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-check-tech-posters",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      },
+      {
+        "id": "exercise-plan-gallery-voice",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 308,
+          "scroll": 308
+        }
+      }
+    ],
+    "client": 375,
+    "headings": [
+      "只说“好看一点”，能拿到可用的海报吗？",
+      "先确定活动事实，再约定怎样展示",
+      "先看两张候选，再逐项核对",
+      "有些条件看内容，有些要看呈现",
+      "修改要指出位置，也要保住原来正确的内容",
+      "生成是其中一步，检查的是这份作品",
+      "文稿写对了，配音就已经合格了吗？",
+      "换一场活动，自己决定该改哪里",
+      "换成展馆配音，哪些结论还得等声音？",
+      "拿到候选以后，把决定写到有依据"
+    ],
+    "scroll": 375,
+    "title": "生成模型：从要求到可核对的作品",
+    "screenshotPosition": {
+      "bottom": 1182.4792175292969,
+      "top": 389.9895935058594
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 389.9895935058594,
+      "width": 390,
+      "y": 10404.6669921875
+    }
+  },
+  {
+    "id": "AI000-C01-L01",
+    "width": 320,
+    "goals": "本节学习目标\n3 项\n01\n解释AI的作用\n\n联系一个任务，用自己的话说明AI在做什么。\n\n02\n说清输入、任务和输出\n\n指出系统拿到什么、处理什么、交回什么。\n\n03\n把需求写成具体任务\n\n限定输出和范围，让结果能够被检查。\n\n查看完整目标\n用自己的话解释人工智能在一个具体任务中起什么作用\n指出系统的输入、处理任务与输出，并说明三者怎样联系\n把一个日常需求改写成范围清楚、能检查结果的AI任务",
+    "entries": [
+      {
+        "text": "理解练习\n向同学解释录音转文字",
+        "href": "#exercise-describe-task"
+      },
+      {
+        "text": "迁移练习\n给失物照片目录安排一项任务",
+        "href": "#exercise-design-task"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-describe-task",
+      "tag": "H3",
+      "text": "向同学解释录音转文字"
+    },
+    "exercises": [
+      {
+        "id": "exercise-describe-task",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      },
+      {
+        "id": "exercise-design-task",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      }
+    ],
+    "client": 305,
+    "headings": [
+      "收件箱里的一个小麻烦",
+      "电脑需要一个怎样的判断办法？",
+      "把刚才的动作，放进“人工智能”这个名称",
+      "沿着输入、任务和输出看一遍",
+      "换一个需求，试着说具体",
+      "能把AI的作用讲成一句完整的话"
+    ],
+    "scroll": 305,
+    "title": "人工智能究竟是什么？",
+    "screenshotPosition": {
+      "bottom": 1153.3438110351562,
+      "top": 390.1041870117187
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 390.1041870117187,
+      "width": 320,
+      "y": 6276.66650390625
+    }
+  },
+  {
+    "id": "AI000-C01-L02",
+    "width": 320,
+    "goals": "本节学习目标\n3 项\n01\n比较不同任务\n\n说明输入、输出和任务范围有何差别。\n\n02\n解释判断错误\n\n区分误拦与漏掉，联系实际后果。\n\n03\n设计核查方案\n\n选可靠依据，逐项比较并安排后续处理。\n\n查看完整目标\n比较识别、分类、推荐和生成任务的输入、输出与适用范围\n结合给定例子解释误拦、漏掉等错误及其后果\n为新任务设计有可靠对照、可执行的初步核查办法",
+    "entries": [
+      {
+        "text": "迁移练习\n四份需求，各该交回什么？",
+        "href": "#exercise-compare-service-tasks"
+      },
+      {
+        "text": "迁移练习\n归还提醒的两种错误",
+        "href": "#exercise-check-library"
+      },
+      {
+        "text": "迁移练习\n给商品照片分类，怎样检查并使用结果？",
+        "href": "#exercise-product-review"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-compare-service-tasks",
+      "tag": "H3",
+      "text": "四份需求，各该交回什么？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-compare-service-tasks",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      },
+      {
+        "id": "exercise-check-library",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      },
+      {
+        "id": "exercise-product-review",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      }
+    ],
+    "client": 305,
+    "headings": [
+      "都在帮忙，做的工作一样吗？",
+      "把两封新邮件放进来，规则还行吗？",
+      "多看一些例子，为什么仍可能判断错？",
+      "新写的一段话，该用什么核对？",
+      "先比较任务，再检查具体结果",
+      "从一句“可能会错”，走到可以核对的动作"
+    ],
+    "scroll": 305,
+    "title": "AI 能做什么，为什么也会出错？",
+    "screenshotPosition": {
+      "bottom": 1153.5208740234375,
+      "top": 390.28125
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 390.28125,
+      "width": 320,
+      "y": 8258.6669921875
+    }
+  },
+  {
+    "id": "AI000-C01-L03",
+    "width": 320,
+    "goals": "本节学习目标\n3 项\n01\n比较得到结果的办法\n\n区分明确步骤、知识推理与从数据学习。\n\n02\n按方法证据判断\n\n给出有条件的结论，指出未说明的信息。\n\n03\n跟着规则推出结论\n\n写出中间步骤，说明还不能确定什么。\n\n查看完整目标\n比较普通自动化、知识推理和数据学习在得到结果时的区别\n根据系统已给出的方法证据判断是否涉及AI，信息不足时说明条件与追问\n沿着简单知识规则推出结论，并说明结论的范围",
+    "entries": [
+      {
+        "text": "迁移练习\n四种系统，哪条信息支持你的判断？",
+        "href": "#exercise-identify-systems"
+      },
+      {
+        "text": "理解练习\n沿着水泵规则走两步",
+        "href": "#exercise-trace-method"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-identify-systems",
+      "tag": "H3",
+      "text": "四种系统，哪条信息支持你的判断？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-identify-systems",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      },
+      {
+        "id": "exercise-trace-method",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      }
+    ],
+    "client": 305,
+    "headings": [
+      "到七点响铃，需要先学会什么吗？",
+      "人写的规则，也可以用来推理",
+      "同样给建议，判断关系从哪里来？",
+      "只有一个“智能”按钮，能确定多少？",
+      "依据换了，你的判断会怎样变？",
+      "方法证据比“看起来智能”更有用"
+    ],
+    "scroll": 305,
+    "title": "普通自动化和 AI 有什么区别？",
+    "screenshotPosition": {
+      "bottom": 1330.2083740234375,
+      "top": 390.125
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 390.125,
+      "width": 320,
+      "y": 6073.33349609375
+    }
+  },
+  {
+    "id": "AI000-C02-L01",
+    "width": 320,
+    "goals": "本节学习目标\n3 项\n01\n画出包含关系\n\n用具体例子说明两个不能反推的边界。\n\n02\n说明多层表示\n\n解释深度学习的学习方式与范围。\n\n03\n根据证据归类\n\n给结论写依据，保留未说明的信息。\n\n查看完整目标\n解释AI、ML、DL的包含关系，并用两个反例说明不能等同\n用多层表示的直觉说明深度学习为何属于机器学习及其与其他方法的差别\n根据新系统给出的方法证据归类，区别明确排除与仍然未知的信息",
+    "entries": [
+      {
+        "text": "理解练习\n画出属于自己的 AI 技术关系图",
+        "href": "#exercise-draw-method-map"
+      },
+      {
+        "text": "迁移练习\n只凭给出的技术信息，能归到哪一层？",
+        "href": "#exercise-method-evidence"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-draw-method-map",
+      "tag": "H3",
+      "text": "画出属于自己的 AI 技术关系图"
+    },
+    "exercises": [
+      {
+        "id": "exercise-draw-method-map",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      },
+      {
+        "id": "exercise-method-evidence",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      }
+    ],
+    "client": 305,
+    "headings": [
+      "邮件还是那些邮件，判断办法从哪里来？",
+      "深度学习多出来的“深度”是什么？",
+      "三个范围，应该怎样套在一起？",
+      "读一段产品说明，先找哪三条信息？",
+      "自己画一张图，再给新系统归类",
+      "把几个名称放进一句有依据的话"
+    ],
+    "scroll": 305,
+    "title": "AI、机器学习与深度学习，到底是什么关系？",
+    "screenshotPosition": {
+      "bottom": 1359.3854675292969,
+      "top": 390.0520935058594
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 390.0520935058594,
+      "width": 320,
+      "y": 8593.3330078125
+    }
+  },
+  {
+    "id": "AI000-C02-L02",
+    "width": 320,
+    "goals": "本节学习目标\n3 项\n01\n辨认四类处理任务\n\n根据过程区分类别判断、查找、编辑和生成。\n\n02\n联系生成、DL与LLM\n\n分别说明能力、方法、模型和产品。\n\n03\n分析产品说明\n\n列出方法证据、成立条件与未知信息。\n\n查看完整目标\n根据具体输入输出和处理过程区分分类、检索、编辑与生成任务\n解释现代生成式AI、深度学习与LLM的关系，区分模型和产品\n分析新产品的任务与方法证据，说明能确定的内容和仍需追问的信息",
+    "entries": [
+      {
+        "text": "迁移练习\n这次是在找、改、判断，还是生成？",
+        "href": "#exercise-classify-new-systems"
+      },
+      {
+        "text": "迁移练习\n为展览服务画一张分工图",
+        "href": "#exercise-product-model-map"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-classify-new-systems",
+      "tag": "H3",
+      "text": "这次是在找、改、判断，还是生成？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-classify-new-systems",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      },
+      {
+        "id": "exercise-product-model-map",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      }
+    ],
+    "client": 305,
+    "headings": [
+      "找一张海报，和画一张海报一样吗？",
+      "生成式AI怎样利用学过的规律？",
+      "聊天产品背后的LLM，指的是什么？",
+      "一个聊天窗口，可能接起哪些工作？",
+      "把任务、方法与产品分工写清楚",
+      "用三个问题读懂新的产品介绍"
+    ],
+    "scroll": 305,
+    "title": "生成式 AI 是什么？它和 LLM 有什么关系？",
+    "screenshotPosition": {
+      "bottom": 1301.0833740234375,
+      "top": 390.25
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 390.25,
+      "width": 320,
+      "y": 8990.6669921875
+    }
+  },
+  {
+    "id": "AI000-C03-L01",
+    "width": 320,
+    "goals": "本节学习目标\n3 项\n01\n分清输入和标签\n\n用自己准备的例子解释监督学习。\n\n02\n区别学习与预测\n\n说明答案何时可用，预测怎样核实。\n\n03\n判断数据还缺什么\n\n为新任务补齐输入、目标及核实办法。\n\n查看完整目标\n用具体例子解释监督学习，区分一条样本中的输入信息与标签\n解释学习时已知目标的作用，以及新输入的预测为何需要另行核实\n判断新任务是否具备监督学习所需的输入与目标信息，并提出合理的数据准备方案",
+    "entries": [
+      {
+        "text": "迁移练习\n为图书分类准备一组有答案的例子",
+        "href": "#exercise-prepare-examples"
+      },
+      {
+        "text": "迁移练习\n四份资料，离开展监督学习还差什么？",
+        "href": "#exercise-missing-targets"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-prepare-examples",
+      "tag": "H3",
+      "text": "为图书分类准备一组有答案的例子"
+    },
+    "exercises": [
+      {
+        "id": "exercise-prepare-examples",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      },
+      {
+        "id": "exercise-missing-targets",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      }
+    ],
+    "client": 305,
+    "headings": [
+      "照片旁边，为什么还要写类别？",
+      "有答案的例子用来学，新照片用来判断",
+      "现在给这种学习方式起个名字",
+      "一条例子里，分别装着什么？",
+      "答案从哪里来，值得信任吗？",
+      "已知答案，也可以是一个数",
+      "只有一堆照片，下一步能做什么？",
+      "换一项工作，自己把例子准备好",
+      "看见一条例子，也要找到它的目标"
+    ],
+    "scroll": 305,
+    "title": "监督学习：从有答案的例子中学习",
+    "screenshotPosition": {
+      "bottom": 1359.3542175292969,
+      "top": 390.0208435058594
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 390.0208435058594,
+      "width": 320,
+      "y": 11030.6669921875
+    }
+  },
+  {
+    "id": "AI000-C03-L02",
+    "width": 320,
+    "goals": "本节学习目标\n3 项\n01\n辨认没有目标标签的学习\n\n分清描述记录的信息和预先给出的答案。\n\n02\n提出有依据的分组\n\n比较新记录，并说明换个依据会怎样。\n\n03\n解释分组能说明多少\n\n保留未决情况，给出相关的核查动作。\n\n查看完整目标\n用具体例子解释无监督学习，区分记录中的输入信息与当前任务预先确认的目标标签\n根据给定记录和明确的比较依据提出合理分组，并解释更换依据可能带来的变化\n区分相似记录组与已确认的真实类别，说明分组的用途、限制与需要核查的内容",
+    "entries": [
+      {
+        "text": "迁移练习\n给六条活动记录提出一个分组方案",
+        "href": "#exercise-propose-groups"
+      },
+      {
+        "text": "迁移练习\n先找当前任务的目标信息，再判断学习方式",
+        "href": "#exercise-identify-learning-signals"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-propose-groups",
+      "tag": "H3",
+      "text": "给六条活动记录提出一个分组方案"
+    },
+    "exercises": [
+      {
+        "id": "exercise-propose-groups",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      },
+      {
+        "id": "exercise-identify-learning-signals",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      }
+    ],
+    "client": 305,
+    "headings": [
+      "这次没有写好答案，还能从哪里看起？",
+      "数字不同，也可能有相近的借阅倾向",
+      "E和F，也必须马上选一组吗？",
+      "没有标签，为什么仍然有东西可学？",
+      "只看总次数，刚才的两组还明显吗？",
+      "有了组号，怎样把观察用在图书馆？",
+      "换成活动记录，自己说明怎样分、为什么分",
+      "给分组写一句能经得起核对的说明"
+    ],
+    "scroll": 305,
+    "title": "无监督学习：没有标签也能发现规律吗？",
+    "screenshotPosition": {
+      "bottom": 1563.7813110351562,
+      "top": 389.6979370117187
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 389.6979370117187,
+      "width": 320,
+      "y": 10224.6669921875
+    }
+  },
+  {
+    "id": "AI000-C03-L03",
+    "width": 320,
+    "goals": "本节学习目标\n3 项\n01\n从原数据准备目标\n\n亲手设计一项有来源可查的学习任务。\n\n02\n分清四个角色\n\n把原文、学习输入、目标和预测分别写出。\n\n03\n根据学习安排判断\n\n比较目标的来源，保留分类口径与实现缺口。\n\n查看完整目标\n用新例构造自监督学习任务，解释学习目标怎样从原始数据自身取得\n区分原始数据、处理后的学习输入、构造目标与模型预测，并说明怎样比较\n根据目标来源和具体学习安排比较监督、无监督聚类与自监督，说明分类联系及信息不足",
+    "entries": [
+      {
+        "text": "迁移练习\n把一则新通知变成学习样本",
+        "href": "#exercise-design-self-task"
+      },
+      {
+        "text": "迁移练习\n三种学习安排，答案各从哪里来？",
+        "href": "#exercise-compare-learning-tasks"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-design-self-task",
+      "tag": "H3",
+      "text": "把一则新通知变成学习样本"
+    },
+    "exercises": [
+      {
+        "id": "exercise-design-self-task",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      },
+      {
+        "id": "exercise-compare-learning-tasks",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      }
+    ],
+    "client": 305,
+    "headings": [
+      "把一句话藏起一部分，答案从哪里来？",
+      "模型收到的句子，和我们保留的原句不同",
+      "让数据为学习提供对照",
+      "换一句话，也要按同一办法准备",
+      "除了遮住中间，还能怎样利用原文？",
+      "学会这种任务，以后就只能补空格吗？",
+      "先问目标从哪里来，再比较学习安排",
+      "自己安排一次有来源可查的学习任务",
+      "目标有出处，比较才有依据"
+    ],
+    "scroll": 305,
+    "title": "自监督学习：怎样从数据本身构造学习任务？",
+    "screenshotPosition": {
+      "bottom": 1328.4271240234375,
+      "top": 389.6875
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 389.6875,
+      "width": 320,
+      "y": 10402
+    }
+  },
+  {
+    "id": "AI000-C03-L04",
+    "width": 320,
+    "goals": "本节学习目标\n3 项\n01\n追踪行动与反馈\n\n写清当前看到什么、做什么，以及随后怎样变化。\n\n02\n比较整段行动\n\n算累计奖励，解释为什么不能只看第一步。\n\n03\n判断任务是否合适\n\n查连续选择、环境反馈和仍然缺少的信息。\n\n查看完整目标\n用新例说明智能体、环境、当前观察、行动与奖励，追踪行动怎样带来新情况和后续选择\n计算两段完整行动的简单累计奖励，解释眼前奖励与整体结果的差别，区分奖励与正确动作标签\n根据实际决策和反馈判断能否按强化学习构造任务，提出所需信息、奖励核查及仍不能确定的内容",
+    "entries": [
+      {
+        "text": "迁移练习\n先浇水还是先补水，差别出现在哪一步？",
+        "href": "#exercise-trace-watering"
+      },
+      {
+        "text": "迁移练习\n哪些条件支持按行动反馈学习来分析？",
+        "href": "#exercise-assess-feedback"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-trace-watering",
+      "tag": "H3",
+      "text": "先浇水还是先补水，差别出现在哪一步？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-trace-watering",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      },
+      {
+        "id": "exercise-assess-feedback",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      }
+    ],
+    "client": 305,
+    "headings": [
+      "走到岔路口，先选哪一条路？",
+      "第一步得分以后，事情还没有结束",
+      "第一步多得几分，整段就更好吗？",
+      "得到7分，会直接告诉它每一步怎么走吗？",
+      "计分办法，也在影响它愿意做什么",
+      "没走过的路，怎样知道后面有什么？",
+      "把经历变成以后选择行动的办法",
+      "回看第三章，四次任务究竟在学什么？",
+      "换成浇水，自己追踪每一步",
+      "看到“自动优化”，还要追问什么？",
+      "把一个决定放回它带来的后续过程"
+    ],
+    "scroll": 305,
+    "title": "强化学习：通过行动与反馈学习",
+    "screenshotPosition": {
+      "bottom": 1271.6771240234375,
+      "top": 390.09375
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 390.09375,
+      "width": 320,
+      "y": 12676.6669921875
+    }
+  },
+  {
+    "id": "AI000-C04-L03",
+    "width": 320,
+    "goals": "本节学习目标\n3 项\n01\n给三批记录安排工作\n\n说清哪些用于学习、选择和最后检查。\n\n02\n根据验证结果作选择\n\n比较预测，并解释测试为何留到方案确定后。\n\n03\n检查评价流程是否合理\n\n追踪信息何时被使用，给出修正办法。\n\n查看完整目标\n用具体记录解释训练、验证和测试三种用途，说明它们分别支持学习、选择和最终检查中的什么工作\n比较候选模型在验证记录上的预测差距并作有依据的选择，解释为什么不能反复用最终测试数据挑选模型\n识别事后信息、重复记录或测试反馈造成的评估问题，为新任务提出数据使用顺序和可执行的核查办法",
+    "entries": [
+      {
+        "text": "迁移练习\n怎样合理安排训练、验证与测试？",
+        "href": "#exercise-plan-print-evaluation"
+      },
+      {
+        "text": "理解练习\n这些结果能证明什么，该怎样修改？",
+        "href": "#exercise-audit-evaluation-flow"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-plan-print-evaluation",
+      "tag": "H3",
+      "text": "怎样合理安排训练、验证与测试？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-plan-print-evaluation",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      },
+      {
+        "id": "exercise-audit-evaluation-flow",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      }
+    ],
+    "client": 305,
+    "headings": [
+      "练过的题全对了，换一套题呢？",
+      "先看一批新的包裹记录",
+      "先安排用途，再看结果",
+      "训练记录把学习所需的输入和目标配在一起",
+      "用验证记录比较，决定继续选谁",
+      "选好乙，再用保留记录检查",
+      "沿着图，追踪每批记录何时参与",
+      "我们希望学到的办法也能用于新记录",
+      "到件时拿不到的信息，为什么会让结果好看？",
+      "换一个编号，不会变成另一件包裹",
+      "看过测试以后，还能改模型吗？",
+      "换到打印点，写出你的数据使用计划",
+      "接手三个流程，找出信息在何时越界",
+      "回看你的计划，检查哪批记录影响过决定"
+    ],
+    "scroll": 305,
+    "title": "训练、验证与测试各有什么作用？",
+    "screenshotPosition": {
+      "bottom": 1476.1979675292969,
+      "top": 389.8645935058594
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 389.8645935058594,
+      "width": 320,
+      "y": 13294.6669921875
+    }
+  },
+  {
+    "id": "AI000-C04-L04",
+    "width": 320,
+    "goals": "本节学习目标\n3 项\n01\n排出一次预测的步骤\n\n联系实际动作，区分使用、核对与再训练。\n\n02\n用固定模型算新任务\n\n指明参数与输入，另存预测和实际结果。\n\n03\n检查输入和适用条件\n\n找出具体问题，提出补查与谨慎处理办法。\n\n查看完整目标\n解释训练与使用已确定模型的区别，为一次新任务排出输入检查、模型计算、使用结果和事后核对的主要顺序\n根据固定模型、参数和新输入逐步得到预测，区分当时未知的实际结果与后来确认的目标\n分析必要输入缺失、单位或取值时刻错误、使用条件变化的问题，提出可执行的核查办法",
+    "entries": [
+      {
+        "text": "迁移练习\n新任务来了，模型怎样给出预测？",
+        "href": "#exercise-use-print-model"
+      },
+      {
+        "text": "迁移练习\n这条输入现在能直接使用吗？",
+        "href": "#exercise-audit-current-inputs"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-use-print-model",
+      "tag": "H3",
+      "text": "新任务来了，模型怎样给出预测？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-use-print-model",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      },
+      {
+        "id": "exercise-audit-current-inputs",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      }
+    ],
+    "client": 305,
+    "headings": [
+      "模型已经准备好，新包裹这时才到",
+      "先把这次要交给模型的信息准备清楚",
+      "输入3件，沿用4和2算出10分钟",
+      "沿着新任务，看预测和实际各放在哪里",
+      "这段使用模型的计算，叫作推理",
+      "等归架完成，再核对这次估计",
+      "模型准备好了，输入仍然要检查",
+      "打印任务来了，自己走完一次使用过程",
+      "面对五份资料，先判断能不能照常用",
+      "把第四章连成一次可核查的使用"
+    ],
+    "scroll": 305,
+    "title": "模型训练好以后，如何完成预测？",
+    "screenshotPosition": {
+      "bottom": 1359.1875610351562,
+      "top": 389.8541870117187
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 389.8541870117187,
+      "width": 320,
+      "y": 8516.6669921875
+    }
+  },
+  {
+    "id": "AI000-C05-L01",
+    "width": 320,
+    "goals": "本节学习目标\n3 项\n01\n分清文字任务\n\n从交付结果区分类别判断、查资料与摘要。\n\n02\n找出每项结论的依据\n\n写清输入、输出和出处，保留未确认的信息。\n\n03\n设计服务处理步骤\n\n安排查找、回复与核查，判断方法证据是否充分。\n\n查看完整目标\n用具体文字任务解释自然语言处理的用途，根据服务需求区分文字分类、信息检索和内容摘要\n分析文字任务所需的输入与期望输出，区分有原始资料支持的结论、组织的回复和仍未知的信息\n为新的语言业务需求设计查找、组织与核查步骤，解释是否需要LLM，并为资料缺口提出核实路径",
+    "entries": [
+      {
+        "text": "迁移练习\n为器材服务交付一份可核查的处理记录",
+        "href": "#exercise-design-equipment-service"
+      },
+      {
+        "text": "迁移练习\n写出输入、交付物、处理方式与核查办法",
+        "href": "#exercise-choose-language-work"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-design-equipment-service",
+      "tag": "H3",
+      "text": "为器材服务交付一份可核查的处理记录"
+    },
+    "exercises": [
+      {
+        "id": "exercise-design-equipment-service",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      },
+      {
+        "id": "exercise-choose-language-work",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      }
+    ],
+    "client": 305,
+    "headings": [
+      "五条咨询，工作人员先做什么？",
+      "按服务需要给消息归类",
+      "知道是取消咨询，还要找到什么？",
+      "同样找到R1，为什么建议会不同？",
+      "找到的规则，怎样变成给B的回复？",
+      "资料缺了一块，怎样继续处理？",
+      "负责人只想看一段简报，怎样写？",
+      "同一条文字，任务变了，交付也变",
+      "NLP是任务领域，LLM可以承担其中多种工作",
+      "把不同工作接成一个服务方案",
+      "换到器材室，设计你自己的处理方案",
+      "四种需求，该交回怎样的语言处理结果？",
+      "拿一组新的文字，先写这份任务单"
+    ],
+    "scroll": 305,
+    "title": "自然语言处理与大语言模型",
+    "screenshotPosition": {
+      "bottom": 1096.1458740234375,
+      "top": 390.0625
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 390.0625,
+      "width": 320,
+      "y": 15580.6669921875
+    }
+  },
+  {
+    "id": "AI000-C05-L03",
+    "width": 320,
+    "goals": "本节学习目标\n3 项\n01\n分清输入与输出模态\n\n按当前步骤区分文字、图片和原始声音。\n\n02\n对应资料并指出来源\n\n用可靠关联找同一对象，说明答案各部分的依据。\n\n03\n发现缺口并安排核查\n\n处理错配、缺失与冲突，保留方法未知。\n\n查看完整目标\n用具体任务区分文字、图像、声音的输入与输出，说明不同模态各自提供什么信息\n根据可靠编号或关联对应不同模态的资料，逐项说明答案由哪些图像观察和文字记录支持\n为新任务设计输入、输出和核查步骤，识别资料缺失、错配、不一致及实现方法的证据缺口",
+    "entries": [
+      {
+        "text": "迁移练习\n交一份有来源、保留缺口的领物答复",
+        "href": "#exercise-link-lost-property"
+      },
+      {
+        "text": "迁移练习\n写清输入、输出、步骤与尚缺的证据",
+        "href": "#exercise-analyse-multimodal-services"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-link-lost-property",
+      "tag": "H3",
+      "text": "交一份有来源、保留缺口的领物答复"
+    },
+    "exercises": [
+      {
+        "id": "exercise-link-lost-property",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      },
+      {
+        "id": "exercise-analyse-multimodal-services",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      }
+    ],
+    "client": 305,
+    "headings": [
+      "看得出有波浪纹，就知道它在哪个展厅吗？",
+      "沿着编号，把外观和登记资料接起来",
+      "图片和文字，各带来一种信息形式",
+      "答案是文字，输入也一定只有文字吗？",
+      "讲解录音，和已经写好的文字稿",
+      "答错展厅，可能错在看图之后",
+      "能接起这些步骤，就一定是一个多模态大模型吗？",
+      "换到失物招领处，自己完成对应和核查",
+      "四份新需求，各步骤实际拿到了什么？",
+      "拿走一种信息，你还剩哪些依据？"
+    ],
+    "scroll": 305,
+    "title": "多模态 AI：连接文字、图片与声音",
+    "screenshotPosition": {
+      "bottom": 1096.3854675292969,
+      "top": 390.3020935058594
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 390.3020935058594,
+      "width": 320,
+      "y": 12162.6669921875
+    }
+  },
+  {
+    "id": "AI000-C05-L04",
+    "width": 320,
+    "goals": "本节学习目标\n3 项\n01\n把要求写到能检查\n\n列清事实与信息怎样呈现。\n\n02\n按证据比较候选\n\n逐项指出符合、缺陷和未知。\n\n03\n提出修改与验收办法\n\n改具体问题，再查内容、媒介效果与资料。\n\n查看完整目标\n将模糊的作品要求整理为明确、可核对的内容条件与呈现条件\n对照同一份要求检查不同候选作品，用可见证据指出满足、未满足及暂时无法确认的条件\n针对发现的问题提出修改或补查方案，为新的文字、图片或声音任务制定基本验收清单",
+    "entries": [
+      {
+        "text": "迁移练习\n科技体验日海报可以交付了吗？",
+        "href": "#exercise-check-tech-posters"
+      },
+      {
+        "text": "迁移练习\n给展馆配音写一份验收方案",
+        "href": "#exercise-plan-gallery-voice"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-check-tech-posters",
+      "tag": "H3",
+      "text": "科技体验日海报可以交付了吗？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-check-tech-posters",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      },
+      {
+        "id": "exercise-plan-gallery-voice",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 254,
+          "scroll": 254
+        }
+      }
+    ],
+    "client": 305,
+    "headings": [
+      "只说“好看一点”，能拿到可用的海报吗？",
+      "先确定活动事实，再约定怎样展示",
+      "先看两张候选，再逐项核对",
+      "有些条件看内容，有些要看呈现",
+      "修改要指出位置，也要保住原来正确的内容",
+      "生成是其中一步，检查的是这份作品",
+      "文稿写对了，配音就已经合格了吗？",
+      "换一场活动，自己决定该改哪里",
+      "换成展馆配音，哪些结论还得等声音？",
+      "拿到候选以后，把决定写到有依据"
+    ],
+    "scroll": 305,
+    "title": "生成模型：从要求到可核对的作品",
+    "screenshotPosition": {
+      "bottom": 1300.9063110351562,
+      "top": 390.0729370117187
+    },
+    "screenshotPaint": {
+      "height": 844,
+      "top": 390.0729370117187,
+      "width": 320,
+      "y": 11950.6669921875
+    }
+  },
+  {
+    "id": "AI000-C01-L01",
+    "width": 1440,
+    "goals": "本节学习目标\n3 项\n01\n解释AI的作用\n\n联系一个任务，用自己的话说明AI在做什么。\n\n02\n说清输入、任务和输出\n\n指出系统拿到什么、处理什么、交回什么。\n\n03\n把需求写成具体任务\n\n限定输出和范围，让结果能够被检查。\n\n查看完整目标\n用自己的话解释人工智能在一个具体任务中起什么作用\n指出系统的输入、处理任务与输出，并说明三者怎样联系\n把一个日常需求改写成范围清楚、能检查结果的AI任务",
+    "entries": [
+      {
+        "text": "理解练习\n向同学解释录音转文字",
+        "href": "#exercise-describe-task"
+      },
+      {
+        "text": "迁移练习\n给失物照片目录安排一项任务",
+        "href": "#exercise-design-task"
+      }
+    ],
+    "refs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-describe-task",
+      "tag": "H3",
+      "text": "向同学解释录音转文字"
+    },
+    "exercises": [
+      {
+        "id": "exercise-describe-task",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-design-task",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      }
+    ],
+    "client": 1425,
+    "headings": [
+      "收件箱里的一个小麻烦",
+      "电脑需要一个怎样的判断办法？",
+      "把刚才的动作，放进“人工智能”这个名称",
+      "沿着输入、任务和输出看一遍",
+      "换一个需求，试着说具体",
+      "能把AI的作用讲成一句完整的话"
+    ],
+    "scroll": 1425,
+    "title": "人工智能究竟是什么？",
+    "screenshotPosition": {
+      "bottom": 932.59375,
+      "top": 356.25
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 356.25,
+      "width": 1440,
+      "y": 3420.666748046875
+    }
+  },
+  {
+    "id": "AI000-C01-L02",
+    "width": 1440,
+    "goals": "本节学习目标\n3 项\n01\n比较不同任务\n\n说明输入、输出和任务范围有何差别。\n\n02\n解释判断错误\n\n区分误拦与漏掉，联系实际后果。\n\n03\n设计核查方案\n\n选可靠依据，逐项比较并安排后续处理。\n\n查看完整目标\n比较识别、分类、推荐和生成任务的输入、输出与适用范围\n结合给定例子解释误拦、漏掉等错误及其后果\n为新任务设计有可靠对照、可执行的初步核查办法",
+    "entries": [
+      {
+        "text": "迁移练习\n四份需求，各该交回什么？",
+        "href": "#exercise-compare-service-tasks"
+      },
+      {
+        "text": "迁移练习\n归还提醒的两种错误",
+        "href": "#exercise-check-library"
+      },
+      {
+        "text": "迁移练习\n给商品照片分类，怎样检查并使用结果？",
+        "href": "#exercise-product-review"
+      }
+    ],
+    "refs": [
+      {
+        "text": "1.1 人工智能究竟是什么？",
+        "href": "/learn/AI000/AI000-C01-L01"
+      }
+    ],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-compare-service-tasks",
+      "tag": "H3",
+      "text": "四份需求，各该交回什么？"
+    },
+    "exercises": [
+      {
+        "id": "exercise-compare-service-tasks",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-check-library",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      },
+      {
+        "id": "exercise-product-review",
+        "input": "A",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "box": {
+          "client": 722,
+          "scroll": 722
+        }
+      }
+    ],
+    "client": 1425,
+    "headings": [
+      "都在帮忙，做的工作一样吗？",
+      "把两封新邮件放进来，规则还行吗？",
+      "多看一些例子，为什么仍可能判断错？",
+      "新写的一段话，该用什么核对？",
+      "先比较任务，再检查具体结果",
+      "从一句“可能会错”，走到可以核对的动作"
+    ],
+    "scroll": 1425,
+    "title": "AI 能做什么，为什么也会出错？",
+    "screenshotPosition": {
+      "bottom": 932.3958435058594,
+      "top": 356.0520935058594
+    },
+    "screenshotPaint": {
+      "height": 1000,
+      "top": 356.0520935058594,
+      "width": 1440,
+      "y": 4546.66650390625
+    }
+  }
+]
