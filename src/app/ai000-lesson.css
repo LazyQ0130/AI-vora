@@ -119,6 +119,8 @@
 #exercise-choose-rl-projects > p:first-of-type { white-space: pre-line; }
 #exercise-audit-submission-answer > p:first-of-type,
 #exercise-write-venue-answer > p:first-of-type { white-space: pre-line; }
+#exercise-audit-event-data > p:first-of-type,
+#exercise-compare-library-results > p:first-of-type { white-space: pre-line; }
 .ai-inference-figure { overflow-wrap: anywhere; }
 .ai-inference-steps { list-style: none; padding: 0; margin: 0; }
 .ai-inference-steps > li { padding: 20px 0 20px 14px; border-left: 3px solid #65cfe3; }

@@ -27,6 +27,7 @@ import { computerVisionLesson } from "../content/lessons/ai000/computer-vision";
 import { generativeWorkLesson } from "../content/lessons/ai000/generative-work";
 import { rlApplicabilityLesson } from "../content/lessons/ai000/rl-applicability";
 import { unreliableAnswersLesson } from "../content/lessons/ai000/unreliable-answers";
+import { privacyFairnessLesson } from "../content/lessons/ai000/privacy-bias-fairness";
 import { multimodalLesson } from "../content/lessons/ai000/multimodal-ai";
 import { trainingValidationTestLesson } from "../content/lessons/ai000/training-validation-test";
 import { aiMlDlLesson } from "../content/lessons/ai000/ai-ml-dl";
@@ -63,6 +64,7 @@ const contents: Lesson[] = [
   generativeWorkLesson,
   rlApplicabilityLesson,
   unreliableAnswersLesson,
+  privacyFairnessLesson,
   ...maV22Lessons,
   regressionTaskLesson,
   linearModelLesson,

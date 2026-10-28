@@ -1,0 +1,1027 @@
+{
+  "draft404": true,
+  "widths": [
+    {
+      "width": 1440,
+      "layout": {
+        "bodyWidth": 1425,
+        "documentWidth": 1425,
+        "exerciseIds": [
+          "exercise-audit-event-data",
+          "exercise-compare-library-results"
+        ],
+        "prompts": [
+          "pre-line",
+          "pre-line"
+        ],
+        "tables": [
+          {
+            "caption": "语音报修的候选字段：先看原计划用途",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 9,
+            "tabIndex": 0,
+            "tableWidth": 722
+          },
+          {
+            "caption": "对照自己的判断：字段怎样服务这项任务",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 9,
+            "tabIndex": 0,
+            "tableWidth": 722
+          },
+          {
+            "caption": "一种按任务分配访问的报修方案",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 4,
+            "tabIndex": 0,
+            "tableWidth": 722
+          },
+          {
+            "caption": "开发材料覆盖清单，与后面的检查记录分开",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 3,
+            "tabIndex": 0,
+            "tableWidth": 722
+          },
+          {
+            "caption": "先独立核对8条最终分类结果",
+            "columns": 4,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 8,
+            "tabIndex": 0,
+            "tableWidth": 722
+          },
+          {
+            "caption": "逐条反馈：对照你标的一致与不一致",
+            "columns": 5,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 8,
+            "tabIndex": 0,
+            "tableWidth": 722
+          },
+          {
+            "caption": "同一批8条，按条件分别计数",
+            "columns": 5,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 3,
+            "tabIndex": 0,
+            "tableWidth": 722
+          },
+          {
+            "caption": "把报修改进写成可执行动作",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 6,
+            "tabIndex": 0,
+            "tableWidth": 722
+          },
+          {
+            "caption": "活动助手的两类任务",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 2,
+            "tabIndex": 0,
+            "tableWidth": 722
+          },
+          {
+            "caption": "待审查的11项候选数据",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 11,
+            "tabIndex": 0,
+            "tableWidth": 722
+          },
+          {
+            "caption": "两组检查条件：同时有不止一项差别",
+            "columns": 4,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 2,
+            "tabIndex": 0,
+            "tableWidth": 722
+          },
+          {
+            "caption": "10条逐项记录：请独立核对与汇总",
+            "columns": 4,
+            "font": "14px",
+            "regionScrollWidth": 722,
+            "regionWidth": 722,
+            "rows": 10,
+            "tabIndex": 0,
+            "tableWidth": 722
+          }
+        ],
+        "width": 1440
+      },
+      "exercises": [
+        {
+          "width": 1440,
+          "id": "audit-event-data",
+          "states": [
+            {
+              "focus": "H3",
+              "focusId": "_R_5l6klfiv5uberb_-title",
+              "open": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "focus": "SUMMARY",
+              "focusId": "",
+              "open": [
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "focus": "SUMMARY",
+              "focusId": "",
+              "open": [
+                true,
+                true,
+                false
+              ]
+            },
+            {
+              "focus": "SUMMARY",
+              "focusId": "",
+              "open": [
+                true,
+                true,
+                true
+              ]
+            }
+          ],
+          "solutionVisible": true,
+          "textLength": 2232,
+          "input": "验收笔记：逐项写用途与条件，保留编号、分母和待核证据。"
+        },
+        {
+          "width": 1440,
+          "id": "compare-library-results",
+          "states": [
+            {
+              "focus": "H3",
+              "focusId": "_R_5lmklfiv5uberb_-title",
+              "open": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "focus": "SUMMARY",
+              "focusId": "",
+              "open": [
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "focus": "SUMMARY",
+              "focusId": "",
+              "open": [
+                true,
+                true,
+                false
+              ]
+            },
+            {
+              "focus": "SUMMARY",
+              "focusId": "",
+              "open": [
+                true,
+                true,
+                true
+              ]
+            }
+          ],
+          "solutionVisible": true,
+          "textLength": 2488,
+          "input": "验收笔记：逐项写用途与条件，保留编号、分母和待核证据。"
+        }
+      ],
+      "panelGoals": 3,
+      "prerequisites": 4
+    },
+    {
+      "width": 768,
+      "layout": {
+        "bodyWidth": 753,
+        "documentWidth": 753,
+        "exerciseIds": [
+          "exercise-audit-event-data",
+          "exercise-compare-library-results"
+        ],
+        "prompts": [
+          "pre-line",
+          "pre-line"
+        ],
+        "tables": [
+          {
+            "caption": "语音报修的候选字段：先看原计划用途",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 9,
+            "tabIndex": 0,
+            "tableWidth": 650
+          },
+          {
+            "caption": "对照自己的判断：字段怎样服务这项任务",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 9,
+            "tabIndex": 0,
+            "tableWidth": 650
+          },
+          {
+            "caption": "一种按任务分配访问的报修方案",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 4,
+            "tabIndex": 0,
+            "tableWidth": 650
+          },
+          {
+            "caption": "开发材料覆盖清单，与后面的检查记录分开",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 3,
+            "tabIndex": 0,
+            "tableWidth": 650
+          },
+          {
+            "caption": "先独立核对8条最终分类结果",
+            "columns": 4,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 8,
+            "tabIndex": 0,
+            "tableWidth": 650
+          },
+          {
+            "caption": "逐条反馈：对照你标的一致与不一致",
+            "columns": 5,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 8,
+            "tabIndex": 0,
+            "tableWidth": 650
+          },
+          {
+            "caption": "同一批8条，按条件分别计数",
+            "columns": 5,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 3,
+            "tabIndex": 0,
+            "tableWidth": 650
+          },
+          {
+            "caption": "把报修改进写成可执行动作",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 6,
+            "tabIndex": 0,
+            "tableWidth": 650
+          },
+          {
+            "caption": "活动助手的两类任务",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 2,
+            "tabIndex": 0,
+            "tableWidth": 650
+          },
+          {
+            "caption": "待审查的11项候选数据",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 11,
+            "tabIndex": 0,
+            "tableWidth": 650
+          },
+          {
+            "caption": "两组检查条件：同时有不止一项差别",
+            "columns": 4,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 2,
+            "tabIndex": 0,
+            "tableWidth": 650
+          },
+          {
+            "caption": "10条逐项记录：请独立核对与汇总",
+            "columns": 4,
+            "font": "14px",
+            "regionScrollWidth": 650,
+            "regionWidth": 650,
+            "rows": 10,
+            "tabIndex": 0,
+            "tableWidth": 650
+          }
+        ],
+        "width": 768
+      },
+      "exercises": [
+        {
+          "width": 768,
+          "id": "audit-event-data",
+          "states": [
+            {
+              "drawer": false,
+              "focus": "H3",
+              "open": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                true
+              ]
+            }
+          ],
+          "solutionVisible": true,
+          "input": "验收笔记：保留用途、条件、编号、分母及待核证据。"
+        },
+        {
+          "width": 768,
+          "id": "compare-library-results",
+          "states": [
+            {
+              "drawer": false,
+              "focus": "H3",
+              "open": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                true
+              ]
+            }
+          ],
+          "solutionVisible": true,
+          "input": "验收笔记：保留用途、条件、编号、分母及待核证据。"
+        }
+      ],
+      "drawerEscapeFocus": true
+    },
+    {
+      "width": 390,
+      "layout": {
+        "bodyWidth": 375,
+        "documentWidth": 375,
+        "exerciseIds": [
+          "exercise-audit-event-data",
+          "exercise-compare-library-results"
+        ],
+        "prompts": [
+          "pre-line",
+          "pre-line"
+        ],
+        "tables": [
+          {
+            "caption": "语音报修的候选字段：先看原计划用途",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 308,
+            "regionWidth": 308,
+            "rows": 9,
+            "tabIndex": 0,
+            "tableWidth": 308
+          },
+          {
+            "caption": "对照自己的判断：字段怎样服务这项任务",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 308,
+            "regionWidth": 308,
+            "rows": 9,
+            "tabIndex": 0,
+            "tableWidth": 308
+          },
+          {
+            "caption": "一种按任务分配访问的报修方案",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 308,
+            "regionWidth": 308,
+            "rows": 4,
+            "tabIndex": 0,
+            "tableWidth": 308
+          },
+          {
+            "caption": "开发材料覆盖清单，与后面的检查记录分开",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 308,
+            "regionWidth": 308,
+            "rows": 3,
+            "tabIndex": 0,
+            "tableWidth": 308
+          },
+          {
+            "caption": "先独立核对8条最终分类结果",
+            "columns": 4,
+            "font": "14px",
+            "regionScrollWidth": 320,
+            "regionWidth": 308,
+            "rows": 8,
+            "tabIndex": 0,
+            "tableWidth": 320
+          },
+          {
+            "caption": "逐条反馈：对照你标的一致与不一致",
+            "columns": 5,
+            "font": "14px",
+            "regionScrollWidth": 400,
+            "regionWidth": 308,
+            "rows": 8,
+            "tabIndex": 0,
+            "tableWidth": 400
+          },
+          {
+            "caption": "同一批8条，按条件分别计数",
+            "columns": 5,
+            "font": "14px",
+            "regionScrollWidth": 400,
+            "regionWidth": 308,
+            "rows": 3,
+            "tabIndex": 0,
+            "tableWidth": 400
+          },
+          {
+            "caption": "把报修改进写成可执行动作",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 308,
+            "regionWidth": 308,
+            "rows": 6,
+            "tabIndex": 0,
+            "tableWidth": 308
+          },
+          {
+            "caption": "活动助手的两类任务",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 308,
+            "regionWidth": 308,
+            "rows": 2,
+            "tabIndex": 0,
+            "tableWidth": 308
+          },
+          {
+            "caption": "待审查的11项候选数据",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 308,
+            "regionWidth": 308,
+            "rows": 11,
+            "tabIndex": 0,
+            "tableWidth": 308
+          },
+          {
+            "caption": "两组检查条件：同时有不止一项差别",
+            "columns": 4,
+            "font": "14px",
+            "regionScrollWidth": 320,
+            "regionWidth": 308,
+            "rows": 2,
+            "tabIndex": 0,
+            "tableWidth": 320
+          },
+          {
+            "caption": "10条逐项记录：请独立核对与汇总",
+            "columns": 4,
+            "font": "14px",
+            "regionScrollWidth": 320,
+            "regionWidth": 308,
+            "rows": 10,
+            "tabIndex": 0,
+            "tableWidth": 320
+          }
+        ],
+        "width": 390
+      },
+      "exercises": [
+        {
+          "width": 390,
+          "id": "audit-event-data",
+          "states": [
+            {
+              "drawer": false,
+              "focus": "H3",
+              "open": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                true
+              ]
+            }
+          ],
+          "solutionVisible": true,
+          "input": "验收笔记：保留用途、条件、编号、分母及待核证据。"
+        },
+        {
+          "width": 390,
+          "id": "compare-library-results",
+          "states": [
+            {
+              "drawer": false,
+              "focus": "H3",
+              "open": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                true
+              ]
+            }
+          ],
+          "solutionVisible": true,
+          "input": "验收笔记：保留用途、条件、编号、分母及待核证据。"
+        }
+      ],
+      "drawerEscapeFocus": true
+    },
+    {
+      "width": 320,
+      "layout": {
+        "bodyWidth": 305,
+        "documentWidth": 305,
+        "exerciseIds": [
+          "exercise-audit-event-data",
+          "exercise-compare-library-results"
+        ],
+        "prompts": [
+          "pre-line",
+          "pre-line"
+        ],
+        "tables": [
+          {
+            "caption": "语音报修的候选字段：先看原计划用途",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 254,
+            "regionWidth": 254,
+            "rows": 9,
+            "tabIndex": 0,
+            "tableWidth": 254
+          },
+          {
+            "caption": "对照自己的判断：字段怎样服务这项任务",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 254,
+            "regionWidth": 254,
+            "rows": 9,
+            "tabIndex": 0,
+            "tableWidth": 254
+          },
+          {
+            "caption": "一种按任务分配访问的报修方案",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 254,
+            "regionWidth": 254,
+            "rows": 4,
+            "tabIndex": 0,
+            "tableWidth": 254
+          },
+          {
+            "caption": "开发材料覆盖清单，与后面的检查记录分开",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 254,
+            "regionWidth": 254,
+            "rows": 3,
+            "tabIndex": 0,
+            "tableWidth": 254
+          },
+          {
+            "caption": "先独立核对8条最终分类结果",
+            "columns": 4,
+            "font": "14px",
+            "regionScrollWidth": 320,
+            "regionWidth": 254,
+            "rows": 8,
+            "tabIndex": 0,
+            "tableWidth": 320
+          },
+          {
+            "caption": "逐条反馈：对照你标的一致与不一致",
+            "columns": 5,
+            "font": "14px",
+            "regionScrollWidth": 400,
+            "regionWidth": 254,
+            "rows": 8,
+            "tabIndex": 0,
+            "tableWidth": 400
+          },
+          {
+            "caption": "同一批8条，按条件分别计数",
+            "columns": 5,
+            "font": "14px",
+            "regionScrollWidth": 400,
+            "regionWidth": 254,
+            "rows": 3,
+            "tabIndex": 0,
+            "tableWidth": 400
+          },
+          {
+            "caption": "把报修改进写成可执行动作",
+            "columns": 3,
+            "font": "14px",
+            "regionScrollWidth": 254,
+            "regionWidth": 254,
+            "rows": 6,
+            "tabIndex": 0,
+            "tableWidth": 254
+          },
+          {
+            "caption": "活动助手的两类任务",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 254,
+            "regionWidth": 254,
+            "rows": 2,
+            "tabIndex": 0,
+            "tableWidth": 254
+          },
+          {
+            "caption": "待审查的11项候选数据",
+            "columns": 2,
+            "font": "14px",
+            "regionScrollWidth": 254,
+            "regionWidth": 254,
+            "rows": 11,
+            "tabIndex": 0,
+            "tableWidth": 254
+          },
+          {
+            "caption": "两组检查条件：同时有不止一项差别",
+            "columns": 4,
+            "font": "14px",
+            "regionScrollWidth": 320,
+            "regionWidth": 254,
+            "rows": 2,
+            "tabIndex": 0,
+            "tableWidth": 320
+          },
+          {
+            "caption": "10条逐项记录：请独立核对与汇总",
+            "columns": 4,
+            "font": "14px",
+            "regionScrollWidth": 320,
+            "regionWidth": 254,
+            "rows": 10,
+            "tabIndex": 0,
+            "tableWidth": 320
+          }
+        ],
+        "width": 320
+      },
+      "exercises": [
+        {
+          "width": 320,
+          "id": "audit-event-data",
+          "states": [
+            {
+              "drawer": false,
+              "focus": "H3",
+              "open": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                true
+              ]
+            }
+          ],
+          "solutionVisible": true,
+          "input": "验收笔记：保留用途、条件、编号、分母及待核证据。"
+        },
+        {
+          "width": 320,
+          "id": "compare-library-results",
+          "states": [
+            {
+              "drawer": false,
+              "focus": "H3",
+              "open": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                false
+              ]
+            },
+            {
+              "drawer": false,
+              "focus": "SUMMARY",
+              "open": [
+                true,
+                true,
+                true
+              ]
+            }
+          ],
+          "solutionVisible": true,
+          "input": "验收笔记：保留用途、条件、编号、分母及待核证据。"
+        }
+      ],
+      "drawerEscapeFocus": true
+    }
+  ],
+  "progress": {
+    "initial": {
+      "aivora:learning:v2:AI000:AI000-C05-L05:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L05\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793202682158}",
+      "aivora:learning:v2:AI000:AI000-C06-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"where-errors-enter\",\"updatedAt\":1793202962848}"
+    },
+    "beforeComplete": {
+      "aivora:learning:v2:AI000:AI000-C05-L05:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L05\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793202682158}",
+      "aivora:learning:v2:AI000:AI000-C06-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"where-errors-enter\",\"updatedAt\":1793202962848}",
+      "aivora:learning:v2:AI000:AI000-C06-L02:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L02\",\"contentVersion\":1,\"percent\":98,\"completed\":false,\"section\":\"library-results-task\",\"updatedAt\":1793205826816}"
+    },
+    "afterCompleteAtPosition": {
+      "aivora:learning:v2:AI000:AI000-C05-L05:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L05\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793202682158}",
+      "aivora:learning:v2:AI000:AI000-C06-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"where-errors-enter\",\"updatedAt\":1793202962848}",
+      "aivora:learning:v2:AI000:AI000-C06-L02:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L02\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"manage-data\",\"updatedAt\":1793205835310}"
+    },
+    "afterReload": {
+      "aivora:learning:v2:AI000:AI000-C05-L05:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L05\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793202682158}",
+      "aivora:learning:v2:AI000:AI000-C06-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"where-errors-enter\",\"updatedAt\":1793202962848}",
+      "aivora:learning:v2:AI000:AI000-C06-L02:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L02\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"manage-data\",\"updatedAt\":1793205856964}"
+    },
+    "inputsAfterReload": [
+      "",
+      ""
+    ],
+    "resumeHref": "#manage-data",
+    "resumeFocus": {
+      "focus": "收进来以后，谁能看、何时还需要？",
+      "hash": "#manage-data",
+      "tag": "H2"
+    },
+    "afterResume": {
+      "aivora:learning:v2:AI000:AI000-C05-L05:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L05\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793202682158}",
+      "aivora:learning:v2:AI000:AI000-C06-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"where-errors-enter\",\"updatedAt\":1793202962848}",
+      "aivora:learning:v2:AI000:AI000-C06-L02:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L02\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"manage-data\",\"updatedAt\":1793205859600}"
+    },
+    "oldRecordsUnchanged": true,
+    "noInitialNewKey": true
+  },
+  "chapterDrawer": {
+    "text": "课程章节与独立课时\n\n课程章节与独立课时，按 Escape 关闭面板。\n\n返回课程详情\nCOURSE CONTENTS\n人工智能导论与技术地图\n\n7 章 · 20 节核心课已制作\n\n已制作课时阅读比例\n15%\n2 / 20 节已标记读完 · 仅当前浏览器\n筹备、可选与旧版课时不计入比例；已读不代表掌握。\n第 1 章：\n人工智能是什么：能力、边界与常见误区\n第 2 章：\nAI、机器学习、深度学习与生成式 AI 的包含关系\n第 3 章：\n监督学习、无监督学习、自监督学习与强化学习\n第 4 章：\n数据、参数、模型、训练、验证、测试与推理\n第 5 章：\n主要技术方向：NLP、LLM、CV、多模态、RL、生成式模型\n第 6 章：\nAI 风险与责任：隐私、偏差、版权、幻觉与误用\n6.1\n为什么 AI 会产生不可靠的回答？\n6.2\n数据隐私、偏差与公平性\n·\n6.3\n版权、误用与负责任地使用 AI\n筹备中\n第 7 章：\n如何阅读课程先修图与选择学习路径\n·\n7.1\n为什么学习 Python、数学与数据分析？\n筹备中\n·\n7.2\nAI 不同技术方向需要哪些基础？\n筹备中\n·\n7.3\n综合实践：分析 AI 问题并制定学习计划\n筹备中",
+    "links": [
+      "/courses/AI000",
+      "/learn/AI000/AI000-C01-L01",
+      "/learn/AI000/AI000-C01-L02",
+      "/learn/AI000/AI000-C01-L03",
+      "/learn/AI000/AI000-C02-L01",
+      "/learn/AI000/AI000-C02-L02",
+      "/learn/AI000/AI000-C03-L01",
+      "/learn/AI000/AI000-C03-L02",
+      "/learn/AI000/AI000-C03-L03",
+      "/learn/AI000/AI000-C03-L04",
+      "/learn/AI000/AI000-C04-L01",
+      "/learn/AI000/AI000-C04-L02",
+      "/learn/AI000/AI000-C04-L03",
+      "/learn/AI000/AI000-C04-L04",
+      "/learn/AI000/AI000-C05-L01",
+      "/learn/AI000/AI000-C05-L02",
+      "/learn/AI000/AI000-C05-L03",
+      "/learn/AI000/AI000-C05-L04",
+      "/learn/AI000/AI000-C05-L05",
+      "/learn/AI000/AI000-C06-L01",
+      "/learn/AI000/AI000-C06-L02"
+    ]
+  },
+  "tableKeyboardScroll": {
+    "mobile390": {
+      "width": 308,
+      "content": 400,
+      "scrollLeft": 3.3333332538604736
+    },
+    "narrow320": {
+      "width": 254,
+      "content": 320,
+      "scrollLeft": 40
+    }
+  },
+  "continuity": [
+    {
+      "url": "http://127.0.0.1:3021/learn/AI000/AI000-C04-L01#choose-fields",
+      "heading": "数据、特征与标签"
+    },
+    {
+      "url": "http://127.0.0.1:3021/learn/AI000/AI000-C05-L03#audio-and-transcript",
+      "heading": "多模态 AI：连接文字、图片与声音"
+    },
+    {
+      "url": "http://127.0.0.1:3021/learn/AI000/AI000-C06-L01#checking-workflow",
+      "heading": "为什么 AI 会产生不可靠的回答？"
+    },
+    {
+      "url": "http://127.0.0.1:3021/learn/AI000/AI000-C06-L02",
+      "heading": "数据隐私、偏差与公平性"
+    }
+  ],
+  "timeDisplay": {
+    "course": "编辑预计 11.8–18.0 小时",
+    "paths": {
+      "hasHourText": false,
+      "ai000CourseLinks": 1,
+      "note": "学习路径当前只展示课程节点与入口，无小时字段；详情和课程卡共用唯一学时表。"
+    }
+  },
+  "console": []
+}

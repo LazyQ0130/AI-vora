@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-10-28T16:35:06.788Z",
+  "base": "6fd30bc3e42bd5c26cd9b31893995341e0ff4689",
+  "unchangedOldLessons": 42,
+  "unchangedPublications": 42,
+  "protectedFiles": 242,
+  "preservedPreciseFigures": 23,
+  "publication": {
+    "lessonId": "AI000-C06-L02",
+    "courseId": "AI000",
+    "chapterId": "AI000-C06",
+    "title": "数据隐私、偏差与公平性",
+    "contentVersion": 1,
+    "order": 2,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "pending-review",
+    "access": "preview",
+    "technicalEvidence": "docs/AI000_LESSON_6_2_REVIEW.md"
+  },
+  "assessmentMap": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "audit-event-data"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "compare-library-results"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "audit-event-data",
+        "compare-library-results"
+      ]
+    }
+  ]
+}

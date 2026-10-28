@@ -24,7 +24,7 @@ const text=(id:string)=>JSON.stringify(lesson.sections.find(s=>s.id===id)!.block
 
 test("5.5增加之外40旧课/发布与238文件精确保留，未登记源码改动仍拒绝",()=>{
   assert.equal(before.lessons.length,40);assert.equal(before.files.length,238);
-  assert.equal(lessonRegistry.size,42);assert.equal(publicationManifest.length,42);
+  assert.equal(lessonRegistry.size,43);assert.equal(publicationManifest.length,43);
   for(const old of before.lessons)assert.equal(JSON.stringify(lessonRegistry.get(old.id)),JSON.stringify(old),old.id);
   for(const old of before.publications)assert.deepEqual(publicationManifest.find(p=>p.lessonId===old.lessonId),old);
   for(const f of before.files){const bytes=readFileSync(f.path);if(sha(bytes)===f.sha256)continue;const source=beforeApplicabilitySource(f.path,bytes.toString("utf8")).replaceAll("\r\n","\n");assert.ok([source,source.replaceAll("\n","\r\n")].some(t=>sha(Buffer.from(t))===f.sha256),f.path);}
@@ -116,7 +116,7 @@ test("draft私有与预览门禁一致，5.4到5.5自动接通，6.2以后仍规
   assert.equal(Boolean(resolveLesson("AI000",lesson.id)),isReadable(pub));
   if(isReadable(pub)){assert.equal(getAdjacentLessons(course,"AI000-C05-L04").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C05-L04");assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C06-L01");}
   else {assert.equal(pub.status,"draft");assert.equal(pub.access,"private");}
-  for(const slot of course.chapters.slice(5).flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C06-L01")){assert.equal(slot.status,"planned");assert.equal(slot.href,undefined);assert.equal(lessonRegistry.has(slot.lessonId),false);}
+  for(const slot of course.chapters.slice(5).flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C06-L02")){assert.equal(slot.status,"planned");assert.equal(slot.href,undefined);assert.equal(lessonRegistry.has(slot.lessonId),false);}
 });
 
 test("真实存储保留40旧课和1.2/5.3历史r1，新5.5 r1位置完成独立恢复",()=>{
@@ -129,8 +129,8 @@ test("真实存储保留40旧课和1.2/5.3历史r1，新5.5 r1位置完成独立
   for(const [k,v]of saved)assert.equal(memory.get(k),v,k);
 });
 
-test("5.5学时唯一维护与新课一致，旧646–992证据留存，完整路线688–1050",()=>{
-  const estimate=getCourseStudyEstimate("AI000")!;assert.deepEqual(estimate.totalMinutes,[688,1050]);assert.equal(estimate.hours,"11.5–17.5");
+test("5.5学时唯一维护与新课一致，旧646–992证据留存，当前完整路线710–1080",()=>{
+  const estimate=getCourseStudyEstimate("AI000")!;assert.deepEqual(estimate.totalMinutes,[710,1080]);assert.equal(estimate.hours,"11.8–18.0");
   const previous=JSON.parse(readFileSync("docs/ai000-cross-lesson-quality/TIME_ESTIMATE.json","utf8"));assert.deepEqual(previous.totalMinutes,[646,992]);
   assert.deepEqual(lesson.learningTime,{reading:[12,18],practice:[28,42],coding:[0,0],basis:"editorial-estimate"});
 });
