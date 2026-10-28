@@ -14,10 +14,10 @@ import { ContentRenderer } from "../src/components/lesson/content-renderer";
 import { keywordMailDecision, mailExamples } from "../src/content/lessons/ai000/mail-example";
 
 const before=JSON.parse(readFileSync(new URL("../docs/ai000-v2/BEFORE.json",import.meta.url),"utf8")) as {lessons:Lesson[];curriculum:{path:string;digest:string}[]};
-const ids=["AI000-C01-L01","AI000-C01-L02","AI000-C01-L03","AI000-C02-L01","AI000-C02-L02","AI000-C03-L01","AI000-C03-L02","AI000-C03-L03","AI000-C03-L04","AI000-C04-L01","AI000-C04-L02","AI000-C04-L03","AI000-C04-L04","AI000-C05-L01","AI000-C05-L02","AI000-C05-L03","AI000-C05-L04"];
+const ids=["AI000-C01-L01","AI000-C01-L02","AI000-C01-L03","AI000-C02-L01","AI000-C02-L02","AI000-C03-L01","AI000-C03-L02","AI000-C03-L03","AI000-C03-L04","AI000-C04-L01","AI000-C04-L02","AI000-C04-L03","AI000-C04-L04","AI000-C05-L01","AI000-C05-L02","AI000-C05-L03","AI000-C05-L04","AI000-C05-L05"];
 const hash=(v:unknown)=>createHash("sha256").update(qualityComparableJson(v)).digest("hex");
 
-test("24节规划对应七章原事实，十七节可读且连续导航，未制作课不伪造正文",()=>{
+test("24节规划对应七章原事实，十八节可读且连续导航，未制作课不伪造正文",()=>{
  const course=getLearningCourse("AI000")!;
  assert.equal(course.status,"planned");
  assert.equal(course.hours,"6–10");
@@ -82,8 +82,8 @@ test("r1存储保留但不计入r2完成；三节新课及五课互不改写旧�
  ids.forEach(id=>assert.equal(parseReadingProgress(restored.getSnapshot(lessonProgressScope(lessonRegistry.get(id)!)),lessonProgressScope(lessonRegistry.get(id)!))?.completed,true));
 });
 
-test("原课与第五章图示有描述和图注，5.1无需配图，误判图核对独立预期，知识图只推出给定排查方向",()=>{
- const expectedKinds=[["mail-flow"],["mail-outcomes"],["knowledge-trace"],["method-hierarchy"],["method-and-task","generation-map"],["supervised-flow"],["borrowing-groups"],["self-supervised-flow"],["reinforcement-flow"],["features-target-flow"],["parameters-compare"],["data-use-flow"],["inference-flow"],[],["vision-shelf","vision-classification","vision-detection","vision-segmentation","vision-workbench"],["multimodal-exhibits","multimodal-lost-property"],["creative-posters","creative-tech-posters"]];
+test("原课与第五章图示有描述和图注，5.1/5.5无需配图，误判图核对独立预期，知识图只推出给定排查方向",()=>{
+ const expectedKinds=[["mail-flow"],["mail-outcomes"],["knowledge-trace"],["method-hierarchy"],["method-and-task","generation-map"],["supervised-flow"],["borrowing-groups"],["self-supervised-flow"],["reinforcement-flow"],["features-target-flow"],["parameters-compare"],["data-use-flow"],["inference-flow"],[],["vision-shelf","vision-classification","vision-detection","vision-segmentation","vision-workbench"],["multimodal-exhibits","multimodal-lost-property"],["creative-posters","creative-tech-posters"],[]];
  ids.forEach((id,i)=>{
   const figures=lessonRegistry.get(id)!.sections.flatMap(s=>s.blocks).filter(b=>b.type==="ai-task-figure");
   assert.deepEqual(figures.map(f=>f.kind),expectedKinds[i]);

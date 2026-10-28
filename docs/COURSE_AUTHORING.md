@@ -21,7 +21,7 @@
 
 原 curriculum/ 的 Markdown、JSON 是 20 门课程、等级、目标、学时、先修、章节与项目的事实来源。教材不能反过来改写这些事实。lib/curriculum 的 Course 是目录适配类型；content/models 的 Course 组合相同事实与结构化 Chapter。每个 Chapter 有稳定 ID、顺序和真实可读课时，不为规划章节伪造课时。
 
-Lesson 数据位于 content/lessons，资源程序位于 content/resources/programs，发布状态位于 publication-manifest；course-engine 负责关联与解析。Reader 不导入某一节教材。34 节现行教材与 6 节旧版试读全部经过同一 ContentRenderer。旧 sample.ts 与 v1 progress API 保留兼容和既有测试；新 UI 不直接消费它们。
+Lesson 数据位于 content/lessons，资源程序位于 content/resources/programs，发布状态位于 publication-manifest；course-engine 负责关联与解析。Reader 不导入某一节教材。35 节现行教材与 6 节旧版试读全部经过同一 ContentRenderer。旧 sample.ts 与 v1 progress API 保留兼容和既有测试；新 UI 不直接消费它们。
 
 ## 添加一节教材
 
@@ -46,7 +46,7 @@ Lesson 数据位于 content/lessons，资源程序位于 content/resources/progr
 | published | 正式教材 | public / preview / private；技术与审核证据齐全 |
 | deprecated | 下线 | private |
 
-technicalEvidence / reviewEvidence 是仓库审核证据引用，不是权限系统或数字签名。维护者负责审查证据的真实性与适用修订；schema 检查字段和状态门禁，不能替代专业审核。当前 40 节均为 pending-review/preview（含旧综合试读及 AI000 十七节），整门课程仍 planned。
+technicalEvidence / reviewEvidence 是仓库审核证据引用，不是权限系统或数字签名。维护者负责审查证据的真实性与适用修订；schema 检查字段和状态门禁，不能替代专业审核。当前 41 节均为 pending-review/preview（含旧综合试读及 AI000 十八节），整门课程仍 planned。
 
 ## 内容组件
 
@@ -125,9 +125,9 @@ V2.1 样式集中在 teaching-v2-1.css；既有品牌、动画和 reader.css 保
 
 ## AI000 系统化节级规划与修订
 
-AI000 的24节蓝图见 ai000-outline.ts 与 AI000_CURRICULUM_V2_PLAN.md，只有已制作的十七节进入发布清单。1.1和2.1核心目标/考核重编为r2，原r1键不删除、不迁移为新版完成。Lesson可选legacyAnchors只存迁出书签的id、标题、说明与真实课时深链接；Reader在页尾折叠衔接入口，原hash通过既有定位逻辑展开并聚焦。它不属于当前核心目标或assessmentMap，不把迁出题再算作本节达标。其余23节数据不因该可选字段增加空值。两份旧AI000专题核验脚本入口现委托review-ai000-v2.ts，历史输出保留，首批证据使用docs/ai000-v2。
+AI000 的24节蓝图见 ai000-outline.ts 与 AI000_CURRICULUM_V2_PLAN.md，只有已制作的十八节进入发布清单。1.1和2.1核心目标/考核重编为r2，原r1键不删除、不迁移为新版完成。Lesson可选legacyAnchors只存迁出书签的id、标题、说明与真实课时深链接；Reader在页尾折叠衔接入口，原hash通过既有定位逻辑展开并聚焦。它不属于当前核心目标或assessmentMap，不把迁出题再算作本节达标。其余23节数据不因该可选字段增加空值。两份旧AI000专题核验脚本入口现委托review-ai000-v2.ts，历史输出保留，首批证据使用docs/ai000-v2。
 
-3.1初始r1、1.3仅语言精修保r1，证据另存docs/ai000-3-1，入口为AI000_3_1_AND_EDITORIAL_REFINEMENT.md。AI000完整路线分钟数维护于ai000-study-time.ts，逐行对应节级规划；course-learning-time.ts统一为卡片和详情求和，当前约10.8–16.5小时是含未制作内容的编辑估计（4.4轮的9.8–15.1小时等历史证据保留）。原课程hours仍保留6–10；不据新展示改写curriculum或学习进度。
+3.1初始r1、1.3仅语言精修保r1，证据另存docs/ai000-3-1，入口为AI000_3_1_AND_EDITORIAL_REFINEMENT.md。AI000完整路线分钟数维护于ai000-study-time.ts，逐行对应节级规划；course-learning-time.ts统一为卡片和详情求和，当前约11.1–17.0小时是含未制作内容的编辑估计（4.4轮的9.8–15.1小时等历史证据保留）。原课程hours仍保留6–10；不据新展示改写curriculum或学习进度。
 
 3.2初始r1证据保留于docs/ai000-3-2；首道核心练习更换数据与达标要求后升r2，旧r1记录保留，不继承新版完成。正文borrowing-groups图、A–F与第二题不变。3.1只修改过期状态句，仍r1；3.2末段也去掉已过期的3.3筹备状态，问题原意保留。3.3初始r1，self-supervised-flow图分开输入、目标与假设预测。3.1→3.2→3.3导航沿用机制，3.4仍规划。精确差异和进度证据见docs/AI000_LESSON_3_3_AND_REFINEMENT.md及docs/ai000-3-3。正文衔接不硬编码开放状态。
 
@@ -156,3 +156,5 @@ AI000 的24节蓝图见 ai000-outline.ts 与 AI000_CURRICULUM_V2_PLAN.md，只�
 5.4初始r1，用旧物交换日A/B和科技体验日C/D实际候选核对内容与呈现，展馆配音新题分开文稿与真实听检。仅扩展两种受控HTML图，39旧课/原发布记录及21幅图不变；先draft/private校验，再pending-review/preview。5.3→5.4接通，5.5保持规划。练习编辑估计24–36分钟，完整路线640–982分钟（10.7–16.4小时）；前轮624–960保留为历史。证据见[5.4审查](AI000_LESSON_5_4_REVIEW.md)及ai000-5-4；教师、中文编辑和学生试学仍待办。
 
 AI000跨课质量修订：1.2新增四任务独立比较题升r2，5.3将宣传尾题改为材料参与证据与对照检查升r2，原r1键与全部旧锚点保留，不继承新版完成。其他提示、先修链接、过渡和3.4奖励消歧保留原版本；精确差异和14篇版本表见[专项审查](AI000_CROSS_LESSON_QUALITY_REVIEW.md)。1.2练习编辑估计15–22→21–32分钟，完整24节路线646–992分钟（10.8–16.5小时），旧640–982证据保留；人工审稿和试学仍待办。
+
+5.5初始r1，仓库任务分开业务期限、奖励分项与硬约束；共享单车和四项目题要求状态追踪、记录来源、基线及验证方案，不重教3.4循环。只用现有HTML表格，无新图/训练环境/模型API。先draft/private核验，再按内容和技术门槛进入pending-review/preview；40旧课、40旧发布与23幅精确图保持。5.4→5.5自动衔接，第六七章仍规划，整门仍planned。阅读12–18、练习28–42、代码0为编辑估计，完整24节路线668–1022分钟（11.1–17.0小时），原646–992及curriculum的6–10小时保留。见[5.5与全章审查](AI000_LESSON_5_5_AND_CHAPTER_5_REVIEW.md)及ai000-5-5；5.1–5.4只读审查，教师/中文编辑/学生试学仍待办。

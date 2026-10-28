@@ -1,0 +1,555 @@
+[
+  {
+    "width": 1440,
+    "height": 1000,
+    "goals": "本节学习目标\n3 项\n01\n比较可行方法\n\n用行动和后续影响说明何时考虑强化学习。\n\n02\n把目标与约束分清\n\n设计观察、行动与反馈，检查分数遗漏了什么。\n\n03\n决定是否值得尝试\n\n核查数据、成本和模拟条件，安排公平对照。\n\n查看完整目标\n根据实际任务中的连续行动、后续变化和可用反馈，比较强化学习、固定规则、监督学习及规划等解决方式\n为可能采用强化学习的问题提出可观察信息、允许行动、任务目标、反馈依据与必要约束，识别计分可能偏离目标的问题\n根据记录、模拟环境、反馈成本与安全条件判断强化学习是否值得尝试，设计有基线、可比情境和独立检查的验证方案",
+    "entries": [
+      {
+        "text": "迁移练习\n交付任务分析、一次状态追踪和验证计划",
+        "href": "#exercise-plan-bike-dispatch"
+      },
+      {
+        "text": "迁移练习\n写四份有比较依据的方案建议",
+        "href": "#exercise-choose-rl-projects"
+      }
+    ],
+    "prereqs": [
+      {
+        "text": "3.4 行动反馈怎样用于改进选择",
+        "href": "/learn/AI000/AI000-C03-L04#name-the-method"
+      },
+      {
+        "text": "3.4 计分怎样影响选择",
+        "href": "/learn/AI000/AI000-C03-L04#reward-design"
+      },
+      {
+        "text": "4.3 检查记录是否参与过调整",
+        "href": "/learn/AI000/AI000-C04-L03#test-feedback"
+      },
+      {
+        "text": "5.4 生成与修改作品",
+        "href": "/learn/AI000/AI000-C05-L04#generation-in-a-system"
+      }
+    ],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-plan-bike-dispatch",
+      "tag": "H3",
+      "text": "交付任务分析、一次状态追踪和验证计划"
+    },
+    "exercises": [
+      {
+        "id": "exercise-plan-bike-dispatch",
+        "input": "check",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "solutionChars": 1640,
+        "rubricItems": 14,
+        "promptParagraphs": []
+      },
+      {
+        "id": "exercise-choose-rl-projects",
+        "input": "check",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "solutionChars": 1497,
+        "rubricItems": 11,
+        "promptParagraphs": []
+      }
+    ],
+    "tables": [
+      {
+        "client": 722,
+        "left": 0,
+        "name": "调度前要能取得什么，随后允许做什么？",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "left": 0,
+        "name": "同一批、同一窗口的结果与计分",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "left": 0,
+        "name": "任务不同，先考虑的解决办法也不同",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "left": 0,
+        "name": "面对新项目，可以按这六问整理依据",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "left": 0,
+        "name": "三个站的当前数量与两个窗口的假设借车需求",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "left": 0,
+        "name": "手头不完整的行动日志",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "left": 0,
+        "name": "先按具体交付和现有条件作项目决定",
+        "scroll": 722
+      }
+    ],
+    "warehouse": "同一批、同一窗口的结果与计分\n核查项\t方案甲\t方案乙\n已完成任务（件）\t6\t5\n其中超20分钟完成（件）\t3\t0\n通道排队事件（次）\t4\t0\n30分钟时未完成（件）\t0\t1\n本规则分数（分）\t17\t25\n六件全部完成这一条\t满足\t未满足",
+    "page": {
+      "client": 1425,
+      "mathCount": 2,
+      "mathErrors": 0,
+      "scroll": 1425
+    },
+    "nav": "上一节 · 5.4 生成模型：从要求到可核对的作品\n下一节 · 尚未提供"
+  },
+  {
+    "width": 768,
+    "height": 1000,
+    "goals": "本节学习目标\n3 项\n01\n比较可行方法\n\n用行动和后续影响说明何时考虑强化学习。\n\n02\n把目标与约束分清\n\n设计观察、行动与反馈，检查分数遗漏了什么。\n\n03\n决定是否值得尝试\n\n核查数据、成本和模拟条件，安排公平对照。\n\n查看完整目标\n根据实际任务中的连续行动、后续变化和可用反馈，比较强化学习、固定规则、监督学习及规划等解决方式\n为可能采用强化学习的问题提出可观察信息、允许行动、任务目标、反馈依据与必要约束，识别计分可能偏离目标的问题\n根据记录、模拟环境、反馈成本与安全条件判断强化学习是否值得尝试，设计有基线、可比情境和独立检查的验证方案",
+    "entries": [
+      {
+        "text": "迁移练习\n交付任务分析、一次状态追踪和验证计划",
+        "href": "#exercise-plan-bike-dispatch"
+      },
+      {
+        "text": "迁移练习\n写四份有比较依据的方案建议",
+        "href": "#exercise-choose-rl-projects"
+      }
+    ],
+    "prereqs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-plan-bike-dispatch",
+      "tag": "H3",
+      "text": "交付任务分析、一次状态追踪和验证计划"
+    },
+    "exercises": [
+      {
+        "id": "exercise-plan-bike-dispatch",
+        "input": "check",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "solutionChars": 1640,
+        "rubricItems": 14,
+        "promptParagraphs": []
+      },
+      {
+        "id": "exercise-choose-rl-projects",
+        "input": "check",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "solutionChars": 1497,
+        "rubricItems": 11,
+        "promptParagraphs": []
+      }
+    ],
+    "tables": [
+      {
+        "client": 650,
+        "left": 0,
+        "name": "调度前要能取得什么，随后允许做什么？",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "left": 0,
+        "name": "同一批、同一窗口的结果与计分",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "left": 0,
+        "name": "任务不同，先考虑的解决办法也不同",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "left": 0,
+        "name": "面对新项目，可以按这六问整理依据",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "left": 0,
+        "name": "三个站的当前数量与两个窗口的假设借车需求",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "left": 0,
+        "name": "手头不完整的行动日志",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "left": 0,
+        "name": "先按具体交付和现有条件作项目决定",
+        "scroll": 650
+      }
+    ],
+    "warehouse": "同一批、同一窗口的结果与计分\n核查项\t方案甲\t方案乙\n已完成任务（件）\t6\t5\n其中超20分钟完成（件）\t3\t0\n通道排队事件（次）\t4\t0\n30分钟时未完成（件）\t0\t1\n本规则分数（分）\t17\t25\n六件全部完成这一条\t满足\t未满足",
+    "page": {
+      "client": 753,
+      "mathCount": 2,
+      "mathErrors": 0,
+      "scroll": 753
+    },
+    "nav": "上一节 · 5.4 生成模型：从要求到可核对的作品\n下一节 · 尚未提供"
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "goals": "本节学习目标\n3 项\n01\n比较可行方法\n\n用行动和后续影响说明何时考虑强化学习。\n\n02\n把目标与约束分清\n\n设计观察、行动与反馈，检查分数遗漏了什么。\n\n03\n决定是否值得尝试\n\n核查数据、成本和模拟条件，安排公平对照。\n\n查看完整目标\n根据实际任务中的连续行动、后续变化和可用反馈，比较强化学习、固定规则、监督学习及规划等解决方式\n为可能采用强化学习的问题提出可观察信息、允许行动、任务目标、反馈依据与必要约束，识别计分可能偏离目标的问题\n根据记录、模拟环境、反馈成本与安全条件判断强化学习是否值得尝试，设计有基线、可比情境和独立检查的验证方案",
+    "entries": [
+      {
+        "text": "迁移练习\n交付任务分析、一次状态追踪和验证计划",
+        "href": "#exercise-plan-bike-dispatch"
+      },
+      {
+        "text": "迁移练习\n写四份有比较依据的方案建议",
+        "href": "#exercise-choose-rl-projects"
+      }
+    ],
+    "prereqs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-plan-bike-dispatch",
+      "tag": "H3",
+      "text": "交付任务分析、一次状态追踪和验证计划"
+    },
+    "exercises": [
+      {
+        "id": "exercise-plan-bike-dispatch",
+        "input": "check",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "solutionChars": 1640,
+        "rubricItems": 14,
+        "promptParagraphs": []
+      },
+      {
+        "id": "exercise-choose-rl-projects",
+        "input": "check",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "solutionChars": 1497,
+        "rubricItems": 11,
+        "promptParagraphs": []
+      }
+    ],
+    "tables": [
+      {
+        "client": 308,
+        "left": 0,
+        "name": "调度前要能取得什么，随后允许做什么？",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "left": 0,
+        "name": "同一批、同一窗口的结果与计分",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "left": 0,
+        "name": "任务不同，先考虑的解决办法也不同",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "left": 0,
+        "name": "面对新项目，可以按这六问整理依据",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "left": 0,
+        "name": "三个站的当前数量与两个窗口的假设借车需求",
+        "scroll": 320
+      },
+      {
+        "client": 308,
+        "left": 0,
+        "name": "手头不完整的行动日志",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "left": 0,
+        "name": "先按具体交付和现有条件作项目决定",
+        "scroll": 308
+      }
+    ],
+    "warehouse": "同一批、同一窗口的结果与计分\n核查项\t方案甲\t方案乙\n已完成任务（件）\t6\t5\n其中超20分钟完成（件）\t3\t0\n通道排队事件（次）\t4\t0\n30分钟时未完成（件）\t0\t1\n本规则分数（分）\t17\t25\n六件全部完成这一条\t满足\t未满足",
+    "page": {
+      "client": 375,
+      "mathCount": 2,
+      "mathErrors": 0,
+      "scroll": 375
+    },
+    "nav": "上一节 · 5.4 生成模型：从要求到可核对的作品\n下一节 · 尚未提供"
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "goals": "本节学习目标\n3 项\n01\n比较可行方法\n\n用行动和后续影响说明何时考虑强化学习。\n\n02\n把目标与约束分清\n\n设计观察、行动与反馈，检查分数遗漏了什么。\n\n03\n决定是否值得尝试\n\n核查数据、成本和模拟条件，安排公平对照。\n\n查看完整目标\n根据实际任务中的连续行动、后续变化和可用反馈，比较强化学习、固定规则、监督学习及规划等解决方式\n为可能采用强化学习的问题提出可观察信息、允许行动、任务目标、反馈依据与必要约束，识别计分可能偏离目标的问题\n根据记录、模拟环境、反馈成本与安全条件判断强化学习是否值得尝试，设计有基线、可比情境和独立检查的验证方案",
+    "entries": [
+      {
+        "text": "迁移练习\n交付任务分析、一次状态追踪和验证计划",
+        "href": "#exercise-plan-bike-dispatch"
+      },
+      {
+        "text": "迁移练习\n写四份有比较依据的方案建议",
+        "href": "#exercise-choose-rl-projects"
+      }
+    ],
+    "prereqs": [],
+    "focus": {
+      "dialogs": 0,
+      "hash": "#exercise-plan-bike-dispatch",
+      "tag": "H3",
+      "text": "交付任务分析、一次状态追踪和验证计划"
+    },
+    "exercises": [
+      {
+        "id": "exercise-plan-bike-dispatch",
+        "input": "check",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "solutionChars": 1640,
+        "rubricItems": 14,
+        "promptParagraphs": []
+      },
+      {
+        "id": "exercise-choose-rl-projects",
+        "input": "check",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "solutionChars": 1497,
+        "rubricItems": 11,
+        "promptParagraphs": []
+      }
+    ],
+    "tables": [
+      {
+        "client": 254,
+        "left": 0,
+        "name": "调度前要能取得什么，随后允许做什么？",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "left": 0,
+        "name": "同一批、同一窗口的结果与计分",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "left": 0,
+        "name": "任务不同，先考虑的解决办法也不同",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "left": 0,
+        "name": "面对新项目，可以按这六问整理依据",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "left": 0,
+        "name": "三个站的当前数量与两个窗口的假设借车需求",
+        "scroll": 320
+      },
+      {
+        "client": 254,
+        "left": 0,
+        "name": "手头不完整的行动日志",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "left": 0,
+        "name": "先按具体交付和现有条件作项目决定",
+        "scroll": 254
+      }
+    ],
+    "warehouse": "同一批、同一窗口的结果与计分\n核查项\t方案甲\t方案乙\n已完成任务（件）\t6\t5\n其中超20分钟完成（件）\t3\t0\n通道排队事件（次）\t4\t0\n30分钟时未完成（件）\t0\t1\n本规则分数（分）\t17\t25\n六件全部完成这一条\t满足\t未满足",
+    "page": {
+      "client": 305,
+      "mathCount": 2,
+      "mathErrors": 0,
+      "scroll": 305
+    },
+    "nav": "上一节 · 5.4 生成模型：从要求到可核对的作品\n下一节 · 尚未提供"
+  }
+]

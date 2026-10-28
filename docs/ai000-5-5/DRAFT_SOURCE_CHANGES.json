@@ -1,0 +1,35 @@
+{
+  "sources": [
+    {
+      "path": "src/lib/course-engine.ts",
+      "changes": [
+        {
+          "before": "import { computerVisionLesson } from \"../content/lessons/ai000/computer-vision\";\nimport { generativeWorkLesson } from \"../content/lessons/ai000/generative-work\";\nimport { multimodalLesson } from \"../content/lessons/ai000/multimodal-ai\";\nimport { trainingValidationTestLesson } from \"../content/lessons/ai000/training-validation-test\";\n",
+          "after": "import { computerVisionLesson } from \"../content/lessons/ai000/computer-vision\";\nimport { generativeWorkLesson } from \"../content/lessons/ai000/generative-work\";\nimport { rlApplicabilityLesson } from \"../content/lessons/ai000/rl-applicability\";\nimport { multimodalLesson } from \"../content/lessons/ai000/multimodal-ai\";\nimport { trainingValidationTestLesson } from \"../content/lessons/ai000/training-validation-test\";\n"
+        },
+        {
+          "before": "  multimodalLesson,\n  generativeWorkLesson,\n  ...maV22Lessons,\n  regressionTaskLesson,\n",
+          "after": "  multimodalLesson,\n  generativeWorkLesson,\n  rlApplicabilityLesson,\n  ...maV22Lessons,\n  regressionTaskLesson,\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "changes": [
+        {
+          "before": "// 发布权限独立于原始课程规划。技术证据不替代人工审核。\nexport const publicationManifest = [\n  {lessonId:\"AI000-C05-L03\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"多模态 AI：连接文字、图片与声音\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L04\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"生成模型：从要求到可核对的作品\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n",
+          "after": "// 发布权限独立于原始课程规划。技术证据不替代人工审核。\nexport const publicationManifest = [\n  {lessonId:\"AI000-C05-L05\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"强化学习适合哪些应用问题？\",contentVersion:1,order:5,status:\"draft\",access:\"private\"},\n  {lessonId:\"AI000-C05-L03\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"多模态 AI：连接文字、图片与声音\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L04\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"生成模型：从要求到可核对的作品\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/ai000-study-time.ts",
+      "changes": [
+        {
+          "before": "  [[10,16,8,14,0,0],[10,16,8,14,0,0],[10,16,8,14,0,0],[12,18,10,16,0,0]],\n  [[10,16,16,24,0,0],[12,18,14,20,0,0],[12,18,16,24,0,0],[10,16,14,22,0,0]],\n  [[10,16,24,36,0,0],[10,16,18,28,0,0],[10,16,20,32,0,0],[10,16,24,36,0,0],[10,16,8,14,0,0]],\n  [[12,18,10,16,0,0],[12,18,10,16,0,0],[12,18,10,16,0,0]],\n  [[10,16,8,14,0,0],[10,16,8,14,0,0],[10,15,15,20,35,55]],\n",
+          "after": "  [[10,16,8,14,0,0],[10,16,8,14,0,0],[10,16,8,14,0,0],[12,18,10,16,0,0]],\n  [[10,16,16,24,0,0],[12,18,14,20,0,0],[12,18,16,24,0,0],[10,16,14,22,0,0]],\n  [[10,16,24,36,0,0],[10,16,18,28,0,0],[10,16,20,32,0,0],[10,16,24,36,0,0],[12,18,28,42,0,0]],\n  [[12,18,10,16,0,0],[12,18,10,16,0,0],[12,18,10,16,0,0]],\n  [[10,16,8,14,0,0],[10,16,8,14,0,0],[10,15,15,20,35,55]],\n"
+        }
+      ]
+    }
+  ]
+}

@@ -34,7 +34,8 @@ if (process.argv.includes("--baseline")) {
       assert.ok(exercise.solution.some(s=>s.includes("常见错误")));
       assert.ok(exercise.rubric.length>=3);
     }
-    assert.ok(blocks.every(b=>!["code","experiment","math"].includes(b.type)));
+    assert.ok(blocks.every(b=>!["code","experiment"].includes(b.type)));
+    assert.equal(blocks.filter(b=>b.type==="math").length,id==="AI000-C05-L05"?2:0);
     assert.equal(lesson.objectiveDisplay?.length,lesson.objectives.length);
     assert.equal(isReadable(publication),Boolean(resolveLesson("AI000",id)));
     writeFileSync(evidencePath(`${id}_AFTER.json`),JSON.stringify(lesson,null,2)+"\n");
@@ -45,7 +46,7 @@ if (process.argv.includes("--baseline")) {
   assert.equal(course.status,"planned");
   if(process.argv.includes("--final")) {
     assert.equal(course.chapters.flatMap(c=>c.lessons).length,24);
-    const ordered=["AI000-C01-L01","AI000-C01-L02","AI000-C01-L03","AI000-C02-L01","AI000-C02-L02","AI000-C03-L01","AI000-C03-L02","AI000-C03-L03","AI000-C03-L04","AI000-C04-L01","AI000-C04-L02","AI000-C04-L03","AI000-C04-L04","AI000-C05-L01","AI000-C05-L02","AI000-C05-L03","AI000-C05-L04"];
+    const ordered=["AI000-C01-L01","AI000-C01-L02","AI000-C01-L03","AI000-C02-L01","AI000-C02-L02","AI000-C03-L01","AI000-C03-L02","AI000-C03-L03","AI000-C03-L04","AI000-C04-L01","AI000-C04-L02","AI000-C04-L03","AI000-C04-L04","AI000-C05-L01","AI000-C05-L02","AI000-C05-L03","AI000-C05-L04","AI000-C05-L05"];
     assert.deepEqual(course.chapters.flatMap(c=>c.lessons).filter(l=>l.href).map(l=>l.lessonId),ordered);
     ordered.forEach((id,index)=>{
       const next=getAdjacentLessons(course,id);

@@ -1,0 +1,10 @@
+
+> aivora-web@0.1.0 lint
+> eslint .
+
+
+C:\Users\QYF\Desktop\Aivora-Web\scripts\review-ai000-5-5.ts
+  36:264  warning  '_solution' is defined but never used  @typescript-eslint/no-unused-vars
+  36:282  warning  '_rubric' is defined but never used    @typescript-eslint/no-unused-vars
+
+✖ 2 problems (0 errors, 2 warnings)

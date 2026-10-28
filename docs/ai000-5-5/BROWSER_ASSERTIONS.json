@@ -1,0 +1,23 @@
+{
+  "evidence": "Assertions over saved outputs from actual browser UI; not simulated UI interaction",
+  "viewports": [
+    1440,
+    768,
+    390,
+    320
+  ],
+  "pageOverflow": false,
+  "mathErrors": 0,
+  "exerciseInputs": 8,
+  "sequentialHintAndAnswerOpenings": 8,
+  "threeParagraphPrompts": 8,
+  "prerequisiteLinksPerViewport": 4,
+  "oldProgressRecordsUnchanged": 16,
+  "storageComparison": "BROWSER_STORAGE_NEW_INITIAL.json to BROWSER_STORAGE_FINAL.json",
+  "newProgressInitiallyAbsent": true,
+  "newProgressCompletedAfterExplicitClick": true,
+  "positionRestoredWithHeadingFocus": true,
+  "tableKeyboardScroll": 40,
+  "drawerEscapeFocusRestored": true,
+  "consoleWarningsAndErrors": 0
+}

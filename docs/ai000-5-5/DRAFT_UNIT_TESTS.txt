@@ -1,0 +1,60 @@
+✔ 5.5增加之外40旧课/发布与238文件精确保留，未登记源码改动仍拒绝 (59.2375ms)
+✔ 仓库从完成时刻与去重事件重算17/25，乙的高分不等于六件完成 (0.3399ms)
+✔ 仓库约束在执行前检查；估时不当实绩，业务期限与目标时间分开 (0.1419ms)
+✔ 单车题独立追踪库存/借还去向，原基线与可行替代都自洽，不要求唯一最优 (0.2714ms)
+✔ 枚举两窗口合法转运，所有中间量非负、守恒且有多个合理方案 (7.9015ms)
+✔ 三目标有两道分段独立题，第二提示只给整理操作，不填写方案或数值结论 (0.4ms)
+✖ 方法选择与离线/模拟/反馈边界明确，文案修改不冒充内部RL训练 (0.2951ms)
+✖ 零新图零模型代码，HTML表格保留语义、数学和三级details可渲染 (12.1504ms)
+✔ draft私有与预览门禁一致，5.4到5.5自动接通，第六七章仍规划 (0.2362ms)
+✔ 真实存储保留40旧课和1.2/5.3历史r1，新5.5 r1位置完成独立恢复 (0.7105ms)
+✔ 5.5学时唯一维护与新课一致，旧646–992证据留存，完整路线668–1022 (0.9574ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 9
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1687.6461
+
+✖ failing tests:
+
+test at tests\ai000-rl-applicability.test.ts:97:1
+✖ 方法选择与离线/模拟/反馈边界明确，文案修改不冒充内部RL训练 (0.2951ms)
+  AssertionError [ERR_ASSERTION]: 相同
+      at TestContext.<anonymous> (C:\Users\QYF\Desktop\Aivora-Web\tests\ai000-rl-applicability.test.ts:100:224)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests\ai000-rl-applicability.test.ts:104:1
+✖ 零新图零模型代码，HTML表格保留语义、数学和三级details可渲染 (12.1504ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(lesson.sections.every(s=>s.tier==="core"&&!/^\d/.test(s.title)))
+
+      at TestContext.<anonymous> (C:\Users\QYF\Desktop\Aivora-Web\tests\ai000-rl-applicability.test.ts:109:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

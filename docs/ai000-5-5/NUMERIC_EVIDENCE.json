@@ -1,0 +1,1979 @@
+{
+  "method": "Independent Python worksheet from question conditions; no training or simulator",
+  "warehouse": [
+    {
+      "completed": 6,
+      "late": 3,
+      "congestion": 4,
+      "score": 17,
+      "all_six": true
+    },
+    {
+      "completed": 5,
+      "late": 0,
+      "congestion": 0,
+      "score": 25,
+      "all_six": false
+    }
+  ],
+  "bike_baseline_morning": {
+    "after_transfer": [
+      4,
+      4,
+      4
+    ],
+    "served": [
+      4,
+      1,
+      1
+    ],
+    "left": [
+      0,
+      3,
+      3
+    ],
+    "evening": [
+      1,
+      7,
+      4
+    ],
+    "unmet": 1
+  },
+  "bike_alternative_morning": {
+    "after_transfer": [
+      4,
+      6,
+      2
+    ],
+    "served": [
+      4,
+      1,
+      1
+    ],
+    "left": [
+      0,
+      5,
+      1
+    ],
+    "evening": [
+      1,
+      9,
+      2
+    ],
+    "unmet": 1
+  },
+  "legal_two_period_pairs": 143,
+  "best_under_this_toy_unmet_then_cost": [
+    1,
+    2
+  ],
+  "equal_best_count": 2,
+  "all_legal_pairs": [
+    {
+      "morning": null,
+      "evening": null,
+      "unmet": 3,
+      "cost": 0
+    },
+    {
+      "morning": null,
+      "evening": [
+        0,
+        1,
+        1
+      ],
+      "unmet": 4,
+      "cost": 1
+    },
+    {
+      "morning": null,
+      "evening": [
+        0,
+        2,
+        1
+      ],
+      "unmet": 4,
+      "cost": 1
+    },
+    {
+      "morning": null,
+      "evening": [
+        1,
+        0,
+        1
+      ],
+      "unmet": 3,
+      "cost": 1
+    },
+    {
+      "morning": null,
+      "evening": [
+        1,
+        0,
+        2
+      ],
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": null,
+      "evening": [
+        1,
+        2,
+        1
+      ],
+      "unmet": 3,
+      "cost": 1
+    },
+    {
+      "morning": null,
+      "evening": [
+        1,
+        2,
+        2
+      ],
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": null,
+      "evening": [
+        2,
+        0,
+        1
+      ],
+      "unmet": 3,
+      "cost": 1
+    },
+    {
+      "morning": null,
+      "evening": [
+        2,
+        0,
+        2
+      ],
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": null,
+      "evening": [
+        2,
+        1,
+        1
+      ],
+      "unmet": 3,
+      "cost": 1
+    },
+    {
+      "morning": null,
+      "evening": [
+        2,
+        1,
+        2
+      ],
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": [
+        0,
+        1,
+        1
+      ],
+      "evening": null,
+      "unmet": 4,
+      "cost": 1
+    },
+    {
+      "morning": [
+        0,
+        1,
+        1
+      ],
+      "evening": [
+        0,
+        1,
+        1
+      ],
+      "unmet": 5,
+      "cost": 2
+    },
+    {
+      "morning": [
+        0,
+        1,
+        1
+      ],
+      "evening": [
+        0,
+        2,
+        1
+      ],
+      "unmet": 5,
+      "cost": 2
+    },
+    {
+      "morning": [
+        0,
+        1,
+        1
+      ],
+      "evening": [
+        1,
+        0,
+        1
+      ],
+      "unmet": 4,
+      "cost": 2
+    },
+    {
+      "morning": [
+        0,
+        1,
+        1
+      ],
+      "evening": [
+        1,
+        0,
+        2
+      ],
+      "unmet": 4,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        1,
+        1
+      ],
+      "evening": [
+        1,
+        2,
+        1
+      ],
+      "unmet": 4,
+      "cost": 2
+    },
+    {
+      "morning": [
+        0,
+        1,
+        1
+      ],
+      "evening": [
+        1,
+        2,
+        2
+      ],
+      "unmet": 4,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        1,
+        1
+      ],
+      "evening": [
+        2,
+        0,
+        1
+      ],
+      "unmet": 4,
+      "cost": 2
+    },
+    {
+      "morning": [
+        0,
+        1,
+        1
+      ],
+      "evening": [
+        2,
+        0,
+        2
+      ],
+      "unmet": 4,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        1,
+        1
+      ],
+      "evening": [
+        2,
+        1,
+        1
+      ],
+      "unmet": 4,
+      "cost": 2
+    },
+    {
+      "morning": [
+        0,
+        1,
+        1
+      ],
+      "evening": [
+        2,
+        1,
+        2
+      ],
+      "unmet": 4,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        1,
+        2
+      ],
+      "evening": null,
+      "unmet": 5,
+      "cost": 2
+    },
+    {
+      "morning": [
+        0,
+        1,
+        2
+      ],
+      "evening": [
+        0,
+        1,
+        1
+      ],
+      "unmet": 6,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        1,
+        2
+      ],
+      "evening": [
+        0,
+        2,
+        1
+      ],
+      "unmet": 6,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        1,
+        2
+      ],
+      "evening": [
+        1,
+        0,
+        1
+      ],
+      "unmet": 5,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        1,
+        2
+      ],
+      "evening": [
+        1,
+        0,
+        2
+      ],
+      "unmet": 5,
+      "cost": 4
+    },
+    {
+      "morning": [
+        0,
+        1,
+        2
+      ],
+      "evening": [
+        1,
+        2,
+        1
+      ],
+      "unmet": 5,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        1,
+        2
+      ],
+      "evening": [
+        1,
+        2,
+        2
+      ],
+      "unmet": 5,
+      "cost": 4
+    },
+    {
+      "morning": [
+        0,
+        1,
+        2
+      ],
+      "evening": [
+        2,
+        0,
+        1
+      ],
+      "unmet": 5,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        1,
+        2
+      ],
+      "evening": [
+        2,
+        0,
+        2
+      ],
+      "unmet": 5,
+      "cost": 4
+    },
+    {
+      "morning": [
+        0,
+        1,
+        2
+      ],
+      "evening": [
+        2,
+        1,
+        1
+      ],
+      "unmet": 5,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        1,
+        2
+      ],
+      "evening": [
+        2,
+        1,
+        2
+      ],
+      "unmet": 5,
+      "cost": 4
+    },
+    {
+      "morning": [
+        0,
+        2,
+        1
+      ],
+      "evening": null,
+      "unmet": 4,
+      "cost": 1
+    },
+    {
+      "morning": [
+        0,
+        2,
+        1
+      ],
+      "evening": [
+        0,
+        1,
+        1
+      ],
+      "unmet": 5,
+      "cost": 2
+    },
+    {
+      "morning": [
+        0,
+        2,
+        1
+      ],
+      "evening": [
+        0,
+        2,
+        1
+      ],
+      "unmet": 5,
+      "cost": 2
+    },
+    {
+      "morning": [
+        0,
+        2,
+        1
+      ],
+      "evening": [
+        1,
+        0,
+        1
+      ],
+      "unmet": 4,
+      "cost": 2
+    },
+    {
+      "morning": [
+        0,
+        2,
+        1
+      ],
+      "evening": [
+        1,
+        0,
+        2
+      ],
+      "unmet": 5,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        2,
+        1
+      ],
+      "evening": [
+        1,
+        2,
+        1
+      ],
+      "unmet": 4,
+      "cost": 2
+    },
+    {
+      "morning": [
+        0,
+        2,
+        1
+      ],
+      "evening": [
+        1,
+        2,
+        2
+      ],
+      "unmet": 5,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        2,
+        1
+      ],
+      "evening": [
+        2,
+        0,
+        1
+      ],
+      "unmet": 4,
+      "cost": 2
+    },
+    {
+      "morning": [
+        0,
+        2,
+        1
+      ],
+      "evening": [
+        2,
+        0,
+        2
+      ],
+      "unmet": 4,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        2,
+        1
+      ],
+      "evening": [
+        2,
+        1,
+        1
+      ],
+      "unmet": 4,
+      "cost": 2
+    },
+    {
+      "morning": [
+        0,
+        2,
+        1
+      ],
+      "evening": [
+        2,
+        1,
+        2
+      ],
+      "unmet": 4,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        2,
+        2
+      ],
+      "evening": null,
+      "unmet": 5,
+      "cost": 2
+    },
+    {
+      "morning": [
+        0,
+        2,
+        2
+      ],
+      "evening": [
+        0,
+        1,
+        1
+      ],
+      "unmet": 6,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        2,
+        2
+      ],
+      "evening": [
+        0,
+        2,
+        1
+      ],
+      "unmet": 6,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        2,
+        2
+      ],
+      "evening": [
+        1,
+        0,
+        1
+      ],
+      "unmet": 6,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        2,
+        2
+      ],
+      "evening": [
+        1,
+        0,
+        2
+      ],
+      "unmet": 7,
+      "cost": 4
+    },
+    {
+      "morning": [
+        0,
+        2,
+        2
+      ],
+      "evening": [
+        1,
+        2,
+        1
+      ],
+      "unmet": 6,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        2,
+        2
+      ],
+      "evening": [
+        1,
+        2,
+        2
+      ],
+      "unmet": 7,
+      "cost": 4
+    },
+    {
+      "morning": [
+        0,
+        2,
+        2
+      ],
+      "evening": [
+        2,
+        0,
+        1
+      ],
+      "unmet": 5,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        2,
+        2
+      ],
+      "evening": [
+        2,
+        0,
+        2
+      ],
+      "unmet": 5,
+      "cost": 4
+    },
+    {
+      "morning": [
+        0,
+        2,
+        2
+      ],
+      "evening": [
+        2,
+        1,
+        1
+      ],
+      "unmet": 5,
+      "cost": 3
+    },
+    {
+      "morning": [
+        0,
+        2,
+        2
+      ],
+      "evening": [
+        2,
+        1,
+        2
+      ],
+      "unmet": 5,
+      "cost": 4
+    },
+    {
+      "morning": [
+        1,
+        0,
+        1
+      ],
+      "evening": null,
+      "unmet": 2,
+      "cost": 1
+    },
+    {
+      "morning": [
+        1,
+        0,
+        1
+      ],
+      "evening": [
+        0,
+        1,
+        1
+      ],
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": [
+        1,
+        0,
+        1
+      ],
+      "evening": [
+        0,
+        2,
+        1
+      ],
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": [
+        1,
+        0,
+        1
+      ],
+      "evening": [
+        1,
+        0,
+        1
+      ],
+      "unmet": 2,
+      "cost": 2
+    },
+    {
+      "morning": [
+        1,
+        0,
+        1
+      ],
+      "evening": [
+        1,
+        0,
+        2
+      ],
+      "unmet": 2,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        0,
+        1
+      ],
+      "evening": [
+        1,
+        2,
+        1
+      ],
+      "unmet": 2,
+      "cost": 2
+    },
+    {
+      "morning": [
+        1,
+        0,
+        1
+      ],
+      "evening": [
+        1,
+        2,
+        2
+      ],
+      "unmet": 2,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        0,
+        1
+      ],
+      "evening": [
+        2,
+        0,
+        1
+      ],
+      "unmet": 2,
+      "cost": 2
+    },
+    {
+      "morning": [
+        1,
+        0,
+        1
+      ],
+      "evening": [
+        2,
+        0,
+        2
+      ],
+      "unmet": 2,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        0,
+        1
+      ],
+      "evening": [
+        2,
+        1,
+        1
+      ],
+      "unmet": 2,
+      "cost": 2
+    },
+    {
+      "morning": [
+        1,
+        0,
+        1
+      ],
+      "evening": [
+        2,
+        1,
+        2
+      ],
+      "unmet": 2,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        0,
+        2
+      ],
+      "evening": null,
+      "unmet": 1,
+      "cost": 2
+    },
+    {
+      "morning": [
+        1,
+        0,
+        2
+      ],
+      "evening": [
+        0,
+        1,
+        1
+      ],
+      "unmet": 2,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        0,
+        2
+      ],
+      "evening": [
+        0,
+        2,
+        1
+      ],
+      "unmet": 2,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        0,
+        2
+      ],
+      "evening": [
+        1,
+        0,
+        1
+      ],
+      "unmet": 1,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        0,
+        2
+      ],
+      "evening": [
+        1,
+        0,
+        2
+      ],
+      "unmet": 1,
+      "cost": 4
+    },
+    {
+      "morning": [
+        1,
+        0,
+        2
+      ],
+      "evening": [
+        1,
+        2,
+        1
+      ],
+      "unmet": 1,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        0,
+        2
+      ],
+      "evening": [
+        1,
+        2,
+        2
+      ],
+      "unmet": 1,
+      "cost": 4
+    },
+    {
+      "morning": [
+        1,
+        0,
+        2
+      ],
+      "evening": [
+        2,
+        0,
+        1
+      ],
+      "unmet": 1,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        0,
+        2
+      ],
+      "evening": [
+        2,
+        0,
+        2
+      ],
+      "unmet": 1,
+      "cost": 4
+    },
+    {
+      "morning": [
+        1,
+        0,
+        2
+      ],
+      "evening": [
+        2,
+        1,
+        1
+      ],
+      "unmet": 1,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        0,
+        2
+      ],
+      "evening": [
+        2,
+        1,
+        2
+      ],
+      "unmet": 1,
+      "cost": 4
+    },
+    {
+      "morning": [
+        1,
+        2,
+        1
+      ],
+      "evening": null,
+      "unmet": 3,
+      "cost": 1
+    },
+    {
+      "morning": [
+        1,
+        2,
+        1
+      ],
+      "evening": [
+        0,
+        1,
+        1
+      ],
+      "unmet": 4,
+      "cost": 2
+    },
+    {
+      "morning": [
+        1,
+        2,
+        1
+      ],
+      "evening": [
+        0,
+        2,
+        1
+      ],
+      "unmet": 4,
+      "cost": 2
+    },
+    {
+      "morning": [
+        1,
+        2,
+        1
+      ],
+      "evening": [
+        1,
+        0,
+        1
+      ],
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": [
+        1,
+        2,
+        1
+      ],
+      "evening": [
+        1,
+        0,
+        2
+      ],
+      "unmet": 4,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        2,
+        1
+      ],
+      "evening": [
+        1,
+        2,
+        1
+      ],
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": [
+        1,
+        2,
+        1
+      ],
+      "evening": [
+        1,
+        2,
+        2
+      ],
+      "unmet": 4,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        2,
+        1
+      ],
+      "evening": [
+        2,
+        0,
+        1
+      ],
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": [
+        1,
+        2,
+        1
+      ],
+      "evening": [
+        2,
+        0,
+        2
+      ],
+      "unmet": 3,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        2,
+        1
+      ],
+      "evening": [
+        2,
+        1,
+        1
+      ],
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": [
+        1,
+        2,
+        1
+      ],
+      "evening": [
+        2,
+        1,
+        2
+      ],
+      "unmet": 3,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        2,
+        2
+      ],
+      "evening": null,
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": [
+        1,
+        2,
+        2
+      ],
+      "evening": [
+        0,
+        1,
+        1
+      ],
+      "unmet": 4,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        2,
+        2
+      ],
+      "evening": [
+        0,
+        2,
+        1
+      ],
+      "unmet": 4,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        2,
+        2
+      ],
+      "evening": [
+        1,
+        0,
+        1
+      ],
+      "unmet": 4,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        2,
+        2
+      ],
+      "evening": [
+        1,
+        0,
+        2
+      ],
+      "unmet": 5,
+      "cost": 4
+    },
+    {
+      "morning": [
+        1,
+        2,
+        2
+      ],
+      "evening": [
+        1,
+        2,
+        1
+      ],
+      "unmet": 4,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        2,
+        2
+      ],
+      "evening": [
+        1,
+        2,
+        2
+      ],
+      "unmet": 5,
+      "cost": 4
+    },
+    {
+      "morning": [
+        1,
+        2,
+        2
+      ],
+      "evening": [
+        2,
+        0,
+        1
+      ],
+      "unmet": 3,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        2,
+        2
+      ],
+      "evening": [
+        2,
+        0,
+        2
+      ],
+      "unmet": 3,
+      "cost": 4
+    },
+    {
+      "morning": [
+        1,
+        2,
+        2
+      ],
+      "evening": [
+        2,
+        1,
+        1
+      ],
+      "unmet": 3,
+      "cost": 3
+    },
+    {
+      "morning": [
+        1,
+        2,
+        2
+      ],
+      "evening": [
+        2,
+        1,
+        2
+      ],
+      "unmet": 3,
+      "cost": 4
+    },
+    {
+      "morning": [
+        2,
+        0,
+        1
+      ],
+      "evening": null,
+      "unmet": 2,
+      "cost": 1
+    },
+    {
+      "morning": [
+        2,
+        0,
+        1
+      ],
+      "evening": [
+        0,
+        1,
+        1
+      ],
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": [
+        2,
+        0,
+        1
+      ],
+      "evening": [
+        0,
+        2,
+        1
+      ],
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": [
+        2,
+        0,
+        1
+      ],
+      "evening": [
+        1,
+        0,
+        1
+      ],
+      "unmet": 2,
+      "cost": 2
+    },
+    {
+      "morning": [
+        2,
+        0,
+        1
+      ],
+      "evening": [
+        1,
+        0,
+        2
+      ],
+      "unmet": 2,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        0,
+        1
+      ],
+      "evening": [
+        1,
+        2,
+        1
+      ],
+      "unmet": 2,
+      "cost": 2
+    },
+    {
+      "morning": [
+        2,
+        0,
+        1
+      ],
+      "evening": [
+        1,
+        2,
+        2
+      ],
+      "unmet": 2,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        0,
+        1
+      ],
+      "evening": [
+        2,
+        0,
+        1
+      ],
+      "unmet": 2,
+      "cost": 2
+    },
+    {
+      "morning": [
+        2,
+        0,
+        1
+      ],
+      "evening": [
+        2,
+        0,
+        2
+      ],
+      "unmet": 2,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        0,
+        1
+      ],
+      "evening": [
+        2,
+        1,
+        1
+      ],
+      "unmet": 2,
+      "cost": 2
+    },
+    {
+      "morning": [
+        2,
+        0,
+        1
+      ],
+      "evening": [
+        2,
+        1,
+        2
+      ],
+      "unmet": 2,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        0,
+        2
+      ],
+      "evening": null,
+      "unmet": 1,
+      "cost": 2
+    },
+    {
+      "morning": [
+        2,
+        0,
+        2
+      ],
+      "evening": [
+        0,
+        1,
+        1
+      ],
+      "unmet": 2,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        0,
+        2
+      ],
+      "evening": [
+        0,
+        2,
+        1
+      ],
+      "unmet": 2,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        0,
+        2
+      ],
+      "evening": [
+        1,
+        0,
+        1
+      ],
+      "unmet": 1,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        0,
+        2
+      ],
+      "evening": [
+        1,
+        0,
+        2
+      ],
+      "unmet": 1,
+      "cost": 4
+    },
+    {
+      "morning": [
+        2,
+        0,
+        2
+      ],
+      "evening": [
+        1,
+        2,
+        1
+      ],
+      "unmet": 1,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        0,
+        2
+      ],
+      "evening": [
+        1,
+        2,
+        2
+      ],
+      "unmet": 1,
+      "cost": 4
+    },
+    {
+      "morning": [
+        2,
+        0,
+        2
+      ],
+      "evening": [
+        2,
+        0,
+        1
+      ],
+      "unmet": 1,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        0,
+        2
+      ],
+      "evening": [
+        2,
+        0,
+        2
+      ],
+      "unmet": 2,
+      "cost": 4
+    },
+    {
+      "morning": [
+        2,
+        0,
+        2
+      ],
+      "evening": [
+        2,
+        1,
+        1
+      ],
+      "unmet": 1,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        0,
+        2
+      ],
+      "evening": [
+        2,
+        1,
+        2
+      ],
+      "unmet": 2,
+      "cost": 4
+    },
+    {
+      "morning": [
+        2,
+        1,
+        1
+      ],
+      "evening": null,
+      "unmet": 3,
+      "cost": 1
+    },
+    {
+      "morning": [
+        2,
+        1,
+        1
+      ],
+      "evening": [
+        0,
+        1,
+        1
+      ],
+      "unmet": 4,
+      "cost": 2
+    },
+    {
+      "morning": [
+        2,
+        1,
+        1
+      ],
+      "evening": [
+        0,
+        2,
+        1
+      ],
+      "unmet": 4,
+      "cost": 2
+    },
+    {
+      "morning": [
+        2,
+        1,
+        1
+      ],
+      "evening": [
+        1,
+        0,
+        1
+      ],
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": [
+        2,
+        1,
+        1
+      ],
+      "evening": [
+        1,
+        0,
+        2
+      ],
+      "unmet": 3,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        1,
+        1
+      ],
+      "evening": [
+        1,
+        2,
+        1
+      ],
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": [
+        2,
+        1,
+        1
+      ],
+      "evening": [
+        1,
+        2,
+        2
+      ],
+      "unmet": 3,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        1,
+        1
+      ],
+      "evening": [
+        2,
+        0,
+        1
+      ],
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": [
+        2,
+        1,
+        1
+      ],
+      "evening": [
+        2,
+        0,
+        2
+      ],
+      "unmet": 3,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        1,
+        1
+      ],
+      "evening": [
+        2,
+        1,
+        1
+      ],
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": [
+        2,
+        1,
+        1
+      ],
+      "evening": [
+        2,
+        1,
+        2
+      ],
+      "unmet": 3,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        1,
+        2
+      ],
+      "evening": null,
+      "unmet": 3,
+      "cost": 2
+    },
+    {
+      "morning": [
+        2,
+        1,
+        2
+      ],
+      "evening": [
+        0,
+        1,
+        1
+      ],
+      "unmet": 4,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        1,
+        2
+      ],
+      "evening": [
+        0,
+        2,
+        1
+      ],
+      "unmet": 4,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        1,
+        2
+      ],
+      "evening": [
+        1,
+        0,
+        1
+      ],
+      "unmet": 3,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        1,
+        2
+      ],
+      "evening": [
+        1,
+        0,
+        2
+      ],
+      "unmet": 3,
+      "cost": 4
+    },
+    {
+      "morning": [
+        2,
+        1,
+        2
+      ],
+      "evening": [
+        1,
+        2,
+        1
+      ],
+      "unmet": 3,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        1,
+        2
+      ],
+      "evening": [
+        1,
+        2,
+        2
+      ],
+      "unmet": 3,
+      "cost": 4
+    },
+    {
+      "morning": [
+        2,
+        1,
+        2
+      ],
+      "evening": [
+        2,
+        0,
+        1
+      ],
+      "unmet": 3,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        1,
+        2
+      ],
+      "evening": [
+        2,
+        0,
+        2
+      ],
+      "unmet": 4,
+      "cost": 4
+    },
+    {
+      "morning": [
+        2,
+        1,
+        2
+      ],
+      "evening": [
+        2,
+        1,
+        1
+      ],
+      "unmet": 3,
+      "cost": 3
+    },
+    {
+      "morning": [
+        2,
+        1,
+        2
+      ],
+      "evening": [
+        2,
+        1,
+        2
+      ],
+      "unmet": 4,
+      "cost": 4
+    }
+  ]
+}

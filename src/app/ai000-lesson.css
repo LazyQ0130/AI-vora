@@ -115,6 +115,8 @@
 .ai-use-figure { overflow-wrap: anywhere; }
 #exercise-use-print-model > p:first-of-type,
 #exercise-audit-current-inputs > p:first-of-type { white-space: pre-line; }
+#exercise-plan-bike-dispatch > p:first-of-type,
+#exercise-choose-rl-projects > p:first-of-type { white-space: pre-line; }
 .ai-inference-figure { overflow-wrap: anywhere; }
 .ai-inference-steps { list-style: none; padding: 0; margin: 0; }
 .ai-inference-steps > li { padding: 20px 0 20px 14px; border-left: 3px solid #65cfe3; }

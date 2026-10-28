@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-10-28T13:47:47.022Z",
+  "base": "5211adf335789cbed020b4b8e8feac00873fd992",
+  "unchangedOldLessons": 40,
+  "unchangedPublications": 40,
+  "protectedFiles": 238,
+  "preservedPreciseFigures": 23,
+  "publication": {
+    "lessonId": "AI000-C05-L05",
+    "courseId": "AI000",
+    "chapterId": "AI000-C05",
+    "title": "强化学习适合哪些应用问题？",
+    "contentVersion": 1,
+    "order": 5,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "pending-review",
+    "access": "preview",
+    "technicalEvidence": "docs/AI000_LESSON_5_5_AND_CHAPTER_5_REVIEW.md"
+  },
+  "assessmentMap": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "plan-bike-dispatch",
+        "choose-rl-projects"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "plan-bike-dispatch"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "plan-bike-dispatch",
+        "choose-rl-projects"
+      ]
+    }
+  ]
+}

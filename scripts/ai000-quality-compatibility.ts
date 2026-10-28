@@ -1,4 +1,5 @@
 import { readFileSync } from "node:fs";
+import { beforeApplicabilitySource } from "./ai000-applicability-compatibility";
 
 type Edit = { path: (string | number)[]; before: unknown; after: unknown };
 type Entry = { id: string; changes: Edit[] };
@@ -28,6 +29,7 @@ export const qualityComparableJson = (value: unknown) => JSON.stringify(beforeQu
 
 // 源码仅接受带唯一上下文、完整匹配的已审查片段；不忽略整个文件、空白或未登记内容。
 export function beforeQualitySource(path: string, source: string) {
+  source = beforeApplicabilitySource(path, source);
   const entry = qualityChanges.sources.find(e => e.path === path);
   if (!entry) return source;
   let text = source.replaceAll("\r\n", "\n");

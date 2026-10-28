@@ -1,0 +1,94 @@
+[
+  {
+    "width": 1440,
+    "height": 1000,
+    "links": [
+      {
+        "href": "/learn/AI000/AI000-C03-L04#name-the-method",
+        "text": "3.4 行动反馈怎样用于改进选择"
+      },
+      {
+        "href": "/learn/AI000/AI000-C03-L04#reward-design",
+        "text": "3.4 计分怎样影响选择"
+      },
+      {
+        "href": "/learn/AI000/AI000-C04-L03#test-feedback",
+        "text": "4.3 检查记录是否参与过调整"
+      },
+      {
+        "href": "/learn/AI000/AI000-C05-L04#generation-in-a-system",
+        "text": "5.4 生成与修改作品"
+      }
+    ],
+    "open": true
+  },
+  {
+    "width": 768,
+    "height": 1000,
+    "links": [
+      {
+        "href": "/learn/AI000/AI000-C03-L04#name-the-method",
+        "text": "3.4 行动反馈怎样用于改进选择"
+      },
+      {
+        "href": "/learn/AI000/AI000-C03-L04#reward-design",
+        "text": "3.4 计分怎样影响选择"
+      },
+      {
+        "href": "/learn/AI000/AI000-C04-L03#test-feedback",
+        "text": "4.3 检查记录是否参与过调整"
+      },
+      {
+        "href": "/learn/AI000/AI000-C05-L04#generation-in-a-system",
+        "text": "5.4 生成与修改作品"
+      }
+    ],
+    "open": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "links": [
+      {
+        "href": "/learn/AI000/AI000-C03-L04#name-the-method",
+        "text": "3.4 行动反馈怎样用于改进选择"
+      },
+      {
+        "href": "/learn/AI000/AI000-C03-L04#reward-design",
+        "text": "3.4 计分怎样影响选择"
+      },
+      {
+        "href": "/learn/AI000/AI000-C04-L03#test-feedback",
+        "text": "4.3 检查记录是否参与过调整"
+      },
+      {
+        "href": "/learn/AI000/AI000-C05-L04#generation-in-a-system",
+        "text": "5.4 生成与修改作品"
+      }
+    ],
+    "open": true
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "links": [
+      {
+        "href": "/learn/AI000/AI000-C03-L04#name-the-method",
+        "text": "3.4 行动反馈怎样用于改进选择"
+      },
+      {
+        "href": "/learn/AI000/AI000-C03-L04#reward-design",
+        "text": "3.4 计分怎样影响选择"
+      },
+      {
+        "href": "/learn/AI000/AI000-C04-L03#test-feedback",
+        "text": "4.3 检查记录是否参与过调整"
+      },
+      {
+        "href": "/learn/AI000/AI000-C05-L04#generation-in-a-system",
+        "text": "5.4 生成与修改作品"
+      }
+    ],
+    "open": true
+  }
+]

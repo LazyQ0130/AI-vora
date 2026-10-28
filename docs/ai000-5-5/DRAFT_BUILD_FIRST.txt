@@ -1,0 +1,13 @@
+
+> aivora-web@0.1.0 build
+> next build
+
+▲ Next.js 16.4.3 (Turbopack)
+✓ Running next.config.ts took 78ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1559ms
+  Running TypeScript ...
+tests/ai000-rl-applicability.test.ts(133,67): error TS18048: 'estimate' is possibly 'undefined'.
+tests/ai000-rl-applicability.test.ts(133,114): error TS18048: 'estimate' is possibly 'undefined'.
+Failed to type check.

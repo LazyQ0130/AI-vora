@@ -65,7 +65,7 @@ test("强化内容：浇水逐步状态独立执行，四步与三步奖励及�
  assert.equal(ex.type,"exercise");if(ex.type==="exercise") {assert.ok(ex.solution.some(s=>s.includes("2−5+0+9=6")&&s.includes("0+2+9=11")));assert.ok(ex.solution.some(s=>s.includes("没有逐步告诉")));}
  assert.equal(signedReward(-6),"−6");assert.equal(signedReward(0),"0");
 });
-test("3.4注册r1、三目标映射两道核心题，3.3/4.1相邻可读，5.2以后无虚假入口",()=>{
+test("3.4注册r1、三目标映射两道核心题，3.3/4.1相邻可读，第六章无虚假入口",()=>{
  assert.equal(lessonRegistry.get(lesson.id),lesson);assert.equal(lesson.contentVersion,1);
  assert.equal(resolveLesson("AI000",lesson.id)?.publication.status,"pending-review");
  assert.equal(resolveLesson("AI000",lesson.id)?.publication.reviewEvidence,undefined);
@@ -73,7 +73,7 @@ test("3.4注册r1、三目标映射两道核心题，3.3/4.1相邻可读，5.2�
  assert.equal(getAdjacentLessons(course,"AI000-C03-L03").next?.lessonId,lesson.id);
  assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C03-L03");
  assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C04-L01");
- for(const slot of course.chapters.slice(4).flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C05-L04")) {assert.equal(slot.href,undefined);assert.equal(resolveLesson("AI000",slot.lessonId),undefined);assert.equal(lessonRegistry.has(slot.lessonId),false);}
+ for(const slot of course.chapters.slice(4).flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C05-L05")) {assert.equal(slot.href,undefined);assert.equal(resolveLesson("AI000",slot.lessonId),undefined);assert.equal(lessonRegistry.has(slot.lessonId),false);}
  assert.deepEqual(lessonExerciseLinks(lesson).map(e=>[e.id,e.tier,e.objectives]),[["trace-watering","core",[1,2]],["assess-feedback","core",[1,3]]]);
  for(const ex of blocks.filter(b=>b.type==="exercise")) {
   assert.equal(ex.hints.length,2);assert.ok(ex.solution.some(s=>s.includes("常见错误")));
