@@ -1,0 +1,290 @@
+[
+  {
+    "width": 1440,
+    "rubric": [
+      {
+        "id": "audit-submission-answer",
+        "visible": false,
+        "listItems": 14
+      },
+      {
+        "id": "write-venue-answer",
+        "visible": true,
+        "listItems": 14
+      }
+    ],
+    "mainAnswerComplete": true,
+    "tables": [
+      {
+        "caption": "青禾科普体验馆：本例原始资料R1、R2",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 722,
+        "width": 722
+      },
+      {
+        "caption": "先只拆主张，不急着给整段判对错",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 722,
+        "width": 722
+      },
+      {
+        "caption": "原回答的完整证据对照",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 722,
+        "width": 722
+      },
+      {
+        "caption": "从本例的问题，找到不同的核查位置",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 722,
+        "width": 722
+      },
+      {
+        "caption": "可照着执行的六步核查记录",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 722,
+        "width": 722
+      },
+      {
+        "caption": "作品提交的完整题设资料",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 722,
+        "width": 722
+      },
+      {
+        "caption": "B室场地使用的完整题设资料",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 722,
+        "width": 722
+      }
+    ],
+    "tableFocus": {
+      "name": "原回答的完整证据对照",
+      "role": "region",
+      "scrollLeft": 0
+    }
+  },
+  {
+    "width": 768,
+    "rubric": [
+      {
+        "id": "audit-submission-answer",
+        "visible": false,
+        "listItems": 14
+      },
+      {
+        "id": "write-venue-answer",
+        "visible": true,
+        "listItems": 14
+      }
+    ],
+    "mainAnswerComplete": true,
+    "tables": [
+      {
+        "caption": "青禾科普体验馆：本例原始资料R1、R2",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 650,
+        "width": 650
+      },
+      {
+        "caption": "先只拆主张，不急着给整段判对错",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 650,
+        "width": 650
+      },
+      {
+        "caption": "原回答的完整证据对照",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 650,
+        "width": 650
+      },
+      {
+        "caption": "从本例的问题，找到不同的核查位置",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 650,
+        "width": 650
+      },
+      {
+        "caption": "可照着执行的六步核查记录",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 650,
+        "width": 650
+      },
+      {
+        "caption": "作品提交的完整题设资料",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 650,
+        "width": 650
+      },
+      {
+        "caption": "B室场地使用的完整题设资料",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 650,
+        "width": 650
+      }
+    ],
+    "tableFocus": {
+      "name": "原回答的完整证据对照",
+      "role": "region",
+      "scrollLeft": 0
+    }
+  },
+  {
+    "width": 390,
+    "rubric": [
+      {
+        "id": "audit-submission-answer",
+        "visible": false,
+        "listItems": 14
+      },
+      {
+        "id": "write-venue-answer",
+        "visible": true,
+        "listItems": 14
+      }
+    ],
+    "mainAnswerComplete": true,
+    "tables": [
+      {
+        "caption": "青禾科普体验馆：本例原始资料R1、R2",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 308,
+        "width": 308
+      },
+      {
+        "caption": "先只拆主张，不急着给整段判对错",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 308,
+        "width": 308
+      },
+      {
+        "caption": "原回答的完整证据对照",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 320,
+        "width": 308
+      },
+      {
+        "caption": "从本例的问题，找到不同的核查位置",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 308,
+        "width": 308
+      },
+      {
+        "caption": "可照着执行的六步核查记录",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 308,
+        "width": 308
+      },
+      {
+        "caption": "作品提交的完整题设资料",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 308,
+        "width": 308
+      },
+      {
+        "caption": "B室场地使用的完整题设资料",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 308,
+        "width": 308
+      }
+    ],
+    "tableFocus": {
+      "name": "原回答的完整证据对照",
+      "role": "region",
+      "scrollLeft": 0.6666666865348816
+    }
+  },
+  {
+    "width": 320,
+    "rubric": [
+      {
+        "id": "audit-submission-answer",
+        "visible": false,
+        "listItems": 14
+      },
+      {
+        "id": "write-venue-answer",
+        "visible": true,
+        "listItems": 14
+      }
+    ],
+    "mainAnswerComplete": true,
+    "tables": [
+      {
+        "caption": "青禾科普体验馆：本例原始资料R1、R2",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 254,
+        "width": 254
+      },
+      {
+        "caption": "先只拆主张，不急着给整段判对错",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 254,
+        "width": 254
+      },
+      {
+        "caption": "原回答的完整证据对照",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 320,
+        "width": 254
+      },
+      {
+        "caption": "从本例的问题，找到不同的核查位置",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 254,
+        "width": 254
+      },
+      {
+        "caption": "可照着执行的六步核查记录",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 254,
+        "width": 254
+      },
+      {
+        "caption": "作品提交的完整题设资料",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 254,
+        "width": 254
+      },
+      {
+        "caption": "B室场地使用的完整题设资料",
+        "fontSize": "14px",
+        "scrollLeft": 0,
+        "scrollWidth": 254,
+        "width": 254
+      }
+    ],
+    "tableFocus": {
+      "name": "原回答的完整证据对照",
+      "role": "region",
+      "scrollLeft": 2.6666667461395264
+    }
+  }
+]

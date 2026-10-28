@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "four_widths": true,
+    "no_page_overflow": true,
+    "two_deduplicated_links": true,
+    "four_prerequisites": true,
+    "anchors_focus_and_drawer": true,
+    "8_details_interactions": true,
+    "rubric_actual_supplement": true,
+    "full_original_answer": true,
+    "seven_tables_each": true,
+    "narrow_keyboard_scroll": true,
+    "refresh_resume": true,
+    "input_temporary": true,
+    "completion_refresh_isolated": true
+  },
+  "note": "初采集rubric标签不匹配及折叠状态问题由RUBRIC_VERIFIED补证，不以初次false宣称通过"
+}

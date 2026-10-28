@@ -1,0 +1,17 @@
+{
+  "resume": {
+    "focus": "H2",
+    "hash": "#venue-answer-task",
+    "inputs": [
+      "",
+      ""
+    ],
+    "title": "只有有限资料，自己写一份可靠回答"
+  },
+  "completedAfterRefresh": true,
+  "oldKeyUnchanged": true,
+  "isolatedEnd": {
+    "aivora:learning:v2:AI000:AI000-C05-L05:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L05\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793202264072}",
+    "aivora:learning:v2:AI000:AI000-C06-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793202660420}"
+  }
+}

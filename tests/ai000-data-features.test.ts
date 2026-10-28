@@ -94,7 +94,7 @@ test("4.1独立r1、3.4/4.2相邻导航；第六章仍仅规划", () => {
   assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, "AI000-C03-L04");
   assert.equal(getAdjacentLessons(course, lesson.id).next?.lessonId, "AI000-C04-L02");
   assert.equal(resolveLesson("PY101", lesson.id), undefined);
-  for (const slot of course.chapters.flatMap(c => c.lessons).filter(l => l.lessonId > "AI000-C05-L05")) {
+  for (const slot of course.chapters.flatMap(c => c.lessons).filter(l => l.lessonId > "AI000-C06-L01")) {
     assert.equal(slot.status, "planned"); assert.equal(slot.href, undefined); assert.equal(lessonRegistry.has(slot.lessonId), false);
     assert.equal(resolveLesson("AI000", slot.lessonId), undefined);
   }

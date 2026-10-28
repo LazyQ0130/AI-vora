@@ -1,0 +1,44 @@
+{
+  "sources": [
+    {
+      "path": "src/lib/course-engine.ts",
+      "changes": [
+        {
+          "before": "import { generativeWorkLesson } from \"../content/lessons/ai000/generative-work\";\nimport { rlApplicabilityLesson } from \"../content/lessons/ai000/rl-applicability\";\nimport { multimodalLesson } from \"../content/lessons/ai000/multimodal-ai\";\nimport { trainingValidationTestLesson } from \"../content/lessons/ai000/training-validation-test\";\n",
+          "after": "import { generativeWorkLesson } from \"../content/lessons/ai000/generative-work\";\nimport { rlApplicabilityLesson } from \"../content/lessons/ai000/rl-applicability\";\nimport { unreliableAnswersLesson } from \"../content/lessons/ai000/unreliable-answers\";\nimport { multimodalLesson } from \"../content/lessons/ai000/multimodal-ai\";\nimport { trainingValidationTestLesson } from \"../content/lessons/ai000/training-validation-test\";\n"
+        },
+        {
+          "before": "  generativeWorkLesson,\n  rlApplicabilityLesson,\n  ...maV22Lessons,\n  regressionTaskLesson,\n",
+          "after": "  generativeWorkLesson,\n  rlApplicabilityLesson,\n  unreliableAnswersLesson,\n  ...maV22Lessons,\n  regressionTaskLesson,\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "changes": [
+        {
+          "before": "// 发布权限独立于原始课程规划。技术证据不替代人工审核。\nexport const publicationManifest = [\n  {lessonId:\"AI000-C05-L05\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"强化学习适合哪些应用问题？\",contentVersion:1,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_5_5_AND_CHAPTER_5_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L03\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"多模态 AI：连接文字、图片与声音\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n",
+          "after": "// 发布权限独立于原始课程规划。技术证据不替代人工审核。\nexport const publicationManifest = [\n  {lessonId:\"AI000-C06-L01\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"为什么 AI 会产生不可靠的回答？\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_6_1_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L05\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"强化学习适合哪些应用问题？\",contentVersion:1,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_5_5_AND_CHAPTER_5_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L03\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"多模态 AI：连接文字、图片与声音\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/ai000-study-time.ts",
+      "changes": [
+        {
+          "before": "  [[10,16,16,24,0,0],[12,18,14,20,0,0],[12,18,16,24,0,0],[10,16,14,22,0,0]],\n  [[10,16,24,36,0,0],[10,16,18,28,0,0],[10,16,20,32,0,0],[10,16,24,36,0,0],[12,18,28,42,0,0]],\n  [[12,18,10,16,0,0],[12,18,10,16,0,0],[12,18,10,16,0,0]],\n  [[10,16,8,14,0,0],[10,16,8,14,0,0],[10,15,15,20,35,55]],\n] as const;\n",
+          "after": "  [[10,16,16,24,0,0],[12,18,14,20,0,0],[12,18,16,24,0,0],[10,16,14,22,0,0]],\n  [[10,16,24,36,0,0],[10,16,18,28,0,0],[10,16,20,32,0,0],[10,16,24,36,0,0],[12,18,28,42,0,0]],\n  [[12,18,30,44,0,0],[12,18,10,16,0,0],[12,18,10,16,0,0]],\n  [[10,16,8,14,0,0],[10,16,8,14,0,0],[10,15,15,20,35,55]],\n] as const;\n"
+        }
+      ]
+    },
+    {
+      "path": "src/app/ai000-lesson.css",
+      "changes": [
+        {
+          "before": "#exercise-plan-bike-dispatch > p:first-of-type,\n#exercise-choose-rl-projects > p:first-of-type { white-space: pre-line; }\n.ai-inference-figure { overflow-wrap: anywhere; }\n.ai-inference-steps { list-style: none; padding: 0; margin: 0; }\n",
+          "after": "#exercise-plan-bike-dispatch > p:first-of-type,\n#exercise-choose-rl-projects > p:first-of-type { white-space: pre-line; }\n#exercise-audit-submission-answer > p:first-of-type,\n#exercise-write-venue-answer > p:first-of-type { white-space: pre-line; }\n.ai-inference-figure { overflow-wrap: anywhere; }\n.ai-inference-steps { list-style: none; padding: 0; margin: 0; }\n"
+        }
+      ]
+    }
+  ]
+}

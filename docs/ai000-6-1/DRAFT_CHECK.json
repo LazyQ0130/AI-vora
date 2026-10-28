@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-10-28T15:38:18.546Z",
+  "base": "1e86d3979a3f2cd5f4c9dda5dc42cb21ab6c958f",
+  "unchangedOldLessons": 41,
+  "unchangedPublications": 41,
+  "protectedFiles": 240,
+  "preservedPreciseFigures": 23,
+  "publication": {
+    "lessonId": "AI000-C06-L01",
+    "courseId": "AI000",
+    "chapterId": "AI000-C06",
+    "title": "为什么 AI 会产生不可靠的回答？",
+    "contentVersion": 1,
+    "order": 1,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "draft",
+    "access": "private"
+  },
+  "assessmentMap": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "audit-submission-answer",
+        "write-venue-answer"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "audit-submission-answer",
+        "write-venue-answer"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "audit-submission-answer",
+        "write-venue-answer"
+      ]
+    }
+  ]
+}

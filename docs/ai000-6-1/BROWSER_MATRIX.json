@@ -1,0 +1,518 @@
+[
+  {
+    "width": 1440,
+    "height": 1000,
+    "mobile": false,
+    "panelData": {
+      "exerciseLinks": [
+        "#exercise-audit-submission-answer",
+        "#exercise-write-venue-answer"
+      ],
+      "prereqs": [
+        "/learn/AI000/AI000-C01-L02#check-output",
+        "/learn/AI000/AI000-C02-L02#llm",
+        "/learn/AI000/AI000-C05-L01#write-reply",
+        "/learn/AI000/AI000-C05-L01#keep-unknown"
+      ],
+      "text": "本节学习目标3 项01解释流畅为何不够区分组织文字与核实事实，分析具体错误来源。02逐条审查主张与引用看原文、条件和编号，分别记录事实与引用状态。03写出有依据的答复修正错误，保留未知，安排能执行的补查步骤。查看完整目标用具体案例解释语言流畅与事实可靠的区别，说明生成回答与外部事实核查是不同环节，并分析不可靠说法可能来自哪些资料或使用问题把回答拆成可核查的事实主张，对照原始资料及适用条件区分有支持、与资料矛盾和暂时未知，分别检查来源存在性与引用有效性修正或独立撰写有依据、可回查且不过度承诺的回答，保留资料缺口，并为未知或冲突设计可执行的后续核查步骤核心练习2 道迁移练习交一份事实与引用分栏的审查记录迁移练习交一份有引用、保留未知的场地答复自主核对 · 不自动评分阅读进度仅当前浏览器已浏览 0%·尚未标记读完浏览比例不代表练习完成或掌握程度。先修知识已学过生成式AI与LLM、按资料组织回复，能读简单表格和回查来源编号。准备纸笔即可，无需编程、模型账户或真实联网答题。1.2 对照资料核查输出回看初步核对具体说法的办法。2.2 LLM与当前上下文需要时补修语言模型怎样利用本次材料。5.1 从资料到有出处的回复沿用查资料与组织语言分开检查的习惯。5.1 资料缺口与补查路径回看没有说明的政策怎样保留待核。"
+    },
+    "anchor": {
+      "dialogOpen": false,
+      "focus": "H3",
+      "focusText": "交一份事实与引用分栏的审查记录",
+      "hash": "#exercise-audit-submission-answer"
+    },
+    "interactions": [
+      {
+        "id": "audit-submission-answer",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "promptStyle": "pre-line",
+        "rubricVisible": false
+      },
+      {
+        "id": "write-venue-answer",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "promptStyle": "pre-line",
+        "rubricVisible": false
+      }
+    ],
+    "layout": {
+      "exerciseCount": 2,
+      "pageWidth": 1425,
+      "tables": [
+        {
+          "name": "青禾科普体验馆：本例原始资料R1、R2",
+          "scrollWidth": 722,
+          "tabindex": "0",
+          "width": 722
+        },
+        {
+          "name": "先只拆主张，不急着给整段判对错",
+          "scrollWidth": 722,
+          "tabindex": "0",
+          "width": 722
+        },
+        {
+          "name": "原回答的完整证据对照",
+          "scrollWidth": 722,
+          "tabindex": "0",
+          "width": 722
+        },
+        {
+          "name": "从本例的问题，找到不同的核查位置",
+          "scrollWidth": 722,
+          "tabindex": "0",
+          "width": 722
+        },
+        {
+          "name": "可照着执行的六步核查记录",
+          "scrollWidth": 722,
+          "tabindex": "0",
+          "width": 722
+        },
+        {
+          "name": "作品提交的完整题设资料",
+          "scrollWidth": 722,
+          "tabindex": "0",
+          "width": 722
+        },
+        {
+          "name": "B室场地使用的完整题设资料",
+          "scrollWidth": 722,
+          "tabindex": "0",
+          "width": 722
+        }
+      ],
+      "viewport": 1440
+    }
+  },
+  {
+    "width": 768,
+    "height": 1000,
+    "mobile": true,
+    "panelData": {
+      "exerciseLinks": [
+        "#exercise-audit-submission-answer",
+        "#exercise-write-venue-answer"
+      ],
+      "prereqs": [
+        "/learn/AI000/AI000-C01-L02#check-output",
+        "/learn/AI000/AI000-C02-L02#llm",
+        "/learn/AI000/AI000-C05-L01#write-reply",
+        "/learn/AI000/AI000-C05-L01#keep-unknown"
+      ],
+      "text": "本节导航本节导航，按 Escape 关闭面板。文章目录12 节点时间、停车、公告都写全了，就能出发吗？打开原资料，看清每份说明管什么同一句话，可能需要查好几件事常规时段写对了，为什么当天仍去不了？把事实判断和引用问题分开记模型怎样写出了流畅却缺依据的话？缺资料、用错资料和资料冲突，各查哪里？拿到新回答，按什么顺序查？给参观者一份可以回查的修正版换成作品提交，审查整段答复只有有限资料，自己写一份可靠回答检查你的每一句确定说法，都能回到哪里本节学习目标3 项01解释流畅为何不够区分组织文字与核实事实，分析具体错误来源。02逐条审查主张与引用看原文、条件和编号，分别记录事实与引用状态。03写出有依据的答复修正错误，保留未知，安排能执行的补查步骤。查看完整目标用具体案例解释语言流畅与事实可靠的区别，说明生成回答与外部事实核查是不同环节，并分析不可靠说法可能来自哪些资料或使用问题把回答拆成可核查的事实主张，对照原始资料及适用条件区分有支持、与资料矛盾和暂时未知，分别检查来源存在性与引用有效性修正或独立撰写有依据、可回查且不过度承诺的回答，保留资料缺口，并为未知或冲突设计可执行的后续核查步骤核心练习2 道迁移练习交一份事实与引用分栏的审查记录迁移练习交一份有引用、保留未知的场地答复自主核对 · 不自动评分阅读进度仅当前浏览器已浏览 80%·尚未标记读完浏览比例不代表练习完成或掌握程度。先修知识已学过生成式AI与LLM、按资料组织回复，能读简单表格和回查来源编号。准备纸笔即可，无需编程、模型账户或真实联网答题。1.2 对照资料核查输出回看初步核对具体说法的办法。2.2 LLM与当前上下文需要时补修语言模型怎样利用本次材料。5.1 从资料到有出处的回复沿用查资料与组织语言分开检查的习惯。5.1 资料缺口与补查路径回看没有说明的政策怎样保留待核。"
+    },
+    "anchor": {
+      "dialogOpen": false,
+      "focus": "H3",
+      "focusText": "交一份事实与引用分栏的审查记录",
+      "hash": "#exercise-audit-submission-answer"
+    },
+    "interactions": [
+      {
+        "id": "audit-submission-answer",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "promptStyle": "pre-line",
+        "rubricVisible": false
+      },
+      {
+        "id": "write-venue-answer",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "promptStyle": "pre-line",
+        "rubricVisible": false
+      }
+    ],
+    "layout": {
+      "exerciseCount": 2,
+      "pageWidth": 753,
+      "tables": [
+        {
+          "name": "青禾科普体验馆：本例原始资料R1、R2",
+          "scrollWidth": 650,
+          "tabindex": "0",
+          "width": 650
+        },
+        {
+          "name": "先只拆主张，不急着给整段判对错",
+          "scrollWidth": 650,
+          "tabindex": "0",
+          "width": 650
+        },
+        {
+          "name": "原回答的完整证据对照",
+          "scrollWidth": 650,
+          "tabindex": "0",
+          "width": 650
+        },
+        {
+          "name": "从本例的问题，找到不同的核查位置",
+          "scrollWidth": 650,
+          "tabindex": "0",
+          "width": 650
+        },
+        {
+          "name": "可照着执行的六步核查记录",
+          "scrollWidth": 650,
+          "tabindex": "0",
+          "width": 650
+        },
+        {
+          "name": "作品提交的完整题设资料",
+          "scrollWidth": 650,
+          "tabindex": "0",
+          "width": 650
+        },
+        {
+          "name": "B室场地使用的完整题设资料",
+          "scrollWidth": 650,
+          "tabindex": "0",
+          "width": 650
+        }
+      ],
+      "viewport": 768
+    }
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "mobile": true,
+    "panelData": {
+      "exerciseLinks": [
+        "#exercise-audit-submission-answer",
+        "#exercise-write-venue-answer"
+      ],
+      "prereqs": [
+        "/learn/AI000/AI000-C01-L02#check-output",
+        "/learn/AI000/AI000-C02-L02#llm",
+        "/learn/AI000/AI000-C05-L01#write-reply",
+        "/learn/AI000/AI000-C05-L01#keep-unknown"
+      ],
+      "text": "本节导航本节导航，按 Escape 关闭面板。文章目录12 节点时间、停车、公告都写全了，就能出发吗？打开原资料，看清每份说明管什么同一句话，可能需要查好几件事常规时段写对了，为什么当天仍去不了？把事实判断和引用问题分开记模型怎样写出了流畅却缺依据的话？缺资料、用错资料和资料冲突，各查哪里？拿到新回答，按什么顺序查？给参观者一份可以回查的修正版换成作品提交，审查整段答复只有有限资料，自己写一份可靠回答检查你的每一句确定说法，都能回到哪里本节学习目标3 项01解释流畅为何不够区分组织文字与核实事实，分析具体错误来源。02逐条审查主张与引用看原文、条件和编号，分别记录事实与引用状态。03写出有依据的答复修正错误，保留未知，安排能执行的补查步骤。查看完整目标用具体案例解释语言流畅与事实可靠的区别，说明生成回答与外部事实核查是不同环节，并分析不可靠说法可能来自哪些资料或使用问题把回答拆成可核查的事实主张，对照原始资料及适用条件区分有支持、与资料矛盾和暂时未知，分别检查来源存在性与引用有效性修正或独立撰写有依据、可回查且不过度承诺的回答，保留资料缺口，并为未知或冲突设计可执行的后续核查步骤核心练习2 道迁移练习交一份事实与引用分栏的审查记录迁移练习交一份有引用、保留未知的场地答复自主核对 · 不自动评分阅读进度仅当前浏览器已浏览 80%·尚未标记读完浏览比例不代表练习完成或掌握程度。先修知识已学过生成式AI与LLM、按资料组织回复，能读简单表格和回查来源编号。准备纸笔即可，无需编程、模型账户或真实联网答题。1.2 对照资料核查输出回看初步核对具体说法的办法。2.2 LLM与当前上下文需要时补修语言模型怎样利用本次材料。5.1 从资料到有出处的回复沿用查资料与组织语言分开检查的习惯。5.1 资料缺口与补查路径回看没有说明的政策怎样保留待核。"
+    },
+    "anchor": {
+      "dialogOpen": false,
+      "focus": "H3",
+      "focusText": "交一份事实与引用分栏的审查记录",
+      "hash": "#exercise-audit-submission-answer"
+    },
+    "interactions": [
+      {
+        "id": "audit-submission-answer",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "promptStyle": "pre-line",
+        "rubricVisible": false
+      },
+      {
+        "id": "write-venue-answer",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "promptStyle": "pre-line",
+        "rubricVisible": false
+      }
+    ],
+    "layout": {
+      "exerciseCount": 2,
+      "pageWidth": 375,
+      "tables": [
+        {
+          "name": "青禾科普体验馆：本例原始资料R1、R2",
+          "scrollWidth": 308,
+          "tabindex": "0",
+          "width": 308
+        },
+        {
+          "name": "先只拆主张，不急着给整段判对错",
+          "scrollWidth": 308,
+          "tabindex": "0",
+          "width": 308
+        },
+        {
+          "name": "原回答的完整证据对照",
+          "scrollWidth": 320,
+          "tabindex": "0",
+          "width": 308
+        },
+        {
+          "name": "从本例的问题，找到不同的核查位置",
+          "scrollWidth": 308,
+          "tabindex": "0",
+          "width": 308
+        },
+        {
+          "name": "可照着执行的六步核查记录",
+          "scrollWidth": 308,
+          "tabindex": "0",
+          "width": 308
+        },
+        {
+          "name": "作品提交的完整题设资料",
+          "scrollWidth": 308,
+          "tabindex": "0",
+          "width": 308
+        },
+        {
+          "name": "B室场地使用的完整题设资料",
+          "scrollWidth": 308,
+          "tabindex": "0",
+          "width": 308
+        }
+      ],
+      "viewport": 390
+    }
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "mobile": true,
+    "panelData": {
+      "exerciseLinks": [
+        "#exercise-audit-submission-answer",
+        "#exercise-write-venue-answer"
+      ],
+      "prereqs": [
+        "/learn/AI000/AI000-C01-L02#check-output",
+        "/learn/AI000/AI000-C02-L02#llm",
+        "/learn/AI000/AI000-C05-L01#write-reply",
+        "/learn/AI000/AI000-C05-L01#keep-unknown"
+      ],
+      "text": "本节导航本节导航，按 Escape 关闭面板。文章目录12 节点时间、停车、公告都写全了，就能出发吗？打开原资料，看清每份说明管什么同一句话，可能需要查好几件事常规时段写对了，为什么当天仍去不了？把事实判断和引用问题分开记模型怎样写出了流畅却缺依据的话？缺资料、用错资料和资料冲突，各查哪里？拿到新回答，按什么顺序查？给参观者一份可以回查的修正版换成作品提交，审查整段答复只有有限资料，自己写一份可靠回答检查你的每一句确定说法，都能回到哪里本节学习目标3 项01解释流畅为何不够区分组织文字与核实事实，分析具体错误来源。02逐条审查主张与引用看原文、条件和编号，分别记录事实与引用状态。03写出有依据的答复修正错误，保留未知，安排能执行的补查步骤。查看完整目标用具体案例解释语言流畅与事实可靠的区别，说明生成回答与外部事实核查是不同环节，并分析不可靠说法可能来自哪些资料或使用问题把回答拆成可核查的事实主张，对照原始资料及适用条件区分有支持、与资料矛盾和暂时未知，分别检查来源存在性与引用有效性修正或独立撰写有依据、可回查且不过度承诺的回答，保留资料缺口，并为未知或冲突设计可执行的后续核查步骤核心练习2 道迁移练习交一份事实与引用分栏的审查记录迁移练习交一份有引用、保留未知的场地答复自主核对 · 不自动评分阅读进度仅当前浏览器已浏览 80%·尚未标记读完浏览比例不代表练习完成或掌握程度。先修知识已学过生成式AI与LLM、按资料组织回复，能读简单表格和回查来源编号。准备纸笔即可，无需编程、模型账户或真实联网答题。1.2 对照资料核查输出回看初步核对具体说法的办法。2.2 LLM与当前上下文需要时补修语言模型怎样利用本次材料。5.1 从资料到有出处的回复沿用查资料与组织语言分开检查的习惯。5.1 资料缺口与补查路径回看没有说明的政策怎样保留待核。"
+    },
+    "anchor": {
+      "dialogOpen": false,
+      "focus": "H3",
+      "focusText": "交一份事实与引用分栏的审查记录",
+      "hash": "#exercise-audit-submission-answer"
+    },
+    "interactions": [
+      {
+        "id": "audit-submission-answer",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "promptStyle": "pre-line",
+        "rubricVisible": false
+      },
+      {
+        "id": "write-venue-answer",
+        "states": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "promptStyle": "pre-line",
+        "rubricVisible": false
+      }
+    ],
+    "layout": {
+      "exerciseCount": 2,
+      "pageWidth": 305,
+      "tables": [
+        {
+          "name": "青禾科普体验馆：本例原始资料R1、R2",
+          "scrollWidth": 254,
+          "tabindex": "0",
+          "width": 254
+        },
+        {
+          "name": "先只拆主张，不急着给整段判对错",
+          "scrollWidth": 254,
+          "tabindex": "0",
+          "width": 254
+        },
+        {
+          "name": "原回答的完整证据对照",
+          "scrollWidth": 320,
+          "tabindex": "0",
+          "width": 254
+        },
+        {
+          "name": "从本例的问题，找到不同的核查位置",
+          "scrollWidth": 254,
+          "tabindex": "0",
+          "width": 254
+        },
+        {
+          "name": "可照着执行的六步核查记录",
+          "scrollWidth": 254,
+          "tabindex": "0",
+          "width": 254
+        },
+        {
+          "name": "作品提交的完整题设资料",
+          "scrollWidth": 254,
+          "tabindex": "0",
+          "width": 254
+        },
+        {
+          "name": "B室场地使用的完整题设资料",
+          "scrollWidth": 254,
+          "tabindex": "0",
+          "width": 254
+        }
+      ],
+      "viewport": 320
+    }
+  }
+]

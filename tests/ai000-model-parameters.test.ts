@@ -113,7 +113,7 @@ test("独立r1可读和4.1→4.2导航，4.2→4.3导航且第六章仍未注册
   const course = getLearningCourse("AI000")!;
   assert.equal(getAdjacentLessons(course, "AI000-C04-L01").next?.lessonId, lesson.id);
   assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, "AI000-C04-L01"); assert.equal(getAdjacentLessons(course, lesson.id).next?.lessonId, "AI000-C04-L03");
-  for (const slot of course.chapters.flatMap(c => c.lessons).filter(l => l.lessonId > "AI000-C05-L05")) { assert.equal(slot.status, "planned"); assert.equal(slot.href, undefined); assert.equal(lessonRegistry.has(slot.lessonId), false); }
+  for (const slot of course.chapters.flatMap(c => c.lessons).filter(l => l.lessonId > "AI000-C06-L01")) { assert.equal(slot.status, "planned"); assert.equal(slot.href, undefined); assert.equal(lessonRegistry.has(slot.lessonId), false); }
   assert.equal(resolveLesson("PY101", lesson.id), undefined);
 });
 
