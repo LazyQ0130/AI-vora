@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-10-29T11:50:43.837Z",
+  "baseline": "0ea031d7283e2bf8c6cf457fd55bab560da5dcec",
+  "protectedFiles": 2190,
+  "previousLessons": 49,
+  "previousPublications": 49,
+  "changedOldLessons": [
+    "PY101-C01-L01"
+  ],
+  "addedLesson": "PY101-C01-L03",
+  "firstLessonVersion": 1,
+  "courseStatus": "planned",
+  "chapter": [
+    {
+      "id": "PY101-C01-L01",
+      "status": "pending-review",
+      "href": "/learn/PY101/PY101-C01-L01"
+    },
+    {
+      "id": "PY101-C01-L02",
+      "status": "pending-review",
+      "href": "/learn/PY101/PY101-C01-L02"
+    },
+    {
+      "id": "PY101-C01-L03",
+      "status": "pending-review",
+      "href": "/learn/PY101/PY101-C01-L03"
+    },
+    {
+      "id": "PY101-C01-L04",
+      "status": "planned",
+      "href": null
+    },
+    {
+      "id": "PY101-C01-L05",
+      "status": "planned",
+      "href": null
+    },
+    {
+      "id": "PY101-C01-L06",
+      "status": "planned",
+      "href": null
+    }
+  ]
+}

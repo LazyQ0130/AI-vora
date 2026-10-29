@@ -1,0 +1,147 @@
+{
+  "checkedAt": "2026-10-29T11:33:21.706Z",
+  "platform": "win32",
+  "executable": "D:\\Program Files\\python.exe",
+  "version": "3.14.2",
+  "runs": [
+    {
+      "label": "initial-disk",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p2\\runtime\\terminal-lab",
+      "command": [
+        "python",
+        "main.py"
+      ],
+      "stdout": "Draft A1\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "saved-revision",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p2\\runtime\\terminal-lab",
+      "command": [
+        "python",
+        "main.py"
+      ],
+      "stdout": "Ready B2\r\nSaved copy\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "wrong-file",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p2\\runtime\\terminal-lab",
+      "command": [
+        "python",
+        "notes.py"
+      ],
+      "stdout": "Notes N4\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "same-name-wrong-target",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p2\\runtime\\terminal-lab\\other",
+      "command": [
+        "python",
+        "main.py"
+      ],
+      "stdout": "Other folder C3\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "relative-recovery",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p2\\runtime\\terminal-lab\\other",
+      "command": [
+        "python",
+        "../main.py"
+      ],
+      "stdout": "Ready B2\r\nSaved copy\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "absolute-from-root",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p2\\runtime\\terminal-lab",
+      "command": [
+        "python",
+        "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p2\\runtime\\terminal-lab\\main.py"
+      ],
+      "stdout": "Ready B2\r\nSaved copy\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "absolute-from-other",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p2\\runtime\\terminal-lab\\other",
+      "command": [
+        "python",
+        "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p2\\runtime\\terminal-lab\\main.py"
+      ],
+      "stdout": "Ready B2\r\nSaved copy\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "missing-file",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p2\\runtime\\terminal-lab\\empty",
+      "command": [
+        "python",
+        "main.py"
+      ],
+      "stdout": "",
+      "stderr": "python: can't open file 'C:\\\\Users\\\\QYF\\\\Desktop\\\\Aivora-Web\\\\docs\\\\py101-p2\\\\runtime\\\\terminal-lab\\\\empty\\\\main.py': [Errno 2] No such file or directory\r\n",
+      "exitCode": 2
+    },
+    {
+      "label": "missing-file-recovery",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p2\\runtime\\terminal-lab\\empty",
+      "command": [
+        "python",
+        "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p2\\runtime\\terminal-lab\\main.py"
+      ],
+      "stdout": "Ready B2\r\nSaved copy\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "exercise-starter",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p2\\runtime\\terminal-lab",
+      "command": [
+        "python",
+        "message.py"
+      ],
+      "stdout": "Plan: read\r\nStep: start\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "exercise-independent-example",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p2\\runtime\\terminal-lab",
+      "command": [
+        "python",
+        "message.example.py"
+      ],
+      "stdout": "Plan: practice P8\r\nStep: save\r\nCheck: rerun\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "interpreter-diagnostic",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web",
+      "command": [
+        "python",
+        "-c",
+        "import sys; print(sys.executable); print(sys.version.split()[0])"
+      ],
+      "stdout": "D:\\Program Files\\python.exe\r\n3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    }
+  ],
+  "guiEvidence": [
+    "runtime/GUI_BEFORE.json",
+    "runtime/GUI_DIRTY.json",
+    "runtime/GUI_SAVED.json"
+  ],
+  "limits": "真实VS Code缓冲区观察另见EDITOR_VALIDATION；macOS尚未实际运行。"
+}

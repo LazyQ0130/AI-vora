@@ -1,0 +1,148 @@
+{
+  "checkedAt": "2026-10-29T11:42:09.760Z",
+  "base": "http://127.0.0.1:3003",
+  "checks": [
+    {
+      "check": "initial-storage",
+      "result": {
+        "result": {
+          "type": "string",
+          "value": "{\"aivora:learning:v2:ML201:ML201-C04-L04:r1\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"ML201\\\",\\\"lessonId\\\":\\\"ML201-C04-L04\\\",\\\"contentVersion\\\":1,\\\"percent\\\":0,\\\"completed\\\":false,\\\"section\\\":\\\"setup\\\",\\\"updatedAt\\\":1793024028654}\",\"aivora:learning:v2:AI000:AI000-C01-L01:r1\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"AI000\\\",\\\"lessonId\\\":\\\"AI000-C01-L01\\\",\\\"contentVersion\\\":1,\\\"percent\\\":100,\\\"completed\\\":true,\\\"section\\\":\\\"mail-task\\\",\\\"updatedAt\\\":1793026870891}\",\"aivora:learning:v2:PY101:PY101-C05-L01:r2\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"PY101\\\",\\\"lessonId\\\":\\\"PY101-C05-L01\\\",\\\"contentVersion\\\":2,\\\"percent\\\":100,\\\"completed\\\":false,\\\"section\\\":\\\"concept\\\",\\\"updatedAt\\\":1793024016441}\",\"aivora:learning:v2:MA101:MA101-C02-L03:r2\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"MA101\\\",\\\"lessonId\\\":\\\"MA101-C02-L03\\\",\\\"contentVersion\\\":2,\\\"percent\\\":0,\\\"completed\\\":false,\\\"section\\\":\\\"scene\\\",\\\"updatedAt\\\":1793024016278}\",\"aivora:learning:v2:PY101:PY101-C05-L02:r1\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"PY101\\\",\\\"lessonId\\\":\\\"PY101-C05-L02\\\",\\\"contentVersion\\\":1,\\\"percent\\\":100,\\\"completed\\\":false,\\\"section\\\":\\\"summary\\\",\\\"updatedAt\\\":1793024015441}\"}"
+        }
+      }
+    },
+    {
+      "check": "copy-python",
+      "passed": false,
+      "copied": ""
+    },
+    {
+      "check": "copy-after-confirmation",
+      "copied": "",
+      "passed": false
+    },
+    {
+      "check": "copy-real-paste",
+      "passed": true,
+      "pasted": "print(\"Ready B2\")\nprint(\"Saved copy\")\n",
+      "note": "clipboard.readText returned empty; real UI paste verified"
+    },
+    {
+      "check": "exercise-reliable-edit",
+      "details": [
+        {
+          "label": "提示 1",
+          "open": true
+        },
+        {
+          "label": "提示 2",
+          "open": true
+        },
+        {
+          "label": "参考解答与自查标准",
+          "open": true
+        }
+      ]
+    },
+    {
+      "check": "exercise-recover-target",
+      "details": [
+        {
+          "label": "提示 1",
+          "open": true
+        },
+        {
+          "label": "提示 2",
+          "open": true
+        },
+        {
+          "label": "参考解答与自查标准",
+          "open": true
+        }
+      ]
+    },
+    {
+      "check": "anchor",
+      "url": "http://127.0.0.1:3003/learn/PY101/PY101-C01-L03#integrated-terminal"
+    },
+    {
+      "check": "progress-before-reload",
+      "result": {
+        "result": {
+          "type": "string",
+          "value": "{\"aivora:learning:v2:PY101:PY101-C05-L01:r2\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"PY101\\\",\\\"lessonId\\\":\\\"PY101-C05-L01\\\",\\\"contentVersion\\\":2,\\\"percent\\\":100,\\\"completed\\\":false,\\\"section\\\":\\\"concept\\\",\\\"updatedAt\\\":1793024016441}\",\"aivora:learning:v2:PY101:PY101-C05-L02:r1\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"PY101\\\",\\\"lessonId\\\":\\\"PY101-C05-L02\\\",\\\"contentVersion\\\":1,\\\"percent\\\":100,\\\"completed\\\":false,\\\"section\\\":\\\"summary\\\",\\\"updatedAt\\\":1793024015441}\",\"aivora:learning:v2:PY101:PY101-C01-L03:r1\":\"{\\\"version\\\":2,\\\"courseId\\\":\\\"PY101\\\",\\\"lessonId\\\":\\\"PY101-C01-L03\\\",\\\"contentVersion\\\":1,\\\"percent\\\":86,\\\"completed\\\":false,\\\"section\\\":\\\"practice\\\",\\\"updatedAt\\\":1793273947826}\"}"
+        }
+      }
+    },
+    {
+      "check": "progress-completed-restored",
+      "completedButton": true,
+      "stored": "{\"version\":2,\"courseId\":\"PY101\",\"lessonId\":\"PY101-C01-L03\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"integrated-terminal\",\"updatedAt\":1793273980707}",
+      "oldKeysUnchanged": true
+    },
+    {
+      "check": "tablet-layout",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "check": "tablet-directory",
+      "plannedLinks": 0,
+      "lessonLink": 1
+    },
+    {
+      "check": "mobile-layout",
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "check": "mobile-navigation-and-solution",
+      "url": "http://127.0.0.1:3003/learn/PY101/PY101-C01-L03#exercise-recover-target",
+      "dialogClosed": true
+    },
+    {
+      "check": "narrow-layout",
+      "scrollWidth": 305,
+      "width": 320
+    },
+    {
+      "check": "narrow-code-scroll",
+      "clientWidth": 254,
+      "overflowX": "auto",
+      "scrollWidth": 603
+    },
+    {
+      "check": "1.2-to-1.3",
+      "href": "/learn/PY101/PY101-C01-L03"
+    },
+    {
+      "check": "404-browser",
+      "path": "/learn/ML201/PY101-C01-L03",
+      "heading": "这里，还没有被探索。"
+    },
+    {
+      "check": "404-browser",
+      "path": "/learn/PY101/PY101-C01-L04",
+      "heading": "这里，还没有被探索。"
+    },
+    {
+      "check": "course-status",
+      "planned": true,
+      "text": "返回课程体系\nL1 · 编程与数据\nPython 编程与工程入门\n\n能独立编写模块化 Python 程序，处理数据文件、定位常见错误并使用虚拟环境与 Notebook。\n\n10 章规划\n预计 26–36 小时\n\n本课程正在筹备，下方为章节规划。目前包含可阅读样章，教材仍待人工审核。\n\nLEARNING OUTCOME\n学会什么，如何验证\n\n给定未见过的小型 CSV，完成读取、清洗、统计与文件输出；可复现运行。\n\nTHE COURSE BLUEPRINT\n课程章节\n10 章 · 规划中\nCOURSE CONTENTS\nPython 编程与工程入门\n\n10 章 · 8 节核心课已制作\n\n已制作课时阅读比例\n50%\n1 / 8 节已标记读完 · 仅当前浏览器\n筹备、可选与旧版课时不计入比例；已读不代表掌握。\n第 1 章：\n环境、解释器、虚拟环境、IDE 与 Jupyter\n1.1\n从零运行第一个Python程序\n1.2\n解释器怎样找到并执行脚本\n1.3\n用编辑器完成保存与重跑\n·\n1.4\n为项目准备独立的虚拟环境\n筹备中\n·\n1.5\n在Jupyter中按顺序运行单元格\n筹备中\n·\n1.6\n让别人复现一次环境问题\n筹备中\n第 2 章：\n变量、基本类型、表达式与输入输出\n第 3 章：\n分支、循环、推导式与常见控制流程\n第 4 章：\n列表、元组、字典、集合与字符串处理\n第 5 章：\n函数、作用域、参数、类型标注与文档字符串\n5.1\nPython 函数与参数\n5.2\n位置与关键字参数绑定\n5.3\n返回值与 print 的区别\n5.4\n函数内外的变量与作用域\n5.5\n简单默认参数\n5.6\n可选进阶：共享对象与接口陷阱\n可选\n第 6 章：\n模块、包、第三方依赖及项目结构\n第 7 章：\n文件、CSV/JSON、路径与编码\n第 8 章：\n异常处理、调试、断言及基础测试\n第 9 章：\n类与对象、迭代器、生成器的必要用法\n第 10 章：\n简单命令行项目、Git 基础及代码风格\nLEARN BY DOING\n在实验与项目中理解\n规划实验\n关键实验\n\n实现统计函数、读取 CSV 文件、调试错误脚本、"
+    },
+    {
+      "check": "quiz-feedback",
+      "wrong": "再想一想",
+      "correct": "理解正确",
+      "localOnly": true
+    },
+    {
+      "check": "all-preexisting-storage-final",
+      "checkedOldKeys": 5,
+      "changedKeys": [],
+      "passed": true
+    }
+  ],
+  "clipboardLimitation": "readText API returned empty; actual copy→textarea paste matched exact source",
+  "storageNote": "UI read-complete marker persisted after hydration; final full storage comparison excludes only new lesson key"
+}

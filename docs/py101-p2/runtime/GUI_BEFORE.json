@@ -1,0 +1,9 @@
+{
+  "phase": "before-gui-edit",
+  "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p2\\runtime\\editor-lab",
+  "command": "python main.py",
+  "source": "print(\"Draft A1\")\n",
+  "stdout": "Draft A1\r\n",
+  "exitCode": 0,
+  "stderr": ""
+}

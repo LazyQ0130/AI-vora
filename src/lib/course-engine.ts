@@ -37,6 +37,7 @@ import { trainingValidationTestLesson } from "../content/lessons/ai000/training-
 import { aiMlDlLesson } from "../content/lessons/ai000/ai-ml-dl";
 import { pythonFirstRunLesson } from "../content/lessons/py101/first-run";
 import { pythonScriptPathsLesson } from "../content/lessons/py101/script-paths";
+import { pythonEditorRerunLesson } from "../content/lessons/py101/editor-rerun";
 import {
   publicationManifest,
   readablePublications,
@@ -52,6 +53,7 @@ import {
 
 const contents: Lesson[] = [
   pythonScriptPathsLesson,
+  pythonEditorRerunLesson,
   pythonFirstRunLesson,
   whatIsAiLesson,
   capabilitiesLesson,

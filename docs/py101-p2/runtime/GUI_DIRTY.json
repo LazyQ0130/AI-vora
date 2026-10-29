@@ -1,0 +1,10 @@
+{
+  "phase": "dirty-buffer-external-terminal",
+  "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p2\\runtime\\editor-lab",
+  "command": "python main.py",
+  "editorBuffer": "print(\"Ready B2\") / print(\"Saved copy\") (GUI dirty)",
+  "source": "print(\"Draft A1\")\n",
+  "stdout": "Draft A1\r\n",
+  "exitCode": 0,
+  "stderr": ""
+}

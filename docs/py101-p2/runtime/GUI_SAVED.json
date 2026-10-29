@@ -1,0 +1,9 @@
+{
+  "phase": "gui-saved-external-terminal",
+  "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p2\\runtime\\editor-lab",
+  "command": "python main.py",
+  "source": "print(\"Ready B2\")\nprint(\"Saved copy\")\n",
+  "stdout": "Ready B2\r\nSaved copy\r\n",
+  "exitCode": 0,
+  "stderr": ""
+}

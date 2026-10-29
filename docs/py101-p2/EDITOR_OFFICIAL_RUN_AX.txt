@@ -1,0 +1,297 @@
+Window: "main.py - editor-lab - Visual Studio Code", App: Code.exe.
+	0 窗口 main.py - editor-lab - Visual Studio Code Secondary Actions: Raise
+		1 窗格 (disabled)
+		2 区域 main.py - editor-lab - Visual Studio Code
+			3 区域
+				4 区域
+					5 区域
+						6 按钮 最小化
+						298 按钮 最大化
+						8 按钮 关闭
+					9 区域
+						10 区域
+							11 区域
+								12 区域
+									14 文档 main.py - editor-lab - Visual Studio Code Value: vscode-file://vscode-app/d:/VSCode/Microsoft%20VS%20Code/e646868227/resources/app/out/vs/code/electron-browser/workbench/workbench.html ID: RootWebArea
+										15 组
+											16 应用程序
+												17 组
+												18 组
+												19 组
+												20 菜单栏
+													21 菜单项 文件
+													22 菜单项 编辑
+													23 菜单项 选择
+													24 菜单项 查看
+													25 菜单项 转到
+													312 菜单项 更多
+												732 工具栏
+													733 按钮 (disabled) 返回 (Alt+LeftArrow)
+													734 按钮 (disabled) 前进 (Alt+RightArrow)
+													735 工具栏 智能体状态
+														736 按钮 打开快速访问
+														737 组
+															738 按钮 切换聊天
+																739 按钮 切换聊天
+															740 组
+																741 组
+																	742 按钮 更多操作
+												40 工具栏
+													526 按钮 在智能体窗口中打开 (Ctrl+Shift+Alt+A)
+												42 工具栏 标题操作
+													772 切换按钮 切换主侧栏 (Ctrl+B)
+														773 文本 
+													774 按钮 自定义布局...
+													775 切换按钮 切换面板 (Ctrl+J)
+														776 文本 
+													777 切换按钮 切换辅助侧栏 (Ctrl+Alt+B)
+														778 文本 
+												50 组
+												51 组
+												52 组
+												53 选项卡 活动视图切换器
+													54 选项卡项目 (selectable) 资源管理器 (Ctrl+Shift+E)
+														55 组 资源管理器 (Ctrl+Shift+E)
+													56 选项卡项目 (selectable) 搜索 (Ctrl+Shift+F)
+														57 组 搜索 (Ctrl+Shift+F)
+													58 选项卡项目 (selectable) 源代码管理 (Ctrl+Shift+G)
+														59 组 源代码管理 (Ctrl+Shift+G)
+													60 选项卡项目 (selectable) 运行和调试 (Ctrl+Shift+D)
+														61 组 运行和调试 (Ctrl+Shift+D)
+													62 选项卡项目 (selectable) 扩展 (Ctrl+Shift+X)
+														63 组 扩展 (Ctrl+Shift+X)
+													414 选项卡项目 (selectable) 测试
+														415 组 测试
+													64 选项卡项目 (selectable) Microsoft Edge Tools
+														65 组 Microsoft Edge Tools
+													66 选项卡项目 (selectable) Python
+														67 组 Python
+													68 选项卡项目 (selectable) GitLens
+														69 组 GitLens
+													70 选项卡项目 (selectable) GitLens 检查器
+														71 组 GitLens 检查器
+													72 选项卡项目 (selectable) GitHub
+														73 组 GitHub
+													74 选项卡项目 (selectable) Gemini Code Assist (Alt+G)
+														75 组 Gemini Code Assist (Alt+G)
+												76 工具栏 管理
+													77 按钮 帐户
+														78 组 帐户
+															316 文本 
+													80 按钮 管理
+														81 组 管理
+															317 文本 
+												83 标题 资源管理器
+												84 工具栏 资源管理器操作
+													534 组
+														535 组
+															536 按钮 视图和更多操作…
+												88 工具栏
+												89 组
+												90 组
+												91 按钮 资源管理器部分: editor-lab
+													92 标题 资源管理器部分: editor-lab
+												93 树 文件资源管理器
+													770 树项目 (selectable) .vscode ID: list_id_3_0
+														771 组 C:\Users\QYF\Desktop\Aivora-Web\docs\py101-p2\runtime\editor-lab\.vscode
+													94 树项目 (selectable) main.py ID: list_id_3_1
+														95 组 C:\Users\QYF\Desktop\Aivora-Web\docs\py101-p2\runtime\editor-lab\main.py
+													96 树项目 (selectable) notes.py ID: list_id_3_2
+														97 组 C:\Users\QYF\Desktop\Aivora-Web\docs\py101-p2\runtime\editor-lab\notes.py
+												98 按钮 大纲部分
+													99 标题 大纲
+												100 按钮 时间线部分
+													101 标题 时间线
+												102 组
+												103 主要 ID: workbench.parts.editor
+													104 组
+														105 选项卡
+															106 选项卡项目 (selectable) main.py，预览
+																107 组 C:\Users\QYF\Desktop\Aivora-Web\docs\py101-p2\runtime\editor-lab\main.py
+																108 工具栏 选项卡操作
+																	109 按钮 关闭 (Ctrl+F4)
+														110 工具栏 编辑器操作
+															779 组
+																780 按钮 运行 Python 文件
+															781 组
+																782 组
+																	783 按钮 运行或调试...
+															784 按钮 Open Codex Sidebar
+															785 组
+																786 组
+																	787 按钮 更多操作...
+																		788 文本 
+														338 列表
+															339 列表项目 main.py
+																340 组 C:\Users\QYF\Desktop\Aivora-Web\docs\py101-p2\runtime\editor-lab\main.py
+																	341 文本 
+																	342 文本 main.py
+													343 组 main.py，预览
+														361 代码
+															362 编辑器 (settable, string) 现在无法访问编辑器。 若要启用屏幕阅读器优化模式，请使用 Shift+Alt+F1
+															609 图形
+												789 选项卡 活动视图切换器
+													790 选项卡项目 (selectable) 问题 (Ctrl+Shift+M)
+														791 组 问题 (Ctrl+Shift+M)
+													792 选项卡项目 (selectable) 输出 (Ctrl+Shift+U)
+														793 组 输出 (Ctrl+Shift+U)
+													794 选项卡项目 (selectable) 调试控制台 (Ctrl+Shift+Y)
+														795 组 调试控制台 (Ctrl+Shift+Y)
+													796 选项卡项目 (selectable) 终端 (Ctrl+`)
+														797 组 终端 (Ctrl+`)
+													798 选项卡项目 (selectable) 端口
+														799 组 端口
+												800 工具栏 终端操作
+													832 按钮 新建终端 (Ctrl+Shift+`) [Alt] 拆分终端 (Ctrl+Shift+5)
+														833 按钮 新建终端 (Ctrl+Shift+`) [Alt] 拆分终端 (Ctrl+Shift+5)
+													834 组
+														835 组
+															836 按钮 启动配置文件...
+													837 按钮 聚焦到终端 (Ctrl+DownArrow) [Alt] 拆分终端 (Ctrl+Shift+5)
+													838 按钮 拆分终端 (Ctrl+Shift+5)
+													839 按钮 终止终端
+													840 组
+														841 组
+															842 按钮 视图和更多操作…
+													843 组 (disabled)
+												813 工具栏
+													814 切换按钮 最大化面板
+														815 文本 
+													816 按钮 隐藏面板 (Ctrl+J)
+												817 组
+													818 组
+														819 图像
+														820 组
+															821 编辑 (settable, string) 终端 2，Python 运行命令: 切换屏幕阅读器辅助功能模式以获得优化的屏幕阅读器体验 使用 Alt+F1 获取终端辅助功能帮助
+															863 组
+																864 文本 
+															865 文本 
+															844 图像
+															845 图像
+												181 选项卡 活动视图切换器
+													182 选项卡项目 (selectable) 聊天 (Ctrl+Alt+I)
+														183 组 聊天 (Ctrl+Alt+I)
+													184 选项卡项目 (selectable) Codex
+														185 组 Codex
+												186 工具栏 聊天操作
+													846 组
+														847 按钮 新建聊天 (Ctrl+N)
+													848 组
+														849 组
+															850 按钮 新建聊天
+													851 按钮 打开自定义
+													852 组
+														853 组
+															854 按钮 视图和更多操作…
+													855 组 (disabled)
+												197 工具栏
+													551 切换按钮 最大化辅助侧栏
+														552 文本 
+													553 按钮 隐藏辅助侧栏 (Ctrl+Alt+B)
+												201 组
+													202 文本 会话
+												203 工具栏
+													554 按钮 刷新智能体会话
+													555 按钮 查找智能体会话
+													556 组
+														557 组
+															558 按钮 筛选智能体会话
+																559 文本 
+													560 按钮 显示智能体会话边栏
+												211 树 智能体会话
+												212 组
+													213 组
+													214 工具栏 Session status
+														215 按钮 未提交更改: 44 Files, +5608, -19
+													216 提示 提示: 配置 default permissions，以绕过审批模式或 Autopilot 模式启动新会话。 按 Tab 执行操作。
+														217 组
+															218 文本 提示:
+															219 文本 配置
+															220 链接 default permissions Value: vscode-file://vscode-app/d:/VSCode/Microsoft%20VS%20Code/e646868227/resources/app/out/vs/code/electron-browser/workbench/workbench.html
+															221 文本 ，以绕过审批模式或 Autopilot 模式启动新会话。
+														222 工具栏
+															223 按钮 上一个提示
+															224 按钮 下一提示
+															225 按钮 关闭提示
+															226 按钮 禁用提示
+													373 组
+														856 组 建议的上下文、文件、main.py file:///c%3A/Users/QYF/Desktop/Aivora-Web/docs/py101-p2/runtime/editor-lab
+															857 按钮 将 file:main.py 添加到上下文
+															858 组 启用当前 文件 上下文 main.py
+																859 文本 
+																860 文本 main.py
+													227 代码
+														228 编辑器 (settable, string) 现在无法访问编辑器。 若要启用屏幕阅读器优化模式，请使用 Shift+Alt+F1
+														229 文本 与 Copilot 聊天
+													230 组
+														231 工具栏
+															379 按钮 添加上下文... (Ctrl+/)
+															380 组
+																381 组
+																	382 按钮 Agent
+																		383 文本 
+																		384 文本 Agent
+															385 组 Models, Auto
+																386 按钮 Models, Auto
+																	756 文本 
+																	757 文本 Auto
+																389 按钮 Auto details, Optimize for: Balance
+														243 工具栏
+															561 切换按钮 Dictate (Speech to Text) (Ctrl+I)
+																753 文本 
+															563 按钮 (disabled) 发送 [Alt] 发送到新聊天 (Ctrl+Shift+Enter)
+													247 工具栏
+														248 组
+															249 组
+																250 按钮 Copilot
+																	324 文本 
+																	252 文本 Copilot
+														253 组 Pick Mode and Permissions, 交互式, Manual permissions
+															254 按钮 Pick Mode, 交互式
+															255 按钮 Pick Permissions, Manual permissions
+														256 切换按钮 Allow connections from other machines and vscode.dev/agents
+															325 文本 
+												258 状态 ID: workbench.parts.statusbar
+													259 组 remote ID: status.host
+														260 按钮 remote
+													261 组 显示 GitLens 提交图 ID: eamodio.gitlens.gitlens.graph
+														262 按钮 显示 GitLens 提交图
+													263 组 rocket gitlens-unplug Launchpad, GitLens Launchpad ᴘʀᴏ &mdash; [$(question)](command:gitlens.launchpad.indicator.action?%22info%22 "这是什么？") [$(gear)](command:workbench.action.openSettings?%22gitlens.launchpad%22 "设置") | [$(circle-slash) 隐藏](command:gitlens.launchpad.indicator.action?%22hide%22 "隐藏") --- [Launchpad](command:gitlens.launchpad.indicator.action?%22info%22 "了解 Launchpad") 将你的拉取请求整理为可操作的分组，帮助你保持专注并让团队保持畅通。 始终可以通过命令面板中的 `GitLens: Open Launchpad` 命令访问它。 --- [连接集成](command:gitlens.showLaunchpad?%7B%22source%22%3A%22launchpad-indicator%22%7D "连接集成") 即可开始使用。 ID: eamodio.gitlens.gitlens.launchpad
+														264 按钮 rocket gitlens-unplug Launchpad, GitLens Launchpad ᴘʀᴏ &mdash; [$(question)](command:gitlens.launchpad.indicator.action?%22info%22 "这是什么？") [$(gear)](command:workbench.action.openSettings?%22gitlens.launchpad%22 "设置") | [$(circle-slash) 隐藏](command:gitlens.launchpad.indicator.action?%22hide%22 "隐藏") --- [Launchpad](command:gitlens.launchpad.indicator.action?%22info%22 "了解 Launchpad") 将你的拉取请求整理为可操作的分组，帮助你保持专注并让团队保持畅通。 始终可以通过命令面板中的 `GitLens: Open Launchpad` 命令访问它。 --- [连接集成](command:gitlens.showLaunchpad?%7B%22source%22%3A%22launchpad-indicator%22%7D "连接集成") 即可开始使用。
+													265 组 没有问题 ID: status.problems
+														266 按钮 没有问题
+													267 组 Git Graph, View Git Graph ID: mhutchie.git-graph
+														268 按钮 Git Graph, View Git Graph
+													269 组 通知 ID: status.notifications
+														270 按钮 通知
+													271 组 material-spark-off, Gemini Code Assist: Please log in to continue ID: google.geminicodeassist
+														272 按钮 material-spark-off, Gemini Code Assist: Please log in to continue
+													273 组 broadcast Go Live, Click to run live server ID: ritwickdey.LiveServer
+														274 按钮 broadcast Go Live, Click to run live server
+													416 组 Python 3.14 (64-bit), d:\Program Files\python.exe ID: ms-python.vscode-python-envs.python.interpreterDisplay
+														417 按钮 Python 3.14 (64-bit), d:\Program Files\python.exe
+													275 组 Copilot 状态 ID: chat.statusBarEntry
+														276 按钮 Copilot 状态
+													390 组 Python ID: status.editor.mode
+														391 按钮 Python
+													392 组 编辑器语言状态: Inline Suggestions, next: 自动导入补全: false, next: 诊断源: Pylance, next: 语言服务器模式: default, next: 类型检查: off, next: $(copilot) 无内联建议可用，内联建议 ID: status.languageStatus
+														393 按钮 编辑器语言状态: Inline Suggestions, next: 自动导入补全: false, next: 诊断源: Pylance, next: 语言服务器模式: default, next: 类型检查: off, next: $(copilot) 无内联建议可用，内联建议
+													394 组 LF ID: status.editor.eol
+														395 按钮 LF
+													396 组 UTF-8 ID: status.editor.encoding
+														397 按钮 UTF-8
+													398 组 空格: 4 ID: status.editor.indentation
+														399 按钮 空格: 4
+													400 组 行 3，列 1 ID: status.editor.selection
+														401 按钮 行 3，列 1
+												277 警报
+													610 文本 print("Ready B3"), 在辅助视图中检查此项 (Alt+F2)
+												279 警报
+												280 组
+												281 组
+												861 工具提示 运行 Python 文件
+								13 区域
+
+Document text: ```
+现在无法访问编辑器。 若要启用屏幕阅读器优化模式，请使用 Shift+Alt+F1
+```

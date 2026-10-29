@@ -1,0 +1,3 @@
+# 本轮GUI解释器选择产生的机器专属工作区设置仅保留本地。
+/runtime/editor-lab/.vscode/
+/CLEAN_EXPORT_PATH.txt

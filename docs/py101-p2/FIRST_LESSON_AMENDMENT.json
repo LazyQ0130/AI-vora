@@ -1,0 +1,13 @@
+{
+  "id": "PY101-C01-L01",
+  "section": "next-step",
+  "block": "last paragraph",
+  "beforeParagraph": "建议下一节学习1.2「解释器怎样找到并执行脚本」，把本节的一次成功运行推广到不同目录。1.2目前只有规划，尚无教材页。阅读器会按现有可读课时跳到第5章；第5章函数课还需要变量、表达式和控制流程等基础，零基础同学先保留本节成果，等待前序教材或补齐这些先修再读。",
+  "afterParagraph": "建议下一节学习1.2「解释器怎样找到并执行脚本」，把本节的一次成功运行推广到不同目录。1.2已有待人工审核的试读教材，完成后可继续1.3「用编辑器完成保存与重跑」的待审核试读。第5章函数课还需要变量、表达式和控制流程等基础，补齐后再读。",
+  "beforeObjectSha256": "a7196bd19ce7b5ddf204c30e5150a3275a3c8c82b36ee179a7fc0793d9f1e436",
+  "afterObjectSha256": "26fba207d52d7b47e6a926101aa0373a521773dbc61049a513c8c79e4222a555",
+  "beforeContentVersion": 1,
+  "afterContentVersion": 1,
+  "assessmentUnchanged": true,
+  "progressScopeUnchanged": true
+}
