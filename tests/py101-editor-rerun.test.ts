@@ -5,7 +5,7 @@ import { createHash } from "node:crypto";
 import { pythonEditorRerunLesson as lesson } from "../src/content/lessons/py101/editor-rerun";
 import { lessonRegistry, getLearningCourse, resolveLesson, getAdjacentLessons } from "../src/lib/course-engine";
 import { publicationManifest } from "../src/content/publication-manifest";
-import { beforeApprovedPy101Object, beforeApprovedPy101Source, protectedPy101FileMatches } from "../scripts/py101-p1-compatibility";
+import { beforeApprovedPy101Object, beforeApprovedPy101Source, protectedPy101FileMatches, approvedPy101Additions } from "../scripts/py101-p1-compatibility";
 import { createProgressStore, parseReadingProgress, progressKey } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
 import { editorFiles } from "../src/content/resources/python-editor";
@@ -18,8 +18,9 @@ test("P2登记只增加1.3，49旧课与发布、历史文件仍通过完整摘�
   assert.equal(protectedPy101FileMatches(portablePath, Buffer.from(portableText), base.files[portablePath]), true);
   assert.equal(protectedPy101FileMatches(portablePath, Buffer.from(portableText + "未授权"), base.files[portablePath]), false);
   const sha = (s: string | Buffer) => createHash("sha256").update(s).digest("hex");
-  assert.deepEqual([...lessonRegistry.keys()].sort(), [...Object.keys(base.lessons), lesson.id].sort());
-  assert.deepEqual(publicationManifest.map(p => p.lessonId).sort(), [...Object.keys(base.publications), lesson.id].sort());
+  const laterAdditions = approvedPy101Additions.filter(id => id !== lesson.id && !(id in base.lessons));
+  assert.deepEqual([...lessonRegistry.keys()].sort(), [...Object.keys(base.lessons), lesson.id, ...laterAdditions].sort());
+  assert.deepEqual(publicationManifest.map(p => p.lessonId).sort(), [...Object.keys(base.publications), lesson.id, ...laterAdditions].sort());
   for (const [id, hash] of Object.entries(base.lessons)) assert.equal(sha(JSON.stringify(beforeApprovedPy101Object("lessons", id, lessonRegistry.get(id)))), hash, id);
   for (const [id, hash] of Object.entries(base.publications)) assert.equal(sha(JSON.stringify(beforeApprovedPy101Object("publications", id, publicationManifest.find(p => p.lessonId === id)))), hash, id);
   for (const [path, hash] of Object.entries(base.files)) assert.ok(protectedPy101FileMatches(path, readFileSync(path), hash as string), path);
@@ -42,12 +43,12 @@ test("1.1只改最终状态段，目标、考核与r1进度范围严格相同；
   for (const path of ["next-env.d.ts", "scripts/ai000-r3-compatibility.ts", "src/components/lesson/reader.tsx", "tests/reading-experience.test.ts"]) assert.equal(protectedPy101FileMatches(path, Buffer.concat([readFileSync(path), Buffer.from("\n// undeclared")]), base.files[path]), false, path);
 });
 
-test("1.2接1.3，1.4–1.6无正文与路由；错误归属不可读", () => {
+test("1.2接1.3，未制作课无正文与路由；错误归属不可读", () => {
   const course = getLearningCourse("PY101")!;
   assert.equal(course.status, "planned"); assert.equal(lesson.contentVersion, 1);
   assert.equal(getAdjacentLessons(course, "PY101-C01-L02").next?.lessonId, lesson.id);
   assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, "PY101-C01-L02");
-  for (const slot of course.chapters[0].lessons.slice(3)) { assert.equal(slot.status, "planned"); assert.equal(slot.href, undefined); assert.equal(lessonRegistry.has(slot.lessonId), false); assert.equal(resolveLesson("PY101", slot.lessonId), undefined); }
+  for (const slot of course.chapters[0].lessons.filter(slot => slot.status === "planned")) { assert.equal(slot.href, undefined); assert.equal(lessonRegistry.has(slot.lessonId), false); assert.equal(resolveLesson("PY101", slot.lessonId), undefined); }
   assert.equal(resolveLesson("ML201", lesson.id), undefined);
 });
 

@@ -1,0 +1,10 @@
+{
+  "label": "create-exercise-label",
+  "checkedAt": "2026-10-29T12:16:28.701Z",
+  "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\tools\\label",
+  "shell": "PowerShell 7 on Windows -NoProfile",
+  "command": "python --version\npython -m venv .venv",
+  "stdout": "Python 3.14.2\r\n",
+  "stderr": "",
+  "exitCode": 0
+}

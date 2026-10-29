@@ -1,0 +1,318 @@
+Window: "observe_env.py - project-a - Visual Studio Code", App: Code.exe.
+	0 窗口 observe_env.py - project-a - Visual Studio Code Secondary Actions: Raise
+		1 窗格 (disabled)
+		2 区域 observe_env.py - project-a - Visual Studio Code
+			3 区域
+				4 区域
+					5 区域
+						6 按钮 最小化
+						7 按钮 最大化
+						8 按钮 关闭
+					9 区域
+						10 区域
+							11 区域
+								12 区域
+									13 文档 observe_env.py - project-a - Visual Studio Code Value: vscode-file://vscode-app/d:/VSCode/Microsoft%20VS%20Code/e646868227/resources/app/out/vs/code/electron-browser/workbench/workbench.html ID: RootWebArea
+										14 组
+											15 应用程序
+												16 组
+												17 组
+												18 组
+												19 菜单栏
+													20 菜单项 文件
+													21 菜单项 编辑
+													22 菜单项 选择
+													23 菜单项 查看
+													24 菜单项 转到
+													25 菜单项 更多
+												501 工具栏
+													502 按钮 (disabled) 返回 (Alt+LeftArrow)
+													503 按钮 (disabled) 前进 (Alt+RightArrow)
+													504 工具栏 智能体状态
+														505 按钮 打开快速访问
+														506 组
+															507 按钮 切换聊天
+																508 按钮 切换聊天
+															509 组
+																510 组
+																	511 按钮 更多操作
+												37 工具栏
+													38 按钮 在智能体窗口中打开 (Ctrl+Shift+Alt+A)
+												39 工具栏 标题操作
+													519 切换按钮 切换主侧栏 (Ctrl+B)
+														520 文本 
+													521 按钮 自定义布局...
+													522 切换按钮 切换面板 (Ctrl+J)
+														523 文本 
+													524 切换按钮 切换辅助侧栏 (Ctrl+Alt+B)
+														525 文本 
+												47 组
+												48 组
+												49 组
+												50 选项卡 活动视图切换器
+													51 选项卡项目 (selectable) 资源管理器 (Ctrl+Shift+E)
+														52 组 资源管理器 (Ctrl+Shift+E)
+													53 选项卡项目 (selectable) 搜索 (Ctrl+Shift+F)
+														54 组 搜索 (Ctrl+Shift+F)
+													55 选项卡项目 (selectable) 源代码管理 (Ctrl+Shift+G)
+														56 组 源代码管理 (Ctrl+Shift+G)
+													57 选项卡项目 (selectable) 运行和调试 (Ctrl+Shift+D)
+														58 组 运行和调试 (Ctrl+Shift+D)
+													59 选项卡项目 (selectable) 扩展 (Ctrl+Shift+X)
+														60 组 扩展 (Ctrl+Shift+X)
+													61 选项卡项目 (selectable) 测试
+														62 组 测试
+													63 选项卡项目 (selectable) Microsoft Edge Tools
+														64 组 Microsoft Edge Tools
+													65 选项卡项目 (selectable) Python
+														66 组 Python
+													67 选项卡项目 (selectable) GitLens
+														68 组 GitLens
+													69 选项卡项目 (selectable) GitLens 检查器
+														70 组 GitLens 检查器
+													71 选项卡项目 (selectable) GitHub
+														72 组 GitHub
+													73 选项卡项目 (selectable) Gemini Code Assist (Alt+G)
+														74 组 Gemini Code Assist (Alt+G)
+												75 工具栏 管理
+													76 按钮 帐户
+														77 组 帐户
+															78 文本 
+													79 按钮 管理
+														80 组 管理
+															81 文本 
+												82 标题 资源管理器
+												83 工具栏 资源管理器操作
+													84 组
+														85 组
+															86 按钮 视图和更多操作…
+												87 工具栏
+												88 组
+												89 组
+												90 按钮 资源管理器部分: project-a
+													91 标题 资源管理器部分: project-a
+												92 树 文件资源管理器
+													93 树项目 (selectable) .venv ID: list_id_3_0
+														94 组 <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-a\.venv
+													95 树项目 (selectable) main.py ID: list_id_3_1
+														96 组 <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-a\main.py
+													97 树项目 (selectable) observe_env.py ID: list_id_3_2
+														98 组 <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-a\observe_env.py
+												99 按钮 大纲部分
+													100 标题 大纲
+												101 按钮 时间线部分
+													102 标题 时间线
+												103 组
+												104 主要 ID: workbench.parts.editor
+													105 组
+														106 选项卡
+															107 选项卡项目 (selectable) observe_env.py，预览
+																108 组 observe_env.py
+																109 工具栏 选项卡操作
+																	110 按钮 关闭 (Ctrl+F4)
+														111 工具栏 编辑器操作
+															636 组
+																637 按钮 运行 Python 文件
+															638 组
+																639 组
+																	640 按钮 运行或调试...
+															641 按钮 Open Codex Sidebar
+															642 组
+																643 组
+																	644 按钮 更多操作...
+																		645 文本 
+														296 列表
+															297 列表项目 observe_env.py
+																298 组 <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-a\observe_env.py
+																	299 文本 
+																	300 文本 observe_env.py
+													301 组 observe_env.py，预览
+														326 代码
+															327 编辑器 (settable, string) observe_env.py，预览
+												536 选项卡 活动视图切换器
+													537 选项卡项目 (selectable) 问题 (Ctrl+Shift+M)
+														538 组 问题 (Ctrl+Shift+M)
+													539 选项卡项目 (selectable) 输出 (Ctrl+Shift+U)
+														540 组 输出 (Ctrl+Shift+U)
+													541 选项卡项目 (selectable) 调试控制台 (Ctrl+Shift+Y)
+														542 组 调试控制台 (Ctrl+Shift+Y)
+													543 选项卡项目 (selectable) 终端 (Ctrl+`)
+														544 组 终端 (Ctrl+`)
+													545 选项卡项目 (selectable) 端口
+														546 组 端口
+												547 工具栏 终端操作
+													647 按钮 新建终端 (Ctrl+Shift+`) [Alt] 拆分终端 (Ctrl+Shift+5)
+														648 按钮 新建终端 (Ctrl+Shift+`) [Alt] 拆分终端 (Ctrl+Shift+5)
+													649 组
+														650 组
+															651 按钮 启动配置文件...
+													652 按钮 聚焦到终端 (Ctrl+DownArrow) [Alt] 拆分终端 (Ctrl+Shift+5)
+													653 按钮 拆分终端 (Ctrl+Shift+5)
+													654 按钮 终止终端
+													655 组
+														656 组
+															657 按钮 视图和更多操作…
+													658 组 (disabled)
+												560 工具栏
+													561 切换按钮 最大化面板
+														562 文本 
+													563 按钮 隐藏面板 (Ctrl+J)
+												564 组
+													565 组
+														566 列表
+															567 列表项目 ject-a> & <WORKSPACE>\docs\py101-p3\runtime\python-projects\proj
+															568 列表项目 ect-a\.venv\Scripts\python.exe <WORKSPACE>/docs/py101-p3/runtime
+															569 列表项目 /python-projects/project-a/observe_env.py
+															570 列表项目 Interpreter: <WORKSPACE>\docs\py101-p3\runtime\python-projects\p
+															571 列表项目 roject-a\.venv\Scripts\python.exe
+															572 列表项目 Environment: <WORKSPACE>\docs\py101-p3\runtime\python-projects\p
+															573 列表项目 roject-a\.venv
+															574 列表项目 Base Python: D:\Program Files
+															575 列表项目 Version: 3.14.2
+															576 列表项目 (.venv) PS <WORKSPACE>\docs\py101-p3\runtime\python-projects\pro
+															577 列表项目 ject-a>
+														578 组
+															686 文本 PS <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-a> (Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; (& <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-a\.venv\Scripts\Activate.ps1) Set-ExecutionPolicy : 在模块“Microsoft.PowerShell.Security”中找到“Set-ExecutionP olicy”命令，但无法加载该模块。有关详细信息，请运行“Import-Module Microsoft.PowerS hell.Security”。 所在位置 行:1 字符: 2 + (Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; ... + ~~~~~~~~~~~~~~~~~~~ + CategoryInfo : ObjectNotFound: (Set-ExecutionPolicy:String) [], Com mandNotFoundException + FullyQualifiedErrorId : CouldNotAutoloadMatchingModule (.venv) PS <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-a> & <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-a\.venv\Scripts\python.exe <WORKSPACE>/docs/py101-p3/runtime/python-projects/project-a/observe_env.py Interpreter: <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-a\.venv\Scripts\python.exe Environment: <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-a\.venv Base Python: D:\Program Files Version: 3.14.2 (.venv) PS <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-a>
+														579 图像
+														580 组
+															581 编辑 (settable, string) 终端 2，Python 使用 Alt+F1 获取终端辅助功能帮助
+															676 组
+																677 文本 
+															679 文本 
+															614 图像
+															615 图像
+													680 组 Description: 导航到命令 滚动到上一条命令 (Ctrl+UpArrow) 滚动到下一条命令 (Ctrl+DownArrow)
+													681 组
+														682 组
+															683 编辑 (settable, string) 终端输入
+															684 图像
+															685 图像
+												182 选项卡 活动视图切换器
+													183 选项卡项目 (selectable) 聊天 (Ctrl+Alt+I)
+														184 组 聊天 (Ctrl+Alt+I)
+													185 选项卡项目 (selectable) Codex
+														186 组 Codex
+												187 工具栏 聊天操作
+													665 组
+														666 按钮 新建聊天 (Ctrl+N)
+													667 组
+														668 组
+															669 按钮 新建聊天
+													670 按钮 打开自定义
+													671 组
+														672 组
+															673 按钮 视图和更多操作…
+													674 组 (disabled)
+												198 工具栏
+													199 切换按钮 最大化辅助侧栏
+														200 文本 
+													201 按钮 隐藏辅助侧栏 (Ctrl+Alt+B)
+												202 组
+													203 文本 会话
+												204 工具栏
+													205 按钮 刷新智能体会话
+													206 按钮 查找智能体会话
+													207 组
+														208 组
+															209 按钮 筛选智能体会话
+																210 文本 
+													211 按钮 显示智能体会话边栏
+												212 树 智能体会话
+												213 组
+													214 组
+													215 工具栏 Session status
+														216 按钮 未提交更改: 58 Files, +23734, -22
+													217 提示 提示: 在 智能体窗口中一次性跨多个项目工作。 按 Tab 执行操作。
+														218 组
+															219 文本 提示:
+															220 文本 在 智能体窗口中一次性跨多个项目工作。
+														221 工具栏
+															222 按钮 上一个提示
+															223 按钮 下一提示
+															224 按钮 关闭提示
+															225 按钮 禁用提示
+													338 组
+														628 组 建议的上下文、文件、observe_env.py file:///c%3A/Users/QYF/Desktop/Aivora-Web/docs/py101-p3/runtime/python-projects/project-a
+															629 按钮 将 file:observe_env.py 添加到上下文
+															630 组 启用当前 文件 上下文 observe_env.py
+																631 文本 
+																632 文本 observe_env.py
+													226 代码
+														227 编辑器 (settable, string) 聊天输入 (智能体)，编辑工作区中的文件。，Auto。 按 Enter 键发送请求。使用 Alt+F1 以获取聊天辅助功能帮助。 Value:
+															228 文本
+														229 文本 与 Copilot 聊天
+													230 组
+														231 工具栏
+															344 按钮 添加上下文... (Ctrl+/)
+															345 组
+																346 组
+																	347 按钮 Agent
+																		348 文本 
+																		349 文本 Agent
+															350 组 Models, Auto
+																351 按钮 Models, Auto
+																	352 文本 
+																	353 文本 Auto
+																354 按钮 Auto details, Optimize for: Balance
+														243 工具栏
+															244 切换按钮 Dictate (Speech to Text) (Ctrl+I)
+																518 文本 
+															246 按钮 (disabled) 发送 [Alt] 发送到新聊天 (Ctrl+Shift+Enter)
+													247 工具栏
+														248 组
+															249 组
+																250 按钮 Copilot
+																	251 文本 
+																	252 文本 Copilot
+														253 组 Pick Mode and Permissions, 交互式, Manual permissions
+															254 按钮 Pick Mode, 交互式
+															255 按钮 Pick Permissions, Manual permissions
+														256 切换按钮 Allow connections from other machines and vscode.dev/agents
+															257 文本 
+												258 状态 ID: workbench.parts.statusbar
+													259 组 remote ID: status.host
+														260 按钮 remote
+													261 组 显示 GitLens 提交图 ID: eamodio.gitlens.gitlens.graph
+														262 按钮 显示 GitLens 提交图
+													263 组 rocket gitlens-unplug Launchpad, GitLens Launchpad ᴘʀᴏ &mdash; [$(question)](command:gitlens.launchpad.indicator.action?%22info%22 "这是什么？") [$(gear)](command:workbench.action.openSettings?%22gitlens.launchpad%22 "设置") | [$(circle-slash) 隐藏](command:gitlens.launchpad.indicator.action?%22hide%22 "隐藏") --- [Launchpad](command:gitlens.launchpad.indicator.action?%22info%22 "了解 Launchpad") 将你的拉取请求整理为可操作的分组，帮助你保持专注并让团队保持畅通。 始终可以通过命令面板中的 `GitLens: Open Launchpad` 命令访问它。 --- [连接集成](command:gitlens.showLaunchpad?%7B%22source%22%3A%22launchpad-indicator%22%7D "连接集成") 即可开始使用。 ID: eamodio.gitlens.gitlens.launchpad
+														264 按钮 rocket gitlens-unplug Launchpad, GitLens Launchpad ᴘʀᴏ &mdash; [$(question)](command:gitlens.launchpad.indicator.action?%22info%22 "这是什么？") [$(gear)](command:workbench.action.openSettings?%22gitlens.launchpad%22 "设置") | [$(circle-slash) 隐藏](command:gitlens.launchpad.indicator.action?%22hide%22 "隐藏") --- [Launchpad](command:gitlens.launchpad.indicator.action?%22info%22 "了解 Launchpad") 将你的拉取请求整理为可操作的分组，帮助你保持专注并让团队保持畅通。 始终可以通过命令面板中的 `GitLens: Open Launchpad` 命令访问它。 --- [连接集成](command:gitlens.showLaunchpad?%7B%22source%22%3A%22launchpad-indicator%22%7D "连接集成") 即可开始使用。
+													265 组 没有问题 ID: status.problems
+														266 按钮 没有问题
+													267 组 Git Graph, View Git Graph ID: mhutchie.git-graph
+														268 按钮 Git Graph, View Git Graph
+													269 组 通知 ID: status.notifications
+														270 按钮 通知
+													271 组 material-spark-off, Gemini Code Assist: Please log in to continue ID: google.geminicodeassist
+														272 按钮 material-spark-off, Gemini Code Assist: Please log in to continue
+													273 组 broadcast Go Live, Click to run live server ID: ritwickdey.LiveServer
+														274 按钮 broadcast Go Live, Click to run live server
+													355 组 .venv (3.14.2), <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-a\.venv\Scripts\python.exe ID: ms-python.vscode-python-envs.python.interpreterDisplay
+														356 按钮 .venv (3.14.2), <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-a\.venv\Scripts\python.exe
+													275 组 Copilot 状态 ID: chat.statusBarEntry
+														276 按钮 Copilot 状态
+													357 组 Python ID: status.editor.mode
+														358 按钮 Python
+													359 组 编辑器语言状态: 自动导入补全: false, next: 诊断源: Pylance, next: 语言服务器模式: default, next: 类型检查: off, next: $(copilot) 无内联建议可用，内联建议 ID: status.languageStatus
+														360 按钮 编辑器语言状态: 自动导入补全: false, next: 诊断源: Pylance, next: 语言服务器模式: default, next: 类型检查: off, next: $(copilot) 无内联建议可用，内联建议
+													361 组 LF ID: status.editor.eol
+														362 按钮 LF
+													363 组 UTF-8 ID: status.editor.encoding
+														364 按钮 UTF-8
+													365 组 空格: 4 ID: status.editor.indentation
+														366 按钮 空格: 4
+													367 组 行 1，列 1 ID: status.editor.selection
+														368 按钮 行 1，列 1
+													277 组 已为屏幕阅读器优化 ID: status.editor.screenReaderMode
+														278 按钮 已为屏幕阅读器优化
+												279 警报
+													280 文本 Auto
+												281 警报
+												282 组
+												283 组
+													678 文本 命令成功
+												675 工具提示 运行 Python 文件
+								284 区域
+
+Document text: ```
+终端输入
+```

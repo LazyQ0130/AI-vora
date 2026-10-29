@@ -144,5 +144,5 @@ test("24节相邻导航与待审核门禁保持，7.4没有正文；保存说明
   assert.equal(ids.length,24);ids.forEach((id,i)=>{const adjacent=getAdjacentLessons(course,id);assert.equal(adjacent.previous?.lessonId,ids[i-1]);assert.equal(adjacent.next?.lessonId,ids[i+1]);});
   for(const id of ["AI000-C07-L04"]){assert.equal(resolveLesson("AI000",id),undefined);assert.equal(lessonRegistry.has(id),false);}
   assert.ok(blocks(get("AI000-C01-L01")).some(b=>b.type==="paragraph"&&b.text.includes("复制到笔记里")));
-  for(const p of publicationManifest){assert.equal(p.status,"pending-review");assert.equal(p.access,"preview");assert.equal(p.reviewEvidence,undefined);}
+  for(const p of publicationManifest.filter(entry=>entry.courseId==="AI000")){assert.equal(p.status,"pending-review");assert.equal(p.access,"preview");assert.equal(p.reviewEvidence,undefined);}
 });

@@ -39,6 +39,14 @@ const examples = [...lessonRegistry.values()].flatMap((lesson) =>
     section.blocks.flatMap((block) => {
       if (block.type !== "code" || block.language !== "python") return [];
       const result = run(["-c", block.code]);
+      if (lesson.id === "PY101-C01-L04") {
+        const independentExpected: Record<string, string> = { "project-a/main.py": "Project A A4", "project-b/main.py": "Project B B6" };
+        if (independentExpected[block.filename] !== undefined && result.stdout !== independentExpected[block.filename]) throw new Error(`虚拟环境课源码输出不符：${block.filename}`);
+        if (block.filename.startsWith("observe_env.py")) {
+          for (const label of ["Interpreter:", "Environment:", "Base Python:", "Version:"]) if (!result.stdout.includes(label)) throw new Error(`诊断字段遗漏：${label}`);
+          // 全网页校验在当前基础Python执行；目标venv判据另由真实环境专项验证。
+        }
+      }
       const expected = ({ "第一条Python指令": "Hello, Aivora!", "first_run.py": "Hello, Aivora!\nFile: first_run.py", "read_vector_components.py": "4 0 7", "add_two_vectors.py": "[2, 3]", "scale_vector.py": "[-6, -4]", "double_without_function.py":"6", "double_definition.py":"", "one_update.py":"-13.0 -8.0 1.3 0.8 1.685", "one_update_checks.py":"-13.0 -8.0 1.3 0.8 1.685" } as Record<string,string>)[block.filename];
       if (expected !== undefined && result.stdout !== expected)
         throw new Error(`教材输出与预期不一致：${block.filename}`);

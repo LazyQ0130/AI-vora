@@ -6,7 +6,8 @@ const revisedCoreLessons: Record<string, number> = { "MA101-C02-L03": 2, "PY101-
 
 // 发布权限独立于原始课程规划。技术证据不替代人工审核。
 export const publicationManifest = [
-  {lessonId:"PY101-C01-L03",courseId:"PY101",chapterId:"PY101-C01",title:"用编辑器完成保存与重跑",contentVersion:1,order:3,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p2/TECHNICAL_REPORT.md"},
+  {lessonId:"PY101-C01-L04",courseId:"PY101",chapterId:"PY101-C01",title:"为项目准备独立的虚拟环境",contentVersion:1,order:4,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p3/TECHNICAL_REPORT.md"},
+  {lessonId:"PY101-C01-L03",courseId:"PY101",chapterId:"PY101-C01",title:"用编辑器完成保存与重跑",contentVersion:1,order:3,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p3/TRANSITION_AMENDMENT.md"},
   {lessonId:"PY101-C01-L02",courseId:"PY101",chapterId:"PY101-C01",title:"解释器怎样找到并执行脚本",contentVersion:1,order:2,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p1/TECHNICAL_REPORT.md"},
   {lessonId:"PY101-C01-L01",courseId:"PY101",chapterId:"PY101-C01",title:"从零运行第一个Python程序",contentVersion:1,order:1,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p2/FIRST_LESSON_AMENDMENT.md"},
   {lessonId:"AI000-C07-L03",courseId:"AI000",chapterId:"AI000-C07",title:"综合实践：分析 AI 问题并制定学习计划",contentVersion:1,order:3,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_7_3_AND_COURSE_REVIEW.md"},

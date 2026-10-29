@@ -1,0 +1,131 @@
+{
+  "checkedAt": "2026-10-29T12:40:39.773Z",
+  "base": "http://127.0.0.1:3004",
+  "checks": [
+    {
+      "check": "desktop",
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "check": "windows-copy-paste",
+      "pasted": "& \".\\.venv\\Scripts\\python.exe\" .\\main.py",
+      "expected": "& \".\\.venv\\Scripts\\python.exe\" .\\main.py",
+      "passed": true
+    },
+    {
+      "check": "mac-copy-paste",
+      "pasted": "./.venv/bin/python main.py",
+      "passed": true
+    },
+    {
+      "check": "exercise-create-project-envs",
+      "details": [
+        {
+          "label": "提示 1",
+          "open": true
+        },
+        {
+          "label": "提示 2",
+          "open": true
+        },
+        {
+          "label": "参考解答与自查标准",
+          "open": true
+        }
+      ]
+    },
+    {
+      "check": "exercise-repair-wrong-env",
+      "details": [
+        {
+          "label": "提示 1",
+          "open": true
+        },
+        {
+          "label": "提示 2",
+          "open": true
+        },
+        {
+          "label": "参考解答与自查标准",
+          "open": true
+        }
+      ]
+    },
+    {
+      "check": "quiz",
+      "wrong": "再想一想",
+      "correct": true
+    },
+    {
+      "check": "progress-reload-and-isolation",
+      "restoredCompleted": true,
+      "oldChangedKeys": []
+    },
+    {
+      "check": "tablet",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "check": "tablet-directory",
+      "plannedLinks": 0
+    },
+    {
+      "check": "mobile",
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "check": "mobile-jump-and-solution",
+      "url": "http://127.0.0.1:3004/learn/PY101/PY101-C01-L04#exercise-repair-wrong-env",
+      "dialogClosed": true
+    },
+    {
+      "check": "narrow-open-solutions-after-fix",
+      "overflowingAnswers": 0,
+      "scrollWidth": 305,
+      "width": 320,
+      "passed": true
+    },
+    {
+      "check": "long-path-scroll",
+      "windows": {
+        "clientWidth": 254,
+        "overflowX": "auto",
+        "scrollWidth": 475
+      },
+      "mac": {
+        "clientWidth": 254,
+        "overflowX": "auto",
+        "scrollWidth": 374
+      }
+    },
+    {
+      "check": "adjacent-1.3-1.4",
+      "href": "/learn/PY101/PY101-C01-L04"
+    },
+    {
+      "check": "404",
+      "path": "/learn/ML201/PY101-C01-L04",
+      "heading": "这里，还没有被探索。"
+    },
+    {
+      "check": "404",
+      "path": "/learn/PY101/PY101-C01-L05",
+      "heading": "这里，还没有被探索。"
+    },
+    {
+      "check": "404",
+      "path": "/learn/PY101/PY101-C01-L06",
+      "heading": "这里，还没有被探索。"
+    },
+    {
+      "check": "course-planned",
+      "planned": true,
+      "originalHours": true,
+      "tenChapters": true
+    }
+  ],
+  "limitations": "第一次复制读取到旧剪贴板；在当前页重新点击后readText/CDP与实际粘贴均匹配。reload初始一次点击定位失效，重新观察状态后再展开。均未注入脚本修改页面或存储。"
+}

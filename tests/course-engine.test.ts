@@ -18,7 +18,13 @@ import { sampleLesson } from "../src/content/sample";
 
 test("课程引擎保留规划章节，真实教材按课程和章节关联", () => {
   for (const entry of publicationManifest) {
-    const resolved = resolveLesson(entry.courseId, entry.lessonId)!;
+    const resolved = resolveLesson(entry.courseId, entry.lessonId);
+    if (!isReadable(entry)) {
+      assert.equal(resolved, undefined);
+      assert.equal(entry.access, "private");
+      assert.ok(lessonRegistry.has(entry.lessonId));
+      continue;
+    }
     assert.ok(resolved);
     assert.equal(resolved.chapter.id, entry.chapterId);
     assert.equal(resolved.course.status, "planned");
@@ -39,7 +45,7 @@ test("课程引擎保留规划章节，真实教材按课程和章节关联", ()
   );
 });
 test("发布权限拒绝无证据发布和草稿试读；未审核不得正式发布", () => {
-  const base = publicationManifest[0];
+  const base = publicationManifest.find(isReadable)!;
   for (const status of [
     "draft",
     "pending-validation",

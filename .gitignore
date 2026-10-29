@@ -9,3 +9,4 @@ out/
 .workbuddy/
 __pycache__/
 .pytest_cache/
+.venv/

@@ -155,6 +155,7 @@
 }
 .guided-exercise details li {
   margin-bottom: 10px;
+  overflow-wrap: anywhere;
 }
 .guided-exercise h4 {
   font-size: 14px;

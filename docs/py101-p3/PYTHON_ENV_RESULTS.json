@@ -1,0 +1,301 @@
+{
+  "checkedAt": "2026-10-29T12:16:33.422Z",
+  "platform": "win32",
+  "base": {
+    "Interpreter": "D:\\Program Files\\python.exe",
+    "Environment": "D:\\Program Files",
+    "Base Python": "D:\\Program Files",
+    "Version": "3.14.2"
+  },
+  "successfulActivation": "PowerShell 7 on Windows",
+  "runs": [
+    {
+      "label": "base-python",
+      "checkedAt": "2026-10-29T12:16:11.270Z",
+      "cwd": "<WORKSPACE>",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "python '<WORKSPACE>\\docs\\py101-p3\\runtime\\observe_base.py'",
+      "stdout": "Interpreter: D:\\Program Files\\python.exe\r\nEnvironment: D:\\Program Files\r\nBase Python: D:\\Program Files\r\nVersion: 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "os-and-policy-read-only",
+      "checkedAt": "2026-10-29T12:16:11.693Z",
+      "cwd": "<WORKSPACE>",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "[Environment]::OSVersion.VersionString; $PSVersionTable.PSVersion.ToString(); Get-ExecutionPolicy -List | ConvertTo-Json",
+      "stdout": "Microsoft Windows NT 10.0.26300.0\r\n7.6.5\r\n[\r\n  {\r\n    \"Scope\": 4,\r\n    \"ExecutionPolicy\": 5\r\n  },\r\n  {\r\n    \"Scope\": 3,\r\n    \"ExecutionPolicy\": 5\r\n  },\r\n  {\r\n    \"Scope\": 0,\r\n    \"ExecutionPolicy\": 5\r\n  },\r\n  {\r\n    \"Scope\": 1,\r\n    \"ExecutionPolicy\": 5\r\n  },\r\n  {\r\n    \"Scope\": 2,\r\n    \"ExecutionPolicy\": 1\r\n  }\r\n]\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "create-project-a",
+      "checkedAt": "2026-10-29T12:16:15.349Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "python --version\npython -m venv .venv",
+      "stdout": "Python 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "inspect-project-a",
+      "checkedAt": "2026-10-29T12:16:15.760Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "Get-Location; Get-ChildItem -Force; Get-Item .venv\\Scripts\\python.exe | Select-Object Name,Length",
+      "stdout": "\r\nPath\r\n----\r\n<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a\r\n\r\nPSPath              : Microsoft.PowerShell.Core\\FileSystem::<WORKSPACE>\\docs\\py101-p3\\runtime\\pytho\r\n                      n-projects\\project-a\\.venv\r\nPSParentPath        : Microsoft.PowerShell.Core\\FileSystem::<WORKSPACE>\\docs\\py101-p3\\runtime\\pytho\r\n                      n-projects\\project-a\r\nPSChildName         : .venv\r\nPSDrive             : C\r\nPSProvider          : Microsoft.PowerShell.Core\\FileSystem\r\nPSIsContainer       : True\r\nName                : .venv\r\nParent              : <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a\r\nRoot                : C:\\\r\nExists              : True\r\nFullName            : <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a\\.venv\r\nExtension           : .venv\r\nCreationTime        : 2026/10/29 20:16:12\r\nCreationTimeUtc     : 2026/10/29 12:16:12\r\nLastAccessTime      : 2026/10/29 20:16:12\r\nLastAccessTimeUtc   : 2026/10/29 12:16:12\r\nLastWriteTime       : 2026/10/29 20:16:12\r\nLastWriteTimeUtc    : 2026/10/29 12:16:12\r\nLinkTarget          : \r\nUnixFileMode        : -1\r\nAttributes          : Directory\r\nMode                : d----\r\nModeWithoutHardLink : d----\r\nBaseName            : .venv\r\nResolvedTarget      : <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a\\.venv\r\nTarget              : \r\nLinkType            : \r\n\r\n\r\nLastWriteTime : 2026/10/29 20:16:11\r\nLength        : 22\r\nName          : main.py\r\n\r\n\r\nLastWriteTime : 2026/10/29 20:16:11\r\nLength        : 165\r\nName          : observe_env.py\r\n\r\n\r\nName   : python.exe\r\nLength : 255320\r\n\r\n\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "run-project-a",
+      "checkedAt": "2026-10-29T12:16:16.101Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\main.py",
+      "stdout": "Project A A4\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "expected": "Project A A4\n"
+    },
+    {
+      "label": "probe-project-a",
+      "checkedAt": "2026-10-29T12:16:16.465Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+      "stdout": "Interpreter: <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a\\.venv\\Scripts\\python.exe\r\nEnvironment: <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a\\.venv\r\nBase Python: D:\\Program Files\r\nVersion: 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "create-project-b",
+      "checkedAt": "2026-10-29T12:16:19.865Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-b",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "python --version\npython -m venv .venv",
+      "stdout": "Python 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "inspect-project-b",
+      "checkedAt": "2026-10-29T12:16:20.289Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-b",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "Get-Location; Get-ChildItem -Force; Get-Item .venv\\Scripts\\python.exe | Select-Object Name,Length",
+      "stdout": "\r\nPath\r\n----\r\n<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-b\r\n\r\nPSPath              : Microsoft.PowerShell.Core\\FileSystem::<WORKSPACE>\\docs\\py101-p3\\runtime\\pytho\r\n                      n-projects\\project-b\\.venv\r\nPSParentPath        : Microsoft.PowerShell.Core\\FileSystem::<WORKSPACE>\\docs\\py101-p3\\runtime\\pytho\r\n                      n-projects\\project-b\r\nPSChildName         : .venv\r\nPSDrive             : C\r\nPSProvider          : Microsoft.PowerShell.Core\\FileSystem\r\nPSIsContainer       : True\r\nName                : .venv\r\nParent              : <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-b\r\nRoot                : C:\\\r\nExists              : True\r\nFullName            : <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-b\\.venv\r\nExtension           : .venv\r\nCreationTime        : 2026/10/29 20:16:16\r\nCreationTimeUtc     : 2026/10/29 12:16:16\r\nLastAccessTime      : 2026/10/29 20:16:16\r\nLastAccessTimeUtc   : 2026/10/29 12:16:16\r\nLastWriteTime       : 2026/10/29 20:16:16\r\nLastWriteTimeUtc    : 2026/10/29 12:16:16\r\nLinkTarget          : \r\nUnixFileMode        : -1\r\nAttributes          : Directory\r\nMode                : d----\r\nModeWithoutHardLink : d----\r\nBaseName            : .venv\r\nResolvedTarget      : <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-b\\.venv\r\nTarget              : \r\nLinkType            : \r\n\r\n\r\nLastWriteTime : 2026/10/29 20:16:16\r\nLength        : 22\r\nName          : main.py\r\n\r\n\r\nLastWriteTime : 2026/10/29 20:16:16\r\nLength        : 165\r\nName          : observe_env.py\r\n\r\n\r\nName   : python.exe\r\nLength : 255320\r\n\r\n\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "run-project-b",
+      "checkedAt": "2026-10-29T12:16:20.656Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-b",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\main.py",
+      "stdout": "Project B B6\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "expected": "Project B B6\n"
+    },
+    {
+      "label": "probe-project-b",
+      "checkedAt": "2026-10-29T12:16:20.987Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-b",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+      "stdout": "Interpreter: <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-b\\.venv\\Scripts\\python.exe\r\nEnvironment: <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-b\\.venv\r\nBase Python: D:\\Program Files\r\nVersion: 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "create-exercise-report",
+      "checkedAt": "2026-10-29T12:16:24.370Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\report",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "python --version\npython -m venv .venv",
+      "stdout": "Python 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "inspect-exercise-report",
+      "checkedAt": "2026-10-29T12:16:24.772Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\report",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "Get-Location; Get-ChildItem -Force; Get-Item .venv\\Scripts\\python.exe | Select-Object Name,Length",
+      "stdout": "\r\nPath\r\n----\r\n<WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\report\r\n\r\nPSPath              : Microsoft.PowerShell.Core\\FileSystem::<WORKSPACE>\\docs\\py101-p3\\runtime\\works\r\n                      hop\\report\\.venv\r\nPSParentPath        : Microsoft.PowerShell.Core\\FileSystem::<WORKSPACE>\\docs\\py101-p3\\runtime\\works\r\n                      hop\\report\r\nPSChildName         : .venv\r\nPSDrive             : C\r\nPSProvider          : Microsoft.PowerShell.Core\\FileSystem\r\nPSIsContainer       : True\r\nName                : .venv\r\nParent              : <WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\report\r\nRoot                : C:\\\r\nExists              : True\r\nFullName            : <WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\report\\.venv\r\nExtension           : .venv\r\nCreationTime        : 2026/10/29 20:16:21\r\nCreationTimeUtc     : 2026/10/29 12:16:21\r\nLastAccessTime      : 2026/10/29 20:16:21\r\nLastAccessTimeUtc   : 2026/10/29 12:16:21\r\nLastWriteTime       : 2026/10/29 20:16:21\r\nLastWriteTimeUtc    : 2026/10/29 12:16:21\r\nLinkTarget          : \r\nUnixFileMode        : -1\r\nAttributes          : Directory\r\nMode                : d----\r\nModeWithoutHardLink : d----\r\nBaseName            : .venv\r\nResolvedTarget      : <WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\report\\.venv\r\nTarget              : \r\nLinkType            : \r\n\r\n\r\nLastWriteTime : 2026/10/29 20:16:20\r\nLength        : 19\r\nName          : check.py\r\n\r\n\r\nLastWriteTime : 2026/10/29 20:16:20\r\nLength        : 165\r\nName          : observe_env.py\r\n\r\n\r\nName   : python.exe\r\nLength : 255320\r\n\r\n\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "run-exercise-report",
+      "checkedAt": "2026-10-29T12:16:25.143Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\report",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\check.py",
+      "stdout": "Report R8\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "expected": "Report R8\n"
+    },
+    {
+      "label": "probe-exercise-report",
+      "checkedAt": "2026-10-29T12:16:25.469Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\report",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+      "stdout": "Interpreter: <WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\report\\.venv\\Scripts\\python.exe\r\nEnvironment: <WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\report\\.venv\r\nBase Python: D:\\Program Files\r\nVersion: 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "create-exercise-label",
+      "checkedAt": "2026-10-29T12:16:28.701Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\tools\\label",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "python --version\npython -m venv .venv",
+      "stdout": "Python 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "inspect-exercise-label",
+      "checkedAt": "2026-10-29T12:16:29.123Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\tools\\label",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "Get-Location; Get-ChildItem -Force; Get-Item .venv\\Scripts\\python.exe | Select-Object Name,Length",
+      "stdout": "\r\nPath\r\n----\r\n<WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\tools\\label\r\n\r\nPSPath              : Microsoft.PowerShell.Core\\FileSystem::<WORKSPACE>\\docs\\py101-p3\\runtime\\works\r\n                      hop\\tools\\label\\.venv\r\nPSParentPath        : Microsoft.PowerShell.Core\\FileSystem::<WORKSPACE>\\docs\\py101-p3\\runtime\\works\r\n                      hop\\tools\\label\r\nPSChildName         : .venv\r\nPSDrive             : C\r\nPSProvider          : Microsoft.PowerShell.Core\\FileSystem\r\nPSIsContainer       : True\r\nName                : .venv\r\nParent              : <WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\tools\\label\r\nRoot                : C:\\\r\nExists              : True\r\nFullName            : <WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\tools\\label\\.venv\r\nExtension           : .venv\r\nCreationTime        : 2026/10/29 20:16:25\r\nCreationTimeUtc     : 2026/10/29 12:16:25\r\nLastAccessTime      : 2026/10/29 20:16:25\r\nLastAccessTimeUtc   : 2026/10/29 12:16:25\r\nLastWriteTime       : 2026/10/29 20:16:25\r\nLastWriteTimeUtc    : 2026/10/29 12:16:25\r\nLinkTarget          : \r\nUnixFileMode        : -1\r\nAttributes          : Directory\r\nMode                : d----\r\nModeWithoutHardLink : d----\r\nBaseName            : .venv\r\nResolvedTarget      : <WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\tools\\label\\.venv\r\nTarget              : \r\nLinkType            : \r\n\r\n\r\nLastWriteTime : 2026/10/29 20:16:25\r\nLength        : 165\r\nName          : observe_env.py\r\n\r\n\r\nLastWriteTime : 2026/10/29 20:16:25\r\nLength        : 18\r\nName          : tag.py\r\n\r\n\r\nName   : python.exe\r\nLength : 255320\r\n\r\n\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "run-exercise-label",
+      "checkedAt": "2026-10-29T12:16:29.466Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\tools\\label",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\tag.py",
+      "stdout": "Label L9\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "expected": "Label L9\n"
+    },
+    {
+      "label": "probe-exercise-label",
+      "checkedAt": "2026-10-29T12:16:29.783Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\tools\\label",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+      "stdout": "Interpreter: <WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\tools\\label\\.venv\\Scripts\\python.exe\r\nEnvironment: <WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\tools\\label\\.venv\r\nBase Python: D:\\Program Files\r\nVersion: 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "wrong-env-same-script",
+      "checkedAt": "2026-10-29T12:16:30.142Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "& \"..\\project-b\\.venv\\Scripts\\python.exe\" .\\main.py\n& \"..\\project-b\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+      "stdout": "Project A A4\r\nInterpreter: <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-b\\.venv\\Scripts\\python.exe\r\nEnvironment: <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-b\\.venv\r\nBase Python: D:\\Program Files\r\nVersion: 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "repair-to-project-a",
+      "checkedAt": "2026-10-29T12:16:30.449Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+      "stdout": "Interpreter: <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a\\.venv\\Scripts\\python.exe\r\nEnvironment: <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a\\.venv\r\nBase Python: D:\\Program Files\r\nVersion: 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "exercise-wrong-env",
+      "checkedAt": "2026-10-29T12:16:30.793Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\report",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "& \"..\\tools\\label\\.venv\\Scripts\\python.exe\" .\\check.py\n& \"..\\tools\\label\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+      "stdout": "Report R8\r\nInterpreter: <WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\tools\\label\\.venv\\Scripts\\python.exe\r\nEnvironment: <WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\tools\\label\\.venv\r\nBase Python: D:\\Program Files\r\nVersion: 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "exercise-repair-run",
+      "checkedAt": "2026-10-29T12:16:31.105Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\report",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\check.py",
+      "stdout": "Report R8\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "exercise-repair-probe",
+      "checkedAt": "2026-10-29T12:16:31.435Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\report",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+      "stdout": "Interpreter: <WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\report\\.venv\\Scripts\\python.exe\r\nEnvironment: <WORKSPACE>\\docs\\py101-p3\\runtime\\workshop\\report\\.venv\r\nBase Python: D:\\Program Files\r\nVersion: 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "powershell-activate",
+      "checkedAt": "2026-10-29T12:16:31.900Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": ".\\.venv\\Scripts\\Activate.ps1\npython .\\observe_env.py",
+      "stdout": "Interpreter: <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a\\.venv\\Scripts\\python.exe\r\nEnvironment: <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a\\.venv\r\nBase Python: D:\\Program Files\r\nVersion: 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "deactivate",
+      "checkedAt": "2026-10-29T12:16:32.327Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": ".\\.venv\\Scripts\\Activate.ps1\ndeactivate\npython .\\observe_env.py",
+      "stdout": "Interpreter: D:\\Program Files\\python.exe\r\nEnvironment: D:\\Program Files\r\nBase Python: D:\\Program Files\r\nVersion: 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "activate-a-then-cd-b",
+      "checkedAt": "2026-10-29T12:16:32.742Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": ".\\.venv\\Scripts\\Activate.ps1\nSet-Location -LiteralPath '<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-b'\npython .\\observe_env.py",
+      "stdout": "Interpreter: <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a\\.venv\\Scripts\\python.exe\r\nEnvironment: <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-a\\.venv\r\nBase Python: D:\\Program Files\r\nVersion: 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "new-shell-no-inherited-activation",
+      "checkedAt": "2026-10-29T12:16:33.071Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-b",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "python .\\observe_env.py",
+      "stdout": "Interpreter: D:\\Program Files\\python.exe\r\nEnvironment: D:\\Program Files\r\nBase Python: D:\\Program Files\r\nVersion: 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "new-shell-direct-project-b",
+      "checkedAt": "2026-10-29T12:16:33.380Z",
+      "cwd": "<WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-b",
+      "shell": "PowerShell 7 on Windows -NoProfile",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+      "stdout": "Interpreter: <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-b\\.venv\\Scripts\\python.exe\r\nEnvironment: <WORKSPACE>\\docs\\py101-p3\\runtime\\python-projects\\project-b\\.venv\r\nBase Python: D:\\Program Files\r\nVersion: 3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0
+    }
+  ],
+  "gitIgnore": ".gitignore:12:.venv/\t\"docs\\\\py101-p3\\\\runtime\\\\python-projects\\\\project-a\\\\.venv\\\\Scripts\\\\python.exe\"\n.gitignore:12:.venv/\t\"docs\\\\py101-p3\\\\runtime\\\\python-projects\\\\project-b\\\\.venv\\\\Scripts\\\\python.exe\"\n.gitignore:12:.venv/\t\"docs\\\\py101-p3\\\\runtime\\\\workshop\\\\report\\\\.venv\\\\Scripts\\\\python.exe\"\n.gitignore:12:.venv/\t\"docs\\\\py101-p3\\\\runtime\\\\workshop\\\\tools\\\\label\\\\.venv\\\\Scripts\\\\python.exe\"\n",
+  "trackedEnvironmentFiles": [],
+  "scope": "Windows实际执行；macOS官方文档核验，未实测。现成诊断不代表学生掌握import/sys。",
+  "redaction": "仅用<WORKSPACE>/<USER>替代真实目录前缀，其余路径关系与实际输出保持。"
+}

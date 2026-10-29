@@ -1,0 +1,318 @@
+Window: "observe_env.py - project-b - Visual Studio Code", App: Code.exe.
+	0 窗口 observe_env.py - project-b - Visual Studio Code Secondary Actions: Raise
+		1 窗格 (disabled)
+		2 区域 observe_env.py - project-b - Visual Studio Code
+			3 区域
+				4 区域
+					5 区域
+						6 按钮 最小化
+						7 按钮 最大化
+						8 按钮 关闭
+					9 区域
+						10 区域
+							11 区域
+								12 区域
+									14 文档 observe_env.py - project-b - Visual Studio Code Value: vscode-file://vscode-app/d:/VSCode/Microsoft%20VS%20Code/e646868227/resources/app/out/vs/code/electron-browser/workbench/workbench.html ID: RootWebArea
+										15 组
+											16 应用程序
+												17 组
+												18 组
+												19 组
+												20 菜单栏
+													21 菜单项 文件
+													22 菜单项 编辑
+													23 菜单项 选择
+													24 菜单项 查看
+													25 菜单项 转到
+													26 菜单项 更多
+												1546 工具栏
+													1547 按钮 (disabled) 返回 (Alt+LeftArrow)
+													1548 按钮 (disabled) 前进 (Alt+RightArrow)
+													1549 工具栏 智能体状态
+														1550 按钮 打开快速访问
+														1551 组
+															1552 按钮 切换聊天
+																1553 按钮 切换聊天
+															1554 组
+																1555 组
+																	1556 按钮 更多操作
+												35 工具栏
+													1185 按钮 在智能体窗口中打开 (Ctrl+Shift+Alt+A)
+												37 工具栏 标题操作
+													1373 切换按钮 切换主侧栏 (Ctrl+B)
+														1374 文本 
+													1375 按钮 自定义布局...
+													1376 切换按钮 切换面板 (Ctrl+J)
+														1377 文本 
+													1378 切换按钮 切换辅助侧栏 (Ctrl+Alt+B)
+														1379 文本 
+												42 组
+												43 组
+												44 组
+												45 选项卡 活动视图切换器
+													46 选项卡项目 (selectable) 资源管理器 (Ctrl+Shift+E)
+														47 组 资源管理器 (Ctrl+Shift+E)
+													48 选项卡项目 (selectable) 搜索 (Ctrl+Shift+F)
+														49 组 搜索 (Ctrl+Shift+F)
+													50 选项卡项目 (selectable) 源代码管理 (Ctrl+Shift+G G)
+														51 组 源代码管理 (Ctrl+Shift+G G)
+													52 选项卡项目 (selectable) 运行和调试 (Ctrl+Shift+D)
+														53 组 运行和调试 (Ctrl+Shift+D)
+													54 选项卡项目 (selectable) 扩展 (Ctrl+Shift+X)
+														55 组 扩展 (Ctrl+Shift+X)
+													837 选项卡项目 (selectable) 测试
+														838 组 测试
+													56 选项卡项目 (selectable) Microsoft Edge Tools
+														57 组 Microsoft Edge Tools
+													217 选项卡项目 (selectable) Python
+														218 组 Python
+													58 选项卡项目 (selectable) GitLens
+														59 组 GitLens
+													1071 选项卡项目 (selectable) GitLens 检查器
+														1072 组 GitLens 检查器
+													62 选项卡项目 (selectable) GitHub
+														63 组 GitHub
+													219 选项卡项目 (selectable) Gemini Code Assist (Alt+G)
+														220 组 Gemini Code Assist (Alt+G)
+												64 工具栏 管理
+													65 按钮 帐户
+														66 组 帐户
+															653 文本 
+													67 按钮 管理
+														68 组 管理
+															654 文本 
+												69 标题 资源管理器
+												70 工具栏 资源管理器操作
+													1242 组
+														1243 组
+															1244 按钮 视图和更多操作…
+												71 工具栏
+												72 组
+												73 组
+												74 按钮 资源管理器部分: project-b
+													75 标题 资源管理器部分: project-b
+												76 树 文件资源管理器
+													180 树项目 (selectable) .venv ID: list_id_3_0
+														181 组 <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-b\.venv
+													182 树项目 (selectable) .vscode ID: list_id_3_1
+														183 组 <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-b\.vscode
+													184 树项目 (selectable) main.py ID: list_id_3_2
+														185 组 <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-b\main.py
+													186 树项目 (selectable) observe_env.py ID: list_id_3_3
+														187 组 <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-b\observe_env.py
+												77 按钮 大纲部分
+													78 标题 大纲
+												79 按钮 时间线部分
+													80 标题 时间线
+												81 组
+												82 主要 ID: workbench.parts.editor
+													479 组
+														480 选项卡
+															481 选项卡项目 (selectable) observe_env.py，预览
+																482 组 observe_env.py
+																483 工具栏 选项卡操作
+																	484 按钮 关闭 (Ctrl+F4)
+														485 工具栏 编辑器操作
+															1586 组
+																1587 按钮 运行 Python 文件
+															1588 组
+																1589 组
+																	1590 按钮 运行或调试...
+															1591 按钮 Open Codex Sidebar
+															1592 组
+																1593 组
+																	1594 按钮 更多操作...
+																		1595 文本 
+														1266 列表
+															1267 列表项目 observe_env.py
+																1268 组 <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-b\observe_env.py
+																	1269 文本 
+																	1270 文本 observe_env.py
+													1271 组 observe_env.py，预览
+														1296 代码
+															1297 编辑器 (settable, string) observe_env.py，预览
+												1390 选项卡 活动视图切换器
+													1391 选项卡项目 (selectable) 问题 (Ctrl+Shift+M)
+														1392 组 问题 (Ctrl+Shift+M)
+													1393 选项卡项目 (selectable) 输出 (Ctrl+Shift+U)
+														1394 组 输出 (Ctrl+Shift+U)
+													1395 选项卡项目 (selectable) 调试控制台 (Ctrl+Shift+Y)
+														1396 组 调试控制台 (Ctrl+Shift+Y)
+													1397 选项卡项目 (selectable) 终端 (Ctrl+`)
+														1398 组 终端 (Ctrl+`)
+													1399 选项卡项目 (selectable) 端口
+														1400 组 端口
+												1401 工具栏 终端操作
+													1596 按钮 新建终端 (Ctrl+Shift+`) [Alt] 拆分终端 (Ctrl+Shift+5)
+														1597 按钮 新建终端 (Ctrl+Shift+`) [Alt] 拆分终端 (Ctrl+Shift+5)
+													1598 组
+														1599 组
+															1600 按钮 启动配置文件...
+													1601 组
+														1602 组
+															1603 按钮 视图和更多操作…
+													1604 组 (disabled)
+												1414 工具栏
+													1415 切换按钮 最大化面板
+														1416 文本 
+													1417 按钮 隐藏面板 (Ctrl+J)
+												1605 组
+												1418 组
+													1606 组
+														1607 列表
+															1608 列表项目
+															1609 列表项目 <WORKSPACE>\docs\py101-p3\runtime\python-project
+															1610 列表项目 s\project-b>"D:\Program Files\python.exe" c:/Users/QYF/Desktop/Aivor
+															1611 列表项目 a-Web/docs/py101-p3/runtime/python-projects/project-b/observe_env.py
+															1612 列表项目
+															1613 列表项目 Interpreter: D:\Program Files\python.exe
+															1614 列表项目 Environment: D:\Program Files
+															1615 列表项目 Base Python: D:\Program Files
+															1616 列表项目 Version: 3.14.2
+															1617 列表项目
+															1618 列表项目 <WORKSPACE>\docs\py101-p3\runtime\python-project
+															1619 列表项目 s\project-b>
+														1620 组
+															1646 文本 Microsoft Windows [版本 10.0.26300.9711] (c) Microsoft Corporation。保留所有权利。 <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-b>"D:\Program Files\python.exe" <WORKSPACE>/docs/py101-p3/runtime/python-projects/project-b/observe_env.py Interpreter: D:\Program Files\python.exe Environment: D:\Program Files Base Python: D:\Program Files Version: 3.14.2 <WORKSPACE>\docs\py101-p3\runtime\python-projects\project-b>
+														1621 图像
+														1622 组
+															1623 编辑 (settable, string) 终端 3，Python 使用 Alt+F1 获取终端辅助功能帮助
+															1624 图像
+															1625 图像
+												1626 列表 终端选项卡
+													1627 列表项目 终端2 Python ID: list_id_7_0
+														1628 组 $(terminal-cmd) Python
+															1629 文本 
+															1630 文本 Python
+													1631 列表项目 终端3 Python ID: list_id_7_1
+														1632 组 $(terminal-cmd) Python
+															1633 文本 
+															1634 文本 Python
+												112 选项卡 活动视图切换器
+													113 选项卡项目 (selectable) 聊天 (Ctrl+Alt+I)
+														114 组 聊天 (Ctrl+Alt+I)
+													115 选项卡项目 (selectable) Codex
+														116 组 Codex
+												117 工具栏 聊天操作
+													1635 组
+														1636 按钮 新建聊天 (Ctrl+N)
+													1637 组
+														1638 组
+															1639 按钮 新建聊天
+													1640 按钮 打开自定义
+													1641 组
+														1642 组
+															1643 按钮 视图和更多操作…
+													1644 组 (disabled)
+												128 工具栏
+													1211 切换按钮 最大化辅助侧栏
+														1212 文本 
+													1213 按钮 隐藏辅助侧栏 (Ctrl+Alt+B)
+												1115 组
+													1116 文本 会话
+												1117 工具栏
+													1214 按钮 刷新智能体会话
+													1215 按钮 查找智能体会话
+													1216 组
+														1217 组
+															1218 按钮 筛选智能体会话
+																1219 文本 
+													1220 按钮 显示智能体会话边栏
+												1125 树 智能体会话
+												131 组
+													1126 组
+													1221 工具栏 Session status
+														1222 按钮 未提交更改: 71 Files, +25769, -25
+													1127 提示 提示: 在 智能体窗口中一次性跨多个项目工作。 按 Tab 执行操作。
+														1128 组
+															1129 文本 提示:
+															1130 文本 在 智能体窗口中一次性跨多个项目工作。
+														1131 工具栏
+															1132 按钮 上一个提示
+															1133 按钮 下一提示
+															1134 按钮 关闭提示
+															1135 按钮 禁用提示
+													1308 组
+														1480 组 建议的上下文、文件、observe_env.py file:///c%3A/Users/QYF/Desktop/Aivora-Web/docs/py101-p3/runtime/python-projects/project-b
+															1481 按钮 将 file:observe_env.py 添加到上下文
+															1482 组 启用当前 文件 上下文 observe_env.py
+																1483 文本 
+																1484 文本 observe_env.py
+													133 代码
+														134 编辑器 (settable, string) 聊天输入 (智能体)，编辑工作区中的文件。，Auto。 按 Enter 键发送请求。使用 Alt+F1 以获取聊天辅助功能帮助。 Value:
+															135 文本
+														1136 文本 与 Copilot 聊天
+													136 组
+														137 工具栏
+															1314 按钮 添加上下文... (Ctrl+/)
+															1315 组
+																1316 组
+																	1317 按钮 Agent
+																		1318 文本 
+																		1319 文本 Agent
+															1320 组 Models, Auto
+																1321 按钮 Models, Auto
+																	1559 文本 
+																	1560 文本 Auto
+																1324 按钮 Auto details, Optimize for: Balance
+														146 工具栏
+															1234 切换按钮 Dictate (Speech to Text) (Ctrl+I)
+																1274 文本 
+															1236 按钮 (disabled) 发送 [Alt] 发送到新聊天 (Ctrl+Shift+Enter)
+													149 工具栏
+														1159 组
+															1160 组
+																1161 按钮 Copilot
+																	1237 文本 
+																	1163 文本 Copilot
+														1172 组 Pick Mode and Permissions, 交互式, Manual permissions
+															1173 按钮 Pick Mode, 交互式
+															1174 按钮 Pick Permissions, Manual permissions
+														1164 切换按钮 Allow connections from other machines and vscode.dev/agents
+															1238 文本 
+												156 状态 ID: workbench.parts.statusbar
+													157 组 remote ID: status.host
+														158 按钮 remote
+													1091 组 显示 GitLens 提交图 ID: eamodio.gitlens.gitlens.graph
+														1092 按钮 显示 GitLens 提交图
+													1069 组 rocket gitlens-unplug Launchpad, GitLens Launchpad ᴘʀᴏ &mdash; [$(question)](command:gitlens.launchpad.indicator.action?%22info%22 "这是什么？") [$(gear)](command:workbench.action.openSettings?%22gitlens.launchpad%22 "设置") | [$(circle-slash) 隐藏](command:gitlens.launchpad.indicator.action?%22hide%22 "隐藏") --- [Launchpad](command:gitlens.launchpad.indicator.action?%22info%22 "了解 Launchpad") 将你的拉取请求整理为可操作的分组，帮助你保持专注并让团队保持畅通。 始终可以通过命令面板中的 `GitLens: Open Launchpad` 命令访问它。 --- [连接集成](command:gitlens.showLaunchpad?%7B%22source%22%3A%22launchpad-indicator%22%7D "连接集成") 即可开始使用。 ID: eamodio.gitlens.gitlens.launchpad
+														1070 按钮 rocket gitlens-unplug Launchpad, GitLens Launchpad ᴘʀᴏ &mdash; [$(question)](command:gitlens.launchpad.indicator.action?%22info%22 "这是什么？") [$(gear)](command:workbench.action.openSettings?%22gitlens.launchpad%22 "设置") | [$(circle-slash) 隐藏](command:gitlens.launchpad.indicator.action?%22hide%22 "隐藏") --- [Launchpad](command:gitlens.launchpad.indicator.action?%22info%22 "了解 Launchpad") 将你的拉取请求整理为可操作的分组，帮助你保持专注并让团队保持畅通。 始终可以通过命令面板中的 `GitLens: Open Launchpad` 命令访问它。 --- [连接集成](command:gitlens.showLaunchpad?%7B%22source%22%3A%22launchpad-indicator%22%7D "连接集成") 即可开始使用。
+													562 组 没有问题 ID: status.problems
+														563 按钮 没有问题
+													817 组 Git Graph, View Git Graph ID: mhutchie.git-graph
+														818 按钮 Git Graph, View Git Graph
+													159 组 通知 ID: status.notifications
+														160 按钮 通知
+													1093 组 material-spark-off, Gemini Code Assist: Please log in to continue ID: google.geminicodeassist
+														1094 按钮 material-spark-off, Gemini Code Assist: Please log in to continue
+													1037 组 broadcast Go Live, Click to run live server ID: ritwickdey.LiveServer
+														1038 按钮 broadcast Go Live, Click to run live server
+													1325 组 Python 3.14 (64-bit), d:\Program Files\python.exe ID: ms-python.vscode-python-envs.python.interpreterDisplay
+														1326 按钮 Python 3.14 (64-bit), d:\Program Files\python.exe
+													161 组 Copilot 状态 ID: chat.statusBarEntry
+														162 按钮 Copilot 状态
+													1327 组 Python ID: status.editor.mode
+														1328 按钮 Python
+													1329 组 编辑器语言状态: 自动导入补全: false, next: 诊断源: Pylance, next: 语言服务器模式: default, next: 类型检查: off, next: $(copilot) 无内联建议可用，内联建议 ID: status.languageStatus
+														1330 按钮 编辑器语言状态: 自动导入补全: false, next: 诊断源: Pylance, next: 语言服务器模式: default, next: 类型检查: off, next: $(copilot) 无内联建议可用，内联建议
+													1331 组 LF ID: status.editor.eol
+														1332 按钮 LF
+													1333 组 UTF-8 ID: status.editor.encoding
+														1334 按钮 UTF-8
+													1335 组 空格: 4 ID: status.editor.indentation
+														1336 按钮 空格: 4
+													1337 组 行 1，列 1 ID: status.editor.selection
+														1338 按钮 行 1，列 1
+													163 组 已为屏幕阅读器优化 ID: status.editor.screenReaderMode
+														164 按钮 已为屏幕阅读器优化
+												165 警报
+												167 警报
+													1171 文本 Auto
+												168 组
+												169 组
+												1645 工具提示 运行 Python 文件
+								13 区域
+
+Document text: ```
+终端 3，Python 使用 Alt+F1 获取终端辅助功能帮助
+```

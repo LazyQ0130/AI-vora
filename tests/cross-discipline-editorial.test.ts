@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import type { ContentBlock, Lesson } from "../src/content/models";
+import { isReadable, type ContentBlock, type Lesson } from "../src/content/models";
 import { lessonRegistry, lessonSummaries, resolveLesson } from "../src/lib/course-engine";
 import { publicationManifest, lessonHref } from "../src/content/publication-manifest";
 import { createProgressStore, parseReadingProgress, progressKey } from "../src/lib/learning-progress";
@@ -39,6 +39,11 @@ test("跨学科与AI000现行修订和发布清单一致，仍待人工审核", 
     const publication = publicationManifest.find((entry) => entry.lessonId === lesson.id)!;
     assert.equal(lesson.contentVersion, expectedVersion, lesson.id);
     assert.equal(publication.contentVersion, expectedVersion, lesson.id);
+    if (!isReadable(publication)) {
+      assert.equal(publication.access, "private");
+      assert.equal(resolveLesson(lesson.courseId, lesson.id), undefined);
+      continue;
+    }
     assert.equal(publication.status, "pending-review");
     assert.equal(publication.access, "preview");
     assert.equal(publication.reviewEvidence, undefined);

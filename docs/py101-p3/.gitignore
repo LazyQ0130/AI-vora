@@ -1,0 +1,3 @@
+# 本轮GUI与环境测试的机器文件不进入教材交付。
+/runtime/**/.vscode/
+/machine/
