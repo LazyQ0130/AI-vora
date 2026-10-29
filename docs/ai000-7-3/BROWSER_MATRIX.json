@@ -1,0 +1,609 @@
+[
+  {
+    "size": {
+      "width": 1440,
+      "height": 1000
+    },
+    "layout": {
+      "client": 1425,
+      "exampleParts": [
+        "实际问题",
+        "输入与输出",
+        "基线方案",
+        "可选技术方法",
+        "数据与前置条件",
+        "评价与验证",
+        "风险与责任",
+        "学习与下一步"
+      ],
+      "font": "16px",
+      "scroll": 1425,
+      "tables": [
+        {
+          "caption": "示范第一、二部分：三个问题的简析与有条件的选择",
+          "font": "14px",
+          "rows": 3
+        },
+        {
+          "caption": "手工整理的示范输出：3份通知对应2项现行活动",
+          "font": "14px",
+          "rows": 2
+        },
+        {
+          "caption": "示范第四部分：通知整理的任务、方法和产品工作",
+          "font": "14px",
+          "rows": 4
+        },
+        {
+          "caption": "可复用的八问，用于优先项目分析而非唯一专业模板",
+          "font": "14px",
+          "rows": 8
+        },
+        {
+          "caption": "固定题资料：有限时段快照，未知不能补成空闲",
+          "font": "14px",
+          "rows": 3
+        }
+      ]
+    },
+    "tasks": [
+      {
+        "id": "audit-booking-proposal",
+        "focus": {
+          "hash": "#exercise-audit-booking-proposal",
+          "tag": "H3",
+          "text": "交一份修正后的最小项目说明"
+        },
+        "initial": [
+          false,
+          false,
+          false
+        ],
+        "states": [
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "prompt": {
+          "paragraphs": 3,
+          "whiteSpace": "pre-line"
+        },
+        "closed": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "id": "write-personal-capstone",
+        "focus": {
+          "hash": "#exercise-write-personal-capstone",
+          "tag": "H3",
+          "text": "交三问题比较、一项深入分析和一条学习路线"
+        },
+        "initial": [
+          false,
+          false,
+          false
+        ],
+        "states": [
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "prompt": {
+          "paragraphs": 3,
+          "whiteSpace": "pre-line"
+        },
+        "closed": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "goals": 3,
+    "links": 2,
+    "fullGoals": 3,
+    "prereqLinks": 4,
+    "copy": {
+      "equal": true,
+      "length": 1017,
+      "headings": [
+        "## 一、我的三个问题",
+        "## 二、比较与优先选择",
+        "## 三、优先问题的深入分析",
+        "## 四、我的AI技术地图",
+        "## 五、我的阶段学习路线",
+        "## 六、当前结论"
+      ],
+      "notAutoCompleted": true
+    },
+    "template": {
+      "font": "14px",
+      "preMinWidth": "0px",
+      "scroll": 722,
+      "width": 722
+    }
+  },
+  {
+    "size": {
+      "width": 768,
+      "height": 1000
+    },
+    "layout": {
+      "client": 753,
+      "exampleParts": [
+        "实际问题",
+        "输入与输出",
+        "基线方案",
+        "可选技术方法",
+        "数据与前置条件",
+        "评价与验证",
+        "风险与责任",
+        "学习与下一步"
+      ],
+      "font": "16px",
+      "scroll": 753,
+      "tables": [
+        {
+          "caption": "示范第一、二部分：三个问题的简析与有条件的选择",
+          "font": "14px",
+          "rows": 3
+        },
+        {
+          "caption": "手工整理的示范输出：3份通知对应2项现行活动",
+          "font": "14px",
+          "rows": 2
+        },
+        {
+          "caption": "示范第四部分：通知整理的任务、方法和产品工作",
+          "font": "14px",
+          "rows": 4
+        },
+        {
+          "caption": "可复用的八问，用于优先项目分析而非唯一专业模板",
+          "font": "14px",
+          "rows": 8
+        },
+        {
+          "caption": "固定题资料：有限时段快照，未知不能补成空闲",
+          "font": "14px",
+          "rows": 3
+        }
+      ]
+    },
+    "tasks": [
+      {
+        "id": "audit-booking-proposal",
+        "focus": {
+          "hash": "#exercise-audit-booking-proposal",
+          "tag": "H3",
+          "text": "交一份修正后的最小项目说明"
+        },
+        "initial": [
+          false,
+          false,
+          false
+        ],
+        "states": [
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "prompt": {
+          "paragraphs": 3,
+          "whiteSpace": "pre-line"
+        },
+        "closed": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "id": "write-personal-capstone",
+        "focus": {
+          "hash": "#exercise-write-personal-capstone",
+          "tag": "H3",
+          "text": "交三问题比较、一项深入分析和一条学习路线"
+        },
+        "initial": [
+          false,
+          false,
+          false
+        ],
+        "states": [
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "prompt": {
+          "paragraphs": 3,
+          "whiteSpace": "pre-line"
+        },
+        "closed": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "goals": 3,
+    "links": 2,
+    "fullGoals": 3,
+    "prereqLinks": 4,
+    "contents": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n13 节点\n有人问“这个AI项目该怎样做”，你准备怎样回答？\n示范先从三份具体通知开始\n示范报告：三个问题，为什么先做通知整理？\n优先问题：一份可以回到原通知核对的清单\n技术地图要解释分工，不必塞满术语\n示范学习路线：三个阶段，各留下什么？\n示范结论：哪些已确认，哪些仍待核？\n把示范带走：八个问题，各要留下什么依据？\n独立审查：场地查询为什么被写成了未来预测？\n现在写自己的《AI 技术地图与问题分析报告》\n复制一份报告骨架，再填入自己的判断\n交稿前，逐项找到能支持结论的内容\n带着一份能继续修订的报告，进入下一项学习\n本节学习目标\n3 项\n01\n独立分析现实需求\n\n说清输入输出、AI必要性、可行方法与资料缺口。\n\n02\n提出能核查的方案\n\n用基线、数据、评价与责任支持具体决定。\n\n03\n完成个人结课报告\n\n比较三问题，深入一个，给地图和至少三个里程碑。\n\n查看完整目标\n独立分析现实问题的需求、使用者、输入与输出，判断是否需要AI，说明可行任务与方法及现有资料不能确认的事项\n为明确问题提出有依据的基线、数据或学习信号、可执行评价与错误处理，检查相关隐私、来源和使用责任并安排补查\n比较三个自选问题并确定优先项目，形成含技术地图、至少三个可验证学习里程碑和适当结论范围的完整报告\n核心练习\n2 道\n迁移练习\n交一份修正后的最小项目说明\n迁移练习\n交三问题比较、一项深入分析和一条学习路线\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n71%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n已完成前23节，能按输入/输出、方法证据、资料用途、事实与责任分析问题，并设计阶段成果。会读表和说明理由即可，无须Python、深度学习算法、模型账户或部署经验。\n\n2.2 模型与产品的分工\n\n方法名称不能代替输入、任务和产品步骤。\n\n5.1 把文字工作接成服务\n\n回看分类、查资料、组织答复怎样分别检查。\n\n6.1 顺着资料核查结论\n\n回看来源、适用条件、未知和更新。\n\n7.2 可验证的学习里程碑\n\n把学完课程改写为成果、检查和继续条件。",
+    "copy": {
+      "equal": true,
+      "length": 1017,
+      "headings": [
+        "## 一、我的三个问题",
+        "## 二、比较与优先选择",
+        "## 三、优先问题的深入分析",
+        "## 四、我的AI技术地图",
+        "## 五、我的阶段学习路线",
+        "## 六、当前结论"
+      ],
+      "notAutoCompleted": true
+    },
+    "template": {
+      "font": "14px",
+      "preMinWidth": "0px",
+      "scroll": 650,
+      "width": 650
+    }
+  },
+  {
+    "size": {
+      "width": 390,
+      "height": 844
+    },
+    "layout": {
+      "client": 375,
+      "exampleParts": [
+        "实际问题",
+        "输入与输出",
+        "基线方案",
+        "可选技术方法",
+        "数据与前置条件",
+        "评价与验证",
+        "风险与责任",
+        "学习与下一步"
+      ],
+      "font": "16px",
+      "scroll": 375,
+      "tables": [
+        {
+          "caption": "示范第一、二部分：三个问题的简析与有条件的选择",
+          "font": "14px",
+          "rows": 3
+        },
+        {
+          "caption": "手工整理的示范输出：3份通知对应2项现行活动",
+          "font": "14px",
+          "rows": 2
+        },
+        {
+          "caption": "示范第四部分：通知整理的任务、方法和产品工作",
+          "font": "14px",
+          "rows": 4
+        },
+        {
+          "caption": "可复用的八问，用于优先项目分析而非唯一专业模板",
+          "font": "14px",
+          "rows": 8
+        },
+        {
+          "caption": "固定题资料：有限时段快照，未知不能补成空闲",
+          "font": "14px",
+          "rows": 3
+        }
+      ]
+    },
+    "tasks": [
+      {
+        "id": "audit-booking-proposal",
+        "focus": {
+          "hash": "#exercise-audit-booking-proposal",
+          "tag": "H3",
+          "text": "交一份修正后的最小项目说明"
+        },
+        "initial": [
+          false,
+          false,
+          false
+        ],
+        "states": [
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "prompt": {
+          "paragraphs": 3,
+          "whiteSpace": "pre-line"
+        },
+        "closed": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "id": "write-personal-capstone",
+        "focus": {
+          "hash": "#exercise-write-personal-capstone",
+          "tag": "H3",
+          "text": "交三问题比较、一项深入分析和一条学习路线"
+        },
+        "initial": [
+          false,
+          false,
+          false
+        ],
+        "states": [
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "prompt": {
+          "paragraphs": 3,
+          "whiteSpace": "pre-line"
+        },
+        "closed": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "goals": 3,
+    "links": 2,
+    "fullGoals": 3,
+    "prereqLinks": 4,
+    "contents": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n13 节点\n有人问“这个AI项目该怎样做”，你准备怎样回答？\n示范先从三份具体通知开始\n示范报告：三个问题，为什么先做通知整理？\n优先问题：一份可以回到原通知核对的清单\n技术地图要解释分工，不必塞满术语\n示范学习路线：三个阶段，各留下什么？\n示范结论：哪些已确认，哪些仍待核？\n把示范带走：八个问题，各要留下什么依据？\n独立审查：场地查询为什么被写成了未来预测？\n现在写自己的《AI 技术地图与问题分析报告》\n复制一份报告骨架，再填入自己的判断\n交稿前，逐项找到能支持结论的内容\n带着一份能继续修订的报告，进入下一项学习\n本节学习目标\n3 项\n01\n独立分析现实需求\n\n说清输入输出、AI必要性、可行方法与资料缺口。\n\n02\n提出能核查的方案\n\n用基线、数据、评价与责任支持具体决定。\n\n03\n完成个人结课报告\n\n比较三问题，深入一个，给地图和至少三个里程碑。\n\n查看完整目标\n独立分析现实问题的需求、使用者、输入与输出，判断是否需要AI，说明可行任务与方法及现有资料不能确认的事项\n为明确问题提出有依据的基线、数据或学习信号、可执行评价与错误处理，检查相关隐私、来源和使用责任并安排补查\n比较三个自选问题并确定优先项目，形成含技术地图、至少三个可验证学习里程碑和适当结论范围的完整报告\n核心练习\n2 道\n迁移练习\n交一份修正后的最小项目说明\n迁移练习\n交三问题比较、一项深入分析和一条学习路线\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n71%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n已完成前23节，能按输入/输出、方法证据、资料用途、事实与责任分析问题，并设计阶段成果。会读表和说明理由即可，无须Python、深度学习算法、模型账户或部署经验。\n\n2.2 模型与产品的分工\n\n方法名称不能代替输入、任务和产品步骤。\n\n5.1 把文字工作接成服务\n\n回看分类、查资料、组织答复怎样分别检查。\n\n6.1 顺着资料核查结论\n\n回看来源、适用条件、未知和更新。\n\n7.2 可验证的学习里程碑\n\n把学完课程改写为成果、检查和继续条件。",
+    "copy": {
+      "equal": true,
+      "length": 1017,
+      "headings": [
+        "## 一、我的三个问题",
+        "## 二、比较与优先选择",
+        "## 三、优先问题的深入分析",
+        "## 四、我的AI技术地图",
+        "## 五、我的阶段学习路线",
+        "## 六、当前结论"
+      ],
+      "notAutoCompleted": true
+    },
+    "template": {
+      "font": "14px",
+      "preMinWidth": "0px",
+      "scroll": 308,
+      "width": 308
+    }
+  },
+  {
+    "size": {
+      "width": 320,
+      "height": 844
+    },
+    "layout": {
+      "client": 305,
+      "exampleParts": [
+        "实际问题",
+        "输入与输出",
+        "基线方案",
+        "可选技术方法",
+        "数据与前置条件",
+        "评价与验证",
+        "风险与责任",
+        "学习与下一步"
+      ],
+      "font": "16px",
+      "scroll": 305,
+      "tables": [
+        {
+          "caption": "示范第一、二部分：三个问题的简析与有条件的选择",
+          "font": "14px",
+          "rows": 3
+        },
+        {
+          "caption": "手工整理的示范输出：3份通知对应2项现行活动",
+          "font": "14px",
+          "rows": 2
+        },
+        {
+          "caption": "示范第四部分：通知整理的任务、方法和产品工作",
+          "font": "14px",
+          "rows": 4
+        },
+        {
+          "caption": "可复用的八问，用于优先项目分析而非唯一专业模板",
+          "font": "14px",
+          "rows": 8
+        },
+        {
+          "caption": "固定题资料：有限时段快照，未知不能补成空闲",
+          "font": "14px",
+          "rows": 3
+        }
+      ]
+    },
+    "tasks": [
+      {
+        "id": "audit-booking-proposal",
+        "focus": {
+          "hash": "#exercise-audit-booking-proposal",
+          "tag": "H3",
+          "text": "交一份修正后的最小项目说明"
+        },
+        "initial": [
+          false,
+          false,
+          false
+        ],
+        "states": [
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "prompt": {
+          "paragraphs": 3,
+          "whiteSpace": "pre-line"
+        },
+        "closed": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "id": "write-personal-capstone",
+        "focus": {
+          "hash": "#exercise-write-personal-capstone",
+          "tag": "H3",
+          "text": "交三问题比较、一项深入分析和一条学习路线"
+        },
+        "initial": [
+          false,
+          false,
+          false
+        ],
+        "states": [
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "prompt": {
+          "paragraphs": 3,
+          "whiteSpace": "pre-line"
+        },
+        "closed": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "goals": 3,
+    "links": 2,
+    "fullGoals": 3,
+    "prereqLinks": 4,
+    "contents": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n13 节点\n有人问“这个AI项目该怎样做”，你准备怎样回答？\n示范先从三份具体通知开始\n示范报告：三个问题，为什么先做通知整理？\n优先问题：一份可以回到原通知核对的清单\n技术地图要解释分工，不必塞满术语\n示范学习路线：三个阶段，各留下什么？\n示范结论：哪些已确认，哪些仍待核？\n把示范带走：八个问题，各要留下什么依据？\n独立审查：场地查询为什么被写成了未来预测？\n现在写自己的《AI 技术地图与问题分析报告》\n复制一份报告骨架，再填入自己的判断\n交稿前，逐项找到能支持结论的内容\n带着一份能继续修订的报告，进入下一项学习\n本节学习目标\n3 项\n01\n独立分析现实需求\n\n说清输入输出、AI必要性、可行方法与资料缺口。\n\n02\n提出能核查的方案\n\n用基线、数据、评价与责任支持具体决定。\n\n03\n完成个人结课报告\n\n比较三问题，深入一个，给地图和至少三个里程碑。\n\n查看完整目标\n独立分析现实问题的需求、使用者、输入与输出，判断是否需要AI，说明可行任务与方法及现有资料不能确认的事项\n为明确问题提出有依据的基线、数据或学习信号、可执行评价与错误处理，检查相关隐私、来源和使用责任并安排补查\n比较三个自选问题并确定优先项目，形成含技术地图、至少三个可验证学习里程碑和适当结论范围的完整报告\n核心练习\n2 道\n迁移练习\n交一份修正后的最小项目说明\n迁移练习\n交三问题比较、一项深入分析和一条学习路线\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n78%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识\n\n已完成前23节，能按输入/输出、方法证据、资料用途、事实与责任分析问题，并设计阶段成果。会读表和说明理由即可，无须Python、深度学习算法、模型账户或部署经验。\n\n2.2 模型与产品的分工\n\n方法名称不能代替输入、任务和产品步骤。\n\n5.1 把文字工作接成服务\n\n回看分类、查资料、组织答复怎样分别检查。\n\n6.1 顺着资料核查结论\n\n回看来源、适用条件、未知和更新。\n\n7.2 可验证的学习里程碑\n\n把学完课程改写为成果、检查和继续条件。",
+    "copy": {
+      "equal": true,
+      "length": 1017,
+      "headings": [
+        "## 一、我的三个问题",
+        "## 二、比较与优先选择",
+        "## 三、优先问题的深入分析",
+        "## 四、我的AI技术地图",
+        "## 五、我的阶段学习路线",
+        "## 六、当前结论"
+      ],
+      "notAutoCompleted": true
+    },
+    "template": {
+      "font": "14px",
+      "preMinWidth": "0px",
+      "scroll": 254,
+      "width": 254
+    }
+  }
+]

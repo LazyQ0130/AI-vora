@@ -50,7 +50,7 @@ test("仅1.2与5.3升r2，正式目标不删；其他同版修订与未修改三
   for(const l of before.lessons){assert.deepEqual(get(l.id).objectives,l.objectives);assert.deepEqual(get(l.id).sections.map(s=>s.id),l.sections.map(s=>s.id));
     for(const e of exercises(l))assert.ok(exercises(get(l.id)).some(n=>n.id===e.id));}
   for(const id of ["AI000-C04-L01","AI000-C04-L02","AI000-C05-L02"])assert.deepEqual(get(id),old(id));
-  assert.equal(lessonRegistry.size,46);
+  assert.equal(lessonRegistry.size,47);
 });
 
 test("1.2新增独立四任务迁移题，保留原商品与图书题、真实覆盖目标一",()=>{
@@ -138,10 +138,10 @@ test("真实存储保留40旧键，同版完成恢复，1.2和5.3 r2不继承r1�
   for(const [k,v] of saved)assert.equal(memory.get(k),v,k);
 });
 
-test("23节相邻导航与待审核门禁保持，7.3没有正文；保存说明不暗示输入自动持久化",()=>{
+test("24节相邻导航与待审核门禁保持，7.4没有正文；保存说明不暗示输入自动持久化",()=>{
   const course=getLearningCourse("AI000")!,ids=course.chapters.flatMap(c=>c.lessons).filter(l=>l.href).map(l=>l.lessonId);
-  assert.equal(ids.length,23);ids.forEach((id,i)=>{const adjacent=getAdjacentLessons(course,id);assert.equal(adjacent.previous?.lessonId,ids[i-1]);assert.equal(adjacent.next?.lessonId,ids[i+1]);});
-  for(const id of ["AI000-C07-L03"]){assert.equal(resolveLesson("AI000",id),undefined);assert.equal(lessonRegistry.has(id),false);}
+  assert.equal(ids.length,24);ids.forEach((id,i)=>{const adjacent=getAdjacentLessons(course,id);assert.equal(adjacent.previous?.lessonId,ids[i-1]);assert.equal(adjacent.next?.lessonId,ids[i+1]);});
+  for(const id of ["AI000-C07-L04"]){assert.equal(resolveLesson("AI000",id),undefined);assert.equal(lessonRegistry.has(id),false);}
   assert.ok(blocks(get("AI000-C01-L01")).some(b=>b.type==="paragraph"&&b.text.includes("复制到笔记里")));
   for(const p of publicationManifest){assert.equal(p.status,"pending-review");assert.equal(p.access,"preview");assert.equal(p.reviewEvidence,undefined);}
 });

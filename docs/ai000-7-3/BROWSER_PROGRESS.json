@@ -1,0 +1,61 @@
+{
+  "newKeyAbsent": true,
+  "freshNotCompleted": true,
+  "oldSeed": [
+    {
+      "id": "AI000-C01-L02",
+      "marked": true
+    },
+    {
+      "id": "AI000-C05-L03",
+      "marked": true
+    },
+    {
+      "id": "AI000-C07-L02",
+      "marked": true
+    }
+  ],
+  "oldSnapshot": {
+    "aivora:learning:v2:AI000:AI000-C06-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C06-L01\",\"contentVersion\":1,\"percent\":57,\"completed\":false,\"section\":\"checking-workflow\",\"updatedAt\":1793250400729}",
+    "aivora:learning:v2:AI000:AI000-C05-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L01\",\"contentVersion\":1,\"percent\":61,\"completed\":false,\"section\":\"combine-steps\",\"updatedAt\":1793250399576}",
+    "aivora:learning:v2:AI000:AI000-C01-L02:r2": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C01-L02\",\"contentVersion\":2,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793250491509}",
+    "aivora:learning:v2:AI000:AI000-C07-L02:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C07-L02\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793250499923}",
+    "aivora:learning:v2:AI000:AI000-C05-L03:r2": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L03\",\"contentVersion\":2,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793250492290}",
+    "aivora:learning:v2:AI000:AI000-C02-L02:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C02-L02\",\"contentVersion\":1,\"percent\":67,\"completed\":false,\"section\":\"product\",\"updatedAt\":1793250398432}"
+  },
+  "previousText": "上一节 · 7.2 AI 不同技术方向需要哪些基础？",
+  "nextDisabled": true,
+  "partialFocus": {
+    "hash": "#capstone-eight-questions",
+    "id": "",
+    "tag": "H2"
+  },
+  "partial": {
+    "version": 2,
+    "courseId": "AI000",
+    "lessonId": "AI000-C07-L03",
+    "contentVersion": 1,
+    "percent": 45,
+    "completed": false,
+    "section": "capstone-eight-questions",
+    "updatedAt": 1793250527662
+  },
+  "resumeHref": "#capstone-eight-questions",
+  "resumeFocus": {
+    "hash": "#capstone-eight-questions",
+    "tag": "H2",
+    "text": "把示范带走：八个问题，各要留下什么依据？"
+  },
+  "completedAfterReload": true,
+  "newRecord": {
+    "version": 2,
+    "courseId": "AI000",
+    "lessonId": "AI000-C07-L03",
+    "contentVersion": 1,
+    "percent": 100,
+    "completed": true,
+    "section": "capstone-next-steps",
+    "updatedAt": 1793250528935
+  },
+  "oldAllUnchanged": true
+}

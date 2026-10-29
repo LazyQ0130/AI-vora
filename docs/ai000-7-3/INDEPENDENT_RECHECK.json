@@ -1,0 +1,18 @@
+{
+  "method": "Python标准库从通知原文提取日期/地点，按明确的同活动更新关系独立核对；从固定题表重新查状态",
+  "noticeCount": 3,
+  "currentEventCount": 2,
+  "E1Original": "2026-11-12T14:00:00",
+  "E1Current": "2026-11-13T14:00:00",
+  "E1Place": "科技楼一楼报告厅",
+  "E1DeadlineRetained": "11月10日18:00",
+  "E2Current": "2026-11-14T19:00:00",
+  "E2Registration": "未知",
+  "slots": {
+    "S1": "空闲快照",
+    "S2": "占用快照",
+    "S3": "未知"
+  },
+  "reservationConfirmed": "未知",
+  "limits": "教学构造范围；无网页访问、接口、真实预约或模型执行证据；定性另轮解见RECHECK.md"
+}

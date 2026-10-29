@@ -24,7 +24,7 @@ const sha=(b:Buffer)=>createHash("sha256").update(b).digest("hex");
 
 test("7.2逐字保护45旧Lesson/发布、248文件和23精确图，不能吞掉未登记变更",()=>{
   assert.equal(before.lessons.length,45);assert.equal(before.publications.length,45);assert.equal(before.files.length,248);
-  assert.equal(lessonRegistry.size,46);assert.equal(publicationManifest.length,46);
+  assert.equal(lessonRegistry.size,47);assert.equal(publicationManifest.length,47);
   for(const old of before.lessons)assert.equal(JSON.stringify(lessonRegistry.get(old.id)),JSON.stringify(old),old.id);
   for(const old of before.publications)assert.deepEqual(publicationManifest.find(p=>p.lessonId===old.lessonId),old,old.lessonId);
   for(const f of before.files){const bytes=readFileSync(f.path);if(sha(bytes)===f.sha256)continue;const reversed=beforeDirectionSource(f.path,bytes.toString("utf8")).replaceAll("\r\n","\n");assert.ok([reversed,reversed.replaceAll("\n","\r\n")].some(s=>sha(Buffer.from(s))===f.sha256),f.path);}
@@ -106,13 +106,13 @@ test("原生表格局部滚动、每题三折叠默认关闭，无新图/代码/
   for(const b of blocks.filter(b=>b.type==="table")){const html=renderToStaticMarkup(createElement(ContentRenderer,{block:b,resources:[]}));assert.match(html,/<caption/);assert.match(html,/<th/);assert.match(html,/tabindex="0"/);}
   for(const b of tasks){const html=renderToStaticMarkup(createElement(ContentRenderer,{block:b,resources:[]}));assert.equal((html.match(/<details/g)??[]).length,3);assert.doesNotMatch(html,/<details[^>]*\sopen/);assert.ok(html.includes(`id="exercise-${b.id}"`));}
 });
-test("草稿门禁/预览衔接7.1↔7.2，7.3无注册或URL，整门仍planned",()=>{
+test("草稿门禁/预览衔接7.1↔7.2↔7.3且保持待审核，整门仍planned",()=>{
   const c=getLearningCourse("AI000")!,pub=publicationManifest.find(p=>p.lessonId===lesson.id)!;
   assert.equal(pub.contentVersion,1);assert.equal(pub.reviewEvidence,undefined);assert.equal(c.status,"planned");assert.equal(c.hours,"6–10");
   assert.equal(Boolean(resolveLesson("AI000",lesson.id)),isReadable(pub));
-  if(isReadable(pub)){assert.equal(pub.status,"pending-review");assert.equal(pub.technicalEvidence,"docs/AI000_LESSON_7_2_REVIEW.md");assert.equal(getAdjacentLessons(c,"AI000-C07-L01").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(c,lesson.id).previous?.lessonId,"AI000-C07-L01");assert.equal(getAdjacentLessons(c,lesson.id).next,undefined);}
+  if(isReadable(pub)){assert.equal(pub.status,"pending-review");assert.equal(pub.technicalEvidence,"docs/AI000_LESSON_7_2_REVIEW.md");assert.equal(getAdjacentLessons(c,"AI000-C07-L01").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(c,lesson.id).previous?.lessonId,"AI000-C07-L01");assert.equal(getAdjacentLessons(c,lesson.id).next?.lessonId,"AI000-C07-L03");}
   else{assert.equal(pub.status,"draft");assert.equal(pub.access,"private");assert.equal(getAdjacentLessons(c,"AI000-C07-L01").next,undefined);}
-  const slot=c.chapters[6].lessons[2];assert.equal(slot.lessonId,"AI000-C07-L03");assert.equal(slot.status,"planned");assert.equal(slot.href,undefined);assert.equal(lessonRegistry.has(slot.lessonId),false);assert.equal(resolveLesson("PY101",lesson.id),undefined);
+  const slot=c.chapters[6].lessons[2];assert.equal(slot.lessonId,"AI000-C07-L03");assert.equal(slot.status,"pending-review");assert.equal(slot.href,"/learn/AI000/AI000-C07-L03");assert.equal(lessonRegistry.has(slot.lessonId),true);assert.equal(resolveLesson("PY101",lesson.id),undefined);
 });
 test("新r1进度空态、位置/完成恢复，不动45旧课及1.2/5.3历史r1",()=>{
   const memory=new Map<string,string>(),port={getItem:(k:string)=>memory.get(k)??null,setItem:(k:string,v:string)=>{memory.set(k,v);}},store=createProgressStore(()=>port);
@@ -125,7 +125,7 @@ test("新r1进度空态、位置/完成恢复，不动45旧课及1.2/5.3历史r1
 });
 test("重新估时同步唯一维护表与完整24节，保存旧764–1154历史",()=>{
   assert.deepEqual(lesson.learningTime,{reading:[18,26],practice:[36,52],coding:[0,0],basis:"editorial-estimate"});
-  const t=getCourseStudyEstimate("AI000")!;assert.deepEqual(t.totalMinutes,[800,1202]);assert.equal(t.hours,"13.3–20.0");
+  const t=getCourseStudyEstimate("AI000")!;assert.deepEqual(t.totalMinutes,[850,1280]);assert.equal(t.hours,"14.2–21.3");
   assert.deepEqual(t.lessons.find(l=>l.lessonId===lesson.id)?.reading,[18,26]);assert.deepEqual(t.lessons.find(l=>l.lessonId===lesson.id)?.practice,[36,52]);
   const old=JSON.parse(readFileSync("docs/ai000-7-1/TIME_ESTIMATE.json","utf8"));assert.deepEqual(old.totalMinutes,[764,1154]);
 });

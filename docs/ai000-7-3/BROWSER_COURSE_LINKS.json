@@ -1,0 +1,38 @@
+[
+  {
+    "code": "PY101",
+    "url": "http://127.0.0.1:3033/courses/PY101",
+    "heading": "Python 编程与工程入门",
+    "not404": true
+  },
+  {
+    "code": "MA101",
+    "url": "http://127.0.0.1:3033/courses/MA101",
+    "heading": "AI 数学 I：线性代数与微积分",
+    "not404": true
+  },
+  {
+    "code": "DS101",
+    "url": "http://127.0.0.1:3033/courses/DS101",
+    "heading": "Python 科学计算与数据分析",
+    "not404": true
+  },
+  {
+    "code": "ST101",
+    "url": "http://127.0.0.1:3033/courses/ST101",
+    "heading": "AI 数学 II：概率、统计与优化基础",
+    "not404": true
+  },
+  {
+    "code": "ML201",
+    "url": "http://127.0.0.1:3033/courses/ML201",
+    "heading": "机器学习基础：监督学习",
+    "not404": true
+  },
+  {
+    "code": "DL301",
+    "url": "http://127.0.0.1:3033/courses/DL301",
+    "heading": "神经网络原理与反向传播",
+    "not404": true
+  }
+]

@@ -1,0 +1,210 @@
+[
+  {
+    "size": {
+      "width": 1440,
+      "height": 1000
+    },
+    "target": "capstone-example-analysis",
+    "file": "1440-capstone-example-analysis.png",
+    "paint": {
+      "height": 37.94791793823242,
+      "text": "优先问题：一份可以回到原通知核对的清单",
+      "y": 212.9791717529297
+    }
+  },
+  {
+    "size": {
+      "width": 1440,
+      "height": 1000
+    },
+    "target": "exercise-audit-booking-proposal",
+    "file": "1440-exercise-audit-booking-proposal.png",
+    "paint": {
+      "height": 30.59375,
+      "text": "交一份修正后的最小项目说明",
+      "y": 216.4375
+    }
+  },
+  {
+    "size": {
+      "width": 1440,
+      "height": 1000
+    },
+    "target": "exercise-write-personal-capstone",
+    "file": "1440-exercise-write-personal-capstone.png",
+    "paint": {
+      "height": 30.59375,
+      "text": "交三问题比较、一项深入分析和一条学习路线",
+      "y": 216.8125
+    }
+  },
+  {
+    "size": {
+      "width": 1440,
+      "height": 1000
+    },
+    "target": "capstone-report-template",
+    "file": "1440-capstone-report-template.png",
+    "paint": {
+      "height": 37.94791793823242,
+      "text": "复制一份报告骨架，再填入自己的判断",
+      "y": 212.92709350585935
+    }
+  },
+  {
+    "size": {
+      "width": 768,
+      "height": 1000
+    },
+    "target": "capstone-example-analysis",
+    "file": "768-capstone-example-analysis.png",
+    "paint": {
+      "height": 37.94791793823242,
+      "text": "优先问题：一份可以回到原通知核对的清单",
+      "y": 236.1666717529297
+    }
+  },
+  {
+    "size": {
+      "width": 768,
+      "height": 1000
+    },
+    "target": "exercise-audit-booking-proposal",
+    "file": "768-exercise-audit-booking-proposal.png",
+    "paint": {
+      "height": 30.59375,
+      "text": "交一份修正后的最小项目说明",
+      "y": 239.46875
+    }
+  },
+  {
+    "size": {
+      "width": 768,
+      "height": 1000
+    },
+    "target": "exercise-write-personal-capstone",
+    "file": "768-exercise-write-personal-capstone.png",
+    "paint": {
+      "height": 30.59375,
+      "text": "交三问题比较、一项深入分析和一条学习路线",
+      "y": 239.84375
+    }
+  },
+  {
+    "size": {
+      "width": 768,
+      "height": 1000
+    },
+    "target": "capstone-report-template",
+    "file": "768-capstone-report-template.png",
+    "paint": {
+      "height": 37.94791793823242,
+      "text": "复制一份报告骨架，再填入自己的判断",
+      "y": 235.95834350585935
+    }
+  },
+  {
+    "size": {
+      "width": 390,
+      "height": 844
+    },
+    "target": "capstone-example-analysis",
+    "file": "390-capstone-example-analysis.png",
+    "paint": {
+      "height": 69.29167175292969,
+      "text": "优先问题：一份可以回到原通知核对的清单",
+      "y": 216.0625
+    }
+  },
+  {
+    "size": {
+      "width": 390,
+      "height": 844
+    },
+    "target": "exercise-audit-booking-proposal",
+    "file": "390-exercise-audit-booking-proposal.png",
+    "paint": {
+      "height": 30.59375,
+      "text": "交一份修正后的最小项目说明",
+      "y": 235.8229217529297
+    }
+  },
+  {
+    "size": {
+      "width": 390,
+      "height": 844
+    },
+    "target": "exercise-write-personal-capstone",
+    "file": "390-exercise-write-personal-capstone.png",
+    "paint": {
+      "height": 61.1875,
+      "text": "交三问题比较、一项深入分析和一条学习路线",
+      "y": 220.1875
+    }
+  },
+  {
+    "size": {
+      "width": 390,
+      "height": 844
+    },
+    "target": "capstone-report-template",
+    "file": "390-capstone-report-template.png",
+    "paint": {
+      "height": 69.29167175292969,
+      "text": "复制一份报告骨架，再填入自己的判断",
+      "y": 216.5416717529297
+    }
+  },
+  {
+    "size": {
+      "width": 320,
+      "height": 844
+    },
+    "target": "capstone-example-analysis",
+    "file": "320-capstone-example-analysis.png",
+    "paint": {
+      "height": 62.6875,
+      "text": "优先问题：一份可以回到原通知核对的清单",
+      "y": 218.6875
+    }
+  },
+  {
+    "size": {
+      "width": 320,
+      "height": 844
+    },
+    "target": "exercise-audit-booking-proposal",
+    "file": "320-exercise-audit-booking-proposal.png",
+    "paint": {
+      "height": 61.1875,
+      "text": "交一份修正后的最小项目说明",
+      "y": 220.4375
+    }
+  },
+  {
+    "size": {
+      "width": 320,
+      "height": 844
+    },
+    "target": "exercise-write-personal-capstone",
+    "file": "320-exercise-write-personal-capstone.png",
+    "paint": {
+      "height": 61.1875,
+      "text": "交三问题比较、一项深入分析和一条学习路线",
+      "y": 220.375
+    }
+  },
+  {
+    "size": {
+      "width": 320,
+      "height": 844
+    },
+    "target": "capstone-report-template",
+    "file": "320-capstone-report-template.png",
+    "paint": {
+      "height": 62.6875,
+      "text": "复制一份报告骨架，再填入自己的判断",
+      "y": 219.5625
+    }
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "storageRestored": true,
+  "restoredKeys": [
+    "aivora:learning:v2:AI000:AI000-C06-L01:r1",
+    "aivora:learning:v2:AI000:AI000-C05-L01:r1",
+    "aivora:learning:v2:AI000:AI000-C01-L02:r2",
+    "aivora:learning:v2:AI000:AI000-C07-L02:r1",
+    "aivora:learning:v2:AI000:AI000-C07-L03:r1",
+    "aivora:learning:v2:AI000:AI000-C05-L03:r2",
+    "aivora:learning:v2:AI000:AI000-C02-L02:r1"
+  ],
+  "clipboardRestored": true,
+  "clipboardRestoreMode": "empty-text-for-initial-empty",
+  "viewportOverrideReset": true,
+  "reducedMotionOverrideReset": true,
+  "normalMotionKeyboard": [
+    {
+      "hash": "#exercise-audit-booking-proposal",
+      "tag": "H3",
+      "text": "交一份修正后的最小项目说明"
+    },
+    {
+      "hash": "#exercise-write-personal-capstone",
+      "tag": "H3",
+      "text": "交三问题比较、一项深入分析和一条学习路线"
+    }
+  ]
+}

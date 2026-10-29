@@ -83,7 +83,10 @@ export default async function CoursePage({
           {estimate && <section className="detail-section" aria-labelledby="course-study-time">
             <h2 id="course-study-time">怎样安排学习时间</h2>
             <p>原规划学时为 {course.hours} 小时。按当前 {estimate.lessonCount} 节完整路线，连同阅读、开放练习与综合实践，编辑预计约 {estimate.hours} 小时；这不是学生实测时间。</p>
-            <p>目前有 {readableCount} 节可阅读，其他课时仍在筹备。完整路线的预计时间包含这些尚未制作的内容，后续制作与实际试学后还会调整。每篇教材另列本节的阅读和练习预计时间。</p>
+            <p>{readableCount < estimate.lessonCount
+              ? <>目前有 {readableCount} 节可阅读，其他课时仍在筹备。完整路线的预计时间包含这些尚未制作的内容，后续制作与实际试学后还会调整。</>
+              : <>目前 {readableCount} 节正文均可试读，仍待人工审核。完整路线的预计时间将根据内容审核与实际试学调整。</>}
+              每篇教材另列本节的阅读和练习预计时间。</p>
           </section>}
           <section className="detail-section">
             <span className="eyebrow">LEARNING OUTCOME</span>

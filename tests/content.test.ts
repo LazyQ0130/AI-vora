@@ -9,7 +9,7 @@ import { programs } from "../src/content/resources/programs";
 import { readablePublications } from "../src/content/publication-manifest";
 
 test("四门不同类型教材用同一模型，公式可严格解析，图片有正确尺寸和可读替代文字", async () => {
-  assert.equal(readablePublications.length, 46);
+  assert.equal(readablePublications.length, 47);
   for (const publication of readablePublications) {
     const { lesson } = resolveLesson(
       publication.courseId,
@@ -20,7 +20,9 @@ test("四门不同类型教材用同一模型，公式可严格解析，图片�
       assert.equal(blocks.filter((block) => block.type === "exercise").length, lesson.id === "AI000-C01-L02" ? 3 : 2);
       // 不设每课配图门槛；原14幅精确图由兼容测试逐幅保护，5.1采用可回查表格。
       assert.ok(blocks.some((block) => block.type === "table"));
-      assert.ok(blocks.every((block) => !["code", "experiment"].includes(block.type)));
+      // 结课页仅复用text块复制Markdown模板，不引入可执行课程代码。
+      assert.ok(blocks.every((block) => block.type !== "experiment" && (block.type !== "code" || (lesson.id === "AI000-C07-L03" && block.language === "text" && block.filename === "AI000-final-report.md"))));
+      assert.equal(blocks.filter(block => block.type === "code").length, lesson.id === "AI000-C07-L03" ? 1 : 0);
       assert.equal(blocks.filter(block => block.type === "math").length, lesson.id === "AI000-C05-L05" ? 2 : 0);
     } else if (lesson.courseId === "MA101" && publication.catalogRole !== "legacy") {
       assert.ok(lesson.sections.filter((section) => section.tier === "core").flatMap((section) => section.blocks).filter((block) => block.type === "exercise").length >= 2);

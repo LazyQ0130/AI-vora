@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\QYF\Desktop\Aivora-Web\scripts\recheck-ai000-7-3.py", line 17, in <module>
+    assert deadline == "11月10日18:00" and "其他报名要求不变" in by_id["N3"]["text"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,10 +1,12 @@
 import { readFileSync } from "node:fs";
+import { beforeCapstoneSource } from "./ai000-capstone-compatibility";
 
 // 仅逆转7.2登记且唯一匹配的接入/学时/局部样式片段；不忽略整个文件。
 const changes=JSON.parse(readFileSync(new URL("../docs/ai000-7-2/SOURCE_CHANGES.json",import.meta.url),"utf8")) as {
   sources:{path:string;changes:{before:string;after:string}[]}[];
 };
 export function beforeDirectionSource(path:string,source:string) {
+  source=beforeCapstoneSource(path,source);
   const entry=changes.sources.find(s=>s.path===path);
   if(!entry)return source;
   let text=source.replaceAll("\r\n","\n");

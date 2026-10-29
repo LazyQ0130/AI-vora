@@ -100,9 +100,9 @@ test("5.2独立r1阅读/完成可恢复，不继承或修改37旧课与旧修订
   restored.save(scope,100,"takeaways",true);assert.equal(parseReadingProgress(createProgressStore(()=>port).getSnapshot(scope),scope)?.completed,true);
   for(const [k,v]of oldKeys)assert.equal(memory.get(k),v);
 });
-test("发布门禁与相邻导航一致，7.3继续规划",()=>{
+test("发布门禁与相邻导航一致，7.4未注册",()=>{
   const course=getLearningCourse("AI000")!,pub=publicationManifest.find(p=>p.lessonId===lesson.id)!;assert.equal(course.status,"planned");assert.equal(pub.reviewEvidence,undefined);
   assert.equal(Boolean(resolveLesson("AI000",lesson.id)),isReadable(pub));
   if(isReadable(pub)){assert.equal(getAdjacentLessons(course,"AI000-C05-L01").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C05-L01");assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C05-L03");}
-  for(const slot of course.chapters.slice(5).flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C07-L02")){assert.equal(slot.status,"planned");assert.equal(slot.href,undefined);assert.equal(lessonRegistry.has(slot.lessonId),false);}
+  for(const slot of course.chapters.slice(5).flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C07-L03")){assert.equal(slot.status,"planned");assert.equal(slot.href,undefined);assert.equal(lessonRegistry.has(slot.lessonId),false);}
 });

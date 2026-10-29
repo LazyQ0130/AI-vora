@@ -1,0 +1,11 @@
+{
+  "localMarkdownLinks": 29,
+  "allExist": true,
+  "documents": [
+    "AI000_LESSON_7_3_AND_COURSE_REVIEW.md",
+    "SPECIAL_CHECKS.md",
+    "COURSE_READONLY_REVIEW.md",
+    "RECHECK.md"
+  ],
+  "logs": "Only trailing whitespace/EOF normalized; stdout content and earlier failure records retained."
+}

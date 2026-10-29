@@ -30,6 +30,7 @@ import { unreliableAnswersLesson } from "../content/lessons/ai000/unreliable-ans
 import { responsibleUseLesson } from "../content/lessons/ai000/responsible-ai-use";
 import { whyFoundationsLesson } from "../content/lessons/ai000/why-foundations";
 import { directionLearningRoutesLesson } from "../content/lessons/ai000/direction-learning-routes";
+import { problemAnalysisCapstoneLesson } from "../content/lessons/ai000/problem-analysis-capstone";
 import { privacyFairnessLesson } from "../content/lessons/ai000/privacy-bias-fairness";
 import { multimodalLesson } from "../content/lessons/ai000/multimodal-ai";
 import { trainingValidationTestLesson } from "../content/lessons/ai000/training-validation-test";
@@ -71,6 +72,7 @@ const contents: Lesson[] = [
   responsibleUseLesson,
   whyFoundationsLesson,
   directionLearningRoutesLesson,
+  problemAnalysisCapstoneLesson,
   ...maV22Lessons,
   regressionTaskLesson,
   linearModelLesson,

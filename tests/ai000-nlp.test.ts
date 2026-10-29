@@ -119,5 +119,5 @@ test("清单控制草稿与预览路径，前后导航自动衔接，7.3没有�
     assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C04-L04");
     assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C05-L02");
   }
-  for (const slot of course.chapters.slice(5).flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C07-L02")) { assert.equal(slot.status,"planned"); assert.equal(slot.href,undefined); assert.equal(lessonRegistry.has(slot.lessonId),false); }
+  for (const slot of course.chapters.slice(5).flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C07-L03")) { assert.equal(slot.status,"planned"); assert.equal(slot.href,undefined); assert.equal(lessonRegistry.has(slot.lessonId),false); }
 });

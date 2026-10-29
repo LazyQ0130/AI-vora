@@ -1,0 +1,69 @@
+{
+  "checkedAt": "2026-10-29T05:09:44.955Z",
+  "base": "http://127.0.0.1:3033/learn/AI000/AI000-C07-L03",
+  "viewports": [
+    {
+      "width": 1440,
+      "pageNoOverflow": true,
+      "eightParts": true,
+      "twoTasks": true,
+      "independentDisclosures": true,
+      "keyboardExerciseFocus": true,
+      "threeGoalsTwoCore": true,
+      "templateCopiedExactly": true,
+      "templateNoOverflow": true,
+      "noAutomaticCompletion": true
+    },
+    {
+      "width": 768,
+      "pageNoOverflow": true,
+      "eightParts": true,
+      "twoTasks": true,
+      "independentDisclosures": true,
+      "keyboardExerciseFocus": true,
+      "threeGoalsTwoCore": true,
+      "templateCopiedExactly": true,
+      "templateNoOverflow": true,
+      "noAutomaticCompletion": true
+    },
+    {
+      "width": 390,
+      "pageNoOverflow": true,
+      "eightParts": true,
+      "twoTasks": true,
+      "independentDisclosures": true,
+      "keyboardExerciseFocus": true,
+      "threeGoalsTwoCore": true,
+      "templateCopiedExactly": true,
+      "templateNoOverflow": true,
+      "noAutomaticCompletion": true
+    },
+    {
+      "width": 320,
+      "pageNoOverflow": true,
+      "eightParts": true,
+      "twoTasks": true,
+      "independentDisclosures": true,
+      "keyboardExerciseFocus": true,
+      "threeGoalsTwoCore": true,
+      "templateCopiedExactly": true,
+      "templateNoOverflow": true,
+      "noAutomaticCompletion": true
+    }
+  ],
+  "tableCopied": true,
+  "paragraphCopied": true,
+  "fiveReadingTargets": true,
+  "sixCoursePages": true,
+  "chapterThreeLessons": true,
+  "chapterEscapeRestoresFocus": true,
+  "newScopeStartsEmpty": true,
+  "partialSaved": true,
+  "readingResume": true,
+  "completedSurvivesReload": true,
+  "allOldProgressUnchanged": true,
+  "noFalseNext": true,
+  "storageRestored": true,
+  "clipboardRestored": true,
+  "warningErrorLogs": 0
+}

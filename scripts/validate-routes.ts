@@ -30,7 +30,7 @@ const paths: [string, number][] = [
   ["/learn/ML201/ML201-C99-L01", 404],
   ["/learn/PY101/ML201-C04-L01", 404],
   ["/learn/AI000/AI000-C07-L04", 404],
-  ["/learn/AI000/AI000-C07-L03", 404],
+  ["/learn/AI000/AI000-C07-L05", 404],
   ["/learn/PY101/AI000-C01-L01", 404],
   ["/learn/AI000/AI000-C02-L03", 404],
   ["/learn/PY101/AI000-C02-L01", 404],

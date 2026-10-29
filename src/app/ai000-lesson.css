@@ -134,6 +134,16 @@
 #exercise-plan-catalog-route,
 #exercise-choose-image-route { overflow-wrap: anywhere; }
 #compare-routes table { min-width: 600px; }
+#exercise-audit-booking-proposal > p:first-of-type,
+#exercise-write-personal-capstone > p:first-of-type { white-space: pre-line; }
+#exercise-audit-booking-proposal,
+#exercise-write-personal-capstone { overflow-wrap: anywhere; }
+#capstone-report-template .lesson-code-title { flex-wrap: wrap; gap: 8px; }
+#capstone-report-template .lesson-code-title > span { min-width: 0; overflow-wrap: anywhere; }
+#capstone-report-template .code-scroll pre { min-width: 0; font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere; }
+#capstone-report-template .token-line { display: flex; }
+#capstone-report-template .token-line > span:last-child { min-width: 0; flex: 1; white-space: pre-wrap; }
+#capstone-report-template .line-number { flex: none; }
 .ai-inference-figure { overflow-wrap: anywhere; }
 .ai-inference-steps { list-style: none; padding: 0; margin: 0; }
 .ai-inference-steps > li { padding: 20px 0 20px 14px; border-left: 3px solid #65cfe3; }
