@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { lessonRegistry } from "../src/lib/course-engine";
 import { publicationManifest } from "../src/content/publication-manifest";
-import { beforeR3Revision, beforeR3Source } from "../scripts/ai000-r3-compatibility";
+import { beforeR3Revision, beforeR3Source } from "../scripts/py101-p0-compatibility";
 import { targetIds, sha, type R3Baseline } from "../scripts/review-ai000-r3";
 import { createProgressStore, parseReadingProgress, progressKey } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";

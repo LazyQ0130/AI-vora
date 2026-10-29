@@ -25,7 +25,7 @@ const sha=(b:Buffer)=>createHash("sha256").update(b).digest("hex");
 
 test("R3登记精修逆转后：7.3保护46旧教材/发布、250文件和23精确图，拒绝额外片段与尾部",()=>{
   assert.equal(before.lessons.length,46);assert.equal(before.publications.length,46);assert.equal(before.files.length,250);
-  assert.equal(lessonRegistry.size,47);assert.equal(publicationManifest.length,47);
+  assert.equal(lessonRegistry.size,48);assert.equal(publicationManifest.length,48);
   for(const old of before.lessons)assert.equal(JSON.stringify(beforeR3Revision(lessonRegistry.get(old.id))),JSON.stringify(old),old.id);
   for(const old of before.publications)assert.deepEqual(beforeR3Revision(publicationManifest.find(p=>p.lessonId===old.lessonId)),old,old.lessonId);
   for(const f of before.files){const bytes=readFileSync(f.path);if(sha(bytes)===f.sha256)continue;const reversed=beforeCapstoneSource(f.path,bytes.toString("utf8")).replaceAll("\r\n","\n");assert.ok([reversed,reversed.replaceAll("\n","\r\n")].some(s=>sha(Buffer.from(s))===f.sha256),f.path);}
@@ -106,7 +106,7 @@ test("无新装饰图、模型执行或上传资源，原生表格与练习折�
 test("链接仅真实正文锚点/课程规划，原始先修事实及当前试读不冒称全开放",()=>{
   const links=[...lesson.prerequisiteLinks,...blocks.filter(b=>b.type==="reading-links").flatMap(b=>b.links)];
   for(const l of links){const [path,hash]=l.href.split("#");if(path.startsWith("/learn/")){const parts=path.split("/"),target=resolveLesson(parts[2],parts[3]);assert.ok(target,l.href);if(hash)assert.ok(target.lesson.sections.some(s=>s.id===hash),l.href);}else if(path.startsWith("/courses/"))assert.ok(getLearningCourse(path.split("/")[2]),path);}
-  for(const [id,current,legacy] of [["PY101",6,0],["MA101",4,5],["ML201",7,1]] as const){const c=getLearningCourse(id)!;assert.equal(c.status,"planned");assert.equal(c.chapters.flatMap(ch=>ch.lessons).filter(l=>l.href).length,current);assert.equal(c.legacyLessons.length,legacy);}
+  for(const [id,current,legacy] of [["PY101",7,0],["MA101",4,5],["ML201",7,1]] as const){const c=getLearningCourse(id)!;assert.equal(c.status,"planned");assert.equal(c.chapters.flatMap(ch=>ch.lessons).filter(l=>l.href).length,current);assert.equal(c.legacyLessons.length,legacy);}
   for(const id of ["DS101","ST101","DL301"]){assert.equal(publicationManifest.filter(p=>p.courseId===id).length,0);assert.ok(links.some(l=>l.href===`/courses/${id}`));}
 });
 test("七章24节注册顺序完整，7.2↔7.3门禁与末课无下一节，整门不自动发布",()=>{

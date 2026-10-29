@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-10-29T08:34:21.556Z",
+  "base": "http://127.0.0.1:3001",
+  "browser": "Codex in-app Chromium",
+  "checks": [
+    {
+      "check": "desktop-copy",
+      "passed": true,
+      "method": "按钮点击后用CDP读取当前页面navigator.clipboard.readText；高层剪贴板桥接返回空值"
+    },
+    {
+      "check": "refresh-resume",
+      "passed": true,
+      "anchor": "#next-step",
+      "note": "输入清空、六个提示/答案默认关闭；阅读位置恢复但未自动完成"
+    },
+    {
+      "check": "tablet-drawer-exercise-anchor",
+      "passed": true
+    },
+    {
+      "check": "mobile-copy",
+      "passed": true
+    },
+    {
+      "check": "mobile-drawer-hints-answer",
+      "passed": true
+    },
+    {
+      "check": "responsive",
+      "passed": true,
+      "viewports": [
+        [
+          1440,
+          1000
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ],
+        [
+          320,
+          844
+        ]
+      ],
+      "note": "正文未撑宽；代码、导航、表格局部滚动。实体设备未测。"
+    },
+    {
+      "check": "old-progress",
+      "passed": true,
+      "note": "所有首次读取时已存在的旧键逐字节不变；通过UI访问5.1并标记当前r2，新r1仍未完成。"
+    },
+    {
+      "check": "anchors",
+      "passed": true,
+      "details": [
+        {
+          "focused": "还没有可用的Python时",
+          "id": "local-python",
+          "targetExists": true
+        },
+        {
+          "focused": "把两条指令保存成文件",
+          "id": "save-script",
+          "targetExists": true
+        },
+        {
+          "focused": "让结果带上自己的变化",
+          "id": "change-message",
+          "targetExists": true
+        },
+        {
+          "focused": "保留程序，准备下一次运行",
+          "id": "next-step",
+          "targetExists": true
+        }
+      ]
+    },
+    {
+      "check": "planned-no-page",
+      "passed": true,
+      "route": "/learn/PY101/PY101-C01-L02",
+      "note": "浏览器显示这里，还没有被探索；HTTP另验404"
+    }
+  ],
+  "limitations": [
+    "Windows现有环境，非干净安装",
+    "macOS安装和实体平板/手机未测",
+    "同一AI辅助检查，不是教师审校或学生试学"
+  ]
+}

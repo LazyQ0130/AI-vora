@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import { beforeR3Source } from "./ai000-r3-compatibility";
+import { beforeR3Source } from "./py101-p0-compatibility";
 
 // 只逆转本轮登记且唯一匹配的完整上下文；额外改动仍交由整文件摘要拒绝。
 const changes=JSON.parse(readFileSync(new URL("../docs/ai000-7-3/SOURCE_CHANGES.json",import.meta.url),"utf8")) as {

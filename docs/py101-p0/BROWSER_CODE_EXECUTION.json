@@ -1,0 +1,18 @@
+[
+  {
+    "name": "browser-copy",
+    "path": "docs\\py101-p0\\runtime\\browser_copied.py",
+    "stdout": "Hello, Aivora!\nFile: first_run.py\n",
+    "stderr": "",
+    "exitCode": 0,
+    "exactSourceMatch": true
+  },
+  {
+    "name": "browser-download",
+    "path": "C:\\Users\\QYF\\Downloads\\first_run.py",
+    "stdout": "Hello, Aivora!\nFile: first_run.py\n",
+    "stderr": "",
+    "exitCode": 0,
+    "exactSourceMatch": true
+  }
+]

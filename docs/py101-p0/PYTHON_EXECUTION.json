@@ -1,0 +1,223 @@
+{
+  "checkedAt": "2026-10-29T08:31:17.576Z",
+  "platform": "win32",
+  "version": "Python 3.14.2",
+  "pythonCommand": "python",
+  "expectedMethod": "运行前按print文本、顺序、换行独立列出预期；逐项对照stdout/stderr/exit",
+  "downloadEqualsWebAndNotebook": true,
+  "results": [
+    {
+      "name": "web:first-output:第一条Python指令",
+      "args": [
+        "-c",
+        "print(\"Hello, Aivora!\")\n"
+      ],
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime",
+      "expectedStdout": "Hello, Aivora!\n",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "Hello, Aivora!\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "web:save-script:first_run.py",
+      "args": [
+        "-c",
+        "print(\"Hello, Aivora!\")\nprint(\"File: first_run.py\")\n"
+      ],
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime",
+      "expectedStdout": "Hello, Aivora!\nFile: first_run.py\n",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "Hello, Aivora!\nFile: first_run.py\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "download-saved-file",
+      "args": [
+        "first_run.py"
+      ],
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime",
+      "expectedStdout": "Hello, Aivora!\nFile: first_run.py\n",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "Hello, Aivora!\nFile: first_run.py\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "generated-notebook-code",
+      "args": [
+        "-c",
+        "print(\"Hello, Aivora!\")\nprint(\"File: first_run.py\")\n"
+      ],
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime",
+      "expectedStdout": "Hello, Aivora!\nFile: first_run.py\n",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "Hello, Aivora!\nFile: first_run.py\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "interactive-hello-and-quit",
+      "args": [
+        "-i"
+      ],
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime",
+      "input": "print(\"Hello, Aivora!\")\nquit()\n",
+      "expectedStdout": "Hello, Aivora!\n",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "Hello, Aivora!\n",
+      "stderr": "Python 3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)] on win32\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n>>> >>> ",
+      "passed": true
+    },
+    {
+      "name": "exercise-1-reference",
+      "args": [
+        "changed.py"
+      ],
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime",
+      "expectedStdout": "Reading plan B7\nFile: first_run.py\nNext: run again\n",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "Reading plan B7\nFile: first_run.py\nNext: run again\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "independent-Chinese-single-quote-variation",
+      "args": [
+        "chinese.py"
+      ],
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime",
+      "expectedStdout": "今天读书 C9\n保存后运行\n再试一次\n",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "今天读书 C9\n保存后运行\n再试一次\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "exercise-2-wrong-directory",
+      "args": [
+        "first_run.py"
+      ],
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime/missing-script",
+      "expectedStdout": "",
+      "expectedExit": 2,
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": "python: can't open file 'C:\\\\Users\\\\QYF\\\\Desktop\\\\Aivora-Web\\\\docs\\\\py101-p0\\\\runtime\\\\missing-script\\\\first_run.py': [Errno 2] No such file or directory\r\n",
+      "passed": true
+    },
+    {
+      "name": "exercise-2-recover-original-directory",
+      "args": [
+        "first_run.py"
+      ],
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime",
+      "expectedStdout": "Hello, Aivora!\nFile: first_run.py\n",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "Hello, Aivora!\nFile: first_run.py\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "exercise-2-recover-absolute-path",
+      "args": [
+        "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime/first_run.py"
+      ],
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime/run-check",
+      "expectedStdout": "Hello, Aivora!\nFile: first_run.py\n",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "Hello, Aivora!\nFile: first_run.py\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "unmatched-quote-no-partial-output",
+      "args": [
+        "bad_quotes.py"
+      ],
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime",
+      "expectedStdout": "",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "  File \"C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime\\bad_quotes.py\", line 1\r\n    print(\"Hello, Aivora!)\r\n          ^\r\nSyntaxError: unterminated string literal (detected at line 1)\r\n",
+      "passed": true
+    },
+    {
+      "name": "quote-repaired-and-saved",
+      "args": [
+        "bad_quotes.py"
+      ],
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime",
+      "expectedStdout": "Hello, Aivora!\nFile: first_run.py\n",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "Hello, Aivora!\nFile: first_run.py\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "wrong-extension",
+      "args": [
+        "extension_case.py"
+      ],
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime/wrong-extension",
+      "expectedStdout": "",
+      "expectedExit": 2,
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": "python: can't open file 'C:\\\\Users\\\\QYF\\\\Desktop\\\\Aivora-Web\\\\docs\\\\py101-p0\\\\runtime\\\\wrong-extension\\\\extension_case.py': [Errno 2] No such file or directory\r\n",
+      "passed": true
+    },
+    {
+      "name": "correct-extension-saved",
+      "args": [
+        "extension_case.py"
+      ],
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime/run-check",
+      "expectedStdout": "Hello, Aivora!\nFile: first_run.py\n",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "Hello, Aivora!\nFile: first_run.py\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "unsaved-buffer-disk-still-old",
+      "args": [
+        "first_run.py"
+      ],
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime",
+      "expectedStdout": "Hello, Aivora!\nFile: first_run.py\n",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "Hello, Aivora!\nFile: first_run.py\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "same-name-different-file",
+      "args": [
+        "first_run.py"
+      ],
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p0\\runtime/run-check",
+      "expectedStdout": "Different file D2\n",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "Different file D2\n",
+      "stderr": "",
+      "passed": true
+    }
+  ],
+  "limitations": "已有Windows解释器；未重装、未验证干净Windows/macOS；交互stdin管道检查不等同于人工键盘交互"
+}

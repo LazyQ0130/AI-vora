@@ -50,7 +50,7 @@ test("仅1.2与5.3升r2，正式目标不删；其他同版修订与未修改三
   for(const l of before.lessons){assert.deepEqual(get(l.id).objectives,l.objectives);assert.deepEqual(get(l.id).sections.map(s=>s.id),l.sections.map(s=>s.id));
     for(const e of exercises(l))assert.ok(exercises(get(l.id)).some(n=>n.id===e.id));}
   for(const id of ["AI000-C04-L01","AI000-C04-L02","AI000-C05-L02"])assert.deepEqual(get(id),old(id));
-  assert.equal(lessonRegistry.size,47);
+  assert.equal(lessonRegistry.size,48);
 });
 
 test("1.2新增独立四任务迁移题，保留原商品与图书题、真实覆盖目标一",()=>{

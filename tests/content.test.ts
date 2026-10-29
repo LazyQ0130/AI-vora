@@ -9,7 +9,7 @@ import { programs } from "../src/content/resources/programs";
 import { readablePublications } from "../src/content/publication-manifest";
 
 test("四门不同类型教材用同一模型，公式可严格解析，图片有正确尺寸和可读替代文字", async () => {
-  assert.equal(readablePublications.length, 47);
+  assert.equal(readablePublications.length, 48);
   for (const publication of readablePublications) {
     const { lesson } = resolveLesson(
       publication.courseId,
@@ -28,6 +28,11 @@ test("四门不同类型教材用同一模型，公式可严格解析，图片�
       assert.ok(lesson.sections.filter((section) => section.tier === "core").flatMap((section) => section.blocks).filter((block) => block.type === "exercise").length >= 2);
       assert.ok(blocks.some((block) => block.type === "vector-figure"));
       assert.ok(lesson.sections.filter((section) => section.tier === "core").every((section) => !section.blocks.some((block) => block.type === "code")));
+    } else if (lesson.id === "PY101-C01-L01") {
+      // 首课用一个概念自查与两道真实编程任务，不强制沿用旧样章题量。
+      assert.equal(blocks.filter(b => b.type === "quiz").length, 1);
+      assert.equal(blocks.filter(b => b.type === "exercise").length, 2);
+      assert.ok(blocks.some(b => b.type === "code" && b.language === "python"));
     } else {
       assert.ok(blocks.filter((b) => b.type === "quiz").length >= 2);
       assert.ok(blocks.some((b) => b.type === "code"));

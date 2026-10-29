@@ -1,4 +1,12 @@
 // 正文与完整下载共用核心源码；验证语句只在完整版追加。
+// 首课无需附加断言；独立片段避免扩展旧第五章工厂的课型联合。
+export const firstRunProgram = {
+    filename: "first_run", title: "从零运行第一个Python程序", environment: "受支持的 Python 3.x · 无第三方依赖 · 本地终端运行（语法兼容3.10+）",
+    core: `print("Hello, Aivora!")
+print("File: first_run.py")
+`,
+    checks: "",
+  } as const;
 export const corePrograms = {
   "function-basics": {
     filename: "function_basics", title: "定义和调用函数", environment: "Python 3.10+ · 标准库",

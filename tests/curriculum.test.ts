@@ -57,7 +57,7 @@ test("仅真实演示样章提供直达入口，不能把整门课程标记为�
   assert.equal(getCourse("AI000")?.status, "planned");
   assert.equal(getCoursePreview("ML201")?.href, SAMPLE_URL);
   assert.equal(getCourse("ML201")?.status, "planned");
-  assert.equal(getCoursePreview("PY101")?.href, "/learn/PY101/PY101-C05-L01");
+  assert.equal(getCoursePreview("PY101")?.href, "/learn/PY101/PY101-C01-L01");
   assert.equal(getCoursePreview("MA101")?.href, "/learn/MA101/MA101-C02-L03");
   assert.equal(getCourse("PY101")?.status, "planned");
   assert.equal(getCoursePreview("unknown"), undefined);

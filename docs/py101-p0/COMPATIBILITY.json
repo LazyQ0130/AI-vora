@@ -1,0 +1,80 @@
+{
+  "checkedAt": "2026-10-29T08:39:03.337Z",
+  "baseline": "81feeb132336e499bbc05d346cbe5d9710472723",
+  "unchanged": {
+    "files": [
+      "next-env.d.ts",
+      "scripts/ai000-r3-compatibility.ts",
+      "src/components/lesson/reader.tsx",
+      "tests/reading-experience.test.ts",
+      "curriculum/AI技术课程目录_V1.0.json",
+      "curriculum/AI技术课程体系_V1.0.md",
+      "src/content/lessons/foundations-v2-1.ts"
+    ],
+    "lessonCount": 47,
+    "publicationCount": 47,
+    "downloadCount": 30
+  },
+  "courseStatus": "planned",
+  "chapter": [
+    {
+      "id": "PY101-C01-L01",
+      "number": "1.1",
+      "status": "pending-review",
+      "href": "/learn/PY101/PY101-C01-L01"
+    },
+    {
+      "id": "PY101-C01-L02",
+      "number": "1.2",
+      "status": "planned",
+      "href": null
+    },
+    {
+      "id": "PY101-C01-L03",
+      "number": "1.3",
+      "status": "planned",
+      "href": null
+    },
+    {
+      "id": "PY101-C01-L04",
+      "number": "1.4",
+      "status": "planned",
+      "href": null
+    },
+    {
+      "id": "PY101-C01-L05",
+      "number": "1.5",
+      "status": "planned",
+      "href": null
+    },
+    {
+      "id": "PY101-C01-L06",
+      "number": "1.6",
+      "status": "planned",
+      "href": null
+    }
+  ],
+  "matrix": [
+    {
+      "objective": 1,
+      "action": "在本地确认解释器版本，并用自己的运行记录区分代码文件、解释器和输出",
+      "evidence": [
+        "own-message"
+      ]
+    },
+    {
+      "objective": 2,
+      "action": "独立修改并运行一个.py文件，先预测再核对print产生的逐行结果",
+      "evidence": [
+        "own-message"
+      ]
+    },
+    {
+      "objective": 3,
+      "action": "根据文件位置或报错定位一次运行失败，并验证恢复后的结果",
+      "evidence": [
+        "find-script"
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import { sampleCode } from "../sample";
 import type { LearningResource } from "../models";
-import { corePrograms, regressionStepCode } from "./core-programs";
+import { corePrograms, firstRunProgram, regressionStepCode } from "./core-programs";
 
 export const pythonFunctionsCode = `# Python 3.10+；仅使用标准库
 def transform(value: float, scale: float = 2.0, *, shift: float = 0.0) -> float:
@@ -160,6 +160,7 @@ export const programs = {
   ...Object.fromEntries(Object.entries(corePrograms).map(([id, sample]) => [id, {
     ...sample, code: sample.core + "\n# 可选：结果与边界验证\n" + sample.checks,
   }])) as unknown as Record<keyof typeof corePrograms, { filename: string; title: string; environment: string; code: string }>,
+  "first-run": { ...firstRunProgram, code: firstRunProgram.core },
   "ml-losses": {
     filename: "ml_losses",
     title: "预测误差、MAE 与 MSE",

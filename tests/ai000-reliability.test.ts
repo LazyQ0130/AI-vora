@@ -25,7 +25,7 @@ const sha=(s:Buffer)=>createHash("sha256").update(s).digest("hex");
 
 test("R3登记精修逆转后：6.1增加之外41旧课/发布与240文件精确保留，额外修改仍被拒绝",()=>{
   assert.equal(before.lessons.length,41); assert.equal(before.publications.length,41); assert.equal(before.files.length,240);
-  assert.equal(lessonRegistry.size,47); assert.equal(publicationManifest.length,47);
+  assert.equal(lessonRegistry.size,48); assert.equal(publicationManifest.length,48);
   for(const old of before.lessons)assert.equal(JSON.stringify(beforeR3Revision(lessonRegistry.get(old.id))),JSON.stringify(old),old.id);
   for(const old of before.publications)assert.deepEqual(beforeR3Revision(publicationManifest.find(p=>p.lessonId===old.lessonId)),old);
   for(const file of before.files){const bytes=readFileSync(file.path);if(sha(bytes)===file.sha256)continue;const reversed=beforeReliabilitySource(file.path,bytes.toString("utf8")).replaceAll("\r\n","\n");assert.ok([reversed,reversed.replaceAll("\n","\r\n")].some(s=>sha(Buffer.from(s))===file.sha256),file.path);}

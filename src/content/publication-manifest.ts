@@ -6,6 +6,7 @@ const revisedCoreLessons: Record<string, number> = { "MA101-C02-L03": 2, "PY101-
 
 // 发布权限独立于原始课程规划。技术证据不替代人工审核。
 export const publicationManifest = [
+  {lessonId:"PY101-C01-L01",courseId:"PY101",chapterId:"PY101-C01",title:"从零运行第一个Python程序",contentVersion:1,order:1,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p0/TECHNICAL_REPORT.md"},
   {lessonId:"AI000-C07-L03",courseId:"AI000",chapterId:"AI000-C07",title:"综合实践：分析 AI 问题并制定学习计划",contentVersion:1,order:3,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_7_3_AND_COURSE_REVIEW.md"},
   {lessonId:"AI000-C07-L02",courseId:"AI000",chapterId:"AI000-C07",title:"AI 不同技术方向需要哪些基础？",contentVersion:1,order:2,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_7_2_REVIEW.md"},
   {lessonId:"AI000-C07-L01",courseId:"AI000",chapterId:"AI000-C07",title:"为什么学习 Python、数学与数据分析？",contentVersion:1,order:1,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_7_1_REVIEW.md"},
@@ -49,7 +50,7 @@ export const publicationManifest = [
     technicalEvidence:"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
   },
   ...courseOutline
-    .filter((slot) => mlV2LessonIds.some((id) => id === slot.lessonId) || slot.courseId === "PY101" || maV22LessonIds.some((id) => id === slot.lessonId))
+    .filter((slot) => mlV2LessonIds.some((id) => id === slot.lessonId) || slot.chapterId === "PY101-C05" || maV22LessonIds.some((id) => id === slot.lessonId))
     .map((slot) => ({
       ...slot,
       contentVersion: revisedCoreLessons[slot.lessonId] ?? 1,
