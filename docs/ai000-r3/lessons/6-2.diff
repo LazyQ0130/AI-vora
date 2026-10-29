@@ -1,0 +1,21 @@
+diff --git a/src/content/lessons/ai000/privacy-bias-fairness.ts b/src/content/lessons/ai000/privacy-bias-fairness.ts
+index 9d018ee..a13b70b 100644
+--- a/src/content/lessons/ai000/privacy-bias-fairness.ts
++++ b/src/content/lessons/ai000/privacy-bias-fairness.ts
+@@ -44,6 +44,8 @@ export const privacyFairnessLesson = lessonSchema.parse({
+       p("还有一项容易混淆：类别是这条流程要产生并核对的结果。3.1学过的已确认类别可以作学习对照；当前报修者却未必先知道故障属于哪类。可以根据描述提出建议，必要时请人确认，不能以“类别字段必填”为由把判断任务推回给学生。"),
+       { type: "table", caption: "对照自己的判断：字段怎样服务这项任务", columns: ["字段", "本例处理建议", "理由与条件"], rows: repairFields.map(f=>[f.name,f.decision,f.reason]) },
+       p("只为明确目的，收集完成它合理需要的信息，这种做法称为数据最小化。“最小”仍要足以完成任务：删掉故障地点会让人找不到灯；加上与派单无关的身份证号，也没有补足故障描述。可选回访、额外身份核验与未来尚未确定的分析用途，应分开说明必要条件，不能用一句“以后有用”覆盖。"),
++      p("这也能联系中国的《个人信息保护法》：第六条要求目的明确、合理，处理与目的直接相关，选择对个人权益影响最小的方式，收集限于实现目的的最小范围。报修中若联系方式确为回访所需，就围绕这项用途安排；不能因为未来“可能有用”，把身份证号和通讯录一并收来。第五条还要求合法、正当、必要和诚信，第七条要求公开透明，公开处理规则并明示目的、方式和范围。"),
++      p("最小化只是其中一项要求。某条工单、录音是否属于个人信息，应结合具体内容及关联记录判断；处理依据与具体做法也要按实际情况核实，不能一概套用同一种授权方式。下面继续看识别、访问和保存问题。"),
+     ] },
+     { id: "personal-information", title: "删掉姓名，录音就一定不涉及个人了吗？", navGroup: "privacy", navLabel: "信息与管理", blocks: [
+       p("个人信息可以直观理解为能够识别特定个人，或与特定个人相关的信息。姓名、联系方式常能关联到人；一项看似普通的信息，与其他记录组合后也可能指向特定个人。例如工单编号若能连接账户，就不能仅因没写姓名而当作完全无关个人的数据。"),
+@@ -187,6 +189,7 @@ export const privacyFairnessLesson = lessonSchema.parse({
+   ],
+   resources: [],
+   references: [
++    { title: "中华人民共和国个人信息保护法（官方全文）", href: "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", note: "对照第五至七条的合法必要、目的和最小范围、公开透明原则；第四、十三条帮助核对个人信息范围与处理依据。访问核验2026-10-29，不以本课简述作完整合规结论。" },
+     { title: "NIST：隐私与公平性（英文）", href: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf", note: "可读§3.6–3.7（正文17–18页），比较隐私、偏差和具体使用情境；其他框架细节可跳过。" },
+     { title: "NIST：识别与管理AI偏差（英文）", href: "https://www.nist.gov/publications/towards-standard-identifying-and-managing-bias-artificial-intelligence", note: "先读出版摘要，理解偏差可能贯穿技术与使用流程，不只是一列数量。" },
+     { title: "Google：为什么要拆分检查结果（英文）", href: "https://developers.google.com/machine-learning/crash-course/fairness/evaluating-for-bias", note: "正文开头说明总体表现可能掩盖子集差异；后续公平指标不是本课要求。" },

@@ -1,0 +1,24 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: 发布清单已变化，需要重新绑定人工材料，不能沿用本包
++ actual - expected
+
++ 'a01ce358cc3ba8835868001fc9076451cf12140610aa049fbbde806a5967a289'
+- '8853380dded5f97f16dd9a12b55c094c03c69c108ba297a243338f492f9b6883'
+
+    at verifySnapshot (C:\Users\QYF\Desktop\Aivora-Web\scripts\prepare-ai000-release-readiness.ts:103:10)
+    at <anonymous> (C:\Users\QYF\Desktop\Aivora-Web\scripts\prepare-ai000-release-readiness.ts:217:69)
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:633:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'a01ce358cc3ba8835868001fc9076451cf12140610aa049fbbde806a5967a289',
+  expected: '8853380dded5f97f16dd9a12b55c094c03c69c108ba297a243338f492f9b6883',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.16.0

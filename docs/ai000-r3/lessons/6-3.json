@@ -1,0 +1,116 @@
+{
+  "id": "AI000-C06-L03",
+  "beforeVersion": 1,
+  "afterVersion": 2,
+  "beforeSha256": "04553790924ad7d1713ec7439786c3397c5c7e6b95fbfedff7e4653faba9767e",
+  "afterSha256": "592d72aee4cafe9f043e0464d76aa36b291e7ef687b80145cf2d7a213402bbbd",
+  "oldSectionIds": [
+    "ready-to-publish",
+    "source-cards",
+    "name-permission",
+    "compare-licenses",
+    "asset-decisions",
+    "voice-and-rights",
+    "misleading-content",
+    "release-roles",
+    "before-and-after",
+    "handbook-task",
+    "lecture-task",
+    "takeaways"
+  ],
+  "newSectionIds": [
+    "ready-to-publish",
+    "source-cards",
+    "name-permission",
+    "compare-licenses",
+    "asset-decisions",
+    "voice-and-rights",
+    "misleading-content",
+    "release-roles",
+    "before-and-after",
+    "handbook-task",
+    "lecture-task",
+    "takeaways"
+  ],
+  "exerciseIds": [
+    "audit-recruitment-assets",
+    "review-lecture-release"
+  ],
+  "assessmentMap": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "audit-recruitment-assets"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "review-lecture-release"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "audit-recruitment-assets",
+        "review-lecture-release"
+      ]
+    }
+  ],
+  "sectionStringCharacters": {
+    "before": 10065,
+    "after": 11552,
+    "delta": 1487,
+    "basis": "section标题及blocks字符串长度，含答案/字段名等；不等于阅读时间"
+  },
+  "learnerCharacters": {
+    "before": {
+      "narrative": 5745,
+      "exercisePrompts": 673,
+      "collapsedFeedback": 3271
+    },
+    "after": {
+      "narrative": 6464,
+      "exercisePrompts": 751,
+      "collapsedFeedback": 3925
+    },
+    "delta": {
+      "narrative": 719,
+      "exercisePrompts": 78,
+      "collapsedFeedback": 654
+    },
+    "basis": "可见标题/段落/表格/提示框/总结，题目标题与题干，折叠提示/答案/rubric分账；不含格式标签、参考目录与未改图文；UTF-16字符串长度不推算时长"
+  },
+  "adjacent": {
+    "previous": {
+      "lessonId": "AI000-C06-L02",
+      "courseId": "AI000",
+      "chapterId": "AI000-C06",
+      "title": "数据隐私、偏差与公平性",
+      "contentVersion": 1,
+      "order": 2,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_R3_REFINEMENT_REPORT.md",
+      "displayNumber": "6.2",
+      "href": "/learn/AI000/AI000-C06-L02"
+    },
+    "next": {
+      "lessonId": "AI000-C07-L01",
+      "courseId": "AI000",
+      "chapterId": "AI000-C07",
+      "title": "为什么学习 Python、数学与数据分析？",
+      "contentVersion": 1,
+      "order": 1,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_LESSON_7_1_REVIEW.md",
+      "displayNumber": "7.1",
+      "href": "/learn/AI000/AI000-C07-L01"
+    }
+  }
+}

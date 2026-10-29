@@ -1,3 +1,4 @@
+import { beforeR3Revision } from "../scripts/ai000-r3-compatibility";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -23,11 +24,11 @@ const prose=(id:string)=>JSON.stringify(sec(id).blocks);
 const sha=(v:Buffer)=>createHash("sha256").update(v).digest("hex");
 const answer=(i:number)=>tasks[i].solution.join("\n");
 
-test("6.3保留43旧课全文/清单、244文件及23精确图，未登记变更仍拒绝",()=>{
+test("R3登记精修逆转后：6.3保留43旧课全文/清单、244文件及23精确图，未登记变更仍拒绝",()=>{
   assert.equal(before.lessons.length,43);assert.equal(before.publications.length,43);assert.equal(before.files.length,244);
   assert.equal(lessonRegistry.size,47);assert.equal(publicationManifest.length,47);
-  for(const old of before.lessons)assert.equal(JSON.stringify(lessonRegistry.get(old.id)),JSON.stringify(old),old.id);
-  for(const old of before.publications)assert.deepEqual(publicationManifest.find(p=>p.lessonId===old.lessonId),old,old.lessonId);
+  for(const old of before.lessons)assert.equal(JSON.stringify(beforeR3Revision(lessonRegistry.get(old.id))),JSON.stringify(old),old.id);
+  for(const old of before.publications)assert.deepEqual(beforeR3Revision(publicationManifest.find(p=>p.lessonId===old.lessonId)),old,old.lessonId);
   for(const f of before.files){const b=readFileSync(f.path);if(sha(b)===f.sha256)continue;const reversed=beforeResponsibleSource(f.path,b.toString("utf8")).replaceAll("\r\n","\n");assert.ok([reversed,reversed.replaceAll("\n","\r\n")].some(s=>sha(Buffer.from(s))===f.sha256),f.path);}
   const path="src/lib/course-engine.ts",source=readFileSync(path,"utf8"),digest=before.files.find(f=>f.path===path)!.sha256;
   assert.notEqual(sha(Buffer.from(beforeResponsibleSource(path,source+"\n// extra"))),digest);
@@ -90,7 +91,7 @@ test("四职责各有对象，最终版本/渠道由人确认，事后按传播�
   assert.match(releaseRoles[3][1],/可公开版本与渠道/);
   assert.match(prose("release-roles"),/一人承担多项职责/);
   assert.match(prose("release-roles"),/自动生成的.*全部审核通过.*没有替负责人/);
-  const sequence=sec("before-and-after").blocks.find(b=>b.type==="table")!;assert.equal(sequence.type,"table");if(sequence.type==="table")assert.equal(sequence.rows.length,6);
+  const sequence=sec("before-and-after").blocks.find(b=>b.type==="table")!;assert.equal(sequence.type,"table");if(sequence.type==="table")assert.equal(sequence.rows.length,7);
   for(const t of ["停止继续传播","活动页、公众号和短视频","实际展示已更新","受影响","无法直接修改的转发","只改本地源文件"])assert.ok(prose("before-and-after").includes(t),t);
 });
 test("招新新题五项决策按范围，有商业/招新分离和合影双层依据",()=>{
@@ -136,15 +137,15 @@ test("只用表格和文字，三折叠与真实先修，6.2到6.3再到7.1及�
   for(const l of lesson.prerequisiteLinks){const [path,hash]=l.href.split("#"),parts=path.split("/");assert.ok(resolveLesson(parts[2],parts[3])!.lesson.sections.some(s=>s.id===hash),l.href);}
   assert.ok(lesson.sections.every(s=>s.tier==="core"&&!/^\d+[.、\s]/.test(s.title)));
   const pub=publicationManifest.find(p=>p.lessonId===lesson.id)!,course=getLearningCourse("AI000")!;
-  assert.equal(course.status,"planned");assert.equal(pub.reviewEvidence,undefined);assert.equal(pub.contentVersion,1);assert.equal(Boolean(resolveLesson("AI000",lesson.id)),isReadable(pub));
+  assert.equal(course.status,"planned");assert.equal(pub.reviewEvidence,undefined);assert.equal(pub.contentVersion,2);assert.equal(Boolean(resolveLesson("AI000",lesson.id)),isReadable(pub));
   if(isReadable(pub)){assert.equal(pub.status,"pending-review");assert.equal(getAdjacentLessons(course,"AI000-C06-L02").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C06-L02");assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C07-L01");}else{assert.equal(pub.status,"draft");assert.equal(pub.access,"private");}
   for(const slot of course.chapters[6].lessons.slice(3)){assert.equal(slot.href,undefined);assert.equal(slot.status,"planned");assert.equal(lessonRegistry.has(slot.lessonId),false);}
 });
-test("6.3 r1空态与43旧课及1.2/5.3历史键隔离，独立恢复位置/完成",()=>{
+test("6.3 r2空态与43旧课及1.2/5.3历史键隔离，独立恢复位置/完成",()=>{
   const memory=new Map<string,string>(),port={getItem:(k:string)=>memory.get(k)??null,setItem:(k:string,v:string)=>{memory.set(k,v);}},store=createProgressStore(()=>port);
   for(const old of before.lessons)store.save(lessonProgressScope(old),100,old.sections.at(-1)!.id,true);
   for(const id of ["AI000-C01-L02","AI000-C05-L03"])store.save({...lessonProgressScope(lessonRegistry.get(id)!),contentVersion:1},100,"takeaways",true);
-  const old=new Map(memory),scope=lessonProgressScope(lesson);assert.equal(progressKey(scope),"aivora:learning:v2:AI000:AI000-C06-L03:r1");assert.equal(store.getSnapshot(scope),null);
+  const old=new Map(memory),scope=lessonProgressScope(lesson);assert.equal(progressKey(scope),"aivora:learning:v2:AI000:AI000-C06-L03:r2");assert.equal(store.getSnapshot(scope),null);
   store.save(scope,58,"asset-decisions");const restored=createProgressStore(()=>port);assert.equal(parseReadingProgress(restored.getSnapshot(scope),scope)?.section,"asset-decisions");assert.equal(parseReadingProgress(restored.getSnapshot(scope),scope)?.completed,false);
   restored.save(scope,100,"takeaways",true);assert.equal(parseReadingProgress(createProgressStore(()=>port).getSnapshot(scope),scope)?.completed,true);for(const [k,v]of old)assert.equal(memory.get(k),v,k);
 });

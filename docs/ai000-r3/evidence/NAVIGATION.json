@@ -1,0 +1,22 @@
+[
+  {
+    "lesson": "AI000-C02-L02",
+    "previous": "http://127.0.0.1:3034/learn/AI000/AI000-C02-L01",
+    "next": "http://127.0.0.1:3034/learn/AI000/AI000-C03-L01"
+  },
+  {
+    "lesson": "AI000-C05-L05",
+    "previous": "http://127.0.0.1:3034/learn/AI000/AI000-C05-L04",
+    "next": "http://127.0.0.1:3034/learn/AI000/AI000-C06-L01"
+  },
+  {
+    "lesson": "AI000-C06-L02",
+    "previous": "http://127.0.0.1:3034/learn/AI000/AI000-C06-L01",
+    "next": "http://127.0.0.1:3034/learn/AI000/AI000-C06-L03"
+  },
+  {
+    "lesson": "AI000-C06-L03",
+    "previous": "http://127.0.0.1:3034/learn/AI000/AI000-C06-L02",
+    "next": "http://127.0.0.1:3034/learn/AI000/AI000-C07-L01"
+  }
+]

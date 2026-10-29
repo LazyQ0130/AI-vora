@@ -1,0 +1,1175 @@
+{
+  "method": "Cua IAB production browser; viewport overrides; DOM geometry plus saved screenshots",
+  "results": [
+    {
+      "exercises": [
+        {
+          "details": 3,
+          "id": "exercise-classify-new-systems",
+          "open": 0
+        },
+        {
+          "details": 3,
+          "id": "exercise-product-model-map",
+          "open": 0
+        }
+      ],
+      "math": 0,
+      "pageWidth": 1425,
+      "preview": true,
+      "tables": [
+        {
+          "client": 722,
+          "name": "同一活动，四种要求与不同的完成条件（教学情境）",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "同一个开头，接下来的候选有不同可能性（教学假设）",
+          "overflow": "auto",
+          "scroll": 722
+        }
+      ],
+      "title": "生成式 AI 是什么？它和 LLM 有什么关系？ · 试读样章 · Aivora",
+      "url": "http://127.0.0.1:3034/learn/AI000/AI000-C02-L02#llm",
+      "width": 1440
+    },
+    {
+      "exercises": [
+        {
+          "details": 3,
+          "id": "exercise-plan-bike-dispatch",
+          "open": 0
+        },
+        {
+          "details": 3,
+          "id": "exercise-choose-rl-projects",
+          "open": 0
+        }
+      ],
+      "math": 2,
+      "pageWidth": 1425,
+      "preview": true,
+      "tables": [
+        {
+          "client": 722,
+          "name": "调度前要能取得什么，随后允许做什么？",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "同一批、同一窗口的结果与计分",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "任务不同，先考虑的解决办法也不同",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "面对新项目，可以按这六问整理依据",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "三个站的当前数量与两个窗口的假设借车需求",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "手头不完整的行动日志",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "先按具体交付和现有条件作项目决定",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "第五章：五种技术侧重点对比（可以组合）",
+          "overflow": "auto",
+          "scroll": 722
+        }
+      ],
+      "title": "强化学习适合哪些应用问题？ · 试读样章 · Aivora",
+      "url": "http://127.0.0.1:3034/learn/AI000/AI000-C05-L05#takeaways",
+      "width": 1440
+    },
+    {
+      "exercises": [
+        {
+          "details": 3,
+          "id": "exercise-audit-event-data",
+          "open": 0
+        },
+        {
+          "details": 3,
+          "id": "exercise-compare-library-results",
+          "open": 0
+        }
+      ],
+      "math": 0,
+      "pageWidth": 1425,
+      "preview": true,
+      "tables": [
+        {
+          "client": 722,
+          "name": "语音报修的候选字段：先看原计划用途",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "对照自己的判断：字段怎样服务这项任务",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "一种按任务分配访问的报修方案",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "开发材料覆盖清单，与后面的检查记录分开",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "先独立核对8条最终分类结果",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "逐条反馈：对照你标的一致与不一致",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "同一批8条，按条件分别计数",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "把报修改进写成可执行动作",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "活动助手的两类任务",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "待审查的11项候选数据",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "两组检查条件：同时有不止一项差别",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "10条逐项记录：请独立核对与汇总",
+          "overflow": "auto",
+          "scroll": 722
+        }
+      ],
+      "title": "数据隐私、偏差与公平性 · 试读样章 · Aivora",
+      "url": "http://127.0.0.1:3034/learn/AI000/AI000-C06-L02#purpose-first",
+      "width": 1440
+    },
+    {
+      "exercises": [
+        {
+          "details": 3,
+          "id": "exercise-audit-recruitment-assets",
+          "open": 0
+        },
+        {
+          "details": 3,
+          "id": "exercise-review-lecture-release",
+          "open": 0
+        }
+      ],
+      "math": 0,
+      "pageWidth": 1425,
+      "preview": true,
+      "tables": [
+        {
+          "client": 722,
+          "name": "本次宣传的统一活动资料",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "S1–S6：现有来源记录与拟用方式，尚未给出审核决定",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "把同一句“能用吗”拆成可查的问题",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "按具体许可比较，不凭“免费”猜范围",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "六项素材的审查反馈",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "同一作品，分别查事实、背书与发布权限",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "本例的一种责任分工",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "可以交给团队执行的发布前顺序",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "招新手册的两种发布用途",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "A–E候选素材：逐项对照计划",
+          "overflow": "auto",
+          "scroll": 722
+        },
+        {
+          "client": 722,
+          "name": "公益讲座：主办方已确认的完整题设",
+          "overflow": "auto",
+          "scroll": 722
+        }
+      ],
+      "title": "版权、误用与负责任地使用 AI · 试读样章 · Aivora",
+      "url": "http://127.0.0.1:3034/learn/AI000/AI000-C06-L03#before-and-after",
+      "width": 1440
+    },
+    {
+      "exercises": [
+        {
+          "details": 3,
+          "id": "exercise-classify-new-systems",
+          "open": 0
+        },
+        {
+          "details": 3,
+          "id": "exercise-product-model-map",
+          "open": 0
+        }
+      ],
+      "math": 0,
+      "pageWidth": 753,
+      "preview": true,
+      "tables": [
+        {
+          "client": 650,
+          "name": "同一活动，四种要求与不同的完成条件（教学情境）",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "同一个开头，接下来的候选有不同可能性（教学假设）",
+          "overflow": "auto",
+          "scroll": 650
+        }
+      ],
+      "title": "生成式 AI 是什么？它和 LLM 有什么关系？ · 试读样章 · Aivora",
+      "url": "http://127.0.0.1:3034/learn/AI000/AI000-C02-L02#llm",
+      "width": 768
+    },
+    {
+      "exercises": [
+        {
+          "details": 3,
+          "id": "exercise-plan-bike-dispatch",
+          "open": 0
+        },
+        {
+          "details": 3,
+          "id": "exercise-choose-rl-projects",
+          "open": 0
+        }
+      ],
+      "math": 2,
+      "pageWidth": 753,
+      "preview": true,
+      "tables": [
+        {
+          "client": 650,
+          "name": "调度前要能取得什么，随后允许做什么？",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "同一批、同一窗口的结果与计分",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "任务不同，先考虑的解决办法也不同",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "面对新项目，可以按这六问整理依据",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "三个站的当前数量与两个窗口的假设借车需求",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "手头不完整的行动日志",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "先按具体交付和现有条件作项目决定",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "第五章：五种技术侧重点对比（可以组合）",
+          "overflow": "auto",
+          "scroll": 650
+        }
+      ],
+      "title": "强化学习适合哪些应用问题？ · 试读样章 · Aivora",
+      "url": "http://127.0.0.1:3034/learn/AI000/AI000-C05-L05#takeaways",
+      "width": 768
+    },
+    {
+      "exercises": [
+        {
+          "details": 3,
+          "id": "exercise-audit-event-data",
+          "open": 0
+        },
+        {
+          "details": 3,
+          "id": "exercise-compare-library-results",
+          "open": 0
+        }
+      ],
+      "math": 0,
+      "pageWidth": 753,
+      "preview": true,
+      "tables": [
+        {
+          "client": 650,
+          "name": "语音报修的候选字段：先看原计划用途",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "对照自己的判断：字段怎样服务这项任务",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "一种按任务分配访问的报修方案",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "开发材料覆盖清单，与后面的检查记录分开",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "先独立核对8条最终分类结果",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "逐条反馈：对照你标的一致与不一致",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "同一批8条，按条件分别计数",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "把报修改进写成可执行动作",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "活动助手的两类任务",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "待审查的11项候选数据",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "两组检查条件：同时有不止一项差别",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "10条逐项记录：请独立核对与汇总",
+          "overflow": "auto",
+          "scroll": 650
+        }
+      ],
+      "title": "数据隐私、偏差与公平性 · 试读样章 · Aivora",
+      "url": "http://127.0.0.1:3034/learn/AI000/AI000-C06-L02#purpose-first",
+      "width": 768
+    },
+    {
+      "exercises": [
+        {
+          "details": 3,
+          "id": "exercise-audit-recruitment-assets",
+          "open": 0
+        },
+        {
+          "details": 3,
+          "id": "exercise-review-lecture-release",
+          "open": 0
+        }
+      ],
+      "math": 0,
+      "pageWidth": 753,
+      "preview": true,
+      "tables": [
+        {
+          "client": 650,
+          "name": "本次宣传的统一活动资料",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "S1–S6：现有来源记录与拟用方式，尚未给出审核决定",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "把同一句“能用吗”拆成可查的问题",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "按具体许可比较，不凭“免费”猜范围",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "六项素材的审查反馈",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "同一作品，分别查事实、背书与发布权限",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "本例的一种责任分工",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "可以交给团队执行的发布前顺序",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "招新手册的两种发布用途",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "A–E候选素材：逐项对照计划",
+          "overflow": "auto",
+          "scroll": 650
+        },
+        {
+          "client": 650,
+          "name": "公益讲座：主办方已确认的完整题设",
+          "overflow": "auto",
+          "scroll": 650
+        }
+      ],
+      "title": "版权、误用与负责任地使用 AI · 试读样章 · Aivora",
+      "url": "http://127.0.0.1:3034/learn/AI000/AI000-C06-L03#before-and-after",
+      "width": 768
+    },
+    {
+      "exercises": [
+        {
+          "details": 3,
+          "id": "exercise-classify-new-systems",
+          "open": 0
+        },
+        {
+          "details": 3,
+          "id": "exercise-product-model-map",
+          "open": 0
+        }
+      ],
+      "math": 0,
+      "pageWidth": 375,
+      "preview": true,
+      "tables": [
+        {
+          "client": 308,
+          "name": "同一活动，四种要求与不同的完成条件（教学情境）",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "同一个开头，接下来的候选有不同可能性（教学假设）",
+          "overflow": "auto",
+          "scroll": 308
+        }
+      ],
+      "title": "生成式 AI 是什么？它和 LLM 有什么关系？ · 试读样章 · Aivora",
+      "url": "http://127.0.0.1:3034/learn/AI000/AI000-C02-L02#llm",
+      "width": 390
+    },
+    {
+      "exercises": [
+        {
+          "details": 3,
+          "id": "exercise-plan-bike-dispatch",
+          "open": 0
+        },
+        {
+          "details": 3,
+          "id": "exercise-choose-rl-projects",
+          "open": 0
+        }
+      ],
+      "math": 2,
+      "pageWidth": 375,
+      "preview": true,
+      "tables": [
+        {
+          "client": 308,
+          "name": "调度前要能取得什么，随后允许做什么？",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "同一批、同一窗口的结果与计分",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "任务不同，先考虑的解决办法也不同",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "面对新项目，可以按这六问整理依据",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "三个站的当前数量与两个窗口的假设借车需求",
+          "overflow": "auto",
+          "scroll": 320
+        },
+        {
+          "client": 308,
+          "name": "手头不完整的行动日志",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "先按具体交付和现有条件作项目决定",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "第五章：五种技术侧重点对比（可以组合）",
+          "overflow": "auto",
+          "scroll": 400
+        }
+      ],
+      "title": "强化学习适合哪些应用问题？ · 试读样章 · Aivora",
+      "url": "http://127.0.0.1:3034/learn/AI000/AI000-C05-L05#takeaways",
+      "width": 390
+    },
+    {
+      "exercises": [
+        {
+          "details": 3,
+          "id": "exercise-audit-event-data",
+          "open": 0
+        },
+        {
+          "details": 3,
+          "id": "exercise-compare-library-results",
+          "open": 0
+        }
+      ],
+      "math": 0,
+      "pageWidth": 375,
+      "preview": true,
+      "tables": [
+        {
+          "client": 308,
+          "name": "语音报修的候选字段：先看原计划用途",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "对照自己的判断：字段怎样服务这项任务",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "一种按任务分配访问的报修方案",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "开发材料覆盖清单，与后面的检查记录分开",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "先独立核对8条最终分类结果",
+          "overflow": "auto",
+          "scroll": 320
+        },
+        {
+          "client": 308,
+          "name": "逐条反馈：对照你标的一致与不一致",
+          "overflow": "auto",
+          "scroll": 400
+        },
+        {
+          "client": 308,
+          "name": "同一批8条，按条件分别计数",
+          "overflow": "auto",
+          "scroll": 400
+        },
+        {
+          "client": 308,
+          "name": "把报修改进写成可执行动作",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "活动助手的两类任务",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "待审查的11项候选数据",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "两组检查条件：同时有不止一项差别",
+          "overflow": "auto",
+          "scroll": 320
+        },
+        {
+          "client": 308,
+          "name": "10条逐项记录：请独立核对与汇总",
+          "overflow": "auto",
+          "scroll": 320
+        }
+      ],
+      "title": "数据隐私、偏差与公平性 · 试读样章 · Aivora",
+      "url": "http://127.0.0.1:3034/learn/AI000/AI000-C06-L02#purpose-first",
+      "width": 390
+    },
+    {
+      "exercises": [
+        {
+          "details": 3,
+          "id": "exercise-audit-recruitment-assets",
+          "open": 0
+        },
+        {
+          "details": 3,
+          "id": "exercise-review-lecture-release",
+          "open": 0
+        }
+      ],
+      "math": 0,
+      "pageWidth": 375,
+      "preview": true,
+      "tables": [
+        {
+          "client": 308,
+          "name": "本次宣传的统一活动资料",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "S1–S6：现有来源记录与拟用方式，尚未给出审核决定",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "把同一句“能用吗”拆成可查的问题",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "按具体许可比较，不凭“免费”猜范围",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "六项素材的审查反馈",
+          "overflow": "auto",
+          "scroll": 320
+        },
+        {
+          "client": 308,
+          "name": "同一作品，分别查事实、背书与发布权限",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "本例的一种责任分工",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "可以交给团队执行的发布前顺序",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "招新手册的两种发布用途",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "A–E候选素材：逐项对照计划",
+          "overflow": "auto",
+          "scroll": 308
+        },
+        {
+          "client": 308,
+          "name": "公益讲座：主办方已确认的完整题设",
+          "overflow": "auto",
+          "scroll": 308
+        }
+      ],
+      "title": "版权、误用与负责任地使用 AI · 试读样章 · Aivora",
+      "url": "http://127.0.0.1:3034/learn/AI000/AI000-C06-L03#before-and-after",
+      "width": 390
+    },
+    {
+      "exercises": [
+        {
+          "details": 3,
+          "id": "exercise-classify-new-systems",
+          "open": 0
+        },
+        {
+          "details": 3,
+          "id": "exercise-product-model-map",
+          "open": 0
+        }
+      ],
+      "math": 0,
+      "pageWidth": 345,
+      "preview": true,
+      "tables": [
+        {
+          "client": 278,
+          "name": "同一活动，四种要求与不同的完成条件（教学情境）",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "同一个开头，接下来的候选有不同可能性（教学假设）",
+          "overflow": "auto",
+          "scroll": 278
+        }
+      ],
+      "title": "生成式 AI 是什么？它和 LLM 有什么关系？ · 试读样章 · Aivora",
+      "url": "http://127.0.0.1:3034/learn/AI000/AI000-C02-L02#llm",
+      "width": 360
+    },
+    {
+      "exercises": [
+        {
+          "details": 3,
+          "id": "exercise-plan-bike-dispatch",
+          "open": 0
+        },
+        {
+          "details": 3,
+          "id": "exercise-choose-rl-projects",
+          "open": 0
+        }
+      ],
+      "math": 2,
+      "pageWidth": 345,
+      "preview": true,
+      "tables": [
+        {
+          "client": 278,
+          "name": "调度前要能取得什么，随后允许做什么？",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "同一批、同一窗口的结果与计分",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "任务不同，先考虑的解决办法也不同",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "面对新项目，可以按这六问整理依据",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "三个站的当前数量与两个窗口的假设借车需求",
+          "overflow": "auto",
+          "scroll": 320
+        },
+        {
+          "client": 278,
+          "name": "手头不完整的行动日志",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "先按具体交付和现有条件作项目决定",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "第五章：五种技术侧重点对比（可以组合）",
+          "overflow": "auto",
+          "scroll": 400
+        }
+      ],
+      "title": "强化学习适合哪些应用问题？ · 试读样章 · Aivora",
+      "url": "http://127.0.0.1:3034/learn/AI000/AI000-C05-L05#takeaways",
+      "width": 360
+    },
+    {
+      "exercises": [
+        {
+          "details": 3,
+          "id": "exercise-audit-event-data",
+          "open": 0
+        },
+        {
+          "details": 3,
+          "id": "exercise-compare-library-results",
+          "open": 0
+        }
+      ],
+      "math": 0,
+      "pageWidth": 345,
+      "preview": true,
+      "tables": [
+        {
+          "client": 278,
+          "name": "语音报修的候选字段：先看原计划用途",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "对照自己的判断：字段怎样服务这项任务",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "一种按任务分配访问的报修方案",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "开发材料覆盖清单，与后面的检查记录分开",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "先独立核对8条最终分类结果",
+          "overflow": "auto",
+          "scroll": 320
+        },
+        {
+          "client": 278,
+          "name": "逐条反馈：对照你标的一致与不一致",
+          "overflow": "auto",
+          "scroll": 400
+        },
+        {
+          "client": 278,
+          "name": "同一批8条，按条件分别计数",
+          "overflow": "auto",
+          "scroll": 400
+        },
+        {
+          "client": 278,
+          "name": "把报修改进写成可执行动作",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "活动助手的两类任务",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "待审查的11项候选数据",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "两组检查条件：同时有不止一项差别",
+          "overflow": "auto",
+          "scroll": 320
+        },
+        {
+          "client": 278,
+          "name": "10条逐项记录：请独立核对与汇总",
+          "overflow": "auto",
+          "scroll": 320
+        }
+      ],
+      "title": "数据隐私、偏差与公平性 · 试读样章 · Aivora",
+      "url": "http://127.0.0.1:3034/learn/AI000/AI000-C06-L02#purpose-first",
+      "width": 360
+    },
+    {
+      "exercises": [
+        {
+          "details": 3,
+          "id": "exercise-audit-recruitment-assets",
+          "open": 0
+        },
+        {
+          "details": 3,
+          "id": "exercise-review-lecture-release",
+          "open": 0
+        }
+      ],
+      "math": 0,
+      "pageWidth": 345,
+      "preview": true,
+      "tables": [
+        {
+          "client": 278,
+          "name": "本次宣传的统一活动资料",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "S1–S6：现有来源记录与拟用方式，尚未给出审核决定",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "把同一句“能用吗”拆成可查的问题",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "按具体许可比较，不凭“免费”猜范围",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "六项素材的审查反馈",
+          "overflow": "auto",
+          "scroll": 320
+        },
+        {
+          "client": 278,
+          "name": "同一作品，分别查事实、背书与发布权限",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "本例的一种责任分工",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "可以交给团队执行的发布前顺序",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "招新手册的两种发布用途",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "A–E候选素材：逐项对照计划",
+          "overflow": "auto",
+          "scroll": 278
+        },
+        {
+          "client": 278,
+          "name": "公益讲座：主办方已确认的完整题设",
+          "overflow": "auto",
+          "scroll": 278
+        }
+      ],
+      "title": "版权、误用与负责任地使用 AI · 试读样章 · Aivora",
+      "url": "http://127.0.0.1:3034/learn/AI000/AI000-C06-L03#before-and-after",
+      "width": 360
+    }
+  ],
+  "disclosureInteractions": [
+    {
+      "id": "exercise-audit-recruitment-assets",
+      "open": 1
+    },
+    {
+      "id": "exercise-audit-recruitment-assets",
+      "open": 1
+    },
+    {
+      "id": "exercise-audit-recruitment-assets",
+      "open": 1
+    },
+    {
+      "id": "exercise-review-lecture-release",
+      "open": 1
+    },
+    {
+      "id": "exercise-review-lecture-release",
+      "open": 1
+    },
+    {
+      "id": "exercise-review-lecture-release",
+      "open": 1
+    }
+  ]
+}

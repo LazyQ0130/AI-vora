@@ -1,3 +1,4 @@
+import { beforeR3Revision } from "../scripts/ai000-r3-compatibility";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
@@ -22,11 +23,11 @@ const blocks=lesson.sections.flatMap(s=>s.blocks), exercises=blocks.filter(b=>b.
 const sha=(s:Buffer)=>createHash("sha256").update(s).digest("hex");
 const text=(id:string)=>JSON.stringify(lesson.sections.find(s=>s.id===id)!.blocks);
 
-test("5.5增加之外40旧课/发布与238文件精确保留，未登记源码改动仍拒绝",()=>{
+test("R3登记精修逆转后：5.5增加之外40旧课/发布与238文件精确保留，未登记源码改动仍拒绝",()=>{
   assert.equal(before.lessons.length,40);assert.equal(before.files.length,238);
   assert.equal(lessonRegistry.size,47);assert.equal(publicationManifest.length,47);
-  for(const old of before.lessons)assert.equal(JSON.stringify(lessonRegistry.get(old.id)),JSON.stringify(old),old.id);
-  for(const old of before.publications)assert.deepEqual(publicationManifest.find(p=>p.lessonId===old.lessonId),old);
+  for(const old of before.lessons)assert.equal(JSON.stringify(beforeR3Revision(lessonRegistry.get(old.id))),JSON.stringify(old),old.id);
+  for(const old of before.publications)assert.deepEqual(beforeR3Revision(publicationManifest.find(p=>p.lessonId===old.lessonId)),old);
   for(const f of before.files){const bytes=readFileSync(f.path);if(sha(bytes)===f.sha256)continue;const source=beforeApplicabilitySource(f.path,bytes.toString("utf8")).replaceAll("\r\n","\n");assert.ok([source,source.replaceAll("\n","\r\n")].some(t=>sha(Buffer.from(t))===f.sha256),f.path);}
   const path="src/lib/course-engine.ts",source=readFileSync(path,"utf8"),expected=before.files.find(f=>f.path===path)!.sha256;
   assert.ok(beforeApplicabilitySource(path,source+"\n// unregistered").endsWith("// unregistered"));

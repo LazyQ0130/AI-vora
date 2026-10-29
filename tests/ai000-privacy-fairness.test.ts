@@ -1,3 +1,4 @@
+import { beforeR3Revision } from "../scripts/ai000-r3-compatibility";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
@@ -30,11 +31,11 @@ function recount(records:readonly CategoryRecord[],condition?:string) {
   return {total:rows.length,correct,wrong};
 }
 
-test("6.2之外42旧教材/发布、242文件及23幅精确图完全保留，未登记变化仍失败",()=>{
+test("R3登记精修逆转后：6.2之外42旧教材/发布、242文件及23幅精确图完全保留，未登记变化仍失败",()=>{
   assert.equal(before.lessons.length,42);assert.equal(before.publications.length,42);assert.equal(before.files.length,242);
   assert.equal(lessonRegistry.size,47);assert.equal(publicationManifest.length,47);
-  for(const old of before.lessons)assert.equal(JSON.stringify(lessonRegistry.get(old.id)),JSON.stringify(old),old.id);
-  for(const old of before.publications)assert.deepEqual(publicationManifest.find(p=>p.lessonId===old.lessonId),old,old.lessonId);
+  for(const old of before.lessons)assert.equal(JSON.stringify(beforeR3Revision(lessonRegistry.get(old.id))),JSON.stringify(old),old.id);
+  for(const old of before.publications)assert.deepEqual(beforeR3Revision(publicationManifest.find(p=>p.lessonId===old.lessonId)),old,old.lessonId);
   for(const f of before.files){const bytes=readFileSync(f.path);if(sha(bytes)===f.sha256)continue;const reversed=beforePrivacySource(f.path,bytes.toString("utf8")).replaceAll("\r\n","\n");assert.ok([reversed,reversed.replaceAll("\n","\r\n")].some(s=>sha(Buffer.from(s))===f.sha256),f.path);}
   const path="src/lib/course-engine.ts",source=readFileSync(path,"utf8"),expected=before.files.find(f=>f.path===path)!.sha256;
   assert.notEqual(sha(Buffer.from(beforePrivacySource(path,source+"\n// unregistered"))),expected);

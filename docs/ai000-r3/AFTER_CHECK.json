@@ -1,0 +1,493 @@
+{
+  "base": "450e40187f444ab551ca1d391ec5aa91c7dc0e5c",
+  "checkedAt": "2026-10-29T06:47:13.549Z",
+  "changedFiles": [
+    {
+      "path": "src/content/lessons/ai000/generative-ai-and-llm.ts",
+      "beforeSha256": "ec75be29a3e15f8eaf109f1a9e3eeb5bed858c728b0727bdc108fb52ad10f788",
+      "afterSha256": "46a46c44b5ea256f9d8f3bc84c3e8034883c58dc5517ad702fc01c52c92dd559"
+    },
+    {
+      "path": "src/content/lessons/ai000/privacy-bias-fairness.ts",
+      "beforeSha256": "2269ae64eb6a85181a6fab0f610b5497637ca2bcf42156f11d5a4fa7714773b2",
+      "afterSha256": "db699d82d2ea37b86ea2dc7805b52f949e686cf16b10e5cb80fc3749bc9b72af"
+    },
+    {
+      "path": "src/content/lessons/ai000/responsible-ai-use.ts",
+      "beforeSha256": "035a57456e0dea8f072196c2272a9cec47dc31cd7ab82ff13b8f05f806a0124b",
+      "afterSha256": "b1a36d0c90859e8b7d8fa42b2cdb1adf92c3d1c71e1233991257ee7bb73c6355"
+    },
+    {
+      "path": "src/content/lessons/ai000/responsible-use-example.ts",
+      "beforeSha256": "260403382cefaff961cfd9392f2a0121589ec8714364cf483c9b12be882e9560",
+      "afterSha256": "1a355c2296b37c05a65e2be270284316524e0ff904398d3b775d0bc3ea3994c0"
+    },
+    {
+      "path": "src/content/lessons/ai000/rl-applicability.ts",
+      "beforeSha256": "2bdeeb4cb9d7a5e6891c9fa015f8875814be96aaad2140ce9d582c582b36de49",
+      "afterSha256": "265a8bed6cfd6063fe82adb0348f4596d14b1e3ad7106a42d70ce136e38ea99d"
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "beforeSha256": "69a709357dc7188f8cdccaadf4c52cf73cfc3463d9e3ec62bf9e285889c12335",
+      "afterSha256": "a10e1222152f3118fe01dbf494b52fbf0e6ffaf1b73355888e8d969e99f560e6"
+    }
+  ],
+  "unchangedLessons": 43,
+  "unchangedPublications": 43,
+  "frozenSnapshotUnchanged": true,
+  "lessons": [
+    {
+      "id": "AI000-C02-L02",
+      "beforeVersion": 1,
+      "afterVersion": 1,
+      "beforeSha256": "9bf25b4d07d062813d92256ad0b25f6bd90a1da1a011834b1d13f059ccc26806",
+      "afterSha256": "69e6402a98a8419e15c9e34de96f341a5812fdbdea7451e97cd92c686d5bba48",
+      "oldSectionIds": [
+        "generation",
+        "generative-model",
+        "llm",
+        "product",
+        "practice",
+        "takeaways"
+      ],
+      "newSectionIds": [
+        "generation",
+        "generative-model",
+        "llm",
+        "product",
+        "practice",
+        "takeaways"
+      ],
+      "exerciseIds": [
+        "classify-new-systems",
+        "product-model-map"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "classify-new-systems"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "product-model-map"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "classify-new-systems",
+            "product-model-map"
+          ]
+        }
+      ],
+      "sectionStringCharacters": {
+        "before": 4614,
+        "after": 5021,
+        "delta": 407,
+        "basis": "section标题及blocks字符串长度，含答案/字段名等；不等于阅读时间"
+      },
+      "learnerCharacters": {
+        "before": {
+          "narrative": 2509,
+          "exercisePrompts": 366,
+          "collapsedFeedback": 1134
+        },
+        "after": {
+          "narrative": 2884,
+          "exercisePrompts": 366,
+          "collapsedFeedback": 1134
+        },
+        "delta": {
+          "narrative": 375,
+          "exercisePrompts": 0,
+          "collapsedFeedback": 0
+        },
+        "basis": "可见标题/段落/表格/提示框/总结，题目标题与题干，折叠提示/答案/rubric分账；不含格式标签、参考目录与未改图文；UTF-16字符串长度不推算时长"
+      },
+      "adjacent": {
+        "previous": {
+          "lessonId": "AI000-C02-L01",
+          "courseId": "AI000",
+          "chapterId": "AI000-C02",
+          "title": "AI、机器学习与深度学习，到底是什么关系？",
+          "contentVersion": 2,
+          "order": 1,
+          "catalogRole": "current",
+          "optionalLesson": false,
+          "status": "pending-review",
+          "access": "preview",
+          "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+          "displayNumber": "2.1",
+          "href": "/learn/AI000/AI000-C02-L01"
+        },
+        "next": {
+          "lessonId": "AI000-C03-L01",
+          "courseId": "AI000",
+          "chapterId": "AI000-C03",
+          "title": "监督学习：从有答案的例子中学习",
+          "contentVersion": 1,
+          "order": 1,
+          "catalogRole": "current",
+          "optionalLesson": false,
+          "status": "pending-review",
+          "access": "preview",
+          "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+          "displayNumber": "3.1",
+          "href": "/learn/AI000/AI000-C03-L01"
+        }
+      }
+    },
+    {
+      "id": "AI000-C05-L05",
+      "beforeVersion": 1,
+      "afterVersion": 1,
+      "beforeSha256": "5dfca0660a12ee659fa7d73651f156219a1aa2fe9eeb011910141759dfbc85c0",
+      "afterSha256": "8efe0189d3dc8f4b4fa6232c97384b943feaf4168002e15e94ca7331fa5fd178",
+      "oldSectionIds": [
+        "warehouse-problem",
+        "first-choices",
+        "warehouse-task",
+        "score-and-requirements",
+        "obtain-feedback",
+        "simulation-check",
+        "compare-methods",
+        "compare-fairly",
+        "bike-dispatch-task",
+        "project-choice-task",
+        "takeaways"
+      ],
+      "newSectionIds": [
+        "warehouse-problem",
+        "first-choices",
+        "warehouse-task",
+        "score-and-requirements",
+        "obtain-feedback",
+        "simulation-check",
+        "compare-methods",
+        "compare-fairly",
+        "bike-dispatch-task",
+        "project-choice-task",
+        "takeaways"
+      ],
+      "exerciseIds": [
+        "plan-bike-dispatch",
+        "choose-rl-projects"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "plan-bike-dispatch",
+            "choose-rl-projects"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "plan-bike-dispatch"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "plan-bike-dispatch",
+            "choose-rl-projects"
+          ]
+        }
+      ],
+      "sectionStringCharacters": {
+        "before": 9150,
+        "after": 9803,
+        "delta": 653,
+        "basis": "section标题及blocks字符串长度，含答案/字段名等；不等于阅读时间"
+      },
+      "learnerCharacters": {
+        "before": {
+          "narrative": 4645,
+          "exercisePrompts": 669,
+          "collapsedFeedback": 3352
+        },
+        "after": {
+          "narrative": 5277,
+          "exercisePrompts": 669,
+          "collapsedFeedback": 3352
+        },
+        "delta": {
+          "narrative": 632,
+          "exercisePrompts": 0,
+          "collapsedFeedback": 0
+        },
+        "basis": "可见标题/段落/表格/提示框/总结，题目标题与题干，折叠提示/答案/rubric分账；不含格式标签、参考目录与未改图文；UTF-16字符串长度不推算时长"
+      },
+      "adjacent": {
+        "previous": {
+          "lessonId": "AI000-C05-L04",
+          "courseId": "AI000",
+          "chapterId": "AI000-C05",
+          "title": "生成模型：从要求到可核对的作品",
+          "contentVersion": 1,
+          "order": 4,
+          "catalogRole": "current",
+          "optionalLesson": false,
+          "status": "pending-review",
+          "access": "preview",
+          "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+          "displayNumber": "5.4",
+          "href": "/learn/AI000/AI000-C05-L04"
+        },
+        "next": {
+          "lessonId": "AI000-C06-L01",
+          "courseId": "AI000",
+          "chapterId": "AI000-C06",
+          "title": "为什么 AI 会产生不可靠的回答？",
+          "contentVersion": 1,
+          "order": 1,
+          "catalogRole": "current",
+          "optionalLesson": false,
+          "status": "pending-review",
+          "access": "preview",
+          "technicalEvidence": "docs/AI000_LESSON_6_1_REVIEW.md",
+          "displayNumber": "6.1",
+          "href": "/learn/AI000/AI000-C06-L01"
+        }
+      }
+    },
+    {
+      "id": "AI000-C06-L02",
+      "beforeVersion": 1,
+      "afterVersion": 1,
+      "beforeSha256": "281989c486447cf31dee70664d6c7c5899516b48b158e9fd0301a528f802703c",
+      "afterSha256": "282f337be3f2dea72f959ea33947a81ca68f2c8796cdcdaacf887d0397cdabca",
+      "oldSectionIds": [
+        "repair-task",
+        "purpose-first",
+        "personal-information",
+        "manage-data",
+        "coverage",
+        "check-records",
+        "compare-results",
+        "fairness",
+        "improve-service",
+        "event-data-task",
+        "library-results-task",
+        "takeaways"
+      ],
+      "newSectionIds": [
+        "repair-task",
+        "purpose-first",
+        "personal-information",
+        "manage-data",
+        "coverage",
+        "check-records",
+        "compare-results",
+        "fairness",
+        "improve-service",
+        "event-data-task",
+        "library-results-task",
+        "takeaways"
+      ],
+      "exerciseIds": [
+        "audit-event-data",
+        "compare-library-results"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "audit-event-data"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "compare-library-results"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "audit-event-data",
+            "compare-library-results"
+          ]
+        }
+      ],
+      "sectionStringCharacters": {
+        "before": 10949,
+        "after": 11227,
+        "delta": 278,
+        "basis": "section标题及blocks字符串长度，含答案/字段名等；不等于阅读时间"
+      },
+      "learnerCharacters": {
+        "before": {
+          "narrative": 6009,
+          "exercisePrompts": 721,
+          "collapsedFeedback": 3784
+        },
+        "after": {
+          "narrative": 6269,
+          "exercisePrompts": 721,
+          "collapsedFeedback": 3784
+        },
+        "delta": {
+          "narrative": 260,
+          "exercisePrompts": 0,
+          "collapsedFeedback": 0
+        },
+        "basis": "可见标题/段落/表格/提示框/总结，题目标题与题干，折叠提示/答案/rubric分账；不含格式标签、参考目录与未改图文；UTF-16字符串长度不推算时长"
+      },
+      "adjacent": {
+        "previous": {
+          "lessonId": "AI000-C06-L01",
+          "courseId": "AI000",
+          "chapterId": "AI000-C06",
+          "title": "为什么 AI 会产生不可靠的回答？",
+          "contentVersion": 1,
+          "order": 1,
+          "catalogRole": "current",
+          "optionalLesson": false,
+          "status": "pending-review",
+          "access": "preview",
+          "technicalEvidence": "docs/AI000_LESSON_6_1_REVIEW.md",
+          "displayNumber": "6.1",
+          "href": "/learn/AI000/AI000-C06-L01"
+        },
+        "next": {
+          "lessonId": "AI000-C06-L03",
+          "courseId": "AI000",
+          "chapterId": "AI000-C06",
+          "title": "版权、误用与负责任地使用 AI",
+          "contentVersion": 2,
+          "order": 3,
+          "catalogRole": "current",
+          "optionalLesson": false,
+          "status": "pending-review",
+          "access": "preview",
+          "technicalEvidence": "docs/AI000_R3_REFINEMENT_REPORT.md",
+          "displayNumber": "6.3",
+          "href": "/learn/AI000/AI000-C06-L03"
+        }
+      }
+    },
+    {
+      "id": "AI000-C06-L03",
+      "beforeVersion": 1,
+      "afterVersion": 2,
+      "beforeSha256": "04553790924ad7d1713ec7439786c3397c5c7e6b95fbfedff7e4653faba9767e",
+      "afterSha256": "592d72aee4cafe9f043e0464d76aa36b291e7ef687b80145cf2d7a213402bbbd",
+      "oldSectionIds": [
+        "ready-to-publish",
+        "source-cards",
+        "name-permission",
+        "compare-licenses",
+        "asset-decisions",
+        "voice-and-rights",
+        "misleading-content",
+        "release-roles",
+        "before-and-after",
+        "handbook-task",
+        "lecture-task",
+        "takeaways"
+      ],
+      "newSectionIds": [
+        "ready-to-publish",
+        "source-cards",
+        "name-permission",
+        "compare-licenses",
+        "asset-decisions",
+        "voice-and-rights",
+        "misleading-content",
+        "release-roles",
+        "before-and-after",
+        "handbook-task",
+        "lecture-task",
+        "takeaways"
+      ],
+      "exerciseIds": [
+        "audit-recruitment-assets",
+        "review-lecture-release"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "audit-recruitment-assets"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "review-lecture-release"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "audit-recruitment-assets",
+            "review-lecture-release"
+          ]
+        }
+      ],
+      "sectionStringCharacters": {
+        "before": 10065,
+        "after": 11552,
+        "delta": 1487,
+        "basis": "section标题及blocks字符串长度，含答案/字段名等；不等于阅读时间"
+      },
+      "learnerCharacters": {
+        "before": {
+          "narrative": 5745,
+          "exercisePrompts": 673,
+          "collapsedFeedback": 3271
+        },
+        "after": {
+          "narrative": 6464,
+          "exercisePrompts": 751,
+          "collapsedFeedback": 3925
+        },
+        "delta": {
+          "narrative": 719,
+          "exercisePrompts": 78,
+          "collapsedFeedback": 654
+        },
+        "basis": "可见标题/段落/表格/提示框/总结，题目标题与题干，折叠提示/答案/rubric分账；不含格式标签、参考目录与未改图文；UTF-16字符串长度不推算时长"
+      },
+      "adjacent": {
+        "previous": {
+          "lessonId": "AI000-C06-L02",
+          "courseId": "AI000",
+          "chapterId": "AI000-C06",
+          "title": "数据隐私、偏差与公平性",
+          "contentVersion": 1,
+          "order": 2,
+          "catalogRole": "current",
+          "optionalLesson": false,
+          "status": "pending-review",
+          "access": "preview",
+          "technicalEvidence": "docs/AI000_R3_REFINEMENT_REPORT.md",
+          "displayNumber": "6.2",
+          "href": "/learn/AI000/AI000-C06-L02"
+        },
+        "next": {
+          "lessonId": "AI000-C07-L01",
+          "courseId": "AI000",
+          "chapterId": "AI000-C07",
+          "title": "为什么学习 Python、数学与数据分析？",
+          "contentVersion": 1,
+          "order": 1,
+          "catalogRole": "current",
+          "optionalLesson": false,
+          "status": "pending-review",
+          "access": "preview",
+          "technicalEvidence": "docs/AI000_LESSON_7_1_REVIEW.md",
+          "displayNumber": "7.1",
+          "href": "/learn/AI000/AI000-C07-L01"
+        }
+      }
+    }
+  ],
+  "status": "24 pending-review/preview; AI000 planned; 49 core exercises"
+}

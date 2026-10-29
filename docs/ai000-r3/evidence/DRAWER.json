@@ -1,0 +1,10 @@
+{
+  "fixedMobileViewport": {
+    "dialogOpen": false,
+    "focused": "交完整修正版与有负责人接手的发布清单",
+    "hash": "#exercise-review-lecture-release",
+    "target": 209.7604217529297,
+    "width": 390
+  },
+  "note": "390×844固定视口下，平滑滚动结束后核对；面板关闭、练习标题聚焦。"
+}

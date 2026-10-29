@@ -1,0 +1,218 @@
+diff --git a/src/content/lessons/ai000/generative-ai-and-llm.ts b/src/content/lessons/ai000/generative-ai-and-llm.ts
+index 706afab..493ed6f 100644
+--- a/src/content/lessons/ai000/generative-ai-and-llm.ts
++++ b/src/content/lessons/ai000/generative-ai-and-llm.ts
+@@ -35,6 +35,12 @@ export const generativeLesson=lessonSchema.parse({
+  {id:"llm",title:"聊天产品背后的LLM，指的是什么？",navGroup:"llm",navLabel:"认识LLM",blocks:[
+  p("让系统写通知，常见的一种实现是使用大语言模型，英文缩写LLM。先拆开看“语言模型”：它从语言数据中学习字词、句子与上下文之间的联系，用这些关系处理或产生语言内容。“大”通常指这类模型的规模较大；现代常见LLM基于深度学习。这里不用参数数量作分类题，也不要求知道内部结构。"),
+  p("你给它活动要点和写作要求，它就有了这次组织回答时可用的材料。这些当前提供的信息，也属于上下文。材料写明时间却没有地点，它可以按要求把地点标待确认；如果自行补地点，就需要沿用1.2的办法回查依据。模型学过很多文字，不意味着知道这一次活动的全部事实。"),
++ p("试着只给一句开头“今天天气真”，等它续写。常见LLM生成文字时，会根据当前上下文预测接下来的token，也就是模型处理的语言片段；一个token可以对应字、词或词的一部分，每次并不必定是一个完整词。下面假设“好”“热”“糟”各是一个token，候选及概率都为教学构造，不是真实模型运行的统计。"),
++ {type:"table",caption:"同一个开头，接下来的候选有不同可能性（教学假设）",columns:["候选token","示意概率","接上后的文字"],rows:[
++ ["好","50%","今天天气真好"],["热","25%","今天天气真热"],["糟","10%","今天天气真糟"],["其他候选合计","15%","还有其他续写可能"],
++ ]},
++ p("若这一步选了“好”，新的上下文就包括“今天天气真好”，模型再据此预测后续token，逐步接成更长的文字。实际生成可以采用不同选择策略，不一定每次都选概率最高的候选；这里不展开算法。"),
++ p("这段续写没有查看当地天气记录，句子流畅也不等于陈述已经核实。这个例子只说明常见LLM语言生成的直觉，图像、声音等生成式AI不都采用完全相同的过程。"),
+  p("同一个LLM可以被安排做不同任务。让它“按三条要点写通知”，是在生成文本；让它“只从正常/垃圾两个类别中选择”，是在分类；让它“把这段会议记录压成两句”，是在摘要。摘要通常也会生成文本，但内容必须受原材料约束，不能把新增事实当作总结。"),
+  p("模型在计算过程中可以输出类别名，但我们描述当前任务时，仍要看它是在选类别还是组织开放内容。模型具备哪些能力，与这次被要求完成什么，需要联系起来说明。文字生成能力也不能证明图像生成、实时查询或计算等其他功能都来自同一个模型。"),
+  {type:"ai-task-figure",kind:"generation-map",alt:"方法范围仍为AI包含ML、ML包含DL。给定深度图像生成模型采用DL，可按描述生成图片，不要求它本身是LLM；现代常见LLM也基于DL，聚焦语言，能写通知、摘要和选择类别。聊天产品可以组合LLM、检索、规则及其他工具，不能把整个产品等同一个模型。",caption:"图二：方法、模型和产品分别说明。这里比较常见实现，不是给所有生成方法规定第四层。"},
+@@ -59,6 +65,6 @@ export const generativeLesson=lessonSchema.parse({
+  {id:"takeaways",title:"用三个问题读懂新的产品介绍",navGroup:"takeaways",navLabel:"回看要点",blocks:[
+  p("这次交回什么内容、怎样得到它、产品中哪一部分完成它？把这三个问题放回你的分工图，就能看见为什么“聊天窗口”“LLM”“生成式AI”和“深度学习”提供的信息并不相同。"),
+  {type:"summary",points:["分类选类别，检索找已有内容，编辑改变内容，生成组织内容；它们可以组合，编辑也可能用生成。","现代常见生成式AI大多使用DL，LLM是聚焦语言的一类模型，能够承担多种语言任务。","功能帮助辨认任务，实现信息帮助判断方法；产品还可以包含检索、规则和普通软件。"]},
+- p("第2章把方法范围和生成能力联系起来了。后面的规划先研究不同学习信号，再研究模型怎样训练和使用；目前尚未制作的课时只在课程目录显示规划。你可以先核对本节两个新任务，留下自己的条件与追问。")]},
++ p("第2章把方法范围和生成能力联系起来了。接下来先研究不同学习信号，再研究模型怎样训练和使用。你可以先核对本节两个新任务，留下自己的条件与追问。")]},
+  ],resources:[],references:[aiSources.gen,aiSources.llm,aiSources.dl,{title:"Google：机器学习术语表（英文）",href:"https://developers.google.com/machine-learning/glossary",note:"核对generative AI、language model与LLM条目，术语边界随语境不同；不直接搬原句或图。访问2026-10-27。"}],
+ });
+diff --git a/src/content/lessons/ai000/privacy-bias-fairness.ts b/src/content/lessons/ai000/privacy-bias-fairness.ts
+index 9d018ee..a13b70b 100644
+--- a/src/content/lessons/ai000/privacy-bias-fairness.ts
++++ b/src/content/lessons/ai000/privacy-bias-fairness.ts
+@@ -44,6 +44,8 @@ export const privacyFairnessLesson = lessonSchema.parse({
+       p("还有一项容易混淆：类别是这条流程要产生并核对的结果。3.1学过的已确认类别可以作学习对照；当前报修者却未必先知道故障属于哪类。可以根据描述提出建议，必要时请人确认，不能以“类别字段必填”为由把判断任务推回给学生。"),
+       { type: "table", caption: "对照自己的判断：字段怎样服务这项任务", columns: ["字段", "本例处理建议", "理由与条件"], rows: repairFields.map(f=>[f.name,f.decision,f.reason]) },
+       p("只为明确目的，收集完成它合理需要的信息，这种做法称为数据最小化。“最小”仍要足以完成任务：删掉故障地点会让人找不到灯；加上与派单无关的身份证号，也没有补足故障描述。可选回访、额外身份核验与未来尚未确定的分析用途，应分开说明必要条件，不能用一句“以后有用”覆盖。"),
++      p("这也能联系中国的《个人信息保护法》：第六条要求目的明确、合理，处理与目的直接相关，选择对个人权益影响最小的方式，收集限于实现目的的最小范围。报修中若联系方式确为回访所需，就围绕这项用途安排；不能因为未来“可能有用”，把身份证号和通讯录一并收来。第五条还要求合法、正当、必要和诚信，第七条要求公开透明，公开处理规则并明示目的、方式和范围。"),
++      p("最小化只是其中一项要求。某条工单、录音是否属于个人信息，应结合具体内容及关联记录判断；处理依据与具体做法也要按实际情况核实，不能一概套用同一种授权方式。下面继续看识别、访问和保存问题。"),
+     ] },
+     { id: "personal-information", title: "删掉姓名，录音就一定不涉及个人了吗？", navGroup: "privacy", navLabel: "信息与管理", blocks: [
+       p("个人信息可以直观理解为能够识别特定个人，或与特定个人相关的信息。姓名、联系方式常能关联到人；一项看似普通的信息，与其他记录组合后也可能指向特定个人。例如工单编号若能连接账户，就不能仅因没写姓名而当作完全无关个人的数据。"),
+@@ -187,6 +189,7 @@ export const privacyFairnessLesson = lessonSchema.parse({
+   ],
+   resources: [],
+   references: [
++    { title: "中华人民共和国个人信息保护法（官方全文）", href: "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", note: "对照第五至七条的合法必要、目的和最小范围、公开透明原则；第四、十三条帮助核对个人信息范围与处理依据。访问核验2026-10-29，不以本课简述作完整合规结论。" },
+     { title: "NIST：隐私与公平性（英文）", href: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf", note: "可读§3.6–3.7（正文17–18页），比较隐私、偏差和具体使用情境；其他框架细节可跳过。" },
+     { title: "NIST：识别与管理AI偏差（英文）", href: "https://www.nist.gov/publications/towards-standard-identifying-and-managing-bias-artificial-intelligence", note: "先读出版摘要，理解偏差可能贯穿技术与使用流程，不只是一列数量。" },
+     { title: "Google：为什么要拆分检查结果（英文）", href: "https://developers.google.com/machine-learning/crash-course/fairness/evaluating-for-bias", note: "正文开头说明总体表现可能掩盖子集差异；后续公平指标不是本课要求。" },
+diff --git a/src/content/lessons/ai000/responsible-ai-use.ts b/src/content/lessons/ai000/responsible-ai-use.ts
+index 6eab594..67778ee 100644
+--- a/src/content/lessons/ai000/responsible-ai-use.ts
++++ b/src/content/lessons/ai000/responsible-ai-use.ts
+@@ -9,7 +9,7 @@ const objectives = [
+ ];
+ const assetRows = (cards:typeof eventAssets) => cards.map(a=>[a.id+" "+a.name,a.source,a.use]);
+ export const responsibleUseLesson = lessonSchema.parse({
+-  id:"AI000-C06-L03",courseId:"AI000",chapterId:"AI000-C06",contentVersion:1,
++  id:"AI000-C06-L03",courseId:"AI000",chapterId:"AI000-C06",contentVersion:2,
+   title:"版权、误用与负责任地使用 AI",
+   subtitle:"海报和配音做好了，先查每项素材凭什么能用，再决定哪一版可以发。",
+   prerequisites:"已完成6.2，能按资料核对事实、区分当前任务与其他用途。用纸笔即可；无需法律条文、编程或真实制作音视频。",
+@@ -87,11 +87,15 @@ export const responsibleUseLesson = lessonSchema.parse({
+       p("小团队可以一人承担多项职责，但每项确认仍要发生。AI可帮助整理待办，自动生成的“全部审核通过”并没有替负责人看过条款、核过事实或确认公开权限。素材通过、文字通过和最终可发布应分别记录。"),
+     ]},
+     {id:"before-and-after",title:"发之前留版本，出问题后追到各个渠道",navGroup:"workflow",navLabel:"发布与纠错步骤",blocks:[
++      p("发布前还要看生成合成内容标识。国家网信办等四部门的《人工智能生成合成内容标识办法》自2025年9月1日起施行，涉及利用AI生成、合成的文本、图片、音频、视频等内容。S6的AI配音就是需要核查的一项；若只是用AI提出修改建议，也应按实际处理过程和最终内容判断，不能把所有辅助修改一概套成相同情形。"),
++      p("显式标识是公众能明显感知的文字、声音或图形提示；隐式标识是文件数据中不易直接感知的技术标记。生成服务提供者按规定添加相应标识，传播服务提供者负责核验、提示并提供用户标识功能，文件元数据中的技术义务有各自承担主体。普通发布用户无需因此自己编写元数据功能。"),
++      p("第十条要求：用户使用网络信息内容传播服务发布生成合成内容时，应主动声明，并使用服务提供者提供的标识功能。对含AI配音的视频，发布负责人应核对最终生成部分、具体渠道和平台当前功能，再履行声明与标识；功能或适用情况未查清，就留下待办、先暂缓相应发布，不能写成已经标好。任何组织和个人都不得恶意删除、篡改、伪造或隐匿办法规定的标识。标注AI生成也不能替代版权许可、人物声音依据、事实核查和最终发布批准。"),
+       {type:"table",caption:"可以交给团队执行的发布前顺序",columns:["动作","通过或继续处理的依据"],rows:[
+         ["列素材与用途","文字、图、音乐、声音分别编号，写渠道、修改和宣传目的"],
+         ["查来源和条件","对应有权许可者/许可版本/授权范围，补署名与改动说明；不明则暂缓或替换"],
+         ["查事实与表达","逐项对照活动资料，去掉无据保证/背书，核人物和声音依据"],
+         ["核实际成品","重看海报、字幕，取得音频后实际听检，确认修改未添新错"],
++        ["查生成情况与标识","逐项确认最终内容是否生成合成；网络发布相关内容时主动声明并用平台标识功能，核实际渠道和已有标识，未知先补查，不恶意改除"],
+         ["由人作最终决定","未决问题已处理后，确认哪个文件版本可发到哪些渠道；仍有问题则不放行受影响版本"],
+         ["记录发布位置","保留版本、确认者、渠道链接/位置及发布后负责更正的人"],
+       ]},
+@@ -100,17 +104,18 @@ export const responsibleUseLesson = lessonSchema.parse({
+     ]},
+     {id:"handbook-task",title:"换成招新手册，同一素材能进入两个用途吗？",navGroup:"practice",navLabel:"独立审核两份方案",blocks:[
+       p("校园科创社团拟公开招新手册。下面两种用途和A–E来源卡是本题完整资料，重新作判断，不沿用S1–S6的决定。这里没有真实图片或音乐文件。"),
++      p("本题另明确：A–E为人工写作、拍摄、绘制或既有录制素材，制作只作排版、裁剪，未使用AI生成合成内容。两渠道的具体标识功能未提供。若你选择的替换方案引入AI生成图片、文字或配音，要据新的成品构成重新判断。"),
+       {type:"table",caption:"招新手册的两种发布用途",columns:["渠道","计划用途"],rows:handbookChannels},
+       {type:"table",caption:"A–E候选素材：逐项对照计划",columns:["素材","已确认的来源与条件","计划用法"],rows:assetRows(handbookAssets)},
+       {type:"exercise",id:"audit-recruitment-assets",title:"交一份按用途作决定的素材审查表",kind:"迁移",
+         prompt:[
+           "先写两渠道的受众、目的与拟用方式。对A–E逐项记录来源证据、许可/同意范围、计划动作、当前决定和理由；需要时同一素材按渠道分别判断，区分可继续制作、完成条件后使用、范围不符和暂缓待查。",
+           "列出具体修改/替换/补查清单：向谁要哪项证据，证据怎样才支持本次用途。为需要的项目拟一条实际可用的署名/许可链接/改动说明安排，区分摄影者许可与人物公开/广告使用依据。解释下载免费、写作者名字、成员原创和校园场景各自为何还不够。",
+-          "给团队一份保留必要功能的发布计划：哪些材料可先继续，哪些版本仍暂缓；谁核素材、谁核最终作品和发布范围，放行前留什么记录。假设发现某项未解决条件已被带进公开版本，写出按渠道处理及通知更正的动作。接受不同替代素材，但需说明使用依据，不凭空填授权。",
++          "给团队一份保留必要功能的发布计划：哪些材料可先继续，哪些版本仍暂缓；谁核素材、最终作品与发布范围，放行前留什么记录。按本题生成情况说明是否触发上述生成合成内容声明/标识要求；若替换方案引入生成内容，写需履行的动作及待核渠道条件。假设某项未解决条件已进入公开版本，写按渠道更正动作。接受不同替代素材，不凭空填授权或标识已完成。",
+         ].join("\n\n"),
+         hints:[
+           "先把两个发布用途分别写在纸上，再逐项连接候选素材；“来源知道了”和“这个用途允许吗”留两栏。",
+-          "任选一项，把准备执行的复制、修改、传播动作，与来源卡中明确允许的动作一一对应。圈出没有对应依据的那一格，写应向谁取得什么；再给最终文件留确认者、版本和渠道三格，其余素材仍需自己判断。",
++          "任选一项，把准备执行的复制、修改、传播动作，与来源卡中明确允许的动作一一对应。圈出没有对应依据的那一格，写应向谁取得什么；最终文件另留确认者、版本、渠道与生成情况/标识待核项，其余素材仍需自己判断。",
+         ],
+         solution:[
+           "两用途分开：社团页面公开免费招新手册/介绍页；赞助页明确为产品引流的商业广告。免费不自动等于所有用法非商业，校园也不是万能许可；逐素材、逐用途作决定。",
+@@ -121,13 +126,15 @@ export const responsibleUseLesson = lessonSchema.parse({
+           "D：只有下载记录，不能确认公开网页配乐、传播及商业广告使用范围，两处均暂缓。向原提供者/有权许可者取得适用音乐版本、配乐及传播用途的条款或授权，核对应条件；查不清可去掉音乐或换依据清楚的音乐，保留手册阅读功能。未知不等于已证明所有使用违法。",
+           "E：摄影者同意只覆盖本次招新；入镜人物公开/广告使用依据待核，广告的摄影许可也要补核。由素材整理者向摄影者及相关人员核实具体渠道、目的和安排，未解决前暂缓相应用法；可改用无人物且来源/范围清楚的设备照，仍需看画面和许可，不把“自己拍”当所有权益已解决。",
+           "汇总计划：招新A可按范围制作、B落实条件；广告A补授权或换，C另授权或换，D两处补查/去掉/换，E解决相应用途的摄影与人物依据或换。素材整理者逐项附证据；作品审核者查实际文件及标注、文案和画面；最终负责人确认未决项已处理、准确文件版本与允许渠道后才发布。当前不能把整套候选一键放行。",
++          "题设A–E及排版/裁剪未使用生成合成内容，不能仅因课程谈AI，就给它们一律填“AI生成”。若保留此制作路径，上述针对发布生成合成内容的声明/标识要求并未由题设触发，许可、事实与发布确认仍须完成。若换成AI生成插画或配音，发布负责人应先确认最终生成部分、两渠道的实际传播方式与标识功能，网络发布相关内容时主动声明并使用平台功能；功能未知先核实或暂缓该版本，不虚构已操作，也不要求自己编写隐式标识。",
+           "若未决素材已公开，先按素材编号找手册PDF、在线页及赞助页等受影响位置，停传问题版本；补核或替换后复核新文件，在各渠道替换/更新并确认显示，必要时联系下载/转发页面管理者及受影响者说明更正，记录哪些已处理、哪些仍待跟进。仅改本地文件或加一行署名不一定解决原问题。",
+-          "接受不用音乐、广告改用全部自制且使用范围明确的材料，或暂时只发已完成全部条件的招新版本等路径；要说明实际替代依据及哪些内容没有发布，不能编造同意。常见错误：A原创就无限放行；B误禁商业；C因免费阅读就允许商业广告；D下载免费即传播免费；E摄影者同意替代人物依据；写“注意版权、人工审核”却没有对象/记录/版本。这些都不足以完成审查。",
++          "接受不用音乐、广告改用全部自制且使用范围明确的材料，或暂时只发已完成全部条件的招新版本等路径；要说明实际替代依据及哪些内容没有发布，不能编造同意。常见错误：A原创就无限放行；B误禁商业；C因免费阅读就允许商业广告；D下载免费即传播免费；E摄影者同意替代人物依据；未生成却一律标AI生成，或引入生成素材后只写版权已查、不检查声明与平台标识；写“注意版权、人工审核”却没有对象/记录/版本。这些都不足以完成审查。",
+         ],
+         rubric:[
+           "A–E逐项连来源、动作与用途；A区分招新和广告、B正确理解BY4、C识别明确商业用途与NC范围不符，D/E保留待核。",
+           "补查有具体对象和证据，B标注可在实际发布处找到且含来源/许可/裁剪等要求；不把一项许可扩成全部其他权利。",
+           "保留手册功能，替换/暂缓有实际范围；明确素材、作品与最终发布的负责人、版本和渠道，不虚构授权。",
++          "按题设实际生成情况作标识判断；若替代引入生成内容，说明主动声明、使用平台功能及待核渠道条件，不伪写操作完成或以标识替代许可。",
+           "事后按受影响素材与渠道更正，确认实际更新、必要通知与记录；解释不同合理方案的前提。",
+         ],
+       },
+@@ -139,12 +146,12 @@ export const responsibleUseLesson = lessonSchema.parse({
+       {type:"exercise",id:"review-lecture-release",title:"交完整修正版与有负责人接手的发布清单",kind:"迁移",
+         prompt:[
+           "逐项列宣传主张与对应资料，区分矛盾、无依据及未经确认的背书/声音使用。哪些说法会怎样误导读者？再写一份可直接用于制作的完整修正版文案，保留名称、主办、时段、地点、报名方式，不增证书、名次、收费或批准等未给事实。",
+-          "提出不冒充老师的具体声音替代方案，并说明还须取得哪些使用依据、完成哪些实际听检。按角色写谁确认事实、素材与声音、最终文案/字幕/成品，以及谁确认最终文件和发布渠道；给出可执行的检查先后顺序。",
++          "提出不冒充老师的具体声音替代方案，说明使用依据与实际听检。按最终生成部分和三渠道，判断是否需主动声明、用平台标识功能，以及哪些条件尚待核；改用人工朗读或字幕时也说明判断前提。按角色写谁核事实、素材/声音、文案/字幕/成品与标识，谁确认最终文件和渠道，给出检查顺序。",
+           "分别决定原稿、修改后的文稿和最终视频当前能否使用及条件。当前未发布；另作一个条件假设：若错误版本已发到题设三渠道，应如何定位受影响内容、停止传播、复核新版本、逐处更正和必要通知？留下什么记录，不能只改本地稿件。",
+         ].join("\n\n"),
+         hints:[
+           "给文字主张、谁在背书、准备怎样用声音各留一栏；一项事实正确不会让其他栏自动通过。",
+-          "选一句宣传，先找题设中直接对应的资料，圈出不能由它支持的部分。修改后再用原资料检查所有必要信息是否还在；沿“文稿—实际成品—发布位置”分别留一个待确认项与接手角色，完整稿和最终决定仍由你写。",
++          "选一句宣传，先找题设中直接对应的资料，圈出不能由它支持的部分。修改后核对必要信息；沿“文稿—实际成品—发布位置”留待确认项与接手角色，再对照成品生成情况和各渠道功能，完整稿和最终决定仍由你写。",
+         ],
+         solution:[
+           "“周六”和讲座主题与资料相符，但稿中缺14:00–15:30、图书馆报告厅和实际主办名称，需补齐。“学校官方认证”未批准，“顶级”无评价依据；“保证官方证书”没有承诺依据，题设明确不承诺；“无需报名直接到场”与提前登记矛盾。它们可能让人误认权威认可、期待证书或省略登记，不能当已确认宣传。",
+@@ -152,16 +159,18 @@ export const responsibleUseLesson = lessonSchema.parse({
+           "完整修正版可为："+correctedLectureCopy,
+           "这段稿只取题设的主办、名称、时段、地点和登记方式，移除认证、顶级、证书保证及老师推荐。不把“不承诺证书”擅自扩大为“任何情况下绝无证书”，不编登记网址、费用或报名成功保证。接受等义、自然措辞，但不能只交删除列表而没有完整稿。",
+           "声音可改由已取得适当同意、且安排覆盖本次公开用途的成员朗读；或选择条款和相关权利清楚、无特定真人冒充的合成声音。向制作者取对应声音来源、工具条款版本与具体情境的使用记录，并按需要核相关人员/权利依据。只写换一个AI声音仍不够，授权未知要继续核；不用声音改字幕版也可，但仍需核字幕和其他素材。",
++          "原计划拟用AI模拟老师声音，含生成合成音频；即使改成不冒充真人的合成配音，网络发布相关成品仍应主动声明并使用平台标识功能。发布负责人逐一核对活动页、公众号、短视频渠道的实际传播方式和当前功能，保留依法要求的已有标识；功能未给出，先补查或暂缓相应发布。改由人工朗读或仅字幕时，须确认文案、图像等其他部分是否也有AI生成合成；只有最终确无相关生成内容，才不按该情形要求声明。可以选择不同路径，但不能把换声音或加“AI制作”当作标识、许可与审批都已完成，也不要求发布者自行实现服务方元数据功能。",
+           "顺序与分工：活动负责人核实题设事实、允许的宣传主体/表述；素材整理者查图片、音乐和所选声音的来源/用途依据及标注；作品审核者核完整改稿，再对实际字幕、画面、音频检查一致，实际听有无错读/漏读/不清楚；最终发布负责人复查未决项已处理，确认最终文件版本、三渠道中准许哪些、发布台账和更正接手人。可由同一人担多项工作，须分别留下实际确认。",
+           "当前原稿/老师拟声背书方案不放行，应先修改/换方案。修正版文稿符合本题事实，可交负责人复核并继续制作；没有真实视频/音频、素材使用及最终发布确认，不能宣布成品已经可公开。自动生成“审核通过”不代替人确认，也不把文稿正确当音频已听检。",
+           "若错误版本已在社团活动页、公众号、短视频账号发布：列出原稿中的认证、证书、免登记和老师背书等受影响内容及对应文件版本/发布位置，先停止继续传播；联系各渠道管理者按需要暂停展示/撤下或加明显纠正提示，处理仍可能误导的内容。取得正确事实与声音/素材依据或替换，负责人复核新版本，再逐渠道改正文、字幕、封面和配音/视频，不能只改其中一句。",
+           "确认三处实际显示的是哪一版；对可能被错误承诺或报名信息影响的人作必要更正说明，告知真实登记条件；对不能直接控制的转发联系管理者并跟进。保留问题、依据、确认者、修订版本、渠道处理结果和未完成事项，不声称能抹去所有下载/转发。原题尚未发布，这些是条件分支方案，不能伪写已经发生真实传播。",
+-          "接受先暂缓全部、先完成无声音且材料依据齐全的字幕版本等方案，前提是逐项处理误导、权限和发布条件。常见错误：只说有幻觉；改好文稿就批准视频；写AI制作仍保老师推荐；主办资料等于学校认证；承诺全部转发自动消失；用一句道歉替代渠道更正。参考解答提供可执行路径，不构成专业法律审核。",
++          "接受先暂缓全部、先完成无声音且材料依据齐全的字幕版本等方案，前提是逐项处理误导、权限和发布条件。常见错误：只说有幻觉；改好文稿就批准视频；写AI制作仍保老师推荐；合成音换了音色就免声明；功能未知却填已标识；恶意去除标识；主办资料等于学校认证；承诺全部转发自动消失；用一句道歉替代渠道更正。参考解答提供可执行路径，不构成专业法律审核。",
+         ],
+         rubric:[
+           "逐项区分已支持、矛盾、未知与背书/声音依据缺口，说明对公众的具体影响，不编发生后果或法律裁判。",
+           "交完整准确文案，五项必要事实齐全，无认证/顶级/证书保证/免报名/老师推荐及题设外事实。",
+           "替代声音有来源和使用范围核查，真实成品要听检；角色、先后、最终版本与渠道明确，不以AI通过字样代人工。",
++          "按最终生成构成与三渠道判断主动声明和平台标识功能的使用，未知写待核/暂缓；人工朗读或字幕方案也核其他生成部分，标识不替代授权、事实和批准，不虚构完成。",
+           "分别决定原方案、文稿、最终视频的当前状态，未决项不伪装已解决。",
+           "条件假设的事后方案覆盖三渠道、停传、复核更新、核实际显示、必要通知与修订记录；不同方案有合理条件。",
+         ],
+@@ -179,6 +188,8 @@ export const responsibleUseLesson = lessonSchema.parse({
+   ],
+   resources:[],
+   references:[
++    {title:"人工智能生成合成内容标识办法（官方全文）",href:"https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm",note:"国信办通字〔2025〕2号；重点看第三条的两类标识、第五六条主体分工、第十条发布用户要求和第十四条施行日期。访问核验2026-10-29，具体内容与渠道仍须核对。"},
++    {title:"国家网信办：标识办法答记者问",href:"https://www.cac.gov.cn/2025-03/14/c_1743654685896173.htm",note:"与正式全文合读，了解适用范围及不同主体责任；不以问答替代办法。"},
+     {title:"Creative Commons：CC BY 4.0",href:"https://creativecommons.org/licenses/by/4.0/",note:"先看允许的行为、署名与改动说明，再从页面进入完整许可；摘要不替代条款。"},
+     {title:"Creative Commons：CC BY-NC 4.0",href:"https://creativecommons.org/licenses/by-nc/4.0/",note:"对照新增的NonCommercial条件及其他权利提醒，不用免费/校园代替用途判断。"},
+     {title:"WIPO：版权常见问题（英文）",href:"https://www.wipo.int/en/web/copyright/faq-copyright",note:"可读许可与Internet作品使用条目；复杂例外不是本课判断题。"},
+diff --git a/src/content/lessons/ai000/responsible-use-example.ts b/src/content/lessons/ai000/responsible-use-example.ts
+index 8870c46..99ca51d 100644
+--- a/src/content/lessons/ai000/responsible-use-example.ts
++++ b/src/content/lessons/ai000/responsible-use-example.ts
+@@ -46,6 +46,7 @@ export const lectureFacts = [
+   ["名称", "公益科普讲座《识别网络信息》"], ["时间", "周六14:00–15:30"], ["地点", "图书馆报告厅"],
+   ["主办", "校园科创社团"], ["报名", "提前通过社团活动页面登记"], ["证书", "本次不承诺任何证书"],
+   ["认可与声音", "未批准学校官方认证表述；没有提供真实老师声音使用或个人背书的依据"],
++  ["生成与标识核查", "原声音计划为AI生成合成；最终替代方案由你选择，文案及其他素材是否使用生成合成内容须一并确认；三渠道的实际标识功能未提供，不能假定已声明或操作完成"],
+   ["发布计划", "拟在社团活动页面、公众号和配套短视频账号发布；当前视频尚未正式发布，最终版本/渠道待负责人确认"],
+ ];
+ export const lectureDraft = "本周六，学校官方认证的顶级讲座《识别网络信息》正式开启！所有参加者均保证获得官方证书，现在无需报名，直接到现场即可参加。视频将使用一位真实老师的AI模拟声音，让大家知道老师也亲自推荐！";
+diff --git a/src/content/lessons/ai000/rl-applicability.ts b/src/content/lessons/ai000/rl-applicability.ts
+index 08f0ab2..25e9174 100644
+--- a/src/content/lessons/ai000/rl-applicability.ts
++++ b/src/content/lessons/ai000/rl-applicability.ts
+@@ -182,7 +182,16 @@ export const rlApplicabilityLesson = lessonSchema.parse({
+         "把业务结果、反馈计分和必须遵守的约束分别核查，高分可能漏掉未完成任务或其他损失。",
+         "检查记录来源与覆盖、模拟差距、试验成本和安全条件，再用一致条件、分项结果和保留情境判断是否值得继续。",
+       ] },
+-      p("第五章从文字处理、图像交付、模态对应，走到作品验收和连续决策的方法选择。选对方向之后，输出依据、资料质量与使用责任仍要逐项核查。后续可靠性与责任主题将继续这些问题。"),
++      p("把第五章放在一起看：NLP和计算机视觉主要按处理对象与任务领域划分，多模态关注不同模态信息及其关联，生成式AI关注生成内容的能力和方法，强化学习关注通过行动与反馈学习的过程。下表比较五种侧重点；它们可以交叉组合，排列不表示技术高低或学习难度。"),
++      { type: "table", caption: "第五章：五种技术侧重点对比（可以组合）", columns: ["方向或侧重点", "典型任务", "常见输入", "预期输出或行动结果", "评价和检查依据"], rows: [
++        ["自然语言处理（NLP）与LLM应用", "咨询分类、检索、摘要或回复", "问题、文档与必要上下文", "类别、相关资料或组织后的文字", "类别约定、原资料及适用条件；LLM是可用模型之一"],
++        ["计算机视觉（CV）", "图像分类、检测、分割", "图像或视频帧", "整图类别、对象位置或区域", "核对图像中的对象、位置/区域及任务要求"],
++        ["多模态AI", "对照展品图片和登记文字回答问题", "文字、图片、声音等不同模态的信息", "与对应材料有关的回答或其他跨模态结果", "各模态内容及对应关系，检查缺失与冲突"],
++        ["生成式AI / 生成模型应用", "写文案、生成图像或配音", "创作要求、参考材料；有些生成任务可不另给要求", "文本、图像、音频等内容", "内容与呈现约束、事实依据、素材使用条件"],
++        ["强化学习应用", "连续调度、选择行动", "可观察情况，学习时取得的行动与反馈", "学得的行动选择办法及执行后的结果", "累计结果、分项记录、硬约束、成本与基线"],
++      ] },
++      { type: "callout", title: "看输入输出，能认出内部模型吗？", text: "校园服务接收设备照片和故障文字，交回一份说明。先想：能否只凭这个界面认定它用了LLM或强化学习？自检：这支持分析图文任务；若两种材料共同参与，还涉及多模态，若组织新说明则涉及生成。具体模型、怎样训练、是否实际使用每种材料仍要查流程与方法证据。文字生成可以同时涉及NLP与生成模型。" },
++      p("选对方向之后，输出依据、资料质量与使用责任仍要逐项核查。下一章继续这些问题。"),
+     ] },
+   ],
+   resources: [],
+diff --git a/src/content/publication-manifest.ts b/src/content/publication-manifest.ts
+index 6582c90..5534c28 100644
+--- a/src/content/publication-manifest.ts
++++ b/src/content/publication-manifest.ts
+@@ -9,10 +9,10 @@ export const publicationManifest = [
+   {lessonId:"AI000-C07-L03",courseId:"AI000",chapterId:"AI000-C07",title:"综合实践：分析 AI 问题并制定学习计划",contentVersion:1,order:3,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_7_3_AND_COURSE_REVIEW.md"},
+   {lessonId:"AI000-C07-L02",courseId:"AI000",chapterId:"AI000-C07",title:"AI 不同技术方向需要哪些基础？",contentVersion:1,order:2,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_7_2_REVIEW.md"},
+   {lessonId:"AI000-C07-L01",courseId:"AI000",chapterId:"AI000-C07",title:"为什么学习 Python、数学与数据分析？",contentVersion:1,order:1,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_7_1_REVIEW.md"},
+-  {lessonId:"AI000-C06-L03",courseId:"AI000",chapterId:"AI000-C06",title:"版权、误用与负责任地使用 AI",contentVersion:1,order:3,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_6_3_AND_CHAPTER_6_REVIEW.md"},
+-  {lessonId:"AI000-C06-L02",courseId:"AI000",chapterId:"AI000-C06",title:"数据隐私、偏差与公平性",contentVersion:1,order:2,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_6_2_REVIEW.md"},
++  {lessonId:"AI000-C06-L03",courseId:"AI000",chapterId:"AI000-C06",title:"版权、误用与负责任地使用 AI",contentVersion:2,order:3,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_R3_REFINEMENT_REPORT.md"},
++  {lessonId:"AI000-C06-L02",courseId:"AI000",chapterId:"AI000-C06",title:"数据隐私、偏差与公平性",contentVersion:1,order:2,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_R3_REFINEMENT_REPORT.md"},
+   {lessonId:"AI000-C06-L01",courseId:"AI000",chapterId:"AI000-C06",title:"为什么 AI 会产生不可靠的回答？",contentVersion:1,order:1,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_6_1_REVIEW.md"},
+-  {lessonId:"AI000-C05-L05",courseId:"AI000",chapterId:"AI000-C05",title:"强化学习适合哪些应用问题？",contentVersion:1,order:5,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_5_5_AND_CHAPTER_5_REVIEW.md"},
++  {lessonId:"AI000-C05-L05",courseId:"AI000",chapterId:"AI000-C05",title:"强化学习适合哪些应用问题？",contentVersion:1,order:5,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_R3_REFINEMENT_REPORT.md"},
+   {lessonId:"AI000-C05-L03",courseId:"AI000",chapterId:"AI000-C05",title:"多模态 AI：连接文字、图片与声音",contentVersion:2,order:3,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"},
+   {lessonId:"AI000-C05-L04",courseId:"AI000",chapterId:"AI000-C05",title:"生成模型：从要求到可核对的作品",contentVersion:1,order:4,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"},
+   {lessonId:"AI000-C05-L02",courseId:"AI000",chapterId:"AI000-C05",title:"计算机视觉：让机器理解图像",contentVersion:1,order:2,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_5_2_REVIEW.md"},
+@@ -25,7 +25,7 @@ export const publicationManifest = [
+   {lessonId:"AI000-C03-L03",courseId:"AI000",chapterId:"AI000-C03",title:"自监督学习：怎样从数据本身构造学习任务？",contentVersion:1,order:3,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"},
+   {lessonId:"AI000-C03-L02",courseId:"AI000",chapterId:"AI000-C03",title:"无监督学习：没有标签也能发现规律吗？",contentVersion:2,order:2,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"},
+   {lessonId:"AI000-C03-L01",courseId:"AI000",chapterId:"AI000-C03",title:"监督学习：从有答案的例子中学习",contentVersion:1,order:1,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"},
+-  ...courseOutline.filter(slot => slot.courseId === "AI000" && ["AI000-C01-L02","AI000-C01-L03","AI000-C02-L02"].includes(slot.lessonId)).map(slot => ({...slot,contentVersion:slot.lessonId === "AI000-C01-L02" ? 2 : 1,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"})),
++  ...courseOutline.filter(slot => slot.courseId === "AI000" && ["AI000-C01-L02","AI000-C01-L03","AI000-C02-L02"].includes(slot.lessonId)).map(slot => ({...slot,contentVersion:slot.lessonId === "AI000-C01-L02" ? 2 : 1,status:"pending-review",access:"preview",technicalEvidence:slot.lessonId === "AI000-C02-L02" ? "docs/AI000_R3_REFINEMENT_REPORT.md" : "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"})),
+   {
+     lessonId: "AI000-C02-L01",
+     courseId: "AI000",
