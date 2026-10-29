@@ -1,0 +1,19 @@
+Browser tab: 5, Title: "first-notebook", URL: "http://localhost:8888/notebooks/first-notebook.ipynb".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 8, 26, 83, 90, 97
++				105 text Last Checkpoint: 3 minutes ago
++				106 progress indicator Description: Kernel status, Value: 100
++								107 text [1]:
+~						88 container Code Cell Content with Output
++								108 text [2]:
++							109 container
++								110 container
++									111 text Ready B
+
+~						95 container Code Cell Content with Output
++								112 text [3]:
++							113 container
++								114 container
++									115 text <NOTEBOOK_LAB>\.venv\Scripts\python.exe
+
+The focused UI element is 65 container Markdown Cell Content

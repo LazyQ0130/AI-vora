@@ -1,0 +1,88 @@
+{
+  "checkedAt": "2026-10-29T13:30:46.659Z",
+  "notebookVersion": "7.6.3",
+  "server": {
+    "address": "http://localhost:8888/",
+    "port": 8888,
+    "tokenEnabled": true
+  },
+  "checks": [
+    {
+      "step": "fresh-sequential",
+      "expected": "Draft A",
+      "visible": "Draft A\n"
+    },
+    {
+      "step": "edit-without-executing-assignment",
+      "expected": "Draft A",
+      "visible": "Draft A\n"
+    },
+    {
+      "step": "execute-new-assignment-and-display",
+      "visible": "Ready B\n"
+    },
+    {
+      "step": "restart-then-display-first",
+      "initialSnapshot": "busy",
+      "errorVisible": true,
+      "observedError": "NameError: name 'marker' is not defined"
+    },
+    {
+      "step": "wrong-order-recovered",
+      "visible": "Ready B\n"
+    },
+    {
+      "step": "kernel-identity",
+      "actual": "<NOTEBOOK_LAB>\\.venv\\Scripts\\python.exe\n",
+      "matchesProject": true
+    },
+    {
+      "step": "kernel-picker",
+      "selected": "existing first-notebook session, Kernel Name: Python 3 (ipykernel)",
+      "available": "Start Kernel: Python 3 (ipykernel)"
+    },
+    {
+      "step": "restart-and-run-all",
+      "output": "Ready B\n",
+      "interpreterMatches": true
+    },
+    {
+      "step": "saved-to-disk",
+      "filename": "first-notebook.ipynb",
+      "codeCounts": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "step": "close-page-not-kernel",
+      "fileListStillShowsRunningKernel": true
+    },
+    {
+      "step": "reopened-restarted-run-all",
+      "output": "Ready B",
+      "projectKernelConfirmed": true,
+      "busyToFinishedObserved": true
+    },
+    {
+      "step": "close-and-shut-down-notebook",
+      "runningKernelRows": 0
+    },
+    {
+      "step": "server-shut-down-menu",
+      "confirmed": true
+    },
+    {
+      "step": "server-menu-stop-result",
+      "visible": "Server stopped",
+      "startupTerminalExitCode": 0
+    }
+  ],
+  "shutdown": {
+    "ctrlCHostSessionExitCode": 1,
+    "menuStopVerified": true,
+    "startupTerminalExitCode": 0,
+    "ownedServerProcessesAfter": 0
+  }
+}

@@ -1,0 +1,104 @@
+[I 2026-10-29 21:17:00.914 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2026-10-29 21:17:00.917 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2026-10-29 21:17:00.920 ServerApp] jupyterlab | extension was successfully linked.
+[I 2026-10-29 21:17:00.923 ServerApp] notebook | extension was successfully linked.
+[I 2026-10-29 21:17:00.928 ServerApp] Writing Jupyter server cookie secret to <NOTEBOOK_LAB>\.jupyter-runtime\jupyter_cookie_secret
+[I 2026-10-29 21:17:00.960 ServerApp] notebook_shim | extension was successfully linked.
+[I 2026-10-29 21:17:00.992 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2026-10-29 21:17:00.994 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2026-10-29 21:17:00.994 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2026-10-29 21:17:00.997 LabApp] JupyterLab extension loaded from <NOTEBOOK_LAB>\.venv\Lib\site-packages\jupyterlab
+[I 2026-10-29 21:17:00.997 LabApp] JupyterLab application directory is <NOTEBOOK_LAB>\.venv\share\jupyter\lab
+[I 2026-10-29 21:17:00.997 LabApp] Extension Manager is 'pypi'.
+[I 2026-10-29 21:17:01.166 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2026-10-29 21:17:01.169 ServerApp] notebook | extension was successfully loaded.
+[I 2026-10-29 21:17:01.170 ServerApp] Serving notebooks from local directory: <NOTEBOOK_LAB>
+[I 2026-10-29 21:17:01.170 ServerApp] Jupyter Server 2.21.1 is running at:
+[I 2026-10-29 21:17:01.170 ServerApp] http://localhost:8888/tree?token=<REDACTED>
+[I 2026-10-29 21:17:01.170 ServerApp]     http://127.0.0.1:8888/tree?token=<REDACTED>
+[I 2026-10-29 21:17:01.170 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2026-10-29 21:17:01.174 ServerApp]
+
+    To access the server, open this file in a browser:
+        file:/C:/Users/QYF/AppData/Local/Temp/aivora-p4-notebook-80078350164b4f7cad068b841c8bd54d/.jupyter-runtime/jpserver-17512-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/tree?token=<REDACTED>
+        http://127.0.0.1:8888/tree?token=<REDACTED>
+[I 2026-10-29 21:17:01.546 ServerApp] Skipped non-installed server(s): basedpyright, bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyrefly, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+[I 2026-10-29 21:17:18.542 JupyterNotebookApp] 302 GET /tree (@::1) 0.89ms
+[I 2026-10-29 21:17:26.874 ServerApp] User 75785234266447d0b10a64b62d8c63b8 logged in.
+[I 2026-10-29 21:17:26.875 ServerApp] 302 POST /login?next=%2Ftree (75785234266447d0b10a64b62d8c63b8@::1) 1.08ms
+[I 2026-10-29 21:18:18.917 ServerApp] Creating new notebook in
+[I 2026-10-29 21:18:19.061 ServerApp] Writing notebook-signing key to <NOTEBOOK_LAB>\.jupyter-data\notebook_secret
+[I 2026-10-29 21:18:19.603 ServerApp] Saving file at /Untitled.ipynb
+[I 2026-10-29 21:18:19.774 ServerApp] Kernel started: 51c30d28-c799-4b10-92db-bf967f9bbca1
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+[I 2026-10-29 21:18:22.444 ServerApp] Adapting from protocol version 5.3 (kernel 51c30d28-c799-4b10-92db-bf967f9bbca1) to 5.4 (client).
+[I 2026-10-29 21:18:22.444 ServerApp] Adapting from protocol version 5.3 (kernel 51c30d28-c799-4b10-92db-bf967f9bbca1) to 5.4 (client).
+[I 2026-10-29 21:18:22.445 ServerApp] Connecting to kernel 51c30d28-c799-4b10-92db-bf967f9bbca1.
+[I 2026-10-29 21:18:22.453 ServerApp] Connecting to kernel 51c30d28-c799-4b10-92db-bf967f9bbca1.
+[W 2026-10-29 21:18:22.460 ServerApp] The websocket_ping_timeout (90000) cannot be longer than the websocket_ping_interval (30000).
+    Setting websocket_ping_timeout=30000
+[I 2026-10-29 21:18:22.483 ServerApp] Adapting from protocol version 5.3 (kernel 51c30d28-c799-4b10-92db-bf967f9bbca1) to 5.4 (client).
+[I 2026-10-29 21:18:22.485 ServerApp] Connecting to kernel 51c30d28-c799-4b10-92db-bf967f9bbca1.
+[I 2026-10-29 21:18:22.531 ServerApp] Adapting from protocol version 5.3 (kernel 51c30d28-c799-4b10-92db-bf967f9bbca1) to 5.4 (client).
+[I 2026-10-29 21:18:22.532 ServerApp] Adapting from protocol version 5.3 (kernel 51c30d28-c799-4b10-92db-bf967f9bbca1) to 5.4 (client).
+[I 2026-10-29 21:18:22.533 ServerApp] Connecting to kernel 51c30d28-c799-4b10-92db-bf967f9bbca1.
+[I 2026-10-29 21:18:22.539 ServerApp] Connecting to kernel 51c30d28-c799-4b10-92db-bf967f9bbca1.
+[I 2026-10-29 21:19:38.791 ServerApp] Kernel restarted: 51c30d28-c799-4b10-92db-bf967f9bbca1
+[I 2026-10-29 21:19:38.800 ServerApp] Adapting from protocol version 5.3 (kernel 51c30d28-c799-4b10-92db-bf967f9bbca1) to 5.4 (client).
+[I 2026-10-29 21:19:38.800 ServerApp] Connecting to kernel 51c30d28-c799-4b10-92db-bf967f9bbca1.
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+[I 2026-10-29 21:20:21.953 ServerApp] Saving file at /Untitled.ipynb
+[I 2026-10-29 21:21:56.274 ServerApp] Kernel restarted: 51c30d28-c799-4b10-92db-bf967f9bbca1
+[I 2026-10-29 21:21:56.283 ServerApp] Adapting from protocol version 5.3 (kernel 51c30d28-c799-4b10-92db-bf967f9bbca1) to 5.4 (client).
+[I 2026-10-29 21:21:56.284 ServerApp] Connecting to kernel 51c30d28-c799-4b10-92db-bf967f9bbca1.
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+[I 2026-10-29 21:22:34.694 ServerApp] Saving file at /first-notebook.ipynb
+[I 2026-10-29 21:23:02.976 ServerApp] Starting buffering for 51c30d28-c799-4b10-92db-bf967f9bbca1:7bf1f26c-a378-49f6-9135-d59fa3ee918f
+[I 2026-10-29 21:23:03.327 ServerApp] Adapting from protocol version 5.3 (kernel 51c30d28-c799-4b10-92db-bf967f9bbca1) to 5.4 (client).
+[I 2026-10-29 21:23:03.328 ServerApp] Connecting to kernel 51c30d28-c799-4b10-92db-bf967f9bbca1.
+[I 2026-10-29 21:23:03.514 ServerApp] Starting buffering for 51c30d28-c799-4b10-92db-bf967f9bbca1:fa1a1001-1ef0-4b66-951c-3e709f3b8e11
+[I 2026-10-29 21:24:16.120 ServerApp] Adapting from protocol version 5.3 (kernel 51c30d28-c799-4b10-92db-bf967f9bbca1) to 5.4 (client).
+[I 2026-10-29 21:24:16.121 ServerApp] Connecting to kernel 51c30d28-c799-4b10-92db-bf967f9bbca1.
+[I 2026-10-29 21:24:16.436 ServerApp] Starting buffering for 51c30d28-c799-4b10-92db-bf967f9bbca1:ce904be7-974c-4876-8dd0-2ca74ed56493
+[I 2026-10-29 21:24:16.629 ServerApp] Adapting from protocol version 5.3 (kernel 51c30d28-c799-4b10-92db-bf967f9bbca1) to 5.4 (client).
+[I 2026-10-29 21:24:16.631 ServerApp] Connecting to kernel 51c30d28-c799-4b10-92db-bf967f9bbca1.
+[I 2026-10-29 21:25:14.324 ServerApp] Kernel restarted: 51c30d28-c799-4b10-92db-bf967f9bbca1
+[I 2026-10-29 21:25:14.329 ServerApp] Starting buffering for 51c30d28-c799-4b10-92db-bf967f9bbca1:21c98c6f-3138-4fc6-8ae8-3b708f48ba2e
+[I 2026-10-29 21:25:14.333 ServerApp] Adapting from protocol version 5.3 (kernel 51c30d28-c799-4b10-92db-bf967f9bbca1) to 5.4 (client).
+[I 2026-10-29 21:25:14.334 ServerApp] Connecting to kernel 51c30d28-c799-4b10-92db-bf967f9bbca1.
+[I 2026-10-29 21:25:14.334 ServerApp] Restoring connection for 51c30d28-c799-4b10-92db-bf967f9bbca1:21c98c6f-3138-4fc6-8ae8-3b708f48ba2e
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+[I 2026-10-29 21:25:50.097 ServerApp] Saving file at /first-notebook.ipynb
+[I 2026-10-29 21:26:02.255 ServerApp] Kernel shutdown: 51c30d28-c799-4b10-92db-bf967f9bbca1
+
+SECOND START: menu shutdown verification
+[I 2026-10-29 21:28:04.484 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2026-10-29 21:28:04.487 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2026-10-29 21:28:04.490 ServerApp] jupyterlab | extension was successfully linked.
+[I 2026-10-29 21:28:04.493 ServerApp] notebook | extension was successfully linked.
+[I 2026-10-29 21:28:04.529 ServerApp] notebook_shim | extension was successfully linked.
+[I 2026-10-29 21:28:04.566 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2026-10-29 21:28:04.567 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2026-10-29 21:28:04.568 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2026-10-29 21:28:04.570 LabApp] JupyterLab extension loaded from <NOTEBOOK_LAB>\.venv\Lib\site-packages\jupyterlab
+[I 2026-10-29 21:28:04.570 LabApp] JupyterLab application directory is <NOTEBOOK_LAB>\.venv\share\jupyter\lab
+[I 2026-10-29 21:28:04.570 LabApp] Extension Manager is 'pypi'.
+[I 2026-10-29 21:28:04.764 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2026-10-29 21:28:04.767 ServerApp] notebook | extension was successfully loaded.
+[I 2026-10-29 21:28:04.768 ServerApp] Serving notebooks from local directory: <NOTEBOOK_LAB>
+[I 2026-10-29 21:28:04.768 ServerApp] Jupyter Server 2.21.1 is running at:
+[I 2026-10-29 21:28:04.768 ServerApp] http://localhost:8888/tree?token=<REDACTED>
+[I 2026-10-29 21:28:04.768 ServerApp]     http://127.0.0.1:8888/tree?token=<REDACTED>
+[I 2026-10-29 21:28:04.768 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2026-10-29 21:28:04.773 ServerApp]
+
+    To access the server, open this file in a browser:
+        file:/C:/Users/QYF/AppData/Local/Temp/aivora-p4-notebook-80078350164b4f7cad068b841c8bd54d/.jupyter-runtime/jpserver-33064-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/tree?token=<REDACTED>
+        http://127.0.0.1:8888/tree?token=<REDACTED>
+[I 2026-10-29 21:28:05.189 ServerApp] Skipped non-installed server(s): basedpyright, bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyrefly, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+[I 2026-10-29 21:29:08.228 ServerApp] Shutting down on /api/shutdown request.
+[I 2026-10-29 21:29:08.229 ServerApp] Shutting down 5 extensions

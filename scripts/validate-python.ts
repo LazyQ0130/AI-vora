@@ -4,6 +4,7 @@ import { evidencePath } from "./evidence-path";
 import { lessonRegistry } from "../src/lib/course-engine";
 import { corePrograms, regressionCoreCode } from "../src/content/resources/core-programs";
 import { programs, gradientDescentCode } from "../src/content/resources/programs";
+import { notebookCode, notebookBlockNames } from "../src/content/resources/python-notebook";
 
 const python = process.env.AIVORA_PYTHON ?? "python";
 function run(args: string[]) {
@@ -38,7 +39,19 @@ const examples = [...lessonRegistry.values()].flatMap((lesson) =>
   lesson.sections.flatMap((section) =>
     section.blocks.flatMap((block) => {
       if (block.type !== "code" || block.language !== "python") return [];
-      const result = run(["-c", block.code]);
+      let setup = "";
+      if (lesson.id === "PY101-C01-L05") {
+        const key = (Object.keys(notebookCode) as (keyof typeof notebookCode)[]).find(key => notebookBlockNames[key] === block.filename);
+        if (!key || block.code !== notebookCode[key]) throw new Error(`未登记的Notebook单元格：${block.filename}`);
+        if (key === "showMarker") setup = notebookCode.setDraft;
+        if (key === "showDelivery") setup = notebookCode.setDelivery;
+      }
+      // Notebook使用前格上下文；仍实际执行每块。重启/旧状态/预期NameError另由真实内核专项检验。
+      const result = run(["-c", setup ? setup + "\n" + block.code : block.code]);
+      if (lesson.id === "PY101-C01-L05") {
+        const expected: Record<string, string> = { [notebookBlockNames.setDraft]: "", [notebookBlockNames.setReady]: "", [notebookBlockNames.showMarker]: "Draft A", [notebookBlockNames.setDelivery]: "", [notebookBlockNames.showDelivery]: "Packed C7" };
+        if (block.filename in expected && result.stdout !== expected[block.filename]) throw new Error(`Notebook顺序输出不符：${block.filename}`);
+      }
       if (lesson.id === "PY101-C01-L04") {
         const independentExpected: Record<string, string> = { "project-a/main.py": "Project A A4", "project-b/main.py": "Project B B6" };
         if (independentExpected[block.filename] !== undefined && result.stdout !== independentExpected[block.filename]) throw new Error(`虚拟环境课源码输出不符：${block.filename}`);
@@ -55,6 +68,7 @@ const examples = [...lessonRegistry.values()].flatMap((lesson) =>
           lessonId: lesson.id,
           sectionId: section.id,
           filename: block.filename,
+          ...(lesson.id === "PY101-C01-L05" ? { executionMode: setup ? "ordered-cells" : "independent-cell", setup } : {}),
           ...(expected !== undefined ? { expected } : {}),
           ...result,
         },

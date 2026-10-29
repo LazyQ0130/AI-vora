@@ -1,0 +1,11 @@
+# 内核验证客户端修复记录
+
+初次独立jupyter_client验证在内核重启后的多格执行中等待IOPub消息超时，Python异常为_queue.Empty，进程退出1；此前的工具结果不能记为26步通过。失败发生在制作端客户端，GUI另行实际操作，不将此错误改写成学生的NameError实验。
+
+原驱动重启后继续使用旧client/channel。修复为每次重启先stop_channels，再取得新client、start_channels、wait_for_ready，保留真实内核重启，不添加任意长等待或跳过测试。随后同一环境中26步通过，包括旧值、真实NameError、恢复、两份下载的干净顺序执行及另一名字的独立练习；正常shutdown后manager.is_alive为false。见NOTEBOOK_KERNEL_RESULTS.json。
+
+另有测试首次类型错误：从窄化后的language_info类型访问不存在version属性，改为检查属性不存在；不修改下载元数据规避测试。随后typecheck通过。
+
+服务关闭证据分开：首次启动终端Ctrl+C后自动化PTY会话退出1，未观察到Jupyter关闭确认，因此只据进程不存在/会话已关闭记录结果，不声称服务自身返回0。补启同一项目，实际File → Shut Down确认，界面Server stopped、启动终端明确返回0，两个服务PID均退出。公开服务日志脱敏；一次日志尾段检查误输出了补验服务停服后已失效令牌，未写入公开证据或Git，不再复述其值。
+
+交付前另对42份公开文本证据扫描真实路径与两次已失效令牌，无命中；同时将本轮两份原始服务日志、首个中断留下的过期访问HTML/JSON四个明确自有文件中的令牌脱敏。没有删除文件或改动活跃服务的认证配置。

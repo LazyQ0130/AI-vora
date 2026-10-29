@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-29T14:01:45.091Z",
+  "baseline": "8f3fd1f814651828c548b8875a2121c4dda1328f",
+  "previousLessons": 51,
+  "protectedFiles": 2624,
+  "originalUserFilesUnchanged": [
+    "next-env.d.ts",
+    "scripts/ai000-r3-compatibility.ts",
+    "src/components/lesson/reader.tsx",
+    "tests/reading-experience.test.ts"
+  ],
+  "oldLessonChanges": [
+    "PY101-C01-L04"
+  ],
+  "oldPublicationsChanged": [
+    "PY101-C01-L04"
+  ],
+  "newLesson": "PY101-C01-L05",
+  "courseStatus": "planned",
+  "untrackedEnvironments": true
+}

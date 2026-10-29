@@ -1,0 +1,7 @@
+Python 3.14.2
+7.6.3
+7.6.3
+pip 25.3 from <NOTEBOOK_LAB>\.venv\Lib\site-packages\pip (python 3.14)
+
+Available kernels:
+  python3    <NOTEBOOK_LAB>\.venv\share\jupyter\kernels\python3

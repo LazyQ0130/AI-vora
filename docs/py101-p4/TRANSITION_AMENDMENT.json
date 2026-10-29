@@ -1,0 +1,16 @@
+{
+  "lessonId": "PY101-C01-L04",
+  "before": {
+    "type": "paragraph",
+    "text": "下一节将进入1.5「在Jupyter中按顺序运行单元格」，目前仍是规划，没有教材页。进入前应能独立创建项目环境、找到实际解释器、直接执行并诊断，恢复错误环境选择；无需提前学习Notebook内核或安装Jupyter。第5章函数课仍需变量、表达式与控制流程等基础，补齐后再读。"
+  },
+  "after": {
+    "type": "paragraph",
+    "text": "接着学习1.5「在Jupyter中按顺序运行单元格」，它已有待人工审核的试读教材。进入前应能独立创建项目环境、找到实际解释器、直接执行并诊断，恢复错误环境选择；Notebook内核与Jupyter安装由下一节首次教授。第5章函数课仍需变量、表达式与控制流程等基础，补齐后再读。"
+  },
+  "beforeSha256": "c5f9276ab754b67727ecb98e808f94a18c15e54380265db0ddd5a3ea96177825",
+  "afterSha256": "84f1afb2deaba6b65371e9aae3d4e5ce88318490b968df4c87fd3d01b1ae1365",
+  "version": 1,
+  "assessmentUnchanged": true,
+  "progressScopeUnchanged": true
+}

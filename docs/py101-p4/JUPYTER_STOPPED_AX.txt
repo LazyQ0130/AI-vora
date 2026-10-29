@@ -1,0 +1,56 @@
+Browser tab: 3, Title: "Home", URL: "http://localhost:8888/tree".
+1 AXWebArea Home, URL: localhost:8888/tree
+	2 container
+		3 container menu-panel
+			4 menu bar
+				5 File
+					6 text File
+				7 View
+					8 text View
+				9 Settings
+					10 text Settings
+				11 Help
+					12 text Help
+		13 container
+			14 tab group
+				15 tab (selectable, settable, boolean) Files, Help: File Browser, ID: tab-key-2-0, Value: 0
+Files
+				16 tab (selected, settable, boolean) Running, ID: tab-key-2-1, Value: 1
+Running
+			17 container Description: Running, ID: jp-running-sessions-tree
+				18 toolbar
+					19 container Refresh List
+						20 checkbox Description: Refresh List, Value: 0
+				21 container side panel content
+					22 heading Description: Kernels Section, Value: 3, ID: title-key-2-3
+						23 text KERNELS
+						24 toolbar Kernels toolbar
+							25 container Shut Down Unused
+								26 button (disabled) Shut Down Unused
+							27 container Collapse All
+								28 checkbox (disabled) Description: Collapse All, Value: 0
+							29 container Switch to List View
+								30 checkbox (disabled) Description: Switch to List View, Value: 0
+							31 container Shut Down All
+								32 checkbox (disabled) Description: Shut Down All, Value: 0
+									33 text Shut Down All
+					34 container Kernels Section, ID: id-ed821709-146e-4b80-b8c1-bbeda6c8cd72
+						35 outline
+					45 heading Description: Language servers Section, Value: 3, ID: title-key-2-4
+						46 text LANGUAGE SERVERS
+						47 toolbar Language servers toolbar
+							48 container Shut Down All
+								49 checkbox (disabled) Description: Shut Down All, Value: 0
+									50 text Shut Down All
+					51 container Language servers Section, ID: id-5afc405b-7f91-41a2-b779-fc56df91db7d
+						52 outline
+					53 heading Description: Terminals Section, Value: 3, ID: title-key-2-5
+						54 text TERMINALS
+						55 toolbar Terminals toolbar
+							56 container Shut Down All
+								57 checkbox (disabled) Description: Shut Down All, Value: 0
+									58 text Shut Down All
+					59 container Terminals Section, ID: id-66c39c8d-1cbf-4c52-9f42-9114c1e1310b
+						60 outline
+
+The focused UI element is 1 AXWebArea Home, URL: localhost:8888/tree

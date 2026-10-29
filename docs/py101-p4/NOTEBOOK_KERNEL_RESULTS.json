@@ -1,0 +1,250 @@
+{
+  "checkedAt": "2026-10-29T13:46:52.823429+00:00",
+  "python": "3.14.2",
+  "kernelInterpreter": "<NOTEBOOK_LAB>\\.venv\\Scripts\\python.exe",
+  "steps": [
+    {
+      "label": "kernel-identity",
+      "source": "import sys\nprint(sys.executable)",
+      "stdout": "<NOTEBOOK_LAB>\\.venv\\Scripts\\python.exe\n",
+      "errors": []
+    },
+    {
+      "label": "draft-assignment-no-output",
+      "source": "marker = \"Draft A\"",
+      "stdout": "",
+      "errors": []
+    },
+    {
+      "label": "draft-display",
+      "source": "print(marker)",
+      "stdout": "Draft A\n",
+      "errors": []
+    },
+    {
+      "label": "edited-not-executed",
+      "sourceOnScreen": "marker = \"Ready B\"",
+      "operation": "edit-text-only"
+    },
+    {
+      "label": "still-old-state",
+      "source": "print(marker)",
+      "stdout": "Draft A\n",
+      "errors": []
+    },
+    {
+      "label": "ready-assignment-no-output",
+      "source": "marker = \"Ready B\"",
+      "stdout": "",
+      "errors": []
+    },
+    {
+      "label": "ready-display",
+      "source": "print(marker)",
+      "stdout": "Ready B\n",
+      "errors": []
+    },
+    {
+      "label": "restart-before-wrong-order",
+      "operation": "restart_kernel",
+      "clean": true
+    },
+    {
+      "label": "wrong-order-name-error",
+      "source": "print(marker)",
+      "stdout": "",
+      "errors": [
+        {
+          "name": "NameError",
+          "value": "name 'marker' is not defined"
+        }
+      ]
+    },
+    {
+      "label": "recover-assignment",
+      "source": "marker = \"Ready B\"",
+      "stdout": "",
+      "errors": []
+    },
+    {
+      "label": "recover-display",
+      "source": "print(marker)",
+      "stdout": "Ready B\n",
+      "errors": []
+    },
+    {
+      "label": "clean-run-first-notebook",
+      "operation": "restart_kernel",
+      "clean": true
+    },
+    {
+      "label": "first-notebook/set-marker",
+      "source": "marker = \"Ready B\"",
+      "stdout": "",
+      "errors": []
+    },
+    {
+      "label": "first-notebook/show-marker",
+      "source": "print(marker)",
+      "stdout": "Ready B\n",
+      "errors": []
+    },
+    {
+      "label": "first-notebook/kernel-probe",
+      "source": "import sys\nprint(sys.executable)",
+      "stdout": "<NOTEBOOK_LAB>\\.venv\\Scripts\\python.exe\n",
+      "errors": []
+    },
+    {
+      "label": "clean-run-dispatch-note",
+      "operation": "restart_kernel",
+      "clean": true
+    },
+    {
+      "label": "dispatch-note/set-note",
+      "source": "delivery_note = \"Packed C7\"",
+      "stdout": "",
+      "errors": []
+    },
+    {
+      "label": "dispatch-note/show-note",
+      "source": "print(delivery_note)",
+      "stdout": "Packed C7\n",
+      "errors": []
+    },
+    {
+      "label": "dispatch-note/kernel-probe",
+      "source": "import sys\nprint(sys.executable)",
+      "stdout": "<NOTEBOOK_LAB>\\.venv\\Scripts\\python.exe\n",
+      "errors": []
+    },
+    {
+      "label": "exercise-fresh-error",
+      "operation": "restart_kernel",
+      "clean": true
+    },
+    {
+      "label": "delivery-wrong-order",
+      "source": "print(delivery_note)",
+      "stdout": "",
+      "errors": [
+        {
+          "name": "NameError",
+          "value": "name 'delivery_note' is not defined"
+        }
+      ]
+    },
+    {
+      "label": "delivery-repair-define",
+      "source": "delivery_note = \"Packed C7\"",
+      "stdout": "",
+      "errors": []
+    },
+    {
+      "label": "delivery-repair-show",
+      "source": "print(delivery_note)",
+      "stdout": "Packed C7\n",
+      "errors": []
+    },
+    {
+      "label": "delivery-text-edited-not-executed",
+      "operation": "edit-text-only",
+      "sourceOnScreen": "delivery_note = \"Packed New E6\""
+    },
+    {
+      "label": "delivery-still-old-state",
+      "source": "print(delivery_note)",
+      "stdout": "Packed C7\n",
+      "errors": []
+    },
+    {
+      "label": "delivery-new-assignment",
+      "source": "delivery_note = \"Packed New E6\"",
+      "stdout": "",
+      "errors": []
+    },
+    {
+      "label": "delivery-new-display",
+      "source": "print(delivery_note)",
+      "stdout": "Packed New E6\n",
+      "errors": []
+    },
+    {
+      "label": "exercise-verification-delivery",
+      "operation": "save-reopen-file",
+      "filename": "exercise-verification-delivery.ipynb",
+      "formatValid": true
+    },
+    {
+      "label": "exercise-verification-delivery-fresh",
+      "operation": "restart_kernel",
+      "clean": true
+    },
+    {
+      "label": "exercise-verification-delivery-define",
+      "source": "delivery_note = \"Packed New E6\"",
+      "stdout": "",
+      "errors": []
+    },
+    {
+      "label": "exercise-verification-delivery-show",
+      "source": "print(delivery_note)",
+      "stdout": "Packed New E6\n",
+      "errors": []
+    },
+    {
+      "label": "exercise-verification-delivery-identity",
+      "source": "import sys\nprint(sys.executable)",
+      "stdout": "<NOTEBOOK_LAB>\\.venv\\Scripts\\python.exe\n",
+      "errors": []
+    },
+    {
+      "label": "independent-own-exercise",
+      "operation": "restart_kernel",
+      "clean": true
+    },
+    {
+      "label": "own-define",
+      "source": "plan_text = \"Sketch D8\"",
+      "stdout": "",
+      "errors": []
+    },
+    {
+      "label": "own-display",
+      "source": "print(plan_text)",
+      "stdout": "Sketch D8\n",
+      "errors": []
+    },
+    {
+      "label": "exercise-verification-own",
+      "operation": "save-reopen-file",
+      "filename": "exercise-verification-own.ipynb",
+      "formatValid": true
+    },
+    {
+      "label": "exercise-verification-own-fresh",
+      "operation": "restart_kernel",
+      "clean": true
+    },
+    {
+      "label": "exercise-verification-own-define",
+      "source": "plan_text = \"Sketch D8\"",
+      "stdout": "",
+      "errors": []
+    },
+    {
+      "label": "exercise-verification-own-show",
+      "source": "print(plan_text)",
+      "stdout": "Sketch D8\n",
+      "errors": []
+    },
+    {
+      "label": "exercise-verification-own-identity",
+      "source": "import sys\nprint(sys.executable)",
+      "stdout": "<NOTEBOOK_LAB>\\.venv\\Scripts\\python.exe\n",
+      "errors": []
+    }
+  ],
+  "kernelShutdown": true,
+  "scope": "真实jupyter_client/IPython内核；不是GUI证据，文本编辑步骤为驱动计划。"
+}

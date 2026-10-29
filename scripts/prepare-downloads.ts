@@ -1,5 +1,6 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { programs } from "../src/content/resources/programs";
+import { notebookDocuments, notebookDownload } from "../src/content/resources/python-notebook";
 await mkdir("public/downloads", { recursive: true });
 for (const program of Object.values(programs)) {
   await writeFile(
@@ -48,3 +49,7 @@ for (const program of Object.values(programs)) {
 console.log(
   `已同源生成 ${Object.keys(programs).length} 组 Python / Notebook 下载文件`,
 );
+for (const document of notebookDocuments) {
+  await writeFile(`public/downloads/${document.filename}.ipynb`, JSON.stringify(notebookDownload(document), null, 2), "utf8");
+}
+console.log(`另生成 ${notebookDocuments.length} 份按单元格组织的Notebook；空输出，不写入机器版本或路径。`);

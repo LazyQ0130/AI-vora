@@ -1,0 +1,196 @@
+{
+  "checkedAt": "2026-10-29T13:59:54.524Z",
+  "base": "http://127.0.0.1:3005",
+  "checks": [
+    {
+      "check": "desktop",
+      "scrollWidth": 1425,
+      "title": "在Jupyter中按顺序运行单元格",
+      "width": 1440
+    },
+    {
+      "check": "adjacent-1.4-1.5",
+      "passed": true,
+      "oldRecordCreatedByActualNavigation": true
+    },
+    {
+      "check": "windows-copy-paste",
+      "value": "& \".\\.venv\\Scripts\\python.exe\" -m jupyter notebook",
+      "passed": true
+    },
+    {
+      "check": "mac-copy-paste",
+      "clipboard": "./.venv/bin/python -m jupyter notebook",
+      "value": "./.venv/bin/python -m jupyter notebook",
+      "passed": true
+    },
+    {
+      "check": "exercise-create-own-notebook",
+      "details": [
+        {
+          "label": "提示 1",
+          "open": true
+        },
+        {
+          "label": "提示 2",
+          "open": true
+        },
+        {
+          "label": "参考解答与自查标准",
+          "open": true
+        }
+      ]
+    },
+    {
+      "check": "exercise-recover-cell-order",
+      "details": [
+        {
+          "label": "提示 1",
+          "open": true
+        },
+        {
+          "label": "提示 2",
+          "open": true
+        },
+        {
+          "label": "参考解答与自查标准",
+          "open": true
+        }
+      ]
+    },
+    {
+      "check": "quiz-wrong",
+      "visible": "再想一想"
+    },
+    {
+      "check": "quiz-correct",
+      "visible": "理解正确"
+    },
+    {
+      "check": "download-first-notebook",
+      "fileAvailable": true,
+      "format": 4,
+      "codeCells": 3,
+      "emptyOutputs": true
+    },
+    {
+      "check": "download-dispatch-note",
+      "fileAvailable": true,
+      "code": [
+        "delivery_note = \"Packed C7\"",
+        "print(delivery_note)",
+        "import sys\nprint(sys.executable)"
+      ],
+      "emptyOutputs": true
+    },
+    {
+      "check": "progress-reload-isolation",
+      "newScope": "PY101-C01-L05:r1",
+      "restoredCompleted": true,
+      "oldChangedKeys": [],
+      "oldCompared": [
+        "aivora:learning:v2:PY101:PY101-C01-L04:r1"
+      ]
+    },
+    {
+      "check": "tablet",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "check": "tablet-directory",
+      "plannedLinks": 0
+    },
+    {
+      "check": "mobile",
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "check": "mobile-exercise-anchor",
+      "url": "http://127.0.0.1:3005/learn/PY101/PY101-C01-L05#exercise-recover-cell-order",
+      "drawerClosed": true
+    },
+    {
+      "check": "narrow",
+      "overflowingAnswers": 0,
+      "scrollWidth": 337,
+      "width": 320
+    },
+    {
+      "check": "narrow-after-resource-label-fix",
+      "overflowingAnswers": 0,
+      "scrollWidth": 305,
+      "width": 320
+    },
+    {
+      "check": "code-local-scroll",
+      "windows": {
+        "client": 254,
+        "left": 120,
+        "overflow": "auto",
+        "scroll": 417
+      },
+      "mac": {
+        "client": 254,
+        "overflow": "auto",
+        "scroll": 332
+      }
+    },
+    {
+      "check": "next-readable-navigation",
+      "url": "http://127.0.0.1:3005/learn/PY101/PY101-C05-L01"
+    },
+    {
+      "check": "404",
+      "path": "/learn/ML201/PY101-C01-L05",
+      "title": "这里，还没有被探索。"
+    },
+    {
+      "check": "404",
+      "path": "/learn/PY101/PY101-C01-L06",
+      "title": "这里，还没有被探索。"
+    },
+    {
+      "check": "course-planned",
+      "planned": true,
+      "hours": true,
+      "chapters": true
+    },
+    {
+      "check": "final-desktop",
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "check": "final-tablet",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "check": "final-mobile",
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "check": "final-narrow-and-task-coverage",
+      "scrollWidth": 305,
+      "width": 320,
+      "shortObservation": true,
+      "reopenRequired": true,
+      "detailsOpen": true
+    },
+    {
+      "check": "final-version-instruction",
+      "showsVersionStep": true,
+      "scrollWidth": 305,
+      "width": 320
+    }
+  ],
+  "limitations": [
+    "首次立即读取剪贴板为旧值；等待复制反馈后重试并实际粘贴，两平台逐字符一致。",
+    "重构建重载后一次summary点击节点失效；重新观察closed状态后再点击成功。最终刷新等待已读状态完成hydration后再操作。",
+    "只通过UI产生进度，无脚本写入/清空存储；旧课对照在相邻导航完成后采集，之后1.5保存与重载不改1.4。",
+    "320px初次长下载标签撑宽至337，简化按钮为文件名后重构建，宽305，代码局部滚动保留。"
+  ]
+}
