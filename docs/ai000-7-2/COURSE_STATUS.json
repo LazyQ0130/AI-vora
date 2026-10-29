@@ -1,0 +1,309 @@
+[
+  {
+    "id": "PY101",
+    "level": "L1",
+    "name": "Python 编程与工程入门",
+    "prerequisites": "无；适合零基础",
+    "status": "planned",
+    "readableCurrent": [
+      {
+        "id": "PY101-C05-L01",
+        "title": "Python 函数与参数",
+        "href": "/learn/PY101/PY101-C05-L01",
+        "status": "pending-review",
+        "version": 2
+      },
+      {
+        "id": "PY101-C05-L02",
+        "title": "位置与关键字参数绑定",
+        "href": "/learn/PY101/PY101-C05-L02",
+        "status": "pending-review",
+        "version": 1
+      },
+      {
+        "id": "PY101-C05-L03",
+        "title": "返回值与 print 的区别",
+        "href": "/learn/PY101/PY101-C05-L03",
+        "status": "pending-review",
+        "version": 1
+      },
+      {
+        "id": "PY101-C05-L04",
+        "title": "函数内外的变量与作用域",
+        "href": "/learn/PY101/PY101-C05-L04",
+        "status": "pending-review",
+        "version": 1
+      },
+      {
+        "id": "PY101-C05-L05",
+        "title": "简单默认参数",
+        "href": "/learn/PY101/PY101-C05-L05",
+        "status": "pending-review",
+        "version": 1
+      },
+      {
+        "id": "PY101-C05-L06",
+        "title": "可选进阶：共享对象与接口陷阱",
+        "href": "/learn/PY101/PY101-C05-L06",
+        "status": "pending-review",
+        "version": 1
+      }
+    ],
+    "legacy": []
+  },
+  {
+    "id": "MA101",
+    "level": "L1",
+    "name": "AI 数学 I：线性代数与微积分",
+    "prerequisites": "初中代数与函数基础；不会编程也可学习理论部分",
+    "status": "planned",
+    "readableCurrent": [
+      {
+        "id": "MA101-C02-L03",
+        "title": "什么是向量？",
+        "href": "/learn/MA101/MA101-C02-L03",
+        "status": "pending-review",
+        "version": 2
+      },
+      {
+        "id": "MA101-C02-L04",
+        "title": "向量的表示、维度与分量",
+        "href": "/learn/MA101/MA101-C02-L04",
+        "status": "pending-review",
+        "version": 1
+      },
+      {
+        "id": "MA101-C02-L05",
+        "title": "向量加法：计算方法与几何意义",
+        "href": "/learn/MA101/MA101-C02-L05",
+        "status": "pending-review",
+        "version": 1
+      },
+      {
+        "id": "MA101-C02-L06",
+        "title": "向量数乘：长度与方向变化",
+        "href": "/learn/MA101/MA101-C02-L06",
+        "status": "pending-review",
+        "version": 1
+      }
+    ],
+    "legacy": [
+      {
+        "id": "MA101-C02-L01",
+        "status": "pending-review",
+        "version": 1
+      },
+      {
+        "id": "MA101-C02-L02",
+        "status": "pending-review",
+        "version": 1
+      },
+      {
+        "id": "MA101-C03-L01",
+        "status": "pending-review",
+        "version": 1
+      },
+      {
+        "id": "MA101-C03-L02",
+        "status": "pending-review",
+        "version": 1
+      },
+      {
+        "id": "MA101-C03-L03",
+        "status": "pending-review",
+        "version": 1
+      }
+    ]
+  },
+  {
+    "id": "DS101",
+    "level": "L1",
+    "name": "Python 科学计算与数据分析",
+    "prerequisites": "PY101 第 1–8 章；MA101 前 3 章建议",
+    "status": "planned",
+    "readableCurrent": [],
+    "legacy": []
+  },
+  {
+    "id": "ST101",
+    "level": "L1",
+    "name": "AI 数学 II：概率、统计与优化基础",
+    "prerequisites": "MA101 的函数与导数章节；PY101 建议同步",
+    "status": "planned",
+    "readableCurrent": [],
+    "legacy": []
+  },
+  {
+    "id": "ML201",
+    "level": "L2",
+    "name": "机器学习基础：监督学习",
+    "prerequisites": "PY101、MA101 核心章节、DS101；ST101 第 1–6 章可同步补足",
+    "status": "planned",
+    "readableCurrent": [
+      {
+        "id": "ML201-C03-L01",
+        "title": "从现实问题认识回归",
+        "href": "/learn/ML201/ML201-C03-L01",
+        "status": "pending-review",
+        "version": 1
+      },
+      {
+        "id": "ML201-C03-L02",
+        "title": "线性回归模型：权重与偏置",
+        "href": "/learn/ML201/ML201-C03-L02",
+        "status": "pending-review",
+        "version": 1
+      },
+      {
+        "id": "ML201-C03-L03",
+        "title": "预测误差、MAE 与 MSE",
+        "href": "/learn/ML201/ML201-C03-L03",
+        "status": "pending-review",
+        "version": 1
+      },
+      {
+        "id": "ML201-C04-L02",
+        "title": "从导数理解优化方向",
+        "href": "/learn/ML201/ML201-C04-L02",
+        "status": "pending-review",
+        "version": 1
+      },
+      {
+        "id": "ML201-C04-L03",
+        "title": "梯度下降的数学原理",
+        "href": "/learn/ML201/ML201-C04-L03",
+        "status": "pending-review",
+        "version": 1
+      },
+      {
+        "id": "ML201-C04-L04",
+        "title": "手动计算一次参数更新",
+        "href": "/learn/ML201/ML201-C04-L04",
+        "status": "pending-review",
+        "version": 1
+      },
+      {
+        "id": "ML201-C04-L05",
+        "title": "使用 NumPy 实现线性回归",
+        "href": "/learn/ML201/ML201-C04-L05",
+        "status": "pending-review",
+        "version": 1
+      }
+    ],
+    "legacy": [
+      {
+        "id": "ML201-C04-L01",
+        "status": "pending-review",
+        "version": 1
+      }
+    ]
+  },
+  {
+    "id": "ML202",
+    "level": "L2",
+    "name": "机器学习进阶：经典算法",
+    "prerequisites": "ML201、ST101 基础知识",
+    "status": "planned",
+    "readableCurrent": [],
+    "legacy": []
+  },
+  {
+    "id": "ML203",
+    "level": "L2",
+    "name": "模型评估与实验方法",
+    "prerequisites": "ML201；ST101 概率统计主要章节",
+    "status": "planned",
+    "readableCurrent": [],
+    "legacy": []
+  },
+  {
+    "id": "DL301",
+    "level": "L3",
+    "name": "神经网络原理与反向传播",
+    "prerequisites": "ML201、MA101；ST101 优化基础",
+    "status": "planned",
+    "readableCurrent": [],
+    "legacy": []
+  },
+  {
+    "id": "DL302",
+    "level": "L3",
+    "name": "PyTorch 深度学习实战",
+    "prerequisites": "PY101、DS101、DL301；可与 DL301 后半段衔接",
+    "status": "planned",
+    "readableCurrent": [],
+    "legacy": []
+  },
+  {
+    "id": "DL303",
+    "level": "L3",
+    "name": "深度学习核心架构",
+    "prerequisites": "DL301、DL302",
+    "status": "planned",
+    "readableCurrent": [],
+    "legacy": []
+  },
+  {
+    "id": "NLP401",
+    "level": "L4",
+    "name": "自然语言处理 NLP",
+    "prerequisites": "DL303、DS101；或通过等价能力测评",
+    "status": "planned",
+    "readableCurrent": [],
+    "legacy": []
+  },
+  {
+    "id": "LLM401",
+    "level": "L4",
+    "name": "大语言模型原理与基础实验",
+    "prerequisites": "DL303；NLP401 第 1–4 章建议；ST101 基础",
+    "status": "planned",
+    "readableCurrent": [],
+    "legacy": []
+  },
+  {
+    "id": "LLM402",
+    "level": "L4",
+    "name": "LLM 微调、评测与推理工程",
+    "prerequisites": "LLM401、DL302、ML203；Linux/命令行基础建议",
+    "status": "planned",
+    "readableCurrent": [],
+    "legacy": []
+  },
+  {
+    "id": "CV401",
+    "level": "L4",
+    "name": "计算机视觉 CV",
+    "prerequisites": "DL303、DL302、DS101",
+    "status": "planned",
+    "readableCurrent": [],
+    "legacy": []
+  },
+  {
+    "id": "MM401",
+    "level": "L4",
+    "name": "多模态学习与视觉语言模型",
+    "prerequisites": "DL303；CV401 核心内容与 LLM401 核心内容",
+    "status": "planned",
+    "readableCurrent": [],
+    "legacy": []
+  },
+  {
+    "id": "RL401",
+    "level": "L4",
+    "name": "强化学习与深度强化学习",
+    "prerequisites": "ST101 的概率/期望/优化、ML201、DL302；建议先修基础动态规划",
+    "status": "planned",
+    "readableCurrent": [],
+    "legacy": []
+  },
+  {
+    "id": "GM401",
+    "level": "L4",
+    "name": "生成式模型：VAE、GAN 与 Diffusion",
+    "prerequisites": "DL302、DL303、ST101 概率基础",
+    "status": "planned",
+    "readableCurrent": [],
+    "legacy": []
+  }
+]

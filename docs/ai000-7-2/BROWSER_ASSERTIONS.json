@@ -1,0 +1,18 @@
+{
+  "viewports": 4,
+  "exerciseCases": 8,
+  "goals": 3,
+  "deduplicatedExercises": 2,
+  "noPageOverflow": true,
+  "stageParagraphFlow": true,
+  "prerequisiteVisits": 4,
+  "courseVisits": 11,
+  "oldStorageValuesUnchanged": 6,
+  "newKeyInitially": null,
+  "partialPercent": 46,
+  "resumeSection": "dependencies",
+  "completedAfterReload": true,
+  "storageRestored": true,
+  "consoleWarningsErrors": 0,
+  "limit": "视口模拟、AI辅助目视与技术验证，不等于实体设备或真实学生试学"
+}

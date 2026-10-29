@@ -1,0 +1,122 @@
+[
+  {
+    "size": {
+      "width": 1440,
+      "height": 1000
+    },
+    "target": "nlp-stages",
+    "file": "FINAL-1440-nlp-stages.png",
+    "paint": {
+      "text": "甲的路线：先把文字任务做小，再决定怎样深入",
+      "y": 213.33334350585935
+    }
+  },
+  {
+    "size": {
+      "width": 1440,
+      "height": 1000
+    },
+    "target": "compare-routes",
+    "file": "FINAL-1440-compare-routes.png",
+    "paint": {
+      "text": "把两条路线并排看，差别出在哪里？",
+      "y": 212.9479217529297
+    }
+  },
+  {
+    "size": {
+      "width": 1440,
+      "height": 1000
+    },
+    "target": "cv-stages",
+    "file": "FINAL-1440-cv-stages.png",
+    "paint": {
+      "text": "乙的路线：先能对上图与框，再检查检测结果",
+      "y": 212.86459350585935
+    }
+  },
+  {
+    "size": {
+      "width": 768,
+      "height": 1000
+    },
+    "target": "nlp-stages",
+    "file": "FINAL-768-nlp-stages.png",
+    "paint": {
+      "text": "甲的路线：先把文字任务做小，再决定怎样深入",
+      "y": 236.0729217529297
+    }
+  },
+  {
+    "size": {
+      "width": 768,
+      "height": 1000
+    },
+    "target": "compare-routes",
+    "file": "FINAL-768-compare-routes.png",
+    "paint": {
+      "text": "把两条路线并排看，差别出在哪里？",
+      "y": 236.3541717529297
+    }
+  },
+  {
+    "size": {
+      "width": 390,
+      "height": 844
+    },
+    "target": "nlp-stages",
+    "file": "FINAL-390-nlp-stages.png",
+    "paint": {
+      "text": "甲的路线：先把文字任务做小，再决定怎样深入",
+      "y": 216.5625
+    }
+  },
+  {
+    "size": {
+      "width": 390,
+      "height": 844
+    },
+    "target": "compare-routes",
+    "file": "FINAL-390-compare-routes.png",
+    "paint": {
+      "text": "把两条路线并排看，差别出在哪里？",
+      "y": 216.40625
+    }
+  },
+  {
+    "size": {
+      "width": 320,
+      "height": 844
+    },
+    "target": "nlp-stages",
+    "file": "FINAL-320-nlp-stages.png",
+    "paint": {
+      "text": "甲的路线：先把文字任务做小，再决定怎样深入",
+      "y": 219.39584350585935
+    }
+  },
+  {
+    "size": {
+      "width": 320,
+      "height": 844
+    },
+    "target": "compare-routes",
+    "file": "FINAL-320-compare-routes.png",
+    "paint": {
+      "text": "把两条路线并排看，差别出在哪里？",
+      "y": 219.59375
+    }
+  },
+  {
+    "size": {
+      "width": 320,
+      "height": 844
+    },
+    "target": "cv-stages",
+    "file": "FINAL-320-cv-stages.png",
+    "paint": {
+      "text": "乙的路线：先能对上图与框，再检查检测结果",
+      "y": 218.9791717529297
+    }
+  }
+]

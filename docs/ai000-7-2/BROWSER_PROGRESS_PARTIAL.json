@@ -1,0 +1,9 @@
+{
+  "aivora:learning:v2:AI000:AI000-C07-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C07-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"course-connections\",\"updatedAt\":1793248580088}",
+  "aivora:learning:v2:AI000:AI000-C05-L02:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L02\",\"contentVersion\":1,\"percent\":18,\"completed\":false,\"section\":\"find-each-box\",\"updatedAt\":1793248543049}",
+  "aivora:learning:v2:AI000:AI000-C04-L03:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C04-L03\",\"contentVersion\":1,\"percent\":13,\"completed\":false,\"section\":\"assign-roles\",\"updatedAt\":1793248544311}",
+  "aivora:learning:v2:AI000:AI000-C05-L01:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L01\",\"contentVersion\":1,\"percent\":49,\"completed\":false,\"section\":\"task-outputs\",\"updatedAt\":1793248541798}",
+  "aivora:learning:v2:AI000:AI000-C01-L02:r2": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C01-L02\",\"contentVersion\":2,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793248569289}",
+  "aivora:learning:v2:AI000:AI000-C07-L02:r1": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C07-L02\",\"contentVersion\":1,\"percent\":46,\"completed\":false,\"section\":\"dependencies\",\"updatedAt\":1793248582020}",
+  "aivora:learning:v2:AI000:AI000-C05-L03:r2": "{\"version\":2,\"courseId\":\"AI000\",\"lessonId\":\"AI000-C05-L03\",\"contentVersion\":2,\"percent\":100,\"completed\":true,\"section\":\"takeaways\",\"updatedAt\":1793248570261}"
+}

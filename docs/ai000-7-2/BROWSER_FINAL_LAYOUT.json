@@ -1,0 +1,102 @@
+[
+  {
+    "client": 1425,
+    "scroll": 1425,
+    "stages": [
+      {
+        "headings": 4,
+        "id": "nlp-stages",
+        "paragraphs": 14,
+        "tables": 0
+      },
+      {
+        "headings": 5,
+        "id": "cv-stages",
+        "paragraphs": 15,
+        "tables": 0
+      }
+    ],
+    "width": 1440,
+    "comparison": {
+      "font": "14px",
+      "region": 722,
+      "tabindex": "0",
+      "table": 722
+    }
+  },
+  {
+    "client": 753,
+    "scroll": 753,
+    "stages": [
+      {
+        "headings": 4,
+        "id": "nlp-stages",
+        "paragraphs": 14,
+        "tables": 0
+      },
+      {
+        "headings": 5,
+        "id": "cv-stages",
+        "paragraphs": 15,
+        "tables": 0
+      }
+    ],
+    "width": 768,
+    "comparison": {
+      "font": "14px",
+      "region": 650,
+      "tabindex": "0",
+      "table": 650
+    }
+  },
+  {
+    "client": 375,
+    "scroll": 375,
+    "stages": [
+      {
+        "headings": 4,
+        "id": "nlp-stages",
+        "paragraphs": 14,
+        "tables": 0
+      },
+      {
+        "headings": 5,
+        "id": "cv-stages",
+        "paragraphs": 15,
+        "tables": 0
+      }
+    ],
+    "width": 390,
+    "comparison": {
+      "font": "14px",
+      "region": 308,
+      "tabindex": "0",
+      "table": 600
+    }
+  },
+  {
+    "client": 305,
+    "scroll": 305,
+    "stages": [
+      {
+        "headings": 4,
+        "id": "nlp-stages",
+        "paragraphs": 14,
+        "tables": 0
+      },
+      {
+        "headings": 5,
+        "id": "cv-stages",
+        "paragraphs": 15,
+        "tables": 0
+      }
+    ],
+    "width": 320,
+    "comparison": {
+      "font": "14px",
+      "region": 254,
+      "tabindex": "0",
+      "table": 600
+    }
+  }
+]

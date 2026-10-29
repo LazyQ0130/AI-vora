@@ -25,7 +25,7 @@ const sha=(b:Buffer)=>createHash("sha256").update(b).digest("hex");
 
 test("7.1完整保护44旧Lesson/发布与246文件，额外源码不被兼容层吞掉",()=>{
   assert.equal(before.lessons.length,44);assert.equal(before.publications.length,44);assert.equal(before.files.length,246);
-  assert.equal(lessonRegistry.size,45);assert.equal(publicationManifest.length,45);
+  assert.equal(lessonRegistry.size,46);assert.equal(publicationManifest.length,46);
   for(const old of before.lessons)assert.equal(JSON.stringify(lessonRegistry.get(old.id)),JSON.stringify(old),old.id);
   for(const old of before.publications)assert.deepEqual(publicationManifest.find(p=>p.lessonId===old.lessonId),old,old.lessonId);
   for(const f of before.files){const bytes=readFileSync(f.path);if(sha(bytes)===f.sha256)continue;const reversed=beforeFoundationsSource(f.path,bytes.toString("utf8")).replaceAll("\r\n","\n");assert.ok([reversed,reversed.replaceAll("\n","\r\n")].some(s=>sha(Buffer.from(s))===f.sha256),f.path);}
@@ -119,13 +119,13 @@ test("表格原生语义/局部滚动，六折叠默认关闭，无额外图、�
   for(const b of tasks){const html=renderToStaticMarkup(createElement(ContentRenderer,{block:b,resources:[]}));assert.equal((html.match(/<details/g)??[]).length,3);assert.doesNotMatch(html,/<details[^>]*\sopen/);assert.ok(html.includes(`id="exercise-${b.id}"`));}
   assert.ok(lesson.sections.every(s=>s.tier==="core"&&!/^\d+[.、\s]/.test(s.title)));
 });
-test("draft私有/preview门禁，6.3↔7.1及7.2/7.3保持规划，整门不发布",()=>{
+test("draft私有/preview门禁，6.3↔7.1↔7.2及7.3保持规划，整门不发布",()=>{
   const course=getLearningCourse("AI000")!,pub=publicationManifest.find(p=>p.lessonId===lesson.id)!;
   assert.equal(pub.contentVersion,1);assert.equal(pub.reviewEvidence,undefined);assert.equal(course.status,"planned");assert.equal(course.hours,"6–10");
   assert.equal(Boolean(resolveLesson("AI000",lesson.id)),isReadable(pub));
-  if(isReadable(pub)){assert.equal(pub.status,"pending-review");assert.equal(pub.technicalEvidence,"docs/AI000_LESSON_7_1_REVIEW.md");assert.equal(getAdjacentLessons(course,"AI000-C06-L03").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C06-L03");assert.equal(getAdjacentLessons(course,lesson.id).next,undefined);}
+  if(isReadable(pub)){assert.equal(pub.status,"pending-review");assert.equal(pub.technicalEvidence,"docs/AI000_LESSON_7_1_REVIEW.md");assert.equal(getAdjacentLessons(course,"AI000-C06-L03").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C06-L03");assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C07-L02");}
   else {assert.equal(pub.status,"draft");assert.equal(pub.access,"private");}
-  for(const slot of course.chapters[6].lessons.slice(1)){assert.equal(slot.status,"planned");assert.equal(slot.href,undefined);assert.equal(lessonRegistry.has(slot.lessonId),false);}
+  for(const slot of course.chapters[6].lessons.slice(2)){assert.equal(slot.status,"planned");assert.equal(slot.href,undefined);assert.equal(lessonRegistry.has(slot.lessonId),false);}
   assert.equal(resolveLesson("PY101",lesson.id),undefined);
 });
 test("7.1初始r1独立空态，保留44旧课和1.2/5.3历史r1且能恢复位置/完成",()=>{
@@ -137,8 +137,8 @@ test("7.1初始r1独立空态，保留44旧课和1.2/5.3历史r1且能恢复位�
   restored.save(scope,100,"course-connections",true);assert.equal(parseReadingProgress(createProgressStore(()=>port).getSnapshot(scope),scope)?.completed,true);
   for(const [k,v]of saved)assert.equal(memory.get(k),v,k);
 });
-test("7.1分项编辑估计与24节764–1154同步，旧734–1112证据保留",()=>{
+test("7.1分项编辑估计与24节800–1202同步，旧734–1112证据保留",()=>{
   assert.deepEqual(lesson.learningTime,{reading:[14,22],practice:[34,50],coding:[0,0],basis:"editorial-estimate"});
-  const time=getCourseStudyEstimate("AI000")!;assert.deepEqual(time.totalMinutes,[764,1154]);assert.equal(time.hours,"12.7–19.2");
+  const time=getCourseStudyEstimate("AI000")!;assert.deepEqual(time.totalMinutes,[800,1202]);assert.equal(time.hours,"13.3–20.0");
   assert.deepEqual(JSON.parse(readFileSync("docs/ai000-6-3/TIME_ESTIMATE.json","utf8")).totalMinutes,[734,1112]);
 });

@@ -1,0 +1,223 @@
+[
+  {
+    "size": {
+      "width": 1440,
+      "height": 1000
+    },
+    "target": "compare-routes",
+    "file": "1440-compare-routes.png",
+    "paint": {
+      "height": 37.94791793823242,
+      "text": "把两条路线并排看，差别出在哪里？",
+      "y": 213.15625
+    }
+  },
+  {
+    "size": {
+      "width": 1440,
+      "height": 1000
+    },
+    "target": "nlp-stages",
+    "file": "1440-nlp-stages.png",
+    "paint": {
+      "height": 37.94791793823242,
+      "text": "甲的路线：先把文字任务做小，再决定怎样深入",
+      "y": 213.33334350585935
+    }
+  },
+  {
+    "size": {
+      "width": 1440,
+      "height": 1000
+    },
+    "target": "cv-stages",
+    "file": "1440-cv-stages.png",
+    "paint": {
+      "height": 37.94791793823242,
+      "text": "乙的路线：先能对上图与框，再检查检测结果",
+      "y": 213.0416717529297
+    }
+  },
+  {
+    "size": {
+      "width": 1440,
+      "height": 1000
+    },
+    "target": "exercise-plan-catalog-route",
+    "file": "1440-exercise-plan-catalog-route.png",
+    "paint": {
+      "height": 30.59375,
+      "text": "从能查表，到能核查的小工具",
+      "y": 216.77084350585935
+    }
+  },
+  {
+    "size": {
+      "width": 1440,
+      "height": 1000
+    },
+    "target": "exercise-choose-image-route",
+    "file": "1440-exercise-choose-image-route.png",
+    "paint": {
+      "height": 30.59375,
+      "text": "给出选择、证据和范围改变后的安排",
+      "y": 216.45834350585935
+    }
+  },
+  {
+    "size": {
+      "width": 768,
+      "height": 1000
+    },
+    "target": "compare-routes",
+    "file": "768-compare-routes.png",
+    "paint": {
+      "height": 37.94791793823242,
+      "text": "把两条路线并排看，差别出在哪里？",
+      "y": 236.1979217529297
+    }
+  },
+  {
+    "size": {
+      "width": 768,
+      "height": 1000
+    },
+    "target": "exercise-plan-catalog-route",
+    "file": "768-exercise-plan-catalog-route.png",
+    "paint": {
+      "height": 30.59375,
+      "text": "从能查表，到能核查的小工具",
+      "y": 239.6666717529297
+    }
+  },
+  {
+    "size": {
+      "width": 768,
+      "height": 1000
+    },
+    "target": "exercise-choose-image-route",
+    "file": "768-exercise-choose-image-route.png",
+    "paint": {
+      "height": 30.59375,
+      "text": "给出选择、证据和范围改变后的安排",
+      "y": 240.02084350585935
+    }
+  },
+  {
+    "size": {
+      "width": 390,
+      "height": 844
+    },
+    "target": "compare-routes",
+    "file": "390-compare-routes.png",
+    "paint": {
+      "height": 69.29167175292969,
+      "text": "把两条路线并排看，差别出在哪里？",
+      "y": 216.4791717529297
+    }
+  },
+  {
+    "size": {
+      "width": 390,
+      "height": 844
+    },
+    "target": "exercise-plan-catalog-route",
+    "file": "390-exercise-plan-catalog-route.png",
+    "paint": {
+      "height": 30.59375,
+      "text": "从能查表，到能核查的小工具",
+      "y": 235.67709350585935
+    }
+  },
+  {
+    "size": {
+      "width": 390,
+      "height": 844
+    },
+    "target": "exercise-choose-image-route",
+    "file": "390-exercise-choose-image-route.png",
+    "paint": {
+      "height": 61.1875,
+      "text": "给出选择、证据和范围改变后的安排",
+      "y": 220.64584350585935
+    }
+  },
+  {
+    "size": {
+      "width": 320,
+      "height": 844
+    },
+    "target": "compare-routes",
+    "file": "320-compare-routes.png",
+    "paint": {
+      "height": 62.6875,
+      "text": "把两条路线并排看，差别出在哪里？",
+      "y": 219.625
+    }
+  },
+  {
+    "size": {
+      "width": 320,
+      "height": 844
+    },
+    "target": "nlp-stages",
+    "file": "320-nlp-stages.png",
+    "paint": {
+      "height": 62.6875,
+      "text": "甲的路线：先把文字任务做小，再决定怎样深入",
+      "y": 218.7291717529297
+    }
+  },
+  {
+    "size": {
+      "width": 320,
+      "height": 844
+    },
+    "target": "cv-stages",
+    "file": "320-cv-stages.png",
+    "paint": {
+      "height": 62.6875,
+      "text": "乙的路线：先能对上图与框，再检查检测结果",
+      "y": 219.5104217529297
+    }
+  },
+  {
+    "size": {
+      "width": 320,
+      "height": 844
+    },
+    "target": "exercise-plan-catalog-route",
+    "file": "320-exercise-plan-catalog-route.png",
+    "paint": {
+      "height": 61.1875,
+      "text": "从能查表，到能核查的小工具",
+      "y": 220.125
+    }
+  },
+  {
+    "size": {
+      "width": 320,
+      "height": 844
+    },
+    "target": "exercise-choose-image-route",
+    "file": "320-exercise-choose-image-route.png",
+    "paint": {
+      "height": 61.1875,
+      "text": "给出选择、证据和范围改变后的安排",
+      "y": 220.70834350585935
+    }
+  },
+  {
+    "size": {
+      "width": 320,
+      "height": 844
+    },
+    "target": "course-connections",
+    "file": "320-course-connections.png",
+    "paint": {
+      "height": 62.6875,
+      "text": "把下一项能力连到真实课程，先看依赖和开放范围",
+      "y": 219.7291717529297
+    }
+  }
+]

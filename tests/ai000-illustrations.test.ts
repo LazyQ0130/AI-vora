@@ -81,10 +81,10 @@ test("新增路径仅用于本地image，不接受远程、越界或下载资源
   }
   assert.equal(resourceSchema.safeParse({id:"wrong",title:"wrong",href:block.src,format:"PDF",description:"wrong"}).success,false);
 });
-test("4.3接4.4再接5.1，7.2/7.3仍规划且无注册正文",()=>{
+test("4.3接4.4再接5.1，7.3仍规划且无注册正文",()=>{
   const course=getLearningCourse("AI000")!;
   assert.equal(getAdjacentLessons(course,"AI000-C04-L03").next?.lessonId,"AI000-C04-L04");
   assert.equal(getAdjacentLessons(course,"AI000-C04-L04").previous?.lessonId,"AI000-C04-L03");
   assert.equal(getAdjacentLessons(course,"AI000-C04-L04").next?.lessonId,"AI000-C05-L01");
-  for(const slot of course.chapters.slice(4).flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C07-L01")){assert.equal(slot.href,undefined);assert.equal(lessonRegistry.has(slot.lessonId),false);}
+  for(const slot of course.chapters.slice(4).flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C07-L02")){assert.equal(slot.href,undefined);assert.equal(lessonRegistry.has(slot.lessonId),false);}
 });

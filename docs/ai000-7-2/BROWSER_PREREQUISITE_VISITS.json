@@ -1,0 +1,26 @@
+[
+  {
+    "focus": "H2",
+    "h1": "为什么学习 Python、数学与数据分析？",
+    "target": "把基础连到工作，不排成一条绝对顺序",
+    "url": "http://127.0.0.1:3032/learn/AI000/AI000-C07-L01#dependency-table"
+  },
+  {
+    "focus": "H2",
+    "h1": "自然语言处理与大语言模型",
+    "target": "同一条文字，任务变了，交付也变",
+    "url": "http://127.0.0.1:3032/learn/AI000/AI000-C05-L01#task-outputs"
+  },
+  {
+    "focus": "H2",
+    "h1": "计算机视觉：让机器理解图像",
+    "target": "要逐个找纸箱，还需要各自的位置",
+    "url": "http://127.0.0.1:3032/learn/AI000/AI000-C05-L02#find-each-box"
+  },
+  {
+    "focus": "H2",
+    "h1": "训练、验证与测试各有什么作用？",
+    "target": "先安排用途，再看结果",
+    "url": "http://127.0.0.1:3032/learn/AI000/AI000-C04-L03#assign-roles"
+  }
+]

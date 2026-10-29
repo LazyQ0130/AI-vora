@@ -1,0 +1,44 @@
+{
+  "method": "Python标准库从QUESTIONS_ONLY题设表重新查找与逐行比较；不执行模型",
+  "queries": {
+    "植物": [
+      "L01",
+      "L02",
+      "L04"
+    ],
+    "星空": [
+      "L03"
+    ],
+    "海洋": []
+  },
+  "sameTitleDifferentAuthors": [
+    [
+      "L01",
+      "校园植物观察",
+      "林晓",
+      "一楼 A-12"
+    ],
+    [
+      "L02",
+      "校园植物观察",
+      "周宁",
+      "二楼 B-03"
+    ]
+  ],
+  "unknownLocationPreserved": [
+    "L04",
+    "植物绘画练习",
+    "许青",
+    "位置待核"
+  ],
+  "photoChecks": {
+    "P11": true,
+    "P12": false,
+    "P13": true,
+    "P14": true
+  },
+  "correct": 3,
+  "denominator": 4,
+  "ratio": 0.75,
+  "limit": "给定假设建议的表内核查，不能验证照片内容或目标位置；定性路线另见RECHECK.md"
+}

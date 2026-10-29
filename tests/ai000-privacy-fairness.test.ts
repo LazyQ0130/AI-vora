@@ -32,7 +32,7 @@ function recount(records:readonly CategoryRecord[],condition?:string) {
 
 test("6.2之外42旧教材/发布、242文件及23幅精确图完全保留，未登记变化仍失败",()=>{
   assert.equal(before.lessons.length,42);assert.equal(before.publications.length,42);assert.equal(before.files.length,242);
-  assert.equal(lessonRegistry.size,45);assert.equal(publicationManifest.length,45);
+  assert.equal(lessonRegistry.size,46);assert.equal(publicationManifest.length,46);
   for(const old of before.lessons)assert.equal(JSON.stringify(lessonRegistry.get(old.id)),JSON.stringify(old),old.id);
   for(const old of before.publications)assert.deepEqual(publicationManifest.find(p=>p.lessonId===old.lessonId),old,old.lessonId);
   for(const f of before.files){const bytes=readFileSync(f.path);if(sha(bytes)===f.sha256)continue;const reversed=beforePrivacySource(f.path,bytes.toString("utf8")).replaceAll("\r\n","\n");assert.ok([reversed,reversed.replaceAll("\n","\r\n")].some(s=>sha(Buffer.from(s))===f.sha256),f.path);}
@@ -140,13 +140,13 @@ test("仅HTML表格与文字，无录音/图片/运行接口，题目可折叠�
   assert.ok(lesson.sections.every(s=>s.tier==="core"&&!/^\d+[.、\s]/.test(s.title)));
 });
 
-test("draft/preview门禁与6.1到6.2自动导航，7.2/7.3无正文，整门仍planned",()=>{
+test("draft/preview门禁与6.1到6.2自动导航，7.3无正文，整门仍planned",()=>{
   const pub=publicationManifest.find(p=>p.lessonId===lesson.id)!,course=getLearningCourse("AI000")!;
   assert.equal(pub.contentVersion,1);assert.equal(pub.reviewEvidence,undefined);assert.equal(course.status,"planned");assert.equal(course.hours,"6–10");
   assert.equal(Boolean(resolveLesson("AI000",lesson.id)),isReadable(pub));
   if(isReadable(pub)){assert.equal(pub.status,"pending-review");assert.equal(getAdjacentLessons(course,"AI000-C06-L01").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C06-L01");assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C06-L03");}
   else {assert.equal(pub.status,"draft");assert.equal(pub.access,"private");}
-  for(const slot of course.chapters.flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C07-L01")){assert.equal(slot.href,undefined);assert.equal(slot.status,"planned");assert.equal(lessonRegistry.has(slot.lessonId),false);}
+  for(const slot of course.chapters.flatMap(c=>c.lessons).filter(l=>l.lessonId>"AI000-C07-L02")){assert.equal(slot.href,undefined);assert.equal(slot.status,"planned");assert.equal(lessonRegistry.has(slot.lessonId),false);}
 });
 
 test("6.2 r1初始空态，42旧课与1.2/5.3历史r1不被覆盖，位置和完成独立恢复",()=>{
@@ -158,8 +158,8 @@ test("6.2 r1初始空态，42旧课与1.2/5.3历史r1不被覆盖，位置和完
   restored.save(scope,100,"takeaways",true);assert.equal(parseReadingProgress(createProgressStore(()=>port).getSnapshot(scope),scope)?.completed,true);for(const [k,v]of saved)assert.equal(memory.get(k),v,k);
 });
 
-test("6.2完整任务量同步唯一学时，旧688–1050证据保留，当前路线764–1154",()=>{
+test("6.2完整任务量同步唯一学时，旧688–1050证据保留，当前路线800–1202",()=>{
   assert.deepEqual(lesson.learningTime,{reading:[14,20],practice:[30,44],coding:[0,0],basis:"editorial-estimate"});
-  const estimate=getCourseStudyEstimate("AI000")!;assert.deepEqual(estimate.totalMinutes,[764,1154]);assert.equal(estimate.hours,"12.7–19.2");
+  const estimate=getCourseStudyEstimate("AI000")!;assert.deepEqual(estimate.totalMinutes,[800,1202]);assert.equal(estimate.hours,"13.3–20.0");
   assert.deepEqual(JSON.parse(readFileSync("docs/ai000-6-1/TIME_ESTIMATE.json","utf8")).totalMinutes,[688,1050]);
 });

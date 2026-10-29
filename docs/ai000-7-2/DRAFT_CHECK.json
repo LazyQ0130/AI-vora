@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-10-29T04:27:38.899Z",
+  "base": "d58c6eb2019bd58f1ee3132c8bcc0e4515c4cda2",
+  "unchangedOldLessons": 45,
+  "unchangedPublications": 45,
+  "protectedFiles": 248,
+  "preservedPreciseFigures": 23,
+  "publication": {
+    "lessonId": "AI000-C07-L02",
+    "courseId": "AI000",
+    "chapterId": "AI000-C07",
+    "title": "AI 不同技术方向需要哪些基础？",
+    "contentVersion": 1,
+    "order": 2,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "draft",
+    "access": "private"
+  },
+  "assessmentMap": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "choose-image-route"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "plan-catalog-route"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "plan-catalog-route",
+        "choose-image-route"
+      ]
+    }
+  ]
+}
