@@ -1,0 +1,1252 @@
+{
+  "baseCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+  "files": [
+    {
+      "path": "curriculum/AI技术课程体系_V1.0.md",
+      "blob": "267f6ee33ab02067b7da318562e77b7a5abef6d7"
+    },
+    {
+      "path": "curriculum/AI技术课程目录_V1.0.json",
+      "blob": "029780a09c8f251e40d6e719f51b2d603ae3a0b8"
+    },
+    {
+      "path": "public/artwork/ai-map-v3.webp",
+      "blob": "a969ad49621ff4dad6ea1eb384304259887ddfb5"
+    },
+    {
+      "path": "public/artwork/course-ai-map-v2.webp",
+      "blob": "de99ada0b78faf8fc0c326fa711a78db87a69d2a"
+    },
+    {
+      "path": "public/artwork/course-machine-learning-v2.webp",
+      "blob": "66db4fcb901e26ef33635cecf589d636f5fe771c"
+    },
+    {
+      "path": "public/artwork/course-mathematics-v2.webp",
+      "blob": "30aee67e6ad6ea16afb1f8041d4bfe4028831142"
+    },
+    {
+      "path": "public/artwork/course-neural-network-v2.webp",
+      "blob": "d5a2c000ca36c1f82e714f18a3f888c718cf09b0"
+    },
+    {
+      "path": "public/artwork/course-programming-v2.webp",
+      "blob": "b67c97b6e809e86bb2359c39e760b3b42c3276ea"
+    },
+    {
+      "path": "public/artwork/courses-v5/ai000-ai-technology-map.webp",
+      "blob": "e879f421ca71306c8e003aae1229d9c2c1441d64"
+    },
+    {
+      "path": "public/artwork/courses-v5/cv401-computer-vision.webp",
+      "blob": "2a31e031a28252436b158dd5d3c95a3679e38888"
+    },
+    {
+      "path": "public/artwork/courses-v5/dl301-neural-backpropagation.webp",
+      "blob": "ac868c6c6f6318a8fd0c607f9cee8ddc0ddae960"
+    },
+    {
+      "path": "public/artwork/courses-v5/dl302-pytorch-training.webp",
+      "blob": "4f60f72d78c25fa170ab1f592461362313c705ba"
+    },
+    {
+      "path": "public/artwork/courses-v5/dl303-deep-learning-architectures.webp",
+      "blob": "b39c5b6f004628106ad26ed977cb7a7b212f3ad0"
+    },
+    {
+      "path": "public/artwork/courses-v5/ds101-scientific-data-analysis.webp",
+      "blob": "278de90f30396a09eb61f3f2300f0cce07b5b875"
+    },
+    {
+      "path": "public/artwork/courses-v5/gm401-generative-models.webp",
+      "blob": "44b2c43673371a5416bd453de97765798571da0b"
+    },
+    {
+      "path": "public/artwork/courses-v5/llm401-language-model-foundations.webp",
+      "blob": "daa407a876961c6598b017ffc23516846f360eda"
+    },
+    {
+      "path": "public/artwork/courses-v5/llm402-llm-finetuning-inference.webp",
+      "blob": "8d79694d4fee1949204426d699c4a34d4270df5c"
+    },
+    {
+      "path": "public/artwork/courses-v5/ma101-linear-algebra-calculus.webp",
+      "blob": "cf019c49cc25784ebd2b69dd1e8b2922567456e2"
+    },
+    {
+      "path": "public/artwork/courses-v5/ml201-supervised-learning.webp",
+      "blob": "e47e97b3cc8804703c43d3fc750d0adee14dd780"
+    },
+    {
+      "path": "public/artwork/courses-v5/ml202-classical-algorithms.webp",
+      "blob": "3eb03b623585904ca21632166a785941c832e349"
+    },
+    {
+      "path": "public/artwork/courses-v5/ml203-model-evaluation.webp",
+      "blob": "bd465c96dc50c4af3bf3207a5ccd145206209847"
+    },
+    {
+      "path": "public/artwork/courses-v5/mm401-multimodal-alignment.webp",
+      "blob": "99d71cbccaffe3ee29dd985e5d00b0ae5f8edb60"
+    },
+    {
+      "path": "public/artwork/courses-v5/nlp401-natural-language-processing.webp",
+      "blob": "4cb414c0be6792bc4b4df877d9901409771da5f0"
+    },
+    {
+      "path": "public/artwork/courses-v5/py101-python-programming.webp",
+      "blob": "aafecf0c7ee2b1c239f3c6d35809e8f1a0341a5a"
+    },
+    {
+      "path": "public/artwork/courses-v5/res501-research-reproduction.webp",
+      "blob": "051d8481162707032f43ac59352ed4b271ab89c1"
+    },
+    {
+      "path": "public/artwork/courses-v5/rl401-reinforcement-learning.webp",
+      "blob": "cc48b3744d3f1e07ca8c011167823de6f58a1dd1"
+    },
+    {
+      "path": "public/artwork/courses-v5/st101-probability-statistics.webp",
+      "blob": "9bdd98a0fe537fbf172cfff50ea4686e1e435107"
+    },
+    {
+      "path": "public/artwork/courses-v5/sys501-mlops-deployment.webp",
+      "blob": "91bfc80d45c06b125b8b6358f56773995515d971"
+    },
+    {
+      "path": "public/artwork/hero-horizon-v2.webp",
+      "blob": "93f9fc42e45e6120fb84c6f0433e0172d6dce4a7"
+    },
+    {
+      "path": "public/artwork/math-foundations-v3.webp",
+      "blob": "0d64a04d702f1449f1ab71726abbe52d181b4682"
+    },
+    {
+      "path": "public/artwork/python-workbench-v3.webp",
+      "blob": "32176c6c2f24be0cad479a44a5b1613a64aaf796"
+    },
+    {
+      "path": "public/artwork/supervised-learning-v3.webp",
+      "blob": "5838ddee0733526d3dc17221cae77b4b85e01a81"
+    },
+    {
+      "path": "public/brand/aivora-horizontal.svg",
+      "blob": "48bd91dfcb58dc476dd676cac9c970923ab49885"
+    },
+    {
+      "path": "public/brand/aivora-mark.svg",
+      "blob": "a4f4215fb83cbedd067ab45bfbd1a1410b650929"
+    },
+    {
+      "path": "public/brand/aivora-mono.svg",
+      "blob": "b6cb98590a072ac5e3134c19c32ab0f7f69b33ae"
+    },
+    {
+      "path": "public/downloads/README.md",
+      "blob": "464931e11441e071fd0b1b897668752cfc62210f"
+    },
+    {
+      "path": "public/downloads/function_basics.ipynb",
+      "blob": "731fc4d51462bfb41753663835beb9782001f3b7"
+    },
+    {
+      "path": "public/downloads/function_basics.py",
+      "blob": "8c034477c87942944f18fd2691da8cf1237d3a98"
+    },
+    {
+      "path": "public/downloads/function_binding.ipynb",
+      "blob": "fb9eb118b0fb03519f7f852a3b4fb74f34b0a28f"
+    },
+    {
+      "path": "public/downloads/function_binding.py",
+      "blob": "d457541547df345bf1a68572c65e5f8afef0c99d"
+    },
+    {
+      "path": "public/downloads/function_defaults.ipynb",
+      "blob": "ec4286517a9ea731058257ef50edd66ff2e7b4c6"
+    },
+    {
+      "path": "public/downloads/function_defaults.py",
+      "blob": "abef7e790ff2b7ec6ea9ba3bb4494c679e3bec89"
+    },
+    {
+      "path": "public/downloads/function_return.ipynb",
+      "blob": "ad1b2db8d414e85354b092a324fe3f5736f97f9b"
+    },
+    {
+      "path": "public/downloads/function_return.py",
+      "blob": "e0b3caffe580efb4c2547a79ca13ab10e0342166"
+    },
+    {
+      "path": "public/downloads/function_scope.ipynb",
+      "blob": "e13c9f7fec2e98b90c34275ba56576d20d8455b9"
+    },
+    {
+      "path": "public/downloads/function_scope.py",
+      "blob": "d7f0cdfa776ed0220e2a39abca985055825783e0"
+    },
+    {
+      "path": "public/downloads/linear_regression.ipynb",
+      "blob": "e9f0f50838e3f625b718be641fa8581bb1f0587f"
+    },
+    {
+      "path": "public/downloads/linear_regression.py",
+      "blob": "e347c01d661df9394b66bec7fc02327e1ddebbf8"
+    },
+    {
+      "path": "public/downloads/matrix_product.ipynb",
+      "blob": "33a493f15b910ec5aae31e1f33146863bfa0da5c"
+    },
+    {
+      "path": "public/downloads/matrix_product.py",
+      "blob": "490e106ce0b1ce6e824aa64d96412e14520d3060"
+    },
+    {
+      "path": "public/downloads/matrix_shape.ipynb",
+      "blob": "6a0e7f6952d42b16288d4a6b429f2598a92bc5bb"
+    },
+    {
+      "path": "public/downloads/matrix_shape.py",
+      "blob": "6b00838165b8dbf115555a6565227155fc5cbb4a"
+    },
+    {
+      "path": "public/downloads/ml_gradient_descent.ipynb",
+      "blob": "78500bcbcc2a2c91773b2c20fd42060d6b23c4e1"
+    },
+    {
+      "path": "public/downloads/ml_gradient_descent.py",
+      "blob": "b096be36882f2abf4484eecc2306c99bfc746756"
+    },
+    {
+      "path": "public/downloads/ml_losses.ipynb",
+      "blob": "0f72c7d2c270bbe00f89df02e6593de9481ef762"
+    },
+    {
+      "path": "public/downloads/ml_losses.py",
+      "blob": "9a36c3fa48588de0e005bd913673c5babc73bf5c"
+    },
+    {
+      "path": "public/downloads/numpy_shapes.ipynb",
+      "blob": "e3903cdaa23266e79466659c20b3d9c03027deea"
+    },
+    {
+      "path": "public/downloads/numpy_shapes.py",
+      "blob": "2bae85106130aeb47559199ec0c5274f8b21d76c"
+    },
+    {
+      "path": "public/downloads/python_functions.ipynb",
+      "blob": "86f0b94b5cf42d7c8ff581f9500271a15ba57325"
+    },
+    {
+      "path": "public/downloads/python_functions.py",
+      "blob": "0bcbd4bac354226b64a176348c83b4fbcaa61bf9"
+    },
+    {
+      "path": "public/downloads/vector_basics.ipynb",
+      "blob": "de807380035bec9bfa7caee1405d94a6cad5b875"
+    },
+    {
+      "path": "public/downloads/vector_basics.py",
+      "blob": "39566c509b67016e85562ed051bfb21ed2c8fa57"
+    },
+    {
+      "path": "public/downloads/vector_dot.ipynb",
+      "blob": "863ecae66c3be1ddd3be554349aed90ee800474d"
+    },
+    {
+      "path": "public/downloads/vector_dot.py",
+      "blob": "f46f0437dd26652004913a12e5515c78dd68502c"
+    },
+    {
+      "path": "public/downloads/vector_matrix.ipynb",
+      "blob": "6838b6acc19af4a8544b681074cea8fa165cfbda"
+    },
+    {
+      "path": "public/downloads/vector_matrix.py",
+      "blob": "ea9b6499296db8f3f93fabdb3339521da5d024fb"
+    },
+    {
+      "path": "public/images/lessons/ai000/ai000-c01-l01-mail-sorting.webp",
+      "blob": "f3b5456ba8b41b33a12e8e0ca6c4729d89c380bf"
+    },
+    {
+      "path": "public/images/lessons/ai000/ai000-c01-l02-mail-review.webp",
+      "blob": "2a68b909aae467b77e9ece5327edc79855a30ea1"
+    },
+    {
+      "path": "public/images/lessons/ai000/ai000-c01-l03-automation-diagnosis.webp",
+      "blob": "c97f295bc11e48913033bdf50ca2debedd6f6f42"
+    },
+    {
+      "path": "public/images/lessons/ai000/ai000-c02-l01-photo-recognition.webp",
+      "blob": "e82898e2a59ae131b06b5b9f5a3de9d07f35d954"
+    },
+    {
+      "path": "public/images/lessons/ai000/ai000-c02-l02-poster-creation.webp",
+      "blob": "67d0de3ee294dda68bec4b32222532ce9aa65643"
+    },
+    {
+      "path": "public/images/lessons/ai000/ai000-c03-l01-photo-label-pairing.webp",
+      "blob": "6a2e0a698ef671a1a8431a8a17f75adc004ad4e6"
+    },
+    {
+      "path": "public/images/lessons/ai000/ai000-c03-l02-library-observation.webp",
+      "blob": "df78ea94f941c5ab598709646cfe505b804ddab3"
+    },
+    {
+      "path": "public/images/lessons/ai000/ai000-c03-l03-masked-document.webp",
+      "blob": "8169334451474663cfe2945cef9875f4a43de4f4"
+    },
+    {
+      "path": "public/images/lessons/ai000/ai000-c03-l04-delivery-robot.webp",
+      "blob": "e07370799b6c409859aae063fcd518cfbbaaf8d8"
+    },
+    {
+      "path": "public/images/lessons/ai000/ai000-c04-l01-parcel-registration.webp",
+      "blob": "2c5ca0d8a8da397ac4a8a8e28ff1d0d047c638c6"
+    },
+    {
+      "path": "public/images/lessons/ai000/ai000-c04-l02-queue-estimate.webp",
+      "blob": "400b95b2086440c44823bbe5bef7faa62cd3f854"
+    },
+    {
+      "path": "public/images/lessons/ai000/ai000-c04-l03-records-reserved.webp",
+      "blob": "b18f2b6ada7b5a8fddae9eeea3aab10201da825a"
+    },
+    {
+      "path": "public/images/lessons/ai000/ai000-c04-l04-model-inference.webp",
+      "blob": "0b2e4166c511e44d48152d68dcc572d8a91e9362"
+    },
+    {
+      "path": "public/learning/ml-v2/calibration-samples-mobile.png",
+      "blob": "6473249197a20959de248c14426b2ec5b966310d"
+    },
+    {
+      "path": "public/learning/ml-v2/calibration-samples.png",
+      "blob": "0cd15b539bca1fc2c1c4819842e62892e0659190"
+    },
+    {
+      "path": "public/learning/ml-v2/first-update-mobile.png",
+      "blob": "3368081633431f28d255abe95de4c0ad35e990c7"
+    },
+    {
+      "path": "public/learning/ml-v2/first-update.png",
+      "blob": "4e912dfbcc4f75630f81ac91e928dd8dd930fde6"
+    },
+    {
+      "path": "public/learning/ml-v2/gradient-direction-mobile.png",
+      "blob": "a971e4d2b4e6c539befb85bd0d571e4267b29fa2"
+    },
+    {
+      "path": "public/learning/ml-v2/gradient-direction.png",
+      "blob": "52cdc4d7ce4facc6d7b0d269dc864fe5f427d39d"
+    },
+    {
+      "path": "public/learning/ml-v2/parameter-lines-mobile.png",
+      "blob": "e71681f84cedfddb50ba400912b9683d85c0c24d"
+    },
+    {
+      "path": "public/learning/ml-v2/parameter-lines.png",
+      "blob": "2560642f7a543da027b21b15d1c7a1bc4aa65d63"
+    },
+    {
+      "path": "public/learning/ml-v2/training-loss-mobile.png",
+      "blob": "e7f8af276fe976ac9277144ee2468daf9b8311fe"
+    },
+    {
+      "path": "public/learning/ml-v2/training-loss.png",
+      "blob": "542d922e2245a4881ba389b8335e474120e6a550"
+    },
+    {
+      "path": "public/learning/python-function-call-mobile.png",
+      "blob": "6a7be540f0c5726bd6fecdceb7428a982f4b65b4"
+    },
+    {
+      "path": "public/learning/python-function-call.png",
+      "blob": "12ea279aa5edc904da3192b5fe2bb22f8e455b22"
+    },
+    {
+      "path": "public/learning/v2-1/array-shapes-mobile.png",
+      "blob": "d3b59e5bb9e03dc0da69a887fe093d832e904ca0"
+    },
+    {
+      "path": "public/learning/v2-1/array-shapes.png",
+      "blob": "21fc6e979a4309bf8d5f53de1d27904bfa66327d"
+    },
+    {
+      "path": "public/learning/v2-1/function-flow-mobile.png",
+      "blob": "5cf635b5e616bff1f4b04085ac9c05c16bac2067"
+    },
+    {
+      "path": "public/learning/v2-1/function-flow.png",
+      "blob": "a68cb5b608aa60108c79cf2dd593e29498d0a297"
+    },
+    {
+      "path": "public/learning/v2-1/matrix-product-mobile.png",
+      "blob": "51e6e9fc12e12ce00b4024567e9c83ab203c6cf3"
+    },
+    {
+      "path": "public/learning/v2-1/matrix-product.png",
+      "blob": "429de6154229fb2b6ec2a4d543b747ac3e10d087"
+    },
+    {
+      "path": "public/learning/v2-1/numeric-evidence.json",
+      "blob": "0d138c95eab3d33c5c6e3724c6ddfd36e5059a0d"
+    },
+    {
+      "path": "public/learning/vector-addition-mobile.png",
+      "blob": "b9541e0c970a59383e3a1cad3f882b90f51c910c"
+    },
+    {
+      "path": "public/learning/vector-addition.png",
+      "blob": "bf8c91efcf4b942e44659750acb89564f8c585b4"
+    },
+    {
+      "path": "src/app/ai000-lesson.css",
+      "blob": "1fd923f76255b3d5ef4d888397e7f891598ebe9c"
+    },
+    {
+      "path": "src/app/course-covers-v3.css",
+      "blob": "eb96d6773bd5e957424a8f5bf9e0ec6201ef5fd3"
+    },
+    {
+      "path": "src/app/course-covers-v5.css",
+      "blob": "2df9a7cd176a527ec96d671ec8a90c02037e58cd"
+    },
+    {
+      "path": "src/app/courses/[id]/page.tsx",
+      "blob": "1e5ea7ad89e9826dffa5f8129255aeecbd6daff5"
+    },
+    {
+      "path": "src/app/courses/page.tsx",
+      "blob": "1719ea9b1110147df4bf7a299a26be818b33505a"
+    },
+    {
+      "path": "src/app/dashboard/page.tsx",
+      "blob": "c854f62d10d41e8d5d8b9c96b7e83363f2cb238d"
+    },
+    {
+      "path": "src/app/error.tsx",
+      "blob": "7080286988572233ad8255a17acd645f069a5e00"
+    },
+    {
+      "path": "src/app/globals.css",
+      "blob": "09d44d4a2621cd7a630d9b253e33ef470ed2b324"
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "blob": "eaf8b645aef67ae22767639d4fbf01b433467c61"
+    },
+    {
+      "path": "src/app/learn/[courseId]/[lessonId]/page.tsx",
+      "blob": "e91821277b0fc773e0bebe82075e6db1295cc77c"
+    },
+    {
+      "path": "src/app/learning-system.css",
+      "blob": "07d49ac8fd60a845ba5494048696825624c08e67"
+    },
+    {
+      "path": "src/app/loading.tsx",
+      "blob": "2779bb6917a06bbece3ffbc9532491591f590428"
+    },
+    {
+      "path": "src/app/not-found.tsx",
+      "blob": "522984323cf3a72eb74b185a2aa79e9a2037d0f2"
+    },
+    {
+      "path": "src/app/page.tsx",
+      "blob": "5ad6b7f72342f72e0b19b88003db57e82a8a7ae1"
+    },
+    {
+      "path": "src/app/paths/page.tsx",
+      "blob": "67174d3b1835196bfd57653ae0f6a7df576bad17"
+    },
+    {
+      "path": "src/app/projects/page.tsx",
+      "blob": "fa084d28d579b5f4d5e0b07ba45ea33d7e8a2e98"
+    },
+    {
+      "path": "src/app/reader.css",
+      "blob": "4cacd05b00f68e999a6e9adf64ecdc336692adca"
+    },
+    {
+      "path": "src/app/teaching-v2-1.css",
+      "blob": "3b76c32786e39123540d360d360fc1c61c523cd2"
+    },
+    {
+      "path": "src/app/teaching-v2-2.css",
+      "blob": "df3086d17e3f7f33db64e56a4902eaa86669b641"
+    },
+    {
+      "path": "src/app/template.tsx",
+      "blob": "1c1e15e891addd1361a6071719a65c0475f2ef10"
+    },
+    {
+      "path": "src/app/usability.css",
+      "blob": "eb00fea6017ae9e9907f58b2c861000b46cb8b54"
+    },
+    {
+      "path": "src/app/visual-v2.css",
+      "blob": "2cbc8bf637222445499d8ae38bf41dfce30c8abb"
+    },
+    {
+      "path": "src/components/catalog.tsx",
+      "blob": "c4c0c085cbf8bd6f6fe6886982499df7111f8d31"
+    },
+    {
+      "path": "src/components/course-card.tsx",
+      "blob": "9464b9e81a26df8de19acb94b92b13dbadd95996"
+    },
+    {
+      "path": "src/components/dashboard.tsx",
+      "blob": "80287fbd7abf521a82edc5a306ab9ef292b769e3"
+    },
+    {
+      "path": "src/components/hero-art.tsx",
+      "blob": "b08032ea516c4a069ec9405f3c8fd03815b15114"
+    },
+    {
+      "path": "src/components/home.tsx",
+      "blob": "5ba05b3496862fbfa511fdf74adabb198753cef4"
+    },
+    {
+      "path": "src/components/lesson/ai-borrowing-figure.tsx",
+      "blob": "6f4cad051c2daf8ff79c980fe25dd7890cc82a5f"
+    },
+    {
+      "path": "src/components/lesson/ai-creative-figure.tsx",
+      "blob": "0881bd23a7cb075832328a4c976f2bcb66404937"
+    },
+    {
+      "path": "src/components/lesson/ai-data-use-figure.tsx",
+      "blob": "f6c8857ffc761106e9a56cc6c4dfd908efa37f34"
+    },
+    {
+      "path": "src/components/lesson/ai-features-target-figure.tsx",
+      "blob": "e67371e2cd9f5855a182832516e124b5b0ff9ad4"
+    },
+    {
+      "path": "src/components/lesson/ai-generation-figure.tsx",
+      "blob": "8952c138f9ceaeeec46ea905e895ff436ac8e65a"
+    },
+    {
+      "path": "src/components/lesson/ai-inference-figure.tsx",
+      "blob": "3af98418e4006cc83862c1716ab9222582ea528f"
+    },
+    {
+      "path": "src/components/lesson/ai-knowledge-figure.tsx",
+      "blob": "dd76b725ea3deb3d2adfad583da33b6b01c5540a"
+    },
+    {
+      "path": "src/components/lesson/ai-multimodal-figure.tsx",
+      "blob": "bd34b0dddd03bba1b6951c04e0422e9b4e73f186"
+    },
+    {
+      "path": "src/components/lesson/ai-parameters-figure.tsx",
+      "blob": "de27f5d198982d52866706b282ed23c6262a7940"
+    },
+    {
+      "path": "src/components/lesson/ai-reinforcement-figure.tsx",
+      "blob": "6b828a231e1338231d75a1cef7be9b91c0249edd"
+    },
+    {
+      "path": "src/components/lesson/ai-relationship-figure.tsx",
+      "blob": "b1d21d9cd792efa9a12aba4ee29e5167ae0c31b1"
+    },
+    {
+      "path": "src/components/lesson/ai-self-supervised-figure.tsx",
+      "blob": "ea029b47c82e57d5da8792706325b4153f836922"
+    },
+    {
+      "path": "src/components/lesson/ai-supervised-figure.tsx",
+      "blob": "afd41dc1e445a73e16a93fd2acc484c94d858e0b"
+    },
+    {
+      "path": "src/components/lesson/ai-task-figure.tsx",
+      "blob": "dccd32821c0a7c0cef73dfef7866cd32e2669bd0"
+    },
+    {
+      "path": "src/components/lesson/ai-vision-figure.tsx",
+      "blob": "cb6cef15d77e98964016accb3ba789b6862734f6"
+    },
+    {
+      "path": "src/components/lesson/article-contents.tsx",
+      "blob": "648cdbe0649cb13b9ceba26868058c5a6f8cb112"
+    },
+    {
+      "path": "src/components/lesson/blocks.tsx",
+      "blob": "d83231ad722f0ec784d115b936ef23cb2c725ce5"
+    },
+    {
+      "path": "src/components/lesson/chapter-toc.tsx",
+      "blob": "d5ef0f4829649b44c6b92e6f5fa686f7e61ae3b1"
+    },
+    {
+      "path": "src/components/lesson/content-renderer.tsx",
+      "blob": "c9b3a2985b3912c7e3ba081e01bc61ee70702e85"
+    },
+    {
+      "path": "src/components/lesson/course-contents.tsx",
+      "blob": "007bfad7946a9c8736048406555d4a0fcb11af11"
+    },
+    {
+      "path": "src/components/lesson/guided-exercise.tsx",
+      "blob": "cfb5a0d0d1cbb644de33ac202a791b0dce488313"
+    },
+    {
+      "path": "src/components/lesson/learning-support.tsx",
+      "blob": "afe6faafb9c06d755f4626984160de810b79e1c6"
+    },
+    {
+      "path": "src/components/lesson/legacy-anchors.tsx",
+      "blob": "1b2ba8558885ac193586441bdc5f5b6d644c2280"
+    },
+    {
+      "path": "src/components/lesson/reader.tsx",
+      "blob": "4ec23fd7b05288b41447edd0fdd9e893074e7edf"
+    },
+    {
+      "path": "src/components/lesson/regression-experiment.tsx",
+      "blob": "86f316847a7665d0412432b56df7c5a57895e4bb"
+    },
+    {
+      "path": "src/components/lesson/teaching-section.tsx",
+      "blob": "f7e8d85258ca01197c492164f3879df57e9ed045"
+    },
+    {
+      "path": "src/components/lesson/vector-figure.tsx",
+      "blob": "287eb9bbb13265be1a3e0a7a043a9d8e1962ff25"
+    },
+    {
+      "path": "src/components/paths-explorer.tsx",
+      "blob": "98bee65b438433726f2803de50a5735b66c6709d"
+    },
+    {
+      "path": "src/components/projects.tsx",
+      "blob": "b26fdf1412a4d736bc842246208ca38cac9bd5a7"
+    },
+    {
+      "path": "src/components/site-shell.tsx",
+      "blob": "56797cc07a0fe9800997b14e64bbe9ae31add5b2"
+    },
+    {
+      "path": "src/components/ui.tsx",
+      "blob": "06a814083f1ac293d542b3e64abf319dd902ec67"
+    },
+    {
+      "path": "src/content/ai000-outline.ts",
+      "blob": "42e3d55a79d9f9d41d8b8c0c3a2ecbc20140f193"
+    },
+    {
+      "path": "src/content/ai000-study-time.ts",
+      "blob": "f170e4f94eebc8dc9549cc80270998e024f75dda"
+    },
+    {
+      "path": "src/content/course-outline.ts",
+      "blob": "df096dacae5e2a0a88201c37411ff21eb222a8a5"
+    },
+    {
+      "path": "src/content/glossary.ts",
+      "blob": "1862ccdf226eccac0af4ba000aa9a573756de880"
+    },
+    {
+      "path": "src/content/lessons/ai000/ai-ml-dl.ts",
+      "blob": "d98b1c6174a880cf636853ee5f265785abc64b6d"
+    },
+    {
+      "path": "src/content/lessons/ai000/automation-and-ai.ts",
+      "blob": "f103cda4254225312ce89ba08c35c119a3080017"
+    },
+    {
+      "path": "src/content/lessons/ai000/borrowing-example.ts",
+      "blob": "f33867caf6853550b6f9d1d9079d36ca9d2bde63"
+    },
+    {
+      "path": "src/content/lessons/ai000/capabilities-and-errors.ts",
+      "blob": "c5a2ee6afeeb2cdc3442117fe0e600fa53e80717"
+    },
+    {
+      "path": "src/content/lessons/ai000/capstone-example.ts",
+      "blob": "8ec0f20f12d8a7479e1979346aa7a6a30d42ccf1"
+    },
+    {
+      "path": "src/content/lessons/ai000/computer-vision.ts",
+      "blob": "7031f1f7c57bdde0817765cbbec7a7417378e822"
+    },
+    {
+      "path": "src/content/lessons/ai000/creative-work-example.ts",
+      "blob": "c0f49855939a624b2a3c561799c3695e84518842"
+    },
+    {
+      "path": "src/content/lessons/ai000/data-features-labels.ts",
+      "blob": "5ecb50c159de2fd6f32ba6925ad08935d8731518"
+    },
+    {
+      "path": "src/content/lessons/ai000/data-use-example.ts",
+      "blob": "83d5d79eb4233293669d397230702426232514e8"
+    },
+    {
+      "path": "src/content/lessons/ai000/delivery-example.ts",
+      "blob": "4e1820a2e73e820e4ef41bce08fd96df1f524c9d"
+    },
+    {
+      "path": "src/content/lessons/ai000/direction-learning-routes.ts",
+      "blob": "696f737cd964dc9ee902df8b16b3ce6feda7cb5f"
+    },
+    {
+      "path": "src/content/lessons/ai000/direction-route-example.ts",
+      "blob": "3a247ed8d7a0a7d1cba5d2b5eede2c85891b8823"
+    },
+    {
+      "path": "src/content/lessons/ai000/fixed-model-example.ts",
+      "blob": "f412beb95dd3f7a93270c91e40306924dc4a2982"
+    },
+    {
+      "path": "src/content/lessons/ai000/foundations-example.ts",
+      "blob": "592fb497deb3f2c94502531df91531c1bfbe3061"
+    },
+    {
+      "path": "src/content/lessons/ai000/generative-ai-and-llm.ts",
+      "blob": "706afab60ed7c16fbca68cb4a4d2db5c9a255236"
+    },
+    {
+      "path": "src/content/lessons/ai000/generative-work.ts",
+      "blob": "e0cac4ef256c842286e2e5d1cc9ca9d1bfc3e6c1"
+    },
+    {
+      "path": "src/content/lessons/ai000/illustrations.ts",
+      "blob": "00818d90e7d5a0ac272648c2d138c0f7324cfa0b"
+    },
+    {
+      "path": "src/content/lessons/ai000/language-service-example.ts",
+      "blob": "1d6c1ce1de5f367fb3dc16acac9ba9f3fcf7a76e"
+    },
+    {
+      "path": "src/content/lessons/ai000/mail-example.ts",
+      "blob": "bab5f11f98f0e486b88f0ce96ea671d2c3f26bf7"
+    },
+    {
+      "path": "src/content/lessons/ai000/model-parameter-example.ts",
+      "blob": "41a6135531315da8f9c2d2f7a39a2416e2104f77"
+    },
+    {
+      "path": "src/content/lessons/ai000/models-and-parameters.ts",
+      "blob": "d75da29290268053c5201e7598e69ccff2645a3f"
+    },
+    {
+      "path": "src/content/lessons/ai000/multimodal-ai.ts",
+      "blob": "4c5c9eb9e260906a73863366664478513ac0c8d0"
+    },
+    {
+      "path": "src/content/lessons/ai000/multimodal-example.ts",
+      "blob": "8e7510a35c2fc76dc1d408863fdd1e9d65e1aa47"
+    },
+    {
+      "path": "src/content/lessons/ai000/natural-language-and-llm.ts",
+      "blob": "246450f564224046c5d3c5c56957047e64228c05"
+    },
+    {
+      "path": "src/content/lessons/ai000/parcel-example.ts",
+      "blob": "8c39d14f70e80cc5da18ae55af4f311fb01ca4ca"
+    },
+    {
+      "path": "src/content/lessons/ai000/parcel-time-example.ts",
+      "blob": "74ce9f89361f8291fb3a3618f74dba2826caf10c"
+    },
+    {
+      "path": "src/content/lessons/ai000/privacy-bias-fairness.ts",
+      "blob": "9d018ee748581fb3eaefe7f6d0008c13a7a7e128"
+    },
+    {
+      "path": "src/content/lessons/ai000/privacy-fairness-example.ts",
+      "blob": "c1da158524a64d247a007e5bfceef61f4fd3556c"
+    },
+    {
+      "path": "src/content/lessons/ai000/problem-analysis-capstone.ts",
+      "blob": "ade727078f77d6dd0619e2ad91898049739c3999"
+    },
+    {
+      "path": "src/content/lessons/ai000/reinforcement-learning.ts",
+      "blob": "84dfe5c4a0464e5fb798a6f7ca40bea4b568789a"
+    },
+    {
+      "path": "src/content/lessons/ai000/reliability-example.ts",
+      "blob": "0c0d3b57642d1a7e482c5c10895bd665e948423f"
+    },
+    {
+      "path": "src/content/lessons/ai000/responsible-ai-use.ts",
+      "blob": "6eab594b1da46073a36f498644489670b1e68f34"
+    },
+    {
+      "path": "src/content/lessons/ai000/responsible-use-example.ts",
+      "blob": "8870c4612edf988771201d916ce7a02086a6cb97"
+    },
+    {
+      "path": "src/content/lessons/ai000/rl-applicability.ts",
+      "blob": "08f0ab2e51ddff502a37cddb412f5a49c6997d52"
+    },
+    {
+      "path": "src/content/lessons/ai000/rl-application-example.ts",
+      "blob": "ef01e68a7ed18fb60a06e620bc9a137cddb733f5"
+    },
+    {
+      "path": "src/content/lessons/ai000/self-supervised-example.ts",
+      "blob": "5e0a7fa8663d74c24c9346c6a00f761bc2b93f15"
+    },
+    {
+      "path": "src/content/lessons/ai000/self-supervised-learning.ts",
+      "blob": "faf321afa2bc06686a1071627f4c43a72fad126f"
+    },
+    {
+      "path": "src/content/lessons/ai000/shared.ts",
+      "blob": "6a0dab7a3904d9a3af45fae622af8f3b3f2c7b8f"
+    },
+    {
+      "path": "src/content/lessons/ai000/supervised-learning.ts",
+      "blob": "0fd08320174e86f1ed62ff43003e77c5bcd7348c"
+    },
+    {
+      "path": "src/content/lessons/ai000/training-validation-test.ts",
+      "blob": "387e4fcb0ed4aab368e03d6f4ade773ed394fbc4"
+    },
+    {
+      "path": "src/content/lessons/ai000/unreliable-answers.ts",
+      "blob": "7128bd36d1ce5dae1eb6cbd047f02dcfada157ef"
+    },
+    {
+      "path": "src/content/lessons/ai000/unsupervised-learning.ts",
+      "blob": "6afd665ce4e9e434eeef386fd9d5155fb9aa7501"
+    },
+    {
+      "path": "src/content/lessons/ai000/using-a-fixed-model.ts",
+      "blob": "e5302319fa456c4a6a2678cf7f3e65ec7c202255"
+    },
+    {
+      "path": "src/content/lessons/ai000/vision-example.ts",
+      "blob": "8646a30b1f39037c5fcdb6cb48b395cecd42fbd7"
+    },
+    {
+      "path": "src/content/lessons/ai000/what-is-ai.ts",
+      "blob": "729b4bc139d7b6a602875b88448988914d836470"
+    },
+    {
+      "path": "src/content/lessons/ai000/why-foundations.ts",
+      "blob": "8ea84c3e0bb3bf3cf3b2c44ca834bb4de1130f8a"
+    },
+    {
+      "path": "src/content/lessons/foundations-v2-1.ts",
+      "blob": "8f33ff2e7ec374444514edb2c40c3bde0bafd132"
+    },
+    {
+      "path": "src/content/lessons/linear-regression.ts",
+      "blob": "9667b2d350899be66a5050f4badb9c3da959079b"
+    },
+    {
+      "path": "src/content/lessons/ma101/index.ts",
+      "blob": "b94fee53eec64499c7bb88797d3986575f17b2fa"
+    },
+    {
+      "path": "src/content/lessons/ma101/shared.ts",
+      "blob": "03c23c49b72801698f9b581a2153cd60022050a2"
+    },
+    {
+      "path": "src/content/lessons/ma101/vector-addition.ts",
+      "blob": "facff3e904ba17b560bd061e0adcaac84929d9eb"
+    },
+    {
+      "path": "src/content/lessons/ma101/vector-meaning.ts",
+      "blob": "bd2c1db3cf302d1ad89b9851c2971a838437d48b"
+    },
+    {
+      "path": "src/content/lessons/ma101/vector-representation.ts",
+      "blob": "2fdce93a37d340e6806eeaf5cadac7b7d14b498e"
+    },
+    {
+      "path": "src/content/lessons/ma101/vector-scaling.ts",
+      "blob": "c83f25bc9dd8b57a0c5c86d54f0a7856a106e5e8"
+    },
+    {
+      "path": "src/content/lessons/ml201/core-assessments.ts",
+      "blob": "7f11f98e52396ed549fb07c93232f26f16b86ee4"
+    },
+    {
+      "path": "src/content/lessons/ml201/derivative-direction.ts",
+      "blob": "e50adc168e488da60191d79a87b823ba99be7e69"
+    },
+    {
+      "path": "src/content/lessons/ml201/linear-model.ts",
+      "blob": "30627da9b28b4c3cdea0b60762c022cb452e3e0a"
+    },
+    {
+      "path": "src/content/lessons/ml201/loss-functions.ts",
+      "blob": "270ad87605ac39853295760c1b41c68eb3d1439f"
+    },
+    {
+      "path": "src/content/lessons/ml201/manual-update.ts",
+      "blob": "1c1b1628b5e9191772cd5090d398e1d93fabd326"
+    },
+    {
+      "path": "src/content/lessons/ml201/mse-gradient.ts",
+      "blob": "7045a28b65bd7d7b9b0556f63b63fdf38faf08b7"
+    },
+    {
+      "path": "src/content/lessons/ml201/numpy-regression.ts",
+      "blob": "bb4c7c6de4ca701387ef28a8659f3929b963b09a"
+    },
+    {
+      "path": "src/content/lessons/ml201/regression-task.ts",
+      "blob": "1231fe9bc3f8e5c5d6968c4e3cec101f8c6b7e06"
+    },
+    {
+      "path": "src/content/lessons/ml201/shared.ts",
+      "blob": "331703b48ccf01f0dc611302665d0564d6f8012e"
+    },
+    {
+      "path": "src/content/lessons/ml201/teaching-profiles.ts",
+      "blob": "80203f1b7a92407c1777506abefbee5c33a0ff24"
+    },
+    {
+      "path": "src/content/lessons/python-functions.ts",
+      "blob": "1f1c70bde5e16e0f27ec757c10997ffa5118b07e"
+    },
+    {
+      "path": "src/content/lessons/vector-matrix.ts",
+      "blob": "cb96d7d69e2d4fed9ad83ef1fe088529a3955d30"
+    },
+    {
+      "path": "src/content/math-outline.ts",
+      "blob": "256ba348e4dc7b064c0a3139bb912c6ad56d14d6"
+    },
+    {
+      "path": "src/content/models.ts",
+      "blob": "26db6f5dfdc71261d2cdd67190d7cf917797ccf8"
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "blob": "6582c904df5261c30c9aaa855a0f163fef08bd20"
+    },
+    {
+      "path": "src/content/resources/core-programs.ts",
+      "blob": "c5bcdd6e2c3e8600c051b20393f35642085298e0"
+    },
+    {
+      "path": "src/content/resources/programs.ts",
+      "blob": "51a2ccc9f50d9a61d1e3fda65bcc02cff38bc8b3"
+    },
+    {
+      "path": "src/content/sample.ts",
+      "blob": "b6747057840902c306ef5c85abfcf8080083e614"
+    },
+    {
+      "path": "src/lib/artwork.ts",
+      "blob": "358a76fe002713e87ccdcbc33357c07ce1928c02"
+    },
+    {
+      "path": "src/lib/course-directory.ts",
+      "blob": "527282114a978cf4d9a19f9669ce8ca382c1a411"
+    },
+    {
+      "path": "src/lib/course-engine.ts",
+      "blob": "134e85d595c6e14943aac14c1518085ed013ea20"
+    },
+    {
+      "path": "src/lib/course-labels.ts",
+      "blob": "3e73523a1d46d6a62ddf012c0b99c3a7a2890eb9"
+    },
+    {
+      "path": "src/lib/course-learning-time.ts",
+      "blob": "b169080e714f555f2235f588370f38d7d9dd04e1"
+    },
+    {
+      "path": "src/lib/course-numbering.ts",
+      "blob": "15574268121657c532787abf1ab9f605d4e75a88"
+    },
+    {
+      "path": "src/lib/course-presentation.ts",
+      "blob": "e9de2056a1f2fe1d358c0dcb13de81643264d9f2"
+    },
+    {
+      "path": "src/lib/course-reading-summary.ts",
+      "blob": "513feb996974e1ea7680ca2d16f0f8aafa127f66"
+    },
+    {
+      "path": "src/lib/course-search.ts",
+      "blob": "e399368901eefff3c11167bc882b837c69cfedf4"
+    },
+    {
+      "path": "src/lib/curriculum.ts",
+      "blob": "2aa00def5d1ab9a5e452493d2ecf76fa5cc495ee"
+    },
+    {
+      "path": "src/lib/learning-progress.ts",
+      "blob": "b891b23c99ec977bee7bbf4d57124a230cb69307"
+    },
+    {
+      "path": "src/lib/lesson-exercises.ts",
+      "blob": "83a0592321732d71d3ed103c6293fe2e5bd4f566"
+    },
+    {
+      "path": "src/lib/paths.ts",
+      "blob": "69aa9c379e5c7f76701d95acffa95dff9484694a"
+    },
+    {
+      "path": "src/lib/progress.ts",
+      "blob": "44c91f48b894d578917f7f156da6f02c0dd12e42"
+    },
+    {
+      "path": "src/lib/regression.ts",
+      "blob": "c1db7c5aeea7d48bb763a0cb741b01b7491bed9a"
+    },
+    {
+      "path": "src/lib/use-learning-progress.ts",
+      "blob": "b7b8d3d6df6d5e410de0b7981d7f0bf264ea5b63"
+    },
+    {
+      "path": "src/lib/use-progress.ts",
+      "blob": "d26e1fe101d6b3441956d09cf47a3f27612048c6"
+    },
+    {
+      "path": "src/lib/vector-teaching.ts",
+      "blob": "6c8a47181b5de66278f068cf232db4601385ca56"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "AI000-C01-L01",
+      "version": 2,
+      "sha256": "b54ed519e222dfa1d6afb22a5130e2a7a89fdd63b461c516b5a9877a0b600d21"
+    },
+    {
+      "id": "AI000-C01-L02",
+      "version": 2,
+      "sha256": "9bc7e303099a1ffff86c49530c36f289ad9c2ac8a8af6ed52fc8cf0e23fbfcb5"
+    },
+    {
+      "id": "AI000-C01-L03",
+      "version": 1,
+      "sha256": "40660658b98b8d52de1229c1e477d2f34b0a6114944479d9a17df98ec6c88c4f"
+    },
+    {
+      "id": "AI000-C02-L01",
+      "version": 2,
+      "sha256": "b42bf7de8752817c3763d854d9d537962f90a7176bb764132cd727c35e8bb6bb"
+    },
+    {
+      "id": "AI000-C02-L02",
+      "version": 1,
+      "sha256": "9bf25b4d07d062813d92256ad0b25f6bd90a1da1a011834b1d13f059ccc26806"
+    },
+    {
+      "id": "AI000-C03-L01",
+      "version": 1,
+      "sha256": "a425d7f5a9f1de93530461e12a2aa5029e133bf9d97e51ef0b1acdf6b2e1b8c0"
+    },
+    {
+      "id": "AI000-C03-L02",
+      "version": 2,
+      "sha256": "aa35407804c649879ea6ab892385f384c758b07b9449d1baa541f60646f4b4f8"
+    },
+    {
+      "id": "AI000-C03-L03",
+      "version": 1,
+      "sha256": "13da68be4b8c258b0faf8b851b93eb13c407877a6b86680c04b41c5a5e11c87d"
+    },
+    {
+      "id": "AI000-C03-L04",
+      "version": 1,
+      "sha256": "7d00e690328db87795c17ee9d533549a3235748915b0fb62cd7318104d90584c"
+    },
+    {
+      "id": "AI000-C04-L01",
+      "version": 1,
+      "sha256": "e08439af1430c994e26f149867df47d82fbf84708ae302d2b7a0d76e9a4243b6"
+    },
+    {
+      "id": "AI000-C04-L02",
+      "version": 1,
+      "sha256": "3113c34484d8c4fe4154cd105945b4fb64ae9288248834963e7ecc8e902cef30"
+    },
+    {
+      "id": "AI000-C04-L03",
+      "version": 1,
+      "sha256": "144fdc35778d64bb5bf474543575eab477e0c289ec229171348ecab4ada63ee9"
+    },
+    {
+      "id": "AI000-C04-L04",
+      "version": 1,
+      "sha256": "67e6ae10715f1a4c1b101bd4c9026d583532aea74f0a0080028b55e9a90d8685"
+    },
+    {
+      "id": "AI000-C05-L01",
+      "version": 1,
+      "sha256": "877e708d6be97f1a8f30ea652a5117dfd42a65b0196f8c6052a8cb5f6fc93556"
+    },
+    {
+      "id": "AI000-C05-L02",
+      "version": 1,
+      "sha256": "9da3339c8ca2d85efb5fb885359520117e351166a92bae635ef6dac648d4629f"
+    },
+    {
+      "id": "AI000-C05-L03",
+      "version": 2,
+      "sha256": "52486c75c158433c4107a58f1c8b780fafdcaedb04f00327128e8eee2234135c"
+    },
+    {
+      "id": "AI000-C05-L04",
+      "version": 1,
+      "sha256": "52cd5dfdbf2d19a06282ab10dd0e0b5a7bf6ed4a876e5fb0104f056478e5bd7a"
+    },
+    {
+      "id": "AI000-C05-L05",
+      "version": 1,
+      "sha256": "5dfca0660a12ee659fa7d73651f156219a1aa2fe9eeb011910141759dfbc85c0"
+    },
+    {
+      "id": "AI000-C06-L01",
+      "version": 1,
+      "sha256": "c538b91c94ead2cdaaa1e3f301863b257c3e56636bd2f25cc153e95e27c8a9d1"
+    },
+    {
+      "id": "AI000-C06-L02",
+      "version": 1,
+      "sha256": "281989c486447cf31dee70664d6c7c5899516b48b158e9fd0301a528f802703c"
+    },
+    {
+      "id": "AI000-C06-L03",
+      "version": 1,
+      "sha256": "04553790924ad7d1713ec7439786c3397c5c7e6b95fbfedff7e4653faba9767e"
+    },
+    {
+      "id": "AI000-C07-L01",
+      "version": 1,
+      "sha256": "474faef4f895471e2b172b462e2dcb1ddfb185f4424b52967783f6e0d620643e"
+    },
+    {
+      "id": "AI000-C07-L02",
+      "version": 1,
+      "sha256": "1cf66f16b883b68920ad18a06571fd21cbb7da579f78643c3b0ebc08f1b40b23"
+    },
+    {
+      "id": "AI000-C07-L03",
+      "version": 1,
+      "sha256": "e60e96f6c2b8dc93e50546e1700fe32533cac6951d3e971f70757deb740c4679"
+    },
+    {
+      "id": "MA101-C02-L03",
+      "version": 2,
+      "sha256": "e469e3e0ebb497e7a3831914d0d4d68bd0bc23b5c30557e4a8b235098d44428e"
+    },
+    {
+      "id": "MA101-C02-L04",
+      "version": 1,
+      "sha256": "4ed8fd14a580511106503adbbdad6241c24fef48663904c3016147ca0d5bde25"
+    },
+    {
+      "id": "MA101-C02-L05",
+      "version": 1,
+      "sha256": "2e710caf4345d49ec860bf2fe1c304e8cf6e0a4e1aa7b5eccf8b9fee35006095"
+    },
+    {
+      "id": "MA101-C02-L06",
+      "version": 1,
+      "sha256": "2fe1d35d3597fc62d049c700b484aa36982edfde813c408605f7d4e5d071cf38"
+    },
+    {
+      "id": "ML201-C03-L01",
+      "version": 1,
+      "sha256": "7675d8830b5432d1387fc18591883e7e43f55f73dc2d9e0afdfa45678b9e73e0"
+    },
+    {
+      "id": "ML201-C03-L02",
+      "version": 1,
+      "sha256": "53820bd813d01ba59a237d1218a1966f16d0c49f04ec4cd7b21b6016525b4530"
+    },
+    {
+      "id": "ML201-C03-L03",
+      "version": 1,
+      "sha256": "92091377137a4c3062d9c1d74f1825562c168526bd539efbf5dc01ff8b3889c0"
+    },
+    {
+      "id": "ML201-C04-L02",
+      "version": 1,
+      "sha256": "d9758378cb21e5786bd3c21b142c3f8063859bfc4d3f30a4f5efd4019f173f5d"
+    },
+    {
+      "id": "ML201-C04-L03",
+      "version": 1,
+      "sha256": "7675813c6dbf06e2eaae249f2468c6a632807208dc51d5857b072468e783efef"
+    },
+    {
+      "id": "ML201-C04-L04",
+      "version": 1,
+      "sha256": "5fa68ffaff83b64af0fcc4dff973dc3ab9976a4b5915f05fdc9e8f499da61c79"
+    },
+    {
+      "id": "ML201-C04-L05",
+      "version": 1,
+      "sha256": "e0547cd116e39acacceea45bd8cac6a1a2c13bc7df91066007db53fbe716287e"
+    },
+    {
+      "id": "ML201-C04-L01",
+      "version": 1,
+      "sha256": "60ff0636fa10563eef3fa1a16dc4935a63ac73ac524181d2902eefb1c917decf"
+    },
+    {
+      "id": "PY101-C05-L01",
+      "version": 2,
+      "sha256": "d052dd48c61d6741bdaccd49de80dac7338b3c9ec45386fc768f93be3993e218"
+    },
+    {
+      "id": "PY101-C05-L02",
+      "version": 1,
+      "sha256": "1efaabac8ba11a3ae26b554131c34e917fd4ce2536705ac4c610ec818bdc807d"
+    },
+    {
+      "id": "PY101-C05-L03",
+      "version": 1,
+      "sha256": "464401c5d3def09f82a43a764f47bba66bb5a7a1354b8e3b90c985c386669874"
+    },
+    {
+      "id": "PY101-C05-L04",
+      "version": 1,
+      "sha256": "0195e241298b62d9c690e9548b7882c29f47a08c72f84aa75989c5cf47f4e4ab"
+    },
+    {
+      "id": "PY101-C05-L05",
+      "version": 1,
+      "sha256": "4879e722b463c049da187e291284b7864fce427cfff7da5ea7f0091a2ff2c1bd"
+    },
+    {
+      "id": "MA101-C02-L01",
+      "version": 1,
+      "sha256": "0697e683df11d31942e05aa714adf6813f0bb62854cde24c900e36d4e0911734"
+    },
+    {
+      "id": "MA101-C02-L02",
+      "version": 1,
+      "sha256": "87e4ffe53218a1b2ef4d94f736fb42f414c1db0b2752a73d5b41d93bc274992f"
+    },
+    {
+      "id": "MA101-C03-L01",
+      "version": 1,
+      "sha256": "39410918d20e8cba4ff8a7f6fe49e072a54d4a10408af4514f8e906e3466a2c7"
+    },
+    {
+      "id": "MA101-C03-L02",
+      "version": 1,
+      "sha256": "0941f935abd9bd1dbe9a50e698eeaf70ef3da2d1bcb195d057be9f6ffda50b52"
+    },
+    {
+      "id": "MA101-C03-L03",
+      "version": 1,
+      "sha256": "66f4d7586db4f6ebf9d1b8474d9802965154e8c02a2bf8210959baf6d5d84585"
+    },
+    {
+      "id": "PY101-C05-L06",
+      "version": 1,
+      "sha256": "8ac18f1b83b6a6610a18493d80d0eac2fc6e447d4a70b24331a9eacd2eb3b7be"
+    }
+  ],
+  "publicationSha256": "a01ce358cc3ba8835868001fc9076451cf12140610aa049fbbde806a5967a289",
+  "courseSha256": "28573324b47349c24562d6a174305bf611fa37e7e4f1b1da00e2b83c53e9f5dd"
+}

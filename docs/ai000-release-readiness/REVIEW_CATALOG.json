@@ -1,0 +1,3216 @@
+{
+  "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+  "contentSource": "当前正式源码为唯一内容来源；本索引不表示人工审核通过",
+  "lessons": [
+    {
+      "lessonId": "AI000-C01-L01",
+      "title": "人工智能究竟是什么？",
+      "contentVersion": 2,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/what-is-ai.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/what-is-ai.ts#L5-L75",
+      "lessonSha256": "b54ed519e222dfa1d6afb22a5130e2a7a89fdd63b461c516b5a9877a0b600d21",
+      "objectives": [
+        "用自己的话解释人工智能在一个具体任务中起什么作用",
+        "指出系统的输入、处理任务与输出，并说明三者怎样联系",
+        "把一个日常需求改写成范围清楚、能检查结果的AI任务"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "describe-task"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "describe-task",
+            "design-task"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "design-task"
+          ]
+        }
+      ],
+      "prerequisites": "只需日常阅读、比较信息并说明理由；无需编程、数学或安装软件。",
+      "prerequisiteLinks": [],
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+      "sections": [
+        {
+          "id": "mail-task",
+          "title": "收件箱里的一个小麻烦",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/what-is-ai.ts#L19-L24"
+        },
+        {
+          "id": "rule-and-learning",
+          "title": "电脑需要一个怎样的判断办法？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/what-is-ai.ts#L25-L30"
+        },
+        {
+          "id": "ai-meaning",
+          "title": "把刚才的动作，放进“人工智能”这个名称",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/what-is-ai.ts#L31-L36"
+        },
+        {
+          "id": "many-tasks",
+          "title": "沿着输入、任务和输出看一遍",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/what-is-ai.ts#L37-L47"
+        },
+        {
+          "id": "practice",
+          "title": "换一个需求，试着说具体",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/what-is-ai.ts#L48-L60"
+        },
+        {
+          "id": "takeaways",
+          "title": "能把AI的作用讲成一句完整的话",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/what-is-ai.ts#L61-L65"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "describe-task",
+          "title": "向同学解释录音转文字",
+          "sectionId": "practice",
+          "objectives": [
+            1,
+            2
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/what-is-ai.ts#L50-L54",
+          "hintCount": 2,
+          "solutionSteps": 3,
+          "rubricItems": 3
+        },
+        {
+          "id": "design-task",
+          "title": "给失物照片目录安排一项任务",
+          "sectionId": "practice",
+          "objectives": [
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/what-is-ai.ts#L55-L59",
+          "hintCount": 2,
+          "solutionSteps": 4,
+          "rubricItems": 3
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C01-L02",
+      "title": "AI 能做什么，为什么也会出错？",
+      "contentVersion": 2,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/capabilities-and-errors.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/capabilities-and-errors.ts#L5-L75",
+      "lessonSha256": "9bc7e303099a1ffff86c49530c36f289ad9c2ac8a8af6ed52fc8cf0e23fbfcb5",
+      "objectives": [
+        "比较识别、分类、推荐和生成任务的输入、输出与适用范围",
+        "结合给定例子解释误拦、漏掉等错误及其后果",
+        "为新任务设计有可靠对照、可执行的初步核查办法"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "compare-service-tasks",
+            "product-review"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "check-library"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "product-review"
+          ]
+        }
+      ],
+      "prerequisites": "已读1.1，能指出输入、任务和输出，知道从例子形成判断方式的基本含义。无需编程或统计公式。",
+      "prerequisiteLinks": [
+        {
+          "title": "1.1 人工智能究竟是什么？",
+          "href": "/learn/AI000/AI000-C01-L01",
+          "note": "回看三要素与邮件需求。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+      "sections": [
+        {
+          "id": "task-comparison",
+          "title": "都在帮忙，做的工作一样吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/capabilities-and-errors.ts#L17-L24"
+        },
+        {
+          "id": "mistakes",
+          "title": "把两封新邮件放进来，规则还行吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/capabilities-and-errors.ts#L25-L30"
+        },
+        {
+          "id": "why-errors",
+          "title": "多看一些例子，为什么仍可能判断错？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/capabilities-and-errors.ts#L31-L35"
+        },
+        {
+          "id": "check-output",
+          "title": "新写的一段话，该用什么核对？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/capabilities-and-errors.ts#L36-L41"
+        },
+        {
+          "id": "practice",
+          "title": "先比较任务，再检查具体结果",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/capabilities-and-errors.ts#L42-L69"
+        },
+        {
+          "id": "takeaways",
+          "title": "从一句“可能会错”，走到可以核对的动作",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/capabilities-and-errors.ts#L70-L73"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "compare-service-tasks",
+          "title": "四份需求，各该交回什么？",
+          "sectionId": "practice",
+          "objectives": [
+            1
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/capabilities-and-errors.ts#L50-L59",
+          "hintCount": 2,
+          "solutionSteps": 5,
+          "rubricItems": 4
+        },
+        {
+          "id": "check-library",
+          "title": "归还提醒的两种错误",
+          "sectionId": "practice",
+          "objectives": [
+            2
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/capabilities-and-errors.ts#L60-L64",
+          "hintCount": 2,
+          "solutionSteps": 3,
+          "rubricItems": 3
+        },
+        {
+          "id": "product-review",
+          "title": "给商品照片分类，怎样检查并使用结果？",
+          "sectionId": "practice",
+          "objectives": [
+            1,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/capabilities-and-errors.ts#L65-L69",
+          "hintCount": 2,
+          "solutionSteps": 4,
+          "rubricItems": 4
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C01-L03",
+      "title": "普通自动化和 AI 有什么区别？",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/automation-and-ai.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/automation-and-ai.ts#L4-L58",
+      "lessonSha256": "40660658b98b8d52de1229c1e477d2f34b0a6114944479d9a17df98ec6c88c4f",
+      "objectives": [
+        "比较普通自动化、知识推理和数据学习在得到结果时的区别",
+        "根据系统已给出的方法证据判断是否涉及AI，信息不足时说明条件与追问",
+        "沿着简单知识规则推出结论，并说明结论的范围"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "identify-systems"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "identify-systems",
+            "trace-method"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "trace-method"
+          ]
+        }
+      ],
+      "prerequisites": "能使用1.1的输入/任务/输出分析，并知道从例子学习形成模型；1.2已讨论任务结果的检查。",
+      "prerequisiteLinks": [
+        {
+          "title": "1.1 三要素与学习的直觉",
+          "href": "/learn/AI000/AI000-C01-L01",
+          "note": "本节不要求任何编程知识。"
+        },
+        {
+          "title": "1.2 为结果找核查依据",
+          "href": "/learn/AI000/AI000-C01-L02#check-output",
+          "note": "回看怎样按任务选择对照，再用于本节的方法与结论核查。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+      "sections": [
+        {
+          "id": "automation",
+          "title": "到七点响铃，需要先学会什么吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/automation-and-ai.ts#L16-L21"
+        },
+        {
+          "id": "knowledge",
+          "title": "人写的规则，也可以用来推理",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/automation-and-ai.ts#L22-L27"
+        },
+        {
+          "id": "compare-methods",
+          "title": "同样给建议，判断关系从哪里来？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/automation-and-ai.ts#L28-L36"
+        },
+        {
+          "id": "evidence",
+          "title": "只有一个“智能”按钮，能确定多少？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/automation-and-ai.ts#L37-L40"
+        },
+        {
+          "id": "practice",
+          "title": "依据换了，你的判断会怎样变？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/automation-and-ai.ts#L41-L52"
+        },
+        {
+          "id": "takeaways",
+          "title": "方法证据比“看起来智能”更有用",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/automation-and-ai.ts#L53-L56"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "identify-systems",
+          "title": "四种系统，哪条信息支持你的判断？",
+          "sectionId": "practice",
+          "objectives": [
+            1,
+            2
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/automation-and-ai.ts#L43-L47",
+          "hintCount": 2,
+          "solutionSteps": 4,
+          "rubricItems": 4
+        },
+        {
+          "id": "trace-method",
+          "title": "沿着水泵规则走两步",
+          "sectionId": "practice",
+          "objectives": [
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/automation-and-ai.ts#L48-L52",
+          "hintCount": 2,
+          "solutionSteps": 3,
+          "rubricItems": 3
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C02-L01",
+      "title": "AI、机器学习与深度学习，到底是什么关系？",
+      "contentVersion": 2,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/ai-ml-dl.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/ai-ml-dl.ts#L3-L364",
+      "lessonSha256": "b42bf7de8752817c3763d854d9d537962f90a7176bb764132cd727c35e8bb6bb",
+      "objectives": [
+        "解释AI、ML、DL的包含关系，并用两个反例说明不能等同",
+        "用多层表示的直觉说明深度学习为何属于机器学习及其与其他方法的差别",
+        "根据新系统给出的方法证据归类，区别明确排除与仍然未知的信息"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "draw-method-map"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "draw-method-map"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "method-evidence"
+          ]
+        }
+      ],
+      "prerequisites": "已读1.1与1.3，能说明输入/任务/输出，并区分知识推理与从数据学习的基本办法。无需数学或编程。",
+      "prerequisiteLinks": [
+        {
+          "title": "1.1 输入、任务与输出",
+          "href": "/learn/AI000/AI000-C01-L01#many-tasks",
+          "note": "回看系统拿到什么、交回什么，再把任务与本节的方法范围分开。"
+        },
+        {
+          "title": "1.3 普通自动化和 AI 有什么区别？",
+          "href": "/learn/AI000/AI000-C01-L03",
+          "note": "回顾知识方法与数据学习，避免仅凭功能判断方法。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+      "sections": [
+        {
+          "id": "learning-from-mail",
+          "title": "邮件还是那些邮件，判断办法从哪里来？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/ai-ml-dl.ts#L78-L110"
+        },
+        {
+          "id": "deep-learning",
+          "title": "深度学习多出来的“深度”是什么？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/ai-ml-dl.ts#L111-L147"
+        },
+        {
+          "id": "method-map",
+          "title": "三个范围，应该怎样套在一起？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/ai-ml-dl.ts#L148-L182"
+        },
+        {
+          "id": "read-system",
+          "title": "读一段产品说明，先找哪三条信息？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/ai-ml-dl.ts#L183-L233"
+        },
+        {
+          "id": "practice",
+          "title": "自己画一张图，再给新系统归类",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/ai-ml-dl.ts#L234-L295"
+        },
+        {
+          "id": "takeaways",
+          "title": "把几个名称放进一句有依据的话",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/ai-ml-dl.ts#L296-L320"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "draw-method-map",
+          "title": "画出属于自己的 AI 技术关系图",
+          "sectionId": "practice",
+          "objectives": [
+            1,
+            2
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/ai-ml-dl.ts#L245-L271",
+          "hintCount": 2,
+          "solutionSteps": 7,
+          "rubricItems": 5
+        },
+        {
+          "id": "method-evidence",
+          "title": "只凭给出的技术信息，能归到哪一层？",
+          "sectionId": "practice",
+          "objectives": [
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/ai-ml-dl.ts#L272-L293",
+          "hintCount": 2,
+          "solutionSteps": 4,
+          "rubricItems": 3
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C02-L02",
+      "title": "生成式 AI 是什么？它和 LLM 有什么关系？",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/generative-ai-and-llm.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-ai-and-llm.ts#L4-L64",
+      "lessonSha256": "9bf25b4d07d062813d92256ad0b25f6bd90a1da1a011834b1d13f059ccc26806",
+      "objectives": [
+        "根据具体输入输出和处理过程区分分类、检索、编辑与生成任务",
+        "解释现代生成式AI、深度学习与LLM的关系，区分模型和产品",
+        "分析新产品的任务与方法证据，说明能确定的内容和仍需追问的信息"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "classify-new-systems"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "product-model-map"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "classify-new-systems",
+            "product-model-map"
+          ]
+        }
+      ],
+      "prerequisites": "已读1.2的任务/核查与2.1的AI、ML、DL包含关系，知道模型从数据中学习。无需神经网络结构、编程或概率公式。",
+      "prerequisiteLinks": [
+        {
+          "title": "2.1 AI、机器学习与深度学习的关系",
+          "href": "/learn/AI000/AI000-C02-L01",
+          "note": "回看方法范围与多层表示。"
+        },
+        {
+          "title": "1.2 逐项核对生成文字",
+          "href": "/learn/AI000/AI000-C01-L02#check-output",
+          "note": "回看输出说法怎样对应原材料，帮助检查本节的通知与摘要。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+      "sections": [
+        {
+          "id": "generation",
+          "title": "找一张海报，和画一张海报一样吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-ai-and-llm.ts#L16-L26"
+        },
+        {
+          "id": "generative-model",
+          "title": "生成式AI怎样利用学过的规律？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-ai-and-llm.ts#L27-L34"
+        },
+        {
+          "id": "llm",
+          "title": "聊天产品背后的LLM，指的是什么？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-ai-and-llm.ts#L35-L41"
+        },
+        {
+          "id": "product",
+          "title": "一个聊天窗口，可能接起哪些工作？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-ai-and-llm.ts#L42-L46"
+        },
+        {
+          "id": "practice",
+          "title": "把任务、方法与产品分工写清楚",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-ai-and-llm.ts#L47-L58"
+        },
+        {
+          "id": "takeaways",
+          "title": "用三个问题读懂新的产品介绍",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-ai-and-llm.ts#L59-L62"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "classify-new-systems",
+          "title": "这次是在找、改、判断，还是生成？",
+          "sectionId": "practice",
+          "objectives": [
+            1,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-ai-and-llm.ts#L49-L53",
+          "hintCount": 2,
+          "solutionSteps": 4,
+          "rubricItems": 3
+        },
+        {
+          "id": "product-model-map",
+          "title": "为展览服务画一张分工图",
+          "sectionId": "practice",
+          "objectives": [
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-ai-and-llm.ts#L54-L58",
+          "hintCount": 2,
+          "solutionSteps": 4,
+          "rubricItems": 4
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C03-L01",
+      "title": "监督学习：从有答案的例子中学习",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/supervised-learning.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/supervised-learning.ts#L11-L118",
+      "lessonSha256": "a425d7f5a9f1de93530461e12a2aa5029e133bf9d97e51ef0b1acdf6b2e1b8c0",
+      "objectives": [
+        "用具体例子解释监督学习，区分一条样本中的输入信息与标签",
+        "解释学习时已知目标的作用，以及新输入的预测为何需要另行核实",
+        "判断新任务是否具备监督学习所需的输入与目标信息，并提出合理的数据准备方案"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "prepare-examples"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "prepare-examples",
+            "missing-targets"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "missing-targets"
+          ]
+        }
+      ],
+      "prerequisites": "已完成前两章，能区分输入、任务和输出，知道机器学习利用数据形成模型。无需编程、数学或算法基础。",
+      "prerequisiteLinks": [
+        {
+          "title": "1.1 输入、任务与输出",
+          "href": "/learn/AI000/AI000-C01-L01#many-tasks",
+          "note": "回看系统实际拿到什么、要交回什么。"
+        },
+        {
+          "title": "2.1 从例子形成模型",
+          "href": "/learn/AI000/AI000-C02-L01#learning-from-mail",
+          "note": "回顾训练与使用学好的模型的区别。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+      "sections": [
+        {
+          "id": "parcel-examples",
+          "title": "照片旁边，为什么还要写类别？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/supervised-learning.ts#L33-L39"
+        },
+        {
+          "id": "learning-and-prediction",
+          "title": "有答案的例子用来学，新照片用来判断",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/supervised-learning.ts#L40-L48"
+        },
+        {
+          "id": "name-the-method",
+          "title": "现在给这种学习方式起个名字",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/supervised-learning.ts#L49-L53"
+        },
+        {
+          "id": "sample-and-label",
+          "title": "一条例子里，分别装着什么？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/supervised-learning.ts#L54-L64"
+        },
+        {
+          "id": "label-sources",
+          "title": "答案从哪里来，值得信任吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/supervised-learning.ts#L65-L70"
+        },
+        {
+          "id": "number-target",
+          "title": "已知答案，也可以是一个数",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/supervised-learning.ts#L71-L74"
+        },
+        {
+          "id": "data-preparation",
+          "title": "只有一堆照片，下一步能做什么？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/supervised-learning.ts#L75-L79"
+        },
+        {
+          "id": "practice",
+          "title": "换一项工作，自己把例子准备好",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/supervised-learning.ts#L80-L105"
+        },
+        {
+          "id": "takeaways",
+          "title": "看见一条例子，也要找到它的目标",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/supervised-learning.ts#L106-L110"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "prepare-examples",
+          "title": "为图书分类准备一组有答案的例子",
+          "sectionId": "practice",
+          "objectives": [
+            1,
+            2
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/supervised-learning.ts#L82-L92",
+          "hintCount": 2,
+          "solutionSteps": 4,
+          "rubricItems": 4
+        },
+        {
+          "id": "missing-targets",
+          "title": "四份资料，离开展监督学习还差什么？",
+          "sectionId": "practice",
+          "objectives": [
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/supervised-learning.ts#L93-L104",
+          "hintCount": 2,
+          "solutionSteps": 5,
+          "rubricItems": 4
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C03-L02",
+      "title": "无监督学习：没有标签也能发现规律吗？",
+      "contentVersion": 2,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/unsupervised-learning.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unsupervised-learning.ts#L11-L113",
+      "lessonSha256": "aa35407804c649879ea6ab892385f384c758b07b9449d1baa541f60646f4b4f8",
+      "objectives": [
+        "用具体例子解释无监督学习，区分记录中的输入信息与当前任务预先确认的目标标签",
+        "根据给定记录和明确的比较依据提出合理分组，并解释更换依据可能带来的变化",
+        "区分相似记录组与已确认的真实类别，说明分组的用途、限制与需要核查的内容"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "propose-groups",
+            "identify-learning-signals"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "propose-groups"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "propose-groups",
+            "identify-learning-signals"
+          ]
+        }
+      ],
+      "prerequisites": "已读3.1，能分清样本、输入和标签，知道已知目标可以帮助学习，预测结果需要核实。无需编程、距离公式或算法基础。",
+      "prerequisiteLinks": [
+        {
+          "title": "3.1 样本、输入与标签",
+          "href": "/learn/AI000/AI000-C03-L01#sample-and-label",
+          "note": "只需回看这三个名称分别指什么，不必重学算法。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+      "sections": [
+        {
+          "id": "borrowing-records",
+          "title": "这次没有写好答案，还能从哪里看起？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unsupervised-learning.ts#L30-L35"
+        },
+        {
+          "id": "compare-records",
+          "title": "数字不同，也可能有相近的借阅倾向",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unsupervised-learning.ts#L36-L41"
+        },
+        {
+          "id": "uncertain-records",
+          "title": "E和F，也必须马上选一组吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unsupervised-learning.ts#L42-L48"
+        },
+        {
+          "id": "unsupervised",
+          "title": "没有标签，为什么仍然有东西可学？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unsupervised-learning.ts#L49-L56"
+        },
+        {
+          "id": "change-the-question",
+          "title": "只看总次数，刚才的两组还明显吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unsupervised-learning.ts#L57-L66"
+        },
+        {
+          "id": "interpret-groups",
+          "title": "有了组号，怎样把观察用在图书馆？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unsupervised-learning.ts#L67-L72"
+        },
+        {
+          "id": "practice",
+          "title": "换成活动记录，自己说明怎样分、为什么分",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unsupervised-learning.ts#L73-L99"
+        },
+        {
+          "id": "takeaways",
+          "title": "给分组写一句能经得起核对的说明",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unsupervised-learning.ts#L100-L104"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "propose-groups",
+          "title": "给六条活动记录提出一个分组方案",
+          "sectionId": "practice",
+          "objectives": [
+            1,
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unsupervised-learning.ts#L75-L86",
+          "hintCount": 2,
+          "solutionSteps": 5,
+          "rubricItems": 4
+        },
+        {
+          "id": "identify-learning-signals",
+          "title": "先找当前任务的目标信息，再判断学习方式",
+          "sectionId": "practice",
+          "objectives": [
+            1,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unsupervised-learning.ts#L87-L98",
+          "hintCount": 2,
+          "solutionSteps": 5,
+          "rubricItems": 4
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C03-L03",
+      "title": "自监督学习：怎样从数据本身构造学习任务？",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/self-supervised-learning.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/self-supervised-learning.ts#L10-L119",
+      "lessonSha256": "13da68be4b8c258b0faf8b851b93eb13c407877a6b86680c04b41c5a5e11c87d",
+      "objectives": [
+        "用新例构造自监督学习任务，解释学习目标怎样从原始数据自身取得",
+        "区分原始数据、处理后的学习输入、构造目标与模型预测，并说明怎样比较",
+        "根据目标来源和具体学习安排比较监督、无监督聚类与自监督，说明分类联系及信息不足"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "design-self-task",
+            "compare-learning-tasks"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "design-self-task",
+            "compare-learning-tasks"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "compare-learning-tasks"
+          ]
+        }
+      ],
+      "prerequisites": "已读3.1，能区分输入、目标与预测；已读3.2，知道没有预定群组标签也能探索相似结构。无需代码、公式或模型训练环境。",
+      "prerequisiteLinks": [
+        {
+          "title": "3.1 输入、标签与预测",
+          "href": "/learn/AI000/AI000-C03-L01#sample-and-label",
+          "note": "回看已知目标和模型预测分别是什么。"
+        },
+        {
+          "title": "3.2 无监督学习的具体安排",
+          "href": "/learn/AI000/AI000-C03-L02#unsupervised",
+          "note": "回看聚类寻找相似结构，以及为什么不能只按有没有人工标注判断。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+      "sections": [
+        {
+          "id": "hide-a-piece",
+          "title": "把一句话藏起一部分，答案从哪里来？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/self-supervised-learning.ts#L31-L36"
+        },
+        {
+          "id": "four-roles",
+          "title": "模型收到的句子，和我们保留的原句不同",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/self-supervised-learning.ts#L37-L49"
+        },
+        {
+          "id": "name-the-method",
+          "title": "让数据为学习提供对照",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/self-supervised-learning.ts#L50-L54"
+        },
+        {
+          "id": "many-records",
+          "title": "换一句话，也要按同一办法准备",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/self-supervised-learning.ts#L55-L60"
+        },
+        {
+          "id": "another-task",
+          "title": "除了遮住中间，还能怎样利用原文？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/self-supervised-learning.ts#L61-L66"
+        },
+        {
+          "id": "task-and-use",
+          "title": "学会这种任务，以后就只能补空格吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/self-supervised-learning.ts#L67-L71"
+        },
+        {
+          "id": "compare-arrangements",
+          "title": "先问目标从哪里来，再比较学习安排",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/self-supervised-learning.ts#L72-L81"
+        },
+        {
+          "id": "practice",
+          "title": "自己安排一次有来源可查的学习任务",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/self-supervised-learning.ts#L82-L108"
+        },
+        {
+          "id": "takeaways",
+          "title": "目标有出处，比较才有依据",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/self-supervised-learning.ts#L109-L113"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "design-self-task",
+          "title": "把一则新通知变成学习样本",
+          "sectionId": "practice",
+          "objectives": [
+            1,
+            2
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/self-supervised-learning.ts#L84-L95",
+          "hintCount": 2,
+          "solutionSteps": 5,
+          "rubricItems": 4
+        },
+        {
+          "id": "compare-learning-tasks",
+          "title": "三种学习安排，答案各从哪里来？",
+          "sectionId": "practice",
+          "objectives": [
+            1,
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/self-supervised-learning.ts#L96-L107",
+          "hintCount": 2,
+          "solutionSteps": 5,
+          "rubricItems": 4
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C03-L04",
+      "title": "强化学习：通过行动与反馈学习",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/reinforcement-learning.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/reinforcement-learning.ts#L11-L125",
+      "lessonSha256": "7d00e690328db87795c17ee9d533549a3235748915b0fb62cd7318104d90584c",
+      "objectives": [
+        "用新例说明智能体、环境、当前观察、行动与奖励，追踪行动怎样带来新情况和后续选择",
+        "计算两段完整行动的简单累计奖励，解释眼前奖励与整体结果的差别，区分奖励与正确动作标签",
+        "根据实际决策和反馈判断能否按强化学习构造任务，提出所需信息、奖励核查及仍不能确定的内容"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "trace-watering",
+            "assess-feedback"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "trace-watering"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "assess-feedback"
+          ]
+        }
+      ],
+      "prerequisites": "已读3.1–3.3，能区分输入、已知目标和预测，知道目标也能从原始数据构造。会做简单的正负数加减即可，无需编程、概率公式或模型训练环境。",
+      "prerequisiteLinks": [
+        {
+          "title": "3.1 输入与标签",
+          "href": "/learn/AI000/AI000-C03-L01#sample-and-label",
+          "note": "回看学习用的已知目标为什么不同于预测。"
+        },
+        {
+          "title": "3.3 原文、输入、目标与预测",
+          "href": "/learn/AI000/AI000-C03-L03#four-roles",
+          "note": "保留目标来源的区分，再看本节的行动反馈。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+      "sections": [
+        {
+          "id": "delivery-problem",
+          "title": "走到岔路口，先选哪一条路？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/reinforcement-learning.ts#L32-L37"
+        },
+        {
+          "id": "follow-actions",
+          "title": "第一步得分以后，事情还没有结束",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/reinforcement-learning.ts#L38-L44"
+        },
+        {
+          "id": "compare-routes",
+          "title": "第一步多得几分，整段就更好吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/reinforcement-learning.ts#L45-L51"
+        },
+        {
+          "id": "reward-and-target",
+          "title": "得到7分，会直接告诉它每一步怎么走吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/reinforcement-learning.ts#L52-L56"
+        },
+        {
+          "id": "reward-design",
+          "title": "计分办法，也在影响它愿意做什么",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/reinforcement-learning.ts#L57-L60"
+        },
+        {
+          "id": "experience",
+          "title": "没走过的路，怎样知道后面有什么？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/reinforcement-learning.ts#L61-L65"
+        },
+        {
+          "id": "name-the-method",
+          "title": "把经历变成以后选择行动的办法",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/reinforcement-learning.ts#L66-L70"
+        },
+        {
+          "id": "compare-tasks",
+          "title": "回看第三章，四次任务究竟在学什么？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/reinforcement-learning.ts#L71-L79"
+        },
+        {
+          "id": "watering-task",
+          "title": "换成浇水，自己追踪每一步",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/reinforcement-learning.ts#L80-L95"
+        },
+        {
+          "id": "feedback-task",
+          "title": "看到“自动优化”，还要追问什么？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/reinforcement-learning.ts#L96-L114"
+        },
+        {
+          "id": "takeaways",
+          "title": "把一个决定放回它带来的后续过程",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/reinforcement-learning.ts#L115-L119"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "trace-watering",
+          "title": "先浇水还是先补水，差别出现在哪一步？",
+          "sectionId": "watering-task",
+          "objectives": [
+            1,
+            2
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/reinforcement-learning.ts#L84-L94",
+          "hintCount": 2,
+          "solutionSteps": 5,
+          "rubricItems": 4
+        },
+        {
+          "id": "assess-feedback",
+          "title": "哪些条件支持按行动反馈学习来分析？",
+          "sectionId": "feedback-task",
+          "objectives": [
+            1,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/reinforcement-learning.ts#L103-L113",
+          "hintCount": 2,
+          "solutionSteps": 5,
+          "rubricItems": 4
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C04-L01",
+      "title": "数据、特征与标签",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/data-features-labels.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/data-features-labels.ts#L11-L149",
+      "lessonSha256": "e08439af1430c994e26f149867df47d82fbf84708ae302d2b7a0d76e9a4243b6",
+      "objectives": [
+        "为一个预测任务组织记录，区分一条样本、记录字段、输入特征与目标标签",
+        "根据预测开始时能否取得信息选择输入，说明待预测答案、预测结果与事后实际结果的区别",
+        "检查简单数据表的字段含义、单位、对应关系和缺失值，提出可执行的补充或核实办法"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "build-print-records"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "build-print-records",
+            "audit-library-records"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "audit-library-records"
+          ]
+        }
+      ],
+      "prerequisites": "已读第三章，能区分输入、已知目标与预测。会读简单表格即可，无需Python、数学公式或模型训练环境。",
+      "prerequisiteLinks": [
+        {
+          "title": "3.1 一条例子里的输入与标签",
+          "href": "/learn/AI000/AI000-C03-L01#sample-and-label",
+          "note": "回看样本与已知目标的含义。"
+        },
+        {
+          "title": "3.1 已知答案也可以是一个数",
+          "href": "/learn/AI000/AI000-C03-L01#number-target",
+          "note": "回看实际分钟数怎样成为学习目标。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_VISUAL_CONTENT_REFINEMENT.md",
+      "sections": [
+        {
+          "id": "parcel-records",
+          "title": "包裹刚送到，能估计还要等多久吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/data-features-labels.ts#L33-L39"
+        },
+        {
+          "id": "rows-and-fields",
+          "title": "一行说一件事，一列回答一个问题",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/data-features-labels.ts#L40-L50"
+        },
+        {
+          "id": "features-and-target",
+          "title": "哪些信息用来估计，哪一项是想知道的结果？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/data-features-labels.ts#L51-L57"
+        },
+        {
+          "id": "new-record",
+          "title": "新包裹的实际时长，为什么还空着？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/data-features-labels.ts#L58-L65"
+        },
+        {
+          "id": "choose-fields",
+          "title": "系统保存的字段，都适合交给模型吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/data-features-labels.ts#L66-L78"
+        },
+        {
+          "id": "check-records",
+          "title": "未知不是零，同一行还要对应同一次处理",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/data-features-labels.ts#L79-L86"
+        },
+        {
+          "id": "print-task",
+          "title": "为打印点准备一张自己的记录表",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/data-features-labels.ts#L87-L108"
+        },
+        {
+          "id": "library-task",
+          "title": "接手一张表，先查哪里出了问题",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/data-features-labels.ts#L109-L135"
+        },
+        {
+          "id": "takeaways",
+          "title": "拿起一张新表，先把这几件事说清",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/data-features-labels.ts#L136-L140"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "build-print-records",
+          "title": "给一个新任务制作学习记录表",
+          "sectionId": "print-task",
+          "objectives": [
+            1,
+            2
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/data-features-labels.ts#L90-L107",
+          "hintCount": 2,
+          "solutionSteps": 6,
+          "rubricItems": 4
+        },
+        {
+          "id": "audit-library-records",
+          "title": "这份数据表有什么问题？",
+          "sectionId": "library-task",
+          "objectives": [
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/data-features-labels.ts#L115-L134",
+          "hintCount": 2,
+          "solutionSteps": 8,
+          "rubricItems": 4
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C04-L02",
+      "title": "模型和参数是怎样得到的？",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/models-and-parameters.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/models-and-parameters.ts#L11-L127",
+      "lessonSha256": "3113c34484d8c4fe4154cd105945b4fb64ae9288248834963e7ecc8e902cef30",
+      "objectives": [
+        "区分输入、模型的计算形式、参数与预测，说明固定参数怎样用于新的输入",
+        "用两组参数计算预测及其与实际目标的差距，说明给定记录上的比较能得出什么结论",
+        "根据多条历史记录提出并核算参数调整，解释哪些预测改善、哪些未改善，以及为什么还需核查"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "compare-print-settings",
+            "adjust-library-settings"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "compare-print-settings"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "adjust-library-settings"
+          ]
+        }
+      ],
+      "prerequisites": "已完成4.1，能区分预测时的输入与历史实际结果。会做简单加减乘即可，无需代码或训练环境。",
+      "prerequisiteLinks": [
+        {
+          "title": "4.1 输入特征与目标",
+          "href": "/learn/AI000/AI000-C04-L01#features-and-target",
+          "note": "回看包裹记录中哪些用于判断、哪些用于对照。"
+        },
+        {
+          "title": "4.1 新包裹的预测与实际结果",
+          "href": "/learn/AI000/AI000-C04-L01#new-record",
+          "note": "记住模型估计和后来确认的分钟数要分开保存。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_VISUAL_CONTENT_REFINEMENT.md",
+      "sections": [
+        {
+          "id": "need-a-model",
+          "title": "有了记录表，怎样算出预计时间？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/models-and-parameters.ts#L33-L38"
+        },
+        {
+          "id": "calculate-first",
+          "title": "排队2件，先按一种设置算一次",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/models-and-parameters.ts#L39-L43"
+        },
+        {
+          "id": "name-parameters",
+          "title": "哪两个数值可以调整？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/models-and-parameters.ts#L44-L50"
+        },
+        {
+          "id": "compare-one",
+          "title": "同一个包裹，为什么能算出6和8？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/models-and-parameters.ts#L51-L56"
+        },
+        {
+          "id": "compare-records",
+          "title": "只看一条还不够，再算A和C",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/models-and-parameters.ts#L57-L63"
+        },
+        {
+          "id": "change-a-parameter",
+          "title": "把每件增加值调大，会处处更准吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/models-and-parameters.ts#L64-L68"
+        },
+        {
+          "id": "training",
+          "title": "训练，怎样利用这些差别？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/models-and-parameters.ts#L69-L74"
+        },
+        {
+          "id": "use-fixed-model",
+          "title": "参数确定后，新输入可以直接拿来算",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/models-and-parameters.ts#L75-L79"
+        },
+        {
+          "id": "print-parameters-task",
+          "title": "换成打印任务，自己比较两组设置",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/models-and-parameters.ts#L80-L96"
+        },
+        {
+          "id": "adjust-parameters-task",
+          "title": "看三条历史记录，提出自己的调整",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/models-and-parameters.ts#L97-L113"
+        },
+        {
+          "id": "takeaways",
+          "title": "把计算办法、参数和这次输入分开说",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/models-and-parameters.ts#L114-L118"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "compare-print-settings",
+          "title": "换一组参数，预测会怎样变化？",
+          "sectionId": "print-parameters-task",
+          "objectives": [
+            1,
+            2
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/models-and-parameters.ts#L84-L95",
+          "hintCount": 2,
+          "solutionSteps": 5,
+          "rubricItems": 4
+        },
+        {
+          "id": "adjust-library-settings",
+          "title": "从历史记录出发，怎样改进预测？",
+          "sectionId": "adjust-parameters-task",
+          "objectives": [
+            1,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/models-and-parameters.ts#L100-L112",
+          "hintCount": 2,
+          "solutionSteps": 6,
+          "rubricItems": 4
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C04-L03",
+      "title": "训练、验证与测试各有什么作用？",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/training-validation-test.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/training-validation-test.ts#L12-L156",
+      "lessonSha256": "144fdc35778d64bb5bf474543575eab477e0c289ec229171348ecab4ada63ee9",
+      "objectives": [
+        "用具体记录解释训练、验证和测试三种用途，说明它们分别支持学习、选择和最终检查中的什么工作",
+        "比较候选模型在验证记录上的预测差距并作有依据的选择，解释为什么不能反复用最终测试数据挑选模型",
+        "识别事后信息、重复记录或测试反馈造成的评估问题，为新任务提出数据使用顺序和可执行的核查办法"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "plan-print-evaluation"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "plan-print-evaluation",
+            "audit-evaluation-flow"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "plan-print-evaluation",
+            "audit-evaluation-flow"
+          ]
+        }
+      ],
+      "prerequisites": "已完成4.1、4.2，能区分输入与历史目标，会用给定参数算预测并比较差多少。无需Python、统计公式或训练环境。",
+      "prerequisiteLinks": [
+        {
+          "title": "4.2 用多条记录比较预测",
+          "href": "/learn/AI000/AI000-C04-L02#compare-records",
+          "note": "回看差距合计怎样计算，以及比较结论的范围。"
+        },
+        {
+          "title": "4.2 训练怎样利用差别",
+          "href": "/learn/AI000/AI000-C04-L02#training",
+          "note": "回看输入与已知目标怎样帮助调整模型。"
+        },
+        {
+          "title": "4.1 信息在预测时可得吗？",
+          "href": "/learn/AI000/AI000-C04-L01#choose-fields",
+          "note": "回看处理完成时刻为什么不能作到件时的输入。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+      "sections": [
+        {
+          "id": "familiar-records",
+          "title": "练过的题全对了，换一套题呢？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/training-validation-test.ts#L35-L39"
+        },
+        {
+          "id": "new-history",
+          "title": "先看一批新的包裹记录",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/training-validation-test.ts#L40-L46"
+        },
+        {
+          "id": "assign-roles",
+          "title": "先安排用途，再看结果",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/training-validation-test.ts#L47-L56"
+        },
+        {
+          "id": "training-records",
+          "title": "训练记录把学习所需的输入和目标配在一起",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/training-validation-test.ts#L57-L61"
+        },
+        {
+          "id": "validation-choice",
+          "title": "用验证记录比较，决定继续选谁",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/training-validation-test.ts#L62-L70"
+        },
+        {
+          "id": "test-records",
+          "title": "选好乙，再用保留记录检查",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/training-validation-test.ts#L71-L76"
+        },
+        {
+          "id": "data-use-flow",
+          "title": "沿着图，追踪每批记录何时参与",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/training-validation-test.ts#L77-L80"
+        },
+        {
+          "id": "generalization",
+          "title": "我们希望学到的办法也能用于新记录",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/training-validation-test.ts#L81-L84"
+        },
+        {
+          "id": "future-information",
+          "title": "到件时拿不到的信息，为什么会让结果好看？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/training-validation-test.ts#L85-L89"
+        },
+        {
+          "id": "duplicate-records",
+          "title": "换一个编号，不会变成另一件包裹",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/training-validation-test.ts#L90-L93"
+        },
+        {
+          "id": "test-feedback",
+          "title": "看过测试以后，还能改模型吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/training-validation-test.ts#L94-L98"
+        },
+        {
+          "id": "print-evaluation-task",
+          "title": "换到打印点，写出你的数据使用计划",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/training-validation-test.ts#L99-L121"
+        },
+        {
+          "id": "audit-evaluation-task",
+          "title": "接手三个流程，找出信息在何时越界",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/training-validation-test.ts#L122-L142"
+        },
+        {
+          "id": "takeaways",
+          "title": "回看你的计划，检查哪批记录影响过决定",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/training-validation-test.ts#L143-L147"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "plan-print-evaluation",
+          "title": "怎样合理安排训练、验证与测试？",
+          "sectionId": "print-evaluation-task",
+          "objectives": [
+            1,
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/training-validation-test.ts#L103-L120",
+          "hintCount": 2,
+          "solutionSteps": 7,
+          "rubricItems": 4
+        },
+        {
+          "id": "audit-evaluation-flow",
+          "title": "这些结果能证明什么，该怎样修改？",
+          "sectionId": "audit-evaluation-task",
+          "objectives": [
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/training-validation-test.ts#L125-L141",
+          "hintCount": 2,
+          "solutionSteps": 6,
+          "rubricItems": 4
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C04-L04",
+      "title": "模型训练好以后，如何完成预测？",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/using-a-fixed-model.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/using-a-fixed-model.ts#L11-L127",
+      "lessonSha256": "67e6ae10715f1a4c1b101bd4c9026d583532aea74f0a0080028b55e9a90d8685",
+      "objectives": [
+        "解释训练与使用已确定模型的区别，为一次新任务排出输入检查、模型计算、使用结果和事后核对的主要顺序",
+        "根据固定模型、参数和新输入逐步得到预测，区分当时未知的实际结果与后来确认的目标",
+        "分析必要输入缺失、单位或取值时刻错误、使用条件变化的问题，提出可执行的核查办法"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "use-print-model"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "use-print-model"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "audit-current-inputs"
+          ]
+        }
+      ],
+      "prerequisites": "已完成4.1–4.3，能分清输入和目标，会按给定参数计算，知道测试与开发记录需要分工。只用简单加减乘，无需Python或软件环境。",
+      "prerequisiteLinks": [
+        {
+          "title": "4.2 参数确定后的使用",
+          "href": "/learn/AI000/AI000-C04-L02#use-fixed-model",
+          "note": "回看换输入与改参数的区别。"
+        },
+        {
+          "title": "4.1 新记录中的未知实际结果",
+          "href": "/learn/AI000/AI000-C04-L01#new-record",
+          "note": "回看预测与实绩为何分别保存。"
+        },
+        {
+          "title": "4.3 测试以后继续开发",
+          "href": "/learn/AI000/AI000-C04-L03#test-feedback",
+          "note": "回看核对结果与重新开发需要分别安排。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+      "sections": [
+        {
+          "id": "new-arrival",
+          "title": "模型已经准备好，新包裹这时才到",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/using-a-fixed-model.ts#L34-L38"
+        },
+        {
+          "id": "one-prediction",
+          "title": "先把这次要交给模型的信息准备清楚",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/using-a-fixed-model.ts#L39-L43"
+        },
+        {
+          "id": "calculate-n",
+          "title": "输入3件，沿用4和2算出10分钟",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/using-a-fixed-model.ts#L44-L54"
+        },
+        {
+          "id": "inference-flow",
+          "title": "沿着新任务，看预测和实际各放在哪里",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/using-a-fixed-model.ts#L55-L58"
+        },
+        {
+          "id": "name-inference",
+          "title": "这段使用模型的计算，叫作推理",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/using-a-fixed-model.ts#L59-L64"
+        },
+        {
+          "id": "after-completion",
+          "title": "等归架完成，再核对这次估计",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/using-a-fixed-model.ts#L65-L69"
+        },
+        {
+          "id": "check-inputs",
+          "title": "模型准备好了，输入仍然要检查",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/using-a-fixed-model.ts#L70-L76"
+        },
+        {
+          "id": "print-use-task",
+          "title": "打印任务来了，自己走完一次使用过程",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/using-a-fixed-model.ts#L77-L97"
+        },
+        {
+          "id": "input-audit-task",
+          "title": "面对五份资料，先判断能不能照常用",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/using-a-fixed-model.ts#L98-L115"
+        },
+        {
+          "id": "takeaways",
+          "title": "把第四章连成一次可核查的使用",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/using-a-fixed-model.ts#L116-L120"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "use-print-model",
+          "title": "新任务来了，模型怎样给出预测？",
+          "sectionId": "print-use-task",
+          "objectives": [
+            1,
+            2
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/using-a-fixed-model.ts#L84-L96",
+          "hintCount": 2,
+          "solutionSteps": 6,
+          "rubricItems": 4
+        },
+        {
+          "id": "audit-current-inputs",
+          "title": "这条输入现在能直接使用吗？",
+          "sectionId": "input-audit-task",
+          "objectives": [
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/using-a-fixed-model.ts#L101-L114",
+          "hintCount": 2,
+          "solutionSteps": 7,
+          "rubricItems": 4
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C05-L01",
+      "title": "自然语言处理与大语言模型",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/natural-language-and-llm.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/natural-language-and-llm.ts#L11-L189",
+      "lessonSha256": "877e708d6be97f1a8f30ea652a5117dfd42a65b0196f8c6052a8cb5f6fc93556",
+      "objectives": [
+        "用具体文字任务解释自然语言处理的用途，根据服务需求区分文字分类、信息检索和内容摘要",
+        "分析文字任务所需的输入与期望输出，区分有原始资料支持的结论、组织的回复和仍未知的信息",
+        "为新的语言业务需求设计查找、组织与核查步骤，解释是否需要LLM，并为资料缺口提出核实路径"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "design-equipment-service",
+            "choose-language-work"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "design-equipment-service",
+            "choose-language-work"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "design-equipment-service",
+            "choose-language-work"
+          ]
+        }
+      ],
+      "prerequisites": "能读简单表格，知道任务要有输入和输出；已读2.2的LLM与产品分工、4.4的输入检查。用纸笔即可完成，无需编程、软件环境或模型账户。",
+      "prerequisiteLinks": [
+        {
+          "title": "2.2 一个聊天产品里的不同工作",
+          "href": "/learn/AI000/AI000-C02-L02#product",
+          "note": "回看查资料、组织回答与产品界面的分工。"
+        },
+        {
+          "title": "2.2 同一LLM可以承担不同任务",
+          "href": "/learn/AI000/AI000-C02-L02#llm",
+          "note": "需要时回看LLM的含义，不必重学模型内部结构。"
+        },
+        {
+          "title": "4.4 先准备清楚这一次的输入",
+          "href": "/learn/AI000/AI000-C04-L04#one-prediction",
+          "note": "把输入检查的习惯用到文字消息与规则资料中。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+      "sections": [
+        {
+          "id": "read-messages",
+          "title": "五条咨询，工作人员先做什么？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/natural-language-and-llm.ts#L34-L38"
+        },
+        {
+          "id": "sort-messages",
+          "title": "按服务需要给消息归类",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/natural-language-and-llm.ts#L39-L45"
+        },
+        {
+          "id": "find-rules",
+          "title": "知道是取消咨询，还要找到什么？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/natural-language-and-llm.ts#L46-L51"
+        },
+        {
+          "id": "compare-conditions",
+          "title": "同样找到R1，为什么建议会不同？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/natural-language-and-llm.ts#L52-L59"
+        },
+        {
+          "id": "write-reply",
+          "title": "找到的规则，怎样变成给B的回复？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/natural-language-and-llm.ts#L60-L64"
+        },
+        {
+          "id": "keep-unknown",
+          "title": "资料缺了一块，怎样继续处理？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/natural-language-and-llm.ts#L65-L71"
+        },
+        {
+          "id": "summarize-messages",
+          "title": "负责人只想看一段简报，怎样写？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/natural-language-and-llm.ts#L72-L80"
+        },
+        {
+          "id": "task-outputs",
+          "title": "同一条文字，任务变了，交付也变",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/natural-language-and-llm.ts#L81-L89"
+        },
+        {
+          "id": "nlp-and-llm",
+          "title": "NLP是任务领域，LLM可以承担其中多种工作",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/natural-language-and-llm.ts#L90-L95"
+        },
+        {
+          "id": "combine-steps",
+          "title": "把不同工作接成一个服务方案",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/natural-language-and-llm.ts#L96-L101"
+        },
+        {
+          "id": "equipment-service-task",
+          "title": "换到器材室，设计你自己的处理方案",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/natural-language-and-llm.ts#L102-L133"
+        },
+        {
+          "id": "choose-language-task",
+          "title": "四种需求，该交回怎样的语言处理结果？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/natural-language-and-llm.ts#L134-L170"
+        },
+        {
+          "id": "takeaways",
+          "title": "拿一组新的文字，先写这份任务单",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/natural-language-and-llm.ts#L171-L179"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "design-equipment-service",
+          "title": "为器材服务交付一份可核查的处理记录",
+          "sectionId": "equipment-service-task",
+          "objectives": [
+            1,
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/natural-language-and-llm.ts#L109-L132",
+          "hintCount": 2,
+          "solutionSteps": 9,
+          "rubricItems": 4
+        },
+        {
+          "id": "choose-language-work",
+          "title": "写出输入、交付物、处理方式与核查办法",
+          "sectionId": "choose-language-task",
+          "objectives": [
+            1,
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/natural-language-and-llm.ts#L146-L169",
+          "hintCount": 2,
+          "solutionSteps": 9,
+          "rubricItems": 4
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C05-L02",
+      "title": "计算机视觉：让机器理解图像",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/computer-vision.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/computer-vision.ts#L9-L142",
+      "lessonSha256": "9da3339c8ca2d85efb5fb885359520117e351166a92bae635ef6dac648d4629f",
+      "objectives": [
+        "根据具体图像需求区分图像分类、目标检测和图像分割，说明各自交回什么结果",
+        "观察同一幅图像，设计类别、位置和区域输出，解释位置框与轮廓、同类区域与独立实例的区别",
+        "为新的视觉任务选择输出形式，说明图像输入、人工核查依据和观察条件造成的信息缺口"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "design-visual-outputs",
+            "choose-vision-task"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "design-visual-outputs",
+            "choose-vision-task"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "design-visual-outputs",
+            "choose-vision-task"
+          ]
+        }
+      ],
+      "prerequisites": "已读5.1，能说明任务的输入、输出和核查依据；知道模型预测仍需检查。会观察简单图形即可，无需代码、坐标计算或模型训练环境。",
+      "prerequisiteLinks": [
+        {
+          "title": "5.1 同一份资料与不同交付",
+          "href": "/learn/AI000/AI000-C05-L01#task-outputs",
+          "note": "回看先写输入、期望输出和核查办法。"
+        },
+        {
+          "title": "3.1 输入与已知目标",
+          "href": "/learn/AI000/AI000-C03-L01#sample-and-label",
+          "note": "需要时回看图片与已确认类别的不同作用。"
+        },
+        {
+          "title": "2.1 任务与方法证据",
+          "href": "/learn/AI000/AI000-C02-L01#read-system",
+          "note": "回看为什么输入形式不能证明模型结构。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_LESSON_5_2_REVIEW.md",
+      "sections": [
+        {
+          "id": "look-at-shelf",
+          "title": "看同一张图，工作人员可能想知道什么？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/computer-vision.ts#L30-L34"
+        },
+        {
+          "id": "whole-image",
+          "title": "只想知道有没有纸箱，可以交一个类别",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/computer-vision.ts#L35-L40"
+        },
+        {
+          "id": "find-each-box",
+          "title": "要逐个找纸箱，还需要各自的位置",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/computer-vision.ts#L41-L47"
+        },
+        {
+          "id": "mark-regions",
+          "title": "要标出纸箱占的区域，就要沿着外形分开",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/computer-vision.ts#L48-L54"
+        },
+        {
+          "id": "regions-and-instances",
+          "title": "同一种类别，和同一件物体有什么不同？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/computer-vision.ts#L55-L65"
+        },
+        {
+          "id": "check-visual-output",
+          "title": "输出形式选对了，结果也要回到图里检查",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/computer-vision.ts#L66-L71"
+        },
+        {
+          "id": "methods-and-targets",
+          "title": "图像是输入，任务与方法还要分别说明",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/computer-vision.ts#L72-L76"
+        },
+        {
+          "id": "workbench-task",
+          "title": "换一张工作台图，自己设计三种输出",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/computer-vision.ts#L77-L101"
+        },
+        {
+          "id": "choose-vision-task",
+          "title": "为五份新需求选择足够的输出",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/computer-vision.ts#L102-L130"
+        },
+        {
+          "id": "takeaways",
+          "title": "先问工作人员拿结果要做什么",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/computer-vision.ts#L131-L135"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "design-visual-outputs",
+          "title": "交一份能对照新图检查的视觉任务单",
+          "sectionId": "workbench-task",
+          "objectives": [
+            1,
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/computer-vision.ts#L83-L100",
+          "hintCount": 2,
+          "solutionSteps": 8,
+          "rubricItems": 4
+        },
+        {
+          "id": "choose-vision-task",
+          "title": "说明为什么需要这种输出，再给核查办法",
+          "sectionId": "choose-vision-task",
+          "objectives": [
+            1,
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/computer-vision.ts#L113-L129",
+          "hintCount": 2,
+          "solutionSteps": 7,
+          "rubricItems": 4
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C05-L03",
+      "title": "多模态 AI：连接文字、图片与声音",
+      "contentVersion": 2,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/multimodal-ai.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/multimodal-ai.ts#L11-L177",
+      "lessonSha256": "52486c75c158433c4107a58f1c8b780fafdcaedb04f00327128e8eee2234135c",
+      "objectives": [
+        "用具体任务区分文字、图像、声音的输入与输出，说明不同模态各自提供什么信息",
+        "根据可靠编号或关联对应不同模态的资料，逐项说明答案由哪些图像观察和文字记录支持",
+        "为新任务设计输入、输出和核查步骤，识别资料缺失、错配、不一致及实现方法的证据缺口"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "link-lost-property",
+            "analyse-multimodal-services"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "link-lost-property",
+            "analyse-multimodal-services"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "link-lost-property",
+            "analyse-multimodal-services"
+          ]
+        }
+      ],
+      "prerequisites": "已读5.1的文字任务与资料核查、5.2的图像输出，能读简单表格。用纸笔即可完成，不需要编程、模型账户或音频处理工具。",
+      "prerequisiteLinks": [
+        {
+          "title": "5.2 图像输入、任务与方法",
+          "href": "/learn/AI000/AI000-C05-L02#methods-and-targets",
+          "note": "回看图像能支持什么，以及为何不能凭输入形式认定模型架构。"
+        },
+        {
+          "title": "5.1 输入、交付和核查",
+          "href": "/learn/AI000/AI000-C05-L01#task-outputs",
+          "note": "回看文字任务的输出和出处，沿用逐项核查的习惯。"
+        },
+        {
+          "title": "2.2 模型和产品的分工",
+          "href": "/learn/AI000/AI000-C02-L02#product",
+          "note": "需要时回看界面、检索与模型可以分别承担工作。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+      "sections": [
+        {
+          "id": "see-exhibits",
+          "title": "看得出有波浪纹，就知道它在哪个展厅吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/multimodal-ai.ts#L34-L38"
+        },
+        {
+          "id": "join-records",
+          "title": "沿着编号，把外观和登记资料接起来",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/multimodal-ai.ts#L39-L51"
+        },
+        {
+          "id": "name-modalities",
+          "title": "图片和文字，各带来一种信息形式",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/multimodal-ai.ts#L52-L56"
+        },
+        {
+          "id": "input-output",
+          "title": "答案是文字，输入也一定只有文字吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/multimodal-ai.ts#L57-L68"
+        },
+        {
+          "id": "audio-and-transcript",
+          "title": "讲解录音，和已经写好的文字稿",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/multimodal-ai.ts#L69-L75"
+        },
+        {
+          "id": "check-links",
+          "title": "答错展厅，可能错在看图之后",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/multimodal-ai.ts#L76-L85"
+        },
+        {
+          "id": "system-and-model",
+          "title": "能接起这些步骤，就一定是一个多模态大模型吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/multimodal-ai.ts#L86-L90"
+        },
+        {
+          "id": "lost-property-task",
+          "title": "换到失物招领处，自己完成对应和核查",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/multimodal-ai.ts#L91-L122"
+        },
+        {
+          "id": "analyse-services",
+          "title": "四份新需求，各步骤实际拿到了什么？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/multimodal-ai.ts#L123-L159"
+        },
+        {
+          "id": "takeaways",
+          "title": "拿走一种信息，你还剩哪些依据？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/multimodal-ai.ts#L160-L168"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "link-lost-property",
+          "title": "交一份有来源、保留缺口的领物答复",
+          "sectionId": "lost-property-task",
+          "objectives": [
+            1,
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/multimodal-ai.ts#L99-L121",
+          "hintCount": 2,
+          "solutionSteps": 8,
+          "rubricItems": 4
+        },
+        {
+          "id": "analyse-multimodal-services",
+          "title": "写清输入、输出、步骤与尚缺的证据",
+          "sectionId": "analyse-services",
+          "objectives": [
+            1,
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/multimodal-ai.ts#L135-L158",
+          "hintCount": 2,
+          "solutionSteps": 9,
+          "rubricItems": 4
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C05-L04",
+      "title": "生成模型：从要求到可核对的作品",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/generative-work.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-work.ts#L10-L169",
+      "lessonSha256": "52cd5dfdbf2d19a06282ab10dd0e0b5a7bf6ed4a876e5fb0104f056478e5bd7a",
+      "objectives": [
+        "将模糊的作品要求整理为明确、可核对的内容条件与呈现条件",
+        "对照同一份要求检查不同候选作品，用可见证据指出满足、未满足及暂时无法确认的条件",
+        "针对发现的问题提出修改或补查方案，为新的文字、图片或声音任务制定基本验收清单"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "check-tech-posters",
+            "plan-gallery-voice"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "check-tech-posters",
+            "plan-gallery-voice"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "check-tech-posters",
+            "plan-gallery-voice"
+          ]
+        }
+      ],
+      "prerequisites": "已完成5.3，能区分文字、图片、声音的输入与输出，并按资料核对结论。准备纸笔即可，不需要编程、模型账户或生成工具。",
+      "prerequisiteLinks": [
+        {
+          "title": "2.2 检索、编辑和生成",
+          "href": "/learn/AI000/AI000-C02-L02#generation",
+          "note": "回看按要求组织内容与查找已有内容的区别。"
+        },
+        {
+          "title": "4.3 根据依据比较候选",
+          "href": "/learn/AI000/AI000-C04-L03#validation-choice",
+          "note": "沿用先定比较办法、再说明结论范围的习惯。"
+        },
+        {
+          "title": "5.3 声音和文字稿",
+          "href": "/learn/AI000/AI000-C05-L03#audio-and-transcript",
+          "note": "回看原始录音与已经提供的文字稿各自能支持什么。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+      "sections": [
+        {
+          "id": "a-vague-request",
+          "title": "只说“好看一点”，能拿到可用的海报吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-work.ts#L33-L36"
+        },
+        {
+          "id": "clear-requirements",
+          "title": "先确定活动事实，再约定怎样展示",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-work.ts#L37-L44"
+        },
+        {
+          "id": "compare-posters",
+          "title": "先看两张候选，再逐项核对",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-work.ts#L45-L56"
+        },
+        {
+          "id": "name-constraints",
+          "title": "有些条件看内容，有些要看呈现",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-work.ts#L57-L67"
+        },
+        {
+          "id": "revise-and-recheck",
+          "title": "修改要指出位置，也要保住原来正确的内容",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-work.ts#L68-L74"
+        },
+        {
+          "id": "generation-in-a-system",
+          "title": "生成是其中一步，检查的是这份作品",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-work.ts#L75-L79"
+        },
+        {
+          "id": "read-the-script",
+          "title": "文稿写对了，配音就已经合格了吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-work.ts#L80-L91"
+        },
+        {
+          "id": "tech-poster-task",
+          "title": "换一场活动，自己决定该改哪里",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-work.ts#L92-L122"
+        },
+        {
+          "id": "gallery-voice-task",
+          "title": "换成展馆配音，哪些结论还得等声音？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-work.ts#L123-L152"
+        },
+        {
+          "id": "takeaways",
+          "title": "拿到候选以后，把决定写到有依据",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-work.ts#L153-L161"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "check-tech-posters",
+          "title": "科技体验日海报可以交付了吗？",
+          "sectionId": "tech-poster-task",
+          "objectives": [
+            1,
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-work.ts#L99-L121",
+          "hintCount": 2,
+          "solutionSteps": 7,
+          "rubricItems": 4
+        },
+        {
+          "id": "plan-gallery-voice",
+          "title": "给展馆配音写一份验收方案",
+          "sectionId": "gallery-voice-task",
+          "objectives": [
+            1,
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/generative-work.ts#L129-L151",
+          "hintCount": 2,
+          "solutionSteps": 7,
+          "rubricItems": 4
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C05-L05",
+      "title": "强化学习适合哪些应用问题？",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/rl-applicability.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/rl-applicability.ts#L11-L195",
+      "lessonSha256": "5dfca0660a12ee659fa7d73651f156219a1aa2fe9eeb011910141759dfbc85c0",
+      "objectives": [
+        "根据实际任务中的连续行动、后续变化和可用反馈，比较强化学习、固定规则、监督学习及规划等解决方式",
+        "为可能采用强化学习的问题提出可观察信息、允许行动、任务目标、反馈依据与必要约束，识别计分可能偏离目标的问题",
+        "根据记录、模拟环境、反馈成本与安全条件判断强化学习是否值得尝试，设计有基线、可比情境和独立检查的验证方案"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "plan-bike-dispatch",
+            "choose-rl-projects"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "plan-bike-dispatch"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "plan-bike-dispatch",
+            "choose-rl-projects"
+          ]
+        }
+      ],
+      "prerequisites": "已学3.4，能追踪行动怎样改变后续情况，分清奖励和正确动作标签；已学4.3，知道参与调整的记录不能冒充独立检查。会读表和简单加减乘即可，无需编程、强化学习库或训练环境。",
+      "prerequisiteLinks": [
+        {
+          "title": "3.4 行动反馈怎样用于改进选择",
+          "href": "/learn/AI000/AI000-C03-L04#name-the-method",
+          "note": "需要时回看强化学习与策略的基本含义。"
+        },
+        {
+          "title": "3.4 计分怎样影响选择",
+          "href": "/learn/AI000/AI000-C03-L04#reward-design",
+          "note": "回看得分与真实任务要求的区别。"
+        },
+        {
+          "title": "4.3 检查记录是否参与过调整",
+          "href": "/learn/AI000/AI000-C04-L03#test-feedback",
+          "note": "把独立评价的习惯用于新的调度方案。"
+        },
+        {
+          "title": "5.4 生成与修改作品",
+          "href": "/learn/AI000/AI000-C05-L04#generation-in-a-system",
+          "note": "比较交付作品与连续选择行动，避免只凭反复修改判断学习方法。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_LESSON_5_5_AND_CHAPTER_5_REVIEW.md",
+      "sections": [
+        {
+          "id": "warehouse-problem",
+          "title": "两台机器人一前一后走，就一定更快吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/rl-applicability.ts#L35-L38"
+        },
+        {
+          "id": "first-choices",
+          "title": "先看规则和预测分别能帮上什么忙",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/rl-applicability.ts#L39-L43"
+        },
+        {
+          "id": "warehouse-task",
+          "title": "先把六件任务写成能执行、能核对的要求",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/rl-applicability.ts#L44-L56"
+        },
+        {
+          "id": "score-and-requirements",
+          "title": "25分高于17分，为什么还不能选它？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/rl-applicability.ts#L57-L72"
+        },
+        {
+          "id": "obtain-feedback",
+          "title": "拿得到反馈，收集起来就一定划算吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/rl-applicability.ts#L73-L77"
+        },
+        {
+          "id": "simulation-check",
+          "title": "在模拟仓库里表现好，搬到现场会怎样？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/rl-applicability.ts#L78-L82"
+        },
+        {
+          "id": "compare-methods",
+          "title": "需要多步安排，也可能先用规划或规则",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/rl-applicability.ts#L83-L92"
+        },
+        {
+          "id": "compare-fairly",
+          "title": "怎样知道新调度真的值得继续研究？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/rl-applicability.ts#L93-L106"
+        },
+        {
+          "id": "bike-dispatch-task",
+          "title": "换成校园单车，写一份有依据的调度计划",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/rl-applicability.ts#L107-L143"
+        },
+        {
+          "id": "project-choice-task",
+          "title": "四份项目需求，你会先怎样投入？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/rl-applicability.ts#L144-L177"
+        },
+        {
+          "id": "takeaways",
+          "title": "把技术建议写成可以核对的决定",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/rl-applicability.ts#L178-L186"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "plan-bike-dispatch",
+          "title": "交付任务分析、一次状态追踪和验证计划",
+          "sectionId": "bike-dispatch-task",
+          "objectives": [
+            1,
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/rl-applicability.ts#L114-L142",
+          "hintCount": 2,
+          "solutionSteps": 9,
+          "rubricItems": 5
+        },
+        {
+          "id": "choose-rl-projects",
+          "title": "写四份有比较依据的方案建议",
+          "sectionId": "project-choice-task",
+          "objectives": [
+            1,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/rl-applicability.ts#L151-L176",
+          "hintCount": 2,
+          "solutionSteps": 7,
+          "rubricItems": 4
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C06-L01",
+      "title": "为什么 AI 会产生不可靠的回答？",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/unreliable-answers.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unreliable-answers.ts#L11-L188",
+      "lessonSha256": "c538b91c94ead2cdaaa1e3f301863b257c3e56636bd2f25cc153e95e27c8a9d1",
+      "objectives": [
+        "用具体案例解释语言流畅与事实可靠的区别，说明生成回答与外部事实核查是不同环节，并分析不可靠说法可能来自哪些资料或使用问题",
+        "把回答拆成可核查的事实主张，对照原始资料及适用条件区分有支持、与资料矛盾和暂时未知，分别检查来源存在性与引用有效性",
+        "修正或独立撰写有依据、可回查且不过度承诺的回答，保留资料缺口，并为未知或冲突设计可执行的后续核查步骤"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "audit-submission-answer",
+            "write-venue-answer"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "audit-submission-answer",
+            "write-venue-answer"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "audit-submission-answer",
+            "write-venue-answer"
+          ]
+        }
+      ],
+      "prerequisites": "已学过生成式AI与LLM、按资料组织回复，能读简单表格和回查来源编号。准备纸笔即可，无需编程、模型账户或真实联网答题。",
+      "prerequisiteLinks": [
+        {
+          "title": "1.2 对照资料核查输出",
+          "href": "/learn/AI000/AI000-C01-L02#check-output",
+          "note": "回看初步核对具体说法的办法。"
+        },
+        {
+          "title": "2.2 LLM与当前上下文",
+          "href": "/learn/AI000/AI000-C02-L02#llm",
+          "note": "需要时补修语言模型怎样利用本次材料。"
+        },
+        {
+          "title": "5.1 从资料到有出处的回复",
+          "href": "/learn/AI000/AI000-C05-L01#write-reply",
+          "note": "沿用查资料与组织语言分开检查的习惯。"
+        },
+        {
+          "title": "5.1 资料缺口与补查路径",
+          "href": "/learn/AI000/AI000-C05-L01#keep-unknown",
+          "note": "回看没有说明的政策怎样保留待核。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_LESSON_6_1_REVIEW.md",
+      "sections": [
+        {
+          "id": "first-answer",
+          "title": "时间、停车、公告都写全了，就能出发吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unreliable-answers.ts#L35-L41"
+        },
+        {
+          "id": "original-sources",
+          "title": "打开原资料，看清每份说明管什么",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unreliable-answers.ts#L42-L46"
+        },
+        {
+          "id": "split-claims",
+          "title": "同一句话，可能需要查好几件事",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unreliable-answers.ts#L47-L52"
+        },
+        {
+          "id": "check-conditions",
+          "title": "常规时段写对了，为什么当天仍去不了？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unreliable-answers.ts#L53-L58"
+        },
+        {
+          "id": "evidence-review",
+          "title": "把事实判断和引用问题分开记",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unreliable-answers.ts#L59-L66"
+        },
+        {
+          "id": "why-unreliable",
+          "title": "模型怎样写出了流畅却缺依据的话？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unreliable-answers.ts#L67-L73"
+        },
+        {
+          "id": "where-errors-enter",
+          "title": "缺资料、用错资料和资料冲突，各查哪里？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unreliable-answers.ts#L74-L84"
+        },
+        {
+          "id": "checking-workflow",
+          "title": "拿到新回答，按什么顺序查？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unreliable-answers.ts#L85-L96"
+        },
+        {
+          "id": "revised-answer",
+          "title": "给参观者一份可以回查的修正版",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unreliable-answers.ts#L97-L101"
+        },
+        {
+          "id": "submission-audit-task",
+          "title": "换成作品提交，审查整段答复",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unreliable-answers.ts#L102-L136"
+        },
+        {
+          "id": "venue-answer-task",
+          "title": "只有有限资料，自己写一份可靠回答",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unreliable-answers.ts#L137-L170"
+        },
+        {
+          "id": "takeaways",
+          "title": "检查你的每一句确定说法，都能回到哪里",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unreliable-answers.ts#L171-L179"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "audit-submission-answer",
+          "title": "交一份事实与引用分栏的审查记录",
+          "sectionId": "submission-audit-task",
+          "objectives": [
+            1,
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unreliable-answers.ts#L107-L135",
+          "hintCount": 2,
+          "solutionSteps": 9,
+          "rubricItems": 5
+        },
+        {
+          "id": "write-venue-answer",
+          "title": "交一份有引用、保留未知的场地答复",
+          "sectionId": "venue-answer-task",
+          "objectives": [
+            1,
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/unreliable-answers.ts#L141-L169",
+          "hintCount": 2,
+          "solutionSteps": 9,
+          "rubricItems": 5
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C06-L02",
+      "title": "数据隐私、偏差与公平性",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/privacy-bias-fairness.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/privacy-bias-fairness.ts#L10-L197",
+      "lessonSha256": "281989c486447cf31dee70664d6c7c5899516b48b158e9fd0301a528f802703c",
+      "objectives": [
+        "根据AI应用的明确任务逐项审查拟收集数据，区分当前必需、条件性需要与不应默认收集的信息，说明收集更多不一定更好",
+        "从给定记录发现输入条件的覆盖不足，独立统计不同条件下的处理结果并解释可能影响，区分已观察差异与未经证实的原因",
+        "为新应用设计最小必要的数据使用、访问和保存安排，提出覆盖补查、分条件与分步骤核验、人工处理及替代渠道的可执行改进方案"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "audit-event-data"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "compare-library-results"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "audit-event-data",
+            "compare-library-results"
+          ]
+        }
+      ],
+      "prerequisites": "已完成6.1，能按资料核对结论；知道字段、输入、人工核对类别与系统预测的区别，能数条数、读简单分数。无需编程、真实录音、模型接口或法律知识。",
+      "prerequisiteLinks": [
+        {
+          "title": "4.1 按任务选择字段",
+          "href": "/learn/AI000/AI000-C04-L01#choose-fields",
+          "note": "回看系统里已有的信息为何不一定适合作输入。"
+        },
+        {
+          "title": "4.3 改进之后重新安排独立检查",
+          "href": "/learn/AI000/AI000-C04-L03#test-feedback",
+          "note": "沿用参与调整的记录不能再冒充独立评价的习惯。"
+        },
+        {
+          "title": "5.3 原始声音与文字稿",
+          "href": "/learn/AI000/AI000-C05-L03#audio-and-transcript",
+          "note": "把两类资料的作用与核验方式分开。"
+        },
+        {
+          "title": "6.1 结论与证据范围",
+          "href": "/learn/AI000/AI000-C06-L01#checking-workflow",
+          "note": "对照有证据的判断、未知及后续核查。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_LESSON_6_2_REVIEW.md",
+      "sections": [
+        {
+          "id": "repair-task",
+          "title": "报修一盏灯，系统需要知道你的一切吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/privacy-bias-fairness.ts#L34-L40"
+        },
+        {
+          "id": "purpose-first",
+          "title": "先说明做什么，再决定收什么",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/privacy-bias-fairness.ts#L41-L47"
+        },
+        {
+          "id": "personal-information",
+          "title": "删掉姓名，录音就一定不涉及个人了吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/privacy-bias-fairness.ts#L48-L52"
+        },
+        {
+          "id": "manage-data",
+          "title": "收进来以后，谁能看、何时还需要？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/privacy-bias-fairness.ts#L53-L64"
+        },
+        {
+          "id": "coverage",
+          "title": "少收了无关信息，就能处理所有报修吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/privacy-bias-fairness.ts#L65-L73"
+        },
+        {
+          "id": "check-records",
+          "title": "逐条比较，哪些类别真的判对了？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/privacy-bias-fairness.ts#L74-L78"
+        },
+        {
+          "id": "compare-results",
+          "title": "6条正确，还藏着怎样的差别？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/privacy-bias-fairness.ts#L79-L86"
+        },
+        {
+          "id": "fairness",
+          "title": "覆盖、偏差和公平性，怎样联系起来？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/privacy-bias-fairness.ts#L87-L92"
+        },
+        {
+          "id": "improve-service",
+          "title": "发现差异以后，下一步具体改哪里？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/privacy-bias-fairness.ts#L93-L104"
+        },
+        {
+          "id": "event-data-task",
+          "title": "换到报名咨询，审查一份收集方案",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/privacy-bias-fairness.ts#L105-L140"
+        },
+        {
+          "id": "library-results-task",
+          "title": "换成图书馆查询，自己统计并提出改进",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/privacy-bias-fairness.ts#L141-L177"
+        },
+        {
+          "id": "takeaways",
+          "title": "拿着新方案，检查数据与服务是否都说清了",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/privacy-bias-fairness.ts#L178-L186"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "audit-event-data",
+          "title": "交一份保留功能、减少无关数据的方案",
+          "sectionId": "event-data-task",
+          "objectives": [
+            1,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/privacy-bias-fairness.ts#L110-L139",
+          "hintCount": 2,
+          "solutionSteps": 11,
+          "rubricItems": 4
+        },
+        {
+          "id": "compare-library-results",
+          "title": "交一份有计数依据、不过度归因的改进计划",
+          "sectionId": "library-results-task",
+          "objectives": [
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/privacy-bias-fairness.ts#L146-L176",
+          "hintCount": 2,
+          "solutionSteps": 11,
+          "rubricItems": 5
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C06-L03",
+      "title": "版权、误用与负责任地使用 AI",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/responsible-ai-use.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/responsible-ai-use.ts#L11-L188",
+      "lessonSha256": "04553790924ad7d1713ec7439786c3397c5c7e6b95fbfedff7e4653faba9767e",
+      "objectives": [
+        "根据作品的具体用途和传播渠道，逐项核查素材来源、有权许可者与使用条件，区分可按条件使用、范围不符和证据不足的情况",
+        "审查AI辅助作品中的事实、机构认可与人物声音使用，指出具体误导和待核依据，写出不增加无据承诺的完整修正版",
+        "为新作品制定素材处理、补查与人工复核清单，明确最终版本和渠道的发布决定，并安排传播后的逐项纠错"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "audit-recruitment-assets"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "review-lecture-release"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "audit-recruitment-assets",
+            "review-lecture-release"
+          ]
+        }
+      ],
+      "prerequisites": "已完成6.2，能按资料核对事实、区分当前任务与其他用途。用纸笔即可；无需法律条文、编程或真实制作音视频。",
+      "prerequisiteLinks": [
+        {
+          "title": "5.4 内容和呈现的验收",
+          "href": "/learn/AI000/AI000-C05-L04#name-constraints",
+          "note": "回看作品符合要求与来源/发布条件尚待核查的区别。"
+        },
+        {
+          "title": "5.3 原始声音与文字稿",
+          "href": "/learn/AI000/AI000-C05-L03#audio-and-transcript",
+          "note": "文稿可查文字，真实声音仍要另听、另核。"
+        },
+        {
+          "title": "6.1 按来源和条件核查",
+          "href": "/learn/AI000/AI000-C06-L01#checking-workflow",
+          "note": "沿用逐项留依据与未知的习惯，不重新学习整套证据链。"
+        },
+        {
+          "title": "6.2 数据用途和管理",
+          "href": "/learn/AI000/AI000-C06-L02#manage-data",
+          "note": "回看资料有明确用途，不自动延伸到其他使用。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_LESSON_6_3_AND_CHAPTER_6_REVIEW.md",
+      "sections": [
+        {
+          "id": "ready-to-publish",
+          "title": "时间地点都对了，就可以发公众号吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/responsible-ai-use.ts#L35-L40"
+        },
+        {
+          "id": "source-cards",
+          "title": "先看六张来源卡，给每项留下一个问题",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/responsible-ai-use.ts#L41-L44"
+        },
+        {
+          "id": "name-permission",
+          "title": "来源、创作者和许可，分别回答什么？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/responsible-ai-use.ts#L45-L56"
+        },
+        {
+          "id": "compare-licenses",
+          "title": "两个许可都写CC BY，使用条件就相同吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/responsible-ai-use.ts#L57-L64"
+        },
+        {
+          "id": "asset-decisions",
+          "title": "回到六项素材，把证据和决定分开",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/responsible-ai-use.ts#L65-L69"
+        },
+        {
+          "id": "voice-and-rights",
+          "title": "配音由AI生成，还要核查哪两种问题？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/responsible-ai-use.ts#L70-L74"
+        },
+        {
+          "id": "misleading-content",
+          "title": "素材能用，宣传也可能误导人",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/responsible-ai-use.ts#L75-L84"
+        },
+        {
+          "id": "release-roles",
+          "title": "一句“人工审核”，由谁具体查什么？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/responsible-ai-use.ts#L85-L88"
+        },
+        {
+          "id": "before-and-after",
+          "title": "发之前留版本，出问题后追到各个渠道",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/responsible-ai-use.ts#L89-L100"
+        },
+        {
+          "id": "handbook-task",
+          "title": "换成招新手册，同一素材能进入两个用途吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/responsible-ai-use.ts#L101-L134"
+        },
+        {
+          "id": "lecture-task",
+          "title": "换成讲座宣传，把文案、声音和发布一起改好",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/responsible-ai-use.ts#L135-L169"
+        },
+        {
+          "id": "takeaways",
+          "title": "留下别人能接着执行的使用决定",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/responsible-ai-use.ts#L170-L178"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "audit-recruitment-assets",
+          "title": "交一份按用途作决定的素材审查表",
+          "sectionId": "handbook-task",
+          "objectives": [
+            1,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/responsible-ai-use.ts#L105-L133",
+          "hintCount": 2,
+          "solutionSteps": 10,
+          "rubricItems": 4
+        },
+        {
+          "id": "review-lecture-release",
+          "title": "交完整修正版与有负责人接手的发布清单",
+          "sectionId": "lecture-task",
+          "objectives": [
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/responsible-ai-use.ts#L139-L168",
+          "hintCount": 2,
+          "solutionSteps": 10,
+          "rubricItems": 5
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C07-L01",
+      "title": "为什么学习 Python、数学与数据分析？",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/why-foundations.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/why-foundations.ts#L13-L250",
+      "lessonSha256": "474faef4f895471e2b172b462e2dcb1ddfb185f4424b52967783f6e0d620643e",
+      "objectives": [
+        "联系具体项目，分别解释Python、数学与数据分析支持哪些操作，以及三类能力怎样配合验证结果",
+        "从新项目的目标和交付反查操作与基础知识，说明先学或并行的理由，提出最小可验证成果与继续学习的能力标准",
+        "诊断学习计划中的具体问题及影响，提出包含必要基础、AI辅助方式和实际检查的修正建议"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "analyse-project-foundations"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "analyse-project-foundations"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "repair-learning-plan"
+          ]
+        }
+      ],
+      "prerequisites": "已完成前六章，能区分输入、目标、预测与评价数据；会读表、数条数和简单加减乘除即可。无需编程经验、数学推导或安装软件。",
+      "prerequisiteLinks": [
+        {
+          "title": "4.1 字段、特征与目标",
+          "href": "/learn/AI000/AI000-C04-L01#features-and-target",
+          "note": "需要时回看记录中的信息分别做什么。"
+        },
+        {
+          "title": "4.2 参数怎样影响预测",
+          "href": "/learn/AI000/AI000-C04-L02#change-a-parameter",
+          "note": "回看为什么调整参数还要检查多条结果。"
+        },
+        {
+          "title": "4.3 留下独立检查的记录",
+          "href": "/learn/AI000/AI000-C04-L03#assign-roles",
+          "note": "回看学习、选择与测试的用途。"
+        },
+        {
+          "title": "5.1 文字分类与其他方法",
+          "href": "/learn/AI000/AI000-C05-L01#nlp-and-llm",
+          "note": "回看同一文字任务可用规则或不同模型。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_LESSON_7_1_REVIEW.md",
+      "sections": [
+        {
+          "id": "project-delivery",
+          "title": "知道是文字分类，离做出工具还差哪些工作？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/why-foundations.ts#L37-L52"
+        },
+        {
+          "id": "eight-records",
+          "title": "先用手比较八条报修记录",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/why-foundations.ts#L53-L57"
+        },
+        {
+          "id": "python-work",
+          "title": "重复读取、判断和保存，可以交给程序",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/why-foundations.ts#L58-L62"
+        },
+        {
+          "id": "minimum-python",
+          "title": "先看要做的动作，再认需要的知识",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/why-foundations.ts#L63-L73"
+        },
+        {
+          "id": "math-use",
+          "title": "从6条正确，到模型里的数量关系",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/why-foundations.ts#L74-L82"
+        },
+        {
+          "id": "math-depth",
+          "title": "需要把数学学到多深，取决于想解释什么",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/why-foundations.ts#L83-L94"
+        },
+        {
+          "id": "data-checks",
+          "title": "程序能算，先确认它算的是什么数据",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/why-foundations.ts#L95-L107"
+        },
+        {
+          "id": "check-denominator",
+          "title": "同一批记录，为什么程序竟报100%？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/why-foundations.ts#L108-L112"
+        },
+        {
+          "id": "ai-coding",
+          "title": "让AI写代码，可以和学习基础同时进行",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/why-foundations.ts#L113-L124"
+        },
+        {
+          "id": "dependency-table",
+          "title": "把基础连到工作，不排成一条绝对顺序",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/why-foundations.ts#L125-L134"
+        },
+        {
+          "id": "small-loop",
+          "title": "下一步只做一个可以对账的小成果",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/why-foundations.ts#L135-L139"
+        },
+        {
+          "id": "projects-task",
+          "title": "为两个新项目反查基础能力",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/why-foundations.ts#L140-L176"
+        },
+        {
+          "id": "plan-task",
+          "title": "审查一份看似很忙的学习计划",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/why-foundations.ts#L177-L214"
+        },
+        {
+          "id": "course-connections",
+          "title": "把用途判断接到真实课程，而非一口气全学完",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/why-foundations.ts#L215-L238"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "analyse-project-foundations",
+          "title": "交两份有依赖理由的项目任务单",
+          "sectionId": "projects-task",
+          "objectives": [
+            1,
+            2
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/why-foundations.ts#L146-L175",
+          "hintCount": 2,
+          "solutionSteps": 10,
+          "rubricItems": 5
+        },
+        {
+          "id": "repair-learning-plan",
+          "title": "交一份有检查证据的计划修正单",
+          "sectionId": "plan-task",
+          "objectives": [
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/why-foundations.ts#L182-L213",
+          "hintCount": 2,
+          "solutionSteps": 12,
+          "rubricItems": 5
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C07-L02",
+      "title": "AI 不同技术方向需要哪些基础？",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/direction-learning-routes.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/direction-learning-routes.ts#L11-L207",
+      "lessonSha256": "1cf66f16b883b68920ad18a06571fd21cbb7da579f78643c3b0ebc08f1b40b23",
+      "objectives": [
+        "通过具体文字与图像任务比较输入、输出、核查数据，以及编程、数学和数据分析的共同用途与方向特有需求",
+        "为明确任务安排有先后理由的学习里程碑，逐阶段写出学习内容、项目成果、核查办法与继续条件",
+        "根据已有基础和任务范围识别缺口，安排先学、并行或暂缓内容，区分模型使用与训练，并在未达标时提出补修和路线调整"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "choose-image-route"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "plan-catalog-route"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "plan-catalog-route",
+            "choose-image-route"
+          ]
+        }
+      ],
+      "prerequisites": "已完成7.1及所需前置，能区分输入、目标、预测和独立检查，读懂简单表格与比例。本课只设计路线，无须编程、安装软件或训练模型。",
+      "prerequisiteLinks": [
+        {
+          "title": "7.1 把基础连到实际工作",
+          "href": "/learn/AI000/AI000-C07-L01#dependency-table",
+          "note": "回看基础如何支持操作，以及可以并行的学习。"
+        },
+        {
+          "title": "5.1 不同文字任务交回什么",
+          "href": "/learn/AI000/AI000-C05-L01#task-outputs",
+          "note": "回看分类与资料检索的交付差异。"
+        },
+        {
+          "title": "5.2 找出每个纸箱",
+          "href": "/learn/AI000/AI000-C05-L02#find-each-box",
+          "note": "回看受控货架图，观察类别与每个目标的位置框。"
+        },
+        {
+          "title": "4.3 给数据安排不同用途",
+          "href": "/learn/AI000/AI000-C04-L03#assign-roles",
+          "note": "回看参与调整的资料与独立检查资料怎样区分。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_LESSON_7_2_REVIEW.md",
+      "sections": [
+        {
+          "id": "two-projects",
+          "title": "两个同学都想学AI，要照同一份清单学吗？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/direction-learning-routes.ts#L35-L39"
+        },
+        {
+          "id": "four-questions",
+          "title": "动手前，两人都要回答四个问题",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/direction-learning-routes.ts#L40-L48"
+        },
+        {
+          "id": "nlp-stages",
+          "title": "甲的路线：先把文字任务做小，再决定怎样深入",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/direction-learning-routes.ts#L49-L58"
+        },
+        {
+          "id": "cv-stages",
+          "title": "乙的路线：先能对上图与框，再检查检测结果",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/direction-learning-routes.ts#L59-L69"
+        },
+        {
+          "id": "compare-routes",
+          "title": "把两条路线并排看，差别出在哪里？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/direction-learning-routes.ts#L70-L82"
+        },
+        {
+          "id": "milestones",
+          "title": "怎样把“学完一门课”改成学习里程碑？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/direction-learning-routes.ts#L83-L87"
+        },
+        {
+          "id": "dependencies",
+          "title": "哪些必须先会，哪些可以一起学？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/direction-learning-routes.ts#L88-L96"
+        },
+        {
+          "id": "ai-assisted-stages",
+          "title": "AI可以协助，阶段检查仍要落到具体输入",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/direction-learning-routes.ts#L97-L101"
+        },
+        {
+          "id": "catalog-task",
+          "title": "给图书查询助手设计一条可以检查的路线",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/direction-learning-routes.ts#L102-L128"
+        },
+        {
+          "id": "image-choice-task",
+          "title": "已有这些基础，先推进哪一个图片选题？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/direction-learning-routes.ts#L129-L158"
+        },
+        {
+          "id": "course-connections",
+          "title": "把下一项能力连到真实课程，先看依赖和开放范围",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/direction-learning-routes.ts#L159-L192"
+        },
+        {
+          "id": "takeaways",
+          "title": "下一阶段开始前，拿出哪份证据？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/direction-learning-routes.ts#L193-L196"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "plan-catalog-route",
+          "title": "从能查表，到能核查的小工具",
+          "sectionId": "catalog-task",
+          "objectives": [
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/direction-learning-routes.ts#L105-L127",
+          "hintCount": 2,
+          "solutionSteps": 7,
+          "rubricItems": 5
+        },
+        {
+          "id": "choose-image-route",
+          "title": "给出选择、证据和范围改变后的安排",
+          "sectionId": "image-choice-task",
+          "objectives": [
+            1,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/direction-learning-routes.ts#L134-L157",
+          "hintCount": 2,
+          "solutionSteps": 8,
+          "rubricItems": 5
+        }
+      ]
+    },
+    {
+      "lessonId": "AI000-C07-L03",
+      "title": "综合实践：分析 AI 问题并制定学习计划",
+      "contentVersion": 1,
+      "reviewCommit": "fc30c72d5572bea05bafd9f9b5b55a54150d634b",
+      "source": "src/content/lessons/ai000/problem-analysis-capstone.ts",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/problem-analysis-capstone.ts#L13-L207",
+      "lessonSha256": "e60e96f6c2b8dc93e50546e1700fe32533cac6951d3e971f70757deb740c4679",
+      "objectives": [
+        "独立分析现实问题的需求、使用者、输入与输出，判断是否需要AI，说明可行任务与方法及现有资料不能确认的事项",
+        "为明确问题提出有依据的基线、数据或学习信号、可执行评价与错误处理，检查相关隐私、来源和使用责任并安排补查",
+        "比较三个自选问题并确定优先项目，形成含技术地图、至少三个可验证学习里程碑和适当结论范围的完整报告"
+      ],
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "audit-booking-proposal",
+            "write-personal-capstone"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "audit-booking-proposal",
+            "write-personal-capstone"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "write-personal-capstone"
+          ]
+        }
+      ],
+      "prerequisites": "已完成前23节，能按输入/输出、方法证据、资料用途、事实与责任分析问题，并设计阶段成果。会读表和说明理由即可，无须Python、深度学习算法、模型账户或部署经验。",
+      "prerequisiteLinks": [
+        {
+          "title": "2.2 模型与产品的分工",
+          "href": "/learn/AI000/AI000-C02-L02#product",
+          "note": "方法名称不能代替输入、任务和产品步骤。"
+        },
+        {
+          "title": "5.1 把文字工作接成服务",
+          "href": "/learn/AI000/AI000-C05-L01#combine-steps",
+          "note": "回看分类、查资料、组织答复怎样分别检查。"
+        },
+        {
+          "title": "6.1 顺着资料核查结论",
+          "href": "/learn/AI000/AI000-C06-L01#checking-workflow",
+          "note": "回看来源、适用条件、未知和更新。"
+        },
+        {
+          "title": "7.2 可验证的学习里程碑",
+          "href": "/learn/AI000/AI000-C07-L02#milestones",
+          "note": "把学完课程改写为成果、检查和继续条件。"
+        }
+      ],
+      "technicalEvidence": "docs/AI000_LESSON_7_3_AND_COURSE_REVIEW.md",
+      "sections": [
+        {
+          "id": "capstone-delivery",
+          "title": "有人问“这个AI项目该怎样做”，你准备怎样回答？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/problem-analysis-capstone.ts#L37-L42"
+        },
+        {
+          "id": "capstone-notice-inputs",
+          "title": "示范先从三份具体通知开始",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/problem-analysis-capstone.ts#L43-L47"
+        },
+        {
+          "id": "capstone-example-choices",
+          "title": "示范报告：三个问题，为什么先做通知整理？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/problem-analysis-capstone.ts#L48-L56"
+        },
+        {
+          "id": "capstone-example-analysis",
+          "title": "优先问题：一份可以回到原通知核对的清单",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/problem-analysis-capstone.ts#L57-L76"
+        },
+        {
+          "id": "capstone-example-map",
+          "title": "技术地图要解释分工，不必塞满术语",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/problem-analysis-capstone.ts#L77-L85"
+        },
+        {
+          "id": "capstone-example-route",
+          "title": "示范学习路线：三个阶段，各留下什么？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/problem-analysis-capstone.ts#L86-L94"
+        },
+        {
+          "id": "capstone-example-conclusion",
+          "title": "示范结论：哪些已确认，哪些仍待核？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/problem-analysis-capstone.ts#L95-L98"
+        },
+        {
+          "id": "capstone-eight-questions",
+          "title": "把示范带走：八个问题，各要留下什么依据？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/problem-analysis-capstone.ts#L99-L112"
+        },
+        {
+          "id": "capstone-audit-task",
+          "title": "独立审查：场地查询为什么被写成了未来预测？",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/problem-analysis-capstone.ts#L113-L142"
+        },
+        {
+          "id": "capstone-personal-task",
+          "title": "现在写自己的《AI 技术地图与问题分析报告》",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/problem-analysis-capstone.ts#L143-L176"
+        },
+        {
+          "id": "capstone-report-template",
+          "title": "复制一份报告骨架，再填入自己的判断",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/problem-analysis-capstone.ts#L177-L181"
+        },
+        {
+          "id": "capstone-checklist",
+          "title": "交稿前，逐项找到能支持结论的内容",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/problem-analysis-capstone.ts#L182-L186"
+        },
+        {
+          "id": "capstone-next-steps",
+          "title": "带着一份能继续修订的报告，进入下一项学习",
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/problem-analysis-capstone.ts#L187-L199"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "audit-booking-proposal",
+          "title": "交一份修正后的最小项目说明",
+          "sectionId": "capstone-audit-task",
+          "objectives": [
+            1,
+            2
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/problem-analysis-capstone.ts#L117-L141",
+          "hintCount": 2,
+          "solutionSteps": 8,
+          "rubricItems": 6
+        },
+        {
+          "id": "write-personal-capstone",
+          "title": "交三问题比较、一项深入分析和一条学习路线",
+          "sectionId": "capstone-personal-task",
+          "objectives": [
+            1,
+            2,
+            3
+          ],
+          "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fc30c72d5572bea05bafd9f9b5b55a54150d634b/src/content/lessons/ai000/problem-analysis-capstone.ts#L145-L175",
+          "hintCount": 2,
+          "solutionSteps": 12,
+          "rubricItems": 8
+        }
+      ]
+    }
+  ]
+}
