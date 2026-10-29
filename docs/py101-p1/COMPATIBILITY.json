@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-10-29T09:23:22.994Z",
+  "baseline": "1fd65b923ee4a535fac140dd28d0fceae1a19ae9",
+  "unchanged": {
+    "files": 2125,
+    "lessons": 48,
+    "publications": 48
+  },
+  "allowedNewLesson": "PY101-C01-L02",
+  "courseStatus": "planned",
+  "chapter": [
+    {
+      "id": "PY101-C01-L01",
+      "status": "pending-review",
+      "href": "/learn/PY101/PY101-C01-L01"
+    },
+    {
+      "id": "PY101-C01-L02",
+      "status": "pending-review",
+      "href": "/learn/PY101/PY101-C01-L02"
+    },
+    {
+      "id": "PY101-C01-L03",
+      "status": "planned",
+      "href": null
+    },
+    {
+      "id": "PY101-C01-L04",
+      "status": "planned",
+      "href": null
+    },
+    {
+      "id": "PY101-C01-L05",
+      "status": "planned",
+      "href": null
+    },
+    {
+      "id": "PY101-C01-L06",
+      "status": "planned",
+      "href": null
+    }
+  ],
+  "assessmentMap": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "trace-target"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "same-target-two-starts"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "trace-target",
+        "same-target-two-starts"
+      ]
+    }
+  ]
+}

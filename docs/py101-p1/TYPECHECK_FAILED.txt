@@ -1,0 +1,8 @@
+
+> aivora-web@0.1.0 typecheck
+> tsc --noEmit
+
+tests/py101-script-paths.test.ts(50,108): error TS2339: Property 'code' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; } | { type: "ai-task-figure"; kind: "mail-flow" | "mail-outcomes" | "method-hierarchy" | "method-and-task" | "knowledge-trace" | ... 17 more ... | "creative-tech-posters"; alt: string; caption: string; } | ... 13 more ... | { ...; }'.
+  Property 'code' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; }'.
+tests/py101-script-paths.test.ts(50,130): error TS2339: Property 'filename' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; } | { type: "ai-task-figure"; kind: "mail-flow" | "mail-outcomes" | "method-hierarchy" | "method-and-task" | "knowledge-trace" | ... 17 more ... | "creative-tech-posters"; alt: string; caption: string; } | ... 13 more ... | { ...; }'.
+  Property 'filename' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; }'.

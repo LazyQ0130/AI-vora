@@ -1,0 +1,55 @@
+[
+  {
+    "command": "npm run typecheck",
+    "exitCode": 0,
+    "output": "TYPECHECK.txt",
+    "phase": "最终稿复验（日志时间为写入结束）",
+    "logWrittenAt": "2026-10-29T09:22:59.554190+00:00"
+  },
+  {
+    "command": "npm run lint",
+    "exitCode": 0,
+    "output": "LINT.txt",
+    "phase": "最终稿复验（日志时间为写入结束）",
+    "logWrittenAt": "2026-10-29T09:23:02.772563+00:00"
+  },
+  {
+    "command": "npm test",
+    "exitCode": 0,
+    "output": "NODE_TESTS.txt",
+    "phase": "最终稿复验（日志时间为写入结束）",
+    "logWrittenAt": "2026-10-29T09:23:19.480951+00:00"
+  },
+  {
+    "command": "npm run prepare:downloads",
+    "exitCode": 0,
+    "output": "PREPARE_DOWNLOADS.txt",
+    "startedAt": "2026-10-29T09:12:50.5391155Z"
+  },
+  {
+    "command": "npm run test:python",
+    "exitCode": 0,
+    "output": "PYTHON_TESTS.txt",
+    "startedAt": "2026-10-29T09:12:50.9305955Z"
+  },
+  {
+    "command": "npm run review:teaching",
+    "exitCode": 0,
+    "output": "TEACHING_REVIEW.txt",
+    "phase": "最终稿复验（日志时间为写入结束）",
+    "logWrittenAt": "2026-10-29T09:23:20.433598+00:00"
+  },
+  {
+    "command": "npm run build",
+    "exitCode": 0,
+    "output": "BUILD.txt",
+    "phase": "最终稿复验（日志时间为写入结束）",
+    "logWrittenAt": "2026-10-29T09:14:53.431623+00:00"
+  },
+  {
+    "command": "npm run test:routes",
+    "base": "http://127.0.0.1:3002",
+    "exitCode": 0,
+    "output": "ROUTES.txt"
+  }
+]

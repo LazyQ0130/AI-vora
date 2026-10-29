@@ -1,3 +1,4 @@
+import { assertRegisteredInventory } from "./helpers/registered-content";
 import { beforeR3Revision } from "../scripts/ai000-r3-compatibility";
 import test from "node:test";
 import assert from "node:assert/strict";
@@ -26,7 +27,7 @@ const answer=(i:number)=>tasks[i].solution.join("\n");
 
 test("R3登记精修逆转后：6.3保留43旧课全文/清单、244文件及23精确图，未登记变更仍拒绝",()=>{
   assert.equal(before.lessons.length,43);assert.equal(before.publications.length,43);assert.equal(before.files.length,244);
-  assert.equal(lessonRegistry.size,48);assert.equal(publicationManifest.length,48);
+  assertRegisteredInventory();
   for(const old of before.lessons)assert.equal(JSON.stringify(beforeR3Revision(lessonRegistry.get(old.id))),JSON.stringify(old),old.id);
   for(const old of before.publications)assert.deepEqual(beforeR3Revision(publicationManifest.find(p=>p.lessonId===old.lessonId)),old,old.lessonId);
   for(const f of before.files){const b=readFileSync(f.path);if(sha(b)===f.sha256)continue;const reversed=beforeResponsibleSource(f.path,b.toString("utf8")).replaceAll("\r\n","\n");assert.ok([reversed,reversed.replaceAll("\n","\r\n")].some(s=>sha(Buffer.from(s))===f.sha256),f.path);}

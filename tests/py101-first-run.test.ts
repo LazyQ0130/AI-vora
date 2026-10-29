@@ -6,20 +6,23 @@ import { pythonFirstRunLesson } from "../src/content/lessons/py101/first-run";
 import { programs } from "../src/content/resources/programs";
 import { readFileSync } from "node:fs";
 import { beforePy101Source } from "../scripts/py101-p0-compatibility";
+import { publicationManifest } from "../src/content/publication-manifest";
 
 test("PY101首章规划课不自动获得Publication、阅读路由或相邻导航", () => {
   const course = getLearningCourse("PY101")!;
   assert.equal(course.status, "planned");
   const slots = course.chapters[0].lessons;
   assert.equal(slots.length, 6);
-  assert.equal(slots.filter(s => s.href).length, 1);
-  for (const slot of slots.slice(1)) {
+  const planned = slots.filter(slot => !publicationManifest.some(p => p.lessonId === slot.lessonId));
+  assert.ok(planned.length > 0);
+  for (const slot of planned) {
     assert.equal(slot.status, "planned");
     assert.equal(slot.href, undefined);
     assert.equal(resolveLesson("PY101", slot.lessonId), undefined);
   }
   assert.equal(resolveLesson("ML201", pythonFirstRunLesson.id), undefined);
-  assert.equal(getAdjacentLessons(course, pythonFirstRunLesson.id).next?.lessonId, "PY101-C05-L01");
+  const current = course.chapters.flatMap(ch => ch.lessons).filter(slot => slot.href);
+  assert.equal(getAdjacentLessons(course, pythonFirstRunLesson.id).next?.lessonId, current[current.findIndex(slot => slot.lessonId === pythonFirstRunLesson.id) + 1]?.lessonId);
   assert.equal(course.chapters[4].lessons.length, 6);
   assert.equal(course.chapters[4].lessons[0].contentVersion, 2);
 });

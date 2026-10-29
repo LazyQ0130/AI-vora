@@ -51,7 +51,7 @@ test("V2.1 先修顺序连通，扩展课不计基础完成分母", () => {
   assert.equal(getLearningCourse("MA101")!.chapters[2].lessons.length, 6);
   const optional = lessonSummaries.find((l) => l.lessonId === "PY101-C05-L06")!;
   const summary = summarizeCourseReading(lessonSummaries, [{ lesson: optional, progress: { version: 2, courseId: optional.courseId, lessonId: optional.lessonId, contentVersion: 1, percent: 100, completed: true, section: "summary", updatedAt: 1 } }]).find((c) => c.courseId === "PY101")!;
-  assert.equal(summary.available, 6);
+  assert.equal(summary.available, lessonSummaries.filter(l => l.courseId === "PY101" && l.catalogRole !== "legacy" && !l.optionalLesson).length);
   assert.equal(summary.completed, 0);
   assert.equal(summary.percent, 0);
   for (const lesson of lessonRegistry.values()) {

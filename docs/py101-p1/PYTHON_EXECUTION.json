@@ -1,0 +1,394 @@
+{
+  "checkedAt": "2026-10-29T09:09:52.168Z",
+  "platform": "win32",
+  "environment": "Python 3.14.2\r\n7.6.5",
+  "expectedMethod": "运行前依据目录行走与字面文本预解；在真实PowerShell执行网页同源命令并比较；不使用脚本内部伪造路径输出",
+  "results": [
+    {
+      "name": "root-missing",
+      "shell": "pwsh",
+      "command": "python run.py",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab",
+      "expectedTarget": null,
+      "expectedStdout": "",
+      "stdout": "",
+      "stderr": "D:\\Program Files\\python.exe: can't open file 'C:\\\\Users\\\\QYF\\\\Desktop\\\\Aivora-Web\\\\docs\\\\py101-p1\\\\runtime\\\\path-lab\\\\run.py': [Errno 2] No such file or directory\n",
+      "exitCode": 2,
+      "locations": {
+        "pythonExit": 2,
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab",
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab"
+      },
+      "passed": true
+    },
+    {
+      "name": "root-alpha",
+      "shell": "pwsh",
+      "command": "python .\\alpha\\run.py",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab",
+      "expectedTarget": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\alpha\\run.py",
+      "expectedStdout": "Alpha A1\n",
+      "stdout": "Alpha A1\n",
+      "stderr": "",
+      "exitCode": 0,
+      "locations": {
+        "pythonExit": 0,
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab",
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab"
+      },
+      "passed": true
+    },
+    {
+      "name": "alpha-current",
+      "shell": "pwsh",
+      "command": "python .\\run.py",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\alpha",
+      "expectedTarget": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\alpha\\run.py",
+      "expectedStdout": "Alpha A1\n",
+      "stdout": "Alpha A1\n",
+      "stderr": "",
+      "exitCode": 0,
+      "locations": {
+        "pythonExit": 0,
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\alpha",
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\alpha"
+      },
+      "passed": true
+    },
+    {
+      "name": "beta-current",
+      "shell": "pwsh",
+      "command": "python run.py",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\beta",
+      "expectedTarget": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\beta\\run.py",
+      "expectedStdout": "Beta B2\n",
+      "stdout": "Beta B2\n",
+      "stderr": "",
+      "exitCode": 0,
+      "locations": {
+        "pythonExit": 0,
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\beta",
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\beta"
+      },
+      "passed": true
+    },
+    {
+      "name": "beta-alpha",
+      "shell": "pwsh",
+      "command": "python ..\\alpha\\run.py",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\beta",
+      "expectedTarget": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\alpha\\run.py",
+      "expectedStdout": "Alpha A1\n",
+      "stdout": "Alpha A1\n",
+      "stderr": "",
+      "exitCode": 0,
+      "locations": {
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\beta",
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\beta",
+        "pythonExit": 0
+      },
+      "passed": true
+    },
+    {
+      "name": "absolute-root",
+      "shell": "pwsh",
+      "command": "python \"C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\alpha\\run.py\"",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab",
+      "expectedTarget": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\alpha\\run.py",
+      "expectedStdout": "Alpha A1\n",
+      "stdout": "Alpha A1\n",
+      "stderr": "",
+      "exitCode": 0,
+      "locations": {
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab",
+        "pythonExit": 0,
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab"
+      },
+      "passed": true
+    },
+    {
+      "name": "absolute-beta",
+      "shell": "pwsh",
+      "command": "python \"C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\alpha\\run.py\"",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\beta",
+      "expectedTarget": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\alpha\\run.py",
+      "expectedStdout": "Alpha A1\n",
+      "stdout": "Alpha A1\n",
+      "stderr": "",
+      "exitCode": 0,
+      "locations": {
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\beta",
+        "pythonExit": 0,
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\beta"
+      },
+      "passed": true
+    },
+    {
+      "name": "space-unquoted",
+      "shell": "pwsh",
+      "command": "python .\\my scripts\\run.py",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab",
+      "expectedTarget": null,
+      "expectedStdout": "",
+      "stdout": "",
+      "stderr": "D:\\Program Files\\python.exe: can't open file 'C:\\\\Users\\\\QYF\\\\Desktop\\\\Aivora-Web\\\\docs\\\\py101-p1\\\\runtime\\\\path-lab\\\\my': [Errno 2] No such file or directory\n",
+      "exitCode": 2,
+      "locations": {
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab",
+        "pythonExit": 2,
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab"
+      },
+      "passed": true
+    },
+    {
+      "name": "space-quoted",
+      "shell": "pwsh",
+      "command": "python \".\\my scripts\\run.py\"",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab",
+      "expectedTarget": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab\\my scripts\\run.py",
+      "expectedStdout": "Space S3\n",
+      "stdout": "Space S3\n",
+      "stderr": "",
+      "exitCode": 0,
+      "locations": {
+        "pythonExit": 0,
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab",
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\path-lab"
+      },
+      "passed": true
+    },
+    {
+      "name": "task-west",
+      "shell": "pwsh",
+      "command": "python .\\check.py",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\west",
+      "expectedTarget": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\west\\check.py",
+      "expectedStdout": "West W5\n",
+      "stdout": "West W5\n",
+      "stderr": "",
+      "exitCode": 0,
+      "locations": {
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\west",
+        "pythonExit": 0,
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\west"
+      },
+      "passed": true
+    },
+    {
+      "name": "task-east",
+      "shell": "pwsh",
+      "command": "python ..\\east\\check.py",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\west",
+      "expectedTarget": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\east\\check.py",
+      "expectedStdout": "East E4\n",
+      "stdout": "East E4\n",
+      "stderr": "",
+      "exitCode": 0,
+      "locations": {
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\west",
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\west",
+        "pythonExit": 0
+      },
+      "passed": true
+    },
+    {
+      "name": "task-missing",
+      "shell": "pwsh",
+      "command": "python ..\\check.py",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\west",
+      "expectedTarget": null,
+      "expectedStdout": "",
+      "stdout": "",
+      "stderr": "D:\\Program Files\\python.exe: can't open file 'C:\\\\Users\\\\QYF\\\\Desktop\\\\Aivora-Web\\\\docs\\\\py101-p1\\\\runtime\\\\route-task\\\\check.py': [Errno 2] No such file or directory\n",
+      "exitCode": 2,
+      "locations": {
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\west",
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\west",
+        "pythonExit": 2
+      },
+      "passed": true
+    },
+    {
+      "name": "variation-west",
+      "shell": "pwsh",
+      "command": "python .\\check.py",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\west",
+      "expectedTarget": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\west\\check.py",
+      "expectedStdout": "West W5\nChange M8\n",
+      "stdout": "West W5\nChange M8\n",
+      "stderr": "",
+      "exitCode": 0,
+      "locations": {
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\west",
+        "pythonExit": 0,
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\west"
+      },
+      "passed": true
+    },
+    {
+      "name": "variation-east-unchanged",
+      "shell": "pwsh",
+      "command": "python ..\\east\\check.py",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\west",
+      "expectedTarget": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\east\\check.py",
+      "expectedStdout": "East E4\n",
+      "stdout": "East E4\n",
+      "stderr": "",
+      "exitCode": 0,
+      "locations": {
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\west",
+        "pythonExit": 0,
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\route-task\\west"
+      },
+      "passed": true
+    },
+    {
+      "name": "task2-unquoted",
+      "shell": "pwsh",
+      "command": "python .\\my notes\\ready.py",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task",
+      "expectedTarget": null,
+      "expectedStdout": "",
+      "stdout": "",
+      "stderr": "D:\\Program Files\\python.exe: can't open file 'C:\\\\Users\\\\QYF\\\\Desktop\\\\Aivora-Web\\\\docs\\\\py101-p1\\\\runtime\\\\delivery-task\\\\my': [Errno 2] No such file or directory\n",
+      "exitCode": 2,
+      "locations": {
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task",
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task",
+        "pythonExit": 2
+      },
+      "passed": true
+    },
+    {
+      "name": "task2-root-relative",
+      "shell": "pwsh",
+      "command": "python \".\\my notes\\ready.py\"",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task",
+      "expectedTarget": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task\\my notes\\ready.py",
+      "expectedStdout": "Target T6\nCheck Z9\n",
+      "stdout": "Target T6\nCheck Z9\n",
+      "stderr": "",
+      "exitCode": 0,
+      "locations": {
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task",
+        "pythonExit": 0,
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task"
+      },
+      "passed": true
+    },
+    {
+      "name": "task2-work-relative",
+      "shell": "pwsh",
+      "command": "python \"..\\my notes\\ready.py\"",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task\\work",
+      "expectedTarget": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task\\my notes\\ready.py",
+      "expectedStdout": "Target T6\nCheck Z9\n",
+      "stdout": "Target T6\nCheck Z9\n",
+      "stderr": "",
+      "exitCode": 0,
+      "locations": {
+        "pythonExit": 0,
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task\\work",
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task\\work"
+      },
+      "passed": true
+    },
+    {
+      "name": "task2-root-absolute",
+      "shell": "pwsh",
+      "command": "python \"C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task\\my notes\\ready.py\"",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task",
+      "expectedTarget": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task\\my notes\\ready.py",
+      "expectedStdout": "Target T6\nCheck Z9\n",
+      "stdout": "Target T6\nCheck Z9\n",
+      "stderr": "",
+      "exitCode": 0,
+      "locations": {
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task",
+        "pythonExit": 0,
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task"
+      },
+      "passed": true
+    },
+    {
+      "name": "task2-work-absolute",
+      "shell": "pwsh",
+      "command": "python \"C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task\\my notes\\ready.py\"",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task\\work",
+      "expectedTarget": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task\\my notes\\ready.py",
+      "expectedStdout": "Target T6\nCheck Z9\n",
+      "stdout": "Target T6\nCheck Z9\n",
+      "stderr": "",
+      "exitCode": 0,
+      "locations": {
+        "pythonExit": 0,
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task\\work",
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\delivery-task\\work"
+      },
+      "passed": true
+    },
+    {
+      "name": "same-text-other-file",
+      "shell": "pwsh",
+      "command": "python run.py",
+      "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\mirror",
+      "expectedTarget": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\mirror\\run.py",
+      "expectedStdout": "Alpha A1\n",
+      "stdout": "Alpha A1\n",
+      "stderr": "",
+      "exitCode": 0,
+      "locations": {
+        "pythonExit": 0,
+        "after": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\mirror",
+        "before": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\mirror"
+      },
+      "passed": true
+    }
+  ],
+  "webResults": [
+    {
+      "filename": "path-lab/alpha/run.py",
+      "stdout": "Alpha A1\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "sameSource": true
+    },
+    {
+      "filename": "path-lab/beta/run.py",
+      "stdout": "Beta B2\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "sameSource": true
+    },
+    {
+      "filename": "path-lab/my scripts/run.py",
+      "stdout": "Space S3\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "sameSource": true
+    },
+    {
+      "filename": "route-task/east/check.py",
+      "stdout": "East E4\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "sameSource": true
+    },
+    {
+      "filename": "route-task/west/check.py",
+      "stdout": "West W5\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "sameSource": true
+    },
+    {
+      "filename": "delivery-task/my notes/ready.py",
+      "stdout": "Target T6\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "sameSource": true
+    }
+  ],
+  "macOS": "未实测，仅官方文档核对；macOS命令未在Windows伪运行",
+  "note": "证据文件仅新增/重建明确路径，不进行递归清理；变体是开发验收输入，不是学生提交"
+}

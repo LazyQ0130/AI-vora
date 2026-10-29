@@ -1,0 +1,13 @@
+{
+  "source": "浏览器复制按钮实际取得并保存",
+  "path": "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\browser-copied\\alpha\\run.py",
+  "command": [
+    "python",
+    "C:\\Users\\QYF\\Desktop\\Aivora-Web\\docs\\py101-p1\\runtime\\browser-copied\\alpha\\run.py"
+  ],
+  "cwd": "C:\\Users\\QYF\\Desktop\\Aivora-Web",
+  "stdout": "Alpha A1\n",
+  "stderr": "",
+  "exitCode": 0,
+  "sameSource": true
+}

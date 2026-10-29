@@ -1,3 +1,4 @@
+import { assertRegisteredInventory, assertCourseAvailability } from "./helpers/registered-content";
 import { beforeR3Revision } from "../scripts/ai000-r3-compatibility";
 import test from "node:test";
 import assert from "node:assert/strict";
@@ -25,7 +26,7 @@ const sha=(b:Buffer)=>createHash("sha256").update(b).digest("hex");
 
 test("R3登记精修逆转后：7.2逐字保护45旧Lesson/发布、248文件和23精确图，不能吞掉未登记变更",()=>{
   assert.equal(before.lessons.length,45);assert.equal(before.publications.length,45);assert.equal(before.files.length,248);
-  assert.equal(lessonRegistry.size,48);assert.equal(publicationManifest.length,48);
+  assertRegisteredInventory();
   for(const old of before.lessons)assert.equal(JSON.stringify(beforeR3Revision(lessonRegistry.get(old.id))),JSON.stringify(old),old.id);
   for(const old of before.publications)assert.deepEqual(beforeR3Revision(publicationManifest.find(p=>p.lessonId===old.lessonId)),old,old.lessonId);
   for(const f of before.files){const bytes=readFileSync(f.path);if(sha(bytes)===f.sha256)continue;const reversed=beforeDirectionSource(f.path,bytes.toString("utf8")).replaceAll("\r\n","\n");assert.ok([reversed,reversed.replaceAll("\n","\r\n")].some(s=>sha(Buffer.from(s))===f.sha256),f.path);}
@@ -99,8 +100,8 @@ test("课程表的先修逐行对照当前curriculum，不把建议改为必需"
     const id=row[0].split(" ")[0];assert.equal(normalize(row[1]),normalize(facts.find(c=>c.id===id)!.req),id);
   }
 });
-test("课程实际开放状态为PY7、MA4+5旧版、ML7+1旧版，仍整门planned",()=>{
-  for(const [id,current,legacy] of [["PY101",7,0],["MA101",4,5],["ML201",7,1]] as const){const c=getLearningCourse(id)!;assert.equal(c.status,"planned");assert.equal(c.chapters.flatMap(ch=>ch.lessons).filter(l=>l.href).length,current);assert.equal(c.legacyLessons.length,legacy);}
+test("当前可读课时与注册清单一致，筹备/旧版分开且整门planned",()=>{
+  for(const id of ["PY101","MA101","ML201"]) assertCourseAvailability(id);
 });
 test("原生表格局部滚动、每题三折叠默认关闭，无新图/代码/执行组件",()=>{
   assert.deepEqual(lesson.resources,[]);assert.ok(blocks.every(b=>!["image","ai-task-figure","code","math","downloads","experiment"].includes(b.type)));

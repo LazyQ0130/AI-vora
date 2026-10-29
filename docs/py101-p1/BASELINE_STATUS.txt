@@ -1,0 +1,13 @@
+ M next-env.d.ts
+ M scripts/ai000-r3-compatibility.ts
+ M src/components/lesson/reader.tsx
+ M tests/reading-experience.test.ts
+?? .codex-remote-attachments/
+?? docs/py101-p1/
+?? ml31-interactions.yaml
+?? ml31.png
+?? ml31.yaml
+?? py101-desktop.png
+?? py101-mobile.png
+?? py101.yaml
+?? scripts/review-py101-p1.ts

@@ -1,0 +1,179 @@
+{
+  "checkedAt": "2026-10-29T09:19:36.546Z",
+  "base": "http://127.0.0.1:3002",
+  "browser": "Codex in-app Chromium",
+  "checks": [
+    {
+      "check": "desktop-layout",
+      "passed": true,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "documentWidth": 1425
+    },
+    {
+      "check": "six-folds",
+      "passed": true,
+      "initial": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "expanded": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "check": "quiz-feedback",
+      "passed": true,
+      "observed": [
+        "再想一想",
+        "理解正确"
+      ]
+    },
+    {
+      "check": "refresh",
+      "passed": true,
+      "resume": "#script-and-cwd",
+      "temporaryInput": "",
+      "foldsReset": true
+    },
+    {
+      "check": "tablet-drawer-anchor",
+      "passed": true,
+      "viewport": [
+        768,
+        1024
+      ],
+      "documentWidth": 753,
+      "focused": "三条命令分别指向谁？"
+    },
+    {
+      "check": "mobile",
+      "passed": true,
+      "viewport": [
+        390,
+        844
+      ],
+      "documentWidth": 375,
+      "longCommandWidths": [
+        {
+          "client": 308,
+          "scroll": 482
+        },
+        {
+          "client": 308,
+          "scroll": 475
+        }
+      ],
+      "task2Folds": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "check": "navigation",
+      "passed": true,
+      "observed": [
+        {
+          "focused": "电脑里有run.py，就一定找得到吗？",
+          "name": "定位起点"
+        },
+        {
+          "focused": "相对路径是一条从当前位置出发的路线",
+          "name": "相对路径"
+        },
+        {
+          "focused": "不切换目录，也能指定同一个文件",
+          "name": "绝对路径"
+        },
+        {
+          "focused": "文件夹名字里有空格时",
+          "name": "空格与引号"
+        },
+        {
+          "focused": "脚本的位置和终端的位置可以不同",
+          "name": "执行边界"
+        },
+        {
+          "focused": "先核对位置，再修命令",
+          "name": "路径排错"
+        },
+        {
+          "focused": "换一个布局，自己决定怎样运行",
+          "name": "独立练习"
+        },
+        {
+          "focused": "带着路径判断能力进入编辑器",
+          "name": "下一步"
+        }
+      ],
+      "previous": "PY101-C01-L01",
+      "nextReadable": "PY101-C05-L01",
+      "plannedHaveNoLinks": [
+        "PY101-C01-L03",
+        "PY101-C01-L04",
+        "PY101-C01-L05",
+        "PY101-C01-L06"
+      ]
+    },
+    {
+      "check": "narrow-320",
+      "passed": true,
+      "viewport": [
+        320,
+        844
+      ],
+      "documentWidth": 305
+    },
+    {
+      "check": "old-progress-unchanged",
+      "passed": true,
+      "note": "比较验收前已存在的旧键；新课100%浏览仍未标记完成"
+    },
+    {
+      "check": "planned-404-browser",
+      "passed": true,
+      "lesson": "PY101-C01-L03"
+    }
+  ],
+  "copies": [
+    {
+      "kind": "python",
+      "value": "print(\"Alpha A1\")\n",
+      "expected": "print(\"Alpha A1\")\n",
+      "passed": true
+    },
+    {
+      "kind": "long-windows-command",
+      "value": "python \"C:\\Users\\你的用户名\\Documents\\path-lab\\alpha\\run.py\"",
+      "expected": "python \"C:\\Users\\你的用户名\\Documents\\path-lab\\alpha\\run.py\"",
+      "passed": true
+    },
+    {
+      "kind": "mobile-long-command",
+      "value": "python \"C:\\Users\\你的用户名\\Documents\\path-lab\\alpha\\run.py\"",
+      "passed": true
+    },
+    {
+      "kind": "mobile-directory-tree",
+      "value": "path-lab/\n└── alpha/\n    └── run.py",
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "视口模拟，非实体手机或平板",
+    "非人工教师审稿或学生试学",
+    "无下载资源，下载UI不适用；原资源另有哈希与生成校验"
+  ]
+}

@@ -36,6 +36,7 @@ import { multimodalLesson } from "../content/lessons/ai000/multimodal-ai";
 import { trainingValidationTestLesson } from "../content/lessons/ai000/training-validation-test";
 import { aiMlDlLesson } from "../content/lessons/ai000/ai-ml-dl";
 import { pythonFirstRunLesson } from "../content/lessons/py101/first-run";
+import { pythonScriptPathsLesson } from "../content/lessons/py101/script-paths";
 import {
   publicationManifest,
   readablePublications,
@@ -50,6 +51,7 @@ import {
 } from "../content/models";
 
 const contents: Lesson[] = [
+  pythonScriptPathsLesson,
   pythonFirstRunLesson,
   whatIsAiLesson,
   capabilitiesLesson,

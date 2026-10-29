@@ -1,0 +1,5 @@
+
+> aivora-web@0.1.0 prepare:downloads
+> tsx scripts/prepare-downloads.ts
+
+已同源生成 16 组 Python / Notebook 下载文件

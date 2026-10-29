@@ -1,3 +1,4 @@
+import { assertRegisteredInventory } from "./helpers/registered-content";
 import { beforeR3Revision } from "../scripts/ai000-r3-compatibility";
 import test from "node:test";
 import assert from "node:assert/strict";
@@ -25,7 +26,7 @@ const text=(id:string)=>JSON.stringify(lesson.sections.find(s=>s.id===id)!.block
 
 test("R3登记精修逆转后：5.5增加之外40旧课/发布与238文件精确保留，未登记源码改动仍拒绝",()=>{
   assert.equal(before.lessons.length,40);assert.equal(before.files.length,238);
-  assert.equal(lessonRegistry.size,48);assert.equal(publicationManifest.length,48);
+  assertRegisteredInventory();
   for(const old of before.lessons)assert.equal(JSON.stringify(beforeR3Revision(lessonRegistry.get(old.id))),JSON.stringify(old),old.id);
   for(const old of before.publications)assert.deepEqual(beforeR3Revision(publicationManifest.find(p=>p.lessonId===old.lessonId)),old);
   for(const f of before.files){const bytes=readFileSync(f.path);if(sha(bytes)===f.sha256)continue;const source=beforeApplicabilitySource(f.path,bytes.toString("utf8")).replaceAll("\r\n","\n");assert.ok([source,source.replaceAll("\n","\r\n")].some(t=>sha(Buffer.from(t))===f.sha256),f.path);}

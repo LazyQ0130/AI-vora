@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-29T09:19:56.703Z",
+  "results": [
+    {
+      "path": "/learn/PY101/PY101-C01-L02",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "path": "/learn/ML201/PY101-C01-L02",
+      "expected": 404,
+      "actual": 404
+    },
+    {
+      "path": "/learn/PY101/PY101-C01-L03",
+      "expected": 404,
+      "actual": 404
+    }
+  ]
+}
