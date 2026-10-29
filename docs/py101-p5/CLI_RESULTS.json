@@ -1,0 +1,165 @@
+{
+  "checkedAt": "2026-10-29T14:48:20.332Z",
+  "platform": "win32",
+  "operatingSystem": {
+    "type": "Windows_NT",
+    "release": "10.0.26300",
+    "version": "Windows 11 Pro"
+  },
+  "base": {
+    "executable": "<BASE-PYTHON>\\python.exe",
+    "prefix": "<BASE-PYTHON>",
+    "version": "3.14.2"
+  },
+  "driver": "spawnSync pwsh -NoProfile -NonInteractive; each command in fresh Shell; wrapper exits LASTEXITCODE",
+  "rows": [
+    {
+      "label": "author-main-interpreter-observation",
+      "cwd": "<P5-LAB>\\repro-lab\\notice-tool",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" -c 'import sys\n\nprint(\"Interpreter:\", sys.executable)\nprint(\"Environment:\", sys.prefix)\nprint(\"Base Python:\", sys.base_prefix)\nprint(\"Version:\", sys.version.split()[0])\n'",
+      "shell": "PowerShell 7.6.5",
+      "shellPid": 28048,
+      "stdout": "Interpreter: <P5-LAB>\\repro-lab\\notice-tool\\.venv\\Scripts\\python.exe\nEnvironment: <P5-LAB>\\repro-lab\\notice-tool\\.venv\nBase Python: <BASE-PYTHON>\nVersion: 3.14.2\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "initial:wrong-script-argument",
+      "cwd": "<P5-LAB>\\repro-lab\\notice-tool",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\notice.py",
+      "shell": "PowerShell 7.6.5",
+      "shellPid": 43620,
+      "stdout": "",
+      "stderr": "<P5-LAB>\\repro-lab\\notice-tool\\.venv\\Scripts\\python.exe: can't open file '<P5-LAB>\\\\repro-lab\\\\notice-tool\\\\notice.py': [Errno 2] No such file or directory\n",
+      "exitCode": 2
+    },
+    {
+      "label": "initial:correct-script-argument",
+      "cwd": "<P5-LAB>\\repro-lab\\notice-tool",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\scripts\\notice.py",
+      "shell": "PowerShell 7.6.5",
+      "shellPid": 45436,
+      "stdout": "Notice N8\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "initial:wrong-environment-program",
+      "cwd": "<P5-LAB>\\handoff-lab\\target",
+      "command": "& \"..\\other\\.venv\\Scripts\\python.exe\" .\\run.py",
+      "shell": "PowerShell 7.6.5",
+      "shellPid": 1948,
+      "stdout": "Target R9\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "initial:wrong-environment-diagnostic",
+      "cwd": "<P5-LAB>\\handoff-lab\\target",
+      "command": "& \"..\\other\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+      "shell": "PowerShell 7.6.5",
+      "shellPid": 32980,
+      "stdout": "Interpreter: <P5-LAB>\\handoff-lab\\other\\.venv\\Scripts\\python.exe\nEnvironment: <P5-LAB>\\handoff-lab\\other\\.venv\nBase Python: <BASE-PYTHON>\nVersion: 3.14.2\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "initial:right-environment-program",
+      "cwd": "<P5-LAB>\\handoff-lab\\target",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\run.py",
+      "shell": "PowerShell 7.6.5",
+      "shellPid": 16620,
+      "stdout": "Target R9\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "initial:right-environment-diagnostic",
+      "cwd": "<P5-LAB>\\handoff-lab\\target",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+      "shell": "PowerShell 7.6.5",
+      "shellPid": 19300,
+      "stdout": "Interpreter: <P5-LAB>\\handoff-lab\\target\\.venv\\Scripts\\python.exe\nEnvironment: <P5-LAB>\\handoff-lab\\target\\.venv\nBase Python: <BASE-PYTHON>\nVersion: 3.14.2\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "new-shell-replay:wrong-script-argument",
+      "cwd": "<P5-LAB>\\repro-lab\\notice-tool",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\notice.py",
+      "shell": "PowerShell 7.6.5",
+      "shellPid": 27636,
+      "stdout": "",
+      "stderr": "<P5-LAB>\\repro-lab\\notice-tool\\.venv\\Scripts\\python.exe: can't open file '<P5-LAB>\\\\repro-lab\\\\notice-tool\\\\notice.py': [Errno 2] No such file or directory\n",
+      "exitCode": 2
+    },
+    {
+      "label": "new-shell-replay:correct-script-argument",
+      "cwd": "<P5-LAB>\\repro-lab\\notice-tool",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\scripts\\notice.py",
+      "shell": "PowerShell 7.6.5",
+      "shellPid": 45124,
+      "stdout": "Notice N8\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "new-shell-replay:wrong-environment-program",
+      "cwd": "<P5-LAB>\\handoff-lab\\target",
+      "command": "& \"..\\other\\.venv\\Scripts\\python.exe\" .\\run.py",
+      "shell": "PowerShell 7.6.5",
+      "shellPid": 6732,
+      "stdout": "Target R9\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "new-shell-replay:wrong-environment-diagnostic",
+      "cwd": "<P5-LAB>\\handoff-lab\\target",
+      "command": "& \"..\\other\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+      "shell": "PowerShell 7.6.5",
+      "shellPid": 44908,
+      "stdout": "Interpreter: <P5-LAB>\\handoff-lab\\other\\.venv\\Scripts\\python.exe\nEnvironment: <P5-LAB>\\handoff-lab\\other\\.venv\nBase Python: <BASE-PYTHON>\nVersion: 3.14.2\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "new-shell-replay:right-environment-program",
+      "cwd": "<P5-LAB>\\handoff-lab\\target",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\run.py",
+      "shell": "PowerShell 7.6.5",
+      "shellPid": 23664,
+      "stdout": "Target R9\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "new-shell-replay:right-environment-diagnostic",
+      "cwd": "<P5-LAB>\\handoff-lab\\target",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+      "shell": "PowerShell 7.6.5",
+      "shellPid": 44156,
+      "stdout": "Interpreter: <P5-LAB>\\handoff-lab\\target\\.venv\\Scripts\\python.exe\nEnvironment: <P5-LAB>\\handoff-lab\\target\\.venv\nBase Python: <BASE-PYTHON>\nVersion: 3.14.2\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "label": "immediate-exit-observation",
+      "cwd": "<P5-LAB>\\repro-lab\\notice-tool",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\notice.py\necho $LASTEXITCODE",
+      "shell": "PowerShell 7.6.5",
+      "shellPid": 41240,
+      "stdout": "2\n",
+      "stderr": "<P5-LAB>\\repro-lab\\notice-tool\\.venv\\Scripts\\python.exe: can't open file '<P5-LAB>\\\\repro-lab\\\\notice-tool\\\\notice.py': [Errno 2] No such file or directory\n",
+      "exitCode": 2
+    }
+  ],
+  "expected": {
+    "failure": "file not found before source execution",
+    "repaired": "Notice N8",
+    "wrongAndRightProgram": "Target R9",
+    "wrongIdentity": "other/.venv",
+    "restoredIdentity": "target/.venv"
+  },
+  "allAssertionsPassed": true
+}

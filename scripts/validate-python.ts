@@ -5,6 +5,7 @@ import { lessonRegistry } from "../src/lib/course-engine";
 import { corePrograms, regressionCoreCode } from "../src/content/resources/core-programs";
 import { programs, gradientDescentCode } from "../src/content/resources/programs";
 import { notebookCode, notebookBlockNames } from "../src/content/resources/python-notebook";
+import { reproductionCode, reproductionBlockNames } from "../src/content/resources/python-reproduction";
 
 const python = process.env.AIVORA_PYTHON ?? "python";
 function run(args: string[]) {
@@ -40,6 +41,11 @@ const examples = [...lessonRegistry.values()].flatMap((lesson) =>
     section.blocks.flatMap((block) => {
       if (block.type !== "code" || block.language !== "python") return [];
       let setup = "";
+      if (lesson.id === "PY101-C01-L06") {
+        const key = (Object.keys(reproductionCode) as (keyof typeof reproductionCode)[]).find(key => reproductionBlockNames[key] === block.filename);
+        if (!key || block.code !== reproductionCode[key]) throw new Error(`未登记的复现课源码：${block.filename}`);
+        if (key === "show") setup = reproductionCode.assign;
+      }
       if (lesson.id === "PY101-C01-L05") {
         const key = (Object.keys(notebookCode) as (keyof typeof notebookCode)[]).find(key => notebookBlockNames[key] === block.filename);
         if (!key || block.code !== notebookCode[key]) throw new Error(`未登记的Notebook单元格：${block.filename}`);
@@ -48,6 +54,10 @@ const examples = [...lessonRegistry.values()].flatMap((lesson) =>
       }
       // Notebook使用前格上下文；仍实际执行每块。重启/旧状态/预期NameError另由真实内核专项检验。
       const result = run(["-c", setup ? setup + "\n" + block.code : block.code]);
+      if (lesson.id === "PY101-C01-L06") {
+        const expected: Record<string, string> = { [reproductionBlockNames.notice]: "Notice N8", [reproductionBlockNames.target]: "Target R9", [reproductionBlockNames.assign]: "", [reproductionBlockNames.show]: "Checked F3" };
+        if (block.filename in expected && result.stdout !== expected[block.filename]) throw new Error(`复现课输出不符：${block.filename}`);
+      }
       if (lesson.id === "PY101-C01-L05") {
         const expected: Record<string, string> = { [notebookBlockNames.setDraft]: "", [notebookBlockNames.setReady]: "", [notebookBlockNames.showMarker]: "Draft A", [notebookBlockNames.setDelivery]: "", [notebookBlockNames.showDelivery]: "Packed C7" };
         if (block.filename in expected && result.stdout !== expected[block.filename]) throw new Error(`Notebook顺序输出不符：${block.filename}`);
@@ -68,7 +78,7 @@ const examples = [...lessonRegistry.values()].flatMap((lesson) =>
           lessonId: lesson.id,
           sectionId: section.id,
           filename: block.filename,
-          ...(lesson.id === "PY101-C01-L05" ? { executionMode: setup ? "ordered-cells" : "independent-cell", setup } : {}),
+          ...(["PY101-C01-L05", "PY101-C01-L06"].includes(lesson.id) ? { executionMode: setup ? "ordered-cells" : "independent-cell", setup } : {}),
           ...(expected !== undefined ? { expected } : {}),
           ...result,
         },

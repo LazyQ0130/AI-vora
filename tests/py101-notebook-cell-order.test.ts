@@ -30,17 +30,18 @@ test("P4按真实基线保护旧教材/文件，1.4只勘误最后状态段，�
   assertRegisteredInventory(); assertCourseAvailability("PY101");
 });
 
-test("新课r1身份与草稿门禁一致，接1.4，1.6和错误归属不可读", () => {
+test("新课r1身份与草稿门禁一致，接1.4，未制作与错误归属不可读", () => {
   const entry = publicationManifest.find(p => p.lessonId === lesson.id)!;
   assert.equal(entry.title, lesson.title); assert.equal(entry.order, 5); assert.equal(entry.contentVersion, 1);
   assert.equal(entry.optionalLesson, false); assert.equal(lesson.optionalLesson, false);
   assert.equal(isReadable({ ...entry, status: "draft", access: "private", technicalEvidence: undefined }), false);
   const course = getLearningCourse("PY101")!; assert.equal(course.status, "planned");
   if (entry.status === "draft") { assert.equal(entry.access, "private"); assert.equal(resolveLesson("PY101", lesson.id), undefined); }
-  else { assert.equal(entry.status, "pending-review"); assert.equal(entry.access, "preview"); assert.ok(entry.technicalEvidence?.startsWith("docs/py101-p4/")); assert.equal(entry.reviewEvidence, undefined); assert.ok(resolveLesson("PY101", lesson.id)); assert.equal(getAdjacentLessons(course, "PY101-C01-L04").next?.lessonId, lesson.id); assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, "PY101-C01-L04"); }
+  else { assert.equal(entry.status, "pending-review"); assert.equal(entry.access, "preview"); const historical = beforeApprovedPy101Object("publications", lesson.id, entry) as typeof entry; assert.ok(historical.technicalEvidence?.startsWith("docs/py101-p4/")); assert.equal(entry.reviewEvidence, undefined); assert.ok(resolveLesson("PY101", lesson.id)); assert.equal(getAdjacentLessons(course, "PY101-C01-L04").next?.lessonId, lesson.id); assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, "PY101-C01-L04"); }
   assert.equal(resolveLesson("ML201", lesson.id), undefined);
-  const planned = course.chapters[0].lessons.find(s => s.lessonId === "PY101-C01-L06")!;
-  assert.equal(planned.status, "planned"); assert.equal(planned.href, undefined); assert.equal(lessonRegistry.has(planned.lessonId), false);
+  for (const planned of course.chapters[0].lessons.filter(s => !lessonRegistry.has(s.lessonId))) {
+    assert.equal(planned.status, "planned"); assert.equal(planned.href, undefined); assert.equal(resolveLesson("PY101", planned.lessonId), undefined);
+  }
 });
 
 test("三目标由真实Notebook两题覆盖，提示不泄露完整顺序，答案要求干净复跑", () => {

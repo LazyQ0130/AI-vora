@@ -40,6 +40,7 @@ import { pythonScriptPathsLesson } from "../content/lessons/py101/script-paths";
 import { pythonEditorRerunLesson } from "../content/lessons/py101/editor-rerun";
 import { pythonProjectEnvironmentsLesson } from "../content/lessons/py101/project-environments";
 import { pythonNotebookCellOrderLesson } from "../content/lessons/py101/notebook-cell-order";
+import { pythonEnvironmentReproductionLesson } from "../content/lessons/py101/environment-reproduction";
 import {
   publicationManifest,
   readablePublications,
@@ -54,6 +55,7 @@ import {
 } from "../content/models";
 
 const contents: Lesson[] = [
+  pythonEnvironmentReproductionLesson,
   pythonScriptPathsLesson,
   pythonEditorRerunLesson,
   pythonProjectEnvironmentsLesson,

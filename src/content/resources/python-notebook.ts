@@ -34,6 +34,6 @@ export const notebookDocuments = [
     { id: "kernel-probe", cell_type: "code", source: notebookCode.kernelProbe },
   ] },
 ] as const;
-export function notebookDownload(document: (typeof notebookDocuments)[number]) {
+export function notebookDownload(document: { cells: readonly { id: string; cell_type: "markdown" | "code"; source: string }[] }) {
   return { nbformat: 4, nbformat_minor: 5, metadata: { kernelspec: { display_name: "Python 3 (ipykernel)", language: "python", name: "python3" }, language_info: { name: "python" } }, cells: document.cells.map(cell => ({ ...cell, metadata: {}, ...(cell.cell_type === "code" ? { execution_count: null, outputs: [] } : {}) })) };
 }

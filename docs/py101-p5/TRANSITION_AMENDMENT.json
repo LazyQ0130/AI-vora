@@ -1,0 +1,16 @@
+{
+  "lessonId": "PY101-C01-L05",
+  "before": {
+    "type": "paragraph",
+    "text": "下一节1.6「让别人复现一次环境问题」仍在规划，没有教材页。它会组合脚本、路径、编辑器、虚拟环境与Notebook的已有操作，本节无需提前学习依赖锁定或远程服务。阅读器可能跳到第5章，函数课仍需变量、表达式和控制流程等基础，不能把本次最小赋值实验当成已学完整变量章节。"
+  },
+  "after": {
+    "type": "paragraph",
+    "text": "下一节1.6「让别人复现一次环境问题」现已提供待审核试读。它会组合脚本、路径、编辑器、虚拟环境与Notebook的已有操作，本节无需提前学习依赖锁定或远程服务。阅读器按可读课时导航，函数试读仍需变量、表达式和控制流程等基础，不能把本次最小赋值实验当成已学完整变量章节。"
+  },
+  "beforeSha256": "9051a443160e21830b1cc9aa129c3b88fca9c2e61dfb3fb2195a01a499bc7287",
+  "afterSha256": "6d8582d3681428b0ced87ef71efe2c948ae115ef95dbdbb073f267cfb0c7dd5c",
+  "version": 1,
+  "assessmentUnchanged": true,
+  "progressScopeUnchanged": true
+}

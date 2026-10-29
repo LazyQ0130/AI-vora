@@ -7,14 +7,17 @@ import { publicationManifest } from "../src/content/publication-manifest";
 
 // 同一审计入口复用至后续单课；原P3默认及证据保持，不复制一套审计器。
 const round = process.env.AIVORA_AUDIT_ROUND ?? "py101-p3";
-assert.ok(["py101-p3", "py101-p4"].includes(round));
+assert.ok(["py101-p3", "py101-p4", "py101-p5"].includes(round));
 const isP4 = round === "py101-p4";
-const dir = `docs/${round}`, id = isP4 ? "PY101-C01-L05" : "PY101-C01-L04", amend = isP4 ? "PY101-C01-L04" : "PY101-C01-L03";
+const isP5 = round === "py101-p5";
+const dir = `docs/${round}`, id = isP5 ? "PY101-C01-L06" : isP4 ? "PY101-C01-L05" : "PY101-C01-L04", amend = isP5 ? "PY101-C01-L05" : isP4 ? "PY101-C01-L04" : "PY101-C01-L03";
 const sha = (value: string | Buffer) => createHash("sha256").update(value).digest("hex");
 const git = (...args: string[]) => execFileSync("git", args, { encoding: "utf8" }).trimEnd();
 await mkdir(dir, { recursive: true });
 const userFiles = ["next-env.d.ts", "scripts/ai000-r3-compatibility.ts", "src/components/lesson/reader.tsx", "tests/reading-experience.test.ts"];
-const allowedSources = isP4
+const allowedSources = isP5
+  ? ["src/lib/course-engine.ts", "src/content/publication-manifest.ts", "src/content/lessons/py101/notebook-cell-order.ts", "src/content/resources/python-notebook.ts", "scripts/audit-py101-p3.ts", "scripts/py101-p1-compatibility.ts", "scripts/validate-python.ts", "scripts/prepare-downloads.ts", "tests/py101-first-run.test.ts", "tests/py101-notebook-cell-order.test.ts"]
+  : isP4
   ? ["src/lib/course-engine.ts", "src/content/publication-manifest.ts", "src/content/lessons/py101/project-environments.ts", "scripts/audit-py101-p3.ts", "scripts/py101-p1-compatibility.ts", "scripts/validate-python.ts", "scripts/prepare-downloads.ts", "tests/py101-project-environments.test.ts"]
   : [".gitignore", "src/lib/course-engine.ts", "src/content/publication-manifest.ts", "src/content/lessons/py101/editor-rerun.ts", "scripts/py101-p1-compatibility.ts", "scripts/validate-python.ts", "tests/py101-editor-rerun.test.ts", "tests/course-engine.test.ts", "tests/cross-discipline-editorial.test.ts", "tests/ai000-quality.test.ts", "src/app/learning-system.css"];
 if (process.argv.includes("--baseline")) {

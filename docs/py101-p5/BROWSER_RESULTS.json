@@ -1,0 +1,263 @@
+{
+  "checkedAt": "2026-10-29T14:47:17.597Z",
+  "baseUrl": "http://127.0.0.1:3006",
+  "production": true,
+  "checks": [
+    {
+      "case": "desktop",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "clientWidth": 1425,
+      "scrollWidth": 1425,
+      "goals": 3,
+      "coreTasks": 2,
+      "allHintsAnswersOpened": true,
+      "quiz": "理解正确",
+      "download": {
+        "cells": 4,
+        "nbformat": 4,
+        "emptyOutputs": true
+      },
+      "copy": {
+        "windows": "& \".\\.venv\\Scripts\\python.exe\" .\\notice.py",
+        "mac": "./.venv/bin/python notice.py",
+        "windowsPastedExact": true
+      }
+    },
+    {
+      "case": "tablet",
+      "viewport": [
+        768,
+        1024
+      ],
+      "drawer": [
+        "本节导航"
+      ],
+      "scroll": 753,
+      "width": 753
+    },
+    {
+      "case": "mobile",
+      "viewport": [
+        390,
+        844
+      ],
+      "drawerOpen": false,
+      "hash": "#exercise-reproduce-script-issue",
+      "opened": true,
+      "scroll": 375,
+      "width": 375,
+      "drawerShowsThreeGoalsAndTwoTasks": true
+    },
+    {
+      "case": "narrow",
+      "viewport": [
+        320,
+        844
+      ],
+      "code": [
+        {
+          "label": "主例布局 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 338,
+          "width": 254
+        },
+        {
+          "label": "scripts/notice.py 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 254,
+          "width": 254
+        },
+        {
+          "label": "Windows · PowerShell · notice-tool项目根 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 360,
+          "width": 254
+        },
+        {
+          "label": "macOS · zsh / bash · notice-tool项目根 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 260,
+          "width": 254
+        },
+        {
+          "label": "主例实测stderr · 项目位置已脱敏 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 831,
+          "width": 254
+        },
+        {
+          "label": "Windows · PowerShell · 紧接刚才的Python命令 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 254,
+          "width": 254
+        },
+        {
+          "label": "macOS · zsh / bash · 紧接刚才的Python命令 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 254,
+          "width": 254
+        },
+        {
+          "label": "Windows · PowerShell · notice-tool项目根 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 417,
+          "width": 254
+        },
+        {
+          "label": "macOS · zsh / bash · notice-tool项目根 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 317,
+          "width": 254
+        },
+        {
+          "label": "修复后实测stdout 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 254,
+          "width": 254
+        },
+        {
+          "label": "可复制的最小记录 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 574,
+          "width": 254
+        },
+        {
+          "label": "练习一布局 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 279,
+          "width": 254
+        },
+        {
+          "label": "target/run.py 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 254,
+          "width": 254
+        },
+        {
+          "label": "target/observe_env.py 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 353,
+          "width": 254
+        },
+        {
+          "label": "Windows · PowerShell · target项目根 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 389,
+          "width": 254
+        },
+        {
+          "label": "macOS · zsh / bash · target项目根 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 289,
+          "width": 254
+        },
+        {
+          "label": "Windows · PowerShell · target项目根 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 446,
+          "width": 254
+        },
+        {
+          "label": "macOS · zsh / bash · target项目根 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 346,
+          "width": 254
+        },
+        {
+          "label": "review-note.ipynb · 提供名字格 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 254,
+          "width": 254
+        },
+        {
+          "label": "review-note.ipynb · 显示格 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 254,
+          "width": 254
+        },
+        {
+          "label": "现成内核观察格 示例代码，可横向滚动",
+          "overflow": "auto",
+          "scroll": 254,
+          "width": 254
+        }
+      ],
+      "scroll": 305,
+      "width": 305,
+      "keyboardScroll": {
+        "left": 40,
+        "overflow": "auto",
+        "scroll": 360,
+        "width": 254
+      }
+    },
+    {
+      "case": "progress-reload",
+      "oldKeys": [
+        "aivora:learning:v2:AI000:AI000-C01-L01:r1",
+        "aivora:learning:v2:AI000:AI000-C02-L01:r1",
+        "aivora:learning:v2:PY101:PY101-C01-L05:r1"
+      ],
+      "oldUnchanged": true,
+      "newKey": "aivora:learning:v2:PY101:PY101-C01-L06:r1",
+      "completed": true,
+      "macPastedExact": true
+    },
+    {
+      "case": "wrong-course-404",
+      "url": "/learn/ML201/PY101-C01-L06",
+      "visibleHeading": "这里，还没有被探索。"
+    },
+    {
+      "case": "course-status",
+      "course": "PY101",
+      "status": "planned",
+      "visiblePreparing": true,
+      "sourceChapter2": "变量、基本类型、表达式与输入输出",
+      "nextReadable": "PY101-C05-L01",
+      "nextIsNotBeginnerRecommendation": true
+    }
+  ],
+  "oldProgressHashes": {
+    "aivora:learning:v2:AI000:AI000-C01-L01:r1": "942fe057044bd8fdffcaeddd0858efe8c7fbc7db50c4274a5ac7656ff0c5195d",
+    "aivora:learning:v2:AI000:AI000-C02-L01:r1": "8893670350efd74221b7a72056c4b85ce9b974d6369eba587c88c0b340e72754",
+    "aivora:learning:v2:PY101:PY101-C01-L05:r1": "3c3c1c5742e1418a5b4015cab6d177a84ddd323725066dbb4096bb52dd000c40"
+  },
+  "scope": "真实IAB生产页面；视口模拟，不等于实体设备或学生试学；只读查看旧存储，未清除或注入进度",
+  "cleanIndexProduction": {
+    "baseUrl": "http://127.0.0.1:3007",
+    "bundler": "webpack",
+    "viewport": [
+      {
+        "client": 1425,
+        "scroll": 1425,
+        "viewport": 1440
+      },
+      {
+        "client": 753,
+        "scroll": 753,
+        "viewport": 768
+      },
+      {
+        "client": 375,
+        "scroll": 375,
+        "viewport": 390
+      },
+      {
+        "client": 305,
+        "scroll": 305,
+        "viewport": 320
+      }
+    ],
+    "allSixDetailsOpened": true,
+    "completedRestored": true,
+    "windowsCopyMatches": true,
+    "oldProgressComparison": "3007 is a separate origin; its own old values were not baselined, so isolation there is not claimed. The original 3006 baseline remains unchanged.",
+    "workOriginOldUnchangedAfterCleanPass": true,
+    "initialReadComplete": false,
+    "cleanOriginOtherKeyCount": 7
+  }
+}

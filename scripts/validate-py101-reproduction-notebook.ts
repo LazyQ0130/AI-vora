@@ -1,0 +1,22 @@
+import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
+import { readFile, writeFile, mkdir } from "node:fs/promises";
+import path from "node:path";
+import { reproductionCode, reproductionNotebook } from "../src/content/resources/python-reproduction";
+import { notebookDownload } from "../src/content/resources/python-notebook";
+
+const evidence = process.env.AIVORA_EVIDENCE_DIR ?? "docs/py101-p5";
+const root = process.env.AIVORA_REPRO_LAB ?? (await readFile(`${evidence}/machine/lab-path.txt`, "utf8")).trim();
+assert.ok(path.isAbsolute(root) && path.basename(root).startsWith("aivora-p5-"));
+const cwd = path.join(root, "notebook-lab"), python = path.join(cwd, ".venv/Scripts/python.exe");
+const privateDir = path.join(root, "jupyter-private");
+await mkdir(privateDir, { recursive: true });
+const result = spawnSync(python, ["scripts/validate-reproduction-kernel.py"], { input: JSON.stringify({ cwd, code: reproductionCode, notebook: notebookDownload(reproductionNotebook) }), encoding: "utf8", timeout: 240_000, env: { ...process.env, PYTHONIOENCODING: "utf-8", JUPYTER_CONFIG_DIR: path.join(privateDir, "config"), JUPYTER_DATA_DIR: path.join(privateDir, "data"), JUPYTER_RUNTIME_DIR: path.join(privateDir, "runtime"), IPYTHONDIR: path.join(privateDir, "ipython") } });
+await writeFile(`${evidence}/machine/kernel-stderr.txt`, result.stderr);
+assert.ifError(result.error); assert.equal(result.status, 0, result.stderr.replaceAll(root, "<P5-LAB>"));
+const report = JSON.parse(result.stdout); assert.equal(report.kernelShutdown, true);
+await writeFile(`${evidence}/NOTEBOOK_RESULTS.json`, JSON.stringify(report, null, 2) + "\n");
+const rawInstall = await readFile(`${evidence}/machine/install-raw.txt`, "utf8");
+const sanitizedInstall = rawInstall.replaceAll(root, "<P5-LAB>").replaceAll(process.env.USERPROFILE ?? "<unused>", "<USER>").replaceAll("\r\n", "\n");
+await writeFile(`${evidence}/INSTALL.txt`, sanitizedInstall);
+console.log(`${report.steps.length} real Jupyter steps passed; Notebook ${report.packages.notebook}; Python ${report.python}; kernel shut down.`);

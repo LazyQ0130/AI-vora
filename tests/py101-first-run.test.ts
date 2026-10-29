@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { getAdjacentLessons, getLearningCourse, resolveLesson } from "../src/lib/course-engine";
+import { getAdjacentLessons, getLearningCourse, resolveLesson, lessonRegistry } from "../src/lib/course-engine";
 import { createProgressStore, progressKey, parseReadingProgress } from "../src/lib/learning-progress";
 import { pythonFirstRunLesson } from "../src/content/lessons/py101/first-run";
 import { programs } from "../src/content/resources/programs";
@@ -14,7 +14,7 @@ test("PY101首章规划课不自动获得Publication、阅读路由或相邻导�
   const slots = course.chapters[0].lessons;
   assert.equal(slots.length, 6);
   const planned = slots.filter(slot => !publicationManifest.some(p => p.lessonId === slot.lessonId));
-  assert.ok(planned.length > 0);
+  assert.deepEqual(planned.map(s => s.lessonId), slots.filter(s => !lessonRegistry.has(s.lessonId)).map(s => s.lessonId));
   for (const slot of planned) {
     assert.equal(slot.status, "planned");
     assert.equal(slot.href, undefined);

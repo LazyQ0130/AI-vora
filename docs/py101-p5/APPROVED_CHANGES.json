@@ -1,0 +1,2766 @@
+{
+  "baseline": "7180c6c473890ffdbd13a4eaba7d1d3d118bcff5",
+  "addedLessonIds": [
+    "PY101-C01-L06"
+  ],
+  "sources": [
+    {
+      "path": "src/lib/course-engine.ts",
+      "before": "import { courses, getCourse } from \"./curriculum\";\nimport { getCourseDirectory } from \"./course-directory\";\nimport { courseOutline } from \"../content/course-outline\";\nimport { linearRegressionLesson } from \"../content/lessons/linear-regression\";\nimport { foundationLessons, pythonAdvancedLesson } from \"../content/lessons/foundations-v2-1\";\nimport { regressionTaskLesson } from \"../content/lessons/ml201/regression-task\";\nimport { linearModelLesson } from \"../content/lessons/ml201/linear-model\";\nimport { lossFunctionsLesson } from \"../content/lessons/ml201/loss-functions\";\nimport { derivativeDirectionLesson } from \"../content/lessons/ml201/derivative-direction\";\nimport { mseGradientLesson } from \"../content/lessons/ml201/mse-gradient\";\nimport { manualUpdateLesson } from \"../content/lessons/ml201/manual-update\";\nimport { numpyRegressionLesson } from \"../content/lessons/ml201/numpy-regression\";\nimport { maV22Lessons } from \"../content/lessons/ma101\";\nimport { whatIsAiLesson } from \"../content/lessons/ai000/what-is-ai\";\nimport { capabilitiesLesson } from \"../content/lessons/ai000/capabilities-and-errors\";\nimport { automationLesson } from \"../content/lessons/ai000/automation-and-ai\";\nimport { generativeLesson } from \"../content/lessons/ai000/generative-ai-and-llm\";\nimport { supervisedLearningLesson } from \"../content/lessons/ai000/supervised-learning\";\nimport { unsupervisedLearningLesson } from \"../content/lessons/ai000/unsupervised-learning\";\nimport { selfSupervisedLesson } from \"../content/lessons/ai000/self-supervised-learning\";\nimport { reinforcementLearningLesson } from \"../content/lessons/ai000/reinforcement-learning\";\nimport { dataFeaturesLabelsLesson } from \"../content/lessons/ai000/data-features-labels\";\nimport { modelsAndParametersLesson } from \"../content/lessons/ai000/models-and-parameters\";\nimport { usingFixedModelLesson } from \"../content/lessons/ai000/using-a-fixed-model\";\nimport { naturalLanguageLesson } from \"../content/lessons/ai000/natural-language-and-llm\";\nimport { computerVisionLesson } from \"../content/lessons/ai000/computer-vision\";\nimport { generativeWorkLesson } from \"../content/lessons/ai000/generative-work\";\nimport { rlApplicabilityLesson } from \"../content/lessons/ai000/rl-applicability\";\nimport { unreliableAnswersLesson } from \"../content/lessons/ai000/unreliable-answers\";\nimport { responsibleUseLesson } from \"../content/lessons/ai000/responsible-ai-use\";\nimport { whyFoundationsLesson } from \"../content/lessons/ai000/why-foundations\";\nimport { directionLearningRoutesLesson } from \"../content/lessons/ai000/direction-learning-routes\";\nimport { problemAnalysisCapstoneLesson } from \"../content/lessons/ai000/problem-analysis-capstone\";\nimport { privacyFairnessLesson } from \"../content/lessons/ai000/privacy-bias-fairness\";\nimport { multimodalLesson } from \"../content/lessons/ai000/multimodal-ai\";\nimport { trainingValidationTestLesson } from \"../content/lessons/ai000/training-validation-test\";\nimport { aiMlDlLesson } from \"../content/lessons/ai000/ai-ml-dl\";\nimport { pythonFirstRunLesson } from \"../content/lessons/py101/first-run\";\nimport { pythonScriptPathsLesson } from \"../content/lessons/py101/script-paths\";\nimport { pythonEditorRerunLesson } from \"../content/lessons/py101/editor-rerun\";\nimport { pythonProjectEnvironmentsLesson } from \"../content/lessons/py101/project-environments\";\nimport { pythonNotebookCellOrderLesson } from \"../content/lessons/py101/notebook-cell-order\";\nimport {\n  publicationManifest,\n  readablePublications,\n  lessonHref,\n} from \"../content/publication-manifest\";\nimport {\n  isReadable,\n  type Course,\n  type Lesson,\n  type LessonSummary,\n  type Publication,\n} from \"../content/models\";\n\nconst contents: Lesson[] = [\n  pythonScriptPathsLesson,\n  pythonEditorRerunLesson,\n  pythonProjectEnvironmentsLesson,\n  pythonNotebookCellOrderLesson,\n  pythonFirstRunLesson,\n  whatIsAiLesson,\n  capabilitiesLesson,\n  automationLesson,\n  aiMlDlLesson,\n  generativeLesson,\n  supervisedLearningLesson,\n  unsupervisedLearningLesson,\n  selfSupervisedLesson,\n  reinforcementLearningLesson,\n  dataFeaturesLabelsLesson,\n  modelsAndParametersLesson,\n  trainingValidationTestLesson,\n  usingFixedModelLesson,\n  naturalLanguageLesson,\n  computerVisionLesson,\n  multimodalLesson,\n  generativeWorkLesson,\n  rlApplicabilityLesson,\n  unreliableAnswersLesson,\n  privacyFairnessLesson,\n  responsibleUseLesson,\n  whyFoundationsLesson,\n  directionLearningRoutesLesson,\n  problemAnalysisCapstoneLesson,\n  ...maV22Lessons,\n  regressionTaskLesson,\n  linearModelLesson,\n  lossFunctionsLesson,\n  derivativeDirectionLesson,\n  mseGradientLesson,\n  manualUpdateLesson,\n  numpyRegressionLesson,\n  linearRegressionLesson,\n  ...foundationLessons,\n  pythonAdvancedLesson,\n];\nexport const lessonRegistry: ReadonlyMap<string, Lesson> = new Map(\n  contents.map((lesson) => [lesson.id, lesson]),\n);\n\nexport function validateRegistry(\n  entries: Publication[],\n  lessons: readonly Lesson[],\n) {\n  if (new Set(entries.map((e) => e.lessonId)).size !== entries.length)\n    throw new Error(\"发布清单课时 ID 重复\");\n  if (new Set(lessons.map((e) => e.id)).size !== lessons.length)\n    throw new Error(\"内容课时 ID 重复\");\n  if (\n    new Set(\n      entries\n        .filter((e) => e.catalogRole !== \"legacy\")\n        .map((e) => `${e.chapterId}:${e.order}`),\n    ).size !== entries.filter((e) => e.catalogRole !== \"legacy\").length\n  )\n    throw new Error(\"同章课时顺序重复\");\n  for (const entry of entries) {\n    const catalog = getCourse(entry.courseId);\n    const chapterIndex = catalog?.chapters.findIndex(\n      (_, index) =>\n        `${catalog.id}-C${String(index + 1).padStart(2, \"0\")}` ===\n        entry.chapterId,\n    );\n    if (\n      !catalog ||\n      chapterIndex === undefined ||\n      chapterIndex < 0 ||\n      !entry.lessonId.startsWith(`${entry.chapterId}-L`)\n    )\n      throw new Error(`发布清单引用无效课程或章节：${entry.lessonId}`);\n    if (entry.catalogRole !== \"legacy\") {\n      const slot = courseOutline.find((s) => s.lessonId === entry.lessonId);\n      if (\n        !slot ||\n        slot.chapterId !== entry.chapterId ||\n        slot.title !== entry.title ||\n        slot.order !== entry.order\n      )\n        throw new Error(`教材与节级蓝图不一致：${entry.lessonId}`);\n    }\n    const lesson = lessons.find((l) => l.id === entry.lessonId);\n    if (!lesson) throw new Error(`缺少教材：${entry.lessonId}`);\n    for (const key of [\n      \"courseId\",\n      \"chapterId\",\n      \"title\",\n      \"contentVersion\",\n    ] as const)\n      if (lesson[key] !== entry[key])\n        throw new Error(`教材与清单不一致：${entry.lessonId}.${key}`);\n  }\n  for (const lesson of lessons)\n    if (!entries.some((e) => e.lessonId === lesson.id))\n      throw new Error(`教材未登记：${lesson.id}`);\n}\nvalidateRegistry(publicationManifest, contents);\n\nexport function getLearningCourse(courseId: string): Course | undefined {\n  const catalog = getCourse(courseId);\n  if (!catalog) return undefined;\n  return getCourseDirectory(catalog);\n}\nexport function resolveLesson(courseId: string, lessonId: string) {\n  const publication = publicationManifest.find(\n    (e) => e.courseId === courseId && e.lessonId === lessonId,\n  );\n  if (!publication || !isReadable(publication)) return undefined;\n  const course = getLearningCourse(courseId);\n  const lesson = lessonRegistry.get(lessonId);\n  const chapter = course?.chapters.find((c) => c.id === publication.chapterId);\n  return course && lesson && chapter\n    ? { course, chapter, lesson, publication }\n    : undefined;\n}\nexport function getAdjacentLessons(course: Course, lessonId: string) {\n  const lessons = course.chapters\n    .flatMap((c) => c.lessons)\n    .filter((e) => e.catalogRole !== \"legacy\" && isReadable(e));\n  const index = lessons.findIndex((l) => l.lessonId === lessonId);\n  if (index < 0) return {};\n  return { previous: lessons[index - 1], next: lessons[index + 1] };\n}\nexport const lessonSummaries: LessonSummary[] = readablePublications.map(\n  (entry) => ({\n    ...entry,\n    href: lessonHref(entry),\n    courseName: getCourse(entry.courseId)!.name,\n    level: getCourse(entry.courseId)!.lvl,\n    displayNumber: getLearningCourse(entry.courseId)\n      ?.chapters.flatMap((ch) => ch.lessons)\n      .find((l) => l.lessonId === entry.lessonId)?.displayNumber,\n    sectionTitles: lessonRegistry\n      .get(entry.lessonId)!\n      .sections.map(({ id, title }) => ({ id, title })),\n  }),\n);\nexport const learningCourses = courses.map((c) => getLearningCourse(c.id)!);\n",
+      "afterSha256": "9ac30b2366991dd6f329f0c12453d06f0c04cc8009f64bd1f801407f46955ca0"
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "before": "import { isReadable, publicationSchema } from \"./models\";\nimport { legacyMathSlots, maV22LessonIds } from \"./math-outline\";\nimport { courseOutline, mlV2LessonIds } from \"./course-outline\";\n\nconst revisedCoreLessons: Record<string, number> = { \"MA101-C02-L03\": 2, \"PY101-C05-L01\": 2 };\n\n// 发布权限独立于原始课程规划。技术证据不替代人工审核。\nexport const publicationManifest = [\n  {lessonId:\"PY101-C01-L05\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"在Jupyter中按顺序运行单元格\",contentVersion:1,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p4/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L04\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"为项目准备独立的虚拟环境\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p4/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L03\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"用编辑器完成保存与重跑\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p3/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L02\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"解释器怎样找到并执行脚本\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p1/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L01\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"从零运行第一个Python程序\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p2/FIRST_LESSON_AMENDMENT.md\"},\n  {lessonId:\"AI000-C07-L03\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"综合实践：分析 AI 问题并制定学习计划\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_3_AND_COURSE_REVIEW.md\"},\n  {lessonId:\"AI000-C07-L02\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"AI 不同技术方向需要哪些基础？\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_2_REVIEW.md\"},\n  {lessonId:\"AI000-C07-L01\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"为什么学习 Python、数学与数据分析？\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_1_REVIEW.md\"},\n  {lessonId:\"AI000-C06-L03\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"版权、误用与负责任地使用 AI\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C06-L02\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"数据隐私、偏差与公平性\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C06-L01\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"为什么 AI 会产生不可靠的回答？\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_6_1_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L05\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"强化学习适合哪些应用问题？\",contentVersion:1,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C05-L03\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"多模态 AI：连接文字、图片与声音\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L04\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"生成模型：从要求到可核对的作品\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L02\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"计算机视觉：让机器理解图像\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_5_2_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L01\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"自然语言处理与大语言模型\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L04\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"模型训练好以后，如何完成预测？\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L03\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"训练、验证与测试各有什么作用？\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L02\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"模型和参数是怎样得到的？\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_VISUAL_CONTENT_REFINEMENT.md\"},\n  {lessonId:\"AI000-C04-L01\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"数据、特征与标签\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_VISUAL_CONTENT_REFINEMENT.md\"},\n  {lessonId:\"AI000-C03-L04\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"强化学习：通过行动与反馈学习\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L03\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"自监督学习：怎样从数据本身构造学习任务？\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L02\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"无监督学习：没有标签也能发现规律吗？\",contentVersion:2,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L01\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"监督学习：从有答案的例子中学习\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  ...courseOutline.filter(slot => slot.courseId === \"AI000\" && [\"AI000-C01-L02\",\"AI000-C01-L03\",\"AI000-C02-L02\"].includes(slot.lessonId)).map(slot => ({...slot,contentVersion:slot.lessonId === \"AI000-C01-L02\" ? 2 : 1,status:\"pending-review\",access:\"preview\",technicalEvidence:slot.lessonId === \"AI000-C02-L02\" ? \"docs/AI000_R3_REFINEMENT_REPORT.md\" : \"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"})),\n  {\n    lessonId: \"AI000-C02-L01\",\n    courseId: \"AI000\",\n    chapterId: \"AI000-C02\",\n    title: \"AI、机器学习与深度学习，到底是什么关系？\",\n    contentVersion: 2,\n    order: 1,\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\",\n  },\n  {\n    lessonId: \"AI000-C01-L01\",\n    courseId: \"AI000\",\n    chapterId: \"AI000-C01\",\n    title: \"人工智能究竟是什么？\",\n    contentVersion: 2,\n    order: 1,\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\",\n  },\n  ...courseOutline\n    .filter((slot) => mlV2LessonIds.some((id) => id === slot.lessonId) || slot.chapterId === \"PY101-C05\" || maV22LessonIds.some((id) => id === slot.lessonId))\n    .map((slot) => ({\n      ...slot,\n      contentVersion: revisedCoreLessons[slot.lessonId] ?? 1,\n      optionalLesson: slot.lessonId === \"PY101-C05-L06\",\n      catalogRole: \"current\",\n      status: \"pending-review\",\n      access: \"preview\",\n      technicalEvidence: slot.lessonId === \"MA101-C02-L03\" || slot.lessonId === \"ML201-C04-L04\" || (slot.courseId === \"PY101\" && slot.lessonId !== \"PY101-C05-L06\")\n        ? \"docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md\"\n        : slot.courseId === \"MA101\" ? \"docs/MA101_EDITORIAL_REVIEW_V1.md\" : \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\",\n    })),\n  ...legacyMathSlots.map((slot) => ({ ...slot, catalogRole: \"legacy\", contentVersion: 1, status: \"pending-review\", access: \"preview\", technicalEvidence: \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\" })),\n  {\n    lessonId: \"ML201-C04-L01\",\n    courseId: \"ML201\",\n    chapterId: \"ML201-C04\",\n    title: \"线性回归与梯度下降\",\n    contentVersion: 1,\n    order: 1,\n    catalogRole: \"legacy\",\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence: \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\",\n  },\n].map((entry) => publicationSchema.parse(entry));\n\nexport const readablePublications = publicationManifest.filter(isReadable);\nexport const lessonHref = (entry: { courseId: string; lessonId: string }) =>\n  `/learn/${entry.courseId}/${entry.lessonId}`;\n",
+      "afterSha256": "0f0a69793907b6423a82e9a21e4370cdc6482fc62ec28b9c64b24c612b14dd1b"
+    },
+    {
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "before": "import { lessonSchema, type ContentBlock } from \"../../models\";\nimport { notebookCode, notebookBlockNames, notebookCommands } from \"../../resources/python-notebook\";\nconst p = (text: string): ContentBlock => ({ type: \"paragraph\", text });\nconst code = (filename: string, text: string, language: \"python\" | \"text\" = \"text\"): ContentBlock => ({ type: \"code\", filename, code: text, language });\nconst cell = (key: keyof typeof notebookCode) => code(notebookBlockNames[key], notebookCode[key], \"python\");\nconst commands = (key: keyof typeof notebookCommands) => [code(\"Windows · PowerShell · 项目根\", notebookCommands[key].windows), code(\"macOS · zsh / bash · 项目根\", notebookCommands[key].mac)];\n\nexport const pythonNotebookCellOrderLesson = lessonSchema.parse({\n  id: \"PY101-C01-L05\", courseId: \"PY101\", chapterId: \"PY101-C01\", contentVersion: 1,\n  title: \"在Jupyter中按顺序运行单元格\",\n  subtitle: \"代码已经改了，为什么还是旧输出？在自己的Notebook里观察内核状态，再从头重跑。\",\n  prerequisites: \"已完成1.1–1.4：保存和运行.py，确认项目目录、.venv及实际解释器，能修复环境错配。本课沿用已有基础Python与项目环境；安装Notebook需要网络和获准的本地软件安装条件。手机可读，实际操作需要电脑。\",\n  prerequisiteLinks: [\n    { title: \"1.1 保存并执行源码\", href: \"/learn/PY101/PY101-C01-L01#run-script\", note: \"补齐本地运行与真实输出。\" },\n    { title: \"1.2 确认当前目录\", href: \"/learn/PY101/PY101-C01-L02#relative-route\", note: \"补齐相对路径。\" },\n    { title: \"1.3 保存与重跑\", href: \"/learn/PY101/PY101-C01-L03#save-rerun\", note: \"区分编辑、保存与执行。\" },\n    { title: \"1.4 用实际解释器核验环境\", href: \"/learn/PY101/PY101-C01-L04#observe-env\", note: \"准备项目.venv，补齐路径观察。\" },\n  ],\n  objectives: [\"在项目环境启动本地Jupyter，确认内核并创建、运行和保存含文字与代码的Notebook\", \"预测并观察旧状态与乱序错误，解释原因，用重启和按序执行恢复\", \"重新打开保存的Notebook，在正确的干净内核中从头完整运行并保留实际证据\"],\n  assessmentMap: [{ objective: 1, exerciseIds: [\"create-own-notebook\"] }, { objective: 2, exerciseIds: [\"recover-cell-order\"] }, { objective: 3, exerciseIds: [\"create-own-notebook\", \"recover-cell-order\"] }],\n  learningTime: { reading: [12, 18], practice: [6, 10], coding: [20, 30], basis: \"editorial-estimate\" },\n  sections: [\n    { id: \"why-notebook\", title: \"把说明和几段代码放在同一份文档里\", navGroup: \"start\", navLabel: \"本地Notebook\", blocks: [\n      p(\"你已经会把几行Python保存成.py并运行。现在想在同一份记录里先写一段说明，再逐段运行代码、保留各段结果。Jupyter Notebook提供这种文档，文件以.ipynb结尾。文档中的一小块文字或代码叫单元格，可以分别编辑和运行。\"),\n      p(\"方便逐格运行，也带来一个疑问：上方代码已经改成新文字，下方却仍显示旧结果；重启后，同一格甚至报错。本节用两格短代码亲自观察，再把自己的文档整理成从头能跑的版本。\"),\n    ] },\n    { id: \"local-start\", title: \"从项目环境启动本地Notebook\", navGroup: \"setup\", navLabel: \"安装与启动\", blocks: [\n      p(\"在自己的练习位置准备notebook-lab；可沿用1.4已核对的项目环境，或按1.4在这个新目录创建.venv。cd到项目根，用pwd和文件清单确认位置及环境解释器。Notebook文件放在项目根，与.venv并列，不进入环境目录。\"),\n      code(\"本课项目布局\", \"notebook-lab/\\n├── .venv/\\n└── first-notebook.ipynb  ← 稍后新建\"),\n      p(\"先用环境中明确的Python核对pip位置。pip是这里用来安装Notebook程序的工具；只需认识这一次用途，完整依赖管理留后续。下列结果中的安装位置应属于本项目.venv，Python版本应与已核对的环境一致。\"),\n      ...commands(\"pip\"),\n      p(\"首次安装需要网络下载Notebook及其必要依赖，正常等待与下载故障都另计时间。使用同一环境解释器执行下一条，等安装成功、终端返回提示符再继续。已有可用Notebook时先核对环境中的版本，不重复安装其他Python或整套工具。\"),\n      ...commands(\"install\"),\n      p(\"若遇网络、权限、证书或版本兼容错误，保存命令和完整提示，向教学支持核对获准网络、Python支持范围及安装位置；不关闭安全保护、不改全局配置或随意换不可信镜像。安装成功后，用上面同一环境的Python路径，把-m pip --version部分换为-m notebook --version执行，记下实际Notebook版本，再从项目根执行下方启动命令：\"),\n      ...commands(\"start\"),\n      p(\"这次终端会持续显示服务日志，通常不会立即回到输入提示符。它启动本地Notebook服务器，用来提供网页界面和管理会话。浏览器若没自动打开，就复制日志中实际给出的本地访问地址。检查是localhost或127.0.0.1，端口以本次日志为准，不假定总是8888。\"),\n      p(\"地址可能带token，它是本次访问凭据，只在自己的浏览器使用，不贴进作业、Git或公开截图。保留默认本地监听和认证，不使用0.0.0.0开放服务。这里运行的是你电脑上的Jupyter，Aivora网页只提供教材。\"),\n    ] },\n    { id: \"first-cells\", title: \"新建文档，先说明，再运行两格\", navGroup: \"cells\", navLabel: \"创建与运行\", blocks: [\n      p(\"本课以Notebook 7的浏览器界面为例。在文件列表使用New / New Notebook创建Python Notebook；若出现内核选择，先选本项目可用的Python内核，稍后用实际路径核验。用File → Rename将Untitled命名为first-notebook.ipynb，并确认保存位置为项目根；界面文字可能随版本变化。\"),\n      p(\"选中第一格，用工具栏的单元格类型列表把Code改为Markdown。Markdown文字格用于说明，写入下面这一句即可，不需要学习完整排版语法。按Shift+Enter运行它，文字应变成阅读状态，未被当作Python执行。\"),\n      code(\"第一格 · Markdown文字\", \"这份Notebook记录一次小型状态观察。先设置任务标签，再显示它。\"),\n      p(\"接着新建两个Code代码格（运行末尾一格后，Shift+Enter通常会选到或新增下一格，也可用工具栏的加号）。第二格只放下面一行，第三格只放print那一行，不把两行合成一格。\"),\n      cell(\"setDraft\"), cell(\"showMarker\"),\n      p(\"这里只临时认识一种新写法：marker是当前运行内核暂时记住的名字，等号让它对应右边的文字。print(marker)显示这个名字此刻对应的内容，引号里的Draft A仍是已学过的字符串。完整变量、类型和赋值规则在后续章节学习。\"),\n      p(\"先预测第三格输出，再选第二格按Shift+Enter，接着运行第三格。第三格下方应出现Draft A。第二格没有普通输出，仍已执行。执行时编号可暂显示[*]，结束后变为数字；短代码变化很快，未必看得见忙碌标记。运行编号和状态帮助观察提交与结束，最后仍核对真实结果。\"),\n      code(\"首次顺序运行 · 预期输出\", \"Draft A\"),\n    ] },\n    { id: \"kernel-check\", title: \"运行代码的是内核，浏览器负责显示\", navGroup: \"cells\", navLabel: \"创建与运行\", blocks: [\n      { type: \"table\", caption: \"把三种对象分开\", columns: [\"对象\", \"负责什么\", \"保存或关闭后会怎样\"], rows: [\n        [\".ipynb文件\", \"保存代码、文字、元数据以及可保存的输出\", \"文件留在磁盘；不等于保存了运行中所有名字\"],\n        [\"Notebook服务器\", \"提供本地网页界面、文件和会话管理\", \"关浏览器不保证服务停止\"],\n        [\"Python内核\", \"实际执行代码，保留运行期间名字对应的内容\", \"重启会清除这次运行状态\"],\n      ] },\n      p(\"浏览器把代码交给内核执行，再显示返回结果。启动服务器的Python与代码内核不能未经核验就当成同一份。在文档末尾再建一个Code格，原样运行下面的只读观察工具，不要求自己写import/sys。\"),\n      cell(\"kernelProbe\"),\n      p(\"把输出的完整解释器位置与目标项目.venv对应：Windows应属于其Scripts/python.exe，macOS属于bin/python。内核标题只写Python 3或版本相同不足为证。若不符，查看Kernel菜单的Change Kernel或右上角内核选择，选目标环境对应项，再重新诊断。\"),\n      p(\"主流程在项目环境安装Notebook后，通常已有Python内核可用，无需人人额外执行用户级内核注册。列表缺少目标时，先确认安装/启动来自同一项目、该环境有ipykernel；按官方帮助请支持人员检查发现方式，再做有条件的修复，不猜选另一个Python。VS Code的Notebook Kernel选择也不同于普通.py解释器选择，本课继续用浏览器Notebook完成操作。\"),\n    ] },\n    { id: \"stale-state\", title: \"文字改了，为什么仍然显示Draft A？\", navGroup: \"state\", navLabel: \"状态与顺序\", blocks: [\n      p(\"保持当前内核运行，把第二格改成下方内容，暂不执行这格。先预测：此刻只重跑第三格，会显示Draft A还是Ready B？写下判断，再选第三格运行。\"),\n      cell(\"setReady\"),\n      p(\"这一次仍应显示Draft A。编辑只改变单元格文本；内核上次真正执行的还是Draft A那次赋值，名字对应的内容没有自动更新。按保存也只是写文件，并不执行新代码。\"),\n      p(\"再实际运行改后的第二格，随后运行第三格，输出才变成Ready B。上方文本、下方先前的输出和内核当前状态可以一时不一致，记录真实执行过哪一格，才能解释屏幕上的结果。\"),\n      code(\"重新执行后 · 预期输出\", \"Ready B\"),\n      { type: \"quiz\", id: \"saved-output-state\", question: \"改了赋值格并保存，但没执行它，显示格仍输出旧文字。最直接的解释是什么？\", options: [\"内核还保留此前实际执行的状态，保存没有执行新赋值\", \"文件保存失败，Python一定损坏了\"], correct: 0, explanations: [\"比较文本、磁盘和运行状态；重新执行提供名字的格，再执行显示格观察变化。\", \"当前现象本身不能证明文件或解释器损坏，应先核对真实执行顺序。\"] },\n    ] },\n    { id: \"restart-order\", title: \"重启后先显示，会发生什么？\", navGroup: \"state\", navLabel: \"状态与顺序\", blocks: [\n      p(\"先保存当前文档。使用Kernel菜单中的Restart Kernel重启，并在确认框确认。此步选择仅重启，暂不选重启并全部运行。等待内核恢复空闲后，先运行第三格print(marker)，不先运行第二格。\"),\n      p(\"这次应出现NameError，错误中会提到marker尚未定义。重启清除了此前记住的名字；虽然赋值代码仍在文档中、文件也存在并已保存，它还没在这个新内核执行。内核路径在前一步已核验，本实验只改变执行顺序，无需重装Python或更换环境。\"),\n      p(\"保留刚才先运行哪格、实际错误和解释。现在运行提供marker的第二格，再运行第三格，应恢复Ready B。恢复不是让错误文字消失就结束，还要完成下一步的从头核验。\"),\n    ] },\n    { id: \"clean-run\", title: \"用一次干净执行检查整份文档\", navGroup: \"rerun\", navLabel: \"保存与复跑\", blocks: [\n      p(\"把文档排成说明、marker赋值、print(marker)、观察工具的顺序，赋值文本保留Ready B。使用当前界面的Restart Kernel and Run All Cells；也可先Restart Kernel确认重启，再用Run菜单的Run All Cells。两种方式都要先清除状态，再按文档从上到下运行。仅在旧内核点Run All可能掩盖缺少定义的问题。\"),\n      p(\"等待所有必要代码格结束，检查：显示格为Ready B、没有错误、观察格仍指向目标.venv。执行计数说明提交顺序，会随重跑变化；屏幕上下排列和旧计数本身不证明刚从干净状态成功执行。把重启动作、实际输出和环境位置一起记下来。\"),\n      { type: \"downloads\", resourceIds: [\"first-notebook-file\"] },\n      p(\"下载是最终可按顺序运行的同源核对稿，初始没有输出；第一次动手仍建议自己创建主例。下载并运行核对稿不能替代后面的独立新题。\"),\n    ] },\n    { id: \"save-stop\", title: \"保存文件，再关闭会话与服务\", navGroup: \"rerun\", navLabel: \"保存与复跑\", blocks: [\n      p(\"使用File → Save Notebook或工具栏保存，Windows通常Ctrl+S、macOS为Command+S；确认保存标记，并在本地文件管理器或项目清单确认first-notebook.ipynb确实存在。它可能保存刚才输出，但不会让运行时名字自动进入另一个新内核。\"),\n      p(\"保存后关闭这份文档，从Jupyter文件列表重新打开，核对文件名与内核，再明确重启并全部运行，检查Ready B和环境路径，最后再保存。只关浏览器标签可能重新连接尚未结束的内核，不把重开页面当作干净执行证明。\"),\n      p(\"结束时先保存；用File → Close and Shut Down Notebook关闭当前文档会话，或用Kernel → Shut Down Kernel关闭内核，在Running列表确认它不再运行。回到启动服务的那个终端按Ctrl+C；若出现关闭确认，按实际提示确认，等待服务退出并返回命令提示符。若终端宿主的中断流程不清楚，Notebook 7还可用File → Shut Down并确认，看到Server stopped后回启动终端核对已退出。只关闭网页不代表本地服务器已停止，也不要终止其他项目的Python进程。\"),\n      p(\"若启动候选命令无法找到Notebook入口，先确认同一环境内安装成功；可按官方说明使用该环境实际存在的Scripts/jupyter-notebook.exe（macOS为bin/jupyter-notebook）启动。命令和版本问题保留完整提示交支持人员，不用关闭认证或更改全局PATH解决。\"),\n    ] },\n    { id: \"practice\", title: \"交付自己的文档与一次恢复记录\", navGroup: \"practice\", navLabel: \"独立练习\", blocks: [\n      { type: \"exercise\", id: \"create-own-notebook\", title: \"建立自己的Notebook并重启复跑\", kind: \"实验\",\n        prompt: \"在目标项目环境中自己新建Notebook，自选.ipynb文件名，不直接交下载稿。写至少一格Markdown说明；自选与正文不同的名字和短文字，将最小赋值、print显示分成代码格，再用现成观察格核对内核。先预测输出，按文档顺序实际运行并保存。重新打开后确认目标内核，明确重启，从头完整运行，再保存。交付真实.ipynb及简短证据：位置、启动命令/版本、实际内核路径、预测/输出、重启动作和全部运行结果；不含访问token。只有文字报告或旧输出截图不足以完成。\",\n        hints: [\"先区分文档、服务与内核。需要哪种单元格保存说明，哪个格提供后续显示所需的名字？\", \"核对项目位置和实际Python路径，再检查各格类型与依赖。保存并重新打开之后，怎样清除之前记住的内容，验证文档本身足够？最后自己执行和比较。\"],\n        solution: [\"例如自己建立own-plan.ipynb，写一格说明，再用plan_text = \\\"Sketch D8\\\"与print(plan_text)两格，先预测Sketch D8。这是一个示例，自己的名称与文字应另选，源码位于环境目录外。\", \"以项目环境启动Notebook，运行现成sys.executable观察格，完整位置应属于自己的.venv；实际运行赋值与显示格，保存真实输出和.ipynb。\", \"保存、重新打开后仍确认内核，明确重启并按文档顺序全部执行。检查没有错误、显示自己的预期文字，再次保存；证据说明何时重启，不能仅说关过页面。\", \"常错是把说明留作Code、只改文本不执行、照抄参考稿、只交已有输出。接受自选名字、普通文字Markdown、等价干净新会话或先重启再全部运行；条件是文件和实际执行证据相互对应。\"],\n        rubric: [\"新文件命名/位置正确，含自写说明与自选名字/文字的最小代码，实际目标内核有路径证据。\", \"有运行前预测、真实输出与保存的.ipynb，说明代码如何依次提供和使用名字。\", \"重新打开并核对内核，从明确干净状态完整执行成功再保存；不以下载点击、旧输出或读完标记代替。\"],\n      },\n      p(\"下一题换成出库标签，保持相同的已核验项目内核。可下载起始文档，也可自己用下方两格建立dispatch-note.ipynb。文件与代码均已保存，只有最小赋值与print，不存在缺包或解释器错配。\"),\n      cell(\"setDelivery\"), cell(\"showDelivery\"),\n      { type: \"downloads\", resourceIds: [\"dispatch-notebook-file\"] },\n      { type: \"exercise\", id: \"recover-cell-order\", title: \"出库标签为什么在重启后失败？\", kind: \"实验\",\n        prompt: \"在dispatch-note.ipynb中，用正确环境的干净内核，先预测并实际运行后面的显示单元格，保存真实错误与执行顺序。保持现有两段源码语法和内核选择不变，独立判断原因，决定需要怎样调整运行或排列。恢复后做一次短观察：只把提供名字格中的文字改成自选新标记，暂不执行它；预测并重跑显示格，记录和解释结果。再让最终文本与执行结果一致，重新打开后确认目标内核、明确重启，按文档顺序完整运行所有核心代码并保存.ipynb。交付错误/短观察的预测与现象、原因、修复、干净重跑和保存证据，解释为何不依赖旧状态。题目不混入未保存、缺包和环境错误。\",\n        hints: [\"看当前内核从重启以来真正执行过哪些格。出错的名字依赖哪一次执行？\", \"找到提供该名字的格，与使用它的格比较位置和执行记录。决定文档怎样组织，再用清除状态后的完整执行检验，不能只靠此前已记住的内容。\"],\n        solution: [\"先在重启后的内核运行print(delivery_note)，实际应出现NameError，提到该名字未定义；保留执行顺序与错误。源码已保存并不代表它已在新内核运行。\", \"赋值格提供delivery_note对应的Packed C7。让文档中提供名字的格位于使用格之前，实际执行后显示应为Packed C7；不修改字符串去掩盖问题，也无需换环境。\", \"短观察例如把赋值文字改为Packed New E6而暂不执行，预测后只跑显示格，仍应得到Packed C7。内核还记住上一次实际赋值；再执行修改格和显示格才变为新标记。学生须用自己的标记和真实记录，不能抄这组输出。\", \"保存并重新打开，确认目标内核，再明确重启、从上到下全部执行；检查所有必要格无错、显示最终自选标记、观察工具仍为目标环境，再保存文件和真实输出。这证明不依赖旧会话残留的名字。\", \"若原排列已正确，可以保留它，只修正执行操作；若曾移动格，则整理依赖后重验。常错是单独补跑却不做干净全跑、把旧输出当新执行、删报错截图代替修复。合理新会话也接受，但要有清除旧状态及完整执行的证据。\"],\n        rubric: [\"从干净内核真正复现显示格先运行的NameError，保留顺序与现象，不捏造其他故障。\", \"解释名字尚未在当前内核定义，给出合理修复；短观察有预测、真实旧值及文本尚未执行的解释。\", \"重新打开后确认目标内核，再从明确干净状态按文档顺序全跑成功，保存.ipynb及最终自选标记的实际结果，说明为何不依赖旧状态；报告不能替代文件与执行。\"],\n      },\n    ] },\n    { id: \"next-step\", title: \"把能重跑的文件交给下一次自己\", navGroup: \"finish\", navLabel: \"下一步\", blocks: [\n      p(\"留好自己的.ipynb与短记录：哪个环境启动，实际内核在哪，先执行了哪些格，重启后能否按文档顺序重现结果。屏幕上的旧输出可以帮助回看，干净重跑才检验当前代码是否完整。\"),\n      p(\"下一节1.6「让别人复现一次环境问题」仍在规划，没有教材页。它会组合脚本、路径、编辑器、虚拟环境与Notebook的已有操作，本节无需提前学习依赖锁定或远程服务。阅读器可能跳到第5章，函数课仍需变量、表达式和控制流程等基础，不能把本次最小赋值实验当成已学完整变量章节。\"),\n    ] },\n  ],\n  resources: [\n    { id: \"first-notebook-file\", title: \"first-notebook.ipynb\", href: \"/downloads/first-notebook.ipynb\", format: \"Notebook\", description: \"最终核对稿：同源Ready B版本，空输出；用于对照，不替代独立新建练习。\" },\n    { id: \"dispatch-notebook-file\", title: \"dispatch-note.ipynb\", href: \"/downloads/dispatch-note.ipynb\", format: \"Notebook\", description: \"出库标签起始稿：同源两格任务；故意乱序需自己操作，默认文档可按序运行。\" },\n  ],\n  references: [\n    { title: \"Jupyter安装\", href: \"https://jupyter.org/install\", note: \"Notebook安装与启动。\" },\n    { title: \"Notebook用户文档\", href: \"https://jupyter-notebook.readthedocs.io/en/stable/\", note: \"界面和单元格，留意版本。\" },\n    { title: \"运行与内核状态\", href: \"https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Running%20Code.html\", note: \"逐格运行、重启与顺序。\" },\n    { title: \"Jupyter Server安全\", href: \"https://jupyter-server.readthedocs.io/en/stable/operators/security.html\", note: \"本地访问与认证保护。\" },\n    { title: \"IPython内核\", href: \"https://ipython.readthedocs.io/en/stable/install/kernel_install.html\", note: \"不同环境内核的条件性安装说明。\" },\n  ],\n});\n",
+      "afterSha256": "df1985f4d97212b0886ed39a0b4be4bb4ca5a4d6cee2fa17d29cd5c41994853c"
+    },
+    {
+      "path": "src/content/resources/python-notebook.ts",
+      "before": "// 网页、空输出下载与有状态校验共用源码。步骤预期由校验器独立断言。\nexport const notebookCode = {\n  setDraft: 'marker = \"Draft A\"',\n  showMarker: 'print(marker)',\n  setReady: 'marker = \"Ready B\"',\n  kernelProbe: 'import sys\\nprint(sys.executable)',\n  setDelivery: 'delivery_note = \"Packed C7\"',\n  showDelivery: 'print(delivery_note)',\n} as const;\nexport const notebookBlockNames: Record<keyof typeof notebookCode, string> = {\n  setDraft: \"first-notebook.ipynb · 代码格一\",\n  showMarker: \"first-notebook.ipynb · 代码格二\",\n  setReady: \"first-notebook.ipynb · 修改代码格一\",\n  kernelProbe: \"现成内核观察格\",\n  setDelivery: \"dispatch-note.ipynb · 代码格一\",\n  showDelivery: \"dispatch-note.ipynb · 代码格二\",\n};\nexport const notebookCommands = {\n  pip: { windows: '& \".\\\\.venv\\\\Scripts\\\\python.exe\" -m pip --version', mac: './.venv/bin/python -m pip --version' },\n  install: { windows: '& \".\\\\.venv\\\\Scripts\\\\python.exe\" -m pip install notebook', mac: './.venv/bin/python -m pip install notebook' },\n  start: { windows: '& \".\\\\.venv\\\\Scripts\\\\python.exe\" -m jupyter notebook', mac: './.venv/bin/python -m jupyter notebook' },\n} as const;\nexport const notebookDocuments = [\n  { filename: \"first-notebook\", title: \"第一次观察单元格状态\", cells: [\n    { id: \"purpose\", cell_type: \"markdown\", source: \"# 小型状态观察\\n先设置任务标签，再显示它。最终版本使用Ready B；旧状态与倒序实验按网页步骤另做。\" },\n    { id: \"set-marker\", cell_type: \"code\", source: notebookCode.setReady },\n    { id: \"show-marker\", cell_type: \"code\", source: notebookCode.showMarker },\n    { id: \"kernel-probe\", cell_type: \"code\", source: notebookCode.kernelProbe },\n  ] },\n  { filename: \"dispatch-note\", title: \"物流任务的顺序观察\", cells: [\n    { id: \"purpose\", cell_type: \"markdown\", source: \"# 出库标签\\n按网页题目先记录预测，再在指定内核观察执行顺序，并保存恢复后的结果。\" },\n    { id: \"set-note\", cell_type: \"code\", source: notebookCode.setDelivery },\n    { id: \"show-note\", cell_type: \"code\", source: notebookCode.showDelivery },\n    { id: \"kernel-probe\", cell_type: \"code\", source: notebookCode.kernelProbe },\n  ] },\n] as const;\nexport function notebookDownload(document: (typeof notebookDocuments)[number]) {\n  return { nbformat: 4, nbformat_minor: 5, metadata: { kernelspec: { display_name: \"Python 3 (ipykernel)\", language: \"python\", name: \"python3\" }, language_info: { name: \"python\" } }, cells: document.cells.map(cell => ({ ...cell, metadata: {}, ...(cell.cell_type === \"code\" ? { execution_count: null, outputs: [] } : {}) })) };\n}\n",
+      "afterSha256": "6377d5cf3d9dc798e6c4a41bada96c9fad1491c6bc12723ce251e1ee0c0535d2"
+    },
+    {
+      "path": "scripts/audit-py101-p3.ts",
+      "before": "import assert from \"node:assert/strict\";\nimport { createHash } from \"node:crypto\";\nimport { execFileSync } from \"node:child_process\";\nimport { mkdir, readFile, writeFile } from \"node:fs/promises\";\nimport { lessonRegistry, getLearningCourse, resolveLesson } from \"../src/lib/course-engine\";\nimport { publicationManifest } from \"../src/content/publication-manifest\";\n\n// 同一审计入口复用至后续单课；原P3默认及证据保持，不复制一套审计器。\nconst round = process.env.AIVORA_AUDIT_ROUND ?? \"py101-p3\";\nassert.ok([\"py101-p3\", \"py101-p4\"].includes(round));\nconst isP4 = round === \"py101-p4\";\nconst dir = `docs/${round}`, id = isP4 ? \"PY101-C01-L05\" : \"PY101-C01-L04\", amend = isP4 ? \"PY101-C01-L04\" : \"PY101-C01-L03\";\nconst sha = (value: string | Buffer) => createHash(\"sha256\").update(value).digest(\"hex\");\nconst git = (...args: string[]) => execFileSync(\"git\", args, { encoding: \"utf8\" }).trimEnd();\nawait mkdir(dir, { recursive: true });\nconst userFiles = [\"next-env.d.ts\", \"scripts/ai000-r3-compatibility.ts\", \"src/components/lesson/reader.tsx\", \"tests/reading-experience.test.ts\"];\nconst allowedSources = isP4\n  ? [\"src/lib/course-engine.ts\", \"src/content/publication-manifest.ts\", \"src/content/lessons/py101/project-environments.ts\", \"scripts/audit-py101-p3.ts\", \"scripts/py101-p1-compatibility.ts\", \"scripts/validate-python.ts\", \"scripts/prepare-downloads.ts\", \"tests/py101-project-environments.test.ts\"]\n  : [\".gitignore\", \"src/lib/course-engine.ts\", \"src/content/publication-manifest.ts\", \"src/content/lessons/py101/editor-rerun.ts\", \"scripts/py101-p1-compatibility.ts\", \"scripts/validate-python.ts\", \"tests/py101-editor-rerun.test.ts\", \"tests/course-engine.test.ts\", \"tests/cross-discipline-editorial.test.ts\", \"tests/ai000-quality.test.ts\", \"src/app/learning-system.css\"];\nif (process.argv.includes(\"--baseline\")) {\n  const paths = git(\"ls-files\", \"-z\").split(\"\\0\").filter(Boolean);\n  const files = Object.fromEntries(await Promise.all(paths.map(async path => {\n    const bytes = await readFile(path), text = bytes.toString(\"utf8\");\n    const validText = !text.includes(\"\\0\") && Buffer.from(text).equals(bytes);\n    return [path, { sha256: sha(bytes), ...(validText ? { lfSha256: sha(text.replaceAll(\"\\r\\n\", \"\\n\")) } : {}) }];\n  })));\n  const baseline = { head: git(\"rev-parse\", \"HEAD\"), status: git(\"status\", \"--short\"), files, lessons: Object.fromEntries([...lessonRegistry].map(([id, value]) => [id, sha(JSON.stringify(value))])), publications: Object.fromEntries(publicationManifest.map(value => [value.lessonId, sha(JSON.stringify(value))])), amendmentBefore: lessonRegistry.get(amend), publicationBefore: publicationManifest.find(p => p.lessonId === amend) };\n  await writeFile(`${dir}/BASELINE.json`, JSON.stringify(baseline, null, 2) + \"\\n\", { flag: \"wx\" });\n  await writeFile(`${dir}/APPROVED_CHANGES.json`, JSON.stringify({ baseline: baseline.head, addedLessonIds: [id], sources: [], lessons: [], publications: [], workspaceOnly: [], protectedText: [] }, null, 2) + \"\\n\", { flag: \"wx\" });\n  console.log(`改前${lessonRegistry.size}课与${paths.length}个跟踪文件已留摘要；不复制无关教材全文。`);\n} else {\n  const base = JSON.parse(await readFile(`${dir}/BASELINE.json`, \"utf8\"));\n  if (process.argv.includes(\"--register\")) {\n    const sources = await Promise.all(allowedSources.map(async path => {\n      const before = execFileSync(\"git\", [\"show\", `${base.head}:${path}`], { encoding: \"utf8\" });\n      const current = (await readFile(path, \"utf8\")).replaceAll(\"\\r\\n\", \"\\n\");\n      return before.replaceAll(\"\\r\\n\", \"\\n\") === current ? null : { path, before, afterSha256: sha(current) };\n    }));\n    const current = lessonRegistry.get(amend)!;\n    const expected = structuredClone(base.amendmentBefore);\n    const last = expected.sections.at(-1); last.blocks[last.blocks.length - 1] = current.sections.at(-1)!.blocks.at(-1);\n    assert.deepEqual(current, expected, `只允许${amend}最后状态段变化`);\n    const publication = publicationManifest.find(p => p.lessonId === amend)!;\n    const workspaceOnly = userFiles.map(path => ({ path, workspaceSha256: base.files[path].sha256, repositorySha256: sha(execFileSync(\"git\", [\"show\", `${base.head}:${path}`])) }));\n    const plan = { baseline: base.head, addedLessonIds: [id], sources: sources.filter(Boolean), lessons: [{ id: amend, before: base.amendmentBefore, afterSha256: sha(JSON.stringify(current)) }], publications: JSON.stringify(publication) === JSON.stringify(base.publicationBefore) ? [] : [{ id: amend, before: base.publicationBefore, afterSha256: sha(JSON.stringify(publication)) }], workspaceOnly, protectedText: Object.entries(base.files as Record<string, { sha256: string; lfSha256?: string }>).filter(([, file]) => file.lfSha256 && file.lfSha256 !== file.sha256).map(([path, file]) => ({ path, baselineSha256: file.sha256, lfSha256: file.lfSha256 })) };\n    await writeFile(`${dir}/APPROVED_CHANGES.json`, JSON.stringify(plan, null, 2) + \"\\n\");\n    const oldBlock = base.amendmentBefore.sections.at(-1).blocks.at(-1), newBlock = current.sections.at(-1)!.blocks.at(-1);\n    await writeFile(`${dir}/TRANSITION_AMENDMENT.json`, JSON.stringify({ lessonId: amend, before: oldBlock, after: newBlock, beforeSha256: base.lessons[amend], afterSha256: sha(JSON.stringify(current)), version: current.contentVersion, assessmentUnchanged: true, progressScopeUnchanged: true }, null, 2) + \"\\n\");\n    console.log(\"已登记最小状态勘误及必要工程变化；不覆盖历史证据。\");\n  } else if (process.argv.includes(\"--draft\")) {\n    const entry = publicationManifest.find(p => p.lessonId === id)!;\n    assert.equal(entry.status, \"draft\"); assert.equal(entry.access, \"private\"); assert.equal(resolveLesson(\"PY101\", id), undefined);\n    await writeFile(`${dir}/DRAFT_GATE.json`, JSON.stringify({ checkedAt: new Date().toISOString(), lessonId: id, status: entry.status, access: entry.access, registered: lessonRegistry.has(id), readable: false }, null, 2) + \"\\n\");\n    console.log(\"draft/private已登记且不可读。\");\n  } else {\n    const plan = JSON.parse(await readFile(`${dir}/APPROVED_CHANGES.json`, \"utf8\"));\n    for (const [path, file] of Object.entries(base.files as Record<string, { sha256: string; lfSha256?: string }>)) {\n      const bytes = await readFile(path);\n      if (sha(bytes) === file.sha256) continue;\n      assert.ok(!userFiles.includes(path), `用户原文件变化：${path}`);\n      const entry = plan.sources.find((row: { path: string }) => row.path === path);\n      assert.ok(entry && sha(entry.before.replaceAll(\"\\r\\n\", \"\\n\")) === file.lfSha256 && sha(bytes.toString(\"utf8\").replaceAll(\"\\r\\n\", \"\\n\")) === entry.afterSha256, path);\n    }\n    for (const [path, hash] of Object.entries(base.untracked ?? {})) assert.equal(sha(await readFile(path)), hash, `原未跟踪文件变化：${path}`);\n    for (const kind of [\"lessons\", \"publications\"] as const) {\n      const current = kind === \"lessons\" ? Object.fromEntries([...lessonRegistry].filter(([key]) => key !== id).map(([key, value]) => [key, sha(JSON.stringify(value))])) : Object.fromEntries(publicationManifest.filter(p => p.lessonId !== id).map(p => [p.lessonId, sha(JSON.stringify(p))]));\n      assert.deepEqual(Object.keys(current).sort(), Object.keys(base[kind]).sort());\n      for (const [key, hash] of Object.entries(base[kind])) {\n        if (current[key] === hash) continue;\n        const entry = plan[kind].find((row: { id: string }) => row.id === key);\n        assert.ok(entry && sha(JSON.stringify(entry.before)) === hash && current[key] === entry.afterSha256, key);\n      }\n    }\n    const course = getLearningCourse(\"PY101\")!;\n    assert.equal(course.status, \"planned\"); assert.ok(resolveLesson(\"PY101\", id));\n    for (const slot of course.chapters[0].lessons.slice(Number(id.slice(-2)))) assert.equal(resolveLesson(\"PY101\", slot.lessonId), undefined);\n    assert.equal(git(\"ls-files\", \"--\", \"**/.venv/**\"), \"\");\n    await writeFile(`${dir}/COMPATIBILITY.json`, JSON.stringify({ checkedAt: new Date().toISOString(), baseline: base.head, previousLessons: Object.keys(base.lessons).length, protectedFiles: Object.keys(base.files).length, originalUserFilesUnchanged: userFiles, oldLessonChanges: plan.lessons.map((row: { id: string }) => row.id), oldPublicationsChanged: plan.publications.map((row: { id: string }) => row.id), newLesson: id, courseStatus: course.status, untrackedEnvironments: true }, null, 2) + \"\\n\");\n    console.log(\"历史摘要、授权变化、用户工作区、规划课与环境未跟踪检查通过。\");\n  }\n}\n",
+      "afterSha256": "eac8fd9e6321d7af402cdaa123ceeeadf0485679476de60211a0e72c397f8104"
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "before": "import { createHash } from \"node:crypto\";\nimport { readFileSync } from \"node:fs\";\n\ntype SourceChange = { path: string; before: string; afterSha256: string };\ntype ObjectChange = { id: string; before: unknown; afterSha256: string };\n// 使用同一个登记器按新到旧撤销已批准修订；不为每轮再嵌套一个专用兼容器。\ntype RevisionPlan = { baseline: string; sources: SourceChange[]; lessons: ObjectChange[]; publications: ObjectChange[]; addedLessonIds: string[]; workspaceOnly: { path: string; workspaceSha256: string; repositorySha256: string }[]; protectedText: { path: string; baselineSha256: string; lfSha256: string }[] };\nconst plans = [\"py101-p4\", \"py101-p3\", \"py101-p2\"].map(round => JSON.parse(readFileSync(new URL(`../docs/${round}/APPROVED_CHANGES.json`, import.meta.url), \"utf8\")) as RevisionPlan);\nfunction revisions(throughBaseline?: string) {\n  const index = plans.findIndex(plan => plan.baseline === throughBaseline);\n  return index < 0 ? plans : plans.slice(0, index + 1);\n}\nconst sources = JSON.parse(readFileSync(new URL(\"../docs/py101-p1/SOURCE_CHANGES.json\", import.meta.url), \"utf8\")) as SourceChange[];\nconst sha = (source: string) => createHash(\"sha256\").update(source).digest(\"hex\");\nfunction undoSource(entries: SourceChange[], path: string, source: string) {\n  const entry = entries.find(row => row.path === path);\n  return entry && sha(source.replaceAll(\"\\r\\n\", \"\\n\")) === entry.afterSha256 ? entry.before : source;\n}\nexport const approvedPy101Additions = [...new Set(plans.flatMap(plan => plan.addedLessonIds))];\nexport function beforeApprovedPy101Source(path: string, source: string, throughBaseline?: string) {\n  return revisions(throughBaseline).reduce((value, plan) => undoSource(plan.sources, path, value), source);\n}\n// 自动回归允许原工作区与干净检出两种精确版本；工作区审计脚本仍严格要求原始指纹。\nexport function protectedPy101FileMatches(path: string, bytes: Buffer, expected: string, throughBaseline?: string) {\n  const digest = createHash(\"sha256\").update(bytes).digest(\"hex\");\n  if (digest === expected) return true;\n  const text = bytes.toString(\"utf8\");\n  // Git检出可转换文本换行；二进制仍逐字节比较，绝不以UTF-8解码后的图像作摘要。\n  const validText = !text.includes(\"\\0\") && Buffer.from(text).equals(bytes);\n  const variants = (value: string) => { const lf = value.replaceAll(\"\\r\\n\", \"\\n\"); return [lf, lf.replaceAll(\"\\n\", \"\\r\\n\")]; };\n  const matches = (value: string, target: string) => validText && variants(value).some(source => sha(source) === target);\n  if (matches(text, expected)) return true;\n  const relevant = revisions(throughBaseline);\n  const portable = relevant.flatMap(plan => plan.protectedText).find(row => row.path === path && row.baselineSha256 === expected);\n  if (portable && validText && sha(text.replaceAll(\"\\r\\n\", \"\\n\")) === portable.lfSha256) return true;\n  const local = relevant.flatMap(plan => plan.workspaceOnly).find(row => row.path === path && row.workspaceSha256 === expected);\n  if (local?.workspaceSha256 === expected && (local.repositorySha256 === digest || matches(text, local.repositorySha256))) return true;\n  return matches(beforeApprovedPy101Source(path, text, throughBaseline), expected);\n}\nexport function beforeApprovedPy101Object(kind: \"lessons\" | \"publications\", id: string, value: unknown, throughBaseline?: string) {\n  return revisions(throughBaseline).reduce((current, plan) => {\n    const entry = plan[kind].find(row => row.id === id);\n    return entry && sha(JSON.stringify(current)) === entry.afterSha256 ? entry.before : current;\n  }, value);\n}\n// 只有完整文件摘要命中才还原；未登记的任何附加修改必须继续暴露给旧保护测试。\nexport function beforePy101P1Source(path: string, source: string) {\n  return undoSource(sources, path, beforeApprovedPy101Source(path, source));\n}\n",
+      "afterSha256": "ae38b6b7da45d8047390515a530849cd9b78d541276b0c80594a37106332c8dc"
+    },
+    {
+      "path": "scripts/validate-python.ts",
+      "before": "import { spawnSync } from \"node:child_process\";\nimport { writeFile } from \"node:fs/promises\";\nimport { evidencePath } from \"./evidence-path\";\nimport { lessonRegistry } from \"../src/lib/course-engine\";\nimport { corePrograms, regressionCoreCode } from \"../src/content/resources/core-programs\";\nimport { programs, gradientDescentCode } from \"../src/content/resources/programs\";\nimport { notebookCode, notebookBlockNames } from \"../src/content/resources/python-notebook\";\n\nconst python = process.env.AIVORA_PYTHON ?? \"python\";\nfunction run(args: string[]) {\n  const result = spawnSync(python, args, {\n    encoding: \"utf8\",\n    env: { ...process.env, PYTHONIOENCODING: \"utf-8\" },\n    timeout: 30_000,\n  });\n  if (result.error || result.status !== 0)\n    throw new Error(`Python 校验失败：${result.error ?? result.stderr}`);\n  return {\n    exitCode: result.status,\n    stdout: result.stdout.replace(/\\r\\n/g, \"\\n\").trim(),\n    stderr: result.stderr.replace(/\\r\\n/g, \"\\n\").trim(),\n  };\n}\nconst environment = run([\n  \"-c\",\n  \"import sys,numpy; print(sys.version.split()[0]); print('NumPy',numpy.__version__)\",\n]);\nconst unit = run([\n  \"-m\",\n  \"unittest\",\n  \"discover\",\n  \"-s\",\n  \"tests\",\n  \"-p\",\n  \"test_*.py\",\n  \"-v\",\n]);\nconst examples = [...lessonRegistry.values()].flatMap((lesson) =>\n  lesson.sections.flatMap((section) =>\n    section.blocks.flatMap((block) => {\n      if (block.type !== \"code\" || block.language !== \"python\") return [];\n      let setup = \"\";\n      if (lesson.id === \"PY101-C01-L05\") {\n        const key = (Object.keys(notebookCode) as (keyof typeof notebookCode)[]).find(key => notebookBlockNames[key] === block.filename);\n        if (!key || block.code !== notebookCode[key]) throw new Error(`未登记的Notebook单元格：${block.filename}`);\n        if (key === \"showMarker\") setup = notebookCode.setDraft;\n        if (key === \"showDelivery\") setup = notebookCode.setDelivery;\n      }\n      // Notebook使用前格上下文；仍实际执行每块。重启/旧状态/预期NameError另由真实内核专项检验。\n      const result = run([\"-c\", setup ? setup + \"\\n\" + block.code : block.code]);\n      if (lesson.id === \"PY101-C01-L05\") {\n        const expected: Record<string, string> = { [notebookBlockNames.setDraft]: \"\", [notebookBlockNames.setReady]: \"\", [notebookBlockNames.showMarker]: \"Draft A\", [notebookBlockNames.setDelivery]: \"\", [notebookBlockNames.showDelivery]: \"Packed C7\" };\n        if (block.filename in expected && result.stdout !== expected[block.filename]) throw new Error(`Notebook顺序输出不符：${block.filename}`);\n      }\n      if (lesson.id === \"PY101-C01-L04\") {\n        const independentExpected: Record<string, string> = { \"project-a/main.py\": \"Project A A4\", \"project-b/main.py\": \"Project B B6\" };\n        if (independentExpected[block.filename] !== undefined && result.stdout !== independentExpected[block.filename]) throw new Error(`虚拟环境课源码输出不符：${block.filename}`);\n        if (block.filename.startsWith(\"observe_env.py\")) {\n          for (const label of [\"Interpreter:\", \"Environment:\", \"Base Python:\", \"Version:\"]) if (!result.stdout.includes(label)) throw new Error(`诊断字段遗漏：${label}`);\n          // 全网页校验在当前基础Python执行；目标venv判据另由真实环境专项验证。\n        }\n      }\n      const expected = ({ \"第一条Python指令\": \"Hello, Aivora!\", \"first_run.py\": \"Hello, Aivora!\\nFile: first_run.py\", \"read_vector_components.py\": \"4 0 7\", \"add_two_vectors.py\": \"[2, 3]\", \"scale_vector.py\": \"[-6, -4]\", \"double_without_function.py\":\"6\", \"double_definition.py\":\"\", \"one_update.py\":\"-13.0 -8.0 1.3 0.8 1.685\", \"one_update_checks.py\":\"-13.0 -8.0 1.3 0.8 1.685\" } as Record<string,string>)[block.filename];\n      if (expected !== undefined && result.stdout !== expected)\n        throw new Error(`教材输出与预期不一致：${block.filename}`);\n      return [\n        {\n          lessonId: lesson.id,\n          sectionId: section.id,\n          filename: block.filename,\n          ...(lesson.id === \"PY101-C01-L05\" ? { executionMode: setup ? \"ordered-cells\" : \"independent-cell\", setup } : {}),\n          ...(expected !== undefined ? { expected } : {}),\n          ...result,\n        },\n      ];\n    }),\n  ),\n);\nconst expectedOutputs: Record<keyof typeof corePrograms, string> = {\n  \"function-basics\": \"6\", \"function-binding\": \"12\\n12\", \"function-return\": \"4\\n4 None\",\n  \"function-scope\": \"5\\n10\", \"function-defaults\": \"6\\n12\", \"vector-basics\": \"[4, 3] [2, 4]\",\n  \"vector-dot\": \"5\", \"matrix-shape\": \"[[1, 4], [2, 5], [3, 6]]\",\n  \"matrix-product\": \"[[4 6]\\n [1 3]]\", \"numpy-shapes\": \"(2,) (2,)\\n(2, 1) (1, 2)\\n5\",\n};\nconst coreComparisons = Object.entries(corePrograms).map(([id, sample]) => {\n  const core = run([\"-c\", sample.core + \"\\n\" + sample.checks]);\n  const full = run([\"-c\", programs[id as keyof typeof corePrograms].code]);\n  if (core.stdout !== expectedOutputs[id as keyof typeof corePrograms] || core.stdout !== full.stdout)\n    throw new Error(`核心/完整版输出与预期不一致：${id}`);\n  return { id, expected: expectedOutputs[id as keyof typeof corePrograms], ...core, fullMatches: true };\n});\nconst trainingComparison = run([\"-c\", `import numpy as np\ncore, full = {}, {}\nexec(${JSON.stringify(regressionCoreCode)}, core)\nexec(${JSON.stringify(gradientDescentCode)}, full)\nnp.testing.assert_allclose([core['w'], core['b'], core['final_loss']], [full['w'], full['b'], full['final_loss']], atol=1e-12, rtol=0)\nnp.testing.assert_allclose([core['w'], core['b']], [2,1], atol=1e-7, rtol=0)\nassert core['final_loss'] < 1e-10\nprint('core/full training match; independent expected line y=2x+1')\n`]);\nconst report = {\n  checkedAt: new Date().toISOString(),\n  environment: environment.stdout,\n  unittest: unit,\n  examples,\n  coreComparisons,\n  trainingComparison,\n  note: \"技术校验通过；不代表人工内容审核、试学或正式发布。代码来自仓库静态教材，仅开发阶段执行。\",\n};\nconst reportPath = evidencePath(\"TEACHING_V2_3_PYTHON_RESULTS.json\");\nawait writeFile(\n  reportPath,\n  JSON.stringify(report, null, 2) + \"\\n\",\n);\nconsole.log(\n  `Python 单元测试通过，${examples.length} 个网页代码块全部实际执行通过，${coreComparisons.length} 组核心/完整版一致。证据：${reportPath}`,\n);\n",
+      "afterSha256": "ba7c75ef6ac477a45416685cb456489fe9fbe5fcbccb13e630f640cfa2e38ae4"
+    },
+    {
+      "path": "scripts/prepare-downloads.ts",
+      "before": "import { mkdir, writeFile } from \"node:fs/promises\";\nimport { programs } from \"../src/content/resources/programs\";\nimport { notebookDocuments, notebookDownload } from \"../src/content/resources/python-notebook\";\nawait mkdir(\"public/downloads\", { recursive: true });\nfor (const program of Object.values(programs)) {\n  await writeFile(\n    `public/downloads/${program.filename}.py`,\n    program.code,\n    \"utf8\",\n  );\n  const notebook = {\n    nbformat: 4,\n    nbformat_minor: 5,\n    metadata: {\n      kernelspec: {\n        display_name: \"Python 3\",\n        language: \"python\",\n        name: \"python3\",\n      },\n      language_info: { name: \"python\", version: \"3.10\" },\n    },\n    cells: [\n      {\n        id: \"introduction\",\n        cell_type: \"markdown\",\n        metadata: {},\n        source: [\n          `# Aivora · ${program.title}（试读样章，待人工审核）\\n`,\n          `${program.environment}。代码与网页同源。\\n`,\n          \"请在本地运行并核对断言；阅读记录不代表已经掌握。\",\n        ],\n      },\n      {\n        id: \"experiment\",\n        cell_type: \"code\",\n        execution_count: null,\n        outputs: [],\n        metadata: {},\n        source: program.code.split(/(?<=\\n)/),\n      },\n    ],\n  };\n  await writeFile(\n    `public/downloads/${program.filename}.ipynb`,\n    JSON.stringify(notebook, null, 2),\n    \"utf8\",\n  );\n}\nconsole.log(\n  `已同源生成 ${Object.keys(programs).length} 组 Python / Notebook 下载文件`,\n);\nfor (const document of notebookDocuments) {\n  await writeFile(`public/downloads/${document.filename}.ipynb`, JSON.stringify(notebookDownload(document), null, 2), \"utf8\");\n}\nconsole.log(`另生成 ${notebookDocuments.length} 份按单元格组织的Notebook；空输出，不写入机器版本或路径。`);\n",
+      "afterSha256": "76a02b3f26b71eb0ec70a05e596f62543e6d737b9ed2beeb43559f2d8200bba2"
+    },
+    {
+      "path": "tests/py101-first-run.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { getAdjacentLessons, getLearningCourse, resolveLesson } from \"../src/lib/course-engine\";\nimport { createProgressStore, progressKey, parseReadingProgress } from \"../src/lib/learning-progress\";\nimport { pythonFirstRunLesson } from \"../src/content/lessons/py101/first-run\";\nimport { programs } from \"../src/content/resources/programs\";\nimport { readFileSync } from \"node:fs\";\nimport { beforePy101Source } from \"../scripts/py101-p0-compatibility\";\nimport { publicationManifest } from \"../src/content/publication-manifest\";\n\ntest(\"PY101首章规划课不自动获得Publication、阅读路由或相邻导航\", () => {\n  const course = getLearningCourse(\"PY101\")!;\n  assert.equal(course.status, \"planned\");\n  const slots = course.chapters[0].lessons;\n  assert.equal(slots.length, 6);\n  const planned = slots.filter(slot => !publicationManifest.some(p => p.lessonId === slot.lessonId));\n  assert.ok(planned.length > 0);\n  for (const slot of planned) {\n    assert.equal(slot.status, \"planned\");\n    assert.equal(slot.href, undefined);\n    assert.equal(resolveLesson(\"PY101\", slot.lessonId), undefined);\n  }\n  assert.equal(resolveLesson(\"ML201\", pythonFirstRunLesson.id), undefined);\n  const current = course.chapters.flatMap(ch => ch.lessons).filter(slot => slot.href);\n  assert.equal(getAdjacentLessons(course, pythonFirstRunLesson.id).next?.lessonId, current[current.findIndex(slot => slot.lessonId === pythonFirstRunLesson.id) + 1]?.lessonId);\n  assert.equal(course.chapters[4].lessons.length, 6);\n  assert.equal(course.chapters[4].lessons[0].contentVersion, 2);\n});\n\ntest(\"新首课进度与第五章和旧修订独立保存，保留旧值\", () => {\n  const data = new Map<string, string>();\n  const store = createProgressStore(() => ({ getItem: key => data.get(key) ?? null, setItem: (key, value) => { data.set(key, value); } }));\n  const first = { courseId: \"PY101\", lessonId: pythonFirstRunLesson.id, contentVersion: 1, sectionIds: pythonFirstRunLesson.sections.map(s => s.id) };\n  const old = { courseId: \"PY101\", lessonId: \"PY101-C05-L01\", contentVersion: 2, sectionIds: [\"concept\", \"quiz\"] };\n  store.save(old, 100, \"quiz\", true);\n  const oldRaw = data.get(progressKey(old));\n  assert.equal(store.getSnapshot(first), null);\n  store.save(first, 40, \"run-script\");\n  assert.equal(data.get(progressKey(old)), oldRaw);\n  assert.equal(parseReadingProgress(store.getSnapshot(first), first)?.completed, false);\n  assert.equal(parseReadingProgress(store.getSnapshot(old), old)?.completed, true);\n});\n\ntest(\"首课可复制Python主代码和完整下载同源且不夹带提示符\", () => {\n  const blocks = pythonFirstRunLesson.sections.flatMap(s => s.blocks);\n  const main = blocks.find(b => b.type === \"code\" && b.filename === \"first_run.py\");\n  assert.ok(main?.type === \"code\");\n  assert.equal(main.code, programs[\"first-run\"].code);\n  assert.doesNotMatch(main.code, />>>|assert |import |def /);\n  assert.equal(pythonFirstRunLesson.resources.length, 1);\n  assert.equal(pythonFirstRunLesson.resources[0].format, \"Python\");\n});\n\ntest(\"本轮兼容登记仅撤销完整命中的必要源码，额外改动继续拒绝\", () => {\n  const sources = JSON.parse(readFileSync(\"docs/py101-p0/SOURCE_CHANGES.json\", \"utf8\")) as { path: string; before: string }[];\n  for (const source of sources) {\n    const current = readFileSync(source.path, \"utf8\");\n    assert.equal(beforePy101Source(source.path, current), source.before);\n    const changed = current + \"\\n// unexpected change\";\n    assert.equal(beforePy101Source(source.path, changed), changed);\n  }\n});\n",
+      "afterSha256": "860911e30bb6642e6a3c98090235cb381e256a9cf41d577483620ca59704a128"
+    },
+    {
+      "path": "tests/py101-notebook-cell-order.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { readFileSync } from \"node:fs\";\nimport { createHash } from \"node:crypto\";\nimport { pythonNotebookCellOrderLesson as lesson } from \"../src/content/lessons/py101/notebook-cell-order\";\nimport { lessonRegistry, resolveLesson, getLearningCourse, getAdjacentLessons } from \"../src/lib/course-engine\";\nimport { publicationManifest } from \"../src/content/publication-manifest\";\nimport { isReadable } from \"../src/content/models\";\nimport { notebookCode, notebookBlockNames, notebookCommands, notebookDocuments, notebookDownload } from \"../src/content/resources/python-notebook\";\nimport { beforeApprovedPy101Object, protectedPy101FileMatches, approvedPy101Additions } from \"../scripts/py101-p1-compatibility\";\nimport { createProgressStore, progressKey, parseReadingProgress } from \"../src/lib/learning-progress\";\nimport { lessonProgressScope } from \"../src/lib/use-learning-progress\";\nimport { assertRegisteredInventory, assertCourseAvailability } from \"./helpers/registered-content\";\n\ntest(\"P4按真实基线保护旧教材/文件，1.4只勘误最后状态段，拒绝附加改动\", () => {\n  const base = JSON.parse(readFileSync(\"docs/py101-p4/BASELINE.json\", \"utf8\"));\n  const sha = (v: unknown) => createHash(\"sha256\").update(JSON.stringify(v)).digest(\"hex\");\n  const later = approvedPy101Additions.filter(id => id !== lesson.id && !(id in base.lessons));\n  assert.deepEqual([...lessonRegistry.keys()].sort(), [...Object.keys(base.lessons), lesson.id, ...later].sort());\n  for (const kind of [\"lessons\", \"publications\"] as const) for (const [id, hash] of Object.entries(base[kind])) {\n    const current = kind === \"lessons\" ? lessonRegistry.get(id) : publicationManifest.find(p => p.lessonId === id);\n    assert.equal(sha(beforeApprovedPy101Object(kind, id, current, base.head)), hash, id);\n  }\n  for (const [path, file] of Object.entries(base.files as Record<string, { sha256: string }>)) assert.ok(protectedPy101FileMatches(path, readFileSync(path), file.sha256, base.head), path);\n  const current = lessonRegistry.get(\"PY101-C01-L04\")!, expected = structuredClone(base.amendmentBefore);\n  expected.sections.at(-1).blocks[expected.sections.at(-1).blocks.length - 1] = current.sections.at(-1)!.blocks.at(-1);\n  assert.deepEqual(current, expected); assert.equal(current.contentVersion, 1);\n  assert.deepEqual(lessonProgressScope(current), lessonProgressScope(base.amendmentBefore));\n  assert.equal(protectedPy101FileMatches(\"src/lib/course-engine.ts\", Buffer.concat([readFileSync(\"src/lib/course-engine.ts\"), Buffer.from(\"\\n// unauthorized\")]), base.files[\"src/lib/course-engine.ts\"].sha256, base.head), false);\n  assertRegisteredInventory(); assertCourseAvailability(\"PY101\");\n});\n\ntest(\"新课r1身份与草稿门禁一致，接1.4，1.6和错误归属不可读\", () => {\n  const entry = publicationManifest.find(p => p.lessonId === lesson.id)!;\n  assert.equal(entry.title, lesson.title); assert.equal(entry.order, 5); assert.equal(entry.contentVersion, 1);\n  assert.equal(entry.optionalLesson, false); assert.equal(lesson.optionalLesson, false);\n  assert.equal(isReadable({ ...entry, status: \"draft\", access: \"private\", technicalEvidence: undefined }), false);\n  const course = getLearningCourse(\"PY101\")!; assert.equal(course.status, \"planned\");\n  if (entry.status === \"draft\") { assert.equal(entry.access, \"private\"); assert.equal(resolveLesson(\"PY101\", lesson.id), undefined); }\n  else { assert.equal(entry.status, \"pending-review\"); assert.equal(entry.access, \"preview\"); assert.ok(entry.technicalEvidence?.startsWith(\"docs/py101-p4/\")); assert.equal(entry.reviewEvidence, undefined); assert.ok(resolveLesson(\"PY101\", lesson.id)); assert.equal(getAdjacentLessons(course, \"PY101-C01-L04\").next?.lessonId, lesson.id); assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, \"PY101-C01-L04\"); }\n  assert.equal(resolveLesson(\"ML201\", lesson.id), undefined);\n  const planned = course.chapters[0].lessons.find(s => s.lessonId === \"PY101-C01-L06\")!;\n  assert.equal(planned.status, \"planned\"); assert.equal(planned.href, undefined); assert.equal(lessonRegistry.has(planned.lessonId), false);\n});\n\ntest(\"三目标由真实Notebook两题覆盖，提示不泄露完整顺序，答案要求干净复跑\", () => {\n  const tasks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === \"exercise\");\n  assert.deepEqual(tasks.map(t => t.id), [\"create-own-notebook\", \"recover-cell-order\"]);\n  assert.deepEqual(lesson.assessmentMap, [{ objective: 1, exerciseIds: [tasks[0].id] }, { objective: 2, exerciseIds: [tasks[1].id] }, { objective: 3, exerciseIds: tasks.map(t => t.id) }]);\n  for (const task of tasks) { assert.equal(task.hints.length, 2); assert.ok(task.solution.length >= 4); assert.ok(task.rubric.length >= 3); assert.doesNotMatch(task.hints.join(\"\"), /Packed C7|Ready B|先运行.*赋值.*再运行.*print/); }\n  assert.match(tasks[0].prompt, /自己新建/); assert.match(tasks[0].prompt, /不同/); assert.match(tasks[1].prompt, /真实错误/); assert.match(tasks[1].prompt, /暂不执行/); assert.match(tasks[1].prompt, /明确重启/);\n});\n\ntest(\"网页每个Python格均有明确同源身份；分平台安装命令不改全局安全配置\", () => {\n  const blocks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === \"code\");\n  assert.deepEqual(blocks.filter(b => b.language === \"python\").map(b => [b.filename, b.code]).sort(), (Object.keys(notebookCode) as (keyof typeof notebookCode)[]).map(k => [notebookBlockNames[k], notebookCode[k]]).sort());\n  for (const pair of Object.values(notebookCommands)) for (const command of Object.values(pair)) assert.ok(blocks.some(b => b.code === command));\n  const text = JSON.stringify(lesson);\n  assert.doesNotMatch(text, /--ip[= ]0\\.0\\.0\\.0|token=''|Set-ExecutionPolicy|--trusted-host|ipykernel install --user|pip install (numpy|pandas|conda|uv)/);\n  assert.match(text, /只关闭网页不代表/); assert.match(text, /保存也只是写文件/); assert.match(text, /NameError/);\n});\n\ntest(\"Notebook下载是有效4.5结构、源码同源、空输出无机器信息；旧资源另受摘要保护\", () => {\n  for (const document of notebookDocuments) {\n    const actual = JSON.parse(readFileSync(`public/downloads/${document.filename}.ipynb`, \"utf8\"));\n    assert.deepEqual(actual, notebookDownload(document));\n    assert.equal(actual.nbformat, 4); assert.equal(actual.nbformat_minor, 5);\n    assert.equal(new Set(actual.cells.map((c: { id: string }) => c.id)).size, actual.cells.length);\n    for (const c of actual.cells) if (c.cell_type === \"code\") { assert.equal(c.execution_count, null); assert.deepEqual(c.outputs, []); }\n    assert.doesNotMatch(JSON.stringify(actual), /C:\\\\\\\\Users|aivora-p4-notebook-|token=|kernel-[a-f0-9]+\\.json/);\n    assert.equal(\"version\" in actual.metadata.language_info, false);\n    assert.ok(lesson.resources.some(r => r.href === `/downloads/${document.filename}.ipynb` && r.format === \"Notebook\"));\n  }\n});\n\ntest(\"新1.5r1进度重载恢复，旧四课/第五章/其他课程和r1/r2保留\", () => {\n  const memory = new Map<string, string>(), storage = { getItem: (k: string) => memory.get(k) ?? null, setItem: (k: string, v: string) => { memory.set(k,v); } };\n  const store = createProgressStore(() => storage);\n  for (const id of [\"PY101-C01-L01\", \"PY101-C01-L02\", \"PY101-C01-L03\", \"PY101-C01-L04\", \"PY101-C05-L01\", \"ML201-C04-L01\"]) { const scope = lessonProgressScope(lessonRegistry.get(id)!); store.save(scope,100,scope.sectionIds[0],true); if (scope.contentVersion > 1) store.save({...scope,contentVersion:1},100,scope.sectionIds[0],true); }\n  const old = new Map(memory), scope = lessonProgressScope(lesson);\n  assert.equal(progressKey(scope), \"aivora:learning:v2:PY101:PY101-C01-L05:r1\"); assert.equal(store.getSnapshot(scope), null);\n  store.save(scope,48,\"stale-state\"); assert.equal(parseReadingProgress(createProgressStore(() => storage).getSnapshot(scope),scope)?.section,\"stale-state\");\n  for (const [k,v] of old) assert.equal(memory.get(k),v);\n});\n",
+      "afterSha256": "8335c26671cd406364a8adab6d7aafbe00c52c4e439072cae57b230a5760ed93"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "PY101-C01-L05",
+      "before": {
+        "id": "PY101-C01-L05",
+        "courseId": "PY101",
+        "chapterId": "PY101-C01",
+        "contentVersion": 1,
+        "title": "在Jupyter中按顺序运行单元格",
+        "subtitle": "代码已经改了，为什么还是旧输出？在自己的Notebook里观察内核状态，再从头重跑。",
+        "learningTime": {
+          "reading": [
+            12,
+            18
+          ],
+          "practice": [
+            6,
+            10
+          ],
+          "coding": [
+            20,
+            30
+          ],
+          "basis": "editorial-estimate"
+        },
+        "optionalLesson": false,
+        "assessmentMap": [
+          {
+            "objective": 1,
+            "exerciseIds": [
+              "create-own-notebook"
+            ]
+          },
+          {
+            "objective": 2,
+            "exerciseIds": [
+              "recover-cell-order"
+            ]
+          },
+          {
+            "objective": 3,
+            "exerciseIds": [
+              "create-own-notebook",
+              "recover-cell-order"
+            ]
+          }
+        ],
+        "prerequisites": "已完成1.1–1.4：保存和运行.py，确认项目目录、.venv及实际解释器，能修复环境错配。本课沿用已有基础Python与项目环境；安装Notebook需要网络和获准的本地软件安装条件。手机可读，实际操作需要电脑。",
+        "prerequisiteLinks": [
+          {
+            "title": "1.1 保存并执行源码",
+            "href": "/learn/PY101/PY101-C01-L01#run-script",
+            "note": "补齐本地运行与真实输出。"
+          },
+          {
+            "title": "1.2 确认当前目录",
+            "href": "/learn/PY101/PY101-C01-L02#relative-route",
+            "note": "补齐相对路径。"
+          },
+          {
+            "title": "1.3 保存与重跑",
+            "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+            "note": "区分编辑、保存与执行。"
+          },
+          {
+            "title": "1.4 用实际解释器核验环境",
+            "href": "/learn/PY101/PY101-C01-L04#observe-env",
+            "note": "准备项目.venv，补齐路径观察。"
+          }
+        ],
+        "objectives": [
+          "在项目环境启动本地Jupyter，确认内核并创建、运行和保存含文字与代码的Notebook",
+          "预测并观察旧状态与乱序错误，解释原因，用重启和按序执行恢复",
+          "重新打开保存的Notebook，在正确的干净内核中从头完整运行并保留实际证据"
+        ],
+        "sections": [
+          {
+            "id": "why-notebook",
+            "title": "把说明和几段代码放在同一份文档里",
+            "navGroup": "start",
+            "navLabel": "本地Notebook",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "你已经会把几行Python保存成.py并运行。现在想在同一份记录里先写一段说明，再逐段运行代码、保留各段结果。Jupyter Notebook提供这种文档，文件以.ipynb结尾。文档中的一小块文字或代码叫单元格，可以分别编辑和运行。"
+              },
+              {
+                "type": "paragraph",
+                "text": "方便逐格运行，也带来一个疑问：上方代码已经改成新文字，下方却仍显示旧结果；重启后，同一格甚至报错。本节用两格短代码亲自观察，再把自己的文档整理成从头能跑的版本。"
+              }
+            ]
+          },
+          {
+            "id": "local-start",
+            "title": "从项目环境启动本地Notebook",
+            "navGroup": "setup",
+            "navLabel": "安装与启动",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "在自己的练习位置准备notebook-lab；可沿用1.4已核对的项目环境，或按1.4在这个新目录创建.venv。cd到项目根，用pwd和文件清单确认位置及环境解释器。Notebook文件放在项目根，与.venv并列，不进入环境目录。"
+              },
+              {
+                "type": "code",
+                "code": "notebook-lab/\n├── .venv/\n└── first-notebook.ipynb  ← 稍后新建",
+                "filename": "本课项目布局",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "先用环境中明确的Python核对pip位置。pip是这里用来安装Notebook程序的工具；只需认识这一次用途，完整依赖管理留后续。下列结果中的安装位置应属于本项目.venv，Python版本应与已核对的环境一致。"
+              },
+              {
+                "type": "code",
+                "code": "& \".\\.venv\\Scripts\\python.exe\" -m pip --version",
+                "filename": "Windows · PowerShell · 项目根",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "./.venv/bin/python -m pip --version",
+                "filename": "macOS · zsh / bash · 项目根",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "首次安装需要网络下载Notebook及其必要依赖，正常等待与下载故障都另计时间。使用同一环境解释器执行下一条，等安装成功、终端返回提示符再继续。已有可用Notebook时先核对环境中的版本，不重复安装其他Python或整套工具。"
+              },
+              {
+                "type": "code",
+                "code": "& \".\\.venv\\Scripts\\python.exe\" -m pip install notebook",
+                "filename": "Windows · PowerShell · 项目根",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "./.venv/bin/python -m pip install notebook",
+                "filename": "macOS · zsh / bash · 项目根",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "若遇网络、权限、证书或版本兼容错误，保存命令和完整提示，向教学支持核对获准网络、Python支持范围及安装位置；不关闭安全保护、不改全局配置或随意换不可信镜像。安装成功后，用上面同一环境的Python路径，把-m pip --version部分换为-m notebook --version执行，记下实际Notebook版本，再从项目根执行下方启动命令："
+              },
+              {
+                "type": "code",
+                "code": "& \".\\.venv\\Scripts\\python.exe\" -m jupyter notebook",
+                "filename": "Windows · PowerShell · 项目根",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "./.venv/bin/python -m jupyter notebook",
+                "filename": "macOS · zsh / bash · 项目根",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "这次终端会持续显示服务日志，通常不会立即回到输入提示符。它启动本地Notebook服务器，用来提供网页界面和管理会话。浏览器若没自动打开，就复制日志中实际给出的本地访问地址。检查是localhost或127.0.0.1，端口以本次日志为准，不假定总是8888。"
+              },
+              {
+                "type": "paragraph",
+                "text": "地址可能带token，它是本次访问凭据，只在自己的浏览器使用，不贴进作业、Git或公开截图。保留默认本地监听和认证，不使用0.0.0.0开放服务。这里运行的是你电脑上的Jupyter，Aivora网页只提供教材。"
+              }
+            ]
+          },
+          {
+            "id": "first-cells",
+            "title": "新建文档，先说明，再运行两格",
+            "navGroup": "cells",
+            "navLabel": "创建与运行",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "本课以Notebook 7的浏览器界面为例。在文件列表使用New / New Notebook创建Python Notebook；若出现内核选择，先选本项目可用的Python内核，稍后用实际路径核验。用File → Rename将Untitled命名为first-notebook.ipynb，并确认保存位置为项目根；界面文字可能随版本变化。"
+              },
+              {
+                "type": "paragraph",
+                "text": "选中第一格，用工具栏的单元格类型列表把Code改为Markdown。Markdown文字格用于说明，写入下面这一句即可，不需要学习完整排版语法。按Shift+Enter运行它，文字应变成阅读状态，未被当作Python执行。"
+              },
+              {
+                "type": "code",
+                "code": "这份Notebook记录一次小型状态观察。先设置任务标签，再显示它。",
+                "filename": "第一格 · Markdown文字",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "接着新建两个Code代码格（运行末尾一格后，Shift+Enter通常会选到或新增下一格，也可用工具栏的加号）。第二格只放下面一行，第三格只放print那一行，不把两行合成一格。"
+              },
+              {
+                "type": "code",
+                "code": "marker = \"Draft A\"",
+                "filename": "first-notebook.ipynb · 代码格一",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "print(marker)",
+                "filename": "first-notebook.ipynb · 代码格二",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "这里只临时认识一种新写法：marker是当前运行内核暂时记住的名字，等号让它对应右边的文字。print(marker)显示这个名字此刻对应的内容，引号里的Draft A仍是已学过的字符串。完整变量、类型和赋值规则在后续章节学习。"
+              },
+              {
+                "type": "paragraph",
+                "text": "先预测第三格输出，再选第二格按Shift+Enter，接着运行第三格。第三格下方应出现Draft A。第二格没有普通输出，仍已执行。执行时编号可暂显示[*]，结束后变为数字；短代码变化很快，未必看得见忙碌标记。运行编号和状态帮助观察提交与结束，最后仍核对真实结果。"
+              },
+              {
+                "type": "code",
+                "code": "Draft A",
+                "filename": "首次顺序运行 · 预期输出",
+                "language": "text"
+              }
+            ]
+          },
+          {
+            "id": "kernel-check",
+            "title": "运行代码的是内核，浏览器负责显示",
+            "navGroup": "cells",
+            "navLabel": "创建与运行",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "table",
+                "caption": "把三种对象分开",
+                "columns": [
+                  "对象",
+                  "负责什么",
+                  "保存或关闭后会怎样"
+                ],
+                "rows": [
+                  [
+                    ".ipynb文件",
+                    "保存代码、文字、元数据以及可保存的输出",
+                    "文件留在磁盘；不等于保存了运行中所有名字"
+                  ],
+                  [
+                    "Notebook服务器",
+                    "提供本地网页界面、文件和会话管理",
+                    "关浏览器不保证服务停止"
+                  ],
+                  [
+                    "Python内核",
+                    "实际执行代码，保留运行期间名字对应的内容",
+                    "重启会清除这次运行状态"
+                  ]
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "浏览器把代码交给内核执行，再显示返回结果。启动服务器的Python与代码内核不能未经核验就当成同一份。在文档末尾再建一个Code格，原样运行下面的只读观察工具，不要求自己写import/sys。"
+              },
+              {
+                "type": "code",
+                "code": "import sys\nprint(sys.executable)",
+                "filename": "现成内核观察格",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "把输出的完整解释器位置与目标项目.venv对应：Windows应属于其Scripts/python.exe，macOS属于bin/python。内核标题只写Python 3或版本相同不足为证。若不符，查看Kernel菜单的Change Kernel或右上角内核选择，选目标环境对应项，再重新诊断。"
+              },
+              {
+                "type": "paragraph",
+                "text": "主流程在项目环境安装Notebook后，通常已有Python内核可用，无需人人额外执行用户级内核注册。列表缺少目标时，先确认安装/启动来自同一项目、该环境有ipykernel；按官方帮助请支持人员检查发现方式，再做有条件的修复，不猜选另一个Python。VS Code的Notebook Kernel选择也不同于普通.py解释器选择，本课继续用浏览器Notebook完成操作。"
+              }
+            ]
+          },
+          {
+            "id": "stale-state",
+            "title": "文字改了，为什么仍然显示Draft A？",
+            "navGroup": "state",
+            "navLabel": "状态与顺序",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "保持当前内核运行，把第二格改成下方内容，暂不执行这格。先预测：此刻只重跑第三格，会显示Draft A还是Ready B？写下判断，再选第三格运行。"
+              },
+              {
+                "type": "code",
+                "code": "marker = \"Ready B\"",
+                "filename": "first-notebook.ipynb · 修改代码格一",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "这一次仍应显示Draft A。编辑只改变单元格文本；内核上次真正执行的还是Draft A那次赋值，名字对应的内容没有自动更新。按保存也只是写文件，并不执行新代码。"
+              },
+              {
+                "type": "paragraph",
+                "text": "再实际运行改后的第二格，随后运行第三格，输出才变成Ready B。上方文本、下方先前的输出和内核当前状态可以一时不一致，记录真实执行过哪一格，才能解释屏幕上的结果。"
+              },
+              {
+                "type": "code",
+                "code": "Ready B",
+                "filename": "重新执行后 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "quiz",
+                "id": "saved-output-state",
+                "question": "改了赋值格并保存，但没执行它，显示格仍输出旧文字。最直接的解释是什么？",
+                "options": [
+                  "内核还保留此前实际执行的状态，保存没有执行新赋值",
+                  "文件保存失败，Python一定损坏了"
+                ],
+                "correct": 0,
+                "explanations": [
+                  "比较文本、磁盘和运行状态；重新执行提供名字的格，再执行显示格观察变化。",
+                  "当前现象本身不能证明文件或解释器损坏，应先核对真实执行顺序。"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "restart-order",
+            "title": "重启后先显示，会发生什么？",
+            "navGroup": "state",
+            "navLabel": "状态与顺序",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "先保存当前文档。使用Kernel菜单中的Restart Kernel重启，并在确认框确认。此步选择仅重启，暂不选重启并全部运行。等待内核恢复空闲后，先运行第三格print(marker)，不先运行第二格。"
+              },
+              {
+                "type": "paragraph",
+                "text": "这次应出现NameError，错误中会提到marker尚未定义。重启清除了此前记住的名字；虽然赋值代码仍在文档中、文件也存在并已保存，它还没在这个新内核执行。内核路径在前一步已核验，本实验只改变执行顺序，无需重装Python或更换环境。"
+              },
+              {
+                "type": "paragraph",
+                "text": "保留刚才先运行哪格、实际错误和解释。现在运行提供marker的第二格，再运行第三格，应恢复Ready B。恢复不是让错误文字消失就结束，还要完成下一步的从头核验。"
+              }
+            ]
+          },
+          {
+            "id": "clean-run",
+            "title": "用一次干净执行检查整份文档",
+            "navGroup": "rerun",
+            "navLabel": "保存与复跑",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "把文档排成说明、marker赋值、print(marker)、观察工具的顺序，赋值文本保留Ready B。使用当前界面的Restart Kernel and Run All Cells；也可先Restart Kernel确认重启，再用Run菜单的Run All Cells。两种方式都要先清除状态，再按文档从上到下运行。仅在旧内核点Run All可能掩盖缺少定义的问题。"
+              },
+              {
+                "type": "paragraph",
+                "text": "等待所有必要代码格结束，检查：显示格为Ready B、没有错误、观察格仍指向目标.venv。执行计数说明提交顺序，会随重跑变化；屏幕上下排列和旧计数本身不证明刚从干净状态成功执行。把重启动作、实际输出和环境位置一起记下来。"
+              },
+              {
+                "type": "downloads",
+                "resourceIds": [
+                  "first-notebook-file"
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "下载是最终可按顺序运行的同源核对稿，初始没有输出；第一次动手仍建议自己创建主例。下载并运行核对稿不能替代后面的独立新题。"
+              }
+            ]
+          },
+          {
+            "id": "save-stop",
+            "title": "保存文件，再关闭会话与服务",
+            "navGroup": "rerun",
+            "navLabel": "保存与复跑",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "使用File → Save Notebook或工具栏保存，Windows通常Ctrl+S、macOS为Command+S；确认保存标记，并在本地文件管理器或项目清单确认first-notebook.ipynb确实存在。它可能保存刚才输出，但不会让运行时名字自动进入另一个新内核。"
+              },
+              {
+                "type": "paragraph",
+                "text": "保存后关闭这份文档，从Jupyter文件列表重新打开，核对文件名与内核，再明确重启并全部运行，检查Ready B和环境路径，最后再保存。只关浏览器标签可能重新连接尚未结束的内核，不把重开页面当作干净执行证明。"
+              },
+              {
+                "type": "paragraph",
+                "text": "结束时先保存；用File → Close and Shut Down Notebook关闭当前文档会话，或用Kernel → Shut Down Kernel关闭内核，在Running列表确认它不再运行。回到启动服务的那个终端按Ctrl+C；若出现关闭确认，按实际提示确认，等待服务退出并返回命令提示符。若终端宿主的中断流程不清楚，Notebook 7还可用File → Shut Down并确认，看到Server stopped后回启动终端核对已退出。只关闭网页不代表本地服务器已停止，也不要终止其他项目的Python进程。"
+              },
+              {
+                "type": "paragraph",
+                "text": "若启动候选命令无法找到Notebook入口，先确认同一环境内安装成功；可按官方说明使用该环境实际存在的Scripts/jupyter-notebook.exe（macOS为bin/jupyter-notebook）启动。命令和版本问题保留完整提示交支持人员，不用关闭认证或更改全局PATH解决。"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "交付自己的文档与一次恢复记录",
+            "navGroup": "practice",
+            "navLabel": "独立练习",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "exercise",
+                "id": "create-own-notebook",
+                "title": "建立自己的Notebook并重启复跑",
+                "kind": "实验",
+                "prompt": "在目标项目环境中自己新建Notebook，自选.ipynb文件名，不直接交下载稿。写至少一格Markdown说明；自选与正文不同的名字和短文字，将最小赋值、print显示分成代码格，再用现成观察格核对内核。先预测输出，按文档顺序实际运行并保存。重新打开后确认目标内核，明确重启，从头完整运行，再保存。交付真实.ipynb及简短证据：位置、启动命令/版本、实际内核路径、预测/输出、重启动作和全部运行结果；不含访问token。只有文字报告或旧输出截图不足以完成。",
+                "hints": [
+                  "先区分文档、服务与内核。需要哪种单元格保存说明，哪个格提供后续显示所需的名字？",
+                  "核对项目位置和实际Python路径，再检查各格类型与依赖。保存并重新打开之后，怎样清除之前记住的内容，验证文档本身足够？最后自己执行和比较。"
+                ],
+                "solution": [
+                  "例如自己建立own-plan.ipynb，写一格说明，再用plan_text = \"Sketch D8\"与print(plan_text)两格，先预测Sketch D8。这是一个示例，自己的名称与文字应另选，源码位于环境目录外。",
+                  "以项目环境启动Notebook，运行现成sys.executable观察格，完整位置应属于自己的.venv；实际运行赋值与显示格，保存真实输出和.ipynb。",
+                  "保存、重新打开后仍确认内核，明确重启并按文档顺序全部执行。检查没有错误、显示自己的预期文字，再次保存；证据说明何时重启，不能仅说关过页面。",
+                  "常错是把说明留作Code、只改文本不执行、照抄参考稿、只交已有输出。接受自选名字、普通文字Markdown、等价干净新会话或先重启再全部运行；条件是文件和实际执行证据相互对应。"
+                ],
+                "rubric": [
+                  "新文件命名/位置正确，含自写说明与自选名字/文字的最小代码，实际目标内核有路径证据。",
+                  "有运行前预测、真实输出与保存的.ipynb，说明代码如何依次提供和使用名字。",
+                  "重新打开并核对内核，从明确干净状态完整执行成功再保存；不以下载点击、旧输出或读完标记代替。"
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "下一题换成出库标签，保持相同的已核验项目内核。可下载起始文档，也可自己用下方两格建立dispatch-note.ipynb。文件与代码均已保存，只有最小赋值与print，不存在缺包或解释器错配。"
+              },
+              {
+                "type": "code",
+                "code": "delivery_note = \"Packed C7\"",
+                "filename": "dispatch-note.ipynb · 代码格一",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "print(delivery_note)",
+                "filename": "dispatch-note.ipynb · 代码格二",
+                "language": "python"
+              },
+              {
+                "type": "downloads",
+                "resourceIds": [
+                  "dispatch-notebook-file"
+                ]
+              },
+              {
+                "type": "exercise",
+                "id": "recover-cell-order",
+                "title": "出库标签为什么在重启后失败？",
+                "kind": "实验",
+                "prompt": "在dispatch-note.ipynb中，用正确环境的干净内核，先预测并实际运行后面的显示单元格，保存真实错误与执行顺序。保持现有两段源码语法和内核选择不变，独立判断原因，决定需要怎样调整运行或排列。恢复后做一次短观察：只把提供名字格中的文字改成自选新标记，暂不执行它；预测并重跑显示格，记录和解释结果。再让最终文本与执行结果一致，重新打开后确认目标内核、明确重启，按文档顺序完整运行所有核心代码并保存.ipynb。交付错误/短观察的预测与现象、原因、修复、干净重跑和保存证据，解释为何不依赖旧状态。题目不混入未保存、缺包和环境错误。",
+                "hints": [
+                  "看当前内核从重启以来真正执行过哪些格。出错的名字依赖哪一次执行？",
+                  "找到提供该名字的格，与使用它的格比较位置和执行记录。决定文档怎样组织，再用清除状态后的完整执行检验，不能只靠此前已记住的内容。"
+                ],
+                "solution": [
+                  "先在重启后的内核运行print(delivery_note)，实际应出现NameError，提到该名字未定义；保留执行顺序与错误。源码已保存并不代表它已在新内核运行。",
+                  "赋值格提供delivery_note对应的Packed C7。让文档中提供名字的格位于使用格之前，实际执行后显示应为Packed C7；不修改字符串去掩盖问题，也无需换环境。",
+                  "短观察例如把赋值文字改为Packed New E6而暂不执行，预测后只跑显示格，仍应得到Packed C7。内核还记住上一次实际赋值；再执行修改格和显示格才变为新标记。学生须用自己的标记和真实记录，不能抄这组输出。",
+                  "保存并重新打开，确认目标内核，再明确重启、从上到下全部执行；检查所有必要格无错、显示最终自选标记、观察工具仍为目标环境，再保存文件和真实输出。这证明不依赖旧会话残留的名字。",
+                  "若原排列已正确，可以保留它，只修正执行操作；若曾移动格，则整理依赖后重验。常错是单独补跑却不做干净全跑、把旧输出当新执行、删报错截图代替修复。合理新会话也接受，但要有清除旧状态及完整执行的证据。"
+                ],
+                "rubric": [
+                  "从干净内核真正复现显示格先运行的NameError，保留顺序与现象，不捏造其他故障。",
+                  "解释名字尚未在当前内核定义，给出合理修复；短观察有预测、真实旧值及文本尚未执行的解释。",
+                  "重新打开后确认目标内核，再从明确干净状态按文档顺序全跑成功，保存.ipynb及最终自选标记的实际结果，说明为何不依赖旧状态；报告不能替代文件与执行。"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "next-step",
+            "title": "把能重跑的文件交给下一次自己",
+            "navGroup": "finish",
+            "navLabel": "下一步",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "留好自己的.ipynb与短记录：哪个环境启动，实际内核在哪，先执行了哪些格，重启后能否按文档顺序重现结果。屏幕上的旧输出可以帮助回看，干净重跑才检验当前代码是否完整。"
+              },
+              {
+                "type": "paragraph",
+                "text": "下一节1.6「让别人复现一次环境问题」仍在规划，没有教材页。它会组合脚本、路径、编辑器、虚拟环境与Notebook的已有操作，本节无需提前学习依赖锁定或远程服务。阅读器可能跳到第5章，函数课仍需变量、表达式和控制流程等基础，不能把本次最小赋值实验当成已学完整变量章节。"
+              }
+            ]
+          }
+        ],
+        "resources": [
+          {
+            "id": "first-notebook-file",
+            "title": "first-notebook.ipynb",
+            "href": "/downloads/first-notebook.ipynb",
+            "format": "Notebook",
+            "description": "最终核对稿：同源Ready B版本，空输出；用于对照，不替代独立新建练习。"
+          },
+          {
+            "id": "dispatch-notebook-file",
+            "title": "dispatch-note.ipynb",
+            "href": "/downloads/dispatch-note.ipynb",
+            "format": "Notebook",
+            "description": "出库标签起始稿：同源两格任务；故意乱序需自己操作，默认文档可按序运行。"
+          }
+        ],
+        "references": [
+          {
+            "title": "Jupyter安装",
+            "href": "https://jupyter.org/install",
+            "note": "Notebook安装与启动。"
+          },
+          {
+            "title": "Notebook用户文档",
+            "href": "https://jupyter-notebook.readthedocs.io/en/stable/",
+            "note": "界面和单元格，留意版本。"
+          },
+          {
+            "title": "运行与内核状态",
+            "href": "https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Running%20Code.html",
+            "note": "逐格运行、重启与顺序。"
+          },
+          {
+            "title": "Jupyter Server安全",
+            "href": "https://jupyter-server.readthedocs.io/en/stable/operators/security.html",
+            "note": "本地访问与认证保护。"
+          },
+          {
+            "title": "IPython内核",
+            "href": "https://ipython.readthedocs.io/en/stable/install/kernel_install.html",
+            "note": "不同环境内核的条件性安装说明。"
+          }
+        ]
+      },
+      "afterSha256": "6d8582d3681428b0ced87ef71efe2c948ae115ef95dbdbb073f267cfb0c7dd5c"
+    }
+  ],
+  "publications": [
+    {
+      "id": "PY101-C01-L05",
+      "before": {
+        "lessonId": "PY101-C01-L05",
+        "courseId": "PY101",
+        "chapterId": "PY101-C01",
+        "title": "在Jupyter中按顺序运行单元格",
+        "contentVersion": 1,
+        "order": 5,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p4/TECHNICAL_REPORT.md"
+      },
+      "afterSha256": "377084f425b4b518ed0961b955b06b3a4bf14b02bae5ae6132dfd352d15e6393"
+    }
+  ],
+  "workspaceOnly": [
+    {
+      "path": "next-env.d.ts",
+      "workspaceSha256": "0f70629890b72a0a82e91972cc032c04b658b26c265373cb711cf576bfbf8fcc",
+      "repositorySha256": "1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b"
+    },
+    {
+      "path": "scripts/ai000-r3-compatibility.ts",
+      "workspaceSha256": "96a7b6cc6c39aead9566c216f1ca885fdfcaf59b5ea8921f9dd996582d423174",
+      "repositorySha256": "1eb2ae76d8fb95c15baf78caa3662eb5f7c570431c3d5f016c2970decf62b3ce"
+    },
+    {
+      "path": "src/components/lesson/reader.tsx",
+      "workspaceSha256": "fa0fbf213d3f8dab8bffbfc607f036da184f1926d170b4cf3d4d6d86e0b1a293",
+      "repositorySha256": "6846cbd7c5d7552926cf10c8d41a385dca3e5b467270733f6fcc5cbecf03c530"
+    },
+    {
+      "path": "tests/reading-experience.test.ts",
+      "workspaceSha256": "072d10fefa6902dbaa2c03084eb7ac289eeb75e570a4a4067ffe23850ace19e0",
+      "repositorySha256": "11a7b088845ab0b61a81fd89ebc0c098909bd2c08d1217002e3b61e5c0ed112b"
+    }
+  ],
+  "protectedText": [
+    {
+      "path": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md",
+      "baselineSha256": "f52133d689032825b81d6fa8aefeee5d235d245134ce137c15c685c4b09c753a",
+      "lfSha256": "0f43604178b66929fa04643f1403637fcd043570d7f5e1e7be1c76825f5a24e2"
+    },
+    {
+      "path": "docs/AI000_LESSON_4_3_REVIEW.md",
+      "baselineSha256": "0fca3e4fb7ff5bc16427ca5c6e24018c5a9f114ee6d6cfe169f0954d8d76cf27",
+      "lfSha256": "7a6b497df05a5ade87811aa48df4946f8ae92ea6f9b51a7a1d8b4f764e112cf8"
+    },
+    {
+      "path": "docs/AI000_LESSON_5_4_REVIEW.md",
+      "baselineSha256": "56da59475b18f83147fc1d82395e61526a9ff53815f4465ed1c77138390dfd0d",
+      "lfSha256": "5f8d8de5800230f65c485b77b970b3b817efa91aab07db5fdb9aad61003b6c1f"
+    },
+    {
+      "path": "docs/AI000_LESSON_6_1_REVIEW.md",
+      "baselineSha256": "6be0d750c1f5a81fd7b793bb2496cc5dbbef4f04e0d6bced1aae6b06db3ad727",
+      "lfSha256": "88796be7d36a635b48590fc49dff00539fb2540e982ddfd96aa05afa249d3859"
+    },
+    {
+      "path": "docs/TEACHING_V2_3_BUILD.txt",
+      "baselineSha256": "e443ca9bbd61718b7f48a88abe6128c5854a9b1dbbd4067a93f29ecc873ef69c",
+      "lfSha256": "16c8fa47b640fc12373d2cb859c821a8fa9a0ef55a59232dc9b5ddd3128f0c96"
+    },
+    {
+      "path": "docs/TEACHING_V2_3_TEST_RESULTS.txt",
+      "baselineSha256": "45eca50586a6d6993d47e7cfb4be51b2eac7598b6ce7e3d8c08f3aff6e904729",
+      "lfSha256": "a9e3df7261629f2fd1d6ff7a59bd5d63b118970c923c3cbff90bcf26b963b715"
+    },
+    {
+      "path": "docs/ai000-1-1/BUILD.txt",
+      "baselineSha256": "50e16f0557672832c480b4800559c0210ef135ab20fe6a80a3f8a76d0136c506",
+      "lfSha256": "480b1f975c41a7cec3eff585ed7f239e5134d6d805d6e9b07f1bbc06c47b2626"
+    },
+    {
+      "path": "docs/ai000-1-1/DOWNLOADS.txt",
+      "baselineSha256": "c5d7cc0d333443797fc75874d02798d7f59b17ef5d72f2ff264f1deece952d15",
+      "lfSha256": "ec96c752f521aa82985638d05c1aa004e68434201eded43b46896221f1aca599"
+    },
+    {
+      "path": "docs/ai000-1-1/DRAFT_BUILD.txt",
+      "baselineSha256": "05cd59cf859ee781300c7e75cf7f1461c761c6100acde981fd21e7646951a7cf",
+      "lfSha256": "aa0f59b01d4a2d7c611a63d955c3a5bfbcf89e9d7d900e5eb5e45d1fc330ae2b"
+    },
+    {
+      "path": "docs/ai000-1-1/DRAFT_LINT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-1-1/DRAFT_TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-1-1/EDITING_CHECK.txt",
+      "baselineSha256": "93dd51e28f67a01a5b4237eba2db5b735ca4b071b3398be5cd984cdc11525842",
+      "lfSha256": "ca8e58054a72618166478909ce461af03a649bcbe8c311fab2caa94913f47640"
+    },
+    {
+      "path": "docs/ai000-1-1/LINT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-1-1/PYTHON_CHECK.txt",
+      "baselineSha256": "94855cd50399080bb288b54393b62b368a94fb7cc5b7d2072f633945195ae7f2",
+      "lfSha256": "3add5c082dd5c5f215883b1b52cd9cc67ea28ffbf48257e1c216fc5f46881cbf"
+    },
+    {
+      "path": "docs/ai000-1-1/ROUTES.txt",
+      "baselineSha256": "7009f84480bf621f96c987ec3a361d0af6e6f14d868989c65742686581d14fe0",
+      "lfSha256": "04e1112dfd0c371707749d68eee6acac246f08b3bd8dfc3dce434d99d6bc01f4"
+    },
+    {
+      "path": "docs/ai000-1-1/TEACHING_CHECK.txt",
+      "baselineSha256": "b974edb70689a9456ffefb0999c6f0b0da1e6e02569692c6f535c21436cfa1c9",
+      "lfSha256": "aafb9f26ce3a702e57c5128819e254a97718390a32fb5e9c756c7c51bd3d6a63"
+    },
+    {
+      "path": "docs/ai000-1-1/TEST_RESULTS.txt",
+      "baselineSha256": "5c0b3af9b993186605214f66d4e4bf69772094f3167887abd55163eae026ffce",
+      "lfSha256": "be7578e40ded3a7bebb9f28796319d6fcf20c0ae4abb692755f34e81f58187bb"
+    },
+    {
+      "path": "docs/ai000-1-1/TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-2-1/BUILD.txt",
+      "baselineSha256": "531d2a82483ad09a7533918c52d8287c9a24bf7d0fbc6f03873951180b8ee7cd",
+      "lfSha256": "3dcf2a05ebfca27d92170b1c2c224e6fa22a664ab479db574249b55937773e54"
+    },
+    {
+      "path": "docs/ai000-2-1/CONTENT_CHECK.txt",
+      "baselineSha256": "56bdcea44630cd6ed3324cc21aa5bb280800315569b088535e2da6d20b60e4bd",
+      "lfSha256": "9d76a1d09e36a9201af78ed234d3e64bf03180b80ea6b9a5f2021c7ffe057559"
+    },
+    {
+      "path": "docs/ai000-2-1/DOWNLOADS.txt",
+      "baselineSha256": "c5d7cc0d333443797fc75874d02798d7f59b17ef5d72f2ff264f1deece952d15",
+      "lfSha256": "ec96c752f521aa82985638d05c1aa004e68434201eded43b46896221f1aca599"
+    },
+    {
+      "path": "docs/ai000-2-1/DRAFT_BUILD.txt",
+      "baselineSha256": "9646c9f0709022e1337ebb914017c4130a360a01cdcbc6203f7280bcbafa3558",
+      "lfSha256": "2c6d1930093f019316f88b8c97c861eb71ce045eca076af40317a9b601d97afe"
+    },
+    {
+      "path": "docs/ai000-2-1/DRAFT_HTTP.json",
+      "baselineSha256": "7d40c318a4c43c2d273832bc3cc6ae3b5b1919fa054c9f23567f94dce1faa79d",
+      "lfSha256": "d6dbcfc08b2bd95080e8c3ae39760fdea551d275bb172c527cc490cb11fec1d4"
+    },
+    {
+      "path": "docs/ai000-2-1/DRAFT_TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-2-1/INITIAL_BUILD_FAILURE.txt",
+      "baselineSha256": "33f69addd96e266ec9afbf67bf4df372e02d6ed03feeaaa1d36163e8b2f58738",
+      "lfSha256": "66d3faf38460cd8706e219e1148cca577251dfb90dd3e012d25a62670b53360b"
+    },
+    {
+      "path": "docs/ai000-2-1/INITIAL_TYPECHECK_FAILURE.txt",
+      "baselineSha256": "1cec3bccc5e1d3084a2df092281dbd92219e803e47af1a124aaf2fde1e209894",
+      "lfSha256": "ca4612cb7b56b4870a80919534ac52395dd0536fa7b20476a30fdc41eae4cb10"
+    },
+    {
+      "path": "docs/ai000-2-1/LINT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-2-1/PYTHON.txt",
+      "baselineSha256": "b3f835054aaeb8654515b2f902292aa6e085831b3c215ccc77e6eed43e54115d",
+      "lfSha256": "6fb732c664c5ddd1a8832874a2cc8bef3f0d41161ec1fe2f468a93ab43317c6d"
+    },
+    {
+      "path": "docs/ai000-2-1/ROUTES.txt",
+      "baselineSha256": "3ce94298af15de3acdf1cbfcdd9c3e673198aa48438b3700e156a6838bf7d1f8",
+      "lfSha256": "10a0362b582a1906c6aa8c06e6adc4e334485fbf27551adeba16853d09547975"
+    },
+    {
+      "path": "docs/ai000-2-1/TEACHING.txt",
+      "baselineSha256": "a1c976d655605ab2d597d12355ac0b92bb6875777c0bf5492b8fd39660af6ec6",
+      "lfSha256": "b1f28d7d47aa71e348728a830f2ca431a4db32350d64015f71133303de29ab80"
+    },
+    {
+      "path": "docs/ai000-2-1/TEST_RESULTS.txt",
+      "baselineSha256": "09f3aed7f81071a95e0859e89c1498ae89386de4c148a961876c1da5b1bea299",
+      "lfSha256": "a0650e0365634e9bd1914b1b0a10628d92b5166a0b305a6110ccba2c00a68358"
+    },
+    {
+      "path": "docs/ai000-2-1/TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-3-1/DRAFT_HTTP.json",
+      "baselineSha256": "111c1e6716c01dfc477f54a6eff8b2f7878e86b623f4ea0bc773b863a638b628",
+      "lfSha256": "4fb33d049dd501d9665afd2c0c69c6a83fc7b64bef0f424a4ef618b64f3b01f3"
+    },
+    {
+      "path": "docs/ai000-3-2/DRAFT_HTTP.json",
+      "baselineSha256": "464bf5a79dd37f99c9f6e37704b6cf4a4b91c55cb30d6119eb6589b317d41805",
+      "lfSha256": "df289e4f8070c25b4d8a77c4ddef9df14e62e7c3241969e644b62fdfa742146e"
+    },
+    {
+      "path": "docs/ai000-3-3/BUILD.txt",
+      "baselineSha256": "93e6861b5196c8718640b37c92d67bbc6f6fb84ed87b2085ce15153a56ab9782",
+      "lfSha256": "da7fbaa8ce9f42f605b0c606f566e4d147a127b8a7cad95f2ebd4ce5e613ee90"
+    },
+    {
+      "path": "docs/ai000-3-3/BUILD_DRAFT.txt",
+      "baselineSha256": "b5d3c0635ba920c8278da79362c118334b7033d99245a98fe4fe427d82c4b0fb",
+      "lfSha256": "98dd378a1add9e779acbb83c6461488f46863ced4b655c6d4dbd59ee1783ecf6"
+    },
+    {
+      "path": "docs/ai000-3-3/CONTENT_FINAL.txt",
+      "baselineSha256": "f76817ae0aad94dbd37c0517d85ca1190089de31900e7cb619d7d9e613ef6b10",
+      "lfSha256": "4ca2fe6f800e872e838e18b7b127d359fe50651a69dd61a5b626d33764723d79"
+    },
+    {
+      "path": "docs/ai000-3-3/DOWNLOADS.txt",
+      "baselineSha256": "c5d7cc0d333443797fc75874d02798d7f59b17ef5d72f2ff264f1deece952d15",
+      "lfSha256": "ec96c752f521aa82985638d05c1aa004e68434201eded43b46896221f1aca599"
+    },
+    {
+      "path": "docs/ai000-3-3/LINT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-3-3/PYTHON.txt",
+      "baselineSha256": "da9d4b2b2692d777f6f9713bc4d367dc247de9a95f861a955752d54137594554",
+      "lfSha256": "4133df658dffc898e2bf7682e373e4ec7f7320801ccf0954dac1bdedbe1e739a"
+    },
+    {
+      "path": "docs/ai000-3-3/REGRESSION_3_1.txt",
+      "baselineSha256": "f7aca25c9d2936f86196c58bd45563f978c81f7aa653ec82c4a2b904394a7544",
+      "lfSha256": "8b710083b18530cb0059eea49aee3cc256f7265443977e9077c85bfd111ee4a6"
+    },
+    {
+      "path": "docs/ai000-3-3/REGRESSION_3_2.txt",
+      "baselineSha256": "92aa38865f18de6a137c8237ffe23efaca114695bf0895c0b70e2e007bdbf152",
+      "lfSha256": "1b945abcc3781dc3914a93f0790cbbe632240dfdebca457aba7bbca43388b2e1"
+    },
+    {
+      "path": "docs/ai000-3-3/REGRESSION_V2.txt",
+      "baselineSha256": "5496d0f5fc93a7cbe3f7d17c6c3f5cebeaee0bc739b039d6e6f8f7d43f73bbc2",
+      "lfSha256": "010c8b8db75d353904f412fbdb3ff21dd0d0e70d775f4b8f3d129f16a1e94e69"
+    },
+    {
+      "path": "docs/ai000-3-3/ROUTES.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-3-3/TEACHING.txt",
+      "baselineSha256": "d304d80404b498e004fd382e6187e098dd79214d001000c81d6bfd2a9b238b7c",
+      "lfSha256": "be99fbdd18c1a5cee3faab408729112eb7a3a8e13e656b4b93a7b772f4515535"
+    },
+    {
+      "path": "docs/ai000-3-3/TEST.txt",
+      "baselineSha256": "8dbb3568199949c99eceba4a1652bc6af7315ec7a49bc943b57762aae1110abd",
+      "lfSha256": "d283df3966a54564c65dadfbb98be0195d7ab16a7683e8945fc1623b8b0abf81"
+    },
+    {
+      "path": "docs/ai000-3-3/TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-3-3/TYPECHECK_CONTENT.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-3-4/BUILD.txt",
+      "baselineSha256": "57cd91338e0f2b120f71fa06245e793434e469f9373947fcae23f52d73d55ec1",
+      "lfSha256": "baffd8bae97ce007c5806fd8425c119afedcf29478fe9047457af3dc7be31939"
+    },
+    {
+      "path": "docs/ai000-3-4/BUILD_DRAFT.txt",
+      "baselineSha256": "3013edef9101fdfcb0e6c042d2d77ffcd3c961149b46985f98ef69baa2c43b9f",
+      "lfSha256": "c1018e39fb8d82a7ffd930d97dcb8ee886d17eed941ee5f2ddf1cc64c1d364aa"
+    },
+    {
+      "path": "docs/ai000-3-4/BUILD_DRAFT_FAILURE.txt",
+      "baselineSha256": "c71d1ae685ac2c873d15f5e629bbdedf19e7b1c9edfe62cdb5b6b85e8c08c100",
+      "lfSha256": "37c2a49ffc27e834ed741117c0ed3e759062cb3fb93b4110198e8c3082c5e124"
+    },
+    {
+      "path": "docs/ai000-3-4/CONTENT_FINAL.txt",
+      "baselineSha256": "0773ce8941182ab5caa44cfd225a0b75d026e23c71b3f6f736357fcb52310626",
+      "lfSha256": "ede52848bfb67e5b0479b712a82ab12e660366d45acbced22bfa169512d04593"
+    },
+    {
+      "path": "docs/ai000-3-4/DOWNLOADS.txt",
+      "baselineSha256": "c5d7cc0d333443797fc75874d02798d7f59b17ef5d72f2ff264f1deece952d15",
+      "lfSha256": "ec96c752f521aa82985638d05c1aa004e68434201eded43b46896221f1aca599"
+    },
+    {
+      "path": "docs/ai000-3-4/DRAFT_CONTENT.txt",
+      "baselineSha256": "0773ce8941182ab5caa44cfd225a0b75d026e23c71b3f6f736357fcb52310626",
+      "lfSha256": "ede52848bfb67e5b0479b712a82ab12e660366d45acbced22bfa169512d04593"
+    },
+    {
+      "path": "docs/ai000-3-4/LINT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-3-4/PYTHON.txt",
+      "baselineSha256": "6b9f7eda2e4e66b18d9dd8e8c45cf356f6bdc2b6ecb71f98af9d6cbf81311ebc",
+      "lfSha256": "abcba3776476a47d59ef0ad23620707f015074cb783daf1d4863831c90e65f27"
+    },
+    {
+      "path": "docs/ai000-3-4/ROUTES.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-3-4/TEACHING.txt",
+      "baselineSha256": "0ca14db2d123d9fe012a812ffaafbafe5c154a12e1e0b303e5efad0251213e68",
+      "lfSha256": "4f837458b357d2b683899af9cc2d4df1f42024a8f54ec512bd8033824768e5d7"
+    },
+    {
+      "path": "docs/ai000-3-4/TEST.txt",
+      "baselineSha256": "054e8f23374116f58a8e02df5e5efd256b6a92f309c762b5be4c3695284f6d59",
+      "lfSha256": "4d3fafc05d0ea443ac31992915793b68b9757801ef0108f25d2211d12ee1261f"
+    },
+    {
+      "path": "docs/ai000-3-4/TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-3-4/TYPECHECK_CONTENT.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-4-1/AI000_STRUCTURE.txt",
+      "baselineSha256": "053e5cc92c4009169083cb2890a4313b5bb12d1f1634c6473767760a87610038",
+      "lfSha256": "a3953b39280898a59a333f69ff1b23f034154bd6be9f70b678b6f55cc7c428c3"
+    },
+    {
+      "path": "docs/ai000-4-1/AI000_STRUCTURE_INITIAL_FAILURE.txt",
+      "baselineSha256": "536f403b69bbbbffac8c81d92de45a76bd3761147dc6f38e7b8bee79980e7a06",
+      "lfSha256": "16d903902631292c3c386db3e2c2039a062cd0cbd005489036fea99cf51fc75c"
+    },
+    {
+      "path": "docs/ai000-4-1/CONTENT_DRAFT_TESTS.txt",
+      "baselineSha256": "45a3270bf460d0835f2cc9dd20ff82fc34b3e19bde5a39f2c3384c3c9f6101ce",
+      "lfSha256": "b1a79f0868f25304ed6fa035825c77e4d2ac5793fae8755556d6b3b82761367e"
+    },
+    {
+      "path": "docs/ai000-4-1/DOWNLOADS.txt",
+      "baselineSha256": "c5d7cc0d333443797fc75874d02798d7f59b17ef5d72f2ff264f1deece952d15",
+      "lfSha256": "ec96c752f521aa82985638d05c1aa004e68434201eded43b46896221f1aca599"
+    },
+    {
+      "path": "docs/ai000-4-1/DRAFT_HTTP.json",
+      "baselineSha256": "049bbd9c276b42678058bf1c5e24ec4b378b5b09a9d476b40b8e7b720212eb83",
+      "lfSha256": "98d1d934e7bbc6d081d7b3d2854f48bbb3ae2ec75fcd5becdb7928e43755b9dd"
+    },
+    {
+      "path": "docs/ai000-4-1/PYTHON.txt",
+      "baselineSha256": "ff0d5cdbff28d0b7373dffebda49379e5bcad6307da105389d0b122514c7753d",
+      "lfSha256": "79d149c88cb638bd1c6edb69d819d4a95b4a475532bdbbd7746bb8bce9d2d0b2"
+    },
+    {
+      "path": "docs/ai000-4-1/ROUTES.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-4-1/STRUCTURE.txt",
+      "baselineSha256": "a15e2cc7d29c7520e6f3ca1706cbec2bfc2f272ff190c9478aed4c1389f72855",
+      "lfSha256": "ccfd563f2ba1b1e65d1a5a6f8cc2d056739ece177aa7f09770324fb2687da7ac"
+    },
+    {
+      "path": "docs/ai000-4-1/STRUCTURE_DRAFT.txt",
+      "baselineSha256": "a15e2cc7d29c7520e6f3ca1706cbec2bfc2f272ff190c9478aed4c1389f72855",
+      "lfSha256": "ccfd563f2ba1b1e65d1a5a6f8cc2d056739ece177aa7f09770324fb2687da7ac"
+    },
+    {
+      "path": "docs/ai000-4-1/TESTS.txt",
+      "baselineSha256": "17db3696a2da877da73e9606cda0079332c07c024fc0c6f00e56b1ba9345797c",
+      "lfSha256": "378ce50733e14fd6aa0dc361e00d2adb3ed3fb2d6ff3e940e638d3c6d3b76c1e"
+    },
+    {
+      "path": "docs/ai000-4-2/COMPATIBILITY.txt",
+      "baselineSha256": "08ecbac574c6e42e6baf0428711695c34a4d65385b2061787d56205b456e85c1",
+      "lfSha256": "8d024dcb4ee59d96ad33b7fe6e28a62c553aa340fa9edf3529961db5c74d72cc"
+    },
+    {
+      "path": "docs/ai000-4-2/CONTENT_DRAFT_TESTS.txt",
+      "baselineSha256": "493da83e238339e21a9f415db66d9ce469e810df4d59404f02ce5edd00887968",
+      "lfSha256": "1c02e03d3c837ec3c03bf01133238f62688f2aff09d6074c4835125dd45f4f83"
+    },
+    {
+      "path": "docs/ai000-4-2/DOWNLOADS.txt",
+      "baselineSha256": "c5d7cc0d333443797fc75874d02798d7f59b17ef5d72f2ff264f1deece952d15",
+      "lfSha256": "ec96c752f521aa82985638d05c1aa004e68434201eded43b46896221f1aca599"
+    },
+    {
+      "path": "docs/ai000-4-2/DRAFT_HTTP.json",
+      "baselineSha256": "808f076c049b1ac842a567d85aec6e2482240b3026b430256a2626a7dbc22ef1",
+      "lfSha256": "c6f72194d659b7e8a676a1e9a172602c7d58e4ba66d97496d3c760b515441071"
+    },
+    {
+      "path": "docs/ai000-4-2/OTHER_AI000_LANGUAGE_AUDIT.json",
+      "baselineSha256": "40465873338b467e75b7abd72f5499b0159ed96d4efaf9eccfa3bd608ec6897e",
+      "lfSha256": "22eed3aa42c5c4fa74d11c4111d8fc669a0a029c75aeee4db376534e55e61f7b"
+    },
+    {
+      "path": "docs/ai000-4-2/PYTHON.txt",
+      "baselineSha256": "1ca73de003ce010fbe14d96a86ed5ecce78e32790b0f9ba5a80d742d3f5b9ccb",
+      "lfSha256": "5c827335ecaa5e0c1b1ca3f5a457ff379f6728d9bf4bd6606c562894ac2a33d4"
+    },
+    {
+      "path": "docs/ai000-4-2/ROUTES.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-4-2/TESTS.txt",
+      "baselineSha256": "1e07ffe00807da8c340cc8ebfa2275ae8e4033253167b22f913541388d110b0b",
+      "lfSha256": "83d2eccc1b795d6baa13a0cbee9caaeaa644fbcff29b657aae918078f12ff2e6"
+    },
+    {
+      "path": "docs/ai000-4-3/AI000_STRUCTURE.txt",
+      "baselineSha256": "33853026216380788c46fdb0bad258254dcc3efdff08991f05cb5bf87b67a1d8",
+      "lfSha256": "d3e64fdc021effe823e53d79c2238541a74493b04478d38e24add0dc0f6977a0"
+    },
+    {
+      "path": "docs/ai000-4-3/BUILD.txt",
+      "baselineSha256": "ae60e6e8e61c8832770ba11390a0309bab31a5839d710c52b255c99005ef9a9b",
+      "lfSha256": "3381055d4d2c633cdd28cabf09161c2fc00b49d84548ddc0f6361ffed8823633"
+    },
+    {
+      "path": "docs/ai000-4-3/BUILD_DRAFT.txt",
+      "baselineSha256": "9574d515b606f3513c7c0dee06503fd0736dd31faf81f1e9f7c6df69f540b433",
+      "lfSha256": "a0a3d308bb047a2f622c94b38938a9440011db413086bb8615b6dd1331a5d6bc"
+    },
+    {
+      "path": "docs/ai000-4-3/COMPATIBILITY.txt",
+      "baselineSha256": "f629202f572fbbad8ded9c8983fbdb84804c4821a5c14ab5b162a657678a8931",
+      "lfSha256": "1ca60e911a03ed0e17bade49e772c899b759d0126e807dcb739095550e9b487a"
+    },
+    {
+      "path": "docs/ai000-4-3/CONTENT_DRAFT_INITIAL_FAILURE.txt",
+      "baselineSha256": "6c5648595c73444321bf2cc92d79e2c14c92ae0cecfc8fcf23b5d21b6641bcd0",
+      "lfSha256": "8265cab154bb7515c1fbb9d71e1ac24873d1ce89000a862ef02ee4507d5bc7fc"
+    },
+    {
+      "path": "docs/ai000-4-3/CONTENT_DRAFT_SNAPSHOT_FAILURE.txt",
+      "baselineSha256": "40b8f1354ce87efa0ad8d761b1de5f701595dec806d22cb04912f19668f838cf",
+      "lfSha256": "0bc2bd6ff5449e57e6aa6174dc21a1fb1378f445fb41da00f97774a6f5acc2f6"
+    },
+    {
+      "path": "docs/ai000-4-3/CONTENT_DRAFT_TESTS.txt",
+      "baselineSha256": "a5c50bff6d74253b9b4749023f17a65f70e5de6959021c5ad38034e10301b471",
+      "lfSha256": "c347884acd5fdae08ac191031e201f8422c4c75ae999c5f3d6e4ce18e6b530a1"
+    },
+    {
+      "path": "docs/ai000-4-3/DOWNLOADS.txt",
+      "baselineSha256": "c5d7cc0d333443797fc75874d02798d7f59b17ef5d72f2ff264f1deece952d15",
+      "lfSha256": "ec96c752f521aa82985638d05c1aa004e68434201eded43b46896221f1aca599"
+    },
+    {
+      "path": "docs/ai000-4-3/DRAFT_HTTP.json",
+      "baselineSha256": "a746f7507b86d23730b66a97eed52ec60d6069c118ed8f2961e7749f843c8870",
+      "lfSha256": "f5adbc58050ccc98e7f5734f18c42f54d80a00606058f8c9fcb42394ab88f390"
+    },
+    {
+      "path": "docs/ai000-4-3/LINT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-4-3/LINT_DRAFT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-4-3/PYTHON.txt",
+      "baselineSha256": "4bcc366790c3d426de37aeb415910a7fbead249b342208efa86476f2e902d87f",
+      "lfSha256": "b3b9b21caa760959d96ac18ba12c9ffc6dbd35632cd3b03193486914087be39a"
+    },
+    {
+      "path": "docs/ai000-4-3/ROUTES.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-4-3/STRUCTURE.txt",
+      "baselineSha256": "320b46bb067640c093abf03f71f666931aada3ab5ed1a0d65d0d43aa8e8acd01",
+      "lfSha256": "bbf05da49db718ad908123cc0e996dc80e3214e8d58621ae32dc42c38c70846d"
+    },
+    {
+      "path": "docs/ai000-4-3/TESTS.txt",
+      "baselineSha256": "ac8ea6675c85dadf817355ce3e3225f30bea0b7882cd0b44dc41b21c584a42b8",
+      "lfSha256": "ceb6cd9a274096f0c195112f61976f0de492991b684ff16bf6353d7b76f7dcdf"
+    },
+    {
+      "path": "docs/ai000-4-3/TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-4-3/TYPECHECK_DRAFT.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-4-3/TYPECHECK_INITIAL_FAILURE.txt",
+      "baselineSha256": "567bc0cd65af2e30c2c6d9fab6f0c3fc8d4109c52b0a9afef85b3360099000b2",
+      "lfSha256": "331b2df34fe19b6c7abd1de374821a3845b4151f10cfb008f5811bedfb54ac7b"
+    },
+    {
+      "path": "docs/ai000-4-4/DRAFT_HTTP.json",
+      "baselineSha256": "9a90ed6ed637fe9958de44623e24b654499c15916173717c7920dd200e347ea7",
+      "lfSha256": "edec0493ce49880d701f02d9dd21ab15b6997f445260245d1fc9600ca25630f3"
+    },
+    {
+      "path": "docs/ai000-5-1/BUILD.txt",
+      "baselineSha256": "ef9f5860b65f43b05b27214d19482751a59a158c6e81c850f0695baa4a188080",
+      "lfSha256": "c89d9405e1cc2497cc8aeb923c4237160a407d5dbeacc79ade31cd82e2e6713f"
+    },
+    {
+      "path": "docs/ai000-5-1/BUILD_DRAFT.txt",
+      "baselineSha256": "2c69cf43ebdbf19e21f5106313d4e068e1167c4ecb112d254fc8ba193dd576b9",
+      "lfSha256": "2962956dc559dc384b4ea3cdb3647907273b3830bff52fb4a3a6bbe5cce0c9d6"
+    },
+    {
+      "path": "docs/ai000-5-1/DOWNLOADS.txt",
+      "baselineSha256": "c5d7cc0d333443797fc75874d02798d7f59b17ef5d72f2ff264f1deece952d15",
+      "lfSha256": "ec96c752f521aa82985638d05c1aa004e68434201eded43b46896221f1aca599"
+    },
+    {
+      "path": "docs/ai000-5-1/DRAFT_HTTP.json",
+      "baselineSha256": "53962217da9b68574522bcfbb9ae7691bf922c1779ebd1c1bf5662ee48830d15",
+      "lfSha256": "0d92eb1a04b541987ea1bef5e26b9796a5b1b33461f7c643d461ab04541f9050"
+    },
+    {
+      "path": "docs/ai000-5-1/HTTP.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-5-1/LINT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-5-1/LINT_DRAFT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-5-1/NLP_DRAFT_TESTS.txt",
+      "baselineSha256": "6f760ac89c431e690faf40ac73d53bd4ed6f654cbb77f8fc396ee68259a8b5e6",
+      "lfSha256": "4197874b8925339271baff7288652d00a1d61cccbd2f628a9b7dd2a1b7ef8cf4"
+    },
+    {
+      "path": "docs/ai000-5-1/PYTHON.txt",
+      "baselineSha256": "de54ef105a3eaea25560d3b05da0edae2d0179a02b74a5996d5f0f83c8d88053",
+      "lfSha256": "11d0883f17d3ea4725569898843e3cf9a2196c0a16229677db0863bc000c0ca1"
+    },
+    {
+      "path": "docs/ai000-5-1/STRUCTURE.txt",
+      "baselineSha256": "9fa8b0c373d38a0af88642a5f20692d5207bc902a1de778ca64e92350d0429f1",
+      "lfSha256": "0492b33cf9c195e2037a7c1f0dfa2417e88d118884b646d90f571ff96915f202"
+    },
+    {
+      "path": "docs/ai000-5-1/TEACHING.txt",
+      "baselineSha256": "964921ce34dfe3533f1e2abc5f19925bcba482a308c1ec3302ce950e4c38880b",
+      "lfSha256": "e4b502b932fdac0176722816b4f5d3629bf5d8cd9911b16b975f66757d77deb2"
+    },
+    {
+      "path": "docs/ai000-5-1/TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-5-1/TYPECHECK_DRAFT.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-5-1/UNIT_TESTS.txt",
+      "baselineSha256": "1f60bca25325c66234ce8aa53ddd4a100548a7cdbb9d751b6d6ae90a7171a0a1",
+      "lfSha256": "5267b0c3d7ce084cb56d5e515843b402c4dbb9583a7abb997c0aa4ea32072a76"
+    },
+    {
+      "path": "docs/ai000-5-1/UNIT_TESTS_INITIAL_FAILURE.txt",
+      "baselineSha256": "f81ddf07fd1e1ec45a610075121caa70c0b3f3c8ade8b9fb2c5e92d184045838",
+      "lfSha256": "9e88e3ac87d5788c95564d20496fe1af1178e9b9456fc471b6b14a492f5fe8f9"
+    },
+    {
+      "path": "docs/ai000-5-1/UNIT_TESTS_SECOND_FAILURE.txt",
+      "baselineSha256": "2b06182e62ba740da1d4394d1a2c20aa463c3e128aea177434620fd1e6580b48",
+      "lfSha256": "ade48efc6a7c4aa6512e7f22f83ac249411cbda7ef2553a7d0b0bf784d94b580"
+    },
+    {
+      "path": "docs/ai000-5-2/DRAFT_HTTP.json",
+      "baselineSha256": "25f2e2f17ee267eb786b9471b05bb936daf8248a66a74bf88e4c3f50549f81f2",
+      "lfSha256": "928ddc9332e07c82fd693411955163602d45cae66ef0939edd89d86542cc34d1"
+    },
+    {
+      "path": "docs/ai000-5-3/DRAFT_HTTP.json",
+      "baselineSha256": "e6d805a82caa6d7901f6611f6c80628fe8a854097856a43a7401e96c6bca5354",
+      "lfSha256": "d8874aa5f6455ab14dba6b5767a756f33be11c65b68f338a2cc7165a83b02cb8"
+    },
+    {
+      "path": "docs/ai000-5-4/BROWSER_CHECK.json",
+      "baselineSha256": "c661857ad50314812e728beeb4d07f72b00407758b11ab76a72d9f4a38a37cec",
+      "lfSha256": "e6867d4419c67ea526297d3f64d018206d0688d54b4af763219fa8a472307656"
+    },
+    {
+      "path": "docs/ai000-5-4/BUILD.txt",
+      "baselineSha256": "28720909d108985126bc0cfd4a0ec914c24f1393101bc37d633c947cd8bc70a7",
+      "lfSha256": "30fca6c1b6e7f8cdd109fc088f6ae7725ad8b57c7dffe452f1a384e5c5b2c17a"
+    },
+    {
+      "path": "docs/ai000-5-4/DOWNLOADS.txt",
+      "baselineSha256": "c5d7cc0d333443797fc75874d02798d7f59b17ef5d72f2ff264f1deece952d15",
+      "lfSha256": "ec96c752f521aa82985638d05c1aa004e68434201eded43b46896221f1aca599"
+    },
+    {
+      "path": "docs/ai000-5-4/DRAFT_BUILD.json",
+      "baselineSha256": "1c9db56d032bd0579e655dc2f62cee41bde0ec071c7b741e63d91661e811df0f",
+      "lfSha256": "874cd562e29ba01761122c7d8e36261e342a623fe59319ec37e3f7b57b5ebbfc"
+    },
+    {
+      "path": "docs/ai000-5-4/DRAFT_HTTP.json",
+      "baselineSha256": "fc3a790d29b38c4c0b128b789cf7aa9e4dabf9792ffac230c590d4b246fddc13",
+      "lfSha256": "126bd71d08c5b52c5ccb09feedf4c6c3db9e97ab75714d08fbea5642a6b06609"
+    },
+    {
+      "path": "docs/ai000-5-4/LINT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-5-4/PYTHON.txt",
+      "baselineSha256": "d424d75c89fee0b01fb247482158385f1e6ffa4d47c24749f37194724ea8b689",
+      "lfSha256": "104bf321c6e05630b79c4de3e32307b0bcb52c5083d56949fd3a34fce04297dd"
+    },
+    {
+      "path": "docs/ai000-5-4/ROUTES.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-5-4/TEACHING.txt",
+      "baselineSha256": "a3c5e34e5c95095cf65e949b3ba023b15a59cd90fde8703ff50ce142b3874f48",
+      "lfSha256": "7d7fe00876f52184c56a09a9bb3eb88dd4e4768275c5923dda1474c4bb841f89"
+    },
+    {
+      "path": "docs/ai000-5-4/TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-5-4/UNIT_TESTS.txt",
+      "baselineSha256": "79aec1b720043db815ea99fff5fbc4aa0f3d95458235fb024ae3e7028b8cba3b",
+      "lfSha256": "aadb4c4dfa3e4ae1e452fe6c0d1cabd941ac36d8cc749689134e28d83590d903"
+    },
+    {
+      "path": "docs/ai000-5-5/BROWSER_ASSERTIONS.json",
+      "baselineSha256": "f43915d2907bec64a20b371104dc3ca995da36133ace33012a31ec44b45dc956",
+      "lfSha256": "2ada582f84d3aecee9a9820f0c21dfa8d1259d77dd38b34ce1fe844885e30bf6"
+    },
+    {
+      "path": "docs/ai000-5-5/BUILD.txt",
+      "baselineSha256": "1dba7fe818f6f1a584ebb0d0285598851cd4c4865b3a3b39343e7f075e76ecfd",
+      "lfSha256": "d682f56a130e0e7dc7f2dda8770ebf9b7498125e7df9a2f29513f3b3123a31cd"
+    },
+    {
+      "path": "docs/ai000-5-5/DOWNLOADS.txt",
+      "baselineSha256": "c5d7cc0d333443797fc75874d02798d7f59b17ef5d72f2ff264f1deece952d15",
+      "lfSha256": "ec96c752f521aa82985638d05c1aa004e68434201eded43b46896221f1aca599"
+    },
+    {
+      "path": "docs/ai000-5-5/DRAFT_BUILD.txt",
+      "baselineSha256": "566a18f6257299b92bd8ede3ffd5b7925c352ba7cefc6a6c39698d4e4a72c0ad",
+      "lfSha256": "6987d5e864dfac29dacacd764b7f59e038cebddab113d8a6ba307911bfd8fb67"
+    },
+    {
+      "path": "docs/ai000-5-5/DRAFT_BUILD_FIRST.txt",
+      "baselineSha256": "fef6a04fc77849cd6354fde51ce96abd95adf226a457bede8efd6f211b75b8b1",
+      "lfSha256": "944d6f34758d6191183ae64b051e71797d31b863834d9a16222297629118bd69"
+    },
+    {
+      "path": "docs/ai000-5-5/DRAFT_LINT.txt",
+      "baselineSha256": "d3ad689efb7bda19914db7972a7600b4c4c58a91feb3625daa109a114be7ac97",
+      "lfSha256": "d0026b1cfcccf2db0f35e634c9ee51a9e7f1990ff96382b79e257bc5cb7da162"
+    },
+    {
+      "path": "docs/ai000-5-5/DRAFT_ROUTES.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-5-5/DRAFT_SOURCE_CHANGES.json",
+      "baselineSha256": "62edcf55c01ec3d944e18cc70d9b7ad8eba60f3ca07c66ef45f7e2a5e1dffcbf",
+      "lfSha256": "37a0789ea8aaa14e39ee705dd4d902cb646b27b2a133387e85e82cf0094be6e2"
+    },
+    {
+      "path": "docs/ai000-5-5/DRAFT_TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-5-5/DRAFT_UNIT_TESTS.txt",
+      "baselineSha256": "223e0308b407b29b51a531f91b0a21a90b1ab9c58d548934b42aa8bcabf38a9f",
+      "lfSha256": "621b1d2fe242623ce08cec3d86f177ab81ccc449bab183195afc85c2bbb6e696"
+    },
+    {
+      "path": "docs/ai000-5-5/DRAFT_UNIT_VERIFIED.txt",
+      "baselineSha256": "f8be6e37ecfd2b644f1a39356aa9d087008289bae3d7be8203797646ae01be5d",
+      "lfSha256": "da96914f9192d4e81973831060e627aee8ef3ff380080377aa4e2e3d689d8586"
+    },
+    {
+      "path": "docs/ai000-5-5/LINT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-5-5/NUMERIC_EVIDENCE.json",
+      "baselineSha256": "778ed90b681ecd1a1179b05de1cf663996fd2175fb647cd84929f4c601678f4a",
+      "lfSha256": "c443915487376aed479b6fe390449bf2e4d39d353a46dd2414f5bc04da44c7f4"
+    },
+    {
+      "path": "docs/ai000-5-5/PYTHON.txt",
+      "baselineSha256": "495830d50c84519e72b681316305ea3cbf56135abee31a892e6b56eb89dbb209",
+      "lfSha256": "f4b2e994307c5f69c842b9774375b4914e0c1f4615a35d3e47d4afb014b42872"
+    },
+    {
+      "path": "docs/ai000-5-5/ROUTES.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-5-5/SOURCE_CHANGES.json",
+      "baselineSha256": "b74a2d347e4ed44e93f8103b244db62d5d1bf5fb5b8f17c62090a57c0c0fc571",
+      "lfSha256": "fc15a3ed3724bd65e797d2502f8621b69ece2c2010ef2f35597cdb81c180e79e"
+    },
+    {
+      "path": "docs/ai000-5-5/TEACHING.txt",
+      "baselineSha256": "91c0eca103d5b918e69000dc73e91a70a81b04e126727a06c831136af3c20f09",
+      "lfSha256": "841e62c703e79ef2e09d1c9d85cd9e798749a4e3c6d707f42107e61a882f7933"
+    },
+    {
+      "path": "docs/ai000-5-5/TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-5-5/UNIT_FIRST.txt",
+      "baselineSha256": "da44d83b319c2b6a9754f192bf9a97e5c149e4185136f1ec7190d023fed4d37a",
+      "lfSha256": "211d5f3d2307698f40f8aa2cb5f4e2eae5f1f7f74b5c19af6a9406921c807dcf"
+    },
+    {
+      "path": "docs/ai000-5-5/UNIT_SECOND.txt",
+      "baselineSha256": "e56b7103c24306ed9551ddadf86afdd7c8a51a872c47c1b9e4d8dde99009a785",
+      "lfSha256": "64f91c879121b607ad4be9978cf0a60ac159ac908f5161508ca5d88e2811295d"
+    },
+    {
+      "path": "docs/ai000-5-5/UNIT_TESTS.txt",
+      "baselineSha256": "223b3d150fe4b3d3419948457defd96562f7026f2cf9da8951d572c7d5149b09",
+      "lfSha256": "81e70b660d161b58f566ac164e38bf6dad5458ea259a67c5c6cfbc2ecc003dd8"
+    },
+    {
+      "path": "docs/ai000-6-1/BROWSER_ASSERTIONS.json",
+      "baselineSha256": "31a9ee1d2d5bcd18993a625d67fd5e4ca00c1471f134e8b5d4b1ab9a55d03b32",
+      "lfSha256": "e1fcaff66b98cd9e5b72b88d7ad66bbe55f0938f54fc5e5189c7114b87d750d7"
+    },
+    {
+      "path": "docs/ai000-6-1/BUILD.txt",
+      "baselineSha256": "ca9e210ee55537960cf5d68194f07830389b0e216b8b966c78d175185ee8a1c0",
+      "lfSha256": "eecc6d83f2cafff02e3e6fae2482e3cf7c905805149f5779d7fda91cf0947d85"
+    },
+    {
+      "path": "docs/ai000-6-1/BUILD_DRAFT.txt",
+      "baselineSha256": "e01df63e1e8b6f0f33cd6d9a45ee63ee189c89dcd032241f9b2d196eb1956661",
+      "lfSha256": "2d7a4d5f4bb008eca52cd70f8ba80c81a9cd0d616c63a76b530364e49f6c15c5"
+    },
+    {
+      "path": "docs/ai000-6-1/DOWNLOADS.txt",
+      "baselineSha256": "c5d7cc0d333443797fc75874d02798d7f59b17ef5d72f2ff264f1deece952d15",
+      "lfSha256": "ec96c752f521aa82985638d05c1aa004e68434201eded43b46896221f1aca599"
+    },
+    {
+      "path": "docs/ai000-6-1/FINAL_EVIDENCE_CHECK.txt",
+      "baselineSha256": "963d035510f7b450d901aa51ecf40ac1a616b50dfec866b5f7701c8da44ea6b0",
+      "lfSha256": "0fe2ac2fb169ec40bdacbafc24f2c9380e52ef94e021030f8044a686e0e34676"
+    },
+    {
+      "path": "docs/ai000-6-1/LINT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-6-1/LINT_DRAFT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-6-1/PYTHON.txt",
+      "baselineSha256": "da402844c8d73c9aa141ccec53771fd31c7db67b293ed224e58729c4127acf4c",
+      "lfSha256": "a0e4364e39b7710cc7903c538d27d166a932257406dcb55f65b48f8a158de3e0"
+    },
+    {
+      "path": "docs/ai000-6-1/ROUTES.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-6-1/SOURCE_CHANGES.json",
+      "baselineSha256": "202be99dca1dc7aa92ab5741d792758300bff181971f28e7b2d60ef1ce2472a6",
+      "lfSha256": "9cadb5f379fbc04e6db45459c82e7113b08890898a7b9a87cd2a04a08c5d3a31"
+    },
+    {
+      "path": "docs/ai000-6-1/SPECIAL_DRAFT.txt",
+      "baselineSha256": "fdd99cbbe5a349bdfea0b760f4165d183da4a78487a3a1f98d2e3afe7763991a",
+      "lfSha256": "dcf98b86af7f48ae31554f50860ad4f99b55f191083621e93aafb27fb14f1c71"
+    },
+    {
+      "path": "docs/ai000-6-1/STRUCTURE.txt",
+      "baselineSha256": "6f9f662752f2139c4034fa75c30c761ac0a7f6fd1ee63d7f51484478ce108181",
+      "lfSha256": "19947a3b5ca130b72fa00ffd1474ab88cdc6d356c5ea93e6854f69199655bfe6"
+    },
+    {
+      "path": "docs/ai000-6-1/TEACHING.txt",
+      "baselineSha256": "8bd71abc63348f8e706dc30aff2215a22654c37623e6fb9c6c9d77d21b438c8f",
+      "lfSha256": "18fe759e868341d952f198cadad52100ee0320451926af2ed8d32949d639bd26"
+    },
+    {
+      "path": "docs/ai000-6-1/TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-6-1/TYPECHECK_DRAFT.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-6-1/UNIT_TESTS.txt",
+      "baselineSha256": "65c83b5660da7ccefe1a4373e315ee42205340f362e92be629d295ddd39dea7e",
+      "lfSha256": "a4fa989f4ad196bcb27b15cb8172929a96e9b7f99485163ff3f8264a8ae3e0a1"
+    },
+    {
+      "path": "docs/ai000-6-1/UNIT_TESTS_INITIAL.txt",
+      "baselineSha256": "411386119f19d72b537e3d838f733beee30fa1849e7ea3f9e93bf52219340d3a",
+      "lfSha256": "33826f652bf02845aee694c41c9151637946b1c88acfcefbe20190164d6c6eba"
+    },
+    {
+      "path": "docs/ai000-6-1/draft/ROUTES.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-6-2/NUMERIC_RECHECK.json",
+      "baselineSha256": "14cb6acc617ca5a4d85f4b8e48605061428e1b68212671ef030a8c2df33c02b1",
+      "lfSha256": "bcc9e7c368d25c2044f4fedfa661efe9147918d9a261948f36962277bf718b0f"
+    },
+    {
+      "path": "docs/ai000-6-2/SOURCE_CHANGES.json",
+      "baselineSha256": "8f72cf72085003434f54f68bc6357de8869813344b6cdbc4061d1c2eeb684453",
+      "lfSha256": "cb8e1f3b355dd66d9fc15d67c747723b429cfb5834a43348b81546e7a631d07f"
+    },
+    {
+      "path": "docs/ai000-6-3/BROWSER_ASSERTIONS.json",
+      "baselineSha256": "1ba27829b697103390b894e6c36615431a5bd603ff94229aa9b5b37260c4292f",
+      "lfSha256": "b68ae019c0965ff47a3b3102cf7c930020cdfdff6a56948e1a68322800dcfd66"
+    },
+    {
+      "path": "docs/ai000-6-3/BUILD.txt",
+      "baselineSha256": "d7deb9b56263ce683d46ecb9a6405a0b0563303185a9ce5bd2d01bf23ac7b008",
+      "lfSha256": "0bfa9e1fa6934bc964eb735487d288d5b8676f6e0ed5df261b83ce29a0adb170"
+    },
+    {
+      "path": "docs/ai000-6-3/BUILD_DRAFT.txt",
+      "baselineSha256": "e11860f6aec5d0179c2250eb936dc68ee7e05b97aeb370dcc8174f98904ad82e",
+      "lfSha256": "7759c8c331bda2439438d9fe2db878a991517f734fb4bbede932e031f3efeee7"
+    },
+    {
+      "path": "docs/ai000-6-3/DOWNLOADS.txt",
+      "baselineSha256": "47763c1b22eb75320bee2f4b1e95181495d66619898054cd97473881b7713987",
+      "lfSha256": "47c8c81cb1f8a01d2071b12faf5a09331062fdc46557eeae037f34bffbcf8d05"
+    },
+    {
+      "path": "docs/ai000-6-3/DRAFT.txt",
+      "baselineSha256": "e571126e210d1dba18b832284ffb0b0d0ad35efffe0eecf7b18dec193833273c",
+      "lfSha256": "371bef48605e34b7adcbada625002dafa2bc74b19484889b0aa966237d3c83ca"
+    },
+    {
+      "path": "docs/ai000-6-3/FINAL.txt",
+      "baselineSha256": "f171040719fc6e7d2bbb5c0b76a315b5b70f28452b78b29a56c2022caf3f759b",
+      "lfSha256": "7906c5b1bb86d28c6f5ae60f0277d884a148d62f739a72d6d79b7eb405d44ed4"
+    },
+    {
+      "path": "docs/ai000-6-3/LINT.txt",
+      "baselineSha256": "32f8f60e396f56add3fbe6696c0a228adfa41c54cbef23af4a5ae070f2812c47",
+      "lfSha256": "776f5e5e99fcb12a3ddfe7c10c0a4b9197a252f54650fa3e4a0fedf2fd0dde44"
+    },
+    {
+      "path": "docs/ai000-6-3/LINT_DRAFT.txt",
+      "baselineSha256": "32f8f60e396f56add3fbe6696c0a228adfa41c54cbef23af4a5ae070f2812c47",
+      "lfSha256": "776f5e5e99fcb12a3ddfe7c10c0a4b9197a252f54650fa3e4a0fedf2fd0dde44"
+    },
+    {
+      "path": "docs/ai000-6-3/PYTHON.txt",
+      "baselineSha256": "a50e0d6a9cf1a769160f4e145314b7096c1ce538a933576c63b451d8b9fe1696",
+      "lfSha256": "a33032d0ff5eefd3160be0ea66db68720691ffa25b33f9472b179ac9430670ea"
+    },
+    {
+      "path": "docs/ai000-6-3/ROUTES.txt",
+      "baselineSha256": "fe652f0796e377900e073834ad46036453694d8e2b362ed31fb1bcbfb71d3367",
+      "lfSha256": "fe72912b1f6faf90ff5c953bac5e7d1114ced06a94bee2a4a36a64d77136c3df"
+    },
+    {
+      "path": "docs/ai000-6-3/ROUTES_DRAFT.txt",
+      "baselineSha256": "fe652f0796e377900e073834ad46036453694d8e2b362ed31fb1bcbfb71d3367",
+      "lfSha256": "fe72912b1f6faf90ff5c953bac5e7d1114ced06a94bee2a4a36a64d77136c3df"
+    },
+    {
+      "path": "docs/ai000-6-3/SOURCE_CHANGES.json",
+      "baselineSha256": "34b01d9eb19086f0150ab9b543476d1599323597150cc76af4e66c474ce68dfc",
+      "lfSha256": "c2eb15991c11efdbe0a7c9f14ebd786c1b1944b9836485bc69a55bd9b062af7a"
+    },
+    {
+      "path": "docs/ai000-6-3/SPECIAL_DRAFT.txt",
+      "baselineSha256": "0a9763ec4675e2d0ceda9dce96ef8c54a44b54120d88aee9bbeb1409ba547818",
+      "lfSha256": "bc3c549724beb9224abadce83808cdc7f8b7862c01dc881fc28d687c6e34ce4f"
+    },
+    {
+      "path": "docs/ai000-6-3/SPECIAL_DRAFT_INITIAL.txt",
+      "baselineSha256": "ced2825ac9c81aee4814e01622a59de92d91358b5a60d31916445b28e0510dd0",
+      "lfSha256": "8ccbbc731637224a7d45f6c8fae0686d72b787224b41d551b6bb80b61ae10bb9"
+    },
+    {
+      "path": "docs/ai000-6-3/SPECIAL_DRAFT_SECOND.txt",
+      "baselineSha256": "ce0ff620f20f1487f60a722af851e61ee64446e80b38ce5dda95827a3174f506",
+      "lfSha256": "c2608f0812e50422b6de8c08d84bf339c943cbfb57d006bf54e2e06beb54bd23"
+    },
+    {
+      "path": "docs/ai000-6-3/TEACHING.txt",
+      "baselineSha256": "e19a5de85f053106faca737023dd022735b60b73c21b9b5e93f1b4c52732d449",
+      "lfSha256": "b50ed390ab7c289c27e3bf5529cc32c9f9935bfc3802cbda517108b4d40a363c"
+    },
+    {
+      "path": "docs/ai000-6-3/TYPECHECK.txt",
+      "baselineSha256": "f487749a8aa9c3085a4c4aac484404749752cc0fe9ec1742536123732b5d73fd",
+      "lfSha256": "853b18cdad700116c2fe744dfe0dfc265b960c24da9720e19de2784f7eebcf43"
+    },
+    {
+      "path": "docs/ai000-6-3/TYPECHECK_DRAFT.txt",
+      "baselineSha256": "f487749a8aa9c3085a4c4aac484404749752cc0fe9ec1742536123732b5d73fd",
+      "lfSha256": "853b18cdad700116c2fe744dfe0dfc265b960c24da9720e19de2784f7eebcf43"
+    },
+    {
+      "path": "docs/ai000-6-3/UNIT.txt",
+      "baselineSha256": "80ada8a9633bee5f98c9bc04240855affe35c2628add51b57e52c44ca785deaf",
+      "lfSha256": "0d4d90f8bee433b91276569079fec869e364692377e6a1c3763710d4bdd7c25a"
+    },
+    {
+      "path": "docs/ai000-6-3/V2_FINAL.txt",
+      "baselineSha256": "53b8edc7239e79e083b93374845de4f545f0b6d6ccd5c2377234a1da37fc4d2d",
+      "lfSha256": "27618a0f6070d8ff93bc786833c4a17dd7733e47711c9a034ba65176a5a5946c"
+    },
+    {
+      "path": "docs/ai000-7-1/DOWNLOADS.txt",
+      "baselineSha256": "c5d7cc0d333443797fc75874d02798d7f59b17ef5d72f2ff264f1deece952d15",
+      "lfSha256": "ec96c752f521aa82985638d05c1aa004e68434201eded43b46896221f1aca599"
+    },
+    {
+      "path": "docs/ai000-7-1/FINAL_CHECK.txt",
+      "baselineSha256": "1d80476ef7bf8a0f09300d1c4f6a0a2ea6fb2593f200e720a2c3f343d3ccc0c8",
+      "lfSha256": "fce893a0b029b198e9cc6e8dfc965b8637292d966addec45b06cc17859805194"
+    },
+    {
+      "path": "docs/ai000-7-1/FOCUSED_DRAFT.txt",
+      "baselineSha256": "0d1d643ab2a9c6e847352d186bf4d1548a9f473f1deb5309fa0eac50f1caf85a",
+      "lfSha256": "957eebbb2c34c81e7cb09a164ac59fdd32d7aa8fb04613c2ff45f7dd0133b6c4"
+    },
+    {
+      "path": "docs/ai000-7-1/NUMERIC_RECHECK.json",
+      "baselineSha256": "15db45547dae21cdfdc0fed24aa61b7735eb671abcfcffa1332936bfa7a69d7c",
+      "lfSha256": "2fdd899deb45be97fbd7961dc9f595b48a40f7597caa8c9b93d433c238607c81"
+    },
+    {
+      "path": "docs/ai000-7-1/PYTHON.txt",
+      "baselineSha256": "a3adccaf6d834e9bdd9e4b080e28f5ceb4ce20dbcf989da7732dd7e3c54bc576",
+      "lfSha256": "36821ff509af7d3d7a86d1bcb4b6ec6fab2cbd9fdc29c08661099525aa04b518"
+    },
+    {
+      "path": "docs/ai000-7-1/ROUTES.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-7-1/ROUTES_DRAFT.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-7-1/TEACHING.txt",
+      "baselineSha256": "6cca01c3007ac259dde218a23ad88b57b8498044138ca8fb69e6ba490403a7e7",
+      "lfSha256": "ca7af2609f542fb65d9379cd64c9c998ccfcf4ab52f0996ae24059d68fbb8030"
+    },
+    {
+      "path": "docs/ai000-7-1/UNIT.txt",
+      "baselineSha256": "df8e4dcc51913aab3b15034cd948f820e7c8d297c7439831c87283993124b991",
+      "lfSha256": "1fd00b2f4f635f375d9afc45768c27ea5b758fdf4c3dac31f6d760d77979b820"
+    },
+    {
+      "path": "docs/ai000-7-2/BROWSER_ASSERTIONS.json",
+      "baselineSha256": "49bdcc7902d6bc370afcceae10c0e89adc07d97ba6dd7941ef5f74d390468399",
+      "lfSha256": "ee5543590f30554ae0bcc4a67bb5ba18acde7df1dc9bbd8dadce96017492f8f6"
+    },
+    {
+      "path": "docs/ai000-7-2/NUMERIC_RECHECK.json",
+      "baselineSha256": "791664659dfa93392e91908d72def728daeec3d2e760d3e46c3c2ed05cbd0520",
+      "lfSha256": "4dc6d2945444d2e1c0ef58580c10dfe45504e7d0594842a999ee8118e58aad8e"
+    },
+    {
+      "path": "docs/ai000-7-3/BUILD.txt",
+      "baselineSha256": "f6477280f880f2c5e0aa31982e23ab549a2f2302bbfced4c3b184dea7c363c9e",
+      "lfSha256": "04bee13c396d0e18b5a63bccb92e02d662b60b21ff2b4779eb481ba657b398c9"
+    },
+    {
+      "path": "docs/ai000-7-3/BUILD_DRAFT.txt",
+      "baselineSha256": "029e6d4d337434ccd7b9a61f3c58140b10ca846fde2d78498a19e384a9a88c1d",
+      "lfSha256": "86101a143e8133827e58364741c90bfd9c493b271a0d63af67a5a4227d338333"
+    },
+    {
+      "path": "docs/ai000-7-3/BUILD_FINAL.txt",
+      "baselineSha256": "1ec2d6b07f24512d401a216c60fe77f04d8b787ebb93a40d350e8d35196980ee",
+      "lfSha256": "146a677892fd488fe1f9a338d1b32a5afc2e386ae731eb55641581e06a074b9b"
+    },
+    {
+      "path": "docs/ai000-7-3/DOCUMENT_CHECK.json",
+      "baselineSha256": "a00c58147276d30b0b58f549746746f5d2be0004960f5162e2488d8f15e2a511",
+      "lfSha256": "9e06c7334c5da9cb56e5dfc8b092e6311ddbcd46be5f5ca1da912ca257572bfc"
+    },
+    {
+      "path": "docs/ai000-7-3/DOWNLOADS.txt",
+      "baselineSha256": "c5d7cc0d333443797fc75874d02798d7f59b17ef5d72f2ff264f1deece952d15",
+      "lfSha256": "ec96c752f521aa82985638d05c1aa004e68434201eded43b46896221f1aca599"
+    },
+    {
+      "path": "docs/ai000-7-3/FOCUSED_DRAFT.txt",
+      "baselineSha256": "d22484b33d986453fdd155323c74d9097de4ec103e9997d57660235cd87a2d11",
+      "lfSha256": "ec9b5e392e5500fd187ee4f79ffcf1d1c460d54a2890d1e29ff4a6477dd21cbe"
+    },
+    {
+      "path": "docs/ai000-7-3/INDEPENDENT_RECHECK.json",
+      "baselineSha256": "96683f4b76a444c74f9c16ea4e8d747d956bc616f7852b71ba9e65ca8452d2b1",
+      "lfSha256": "dcfaf7defa824747c8b3a015dd3236206a255e20bba960a82b43f757477fb8b1"
+    },
+    {
+      "path": "docs/ai000-7-3/LINT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-7-3/LINT_DRAFT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-7-3/LINT_FINAL.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-7-3/PYTHON.txt",
+      "baselineSha256": "4c590f8d2df3af5101c4d390e13967cd6ad108af3a701fccea713bd701c78634",
+      "lfSha256": "36a5c0d6f79b85777df3e5fc40e3e833b30ad633af2d08feb16645da8ffe4752"
+    },
+    {
+      "path": "docs/ai000-7-3/READ_CHAPTER_1.md",
+      "baselineSha256": "962e04e4d802c85c3faec0ad2136e2b9fc8f183e0f95497996e259f36bb9456f",
+      "lfSha256": "7ea1b405150d07a76bfffbc68e1f1db22889c488063f9187fd09b7904046dde0"
+    },
+    {
+      "path": "docs/ai000-7-3/READ_CHAPTER_2.md",
+      "baselineSha256": "a6df6788be8b5f8bd0a1334d95111172cfffa1e68b91cbd774725e8f0be56489",
+      "lfSha256": "793040dc4a9eee5856b46ebb0c500505927cd8ddf6385ccc0c98a954bddb2388"
+    },
+    {
+      "path": "docs/ai000-7-3/READ_CHAPTER_3.md",
+      "baselineSha256": "2c5e1821cf7839f775d35d0eb7a9cedcc9eac4195c176ee4d5d436c66d0d2e45",
+      "lfSha256": "1a199c70a5ae72b518890812a5de58084b9137572b713f532e538aaec1a8bedd"
+    },
+    {
+      "path": "docs/ai000-7-3/READ_CHAPTER_4.md",
+      "baselineSha256": "0609a30e3c20d6be055af242ed586fb9f62804032a6f1e6cb3ab9d14652fe61e",
+      "lfSha256": "f25f7b3e81c1107976605d8c6fb2e35eeda88160da8d7cc2c3db897315bb38dc"
+    },
+    {
+      "path": "docs/ai000-7-3/READ_CHAPTER_5.md",
+      "baselineSha256": "031c63cac03451f10ff48934dafd45f21b5fab8a890dd583365ad68002e5e42b",
+      "lfSha256": "c156cea09ba3d02a56bc7917c1a7453403584a585f56a8addeb4ffcfa3726c88"
+    },
+    {
+      "path": "docs/ai000-7-3/READ_CHAPTER_6.md",
+      "baselineSha256": "66f2229df0381ba6669f426416da7b091c132a555ef52a8f1e43b5f67417f91d",
+      "lfSha256": "d24c7df32f97ca9fb8cfcc57728a3c1ece97a61390ea0344e8b3b39d123cd827"
+    },
+    {
+      "path": "docs/ai000-7-3/READ_CHAPTER_7.md",
+      "baselineSha256": "59a5902d4d7945d8807bd0cb4055e315c45e8b896744e2e52588d4ad1f863709",
+      "lfSha256": "701510d3fff877efdd2516eda8ca28ed498a58fa214c84562ebf5dfd4d74d8ac"
+    },
+    {
+      "path": "docs/ai000-7-3/RECHECK_FIRST.txt",
+      "baselineSha256": "bf8d5a850b5810aa3f57a99fa21346fdf9a973bb3933a7e30d97c4be40ae5cde",
+      "lfSha256": "c833cd8a3fc3868fe522a1d5e5d7ce9d2515bdc7a8787fc78b53e1659c89b448"
+    },
+    {
+      "path": "docs/ai000-7-3/ROUTES.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-7-3/ROUTES_DRAFT.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-7-3/ROUTES_FINAL.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-7-3/TEACHING.txt",
+      "baselineSha256": "e98734cde8a2cd7566007039c4806499d0a82f97f5e27c5e9f8ee57b80a4a4c3",
+      "lfSha256": "5dbe9d24cb0037f6d9a351665ac3e3076eec7f809a0fb7457b312182d3cf30a2"
+    },
+    {
+      "path": "docs/ai000-7-3/TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-7-3/TYPECHECK_DRAFT.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-7-3/TYPECHECK_FINAL.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-7-3/UNIT.txt",
+      "baselineSha256": "dd56978b7cc665bd46fb1e935b288c730433d04c13d4e332ac38787c24e943af",
+      "lfSha256": "5de00c21e2865e9e08452a4c73f4d2eb4cea38ceae5400d675fd44683999560e"
+    },
+    {
+      "path": "docs/ai000-7-3/UNIT_FINAL.txt",
+      "baselineSha256": "59b5d8b701590b0b1fa59af3833d656b987dc3f784e6bc4e1d7975a57e5a093e",
+      "lfSha256": "d2061bb406af4a5fcfe2653bea21ab44437dfd7638556c13a26f391389818f89"
+    },
+    {
+      "path": "docs/ai000-7-3/UNIT_FIRST.txt",
+      "baselineSha256": "7c5e222bf16bacc9c9c06750c1af4227830416f51fd0b8094ac430e33d82af92",
+      "lfSha256": "f59434b883acaaf25dae77b23af5d8f869c77f342b8bba8e4b50d4c0ad4c1673"
+    },
+    {
+      "path": "docs/ai000-cross-lesson-quality/APPROVED_CHANGES.json",
+      "baselineSha256": "5696e6be140e7dcbc56138828288f0d49f958c77b1d424452a23586fc06fc960",
+      "lfSha256": "f44b936b13315eecf3bf866505fa2fbaf71dbd02a75a3c3dd1eda5ff6eab6e1c"
+    },
+    {
+      "path": "docs/ai000-cross-lesson-quality/BROWSER_ASSERTIONS.json",
+      "baselineSha256": "03095a176ce6bcc7e8f27442b26b0e495d92eaf13e63d8e447d10161c138c61a",
+      "lfSha256": "afee7edeca1024d40ccd5618993168c034f2b29b87dec2efda26e4147f357059"
+    },
+    {
+      "path": "docs/ai000-cross-lesson-quality/BUILD.txt",
+      "baselineSha256": "b81aa7dd8ee1b24f39935951a2fc8b46ef040b0d783c9b1ffa6ecb7ddcf5eca5",
+      "lfSha256": "28cb6e55335dfb15fd15508ba8905fa506e215209092f1a0422af090ac21e0eb"
+    },
+    {
+      "path": "docs/ai000-cross-lesson-quality/DOWNLOADS.txt",
+      "baselineSha256": "c5d7cc0d333443797fc75874d02798d7f59b17ef5d72f2ff264f1deece952d15",
+      "lfSha256": "ec96c752f521aa82985638d05c1aa004e68434201eded43b46896221f1aca599"
+    },
+    {
+      "path": "docs/ai000-cross-lesson-quality/HINT_AUDIT.json",
+      "baselineSha256": "6385e7f423fcc9fd793bbc11d01137cdbdaf504280b1d76b6af94a8ab8d3908a",
+      "lfSha256": "a425fb8a2689389233b594ce0d0bf7f168cc9cd14b3b73984fac1eb47cf0e3d4"
+    },
+    {
+      "path": "docs/ai000-cross-lesson-quality/HINT_AUDIT_BEFORE.json",
+      "baselineSha256": "737c666110b483d4454eeecb1a833866f54f1b261ada4cd993f4339ecd28648c",
+      "lfSha256": "bf39343a08a43a698f4ed5f0d3dd21ff6b99af4f8fb780ed17e711d2aa4da3e3"
+    },
+    {
+      "path": "docs/ai000-cross-lesson-quality/HINT_REVISIONS.json",
+      "baselineSha256": "d5f4479f5ade90df615e2791e5dc10be728ab3bec81d9f2fccf7662ed21fd374",
+      "lfSha256": "b223350e629635d1a6bdb6c0e25e6d64d373a7fda148b58d05018af9b419b91a"
+    },
+    {
+      "path": "docs/ai000-cross-lesson-quality/LINT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-cross-lesson-quality/ONLY_QUESTIONS_AND_HINTS.json",
+      "baselineSha256": "c7bc44a57706757ba76ca79e55a3aa8ba866400f70dd0baee8ffc82b81e6699c",
+      "lfSha256": "3dd35e554dded4bc0bfa544e57f113df4b3ee76305b7e3384a1f7860d4cbd506"
+    },
+    {
+      "path": "docs/ai000-cross-lesson-quality/PYTHON.txt",
+      "baselineSha256": "ffadb40c803b1677ca23efe9b0a86bfa90132ad138b9c3ffa22f4711289b67d0",
+      "lfSha256": "5f14140223f897be9def450d14b8e23bb1dd314e79df0b72f85f2448ff93ba81"
+    },
+    {
+      "path": "docs/ai000-cross-lesson-quality/ROUTES.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-cross-lesson-quality/TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-cross-lesson-quality/UNIT_FIRST.txt",
+      "baselineSha256": "ae1ea6f75658833b9a12105f272a853a26e8834fc021a4fcec5e6cc8ee66cdc1",
+      "lfSha256": "0ad0e2205943456118f39d7b08d2eddcce6dc79c09632515fc0b72207b23d997"
+    },
+    {
+      "path": "docs/ai000-cross-lesson-quality/UNIT_SECOND.txt",
+      "baselineSha256": "2c3aa8703c0c48cec450548740ef1bfceabb9b449af35b28ea94ad104fea4f28",
+      "lfSha256": "65f192c77e27c82ea6f8202edd2cc1365f5a97bcbe7d511a58d7180fefad8c25"
+    },
+    {
+      "path": "docs/ai000-cross-lesson-quality/UNIT_TESTS.txt",
+      "baselineSha256": "5ea0ab5fd43d3ca2ddff1e12abefe976a40e0af97df24a47d296cd0317970b24",
+      "lfSha256": "521b3ff400069aa1e645f11f9e4843c589bf791c7e75c1c8abf0eeff28a93036"
+    },
+    {
+      "path": "docs/ai000-r3/evidence/LEGAL_FETCH.json",
+      "baselineSha256": "d5301f3e2110c7280ebe7991b8632b9e716c8f93028eaa5a486a562fdf7b9205",
+      "lfSha256": "927a675467d852c9016c7133cabef12bddcb3e9740e24da77bdafdcad97765a8"
+    },
+    {
+      "path": "docs/ai000-release-readiness/evidence/BUILD.txt",
+      "baselineSha256": "d32104d8c1f2a319a900f342001371b14228fe4d01e9dfd1e541331266cc4f45",
+      "lfSha256": "20dcad9026f91a6ce0d2078f99edb1d599400b55aaaf1489be5a3a8ba4f1afbd"
+    },
+    {
+      "path": "docs/ai000-release-readiness/evidence/INDEX_CHECK.txt",
+      "baselineSha256": "224a3fc3bb139221a5ccd8209d996cf33a23dcb3c1df0048da5980652b13c97d",
+      "lfSha256": "39e914ed9167513e91ecfda67d7b54e12542c108c6956900866edc4b0cd16ab4"
+    },
+    {
+      "path": "docs/ai000-release-readiness/evidence/LINT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-release-readiness/evidence/ROUTES.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-release-readiness/evidence/TASK_READER_CHECK.txt",
+      "baselineSha256": "34fe16b338162be583f673c5ca63a3e9a878237a646b10b6e640f4413c11050a",
+      "lfSha256": "bc712044cecd1234843fd1d429af07fca6bf1ae14ae92d280ac707c7d23b9c9f"
+    },
+    {
+      "path": "docs/ai000-release-readiness/evidence/TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-release-readiness/evidence/UNIT.txt",
+      "baselineSha256": "e7e7921991334de203093c3be271d7ecfa00de13e539e29d6de0509506717106",
+      "lfSha256": "dda0820ef1642c6fd4ecf8596132a792caa374cf11a02680f471ca1e6c9ae9ff"
+    },
+    {
+      "path": "docs/ai000-v2/AI000-C01-L01_RENDERED.txt",
+      "baselineSha256": "1ce862efe1253248ef7efe1af07f20a88d5fcceee4fe3010c1beb22280529ba2",
+      "lfSha256": "11fa6613f1fb87a2bdf5428d3e70ecdce531d013e62efc0f7decf12ce6edfcb1"
+    },
+    {
+      "path": "docs/ai000-v2/AI000-C01-L01_TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-v2/AI000-C01-L02_RENDERED.txt",
+      "baselineSha256": "f5082a738eb9b05dceee2590cc4853e1cfdef322b6a3da743752f4f89d1ab4d1",
+      "lfSha256": "c1354d3877c24eca9fdf1bd51d067c03e5d2577e0c27ac4013765520bb6ad783"
+    },
+    {
+      "path": "docs/ai000-v2/AI000-C01-L02_TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-v2/AI000-C01-L03_RENDERED.txt",
+      "baselineSha256": "fac0f4570a1f86c467e404da074bff6488638f7d6bca24084cea7c5af4d88c78",
+      "lfSha256": "0f40d6a7a1f713f5862c4ad1f1d600e9e9cd692733eeb39ceb25332e77d5123d"
+    },
+    {
+      "path": "docs/ai000-v2/AI000-C01-L03_TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-v2/AI000-C02-L01_RENDERED.txt",
+      "baselineSha256": "947bd0379c56fbc5f6f54acf43ad31f8a1cab0d30fb1c0167af51ff53fb9c6be",
+      "lfSha256": "2412192ed0df8fbb41d00474d9623e270c7866833e27000cabd36261faaaeaf3"
+    },
+    {
+      "path": "docs/ai000-v2/AI000-C02-L01_TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-v2/AI000-C02-L02_RENDERED.txt",
+      "baselineSha256": "0185a24d41735455033704e8b83f4727ae5d1e0c64f4f76243c96b37e800bacf",
+      "lfSha256": "a45bcbae8c78e65ba50c101cd0b3cc20eea14ab8f2cb5ed61cc6043c391e36f8"
+    },
+    {
+      "path": "docs/ai000-v2/AI000-C02-L02_TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/ai000-v2/BUILD.txt",
+      "baselineSha256": "609d45ce91bd3d556e5a85232b1127073fa8cedfe94003ec7159b19792e7a0bb",
+      "lfSha256": "9ad81ca57e90bd577c33c28f89aed33b894a8b5716a289e5f3f3a0f0a6812887"
+    },
+    {
+      "path": "docs/ai000-v2/DOWNLOADS.txt",
+      "baselineSha256": "c5d7cc0d333443797fc75874d02798d7f59b17ef5d72f2ff264f1deece952d15",
+      "lfSha256": "ec96c752f521aa82985638d05c1aa004e68434201eded43b46896221f1aca599"
+    },
+    {
+      "path": "docs/ai000-v2/DRAFT_BUILD.txt",
+      "baselineSha256": "903f606027d35d6799c78ecc5782c0f5bcdc28b021497b5206ce92bdf488f036",
+      "lfSha256": "3d5abb7724be292c91f712b4b92b1d3c662f27917a71f05f4c357dbbb2883884"
+    },
+    {
+      "path": "docs/ai000-v2/DRAFT_HTTP.json",
+      "baselineSha256": "7427f45738422b99d3efdd8ec0653c9e71eec2916cd133f53264ec4907a9f5f5",
+      "lfSha256": "2c728ac2885f8c4f64b567905d51bc47b27be736f2d4cf291d584ea5fd6c2af0"
+    },
+    {
+      "path": "docs/ai000-v2/INITIAL_BUILD_FAILURE.txt",
+      "baselineSha256": "4ac8097219fc272ff42f2ec725e2934a1da9a617dc2ee405dfee0d7e72a82b6e",
+      "lfSha256": "70536bd1686ace7439fd1fbd46579dd34b407ef2644bbef0e0c32eed0a6d502f"
+    },
+    {
+      "path": "docs/ai000-v2/INITIAL_TEST_FAILURE.txt",
+      "baselineSha256": "a58ab96d9953093dfc781d43dca8dd1011eac8acd4e993a00a064a61db30caa3",
+      "lfSha256": "39a2e7d1a38cbe776d95319b76a0aeb84d6d6ef2dc33c1075a502775ee67626b"
+    },
+    {
+      "path": "docs/ai000-v2/LINT.txt",
+      "baselineSha256": "8bfaf9fde039872ad661240784e1e8d3d43cec64525eaae4628ef167b258867d",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/ai000-v2/PYTHON.txt",
+      "baselineSha256": "15fe6786055bbce31a51ca72d469a66e758b435f16f690a25b01b618bd819261",
+      "lfSha256": "c6dca2eb1cf4abe35cad4c3de49a1de2042eb37eab3b8d676a0b2dd1f65e9ead"
+    },
+    {
+      "path": "docs/ai000-v2/ROUTES.txt",
+      "baselineSha256": "825f691f679dc40c780af401b0f53c942ca6799406e0720f58cb86e7fed50673",
+      "lfSha256": "d474d79f4a2c3bb0b87ce21a9d844ed175aec6b235662af1aa1ac0e8bfd5b1e1"
+    },
+    {
+      "path": "docs/ai000-v2/TEACHING.txt",
+      "baselineSha256": "45eb42a57490cbc675c7cf81000c5852eec3c1b9dc2b8615f45367c5165a0992",
+      "lfSha256": "717169e14f5059c693f2c487bb244d9fdff13387a5019b71608ce893644b6162"
+    },
+    {
+      "path": "docs/ai000-v2/TEST_RESULTS.txt",
+      "baselineSha256": "85cdfc62e1f10fc1f39d93dc3f5ede5978b7cf5277a069ddbacfe8a65d62b89d",
+      "lfSha256": "5a1e017e482feabb0355ec5d4b0effd200a0b8a8cabb428572c0bbae7605377e"
+    },
+    {
+      "path": "docs/ai000-v2/TIME_ESTIMATE.json",
+      "baselineSha256": "676f6fff89254b1b244643b4ca0e68c9e5627b1baf7a5a76536aa3f3934cf204",
+      "lfSha256": "cb0eab61ba27b74c5d0d80d87e075d34e62f8bee2fca1a795ad11b8730625021"
+    },
+    {
+      "path": "docs/ai000-v2/TYPECHECK.txt",
+      "baselineSha256": "a6576253f6660a3ef780b6214cf713613811a6946719830dd2c10df809a2022c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/cross-discipline-v1/BUILD.txt",
+      "baselineSha256": "cbb994d28c39f85d0851b5e829fd5bf53b6fe8e7c39a836fd0f50393cfddf2a1",
+      "lfSha256": "5251ca38403cb82ed413a454d446f0cb0fa7d1802fecf768db3c3fe55fa6c37d"
+    },
+    {
+      "path": "docs/cross-discipline-v1/DOWNLOADS.txt",
+      "baselineSha256": "c5d7cc0d333443797fc75874d02798d7f59b17ef5d72f2ff264f1deece952d15",
+      "lfSha256": "ec96c752f521aa82985638d05c1aa004e68434201eded43b46896221f1aca599"
+    },
+    {
+      "path": "docs/cross-discipline-v1/EDITING.txt",
+      "baselineSha256": "ff24fd40ae98e1c6b35b7e31a32ed1e2e43c3c07e5fbfac9caf518ed2b280990",
+      "lfSha256": "28263219c4b62b7b3e069f5af86ea517a30635cdc0fb8e2c4ad063b5bbb51598"
+    },
+    {
+      "path": "docs/cross-discipline-v1/LINT.txt",
+      "baselineSha256": "16d2d24daacb25ca1d6f521602f1477b9c90575ccd91347572af5d13ca4bf454",
+      "lfSha256": "682dfcd1b13f9a0f7e95ad490d7dd8e2ecc5009942b86a5e49d32f0d68bdf3c7"
+    },
+    {
+      "path": "docs/cross-discipline-v1/PYTHON.txt",
+      "baselineSha256": "7a8ba3c3993ef25bf2524fc0e03a55e47dcfc8b03db2ac1bfcb1308cd285ea81",
+      "lfSha256": "2cdb08d95a2977e865b9a54d607d4d45543a0e8d752aa776624a232fe6d557a9"
+    },
+    {
+      "path": "docs/cross-discipline-v1/ROUTES.txt",
+      "baselineSha256": "04919afda256bf5d15f36c382591aa384eb53a4d8332ea1befc2b0cd998f6443",
+      "lfSha256": "31b34525bf44f21a64241e6d32f9410f1d87a739e62fc0c05ce97fafeebd702b"
+    },
+    {
+      "path": "docs/cross-discipline-v1/STRUCTURE.txt",
+      "baselineSha256": "35734456ef684f0cdd548909c4c692e6563a0ecfe16a841df5851b9100838f36",
+      "lfSha256": "59a0dd2a5766c2c83b0b8a37a2ebc5a2e59ed6ce3173bdb0e2c19ab697bbd8d4"
+    },
+    {
+      "path": "docs/cross-discipline-v1/TEST_RESULTS.txt",
+      "baselineSha256": "fcf376d1987ca81c95bbc0176727fcc7151113de7b0412801c4cce5889a1778d",
+      "lfSha256": "826e2e86c563cbf49e2a6b6693fb84a524fc0f8958313047916e1367e6ed613c"
+    },
+    {
+      "path": "docs/cross-discipline-v1/TYPECHECK.txt",
+      "baselineSha256": "68f6d19cb7977e21b990f08f9072767a38fa80c2d8a7c3766f406ce0af662cd4",
+      "lfSha256": "eb270fe917abe52808b7426b18327b1b22992b8df3d702a515917bdb8685ba95"
+    },
+    {
+      "path": "docs/cross-discipline-v1/VERSION_GUARD.txt",
+      "baselineSha256": "482478f5a9d8cef0c4137330eedfae0c9a78d1225495e209078f664fbe4fc001",
+      "lfSha256": "4eba7287e7aca87dfe38032b61bcc14cfba32f37716e30ecc7294ac5bf811df8"
+    },
+    {
+      "path": "docs/editorial-v1/BASELINE_GUARD.txt",
+      "baselineSha256": "d32d1bbc52d9d6e72258f396784bc3f84f02749321d3ca21f729adb6ed7ac44a",
+      "lfSha256": "ac6abbe56c52ba9d93bfaf131c2b77be424fa91b4693a662b0cb682e13119d85"
+    },
+    {
+      "path": "docs/editorial-v1/BUILD.txt",
+      "baselineSha256": "b557cecc44f45a33b1af30ea4e97c0b59179f7d79361e5f3fc41acacd3192ef5",
+      "lfSha256": "b169d5488e69c6093ba981f6f48764ef675c60cad2f66ad0c239e405aec604fb"
+    },
+    {
+      "path": "docs/editorial-v1/DOCUMENT_COMPATIBILITY_CHECKS.json",
+      "baselineSha256": "351488ce37c6e72946ac0bc398cd607ba79f3e8c30605d775c4c500a0468f194",
+      "lfSha256": "4bd3d65900b90b7445dd3694738b0cdbf5b7c7f14fd1ce1e4c10d24db7967fbe"
+    },
+    {
+      "path": "docs/editorial-v1/DOWNLOADS.txt",
+      "baselineSha256": "c5d7cc0d333443797fc75874d02798d7f59b17ef5d72f2ff264f1deece952d15",
+      "lfSha256": "ec96c752f521aa82985638d05c1aa004e68434201eded43b46896221f1aca599"
+    },
+    {
+      "path": "docs/editorial-v1/INDEPENDENT_CHECKS.json",
+      "baselineSha256": "e29dab903c0c4377a4b8ebe53d985c3b8c9926f981cdf31380b7f9813fc8147f",
+      "lfSha256": "f13a96cddbbd14c482f9bdfe8cfff345fb2cdd76e0b0e1032a7400368e4e9205"
+    },
+    {
+      "path": "docs/editorial-v1/LINT.txt",
+      "baselineSha256": "16d2d24daacb25ca1d6f521602f1477b9c90575ccd91347572af5d13ca4bf454",
+      "lfSha256": "682dfcd1b13f9a0f7e95ad490d7dd8e2ecc5009942b86a5e49d32f0d68bdf3c7"
+    },
+    {
+      "path": "docs/editorial-v1/PIPELINE_CONTRACT.json",
+      "baselineSha256": "855065c6f2a6f643962afcde70678be822b8fb1a6b5768572e6544f371252e01",
+      "lfSha256": "999f3021fa8e332e01b89656cce033a9981ca2cb70a245c3779aad61db099a1d"
+    },
+    {
+      "path": "docs/editorial-v1/PYTHON.txt",
+      "baselineSha256": "8ccd8c81c18efb1827a6ae2b0ae6d6027cf60f70add442236730180c98ddbdae",
+      "lfSha256": "b9c3965b3980d99ff8fd403e17659e6884143432ac32d95f701cb6c5dcac1b63"
+    },
+    {
+      "path": "docs/editorial-v1/ROUTES.txt",
+      "baselineSha256": "04919afda256bf5d15f36c382591aa384eb53a4d8332ea1befc2b0cd998f6443",
+      "lfSha256": "31b34525bf44f21a64241e6d32f9410f1d87a739e62fc0c05ce97fafeebd702b"
+    },
+    {
+      "path": "docs/editorial-v1/TEST_RESULTS.txt",
+      "baselineSha256": "ad23975c0d7c826f128d86a20d4c80eda2efc728d6935421cded8040aebc8350",
+      "lfSha256": "948a9ad4be12a90f8e8953709176a15d1fe363a751b6d087bca8e0cac4ee934d"
+    },
+    {
+      "path": "docs/editorial-v1/TYPECHECK.txt",
+      "baselineSha256": "68f6d19cb7977e21b990f08f9072767a38fa80c2d8a7c3766f406ce0af662cd4",
+      "lfSha256": "eb270fe917abe52808b7426b18327b1b22992b8df3d702a515917bdb8685ba95"
+    },
+    {
+      "path": "docs/py101-p0/BROWSER_CODE_EXECUTION.json",
+      "baselineSha256": "85eef37c088ce6eb68dbc688e40a9037cc050f71aafaafa3d1284c52c458e4df",
+      "lfSha256": "a4e09105cc62324374ced4981e3a84ad73fbb4067e65937a74c8296d234d1900"
+    },
+    {
+      "path": "docs/py101-p0/CHECK_RESULTS.json",
+      "baselineSha256": "f105e617b08a40cd2605d5a6b807163dfbe60a7313bc486c1237516f870c4b7b",
+      "lfSha256": "bc8a26c73b2de4f3b6b7c2395c1b4ca4f51ef230e7d8c1d9a703623b30c606de"
+    },
+    {
+      "path": "docs/py101-p0/NODE_TESTS.txt",
+      "baselineSha256": "c6d49bd2384f71b5eb2282f27d187b80978d33c368680ccc19ebb188a13f658f",
+      "lfSha256": "d2dc6737ef77008d14c014cce6a2a7a937b82a5ce7b379908c6745a145e3033b"
+    },
+    {
+      "path": "docs/py101-p0/PREPARE_DOWNLOADS.txt",
+      "baselineSha256": "898911116b40ecd590100833d94bfe91b4bd9f30617762859da0fe35805e3f96",
+      "lfSha256": "3b23ec12347d1b92226c09b53e3eeaa12e674aeac65e41a99d92e31713871861"
+    },
+    {
+      "path": "docs/py101-p0/PYTHON_TESTS.txt",
+      "baselineSha256": "0d84070b7e2f02698b5dc811c59c1d502b11438deb536eb233f856959cc62d78",
+      "lfSha256": "ea4d21c77ddaf886d7445baea2936b7a04c0f1177bb1f7a51ed313e9a6480aeb"
+    },
+    {
+      "path": "docs/py101-p0/ROUTES.txt",
+      "baselineSha256": "2e5460b4d81a3dd41ce93e9e443cb50bbaa7a35491e8f963921cb0d7af51dd75",
+      "lfSha256": "a2b9451623ddd6db9045c2ccb66d2bfb6275407b601c2f3d1671f7457a3202d4"
+    },
+    {
+      "path": "docs/py101-p0/TEACHING_REVIEW.txt",
+      "baselineSha256": "b4715d50800c50f90f229c1b9155b3c15bebdb02c172bbd1d27be7c5078fbc3f",
+      "lfSha256": "20d4e889fc15e4dda9d9ffdab434149ca9f0de5f8b336c9fc761a2b0b4825f8a"
+    },
+    {
+      "path": "docs/py101-p1/BROWSER_CODE_EXECUTION.json",
+      "baselineSha256": "322fab14a7366feb82a9ad5c1e3064a836bdc9faa994cfbf81ca82f554944d17",
+      "lfSha256": "e56bd4567a62f07620f1f4856fa8b969fdc8ffff08c7afa5d84d29df62c4d923"
+    },
+    {
+      "path": "docs/py101-p1/CHECK_RESULTS.json",
+      "baselineSha256": "2f0abc080043a4f025938f3ab019280120431ab6cec8787686d8bbdbfb263edf",
+      "lfSha256": "2b9243f6eb59b8ac6dec4d02ebbe6570b726cccc8058e7f42d37ca7532879f66"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/absolute-beta.json",
+      "baselineSha256": "95507244c022211ae62430f12f03909fb508ab2b39771500736841bfed6f1b28",
+      "lfSha256": "78e310f56bcede4473d56942c7f5e7418d3b4fe72f632a84fd984cc6a0ae6ec0"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/absolute-root.json",
+      "baselineSha256": "73f5d64a468700f93a3e61db80a2f0ce19fdc8326d28d2e8fa387aee3afe0ea7",
+      "lfSha256": "5c58aac904b1d73c8c105bb13dcf92b7d8aa44e804c8a2e8f1e767e847a6819a"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/alpha-current.json",
+      "baselineSha256": "5873cf784e5152f5f071fb51e5e917b346581c2cbc89483da9428f0936f59442",
+      "lfSha256": "feb9181cd5a1e71155655d7408fabbd2e6409ff3e7daa881373e0e93681ffd3b"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/beta-alpha.json",
+      "baselineSha256": "a4b841ca744a2c166e9dc83dff2dc90dfff8e081a2e26c47da97685d7f73396f",
+      "lfSha256": "a25c329ea869ef2097f294228e5ebd24377a0b3580c9307b3f12bd5ea979981c"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/beta-current.json",
+      "baselineSha256": "408b5587d9376215765da53485008f020aac8b8ad46e47cf31580e91bc396281",
+      "lfSha256": "cd4ef7cb918f97dfb1a826495eeaa3250dc6767994bd01458e999a637b322b02"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/root-alpha.json",
+      "baselineSha256": "15c923ed89ff317e1508bea7d3c0d84d9ab729672791eceab869bbcba0c89e11",
+      "lfSha256": "b829268b7d4ca5ba372d6be6e09b20fa86d0147d36bcd141d8e2ee0504bc3245"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/root-missing.json",
+      "baselineSha256": "d70ffbdb24bd7e3f17a7e3cafafab1ed38ba60ba9df79952e1fa8a41cf00723b",
+      "lfSha256": "d91d93a74a9688d15ad305c83ac07babd6739c78b77c7dbd38e2f73bff281ae3"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/same-text-other-file.json",
+      "baselineSha256": "3de2505f8815965a345578559f52b991712350a71e0555076f714af307b65346",
+      "lfSha256": "6158ac81a6172be1e152dc44fff945979b4c56f046ad9e7c23bb309485aac158"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/space-quoted.json",
+      "baselineSha256": "0c36058fc382b018b609d39056034506ce2e594c4c7129d06fca9af1f2ab37cd",
+      "lfSha256": "285179117ebec9492b3116698ee3d4085ac665107720bb3862e42d9a071ca8ce"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/space-unquoted.json",
+      "baselineSha256": "f63d888629c55d7dbace0cdf2582d2c2fefcce71c743e8504cb55d8c3bbcea3d",
+      "lfSha256": "59ed5579688b7c91d10823f7a68013f052da71436cae6f78ac2a941b0fcd95a9"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/task-east.json",
+      "baselineSha256": "ae4616d85e79c33025773a231fe542561d822905853a25a092b0de7e0aaf1f7e",
+      "lfSha256": "c4cf61468eb6ca239d5540549b94b6b493c44767647b9430d948da5bc4c79590"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/task-missing.json",
+      "baselineSha256": "862032b53a740c7ed9220d72171b79401177aa4cfc28c1a445b4b56847d74b35",
+      "lfSha256": "4e451a0ee26be9116e610e075d6639767982f5653a682de1fdd68acf8533b841"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/task-west.json",
+      "baselineSha256": "a2bbdcf3eed8f279e33ef9059d9fbf0592dd7e778a45ebcd721be40dcfffdf3f",
+      "lfSha256": "ed8f4e034a065a7c7807cda5256ce3d9e0bedcabd1923766d9e6fb5509f64c5e"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/task2-root-absolute.json",
+      "baselineSha256": "9e2838824a70ed6dafee5f765bb0d1bb06dd217a23d4eaf9b98e8aeda211b882",
+      "lfSha256": "8464d4a9deb5c399ce4189eb61233e38099fc59b6a64e1ddb179e96076ed5caf"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/task2-root-relative.json",
+      "baselineSha256": "9e2838824a70ed6dafee5f765bb0d1bb06dd217a23d4eaf9b98e8aeda211b882",
+      "lfSha256": "8464d4a9deb5c399ce4189eb61233e38099fc59b6a64e1ddb179e96076ed5caf"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/task2-unquoted.json",
+      "baselineSha256": "42cb2822b105169af6f83d42b1c55a8070c40dfbea238a8fb8edc106c8573c67",
+      "lfSha256": "f50befbfa6be3a82e8c70b2ac741ef1593c84fa45b6ea29fdaaa0db29741d21c"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/task2-work-absolute.json",
+      "baselineSha256": "18e3966d6cffb81d786e3f553916c596e91476ff13fdcf1d4e80a1314e8484db",
+      "lfSha256": "7511beec8abe9289c5b9ffe56cf3df3454b445be939694dcd56a6b1abfe40978"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/task2-work-relative.json",
+      "baselineSha256": "6a1edd09af1609139821ec96ce0dc5817b4e040398d9fa5118714dcf9b5c3af1",
+      "lfSha256": "1be91530443115fa07b8dc9db3fda9d0ae63f111c19bf5cd445bc9c825261e90"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/variation-east-unchanged.json",
+      "baselineSha256": "d54aa591e335fea564c9b98aa602db52b729c542b0416b05a8d0bc81f019194b",
+      "lfSha256": "a5abc586b865af1ce3d03ef62daf4ad1f845f526f412a01db22312cff12e11d7"
+    },
+    {
+      "path": "docs/py101-p1/runtime/shell-meta/variation-west.json",
+      "baselineSha256": "a2bbdcf3eed8f279e33ef9059d9fbf0592dd7e778a45ebcd721be40dcfffdf3f",
+      "lfSha256": "ed8f4e034a065a7c7807cda5256ce3d9e0bedcabd1923766d9e6fb5509f64c5e"
+    },
+    {
+      "path": "docs/py101-p2/runtime/GUI_BEFORE.json",
+      "baselineSha256": "ac3c4b5a8b194905aca4a108c81fc54ab4994f0d4c9242c039184a21c796ae60",
+      "lfSha256": "36cdacf25ce0ae2f76b547db29d0f712b3fd3e28aba3649cbb912aa61e6c7508"
+    },
+    {
+      "path": "docs/py101-p2/runtime/GUI_DIRTY.json",
+      "baselineSha256": "d1f5ae11f0ebec271169cba546f22047e820bba00be2924031e225431977783b",
+      "lfSha256": "11dc529f0b7b26e67f952a56fb1b865c82061c92bc866798259fed03c5f51a58"
+    },
+    {
+      "path": "docs/py101-p2/runtime/GUI_SAVED.json",
+      "baselineSha256": "c3b17d314ced22293133249929dd328ddb48b7a852fc36435b7f4280b97d9853",
+      "lfSha256": "d3edb206abd9c096912b7f78aaad1466aa28427514a650813094d34d3d751079"
+    },
+    {
+      "path": "docs/py101-p3/BUILD.txt",
+      "baselineSha256": "3a835681299ba3e9004c8bfd8487588f11819c8c6f97f629a413d45047d4302e",
+      "lfSha256": "70db1e6ed55b3677638b1f06f57c0f9cfeaceff785d84aa93dd4c6a3a0580d24"
+    },
+    {
+      "path": "docs/py101-p3/BUILD_DRAFT.txt",
+      "baselineSha256": "5a3ac4205e75163b234101a1ddfa508cbb0ac605aa6e8c2a879e66130dd9ca89",
+      "lfSha256": "45617104d3b000dd83b744147dc9f89a1c2b24a1b0ba73f58bc07f537d8a35d5"
+    },
+    {
+      "path": "docs/py101-p3/CLEAN_TESTS.txt",
+      "baselineSha256": "e95e1f756eb534bd798d836911d29d661b99b924e6ab060b672ad0af9f852baa",
+      "lfSha256": "95b73d71939d93f663857c5385c2f6f23c650c53e077d38f3c2070887eda9460"
+    },
+    {
+      "path": "docs/py101-p3/DOWNLOADS.txt",
+      "baselineSha256": "0ad19aa0a18eb7669c07f4e7484e8ee86d8d586b0cd65ee8bbdc07061dd8db26",
+      "lfSha256": "3b23ec12347d1b92226c09b53e3eeaa12e674aeac65e41a99d92e31713871861"
+    },
+    {
+      "path": "docs/py101-p3/LINT.txt",
+      "baselineSha256": "9d83e8f518c1d08ee686ffb7dddfffe3486fe47fe644b08fd8fc1ecdc111a397",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/py101-p3/PYTHON.txt",
+      "baselineSha256": "f1f5eac269b2caf1c7ef2b0910aef3998304ff93e143c7a226aa9931d0f58494",
+      "lfSha256": "68a99dc83b408e9c1978af6b3a087915627d6a3d6a34161c31052410803808df"
+    },
+    {
+      "path": "docs/py101-p3/ROUTES.txt",
+      "baselineSha256": "3dd6c9c5609eced20a948b7a9b32aade6e38b5f9e2559adf415b5bc1f48a70f6",
+      "lfSha256": "a2b9451623ddd6db9045c2ccb66d2bfb6275407b601c2f3d1671f7457a3202d4"
+    },
+    {
+      "path": "docs/py101-p3/ROUTES_DRAFT.txt",
+      "baselineSha256": "3dd6c9c5609eced20a948b7a9b32aade6e38b5f9e2559adf415b5bc1f48a70f6",
+      "lfSha256": "a2b9451623ddd6db9045c2ccb66d2bfb6275407b601c2f3d1671f7457a3202d4"
+    },
+    {
+      "path": "docs/py101-p3/SPECIALIZED.txt",
+      "baselineSha256": "2ad629269898202da8091c456e765db5df9b5713b82f90ba0ed8f5a790395af6",
+      "lfSha256": "54b2e0dce1b421c9af97b27d0032381f99c01b135de403f6943e880bc89ea04c"
+    },
+    {
+      "path": "docs/py101-p3/TEACHING.txt",
+      "baselineSha256": "59891ac18c547332777384048f94d7fedc57eacc5e53c1db59b70fb955cbcff7",
+      "lfSha256": "63f8e8a47bab3024f98cbe5745c4c04943df27a72fe658cca44667c29eedf50b"
+    },
+    {
+      "path": "docs/py101-p3/TESTS.txt",
+      "baselineSha256": "59198a18795f896ca8030190947df338a2589d1b1f09c7aa8a10e912499692fb",
+      "lfSha256": "1628815f87797fe39ea946eaa8605617baa6e8a968593388d39f36f881a1bc27"
+    },
+    {
+      "path": "docs/py101-p3/TESTS_DRAFT.txt",
+      "baselineSha256": "7a9e9be2e7fb870c5c327556ad3e1c1df58a44f3023f74b8faf41b763387d1bf",
+      "lfSha256": "2c3321313b0686addf22ae20fcf9b837c209c9119f594de13be660911c9e0d10"
+    },
+    {
+      "path": "docs/py101-p3/TYPECHECK.txt",
+      "baselineSha256": "3b3a52b48282e53c6e31bf15a9d3c49cf5bbba659ab50b2622c704855385c24c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/py101-p4/BUILD.txt",
+      "baselineSha256": "a659e23d169ced4744bfd17f24976d23c3679a81052c87116bab898c101589e3",
+      "lfSha256": "5d08b40e739bde2eb73591d16e8a34a26ce7dbc2187abefca63926264d6bdae0"
+    },
+    {
+      "path": "docs/py101-p4/BUILD_DRAFT.txt",
+      "baselineSha256": "160935e495ab8b347bcf2d31ebda5c1f9004f70b4a12111eafe13c35309f6644",
+      "lfSha256": "407d8b41e1eb7be6db8090050e65a4797e8dbb425b1d7b60edcc68ca9e15447d"
+    },
+    {
+      "path": "docs/py101-p4/CLEAN_TESTS.txt",
+      "baselineSha256": "6b85eb210ac6d86a8b4410f6ebbeb982a97e0391dab073853c0b974b1d65e6b1",
+      "lfSha256": "c89c2612f604d2ff9a737e6d4913b37bce0de4ae00a85315255a12e74b9fa940"
+    },
+    {
+      "path": "docs/py101-p4/DOWNLOADS.txt",
+      "baselineSha256": "0fb0a1213d2ee711d2f3e5c1f6ed66d0ef5efc95d41d3180943d7fa0125fa406",
+      "lfSha256": "a21008c4f1ded524c4209a3451e14fb4eee05339ca1182b77d20f945389d884a"
+    },
+    {
+      "path": "docs/py101-p4/INSTALL.txt",
+      "baselineSha256": "365a1cf38c0b41620c18419cc34c5e7be1725bc1306ef17e5eac14a67aef74c2",
+      "lfSha256": "50c861f8aaf9c72da87708808582b187f01541a45c3602129082db533e333a97"
+    },
+    {
+      "path": "docs/py101-p4/JUPYTER_SERVICE_LOG.txt",
+      "baselineSha256": "a285cdfdca75edaa8df4f1a92f6e745fc26be78b21ac4b6a49e2a5608880d8fd",
+      "lfSha256": "2512cdaab7f7ad74e3c894b9ddb38a60a12ad51030a8d3ae2bd221a4fa998a25"
+    },
+    {
+      "path": "docs/py101-p4/JUPYTER_SHUTDOWN.json",
+      "baselineSha256": "0c0dec915baa4d3020530ea94173e9b6a062745065b9252850e6e6ffeab7b651",
+      "lfSha256": "f62f89642bdc224dd6d1863457aefb26d73c1a417450182a60475c7984d39211"
+    },
+    {
+      "path": "docs/py101-p4/LINT.txt",
+      "baselineSha256": "9d83e8f518c1d08ee686ffb7dddfffe3486fe47fe644b08fd8fc1ecdc111a397",
+      "lfSha256": "16407639f6b789d310cbcbe800e16b980081b5571e42146c76e6483583b85b4a"
+    },
+    {
+      "path": "docs/py101-p4/PYTHON.txt",
+      "baselineSha256": "f5638c2a3c866db5bc114c5495a8e17b8850b9ad374e3342d0376e544e6857de",
+      "lfSha256": "f8b1e68135fa7a41971d406d56db26f1fb11c1c74ab150c85b15c49dd0c15921"
+    },
+    {
+      "path": "docs/py101-p4/ROUTES.txt",
+      "baselineSha256": "3dd6c9c5609eced20a948b7a9b32aade6e38b5f9e2559adf415b5bc1f48a70f6",
+      "lfSha256": "a2b9451623ddd6db9045c2ccb66d2bfb6275407b601c2f3d1671f7457a3202d4"
+    },
+    {
+      "path": "docs/py101-p4/ROUTES_DRAFT.txt",
+      "baselineSha256": "3dd6c9c5609eced20a948b7a9b32aade6e38b5f9e2559adf415b5bc1f48a70f6",
+      "lfSha256": "a2b9451623ddd6db9045c2ccb66d2bfb6275407b601c2f3d1671f7457a3202d4"
+    },
+    {
+      "path": "docs/py101-p4/TEACHING.txt",
+      "baselineSha256": "bf639ab227568a64188ee4414a92e297f000ad42585b0d2cf33e2631b5e1463d",
+      "lfSha256": "e7cff3d7d068205fc9ee29f0f919a999a50212771114590a3e405518455d5909"
+    },
+    {
+      "path": "docs/py101-p4/TESTS.txt",
+      "baselineSha256": "41d1329e51ec5b8527d0ff7210a9f6833d53e2f08827c84b67f4650ba6e3c195",
+      "lfSha256": "41a89af5d923a6c0ac9c8edaa447972508e074789968ed33fcd705acdbaf9dd6"
+    },
+    {
+      "path": "docs/py101-p4/TESTS_DRAFT.txt",
+      "baselineSha256": "4aac777ec644cbe745a11faa96e1f71a58edf54ed644e91adbc73226e7d9d592",
+      "lfSha256": "ddc65582683c47f87c26bef0f7d3363000c884dc77fd8ee015c5a5826e1db76f"
+    },
+    {
+      "path": "docs/py101-p4/TYPECHECK.txt",
+      "baselineSha256": "3b3a52b48282e53c6e31bf15a9d3c49cf5bbba659ab50b2622c704855385c24c",
+      "lfSha256": "fe49a9e2a8616a121b306da89a573c2c1d1abfc73f2d82a102ec9fb2b2436fb6"
+    },
+    {
+      "path": "docs/reading-experience/PYTHON.txt",
+      "baselineSha256": "fde5b138fa5f5b5e8dcde8b9b02b53578244697644c76c7c52bff0a549c7fab7",
+      "lfSha256": "6370f1be366c3290d04d5e5204095c24e139efbb7751c3ff8856e6141c14dbe7"
+    },
+    {
+      "path": "docs/reading-experience/TEST_RESULTS.txt",
+      "baselineSha256": "8637def0d467afb33628f3bd837101adc3151820f8deec54589f8718f93ac547",
+      "lfSha256": "b4b3771456ec8f51c900ee033d8214d1b4b66fe19cae839b03966862295712ce"
+    },
+    {
+      "path": "public/learning/v2-1/numeric-evidence.json",
+      "baselineSha256": "cbc7813b465e0699113254f7e5c1ae6898f3efd9ef7089de26e29a3406abc9ca",
+      "lfSha256": "befe6c563777825fcf97d0fba7eb8c3f32eee508432a4a4655346fda96950c21"
+    },
+    {
+      "path": "scripts/ai000-creative-compatibility.ts",
+      "baselineSha256": "596d768153d00c8cd664ea4249c0b5522520be9b7bb1b23be33ccdbfdfd3503c",
+      "lfSha256": "e04b25aa58c3560fa7b5bd3c1677ba3f974793461f713e0859d93b0ae9984245"
+    },
+    {
+      "path": "scripts/ai000-illustration-compatibility.ts",
+      "baselineSha256": "4dc42bf6355e586a43763529d9c191fc7190d007b1c6687dfb4f563f665dcd5e",
+      "lfSha256": "8577b6055bf64603e42555a19d5e61c28cae3c05f39f0f077e890d599c73f8e4"
+    },
+    {
+      "path": "scripts/ai000-multimodal-compatibility.ts",
+      "baselineSha256": "1e7f8f600e30b3b53d648145cfbfe46827f478892825daf8b7f0433c848c8888",
+      "lfSha256": "fe901dcbcd174e530fb76a5f512209f60b11db572692a7d1a19605e51816159a"
+    },
+    {
+      "path": "scripts/ai000-privacy-compatibility.ts",
+      "baselineSha256": "1d5c3902f04aa2ee7aa449e81890f9f5986b9d965c0d6c9265e6bd3c16350bc8",
+      "lfSha256": "8241077c1b56c970f1b9888d48a850b2d1afceb9882773c65a58a1661a20d8c1"
+    },
+    {
+      "path": "scripts/ai000-responsible-compatibility.ts",
+      "baselineSha256": "65c9f4f36d38eae3f09894abdc95557bcf7adb0a91d8286dee730a6c9c6e46df",
+      "lfSha256": "4de146ed6a4cf80e936bdfafaac6eaa4457289849b6e7b3606a5f2f6a903ebf9"
+    },
+    {
+      "path": "scripts/ai000-study-time-compatibility.ts",
+      "baselineSha256": "a29a5107c83fcd05d194f82b7e8d07e74e7c26d6d3e09a7dcd8809130f90eb9d",
+      "lfSha256": "e0ad5af6200e2a14a9204af3cdd105d378fa3df13534b91af7d648dbb74972aa"
+    },
+    {
+      "path": "scripts/check-ai000-content.ts",
+      "baselineSha256": "bdf3d555eda3ee9b6c08845c743c2ee6e7b55d18860613b0afa7a09e26d3ab74",
+      "lfSha256": "e5fdbcf2cc32a1e452917bffcb0aaa05f649e54f4ceda60f9b28885c9eac0557"
+    },
+    {
+      "path": "scripts/check-ai000-relationships.ts",
+      "baselineSha256": "a7d47dba98c61871ca25ee878e2f66d64d6845107e8e15da1e22779a5f5694ab",
+      "lfSha256": "7b3cf2a2fabff3312d93e872a3dd04e7b76640dff996af4c8fc3aceb128974fe"
+    },
+    {
+      "path": "scripts/review-ai000-3-1.ts",
+      "baselineSha256": "f0643e25c7a23e16a92a1a6522f4e89817386b2ee76dffbf8f1bd637b369bb4d",
+      "lfSha256": "1f71d2d5be4b243d4cd23b34b28e8044dbac7dbf4bd8f6ff91dbcffcf118d29f"
+    },
+    {
+      "path": "scripts/review-ai000-3-2.ts",
+      "baselineSha256": "90da725edd2d15ffdd54fcf5348be1a82713de3091d31e0fe342cffab266bbb7",
+      "lfSha256": "2649b40c387f7f13cda73b2548c8cb64ea4ce82297353957dbdf95db15c3b276"
+    },
+    {
+      "path": "scripts/review-ai000-4-3.ts",
+      "baselineSha256": "2d3328bf64173ab94f72353b076178489cc1b72a8ef2208001074487f8fa37cc",
+      "lfSha256": "ee27994d4445df06c4c3b77eabd2545df624f2852c93c319a9a4eb1773ba9e95"
+    },
+    {
+      "path": "scripts/review-ai000-5-2.ts",
+      "baselineSha256": "9888de2b2f415d8d2c78fa87d50de710ea3c6a182eedf0aa81af21558681899c",
+      "lfSha256": "8552126602759e222019b542305848c03133162b971521e8e032e45470d35438"
+    },
+    {
+      "path": "scripts/review-ai000-5-4.ts",
+      "baselineSha256": "9a248a0936dbbe9216cf1e7cacf979ba6ea4c86083d0072cf4594e890acef600",
+      "lfSha256": "2793a60a8e1750d78af9fac1c8b0ddad9a25f893f637a94eef10a0d4b84b40e5"
+    },
+    {
+      "path": "scripts/review-ai000-6-2.ts",
+      "baselineSha256": "ad12a4bd315b9135f76fe60ca43144faefc2dc542003402ecd444eaa7dd43008",
+      "lfSha256": "9b1889ef00ed710739b3bc41883d7ef9a32d74262801f5a266d76af29e3ae947"
+    },
+    {
+      "path": "scripts/review-ai000-6-3.ts",
+      "baselineSha256": "6a6a92f978a9c26002c32bf1502862f8661de4abd04e99dad02aff85e2a63ab3",
+      "lfSha256": "60cbb30132e3b5a119c8cc8f3c5792b1df3c61ce740b10c4407af08a7f8ccbb4"
+    },
+    {
+      "path": "scripts/review-ai000-quality.ts",
+      "baselineSha256": "024edd826d63df28392c6125a1195484532b3af4cd4150129629c7021611b2a3",
+      "lfSha256": "6125e255f9c81fa19387de3ce8f61afa67918a67f39fe0d3933ecc80b9353e1b"
+    },
+    {
+      "path": "scripts/review-ai000-v2.ts",
+      "baselineSha256": "572d7ee60dcb2a824c9c4bb3ec636186c3fcecaa4f24ab6090b8a02b6634b64f",
+      "lfSha256": "470a097e38ec95acf3ffd9fa62f8b8f8daddae59ead219117035f09f7cbf56cc"
+    },
+    {
+      "path": "scripts/review-teaching.ts",
+      "baselineSha256": "3f227477730afb928ec67c049b0b12b1996d6f34cb35a48988c8172fcc5de399",
+      "lfSha256": "aee5d3a9f3b484603603b193e4b3f078751d294675cf4cb220de26df056d6ae4"
+    },
+    {
+      "path": "scripts/validate-python.ts",
+      "baselineSha256": "2647f388f3d5d266dd08aa1ccf489f3f6734cd8c1edec679715991ba816c56ea",
+      "lfSha256": "a47d50dd30b31b7126746a84a763afccfcaeedb99cf1c197c77bf3176dec15d0"
+    },
+    {
+      "path": "src/app/ai000-lesson.css",
+      "baselineSha256": "dcc93d72bc813258d8026eb8aa1db4f54b20f0da8de6c4816adf2cf7677421c3",
+      "lfSha256": "1585d97b57a67317ef757fa01f1226c67a539f3e5c60ec9679cea5742b178880"
+    },
+    {
+      "path": "src/app/courses/[id]/page.tsx",
+      "baselineSha256": "3904f18a649e84a90b1bc675c73c099b74713cbb84198f337c290e2d4bc87a1a",
+      "lfSha256": "323b60eddd99253e33315ceeb73168abbc8f90904422ba3ab8a8d8fadac15ecc"
+    },
+    {
+      "path": "src/app/learn/[courseId]/[lessonId]/page.tsx",
+      "baselineSha256": "8eee57fe880b96674bf99eba73b144d561abd287cd553da44c56c7bfd024c058",
+      "lfSha256": "573c7020c4693e88adcc95cee41484d6d196f2589d7a6b95d59d0cdf0e571db9"
+    },
+    {
+      "path": "src/app/reader.css",
+      "baselineSha256": "c00a578b07507e9db01a7e49394a1271e1f52b7d10b291b621164e5784b45ae1",
+      "lfSha256": "44fcd476a3d88a42c97c5d35103d04ce440214f97bd091366f6e9de2fa71dd10"
+    },
+    {
+      "path": "src/app/teaching-v2-2.css",
+      "baselineSha256": "96269582a0d64beb7e8ab05d5b49e8c15b95e7094ee52e081cb83d6c73faffe7",
+      "lfSha256": "aa9c4e881700e2cd10e1ee89b55af275c25833e17b21ba145149ae56dc7011e2"
+    },
+    {
+      "path": "src/components/lesson/ai-creative-figure.tsx",
+      "baselineSha256": "388bb20d8fa998db102e9bc48d2d19b833a4c1a829810c9425100190a9f5284d",
+      "lfSha256": "0b6f76b41c87c1525539fcfbe516bff9636421bb2482987cff5f42b077938eab"
+    },
+    {
+      "path": "src/components/lesson/ai-data-use-figure.tsx",
+      "baselineSha256": "ad3386a3ffe729c9f5ff07d86494fc1ee333cdda9a40ddbb4bdf6c7be0255191",
+      "lfSha256": "5d4defff64a5b6be91480f717e1710a4bc022a3aa1305fb4c55cdfc68f4948aa"
+    },
+    {
+      "path": "src/components/lesson/ai-task-figure.tsx",
+      "baselineSha256": "699230936b748c65b89319c1321b11575fb1cb3ee01bf0a870effe338968036a",
+      "lfSha256": "7e33851808b2c549a4a0d711a657af0a1ce4d9365f051ca576b1c1c94ee36021"
+    },
+    {
+      "path": "src/components/lesson/ai-vision-figure.tsx",
+      "baselineSha256": "9172bb2f9c57244d292db4782a275e264434e0a44af0c707c8f07835b704623f",
+      "lfSha256": "81d630c53681f8b3b10bc9d90116dbfe983b6c26a545c9702557d187a4546701"
+    },
+    {
+      "path": "src/components/lesson/chapter-toc.tsx",
+      "baselineSha256": "037b6cbc129d7272b6b2ac3fce38d9f744762ad8f80049a4e5a3d370cc09f8a9",
+      "lfSha256": "d4bf164024ede2d05ccfb9145970e5d069a9ed7c202c8a731943490f572572fa"
+    },
+    {
+      "path": "src/components/lesson/course-contents.tsx",
+      "baselineSha256": "094365369364e649591c8ced22ea3cac59612f5953e1481a6932300e0f2561db",
+      "lfSha256": "c69190845bb979c5874dfeb0d60619207941a02a0e83e7052fbe3f3a47485e17"
+    },
+    {
+      "path": "src/components/lesson/reader.tsx",
+      "baselineSha256": "fa0fbf213d3f8dab8bffbfc607f036da184f1926d170b4cf3d4d6d86e0b1a293",
+      "lfSha256": "39f99e4184d88e0dc8886ca9c219a49198fd4dd863ffb561ff54945714c81b80"
+    },
+    {
+      "path": "src/content/ai000-study-time.ts",
+      "baselineSha256": "b033d0eb359b07310270a564fef1803b79f4082ed8b57b292c78bd8fe1249cd1",
+      "lfSha256": "cad2e2b197eb7224ff4f1a740a0cd01ef4c4583421b7f9787bdd0a4a7be747c7"
+    },
+    {
+      "path": "src/content/course-outline.ts",
+      "baselineSha256": "5565f737bf719a61156f32314371df7f7a904a502f72082039b523cabd7d0261",
+      "lfSha256": "a91313927295100169b3da43dd8f529f06d309d7e8eb4c63b23de7fbf46d6bac"
+    },
+    {
+      "path": "src/content/lessons/ai000/ai-ml-dl.ts",
+      "baselineSha256": "16c057b3a79b64a4d53aa13005aa646f22aa578cb7dfce4770400301aba8470a",
+      "lfSha256": "eb2e92c4aada08b94a8d9422ecf933266c95b33cca7efe284d12b53db8dda791"
+    },
+    {
+      "path": "src/content/lessons/ai000/automation-and-ai.ts",
+      "baselineSha256": "4e9003788437ce1a69c563669518d6a968a9f8e77744144f542d9915784facd8",
+      "lfSha256": "6567b6c21468219883cab5288db2a811217f238ec7ecc394e965d53c332458d5"
+    },
+    {
+      "path": "src/content/lessons/ai000/capabilities-and-errors.ts",
+      "baselineSha256": "db0a83505629f011b04d32005ce57e2261a316006618c528a79079e8754f0a13",
+      "lfSha256": "bccf3146bedcd8aad9f4deb19cdfb9c447d126ef48cd344007fd7c14878df1b7"
+    },
+    {
+      "path": "src/content/lessons/ai000/creative-work-example.ts",
+      "baselineSha256": "974263de21656a90398cdb9df8440827aeacccc9df08a01281386847afebcd04",
+      "lfSha256": "e0c6dc7a8e18ecf1e371a022df795d87cd2f55e41dcaf6fa377348baa1214ac9"
+    },
+    {
+      "path": "src/content/lessons/ai000/generative-ai-and-llm.ts",
+      "baselineSha256": "46a46c44b5ea256f9d8f3bc84c3e8034883c58dc5517ad702fc01c52c92dd559",
+      "lfSha256": "2d02f9e1d426a8c2db4c3337bb8e17ab7f282fcde4fbeb6f306e0f6be69464a4"
+    },
+    {
+      "path": "src/content/lessons/ai000/generative-work.ts",
+      "baselineSha256": "eb06aaa8fbe9a303598d2e56b11b5f07483595759966eb039c0af421f280b942",
+      "lfSha256": "0bcee9938cfbc9358fa313eca527128e3efe2d539ab70013503155c450367ef1"
+    },
+    {
+      "path": "src/content/lessons/ai000/multimodal-ai.ts",
+      "baselineSha256": "7a597ffd283764c3da1d8f63ec3e4427bb371bac2ca22bba2829c47e0200ff0c",
+      "lfSha256": "28cde19cd922d5c1130eee11a9586c03ef300f8af1d6087fd98fa54615250885"
+    },
+    {
+      "path": "src/content/lessons/ai000/natural-language-and-llm.ts",
+      "baselineSha256": "73f77bb586145bfca31c4c2d67368c314a4f36686c7213cc23708145f07d513f",
+      "lfSha256": "75f52433e87b250550901da950608ad15955a802758343155263741854f8e4a9"
+    },
+    {
+      "path": "src/content/lessons/ai000/reinforcement-learning.ts",
+      "baselineSha256": "5599dcb937d41137e89d666fa6e39e0a3aa9401688c1de93ad1fe7833b2460c6",
+      "lfSha256": "26f68bf17935e978dcfe76176a82f8303d6dc62de3b41b328cf82fe50ef8bda5"
+    },
+    {
+      "path": "src/content/lessons/ai000/self-supervised-learning.ts",
+      "baselineSha256": "fc4d245028c882cc3ebba826b0f56c99b3ecbe07e31596aba5b2cd0aeae8882c",
+      "lfSha256": "7a6e2fcebb3c46bf8c4f4d1f75c8c02551c0bd8844b0d7ba2988cdc9c8726380"
+    },
+    {
+      "path": "src/content/lessons/ai000/supervised-learning.ts",
+      "baselineSha256": "285c809123c3f3e4f8d994a7349164b27709007f20474e0e3c5665d012daba03",
+      "lfSha256": "f0331bf340146e590b11b830d6f4e97d9b1446ea538a05464c8a50279799e895"
+    },
+    {
+      "path": "src/content/lessons/ai000/training-validation-test.ts",
+      "baselineSha256": "1bfc050df31c62cdc7581ff7a8a7ac31f650036ed8d30e3fbed1aa5b6512811b",
+      "lfSha256": "8c883db717724d2b99a7aa114ce83b75387da5ae6ca59c4390cc0c7c53a7951c"
+    },
+    {
+      "path": "src/content/lessons/ai000/unreliable-answers.ts",
+      "baselineSha256": "3706fb1d1a4ee043b5944d58e0d63949784f753bbf51b683d6003d21cb84cb0b",
+      "lfSha256": "b38969036d715243539a2f771fd42b0420e51c9e662e6b7a157f504426e14b7f"
+    },
+    {
+      "path": "src/content/lessons/ai000/unsupervised-learning.ts",
+      "baselineSha256": "ca2c293cd87b1e95554664b668fab6af1b4be8e6992057462e4fa12f2bcf6150",
+      "lfSha256": "fc7ab2542068357464b8d650f0efb3ce8668bb87f234ee3fca15ed1954ebf24b"
+    },
+    {
+      "path": "src/content/lessons/ai000/using-a-fixed-model.ts",
+      "baselineSha256": "b83b5e4711adad230b060cab33c68b227a8aea79e67507f22fb171194f6e4dfe",
+      "lfSha256": "571766e7299468bf45b65d750456f187807b9ea3af0604b8e68b7e014e5ab86e"
+    },
+    {
+      "path": "src/content/lessons/ai000/what-is-ai.ts",
+      "baselineSha256": "a3e83a5987bbc7bc011a6a21a239e9083d2d680390696d8a6428a22362808102",
+      "lfSha256": "05ff9073d2afb1d7322b03b69cb94a512713f29aa0be66528ae4f2dc1fd2d1e5"
+    },
+    {
+      "path": "src/content/lessons/ma101/vector-addition.ts",
+      "baselineSha256": "a8dbc3cc913d9df6b7d53f758b986c1933f04989eb4ec7f0746c12be50ebce4f",
+      "lfSha256": "956f7cfbd39f97bfc81757303c9c50be877e27a3b3844f673b34ef30d023ecbb"
+    },
+    {
+      "path": "src/content/lessons/ma101/vector-meaning.ts",
+      "baselineSha256": "4f58715c673eacea7c5c827a4ac323c84d890d340ac26a5eaa685165f7cf3a18",
+      "lfSha256": "8c2c20ba6e32c446a10235a841c27834f5ce7499d99d89fb11b639955181076d"
+    },
+    {
+      "path": "src/content/lessons/ml201/derivative-direction.ts",
+      "baselineSha256": "cfc65647e0ef5414a3cb04b135ba52115754e1044e43059721773d78258c9a53",
+      "lfSha256": "1c1f0d76ca8a8cfb3c055519101484bb119d2f17b952ea3541bd894d9044eebf"
+    },
+    {
+      "path": "src/content/lessons/ml201/linear-model.ts",
+      "baselineSha256": "e73c744b51aa4318944eb872f21863075e1262f49106b1b866f658e67dbf8859",
+      "lfSha256": "c6f19a719fad64e505d46c3e70df6243e8a45c2d7724274137099d5ea01e447f"
+    },
+    {
+      "path": "src/content/lessons/ml201/loss-functions.ts",
+      "baselineSha256": "6f9b441cf19d6dc3e2c859de4df40db01a27ed0a93415f5556114a760a1680d4",
+      "lfSha256": "287131d25bba41b886aeab25a1f025dc7403b19fbc8deeb878cea29f548036bd"
+    },
+    {
+      "path": "src/content/lessons/ml201/manual-update.ts",
+      "baselineSha256": "0719736381370cfbc04f4b1afb1c769142f5bb23733cbcbed934898597de278c",
+      "lfSha256": "48e5372f4dc308e8a11e92b86e7f1594064741273d2233e70993e83a0245af2f"
+    },
+    {
+      "path": "src/content/lessons/ml201/mse-gradient.ts",
+      "baselineSha256": "f7105b7fd0b8544f7da880b43839c918690c09e313ef1654d16a83e56f338d07",
+      "lfSha256": "aa9e699d7cf6afde76fe30f8c9dc85decbe2b1794e849cdef135a3661b920b22"
+    },
+    {
+      "path": "src/content/lessons/ml201/numpy-regression.ts",
+      "baselineSha256": "d4e3ebc7fcb6ba404c7a2c883df85ca19d4f7daa6c7a4a66ea512ba788fe3ddc",
+      "lfSha256": "8883161c7323833a3bf2ef48aa58ea266db6bcdacb2587b0c9c71550d4658e20"
+    },
+    {
+      "path": "src/content/lessons/ml201/regression-task.ts",
+      "baselineSha256": "283efe7f9cea5bda1cbb7f11cacf69362e05be311af18a386935f58b4826286b",
+      "lfSha256": "63cfbc5f414763d7304348055138355ac4d05d57a5b2befd9abc5861839465df"
+    },
+    {
+      "path": "src/content/lessons/ml201/shared.ts",
+      "baselineSha256": "4ba26381293e3c146ec154289354141672f82931ea36ca0eade0a06ae53cec32",
+      "lfSha256": "97ae989412b7a926abcc2a924835ae3c21a3f164796589106cc35f0835c18829"
+    },
+    {
+      "path": "src/content/lessons/ml201/teaching-profiles.ts",
+      "baselineSha256": "cea6fad96ab78c067e2eac2f3a71660b64c384d59d12c304fdc088ad44ea8654",
+      "lfSha256": "9fa594cdc72d73ebffcab3ea1fef1209ca85c763dff59ded6b9bc8f9649a3253"
+    },
+    {
+      "path": "src/content/lessons/python-functions.ts",
+      "baselineSha256": "f6cd84c91779daf289e69f7cedbd895f709471ce40ad707e988938b914055f54",
+      "lfSha256": "985a591253332f84d5230074e8d976f675c8e7fa8aaa4737c70ac7eaf9ba6475"
+    },
+    {
+      "path": "src/content/lessons/vector-matrix.ts",
+      "baselineSha256": "9867ffea3162740f0fac2eebb4878254b29f1e4891a5dcf479f5787f308e1b8d",
+      "lfSha256": "7e9072630d9e1a71a7aa582ee60de01c81706039ea3205667a720b5023486ff6"
+    },
+    {
+      "path": "src/content/models.ts",
+      "baselineSha256": "c6d10758322631a7493a63ce7d5d7bdbfe297ebd9b36f5fd950668b93d2da556",
+      "lfSha256": "2a3a119bbe87d7898add6d5ba9ac9bcd84d38221987a092181386cd91ca09754"
+    },
+    {
+      "path": "src/lib/course-engine.ts",
+      "baselineSha256": "8e57692088d31fbbb2a4acfb6663b10120a8a390103b7e67f92ed8199cc78da1",
+      "lfSha256": "3829162599d932a29ef4c6844fb36c71342a8c7bd2ea8ab5e692c6167d4ae389"
+    },
+    {
+      "path": "src/lib/curriculum.ts",
+      "baselineSha256": "98911db985e1aa6736eb313d709a5fbdecc26861a6a5d97a1c1fd67eef64685d",
+      "lfSha256": "79d1329e5b86bc52826d1fa7acddef3d968f193e8575b930249ad1ad464abab0"
+    },
+    {
+      "path": "tests/cross-discipline-editorial.test.ts",
+      "baselineSha256": "ea3841bea1c03846fa5dd81cc44a7bf050c2f78b8867769b4169e8415b91096a",
+      "lfSha256": "a8440440a050ad8482bf2e06c3a8233a425d9c362555f65e6fd8fee40c08a745"
+    },
+    {
+      "path": "tests/curriculum.test.ts",
+      "baselineSha256": "327d8b2ce7acfe2c26ee2f2c99f74ebcf31b092b0f1272d7cec176e2e9c81ed5",
+      "lfSha256": "537e5bf1e6345b0aef6ba50516f3d518c9f72c537d15b04496abcd5ce51dfcbf"
+    },
+    {
+      "path": "tests/teaching-v2-1.test.ts",
+      "baselineSha256": "09daecd48c19c679b614fccc07d854a92b145d207bf1734c57c756d7b455a88c",
+      "lfSha256": "cfc422551c996afe4be687a9eb8ecacc19baa31bf37bfa4e76c21bc9d8baf429"
+    }
+  ]
+}
