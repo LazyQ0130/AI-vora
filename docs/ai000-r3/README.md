@@ -2,6 +2,8 @@
 
 2026-10-29。基线450e40187f444ab551ca1d391ec5aa91c7dc0e5c。正文仅改2.2、5.5、6.2、6.3，6.3配套题设及四条Publication同步；V1.0仍是正式采用的编辑规范。
 
+教材提交及各源码Git blob/对象摘要见[BINDING.json](BINDING.json)。
+
 先读[完整报告](../AI000_R3_REFINEMENT_REPORT.md)、[来源核验](SOURCES.md)与[另轮解题](SEMANTIC_RECHECK.md)。这是AI辅助精修及技术证据，不是教师审核、法律审核或学生试学。
 
 |课时|开写前简报|准确差异|本轮对象/版本/锚点/阅读量证据|

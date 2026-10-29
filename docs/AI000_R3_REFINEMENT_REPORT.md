@@ -10,7 +10,7 @@
 
 用户开工前的`next-env.d.ts`、`.codex-remote-attachments/`和ML/PY截图/YAML保留、不提交。构建自动将next-env路由导入改为types，结束前恢复原有dev路由导入差异；其余无关文件未操作。没有批量或单项删除文件。
 
-[独立证据目录](ai000-r3/README.md)保存四份开写前简报、[实际基线](ai000-r3/BEFORE.json)、[六个生产源码完整差异](ai000-r3/CONTENT.diff)、[新稿检查](ai000-r3/AFTER_CHECK.json)、事实与语义复核、技术日志及截图。完整教材提交在内容提交后以`ai000-r3/BINDING.json`追加绑定；绑定提交只补证据，不再改变教材。
+[独立证据目录](ai000-r3/README.md)保存四份开写前简报、[实际基线](ai000-r3/BEFORE.json)、[六个生产源码完整差异](ai000-r3/CONTENT.diff)、[新稿检查](ai000-r3/AFTER_CHECK.json)、事实与语义复核、技术日志及截图。完整教材提交为[`fd33ef738042444f1362fe7511b3763a2102a8fd`](https://github.com/LazyQ0130/AI-vora/commit/fd33ef738042444f1362fe7511b3763a2102a8fd)，以[BINDING.json](ai000-r3/BINDING.json)追加绑定；绑定提交只补证据，不再改变教材。
 
 ## 四节原问题与关键差异
 

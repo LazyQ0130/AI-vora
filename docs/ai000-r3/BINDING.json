@@ -1,0 +1,64 @@
+{
+  "baseCommit": "450e40187f444ab551ca1d391ec5aa91c7dc0e5c",
+  "contentCommit": "fd33ef738042444f1362fe7511b3763a2102a8fd",
+  "contentCommitUrl": "https://github.com/LazyQ0130/AI-vora/commit/fd33ef738042444f1362fe7511b3763a2102a8fd",
+  "sourceFiles": [
+    {
+      "path": "src/content/lessons/ai000/generative-ai-and-llm.ts",
+      "gitBlob": "493ed6fb333cc85141b82b572ba87dae2176c9bb",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fd33ef738042444f1362fe7511b3763a2102a8fd/src/content/lessons/ai000/generative-ai-and-llm.ts"
+    },
+    {
+      "path": "src/content/lessons/ai000/privacy-bias-fairness.ts",
+      "gitBlob": "a13b70b74c1db35c0924f8cdf839e7c9712478bd",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fd33ef738042444f1362fe7511b3763a2102a8fd/src/content/lessons/ai000/privacy-bias-fairness.ts"
+    },
+    {
+      "path": "src/content/lessons/ai000/responsible-ai-use.ts",
+      "gitBlob": "67778eeb15d6a7a6000049a0521bfd449434525c",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fd33ef738042444f1362fe7511b3763a2102a8fd/src/content/lessons/ai000/responsible-ai-use.ts"
+    },
+    {
+      "path": "src/content/lessons/ai000/responsible-use-example.ts",
+      "gitBlob": "99ca51dad401159fc7e54406b73b6f3fc1e2900c",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fd33ef738042444f1362fe7511b3763a2102a8fd/src/content/lessons/ai000/responsible-use-example.ts"
+    },
+    {
+      "path": "src/content/lessons/ai000/rl-applicability.ts",
+      "gitBlob": "25e917449f0302d40230e85bfef9fcbcbf745b84",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fd33ef738042444f1362fe7511b3763a2102a8fd/src/content/lessons/ai000/rl-applicability.ts"
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "gitBlob": "5534c28698252d7535bf792a9b7532b55cc87ffd",
+      "sourceUrl": "https://github.com/LazyQ0130/AI-vora/blob/fd33ef738042444f1362fe7511b3763a2102a8fd/src/content/publication-manifest.ts"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "AI000-C02-L02",
+      "contentVersion": 1,
+      "sha256": "69e6402a98a8419e15c9e34de96f341a5812fdbdea7451e97cd92c686d5bba48"
+    },
+    {
+      "id": "AI000-C05-L05",
+      "contentVersion": 1,
+      "sha256": "8efe0189d3dc8f4b4fa6232c97384b943feaf4168002e15e94ca7331fa5fd178"
+    },
+    {
+      "id": "AI000-C06-L02",
+      "contentVersion": 1,
+      "sha256": "282f337be3f2dea72f959ea33947a81ca68f2c8796cdcdaacf887d0397cdabca"
+    },
+    {
+      "id": "AI000-C06-L03",
+      "contentVersion": 2,
+      "sha256": "592d72aee4cafe9f043e0464d76aa36b291e7ef687b80145cf2d7a213402bbbd"
+    }
+  ],
+  "frozenSnapshotSha256": "8403f8a29036eeb1a177a1609638888c05ffe85b94a04427fd4dd5d0f642a386",
+  "productionDiffAfterContentCommit": [],
+  "preservedUserWorkspaceStatus": "M next-env.d.ts\n?? .codex-remote-attachments/\n?? ml31-interactions.yaml\n?? ml31.png\n?? ml31.yaml\n?? py101-desktop.png\n?? py101-mobile.png\n?? py101.yaml",
+  "humanReview": "not performed; no signatures or student results",
+  "note": "Binding added after content commit. Baseline workspace status also lists the newly authored review-ai000-r3.ts helper; only that exact task-owned entry is excluded when checking preserved user changes."
+}
