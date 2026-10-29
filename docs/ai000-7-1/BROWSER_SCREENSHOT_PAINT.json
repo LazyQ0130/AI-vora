@@ -1,0 +1,182 @@
+[
+  {
+    "width": 1440,
+    "section": "eight-records",
+    "rect": {
+      "bottom": 251.2604179382324,
+      "top": 213.3125
+    },
+    "filename": "1440-RECORDS.png"
+  },
+  {
+    "width": 1440,
+    "section": "math-use",
+    "rect": {
+      "bottom": 251.1250114440918,
+      "top": 213.17709350585935
+    },
+    "filename": "1440-math-use.png"
+  },
+  {
+    "width": 1440,
+    "section": "dependency-table",
+    "rect": {
+      "bottom": 251.1875114440918,
+      "top": 213.23959350585935
+    },
+    "filename": "1440-dependency-table.png"
+  },
+  {
+    "width": 1440,
+    "section": "exercise-analyse-project-foundations",
+    "rect": {
+      "bottom": 247.17709350585935,
+      "top": 216.58334350585935
+    },
+    "filename": "1440-analyse-project-foundations.png"
+  },
+  {
+    "width": 1440,
+    "section": "exercise-repair-learning-plan",
+    "rect": {
+      "bottom": 247.39584350585935,
+      "top": 216.80209350585935
+    },
+    "filename": "1440-repair-learning-plan.png"
+  },
+  {
+    "width": 768,
+    "section": "eight-records",
+    "rect": {
+      "bottom": 274.0000114440918,
+      "top": 236.05209350585935
+    },
+    "filename": "768-RECORDS.png"
+  },
+  {
+    "width": 768,
+    "section": "math-use",
+    "rect": {
+      "bottom": 273.7187614440918,
+      "top": 235.77084350585935
+    },
+    "filename": "768-math-use.png"
+  },
+  {
+    "width": 768,
+    "section": "dependency-table",
+    "rect": {
+      "bottom": 273.7812614440918,
+      "top": 235.83334350585935
+    },
+    "filename": "768-dependency-table.png"
+  },
+  {
+    "width": 768,
+    "section": "exercise-analyse-project-foundations",
+    "rect": {
+      "bottom": 270.2916717529297,
+      "top": 239.6979217529297
+    },
+    "filename": "768-analyse-project-foundations.png"
+  },
+  {
+    "width": 768,
+    "section": "exercise-repair-learning-plan",
+    "rect": {
+      "bottom": 270.4270935058594,
+      "top": 239.83334350585935
+    },
+    "filename": "768-repair-learning-plan.png"
+  },
+  {
+    "width": 390,
+    "section": "eight-records",
+    "rect": {
+      "bottom": 268.4166793823242,
+      "top": 233.77084350585935
+    },
+    "filename": "390-RECORDS.png"
+  },
+  {
+    "width": 390,
+    "section": "math-use",
+    "rect": {
+      "bottom": 268.00000762939453,
+      "top": 233.3541717529297
+    },
+    "filename": "390-math-use.png"
+  },
+  {
+    "width": 390,
+    "section": "dependency-table",
+    "rect": {
+      "bottom": 285.53126525878906,
+      "top": 216.23959350585935
+    },
+    "filename": "390-dependency-table.png"
+  },
+  {
+    "width": 390,
+    "section": "exercise-analyse-project-foundations",
+    "rect": {
+      "bottom": 266.03125,
+      "top": 235.4375
+    },
+    "filename": "390-analyse-project-foundations.png"
+  },
+  {
+    "width": 390,
+    "section": "exercise-repair-learning-plan",
+    "rect": {
+      "bottom": 265.9583435058594,
+      "top": 235.36459350585935
+    },
+    "filename": "390-repair-learning-plan.png"
+  },
+  {
+    "width": 320,
+    "section": "eight-records",
+    "rect": {
+      "bottom": 266.9375,
+      "top": 235.59375
+    },
+    "filename": "320-RECORDS.png"
+  },
+  {
+    "width": 320,
+    "section": "math-use",
+    "rect": {
+      "bottom": 282.25,
+      "top": 219.5625
+    },
+    "filename": "320-math-use.png"
+  },
+  {
+    "width": 320,
+    "section": "dependency-table",
+    "rect": {
+      "bottom": 282.0416717529297,
+      "top": 219.3541717529297
+    },
+    "filename": "320-dependency-table.png"
+  },
+  {
+    "width": 320,
+    "section": "exercise-analyse-project-foundations",
+    "rect": {
+      "bottom": 281.6875,
+      "top": 220.5
+    },
+    "filename": "320-analyse-project-foundations.png"
+  },
+  {
+    "width": 320,
+    "section": "exercise-repair-learning-plan",
+    "rect": {
+      "bottom": 281.7395935058594,
+      "top": 220.55209350585935
+    },
+    "filename": "320-repair-learning-plan.png"
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "viewportWidths": [
+    1440,
+    768,
+    390,
+    320
+  ],
+  "exerciseRuns": 8,
+  "allExerciseStates": true,
+  "pageOverflow": [
+    {
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "overflow": false
+    }
+  ],
+  "oldStorageUnchanged": true,
+  "newProgressIndependent": true,
+  "partialPosition": {
+    "version": 2,
+    "courseId": "AI000",
+    "lessonId": "AI000-C07-L01",
+    "contentVersion": 1,
+    "percent": 37,
+    "completed": false,
+    "section": "data-checks",
+    "updatedAt": 1793246873525
+  },
+  "completedRestored": true,
+  "prerequisiteVisits": 4,
+  "desktopKeyboard": [
+    {
+      "hash": "#exercise-analyse-project-foundations",
+      "tag": "H3",
+      "title": "交两份有依赖理由的项目任务单"
+    },
+    {
+      "hash": "#exercise-repair-learning-plan",
+      "tag": "H3",
+      "title": "交一份有检查证据的计划修正单"
+    }
+  ],
+  "consoleWarnErrorCount": 0
+}

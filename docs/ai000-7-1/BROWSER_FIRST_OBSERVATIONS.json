@@ -1,0 +1,132 @@
+[
+  {
+    "focused": "先用手比较八条报修记录",
+    "pageWidth": 1425,
+    "regions": [
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "一个最小报修工具需要完成的工作",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "八条虚构报修记录：先找出两处不一致",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "从报修操作反查少量Python基础，不是完整语法目录",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "当前目标不同，数学需要解释的事情也不同",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "不同数据问题，需要不同检查动作",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "代码生成以后，学习者仍要回答的具体问题",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "报修项目的能力依赖：按工作检查，不要求先学完整门课",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "项目甲：借阅导出表，类别已按馆藏约定，漏记项待核",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "项目乙：已有历史输入与结果，六条只够作入门练习",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "小岚手里的新资料：7行不等于7次独立事件",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "课程规划与当前可读内容分别看",
+        "scroll": 722
+      }
+    ],
+    "rows": 8,
+    "section": "eight-records",
+    "viewport": 1425,
+    "width": 1440
+  },
+  {
+    "width": 1440,
+    "exercise": "analyse-project-foundations",
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        true
+      ]
+    ],
+    "characters": 2035
+  },
+  {
+    "width": 1440,
+    "exercise": "repair-learning-plan",
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        true,
+        true
+      ]
+    ],
+    "characters": 2418
+  }
+]

@@ -30,7 +30,7 @@ test("3.2修订r2，目标真实映射两个去重核心入口，3.1/3.3相邻�
  assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C03-L01");
  assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C03-L03");
  assert.equal(resolveLesson("PY101",lesson.id),undefined);
- for(const id of ["AI000-C07-L01","AI000-C07-L02","AI000-C07-L03"]) {
+ for(const id of ["AI000-C07-L02","AI000-C07-L03"]) {
   assert.equal(resolveLesson("AI000",id),undefined);assert.equal(lessonRegistry.has(id),false);
  }
  assert.deepEqual(lesson.assessmentMap,[{objective:1,exerciseIds:["propose-groups","identify-learning-signals"]},{objective:2,exerciseIds:["propose-groups"]},{objective:3,exerciseIds:["propose-groups","identify-learning-signals"]}]);

@@ -1,0 +1,444 @@
+[
+  {
+    "focused": "先用手比较八条报修记录",
+    "pageWidth": 1425,
+    "regions": [
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "一个最小报修工具需要完成的工作",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "八条虚构报修记录：先找出两处不一致",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "从报修操作反查少量Python基础，不是完整语法目录",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "当前目标不同，数学需要解释的事情也不同",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "不同数据问题，需要不同检查动作",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "代码生成以后，学习者仍要回答的具体问题",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "报修项目的能力依赖：按工作检查，不要求先学完整门课",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "项目甲：借阅导出表，类别已按馆藏约定，漏记项待核",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "项目乙：已有历史输入与结果，六条只够作入门练习",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "小岚手里的新资料：7行不等于7次独立事件",
+        "scroll": 722
+      },
+      {
+        "client": 722,
+        "font": "14px",
+        "name": "课程规划与当前可读内容分别看",
+        "scroll": 722
+      }
+    ],
+    "rows": 8,
+    "section": "eight-records",
+    "viewport": 1425,
+    "width": 1440
+  },
+  {
+    "width": 1440,
+    "exercise": "analyse-project-foundations",
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ]
+  },
+  {
+    "width": 1440,
+    "exercise": "repair-learning-plan",
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ]
+  },
+  {
+    "width": 768,
+    "panel": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n14 节点\n知道是文字分类，离做出工具还差哪些工作？\n先用手比较八条报修记录\n重复读取、判断和保存，可以交给程序\n先看要做的动作，再认需要的知识\n从6条正确，到模型里的数量关系\n需要把数学学到多深，取决于想解释什么\n程序能算，先确认它算的是什么数据\n同一批记录，为什么程序竟报100%？\n让AI写代码，可以和学习基础同时进行\n把基础连到工作，不排成一条绝对顺序\n下一步只做一个可以对账的小成果\n为两个新项目反查基础能力\n审查一份看似很忙的学习计划\n把用途判断接到真实课程，而非一口气全学完\n本节学习目标\n3 项\n01\n解释三类基础的用途\n\n把程序动作、数量关系和数据检查连到具体工作。\n\n02\n从项目反查要补什么\n\n给出依赖理由、最小成果和可以继续的证据。\n\n03\n修正不合理学习安排\n\n指出具体问题，安排AI辅助、学习与结果检查。\n\n查看完整目标\n联系具体项目，分别解释Python、数学与数据分析支持哪些操作，以及三类能力怎样配合验证结果\n从新项目的目标和交付反查操作与基础知识，说明先学或并行的理由，提出最小可验证成果与继续学习的能力标准\n诊断学习计划中的具体问题及影响，提出包含必要基础、AI辅助方式和实际检查的修正建议\n核心练习\n2 道\n迁移练习\n交两份有依赖理由的项目任务单\n迁移练习\n交一份有检查证据的计划修正单\n\n自主核对 · 不自动评分\n\n阅读进度\n仅当前浏览器\n\n已浏览\n100%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识",
+    "exerciseLinks": 2
+  },
+  {
+    "focused": "先用手比较八条报修记录",
+    "pageWidth": 753,
+    "rows": 8,
+    "section": "eight-records",
+    "viewport": 753,
+    "width": 768
+  },
+  {
+    "width": 768,
+    "exercise": "analyse-project-foundations",
+    "focus": {
+      "hash": "#exercise-analyse-project-foundations",
+      "tag": "H3",
+      "title": "交两份有依赖理由的项目任务单"
+    },
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "exercise": "repair-learning-plan",
+    "focus": {
+      "hash": "#exercise-repair-learning-plan",
+      "tag": "H3",
+      "title": "交一份有检查证据的计划修正单"
+    },
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ],
+    "overflow": false
+  },
+  {
+    "bodyFont": "16px",
+    "pageWidth": 375,
+    "rows": 8,
+    "section": "eight-records",
+    "tableClient": 308,
+    "tableFont": "14px",
+    "tableScroll": 320,
+    "viewport": 375,
+    "width": 390
+  },
+  {
+    "width": 390,
+    "keyboardHorizontal": 12
+  },
+  {
+    "width": 390,
+    "exercise": "analyse-project-foundations",
+    "focus": {
+      "hash": "#exercise-analyse-project-foundations",
+      "tag": "H3",
+      "title": "交两份有依赖理由的项目任务单"
+    },
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "exercise": "repair-learning-plan",
+    "focus": {
+      "hash": "#exercise-repair-learning-plan",
+      "tag": "H3",
+      "title": "交一份有检查证据的计划修正单"
+    },
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ],
+    "overflow": false
+  },
+  {
+    "pageWidth": 305,
+    "regions": [
+      {
+        "client": 254,
+        "name": "一个最小报修工具需要完成的工作",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "name": "八条虚构报修记录：先找出两处不一致",
+        "scroll": 320
+      },
+      {
+        "client": 254,
+        "name": "从报修操作反查少量Python基础，不是完整语法目录",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "name": "当前目标不同，数学需要解释的事情也不同",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "name": "不同数据问题，需要不同检查动作",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "name": "代码生成以后，学习者仍要回答的具体问题",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "name": "报修项目的能力依赖：按工作检查，不要求先学完整门课",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "name": "项目甲：借阅导出表，类别已按馆藏约定，漏记项待核",
+        "scroll": 320
+      },
+      {
+        "client": 254,
+        "name": "项目乙：已有历史输入与结果，六条只够作入门练习",
+        "scroll": 400
+      },
+      {
+        "client": 254,
+        "name": "小岚手里的新资料：7行不等于7次独立事件",
+        "scroll": 400
+      },
+      {
+        "client": 254,
+        "name": "课程规划与当前可读内容分别看",
+        "scroll": 254
+      }
+    ],
+    "rows": 8,
+    "section": "eight-records",
+    "viewport": 305,
+    "width": 320
+  },
+  {
+    "width": 320,
+    "exercise": "analyse-project-foundations",
+    "focus": {
+      "hash": "#exercise-analyse-project-foundations",
+      "tag": "H3",
+      "title": "交两份有依赖理由的项目任务单"
+    },
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ],
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "exercise": "repair-learning-plan",
+    "focus": {
+      "hash": "#exercise-repair-learning-plan",
+      "tag": "H3",
+      "title": "交一份有检查证据的计划修正单"
+    },
+    "states": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ],
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "chapter": {
+      "chapter7Links": [
+        {
+          "href": "/learn/AI000/AI000-C07-L01",
+          "text": "7.1为什么学习 Python、数学与数据分析？"
+        }
+      ],
+      "planned7_2": true,
+      "planned7_3": true,
+      "text": "课程章节与独立课时课程章节与独立课时，按 Escape 关闭面板。返回课程详情COURSE CONTENTS人工智能导论与技术地图7 章 · 22 节核心课已制作已制作课时阅读比例11%0 / 22 节已标记读完 · 仅当前浏览器筹备、可选与旧版课时不计入比例；已读不代表掌握。第 1 章：人工智能是什么：能力、边界与常见误区1.1人工智能究竟是什么？1.2AI 能做什么，为什么也会出错？1.3普通自动化和 AI 有什么区别？第 2 章：AI、机器学习、深度学习与生成式 AI 的包含关系2.1AI、机器学习与深度学习，到底是什么关系？2.2生成式 AI 是什么？它和 LLM 有什么关系？第 3 章：监督学习、无监督学习、自监督学习与强化学习3.1监督学习：从有答案的例子中学习3.2无监督学习：没有标签也能发现规律吗？3.3自监督学习：怎样从数据本身构造学习任务？3.4强化学习：通过行动与反馈学习第 4 章：数据、参数、模型、训练、验证、测试与推理4.1数据、特征与标签4.2模型和参数是怎样得到的？4.3训练、验证与测试各有什么作用？4.4模型训练好以后，如何完成预测？第 5 章：主要技术方向：NLP、LLM、CV、多模态、RL、生成式模型5.1自然语言处理与大语言模型5.2计算机视觉：让机器理解图像5.3多模态 AI：连接文字、图片与声音5.4生成模型：从要求到可核对的作品5.5强化学习适合哪些应用问题？第 6 章：AI 风险与责任：隐私、偏差、版权、幻觉与误用6.1为什么 AI 会产生不可靠的回答？6.2数据隐私、偏差与公平性6.3版权、误用与负责任地使用 AI第 7 章：如何阅读课程先修图与选择学习路径7.1为什么学习 Python、数学与数据分析？·7.2AI 不同技术方向需要哪些基础？筹备中·7.3综合实践：分析 AI 问题并制定学习计划筹备中"
+    },
+    "escapeFocus": "章节目录"
+  },
+  {
+    "width": 1440,
+    "keyboardFocus": [
+      {
+        "hash": "#exercise-analyse-project-foundations",
+        "tag": "H3",
+        "title": "交两份有依赖理由的项目任务单"
+      },
+      {
+        "hash": "#exercise-repair-learning-plan",
+        "tag": "H3",
+        "title": "交一份有检查证据的计划修正单"
+      }
+    ]
+  }
+]

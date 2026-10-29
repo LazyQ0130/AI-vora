@@ -6,6 +6,7 @@ const revisedCoreLessons: Record<string, number> = { "MA101-C02-L03": 2, "PY101-
 
 // 发布权限独立于原始课程规划。技术证据不替代人工审核。
 export const publicationManifest = [
+  {lessonId:"AI000-C07-L01",courseId:"AI000",chapterId:"AI000-C07",title:"为什么学习 Python、数学与数据分析？",contentVersion:1,order:1,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_7_1_REVIEW.md"},
   {lessonId:"AI000-C06-L03",courseId:"AI000",chapterId:"AI000-C06",title:"版权、误用与负责任地使用 AI",contentVersion:1,order:3,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_6_3_AND_CHAPTER_6_REVIEW.md"},
   {lessonId:"AI000-C06-L02",courseId:"AI000",chapterId:"AI000-C06",title:"数据隐私、偏差与公平性",contentVersion:1,order:2,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_6_2_REVIEW.md"},
   {lessonId:"AI000-C06-L01",courseId:"AI000",chapterId:"AI000-C06",title:"为什么 AI 会产生不可靠的回答？",contentVersion:1,order:1,status:"pending-review",access:"preview",technicalEvidence:"docs/AI000_LESSON_6_1_REVIEW.md"},

@@ -1,0 +1,90 @@
+{
+  "method": "Python stdlib from rendered Lesson tables; no TS helper or solution as oracle",
+  "main": {
+    "correct": [
+      "R01",
+      "R02",
+      "R03",
+      "R05",
+      "R06",
+      "R08"
+    ],
+    "wrong": [
+      "R04",
+      "R07"
+    ],
+    "total": 8,
+    "ratio": 0.75,
+    "byConfirmedClass": {
+      "照明故障": [
+        2,
+        3
+      ],
+      "漏水故障": [
+        2,
+        3
+      ],
+      "门锁故障": [
+        2,
+        2
+      ]
+    }
+  },
+  "library": {
+    "raw": 6,
+    "events": 5,
+    "counts": [
+      {
+        "date": "11月2日",
+        "category": "科普",
+        "count": 2
+      },
+      {
+        "date": "11月2日",
+        "category": "文学",
+        "count": 1
+      },
+      {
+        "date": "11月3日",
+        "category": "未登记",
+        "count": 1
+      },
+      {
+        "date": "11月3日",
+        "category": "科普",
+        "count": 1
+      }
+    ]
+  },
+  "parcel": [
+    [
+      "A",
+      4,
+      4,
+      0
+    ],
+    [
+      "B",
+      8,
+      7,
+      1
+    ]
+  ],
+  "plan": {
+    "raw": 7,
+    "events": 6,
+    "comparable": 5,
+    "unknown": [
+      "E24"
+    ],
+    "eventResults": {
+      "E21": true,
+      "E22": false,
+      "E23": true,
+      "E25": true,
+      "E26": true
+    },
+    "ratio": 0.8,
+    "changedRatio": 0.6
+  }
+}

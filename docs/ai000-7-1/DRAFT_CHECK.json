@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-29T03:56:16.958Z",
+  "base": "229684411e8516f144f5a2e564d4bc6e176d6a50",
+  "unchangedOldLessons": 44,
+  "unchangedPublications": 44,
+  "protectedFiles": 246,
+  "preservedPreciseFigures": 23,
+  "publication": {
+    "lessonId": "AI000-C07-L01",
+    "courseId": "AI000",
+    "chapterId": "AI000-C07",
+    "title": "为什么学习 Python、数学与数据分析？",
+    "contentVersion": 1,
+    "order": 1,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "draft",
+    "access": "private"
+  },
+  "assessmentMap": [
+    {
+      "objective": 1,
+      "exerciseIds": [
+        "analyse-project-foundations"
+      ]
+    },
+    {
+      "objective": 2,
+      "exerciseIds": [
+        "analyse-project-foundations"
+      ]
+    },
+    {
+      "objective": 3,
+      "exerciseIds": [
+        "repair-learning-plan"
+      ]
+    }
+  ]
+}

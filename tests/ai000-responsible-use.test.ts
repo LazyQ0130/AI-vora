@@ -25,7 +25,7 @@ const answer=(i:number)=>tasks[i].solution.join("\n");
 
 test("6.3保留43旧课全文/清单、244文件及23精确图，未登记变更仍拒绝",()=>{
   assert.equal(before.lessons.length,43);assert.equal(before.publications.length,43);assert.equal(before.files.length,244);
-  assert.equal(lessonRegistry.size,44);assert.equal(publicationManifest.length,44);
+  assert.equal(lessonRegistry.size,45);assert.equal(publicationManifest.length,45);
   for(const old of before.lessons)assert.equal(JSON.stringify(lessonRegistry.get(old.id)),JSON.stringify(old),old.id);
   for(const old of before.publications)assert.deepEqual(publicationManifest.find(p=>p.lessonId===old.lessonId),old,old.lessonId);
   for(const f of before.files){const b=readFileSync(f.path);if(sha(b)===f.sha256)continue;const reversed=beforeResponsibleSource(f.path,b.toString("utf8")).replaceAll("\r\n","\n");assert.ok([reversed,reversed.replaceAll("\n","\r\n")].some(s=>sha(Buffer.from(s))===f.sha256),f.path);}
@@ -129,7 +129,7 @@ test("两种迁移产出映射三目标，提示只给动作不交字段决定�
   assert.doesNotMatch(tasks[1].hints.join(""),/识别网络信息|14:00|15:30|图书馆|请提前|老师|证书/);
   const invalid=structuredClone(lesson);invalid.sections.find(s=>s.id==="lecture-task")!.tier="advanced";assert.equal(lessonSchema.safeParse(invalid).success,false);
 });
-test("只用表格和文字，三折叠与真实先修，6.2到6.3末端和第七章规划门禁",()=>{
+test("只用表格和文字，三折叠与真实先修，6.2到6.3再到7.1及后两节规划门禁",()=>{
   assert.ok(blocks.every(b=>!["image","ai-task-figure","code","experiment","downloads","math"].includes(b.type)));assert.deepEqual(lesson.resources,[]);
   for(const b of blocks.filter(b=>b.type==="table")){const h=renderToStaticMarkup(createElement(ContentRenderer,{block:b,resources:[]}));assert.match(h,/<caption/);assert.match(h,/<th/);assert.match(h,/tabindex="0"/);}
   for(const b of tasks){const h=renderToStaticMarkup(createElement(ContentRenderer,{block:b,resources:[]}));assert.equal((h.match(/<details/g)??[]).length,3);assert.doesNotMatch(h,/<details[^>]*\sopen/);}
@@ -137,8 +137,8 @@ test("只用表格和文字，三折叠与真实先修，6.2到6.3末端和第�
   assert.ok(lesson.sections.every(s=>s.tier==="core"&&!/^\d+[.、\s]/.test(s.title)));
   const pub=publicationManifest.find(p=>p.lessonId===lesson.id)!,course=getLearningCourse("AI000")!;
   assert.equal(course.status,"planned");assert.equal(pub.reviewEvidence,undefined);assert.equal(pub.contentVersion,1);assert.equal(Boolean(resolveLesson("AI000",lesson.id)),isReadable(pub));
-  if(isReadable(pub)){assert.equal(pub.status,"pending-review");assert.equal(getAdjacentLessons(course,"AI000-C06-L02").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C06-L02");assert.equal(getAdjacentLessons(course,lesson.id).next,undefined);}else{assert.equal(pub.status,"draft");assert.equal(pub.access,"private");}
-  for(const slot of course.chapters[6].lessons){assert.equal(slot.href,undefined);assert.equal(slot.status,"planned");assert.equal(lessonRegistry.has(slot.lessonId),false);}
+  if(isReadable(pub)){assert.equal(pub.status,"pending-review");assert.equal(getAdjacentLessons(course,"AI000-C06-L02").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"AI000-C06-L02");assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"AI000-C07-L01");}else{assert.equal(pub.status,"draft");assert.equal(pub.access,"private");}
+  for(const slot of course.chapters[6].lessons.slice(1)){assert.equal(slot.href,undefined);assert.equal(slot.status,"planned");assert.equal(lessonRegistry.has(slot.lessonId),false);}
 });
 test("6.3 r1空态与43旧课及1.2/5.3历史键隔离，独立恢复位置/完成",()=>{
   const memory=new Map<string,string>(),port={getItem:(k:string)=>memory.get(k)??null,setItem:(k:string,v:string)=>{memory.set(k,v);}},store=createProgressStore(()=>port);
@@ -148,8 +148,8 @@ test("6.3 r1空态与43旧课及1.2/5.3历史键隔离，独立恢复位置/完�
   store.save(scope,58,"asset-decisions");const restored=createProgressStore(()=>port);assert.equal(parseReadingProgress(restored.getSnapshot(scope),scope)?.section,"asset-decisions");assert.equal(parseReadingProgress(restored.getSnapshot(scope),scope)?.completed,false);
   restored.save(scope,100,"takeaways",true);assert.equal(parseReadingProgress(createProgressStore(()=>port).getSnapshot(scope),scope)?.completed,true);for(const [k,v]of old)assert.equal(memory.get(k),v,k);
 });
-test("6.3任务量编辑估计同步24节734–1112，710–1080历史留存",()=>{
+test("6.3任务量编辑估计同步24节764–1154，710–1080历史留存",()=>{
   assert.deepEqual(lesson.learningTime,{reading:[14,20],practice:[32,46],coding:[0,0],basis:"editorial-estimate"});
-  const t=getCourseStudyEstimate("AI000")!;assert.deepEqual(t.totalMinutes,[734,1112]);assert.equal(t.hours,"12.2–18.5");
+  const t=getCourseStudyEstimate("AI000")!;assert.deepEqual(t.totalMinutes,[764,1154]);assert.equal(t.hours,"12.7–19.2");
   assert.deepEqual(JSON.parse(readFileSync("docs/ai000-6-2/TIME_ESTIMATE.json","utf8")).totalMinutes,[710,1080]);
 });
