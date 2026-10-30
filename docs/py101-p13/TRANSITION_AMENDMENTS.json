@@ -1,0 +1,46 @@
+{
+  "records": [
+    {
+      "lessonId": "PY101-C02-L05",
+      "before": "下一节2.6「把输入和计算整理成清楚的输出」仍在规划，尚未制作；本课先不要求格式化。第5章函数试读还需输出、控制流程等中间先修，下一可读导航不表示直接跳学建议。整门PY101仍在筹备。",
+      "after": "本课已完成输入与转换基础，接着学习2.6「把输入和计算整理成清楚的输出」，它已有待人工审核试读，将组合输入、计算、比较与可读输出。第5章函数试读仍需第三、第四章等中间先修，下一可读导航不表示直接跳学建议。整门PY101仍在筹备。",
+      "contentVersion": 1,
+      "objectivesAndAssessmentsUnchanged": true,
+      "beforeObjectSha256": "ad7a6573af665f7d222a95d2f7c12797ce80620c9bb3718aff4bfd1c79274c67",
+      "afterObjectSha256": "f7f4aef19c08a4d9d182824bb22fe7ab792823cb640198681d94d0c513fd4a8a",
+      "progressScopeBefore": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L05",
+        "contentVersion": 1,
+        "sectionIds": [
+          "first-input",
+          "raw-count",
+          "int-conversion",
+          "main-example",
+          "float-conversion",
+          "format-error",
+          "practice",
+          "reference-programs",
+          "next-step"
+        ]
+      },
+      "progressScopeAfter": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L05",
+        "contentVersion": 1,
+        "sectionIds": [
+          "first-input",
+          "raw-count",
+          "int-conversion",
+          "main-example",
+          "float-conversion",
+          "format-error",
+          "practice",
+          "reference-programs",
+          "next-step"
+        ]
+      }
+    }
+  ],
+  "allExactParagraphComparisonsPassed": true
+}

@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-30T16:06:17.802Z",
+  "oldLessonCount": 58,
+  "unchangedOtherLessonObjects": 57,
+  "protectedFileCount": 2887,
+  "protectedPortableDigest": "523132dfaa394a7430f9f3cedcd07a787694df9c38865458bd6e91a865b62ec5",
+  "onlyAllowedSourceChanges": [
+    "src/content/course-outline.ts",
+    "src/lib/course-engine.ts",
+    "src/content/publication-manifest.ts",
+    "src/content/lessons/py101/input-and-conversion.ts",
+    "scripts/validate-python.ts",
+    "scripts/py101-p1-compatibility.ts",
+    "tests/content.test.ts",
+    "tests/py101-input-and-conversion.test.ts"
+  ],
+  "amendedLessonIds": [
+    "PY101-C02-L05"
+  ],
+  "newLessonIds": [
+    "PY101-C02-L06"
+  ],
+  "allAssertionsPassed": true
+}

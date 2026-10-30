@@ -1,0 +1,115 @@
+{
+  "checkedAt": "2026-10-30T09:05:39.470Z",
+  "method": "Windows ConPTY / own interactive PowerShell -NoLogo -NoProfile; tool sends shell command and input after prompts, captures actual Shell return after two Python runs.",
+  "events": [
+    {
+      "step": "Started own interactive PowerShell in saved-program directory",
+      "chunk_id": "00a4a1",
+      "wall_time_seconds": 10.0027461,
+      "session_id": 33610,
+      "original_token_count": 66,
+      "output": "\u001b[?9001h\u001b[?1004h\u001b[?25l\u001b[2J\u001b[m\u001b[HPS <WORKSPACE>\\.workbuddy\\py101-p13\\terminal-lab>\u001b[1C\u001b]0;<TERMINAL-TITLE>\u0007\u001b[?25h"
+    },
+    {
+      "step": "Typed shell command then Enter",
+      "typed": "python parcel_summary.py\r",
+      "chunk_id": "fef05f",
+      "wall_time_seconds": 1.0036579,
+      "session_id": 33610,
+      "original_token_count": 42,
+      "output": "\u001b[?25l\u001b[93mp\u001b[97m\u001b[2m\u001b[3m<SHELL-PREDICTION-REDACTED>\u001b[1;72H\u001b[?25h\u001b[m\u001b[93m\bpython \u001b[37mparcel_summary.py\u001b[52X\r\n\u001b[mItem: "
+    },
+    {
+      "step": "First input after Item prompt",
+      "typed": "Parcel\r",
+      "chunk_id": "cff380",
+      "wall_time_seconds": 1.0038501,
+      "session_id": 33610,
+      "original_token_count": 4,
+      "output": "Parcel\r\nCount: "
+    },
+    {
+      "step": "Count input then Enter",
+      "typed": "4\r",
+      "chunk_id": "183a85",
+      "wall_time_seconds": 1.0095328,
+      "session_id": 33610,
+      "original_token_count": 3,
+      "output": "4\r\nMass kg: "
+    },
+    {
+      "step": "Mass input then Enter; four print lines and actual Shell return",
+      "typed": "1.5\r",
+      "chunk_id": "ba3266",
+      "wall_time_seconds": 1.0164136,
+      "session_id": 33610,
+      "original_token_count": 34,
+      "output": "1.5\r\nItem: Parcel\r\nCount: 4\r\nTotal kg: 6.0\r\nWithin 10 kg: True\r\nPS <WORKSPACE>\\.workbuddy\\py101-p13\\terminal-lab> "
+    },
+    {
+      "step": "Recalled previous own python command with Up, then Enter; new process",
+      "chunk_id": "aa4405",
+      "wall_time_seconds": 1.0154771,
+      "session_id": 33610,
+      "original_token_count": 15,
+      "output": "\u001b[?25l\u001b[93mpython \u001b[37mparcel_summary.py\r\n\u001b[?25h\u001b[mItem: "
+    },
+    {
+      "step": "Second run Item input",
+      "typed": "Crate B\r",
+      "chunk_id": "9a2da0",
+      "wall_time_seconds": 1.0107651,
+      "session_id": 33610,
+      "original_token_count": 4,
+      "output": "Crate B\r\nCount: "
+    },
+    {
+      "step": "Second run Count input",
+      "typed": "4\r",
+      "chunk_id": "471b70",
+      "wall_time_seconds": 1.0017689,
+      "session_id": 33610,
+      "original_token_count": 3,
+      "output": "4\r\nMass kg: "
+    },
+    {
+      "step": "Second run Mass input; equal boundary and actual Shell return",
+      "typed": "2.5\r",
+      "chunk_id": "7010ff",
+      "wall_time_seconds": 1.0079924,
+      "session_id": 33610,
+      "original_token_count": 34,
+      "output": "2.5\r\nItem: Crate B\r\nCount: 4\r\nTotal kg: 10.0\r\nWithin 10 kg: True\r\nPS <WORKSPACE>\\.workbuddy\\py101-p13\\terminal-lab> "
+    },
+    {
+      "step": "Ctrl+D did not close Shell; observed it still waiting",
+      "chunk_id": "26b0fa",
+      "wall_time_seconds": 1.0076611,
+      "session_id": 33610,
+      "original_token_count": 5,
+      "output": "\u001b[?25l\u001b[93m^D\u001b[?25h"
+    },
+    {
+      "step": "Own Shell did not treat raw control bytes as line-editing keys; command failed and returned to prompt",
+      "chunk_id": "482dca",
+      "wall_time_seconds": 1.0049112,
+      "session_id": 33610,
+      "original_token_count": 88,
+      "output": "\u001b[m\u001b[?25l\u001b[93m\u001b[19;71H^D^Uexit\r\n\u001b[?25h\u001b[m\u001b[38;5;9mexit: The term 'exit' is not recognized as a name of a cmdlet, function, script file, or executable program.\r\n\u001b[m\u001b[38;5;9mCheck the spelling of the name, or if a path was included, verify that the path is correct and try again.\r\n\u001b[mPS <WORKSPACE>\\.workbuddy\\py101-p13\\terminal-lab> "
+    },
+    {
+      "step": "Typed plain exit at freshly observed empty Shell prompt",
+      "chunk_id": "cd9a82",
+      "wall_time_seconds": 2.49e-05,
+      "exit_code": 0,
+      "original_token_count": 11,
+      "output": "\u001b[?25l\u001b[92mexit\u001b[?25h\u001b[m\r\n\u001b[?9001l\u001b[?1004l"
+    }
+  ],
+  "note": "Real terminal stream mixes shell command/prompt, tool input/echo, Python prompts/print and ANSI controls; not pure stdout, a GUI screenshot or human/student trial. Workspace prefix, terminal title and incidental unrelated Shell history suggestion redacted; Python output order unchanged. Cleanup control-byte attempts failed; plain exit at fresh prompt closed only own Shell with exit0. Raw capture private/ignored.",
+  "program": {
+    "filename": "parcel_summary.py",
+    "savedSha256": "92a7cdd2aaec813b40f739c756f2bbd06c82518f089bf76e0bf19f842fd4cb09",
+    "matchesSameSource": true
+  }
+}

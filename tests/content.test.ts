@@ -29,7 +29,7 @@ test("四门不同类型教材用同一模型，公式可严格解析，图片�
       assert.ok(lesson.sections.filter((section) => section.tier === "core").flatMap((section) => section.blocks).filter((block) => block.type === "exercise").length >= 2);
       assert.ok(blocks.some((block) => block.type === "vector-figure"));
       assert.ok(lesson.sections.filter((section) => section.tier === "core").every((section) => !section.blocks.some((block) => block.type === "code")));
-    } else if (lesson.chapterId === "PY101-C01" || ["PY101-C02-L01", "PY101-C02-L02", "PY101-C02-L03", "PY101-C02-L04", "PY101-C02-L05"].includes(lesson.id)) {
+    } else if (lesson.chapterId === "PY101-C01" || ["PY101-C02-L01", "PY101-C02-L02", "PY101-C02-L03", "PY101-C02-L04", "PY101-C02-L05", "PY101-C02-L06"].includes(lesson.id)) {
       // 操作型首章及变量入门用目标对应的核心开放题验收；旧样章仍保留下面的Quiz契约。
       const tasks = lesson.sections.filter(s => s.tier === "core").flatMap(s => s.blocks).filter(b => b.type === "exercise");
       assert.ok(tasks.length > 0);

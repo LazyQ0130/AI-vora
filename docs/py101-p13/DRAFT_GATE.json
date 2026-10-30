@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-30T08:59:08.393Z",
+  "lessonId": "PY101-C02-L06",
+  "status": "draft",
+  "access": "private",
+  "readable": false,
+  "resolveUndefined": true,
+  "directoryHrefAbsent": true,
+  "productionHttp": {
+    "path": "/learn/PY101/PY101-C02-L06",
+    "expected": 404,
+    "actual": 404,
+    "passed": true
+  },
+  "productionRouteCount": 110,
+  "allProductionRoutesPassed": true,
+  "browserObserved": "真实IAB：这里，还没有被探索。",
+  "browserCheckedAt": "2026-10-30T09:02:10.854568+00:00"
+}

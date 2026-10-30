@@ -1,0 +1,194 @@
+{
+  "testedAt": "2026-10-30T09:06:14.109Z",
+  "base": "http://127.0.0.1:3029",
+  "build": "clean candidate Webpack production / preview projection",
+  "checks": [
+    {
+      "label": "desktop-content",
+      "chapterText": "第二章收束：能说明结果，也知道还没学什么保存与更新变量，辨认基本类型，写有单位的数值表达式和比较。从终端取得文字，明确int/float转换，再计算和保存判断。用简单f-string把名称、数量、单位和比较问题一起显示，用真实低/等/高输入核对。保留本人代码和短记录，能现场换一组新数据、预测并解释每行含义，才有这些操作的证据。网页读完或作者测试通过不等于学生已能独立完成。第二章六节的技术制作已齐，教材仍待人工教学审核，整门PY101继续筹备。课程体系下一章是「分支、循环、推导式与常见控制流程」，当前尚无正式节级规划或可读正文。本章还没有教授分支、循环、容器、函数或CSV数据工具。第5章虽有旧试读，仍需第三、第四章等中间先修；技术导航跳到第5章不是零基础直接学习建议。",
+      "clientWidth": 1425,
+      "docWidth": 1425,
+      "formatText": "f前缀告诉Python：这里要放入当前值f-string（格式化字符串）在开头引号前写f。成对英文引号仍界定整段文字，Total kg: 是说明；{total_mass}这一对花括号标出插入位置。运行到这条字符串时，Python读取total_mass当前对应的值，组成文字，再由print显示。f紧挨开头引号，花括号内先只用已经赋值的简单名称。另建insert_mass.py，先预测下面一行显示什么，再保存运行。Windows在文件所在目录用python insert_mass.py，macOS用python3 insert_mass.py；一直使用已核验py的Windows环境可保持py。用pwd及dir（macOS用ls）核对目录；源码在.venv外、行首不缩进。命令写终端，不写进.py或Python的>>>。后面新文件替换同一命令的文件名并保存重跑。Python insert_mass.py复制代码1total_mass = 6.02print(f\"Total kg: {total_mass}\")text f-string · 预期print结果复制代码1Total kg: 6.0对照另存literal_mass.py：去掉开头f，仍是合法Python普通字符串。先预测花括号会消失还是原样显示，再运行核对。Python literal_mass.py复制代码1total_mass = 6.02print(\"Total kg: {total_mass}\")text 普通字符串 · 预期print结果复制代码1Total kg: {total_mass}普通字符串没有请求插入值，所以花括号和名称原样显示；它没有发生语法错误。对比两份源码和真实结果，指出哪个f在起作用，不能认为所有引号里的花括号都会自动替换。",
+      "groups": [
+        "输出含义",
+        "文字与名称",
+        "逐步组装",
+        "完整摘要",
+        "独立练习",
+        "参考核对",
+        "章末衔接"
+      ],
+      "h1": "把输入和计算整理成清楚的输出",
+      "h2": [
+        "数字算对了，别人能看懂吗？",
+        "f前缀告诉Python：这里要放入当前值",
+        "每一行都说清名称、数量或单位",
+        "先收三项输入，暂时只观察提示",
+        "把件数和单件质量变成总量，再比较",
+        "最后接上四行可读摘要",
+        "源码不变，换低于、等于和高于上限的数据",
+        "自己选择情境，交出可读结果与边界证据",
+        "做完再核对：完整参考与名称错拼副本",
+        "第二章收束：能说明结果，也知道还没学什么"
+      ],
+      "tasks": [
+        "自己的可读计算摘要",
+        "验证摘要边界，并解释真假回答了什么"
+      ],
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "label": "exercise-hints-reference",
+      "openCount": 6,
+      "rubrics": [
+        "检查自己的解答",
+        "检查自己的解答"
+      ],
+      "referenceCodes": 4,
+      "passed": true
+    },
+    {
+      "label": "desktop-copy-f-string-confirmed",
+      "passed": true,
+      "clipboard": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")",
+      "pasted": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")"
+    },
+    {
+      "label": "tablet-drawer",
+      "text": "本节导航\n\n本节导航，按 Escape 关闭面板。\n\n文章目录\n10 节点\n数字算对了，别人能看懂吗？\nf前缀告诉Python：这里要放入当前值\n每一行都说清名称、数量或单位\n先收三项输入，暂时只观察提示\n把件数和单件质量变成总量，再比较\n最后接上四行可读摘要\n源码不变，换低于、等于和高于上限的数据\n自己选择情境，交出可读结果与边界证据\n做完再核对：完整参考与名称错拼副本可选\n第二章收束：能说明结果，也知道还没学什么\n本节学习目标\n3 项\n01\n\n把已绑定名称的值插入简单f-string，输出有实际含义和单位的文字，并区分普通字符串与格式化字符串\n\n02\n\n在自己创建的.py中组合输入、明确转换、数值计算、布尔比较与清楚输出，说明每一步的值来自哪里\n\n03\n\n为同一程序预测并真实运行新输入，验证低于、恰好等于、高于限制的结果与单位，解释真假判断的实际范围\n\n核心练习\n2 道\n代码练习\n自己的可读计算摘要\n代码练习\n验证摘要边界，并解释真假回答了什么\n\n自主核对 · 不自动评分\n\n可选拓展与验证\n阅读进度\n仅当前浏览器\n\n已浏览\n99%\n·\n尚未标记读完\n\n浏览比例不代表练习完成或掌握程度。\n\n先修知识",
+      "passed": true
+    },
+    {
+      "label": "tablet-anchor",
+      "dialog": false,
+      "hash": "#first-format",
+      "tag": "H2",
+      "text": "f前缀告诉Python：这里要放入当前值",
+      "top": 252.73959350585935,
+      "passed": true
+    },
+    {
+      "label": "native-complete-main-copy",
+      "passed": true,
+      "text": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")",
+      "method": "Click copy button; read actual navigator.clipboard in target origin; virtual paste channel retained separately as diagnostic."
+    },
+    {
+      "label": "phone-native-f-string-copy",
+      "passed": true,
+      "text": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")",
+      "method": "copy button then native clipboard read"
+    },
+    {
+      "label": "narrow-320",
+      "client": 305,
+      "doc": 305,
+      "pageX": 0,
+      "region": {
+        "client": 254,
+        "left": 77.33333587646484,
+        "overflow": "auto",
+        "scroll": 332,
+        "tabindex": "0"
+      },
+      "width": 320,
+      "passed": true
+    },
+    {
+      "label": "phone-exercise-anchor",
+      "dialog": false,
+      "hash": "#exercise-verify-summary-boundary",
+      "tag": "H3",
+      "text": "验证摘要边界，并解释真假回答了什么",
+      "top": 260.34375,
+      "passed": true
+    },
+    {
+      "label": "2.5-amendment-navigation",
+      "text": "先接住文字，再用真实输入核对计算\ninput显示提示并等待一行，Enter提交后取得str；提示、终端回显与print来源不同。\n原始文本与转换结果分开，用type观察；完整数量用int，小数测量用float，转换后再做数值计算。\n同一保存脚本，两组新合法输入先预测再实跑；受控格式错误留回溯，终止后重启用合法值确认恢复。\n\n保留自己的两份.py及短记录，能换新数据、解释类型/单位和一次转换失败，才有独立操作证据。作者程序运行或网页读完都不能证明学生已经学会。\n\n本课已完成输入与转换基础，接着学习2.6「把输入和计算整理成清楚的输出」，它已有待人工审核试读，将组合输入、计算、比较与可读输出。第5章函数试读仍需第三、第四章等中间先修，下一可读导航不表示直接跳学建议。整门PY101仍在筹备。",
+      "next": "/learn/PY101/PY101-C02-L06",
+      "passed": true
+    },
+    {
+      "label": "desktop-main-anchor",
+      "hash": "#main-example",
+      "tag": "H2",
+      "text": "最后接上四行可读摘要",
+      "top": 206.4791717529297,
+      "passed": true
+    },
+    {
+      "label": "progress-reload-isolation",
+      "passed": true,
+      "before": {
+        "aivora:learning:v2:PY101:PY101-C05-L01:r2": "{\"version\":2,\"courseId\":\"PY101\",\"lessonId\":\"PY101-C05-L01\",\"contentVersion\":2,\"percent\":100,\"completed\":false,\"section\":\"summary\",\"updatedAt\":1793376068707}",
+        "aivora:learning:v2:PY101:PY101-C02-L05:r1": "{\"version\":2,\"courseId\":\"PY101\",\"lessonId\":\"PY101-C02-L05\",\"contentVersion\":1,\"percent\":100,\"completed\":false,\"section\":\"next-step\",\"updatedAt\":1793376050497}"
+      },
+      "after": {
+        "aivora:learning:v2:PY101:PY101-C05-L01:r2": "{\"version\":2,\"courseId\":\"PY101\",\"lessonId\":\"PY101-C05-L01\",\"contentVersion\":2,\"percent\":100,\"completed\":false,\"section\":\"summary\",\"updatedAt\":1793376068707}",
+        "aivora:learning:v2:PY101:PY101-C02-L05:r1": "{\"version\":2,\"courseId\":\"PY101\",\"lessonId\":\"PY101-C02-L05\",\"contentVersion\":1,\"percent\":100,\"completed\":false,\"section\":\"next-step\",\"updatedAt\":1793376050497}",
+        "aivora:learning:v2:PY101:PY101-C02-L06:r1": "{\"version\":2,\"courseId\":\"PY101\",\"lessonId\":\"PY101-C02-L06\",\"contentVersion\":1,\"percent\":100,\"completed\":false,\"section\":\"main-example\",\"updatedAt\":1793376080792}"
+      },
+      "resumeHref": "#main-example"
+    },
+    {
+      "label": "resume-anchor",
+      "hash": "#main-example",
+      "tag": "H2",
+      "text": "最后接上四行可读摘要",
+      "top": 206.4791717529297,
+      "passed": true
+    },
+    {
+      "label": "chapter-end",
+      "text": "第二章收束：能说明结果，也知道还没学什么\n保存与更新变量，辨认基本类型，写有单位的数值表达式和比较。\n从终端取得文字，明确int/float转换，再计算和保存判断。\n用简单f-string把名称、数量、单位和比较问题一起显示，用真实低/等/高输入核对。\n\n保留本人代码和短记录，能现场换一组新数据、预测并解释每行含义，才有这些操作的证据。网页读完或作者测试通过不等于学生已能独立完成。\n\n第二章六节的技术制作已齐，教材仍待人工教学审核，整门PY101继续筹备。课程体系下一章是「分支、循环、推导式与常见控制流程」，当前尚无正式节级规划或可读正文。本章还没有教授分支、循环、容器、函数或CSV数据工具。第5章虽有旧试读，仍需第三、第四章等中间先修；技术导航跳到第5章不是零基础直接学习建议。",
+      "passed": true
+    },
+    {
+      "label": "wrong-course-404",
+      "text": "跳到主要内容\nAivora\n系统化 AI 技术学习平台\n首页\n课程体系\n学习路径\n实践项目\n探索知识\nCtrl K\n学习中心\n开始试读\nA DIFFERENT PATH AWAITS\n4\n4\n这里，还没有被探索。\n\n页面或课程单元不存在，回到知识地图，重新找到你的方向。\n\n返回首页\n探索课程体系\nAivora\n系统化 AI 技术学习平台\n\n让 AI 知识，成为可掌握的未来。\n\n探索课程\n学习路径\n实践项目\n试读样章\n© 2026 Aivora\n课程筹备中 · 可体验试读样章",
+      "passed": true
+    },
+    {
+      "label": "course-planned-six-lessons",
+      "text": "跳到主要内容\nAivora\n系统化 AI 技术学习平台\n首页\n课程体系\n学习路径\n实践项目\n探索知识\nCtrl K\n学习中心\n开始试读\n返回课程体系\nL1 · 编程与数据\nPython 编程与工程入门\n\n能独立编写模块化 Python 程序，处理数据文件、定位常见错误并使用虚拟环境与 Notebook。\n\n10 章规划\n预计 26–36 小时\n\n本课程正在筹备，下方为章节规划。目前包含可阅读样章，教材仍待人工审核。\n\nLEARNING OUTCOME\n学会什么，如何验证\n\n给定未见过的小型 CSV，完成读取、清洗、统计与文件输出；可复现运行。\n\nTHE COURSE BLUEPRINT\n课程章节\n10 章 · 规划中\nCOURSE CONTENTS\nPython 编程与工程入门\n\n10 章 · 17 节核心课已制作\n\n已制作课时阅读比例\n18%\n0 / 17 节已标记读完 · 仅当前浏览器\n筹备、可选与旧版课时不计入比例；已读不代表掌握。\n第 1 章：\n环境、解释器、虚拟环境、IDE 与 Jupyter\n1.1\n从零运行第一个Python程序\n1.2\n解释器怎样找到并执行脚本\n1.3\n用编辑器完成保存与重跑\n1.4\n为项目准备独立的虚拟环境\n1.5\n在Jupyter中按顺序运行单元格\n1.6\n让别人复现一次环境问题\n第 2 章：\n变量、基本类型、表达式与输入输出\n2.1\n用变量保留并更新程序里的值\n2.2\n分清文字、整数、小数和真假值\n2.3\n用表达式算出一个结果\n2.4\n让比较表达式给出真假结果\n2.5\n取得用户输入，再转成需要的数值\n2.6\n把输入和计算整理成清楚的输出\n第 3 章：\n分支、循环、推导式与常见控制流程\n第 4 章：\n列表、元组、字典、集合与字符串处理\n第 5 章：\n函数、作用域、参数、类型标注与文档字符串\n5.1\nPython 函数与参数\n5.2\n位置与关键字参数绑定\n5.3\n返回值与 print 的区别\n5.4\n函数内外的变量与作用域\n5.5\n简单默认参数\n5.6\n可选进阶：共享对象与接口陷阱\n可选\n第 6 章：\n模块、包、第三方依赖及项目结构\n第 7 章：\n文件、CSV/JSON、路径与编码\n第 8 章：\n异常处理、调试、断言及基础测试\n第 9 章：\n类与对象、迭代器、生成器的必要用法\n第 10 章：\n简单命令行项目、Git 基础及代码风格\nLEARN BY DOING\n在实验与项目中理解\n规划实验\n关键实验\n\n实现统计函数、读取 CSV 文件、调试错误脚本、为函数编写单元测试。\n\n规划项目\n命令行数据清洗与统计小工具\n\n给定未见过的小型 CSV，完成读取、清洗、统计与文件输出；可复现运行。\n\n课程规划中\n从理解到可复现的实践\n\n图文 · 公式 · 代码 · 小测 · 项目\n\n阅读样章\n课程教材尚未正式发布\nBEFORE YOU START\n建议先修能力\n\n无；适合零基础\n\n面向所有专业与身份的学习者，按已有能力选择起点。\n\nAivora\n系统化 AI 技术学习平台\n\n让 AI 知识，成为可掌握的未来。\n\n探索课程\n学习路径\n实践项目\n试读样章\n© 2026 Aivora\n课程筹备中 · 可体验试读样章",
+      "chapter2Links": [
+        "/learn/PY101/PY101-C02-L01",
+        "/learn/PY101/PY101-C02-L02",
+        "/learn/PY101/PY101-C02-L03",
+        "/learn/PY101/PY101-C02-L04",
+        "/learn/PY101/PY101-C02-L05",
+        "/learn/PY101/PY101-C02-L06"
+      ],
+      "chapter3Links": 0,
+      "passed": true
+    }
+  ],
+  "initialProgress": {},
+  "resumedAt": "2026-10-30T15:58:57.637Z",
+  "consoleErrors": [],
+  "diagnostics": [
+    {
+      "label": "desktop-copy-f-string",
+      "passed": false,
+      "clipboard": "count_text = input(\"Count: \")\nprint(count_text)\nprint(type(count_text))",
+      "pasted": "count_text = input(\"Count: \")\nprint(count_text)\nprint(type(count_text))"
+    },
+    {
+      "label": "desktop-copy-complete-main",
+      "passed": false,
+      "clipboard": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")",
+      "pasted": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")"
+    },
+    {
+      "label": "complete-main-copy-confirmed",
+      "passed": false,
+      "clipboard": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")",
+      "pasted": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")"
+    }
+  ],
+  "allConfirmedChecksPassed": true,
+  "completedAt": "2026-10-30T16:01:49.185Z",
+  "diagnosticNote": "Virtual clipboard/paste returned stale earlier source three times; kept verbatim. Copy buttons and native navigator.clipboard reads confirmed exact complete main and phone f-string. No permission or environment change, no claimed root-cause repair. One navigation node error resolved after fresh observed state; summary controls used native details selectors after role lookup mismatch."
+}

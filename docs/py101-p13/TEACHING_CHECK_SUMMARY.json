@@ -1,0 +1,220 @@
+{
+  "checkedAt": "2026-10-30T09:02:49.010Z",
+  "totalLessons": 59,
+  "note": "结构覆盖与编辑估计快照；映射通过不证明题目效度或独立自学效果，需人工与目标学生验证。",
+  "lesson": {
+    "id": "PY101-C02-L06",
+    "title": "把输入和计算整理成清楚的输出",
+    "href": "/learn/PY101/PY101-C02-L06",
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "pending-review",
+    "contentVersion": 1,
+    "learningTime": {
+      "reading": [
+        12,
+        18
+      ],
+      "practice": [
+        8,
+        12
+      ],
+      "coding": [
+        22,
+        32
+      ],
+      "basis": "editorial-estimate"
+    },
+    "objectives": [
+      {
+        "objective": 1,
+        "text": "把已绑定名称的值插入简单f-string，输出有实际含义和单位的文字，并区分普通字符串与格式化字符串",
+        "exercises": [
+          {
+            "id": "write-clear-summary",
+            "title": "自己的可读计算摘要",
+            "kind": "代码",
+            "tier": "core",
+            "prompt": "另选与正文不同的测量情境，例如材料件数和单件长度，自选合法名称和清楚提示，创建新.py。input取得文字标签、整数数量文本、小数测量文本，分别用int/float明确转换，再用乘法求有实际意义的总量。用简单f-string显示标签、件数和总量，写清各项含义与单位。先预测两组不同的新合法输入，保存同一源码后分别从终端实际输入运行，保留命令、两组输入/预测/print结果及数据流说明；不能照抄正文物品和整组数字。指出一条f-string去掉f后为何会不同，可另存副本观察。英文或中文输出均可，不用if、循环、函数或格式指定。",
+            "hints": 2,
+            "rubric": [
+              "本人新.py真实取得三输入并分步int/float转换，使用转换后数量求总量，名称/提示/情境由本人设计。",
+              "简单f-string插入正确已绑定名称，标签/件数/总量及单位让别人可辨；能区分少f的普通字符串。",
+              "两组新合法输入均有本人事先预测、同一保存源码、真实命令与输出，关系/单位和数据流解释可核对，抄参考或读完标记不足。"
+            ]
+          }
+        ]
+      },
+      {
+        "objective": 2,
+        "text": "在自己创建的.py中组合输入、明确转换、数值计算、布尔比较与清楚输出，说明每一步的值来自哪里",
+        "exercises": [
+          {
+            "id": "write-clear-summary",
+            "title": "自己的可读计算摘要",
+            "kind": "代码",
+            "tier": "core",
+            "prompt": "另选与正文不同的测量情境，例如材料件数和单件长度，自选合法名称和清楚提示，创建新.py。input取得文字标签、整数数量文本、小数测量文本，分别用int/float明确转换，再用乘法求有实际意义的总量。用简单f-string显示标签、件数和总量，写清各项含义与单位。先预测两组不同的新合法输入，保存同一源码后分别从终端实际输入运行，保留命令、两组输入/预测/print结果及数据流说明；不能照抄正文物品和整组数字。指出一条f-string去掉f后为何会不同，可另存副本观察。英文或中文输出均可，不用if、循环、函数或格式指定。",
+            "hints": 2,
+            "rubric": [
+              "本人新.py真实取得三输入并分步int/float转换，使用转换后数量求总量，名称/提示/情境由本人设计。",
+              "简单f-string插入正确已绑定名称，标签/件数/总量及单位让别人可辨；能区分少f的普通字符串。",
+              "两组新合法输入均有本人事先预测、同一保存源码、真实命令与输出，关系/单位和数据流解释可核对，抄参考或读完标记不足。"
+            ]
+          },
+          {
+            "id": "verify-summary-boundary",
+            "title": "验证摘要边界，并解释真假回答了什么",
+            "kind": "代码",
+            "tier": "core",
+            "prompt": "自选与物品质量主例不同的测量限制情境，例如材料总长度最多若干米。可复用题一结构，但保留题一/题二阶段源码与实际修改记录。真实input取得名称、正整数件数、小数单件测量，明确int/float转换并算总量；自己固定一个合理上限，用总量<=上限保存布尔结果，再用f-string显示名称、件数、总量/单位和明确的比较问题及真假。先选低于、恰好等于、高于上限三组合法输入，各先预测再完整运行同一源码，保留三组命令/输入/实际摘要和固定上限。选整数、0.5或0.25等易手算数据，让等值确实达到。解释等值为何True、超限False只表示此比较不满足而没有执行拒绝。不把一次运行重复计数，不用if/循环/复杂精度算法。",
+            "hints": 2,
+            "rubric": [
+              "本人真实输入/转换/计算，单件与总量关系、单位和固定上限正确，比较确实使用总量<=上限。",
+              "三组新数据分别低/等/高，各有预测、同一源码、真实命令与完整可读输出，上限不随轮次改变。",
+              "等值True/超限False正确，文字明确比较对象和单位，解释其范围及没有自动拒绝动作。",
+              "简单f-string与已学语法完成；若复用题一有阶段源码/修改记录和独立三轮，固定表或一次截图不能替代。"
+            ]
+          }
+        ]
+      },
+      {
+        "objective": 3,
+        "text": "为同一程序预测并真实运行新输入，验证低于、恰好等于、高于限制的结果与单位，解释真假判断的实际范围",
+        "exercises": [
+          {
+            "id": "verify-summary-boundary",
+            "title": "验证摘要边界，并解释真假回答了什么",
+            "kind": "代码",
+            "tier": "core",
+            "prompt": "自选与物品质量主例不同的测量限制情境，例如材料总长度最多若干米。可复用题一结构，但保留题一/题二阶段源码与实际修改记录。真实input取得名称、正整数件数、小数单件测量，明确int/float转换并算总量；自己固定一个合理上限，用总量<=上限保存布尔结果，再用f-string显示名称、件数、总量/单位和明确的比较问题及真假。先选低于、恰好等于、高于上限三组合法输入，各先预测再完整运行同一源码，保留三组命令/输入/实际摘要和固定上限。选整数、0.5或0.25等易手算数据，让等值确实达到。解释等值为何True、超限False只表示此比较不满足而没有执行拒绝。不把一次运行重复计数，不用if/循环/复杂精度算法。",
+            "hints": 2,
+            "rubric": [
+              "本人真实输入/转换/计算，单件与总量关系、单位和固定上限正确，比较确实使用总量<=上限。",
+              "三组新数据分别低/等/高，各有预测、同一源码、真实命令与完整可读输出，上限不随轮次改变。",
+              "等值True/超限False正确，文字明确比较对象和单位，解释其范围及没有自动拒绝动作。",
+              "简单f-string与已学语法完成；若复用题一有阶段源码/修改记录和独立三轮，固定表或一次截图不能替代。"
+            ]
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "id": "bare-results",
+        "title": "数字算对了，别人能看懂吗？",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "bare_results.py",
+            "lines": 5
+          }
+        ]
+      },
+      {
+        "id": "first-format",
+        "title": "f前缀告诉Python：这里要放入当前值",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "insert_mass.py",
+            "lines": 2
+          },
+          {
+            "filename": "literal_mass.py",
+            "lines": 2
+          }
+        ]
+      },
+      {
+        "id": "labels-and-units",
+        "title": "每一行都说清名称、数量或单位",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "known_summary.py",
+            "lines": 7
+          },
+          {
+            "filename": "chinese_mass.py",
+            "lines": 2
+          }
+        ]
+      },
+      {
+        "id": "receive-values",
+        "title": "先收三项输入，暂时只观察提示",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "receive_parcel.py",
+            "lines": 3
+          }
+        ]
+      },
+      {
+        "id": "calculate-check",
+        "title": "把件数和单件质量变成总量，再比较",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "calculate_parcel.py",
+            "lines": 12
+          }
+        ]
+      },
+      {
+        "id": "main-example",
+        "title": "最后接上四行可读摘要",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "parcel_summary.py",
+            "lines": 14
+          }
+        ]
+      },
+      {
+        "id": "boundary-runs",
+        "title": "源码不变，换低于、等于和高于上限的数据",
+        "tier": "core",
+        "pythonBlocks": []
+      },
+      {
+        "id": "practice",
+        "title": "自己选择情境，交出可读结果与边界证据",
+        "tier": "core",
+        "pythonBlocks": []
+      },
+      {
+        "id": "reference-programs",
+        "title": "做完再核对：完整参考与名称错拼副本",
+        "tier": "verification",
+        "pythonBlocks": [
+          {
+            "filename": "material_summary.py · 题一参考",
+            "lines": 9
+          },
+          {
+            "filename": "garden_boundary.py · 题二参考",
+            "lines": 12
+          },
+          {
+            "filename": "field_copy.py · 名称错拼副本",
+            "lines": 2
+          },
+          {
+            "filename": "field_copy.py · 名称修复副本",
+            "lines": 2
+          }
+        ]
+      },
+      {
+        "id": "chapter-end",
+        "title": "第二章收束：能说明结果，也知道还没学什么",
+        "tier": "core",
+        "pythonBlocks": []
+      }
+    ]
+  }
+}

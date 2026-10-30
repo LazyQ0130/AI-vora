@@ -1,0 +1,592 @@
+{
+  "checkedAt": "2026-10-30T09:02:48.382Z",
+  "environment": "3.14.2\nNumPy 2.5.2",
+  "unitTests": 25,
+  "unitExitCode": 0,
+  "totalWebBlocks": 126,
+  "inputRunCount": 22,
+  "coreComparisonCount": 10,
+  "examples": [
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "bare-results",
+      "filename": "bare_results.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "plain",
+      "sourceSha256": "a87ed0db69c803d8c4a34827288ea86b24540a1037103bb3cf89fc8b3d70661b",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "plain",
+          "caseId": "bare",
+          "filename": "bare_results.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\bare_results.py"
+          ],
+          "pid": 35692,
+          "stdin": "",
+          "savedSource": "total_mass = 6.0\nwithin_limit = True\n\nprint(total_mass)\nprint(within_limit)\n",
+          "savedSha256": "a87ed0db69c803d8c4a34827288ea86b24540a1037103bb3cf89fc8b3d70661b",
+          "expectedStdout": "6.0\nTrue\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "6.0\r\nTrue\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "first-format",
+      "filename": "insert_mass.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "insert",
+      "sourceSha256": "2635826f02c85f3f8233ae20065a36754b5e69ce336755842e7f8f8e8fda4629",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "insert",
+          "caseId": "insert",
+          "filename": "insert_mass.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\insert_mass.py"
+          ],
+          "pid": 33900,
+          "stdin": "",
+          "savedSource": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")\n",
+          "savedSha256": "2635826f02c85f3f8233ae20065a36754b5e69ce336755842e7f8f8e8fda4629",
+          "expectedStdout": "Total kg: 6.0\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Total kg: 6.0\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "first-format",
+      "filename": "literal_mass.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "literal",
+      "sourceSha256": "d7bd446d506acb8beabb948e42b0a4c66aba9169bedd7b485ae3af3969c5809d",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "literal",
+          "caseId": "literal",
+          "filename": "literal_mass.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\literal_mass.py"
+          ],
+          "pid": 34128,
+          "stdin": "",
+          "savedSource": "total_mass = 6.0\nprint(\"Total kg: {total_mass}\")\n",
+          "savedSha256": "d7bd446d506acb8beabb948e42b0a4c66aba9169bedd7b485ae3af3969c5809d",
+          "expectedStdout": "Total kg: {total_mass}\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Total kg: {total_mass}\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "labels-and-units",
+      "filename": "known_summary.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "labels",
+      "sourceSha256": "213089b50d9b114b0e520f730d64e51d2255a25f87cb9d6a467b9397dba64bdb",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "labels",
+          "caseId": "labels",
+          "filename": "known_summary.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\known_summary.py"
+          ],
+          "pid": 35124,
+          "stdin": "",
+          "savedSource": "item_name = \"Parcel\"\ncount = 4\ntotal_mass = 6.0\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\n",
+          "savedSha256": "213089b50d9b114b0e520f730d64e51d2255a25f87cb9d6a467b9397dba64bdb",
+          "expectedStdout": "Item: Parcel\nCount: 4\nTotal kg: 6.0\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Item: Parcel\r\nCount: 4\r\nTotal kg: 6.0\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "labels-and-units",
+      "filename": "chinese_mass.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "chinese",
+      "sourceSha256": "77e9542ed1989b8ae96516ca8ba4a4580a20d8b824aebfa3ef17d8b4d85cd92f",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "chinese",
+          "caseId": "chinese",
+          "filename": "chinese_mass.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\chinese_mass.py"
+          ],
+          "pid": 17920,
+          "stdin": "",
+          "savedSource": "total_mass = 6.0\nprint(f\"总质量（千克）：{total_mass}\")\n",
+          "savedSha256": "77e9542ed1989b8ae96516ca8ba4a4580a20d8b824aebfa3ef17d8b4d85cd92f",
+          "expectedStdout": "总质量（千克）：6.0\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "总质量（千克）：6.0\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "receive-values",
+      "filename": "receive_parcel.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "receive",
+      "sourceSha256": "f5357afdb62a7605314769b4b9d12444508c3490307e5b13aba932619c77336e",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "receive",
+          "caseId": "receive",
+          "filename": "receive_parcel.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\receive_parcel.py"
+          ],
+          "pid": 15860,
+          "stdin": "Parcel\n4\n1.5\n",
+          "savedSource": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n",
+          "savedSha256": "f5357afdb62a7605314769b4b9d12444508c3490307e5b13aba932619c77336e",
+          "expectedStdout": "Item: Count: Mass kg: ",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Item: Count: Mass kg: ",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "calculate-check",
+      "filename": "calculate_parcel.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "calculate",
+      "sourceSha256": "a96f22ad0ab4b962d6a095e292162a26c061fe4521f7520d719badcf2b533f07",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "calculate",
+          "caseId": "calculate",
+          "filename": "calculate_parcel.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\calculate_parcel.py"
+          ],
+          "pid": 24560,
+          "stdin": "Parcel\n4\n1.5\n",
+          "savedSource": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(total_mass)\nprint(within_limit)\n",
+          "savedSha256": "a96f22ad0ab4b962d6a095e292162a26c061fe4521f7520d719badcf2b533f07",
+          "expectedStdout": "Item: Count: Mass kg: 6.0\nTrue\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Item: Count: Mass kg: 6.0\r\nTrue\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "main-example",
+      "filename": "parcel_summary.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "main",
+      "sourceSha256": "92a7cdd2aaec813b40f739c756f2bbd06c82518f089bf76e0bf19f842fd4cb09",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "main",
+          "caseId": "parcel-low",
+          "filename": "parcel_summary.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\parcel_summary.py"
+          ],
+          "pid": 33524,
+          "stdin": "Parcel\n4\n1.5\n",
+          "savedSource": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")\n",
+          "savedSha256": "92a7cdd2aaec813b40f739c756f2bbd06c82518f089bf76e0bf19f842fd4cb09",
+          "expectedStdout": "Item: Count: Mass kg: Item: Parcel\nCount: 4\nTotal kg: 6.0\nWithin 10 kg: True\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Item: Count: Mass kg: Item: Parcel\r\nCount: 4\r\nTotal kg: 6.0\r\nWithin 10 kg: True\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "main",
+          "caseId": "crate-equal",
+          "filename": "parcel_summary.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\parcel_summary.py"
+          ],
+          "pid": 16032,
+          "stdin": "Crate B\n4\n2.5\n",
+          "savedSource": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")\n",
+          "savedSha256": "92a7cdd2aaec813b40f739c756f2bbd06c82518f089bf76e0bf19f842fd4cb09",
+          "expectedStdout": "Item: Count: Mass kg: Item: Crate B\nCount: 4\nTotal kg: 10.0\nWithin 10 kg: True\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Item: Count: Mass kg: Item: Crate B\r\nCount: 4\r\nTotal kg: 10.0\r\nWithin 10 kg: True\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "main",
+          "caseId": "crate-high",
+          "filename": "parcel_summary.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\parcel_summary.py"
+          ],
+          "pid": 32332,
+          "stdin": "Crate C\n4\n3.0\n",
+          "savedSource": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")\n",
+          "savedSha256": "92a7cdd2aaec813b40f739c756f2bbd06c82518f089bf76e0bf19f842fd4cb09",
+          "expectedStdout": "Item: Count: Mass kg: Item: Crate C\nCount: 4\nTotal kg: 12.0\nWithin 10 kg: False\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Item: Count: Mass kg: Item: Crate C\r\nCount: 4\r\nTotal kg: 12.0\r\nWithin 10 kg: False\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "main",
+          "caseId": "unseen-parcel",
+          "filename": "parcel_summary.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\parcel_summary.py"
+          ],
+          "pid": 32592,
+          "stdin": "Bundle D\n2\n2.25\n",
+          "savedSource": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")\n",
+          "savedSha256": "92a7cdd2aaec813b40f739c756f2bbd06c82518f089bf76e0bf19f842fd4cb09",
+          "expectedStdout": "Item: Count: Mass kg: Item: Bundle D\nCount: 2\nTotal kg: 4.5\nWithin 10 kg: True\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Item: Count: Mass kg: Item: Bundle D\r\nCount: 2\r\nTotal kg: 4.5\r\nWithin 10 kg: True\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "main",
+          "caseId": "bad-count",
+          "filename": "parcel_summary.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\parcel_summary.py"
+          ],
+          "pid": 23216,
+          "stdin": "Parcel\n4.5\n1.5\n",
+          "savedSource": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")\n",
+          "savedSha256": "92a7cdd2aaec813b40f739c756f2bbd06c82518f089bf76e0bf19f842fd4cb09",
+          "expectedStdout": "Item: Count: Mass kg: ",
+          "expectedExitCode": 1,
+          "expectedError": {
+            "type": "ValueError",
+            "line": 5,
+            "message": "ValueError: invalid literal for int() with base 10: '4.5'"
+          },
+          "exitCode": 1,
+          "stdout": "Item: Count: Mass kg: ",
+          "stderr": "Traceback (most recent call last):\r\n  File \"<PYTHON-LAB>\\parcel_summary.py\", line 5, in <module>\r\n    count = int(count_text)\r\nValueError: invalid literal for int() with base 10: '4.5'\r\n"
+        },
+        {
+          "key": "main",
+          "caseId": "restart-valid",
+          "filename": "parcel_summary.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\parcel_summary.py"
+          ],
+          "pid": 35352,
+          "stdin": "Parcel\n4\n1.5\n",
+          "savedSource": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")\n",
+          "savedSha256": "92a7cdd2aaec813b40f739c756f2bbd06c82518f089bf76e0bf19f842fd4cb09",
+          "expectedStdout": "Item: Count: Mass kg: Item: Parcel\nCount: 4\nTotal kg: 6.0\nWithin 10 kg: True\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Item: Count: Mass kg: Item: Parcel\r\nCount: 4\r\nTotal kg: 6.0\r\nWithin 10 kg: True\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "reference-programs",
+      "filename": "material_summary.py · 题一参考",
+      "executionMode": "saved-file-real-stdin",
+      "key": "ownSummary",
+      "sourceSha256": "6bd52c473cb8ff097563302b51c20c81b9b704d18e09001c8327075bce7e736a",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "ownSummary",
+          "caseId": "banner-a",
+          "filename": "material_summary.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\material_summary.py"
+          ],
+          "pid": 34408,
+          "stdin": "Banner A\n6\n0.75\n",
+          "savedSource": "material_name = input(\"Material: \")\npieces_text = input(\"Pieces: \")\nlength_text = input(\"Length m: \")\npieces = int(pieces_text)\nlength = float(length_text)\ntotal_length = pieces * length\nprint(f\"Material: {material_name}\")\nprint(f\"Pieces: {pieces}\")\nprint(f\"Total m: {total_length}\")\n",
+          "savedSha256": "6bd52c473cb8ff097563302b51c20c81b9b704d18e09001c8327075bce7e736a",
+          "expectedStdout": "Material: Pieces: Length m: Material: Banner A\nPieces: 6\nTotal m: 4.5\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Material: Pieces: Length m: Material: Banner A\r\nPieces: 6\r\nTotal m: 4.5\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "ownSummary",
+          "caseId": "banner-b",
+          "filename": "material_summary.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\material_summary.py"
+          ],
+          "pid": 29616,
+          "stdin": "Banner B\n10\n0.5\n",
+          "savedSource": "material_name = input(\"Material: \")\npieces_text = input(\"Pieces: \")\nlength_text = input(\"Length m: \")\npieces = int(pieces_text)\nlength = float(length_text)\ntotal_length = pieces * length\nprint(f\"Material: {material_name}\")\nprint(f\"Pieces: {pieces}\")\nprint(f\"Total m: {total_length}\")\n",
+          "savedSha256": "6bd52c473cb8ff097563302b51c20c81b9b704d18e09001c8327075bce7e736a",
+          "expectedStdout": "Material: Pieces: Length m: Material: Banner B\nPieces: 10\nTotal m: 5.0\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Material: Pieces: Length m: Material: Banner B\r\nPieces: 10\r\nTotal m: 5.0\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "ownSummary",
+          "caseId": "unseen-summary",
+          "filename": "material_summary.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\material_summary.py"
+          ],
+          "pid": 11408,
+          "stdin": "Cable C\n3\n1.25\n",
+          "savedSource": "material_name = input(\"Material: \")\npieces_text = input(\"Pieces: \")\nlength_text = input(\"Length m: \")\npieces = int(pieces_text)\nlength = float(length_text)\ntotal_length = pieces * length\nprint(f\"Material: {material_name}\")\nprint(f\"Pieces: {pieces}\")\nprint(f\"Total m: {total_length}\")\n",
+          "savedSha256": "6bd52c473cb8ff097563302b51c20c81b9b704d18e09001c8327075bce7e736a",
+          "expectedStdout": "Material: Pieces: Length m: Material: Cable C\nPieces: 3\nTotal m: 3.75\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Material: Pieces: Length m: Material: Cable C\r\nPieces: 3\r\nTotal m: 3.75\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "reference-programs",
+      "filename": "garden_boundary.py · 题二参考",
+      "executionMode": "saved-file-real-stdin",
+      "key": "ownBoundary",
+      "sourceSha256": "e787dbd627f4a179000385ca1e4f3a6ab8a1525572cb5977e0228738a36bf259",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "ownBoundary",
+          "caseId": "garden-low",
+          "filename": "garden_boundary.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\garden_boundary.py"
+          ],
+          "pid": 36648,
+          "stdin": "Garden A\n3\n3\n",
+          "savedSource": "batch_name = input(\"Batch: \")\nstrips_text = input(\"Strips: \")\nstrip_text = input(\"Strip m: \")\nstrips = int(strips_text)\nstrip_length = float(strip_text)\nlength_limit = 12\ntotal_length = strips * strip_length\nwithin_limit = total_length <= length_limit\nprint(f\"Batch: {batch_name}\")\nprint(f\"Strips: {strips}\")\nprint(f\"Total m: {total_length}\")\nprint(f\"Within {length_limit} m: {within_limit}\")\n",
+          "savedSha256": "e787dbd627f4a179000385ca1e4f3a6ab8a1525572cb5977e0228738a36bf259",
+          "expectedStdout": "Batch: Strips: Strip m: Batch: Garden A\nStrips: 3\nTotal m: 9.0\nWithin 12 m: True\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Batch: Strips: Strip m: Batch: Garden A\r\nStrips: 3\r\nTotal m: 9.0\r\nWithin 12 m: True\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "ownBoundary",
+          "caseId": "garden-equal",
+          "filename": "garden_boundary.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\garden_boundary.py"
+          ],
+          "pid": 33256,
+          "stdin": "Garden B\n3\n4\n",
+          "savedSource": "batch_name = input(\"Batch: \")\nstrips_text = input(\"Strips: \")\nstrip_text = input(\"Strip m: \")\nstrips = int(strips_text)\nstrip_length = float(strip_text)\nlength_limit = 12\ntotal_length = strips * strip_length\nwithin_limit = total_length <= length_limit\nprint(f\"Batch: {batch_name}\")\nprint(f\"Strips: {strips}\")\nprint(f\"Total m: {total_length}\")\nprint(f\"Within {length_limit} m: {within_limit}\")\n",
+          "savedSha256": "e787dbd627f4a179000385ca1e4f3a6ab8a1525572cb5977e0228738a36bf259",
+          "expectedStdout": "Batch: Strips: Strip m: Batch: Garden B\nStrips: 3\nTotal m: 12.0\nWithin 12 m: True\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Batch: Strips: Strip m: Batch: Garden B\r\nStrips: 3\r\nTotal m: 12.0\r\nWithin 12 m: True\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "ownBoundary",
+          "caseId": "garden-high",
+          "filename": "garden_boundary.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\garden_boundary.py"
+          ],
+          "pid": 33116,
+          "stdin": "Garden C\n3\n5\n",
+          "savedSource": "batch_name = input(\"Batch: \")\nstrips_text = input(\"Strips: \")\nstrip_text = input(\"Strip m: \")\nstrips = int(strips_text)\nstrip_length = float(strip_text)\nlength_limit = 12\ntotal_length = strips * strip_length\nwithin_limit = total_length <= length_limit\nprint(f\"Batch: {batch_name}\")\nprint(f\"Strips: {strips}\")\nprint(f\"Total m: {total_length}\")\nprint(f\"Within {length_limit} m: {within_limit}\")\n",
+          "savedSha256": "e787dbd627f4a179000385ca1e4f3a6ab8a1525572cb5977e0228738a36bf259",
+          "expectedStdout": "Batch: Strips: Strip m: Batch: Garden C\nStrips: 3\nTotal m: 15.0\nWithin 12 m: False\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Batch: Strips: Strip m: Batch: Garden C\r\nStrips: 3\r\nTotal m: 15.0\r\nWithin 12 m: False\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "ownBoundary",
+          "caseId": "unseen-boundary",
+          "filename": "garden_boundary.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\garden_boundary.py"
+          ],
+          "pid": 34808,
+          "stdin": "Garden D\n4\n3\n",
+          "savedSource": "batch_name = input(\"Batch: \")\nstrips_text = input(\"Strips: \")\nstrip_text = input(\"Strip m: \")\nstrips = int(strips_text)\nstrip_length = float(strip_text)\nlength_limit = 12\ntotal_length = strips * strip_length\nwithin_limit = total_length <= length_limit\nprint(f\"Batch: {batch_name}\")\nprint(f\"Strips: {strips}\")\nprint(f\"Total m: {total_length}\")\nprint(f\"Within {length_limit} m: {within_limit}\")\n",
+          "savedSha256": "e787dbd627f4a179000385ca1e4f3a6ab8a1525572cb5977e0228738a36bf259",
+          "expectedStdout": "Batch: Strips: Strip m: Batch: Garden D\nStrips: 4\nTotal m: 12.0\nWithin 12 m: True\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Batch: Strips: Strip m: Batch: Garden D\r\nStrips: 4\r\nTotal m: 12.0\r\nWithin 12 m: True\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "reference-programs",
+      "filename": "field_copy.py · 名称错拼副本",
+      "executionMode": "saved-file-real-stdin",
+      "key": "nameError",
+      "sourceSha256": "7dd83e09752650f361db77d29c1e0f17e92cfc3700372eb52213f23b1d5c882d",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "nameError",
+          "caseId": "unbound-field",
+          "filename": "field_copy.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\field_copy.py"
+          ],
+          "pid": 36228,
+          "stdin": "",
+          "savedSource": "total_mass = 6.0\nprint(f\"Total kg: {total_mas}\")\n",
+          "savedSha256": "7dd83e09752650f361db77d29c1e0f17e92cfc3700372eb52213f23b1d5c882d",
+          "expectedStdout": "",
+          "expectedExitCode": 1,
+          "expectedError": {
+            "type": "NameError",
+            "line": 2,
+            "message": "NameError: name 'total_mas' is not defined"
+          },
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\r\n  File \"<PYTHON-LAB>\\field_copy.py\", line 2, in <module>\r\n    print(f\"Total kg: {total_mas}\")\r\n                       ^^^^^^^^^\r\nNameError: name 'total_mas' is not defined. Did you mean: 'total_mass'?\r\n"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "reference-programs",
+      "filename": "field_copy.py · 名称修复副本",
+      "executionMode": "saved-file-real-stdin",
+      "key": "nameRepair",
+      "sourceSha256": "2635826f02c85f3f8233ae20065a36754b5e69ce336755842e7f8f8e8fda4629",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "nameRepair",
+          "caseId": "field-repaired",
+          "filename": "field_copy.py",
+          "cwd": "<PYTHON-LAB>",
+          "command": [
+            "python",
+            "<PYTHON-LAB>\\field_copy.py"
+          ],
+          "pid": 34976,
+          "stdin": "",
+          "savedSource": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")\n",
+          "savedSha256": "2635826f02c85f3f8233ae20065a36754b5e69ce336755842e7f8f8e8fda4629",
+          "expectedStdout": "Total kg: 6.0\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Total kg: 6.0\r\n",
+          "stderr": ""
+        }
+      ]
+    }
+  ],
+  "note": "Only new lesson details committed; historical controlled errors retained and full global logs kept in ignored author directory. New saved-file execution is separately recorded in PYTHON_RUNS.json."
+}

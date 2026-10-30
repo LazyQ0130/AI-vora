@@ -46,6 +46,7 @@ import { pythonBasicValueTypesLesson } from "../content/lessons/py101/basic-valu
 import { pythonArithmeticExpressionsLesson } from "../content/lessons/py101/arithmetic-expressions";
 import { pythonNumericComparisonsLesson } from "../content/lessons/py101/numeric-comparisons";
 import { pythonInputAndConversionLesson } from "../content/lessons/py101/input-and-conversion";
+import { pythonReadableOutputLesson } from "../content/lessons/py101/readable-output";
 import {
   publicationManifest,
   readablePublications,
@@ -60,6 +61,7 @@ import {
 } from "../content/models";
 
 const contents: Lesson[] = [
+  pythonReadableOutputLesson,
   pythonInputAndConversionLesson,
   pythonNumericComparisonsLesson,
   pythonArithmeticExpressionsLesson,

@@ -6,7 +6,8 @@ const revisedCoreLessons: Record<string, number> = { "MA101-C02-L03": 2, "PY101-
 
 // 发布权限独立于原始课程规划。技术证据不替代人工审核。
 export const publicationManifest = [
-  {lessonId:"PY101-C02-L05",courseId:"PY101",chapterId:"PY101-C02",title:"取得用户输入，再转成需要的数值",contentVersion:1,order:5,optionalLesson:false,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p12/TECHNICAL_REPORT.md"},
+  {lessonId:"PY101-C02-L06",courseId:"PY101",chapterId:"PY101-C02",title:"把输入和计算整理成清楚的输出",contentVersion:1,order:6,optionalLesson:false,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p13/TECHNICAL_REPORT.md"},
+  {lessonId:"PY101-C02-L05",courseId:"PY101",chapterId:"PY101-C02",title:"取得用户输入，再转成需要的数值",contentVersion:1,order:5,optionalLesson:false,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p13/TRANSITION_AMENDMENTS.md"},
   {lessonId:"PY101-C02-L04",courseId:"PY101",chapterId:"PY101-C02",title:"让比较表达式给出真假结果",contentVersion:1,order:4,optionalLesson:false,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p12/TRANSITION_AMENDMENTS.md"},
   {lessonId:"PY101-C02-L03",courseId:"PY101",chapterId:"PY101-C02",title:"用表达式算出一个结果",contentVersion:1,order:3,optionalLesson:false,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p11/TRANSITION_AMENDMENTS.md"},
   {lessonId:"PY101-C02-L02",courseId:"PY101",chapterId:"PY101-C02",title:"分清文字、整数、小数和真假值",contentVersion:1,order:2,optionalLesson:false,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p10/TRANSITION_AMENDMENT.md"},
