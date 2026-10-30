@@ -1,0 +1,37 @@
+{
+  "baseline": "e6c3c0859e4ebc39b574cbd74b9d4cbdd03b9af1",
+  "method": "git archive HEAD + explicitly scoped task files; external dependency junction; user modifications/attachments excluded",
+  "sourceComparison": [
+    {
+      "path": "src/content/course-outline.ts",
+      "lfSha256": "6b121a24392967465cd4f4a9a334e60091d4c9e440029dc2d71e7bcf4de35532",
+      "matchesBrowserProductionSource": true
+    },
+    {
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "lfSha256": "d2eeed2e56f2f2d1409a7ecf956280011c908b892005867a30a54b2c6e5acb31",
+      "matchesBrowserProductionSource": true
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "lfSha256": "f744ae5275c9083c1cf80606630a790085563a905e0b131e5a666fd4c29827b8",
+      "matchesBrowserProductionSource": true
+    },
+    {
+      "path": "src/lib/course-engine.ts",
+      "lfSha256": "61f908a564bffb06969ff315d6df5a6e673ff886852ca44d86d1ff59ef55dfcf",
+      "matchesBrowserProductionSource": true
+    },
+    {
+      "path": "src/content/resources/python-variables.ts",
+      "lfSha256": "9430e4a114a1f0ce154e561daac1defc09d6905994891cef3cea5c1ba048d1e8",
+      "matchesBrowserProductionSource": true
+    },
+    {
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "lfSha256": "7c8048e8eeb8eb689e037b8ce04c825b6858f1ba6b2ede85ac63318d7d6631de",
+      "matchesBrowserProductionSource": true
+    }
+  ],
+  "allAssertionsPassed": true
+}

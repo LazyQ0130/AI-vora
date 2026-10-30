@@ -1,0 +1,183 @@
+{
+  "testedAt": "2026-10-30T03:44:43.209Z",
+  "base": "http://127.0.0.1:3019",
+  "build": "clean source / production Webpack / provisional preview projection",
+  "checks": [
+    {
+      "label": "desktop-layout",
+      "brokenPlanningLinks": [],
+      "documentWidth": 1425,
+      "h1": "用变量保留并更新程序里的值",
+      "sectionIds": [
+        "changing-task",
+        "name-and-value",
+        "choose-name",
+        "read-and-update",
+        "predict-run",
+        "change-one-value",
+        "literal-or-name",
+        "fresh-script",
+        "first-read-error",
+        "practice",
+        "exercise-keep-and-update",
+        "exercise-repair-first-read",
+        "next-step"
+      ],
+      "viewport": 1425,
+      "width": 1440
+    },
+    {
+      "label": "exercise-one-disclosures",
+      "open": 3
+    },
+    {
+      "label": "copy-failure-exact",
+      "passed": true,
+      "text": "print(dispatch_label)\ndispatch_label = \"Packed T7\""
+    },
+    {
+      "label": "copy-main-after-completion-feedback",
+      "passed": true,
+      "text": "task_name = \"Pack notebooks\"\nprint(task_name)\ntask_name = \"Check labels\"\nprint(task_name)"
+    },
+    {
+      "label": "tablet-directory-anchor",
+      "dialogCount": 0,
+      "documentWidth": 753,
+      "focusedId": "",
+      "hash": "#predict-run",
+      "viewport": 753,
+      "width": 768
+    },
+    {
+      "label": "phone-layout",
+      "documentWidth": 375,
+      "mainWidth": 374.6666870117187,
+      "viewport": 375,
+      "width": 390
+    },
+    {
+      "label": "phone-anchor-after-scroll",
+      "focused": "有引号的文字和无引号的名称",
+      "hash": "#literal-or-name",
+      "targetTop": 209.9166717529297
+    },
+    {
+      "label": "narrow-layout",
+      "articleWidth": 284.66668701171875,
+      "documentWidth": 305,
+      "viewport": 305,
+      "width": 320
+    },
+    {
+      "label": "stable-hashless-progress-recovery",
+      "before": {
+        "version": 2,
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L01",
+        "contentVersion": 1,
+        "percent": 90,
+        "completed": false,
+        "section": "literal-or-name",
+        "updatedAt": 1793332046044
+      },
+      "after": {
+        "version": 2,
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L01",
+        "contentVersion": 1,
+        "percent": 90,
+        "completed": false,
+        "section": "literal-or-name",
+        "updatedAt": 1793332070330
+      },
+      "resumeHref": "#literal-or-name",
+      "oldKeys": [
+        "aivora:learning:v2:AI000:AI000-C05-L03:r1",
+        "aivora:learning:v2:AI000:AI000-C05-L04:r1",
+        "aivora:learning:v2:PY101:PY101-C01-L06:r1"
+      ],
+      "allOldBytesEqual": true
+    },
+    {
+      "label": "final-production-answer-lines",
+      "firstFourLines": true,
+      "repairTwoLines": true,
+      "allDisclosureCounts": 6
+    },
+    {
+      "label": "final-one-six-transition",
+      "text": "第一章结束，留下能重新核对的文件\n\n现在你能把本地脚本保存并重跑，核对文件位置与实际解释器，区分项目环境，在Jupyter按序执行，并把一次问题整理成别人可以按条件尝试的短记录。两题的真实文件和新会话证据才用于自查，网页“读完”只记录阅读。另一位人类实际按记录操作之前，把同伴复现列为待验证。\n\n第一章1.1–1.6帮助你准备了文件、环境与运行能力。接下来按原课程体系进入第二章“变量、基本类型、表达式与输入输出”：2.1「用变量保留并更新程序里的值」已有待人工审核试读，将在普通.py脚本中系统练习名称赋值、读取、更新和执行顺序。第二章其余课时仍只有规划。第5章函数试读还需要表达式与控制流程等中间先修，阅读器的可读课时导航不代表可以直接跳学。整门PY101仍在筹备。",
+      "nextHref": "/learn/PY101/PY101-C02-L01"
+    },
+    {
+      "label": "phone-copy-literal-exact",
+      "passed": true,
+      "text": "task_name = \"Ready\"\nprint(\"task_name\")\nprint(task_name)"
+    },
+    {
+      "label": "wrong-course-browser-404",
+      "heading": "这里，还没有被探索。"
+    },
+    {
+      "label": "course-planned-browser",
+      "text": "跳到主要内容\nAivora\n系统化 AI 技术学习平台\n返回课程体系\nL1 · 编程与数据\nPython 编程与工程入门\n\n能独立编写模块化 Python 程序，处理数据文件、定位常见错误并使用虚拟环境与 Notebook。\n\n10 章规划\n预计 26–36 小时\n\n本课程正在筹备，下方为章节规划。目前包含可阅读样章，教材仍待人工审核。\n\nLEARNING OUTCOME\n学会什么，如何验证\n\n给定未见过的小型 CSV，完成读取、清洗、统计与文件输出；可复现运行。\n\nTHE COURSE BLUEPRINT\n课程章节\n10 章 · 规划中\nCOURSE CONTENTS\nPython 编程与工程入门\n\n10 章 · 12 节核心课已制作\n\n已制作课时阅读比例\n16%\n0 / 12 节已标记读完 · 仅当前浏览器\n筹备、可选与旧版课时不计入比例；已读不代表掌握。\n第 1 章：\n环境、解释器、虚拟环境、IDE 与 Jupyter\n1.1\n从零运行第一个Python程序\n1.2\n解释器怎样找到并执行脚本\n1.3\n用编辑器完成保存与重跑\n1.4\n为项目准备独立的虚拟环境\n1.5\n在Jupyter中按顺序运行单元格\n1.6\n让别人复现一次环境问题\n第 2 章：\n变量、基本类型、表达式与输入输出\n2.1\n用变量保留并更新程序里的值\n第 3 章：\n分支、循环、推导式与常见控制流程\n第 4 章：\n列表、元组、字典、集合与字符串处理\n第 5 章：\n函数、作用域、参数、类型标注与文档字符串\n5.1\n",
+      "unmadeLinks": 0
+    }
+  ],
+  "diagnostics": [
+    {
+      "issue": "参考答案列表合并换行",
+      "resolution": "本课答案按第1/2/3/4行说明；最终生产页面已复验，未改Reader。"
+    },
+    {
+      "issue": "复制主例首次读取剪贴板过早为空",
+      "resolution": "先观察按钮已复制，再读取，逐字符匹配成功。"
+    },
+    {
+      "issue": "首次旧记录对照跨越了1.6离开页面时的正常pagehide保存；新页滚动中途读取位置",
+      "resolution": "以离开旧页后、滚动结束的记录为基线，复测无hash重开，literal-or-name恢复且旧记录字节全等。"
+    },
+    {
+      "issue": "DOMStorage原始CDP命令不受支持、只读DOM作用域不提供localStorage",
+      "resolution": "用获支持的Runtime.evaluate只读本地存储；没有通过开发接口改写或清空存储。"
+    }
+  ],
+  "initialObservations": [
+    {
+      "label": "copy-main-exact",
+      "passed": false,
+      "text": ""
+    },
+    {
+      "label": "progress-and-old-isolation",
+      "before": {
+        "version": 2,
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L01",
+        "contentVersion": 1,
+        "percent": 90,
+        "completed": false,
+        "section": "predict-run",
+        "updatedAt": 1793332013644
+      },
+      "after": {
+        "version": 2,
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L01",
+        "contentVersion": 1,
+        "percent": 90,
+        "completed": false,
+        "section": "name-and-value",
+        "updatedAt": 1793332045416
+      },
+      "oldKeys": [
+        "aivora:learning:v2:AI000:AI000-C05-L03:r1",
+        "aivora:learning:v2:AI000:AI000-C05-L04:r1",
+        "aivora:learning:v2:PY101:PY101-C01-L06:r1"
+      ],
+      "allOldBytesEqual": false
+    }
+  ],
+  "finalChecksPassed": true
+}

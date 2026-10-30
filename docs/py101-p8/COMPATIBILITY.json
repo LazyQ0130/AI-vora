@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-30T03:53:45.980Z",
+  "oldLessonCount": 53,
+  "newLessonIds": [
+    "PY101-C02-L01"
+  ],
+  "unchangedOtherLessonObjects": 52,
+  "protectedFileCount": 444,
+  "onlyAllowedSourceChanges": [
+    "src/content/course-outline.ts",
+    "src/lib/course-engine.ts",
+    "src/content/publication-manifest.ts",
+    "src/content/lessons/py101/environment-reproduction.ts",
+    "scripts/validate-python.ts",
+    "scripts/py101-p1-compatibility.ts",
+    "tests/py101-environment-reproduction.test.ts",
+    "tests/content.test.ts"
+  ],
+  "allAssertionsPassed": true
+}

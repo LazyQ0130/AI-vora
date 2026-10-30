@@ -1,0 +1,185 @@
+{
+  "checkedAt": "2026-10-30T03:53:42.413Z",
+  "note": "结构覆盖与编辑估计快照；映射通过不证明题目效度或独立自学效果，需人工与目标学生验证。",
+  "registeredLessonCount": 54,
+  "currentLesson": {
+    "id": "PY101-C02-L01",
+    "title": "用变量保留并更新程序里的值",
+    "href": "/learn/PY101/PY101-C02-L01",
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "pending-review",
+    "contentVersion": 1,
+    "learningTime": {
+      "reading": [
+        10,
+        15
+      ],
+      "practice": [
+        5,
+        8
+      ],
+      "coding": [
+        10,
+        15
+      ],
+      "basis": "editorial-estimate"
+    },
+    "objectives": [
+      {
+        "objective": 1,
+        "text": "在自己创建的.py中用合法名称保存文字并输出当前值，区分名称和引号内的固定文字",
+        "exercises": [
+          {
+            "id": "keep-and-update",
+            "title": "自己的任务标签会怎样改变？",
+            "kind": "代码",
+            "tier": "core",
+            "prompt": "创建与正文不同的.py文件，自选新的任务情境、一个合法名称和两段不同文字。自己写第一次赋值与名称读取，再写同一名称的第二次赋值与名称读取。运行前预测两行输出，保存并真实执行。随后只改第二次赋值的文字，再预测、保存并完整运行一次。交付实际源码（保留改前/改后差异）、运行命令、两次预测和两次真实输出；简短说明为什么第一行不随后面的赋值倒退改变，再用一句话区分名称与引号里的文字。名称不必是task_name，接受其他合法写法；不能只交参考输出。",
+            "hints": 2,
+            "rubric": [
+              "实际新.py使用自选合法名称与新情境，两段文字不同；有同名两次赋值及两次名称读取，源码和运行命令对应。",
+              "两轮都有运行前两行预测和真实输出；改后只改变第二次赋值，结果与执行位置相符，差异有核对。",
+              "结合本人代码说明第一行已在更新前显示，不会被后来赋值改写；能区分名称读取与引号内固定文字。读完标记、复制样例或只有解释不代替代码与运行。"
+            ]
+          }
+        ]
+      },
+      {
+        "objective": 2,
+        "text": "预测同一名称重新赋值前后的输出，只修改第二次赋值，保存重跑并解释哪一行变化",
+        "exercises": [
+          {
+            "id": "keep-and-update",
+            "title": "自己的任务标签会怎样改变？",
+            "kind": "代码",
+            "tier": "core",
+            "prompt": "创建与正文不同的.py文件，自选新的任务情境、一个合法名称和两段不同文字。自己写第一次赋值与名称读取，再写同一名称的第二次赋值与名称读取。运行前预测两行输出，保存并真实执行。随后只改第二次赋值的文字，再预测、保存并完整运行一次。交付实际源码（保留改前/改后差异）、运行命令、两次预测和两次真实输出；简短说明为什么第一行不随后面的赋值倒退改变，再用一句话区分名称与引号里的文字。名称不必是task_name，接受其他合法写法；不能只交参考输出。",
+            "hints": 2,
+            "rubric": [
+              "实际新.py使用自选合法名称与新情境，两段文字不同；有同名两次赋值及两次名称读取，源码和运行命令对应。",
+              "两轮都有运行前两行预测和真实输出；改后只改变第二次赋值，结果与执行位置相符，差异有核对。",
+              "结合本人代码说明第一行已在更新前显示，不会被后来赋值改写；能区分名称读取与引号内固定文字。读完标记、复制样例或只有解释不代替代码与运行。"
+            ]
+          }
+        ]
+      },
+      {
+        "objective": 3,
+        "text": "按执行顺序找出首次赋值前的读取，记录实际错误，保留名称读取语义修复并从头运行",
+        "exercises": [
+          {
+            "id": "repair-first-read",
+            "title": "为什么脚本还没开始显示任务就报错？",
+            "kind": "实验",
+            "tier": "core",
+            "prompt": "确认repair_label.py的真实位置与保存状态，内容为上方dispatch_label两行故障源码。先预测首次运行现象，再从终端实际执行，保留真实错误类型、相关代码行和末行。按这次执行顺序判断：读取时，这个名称是否已经有值？自己决定安全修复方法，保留变量赋值与名称读取的语义，保存并从头重跑。交付修复前后源码、命令、错误及恢复后的真实输出，再简短解释本次新脚本为何不能依赖以前Notebook内核的状态。只改成print(\"Packed T7\")跳过了名称读取，不能算本题完成；不通过重装、改PATH或删环境解决。",
+            "hints": 2,
+            "rubric": [
+              "在已确认的保存文件上真正复现首次读取错误，保留实际命令、相关代码与NameError，不以预贴错误文字替代。",
+              "依据本次执行先后指出读取时尚未绑定；修复仍含赋值及名称读取，提供值先执行，未用输出常量绕开任务。",
+              "保存修复源码并从头运行，保留真实Packed T7输出与命令；能解释新脚本进程和旧Notebook内核状态的区别。"
+            ]
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "id": "changing-task",
+        "title": "任务变了，程序怎样接着使用新文字？",
+        "tier": "core",
+        "pythonBlocks": []
+      },
+      {
+        "id": "name-and-value",
+        "title": "先把一份文字交给名称",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "赋值片段 · 稍后组合",
+            "lines": 1
+          }
+        ]
+      },
+      {
+        "id": "choose-name",
+        "title": "自己选一个能使用的名称",
+        "tier": "core",
+        "pythonBlocks": []
+      },
+      {
+        "id": "read-and-update",
+        "title": "读取当前值，再给同一名称新值",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "读取片段 · 接在首次赋值之后",
+            "lines": 1
+          },
+          {
+            "filename": "更新片段 · 接在首次读取之后",
+            "lines": 1
+          }
+        ]
+      },
+      {
+        "id": "predict-run",
+        "title": "先预测四行代码，再运行完整脚本",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "task_labels.py",
+            "lines": 4
+          }
+        ]
+      },
+      {
+        "id": "change-one-value",
+        "title": "只改第二次赋值，会改变哪一行？",
+        "tier": "core",
+        "pythonBlocks": []
+      },
+      {
+        "id": "literal-or-name",
+        "title": "有引号的文字和无引号的名称",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "name_or_text.py",
+            "lines": 3
+          }
+        ]
+      },
+      {
+        "id": "fresh-script",
+        "title": "每次从终端启动，是本次脚本的执行",
+        "tier": "core",
+        "pythonBlocks": []
+      },
+      {
+        "id": "first-read-error",
+        "title": "赋值写在后面，为什么第一行仍报错？",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "dispatch_label.py · 预期出现NameError",
+            "lines": 2
+          }
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "自己写一次更新，再独立修复一次读取",
+        "tier": "core",
+        "pythonBlocks": []
+      },
+      {
+        "id": "next-step",
+        "title": "用自己的文件检查这三件事",
+        "tier": "core",
+        "pythonBlocks": []
+      }
+    ]
+  }
+}

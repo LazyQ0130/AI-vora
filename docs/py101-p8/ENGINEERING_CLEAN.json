@@ -1,0 +1,137 @@
+{
+  "phase": "final canonical clean candidate excluding user modifications",
+  "previousAttempt": {
+    "rows": [
+      {
+        "command": "npm run typecheck",
+        "exitCode": 0,
+        "elapsedSeconds": 3.96,
+        "summary": [
+          "",
+          "> aivora-web@0.1.0 typecheck",
+          "> tsc --noEmit",
+          ""
+        ]
+      },
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "elapsedSeconds": 5.8,
+        "summary": [
+          "",
+          "> aivora-web@0.1.0 lint",
+          "> eslint .",
+          ""
+        ]
+      },
+      {
+        "command": "npm test",
+        "exitCode": 1,
+        "elapsedSeconds": 9.62,
+        "summary": [
+          "      at Test.run (node:internal/test_runner/test:1306:25)",
+          "      at Test.start (node:internal/test_runner/test:1177:17)",
+          "      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {",
+          "    generatedMessage: true,",
+          "    code: 'ERR_ASSERTION',",
+          "    actual: false,",
+          "    expected: true,",
+          "    operator: '==',",
+          "    diff: 'simple'",
+          "  }"
+        ]
+      }
+    ],
+    "failureReason": "旧content.test要求2.1至少两道Quiz；现对2.1采用已有核心开放任务映射检查，其他旧样章Quiz契约保留"
+  },
+  "rows": [
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "elapsedSeconds": 1.65,
+      "summary": [
+        "",
+        "> aivora-web@0.1.0 typecheck",
+        "> tsc --noEmit",
+        ""
+      ]
+    },
+    {
+      "command": "npm run lint",
+      "exitCode": 0,
+      "elapsedSeconds": 4.38,
+      "summary": [
+        "",
+        "> aivora-web@0.1.0 lint",
+        "> eslint .",
+        ""
+      ]
+    },
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "elapsedSeconds": 6.12,
+      "summary": [
+        "✔ 新版完成率从零开始，旧版读完记录仅保留历史，不抬高新版完成率 (0.6198ms)",
+        "✔ 内部 ID 与显示顺序分离，规划节无链接；技术开放后上下节自动越过规划内容 (2.2912ms)",
+        "ℹ tests 321",
+        "ℹ suites 0",
+        "ℹ pass 321",
+        "ℹ fail 0",
+        "ℹ cancelled 0",
+        "ℹ skipped 0",
+        "ℹ todo 0",
+        "ℹ duration_ms 5788.5614"
+      ]
+    },
+    {
+      "command": "npm run prepare:downloads",
+      "exitCode": 0,
+      "elapsedSeconds": 0.48,
+      "summary": [
+        "",
+        "> aivora-web@0.1.0 prepare:downloads",
+        "> tsx scripts/prepare-downloads.ts",
+        "",
+        "已同源生成 16 组 Python / Notebook 下载文件",
+        "另生成 3 份按单元格组织的Notebook；空输出，不写入机器版本或路径。"
+      ]
+    },
+    {
+      "command": "npm run test:python",
+      "exitCode": 0,
+      "elapsedSeconds": 4.31,
+      "summary": [
+        "",
+        "> aivora-web@0.1.0 test:python",
+        "> tsx scripts/validate-python.ts",
+        "",
+        "Python 单元测试通过，74 个网页代码块按成功/受控错误契约实际执行通过，10 组核心/完整版一致。证据：<REPOSITORY>\\.workbuddy\\py101-p8\\final-clean\\TEACHING_V2_3_PYTHON_RESULTS.json"
+      ]
+    },
+    {
+      "command": "npm run review:teaching",
+      "exitCode": 0,
+      "elapsedSeconds": 0.69,
+      "summary": [
+        "",
+        "> aivora-web@0.1.0 review:teaching",
+        "> tsx scripts/review-teaching.ts",
+        "",
+        "54 节教材的目标映射、时间估计与分层代码清单已输出"
+      ]
+    }
+  ],
+  "build": {
+    "command": "npm run build -- --webpack",
+    "bundler": "Webpack",
+    "exitCode": 0,
+    "reason": "仓库外node_modules联接；复用已确认可用的Next正式CLI选项，未改项目配置"
+  },
+  "productionRoutes": {
+    "base": "http://127.0.0.1:3019",
+    "passed": 105,
+    "total": 105,
+    "exitCode": 0
+  }
+}

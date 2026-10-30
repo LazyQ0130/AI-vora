@@ -9,7 +9,7 @@ import { isReadable } from "../src/content/models";
 import { reproductionCode, reproductionCommands, reproductionBlockNames, reproductionNotebook } from "../src/content/resources/python-reproduction";
 import { notebookDownload } from "../src/content/resources/python-notebook";
 import { environmentProbe } from "../src/content/resources/python-venv";
-import { beforeApprovedPy101Object, protectedPy101FileMatches } from "../scripts/py101-p1-compatibility";
+import { beforeApprovedPy101Object, protectedPy101FileMatches, approvedPy101Additions } from "../scripts/py101-p1-compatibility";
 import { createProgressStore, parseReadingProgress, progressKey } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
 import { assertRegisteredInventory, assertCourseAvailability } from "./helpers/registered-content";
@@ -17,7 +17,8 @@ const read = (name: string) => JSON.parse(readFileSync(`docs/py101-p5/${name}.js
 
 test("P5保护真实基线的全部旧文件/教材，1.5只改最后过渡段且保留r1范围", () => {
   const base = read("BASELINE"), sha = (v: unknown) => createHash("sha256").update(JSON.stringify(v)).digest("hex");
-  assert.deepEqual([...lessonRegistry.keys()].sort(), [...Object.keys(base.lessons), lesson.id].sort());
+  const later = approvedPy101Additions.filter(id => id !== lesson.id && !(id in base.lessons));
+  assert.deepEqual([...lessonRegistry.keys()].sort(), [...Object.keys(base.lessons), lesson.id, ...later].sort());
   for (const kind of ["lessons", "publications"] as const) for (const [id, hash] of Object.entries(base[kind])) {
     const value = kind === "lessons" ? lessonRegistry.get(id) : publicationManifest.find(p => p.lessonId === id);
     assert.equal(sha(beforeApprovedPy101Object(kind, id, value, base.head)), hash, id);
@@ -39,9 +40,10 @@ test("1.6注册r1和草稿门禁，首章六槽顺序与相邻导航，整课筹
   const course = getLearningCourse("PY101")!; assert.equal(course.status, "planned"); assert.equal(course.chapters.length, 10);
   assert.deepEqual(course.chapters[0].lessons.map(s => [s.lessonId, s.order]), Array.from({length: 6}, (_, i) => [`PY101-C01-L0${i+1}`, i+1]));
   if (entry.status === "draft") { assert.equal(entry.access, "private"); assert.equal(resolveLesson("PY101", lesson.id), undefined); }
-  else { assert.equal(entry.status, "pending-review"); assert.equal(entry.access, "preview"); assert.ok(entry.technicalEvidence?.startsWith("docs/py101-p5/")); assert.equal(entry.reviewEvidence, undefined); assert.equal(getAdjacentLessons(course, "PY101-C01-L05").next?.lessonId, lesson.id); assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, "PY101-C01-L05"); assert.equal(getAdjacentLessons(course, lesson.id).next?.lessonId, "PY101-C05-L01"); }
+  else { assert.equal(entry.status, "pending-review"); assert.equal(entry.access, "preview"); const historical = beforeApprovedPy101Object("publications", lesson.id, entry) as typeof entry; assert.ok(historical.technicalEvidence?.startsWith("docs/py101-p5/")); assert.equal(entry.reviewEvidence, undefined); assert.equal(getAdjacentLessons(course, "PY101-C01-L05").next?.lessonId, lesson.id); assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, "PY101-C01-L05"); const readable = course.chapters.flatMap(c => c.lessons).filter(s => s.href); assert.equal(getAdjacentLessons(course, lesson.id).next?.lessonId, readable[readable.findIndex(s => s.lessonId === lesson.id) + 1]?.lessonId); }
   assert.equal(resolveLesson("ML201", lesson.id), undefined);
-  assert.equal(course.chapters[1].lessons.some(s => s.href), false);
+  // 第二章是否可读取决于实际清单；P8只接入2.1，不再假定本章永久为空。
+  assert.deepEqual(course.chapters[1].lessons.filter(s => s.href).map(s => s.lessonId), publicationManifest.filter(p => p.chapterId === "PY101-C02" && isReadable(p)).map(p => p.lessonId));
 });
 
 test("三目标映射两项真实任务，提示分层且不泄露目标命令，保留答案与rubric", () => {

@@ -1,0 +1,566 @@
+{
+  "baseline": "e6c3c0859e4ebc39b574cbd74b9d4cbdd03b9af1",
+  "addedLessonIds": [
+    "PY101-C02-L01"
+  ],
+  "sources": [
+    {
+      "path": "src/content/course-outline.ts",
+      "before": "import { z } from \"zod\";\nimport { mathCourseOutline } from \"./math-outline\";\nimport { ai000ChapterLessons } from \"./ai000-outline\";\n\nconst slotSchema = z.object({\n  courseId: z.string().regex(/^[A-Z]+\\d{3}$/),\n  chapterId: z.string().regex(/^[A-Z]+\\d{3}-C\\d{2}$/),\n  lessonId: z.string().regex(/^[A-Z]+\\d{3}-C\\d{2}-L\\d{2}$/),\n  title: z.string().min(1),\n  order: z.number().int().positive(),\n});\nfunction chapterSlots(\n  courseId: string,\n  chapter: number,\n  lessons: [string, string][],\n) {\n  const chapterId = `${courseId}-C${String(chapter).padStart(2, \"0\")}`;\n  return lessons.map(([suffix, title], index) =>\n    slotSchema.parse({\n      courseId,\n      chapterId,\n      lessonId: `${chapterId}-${suffix}`,\n      title,\n      order: index + 1,\n    }),\n  );\n}\n// 节级编辑蓝图；不修改 V1.0 章级事实，也不表示这些课时已写完。\nexport const courseOutline = [\n  ...ai000ChapterLessons.flatMap((titles, index) => chapterSlots(\"AI000\", index + 1,\n    titles.map((title, order) => [`L${String(order + 1).padStart(2, \"0\")}`, title]))),\n  ...chapterSlots(\"ML201\", 1, [\n    [\"L01\", \"什么是机器学习\"],\n    [\"L02\", \"如何定义预测任务\"],\n    [\"L03\", \"数据、特征与标签\"],\n  ]),\n  ...chapterSlots(\"ML201\", 2, [\n    [\"L01\", \"训练集、验证集和测试集\"],\n    [\"L02\", \"数据泄漏是怎样发生的\"],\n  ]),\n  ...chapterSlots(\"ML201\", 3, [\n    [\"L01\", \"从现实问题认识回归\"],\n    [\"L02\", \"线性回归模型：权重与偏置\"],\n    [\"L03\", \"预测误差、MAE 与 MSE\"],\n    [\"L04\", \"最小二乘法的基本思想\"],\n  ]),\n  // L01 由旧综合试读占用；显示顺序独立于稳定 ID。\n  ...chapterSlots(\"ML201\", 4, [\n    [\"L02\", \"从导数理解优化方向\"],\n    [\"L03\", \"梯度下降的数学原理\"],\n    [\"L04\", \"手动计算一次参数更新\"],\n    [\"L05\", \"使用 NumPy 实现线性回归\"],\n    [\"L06\", \"学习率与收敛实验\"],\n    [\"L07\", \"综合练习与实验分析\"],\n  ]),\n  // 第一章节级蓝图；仅1.1有教材与Publication，余下由目录呈现为筹备。\n  ...chapterSlots(\"PY101\", 1, [\n    [\"L01\", \"从零运行第一个Python程序\"],\n    [\"L02\", \"解释器怎样找到并执行脚本\"],\n    [\"L03\", \"用编辑器完成保存与重跑\"],\n    [\"L04\", \"为项目准备独立的虚拟环境\"],\n    [\"L05\", \"在Jupyter中按顺序运行单元格\"],\n    [\"L06\", \"让别人复现一次环境问题\"],\n  ]),\n  ...chapterSlots(\"PY101\", 5, [\n    [\"L01\", \"Python 函数与参数\"],\n    [\"L02\", \"位置与关键字参数绑定\"],\n    [\"L03\", \"返回值与 print 的区别\"],\n    [\"L04\", \"函数内外的变量与作用域\"],\n    [\"L05\", \"简单默认参数\"],\n    [\"L06\", \"可选进阶：共享对象与接口陷阱\"],\n  ]),\n  ...mathCourseOutline,\n];\nif (\n  new Set(courseOutline.map((slot) => slot.lessonId)).size !==\n  courseOutline.length\n)\n  throw new Error(\"节级蓝图 ID 重复\");\nexport const mlV2LessonIds = [\n  \"ML201-C03-L01\",\n  \"ML201-C03-L02\",\n  \"ML201-C03-L03\",\n  \"ML201-C04-L02\",\n  \"ML201-C04-L03\",\n  \"ML201-C04-L04\",\n  \"ML201-C04-L05\",\n] as const;\n",
+      "afterSha256": "6b121a24392967465cd4f4a9a334e60091d4c9e440029dc2d71e7bcf4de35532"
+    },
+    {
+      "path": "src/lib/course-engine.ts",
+      "before": "import { courses, getCourse } from \"./curriculum\";\nimport { getCourseDirectory } from \"./course-directory\";\nimport { courseOutline } from \"../content/course-outline\";\nimport { linearRegressionLesson } from \"../content/lessons/linear-regression\";\nimport { foundationLessons, pythonAdvancedLesson } from \"../content/lessons/foundations-v2-1\";\nimport { regressionTaskLesson } from \"../content/lessons/ml201/regression-task\";\nimport { linearModelLesson } from \"../content/lessons/ml201/linear-model\";\nimport { lossFunctionsLesson } from \"../content/lessons/ml201/loss-functions\";\nimport { derivativeDirectionLesson } from \"../content/lessons/ml201/derivative-direction\";\nimport { mseGradientLesson } from \"../content/lessons/ml201/mse-gradient\";\nimport { manualUpdateLesson } from \"../content/lessons/ml201/manual-update\";\nimport { numpyRegressionLesson } from \"../content/lessons/ml201/numpy-regression\";\nimport { maV22Lessons } from \"../content/lessons/ma101\";\nimport { whatIsAiLesson } from \"../content/lessons/ai000/what-is-ai\";\nimport { capabilitiesLesson } from \"../content/lessons/ai000/capabilities-and-errors\";\nimport { automationLesson } from \"../content/lessons/ai000/automation-and-ai\";\nimport { generativeLesson } from \"../content/lessons/ai000/generative-ai-and-llm\";\nimport { supervisedLearningLesson } from \"../content/lessons/ai000/supervised-learning\";\nimport { unsupervisedLearningLesson } from \"../content/lessons/ai000/unsupervised-learning\";\nimport { selfSupervisedLesson } from \"../content/lessons/ai000/self-supervised-learning\";\nimport { reinforcementLearningLesson } from \"../content/lessons/ai000/reinforcement-learning\";\nimport { dataFeaturesLabelsLesson } from \"../content/lessons/ai000/data-features-labels\";\nimport { modelsAndParametersLesson } from \"../content/lessons/ai000/models-and-parameters\";\nimport { usingFixedModelLesson } from \"../content/lessons/ai000/using-a-fixed-model\";\nimport { naturalLanguageLesson } from \"../content/lessons/ai000/natural-language-and-llm\";\nimport { computerVisionLesson } from \"../content/lessons/ai000/computer-vision\";\nimport { generativeWorkLesson } from \"../content/lessons/ai000/generative-work\";\nimport { rlApplicabilityLesson } from \"../content/lessons/ai000/rl-applicability\";\nimport { unreliableAnswersLesson } from \"../content/lessons/ai000/unreliable-answers\";\nimport { responsibleUseLesson } from \"../content/lessons/ai000/responsible-ai-use\";\nimport { whyFoundationsLesson } from \"../content/lessons/ai000/why-foundations\";\nimport { directionLearningRoutesLesson } from \"../content/lessons/ai000/direction-learning-routes\";\nimport { problemAnalysisCapstoneLesson } from \"../content/lessons/ai000/problem-analysis-capstone\";\nimport { privacyFairnessLesson } from \"../content/lessons/ai000/privacy-bias-fairness\";\nimport { multimodalLesson } from \"../content/lessons/ai000/multimodal-ai\";\nimport { trainingValidationTestLesson } from \"../content/lessons/ai000/training-validation-test\";\nimport { aiMlDlLesson } from \"../content/lessons/ai000/ai-ml-dl\";\nimport { pythonFirstRunLesson } from \"../content/lessons/py101/first-run\";\nimport { pythonScriptPathsLesson } from \"../content/lessons/py101/script-paths\";\nimport { pythonEditorRerunLesson } from \"../content/lessons/py101/editor-rerun\";\nimport { pythonProjectEnvironmentsLesson } from \"../content/lessons/py101/project-environments\";\nimport { pythonNotebookCellOrderLesson } from \"../content/lessons/py101/notebook-cell-order\";\nimport { pythonEnvironmentReproductionLesson } from \"../content/lessons/py101/environment-reproduction\";\nimport {\n  publicationManifest,\n  readablePublications,\n  lessonHref,\n} from \"../content/publication-manifest\";\nimport {\n  isReadable,\n  type Course,\n  type Lesson,\n  type LessonSummary,\n  type Publication,\n} from \"../content/models\";\n\nconst contents: Lesson[] = [\n  pythonEnvironmentReproductionLesson,\n  pythonScriptPathsLesson,\n  pythonEditorRerunLesson,\n  pythonProjectEnvironmentsLesson,\n  pythonNotebookCellOrderLesson,\n  pythonFirstRunLesson,\n  whatIsAiLesson,\n  capabilitiesLesson,\n  automationLesson,\n  aiMlDlLesson,\n  generativeLesson,\n  supervisedLearningLesson,\n  unsupervisedLearningLesson,\n  selfSupervisedLesson,\n  reinforcementLearningLesson,\n  dataFeaturesLabelsLesson,\n  modelsAndParametersLesson,\n  trainingValidationTestLesson,\n  usingFixedModelLesson,\n  naturalLanguageLesson,\n  computerVisionLesson,\n  multimodalLesson,\n  generativeWorkLesson,\n  rlApplicabilityLesson,\n  unreliableAnswersLesson,\n  privacyFairnessLesson,\n  responsibleUseLesson,\n  whyFoundationsLesson,\n  directionLearningRoutesLesson,\n  problemAnalysisCapstoneLesson,\n  ...maV22Lessons,\n  regressionTaskLesson,\n  linearModelLesson,\n  lossFunctionsLesson,\n  derivativeDirectionLesson,\n  mseGradientLesson,\n  manualUpdateLesson,\n  numpyRegressionLesson,\n  linearRegressionLesson,\n  ...foundationLessons,\n  pythonAdvancedLesson,\n];\nexport const lessonRegistry: ReadonlyMap<string, Lesson> = new Map(\n  contents.map((lesson) => [lesson.id, lesson]),\n);\n\nexport function validateRegistry(\n  entries: Publication[],\n  lessons: readonly Lesson[],\n) {\n  if (new Set(entries.map((e) => e.lessonId)).size !== entries.length)\n    throw new Error(\"发布清单课时 ID 重复\");\n  if (new Set(lessons.map((e) => e.id)).size !== lessons.length)\n    throw new Error(\"内容课时 ID 重复\");\n  if (\n    new Set(\n      entries\n        .filter((e) => e.catalogRole !== \"legacy\")\n        .map((e) => `${e.chapterId}:${e.order}`),\n    ).size !== entries.filter((e) => e.catalogRole !== \"legacy\").length\n  )\n    throw new Error(\"同章课时顺序重复\");\n  for (const entry of entries) {\n    const catalog = getCourse(entry.courseId);\n    const chapterIndex = catalog?.chapters.findIndex(\n      (_, index) =>\n        `${catalog.id}-C${String(index + 1).padStart(2, \"0\")}` ===\n        entry.chapterId,\n    );\n    if (\n      !catalog ||\n      chapterIndex === undefined ||\n      chapterIndex < 0 ||\n      !entry.lessonId.startsWith(`${entry.chapterId}-L`)\n    )\n      throw new Error(`发布清单引用无效课程或章节：${entry.lessonId}`);\n    if (entry.catalogRole !== \"legacy\") {\n      const slot = courseOutline.find((s) => s.lessonId === entry.lessonId);\n      if (\n        !slot ||\n        slot.chapterId !== entry.chapterId ||\n        slot.title !== entry.title ||\n        slot.order !== entry.order\n      )\n        throw new Error(`教材与节级蓝图不一致：${entry.lessonId}`);\n    }\n    const lesson = lessons.find((l) => l.id === entry.lessonId);\n    if (!lesson) throw new Error(`缺少教材：${entry.lessonId}`);\n    for (const key of [\n      \"courseId\",\n      \"chapterId\",\n      \"title\",\n      \"contentVersion\",\n    ] as const)\n      if (lesson[key] !== entry[key])\n        throw new Error(`教材与清单不一致：${entry.lessonId}.${key}`);\n  }\n  for (const lesson of lessons)\n    if (!entries.some((e) => e.lessonId === lesson.id))\n      throw new Error(`教材未登记：${lesson.id}`);\n}\nvalidateRegistry(publicationManifest, contents);\n\nexport function getLearningCourse(courseId: string): Course | undefined {\n  const catalog = getCourse(courseId);\n  if (!catalog) return undefined;\n  return getCourseDirectory(catalog);\n}\nexport function resolveLesson(courseId: string, lessonId: string) {\n  const publication = publicationManifest.find(\n    (e) => e.courseId === courseId && e.lessonId === lessonId,\n  );\n  if (!publication || !isReadable(publication)) return undefined;\n  const course = getLearningCourse(courseId);\n  const lesson = lessonRegistry.get(lessonId);\n  const chapter = course?.chapters.find((c) => c.id === publication.chapterId);\n  return course && lesson && chapter\n    ? { course, chapter, lesson, publication }\n    : undefined;\n}\nexport function getAdjacentLessons(course: Course, lessonId: string) {\n  const lessons = course.chapters\n    .flatMap((c) => c.lessons)\n    .filter((e) => e.catalogRole !== \"legacy\" && isReadable(e));\n  const index = lessons.findIndex((l) => l.lessonId === lessonId);\n  if (index < 0) return {};\n  return { previous: lessons[index - 1], next: lessons[index + 1] };\n}\nexport const lessonSummaries: LessonSummary[] = readablePublications.map(\n  (entry) => ({\n    ...entry,\n    href: lessonHref(entry),\n    courseName: getCourse(entry.courseId)!.name,\n    level: getCourse(entry.courseId)!.lvl,\n    displayNumber: getLearningCourse(entry.courseId)\n      ?.chapters.flatMap((ch) => ch.lessons)\n      .find((l) => l.lessonId === entry.lessonId)?.displayNumber,\n    sectionTitles: lessonRegistry\n      .get(entry.lessonId)!\n      .sections.map(({ id, title }) => ({ id, title })),\n  }),\n);\nexport const learningCourses = courses.map((c) => getLearningCourse(c.id)!);\n",
+      "afterSha256": "61f908a564bffb06969ff315d6df5a6e673ff886852ca44d86d1ff59ef55dfcf"
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "before": "import { isReadable, publicationSchema } from \"./models\";\nimport { legacyMathSlots, maV22LessonIds } from \"./math-outline\";\nimport { courseOutline, mlV2LessonIds } from \"./course-outline\";\n\nconst revisedCoreLessons: Record<string, number> = { \"MA101-C02-L03\": 2, \"PY101-C05-L01\": 2 };\n\n// 发布权限独立于原始课程规划。技术证据不替代人工审核。\nexport const publicationManifest = [\n  {lessonId:\"PY101-C01-L06\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"让别人复现一次环境问题\",contentVersion:1,order:6,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p5/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L05\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"在Jupyter中按顺序运行单元格\",contentVersion:1,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p7/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L04\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"为项目准备独立的虚拟环境\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p4/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L03\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"用编辑器完成保存与重跑\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p3/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L02\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"解释器怎样找到并执行脚本\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p6/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L01\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"从零运行第一个Python程序\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p2/FIRST_LESSON_AMENDMENT.md\"},\n  {lessonId:\"AI000-C07-L03\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"综合实践：分析 AI 问题并制定学习计划\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_3_AND_COURSE_REVIEW.md\"},\n  {lessonId:\"AI000-C07-L02\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"AI 不同技术方向需要哪些基础？\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_2_REVIEW.md\"},\n  {lessonId:\"AI000-C07-L01\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"为什么学习 Python、数学与数据分析？\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_1_REVIEW.md\"},\n  {lessonId:\"AI000-C06-L03\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"版权、误用与负责任地使用 AI\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C06-L02\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"数据隐私、偏差与公平性\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C06-L01\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"为什么 AI 会产生不可靠的回答？\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_6_1_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L05\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"强化学习适合哪些应用问题？\",contentVersion:1,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C05-L03\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"多模态 AI：连接文字、图片与声音\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L04\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"生成模型：从要求到可核对的作品\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L02\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"计算机视觉：让机器理解图像\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_5_2_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L01\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"自然语言处理与大语言模型\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L04\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"模型训练好以后，如何完成预测？\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L03\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"训练、验证与测试各有什么作用？\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L02\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"模型和参数是怎样得到的？\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_VISUAL_CONTENT_REFINEMENT.md\"},\n  {lessonId:\"AI000-C04-L01\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"数据、特征与标签\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_VISUAL_CONTENT_REFINEMENT.md\"},\n  {lessonId:\"AI000-C03-L04\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"强化学习：通过行动与反馈学习\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L03\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"自监督学习：怎样从数据本身构造学习任务？\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L02\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"无监督学习：没有标签也能发现规律吗？\",contentVersion:2,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L01\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"监督学习：从有答案的例子中学习\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  ...courseOutline.filter(slot => slot.courseId === \"AI000\" && [\"AI000-C01-L02\",\"AI000-C01-L03\",\"AI000-C02-L02\"].includes(slot.lessonId)).map(slot => ({...slot,contentVersion:slot.lessonId === \"AI000-C01-L02\" ? 2 : 1,status:\"pending-review\",access:\"preview\",technicalEvidence:slot.lessonId === \"AI000-C02-L02\" ? \"docs/AI000_R3_REFINEMENT_REPORT.md\" : \"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"})),\n  {\n    lessonId: \"AI000-C02-L01\",\n    courseId: \"AI000\",\n    chapterId: \"AI000-C02\",\n    title: \"AI、机器学习与深度学习，到底是什么关系？\",\n    contentVersion: 2,\n    order: 1,\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\",\n  },\n  {\n    lessonId: \"AI000-C01-L01\",\n    courseId: \"AI000\",\n    chapterId: \"AI000-C01\",\n    title: \"人工智能究竟是什么？\",\n    contentVersion: 2,\n    order: 1,\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\",\n  },\n  ...courseOutline\n    .filter((slot) => mlV2LessonIds.some((id) => id === slot.lessonId) || slot.chapterId === \"PY101-C05\" || maV22LessonIds.some((id) => id === slot.lessonId))\n    .map((slot) => ({\n      ...slot,\n      contentVersion: revisedCoreLessons[slot.lessonId] ?? 1,\n      optionalLesson: slot.lessonId === \"PY101-C05-L06\",\n      catalogRole: \"current\",\n      status: \"pending-review\",\n      access: \"preview\",\n      technicalEvidence: slot.lessonId === \"MA101-C02-L03\" || slot.lessonId === \"ML201-C04-L04\" || (slot.courseId === \"PY101\" && slot.lessonId !== \"PY101-C05-L06\")\n        ? \"docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md\"\n        : slot.courseId === \"MA101\" ? \"docs/MA101_EDITORIAL_REVIEW_V1.md\" : \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\",\n    })),\n  ...legacyMathSlots.map((slot) => ({ ...slot, catalogRole: \"legacy\", contentVersion: 1, status: \"pending-review\", access: \"preview\", technicalEvidence: \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\" })),\n  {\n    lessonId: \"ML201-C04-L01\",\n    courseId: \"ML201\",\n    chapterId: \"ML201-C04\",\n    title: \"线性回归与梯度下降\",\n    contentVersion: 1,\n    order: 1,\n    catalogRole: \"legacy\",\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence: \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\",\n  },\n].map((entry) => publicationSchema.parse(entry));\n\nexport const readablePublications = publicationManifest.filter(isReadable);\nexport const lessonHref = (entry: { courseId: string; lessonId: string }) =>\n  `/learn/${entry.courseId}/${entry.lessonId}`;\n",
+      "afterSha256": "f744ae5275c9083c1cf80606630a790085563a905e0b131e5a666fd4c29827b8"
+    },
+    {
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "before": "import { lessonSchema, type ContentBlock } from \"../../models\";\nimport { reproductionCode, reproductionBlockNames, reproductionCommands as cmd } from \"../../resources/python-reproduction\";\nconst p = (text: string): ContentBlock => ({ type: \"paragraph\", text });\nconst code = (filename: string, text: string, language: \"python\" | \"text\" = \"text\"): ContentBlock => ({ type: \"code\", filename, code: text, language });\nconst sample = (key: keyof typeof reproductionCode) => code(reproductionBlockNames[key], reproductionCode[key], \"python\");\nconst commands = (key: keyof typeof cmd, location: string) => [code(`Windows · PowerShell · ${location}`, cmd[key].windows), code(`macOS · zsh / bash · ${location}`, cmd[key].mac)];\n\nexport const pythonEnvironmentReproductionLesson = lessonSchema.parse({\n  id: \"PY101-C01-L06\", courseId: \"PY101\", chapterId: \"PY101-C01\", contentVersion: 1,\n  title: \"让别人复现一次环境问题\",\n  subtitle: \"把“刚才运行出错”变成可重新操作的条件、文件与记录，再在新会话里验证恢复。\",\n  prerequisites: \"已完成1.1–1.5，能保存运行.py、确认cwd与相对路径、使用项目.venv并核验实际解释器，能在Jupyter重启内核按序全跑。本课组合这些操作，不另教完整调试体系。实际练习需要电脑和已可用的本地Python/Jupyter。\",\n  prerequisiteLinks: [\n    { title: \"1.2 当前目录与脚本路径\", href: \"/learn/PY101/PY101-C01-L02#relative-route\", note: \"补齐相对路径与cwd。\" },\n    { title: \"1.3 保存后重新运行\", href: \"/learn/PY101/PY101-C01-L03#save-rerun\", note: \"先确认提交的源码确实保存。\" },\n    { title: \"1.4 实际环境诊断\", href: \"/learn/PY101/PY101-C01-L04#observe-env\", note: \"复制只读观察工具，核对环境身份。\" },\n    { title: \"1.5 从干净内核运行\", href: \"/learn/PY101/PY101-C01-L05#clean-run\", note: \"补齐内核状态、重启与全部运行。\" },\n  ],\n  objectives: [\"从实际运行中收集位置、环境身份、命令及预期与实际结果，留下必要复现条件\", \"在新终端或干净Notebook内核中重现受控问题，区分位置、环境与状态并修复\", \"交付必要源码与简短脱敏记录，保留修复前后结果并在新会话验证恢复\"],\n  assessmentMap: [{ objective: 1, exerciseIds: [\"reproduce-script-issue\"] }, { objective: 2, exerciseIds: [\"reproduce-script-issue\", \"recover-notebook-record\"] }, { objective: 3, exerciseIds: [\"reproduce-script-issue\", \"recover-notebook-record\"] }],\n  learningTime: { reading: [10, 15], practice: [8, 12], coding: [22, 30], basis: \"editorial-estimate\" },\n  sections: [\n    { id: \"unclear-request\", title: \"“运行出错了”还缺什么？\", navGroup: \"start\", navLabel: \"复现条件\", blocks: [\n      p(\"你向别人求助：“我运行Python时出错了。”对方拿到同一份文件却运行成功。究竟是文件位置、启动的Python，还是Notebook上一次记住的内容不同？只凭回忆，很难把两次操作对齐。\"),\n      p(\"复现就是按明确条件重新操作，观察问题是否再次出现。我们先用一条已经学过的print制造受控的文件定位问题，记下条件；随后换两个情境，练习把记录交给别人。记录要短，但要能据此真正操作。\"),\n    ] },\n    { id: \"prepare-case\", title: \"只准备一个文件定位问题\", navGroup: \"start\", navLabel: \"复现条件\", blocks: [\n      p(\"在自己的练习位置新建repro-lab/notice-tool，按1.4为notice-tool准备.venv。用编辑器建立scripts目录和notice.py，保存下列源码。print和引号里的文字来自1.1，这里无需新Python语法。文件位于环境目录之外。\"),\n      code(\"主例布局\", \"repro-lab/\\n└── notice-tool/       ← 本次项目根和cwd\\n    ├── .venv/\\n    └── scripts/\\n        └── notice.py\"),\n      sample(\"notice\"),\n      p(\"在终端进入notice-tool，先用pwd确认当前目录，Windows用dir scripts、macOS用ls scripts确认源码位置；使用1.4的现成诊断核对本项目Python路径与版本。把实际系统和Shell名称一起记下。下面的命令只故意写错脚本参数，环境和文件保存状态均保持正确。先预测：它会显示Notice N8，还是还没执行源码就失败？\"),\n      ...commands(\"badPath\", \"notice-tool项目根\"),\n      p(\"这些是Shell命令，输入终端，不放进.py或Notebook代码格。Windows的&调用引号中的环境解释器；后面的相对路径从当前目录找文件。这里请求的是根下notice.py，而实际文件在scripts内。执行一次，保留自己得到的完整提示。\"),\n    ] },\n    { id: \"read-evidence\", title: \"把命令、输出和错误分开看\", navGroup: \"observe\", navLabel: \"错误与恢复\", blocks: [\n      p(\"命令记录你做了什么。标准输出（stdout）接收print这样的正常结果；错误输出（stderr）提供故障线索，终端可能把两者显示在同一个窗口。抄录时分别标明，不能把命令或提示符当程序输出。本例应没有Notice N8，因为解释器还没打开脚本。\"),\n      p(\"下面是本轮Windows、Python 3.14.2的实际错误，项目绝对位置已换为占位符。自己的错误文字可能不同；要辨认“哪个解释器无法打开哪个文件”，保留第一条相关错误及必要上下文，而不只交一个Errno关键词。\"),\n      code(\"主例实测stderr · 项目位置已脱敏\", \"<项目根>\\\\.venv\\\\Scripts\\\\python.exe: can't open file '<项目根>\\\\\\\\notice.py': [Errno 2] No such file or directory\"),\n      p(\"退出状态是外部程序结束时返回给Shell的辅助信号。Python通常以0表示正常完成，非零表示失败，不能只靠一个数字判断原因。在刚才的Python命令后立即执行对应观察行，中间不要先运行其他外部程序。echo在这里让Shell显示上次状态，不是Python的print，也不用把它写入源码。\"),\n      ...commands(\"exit\", \"紧接刚才的Python命令\"),\n      p(\"本轮文件定位失败实测为2，修复后为0；记录自己实际得到的值，不必逐字背诵这个版本的错误。若无法确认字段，写“尚未核实”及下一步核查方式；例如重新执行目标命令后立即观察退出状态。\"),\n      { type: \"table\", caption: \"两类失败发生的位置不同\", columns: [\"现象\", \"已发生什么\", \"先核对什么\"], rows: [\n        [\"can't open file，目标路径不存在\", \"解释器已启动，目标源码还没开始执行\", \"cwd、脚本参数、真实文件位置\"],\n        [\"Notebook中的NameError，提到某个名字\", \"代码已交给内核执行，但当前状态缺少该名字\", \"实际内核、重启动作、提供名字的格是否先执行\"],\n      ] },\n      p(\"长回溯要连同出错代码行和相关末行保存；不要只截NameError一个词。若出现与预期不同的故障，先记录事实再检查条件，不把真实错误改写成教材预期。\"),\n    ] },\n    { id: \"repair-replay\", title: \"只改脚本参数，再开一个终端\", navGroup: \"observe\", navLabel: \"错误与恢复\", blocks: [\n      p(\"保持notice-tool为cwd，继续使用原来的环境Python和已保存源码，只把参数改为实际的scripts/notice.py。先写下预期，再执行下方本平台命令。\"),\n      ...commands(\"goodPath\", \"notice-tool项目根\"),\n      code(\"修复后实测stdout\", \"Notice N8\"),\n      p(\"本轮修复后stderr为空、退出状态0。原因是脚本参数现在从同一个cwd指向真实文件；没有更换解释器，也没有改源码。保留两条命令，才能看出究竟改了什么。\"),\n      p(\"新开一个独立终端窗口或终端标签，重新进入notice-tool并用pwd核对位置。不要依赖旧终端的激活状态；按记录明确指定同一环境Python，先执行错误参数，再执行正确参数，分别保存实际结果。这证明当前机器上按这些条件能重现并恢复；另一台机器的绝对路径、版本与报错文字仍可能不同。\"),\n    ] },\n    { id: \"minimal-record\", title: \"六项短记录，让别人知道怎样重做\", navGroup: \"record\", navLabel: \"记录与交接\", blocks: [\n      p(\"主例做完后，把已有证据整理成下面六项，每项几行即可。目标是让接手的人知道从哪里开始、做什么、比较什么。真正不适用的字段写“不适用”；尚不清楚的字段写“尚未核实”并列核查办法。\"),\n      code(\"可复制的最小记录\", \"1 目标与预期：运行哪个文件，期望什么输出/环境？\\n2 环境身份：系统；Shell；Python版本；实际解释器；Notebook内核（脚本题不适用）\\n3 位置：项目根；cwd；实际目标文件（相对项目根）\\n4 操作：原样命令，或重启动作与单元格实际执行顺序\\n5 结果：stdout；首个相关错误全文及上下文；退出状态（不适用时注明）\\n6 恢复：只改了什么；新命令/顺序；实际输出；新会话复验及未核实项\"),\n      p(\"例如主例目标为Notice N8，文件位置是scripts/notice.py，cwd是notice-tool根；操作记录必须同时保留错误参数和修复后的参数。把真实源码一起交接，不能只说“换个路径好了”。Notebook题的单元格错误没有普通脚本进程退出码，写“不适用，记录内核错误消息及运行顺序”，不编造一个。\"),\n      p(\"自己本地核对时使用真实路径，公开记录时可将共同前缀换成<练习根>。约定读者把它替换为自己实际创建的练习目录，后面的handoff-lab/target与other仍完整保留；命令从相应cwd执行。占位符是位置说明，不能原样当作已存在的目录输入。不要为了脱敏抹掉区分两个项目、两个Python的后半段。\"),\n      p(\"只附必要源码、Notebook和操作结果。密码、API密钥、Notebook访问token、隐私文件、整个.venv及机器专属配置不公开；环境由对方按已有基础流程重建。无需收集全部环境变量、完整PATH或pip freeze。尚未有别人实际操作时，结论写“同机新会话已验证；他人复现待验证”。\"),\n    ] },\n    { id: \"script-handoff\", title: \"输出正确，为什么还需要修复？\", navGroup: \"practice\", navLabel: \"两道独立任务\", blocks: [\n      p(\"这次用新的handoff-lab布局，目标是target的程序必须由target自己的环境运行。按1.4分别建立两个项目环境，保持现有系统Python，不需要不同版本或装额外包。把run.py和现成observe_env.py保存到target。\"),\n      code(\"练习一布局\", \"handoff-lab/\\n├── target/           ← 本题cwd\\n│   ├── .venv/\\n│   ├── run.py\\n│   └── observe_env.py\\n└── other/\\n    └── .venv/\"),\n      sample(\"target\"),\n      p(\"下面是1.4的完整只读观察工具，原样复制到observe_env.py，用与run.py相同的解释器在终端运行。观察Interpreter和Environment是否属于目标项目，Base Python帮助区分环境与基础Python，Version记录版本。本题要求比较输出位置，不要求独立编写import、点号、split或下标语法。\"),\n      sample(\"environmentProbe\"),\n      p(\"从target根执行下列受控故障命令。它们使用other的Python，但脚本仍是target内的文件；先预测普通文字与环境身份各会怎样，再真实运行。\"),\n      ...commands(\"wrongRun\", \"target项目根\"), ...commands(\"wrongProbe\", \"target项目根\"),\n      { type: \"exercise\", id: \"reproduce-script-issue\", title: \"交付脚本环境错配的复现记录\", kind: \"实验\",\n        prompt: \"在自己新建的handoff-lab确认两个.venv确实存在，保存给出的两份源码。运行前记录目标解释器所属项目及预期文字。实际执行错误环境命令和诊断，保留cwd、系统/Shell/Python版本、命令、stdout/stderr与退出状态，指出哪条实际身份与目标不符。独立决定怎样用正确环境恢复，重新运行程序和诊断。新开独立终端，核对cwd，再按短记录复现错配及恢复。提交run.py、observe_env.py和六项短记录，保留修复前后身份与实际结果；公开路径用同一占位映射。程序正常打印不能代替身份核验，只有文字答案不算操作完成。\",\n        hints: [\"把“想使用哪个项目的环境”与观察工具实际报告的位置比较；普通文字能区分两个Python吗？\", \"先确认cwd和源码都属于目标，再看命令中负责启动Python的那一段，与脚本参数分别对应什么。找出需要改变的条件，并用同一观察工具检查改动效果。\"],\n        solution: [\"保存两份源码，cwd保持target，核实两个环境文件存在。错误环境运行时普通输出仍可能Target R9、状态0，诊断Interpreter/Environment却位于other/.venv；这就是本题已知错配，无需制造Python异常。\", `只把启动解释器改为target自己的环境。Windows从target执行：${cmd.rightRun.windows}，再${cmd.rightProbe.windows}；macOS：${cmd.rightRun.mac}，再${cmd.rightProbe.mac}。两次普通输出都可为Target R9，恢复证据是实际解释器和环境前缀回到target/.venv。`, \"新终端重新进入target，核对位置后用明确路径先重现other身份、再验证target身份。保存各次实际命令和诊断，六项记录附必要源码；相同版本不意味着同一环境。\", \"常错是看到文字成功就结束、只改VS Code状态栏而未重跑诊断、脱敏时把target/other都删掉。可用明确绝对路径或已核验的编辑器入口等价恢复，但交接仍须说明cwd和实际启动方式，并用新会话证明；不需要复制.venv。\"],\n        rubric: [\"两环境和两份源码真实存在；目标、cwd、平台/版本、实际命令、输出/错误及退出状态可核对。\", \"真正复现普通输出成功而other身份错误，指出实际路径与目标差异；正确环境恢复有程序与诊断证据。\", \"新终端按记录再次复现和恢复，提交必要源码与简短脱敏记录；保留项目区别，不虚构同伴或跨机器结果。\"],\n      },\n      { type: \"quiz\", id: \"normal-output-wrong-identity\", question: \"run.py正常输出Target R9且状态0，能证明使用target环境了吗？\", options: [\"还需核对相同启动方式下诊断的实际解释器和环境前缀\", \"能，正常输出就足够\"], correct: 0, explanations: [\"正常输出回答程序结果，路径诊断回答环境身份。两项要求都要核实。\", \"两个环境都可能执行这条print，成功退出不能单独区分环境。\"] },\n    ] },\n    { id: \"notebook-handoff\", title: \"补全一份Notebook求助记录\", navGroup: \"practice\", navLabel: \"两道独立任务\", blocks: [\n      p(\"第二条求助只有：“Notebook打开后运行某个格子出错，但刚才还成功过。”你需要先列出它缺少的条件，再亲自取得证据。沿用1.5已可用的本地Jupyter，在目标项目打开review-note.ipynb，可下载下方起始材料。文件默认按顺序可运行，故障由你的执行操作产生。\"),\n      { type: \"downloads\", resourceIds: [\"review-notebook-file\"] },\n      p(\"文档先有Markdown说明，再把以下两行分别放在两个Code格。回顾1.5：先运行赋值格，当前内核才记住batch_label对应的文字；print(batch_label)读取当前对应值，print(\\\"batch_label\\\")只会打印引号里的文字。这里仍只用最小赋值与名称读取。\"),\n      sample(\"assign\"), sample(\"show\"),\n      p(\"末尾保留下面的现成只读观察格，在Notebook代码格运行，观察实际Python是否属于目标.venv。import/sys仅作已提供的工具，不要求独立编写。按1.5核对Kernel选择；同一个Python 3标题不能代替路径证据。\"),\n      sample(\"kernelProbe\"),\n      { type: \"exercise\", id: \"recover-notebook-record\", title: \"用真实内核补齐缺失的复现条件\", kind: \"实验\",\n        prompt: \"先指出那句求助缺少哪些关键条件。在目标环境中打开review-note.ipynb并核对实际内核Python，记录平台与版本。明确重启内核，预测并实际先运行依赖前面赋值的显示格，保存真实错误全文、相关代码和执行顺序。独立解释原因并恢复，记录实际结果。再明确重启，从文档开头按序运行全部核心代码，核对输出与内核，保存.ipynb并重新打开检查文件。交付自己的Notebook及六项短记录：起始状态、实际顺序、错误、改动、干净全跑与保存证据。若出现的不是预期NameError，先调查真实状态而非改写错误。已有输出截图不能替代新执行；结束时按1.5保存并关闭自己的会话和服务。\",\n        hints: [\"“刚才成功”没有说明当前内核从重启后执行过什么。接手的人要怎样知道起点和操作相同？\", \"找到提供显示格所需名字的那格，核对它是否在当前内核执行；把内核身份、重启动作、实际顺序与完整相关错误补进记录，再设计一次不依赖旧状态的验证。\"],\n        solution: [\"缺少目标/实际内核、Python版本、是否重启、具体格源码、真实执行顺序和错误全文等信息。先用观察格核对目标.venv，再明确重启；只关网页可能重连旧内核。\", \"新内核先执行print(batch_label)，实际应有NameError说明batch_label尚未定义。保留回溯中的代码行、末行及顺序；赋值文本虽然已保存，却未在这个新内核执行。\", \"运行提供名字格，再运行显示格，应为Checked F3。保持文档中赋值在使用前，明确重启并从头全部运行，检查无错、输出和目标内核一致；保存，重新打开核对真实文件。\", \"记录故障起点和修复后操作，包括何时重启、各格怎样执行、实际输出。Notebook错误的脚本退出码写不适用。保存的代码/文字/输出并不将运行中的名字自动装入新内核。\", \"常错是只交旧输出、不写重启条件、删错误格当修复。接受依赖合理的等价排列、全新内核会话或先重启再Run All；都须保留实际故障、干净完整执行与文件证据。新会话技术复验尚不能写成同伴成功复现。\"],\n        rubric: [\"先指出原求助缺失条件，实际核对目标内核；重启后真正复现乱序错误，保留代码、执行顺序及完整相关错误。\", \"解释未在当前内核定义名字并合理恢复；重启后按文档顺序全部运行，真实输出Checked F3且环境正确。\", \"保存并重新打开核对.ipynb，交简短脱敏复现记录与干净全跑证据；区分文件输出和运行状态，没有虚构他人操作。\"],\n      },\n    ] },\n    { id: \"chapter-handoff\", title: \"第一章结束，留下能重新核对的文件\", navGroup: \"finish\", navLabel: \"章末交接\", blocks: [\n      p(\"现在你能把本地脚本保存并重跑，核对文件位置与实际解释器，区分项目环境，在Jupyter按序执行，并把一次问题整理成别人可以按条件尝试的短记录。两题的真实文件和新会话证据才用于自查，网页“读完”只记录阅读。另一位人类实际按记录操作之前，把同伴复现列为待验证。\"),\n      p(\"PY101接下来按原课程体系进入第二章“变量、基本类型、表达式与输入输出”。第一章只借用了最小赋值，完整变量、控制流程、函数和依赖管理仍需后续学习。第二章尚无本轮制作的教材链接；阅读器按已有可读课时可能把下一节指向第5章函数试读，那需要中间基础，不作为零基础学生直接跳学的推荐。整门PY101仍在筹备。\"),\n    ] },\n  ],\n  resources: [{ id: \"review-notebook-file\", title: \"review-note.ipynb\", href: \"/downloads/review-note.ipynb\", format: \"Notebook\", description: \"第二题起始材料，空输出、默认可按序运行；仍须自行复现故障、补记录并干净重跑。\" }],\n  references: [\n    { title: \"Python命令行\", href: \"https://docs.python.org/3/using/cmdline.html\", note: \"脚本参数及执行条件。\" },\n    { title: \"Python错误与异常\", href: \"https://docs.python.org/3/tutorial/errors.html\", note: \"回溯与NameError；本课不教异常处理。\" },\n    { title: \"sys运行身份\", href: \"https://docs.python.org/3/library/sys.html\", note: \"实际解释器与环境前缀。\" },\n    { title: \"Notebook运行代码\", href: \"https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Running%20Code.html\", note: \"内核状态及重启。\" },\n  ],\n});\n",
+      "afterSha256": "d2eeed2e56f2f2d1409a7ecf956280011c908b892005867a30a54b2c6e5acb31"
+    },
+    {
+      "path": "scripts/validate-python.ts",
+      "before": "import { spawnSync } from \"node:child_process\";\nimport { writeFile } from \"node:fs/promises\";\nimport { evidencePath } from \"./evidence-path\";\nimport { lessonRegistry } from \"../src/lib/course-engine\";\nimport { corePrograms, regressionCoreCode } from \"../src/content/resources/core-programs\";\nimport { programs, gradientDescentCode } from \"../src/content/resources/programs\";\nimport { notebookCode, notebookBlockNames } from \"../src/content/resources/python-notebook\";\nimport { reproductionCode, reproductionBlockNames } from \"../src/content/resources/python-reproduction\";\n\nconst python = process.env.AIVORA_PYTHON ?? \"python\";\nfunction run(args: string[]) {\n  const result = spawnSync(python, args, {\n    encoding: \"utf8\",\n    env: { ...process.env, PYTHONIOENCODING: \"utf-8\" },\n    timeout: 30_000,\n  });\n  if (result.error || result.status !== 0)\n    throw new Error(`Python 校验失败：${result.error ?? result.stderr}`);\n  return {\n    exitCode: result.status,\n    stdout: result.stdout.replace(/\\r\\n/g, \"\\n\").trim(),\n    stderr: result.stderr.replace(/\\r\\n/g, \"\\n\").trim(),\n  };\n}\nconst environment = run([\n  \"-c\",\n  \"import sys,numpy; print(sys.version.split()[0]); print('NumPy',numpy.__version__)\",\n]);\nconst unit = run([\n  \"-m\",\n  \"unittest\",\n  \"discover\",\n  \"-s\",\n  \"tests\",\n  \"-p\",\n  \"test_*.py\",\n  \"-v\",\n]);\nconst examples = [...lessonRegistry.values()].flatMap((lesson) =>\n  lesson.sections.flatMap((section) =>\n    section.blocks.flatMap((block) => {\n      if (block.type !== \"code\" || block.language !== \"python\") return [];\n      let setup = \"\";\n      if (lesson.id === \"PY101-C01-L06\") {\n        const key = (Object.keys(reproductionCode) as (keyof typeof reproductionCode)[]).find(key => reproductionBlockNames[key] === block.filename);\n        if (!key || block.code !== reproductionCode[key]) throw new Error(`未登记的复现课源码：${block.filename}`);\n        if (key === \"show\") setup = reproductionCode.assign;\n      }\n      if (lesson.id === \"PY101-C01-L05\") {\n        const key = (Object.keys(notebookCode) as (keyof typeof notebookCode)[]).find(key => notebookBlockNames[key] === block.filename);\n        if (!key || block.code !== notebookCode[key]) throw new Error(`未登记的Notebook单元格：${block.filename}`);\n        if (key === \"showMarker\") setup = notebookCode.setDraft;\n        if (key === \"showDelivery\") setup = notebookCode.setDelivery;\n      }\n      // Notebook使用前格上下文；仍实际执行每块。重启/旧状态/预期NameError另由真实内核专项检验。\n      const result = run([\"-c\", setup ? setup + \"\\n\" + block.code : block.code]);\n      if (lesson.id === \"PY101-C01-L06\") {\n        const expected: Record<string, string> = { [reproductionBlockNames.notice]: \"Notice N8\", [reproductionBlockNames.target]: \"Target R9\", [reproductionBlockNames.assign]: \"\", [reproductionBlockNames.show]: \"Checked F3\" };\n        if (block.filename in expected && result.stdout !== expected[block.filename]) throw new Error(`复现课输出不符：${block.filename}`);\n      }\n      if (lesson.id === \"PY101-C01-L05\") {\n        const expected: Record<string, string> = { [notebookBlockNames.setDraft]: \"\", [notebookBlockNames.setReady]: \"\", [notebookBlockNames.showMarker]: \"Draft A\", [notebookBlockNames.setDelivery]: \"\", [notebookBlockNames.showDelivery]: \"Packed C7\" };\n        if (block.filename in expected && result.stdout !== expected[block.filename]) throw new Error(`Notebook顺序输出不符：${block.filename}`);\n      }\n      if (lesson.id === \"PY101-C01-L04\") {\n        const independentExpected: Record<string, string> = { \"project-a/main.py\": \"Project A A4\", \"project-b/main.py\": \"Project B B6\" };\n        if (independentExpected[block.filename] !== undefined && result.stdout !== independentExpected[block.filename]) throw new Error(`虚拟环境课源码输出不符：${block.filename}`);\n        if (block.filename.startsWith(\"observe_env.py\")) {\n          for (const label of [\"Interpreter:\", \"Environment:\", \"Base Python:\", \"Version:\"]) if (!result.stdout.includes(label)) throw new Error(`诊断字段遗漏：${label}`);\n          // 全网页校验在当前基础Python执行；目标venv判据另由真实环境专项验证。\n        }\n      }\n      const expected = ({ \"第一条Python指令\": \"Hello, Aivora!\", \"first_run.py\": \"Hello, Aivora!\\nFile: first_run.py\", \"read_vector_components.py\": \"4 0 7\", \"add_two_vectors.py\": \"[2, 3]\", \"scale_vector.py\": \"[-6, -4]\", \"double_without_function.py\":\"6\", \"double_definition.py\":\"\", \"one_update.py\":\"-13.0 -8.0 1.3 0.8 1.685\", \"one_update_checks.py\":\"-13.0 -8.0 1.3 0.8 1.685\" } as Record<string,string>)[block.filename];\n      if (expected !== undefined && result.stdout !== expected)\n        throw new Error(`教材输出与预期不一致：${block.filename}`);\n      return [\n        {\n          lessonId: lesson.id,\n          sectionId: section.id,\n          filename: block.filename,\n          ...([\"PY101-C01-L05\", \"PY101-C01-L06\"].includes(lesson.id) ? { executionMode: setup ? \"ordered-cells\" : \"independent-cell\", setup } : {}),\n          ...(expected !== undefined ? { expected } : {}),\n          ...result,\n        },\n      ];\n    }),\n  ),\n);\nconst expectedOutputs: Record<keyof typeof corePrograms, string> = {\n  \"function-basics\": \"6\", \"function-binding\": \"12\\n12\", \"function-return\": \"4\\n4 None\",\n  \"function-scope\": \"5\\n10\", \"function-defaults\": \"6\\n12\", \"vector-basics\": \"[4, 3] [2, 4]\",\n  \"vector-dot\": \"5\", \"matrix-shape\": \"[[1, 4], [2, 5], [3, 6]]\",\n  \"matrix-product\": \"[[4 6]\\n [1 3]]\", \"numpy-shapes\": \"(2,) (2,)\\n(2, 1) (1, 2)\\n5\",\n};\nconst coreComparisons = Object.entries(corePrograms).map(([id, sample]) => {\n  const core = run([\"-c\", sample.core + \"\\n\" + sample.checks]);\n  const full = run([\"-c\", programs[id as keyof typeof corePrograms].code]);\n  if (core.stdout !== expectedOutputs[id as keyof typeof corePrograms] || core.stdout !== full.stdout)\n    throw new Error(`核心/完整版输出与预期不一致：${id}`);\n  return { id, expected: expectedOutputs[id as keyof typeof corePrograms], ...core, fullMatches: true };\n});\nconst trainingComparison = run([\"-c\", `import numpy as np\ncore, full = {}, {}\nexec(${JSON.stringify(regressionCoreCode)}, core)\nexec(${JSON.stringify(gradientDescentCode)}, full)\nnp.testing.assert_allclose([core['w'], core['b'], core['final_loss']], [full['w'], full['b'], full['final_loss']], atol=1e-12, rtol=0)\nnp.testing.assert_allclose([core['w'], core['b']], [2,1], atol=1e-7, rtol=0)\nassert core['final_loss'] < 1e-10\nprint('core/full training match; independent expected line y=2x+1')\n`]);\nconst report = {\n  checkedAt: new Date().toISOString(),\n  environment: environment.stdout,\n  unittest: unit,\n  examples,\n  coreComparisons,\n  trainingComparison,\n  note: \"技术校验通过；不代表人工内容审核、试学或正式发布。代码来自仓库静态教材，仅开发阶段执行。\",\n};\nconst reportPath = evidencePath(\"TEACHING_V2_3_PYTHON_RESULTS.json\");\nawait writeFile(\n  reportPath,\n  JSON.stringify(report, null, 2) + \"\\n\",\n);\nconsole.log(\n  `Python 单元测试通过，${examples.length} 个网页代码块全部实际执行通过，${coreComparisons.length} 组核心/完整版一致。证据：${reportPath}`,\n);\n",
+      "afterSha256": "88090f259d66ef3aac2285ae45e7bdef8ea706457bbd30c9973f16e24d6edf93"
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "before": "import { createHash } from \"node:crypto\";\nimport { readFileSync } from \"node:fs\";\n\ntype SourceChange = { path: string; before: string; afterSha256: string };\ntype ObjectChange = { id: string; before: unknown; afterSha256: string };\n// 使用同一个登记器按新到旧撤销已批准修订；不为每轮再嵌套一个专用兼容器。\ntype RevisionPlan = { baseline: string; sources: SourceChange[]; lessons: ObjectChange[]; publications: ObjectChange[]; addedLessonIds: string[]; workspaceOnly: { path: string; workspaceSha256: string; repositorySha256: string }[]; protectedText: { path: string; baselineSha256: string; lfSha256: string }[] };\nconst plans = [\"py101-p7\", \"py101-p6\", \"py101-p5\", \"py101-p4\", \"py101-p3\", \"py101-p2\"].map(round => JSON.parse(readFileSync(new URL(`../docs/${round}/APPROVED_CHANGES.json`, import.meta.url), \"utf8\")) as RevisionPlan);\nfunction revisions(throughBaseline?: string) {\n  const index = plans.findIndex(plan => plan.baseline === throughBaseline);\n  return index < 0 ? plans : plans.slice(0, index + 1);\n}\nconst sources = JSON.parse(readFileSync(new URL(\"../docs/py101-p1/SOURCE_CHANGES.json\", import.meta.url), \"utf8\")) as SourceChange[];\nconst sha = (source: string) => createHash(\"sha256\").update(source).digest(\"hex\");\nfunction undoSource(entries: SourceChange[], path: string, source: string) {\n  const entry = entries.find(row => row.path === path);\n  return entry && sha(source.replaceAll(\"\\r\\n\", \"\\n\")) === entry.afterSha256 ? entry.before : source;\n}\nexport const approvedPy101Additions = [...new Set(plans.flatMap(plan => plan.addedLessonIds))];\nexport function beforeApprovedPy101Source(path: string, source: string, throughBaseline?: string) {\n  return revisions(throughBaseline).reduce((value, plan) => undoSource(plan.sources, path, value), source);\n}\n// 自动回归允许原工作区与干净检出两种精确版本；工作区审计脚本仍严格要求原始指纹。\nexport function protectedPy101FileMatches(path: string, bytes: Buffer, expected: string, throughBaseline?: string) {\n  const digest = createHash(\"sha256\").update(bytes).digest(\"hex\");\n  if (digest === expected) return true;\n  const text = bytes.toString(\"utf8\");\n  // Git检出可转换文本换行；二进制仍逐字节比较，绝不以UTF-8解码后的图像作摘要。\n  const validText = !text.includes(\"\\0\") && Buffer.from(text).equals(bytes);\n  const variants = (value: string) => { const lf = value.replaceAll(\"\\r\\n\", \"\\n\"); return [lf, lf.replaceAll(\"\\n\", \"\\r\\n\")]; };\n  const matches = (value: string, target: string) => validText && variants(value).some(source => sha(source) === target);\n  if (matches(text, expected)) return true;\n  const relevant = revisions(throughBaseline);\n  const portable = relevant.flatMap(plan => plan.protectedText).find(row => row.path === path && row.baselineSha256 === expected);\n  if (portable && validText && sha(text.replaceAll(\"\\r\\n\", \"\\n\")) === portable.lfSha256) return true;\n  const local = relevant.flatMap(plan => plan.workspaceOnly).find(row => row.path === path && row.workspaceSha256 === expected);\n  if (local?.workspaceSha256 === expected && (local.repositorySha256 === digest || matches(text, local.repositorySha256))) return true;\n  return matches(beforeApprovedPy101Source(path, text, throughBaseline), expected);\n}\nexport function beforeApprovedPy101Object(kind: \"lessons\" | \"publications\", id: string, value: unknown, throughBaseline?: string) {\n  return revisions(throughBaseline).reduce((current, plan) => {\n    const entry = plan[kind].find(row => row.id === id);\n    return entry && sha(JSON.stringify(current)) === entry.afterSha256 ? entry.before : current;\n  }, value);\n}\n// 只有完整文件摘要命中才还原；未登记的任何附加修改必须继续暴露给旧保护测试。\nexport function beforePy101P1Source(path: string, source: string) {\n  return undoSource(sources, path, beforeApprovedPy101Source(path, source));\n}\n",
+      "afterSha256": "1f6230fb3843e7f4f7f443fa8e18e6c843c30f6bf169d4b1cdb37ee383a580f9"
+    },
+    {
+      "path": "tests/py101-environment-reproduction.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { createHash } from \"node:crypto\";\nimport { readFileSync } from \"node:fs\";\nimport { pythonEnvironmentReproductionLesson as lesson } from \"../src/content/lessons/py101/environment-reproduction\";\nimport { lessonRegistry, getLearningCourse, getAdjacentLessons, resolveLesson } from \"../src/lib/course-engine\";\nimport { publicationManifest } from \"../src/content/publication-manifest\";\nimport { isReadable } from \"../src/content/models\";\nimport { reproductionCode, reproductionCommands, reproductionBlockNames, reproductionNotebook } from \"../src/content/resources/python-reproduction\";\nimport { notebookDownload } from \"../src/content/resources/python-notebook\";\nimport { environmentProbe } from \"../src/content/resources/python-venv\";\nimport { beforeApprovedPy101Object, protectedPy101FileMatches } from \"../scripts/py101-p1-compatibility\";\nimport { createProgressStore, parseReadingProgress, progressKey } from \"../src/lib/learning-progress\";\nimport { lessonProgressScope } from \"../src/lib/use-learning-progress\";\nimport { assertRegisteredInventory, assertCourseAvailability } from \"./helpers/registered-content\";\nconst read = (name: string) => JSON.parse(readFileSync(`docs/py101-p5/${name}.json`, \"utf8\"));\n\ntest(\"P5保护真实基线的全部旧文件/教材，1.5只改最后过渡段且保留r1范围\", () => {\n  const base = read(\"BASELINE\"), sha = (v: unknown) => createHash(\"sha256\").update(JSON.stringify(v)).digest(\"hex\");\n  assert.deepEqual([...lessonRegistry.keys()].sort(), [...Object.keys(base.lessons), lesson.id].sort());\n  for (const kind of [\"lessons\", \"publications\"] as const) for (const [id, hash] of Object.entries(base[kind])) {\n    const value = kind === \"lessons\" ? lessonRegistry.get(id) : publicationManifest.find(p => p.lessonId === id);\n    assert.equal(sha(beforeApprovedPy101Object(kind, id, value, base.head)), hash, id);\n  }\n  for (const [path, file] of Object.entries(base.files as Record<string, { sha256: string }>)) assert.ok(protectedPy101FileMatches(path, readFileSync(path), file.sha256, base.head), path);\n  // 先精确撤销后续批准修订，仍核对P5当时仅改末段的历史事实。\n  const current = beforeApprovedPy101Object(\"lessons\", \"PY101-C01-L05\", lessonRegistry.get(\"PY101-C01-L05\"), JSON.parse(readFileSync(\"docs/py101-p6/BASELINE.json\", \"utf8\")).head) as typeof lesson, expected = structuredClone(base.amendmentBefore);\n  expected.sections.at(-1).blocks[expected.sections.at(-1).blocks.length - 1] = current.sections.at(-1)!.blocks.at(-1);\n  assert.deepEqual(current, expected); assert.equal(current.contentVersion, 1); assert.deepEqual(lessonProgressScope(current), lessonProgressScope(base.amendmentBefore));\n  assert.equal(protectedPy101FileMatches(\"src/lib/course-engine.ts\", Buffer.concat([readFileSync(\"src/lib/course-engine.ts\"), Buffer.from(\"\\n// unauthorized\")]), base.files[\"src/lib/course-engine.ts\"].sha256, base.head), false);\n  assertRegisteredInventory(); assertCourseAvailability(\"PY101\");\n});\n\ntest(\"1.6注册r1和草稿门禁，首章六槽顺序与相邻导航，整课筹备且错误归属不可读\", () => {\n  const entry = publicationManifest.find(p => p.lessonId === lesson.id)!;\n  assert.deepEqual([entry.title, entry.order, entry.contentVersion], [lesson.title, 6, 1]);\n  assert.equal(isReadable({ ...entry, status: \"draft\", access: \"private\", technicalEvidence: undefined }), false);\n  const gate = read(\"DRAFT_GATE\"); assert.deepEqual([gate.status, gate.access, gate.readable], [\"draft\", \"private\", false]);\n  const course = getLearningCourse(\"PY101\")!; assert.equal(course.status, \"planned\"); assert.equal(course.chapters.length, 10);\n  assert.deepEqual(course.chapters[0].lessons.map(s => [s.lessonId, s.order]), Array.from({length: 6}, (_, i) => [`PY101-C01-L0${i+1}`, i+1]));\n  if (entry.status === \"draft\") { assert.equal(entry.access, \"private\"); assert.equal(resolveLesson(\"PY101\", lesson.id), undefined); }\n  else { assert.equal(entry.status, \"pending-review\"); assert.equal(entry.access, \"preview\"); assert.ok(entry.technicalEvidence?.startsWith(\"docs/py101-p5/\")); assert.equal(entry.reviewEvidence, undefined); assert.equal(getAdjacentLessons(course, \"PY101-C01-L05\").next?.lessonId, lesson.id); assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, \"PY101-C01-L05\"); assert.equal(getAdjacentLessons(course, lesson.id).next?.lessonId, \"PY101-C05-L01\"); }\n  assert.equal(resolveLesson(\"ML201\", lesson.id), undefined);\n  assert.equal(course.chapters[1].lessons.some(s => s.href), false);\n});\n\ntest(\"三目标映射两项真实任务，提示分层且不泄露目标命令，保留答案与rubric\", () => {\n  const tasks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === \"exercise\");\n  assert.deepEqual(tasks.map(t => t.id), [\"reproduce-script-issue\", \"recover-notebook-record\"]);\n  assert.deepEqual(lesson.assessmentMap, [{ objective: 1, exerciseIds: [tasks[0].id] }, { objective: 2, exerciseIds: tasks.map(t => t.id) }, { objective: 3, exerciseIds: tasks.map(t => t.id) }]);\n  for (const task of tasks) { assert.equal(task.hints.length, 2); assert.ok(task.solution.length >= 4); assert.ok(task.rubric.length >= 3); assert.doesNotMatch(task.hints.join(\"\"), /Scripts\\\\python|bin\\/python|Checked F3|先运行.*赋值.*再运行.*显示/); }\n  assert.equal(lesson.learningTime.basis, \"editorial-estimate\");\n});\n\ntest(\"Python核心只复用已教源码，观察工具同源；主例仅修脚本参数\", () => {\n  const blocks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === \"code\");\n  assert.deepEqual(blocks.filter(b => b.language === \"python\").map(b => [b.filename, b.code]).sort(), (Object.keys(reproductionCode) as (keyof typeof reproductionCode)[]).map(k => [reproductionBlockNames[k], reproductionCode[k]]).sort());\n  assert.equal(reproductionCode.environmentProbe, environmentProbe);\n  for (const key of [\"notice\", \"target\", \"assign\", \"show\"] as const) assert.doesNotMatch(reproductionCode[key], /\\b(import|def|for|while|try|except|if|open)\\b/);\n  for (const platform of [\"windows\", \"mac\"] as const) assert.equal(reproductionCommands.goodPath[platform].replace(platform === \"windows\" ? \".\\\\scripts\\\\notice.py\" : \"scripts/notice.py\", platform === \"windows\" ? \".\\\\notice.py\" : \"notice.py\"), reproductionCommands.badPath[platform]);\n});\n\ntest(\"P5下载与单元格同源且无运行状态/机器路径，旧下载由基线保护\", () => {\n  const actual = JSON.parse(readFileSync(\"public/downloads/review-note.ipynb\", \"utf8\"));\n  assert.deepEqual(actual, notebookDownload(reproductionNotebook)); assert.equal(actual.nbformat, 4); assert.equal(actual.nbformat_minor, 5);\n  for (const cell of actual.cells) if (cell.cell_type === \"code\") { assert.equal(cell.execution_count, null); assert.deepEqual(cell.outputs, []); }\n  assert.doesNotMatch(JSON.stringify(actual), /C:\\\\\\\\Users|token=|kernel-[a-f0-9]+\\.json|aivora-p5-/);\n  assert.ok(lesson.resources.some(r => r.href === \"/downloads/review-note.ipynb\"));\n});\n\ntest(\"真实Shell和Jupyter证据包含已知故障、恢复、新会话、同源代码与安全结束\", () => {\n  const cli = read(\"CLI_RESULTS\"), kernel = read(\"NOTEBOOK_RESULTS\");\n  assert.equal(cli.allAssertionsPassed, true); assert.equal(new Set(cli.rows.map((r: {shellPid: number}) => r.shellPid)).size, cli.rows.length);\n  for (const session of [\"initial\", \"new-shell-replay\"]) {\n    const row = (suffix: string) => cli.rows.find((r: {label: string}) => r.label === `${session}:${suffix}`);\n    assert.notEqual(row(\"wrong-script-argument\").exitCode, 0); assert.match(row(\"wrong-script-argument\").stderr, /can't open file/);\n    assert.equal(row(\"correct-script-argument\").stdout.trim(), \"Notice N8\"); assert.equal(row(\"correct-script-argument\").exitCode, 0);\n    assert.equal(row(\"wrong-script-argument\").command, reproductionCommands.badPath.windows);\n    for (const phase of [\"wrong\", \"right\"]) { assert.equal(row(`${phase}-environment-program`).stdout.trim(), \"Target R9\"); assert.equal(row(`${phase}-environment-program`).exitCode, 0); assert.match(row(`${phase}-environment-diagnostic`).stdout, phase === \"wrong\" ? /other\\\\.venv/ : /target\\\\.venv/); }\n  }\n  assert.equal(kernel.kernelShutdown, true);\n  const failure = kernel.steps.find((s: {label?: string}) => s.label === \"first-display-real-error\");\n  assert.equal(failure.source, reproductionCode.show); assert.equal(failure.outputs[0].ename, \"NameError\"); assert.ok(failure.outputs[0].traceback.length > 1);\n  assert.equal(kernel.savedNotebook.cells[2].outputs[0].text, \"Checked F3\\n\"); assert.equal(kernel.savedNotebook.cells[1].source, reproductionCode.assign);\n  assert.ok(kernel.steps.some((s: {operation?: string}) => s.operation === \"reopen-saved-file\"));\n  assert.doesNotMatch(JSON.stringify([cli,kernel]), /C:\\\\\\\\Users\\\\\\\\QYF|token=|aivora-p5-[a-f0-9]/);\n});\n\ntest(\"1.6新r1进度重载且不写旧五课、第五章修订与其他课程记录\", () => {\n  const memory = new Map<string,string>(), storage = { getItem: (k: string) => memory.get(k) ?? null, setItem: (k: string,v: string) => {memory.set(k,v);} };\n  const store = createProgressStore(() => storage);\n  for (const id of [\"PY101-C01-L01\", \"PY101-C01-L02\", \"PY101-C01-L03\", \"PY101-C01-L04\", \"PY101-C01-L05\", \"PY101-C05-L01\", \"ML201-C04-L01\"]) { const scope = lessonProgressScope(lessonRegistry.get(id)!); store.save(scope,100,scope.sectionIds[0],true); if (scope.contentVersion > 1) store.save({...scope,contentVersion:1},100,scope.sectionIds[0],true); }\n  const old = new Map(memory), scope = lessonProgressScope(lesson); assert.equal(progressKey(scope), \"aivora:learning:v2:PY101:PY101-C01-L06:r1\"); assert.equal(store.getSnapshot(scope), null);\n  store.save(scope,46,\"minimal-record\"); assert.equal(parseReadingProgress(createProgressStore(() => storage).getSnapshot(scope),scope)?.section,\"minimal-record\");\n  for (const [k,v] of old) assert.equal(memory.get(k),v);\n});\n",
+      "afterSha256": "809f10a79bf092e08e1eaf276de14b97712f84af25ae357e6d90b702a107cc87"
+    },
+    {
+      "path": "tests/content.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { readFile, stat } from \"node:fs/promises\";\nimport { createHash } from \"node:crypto\";\nimport katex from \"katex\";\nimport sharp from \"sharp\";\nimport { lessonRegistry, resolveLesson } from \"../src/lib/course-engine\";\nimport { programs } from \"../src/content/resources/programs\";\nimport { readablePublications } from \"../src/content/publication-manifest\";\nimport { assertRegisteredInventory } from \"./helpers/registered-content\";\n\ntest(\"四门不同类型教材用同一模型，公式可严格解析，图片有正确尺寸和可读替代文字\", async () => {\n  assertRegisteredInventory();\n  for (const publication of readablePublications) {\n    const { lesson } = resolveLesson(\n      publication.courseId,\n      publication.lessonId,\n    )!;\n    const blocks = lesson.sections.flatMap((s) => s.blocks);\n    if (lesson.courseId === \"AI000\") {\n      assert.equal(blocks.filter((block) => block.type === \"exercise\").length, lesson.id === \"AI000-C01-L02\" ? 3 : 2);\n      // 不设每课配图门槛；原14幅精确图由兼容测试逐幅保护，5.1采用可回查表格。\n      assert.ok(blocks.some((block) => block.type === \"table\"));\n      // 结课页仅复用text块复制Markdown模板，不引入可执行课程代码。\n      assert.ok(blocks.every((block) => block.type !== \"experiment\" && (block.type !== \"code\" || (lesson.id === \"AI000-C07-L03\" && block.language === \"text\" && block.filename === \"AI000-final-report.md\"))));\n      assert.equal(blocks.filter(block => block.type === \"code\").length, lesson.id === \"AI000-C07-L03\" ? 1 : 0);\n      assert.equal(blocks.filter(block => block.type === \"math\").length, lesson.id === \"AI000-C05-L05\" ? 2 : 0);\n    } else if (lesson.courseId === \"MA101\" && publication.catalogRole !== \"legacy\") {\n      assert.ok(lesson.sections.filter((section) => section.tier === \"core\").flatMap((section) => section.blocks).filter((block) => block.type === \"exercise\").length >= 2);\n      assert.ok(blocks.some((block) => block.type === \"vector-figure\"));\n      assert.ok(lesson.sections.filter((section) => section.tier === \"core\").every((section) => !section.blocks.some((block) => block.type === \"code\")));\n    } else if (lesson.chapterId === \"PY101-C01\") {\n      // 操作型首章用正式目标对应的核心任务验收，不沿用旧样章Quiz数量配额。\n      const tasks = blocks.filter(b => b.type === \"exercise\");\n      assert.ok(tasks.length > 0);\n      for (const row of lesson.assessmentMap) assert.ok(row.exerciseIds.every(id => tasks.some(task => task.id === id)));\n      assert.ok(blocks.some(b => b.type === \"code\" && b.language === \"python\"));\n    } else {\n      assert.ok(blocks.filter((b) => b.type === \"quiz\").length >= 2);\n      assert.ok(blocks.some((b) => b.type === \"code\"));\n    }\n    assert.equal(publication.status, \"pending-review\");\n    assert.equal(publication.reviewEvidence, undefined);\n    for (const block of blocks) {\n      if (block.type === \"math\")\n        assert.doesNotThrow(() =>\n          katex.renderToString(block.latex, {\n            throwOnError: true,\n            strict: \"error\",\n            trust: false,\n          }),\n        );\n      if (block.type === \"image\") {\n        const bytes = await readFile(`public${block.src}`);\n        const metadata = await sharp(bytes).metadata();\n        assert.equal(metadata.format, block.src.endsWith(\".webp\") ? \"webp\" : \"png\");\n        assert.equal(metadata.width, block.width);\n        assert.equal(metadata.height, block.height);\n        assert.ok(block.alt.length > 30);\n        if (block.mobile) {\n          const mobileBytes = await readFile(`public${block.mobile.src}`);\n          const mobileMetadata = await sharp(mobileBytes).metadata();\n          assert.equal(mobileMetadata.format, block.mobile.src.endsWith(\".webp\") ? \"webp\" : \"png\");\n          assert.equal(mobileMetadata.width, block.mobile.width);\n          assert.equal(mobileMetadata.height, block.mobile.height);\n        }\n      }\n    }\n    for (const resource of lesson.resources)\n      assert.ok((await stat(`public${resource.href}`)).size > 0);\n  }\n  assert.deepEqual(\n    [...new Set([...lessonRegistry.values()].map((l) => l.courseId))].sort(),\n    [\"AI000\", \"MA101\", \"ML201\", \"PY101\"],\n  );\n});\ntest(\"全部下载脚本、Notebook 和网页完整代码同源，Notebook 不伪造执行结果\", async () => {\n  const codeBlocks = [...lessonRegistry.values()]\n    .flatMap((l) => l.sections.flatMap((s) => s.blocks))\n    .filter((b) => b.type === \"code\");\n  for (const program of Object.values(programs)) {\n    assert.equal(\n      await readFile(`public/downloads/${program.filename}.py`, \"utf8\"),\n      program.code,\n    );\n    assert.ok(\n      codeBlocks.some(\n        (block) =>\n          block.code === program.code &&\n          block.filename === `${program.filename}.py`,\n      ),\n    );\n    const notebook = JSON.parse(\n      await readFile(`public/downloads/${program.filename}.ipynb`, \"utf8\"),\n    );\n    assert.equal(notebook.cells[1].source.join(\"\"), program.code);\n    assert.equal(notebook.cells[1].execution_count, null);\n    assert.deepEqual(notebook.cells[1].outputs, []);\n  }\n});\ntest(\"课程体系 V1.0 的原始 Markdown 和 JSON 字节未变\", async () => {\n  for (const [path, hash] of [\n    [\n      \"curriculum/AI技术课程体系_V1.0.md\",\n      \"b863f49f3da43225b009b7053dff79d6b5985bf8da9327f7701bc40c0c9d5a73\",\n    ],\n    [\n      \"curriculum/AI技术课程目录_V1.0.json\",\n      \"a7f5723c2ac659bfe271eeeffc050c2d96c46fd68e29391051c88f5db2812366\",\n    ],\n  ])\n    assert.equal(\n      createHash(\"sha256\")\n        .update(await readFile(path))\n        .digest(\"hex\"),\n      hash,\n    );\n});\n",
+      "afterSha256": "d4cff388525a855ab2606e692c2ba29af2f6df42e90bd67725f0602db9e54ad2"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "PY101-C01-L06",
+      "before": {
+        "id": "PY101-C01-L06",
+        "courseId": "PY101",
+        "chapterId": "PY101-C01",
+        "contentVersion": 1,
+        "title": "让别人复现一次环境问题",
+        "subtitle": "把“刚才运行出错”变成可重新操作的条件、文件与记录，再在新会话里验证恢复。",
+        "learningTime": {
+          "reading": [
+            10,
+            15
+          ],
+          "practice": [
+            8,
+            12
+          ],
+          "coding": [
+            22,
+            30
+          ],
+          "basis": "editorial-estimate"
+        },
+        "optionalLesson": false,
+        "assessmentMap": [
+          {
+            "objective": 1,
+            "exerciseIds": [
+              "reproduce-script-issue"
+            ]
+          },
+          {
+            "objective": 2,
+            "exerciseIds": [
+              "reproduce-script-issue",
+              "recover-notebook-record"
+            ]
+          },
+          {
+            "objective": 3,
+            "exerciseIds": [
+              "reproduce-script-issue",
+              "recover-notebook-record"
+            ]
+          }
+        ],
+        "prerequisites": "已完成1.1–1.5，能保存运行.py、确认cwd与相对路径、使用项目.venv并核验实际解释器，能在Jupyter重启内核按序全跑。本课组合这些操作，不另教完整调试体系。实际练习需要电脑和已可用的本地Python/Jupyter。",
+        "prerequisiteLinks": [
+          {
+            "title": "1.2 当前目录与脚本路径",
+            "href": "/learn/PY101/PY101-C01-L02#relative-route",
+            "note": "补齐相对路径与cwd。"
+          },
+          {
+            "title": "1.3 保存后重新运行",
+            "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+            "note": "先确认提交的源码确实保存。"
+          },
+          {
+            "title": "1.4 实际环境诊断",
+            "href": "/learn/PY101/PY101-C01-L04#observe-env",
+            "note": "复制只读观察工具，核对环境身份。"
+          },
+          {
+            "title": "1.5 从干净内核运行",
+            "href": "/learn/PY101/PY101-C01-L05#clean-run",
+            "note": "补齐内核状态、重启与全部运行。"
+          }
+        ],
+        "objectives": [
+          "从实际运行中收集位置、环境身份、命令及预期与实际结果，留下必要复现条件",
+          "在新终端或干净Notebook内核中重现受控问题，区分位置、环境与状态并修复",
+          "交付必要源码与简短脱敏记录，保留修复前后结果并在新会话验证恢复"
+        ],
+        "sections": [
+          {
+            "id": "unclear-request",
+            "title": "“运行出错了”还缺什么？",
+            "navGroup": "start",
+            "navLabel": "复现条件",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "你向别人求助：“我运行Python时出错了。”对方拿到同一份文件却运行成功。究竟是文件位置、启动的Python，还是Notebook上一次记住的内容不同？只凭回忆，很难把两次操作对齐。"
+              },
+              {
+                "type": "paragraph",
+                "text": "复现就是按明确条件重新操作，观察问题是否再次出现。我们先用一条已经学过的print制造受控的文件定位问题，记下条件；随后换两个情境，练习把记录交给别人。记录要短，但要能据此真正操作。"
+              }
+            ]
+          },
+          {
+            "id": "prepare-case",
+            "title": "只准备一个文件定位问题",
+            "navGroup": "start",
+            "navLabel": "复现条件",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "在自己的练习位置新建repro-lab/notice-tool，按1.4为notice-tool准备.venv。用编辑器建立scripts目录和notice.py，保存下列源码。print和引号里的文字来自1.1，这里无需新Python语法。文件位于环境目录之外。"
+              },
+              {
+                "type": "code",
+                "code": "repro-lab/\n└── notice-tool/       ← 本次项目根和cwd\n    ├── .venv/\n    └── scripts/\n        └── notice.py",
+                "filename": "主例布局",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "print(\"Notice N8\")",
+                "filename": "scripts/notice.py",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "在终端进入notice-tool，先用pwd确认当前目录，Windows用dir scripts、macOS用ls scripts确认源码位置；使用1.4的现成诊断核对本项目Python路径与版本。把实际系统和Shell名称一起记下。下面的命令只故意写错脚本参数，环境和文件保存状态均保持正确。先预测：它会显示Notice N8，还是还没执行源码就失败？"
+              },
+              {
+                "type": "code",
+                "code": "& \".\\.venv\\Scripts\\python.exe\" .\\notice.py",
+                "filename": "Windows · PowerShell · notice-tool项目根",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "./.venv/bin/python notice.py",
+                "filename": "macOS · zsh / bash · notice-tool项目根",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "这些是Shell命令，输入终端，不放进.py或Notebook代码格。Windows的&调用引号中的环境解释器；后面的相对路径从当前目录找文件。这里请求的是根下notice.py，而实际文件在scripts内。执行一次，保留自己得到的完整提示。"
+              }
+            ]
+          },
+          {
+            "id": "read-evidence",
+            "title": "把命令、输出和错误分开看",
+            "navGroup": "observe",
+            "navLabel": "错误与恢复",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "命令记录你做了什么。标准输出（stdout）接收print这样的正常结果；错误输出（stderr）提供故障线索，终端可能把两者显示在同一个窗口。抄录时分别标明，不能把命令或提示符当程序输出。本例应没有Notice N8，因为解释器还没打开脚本。"
+              },
+              {
+                "type": "paragraph",
+                "text": "下面是本轮Windows、Python 3.14.2的实际错误，项目绝对位置已换为占位符。自己的错误文字可能不同；要辨认“哪个解释器无法打开哪个文件”，保留第一条相关错误及必要上下文，而不只交一个Errno关键词。"
+              },
+              {
+                "type": "code",
+                "code": "<项目根>\\.venv\\Scripts\\python.exe: can't open file '<项目根>\\\\notice.py': [Errno 2] No such file or directory",
+                "filename": "主例实测stderr · 项目位置已脱敏",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "退出状态是外部程序结束时返回给Shell的辅助信号。Python通常以0表示正常完成，非零表示失败，不能只靠一个数字判断原因。在刚才的Python命令后立即执行对应观察行，中间不要先运行其他外部程序。echo在这里让Shell显示上次状态，不是Python的print，也不用把它写入源码。"
+              },
+              {
+                "type": "code",
+                "code": "echo $LASTEXITCODE",
+                "filename": "Windows · PowerShell · 紧接刚才的Python命令",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "echo $?",
+                "filename": "macOS · zsh / bash · 紧接刚才的Python命令",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "本轮文件定位失败实测为2，修复后为0；记录自己实际得到的值，不必逐字背诵这个版本的错误。若无法确认字段，写“尚未核实”及下一步核查方式；例如重新执行目标命令后立即观察退出状态。"
+              },
+              {
+                "type": "table",
+                "caption": "两类失败发生的位置不同",
+                "columns": [
+                  "现象",
+                  "已发生什么",
+                  "先核对什么"
+                ],
+                "rows": [
+                  [
+                    "can't open file，目标路径不存在",
+                    "解释器已启动，目标源码还没开始执行",
+                    "cwd、脚本参数、真实文件位置"
+                  ],
+                  [
+                    "Notebook中的NameError，提到某个名字",
+                    "代码已交给内核执行，但当前状态缺少该名字",
+                    "实际内核、重启动作、提供名字的格是否先执行"
+                  ]
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "长回溯要连同出错代码行和相关末行保存；不要只截NameError一个词。若出现与预期不同的故障，先记录事实再检查条件，不把真实错误改写成教材预期。"
+              }
+            ]
+          },
+          {
+            "id": "repair-replay",
+            "title": "只改脚本参数，再开一个终端",
+            "navGroup": "observe",
+            "navLabel": "错误与恢复",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "保持notice-tool为cwd，继续使用原来的环境Python和已保存源码，只把参数改为实际的scripts/notice.py。先写下预期，再执行下方本平台命令。"
+              },
+              {
+                "type": "code",
+                "code": "& \".\\.venv\\Scripts\\python.exe\" .\\scripts\\notice.py",
+                "filename": "Windows · PowerShell · notice-tool项目根",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "./.venv/bin/python scripts/notice.py",
+                "filename": "macOS · zsh / bash · notice-tool项目根",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "Notice N8",
+                "filename": "修复后实测stdout",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "本轮修复后stderr为空、退出状态0。原因是脚本参数现在从同一个cwd指向真实文件；没有更换解释器，也没有改源码。保留两条命令，才能看出究竟改了什么。"
+              },
+              {
+                "type": "paragraph",
+                "text": "新开一个独立终端窗口或终端标签，重新进入notice-tool并用pwd核对位置。不要依赖旧终端的激活状态；按记录明确指定同一环境Python，先执行错误参数，再执行正确参数，分别保存实际结果。这证明当前机器上按这些条件能重现并恢复；另一台机器的绝对路径、版本与报错文字仍可能不同。"
+              }
+            ]
+          },
+          {
+            "id": "minimal-record",
+            "title": "六项短记录，让别人知道怎样重做",
+            "navGroup": "record",
+            "navLabel": "记录与交接",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "主例做完后，把已有证据整理成下面六项，每项几行即可。目标是让接手的人知道从哪里开始、做什么、比较什么。真正不适用的字段写“不适用”；尚不清楚的字段写“尚未核实”并列核查办法。"
+              },
+              {
+                "type": "code",
+                "code": "1 目标与预期：运行哪个文件，期望什么输出/环境？\n2 环境身份：系统；Shell；Python版本；实际解释器；Notebook内核（脚本题不适用）\n3 位置：项目根；cwd；实际目标文件（相对项目根）\n4 操作：原样命令，或重启动作与单元格实际执行顺序\n5 结果：stdout；首个相关错误全文及上下文；退出状态（不适用时注明）\n6 恢复：只改了什么；新命令/顺序；实际输出；新会话复验及未核实项",
+                "filename": "可复制的最小记录",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "例如主例目标为Notice N8，文件位置是scripts/notice.py，cwd是notice-tool根；操作记录必须同时保留错误参数和修复后的参数。把真实源码一起交接，不能只说“换个路径好了”。Notebook题的单元格错误没有普通脚本进程退出码，写“不适用，记录内核错误消息及运行顺序”，不编造一个。"
+              },
+              {
+                "type": "paragraph",
+                "text": "自己本地核对时使用真实路径，公开记录时可将共同前缀换成<练习根>。约定读者把它替换为自己实际创建的练习目录，后面的handoff-lab/target与other仍完整保留；命令从相应cwd执行。占位符是位置说明，不能原样当作已存在的目录输入。不要为了脱敏抹掉区分两个项目、两个Python的后半段。"
+              },
+              {
+                "type": "paragraph",
+                "text": "只附必要源码、Notebook和操作结果。密码、API密钥、Notebook访问token、隐私文件、整个.venv及机器专属配置不公开；环境由对方按已有基础流程重建。无需收集全部环境变量、完整PATH或pip freeze。尚未有别人实际操作时，结论写“同机新会话已验证；他人复现待验证”。"
+              }
+            ]
+          },
+          {
+            "id": "script-handoff",
+            "title": "输出正确，为什么还需要修复？",
+            "navGroup": "practice",
+            "navLabel": "两道独立任务",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "这次用新的handoff-lab布局，目标是target的程序必须由target自己的环境运行。按1.4分别建立两个项目环境，保持现有系统Python，不需要不同版本或装额外包。把run.py和现成observe_env.py保存到target。"
+              },
+              {
+                "type": "code",
+                "code": "handoff-lab/\n├── target/           ← 本题cwd\n│   ├── .venv/\n│   ├── run.py\n│   └── observe_env.py\n└── other/\n    └── .venv/",
+                "filename": "练习一布局",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "print(\"Target R9\")",
+                "filename": "target/run.py",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "下面是1.4的完整只读观察工具，原样复制到observe_env.py，用与run.py相同的解释器在终端运行。观察Interpreter和Environment是否属于目标项目，Base Python帮助区分环境与基础Python，Version记录版本。本题要求比较输出位置，不要求独立编写import、点号、split或下标语法。"
+              },
+              {
+                "type": "code",
+                "code": "import sys\n\nprint(\"Interpreter:\", sys.executable)\nprint(\"Environment:\", sys.prefix)\nprint(\"Base Python:\", sys.base_prefix)\nprint(\"Version:\", sys.version.split()[0])\n",
+                "filename": "target/observe_env.py",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "从target根执行下列受控故障命令。它们使用other的Python，但脚本仍是target内的文件；先预测普通文字与环境身份各会怎样，再真实运行。"
+              },
+              {
+                "type": "code",
+                "code": "& \"..\\other\\.venv\\Scripts\\python.exe\" .\\run.py",
+                "filename": "Windows · PowerShell · target项目根",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "../other/.venv/bin/python run.py",
+                "filename": "macOS · zsh / bash · target项目根",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "& \"..\\other\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+                "filename": "Windows · PowerShell · target项目根",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "../other/.venv/bin/python observe_env.py",
+                "filename": "macOS · zsh / bash · target项目根",
+                "language": "text"
+              },
+              {
+                "type": "exercise",
+                "id": "reproduce-script-issue",
+                "title": "交付脚本环境错配的复现记录",
+                "kind": "实验",
+                "prompt": "在自己新建的handoff-lab确认两个.venv确实存在，保存给出的两份源码。运行前记录目标解释器所属项目及预期文字。实际执行错误环境命令和诊断，保留cwd、系统/Shell/Python版本、命令、stdout/stderr与退出状态，指出哪条实际身份与目标不符。独立决定怎样用正确环境恢复，重新运行程序和诊断。新开独立终端，核对cwd，再按短记录复现错配及恢复。提交run.py、observe_env.py和六项短记录，保留修复前后身份与实际结果；公开路径用同一占位映射。程序正常打印不能代替身份核验，只有文字答案不算操作完成。",
+                "hints": [
+                  "把“想使用哪个项目的环境”与观察工具实际报告的位置比较；普通文字能区分两个Python吗？",
+                  "先确认cwd和源码都属于目标，再看命令中负责启动Python的那一段，与脚本参数分别对应什么。找出需要改变的条件，并用同一观察工具检查改动效果。"
+                ],
+                "solution": [
+                  "保存两份源码，cwd保持target，核实两个环境文件存在。错误环境运行时普通输出仍可能Target R9、状态0，诊断Interpreter/Environment却位于other/.venv；这就是本题已知错配，无需制造Python异常。",
+                  "只把启动解释器改为target自己的环境。Windows从target执行：& \".\\.venv\\Scripts\\python.exe\" .\\run.py，再& \".\\.venv\\Scripts\\python.exe\" .\\observe_env.py；macOS：./.venv/bin/python run.py，再./.venv/bin/python observe_env.py。两次普通输出都可为Target R9，恢复证据是实际解释器和环境前缀回到target/.venv。",
+                  "新终端重新进入target，核对位置后用明确路径先重现other身份、再验证target身份。保存各次实际命令和诊断，六项记录附必要源码；相同版本不意味着同一环境。",
+                  "常错是看到文字成功就结束、只改VS Code状态栏而未重跑诊断、脱敏时把target/other都删掉。可用明确绝对路径或已核验的编辑器入口等价恢复，但交接仍须说明cwd和实际启动方式，并用新会话证明；不需要复制.venv。"
+                ],
+                "rubric": [
+                  "两环境和两份源码真实存在；目标、cwd、平台/版本、实际命令、输出/错误及退出状态可核对。",
+                  "真正复现普通输出成功而other身份错误，指出实际路径与目标差异；正确环境恢复有程序与诊断证据。",
+                  "新终端按记录再次复现和恢复，提交必要源码与简短脱敏记录；保留项目区别，不虚构同伴或跨机器结果。"
+                ]
+              },
+              {
+                "type": "quiz",
+                "id": "normal-output-wrong-identity",
+                "question": "run.py正常输出Target R9且状态0，能证明使用target环境了吗？",
+                "options": [
+                  "还需核对相同启动方式下诊断的实际解释器和环境前缀",
+                  "能，正常输出就足够"
+                ],
+                "correct": 0,
+                "explanations": [
+                  "正常输出回答程序结果，路径诊断回答环境身份。两项要求都要核实。",
+                  "两个环境都可能执行这条print，成功退出不能单独区分环境。"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "notebook-handoff",
+            "title": "补全一份Notebook求助记录",
+            "navGroup": "practice",
+            "navLabel": "两道独立任务",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "第二条求助只有：“Notebook打开后运行某个格子出错，但刚才还成功过。”你需要先列出它缺少的条件，再亲自取得证据。沿用1.5已可用的本地Jupyter，在目标项目打开review-note.ipynb，可下载下方起始材料。文件默认按顺序可运行，故障由你的执行操作产生。"
+              },
+              {
+                "type": "downloads",
+                "resourceIds": [
+                  "review-notebook-file"
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "文档先有Markdown说明，再把以下两行分别放在两个Code格。回顾1.5：先运行赋值格，当前内核才记住batch_label对应的文字；print(batch_label)读取当前对应值，print(\"batch_label\")只会打印引号里的文字。这里仍只用最小赋值与名称读取。"
+              },
+              {
+                "type": "code",
+                "code": "batch_label = \"Checked F3\"",
+                "filename": "review-note.ipynb · 提供名字格",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "print(batch_label)",
+                "filename": "review-note.ipynb · 显示格",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "末尾保留下面的现成只读观察格，在Notebook代码格运行，观察实际Python是否属于目标.venv。import/sys仅作已提供的工具，不要求独立编写。按1.5核对Kernel选择；同一个Python 3标题不能代替路径证据。"
+              },
+              {
+                "type": "code",
+                "code": "import sys\nprint(sys.executable)",
+                "filename": "现成内核观察格",
+                "language": "python"
+              },
+              {
+                "type": "exercise",
+                "id": "recover-notebook-record",
+                "title": "用真实内核补齐缺失的复现条件",
+                "kind": "实验",
+                "prompt": "先指出那句求助缺少哪些关键条件。在目标环境中打开review-note.ipynb并核对实际内核Python，记录平台与版本。明确重启内核，预测并实际先运行依赖前面赋值的显示格，保存真实错误全文、相关代码和执行顺序。独立解释原因并恢复，记录实际结果。再明确重启，从文档开头按序运行全部核心代码，核对输出与内核，保存.ipynb并重新打开检查文件。交付自己的Notebook及六项短记录：起始状态、实际顺序、错误、改动、干净全跑与保存证据。若出现的不是预期NameError，先调查真实状态而非改写错误。已有输出截图不能替代新执行；结束时按1.5保存并关闭自己的会话和服务。",
+                "hints": [
+                  "“刚才成功”没有说明当前内核从重启后执行过什么。接手的人要怎样知道起点和操作相同？",
+                  "找到提供显示格所需名字的那格，核对它是否在当前内核执行；把内核身份、重启动作、实际顺序与完整相关错误补进记录，再设计一次不依赖旧状态的验证。"
+                ],
+                "solution": [
+                  "缺少目标/实际内核、Python版本、是否重启、具体格源码、真实执行顺序和错误全文等信息。先用观察格核对目标.venv，再明确重启；只关网页可能重连旧内核。",
+                  "新内核先执行print(batch_label)，实际应有NameError说明batch_label尚未定义。保留回溯中的代码行、末行及顺序；赋值文本虽然已保存，却未在这个新内核执行。",
+                  "运行提供名字格，再运行显示格，应为Checked F3。保持文档中赋值在使用前，明确重启并从头全部运行，检查无错、输出和目标内核一致；保存，重新打开核对真实文件。",
+                  "记录故障起点和修复后操作，包括何时重启、各格怎样执行、实际输出。Notebook错误的脚本退出码写不适用。保存的代码/文字/输出并不将运行中的名字自动装入新内核。",
+                  "常错是只交旧输出、不写重启条件、删错误格当修复。接受依赖合理的等价排列、全新内核会话或先重启再Run All；都须保留实际故障、干净完整执行与文件证据。新会话技术复验尚不能写成同伴成功复现。"
+                ],
+                "rubric": [
+                  "先指出原求助缺失条件，实际核对目标内核；重启后真正复现乱序错误，保留代码、执行顺序及完整相关错误。",
+                  "解释未在当前内核定义名字并合理恢复；重启后按文档顺序全部运行，真实输出Checked F3且环境正确。",
+                  "保存并重新打开核对.ipynb，交简短脱敏复现记录与干净全跑证据；区分文件输出和运行状态，没有虚构他人操作。"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "chapter-handoff",
+            "title": "第一章结束，留下能重新核对的文件",
+            "navGroup": "finish",
+            "navLabel": "章末交接",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "现在你能把本地脚本保存并重跑，核对文件位置与实际解释器，区分项目环境，在Jupyter按序执行，并把一次问题整理成别人可以按条件尝试的短记录。两题的真实文件和新会话证据才用于自查，网页“读完”只记录阅读。另一位人类实际按记录操作之前，把同伴复现列为待验证。"
+              },
+              {
+                "type": "paragraph",
+                "text": "PY101接下来按原课程体系进入第二章“变量、基本类型、表达式与输入输出”。第一章只借用了最小赋值，完整变量、控制流程、函数和依赖管理仍需后续学习。第二章尚无本轮制作的教材链接；阅读器按已有可读课时可能把下一节指向第5章函数试读，那需要中间基础，不作为零基础学生直接跳学的推荐。整门PY101仍在筹备。"
+              }
+            ]
+          }
+        ],
+        "resources": [
+          {
+            "id": "review-notebook-file",
+            "title": "review-note.ipynb",
+            "href": "/downloads/review-note.ipynb",
+            "format": "Notebook",
+            "description": "第二题起始材料，空输出、默认可按序运行；仍须自行复现故障、补记录并干净重跑。"
+          }
+        ],
+        "references": [
+          {
+            "title": "Python命令行",
+            "href": "https://docs.python.org/3/using/cmdline.html",
+            "note": "脚本参数及执行条件。"
+          },
+          {
+            "title": "Python错误与异常",
+            "href": "https://docs.python.org/3/tutorial/errors.html",
+            "note": "回溯与NameError；本课不教异常处理。"
+          },
+          {
+            "title": "sys运行身份",
+            "href": "https://docs.python.org/3/library/sys.html",
+            "note": "实际解释器与环境前缀。"
+          },
+          {
+            "title": "Notebook运行代码",
+            "href": "https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Running%20Code.html",
+            "note": "内核状态及重启。"
+          }
+        ]
+      },
+      "afterSha256": "693d64e1e8147aa5c67cfa68ab895012073131be40875938d5c88db2cab12fd8"
+    }
+  ],
+  "publications": [
+    {
+      "id": "PY101-C01-L06",
+      "before": {
+        "lessonId": "PY101-C01-L06",
+        "courseId": "PY101",
+        "chapterId": "PY101-C01",
+        "title": "让别人复现一次环境问题",
+        "contentVersion": 1,
+        "order": 6,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p5/TECHNICAL_REPORT.md"
+      },
+      "afterSha256": "f07c140b9a06e2e51071b84f03af53c3c89978b4c583e8e760cc4614eb6e50d6"
+    }
+  ],
+  "workspaceOnly": [],
+  "protectedText": []
+}

@@ -1,0 +1,131 @@
+{
+  "phase": "最终工作区；含用户原有修改，另作干净候选验证",
+  "node": "24.16.0",
+  "rows": [
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "elapsedSeconds": 2.91,
+      "summary": [
+        "",
+        "> aivora-web@0.1.0 typecheck",
+        "> tsc --noEmit",
+        ""
+      ]
+    },
+    {
+      "command": "npm run lint",
+      "exitCode": 0,
+      "elapsedSeconds": 6.83,
+      "summary": [
+        "",
+        "> aivora-web@0.1.0 lint",
+        "> eslint .",
+        ""
+      ]
+    },
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "elapsedSeconds": 6.54,
+      "summary": [
+        "✔ 新版完成率从零开始，旧版读完记录仅保留历史，不抬高新版完成率 (0.4097ms)",
+        "✔ 内部 ID 与显示顺序分离，规划节无链接；技术开放后上下节自动越过规划内容 (1.1734ms)",
+        "ℹ tests 322",
+        "ℹ suites 0",
+        "ℹ pass 322",
+        "ℹ fail 0",
+        "ℹ cancelled 0",
+        "ℹ skipped 0",
+        "ℹ todo 0",
+        "ℹ duration_ms 6200.832"
+      ]
+    },
+    {
+      "command": "npm run prepare:downloads",
+      "exitCode": 0,
+      "elapsedSeconds": 0.41,
+      "summary": [
+        "",
+        "> aivora-web@0.1.0 prepare:downloads",
+        "> tsx scripts/prepare-downloads.ts",
+        "",
+        "已同源生成 16 组 Python / Notebook 下载文件",
+        "另生成 3 份按单元格组织的Notebook；空输出，不写入机器版本或路径。"
+      ]
+    },
+    {
+      "command": "npm run test:python",
+      "exitCode": 0,
+      "elapsedSeconds": 3.95,
+      "summary": [
+        "",
+        "> aivora-web@0.1.0 test:python",
+        "> tsx scripts/validate-python.ts",
+        "",
+        "Python 单元测试通过，74 个网页代码块按成功/受控错误契约实际执行通过，10 组核心/完整版一致。证据：<REPOSITORY>\\.workbuddy\\py101-p8\\final-workspace\\TEACHING_V2_3_PYTHON_RESULTS.json"
+      ]
+    },
+    {
+      "command": "npm run review:teaching",
+      "exitCode": 0,
+      "elapsedSeconds": 0.57,
+      "summary": [
+        "",
+        "> aivora-web@0.1.0 review:teaching",
+        "> tsx scripts/review-teaching.ts",
+        "",
+        "54 节教材的目标映射、时间估计与分层代码清单已输出"
+      ]
+    }
+  ],
+  "postPromotionNode": {
+    "command": "npm test",
+    "tests": 322,
+    "passed": 322,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "postPromotionTypecheckAndLint": {
+    "commands": [
+      "npm run typecheck",
+      "npm run lint"
+    ],
+    "exitCodes": [
+      0,
+      0
+    ]
+  },
+  "repairedFailure": {
+    "command": "npm test",
+    "firstResult": "321/322，content.test旧Quiz配额不适用于2.1",
+    "resolution": "仅将PY101-C02-L01纳入核心开放任务与assessmentMap检查；其他旧课Quiz要求未改",
+    "finalResult": "322/322"
+  },
+  "build": {
+    "command": "npm run build",
+    "bundler": "default Turbopack",
+    "exitCode": 0,
+    "summary": [
+      "├   /learn/[courseId]/[lessonId]",
+      "│ ├ ● /learn/PY101/PY101-C02-L01",
+      "│ ├ ● /learn/PY101/PY101-C01-L06",
+      "│ ├ ● /learn/PY101/PY101-C01-L05",
+      "│ └ ● [+51 more paths]",
+      "├ ○ /paths",
+      "└ ○ /projects",
+      "",
+      "",
+      "○  (Static)  prerendered as static content",
+      "●  (SSG)     prerendered as static HTML (uses generateStaticParams)",
+      ""
+    ]
+  },
+  "productionRoutes": {
+    "command": "npm run test:routes",
+    "base": "http://127.0.0.1:3018",
+    "passed": 105,
+    "total": 105,
+    "exitCode": 0
+  }
+}

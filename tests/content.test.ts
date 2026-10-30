@@ -29,9 +29,9 @@ test("四门不同类型教材用同一模型，公式可严格解析，图片�
       assert.ok(lesson.sections.filter((section) => section.tier === "core").flatMap((section) => section.blocks).filter((block) => block.type === "exercise").length >= 2);
       assert.ok(blocks.some((block) => block.type === "vector-figure"));
       assert.ok(lesson.sections.filter((section) => section.tier === "core").every((section) => !section.blocks.some((block) => block.type === "code")));
-    } else if (lesson.chapterId === "PY101-C01") {
-      // 操作型首章用正式目标对应的核心任务验收，不沿用旧样章Quiz数量配额。
-      const tasks = blocks.filter(b => b.type === "exercise");
+    } else if (lesson.chapterId === "PY101-C01" || lesson.id === "PY101-C02-L01") {
+      // 操作型首章及变量入门用目标对应的核心开放题验收；旧样章仍保留下面的Quiz契约。
+      const tasks = lesson.sections.filter(s => s.tier === "core").flatMap(s => s.blocks).filter(b => b.type === "exercise");
       assert.ok(tasks.length > 0);
       for (const row of lesson.assessmentMap) assert.ok(row.exerciseIds.every(id => tasks.some(task => task.id === id)));
       assert.ok(blocks.some(b => b.type === "code" && b.language === "python"));

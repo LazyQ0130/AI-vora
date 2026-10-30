@@ -6,6 +6,7 @@ import { corePrograms, regressionCoreCode } from "../src/content/resources/core-
 import { programs, gradientDescentCode } from "../src/content/resources/programs";
 import { notebookCode, notebookBlockNames } from "../src/content/resources/python-notebook";
 import { reproductionCode, reproductionBlockNames } from "../src/content/resources/python-reproduction";
+import { runVariableExample } from "./python-variable-checks";
 
 const python = process.env.AIVORA_PYTHON ?? "python";
 function run(args: string[]) {
@@ -38,8 +39,11 @@ const unit = run([
 ]);
 const examples = [...lessonRegistry.values()].flatMap((lesson) =>
   lesson.sections.flatMap((section) =>
-    section.blocks.flatMap((block) => {
+    section.blocks.flatMap<Record<string, unknown>>((block) => {
       if (block.type !== "code" || block.language !== "python") return [];
+      if (lesson.id === "PY101-C02-L01") {
+        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runVariableExample(block.filename, block.code) }];
+      }
       let setup = "";
       if (lesson.id === "PY101-C01-L06") {
         const key = (Object.keys(reproductionCode) as (keyof typeof reproductionCode)[]).find(key => reproductionBlockNames[key] === block.filename);
@@ -123,5 +127,5 @@ await writeFile(
   JSON.stringify(report, null, 2) + "\n",
 );
 console.log(
-  `Python 单元测试通过，${examples.length} 个网页代码块全部实际执行通过，${coreComparisons.length} 组核心/完整版一致。证据：${reportPath}`,
+  `Python 单元测试通过，${examples.length} 个网页代码块按成功/受控错误契约实际执行通过，${coreComparisons.length} 组核心/完整版一致。证据：${reportPath}`,
 );

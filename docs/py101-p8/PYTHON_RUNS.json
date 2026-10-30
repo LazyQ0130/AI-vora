@@ -1,0 +1,317 @@
+{
+  "checkedAt": "2026-10-30T03:40:22.841Z",
+  "platform": "win32",
+  "os": {
+    "type": "Windows_NT",
+    "release": "10.0.26300"
+  },
+  "python": {
+    "executable": "<BASE-PYTHON>\\python.exe",
+    "prefix": "<BASE-PYTHON>",
+    "version": "3.14.2"
+  },
+  "shell": "PowerShell 7.6.5",
+  "method": "每行记录为新PowerShell进程，保存.py后实际启动Python；所有预测见预解及独立断言",
+  "rows": [
+    {
+      "label": "assign",
+      "cwd": "<P8-LAB>",
+      "filename": "assign.py",
+      "savedSource": "task_name = \"Pack notebooks\"",
+      "savedSha256": "aff020eb58a682dd2e00a7f381041ff2f3c430ccbe642a013d369d3a63568211",
+      "command": "python .\\assign.py",
+      "shellPid": 21516,
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "read",
+      "cwd": "<P8-LAB>",
+      "filename": "read.py",
+      "savedSource": "task_name = \"Pack notebooks\"\nprint(task_name)",
+      "savedSha256": "8706fa15e8a9313f23f223839c7e73caa2264c854e0f0d3a6aaf371e23d18796",
+      "command": "python .\\read.py",
+      "shellPid": 2564,
+      "exitCode": 0,
+      "stdout": "Pack notebooks\n",
+      "stderr": ""
+    },
+    {
+      "label": "update",
+      "cwd": "<P8-LAB>",
+      "filename": "update.py",
+      "savedSource": "task_name = \"Pack notebooks\"\ntask_name = \"Check labels\"",
+      "savedSha256": "f40ed7b5bc254ef89b876562b6545416c86a421eb0fc13bf219f37cc1e639232",
+      "command": "python .\\update.py",
+      "shellPid": 7080,
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "main",
+      "cwd": "<P8-LAB>",
+      "filename": "main.py",
+      "savedSource": "task_name = \"Pack notebooks\"\nprint(task_name)\ntask_name = \"Check labels\"\nprint(task_name)",
+      "savedSha256": "fb41e1efe7f0b5dab3972aebdfff40dfc8aaf828df5a55dd1accf8cfd766a487",
+      "command": "python .\\main.py",
+      "shellPid": 1060,
+      "exitCode": 0,
+      "stdout": "Pack notebooks\nCheck labels\n",
+      "stderr": ""
+    },
+    {
+      "label": "changedMain",
+      "cwd": "<P8-LAB>",
+      "filename": "changedMain.py",
+      "savedSource": "task_name = \"Pack notebooks\"\nprint(task_name)\ntask_name = \"Sort envelopes\"\nprint(task_name)",
+      "savedSha256": "af2ef8839f8b8652d394ab32dda518c7233f69d679f2ecd30fcd58a1622ff18f",
+      "command": "python .\\changedMain.py",
+      "shellPid": 26224,
+      "exitCode": 0,
+      "stdout": "Pack notebooks\nSort envelopes\n",
+      "stderr": ""
+    },
+    {
+      "label": "literal",
+      "cwd": "<P8-LAB>",
+      "filename": "literal.py",
+      "savedSource": "task_name = \"Ready\"\nprint(\"task_name\")\nprint(task_name)",
+      "savedSha256": "2c3a2794c31cc166e15fff763df9f2a0dc48ae18a24cb928f1df1a647a5ae5bf",
+      "command": "python .\\literal.py",
+      "shellPid": 16492,
+      "exitCode": 0,
+      "stdout": "task_name\nReady\n",
+      "stderr": ""
+    },
+    {
+      "label": "firstRead",
+      "cwd": "<P8-LAB>",
+      "filename": "firstRead.py",
+      "savedSource": "print(dispatch_label)\ndispatch_label = \"Packed T7\"",
+      "savedSha256": "cefe96dfc04cdf82d80f44bb943305c451cfbc6602da9f5917092bc563dd9d9c",
+      "command": "python .\\firstRead.py",
+      "shellPid": 26620,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<P8-LAB>\\firstRead.py\", line 1, in <module>\n    print(dispatch_label)\n          ^^^^^^^^^^^^^^\nNameError: name 'dispatch_label' is not defined\n"
+    },
+    {
+      "label": "repaired",
+      "cwd": "<P8-LAB>",
+      "filename": "repaired.py",
+      "savedSource": "dispatch_label = \"Packed T7\"\nprint(dispatch_label)",
+      "savedSha256": "0d6af8daf1eee23c0896eb2393488a9e04b4fded85b180ab0c75d320bcb8ebfa",
+      "command": "python .\\repaired.py",
+      "shellPid": 25236,
+      "exitCode": 0,
+      "stdout": "Packed T7\n",
+      "stderr": ""
+    },
+    {
+      "label": "ownInitial",
+      "cwd": "<P8-LAB>",
+      "filename": "ownInitial.py",
+      "savedSource": "display_note = \"Hang posters\"\nprint(display_note)\ndisplay_note = \"Place signs\"\nprint(display_note)",
+      "savedSha256": "d6747dd0a0dab449d0c5a8936fec92bee18dbd4f4771170a96b32b139b3593da",
+      "command": "python .\\ownInitial.py",
+      "shellPid": 24820,
+      "exitCode": 0,
+      "stdout": "Hang posters\nPlace signs\n",
+      "stderr": ""
+    },
+    {
+      "label": "ownChanged",
+      "cwd": "<P8-LAB>",
+      "filename": "ownChanged.py",
+      "savedSource": "display_note = \"Hang posters\"\nprint(display_note)\ndisplay_note = \"Open doors\"\nprint(display_note)",
+      "savedSha256": "a83a8a069e6f595ccf829e305344f342901d05400888f8dfe8e458a2c5c92582",
+      "command": "python .\\ownChanged.py",
+      "shellPid": 13448,
+      "exitCode": 0,
+      "stdout": "Hang posters\nOpen doors\n",
+      "stderr": ""
+    },
+    {
+      "label": "own-file-before",
+      "cwd": "<P8-LAB>",
+      "filename": "my_shipping.py",
+      "savedSource": "shipping_step2 = \"Fold cartons\"\nprint(shipping_step2)\nshipping_step2 = \"Seal cartons\"\nprint(shipping_step2)",
+      "savedSha256": "2a114634229a7ddb8aa7326832fb02dcb478706e360b7d20403cc19d68130245",
+      "command": "python .\\my_shipping.py",
+      "shellPid": 20736,
+      "exitCode": 0,
+      "stdout": "Fold cartons\nSeal cartons\n",
+      "stderr": ""
+    },
+    {
+      "label": "own-file-after",
+      "cwd": "<P8-LAB>",
+      "filename": "my_shipping.py",
+      "savedSource": "shipping_step2 = \"Fold cartons\"\nprint(shipping_step2)\nshipping_step2 = \"Stack cartons\"\nprint(shipping_step2)",
+      "savedSha256": "a675ca77cac762b976338ac1de44064f412c6f7120667913c8afa788ea77021a",
+      "command": "python .\\my_shipping.py",
+      "shellPid": 25524,
+      "exitCode": 0,
+      "stdout": "Fold cartons\nStack cartons\n",
+      "stderr": ""
+    },
+    {
+      "label": "repair-same-file",
+      "cwd": "<P8-LAB>",
+      "filename": "firstRead.py",
+      "savedSource": "dispatch_label = \"Packed T7\"\nprint(dispatch_label)",
+      "savedSha256": "0d6af8daf1eee23c0896eb2393488a9e04b4fded85b180ab0c75d320bcb8ebfa",
+      "command": "python .\\firstRead.py",
+      "shellPid": 16312,
+      "exitCode": 0,
+      "stdout": "Packed T7\n",
+      "stderr": ""
+    },
+    {
+      "label": "fresh-process-after-success",
+      "cwd": "<P8-LAB>",
+      "filename": "firstRead.py",
+      "savedSource": "print(dispatch_label)\ndispatch_label = \"Packed T7\"",
+      "savedSha256": "cefe96dfc04cdf82d80f44bb943305c451cfbc6602da9f5917092bc563dd9d9c",
+      "command": "python .\\firstRead.py",
+      "shellPid": 25532,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<P8-LAB>\\firstRead.py\", line 1, in <module>\n    print(dispatch_label)\n          ^^^^^^^^^^^^^^\nNameError: name 'dispatch_label' is not defined\n"
+    },
+    {
+      "label": "legal:label2",
+      "cwd": "<P8-LAB>",
+      "filename": "legal-14.py",
+      "savedSource": "label2 = \"Ready\"\nprint(label2)",
+      "savedSha256": "57eaee811908d0085175f3e96806b1e3f6f2eaf329697f070d485d9eb1f33e22",
+      "command": "python .\\legal-14.py",
+      "shellPid": 27576,
+      "exitCode": 0,
+      "stdout": "Ready\n",
+      "stderr": ""
+    },
+    {
+      "label": "legal:_label",
+      "cwd": "<P8-LAB>",
+      "filename": "legal-15.py",
+      "savedSource": "_label = \"Ready\"\nprint(_label)",
+      "savedSha256": "5b9e72b1fc6d444bbca4bdd5be78519f4f257a284755328e0252382637e507e1",
+      "command": "python .\\legal-15.py",
+      "shellPid": 23624,
+      "exitCode": 0,
+      "stdout": "Ready\n",
+      "stderr": ""
+    },
+    {
+      "label": "legal:任务",
+      "cwd": "<P8-LAB>",
+      "filename": "legal-16.py",
+      "savedSource": "任务 = \"Ready\"\nprint(任务)",
+      "savedSha256": "a8a258569bd3530b6980f82b5e04cfbbfe800e4fdce64a2b9738caf5f1f49898",
+      "command": "python .\\legal-16.py",
+      "shellPid": 22324,
+      "exitCode": 0,
+      "stdout": "Ready\n",
+      "stderr": ""
+    },
+    {
+      "label": "invalid:my plan",
+      "cwd": "<P8-LAB>",
+      "filename": "invalid-17.py",
+      "savedSource": "my plan = \"Ready\"",
+      "savedSha256": "09fae8fb145d15e14a5309664164ba295b48c8fad7eaf5103fb9f4fa534e6714",
+      "command": "python .\\invalid-17.py",
+      "shellPid": 26128,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "  File \"<P8-LAB>\\invalid-17.py\", line 1\n    my plan = \"Ready\"\n       ^^^^\nSyntaxError: invalid syntax\n"
+    },
+    {
+      "label": "invalid:1plan",
+      "cwd": "<P8-LAB>",
+      "filename": "invalid-18.py",
+      "savedSource": "1plan = \"Ready\"",
+      "savedSha256": "ea826127b1138c5467f2a6966c097d4e3bc2a1b70c9daa46a4e0a46a17396687",
+      "command": "python .\\invalid-18.py",
+      "shellPid": 9232,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "  File \"<P8-LAB>\\invalid-18.py\", line 1\n    1plan = \"Ready\"\n    ^\nSyntaxError: invalid decimal literal\n"
+    },
+    {
+      "label": "invalid:for",
+      "cwd": "<P8-LAB>",
+      "filename": "invalid-19.py",
+      "savedSource": "for = \"Ready\"",
+      "savedSha256": "e43b9221da97ec6fc3a892db77ffdca1ccc0a3b71244238ec1b6ed560ca6c49c",
+      "command": "python .\\invalid-19.py",
+      "shellPid": 18636,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "  File \"<P8-LAB>\\invalid-19.py\", line 1\n    for = \"Ready\"\n        ^\nSyntaxError: invalid syntax\n"
+    },
+    {
+      "label": "invalid:class",
+      "cwd": "<P8-LAB>",
+      "filename": "invalid-20.py",
+      "savedSource": "class = \"Ready\"",
+      "savedSha256": "ea660cb765fd5499b91bb19ce3f8c4f54f6b812f82852eb3b40c65380be7dbcd",
+      "command": "python .\\invalid-20.py",
+      "shellPid": 1056,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "  File \"<P8-LAB>\\invalid-20.py\", line 1\n    class = \"Ready\"\n          ^\nSyntaxError: invalid syntax\n"
+    },
+    {
+      "label": "case-sensitive",
+      "cwd": "<P8-LAB>",
+      "filename": "case-sensitive.py",
+      "savedSource": "task_name = \"Ready\"\nprint(Task_name)",
+      "savedSha256": "3aa4cd01f923e23ae8110a6d2c879bef60850dc92575bee6f146192628f20a50",
+      "command": "python .\\case-sensitive.py",
+      "shellPid": 25248,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<P8-LAB>\\case-sensitive.py\", line 2, in <module>\n    print(Task_name)\n          ^^^^^^^^^\nNameError: name 'Task_name' is not defined. Did you mean: 'task_name'?\n"
+    },
+    {
+      "label": "missing-text-quotes",
+      "cwd": "<P8-LAB>",
+      "filename": "missing-text-quotes.py",
+      "savedSource": "task_name = Ready\nprint(task_name)",
+      "savedSha256": "e7337a683e6071fcba4183a4e8ef27bf46da5fda6728330bd9587d678d794821",
+      "command": "python .\\missing-text-quotes.py",
+      "shellPid": 11080,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<P8-LAB>\\missing-text-quotes.py\", line 1, in <module>\n    task_name = Ready\n                ^^^^^\nNameError: name 'Ready' is not defined\n"
+    },
+    {
+      "label": "unpaired-quote",
+      "cwd": "<P8-LAB>",
+      "filename": "unpaired-quote.py",
+      "savedSource": "task_name = \"Ready",
+      "savedSha256": "cd30ce185034e7237f5c1978fc0611821ca8165c73654597863e299965b4956a",
+      "command": "python .\\unpaired-quote.py",
+      "shellPid": 21880,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "  File \"<P8-LAB>\\unpaired-quote.py\", line 1\n    task_name = \"Ready\n                ^\nSyntaxError: unterminated string literal (detected at line 1)\n"
+    }
+  ],
+  "independentPredictions": {
+    "before": [
+      "Fold cartons",
+      "Seal cartons"
+    ],
+    "after": [
+      "Fold cartons",
+      "Stack cartons"
+    ]
+  },
+  "allAssertionsPassed": true,
+  "macOS": "未实机验证"
+}
