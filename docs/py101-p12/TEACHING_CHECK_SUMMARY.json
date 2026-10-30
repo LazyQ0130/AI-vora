@@ -1,0 +1,214 @@
+{
+  "checkedAt": "2026-10-30T08:13:29.313Z",
+  "totalLessons": 58,
+  "note": "结构覆盖与编辑估计快照；映射通过不证明题目效度或独立自学效果，需人工与目标学生验证。",
+  "lesson": {
+    "id": "PY101-C02-L05",
+    "title": "取得用户输入，再转成需要的数值",
+    "href": "/learn/PY101/PY101-C02-L05",
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "pending-review",
+    "contentVersion": 1,
+    "learningTime": {
+      "reading": [
+        12,
+        18
+      ],
+      "practice": [
+        8,
+        12
+      ],
+      "coding": [
+        18,
+        28
+      ],
+      "basis": "editorial-estimate"
+    },
+    "objectives": [
+      {
+        "objective": 1,
+        "text": "在自己创建的.py中用input取得终端输入，解释提示、等待、键入、Enter与print显示的区别并保留真实记录",
+        "exercises": [
+          {
+            "id": "interactive-label-and-count",
+            "title": "自己的物品标签和数量",
+            "kind": "代码",
+            "tier": "core",
+            "prompt": "自选不同于正文的物品或活动主题，自己设计两条清楚提示、合法名称和新.py。input取得文字标签，另一次input取得整数数量文本，明确分步int转换，再用乘法计算有意义的总用量，print标签与结果。固定合理正整数的每份用量，注明每份和总量单位。为同一源码先预测两组不同的新合法输入，再保存并从终端分别键入运行，不照抄Box A/4、Tool B/2。交本人.py、命令、两组输入/预测/真实结果；用type实际观察原文本str与转换后int，可另存观察副本，并解释源码不变时结果为何能不同。",
+            "hints": 2,
+            "rubric": [
+              "本人新.py两次运行时input取得标签和整数文本，明确分步int转换并使用转换结果，提示、名称和情境由本人设计。",
+              "两组新合法输入均有事先预测、同一保存源码、真实命令和结果，乘法关系与每份/总量单位对应。",
+              "实际type观察能解释str/int，提示、终端回显和print分清；复制参考、文字设想或读完标记不能替代代码。"
+            ]
+          }
+        ]
+      },
+      {
+        "objective": 2,
+        "text": "用type观察原始str与转换后的int或float，明确先接收再转换，用转换后的数值完成有单位的计算",
+        "exercises": [
+          {
+            "id": "interactive-label-and-count",
+            "title": "自己的物品标签和数量",
+            "kind": "代码",
+            "tier": "core",
+            "prompt": "自选不同于正文的物品或活动主题，自己设计两条清楚提示、合法名称和新.py。input取得文字标签，另一次input取得整数数量文本，明确分步int转换，再用乘法计算有意义的总用量，print标签与结果。固定合理正整数的每份用量，注明每份和总量单位。为同一源码先预测两组不同的新合法输入，再保存并从终端分别键入运行，不照抄Box A/4、Tool B/2。交本人.py、命令、两组输入/预测/真实结果；用type实际观察原文本str与转换后int，可另存观察副本，并解释源码不变时结果为何能不同。",
+            "hints": 2,
+            "rubric": [
+              "本人新.py两次运行时input取得标签和整数文本，明确分步int转换并使用转换结果，提示、名称和情境由本人设计。",
+              "两组新合法输入均有事先预测、同一保存源码、真实命令和结果，乘法关系与每份/总量单位对应。",
+              "实际type观察能解释str/int，提示、终端回显和print分清；复制参考、文字设想或读完标记不能替代代码。"
+            ]
+          },
+          {
+            "id": "measure-and-recheck",
+            "title": "小数测量与错误格式恢复",
+            "kind": "代码",
+            "tier": "core",
+            "prompt": "自选与正文不同的测量情境，例如一段材料长度，自定合法名称、清楚提示、单位和固定合理正整数件数。新.py用input接收测量文本，另行float转换，再乘件数显示总量。先预测两组不同合法小数输入，保存并实际分别运行核对；用type观察原str/新float，可另存观察版。另建受控副本保留成功程序，输入一次明显不合格文字，留真实ValueError完整回溯、相关转换行和退出记录，解释为何不合格式。随后重新启动副本，用合法值实际确认恢复。交源码、命令、两组合法输入/预测/输出、一次错误和新进程恢复以及单位说明，不写异常捕获、循环或eval。",
+            "hints": 2,
+            "rubric": [
+              "本人程序真实input、分步float并计算，情境/单位/固定件数合理，原始与转换后类型有实际观察。",
+              "两组新合法输入有本人预测、命令、源码与真实结果，总量及单位正确，源码未写死输入。",
+              "独立副本确有ValueError，留输入、转换行、完整回溯与非零退出，指出输入格式原因。",
+              "重新启动副本后合法值实际成功，无未教异常捕获/循环/eval；抄错误名或设想恢复不足。"
+            ]
+          }
+        ]
+      },
+      {
+        "objective": 3,
+        "text": "为自己的程序预测并真实运行两组新合法输入，在受控副本识别格式错误，再重新启动用合法值验证恢复",
+        "exercises": [
+          {
+            "id": "measure-and-recheck",
+            "title": "小数测量与错误格式恢复",
+            "kind": "代码",
+            "tier": "core",
+            "prompt": "自选与正文不同的测量情境，例如一段材料长度，自定合法名称、清楚提示、单位和固定合理正整数件数。新.py用input接收测量文本，另行float转换，再乘件数显示总量。先预测两组不同合法小数输入，保存并实际分别运行核对；用type观察原str/新float，可另存观察版。另建受控副本保留成功程序，输入一次明显不合格文字，留真实ValueError完整回溯、相关转换行和退出记录，解释为何不合格式。随后重新启动副本，用合法值实际确认恢复。交源码、命令、两组合法输入/预测/输出、一次错误和新进程恢复以及单位说明，不写异常捕获、循环或eval。",
+            "hints": 2,
+            "rubric": [
+              "本人程序真实input、分步float并计算，情境/单位/固定件数合理，原始与转换后类型有实际观察。",
+              "两组新合法输入有本人预测、命令、源码与真实结果，总量及单位正确，源码未写死输入。",
+              "独立副本确有ValueError，留输入、转换行、完整回溯与非零退出，指出输入格式原因。",
+              "重新启动副本后合法值实际成功，无未教异常捕获/循环/eval；抄错误名或设想恢复不足。"
+            ]
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "id": "first-input",
+        "title": "提示出现后，程序在等你键入",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "receive_label.py",
+            "lines": 2
+          }
+        ]
+      },
+      {
+        "id": "raw-count",
+        "title": "键入数字4，先看看取得的类型",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "inspect_input.py",
+            "lines": 3
+          }
+        ]
+      },
+      {
+        "id": "int-conversion",
+        "title": "另做一步整数转换，保留原始文字",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "convert_count.py",
+            "lines": 4
+          },
+          {
+            "filename": "observe_conversion.py",
+            "lines": 6
+          }
+        ]
+      },
+      {
+        "id": "main-example",
+        "title": "同一份脚本，接收两批不同物品",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "item_labels.py",
+            "lines": 6
+          }
+        ]
+      },
+      {
+        "id": "float-conversion",
+        "title": "测量有小数，转换成float再计算",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "two_masses.py",
+            "lines": 3
+          },
+          {
+            "filename": "observe_mass.py",
+            "lines": 6
+          }
+        ]
+      },
+      {
+        "id": "format-error",
+        "title": "输入格式不合要求，留错误再重启",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "count_format_copy.py · 受控副本",
+            "lines": 3
+          },
+          {
+            "filename": "mass_format_copy.py · 受控副本",
+            "lines": 3
+          }
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "换自己的主题和数据，完成两份新程序",
+        "tier": "core",
+        "pythonBlocks": []
+      },
+      {
+        "id": "reference-programs",
+        "title": "完成后再展开：两题完整参考程序",
+        "tier": "verification",
+        "pythonBlocks": [
+          {
+            "filename": "event_badges.py · 参考程序",
+            "lines": 5
+          },
+          {
+            "filename": "cord_lengths.py · 参考程序",
+            "lines": 3
+          },
+          {
+            "filename": "cord_format_copy.py · 参考受控副本",
+            "lines": 3
+          }
+        ]
+      },
+      {
+        "id": "next-step",
+        "title": "先接住文字，再用真实输入核对计算",
+        "tier": "core",
+        "pythonBlocks": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "label": "clean",
+  "rows": [
+    {
+      "command": "npm run typecheck",
+      "startedAt": "2026-10-30T08:12:54.495509+00:00",
+      "exitCode": 0,
+      "tail": [
+        "> aivora-web@0.1.0 typecheck",
+        "> tsc --noEmit"
+      ]
+    },
+    {
+      "command": "npm run lint",
+      "startedAt": "2026-10-30T08:13:01.219541+00:00",
+      "exitCode": 0,
+      "tail": [
+        "> aivora-web@0.1.0 lint",
+        "> eslint ."
+      ]
+    },
+    {
+      "command": "npm run test",
+      "startedAt": "2026-10-30T08:13:09.813851+00:00",
+      "exitCode": 0,
+      "tail": [
+        "✔ V2.3 核心验收与拓展隔离；复杂表示和反求倍率不再是基础目标 (0.5526ms)",
+        "✔ V2.3 比例明确按东、北排序，正文、数值表与图注相互对应 (6.745ms)",
+        "✔ 七节草稿具备先修、分步知识单元、可运行代码、分层提示及独立自查答案，所有公式严格解析 (31.8788ms)",
+        "✔ 教材补修与衔接指向真实正文或存在的章级规划 (2.2757ms)",
+        "✔ 新组件拒绝缺失答案的练习、列数错误表格和重复练习 ID (1.7179ms)",
+        "✔ 新版完成率从零开始，旧版读完记录仅保留历史，不抬高新版完成率 (0.5314ms)",
+        "✔ 内部 ID 与显示顺序分离，规划节无链接；技术开放后上下节自动越过规划内容 (1.5489ms)",
+        "ℹ tests 353",
+        "ℹ suites 0",
+        "ℹ pass 353",
+        "ℹ fail 0",
+        "ℹ cancelled 0",
+        "ℹ skipped 0",
+        "ℹ todo 0",
+        "ℹ duration_ms 12157.249"
+      ]
+    },
+    {
+      "command": "npm run prepare:downloads",
+      "startedAt": "2026-10-30T08:13:22.368361+00:00",
+      "exitCode": 0,
+      "tail": [
+        "> aivora-web@0.1.0 prepare:downloads",
+        "> tsx scripts/prepare-downloads.ts",
+        "",
+        "已同源生成 16 组 Python / Notebook 下载文件",
+        "另生成 3 份按单元格组织的Notebook；空输出，不写入机器版本或路径。"
+      ]
+    },
+    {
+      "command": "npm run test:python",
+      "startedAt": "2026-10-30T08:13:22.863513+00:00",
+      "exitCode": 0,
+      "tail": [
+        "> aivora-web@0.1.0 test:python",
+        "> tsx scripts/validate-python.ts",
+        "",
+        "Python 单元测试通过，114 个网页代码块按成功/受控错误契约实际执行通过，10 组核心/完整版一致。证据：<WORKSPACE>\\.workbuddy\\py101-p12-session\\clean\\TEACHING_V2_3_PYTHON_RESULTS.json"
+      ]
+    },
+    {
+      "command": "npm run review:teaching",
+      "startedAt": "2026-10-30T08:13:28.543062+00:00",
+      "exitCode": 0,
+      "tail": [
+        "> aivora-web@0.1.0 review:teaching",
+        "> tsx scripts/review-teaching.ts",
+        "",
+        "58 节教材的目标映射、时间估计与分层代码清单已输出"
+      ]
+    },
+    {
+      "command": "npm run build",
+      "startedAt": "2026-10-30T08:13:29.382856+00:00",
+      "exitCode": 1,
+      "tail": [
+        "",
+        "Possible causes:",
+        "  - node_modules is being reorganized by a concurrent install (e.g. pnpm adding a package with a `next` peer dependency). This is transient and should clear once the install completes.",
+        "  - node_modules/next was removed, renamed, or has a broken symlink.",
+        "  - The workspace root is incorrect — see turbopack.root in the Next.js config docs for how to configure it.",
+        "  - In a monorepo, the Next.js package may only exist in a directory above the closest directory containing a package manager lockfile. The workspace root is detected by locating the nearest package manager lockfile.",
+        "  - Next.js is installed globally rather than as a project dependency. This is not supported; install it locally.",
+        "",
+        "Note: To ensure a hermetic build and a portable cache, files outside of the workspace root are not compiled.",
+        "",
+        "https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory",
+        "",
+        "",
+        "    at <unknown> (Filesystem root used for resolution: <CLEAN-CANDIDATE>)",
+        "    at <unknown> (https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory)"
+      ]
+    },
+    {
+      "command": "npm run test:routes",
+      "exitCode": 0,
+      "checkedAt": "2026-10-30T08:17:08.346Z",
+      "base": "http://127.0.0.1:3027",
+      "passed": 109,
+      "total": 109
+    },
+    {
+      "command": "npm run build -- --webpack",
+      "exitCode": 0,
+      "bundler": "Webpack",
+      "logSha256": "0abe4784d78792aae3da7cd3cd48559dcf1e7cbfe89a72cfe80bb7309c8ba540",
+      "note": "Actual command exit0; production build served for four-viewport browser checks."
+    }
+  ],
+  "defaultTurbopackSucceeded": false,
+  "acceptedProductionBuild": "Webpack",
+  "requiredChecksPassedWithSupportedBundler": true,
+  "node": "24.16.0",
+  "next": "16.4.3",
+  "python": "3.14.2",
+  "testCounts": {
+    "tests": 353,
+    "pass": 353,
+    "fail": 0,
+    "skipped": 0
+  },
+  "cwd": "<CLEAN-CANDIDATE>"
+}

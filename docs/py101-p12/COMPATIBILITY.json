@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-30T08:24:55.708Z",
+  "oldLessonCount": 57,
+  "unchangedOtherLessonObjects": 56,
+  "protectedFileCount": 2852,
+  "protectedPortableDigest": "fb7a717ebb42d2f04b075ca1e5bfb8de75f4653a2c48a9b67a159f7d32430edb",
+  "onlyAllowedSourceChanges": [
+    "src/content/course-outline.ts",
+    "src/lib/course-engine.ts",
+    "src/content/publication-manifest.ts",
+    "src/content/lessons/py101/numeric-comparisons.ts",
+    "scripts/validate-python.ts",
+    "scripts/py101-p1-compatibility.ts",
+    "tests/content.test.ts",
+    "tests/py101-numeric-comparisons.test.ts"
+  ],
+  "amendedLessonIds": [
+    "PY101-C02-L04"
+  ],
+  "newLessonIds": [
+    "PY101-C02-L05"
+  ],
+  "allAssertionsPassed": true
+}

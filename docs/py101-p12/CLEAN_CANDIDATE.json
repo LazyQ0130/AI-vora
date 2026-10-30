@@ -1,0 +1,72 @@
+{
+  "checkedAt": "2026-10-30T08:21:09.151750+00:00",
+  "baseline": "4b5a8c158e462aef1683a499c7f1b141fe7a917d",
+  "source": "git archive HEAD plus explicit task files",
+  "excludedOriginalModified": 4,
+  "excludedOriginalUntracked": 7,
+  "productSourcesEqualBrowserBuildInputs": true,
+  "allTaskCodeEqualCleanChecks": true,
+  "files": [
+    {
+      "path": "src/content/course-outline.ts",
+      "lfSha256": "2f6dedab2712d007f4199ce63333d29cb9a3d2074d8e9c973e6772da8a586bf4",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/lib/course-engine.ts",
+      "lfSha256": "e4e8701d1743a03863af43812bc8304ec1e7d9148626c59242aafc0b12b3767a",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "lfSha256": "58fa8a6c18c6cd72fad112ccc5007820563cf65fa4e01599ed8ed66e36b994bc",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "lfSha256": "1a41a38a5b4f8f4ce08a40f6720d89eff8d0182d21aefeff8a5e7286c5227360",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "scripts/validate-python.ts",
+      "lfSha256": "abdd0438a0fa5082d2abaf32406768ae72e977e7a47b3431d06226d218f4fb39",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "lfSha256": "e9490ce0a7fd0c681039663c02938f5eb2c43eef5553d6d49c0a80e0d009d54b",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "tests/content.test.ts",
+      "lfSha256": "9a1dfec364493515569db87974cee86721874f46fa23f9b14c844e0735bc1540",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "tests/py101-numeric-comparisons.test.ts",
+      "lfSha256": "b3463445841d4c4b13314f637f79bcdf35389532b01d754101f22f06089025d8",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "lfSha256": "c45621ee4d906de7e9cd696dca81877381def56317aa99333381b58b2f7b1368",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/content/resources/python-input-conversion.ts",
+      "lfSha256": "3155d6031ae81e3531af89228471bd02bbda057a5748e008d6760ae3f86856d1",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "scripts/validate-py101-input.ts",
+      "lfSha256": "1c938abe96aa64abde35e6504810d3cb838fa5eafbcdded7ca67de0cdf890090",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "tests/py101-input-and-conversion.test.ts",
+      "lfSha256": "b450966c1a260c7e16b2dc099608ba8f1aa7fb74e5cdcb49facebc3925d5b0be",
+      "matchesCleanCandidate": true
+    }
+  ],
+  "note": "Node dependency junction reused. Actual clean Turbopack failure retained; supported Webpack served on3027. Working checkout separately passed default Turbopack. Final source equals gated preview projection. Documentation-only finalization does not change product inputs."
+}

@@ -1,0 +1,121 @@
+{
+  "label": "workspace",
+  "rows": [
+    {
+      "command": "npm run typecheck",
+      "startedAt": "2026-10-30T08:20:10.110661+00:00",
+      "exitCode": 0,
+      "tail": [
+        "> aivora-web@0.1.0 typecheck",
+        "> tsc --noEmit"
+      ]
+    },
+    {
+      "command": "npm run lint",
+      "startedAt": "2026-10-30T08:20:14.692866+00:00",
+      "exitCode": 0,
+      "tail": [
+        "> aivora-web@0.1.0 lint",
+        "> eslint ."
+      ]
+    },
+    {
+      "command": "npm run test",
+      "startedAt": "2026-10-30T08:20:22.177178+00:00",
+      "exitCode": 0,
+      "tail": [
+        "✔ V2.3 核心验收与拓展隔离；复杂表示和反求倍率不再是基础目标 (0.8139ms)",
+        "✔ V2.3 比例明确按东、北排序，正文、数值表与图注相互对应 (8.3983ms)",
+        "✔ 七节草稿具备先修、分步知识单元、可运行代码、分层提示及独立自查答案，所有公式严格解析 (30.7486ms)",
+        "✔ 教材补修与衔接指向真实正文或存在的章级规划 (1.8684ms)",
+        "✔ 新组件拒绝缺失答案的练习、列数错误表格和重复练习 ID (1.4206ms)",
+        "✔ 新版完成率从零开始，旧版读完记录仅保留历史，不抬高新版完成率 (0.5157ms)",
+        "✔ 内部 ID 与显示顺序分离，规划节无链接；技术开放后上下节自动越过规划内容 (1.6998ms)",
+        "ℹ tests 354",
+        "ℹ suites 0",
+        "ℹ pass 354",
+        "ℹ fail 0",
+        "ℹ cancelled 0",
+        "ℹ skipped 0",
+        "ℹ todo 0",
+        "ℹ duration_ms 7795.7011"
+      ]
+    },
+    {
+      "command": "npm run prepare:downloads",
+      "startedAt": "2026-10-30T08:20:30.341696+00:00",
+      "exitCode": 0,
+      "tail": [
+        "> aivora-web@0.1.0 prepare:downloads",
+        "> tsx scripts/prepare-downloads.ts",
+        "",
+        "已同源生成 16 组 Python / Notebook 下载文件",
+        "另生成 3 份按单元格组织的Notebook；空输出，不写入机器版本或路径。"
+      ]
+    },
+    {
+      "command": "npm run test:python",
+      "startedAt": "2026-10-30T08:20:30.804505+00:00",
+      "exitCode": 0,
+      "tail": [
+        "> aivora-web@0.1.0 test:python",
+        "> tsx scripts/validate-python.ts",
+        "",
+        "Python 单元测试通过，114 个网页代码块按成功/受控错误契约实际执行通过，10 组核心/完整版一致。证据：<WORKSPACE>\\.workbuddy\\py101-p12-session\\workspace\\TEACHING_V2_3_PYTHON_RESULTS.json"
+      ]
+    },
+    {
+      "command": "npm run review:teaching",
+      "startedAt": "2026-10-30T08:20:36.147087+00:00",
+      "exitCode": 0,
+      "tail": [
+        "> aivora-web@0.1.0 review:teaching",
+        "> tsx scripts/review-teaching.ts",
+        "",
+        "58 节教材的目标映射、时间估计与分层代码清单已输出"
+      ]
+    },
+    {
+      "command": "npm run build",
+      "startedAt": "2026-10-30T08:20:36.813573+00:00",
+      "exitCode": 0,
+      "tail": [
+        "│ ├ ● /courses/PY101",
+        "│ ├ ● /courses/MA101",
+        "│ └ ● [+17 more paths]",
+        "├ ○ /dashboard",
+        "├   /learn/[courseId]/[lessonId]",
+        "│ ├ ● /learn/PY101/PY101-C02-L05",
+        "│ ├ ● /learn/PY101/PY101-C02-L04",
+        "│ ├ ● /learn/PY101/PY101-C02-L03",
+        "│ └ ● [+55 more paths]",
+        "├ ○ /paths",
+        "└ ○ /projects",
+        "",
+        "",
+        "○  (Static)  prerendered as static content",
+        "●  (SSG)     prerendered as static HTML (uses generateStaticParams)"
+      ]
+    },
+    {
+      "command": "npm run test:routes",
+      "exitCode": 0,
+      "checkedAt": "2026-10-30T08:21:09.060Z",
+      "base": "http://127.0.0.1:3026",
+      "passed": 109,
+      "total": 109
+    }
+  ],
+  "defaultTurbopackSucceeded": true,
+  "allFinalCommandsPassed": true,
+  "node": "24.16.0",
+  "next": "16.4.3",
+  "python": "3.14.2",
+  "testCounts": {
+    "tests": 354,
+    "pass": 354,
+    "fail": 0,
+    "skipped": 0
+  },
+  "cwd": "<WORKSPACE>"
+}

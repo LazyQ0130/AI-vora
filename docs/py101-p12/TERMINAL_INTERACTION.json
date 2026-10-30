@@ -1,0 +1,117 @@
+{
+  "checkedAt": "2026-10-30T08:13:11.188Z",
+  "method": "Windows ConPTY / exec_command tty:true; tool sends keystrokes and Enter after observing prompts. Real interactive terminal, not redirected stdin, not a human/student trial or GUI screenshot.",
+  "events": [
+    {
+      "step": "start main; no input supplied; process waiting",
+      "chunk_id": "536693",
+      "wall_time_seconds": 10.00884,
+      "session_id": 69526,
+      "original_token_count": 50,
+      "output": "\u001b[?9001h\u001b[?1004h\u001b[?25l\u001b[2J\u001b[m\u001b[HLabel:\u001b[1C\u001b]0;<TERMINAL-TITLE>\u0007\u001b[?25h"
+    },
+    {
+      "step": "typed Box A then Enter",
+      "chunk_id": "01114e",
+      "wall_time_seconds": 1.0068115,
+      "session_id": 69526,
+      "original_token_count": 4,
+      "output": "Box A\r\nCount: "
+    },
+    {
+      "step": "typed4 then Enter; process completes",
+      "chunk_id": "4ec8cb",
+      "wall_time_seconds": 0.0000558,
+      "exit_code": 0,
+      "original_token_count": 8,
+      "output": "4\r\nBox A\r\n12\r\n\u001b[?9001l\u001b[?1004l"
+    },
+    {
+      "program": "item_labels.py",
+      "step": "started, no input yet, waiting prompt",
+      "chunk_id": "b4c8ee",
+      "wall_time_seconds": 10.0158559,
+      "session_id": 73135,
+      "original_token_count": 50,
+      "output": "\u001b[?9001h\u001b[?1004h\u001b[?25l\u001b[2J\u001b[m\u001b[HLabel:\u001b[1C\u001b]0;<TERMINAL-TITLE>\u0007\u001b[?25h"
+    },
+    {
+      "program": "inspect_input.py",
+      "step": "started, no input yet, waiting prompt",
+      "chunk_id": "5aba2f",
+      "wall_time_seconds": 10.0041615,
+      "session_id": 19975,
+      "original_token_count": 50,
+      "output": "\u001b[?9001h\u001b[?1004h\u001b[?25l\u001b[2J\u001b[m\u001b[HCount:\u001b[1C\u001b]0;<TERMINAL-TITLE>\u0007\u001b[?25h"
+    },
+    {
+      "program": "count_format_copy.py",
+      "step": "started, no input yet, waiting prompt",
+      "chunk_id": "dc5948",
+      "wall_time_seconds": 10.003811,
+      "session_id": 23206,
+      "original_token_count": 50,
+      "output": "\u001b[?9001h\u001b[?1004h\u001b[?25l\u001b[2J\u001b[m\u001b[HCount:\u001b[1C\u001b]0;<TERMINAL-TITLE>\u0007\u001b[?25h"
+    },
+    {
+      "program": "item_labels.py",
+      "typed": "Tool B\r",
+      "step": "Enter submitted",
+      "chunk_id": "d99a13",
+      "wall_time_seconds": 1.0010057,
+      "session_id": 73135,
+      "original_token_count": 4,
+      "output": "Tool B\r\nCount: "
+    },
+    {
+      "program": "inspect_input.py",
+      "typed": "4\r",
+      "step": "Enter submitted",
+      "chunk_id": "3ab164",
+      "wall_time_seconds": 0.0000129,
+      "exit_code": 0,
+      "original_token_count": 10,
+      "output": "4\r\n4\r\n<class 'str'>\r\n\u001b[?9001l\u001b[?1004l"
+    },
+    {
+      "program": "count_format_copy.py",
+      "typed": "four\r",
+      "step": "Enter submitted",
+      "chunk_id": "83a89e",
+      "wall_time_seconds": 0.0000268,
+      "exit_code": 1,
+      "original_token_count": 69,
+      "output": "four\r\nTraceback (most recent call last):\r\n  File \"<WORKSPACE>\\.workbuddy\\py101-p12-session\\terminal-lab\\count_format_copy.py\", line 2, in <module>\r\n    count = int(count_text)\r\nValueError: invalid literal for int() with base 10: 'four'\r\n\u001b[?9001l\u001b[?1004l"
+    },
+    {
+      "program": "item_labels.py",
+      "typed": "2\r",
+      "step": "second main run ends",
+      "chunk_id": "12fe51",
+      "wall_time_seconds": 0.0000335,
+      "exit_code": 0,
+      "original_token_count": 8,
+      "output": "2\r\nTool B\r\n6\r\n\u001b[?9001l\u001b[?1004l"
+    },
+    {
+      "program": "count_format_copy.py",
+      "step": "fresh process after ValueError; waiting prompt",
+      "chunk_id": "ee0a68",
+      "wall_time_seconds": 10.0021781,
+      "session_id": 94574,
+      "original_token_count": 50,
+      "output": "\u001b[?9001h\u001b[?1004h\u001b[?25l\u001b[2J\u001b[m\u001b[HCount:\u001b[1C\u001b]0;<TERMINAL-TITLE>\u0007\u001b[?25h"
+    },
+    {
+      "program": "count_format_copy.py",
+      "typed": "7\r",
+      "step": "fresh-process recovery completes",
+      "chunk_id": "9a6593",
+      "wall_time_seconds": 0.1162972,
+      "exit_code": 0,
+      "original_token_count": 6,
+      "output": "7\r\n7\r\n\u001b[?9001l\u001b[?1004l"
+    }
+  ],
+  "note": "Terminal stream mixes program prompts, terminal input echo, print and ANSI control sequences; it is not program stdout. Only workspace path prefix and terminal title redacted; input/output ordering retained. Pipe evidence is separately in PYTHON_RUNS.json."
+}

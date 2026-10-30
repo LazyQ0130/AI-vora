@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-30T08:24:29.637238+00:00",
+  "base": "http://127.0.0.1:3027",
+  "results": [
+    {
+      "path": "/learn/PY101/PY101-C02-L05",
+      "expected": 200,
+      "actual": 200,
+      "passed": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C02-L04",
+      "expected": 200,
+      "actual": 200,
+      "passed": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C02-L06",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/learn/ML201/PY101-C02-L05",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/courses/PY101",
+      "expected": 200,
+      "actual": 200,
+      "passed": true
+    }
+  ]
+}

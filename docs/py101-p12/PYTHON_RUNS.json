@@ -1,0 +1,456 @@
+{
+  "checkedAt": "2026-10-30T08:08:15.709Z",
+  "platform": "win32",
+  "os": "10.0.26300",
+  "shell": "PowerShell 7.6.5",
+  "python": {
+    "version": "3.14.2",
+    "executable": "<BASE-PYTHON>\\python.exe",
+    "prefix": "<BASE-PYTHON>"
+  },
+  "method": "保存.py并重读核SHA；新真实Python进程逐案提供stdin；stdout/stderr不补造回显或重排，仅公开路径前缀脱敏",
+  "rows": [
+    {
+      "key": "label",
+      "caseId": "label",
+      "filename": "receive_label.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\receive_label.py"
+      ],
+      "pid": 27904,
+      "stdin": "Box A\n",
+      "savedSource": "label = input(\"Label: \")\nprint(label)\n",
+      "savedSha256": "02847205850ff01f9a8cfeb7d5d0faf66dc657c32beb8c5757bb37a196b2b691",
+      "expectedStdout": "Label: Box A\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Label: Box A\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "rawCount",
+      "caseId": "raw-four",
+      "filename": "inspect_input.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\inspect_input.py"
+      ],
+      "pid": 20872,
+      "stdin": "4\n",
+      "savedSource": "count_text = input(\"Count: \")\nprint(count_text)\nprint(type(count_text))\n",
+      "savedSha256": "88a27637221d28751955d815dfc19e87fe5ba477748675120e920b6ab259be3f",
+      "expectedStdout": "Count: 4\n<class 'str'>\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Count: 4\r\n<class 'str'>\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "convertInt",
+      "caseId": "int-four",
+      "filename": "convert_count.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\convert_count.py"
+      ],
+      "pid": 25068,
+      "stdin": "4\n",
+      "savedSource": "count_text = input(\"Count: \")\ncount = int(count_text)\nprint(count)\nprint(type(count))\n",
+      "savedSha256": "ab9c61812b4fff1b5ab60132a72f264bd6dd7d60f514f71768e13cea69708dc3",
+      "expectedStdout": "Count: 4\n<class 'int'>\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Count: 4\r\n<class 'int'>\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "inspectInt",
+      "caseId": "inspect-int",
+      "filename": "observe_conversion.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\observe_conversion.py"
+      ],
+      "pid": 23420,
+      "stdin": "4\n",
+      "savedSource": "count_text = input(\"Count: \")\nprint(count_text)\nprint(type(count_text))\ncount = int(count_text)\nprint(count)\nprint(type(count))\n",
+      "savedSha256": "93d762282eb542775350ab00afeb7a1e3ac5cf7158acafcfa0f044958e446be0",
+      "expectedStdout": "Count: 4\n<class 'str'>\n4\n<class 'int'>\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Count: 4\r\n<class 'str'>\r\n4\r\n<class 'int'>\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "main",
+      "caseId": "box-four",
+      "filename": "item_labels.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\item_labels.py"
+      ],
+      "pid": 24684,
+      "stdin": "Box A\n4\n",
+      "savedSource": "label = input(\"Label: \")\ncount_text = input(\"Count: \")\ncount = int(count_text)\n\nprint(label)\nprint(count * 3)\n",
+      "savedSha256": "bb89d2f401452e5a0f5b925bcb8e0958e4115854823c07e7f04b14ad42fab658",
+      "expectedStdout": "Label: Count: Box A\n12\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Label: Count: Box A\r\n12\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "main",
+      "caseId": "tool-two",
+      "filename": "item_labels.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\item_labels.py"
+      ],
+      "pid": 6968,
+      "stdin": "Tool B\n2\n",
+      "savedSource": "label = input(\"Label: \")\ncount_text = input(\"Count: \")\ncount = int(count_text)\n\nprint(label)\nprint(count * 3)\n",
+      "savedSha256": "bb89d2f401452e5a0f5b925bcb8e0958e4115854823c07e7f04b14ad42fab658",
+      "expectedStdout": "Label: Count: Tool B\n6\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Label: Count: Tool B\r\n6\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "mass",
+      "caseId": "mass-one",
+      "filename": "two_masses.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\two_masses.py"
+      ],
+      "pid": 22432,
+      "stdin": "1.5\n",
+      "savedSource": "mass_text = input(\"Mass kg: \")\nmass = float(mass_text)\nprint(mass * 2)\n",
+      "savedSha256": "2109a3a2e66b29fdea8bc22f25f9a227531d7265ce390459d9514b73aab0cd39",
+      "expectedStdout": "Mass kg: 3.0\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Mass kg: 3.0\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "mass",
+      "caseId": "mass-two",
+      "filename": "two_masses.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\two_masses.py"
+      ],
+      "pid": 23652,
+      "stdin": "2.25\n",
+      "savedSource": "mass_text = input(\"Mass kg: \")\nmass = float(mass_text)\nprint(mass * 2)\n",
+      "savedSha256": "2109a3a2e66b29fdea8bc22f25f9a227531d7265ce390459d9514b73aab0cd39",
+      "expectedStdout": "Mass kg: 4.5\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Mass kg: 4.5\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "inspectFloat",
+      "caseId": "inspect-float",
+      "filename": "observe_mass.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\observe_mass.py"
+      ],
+      "pid": 22668,
+      "stdin": "1.5\n",
+      "savedSource": "mass_text = input(\"Mass kg: \")\nprint(mass_text)\nprint(type(mass_text))\nmass = float(mass_text)\nprint(mass)\nprint(type(mass))\n",
+      "savedSha256": "b2033e9f09aa3d5405d9da1d0d5f3bc00bd97b87d11db2d3fe23da55c7d5e0b0",
+      "expectedStdout": "Mass kg: 1.5\n<class 'str'>\n1.5\n<class 'float'>\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Mass kg: 1.5\r\n<class 'str'>\r\n1.5\r\n<class 'float'>\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "integerError",
+      "caseId": "word",
+      "filename": "count_format_copy.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\count_format_copy.py"
+      ],
+      "pid": 26448,
+      "stdin": "four\n",
+      "savedSource": "count_text = input(\"Count: \")\ncount = int(count_text)\nprint(count)\n",
+      "savedSha256": "bfc69d9a78559a237032ae12da50d33ed8c387dfcb79fd721e8cd62a8b2b3590",
+      "expectedStdout": "Count: ",
+      "expectedExitCode": 1,
+      "expectedErrorLine": "ValueError: invalid literal for int() with base 10: 'four'",
+      "exitCode": 1,
+      "stdout": "Count: ",
+      "stderr": "Traceback (most recent call last):\r\n  File \"<P12-LAB>\\count_format_copy.py\", line 2, in <module>\r\n    count = int(count_text)\r\nValueError: invalid literal for int() with base 10: 'four'\r\n"
+    },
+    {
+      "key": "integerError",
+      "caseId": "decimal-int",
+      "filename": "count_format_copy.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\count_format_copy.py"
+      ],
+      "pid": 27012,
+      "stdin": "4.5\n",
+      "savedSource": "count_text = input(\"Count: \")\ncount = int(count_text)\nprint(count)\n",
+      "savedSha256": "bfc69d9a78559a237032ae12da50d33ed8c387dfcb79fd721e8cd62a8b2b3590",
+      "expectedStdout": "Count: ",
+      "expectedExitCode": 1,
+      "expectedErrorLine": "ValueError: invalid literal for int() with base 10: '4.5'",
+      "exitCode": 1,
+      "stdout": "Count: ",
+      "stderr": "Traceback (most recent call last):\r\n  File \"<P12-LAB>\\count_format_copy.py\", line 2, in <module>\r\n    count = int(count_text)\r\nValueError: invalid literal for int() with base 10: '4.5'\r\n"
+    },
+    {
+      "key": "integerError",
+      "caseId": "int-restart",
+      "filename": "count_format_copy.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\count_format_copy.py"
+      ],
+      "pid": 14020,
+      "stdin": "7\n",
+      "savedSource": "count_text = input(\"Count: \")\ncount = int(count_text)\nprint(count)\n",
+      "savedSha256": "bfc69d9a78559a237032ae12da50d33ed8c387dfcb79fd721e8cd62a8b2b3590",
+      "expectedStdout": "Count: 7\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Count: 7\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "floatError",
+      "caseId": "bad-float",
+      "filename": "mass_format_copy.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\mass_format_copy.py"
+      ],
+      "pid": 28332,
+      "stdin": "bad\n",
+      "savedSource": "mass_text = input(\"Mass kg: \")\nmass = float(mass_text)\nprint(mass * 2)\n",
+      "savedSha256": "2109a3a2e66b29fdea8bc22f25f9a227531d7265ce390459d9514b73aab0cd39",
+      "expectedStdout": "Mass kg: ",
+      "expectedExitCode": 1,
+      "expectedErrorLine": "ValueError: could not convert string to float: 'bad'",
+      "exitCode": 1,
+      "stdout": "Mass kg: ",
+      "stderr": "Traceback (most recent call last):\r\n  File \"<P12-LAB>\\mass_format_copy.py\", line 2, in <module>\r\n    mass = float(mass_text)\r\nValueError: could not convert string to float: 'bad'\r\n"
+    },
+    {
+      "key": "floatError",
+      "caseId": "float-restart",
+      "filename": "mass_format_copy.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\mass_format_copy.py"
+      ],
+      "pid": 32544,
+      "stdin": "1.75\n",
+      "savedSource": "mass_text = input(\"Mass kg: \")\nmass = float(mass_text)\nprint(mass * 2)\n",
+      "savedSha256": "2109a3a2e66b29fdea8bc22f25f9a227531d7265ce390459d9514b73aab0cd39",
+      "expectedStdout": "Mass kg: 3.5\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Mass kg: 3.5\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "ownInteger",
+      "caseId": "hall-three",
+      "filename": "event_badges.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\event_badges.py"
+      ],
+      "pid": 32404,
+      "stdin": "Hall C\n3\n",
+      "savedSource": "venue_name = input(\"Venue: \")\nteam_text = input(\"Teams: \")\nteams = int(team_text)\nprint(venue_name)\nprint(teams * 5)\n",
+      "savedSha256": "edad2e538d0f672ffb2bc122a9b0a4e757924d7f70cec4706228b31376e0081d",
+      "expectedStdout": "Venue: Teams: Hall C\n15\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Venue: Teams: Hall C\r\n15\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "ownInteger",
+      "caseId": "hall-six",
+      "filename": "event_badges.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\event_badges.py"
+      ],
+      "pid": 24540,
+      "stdin": "Hall D\n6\n",
+      "savedSource": "venue_name = input(\"Venue: \")\nteam_text = input(\"Teams: \")\nteams = int(team_text)\nprint(venue_name)\nprint(teams * 5)\n",
+      "savedSha256": "edad2e538d0f672ffb2bc122a9b0a4e757924d7f70cec4706228b31376e0081d",
+      "expectedStdout": "Venue: Teams: Hall D\n30\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Venue: Teams: Hall D\r\n30\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "ownInteger",
+      "caseId": "unseen-int",
+      "filename": "event_badges.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\event_badges.py"
+      ],
+      "pid": 5956,
+      "stdin": "Porch E\n7\n",
+      "savedSource": "venue_name = input(\"Venue: \")\nteam_text = input(\"Teams: \")\nteams = int(team_text)\nprint(venue_name)\nprint(teams * 5)\n",
+      "savedSha256": "edad2e538d0f672ffb2bc122a9b0a4e757924d7f70cec4706228b31376e0081d",
+      "expectedStdout": "Venue: Teams: Porch E\n35\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Venue: Teams: Porch E\r\n35\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "ownMeasure",
+      "caseId": "length-one",
+      "filename": "cord_lengths.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\cord_lengths.py"
+      ],
+      "pid": 17388,
+      "stdin": "1.25\n",
+      "savedSource": "length_text = input(\"Length m: \")\nlength = float(length_text)\nprint(length * 4)\n",
+      "savedSha256": "496eb96af5d455c637bddd7982d9acda880611663f3142f831e96e779332d698",
+      "expectedStdout": "Length m: 5.0\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Length m: 5.0\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "ownMeasure",
+      "caseId": "length-two",
+      "filename": "cord_lengths.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\cord_lengths.py"
+      ],
+      "pid": 5128,
+      "stdin": "2.5\n",
+      "savedSource": "length_text = input(\"Length m: \")\nlength = float(length_text)\nprint(length * 4)\n",
+      "savedSha256": "496eb96af5d455c637bddd7982d9acda880611663f3142f831e96e779332d698",
+      "expectedStdout": "Length m: 10.0\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Length m: 10.0\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "ownMeasure",
+      "caseId": "unseen-float",
+      "filename": "cord_lengths.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\cord_lengths.py"
+      ],
+      "pid": 23336,
+      "stdin": "1.125\n",
+      "savedSource": "length_text = input(\"Length m: \")\nlength = float(length_text)\nprint(length * 4)\n",
+      "savedSha256": "496eb96af5d455c637bddd7982d9acda880611663f3142f831e96e779332d698",
+      "expectedStdout": "Length m: 4.5\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Length m: 4.5\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "measureError",
+      "caseId": "bad-length",
+      "filename": "cord_format_copy.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\cord_format_copy.py"
+      ],
+      "pid": 15680,
+      "stdin": "oops\n",
+      "savedSource": "length_text = input(\"Length m: \")\nlength = float(length_text)\nprint(length * 4)\n",
+      "savedSha256": "496eb96af5d455c637bddd7982d9acda880611663f3142f831e96e779332d698",
+      "expectedStdout": "Length m: ",
+      "expectedExitCode": 1,
+      "expectedErrorLine": "ValueError: could not convert string to float: 'oops'",
+      "exitCode": 1,
+      "stdout": "Length m: ",
+      "stderr": "Traceback (most recent call last):\r\n  File \"<P12-LAB>\\cord_format_copy.py\", line 2, in <module>\r\n    length = float(length_text)\r\nValueError: could not convert string to float: 'oops'\r\n"
+    },
+    {
+      "key": "measureError",
+      "caseId": "length-restart",
+      "filename": "cord_format_copy.py",
+      "cwd": "<P12-LAB>",
+      "command": [
+        "python",
+        "<P12-LAB>\\cord_format_copy.py"
+      ],
+      "pid": 7840,
+      "stdin": "0.75\n",
+      "savedSource": "length_text = input(\"Length m: \")\nlength = float(length_text)\nprint(length * 4)\n",
+      "savedSha256": "496eb96af5d455c637bddd7982d9acda880611663f3142f831e96e779332d698",
+      "expectedStdout": "Length m: 3.0\n",
+      "expectedExitCode": 0,
+      "expectedErrorLine": null,
+      "exitCode": 0,
+      "stdout": "Length m: 3.0\r\n",
+      "stderr": ""
+    }
+  ],
+  "allAssertionsPassed": true,
+  "macOS": "未实机运行"
+}

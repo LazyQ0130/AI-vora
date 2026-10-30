@@ -1,0 +1,593 @@
+{
+  "baseline": "4b5a8c158e462aef1683a499c7f1b141fe7a917d",
+  "addedLessonIds": [
+    "PY101-C02-L05"
+  ],
+  "sources": [
+    {
+      "path": "src/content/course-outline.ts",
+      "before": "import { z } from \"zod\";\nimport { mathCourseOutline } from \"./math-outline\";\nimport { ai000ChapterLessons } from \"./ai000-outline\";\n\nconst slotSchema = z.object({\n  courseId: z.string().regex(/^[A-Z]+\\d{3}$/),\n  chapterId: z.string().regex(/^[A-Z]+\\d{3}-C\\d{2}$/),\n  lessonId: z.string().regex(/^[A-Z]+\\d{3}-C\\d{2}-L\\d{2}$/),\n  title: z.string().min(1),\n  order: z.number().int().positive(),\n});\nfunction chapterSlots(\n  courseId: string,\n  chapter: number,\n  lessons: [string, string][],\n) {\n  const chapterId = `${courseId}-C${String(chapter).padStart(2, \"0\")}`;\n  return lessons.map(([suffix, title], index) =>\n    slotSchema.parse({\n      courseId,\n      chapterId,\n      lessonId: `${chapterId}-${suffix}`,\n      title,\n      order: index + 1,\n    }),\n  );\n}\n// 节级编辑蓝图；不修改 V1.0 章级事实，也不表示这些课时已写完。\nexport const courseOutline = [\n  ...ai000ChapterLessons.flatMap((titles, index) => chapterSlots(\"AI000\", index + 1,\n    titles.map((title, order) => [`L${String(order + 1).padStart(2, \"0\")}`, title]))),\n  ...chapterSlots(\"ML201\", 1, [\n    [\"L01\", \"什么是机器学习\"],\n    [\"L02\", \"如何定义预测任务\"],\n    [\"L03\", \"数据、特征与标签\"],\n  ]),\n  ...chapterSlots(\"ML201\", 2, [\n    [\"L01\", \"训练集、验证集和测试集\"],\n    [\"L02\", \"数据泄漏是怎样发生的\"],\n  ]),\n  ...chapterSlots(\"ML201\", 3, [\n    [\"L01\", \"从现实问题认识回归\"],\n    [\"L02\", \"线性回归模型：权重与偏置\"],\n    [\"L03\", \"预测误差、MAE 与 MSE\"],\n    [\"L04\", \"最小二乘法的基本思想\"],\n  ]),\n  // L01 由旧综合试读占用；显示顺序独立于稳定 ID。\n  ...chapterSlots(\"ML201\", 4, [\n    [\"L02\", \"从导数理解优化方向\"],\n    [\"L03\", \"梯度下降的数学原理\"],\n    [\"L04\", \"手动计算一次参数更新\"],\n    [\"L05\", \"使用 NumPy 实现线性回归\"],\n    [\"L06\", \"学习率与收敛实验\"],\n    [\"L07\", \"综合练习与实验分析\"],\n  ]),\n  // 第一章节级蓝图；实际可读性由Publication门禁决定。\n  ...chapterSlots(\"PY101\", 1, [\n    [\"L01\", \"从零运行第一个Python程序\"],\n    [\"L02\", \"解释器怎样找到并执行脚本\"],\n    [\"L03\", \"用编辑器完成保存与重跑\"],\n    [\"L04\", \"为项目准备独立的虚拟环境\"],\n    [\"L05\", \"在Jupyter中按顺序运行单元格\"],\n    [\"L06\", \"让别人复现一次环境问题\"],\n  ]),\n  // 第二章接入2.1–2.4；2.5–2.6仍留在P7文档规划中。\n  ...chapterSlots(\"PY101\", 2, [\n    [\"L01\", \"用变量保留并更新程序里的值\"],\n    [\"L02\", \"分清文字、整数、小数和真假值\"],\n    [\"L03\", \"用表达式算出一个结果\"],\n    [\"L04\", \"让比较表达式给出真假结果\"],\n  ]),\n  ...chapterSlots(\"PY101\", 5, [\n    [\"L01\", \"Python 函数与参数\"],\n    [\"L02\", \"位置与关键字参数绑定\"],\n    [\"L03\", \"返回值与 print 的区别\"],\n    [\"L04\", \"函数内外的变量与作用域\"],\n    [\"L05\", \"简单默认参数\"],\n    [\"L06\", \"可选进阶：共享对象与接口陷阱\"],\n  ]),\n  ...mathCourseOutline,\n];\nif (\n  new Set(courseOutline.map((slot) => slot.lessonId)).size !==\n  courseOutline.length\n)\n  throw new Error(\"节级蓝图 ID 重复\");\nexport const mlV2LessonIds = [\n  \"ML201-C03-L01\",\n  \"ML201-C03-L02\",\n  \"ML201-C03-L03\",\n  \"ML201-C04-L02\",\n  \"ML201-C04-L03\",\n  \"ML201-C04-L04\",\n  \"ML201-C04-L05\",\n] as const;\n",
+      "afterSha256": "2f6dedab2712d007f4199ce63333d29cb9a3d2074d8e9c973e6772da8a586bf4"
+    },
+    {
+      "path": "src/lib/course-engine.ts",
+      "before": "import { courses, getCourse } from \"./curriculum\";\nimport { getCourseDirectory } from \"./course-directory\";\nimport { courseOutline } from \"../content/course-outline\";\nimport { linearRegressionLesson } from \"../content/lessons/linear-regression\";\nimport { foundationLessons, pythonAdvancedLesson } from \"../content/lessons/foundations-v2-1\";\nimport { regressionTaskLesson } from \"../content/lessons/ml201/regression-task\";\nimport { linearModelLesson } from \"../content/lessons/ml201/linear-model\";\nimport { lossFunctionsLesson } from \"../content/lessons/ml201/loss-functions\";\nimport { derivativeDirectionLesson } from \"../content/lessons/ml201/derivative-direction\";\nimport { mseGradientLesson } from \"../content/lessons/ml201/mse-gradient\";\nimport { manualUpdateLesson } from \"../content/lessons/ml201/manual-update\";\nimport { numpyRegressionLesson } from \"../content/lessons/ml201/numpy-regression\";\nimport { maV22Lessons } from \"../content/lessons/ma101\";\nimport { whatIsAiLesson } from \"../content/lessons/ai000/what-is-ai\";\nimport { capabilitiesLesson } from \"../content/lessons/ai000/capabilities-and-errors\";\nimport { automationLesson } from \"../content/lessons/ai000/automation-and-ai\";\nimport { generativeLesson } from \"../content/lessons/ai000/generative-ai-and-llm\";\nimport { supervisedLearningLesson } from \"../content/lessons/ai000/supervised-learning\";\nimport { unsupervisedLearningLesson } from \"../content/lessons/ai000/unsupervised-learning\";\nimport { selfSupervisedLesson } from \"../content/lessons/ai000/self-supervised-learning\";\nimport { reinforcementLearningLesson } from \"../content/lessons/ai000/reinforcement-learning\";\nimport { dataFeaturesLabelsLesson } from \"../content/lessons/ai000/data-features-labels\";\nimport { modelsAndParametersLesson } from \"../content/lessons/ai000/models-and-parameters\";\nimport { usingFixedModelLesson } from \"../content/lessons/ai000/using-a-fixed-model\";\nimport { naturalLanguageLesson } from \"../content/lessons/ai000/natural-language-and-llm\";\nimport { computerVisionLesson } from \"../content/lessons/ai000/computer-vision\";\nimport { generativeWorkLesson } from \"../content/lessons/ai000/generative-work\";\nimport { rlApplicabilityLesson } from \"../content/lessons/ai000/rl-applicability\";\nimport { unreliableAnswersLesson } from \"../content/lessons/ai000/unreliable-answers\";\nimport { responsibleUseLesson } from \"../content/lessons/ai000/responsible-ai-use\";\nimport { whyFoundationsLesson } from \"../content/lessons/ai000/why-foundations\";\nimport { directionLearningRoutesLesson } from \"../content/lessons/ai000/direction-learning-routes\";\nimport { problemAnalysisCapstoneLesson } from \"../content/lessons/ai000/problem-analysis-capstone\";\nimport { privacyFairnessLesson } from \"../content/lessons/ai000/privacy-bias-fairness\";\nimport { multimodalLesson } from \"../content/lessons/ai000/multimodal-ai\";\nimport { trainingValidationTestLesson } from \"../content/lessons/ai000/training-validation-test\";\nimport { aiMlDlLesson } from \"../content/lessons/ai000/ai-ml-dl\";\nimport { pythonFirstRunLesson } from \"../content/lessons/py101/first-run\";\nimport { pythonScriptPathsLesson } from \"../content/lessons/py101/script-paths\";\nimport { pythonEditorRerunLesson } from \"../content/lessons/py101/editor-rerun\";\nimport { pythonProjectEnvironmentsLesson } from \"../content/lessons/py101/project-environments\";\nimport { pythonNotebookCellOrderLesson } from \"../content/lessons/py101/notebook-cell-order\";\nimport { pythonEnvironmentReproductionLesson } from \"../content/lessons/py101/environment-reproduction\";\nimport { pythonVariablesAndAssignmentLesson } from \"../content/lessons/py101/variables-and-assignment\";\nimport { pythonBasicValueTypesLesson } from \"../content/lessons/py101/basic-value-types\";\nimport { pythonArithmeticExpressionsLesson } from \"../content/lessons/py101/arithmetic-expressions\";\nimport { pythonNumericComparisonsLesson } from \"../content/lessons/py101/numeric-comparisons\";\nimport {\n  publicationManifest,\n  readablePublications,\n  lessonHref,\n} from \"../content/publication-manifest\";\nimport {\n  isReadable,\n  type Course,\n  type Lesson,\n  type LessonSummary,\n  type Publication,\n} from \"../content/models\";\n\nconst contents: Lesson[] = [\n  pythonNumericComparisonsLesson,\n  pythonArithmeticExpressionsLesson,\n  pythonBasicValueTypesLesson,\n  pythonVariablesAndAssignmentLesson,\n  pythonEnvironmentReproductionLesson,\n  pythonScriptPathsLesson,\n  pythonEditorRerunLesson,\n  pythonProjectEnvironmentsLesson,\n  pythonNotebookCellOrderLesson,\n  pythonFirstRunLesson,\n  whatIsAiLesson,\n  capabilitiesLesson,\n  automationLesson,\n  aiMlDlLesson,\n  generativeLesson,\n  supervisedLearningLesson,\n  unsupervisedLearningLesson,\n  selfSupervisedLesson,\n  reinforcementLearningLesson,\n  dataFeaturesLabelsLesson,\n  modelsAndParametersLesson,\n  trainingValidationTestLesson,\n  usingFixedModelLesson,\n  naturalLanguageLesson,\n  computerVisionLesson,\n  multimodalLesson,\n  generativeWorkLesson,\n  rlApplicabilityLesson,\n  unreliableAnswersLesson,\n  privacyFairnessLesson,\n  responsibleUseLesson,\n  whyFoundationsLesson,\n  directionLearningRoutesLesson,\n  problemAnalysisCapstoneLesson,\n  ...maV22Lessons,\n  regressionTaskLesson,\n  linearModelLesson,\n  lossFunctionsLesson,\n  derivativeDirectionLesson,\n  mseGradientLesson,\n  manualUpdateLesson,\n  numpyRegressionLesson,\n  linearRegressionLesson,\n  ...foundationLessons,\n  pythonAdvancedLesson,\n];\nexport const lessonRegistry: ReadonlyMap<string, Lesson> = new Map(\n  contents.map((lesson) => [lesson.id, lesson]),\n);\n\nexport function validateRegistry(\n  entries: Publication[],\n  lessons: readonly Lesson[],\n) {\n  if (new Set(entries.map((e) => e.lessonId)).size !== entries.length)\n    throw new Error(\"发布清单课时 ID 重复\");\n  if (new Set(lessons.map((e) => e.id)).size !== lessons.length)\n    throw new Error(\"内容课时 ID 重复\");\n  if (\n    new Set(\n      entries\n        .filter((e) => e.catalogRole !== \"legacy\")\n        .map((e) => `${e.chapterId}:${e.order}`),\n    ).size !== entries.filter((e) => e.catalogRole !== \"legacy\").length\n  )\n    throw new Error(\"同章课时顺序重复\");\n  for (const entry of entries) {\n    const catalog = getCourse(entry.courseId);\n    const chapterIndex = catalog?.chapters.findIndex(\n      (_, index) =>\n        `${catalog.id}-C${String(index + 1).padStart(2, \"0\")}` ===\n        entry.chapterId,\n    );\n    if (\n      !catalog ||\n      chapterIndex === undefined ||\n      chapterIndex < 0 ||\n      !entry.lessonId.startsWith(`${entry.chapterId}-L`)\n    )\n      throw new Error(`发布清单引用无效课程或章节：${entry.lessonId}`);\n    if (entry.catalogRole !== \"legacy\") {\n      const slot = courseOutline.find((s) => s.lessonId === entry.lessonId);\n      if (\n        !slot ||\n        slot.chapterId !== entry.chapterId ||\n        slot.title !== entry.title ||\n        slot.order !== entry.order\n      )\n        throw new Error(`教材与节级蓝图不一致：${entry.lessonId}`);\n    }\n    const lesson = lessons.find((l) => l.id === entry.lessonId);\n    if (!lesson) throw new Error(`缺少教材：${entry.lessonId}`);\n    for (const key of [\n      \"courseId\",\n      \"chapterId\",\n      \"title\",\n      \"contentVersion\",\n    ] as const)\n      if (lesson[key] !== entry[key])\n        throw new Error(`教材与清单不一致：${entry.lessonId}.${key}`);\n  }\n  for (const lesson of lessons)\n    if (!entries.some((e) => e.lessonId === lesson.id))\n      throw new Error(`教材未登记：${lesson.id}`);\n}\nvalidateRegistry(publicationManifest, contents);\n\nexport function getLearningCourse(courseId: string): Course | undefined {\n  const catalog = getCourse(courseId);\n  if (!catalog) return undefined;\n  return getCourseDirectory(catalog);\n}\nexport function resolveLesson(courseId: string, lessonId: string) {\n  const publication = publicationManifest.find(\n    (e) => e.courseId === courseId && e.lessonId === lessonId,\n  );\n  if (!publication || !isReadable(publication)) return undefined;\n  const course = getLearningCourse(courseId);\n  const lesson = lessonRegistry.get(lessonId);\n  const chapter = course?.chapters.find((c) => c.id === publication.chapterId);\n  return course && lesson && chapter\n    ? { course, chapter, lesson, publication }\n    : undefined;\n}\nexport function getAdjacentLessons(course: Course, lessonId: string) {\n  const lessons = course.chapters\n    .flatMap((c) => c.lessons)\n    .filter((e) => e.catalogRole !== \"legacy\" && isReadable(e));\n  const index = lessons.findIndex((l) => l.lessonId === lessonId);\n  if (index < 0) return {};\n  return { previous: lessons[index - 1], next: lessons[index + 1] };\n}\nexport const lessonSummaries: LessonSummary[] = readablePublications.map(\n  (entry) => ({\n    ...entry,\n    href: lessonHref(entry),\n    courseName: getCourse(entry.courseId)!.name,\n    level: getCourse(entry.courseId)!.lvl,\n    displayNumber: getLearningCourse(entry.courseId)\n      ?.chapters.flatMap((ch) => ch.lessons)\n      .find((l) => l.lessonId === entry.lessonId)?.displayNumber,\n    sectionTitles: lessonRegistry\n      .get(entry.lessonId)!\n      .sections.map(({ id, title }) => ({ id, title })),\n  }),\n);\nexport const learningCourses = courses.map((c) => getLearningCourse(c.id)!);\n",
+      "afterSha256": "e4e8701d1743a03863af43812bc8304ec1e7d9148626c59242aafc0b12b3767a"
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "before": "import { isReadable, publicationSchema } from \"./models\";\nimport { legacyMathSlots, maV22LessonIds } from \"./math-outline\";\nimport { courseOutline, mlV2LessonIds } from \"./course-outline\";\n\nconst revisedCoreLessons: Record<string, number> = { \"MA101-C02-L03\": 2, \"PY101-C05-L01\": 2 };\n\n// 发布权限独立于原始课程规划。技术证据不替代人工审核。\nexport const publicationManifest = [\n  {lessonId:\"PY101-C02-L04\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"让比较表达式给出真假结果\",contentVersion:1,order:4,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p11/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C02-L03\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"用表达式算出一个结果\",contentVersion:1,order:3,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p11/TRANSITION_AMENDMENTS.md\"},\n  {lessonId:\"PY101-C02-L02\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"分清文字、整数、小数和真假值\",contentVersion:1,order:2,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p10/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C02-L01\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"用变量保留并更新程序里的值\",contentVersion:1,order:1,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p11/TRANSITION_AMENDMENTS.md\"},\n  {lessonId:\"PY101-C01-L06\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"让别人复现一次环境问题\",contentVersion:1,order:6,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p8/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L05\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"在Jupyter中按顺序运行单元格\",contentVersion:1,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p7/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L04\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"为项目准备独立的虚拟环境\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p4/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L03\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"用编辑器完成保存与重跑\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p3/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L02\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"解释器怎样找到并执行脚本\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p6/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L01\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"从零运行第一个Python程序\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p2/FIRST_LESSON_AMENDMENT.md\"},\n  {lessonId:\"AI000-C07-L03\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"综合实践：分析 AI 问题并制定学习计划\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_3_AND_COURSE_REVIEW.md\"},\n  {lessonId:\"AI000-C07-L02\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"AI 不同技术方向需要哪些基础？\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_2_REVIEW.md\"},\n  {lessonId:\"AI000-C07-L01\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"为什么学习 Python、数学与数据分析？\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_1_REVIEW.md\"},\n  {lessonId:\"AI000-C06-L03\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"版权、误用与负责任地使用 AI\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C06-L02\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"数据隐私、偏差与公平性\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C06-L01\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"为什么 AI 会产生不可靠的回答？\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_6_1_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L05\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"强化学习适合哪些应用问题？\",contentVersion:1,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C05-L03\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"多模态 AI：连接文字、图片与声音\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L04\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"生成模型：从要求到可核对的作品\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L02\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"计算机视觉：让机器理解图像\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_5_2_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L01\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"自然语言处理与大语言模型\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L04\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"模型训练好以后，如何完成预测？\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L03\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"训练、验证与测试各有什么作用？\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L02\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"模型和参数是怎样得到的？\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_VISUAL_CONTENT_REFINEMENT.md\"},\n  {lessonId:\"AI000-C04-L01\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"数据、特征与标签\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_VISUAL_CONTENT_REFINEMENT.md\"},\n  {lessonId:\"AI000-C03-L04\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"强化学习：通过行动与反馈学习\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L03\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"自监督学习：怎样从数据本身构造学习任务？\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L02\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"无监督学习：没有标签也能发现规律吗？\",contentVersion:2,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L01\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"监督学习：从有答案的例子中学习\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  ...courseOutline.filter(slot => slot.courseId === \"AI000\" && [\"AI000-C01-L02\",\"AI000-C01-L03\",\"AI000-C02-L02\"].includes(slot.lessonId)).map(slot => ({...slot,contentVersion:slot.lessonId === \"AI000-C01-L02\" ? 2 : 1,status:\"pending-review\",access:\"preview\",technicalEvidence:slot.lessonId === \"AI000-C02-L02\" ? \"docs/AI000_R3_REFINEMENT_REPORT.md\" : \"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"})),\n  {\n    lessonId: \"AI000-C02-L01\",\n    courseId: \"AI000\",\n    chapterId: \"AI000-C02\",\n    title: \"AI、机器学习与深度学习，到底是什么关系？\",\n    contentVersion: 2,\n    order: 1,\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\",\n  },\n  {\n    lessonId: \"AI000-C01-L01\",\n    courseId: \"AI000\",\n    chapterId: \"AI000-C01\",\n    title: \"人工智能究竟是什么？\",\n    contentVersion: 2,\n    order: 1,\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\",\n  },\n  ...courseOutline\n    .filter((slot) => mlV2LessonIds.some((id) => id === slot.lessonId) || slot.chapterId === \"PY101-C05\" || maV22LessonIds.some((id) => id === slot.lessonId))\n    .map((slot) => ({\n      ...slot,\n      contentVersion: revisedCoreLessons[slot.lessonId] ?? 1,\n      optionalLesson: slot.lessonId === \"PY101-C05-L06\",\n      catalogRole: \"current\",\n      status: \"pending-review\",\n      access: \"preview\",\n      technicalEvidence: slot.lessonId === \"MA101-C02-L03\" || slot.lessonId === \"ML201-C04-L04\" || (slot.courseId === \"PY101\" && slot.lessonId !== \"PY101-C05-L06\")\n        ? \"docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md\"\n        : slot.courseId === \"MA101\" ? \"docs/MA101_EDITORIAL_REVIEW_V1.md\" : \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\",\n    })),\n  ...legacyMathSlots.map((slot) => ({ ...slot, catalogRole: \"legacy\", contentVersion: 1, status: \"pending-review\", access: \"preview\", technicalEvidence: \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\" })),\n  {\n    lessonId: \"ML201-C04-L01\",\n    courseId: \"ML201\",\n    chapterId: \"ML201-C04\",\n    title: \"线性回归与梯度下降\",\n    contentVersion: 1,\n    order: 1,\n    catalogRole: \"legacy\",\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence: \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\",\n  },\n].map((entry) => publicationSchema.parse(entry));\n\nexport const readablePublications = publicationManifest.filter(isReadable);\nexport const lessonHref = (entry: { courseId: string; lessonId: string }) =>\n  `/learn/${entry.courseId}/${entry.lessonId}`;\n",
+      "afterSha256": "58fa8a6c18c6cd72fad112ccc5007820563cf65fa4e01599ed8ed66e36b994bc"
+    },
+    {
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "before": "import { lessonSchema, type ContentBlock } from \"../../models\";\nimport { comparisonCode, comparisonBlockNames, type ComparisonKey } from \"../../resources/python-comparisons\";\nconst p = (text: string): ContentBlock => ({ type: \"paragraph\", text });\nconst output = (filename: string, code: string): ContentBlock => ({ type: \"code\", language: \"text\", filename, code });\nconst sample = (key: ComparisonKey): ContentBlock => ({ type: \"code\", language: \"python\", filename: comparisonBlockNames[key], code: comparisonCode[key] });\nconst lines = (key: ComparisonKey) => comparisonCode[key].split(\"\\n\").map((line,i) => `第${i+1}行：${line}`).join(\"；\");\n\n// 课前简报、独立预解、官方事实与保存文件实跑：docs/py101-p11。沿用现有Reader，无新下载。\nexport const pythonNumericComparisonsLesson = lessonSchema.parse({\n  id: \"PY101-C02-L04\", courseId: \"PY101\", chapterId: \"PY101-C02\", title: \"让比较表达式给出真假结果\",\n  contentVersion: 1, optionalLesson: false,\n  subtitle: \"最多能放6件，刚好6件算不算满足？先写判断，再用三个边界值核对。\",\n  prerequisites: \"已完成第一章和2.1–2.3：会用变量保存整数，使用print，认识True/False与bool，理解右侧表达式求值再赋值，能预测、保存并从终端完整运行.py。沿用现有Python 3和编辑器，不装库；手机可读，代码操作需要电脑。\",\n  prerequisiteLinks: [\n    { title: \"2.1 读取与更新\", href: \"/learn/PY101/PY101-C02-L01#read-and-update\", note: \"回顾=赋值和读取当前值。\" },\n    { title: \"2.2 真假状态\", href: \"/learn/PY101/PY101-C02-L02#ready-state\", note: \"回顾True、False与字符串的差别。\" },\n    { title: \"2.2 观察类型\", href: \"/learn/PY101/PY101-C02-L02#inspect-type\", note: \"需要时复习type的观察用途。\" },\n    { title: \"2.3 先求右侧结果\", href: \"/learn/PY101/PY101-C02-L03#expression-to-value\", note: \"把已有数值表达式经验接到比较结果。\" },\n    { title: \"1.3 保存与重跑\", href: \"/learn/PY101/PY101-C01-L03#save-rerun\", note: \"核对保存状态与实际运行文件。\" },\n  ],\n  objectives: [\n    \"根据新的数量规则选择数值比较运算符，在自己创建的.py中取得真实True/False并解释判断含义\",\n    \"区分赋值=与相等比较==，正确使用相等和不等比较，先预测再核对实际布尔结果\",\n    \"固定限制值，手动改成低于、等于、高于的三个实际值，保存重跑并说明比较是否包含边界\",\n  ],\n  assessmentMap: [{ objective: 1, exerciseIds: [\"compare-and-explain\", \"test-boundary-values\"] }, { objective: 2, exerciseIds: [\"compare-and-explain\"] }, { objective: 3, exerciseIds: [\"test-boundary-values\"] }],\n  learningTime: { reading: [10,15], practice: [6,10], coding: [12,18], basis: \"editorial-estimate\" },\n  sections: [\n    { id: \"most-six\", title: \"刚好装到上限，也算满足吗？\", navGroup: \"meaning\", navLabel: \"规则与判断\", blocks: [\n      p(\"一个收纳盒最多允许放6件物品，现在放了5件。先用一句话判断：现在是否满足“最多6件”？如果再放1件，恰好6件呢？“最多”包括刚好达到上限的情况，超过6件才不满足这条规定。\"),\n      p(\"把实际件数交给count，把最大件数交给limit。两个值都是整数，也都以“件”为单位，可以直接比较。这里的边界就是限制值6；接下来要让Python给出能核对的真假结果。\"),\n    ] },\n    { id: \"compare-limit\", title: \"把“最多”写成一个比较式\", navGroup: \"meaning\", navLabel: \"规则与判断\", blocks: [\n      p(\"Python用<表示小于：左边严格小于右边时才为真，恰好相等不算。<=表示小于或等于，既包括小于，也包括相等。<=是两个字符连续写成的一个比较运算符，中间不拆开。\"),\n      p(\"count <= limit把实际数量放左边、限制值放右边，判断实际数量是否小于或等于限制。像这样用比较运算符连接两个值的写法，叫比较表达式。本节比较普通整数，结果是2.2认识的布尔值True或False。先写下5件与最多6件的预测，再输入下方完整程序。\"),\n      sample(\"basic\"),\n      p(\"在自己的练习文件夹新建capacity_check.py，行首不加缩进，源码放在.venv外。保存后用pwd和Windows的dir确认文件，沿用已核验的解释器运行第一条命令；macOS用pwd、ls确认后运行第二条。此前一直用py的Windows环境可保持py。后面的新文件只替换命令中的文件名，每次都保存并从头运行整份.py。\"),\n      output(\"Windows · PowerShell · 文件所在目录\", \"python capacity_check.py\"), output(\"macOS · 终端 · 文件所在目录\", \"python3 capacity_check.py\"), output(\"首次比较 · 预期输出\", \"True\"),\n      p(\"True回答的是“5是否小于或等于6”，与本题“最多6件”一致。比较只取得这个判断；程序还没有根据结果选择行动。先能写出并解释真假结果，就可以完成本节任务。\"),\n    ] },\n    { id: \"keep-result\", title: \"比较的结果也能交给一个名称\", navGroup: \"assignment\", navLabel: \"赋值与比较\", blocks: [\n      p(\"2.3中，右边先算出数量，再由=保存结果。比较也可以这样做：右侧count <= limit先得到True，=再让within_limit对应这个布尔值，随后print读取它。名称表示“在限制之内”，保存的是这一次的真假结果。\"),\n      p(\"在capacity_check.py原三行末尾追加下面两行，保留该文件前面的count和limit赋值。先预测新增输出，再保存完整运行；它依赖前两项赋值，不能放进空文件直接执行。改数值后也要完整重跑，让比较那一行再次执行。\"),\n      sample(\"saveResult\"), output(\"新增一行 · 接在首次True之后\", \"True\"),\n    ] },\n    { id: \"equal-or-different\", title: \"=保存值，==判断是否相等\", navGroup: \"assignment\", navLabel: \"赋值与比较\", blocks: [\n      p(\"若想问“是不是刚好达到6件”，用==比较左右两个值是否相等。它是一个比较运算符，得到True或False，不是执行两次赋值。!=则判断两值是否不相等。符号都连续写；=仍负责给名称赋值，不能代替==来问相不相等。\"),\n      p(\"在capacity_check.py末尾继续加这两行。先根据该文件仍为5和6的当前值分别预测，再保存从头运行。新增两行输出各在回答什么？\"),\n      sample(\"equalNot\"), output(\"追加的两行 · 接在两个True之后\", \"False\\nTrue\"),\n      p(\"5与6不相等，所以==得到False，!=得到True。这两次比较没有把count改成6；它仍保存5。区别可以再用一份合法的小程序观察：先给count赋5并比较，再重新赋6并比较。先预测两行，再保存为assignment_or_comparison.py完整运行。\"),\n      sample(\"assignCompare\"), output(\"赋值后再比较 · 预期输出\", \"False\\nTrue\"),\n      p(\"第一条赋值让count对应5，所以和6相等的判断是假；后一次赋值让它对应6，再作相等判断就是真。两条print中的==取得判断，改变当前数值的是各自前面的=。本题只需这些合法操作来分清两者。\"),\n    ] },\n    { id: \"above-limit\", title: \"超过上限，与至少达到有什么不同？\", navGroup: \"meaning-two\", navLabel: \"超过与达到\", blocks: [\n      p(\"现在单独看7件与上限6件。>表示大于，左边严格超过右边时为真；>=表示大于或等于，表示“至少达到”，也包括刚好等于。这两个问题与“最多”不同：超过上限时，至少达到上限也为真，但并不表示满足最多6件的规定。\"),\n      p(\"先预测下面三行，分别判断7是否超过6、是否至少达到6、是否仍满足最多6。另存为above_limit.py，保存并完整运行。\"),\n      sample(\"greater\"), output(\"超过/至少达到/最多 · 预期输出\", \"True\\nTrue\\nFalse\"),\n      p(\"前两行都为True，因为7确实大于6，也满足大于或等于6。最后一行为False，因为本次已经超过最大件数。等于6时>和>=还会不会相同，稍后用边界实验核对。\"),\n    ] },\n    { id: \"main-example\", title: \"把三项判断放回同一份记录\", navGroup: \"boundary\", navLabel: \"边界验证\", blocks: [\n      p(\"回到最初5件、最多6件的条件。下面完整主例将不超过、刚好等于、不等于三项判断集中起来。先预测三行，并各写一句含义，再另存capacity_results.py保存运行。\"),\n      sample(\"main\"), output(\"完整主例 · 三行预期输出\", \"True\\nFalse\\nTrue\"),\n      p(\"within_limit保存5不超过6的结果；第二行说明尚未刚好达到6，第三行说明两值不同。每一行都要和自己的判断问题对应，不能只把三个真假词背成固定答案。\"),\n    ] },\n    { id: \"boundary-runs\", title: \"固定上限，验证边界附近三个值\", navGroup: \"boundary\", navLabel: \"边界验证\", blocks: [\n      p(\"新建boundary_values.py，保持limit为6。下面三条print依次问严格小于、最多、恰好等于。先在笔记写count为5时的三行预测，再保存并完整运行下面的文件，保留源码、命令和真实输出。\"),\n      sample(\"boundaryLow\"), output(\"低于边界 · 运行后核对\", \"True\\nTrue\\nFalse\"),\n      p(\"第二轮只把count的赋值改为6，limit和三条比较都不动。先写新预测，保存，用同一命令完整运行，保留本轮源码与输出。第三轮再只把count改为7，重新预测、保存和运行。三次运行是三份真实证据，一次截图或手抄表格不能代替。\"),\n      { type: \"table\", caption: \"三轮运行后，按相同输出顺序核对\", columns: [\"count（件）\", \"count < limit\", \"count <= limit\", \"count == limit\"], rows: [[\"5\",\"True\",\"True\",\"False\"],[\"6\",\"False\",\"True\",\"True\"],[\"7\",\"False\",\"False\",\"False\"]] },\n      p(\"最值得看的是count恰好为6：<得到False，<=得到True。前者不包含相等，后者包含相等。若题目规定“最多6件”，6件满足；若规定“必须少于6件”，6件就不满足。符号本身不固定代表允许或禁止，要先读清实际规则。\"),\n      p(\"再把等值位置单独拿出来，同时核对已经解释过的六种比较。先预测，保存six_comparisons.py运行。第一条print只是已学的固定文字标签At capacity，后面六条才依次显示比较结果；引号只围住这段文字，不围住整数。\"),\n      sample(\"allAtCapacity\"), output(\"等值位置 · 标签及六条预期结果\", \"At capacity\\nFalse\\nTrue\\nFalse\\nTrue\\nTrue\\nFalse\"),\n      { type: \"table\", caption: \"同为6件时，不同规则问的是不同问题\", columns: [\"规则\", \"本例比较\", \"6件时\"], rows: [[\"最多6件\",\"count <= limit\",\"True\"],[\"少于6件\",\"count < limit\",\"False\"],[\"至少6件\",\"count >= limit\",\"True\"],[\"多于6件\",\"count > limit\",\"False\"],[\"恰好6件\",\"count == limit\",\"True\"],[\"不等于6件\",\"count != limit\",\"False\"]] },\n      p(\"这里每一式只比较左右两个普通整数。两题也先按这个范围操作，分别运行并解释结果；组合多个条件或根据真假改变执行路线，是之后的内容。\"),\n    ] },\n    { id: \"practice\", title: \"自己选规则，再验证含不含边界\", navGroup: \"practice\", navLabel: \"独立练习\", blocks: [\n      p(\"先合上参考答案，自建两份短.py。正式成果保存在本地，网页输入框只是临时思考区。每轮留源码、命令、预测和真实输出，用简短文字说明规则即可。\"),\n      { type: \"exercise\", id: \"compare-and-explain\", title: \"写出自己的三项数量判断\", kind: \"代码\",\n        prompt: \"另选与正文不同的容量情境，例如收纳架，自行确定合理的整数上限和实际数量，单位相同。不要照抄正文5/6整组数据或count、limit、within_limit这些变量名。创建新的.py，自选合法且有意义的名称保存两个量，写出实际值小于或等于上限、是否恰好等于上限、是否不等于上限三项比较。运行前分别预测True/False，保存并实际运行，逐项将真实结果对应到规则。交本人源码、变量/单位、命令、三项预测与实际结果，再简短说明=、==、!=各自做什么；至少结合一条真实赋值和一条真实相等比较说明。可以直接显示比较，也可先保存布尔结果再显示，不使用if或输入函数。\",\n        hints: [\"先用自己的话问：实际数量有没有超过上限，是否恰好到达，两个值是否不同？两个数量的单位一致吗？\", \"检查左边实际量和右边上限是否读到你保存的值，再逐项核对比较含义。赋值用于保存，判断相等和不等各有符号；仍由你选名称、数值、最终代码与预测。\"],\n        solution: [\n          `例如改用图书推车，现装9册、容量12册，新建book_cart.py，六行分别为：${lines(\"ownCompare\")}。每条语句各写一行，“第几行”和分隔文字不输入源码。`,\n          \"loaded_books是实际册数，cart_capacity是最多册数，两者单位都是册；fits_cart接住本次小于或等于的布尔结果。先预测True、False、True，再保存运行python book_cart.py（macOS用python3，已核验的py也可），保留本人实际三行结果核对。\",\n          \"9没有超过12，所以第一项为真；9没有刚好达到12，所以相等比较为假；两个值不同，所以不等比较为真。若换成自己选择的数据，必须按自己真实值重新解释，不把这组输出当所有情境的答案。\",\n          \"前两行的=分别给名称提供整数，第三行的=保存右侧比较结果；第五行的==只问两值是否相等，最后一行的!=问是否不同。==是一个比较运算符，不是赋值两次。\",\n          \"常错包括把实际值/上限位置颠倒、用赋值代替比较、只打印预写True/False，或改了文件未保存。沿源码核对数量和规则，再真实重跑。接受其他新情境、合理上限、合法名称及等价正确写法；不能只交符号表或复制参考输出。\",\n        ],\n        rubric: [\n          \"本人新.py含自选容量情境、新整数与合法名称，实际量/上限单位相同，真实写出<=、==、!=三项比较并显示结果，而非只打印答案常量。\",\n          \"运行前有三项预测，实际命令/源码/完整三项结果对应；逐项解释是在判断最多、恰好还是不同，并核对预测差异。\",\n          \"结合本人赋值与相等/不等比较说明=、==、!=的不同作用，变量读取拼写一致，实际操作可复现；Quiz、文字方案或读完标记不能代替代码。\",\n        ],\n      },\n      { type: \"exercise\", id: \"test-boundary-values\", title: \"上限不变，独立运行三种边界\", kind: \"代码\",\n        prompt: \"另建新.py，自选一种“最多可装若干件”的新情境和正整数上限，不用正文上限6。自己选合法名称，固定上限，在同一个文件写出实际量<上限、实际量<=上限两项判断，再选>或>=加一项验证，并说明它问的是超过还是至少达到。先把实际量设为低于上限，预测三项、保存并真实运行；第二轮只改实际量使它恰好等于上限，再预测、保存、完整运行；第三轮只改实际量使它高于上限，再完整重复。交三轮具体值、对应源码、命令、运行前预测和真实输出，上限及比较式保持不变。说明相等时<与<=为何不同，以及“最多”和“必须少于”分别是否包含边界。不用循环自动测试，不只抄三行真假表。\",\n        hints: [\"先在纸上标出低于、恰好等于、高于三个位置，各选一个实际量。上限是否始终是同一个数？相等位置最能区分哪些规则？\", \"逐项看符号是否带等号，额外判断问的是超过还是至少达到。把证据分成三次预测、保存和运行，每次只改实际量，仍由你填数据、代码与真实结果。\"],\n        solution: [\n          `例如展板最多放10幅画，先放9幅。新建display_boundary.py，五行分别为：${lines(\"ownBoundaryLow\")}。每条语句单独一行，数量单位都是幅，第三项>=问是否至少达到上限，不代表是否仍允许放入。`,\n          \"第一轮9低于10，先预测True、True、False，保存后运行python display_boundary.py（macOS用python3），留本人真实输出。第一项严格小于为真，第二项最多为真，第三项至少达到为假。\",\n          `第二轮只改实际量为10，五行依次为：${lines(\"ownBoundaryEqual\")}。先预测False、True、True，再保存并用同一命令完整运行。相等不满足严格小于，但满足小于或等于，也满足至少达到。`,\n          `第三轮只改实际量为11，五行依次为：${lines(\"ownBoundaryHigh\")}。先预测False、False、True，再保存完整运行。已经超过最多10幅；>=仍为True，因为至少达到10也包含更大值，并不只表示刚好装满。`,\n          \"最多10幅包含10，必须少于10幅排除10；三个实际值不同，上限和三项规则都没改变。若额外选>，三轮那一项应是False、False、True，相等时不包含边界。接受其他新上限、三个合理整数、合法名称与正确的额外判断。\",\n          \"常错是第二轮连上限也改了、三轮仍读旧文件、未完整重跑、只交最终高于一轮或把>=说成刚好相等。逐轮核对保存源码、值与命令，保留真实差异和说明，不用一张参考表冒充三次运行。\",\n        ],\n        rubric: [\n          \"本人固定同一新上限，三个实际整数确实分别低于、等于、高于，上限/比较式在三轮保持，只改实际量；源码均不使用未教控制流程。\",\n          \"三轮都保留保存源码、实际命令、事先三项预测与真实完整输出，<、<=及额外>或>=与本轮值对应，不把一次运行冒充三轮。\",\n          \"能结合相等一轮解释<排除边界而<=包含边界，说明最多/少于的实际规则，并正确解释额外比较是超过或至少达到。合理替代名和新整数可达标，抄表或网页读完不算操作证据。\",\n        ],\n      },\n    ] },\n    { id: \"next-step\", title: \"先读规则，再用边界检查真假\", navGroup: \"finish\", navLabel: \"回顾与后续\", blocks: [\n      { type: \"summary\", points: [\"本课的普通整数比较得到True或False，结果回答的是所写出的数量关系。\", \"=保存值，==判断相等，!=判断不同；严格小于/大于与含等号的比较在相等位置有区别。\", \"固定规则与上限，低于、等于、高于三轮先预测、保存并完整运行，再核对含不含边界。\"] },\n      p(\"保留本人两份.py及短记录，能换一个上限重新验证、解释每个真假结果，才有独立代码证据。网页读完不代表已经会选符号，比较结果本身也没有替程序选择行动。\"),\n      p(\"接下来规划2.5「取得用户输入，再转成需要的数值」，目前没有可读正文，2.6也仍在规划。按课程顺序还需完成输入输出与控制流程等中间内容，再进入第5章函数试读；阅读器的下一可读导航不表示直接跳学建议。整门PY101仍在筹备。\"),\n    ] },\n  ], resources: [],\n  references: [\n    { title: \"Python比较表达式\", href: \"https://docs.python.org/3.14/reference/expressions.html#comparisons\", note: \"核对比较符号及普通数值结果。\" },\n    { title: \"值比较\", href: \"https://docs.python.org/3/reference/expressions.html#value-comparisons\", note: \"本课只使用同单位普通整数，其他比较规则延后。\" },\n    { title: \"赋值语句\", href: \"https://docs.python.org/3.14/reference/simple_stmts.html#assignment-statements\", note: \"核对取得右侧结果再绑定名称。\" },\n    { title: \"布尔类型\", href: \"https://docs.python.org/3.14/library/stdtypes.html#boolean-type-bool\", note: \"核对True、False与bool，衔接2.2。\" },\n  ],\n});\n",
+      "afterSha256": "1a41a38a5b4f8f4ce08a40f6720d89eff8d0182d21aefeff8a5e7286c5227360"
+    },
+    {
+      "path": "scripts/validate-python.ts",
+      "before": "import { spawnSync } from \"node:child_process\";\nimport { writeFile } from \"node:fs/promises\";\nimport { evidencePath } from \"./evidence-path\";\nimport { lessonRegistry } from \"../src/lib/course-engine\";\nimport { corePrograms, regressionCoreCode } from \"../src/content/resources/core-programs\";\nimport { programs, gradientDescentCode } from \"../src/content/resources/programs\";\nimport { notebookCode, notebookBlockNames } from \"../src/content/resources/python-notebook\";\nimport { reproductionCode, reproductionBlockNames } from \"../src/content/resources/python-reproduction\";\nimport { runVariableExample } from \"./python-variable-checks\";\nimport { runValueTypeExample } from \"./validate-py101-value-types\";\nimport { runArithmeticExample } from \"./validate-py101-arithmetic\";\nimport { runComparisonExample } from \"./validate-py101-comparisons\";\n\nconst python = process.env.AIVORA_PYTHON ?? \"python\";\nfunction run(args: string[]) {\n  const result = spawnSync(python, args, {\n    encoding: \"utf8\",\n    env: { ...process.env, PYTHONIOENCODING: \"utf-8\" },\n    timeout: 30_000,\n  });\n  if (result.error || result.status !== 0)\n    throw new Error(`Python 校验失败：${result.error ?? result.stderr}`);\n  return {\n    exitCode: result.status,\n    stdout: result.stdout.replace(/\\r\\n/g, \"\\n\").trim(),\n    stderr: result.stderr.replace(/\\r\\n/g, \"\\n\").trim(),\n  };\n}\nconst environment = run([\n  \"-c\",\n  \"import sys,numpy; print(sys.version.split()[0]); print('NumPy',numpy.__version__)\",\n]);\nconst unit = run([\n  \"-m\",\n  \"unittest\",\n  \"discover\",\n  \"-s\",\n  \"tests\",\n  \"-p\",\n  \"test_*.py\",\n  \"-v\",\n]);\nconst examples = [...lessonRegistry.values()].flatMap((lesson) =>\n  lesson.sections.flatMap((section) =>\n    section.blocks.flatMap<Record<string, unknown>>((block) => {\n      if (block.type !== \"code\" || block.language !== \"python\") return [];\n      if (lesson.id === \"PY101-C02-L01\") {\n        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runVariableExample(block.filename, block.code) }];\n      }\n      if (lesson.id === \"PY101-C02-L02\") {\n        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runValueTypeExample(block.filename, block.code) }];\n      }\n      if (lesson.id === \"PY101-C02-L03\") {\n        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runArithmeticExample(block.filename, block.code) }];\n      }\n      if (lesson.id === \"PY101-C02-L04\") {\n        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runComparisonExample(block.filename, block.code) }];\n      }\n      let setup = \"\";\n      if (lesson.id === \"PY101-C01-L06\") {\n        const key = (Object.keys(reproductionCode) as (keyof typeof reproductionCode)[]).find(key => reproductionBlockNames[key] === block.filename);\n        if (!key || block.code !== reproductionCode[key]) throw new Error(`未登记的复现课源码：${block.filename}`);\n        if (key === \"show\") setup = reproductionCode.assign;\n      }\n      if (lesson.id === \"PY101-C01-L05\") {\n        const key = (Object.keys(notebookCode) as (keyof typeof notebookCode)[]).find(key => notebookBlockNames[key] === block.filename);\n        if (!key || block.code !== notebookCode[key]) throw new Error(`未登记的Notebook单元格：${block.filename}`);\n        if (key === \"showMarker\") setup = notebookCode.setDraft;\n        if (key === \"showDelivery\") setup = notebookCode.setDelivery;\n      }\n      // Notebook使用前格上下文；仍实际执行每块。重启/旧状态/预期NameError另由真实内核专项检验。\n      const result = run([\"-c\", setup ? setup + \"\\n\" + block.code : block.code]);\n      if (lesson.id === \"PY101-C01-L06\") {\n        const expected: Record<string, string> = { [reproductionBlockNames.notice]: \"Notice N8\", [reproductionBlockNames.target]: \"Target R9\", [reproductionBlockNames.assign]: \"\", [reproductionBlockNames.show]: \"Checked F3\" };\n        if (block.filename in expected && result.stdout !== expected[block.filename]) throw new Error(`复现课输出不符：${block.filename}`);\n      }\n      if (lesson.id === \"PY101-C01-L05\") {\n        const expected: Record<string, string> = { [notebookBlockNames.setDraft]: \"\", [notebookBlockNames.setReady]: \"\", [notebookBlockNames.showMarker]: \"Draft A\", [notebookBlockNames.setDelivery]: \"\", [notebookBlockNames.showDelivery]: \"Packed C7\" };\n        if (block.filename in expected && result.stdout !== expected[block.filename]) throw new Error(`Notebook顺序输出不符：${block.filename}`);\n      }\n      if (lesson.id === \"PY101-C01-L04\") {\n        const independentExpected: Record<string, string> = { \"project-a/main.py\": \"Project A A4\", \"project-b/main.py\": \"Project B B6\" };\n        if (independentExpected[block.filename] !== undefined && result.stdout !== independentExpected[block.filename]) throw new Error(`虚拟环境课源码输出不符：${block.filename}`);\n        if (block.filename.startsWith(\"observe_env.py\")) {\n          for (const label of [\"Interpreter:\", \"Environment:\", \"Base Python:\", \"Version:\"]) if (!result.stdout.includes(label)) throw new Error(`诊断字段遗漏：${label}`);\n          // 全网页校验在当前基础Python执行；目标venv判据另由真实环境专项验证。\n        }\n      }\n      const expected = ({ \"第一条Python指令\": \"Hello, Aivora!\", \"first_run.py\": \"Hello, Aivora!\\nFile: first_run.py\", \"read_vector_components.py\": \"4 0 7\", \"add_two_vectors.py\": \"[2, 3]\", \"scale_vector.py\": \"[-6, -4]\", \"double_without_function.py\":\"6\", \"double_definition.py\":\"\", \"one_update.py\":\"-13.0 -8.0 1.3 0.8 1.685\", \"one_update_checks.py\":\"-13.0 -8.0 1.3 0.8 1.685\" } as Record<string,string>)[block.filename];\n      if (expected !== undefined && result.stdout !== expected)\n        throw new Error(`教材输出与预期不一致：${block.filename}`);\n      return [\n        {\n          lessonId: lesson.id,\n          sectionId: section.id,\n          filename: block.filename,\n          ...([\"PY101-C01-L05\", \"PY101-C01-L06\"].includes(lesson.id) ? { executionMode: setup ? \"ordered-cells\" : \"independent-cell\", setup } : {}),\n          ...(expected !== undefined ? { expected } : {}),\n          ...result,\n        },\n      ];\n    }),\n  ),\n);\nconst expectedOutputs: Record<keyof typeof corePrograms, string> = {\n  \"function-basics\": \"6\", \"function-binding\": \"12\\n12\", \"function-return\": \"4\\n4 None\",\n  \"function-scope\": \"5\\n10\", \"function-defaults\": \"6\\n12\", \"vector-basics\": \"[4, 3] [2, 4]\",\n  \"vector-dot\": \"5\", \"matrix-shape\": \"[[1, 4], [2, 5], [3, 6]]\",\n  \"matrix-product\": \"[[4 6]\\n [1 3]]\", \"numpy-shapes\": \"(2,) (2,)\\n(2, 1) (1, 2)\\n5\",\n};\nconst coreComparisons = Object.entries(corePrograms).map(([id, sample]) => {\n  const core = run([\"-c\", sample.core + \"\\n\" + sample.checks]);\n  const full = run([\"-c\", programs[id as keyof typeof corePrograms].code]);\n  if (core.stdout !== expectedOutputs[id as keyof typeof corePrograms] || core.stdout !== full.stdout)\n    throw new Error(`核心/完整版输出与预期不一致：${id}`);\n  return { id, expected: expectedOutputs[id as keyof typeof corePrograms], ...core, fullMatches: true };\n});\nconst trainingComparison = run([\"-c\", `import numpy as np\ncore, full = {}, {}\nexec(${JSON.stringify(regressionCoreCode)}, core)\nexec(${JSON.stringify(gradientDescentCode)}, full)\nnp.testing.assert_allclose([core['w'], core['b'], core['final_loss']], [full['w'], full['b'], full['final_loss']], atol=1e-12, rtol=0)\nnp.testing.assert_allclose([core['w'], core['b']], [2,1], atol=1e-7, rtol=0)\nassert core['final_loss'] < 1e-10\nprint('core/full training match; independent expected line y=2x+1')\n`]);\nconst report = {\n  checkedAt: new Date().toISOString(),\n  environment: environment.stdout,\n  unittest: unit,\n  examples,\n  coreComparisons,\n  trainingComparison,\n  note: \"技术校验通过；不代表人工内容审核、试学或正式发布。代码来自仓库静态教材，仅开发阶段执行。\",\n};\nconst reportPath = evidencePath(\"TEACHING_V2_3_PYTHON_RESULTS.json\");\nawait writeFile(\n  reportPath,\n  JSON.stringify(report, null, 2) + \"\\n\",\n);\nconsole.log(\n  `Python 单元测试通过，${examples.length} 个网页代码块按成功/受控错误契约实际执行通过，${coreComparisons.length} 组核心/完整版一致。证据：${reportPath}`,\n);\n",
+      "afterSha256": "abdd0438a0fa5082d2abaf32406768ae72e977e7a47b3431d06226d218f4fb39"
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "before": "import { createHash } from \"node:crypto\";\nimport { readFileSync } from \"node:fs\";\n\ntype SourceChange = { path: string; before: string; afterSha256: string };\ntype ObjectChange = { id: string; before: unknown; afterSha256: string };\n// 使用同一个登记器按新到旧撤销已批准修订；不为每轮再嵌套一个专用兼容器。\ntype RevisionPlan = { baseline: string; sources: SourceChange[]; lessons: ObjectChange[]; publications: ObjectChange[]; addedLessonIds: string[]; workspaceOnly: { path: string; workspaceSha256: string; repositorySha256: string }[]; protectedText: { path: string; baselineSha256: string; lfSha256: string }[] };\nconst plans = [\"py101-p11\", \"py101-p10\", \"py101-p9\", \"py101-p8\", \"py101-p7\", \"py101-p6\", \"py101-p5\", \"py101-p4\", \"py101-p3\", \"py101-p2\"].map(round => JSON.parse(readFileSync(new URL(`../docs/${round}/APPROVED_CHANGES.json`, import.meta.url), \"utf8\")) as RevisionPlan);\nfunction revisions(throughBaseline?: string) {\n  const index = plans.findIndex(plan => plan.baseline === throughBaseline);\n  return index < 0 ? plans : plans.slice(0, index + 1);\n}\nconst sources = JSON.parse(readFileSync(new URL(\"../docs/py101-p1/SOURCE_CHANGES.json\", import.meta.url), \"utf8\")) as SourceChange[];\nconst sha = (source: string) => createHash(\"sha256\").update(source).digest(\"hex\");\nfunction undoSource(entries: SourceChange[], path: string, source: string) {\n  const entry = entries.find(row => row.path === path);\n  return entry && sha(source.replaceAll(\"\\r\\n\", \"\\n\")) === entry.afterSha256 ? entry.before : source;\n}\nexport const approvedPy101Additions = [...new Set(plans.flatMap(plan => plan.addedLessonIds))];\nexport function beforeApprovedPy101Source(path: string, source: string, throughBaseline?: string) {\n  return revisions(throughBaseline).reduce((value, plan) => undoSource(plan.sources, path, value), source);\n}\n// 自动回归允许原工作区与干净检出两种精确版本；工作区审计脚本仍严格要求原始指纹。\nexport function protectedPy101FileMatches(path: string, bytes: Buffer, expected: string, throughBaseline?: string) {\n  const digest = createHash(\"sha256\").update(bytes).digest(\"hex\");\n  if (digest === expected) return true;\n  const text = bytes.toString(\"utf8\");\n  // Git检出可转换文本换行；二进制仍逐字节比较，绝不以UTF-8解码后的图像作摘要。\n  const validText = !text.includes(\"\\0\") && Buffer.from(text).equals(bytes);\n  const variants = (value: string) => { const lf = value.replaceAll(\"\\r\\n\", \"\\n\"); return [lf, lf.replaceAll(\"\\n\", \"\\r\\n\")]; };\n  const matches = (value: string, target: string) => validText && variants(value).some(source => sha(source) === target);\n  if (matches(text, expected)) return true;\n  const relevant = revisions(throughBaseline);\n  const portable = relevant.flatMap(plan => plan.protectedText).find(row => row.path === path && row.baselineSha256 === expected);\n  if (portable && validText && sha(text.replaceAll(\"\\r\\n\", \"\\n\")) === portable.lfSha256) return true;\n  const local = relevant.flatMap(plan => plan.workspaceOnly).find(row => row.path === path && row.workspaceSha256 === expected);\n  if (local?.workspaceSha256 === expected && (local.repositorySha256 === digest || matches(text, local.repositorySha256))) return true;\n  return matches(beforeApprovedPy101Source(path, text, throughBaseline), expected);\n}\nexport function beforeApprovedPy101Object(kind: \"lessons\" | \"publications\", id: string, value: unknown, throughBaseline?: string) {\n  return revisions(throughBaseline).reduce((current, plan) => {\n    const entry = plan[kind].find(row => row.id === id);\n    return entry && sha(JSON.stringify(current)) === entry.afterSha256 ? entry.before : current;\n  }, value);\n}\n// 只有完整文件摘要命中才还原；未登记的任何附加修改必须继续暴露给旧保护测试。\nexport function beforePy101P1Source(path: string, source: string) {\n  return undoSource(sources, path, beforeApprovedPy101Source(path, source));\n}\n",
+      "afterSha256": "e9490ce0a7fd0c681039663c02938f5eb2c43eef5553d6d49c0a80e0d009d54b"
+    },
+    {
+      "path": "tests/content.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { readFile, stat } from \"node:fs/promises\";\nimport { createHash } from \"node:crypto\";\nimport katex from \"katex\";\nimport sharp from \"sharp\";\nimport { lessonRegistry, resolveLesson } from \"../src/lib/course-engine\";\nimport { programs } from \"../src/content/resources/programs\";\nimport { readablePublications } from \"../src/content/publication-manifest\";\nimport { assertRegisteredInventory } from \"./helpers/registered-content\";\n\ntest(\"四门不同类型教材用同一模型，公式可严格解析，图片有正确尺寸和可读替代文字\", async () => {\n  assertRegisteredInventory();\n  for (const publication of readablePublications) {\n    const { lesson } = resolveLesson(\n      publication.courseId,\n      publication.lessonId,\n    )!;\n    const blocks = lesson.sections.flatMap((s) => s.blocks);\n    if (lesson.courseId === \"AI000\") {\n      assert.equal(blocks.filter((block) => block.type === \"exercise\").length, lesson.id === \"AI000-C01-L02\" ? 3 : 2);\n      // 不设每课配图门槛；原14幅精确图由兼容测试逐幅保护，5.1采用可回查表格。\n      assert.ok(blocks.some((block) => block.type === \"table\"));\n      // 结课页仅复用text块复制Markdown模板，不引入可执行课程代码。\n      assert.ok(blocks.every((block) => block.type !== \"experiment\" && (block.type !== \"code\" || (lesson.id === \"AI000-C07-L03\" && block.language === \"text\" && block.filename === \"AI000-final-report.md\"))));\n      assert.equal(blocks.filter(block => block.type === \"code\").length, lesson.id === \"AI000-C07-L03\" ? 1 : 0);\n      assert.equal(blocks.filter(block => block.type === \"math\").length, lesson.id === \"AI000-C05-L05\" ? 2 : 0);\n    } else if (lesson.courseId === \"MA101\" && publication.catalogRole !== \"legacy\") {\n      assert.ok(lesson.sections.filter((section) => section.tier === \"core\").flatMap((section) => section.blocks).filter((block) => block.type === \"exercise\").length >= 2);\n      assert.ok(blocks.some((block) => block.type === \"vector-figure\"));\n      assert.ok(lesson.sections.filter((section) => section.tier === \"core\").every((section) => !section.blocks.some((block) => block.type === \"code\")));\n    } else if (lesson.chapterId === \"PY101-C01\" || [\"PY101-C02-L01\", \"PY101-C02-L02\", \"PY101-C02-L03\", \"PY101-C02-L04\"].includes(lesson.id)) {\n      // 操作型首章及变量入门用目标对应的核心开放题验收；旧样章仍保留下面的Quiz契约。\n      const tasks = lesson.sections.filter(s => s.tier === \"core\").flatMap(s => s.blocks).filter(b => b.type === \"exercise\");\n      assert.ok(tasks.length > 0);\n      for (const row of lesson.assessmentMap) assert.ok(row.exerciseIds.every(id => tasks.some(task => task.id === id)));\n      assert.ok(blocks.some(b => b.type === \"code\" && b.language === \"python\"));\n    } else {\n      assert.ok(blocks.filter((b) => b.type === \"quiz\").length >= 2);\n      assert.ok(blocks.some((b) => b.type === \"code\"));\n    }\n    assert.equal(publication.status, \"pending-review\");\n    assert.equal(publication.reviewEvidence, undefined);\n    for (const block of blocks) {\n      if (block.type === \"math\")\n        assert.doesNotThrow(() =>\n          katex.renderToString(block.latex, {\n            throwOnError: true,\n            strict: \"error\",\n            trust: false,\n          }),\n        );\n      if (block.type === \"image\") {\n        const bytes = await readFile(`public${block.src}`);\n        const metadata = await sharp(bytes).metadata();\n        assert.equal(metadata.format, block.src.endsWith(\".webp\") ? \"webp\" : \"png\");\n        assert.equal(metadata.width, block.width);\n        assert.equal(metadata.height, block.height);\n        assert.ok(block.alt.length > 30);\n        if (block.mobile) {\n          const mobileBytes = await readFile(`public${block.mobile.src}`);\n          const mobileMetadata = await sharp(mobileBytes).metadata();\n          assert.equal(mobileMetadata.format, block.mobile.src.endsWith(\".webp\") ? \"webp\" : \"png\");\n          assert.equal(mobileMetadata.width, block.mobile.width);\n          assert.equal(mobileMetadata.height, block.mobile.height);\n        }\n      }\n    }\n    for (const resource of lesson.resources)\n      assert.ok((await stat(`public${resource.href}`)).size > 0);\n  }\n  assert.deepEqual(\n    [...new Set([...lessonRegistry.values()].map((l) => l.courseId))].sort(),\n    [\"AI000\", \"MA101\", \"ML201\", \"PY101\"],\n  );\n});\ntest(\"全部下载脚本、Notebook 和网页完整代码同源，Notebook 不伪造执行结果\", async () => {\n  const codeBlocks = [...lessonRegistry.values()]\n    .flatMap((l) => l.sections.flatMap((s) => s.blocks))\n    .filter((b) => b.type === \"code\");\n  for (const program of Object.values(programs)) {\n    assert.equal(\n      await readFile(`public/downloads/${program.filename}.py`, \"utf8\"),\n      program.code,\n    );\n    assert.ok(\n      codeBlocks.some(\n        (block) =>\n          block.code === program.code &&\n          block.filename === `${program.filename}.py`,\n      ),\n    );\n    const notebook = JSON.parse(\n      await readFile(`public/downloads/${program.filename}.ipynb`, \"utf8\"),\n    );\n    assert.equal(notebook.cells[1].source.join(\"\"), program.code);\n    assert.equal(notebook.cells[1].execution_count, null);\n    assert.deepEqual(notebook.cells[1].outputs, []);\n  }\n});\ntest(\"课程体系 V1.0 的原始 Markdown 和 JSON 字节未变\", async () => {\n  for (const [path, hash] of [\n    [\n      \"curriculum/AI技术课程体系_V1.0.md\",\n      \"b863f49f3da43225b009b7053dff79d6b5985bf8da9327f7701bc40c0c9d5a73\",\n    ],\n    [\n      \"curriculum/AI技术课程目录_V1.0.json\",\n      \"a7f5723c2ac659bfe271eeeffc050c2d96c46fd68e29391051c88f5db2812366\",\n    ],\n  ])\n    assert.equal(\n      createHash(\"sha256\")\n        .update(await readFile(path))\n        .digest(\"hex\"),\n      hash,\n    );\n});\n",
+      "afterSha256": "9a1dfec364493515569db87974cee86721874f46fa23f9b14c844e0735bc1540"
+    },
+    {
+      "path": "tests/py101-numeric-comparisons.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { createHash } from \"node:crypto\";\nimport { readFileSync } from \"node:fs\";\nimport { pythonNumericComparisonsLesson as lesson } from \"../src/content/lessons/py101/numeric-comparisons\";\nimport { comparisonCode, comparisonBlockNames, comparisonSetups } from \"../src/content/resources/python-comparisons\";\nimport { comparisonKey, comparisonExpected, checkComparisonResult } from \"../scripts/validate-py101-comparisons\";\nimport { publicationManifest } from \"../src/content/publication-manifest\";\nimport { courseOutline } from \"../src/content/course-outline\";\nimport { isReadable, publicationSchema } from \"../src/content/models\";\nimport { lessonRegistry, resolveLesson, getLearningCourse, getAdjacentLessons } from \"../src/lib/course-engine\";\nimport { progressKey, createProgressStore, parseReadingProgress } from \"../src/lib/learning-progress\";\nimport { lessonProgressScope } from \"../src/lib/use-learning-progress\";\nimport { beforeApprovedPy101Source, beforeApprovedPy101Object } from \"../scripts/py101-p1-compatibility\";\nimport { assertRegisteredInventory, assertCourseAvailability } from \"./helpers/registered-content\";\nconst read=(name:string)=>JSON.parse(readFileSync(`docs/py101-p11/${name}.json`,\"utf8\"));\nconst sha=(v:unknown)=>createHash(\"sha256\").update(JSON.stringify(v)).digest(\"hex\");\n\ntest(\"2.4身份/order4/r1与实际草稿门禁，技术后试读不冒充人工审核\",()=>{\n  const entry=publicationManifest.find(p=>p.lessonId===lesson.id)!;\n  assert.deepEqual([entry.title,entry.courseId,entry.chapterId,entry.order,entry.contentVersion,entry.optionalLesson],[lesson.title,\"PY101\",\"PY101-C02\",4,1,false]);assert.equal(courseOutline.find(s=>s.lessonId===lesson.id)?.order,4);\n  const g=read(\"DRAFT_GATE\");assert.deepEqual([g.status,g.access,g.readable,g.resolveUndefined,g.directoryHrefAbsent],[\"draft\",\"private\",false,true,true]);\n  assert.equal(isReadable({...entry,status:\"draft\",access:\"private\",technicalEvidence:undefined}),false);assert.throws(()=>publicationSchema.parse({...entry,status:\"draft\",access:\"preview\"}));assert.throws(()=>publicationSchema.parse({...entry,status:\"pending-review\",access:\"preview\",technicalEvidence:undefined}));assert.equal(entry.reviewEvidence,undefined);\n  if(entry.status===\"draft\")assert.equal(resolveLesson(\"PY101\",lesson.id),undefined);else{assert.deepEqual([entry.status,entry.access,entry.technicalEvidence],[\"pending-review\",\"preview\",\"docs/py101-p11/TECHNICAL_REPORT.md\"]);assert.ok(resolveLesson(\"PY101\",lesson.id));}\n  assertRegisteredInventory();assertCourseAvailability(\"PY101\");\n});\n\ntest(\"三目标映射两项核心代码操作，提示不代填真假表，分项估时与反馈齐全\",()=>{\n  const tasks=lesson.sections.filter(s=>s.tier===\"core\").flatMap(s=>s.blocks).filter(b=>b.type===\"exercise\");assert.deepEqual(tasks.map(t=>t.id),[\"compare-and-explain\",\"test-boundary-values\"]);\n  assert.deepEqual(lesson.assessmentMap,[{objective:1,exerciseIds:tasks.map(t=>t.id)},{objective:2,exerciseIds:[tasks[0].id]},{objective:3,exerciseIds:[tasks[1].id]}]);\n  for(const t of tasks){assert.equal(t.kind,\"代码\");assert.equal(t.hints.length,2);assert.ok(t.solution.length>=4);assert.ok(t.rubric.length>=3);assert.doesNotMatch(t.hints.join(\"\"),/loaded_books|cart_capacity|art_total|True|False| = /);}\n  assert.match(tasks[1].prompt,/第二轮只改实际量/);assert.match(tasks[1].prompt,/第三轮只改实际量/);assert.deepEqual(lesson.learningTime,{reading:[10,15],practice:[6,10],coding:[12,18],basis:\"editorial-estimate\"});assert.deepEqual(lesson.resources,[]);\n});\n\ntest(\"六符号同源且每式仅比较两值，未知/改写代码不能被网页验证器略过\",()=>{\n  const blocks=lesson.sections.flatMap(s=>s.blocks).filter(b=>b.type===\"code\").filter(b=>b.language===\"python\");assert.deepEqual(blocks.map(b=>comparisonKey(b.filename,b.code)),[\"basic\",\"saveResult\",\"equalNot\",\"assignCompare\",\"greater\",\"main\",\"boundaryLow\",\"allAtCapacity\"]);\n  assert.equal(comparisonSetups.saveResult,\"count = 5\\nlimit = 6\");assert.equal(comparisonSetups.equalNot,comparisonSetups.saveResult);\n  const operators=new Set<string>();for(const b of blocks){assert.doesNotMatch(b.code,/\\b(input|int|float|bool|str)\\s*\\(|\\b(if|elif|else|for|while|and|or|not|is|import|def|try|except)\\b/);for(const line of b.code.split(\"\\n\")){const matches=line.match(/<=|>=|==|!=|[<>]/g)??[];assert.ok(matches.length<=1,\"不引入链式比较\");matches.forEach(op=>operators.add(op));}}\n  assert.deepEqual([...operators].sort(),[\"<\",\"<=\",\">\",\">=\",\"==\",\"!=\"].sort());assert.throws(()=>comparisonKey(\"unknown.py\",\"print(True)\"));assert.throws(()=>comparisonKey(comparisonBlockNames.main,comparisonCode.main.replace(\"<=\",\"<\")));\n});\n\ntest(\"主例、相等/不等与边界预期独立，错误类型/缺行/无关异常均被拒绝\",()=>{\n  assert.equal(comparisonExpected.main,\"True\\nFalse\\nTrue\\n\");assert.equal(comparisonExpected.assignCompare,\"False\\nTrue\\n\");assert.equal(comparisonExpected.greater,\"True\\nTrue\\nFalse\\n\");assert.equal(comparisonExpected.boundaryEqual,\"False\\nTrue\\nTrue\\n\");assert.equal(comparisonExpected.allAtCapacity,\"At capacity\\nFalse\\nTrue\\nFalse\\nTrue\\nTrue\\nFalse\\n\");\n  checkComparisonResult(\"boundaryEqual\",{exitCode:0,stdout:\"False\\nTrue\\nTrue\\n\",stderr:\"\"});\n  assert.throws(()=>checkComparisonResult(\"boundaryEqual\",{exitCode:0,stdout:\"False\\nFalse\\nTrue\\n\",stderr:\"\"}));assert.throws(()=>checkComparisonResult(\"main\",{exitCode:1,stdout:comparisonExpected.main,stderr:\"TypeError\"}));assert.throws(()=>checkComparisonResult(\"basic\",{exitCode:0,stdout:\"1\\n\",stderr:\"\"}));assert.throws(()=>checkComparisonResult(\"main\",{exitCode:0,stdout:\"True\\nFalse\\n\",stderr:\"\"}));\n});\n\ntest(\"真实保存文件三轮只改实际值，两个新题参考与陌生数据均有实际输出\",()=>{\n  const evidence=read(\"PYTHON_RUNS\"),row=(label:string)=>evidence.rows.find((r:{label:string})=>r.label===label);assert.equal(evidence.platform,\"win32\");assert.equal(evidence.allAssertionsPassed,true);\n  for(const k of Object.keys(comparisonCode) as (keyof typeof comparisonCode)[]){const r=row(k);checkComparisonResult(k,r);assert.equal(r.savedSource,(comparisonSetups[k]?comparisonSetups[k]+\"\\n\":\"\")+comparisonCode[k]);}\n  for(const [low,equal,high,from,to,above]of [[\"boundaryLow\",\"boundaryEqual\",\"boundaryHigh\",\"count = 5\",\"count = 6\",\"count = 7\"],[\"ownBoundaryLow\",\"ownBoundaryEqual\",\"ownBoundaryHigh\",\"art_total = 9\",\"art_total = 10\",\"art_total = 11\"],[\"new-boundary-low\",\"new-boundary-equal\",\"new-boundary-high\",\"stock_total = 13\",\"stock_total = 15\",\"stock_total = 18\"]]){\n    assert.equal(row(low).filename,row(equal).filename);assert.equal(row(equal).filename,row(high).filename);assert.equal(row(low).savedSource.replace(from,to),row(equal).savedSource);assert.equal(row(low).savedSource.replace(from,above),row(high).savedSource);\n  }\n  assert.equal(row(\"follow-appends\").stdout,\"True\\nTrue\\nFalse\\nTrue\\n\");assert.equal(row(\"stored-bool-type\").stdout,\"True\\nFalse\\nTrue\\n<class 'bool'>\\n\");assert.equal(row(\"new-equal-context\").stdout,\"True\\nTrue\\nFalse\\n\");assert.equal(row(\"new-boundary-high\").stdout,\"False\\nFalse\\nTrue\\n\");\n  assert.equal(new Set(evidence.rows.map((r:{shellPid:number})=>r.shellPid)).size,evidence.rows.length);assert.doesNotMatch(JSON.stringify(evidence),/[A-Za-z]:\\\\\\\\Users\\\\\\\\|token=/);\n});\n\ntest(\"2.1和2.3仅各末段状态/依据指针，核心与r1 scope保持且未知改写不获豁免\",()=>{\n  const base=read(\"BASELINE\"),ids=Object.keys(base.amendmentsBefore);\n  assert.deepEqual(ids.sort(),[\"PY101-C02-L01\",\"PY101-C02-L03\"]);\n  for(const id of ids){const before=base.amendmentsBefore[id],current=lessonRegistry.get(id)!,expected=structuredClone(before.lesson);expected.sections.at(-1).blocks[expected.sections.at(-1).blocks.length-1]=current.sections.at(-1)!.blocks.at(-1);assert.deepEqual(current,expected);assert.equal(current.contentVersion,1);assert.deepEqual(lessonProgressScope(current),lessonProgressScope(before.lesson));const pub=publicationManifest.find(p=>p.lessonId===id)!;assert.deepEqual(pub,{...before.publication,technicalEvidence:pub.technicalEvidence});if(pub.technicalEvidence!==before.publication.technicalEvidence)assert.equal(pub.technicalEvidence,\"docs/py101-p11/TRANSITION_AMENDMENTS.md\");const tampered=structuredClone(current);tampered.title+=\" 未登记\";assert.deepEqual(beforeApprovedPy101Object(\"lessons\",id,tampered,base.head),tampered);}\n  for(const [id,digest]of Object.entries(base.lessons))if(!ids.includes(id))assert.equal(sha(lessonRegistry.get(id)),digest,id);for(const [id,digest]of Object.entries(base.publications))if(!ids.includes(id))assert.equal(sha(publicationManifest.find(p=>p.lessonId===id)),digest,id);\n  const source=readFileSync(\"src/lib/course-engine.ts\",\"utf8\"),plan=read(\"APPROVED_CHANGES\");assert.equal(beforeApprovedPy101Source(\"src/lib/course-engine.ts\",source,base.head),plan.sources.find((r:{path:string})=>r.path===\"src/lib/course-engine.ts\").before);assert.equal(beforeApprovedPy101Source(\"src/lib/course-engine.ts\",source+\"\\n// unauthorized\",base.head),source+\"\\n// unauthorized\");\n});\n\ntest(\"2.3到2.4相邻，2.5/2.6不注册且错误归属不可读，整课仍planned\",()=>{\n  const course=getLearningCourse(\"PY101\")!;assert.equal(course.status,\"planned\");if(isReadable(publicationManifest.find(p=>p.lessonId===lesson.id)!)){assert.equal(getAdjacentLessons(course,\"PY101-C02-L03\").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,\"PY101-C02-L03\");assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,\"PY101-C05-L01\");}\n  for(const id of [\"PY101-C02-L05\",\"PY101-C02-L06\"]){assert.equal(courseOutline.some(s=>s.lessonId===id),false);assert.equal(lessonRegistry.has(id),false);assert.equal(publicationManifest.some(p=>p.lessonId===id),false);assert.equal(resolveLesson(\"PY101\",id),undefined);}assert.equal(resolveLesson(\"ML201\",lesson.id),undefined);\n});\n\ntest(\"2.4新r1重载独立，不继承或覆盖旧课和旧修订完成记录\",()=>{\n  const memory=new Map<string,string>(),storage={getItem:(k:string)=>memory.get(k)??null,setItem:(k:string,v:string)=>{memory.set(k,v);}},store=createProgressStore(()=>storage);\n  for(const old of lessonRegistry.values())if(old.id!==lesson.id){const s=lessonProgressScope(old);store.save(s,100,s.sectionIds[0],true);if(s.contentVersion>1)store.save({...s,contentVersion:1},100,s.sectionIds[0],true);}\n  const before=new Map(memory),scope=lessonProgressScope(lesson);assert.equal(progressKey(scope),\"aivora:learning:v2:PY101:PY101-C02-L04:r1\");assert.equal(store.getSnapshot(scope),null);store.save(scope,51,\"boundary-runs\");const restored=parseReadingProgress(createProgressStore(()=>storage).getSnapshot(scope),scope);assert.equal(restored?.section,\"boundary-runs\");assert.equal(restored?.completed,false);for(const [k,v]of before)assert.equal(memory.get(k),v);\n});\n",
+      "afterSha256": "b3463445841d4c4b13314f637f79bcdf35389532b01d754101f22f06089025d8"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "PY101-C02-L04",
+      "before": {
+        "id": "PY101-C02-L04",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "contentVersion": 1,
+        "title": "让比较表达式给出真假结果",
+        "subtitle": "最多能放6件，刚好6件算不算满足？先写判断，再用三个边界值核对。",
+        "learningTime": {
+          "reading": [
+            10,
+            15
+          ],
+          "practice": [
+            6,
+            10
+          ],
+          "coding": [
+            12,
+            18
+          ],
+          "basis": "editorial-estimate"
+        },
+        "optionalLesson": false,
+        "assessmentMap": [
+          {
+            "objective": 1,
+            "exerciseIds": [
+              "compare-and-explain",
+              "test-boundary-values"
+            ]
+          },
+          {
+            "objective": 2,
+            "exerciseIds": [
+              "compare-and-explain"
+            ]
+          },
+          {
+            "objective": 3,
+            "exerciseIds": [
+              "test-boundary-values"
+            ]
+          }
+        ],
+        "prerequisites": "已完成第一章和2.1–2.3：会用变量保存整数，使用print，认识True/False与bool，理解右侧表达式求值再赋值，能预测、保存并从终端完整运行.py。沿用现有Python 3和编辑器，不装库；手机可读，代码操作需要电脑。",
+        "prerequisiteLinks": [
+          {
+            "title": "2.1 读取与更新",
+            "href": "/learn/PY101/PY101-C02-L01#read-and-update",
+            "note": "回顾=赋值和读取当前值。"
+          },
+          {
+            "title": "2.2 真假状态",
+            "href": "/learn/PY101/PY101-C02-L02#ready-state",
+            "note": "回顾True、False与字符串的差别。"
+          },
+          {
+            "title": "2.2 观察类型",
+            "href": "/learn/PY101/PY101-C02-L02#inspect-type",
+            "note": "需要时复习type的观察用途。"
+          },
+          {
+            "title": "2.3 先求右侧结果",
+            "href": "/learn/PY101/PY101-C02-L03#expression-to-value",
+            "note": "把已有数值表达式经验接到比较结果。"
+          },
+          {
+            "title": "1.3 保存与重跑",
+            "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+            "note": "核对保存状态与实际运行文件。"
+          }
+        ],
+        "objectives": [
+          "根据新的数量规则选择数值比较运算符，在自己创建的.py中取得真实True/False并解释判断含义",
+          "区分赋值=与相等比较==，正确使用相等和不等比较，先预测再核对实际布尔结果",
+          "固定限制值，手动改成低于、等于、高于的三个实际值，保存重跑并说明比较是否包含边界"
+        ],
+        "sections": [
+          {
+            "id": "most-six",
+            "title": "刚好装到上限，也算满足吗？",
+            "navGroup": "meaning",
+            "navLabel": "规则与判断",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "一个收纳盒最多允许放6件物品，现在放了5件。先用一句话判断：现在是否满足“最多6件”？如果再放1件，恰好6件呢？“最多”包括刚好达到上限的情况，超过6件才不满足这条规定。"
+              },
+              {
+                "type": "paragraph",
+                "text": "把实际件数交给count，把最大件数交给limit。两个值都是整数，也都以“件”为单位，可以直接比较。这里的边界就是限制值6；接下来要让Python给出能核对的真假结果。"
+              }
+            ]
+          },
+          {
+            "id": "compare-limit",
+            "title": "把“最多”写成一个比较式",
+            "navGroup": "meaning",
+            "navLabel": "规则与判断",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Python用<表示小于：左边严格小于右边时才为真，恰好相等不算。<=表示小于或等于，既包括小于，也包括相等。<=是两个字符连续写成的一个比较运算符，中间不拆开。"
+              },
+              {
+                "type": "paragraph",
+                "text": "count <= limit把实际数量放左边、限制值放右边，判断实际数量是否小于或等于限制。像这样用比较运算符连接两个值的写法，叫比较表达式。本节比较普通整数，结果是2.2认识的布尔值True或False。先写下5件与最多6件的预测，再输入下方完整程序。"
+              },
+              {
+                "type": "code",
+                "code": "count = 5\nlimit = 6\nprint(count <= limit)",
+                "filename": "capacity_check.py · 首次比较",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "在自己的练习文件夹新建capacity_check.py，行首不加缩进，源码放在.venv外。保存后用pwd和Windows的dir确认文件，沿用已核验的解释器运行第一条命令；macOS用pwd、ls确认后运行第二条。此前一直用py的Windows环境可保持py。后面的新文件只替换命令中的文件名，每次都保存并从头运行整份.py。"
+              },
+              {
+                "type": "code",
+                "code": "python capacity_check.py",
+                "filename": "Windows · PowerShell · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "python3 capacity_check.py",
+                "filename": "macOS · 终端 · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "True",
+                "filename": "首次比较 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "True回答的是“5是否小于或等于6”，与本题“最多6件”一致。比较只取得这个判断；程序还没有根据结果选择行动。先能写出并解释真假结果，就可以完成本节任务。"
+              }
+            ]
+          },
+          {
+            "id": "keep-result",
+            "title": "比较的结果也能交给一个名称",
+            "navGroup": "assignment",
+            "navLabel": "赋值与比较",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "2.3中，右边先算出数量，再由=保存结果。比较也可以这样做：右侧count <= limit先得到True，=再让within_limit对应这个布尔值，随后print读取它。名称表示“在限制之内”，保存的是这一次的真假结果。"
+              },
+              {
+                "type": "paragraph",
+                "text": "在capacity_check.py原三行末尾追加下面两行，保留该文件前面的count和limit赋值。先预测新增输出，再保存完整运行；它依赖前两项赋值，不能放进空文件直接执行。改数值后也要完整重跑，让比较那一行再次执行。"
+              },
+              {
+                "type": "code",
+                "code": "within_limit = count <= limit\nprint(within_limit)",
+                "filename": "追加片段 · capacity_check.py保存结果",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "True",
+                "filename": "新增一行 · 接在首次True之后",
+                "language": "text"
+              }
+            ]
+          },
+          {
+            "id": "equal-or-different",
+            "title": "=保存值，==判断是否相等",
+            "navGroup": "assignment",
+            "navLabel": "赋值与比较",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "若想问“是不是刚好达到6件”，用==比较左右两个值是否相等。它是一个比较运算符，得到True或False，不是执行两次赋值。!=则判断两值是否不相等。符号都连续写；=仍负责给名称赋值，不能代替==来问相不相等。"
+              },
+              {
+                "type": "paragraph",
+                "text": "在capacity_check.py末尾继续加这两行。先根据该文件仍为5和6的当前值分别预测，再保存从头运行。新增两行输出各在回答什么？"
+              },
+              {
+                "type": "code",
+                "code": "print(count == limit)\nprint(count != limit)",
+                "filename": "追加片段 · capacity_check.py相等与不等",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "False\nTrue",
+                "filename": "追加的两行 · 接在两个True之后",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "5与6不相等，所以==得到False，!=得到True。这两次比较没有把count改成6；它仍保存5。区别可以再用一份合法的小程序观察：先给count赋5并比较，再重新赋6并比较。先预测两行，再保存为assignment_or_comparison.py完整运行。"
+              },
+              {
+                "type": "code",
+                "code": "count = 5\nprint(count == 6)\ncount = 6\nprint(count == 6)",
+                "filename": "assignment_or_comparison.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "False\nTrue",
+                "filename": "赋值后再比较 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "第一条赋值让count对应5，所以和6相等的判断是假；后一次赋值让它对应6，再作相等判断就是真。两条print中的==取得判断，改变当前数值的是各自前面的=。本题只需这些合法操作来分清两者。"
+              }
+            ]
+          },
+          {
+            "id": "above-limit",
+            "title": "超过上限，与至少达到有什么不同？",
+            "navGroup": "meaning-two",
+            "navLabel": "超过与达到",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "现在单独看7件与上限6件。>表示大于，左边严格超过右边时为真；>=表示大于或等于，表示“至少达到”，也包括刚好等于。这两个问题与“最多”不同：超过上限时，至少达到上限也为真，但并不表示满足最多6件的规定。"
+              },
+              {
+                "type": "paragraph",
+                "text": "先预测下面三行，分别判断7是否超过6、是否至少达到6、是否仍满足最多6。另存为above_limit.py，保存并完整运行。"
+              },
+              {
+                "type": "code",
+                "code": "count = 7\nlimit = 6\nprint(count > limit)\nprint(count >= limit)\nprint(count <= limit)",
+                "filename": "above_limit.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "True\nTrue\nFalse",
+                "filename": "超过/至少达到/最多 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "前两行都为True，因为7确实大于6，也满足大于或等于6。最后一行为False，因为本次已经超过最大件数。等于6时>和>=还会不会相同，稍后用边界实验核对。"
+              }
+            ]
+          },
+          {
+            "id": "main-example",
+            "title": "把三项判断放回同一份记录",
+            "navGroup": "boundary",
+            "navLabel": "边界验证",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "回到最初5件、最多6件的条件。下面完整主例将不超过、刚好等于、不等于三项判断集中起来。先预测三行，并各写一句含义，再另存capacity_results.py保存运行。"
+              },
+              {
+                "type": "code",
+                "code": "count = 5\nlimit = 6\nwithin_limit = count <= limit\n\nprint(within_limit)\nprint(count == limit)\nprint(count != limit)",
+                "filename": "capacity_results.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "True\nFalse\nTrue",
+                "filename": "完整主例 · 三行预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "within_limit保存5不超过6的结果；第二行说明尚未刚好达到6，第三行说明两值不同。每一行都要和自己的判断问题对应，不能只把三个真假词背成固定答案。"
+              }
+            ]
+          },
+          {
+            "id": "boundary-runs",
+            "title": "固定上限，验证边界附近三个值",
+            "navGroup": "boundary",
+            "navLabel": "边界验证",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "新建boundary_values.py，保持limit为6。下面三条print依次问严格小于、最多、恰好等于。先在笔记写count为5时的三行预测，再保存并完整运行下面的文件，保留源码、命令和真实输出。"
+              },
+              {
+                "type": "code",
+                "code": "count = 5\nlimit = 6\nprint(count < limit)\nprint(count <= limit)\nprint(count == limit)",
+                "filename": "boundary_values.py · 低于限制",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "True\nTrue\nFalse",
+                "filename": "低于边界 · 运行后核对",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "第二轮只把count的赋值改为6，limit和三条比较都不动。先写新预测，保存，用同一命令完整运行，保留本轮源码与输出。第三轮再只把count改为7，重新预测、保存和运行。三次运行是三份真实证据，一次截图或手抄表格不能代替。"
+              },
+              {
+                "type": "table",
+                "caption": "三轮运行后，按相同输出顺序核对",
+                "columns": [
+                  "count（件）",
+                  "count < limit",
+                  "count <= limit",
+                  "count == limit"
+                ],
+                "rows": [
+                  [
+                    "5",
+                    "True",
+                    "True",
+                    "False"
+                  ],
+                  [
+                    "6",
+                    "False",
+                    "True",
+                    "True"
+                  ],
+                  [
+                    "7",
+                    "False",
+                    "False",
+                    "False"
+                  ]
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "最值得看的是count恰好为6：<得到False，<=得到True。前者不包含相等，后者包含相等。若题目规定“最多6件”，6件满足；若规定“必须少于6件”，6件就不满足。符号本身不固定代表允许或禁止，要先读清实际规则。"
+              },
+              {
+                "type": "paragraph",
+                "text": "再把等值位置单独拿出来，同时核对已经解释过的六种比较。先预测，保存six_comparisons.py运行。第一条print只是已学的固定文字标签At capacity，后面六条才依次显示比较结果；引号只围住这段文字，不围住整数。"
+              },
+              {
+                "type": "code",
+                "code": "count = 6\nlimit = 6\nprint(\"At capacity\")\nprint(count < limit)\nprint(count <= limit)\nprint(count > limit)\nprint(count >= limit)\nprint(count == limit)\nprint(count != limit)",
+                "filename": "six_comparisons.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "At capacity\nFalse\nTrue\nFalse\nTrue\nTrue\nFalse",
+                "filename": "等值位置 · 标签及六条预期结果",
+                "language": "text"
+              },
+              {
+                "type": "table",
+                "caption": "同为6件时，不同规则问的是不同问题",
+                "columns": [
+                  "规则",
+                  "本例比较",
+                  "6件时"
+                ],
+                "rows": [
+                  [
+                    "最多6件",
+                    "count <= limit",
+                    "True"
+                  ],
+                  [
+                    "少于6件",
+                    "count < limit",
+                    "False"
+                  ],
+                  [
+                    "至少6件",
+                    "count >= limit",
+                    "True"
+                  ],
+                  [
+                    "多于6件",
+                    "count > limit",
+                    "False"
+                  ],
+                  [
+                    "恰好6件",
+                    "count == limit",
+                    "True"
+                  ],
+                  [
+                    "不等于6件",
+                    "count != limit",
+                    "False"
+                  ]
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "这里每一式只比较左右两个普通整数。两题也先按这个范围操作，分别运行并解释结果；组合多个条件或根据真假改变执行路线，是之后的内容。"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "自己选规则，再验证含不含边界",
+            "navGroup": "practice",
+            "navLabel": "独立练习",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "先合上参考答案，自建两份短.py。正式成果保存在本地，网页输入框只是临时思考区。每轮留源码、命令、预测和真实输出，用简短文字说明规则即可。"
+              },
+              {
+                "type": "exercise",
+                "id": "compare-and-explain",
+                "title": "写出自己的三项数量判断",
+                "kind": "代码",
+                "prompt": "另选与正文不同的容量情境，例如收纳架，自行确定合理的整数上限和实际数量，单位相同。不要照抄正文5/6整组数据或count、limit、within_limit这些变量名。创建新的.py，自选合法且有意义的名称保存两个量，写出实际值小于或等于上限、是否恰好等于上限、是否不等于上限三项比较。运行前分别预测True/False，保存并实际运行，逐项将真实结果对应到规则。交本人源码、变量/单位、命令、三项预测与实际结果，再简短说明=、==、!=各自做什么；至少结合一条真实赋值和一条真实相等比较说明。可以直接显示比较，也可先保存布尔结果再显示，不使用if或输入函数。",
+                "hints": [
+                  "先用自己的话问：实际数量有没有超过上限，是否恰好到达，两个值是否不同？两个数量的单位一致吗？",
+                  "检查左边实际量和右边上限是否读到你保存的值，再逐项核对比较含义。赋值用于保存，判断相等和不等各有符号；仍由你选名称、数值、最终代码与预测。"
+                ],
+                "solution": [
+                  "例如改用图书推车，现装9册、容量12册，新建book_cart.py，六行分别为：第1行：loaded_books = 9；第2行：cart_capacity = 12；第3行：fits_cart = loaded_books <= cart_capacity；第4行：print(fits_cart)；第5行：print(loaded_books == cart_capacity)；第6行：print(loaded_books != cart_capacity)。每条语句各写一行，“第几行”和分隔文字不输入源码。",
+                  "loaded_books是实际册数，cart_capacity是最多册数，两者单位都是册；fits_cart接住本次小于或等于的布尔结果。先预测True、False、True，再保存运行python book_cart.py（macOS用python3，已核验的py也可），保留本人实际三行结果核对。",
+                  "9没有超过12，所以第一项为真；9没有刚好达到12，所以相等比较为假；两个值不同，所以不等比较为真。若换成自己选择的数据，必须按自己真实值重新解释，不把这组输出当所有情境的答案。",
+                  "前两行的=分别给名称提供整数，第三行的=保存右侧比较结果；第五行的==只问两值是否相等，最后一行的!=问是否不同。==是一个比较运算符，不是赋值两次。",
+                  "常错包括把实际值/上限位置颠倒、用赋值代替比较、只打印预写True/False，或改了文件未保存。沿源码核对数量和规则，再真实重跑。接受其他新情境、合理上限、合法名称及等价正确写法；不能只交符号表或复制参考输出。"
+                ],
+                "rubric": [
+                  "本人新.py含自选容量情境、新整数与合法名称，实际量/上限单位相同，真实写出<=、==、!=三项比较并显示结果，而非只打印答案常量。",
+                  "运行前有三项预测，实际命令/源码/完整三项结果对应；逐项解释是在判断最多、恰好还是不同，并核对预测差异。",
+                  "结合本人赋值与相等/不等比较说明=、==、!=的不同作用，变量读取拼写一致，实际操作可复现；Quiz、文字方案或读完标记不能代替代码。"
+                ]
+              },
+              {
+                "type": "exercise",
+                "id": "test-boundary-values",
+                "title": "上限不变，独立运行三种边界",
+                "kind": "代码",
+                "prompt": "另建新.py，自选一种“最多可装若干件”的新情境和正整数上限，不用正文上限6。自己选合法名称，固定上限，在同一个文件写出实际量<上限、实际量<=上限两项判断，再选>或>=加一项验证，并说明它问的是超过还是至少达到。先把实际量设为低于上限，预测三项、保存并真实运行；第二轮只改实际量使它恰好等于上限，再预测、保存、完整运行；第三轮只改实际量使它高于上限，再完整重复。交三轮具体值、对应源码、命令、运行前预测和真实输出，上限及比较式保持不变。说明相等时<与<=为何不同，以及“最多”和“必须少于”分别是否包含边界。不用循环自动测试，不只抄三行真假表。",
+                "hints": [
+                  "先在纸上标出低于、恰好等于、高于三个位置，各选一个实际量。上限是否始终是同一个数？相等位置最能区分哪些规则？",
+                  "逐项看符号是否带等号，额外判断问的是超过还是至少达到。把证据分成三次预测、保存和运行，每次只改实际量，仍由你填数据、代码与真实结果。"
+                ],
+                "solution": [
+                  "例如展板最多放10幅画，先放9幅。新建display_boundary.py，五行分别为：第1行：art_total = 9；第2行：display_limit = 10；第3行：print(art_total < display_limit)；第4行：print(art_total <= display_limit)；第5行：print(art_total >= display_limit)。每条语句单独一行，数量单位都是幅，第三项>=问是否至少达到上限，不代表是否仍允许放入。",
+                  "第一轮9低于10，先预测True、True、False，保存后运行python display_boundary.py（macOS用python3），留本人真实输出。第一项严格小于为真，第二项最多为真，第三项至少达到为假。",
+                  "第二轮只改实际量为10，五行依次为：第1行：art_total = 10；第2行：display_limit = 10；第3行：print(art_total < display_limit)；第4行：print(art_total <= display_limit)；第5行：print(art_total >= display_limit)。先预测False、True、True，再保存并用同一命令完整运行。相等不满足严格小于，但满足小于或等于，也满足至少达到。",
+                  "第三轮只改实际量为11，五行依次为：第1行：art_total = 11；第2行：display_limit = 10；第3行：print(art_total < display_limit)；第4行：print(art_total <= display_limit)；第5行：print(art_total >= display_limit)。先预测False、False、True，再保存完整运行。已经超过最多10幅；>=仍为True，因为至少达到10也包含更大值，并不只表示刚好装满。",
+                  "最多10幅包含10，必须少于10幅排除10；三个实际值不同，上限和三项规则都没改变。若额外选>，三轮那一项应是False、False、True，相等时不包含边界。接受其他新上限、三个合理整数、合法名称与正确的额外判断。",
+                  "常错是第二轮连上限也改了、三轮仍读旧文件、未完整重跑、只交最终高于一轮或把>=说成刚好相等。逐轮核对保存源码、值与命令，保留真实差异和说明，不用一张参考表冒充三次运行。"
+                ],
+                "rubric": [
+                  "本人固定同一新上限，三个实际整数确实分别低于、等于、高于，上限/比较式在三轮保持，只改实际量；源码均不使用未教控制流程。",
+                  "三轮都保留保存源码、实际命令、事先三项预测与真实完整输出，<、<=及额外>或>=与本轮值对应，不把一次运行冒充三轮。",
+                  "能结合相等一轮解释<排除边界而<=包含边界，说明最多/少于的实际规则，并正确解释额外比较是超过或至少达到。合理替代名和新整数可达标，抄表或网页读完不算操作证据。"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "next-step",
+            "title": "先读规则，再用边界检查真假",
+            "navGroup": "finish",
+            "navLabel": "回顾与后续",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "summary",
+                "points": [
+                  "本课的普通整数比较得到True或False，结果回答的是所写出的数量关系。",
+                  "=保存值，==判断相等，!=判断不同；严格小于/大于与含等号的比较在相等位置有区别。",
+                  "固定规则与上限，低于、等于、高于三轮先预测、保存并完整运行，再核对含不含边界。"
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "保留本人两份.py及短记录，能换一个上限重新验证、解释每个真假结果，才有独立代码证据。网页读完不代表已经会选符号，比较结果本身也没有替程序选择行动。"
+              },
+              {
+                "type": "paragraph",
+                "text": "接下来规划2.5「取得用户输入，再转成需要的数值」，目前没有可读正文，2.6也仍在规划。按课程顺序还需完成输入输出与控制流程等中间内容，再进入第5章函数试读；阅读器的下一可读导航不表示直接跳学建议。整门PY101仍在筹备。"
+              }
+            ]
+          }
+        ],
+        "resources": [],
+        "references": [
+          {
+            "title": "Python比较表达式",
+            "href": "https://docs.python.org/3.14/reference/expressions.html#comparisons",
+            "note": "核对比较符号及普通数值结果。"
+          },
+          {
+            "title": "值比较",
+            "href": "https://docs.python.org/3/reference/expressions.html#value-comparisons",
+            "note": "本课只使用同单位普通整数，其他比较规则延后。"
+          },
+          {
+            "title": "赋值语句",
+            "href": "https://docs.python.org/3.14/reference/simple_stmts.html#assignment-statements",
+            "note": "核对取得右侧结果再绑定名称。"
+          },
+          {
+            "title": "布尔类型",
+            "href": "https://docs.python.org/3.14/library/stdtypes.html#boolean-type-bool",
+            "note": "核对True、False与bool，衔接2.2。"
+          }
+        ]
+      },
+      "afterSha256": "cfec59a758db3df02d07bd4fbedfa49f93fc1aeedef6044ce9e85713a533d62c"
+    }
+  ],
+  "publications": [
+    {
+      "id": "PY101-C02-L04",
+      "before": {
+        "lessonId": "PY101-C02-L04",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "title": "让比较表达式给出真假结果",
+        "contentVersion": 1,
+        "order": 4,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p11/TECHNICAL_REPORT.md"
+      },
+      "afterSha256": "c5c6a0d25de7c855490ef5d9e20cd12ac45b5b41e0c53c60ec2f7a9605f6120f"
+    }
+  ],
+  "workspaceOnly": [],
+  "protectedText": []
+}

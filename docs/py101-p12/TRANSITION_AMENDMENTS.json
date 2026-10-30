@@ -1,0 +1,46 @@
+{
+  "records": [
+    {
+      "lessonId": "PY101-C02-L04",
+      "before": "接下来规划2.5「取得用户输入，再转成需要的数值」，目前没有可读正文，2.6也仍在规划。按课程顺序还需完成输入输出与控制流程等中间内容，再进入第5章函数试读；阅读器的下一可读导航不表示直接跳学建议。整门PY101仍在筹备。",
+      "after": "接着学习2.5「取得用户输入，再转成需要的数值」，它已有待人工审核试读，2.6尚未制作。第5章函数试读还需输出与控制流程等中间先修，阅读器的下一可读导航不表示直接跳学建议。整门PY101仍在筹备。",
+      "contentVersion": 1,
+      "objectivesAndAssessmentsUnchanged": true,
+      "beforeObjectSha256": "dba304f8c6af563743a809904a6f1aa08f7171f5962b77c18734fd2689d911b4",
+      "afterObjectSha256": "cfec59a758db3df02d07bd4fbedfa49f93fc1aeedef6044ce9e85713a533d62c",
+      "progressScopeBefore": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L04",
+        "contentVersion": 1,
+        "sectionIds": [
+          "most-six",
+          "compare-limit",
+          "keep-result",
+          "equal-or-different",
+          "above-limit",
+          "main-example",
+          "boundary-runs",
+          "practice",
+          "next-step"
+        ]
+      },
+      "progressScopeAfter": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L04",
+        "contentVersion": 1,
+        "sectionIds": [
+          "most-six",
+          "compare-limit",
+          "keep-result",
+          "equal-or-different",
+          "above-limit",
+          "main-example",
+          "boundary-runs",
+          "practice",
+          "next-step"
+        ]
+      }
+    }
+  ],
+  "allExactParagraphComparisonsPassed": true
+}

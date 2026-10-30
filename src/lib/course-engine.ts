@@ -45,6 +45,7 @@ import { pythonVariablesAndAssignmentLesson } from "../content/lessons/py101/var
 import { pythonBasicValueTypesLesson } from "../content/lessons/py101/basic-value-types";
 import { pythonArithmeticExpressionsLesson } from "../content/lessons/py101/arithmetic-expressions";
 import { pythonNumericComparisonsLesson } from "../content/lessons/py101/numeric-comparisons";
+import { pythonInputAndConversionLesson } from "../content/lessons/py101/input-and-conversion";
 import {
   publicationManifest,
   readablePublications,
@@ -59,6 +60,7 @@ import {
 } from "../content/models";
 
 const contents: Lesson[] = [
+  pythonInputAndConversionLesson,
   pythonNumericComparisonsLesson,
   pythonArithmeticExpressionsLesson,
   pythonBasicValueTypesLesson,

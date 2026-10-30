@@ -10,6 +10,7 @@ import { runVariableExample } from "./python-variable-checks";
 import { runValueTypeExample } from "./validate-py101-value-types";
 import { runArithmeticExample } from "./validate-py101-arithmetic";
 import { runComparisonExample } from "./validate-py101-comparisons";
+import { runInputExample } from "./validate-py101-input";
 
 const python = process.env.AIVORA_PYTHON ?? "python";
 function run(args: string[]) {
@@ -55,6 +56,9 @@ const examples = [...lessonRegistry.values()].flatMap((lesson) =>
       }
       if (lesson.id === "PY101-C02-L04") {
         return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runComparisonExample(block.filename, block.code) }];
+      }
+      if (lesson.id === "PY101-C02-L05") {
+        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runInputExample(block.filename, block.code) }];
       }
       let setup = "";
       if (lesson.id === "PY101-C01-L06") {
