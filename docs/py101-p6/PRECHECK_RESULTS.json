@@ -1,0 +1,468 @@
+{
+  "checkedAt": "2026-10-30T03:03:38.247169+00:00",
+  "platform": "win32",
+  "python": "3.14.2",
+  "packages": {
+    "notebook": "7.6.3",
+    "jupyter_server": "2.21.1",
+    "jupyter_client": "8.10.0",
+    "ipykernel": "7.4.0",
+    "nbformat": "5.11.1"
+  },
+  "environmentCreation": {
+    "freshProjects": 2,
+    "command": "base Python -m venv .venv in each new project",
+    "notebookInstallExitCode": 0,
+    "index": "https://pypi.org/simple"
+  },
+  "shell": "PowerShell 7.6.5 -NoProfile -NonInteractive",
+  "cli": [
+    {
+      "label": "base-identity",
+      "cwd": "<P6-LAB>\\pilot-box",
+      "command": "& '<BASE-PYTHON>\\python.exe' .\\observe_env.py",
+      "stdout": "Interpreter: <BASE-PYTHON>\\python.exe\nEnvironment: <BASE-PYTHON>\nBase Python: <BASE-PYTHON>\nVersion: 3.14.2\n",
+      "stderr": "",
+      "exitCode": 0,
+      "newShellProcess": true
+    },
+    {
+      "label": "base-saved-script",
+      "cwd": "<P6-LAB>\\pilot-box",
+      "command": "& '<BASE-PYTHON>\\python.exe' .\\cards\\start.py",
+      "stdout": "Parcel K8\nCheck saved copy\n",
+      "stderr": "",
+      "exitCode": 0,
+      "newShellProcess": true
+    },
+    {
+      "label": "missing-script-parameter",
+      "cwd": "<P6-LAB>\\pilot-box",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\start.py",
+      "stdout": "",
+      "stderr": "<P6-LAB>\\pilot-box\\.venv\\Scripts\\python.exe: can't open file 'C:\\\\Users\\\\QYF\\\\AppData\\\\Local\\\\Temp\\\\aivora-p6-e93ee1c1179f43bf92def4f78a8abd89\\\\pilot-box\\\\start.py': [Errno 2] No such file or directory\n",
+      "exitCode": 2,
+      "newShellProcess": true
+    },
+    {
+      "label": "correct-script-parameter",
+      "cwd": "<P6-LAB>\\pilot-box",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\cards\\start.py",
+      "stdout": "Parcel K8\nCheck saved copy\n",
+      "stderr": "",
+      "exitCode": 0,
+      "newShellProcess": true
+    },
+    {
+      "label": "first:wrong-program",
+      "cwd": "<P6-LAB>\\pilot-box",
+      "command": "& \"..\\neighbor\\.venv\\Scripts\\python.exe\" .\\cards\\start.py",
+      "stdout": "Parcel K8\nCheck saved copy\n",
+      "stderr": "",
+      "exitCode": 0,
+      "newShellProcess": true
+    },
+    {
+      "label": "first:wrong-probe",
+      "cwd": "<P6-LAB>\\pilot-box",
+      "command": "& \"..\\neighbor\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+      "stdout": "Interpreter: <P6-LAB>\\neighbor\\.venv\\Scripts\\python.exe\nEnvironment: <P6-LAB>\\neighbor\\.venv\nBase Python: <BASE-PYTHON>\nVersion: 3.14.2\n",
+      "stderr": "",
+      "exitCode": 0,
+      "newShellProcess": true
+    },
+    {
+      "label": "first:right-program",
+      "cwd": "<P6-LAB>\\pilot-box",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\cards\\start.py",
+      "stdout": "Parcel K8\nCheck saved copy\n",
+      "stderr": "",
+      "exitCode": 0,
+      "newShellProcess": true
+    },
+    {
+      "label": "first:right-probe",
+      "cwd": "<P6-LAB>\\pilot-box",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+      "stdout": "Interpreter: <P6-LAB>\\pilot-box\\.venv\\Scripts\\python.exe\nEnvironment: <P6-LAB>\\pilot-box\\.venv\nBase Python: <BASE-PYTHON>\nVersion: 3.14.2\n",
+      "stderr": "",
+      "exitCode": 0,
+      "newShellProcess": true
+    },
+    {
+      "label": "new-session-replay:wrong-program",
+      "cwd": "<P6-LAB>\\pilot-box",
+      "command": "& \"..\\neighbor\\.venv\\Scripts\\python.exe\" .\\cards\\start.py",
+      "stdout": "Parcel K8\nCheck saved copy\n",
+      "stderr": "",
+      "exitCode": 0,
+      "newShellProcess": true
+    },
+    {
+      "label": "new-session-replay:wrong-probe",
+      "cwd": "<P6-LAB>\\pilot-box",
+      "command": "& \"..\\neighbor\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+      "stdout": "Interpreter: <P6-LAB>\\neighbor\\.venv\\Scripts\\python.exe\nEnvironment: <P6-LAB>\\neighbor\\.venv\nBase Python: <BASE-PYTHON>\nVersion: 3.14.2\n",
+      "stderr": "",
+      "exitCode": 0,
+      "newShellProcess": true
+    },
+    {
+      "label": "new-session-replay:right-program",
+      "cwd": "<P6-LAB>\\pilot-box",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\cards\\start.py",
+      "stdout": "Parcel K8\nCheck saved copy\n",
+      "stderr": "",
+      "exitCode": 0,
+      "newShellProcess": true
+    },
+    {
+      "label": "new-session-replay:right-probe",
+      "cwd": "<P6-LAB>\\pilot-box",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\observe_env.py",
+      "stdout": "Interpreter: <P6-LAB>\\pilot-box\\.venv\\Scripts\\python.exe\nEnvironment: <P6-LAB>\\pilot-box\\.venv\nBase Python: <BASE-PYTHON>\nVersion: 3.14.2\n",
+      "stderr": "",
+      "exitCode": 0,
+      "newShellProcess": true
+    },
+    {
+      "label": "immediate-exit-status",
+      "cwd": "<P6-LAB>\\pilot-box",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" .\\start.py\necho $LASTEXITCODE",
+      "stdout": "2\n",
+      "stderr": "<P6-LAB>\\pilot-box\\.venv\\Scripts\\python.exe: can't open file 'C:\\\\Users\\\\QYF\\\\AppData\\\\Local\\\\Temp\\\\aivora-p6-e93ee1c1179f43bf92def4f78a8abd89\\\\pilot-box\\\\start.py': [Errno 2] No such file or directory\n",
+      "exitCode": 2,
+      "newShellProcess": true
+    },
+    {
+      "label": "pip-location",
+      "cwd": "<P6-LAB>\\pilot-box",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" -m pip --version",
+      "stdout": "pip 25.3 from <P6-LAB>\\pilot-box\\.venv\\Lib\\site-packages\\pip (python 3.14)\n\n",
+      "stderr": "",
+      "exitCode": 0,
+      "newShellProcess": true
+    },
+    {
+      "label": "notebook-version",
+      "cwd": "<P6-LAB>\\pilot-box",
+      "command": "& \".\\.venv\\Scripts\\python.exe\" -m notebook --version",
+      "stdout": "7.6.3\n",
+      "stderr": "",
+      "exitCode": 0,
+      "newShellProcess": true
+    }
+  ],
+  "nameConstraintProbe": [
+    {
+      "source": "plan_note = \"K8\"\nprint(plan_note)",
+      "exitCode": 0,
+      "stdout": "K8\n",
+      "stderr": ""
+    },
+    {
+      "source": "my plan = \"K8\"",
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "  File \"<string>\", line 1\n    my plan = \"K8\"\n       ^^^^\nSyntaxError: invalid syntax\n"
+    },
+    {
+      "source": "1plan = \"K8\"",
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "  File \"<string>\", line 1\n    1plan = \"K8\"\n    ^\nSyntaxError: invalid decimal literal\n"
+    }
+  ],
+  "downloads": [
+    {
+      "path": "public/downloads/first-notebook.ipynb",
+      "formatValid": true,
+      "distributedOutputsEmpty": true,
+      "cleanRunExpectedOutput": "Ready B",
+      "actualKernelMatchesPilot": true
+    },
+    {
+      "path": "public/downloads/dispatch-note.ipynb",
+      "formatValid": true,
+      "distributedOutputsEmpty": true,
+      "cleanRunExpectedOutput": "Packed C7",
+      "actualKernelMatchesPilot": true
+    },
+    {
+      "path": "public/downloads/review-note.ipynb",
+      "formatValid": true,
+      "distributedOutputsEmpty": true,
+      "cleanRunExpectedOutput": "Checked F3",
+      "actualKernelMatchesPilot": true
+    }
+  ],
+  "kernelSteps": [
+    {
+      "label": "pilot-kernel-identity",
+      "source": "import sys\nprint(sys.executable)",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "<P6-LAB>\\pilot-box\\.venv\\Scripts\\python.exe\n"
+        }
+      ],
+      "executionCount": 1
+    },
+    {
+      "label": "download-clean:first-notebook",
+      "operation": "restart_kernel"
+    },
+    {
+      "label": "first-notebook:set-marker",
+      "source": "marker = \"Ready B\"",
+      "outputs": [],
+      "executionCount": 1
+    },
+    {
+      "label": "first-notebook:show-marker",
+      "source": "print(marker)",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "Ready B\n"
+        }
+      ],
+      "executionCount": 2
+    },
+    {
+      "label": "first-notebook:kernel-probe",
+      "source": "import sys\nprint(sys.executable)",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "<P6-LAB>\\pilot-box\\.venv\\Scripts\\python.exe\n"
+        }
+      ],
+      "executionCount": 3
+    },
+    {
+      "label": "download-clean:dispatch-note",
+      "operation": "restart_kernel"
+    },
+    {
+      "label": "dispatch-note:set-note",
+      "source": "delivery_note = \"Packed C7\"",
+      "outputs": [],
+      "executionCount": 1
+    },
+    {
+      "label": "dispatch-note:show-note",
+      "source": "print(delivery_note)",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "Packed C7\n"
+        }
+      ],
+      "executionCount": 2
+    },
+    {
+      "label": "dispatch-note:kernel-probe",
+      "source": "import sys\nprint(sys.executable)",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "<P6-LAB>\\pilot-box\\.venv\\Scripts\\python.exe\n"
+        }
+      ],
+      "executionCount": 3
+    },
+    {
+      "label": "download-clean:review-note",
+      "operation": "restart_kernel"
+    },
+    {
+      "label": "review-note:set-label",
+      "source": "batch_label = \"Checked F3\"",
+      "outputs": [],
+      "executionCount": 1
+    },
+    {
+      "label": "review-note:show-label",
+      "source": "print(batch_label)",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "Checked F3\n"
+        }
+      ],
+      "executionCount": 2
+    },
+    {
+      "label": "review-note:kernel-probe",
+      "source": "import sys\nprint(sys.executable)",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "<P6-LAB>\\pilot-box\\.venv\\Scripts\\python.exe\n"
+        }
+      ],
+      "executionCount": 3
+    },
+    {
+      "label": "pilot-error-clean",
+      "operation": "restart_kernel"
+    },
+    {
+      "label": "pilot-display-first",
+      "source": "print(parcel_label)",
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "NameError",
+          "evalue": "name 'parcel_label' is not defined",
+          "traceback": [
+            "---------------------------------------------------------------------------",
+            "NameError                                 Traceback (most recent call last)",
+            "Cell In[1], line 1\n----> 1 print(parcel_label)\n",
+            "NameError: name 'parcel_label' is not defined"
+          ]
+        }
+      ],
+      "executionCount": 1
+    },
+    {
+      "label": "pilot-provider",
+      "source": "parcel_label = \"Ready J4\"",
+      "outputs": [],
+      "executionCount": 2
+    },
+    {
+      "label": "pilot-recover-display",
+      "source": "print(parcel_label)",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "Ready J4\n"
+        }
+      ],
+      "executionCount": 3
+    },
+    {
+      "operation": "edit-save-text-without-execute",
+      "filename": "parcel-note.ipynb",
+      "sourceOnDisk": "parcel_label = \"Sent M6\""
+    },
+    {
+      "label": "pilot-saved-text-still-old-state",
+      "source": "print(parcel_label)",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "Ready J4\n"
+        }
+      ],
+      "executionCount": 4
+    },
+    {
+      "label": "final-clean-run",
+      "operation": "restart_kernel"
+    },
+    {
+      "label": "final-clean-run:set-parcel",
+      "source": "parcel_label = \"Sent M6\"",
+      "outputs": [],
+      "executionCount": 1
+    },
+    {
+      "label": "final-clean-run:show-parcel",
+      "source": "print(parcel_label)",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "Sent M6\n"
+        }
+      ],
+      "executionCount": 2
+    },
+    {
+      "label": "final-clean-run:kernel-probe",
+      "source": "import sys\nprint(sys.executable)",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "<P6-LAB>\\pilot-box\\.venv\\Scripts\\python.exe\n"
+        }
+      ],
+      "executionCount": 3
+    },
+    {
+      "operation": "save-validate-reread",
+      "filename": "parcel-note.ipynb",
+      "phase": "final-clean-run",
+      "errors": 0
+    },
+    {
+      "label": "reopen-clean-run",
+      "operation": "restart_kernel"
+    },
+    {
+      "label": "reopen-clean-run:set-parcel",
+      "source": "parcel_label = \"Sent M6\"",
+      "outputs": [],
+      "executionCount": 1
+    },
+    {
+      "label": "reopen-clean-run:show-parcel",
+      "source": "print(parcel_label)",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "Sent M6\n"
+        }
+      ],
+      "executionCount": 2
+    },
+    {
+      "label": "reopen-clean-run:kernel-probe",
+      "source": "import sys\nprint(sys.executable)",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "<P6-LAB>\\pilot-box\\.venv\\Scripts\\python.exe\n"
+        }
+      ],
+      "executionCount": 3
+    },
+    {
+      "operation": "save-validate-reread",
+      "filename": "parcel-note.ipynb",
+      "phase": "reopen-clean-run",
+      "errors": 0
+    }
+  ],
+  "kernelShutdown": true,
+  "allAssertionsPassed": true,
+  "scope": "author technical precheck; real Shell/IPython and saved files; no new GUI, no learner or peer trial",
+  "localNotebookServer": {
+    "command": "target environment Python -m jupyter notebook --no-browser --ServerApp.ip=127.0.0.1 --ServerApp.port_retries=0 --port=<FREE-LOCAL-PORT>",
+    "loopbackOnly": true,
+    "tokenAuthenticationPresent": true,
+    "contentApiFile": "parcel-note.ipynb",
+    "contentApiStatus": 200,
+    "notebookCells": 4,
+    "shutdownMethod": "authenticated POST /api/shutdown to owned server",
+    "shutdownStatus": 200,
+    "serverExitCode": 0,
+    "ownedPortClosed": true,
+    "scope": "real local Notebook server and file API; no GUI or learner observation; token kept in private runtime only"
+  }
+}

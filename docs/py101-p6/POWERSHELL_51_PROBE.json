@@ -1,0 +1,19 @@
+{
+  "initialProbe": {
+    "command": "$PSVersionTable.PSVersion.ToString()\npwd\ndir .\\cards\n& \".\\.venv\\Scripts\\python.exe\" .\\observe_env.py\nexit $LASTEXITCODE",
+    "cwd": "<P6-LAB>/pilot-box",
+    "exitCode": 0,
+    "stdout": "5.1.26100.9711\n\nInterpreter: <P6-LAB>\\pilot-box\\.venv\\Scripts\\python.exe\nEnvironment: <P6-LAB>\\pilot-box\\.venv\nBase Python: <BASE-PYTHON>\nVersion: 3.14.2\n",
+    "stderr": "",
+    "scope": "one Windows PowerShell 5.1 directory/direct-diagnostic probe only; not activation or GUI coverage"
+  },
+  "followup": {
+    "command": "$ErrorActionPreference = \"Stop\"\n$PSVersionTable.PSVersion.ToString()\npwd | ForEach-Object { $_.Path }\ndir .\\cards | ForEach-Object { $_.Name }\n& \".\\.venv\\Scripts\\python.exe\" .\\observe_env.py\nexit $LASTEXITCODE",
+    "cwd": "<P6-LAB>/pilot-box",
+    "exitCode": 0,
+    "stdout": "5.1.26100.9711\n<P6-LAB>\\pilot-box\nstart.py\nInterpreter: <P6-LAB>\\pilot-box\\.venv\\Scripts\\python.exe\nEnvironment: <P6-LAB>\\pilot-box\\.venv\nBase Python: <BASE-PYTHON>\nVersion: 3.14.2\n",
+    "stderr": ""
+  },
+  "interpretation": "initial formatted directory objects did not appear before explicit exit; followup emits Path/Name strings and fails on command errors",
+  "scope": "Windows PowerShell 5.1 directory/direct-diagnostic probe only; not Security module activation or GUI coverage"
+}

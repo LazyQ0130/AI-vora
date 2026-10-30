@@ -5,7 +5,7 @@ type SourceChange = { path: string; before: string; afterSha256: string };
 type ObjectChange = { id: string; before: unknown; afterSha256: string };
 // 使用同一个登记器按新到旧撤销已批准修订；不为每轮再嵌套一个专用兼容器。
 type RevisionPlan = { baseline: string; sources: SourceChange[]; lessons: ObjectChange[]; publications: ObjectChange[]; addedLessonIds: string[]; workspaceOnly: { path: string; workspaceSha256: string; repositorySha256: string }[]; protectedText: { path: string; baselineSha256: string; lfSha256: string }[] };
-const plans = ["py101-p5", "py101-p4", "py101-p3", "py101-p2"].map(round => JSON.parse(readFileSync(new URL(`../docs/${round}/APPROVED_CHANGES.json`, import.meta.url), "utf8")) as RevisionPlan);
+const plans = ["py101-p6", "py101-p5", "py101-p4", "py101-p3", "py101-p2"].map(round => JSON.parse(readFileSync(new URL(`../docs/${round}/APPROVED_CHANGES.json`, import.meta.url), "utf8")) as RevisionPlan);
 function revisions(throughBaseline?: string) {
   const index = plans.findIndex(plan => plan.baseline === throughBaseline);
   return index < 0 ? plans : plans.slice(0, index + 1);

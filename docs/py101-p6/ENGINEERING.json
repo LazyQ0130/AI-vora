@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-30",
+  "baseline": "5d71fe8b585db695ceb926bfb35211a2104639f0",
+  "testedCandidateTree": "98300816a459d4f5c860e7f37f20d65eef7312b1",
+  "node": "v24.16.0",
+  "validation": {
+    "npm test": {
+      "exitCode": 0,
+      "logSha256": "f5210ccfbfc901e8d557e7fe77fc6f492eba466005c78a32ea4e738c81f5d6e6",
+      "tests": 315,
+      "pass": 315,
+      "fail": 0
+    },
+    "npm run typecheck": {
+      "exitCode": 0,
+      "logSha256": "eb270fe917abe52808b7426b18327b1b22992b8df3d702a515917bdb8685ba95"
+    },
+    "changed-file ESLint": {
+      "exitCode": 0,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "clean npm test": {
+      "exitCode": 0,
+      "logSha256": "e6cbf1cb36852833901c1b1fb892ab9262abed2de9caedc22042dc005b8c3f15",
+      "tests": 314,
+      "pass": 314,
+      "fail": 0
+    }
+  },
+  "lintCommand": "npx eslint scripts/py101-p1-compatibility.ts src/content/lessons/py101/script-paths.ts src/content/publication-manifest.ts",
+  "cleanTreeMethod": "git checkout-index --all into a fresh external directory; node_modules junction only",
+  "cleanTreeExcludesUserWork": true,
+  "differenceInTestCount": "315 workspace / 314 clean: original uncommitted reading-experience test is excluded",
+  "testedStagedSources": {
+    "scripts/py101-p1-compatibility.ts": "7dc0973875885d37d87bc26f8b65bd585d4b8e0137bd17c14a51c1196a846f78",
+    "src/content/lessons/py101/script-paths.ts": "2875ca12d623ef770640129f2db380e16e859025b464cecd1388e1275e4b1a42",
+    "src/content/publication-manifest.ts": "22c3ac4a07a428713652d81380bf647b4f51cb7c5677b916a527cf8c93739f6c"
+  },
+  "afterCleanTestScope": "reports/evidence only; product and compatibility sources remain identical to tested candidate",
+  "notRun": [
+    "full npm lint (only changed sources linted)",
+    "prepare:downloads (no resource changes)",
+    "test:python (cross-link/pilot real Shell/kernel precheck instead)",
+    "review:teaching (actual lesson assessmentMap snapshot and semantic review instead)",
+    "build",
+    "test:routes",
+    "new browser screenshots"
+  ],
+  "notClaimed": [
+    "macOS real execution",
+    "new GUI verification",
+    "human review",
+    "learner trial",
+    "resolution of historical Turbopack linked-dependency limit"
+  ],
+  "finalChecks": {
+    "originalTrackedModificationsByteIdentical": 4,
+    "originalUntrackedFilesByteIdentical": 7,
+    "stagedFiles": 25,
+    "onlyAuthorizedPathsStaged": true,
+    "stagedSourcesStillMatchCleanTest": true,
+    "relativeLinksAndJsonValid": true,
+    "sensitiveDataScanPassed": true,
+    "studentTaskPaperContainsNoFinalRepairCommands": true,
+    "ownedRuntimeProcessesRemaining": 0,
+    "browserProgressNotAccessedOrCleared": true
+  }
+}

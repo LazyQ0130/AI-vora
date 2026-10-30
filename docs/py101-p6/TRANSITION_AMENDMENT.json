@@ -1,0 +1,19 @@
+{
+  "lessonId": "PY101-C01-L02",
+  "section": "next-step",
+  "before": {
+    "type": "paragraph",
+    "text": "下一节建议1.3「用编辑器完成保存与重跑」。你已有保存、运行、辨认目标文件和排查路径的基础，届时再检查编辑器里打开的文件、集成终端的位置与选中的解释器是否对应。1.3当前仍是规划；阅读器可能跳到现有第5章，函数课还需要前序变量和表达式等基础。"
+  },
+  "after": {
+    "type": "paragraph",
+    "text": "下一节建议1.3「用编辑器完成保存与重跑」。你已有保存、运行、辨认目标文件和排查路径的基础，接着检查编辑器里打开的文件、集成终端的位置与选中的解释器是否对应。1.3–1.6均已有待人工审核的试读教材，可按第一章顺序继续。第5章函数课还需要变量、表达式和控制流程等基础，补齐后再读。"
+  },
+  "beforeObjectSha256": "d7b8c940f548d553d31015393178260b8832ea41f41039d66a04a0a4b993a301",
+  "afterObjectSha256": "3c26a32760d7c224caaa7ac3eaeb81ce086c8b59f6613bff9bc5c4e75c9faa30",
+  "beforeSourceSha256LF": "daf3e09860fabe0e6b8470f39f7efbb41b06e390df5856c1699127af014c00a9",
+  "afterSourceSha256LF": "2875ca12d623ef770640129f2db380e16e859025b464cecd1388e1275e4b1a42",
+  "contentVersion": 1,
+  "assessmentUnchanged": true,
+  "progressScopeUnchanged": true
+}
