@@ -1,0 +1,11 @@
+{
+  "lessonId": "PY101-C02-L02",
+  "section": "next-step",
+  "before": "接下来规划2.3「用表达式算出一个结果」，目前尚无可读正文，2.4–2.6也仍在规划。阅读器的下一可读课可能跳到第5章函数试读，它还需要表达式与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。",
+  "after": "接着学习2.3「用表达式算出一个结果」，它已有待人工审核试读，2.4–2.6仍在规划。第5章函数试读还需要表达式与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。",
+  "contentVersion": 1,
+  "objectivesAndExercisesUnchanged": true,
+  "progressScopeUnchanged": true,
+  "beforeObjectSha256": "0c1557bfe70276d2168feeca915c04073f6aa2764cf5e00d06505584855a41c4",
+  "afterObjectSha256": "47b641470d7d65350e658f2a01c1ade51b21a231dc98e0fe329cbdf024e3ae38"
+}

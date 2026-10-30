@@ -8,6 +8,7 @@ import { notebookCode, notebookBlockNames } from "../src/content/resources/pytho
 import { reproductionCode, reproductionBlockNames } from "../src/content/resources/python-reproduction";
 import { runVariableExample } from "./python-variable-checks";
 import { runValueTypeExample } from "./validate-py101-value-types";
+import { runArithmeticExample } from "./validate-py101-arithmetic";
 
 const python = process.env.AIVORA_PYTHON ?? "python";
 function run(args: string[]) {
@@ -47,6 +48,9 @@ const examples = [...lessonRegistry.values()].flatMap((lesson) =>
       }
       if (lesson.id === "PY101-C02-L02") {
         return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runValueTypeExample(block.filename, block.code) }];
+      }
+      if (lesson.id === "PY101-C02-L03") {
+        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runArithmeticExample(block.filename, block.code) }];
       }
       let setup = "";
       if (lesson.id === "PY101-C01-L06") {

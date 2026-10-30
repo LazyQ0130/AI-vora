@@ -6,7 +6,8 @@ const revisedCoreLessons: Record<string, number> = { "MA101-C02-L03": 2, "PY101-
 
 // 发布权限独立于原始课程规划。技术证据不替代人工审核。
 export const publicationManifest = [
-  {lessonId:"PY101-C02-L02",courseId:"PY101",chapterId:"PY101-C02",title:"分清文字、整数、小数和真假值",contentVersion:1,order:2,optionalLesson:false,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p9/TECHNICAL_REPORT.md"},
+  {lessonId:"PY101-C02-L03",courseId:"PY101",chapterId:"PY101-C02",title:"用表达式算出一个结果",contentVersion:1,order:3,optionalLesson:false,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p10/TECHNICAL_REPORT.md"},
+  {lessonId:"PY101-C02-L02",courseId:"PY101",chapterId:"PY101-C02",title:"分清文字、整数、小数和真假值",contentVersion:1,order:2,optionalLesson:false,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p10/TRANSITION_AMENDMENT.md"},
   {lessonId:"PY101-C02-L01",courseId:"PY101",chapterId:"PY101-C02",title:"用变量保留并更新程序里的值",contentVersion:1,order:1,optionalLesson:false,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p9/TRANSITION_AMENDMENT.md"},
   {lessonId:"PY101-C01-L06",courseId:"PY101",chapterId:"PY101-C01",title:"让别人复现一次环境问题",contentVersion:1,order:6,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p8/TRANSITION_AMENDMENT.md"},
   {lessonId:"PY101-C01-L05",courseId:"PY101",chapterId:"PY101-C01",title:"在Jupyter中按顺序运行单元格",contentVersion:1,order:5,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p7/TECHNICAL_REPORT.md"},

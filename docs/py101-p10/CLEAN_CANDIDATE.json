@@ -1,0 +1,72 @@
+{
+  "checkedAt": "2026-10-30T04:59:48.559194+00:00",
+  "baseline": "cb11207cbb580b316daa2113c94ec1662e28c4a9",
+  "source": "git archive HEAD plus explicit task files",
+  "excludedOriginalModified": 4,
+  "excludedOriginalUntracked": 7,
+  "productSourcesEqualBrowserBuildInputs": true,
+  "allTaskCodeEqualCleanChecks": true,
+  "files": [
+    {
+      "path": "src/content/course-outline.ts",
+      "lfSha256": "1b8c55ceb1ba05fc00e947865c380829e1b73545b54d581e1c03e6a75ac780f2",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/lib/course-engine.ts",
+      "lfSha256": "e93ebb0cbfa3f54de383d7b52584e7cacc01b4554f5cf46c0c11656314585d41",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "lfSha256": "a6988d56cd0988d19f4748aa4b35d496b9bf1fe1c9d5fcc73015be4d5d7e01a6",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "lfSha256": "1b053a6204a405a332af401f303fd159f9338304ce518c8ad4425531c727beed",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "scripts/validate-python.ts",
+      "lfSha256": "302b10c535f89bed7b11580820b71c2dcec4f98a0dca865406a4b06f794fb06d",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "lfSha256": "3d920bc39cbe83be257ceb734adc77c484e03ee8695c4e529462252439d83955",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "tests/content.test.ts",
+      "lfSha256": "d2d54770d39181791b380e8a9190025c3904ef6546329ced3cd9d6d8b7e7a5bf",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "tests/py101-basic-value-types.test.ts",
+      "lfSha256": "71fa5efb29e397e3fbb5bde13a4b2d50af292fcb6dfd612328b5dbe575154f6a",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "lfSha256": "e38a1a0e5851ee69744026c602cf45dd6572bce9b8a1ad1d9760c92977ec9440",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/content/resources/python-arithmetic.ts",
+      "lfSha256": "d70eea66c7fd9f6d3df366522f8b8ed58479ad0d076bdca9c3bc6b99137a90b0",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "scripts/validate-py101-arithmetic.ts",
+      "lfSha256": "481bf40292b4f2e93cc514014d77cf192b504785c89d5bd355bb2209b4ecec55",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "tests/py101-arithmetic-expressions.test.ts",
+      "lfSha256": "fdbeca215fad2819293fa33b55b3fdbfa87b49b0894f15789ed69676af9982de",
+      "matchesCleanCandidate": true
+    }
+  ],
+  "note": "Node dependency junction reused. Actual clean Turbopack failure retained; supported Webpack served on3023. Working checkout separately passed default Turbopack. Final source equals preview projection."
+}

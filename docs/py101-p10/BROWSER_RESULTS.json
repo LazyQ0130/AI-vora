@@ -1,0 +1,263 @@
+{
+  "testedAt": "2026-10-30T04:51:57.744Z",
+  "base": "http://127.0.0.1:3023",
+  "build": "Clean candidate / production Webpack / preview projection",
+  "checks": [
+    {
+      "label": "initial-progress",
+      "oldKeys": [],
+      "newRecord": null
+    },
+    {
+      "label": "desktop-layout",
+      "documentWidth": 1425,
+      "h1": "用表达式算出一个结果",
+      "h2": [
+        "先弄清楚每个数字在数什么",
+        "让右边先算出一个值",
+        "取走两件后，怎样接着算？",
+        "括号改变分组，也要检查单位",
+        "重新平均分配，除法在算什么？",
+        "同一级的运算怎样分组？",
+        "用同一份关系预测新数量",
+        "除数为零时，要读懂失败原因",
+        "换一个情境，自己写并核对关系",
+        "结果有意义，计算才回答了问题"
+      ],
+      "viewport": 1425,
+      "width": 1440
+    },
+    {
+      "label": "desktop-copy-main-paste",
+      "passed": true,
+      "text": "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\n\nprint(total)\nprint((box_count + spare) * per_box)\nprint(total / box_count)"
+    },
+    {
+      "label": "desktop-copy-type-output-paste",
+      "passed": true,
+      "text": "4.0\n<class 'float'>"
+    },
+    {
+      "label": "exercise-disclosures",
+      "openCount": 6,
+      "rubricHeadings": [
+        "检查自己的解答",
+        "检查自己的解答"
+      ],
+      "firstReferenceHasLine8": true,
+      "secondReferenceHasRepair": true
+    },
+    {
+      "label": "tablet-directory",
+      "documentWidth": 768,
+      "links": [
+        {
+          "href": "#quantities-and-units",
+          "text": "先弄清楚每个数字在数什么"
+        },
+        {
+          "href": "#expression-to-value",
+          "text": "让右边先算出一个值"
+        },
+        {
+          "href": "#take-some-away",
+          "text": "取走两件后，怎样接着算？"
+        },
+        {
+          "href": "#order-and-grouping",
+          "text": "括号改变分组，也要检查单位"
+        },
+        {
+          "href": "#divide-and-meaning",
+          "text": "重新平均分配，除法在算什么？"
+        },
+        {
+          "href": "#same-level-order",
+          "text": "同一级的运算怎样分组？"
+        },
+        {
+          "href": "#put-it-together",
+          "text": "用同一份关系预测新数量"
+        },
+        {
+          "href": "#zero-divisor",
+          "text": "除数为零时，要读懂失败原因"
+        },
+        {
+          "href": "#practice",
+          "text": "换一个情境，自己写并核对关系"
+        },
+        {
+          "href": "#next-step",
+          "text": "结果有意义，计算才回答了问题"
+        },
+        {
+          "href": "#exercise-calculate-and-revise",
+          "text": "代码练习独立计算，再只改一个数量"
+        },
+        {
+          "href": "#exercise-compare-grouping",
+          "text": "代码练习括号式算得通，符合题意吗？"
+        },
+        {
+          "href": "/learn/PY101/PY101-C02-L01#name-and-value",
+          "text": "2.1 赋值与名称读取"
+        },
+        {
+          "href": "/learn/PY101/PY101-C02-L01#predict-run",
+          "text": "2.1 预测与完整运行"
+        },
+        {
+          "href": "/learn/PY101/PY101-C02-L02#add-measurement",
+          "text": "2.2 数值与文字"
+        },
+        {
+          "href": "/learn/PY101/PY101-C02-L02#inspect-type",
+          "text": "2.2 类型观察"
+        },
+        {
+          "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+          "text": "1.3 保存与重跑"
+        }
+      ],
+      "viewport": 768,
+      "width": 768
+    },
+    {
+      "label": "tablet-anchor",
+      "focused": "用同一份关系预测新数量",
+      "hash": "#put-it-together",
+      "top": 221.7604217529297
+    },
+    {
+      "label": "phone-copy-main-paste",
+      "passed": true,
+      "text": "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\n\nprint(total)\nprint((box_count + spare) * per_box)\nprint(total / box_count)"
+    },
+    {
+      "label": "phone-layout",
+      "classTags": 0,
+      "documentWidth": 375,
+      "typeText": true,
+      "viewport": 375,
+      "width": 390
+    },
+    {
+      "label": "narrow-local-scroll",
+      "code": [
+        {
+          "client": 254,
+          "label": "box_relations.py 示例代码，可横向滚动",
+          "left": 63.33333206176758,
+          "scroll": 317
+        },
+        {
+          "client": 254,
+          "label": "完整主例 · 三行预期输出 示例代码，可横向滚动",
+          "left": 0,
+          "scroll": 254
+        },
+        {
+          "client": 254,
+          "label": "revise_boxes.py 示例代码，可横向滚动",
+          "left": 0,
+          "scroll": 310
+        },
+        {
+          "client": 254,
+          "label": "改值前 · 预期输出 示例代码，可横向滚动",
+          "left": 0,
+          "scroll": 254
+        }
+      ],
+      "documentWidth": 305,
+      "pageLeft": 0,
+      "viewport": 305,
+      "width": 320
+    },
+    {
+      "label": "narrow-exercise-anchor",
+      "drawerClosed": true,
+      "focused": "括号式算得通，符合题意吗？",
+      "hash": "#exercise-compare-grouping",
+      "top": 210.2291717529297
+    },
+    {
+      "label": "transition-and-previous",
+      "text": "先确认值的类型，再准备使用它给文字、完整件数、测量值和真假状态选择合适的字面量，分别观察str、int、float、bool。普通print可能让不同类型看起来相同；读取名称，取得type结果，再显示它，可以核对类型。同一名称可以先后对应不同类型的值。预测、保存和完整重跑，检查每一次读取发生时对应什么。保留两份自己写的程序及短记录，换一个值后能重新预测和核对，才有这次代码操作的证据。网页读完只记录阅读，type输出本身也不能替代你对用途和结果的解释。接着学习2.3「用表达式算出一个结果」，它已有待人工审核试读，2.4–2.6仍在规划。第5章函数试读还需要表达式与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。",
+      "nextHref": "/learn/PY101/PY101-C02-L03"
+    },
+    {
+      "label": "desktop-anchor",
+      "focused": "用同一份关系预测新数量",
+      "hash": "#put-it-together",
+      "top": 175.6875
+    },
+    {
+      "label": "new-r1-reload-old-isolation",
+      "newRecord": {
+        "version": 2,
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L03",
+        "contentVersion": 1,
+        "percent": 100,
+        "completed": false,
+        "section": "put-it-together",
+        "updatedAt": 1793336171081
+      },
+      "resumeHref": "#put-it-together",
+      "oldKeys": [
+        "aivora:learning:v2:PY101:PY101-C02-L02:r1",
+        "aivora:learning:v2:PY101:PY101-C05-L01:r2"
+      ],
+      "allOldBytesUnchanged": true,
+      "originalRecordsUnchanged": true
+    },
+    {
+      "label": "resume-and-future",
+      "focused": "用同一份关系预测新数量",
+      "hash": "#put-it-together",
+      "top": 175.6875,
+      "futureText": "结果有意义，计算才回答了问题先写清数值和单位，再用+、-、*、/表达数量关系；右边先求值，=保存结果。乘除先于加减，括号明确分组，这几种同级二元运算按左结合；计算规则与现实单位都要核对。使用内置整数或浮点数做/除法得到float，除数非零。只改一个已知量后先预测、保存、完整重跑，检查结果仍在回答原问题。保留自己两份.py、改值及修复前后的短记录。能用新数量解释计算和单位，再以本人运行核对，才有独立操作证据；网页读完或程序显示了数字都不能替代这些检查。接下来规划2.4「让比较表达式给出真假结果」，目前没有可读正文，2.5–2.6也仍在规划。阅读器下一可读课可能跳到第5章函数试读，它还需要比较、输入输出与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。"
+    },
+    {
+      "label": "wrong-course-browser-404",
+      "heading": "这里，还没有被探索。",
+      "passed": true
+    },
+    {
+      "label": "planned-directory",
+      "chapter": [
+        {
+          "href": "/learn/PY101/PY101-C02-L01",
+          "text": "2.1用变量保留并更新程序里的值"
+        },
+        {
+          "href": "/learn/PY101/PY101-C02-L02",
+          "text": "2.2分清文字、整数、小数和真假值"
+        },
+        {
+          "href": "/learn/PY101/PY101-C02-L03",
+          "text": "2.3用表达式算出一个结果"
+        }
+      ],
+      "futureLinks": 0,
+      "plannedText": true
+    }
+  ],
+  "consoleErrors": [],
+  "diagnostics": [
+    {
+      "label": "clipboard-interface",
+      "nativeRead": "Runtime.evaluate timed out; read-only permission query returned prompt. No permission granted.",
+      "bridgeRead": "High-level clipboard bridge returned previous-task text; not used as final copy evidence.",
+      "resolution": "Real copy button followed by Control+V into this new page temporary exercise field; exact contents verified, then own temporary field cleared."
+    },
+    {
+      "label": "readonly-dom-scope",
+      "observation": "document.hasFocus is unavailable in read-only Playwright DOM scope; native CDP read confirmed focused and visible. No product change."
+    }
+  ],
+  "finalChecksPassed": true,
+  "note": "Technical UI checks only, no learner achievement inferred. Old r1/r2 records were created through ordinary reading on this previously empty test origin; broader historical revisions covered by unit tests. No localStorage deletion or completed flag action."
+}

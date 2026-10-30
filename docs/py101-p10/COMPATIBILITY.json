@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-30T04:58:54.546Z",
+  "oldLessonCount": 55,
+  "unchangedOtherLessonObjects": 54,
+  "protectedFileCount": 2784,
+  "onlyAllowedSourceChanges": [
+    "src/content/course-outline.ts",
+    "src/lib/course-engine.ts",
+    "src/content/publication-manifest.ts",
+    "src/content/lessons/py101/basic-value-types.ts",
+    "scripts/validate-python.ts",
+    "scripts/py101-p1-compatibility.ts",
+    "tests/content.test.ts",
+    "tests/py101-basic-value-types.test.ts"
+  ],
+  "newLessonIds": [
+    "PY101-C02-L03"
+  ],
+  "allAssertionsPassed": true
+}

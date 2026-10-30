@@ -43,6 +43,7 @@ import { pythonNotebookCellOrderLesson } from "../content/lessons/py101/notebook
 import { pythonEnvironmentReproductionLesson } from "../content/lessons/py101/environment-reproduction";
 import { pythonVariablesAndAssignmentLesson } from "../content/lessons/py101/variables-and-assignment";
 import { pythonBasicValueTypesLesson } from "../content/lessons/py101/basic-value-types";
+import { pythonArithmeticExpressionsLesson } from "../content/lessons/py101/arithmetic-expressions";
 import {
   publicationManifest,
   readablePublications,
@@ -57,6 +58,7 @@ import {
 } from "../content/models";
 
 const contents: Lesson[] = [
+  pythonArithmeticExpressionsLesson,
   pythonBasicValueTypesLesson,
   pythonVariablesAndAssignmentLesson,
   pythonEnvironmentReproductionLesson,

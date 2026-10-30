@@ -1,0 +1,543 @@
+{
+  "baseline": "cb11207cbb580b316daa2113c94ec1662e28c4a9",
+  "addedLessonIds": [
+    "PY101-C02-L03"
+  ],
+  "sources": [
+    {
+      "path": "src/content/course-outline.ts",
+      "before": "import { z } from \"zod\";\nimport { mathCourseOutline } from \"./math-outline\";\nimport { ai000ChapterLessons } from \"./ai000-outline\";\n\nconst slotSchema = z.object({\n  courseId: z.string().regex(/^[A-Z]+\\d{3}$/),\n  chapterId: z.string().regex(/^[A-Z]+\\d{3}-C\\d{2}$/),\n  lessonId: z.string().regex(/^[A-Z]+\\d{3}-C\\d{2}-L\\d{2}$/),\n  title: z.string().min(1),\n  order: z.number().int().positive(),\n});\nfunction chapterSlots(\n  courseId: string,\n  chapter: number,\n  lessons: [string, string][],\n) {\n  const chapterId = `${courseId}-C${String(chapter).padStart(2, \"0\")}`;\n  return lessons.map(([suffix, title], index) =>\n    slotSchema.parse({\n      courseId,\n      chapterId,\n      lessonId: `${chapterId}-${suffix}`,\n      title,\n      order: index + 1,\n    }),\n  );\n}\n// 节级编辑蓝图；不修改 V1.0 章级事实，也不表示这些课时已写完。\nexport const courseOutline = [\n  ...ai000ChapterLessons.flatMap((titles, index) => chapterSlots(\"AI000\", index + 1,\n    titles.map((title, order) => [`L${String(order + 1).padStart(2, \"0\")}`, title]))),\n  ...chapterSlots(\"ML201\", 1, [\n    [\"L01\", \"什么是机器学习\"],\n    [\"L02\", \"如何定义预测任务\"],\n    [\"L03\", \"数据、特征与标签\"],\n  ]),\n  ...chapterSlots(\"ML201\", 2, [\n    [\"L01\", \"训练集、验证集和测试集\"],\n    [\"L02\", \"数据泄漏是怎样发生的\"],\n  ]),\n  ...chapterSlots(\"ML201\", 3, [\n    [\"L01\", \"从现实问题认识回归\"],\n    [\"L02\", \"线性回归模型：权重与偏置\"],\n    [\"L03\", \"预测误差、MAE 与 MSE\"],\n    [\"L04\", \"最小二乘法的基本思想\"],\n  ]),\n  // L01 由旧综合试读占用；显示顺序独立于稳定 ID。\n  ...chapterSlots(\"ML201\", 4, [\n    [\"L02\", \"从导数理解优化方向\"],\n    [\"L03\", \"梯度下降的数学原理\"],\n    [\"L04\", \"手动计算一次参数更新\"],\n    [\"L05\", \"使用 NumPy 实现线性回归\"],\n    [\"L06\", \"学习率与收敛实验\"],\n    [\"L07\", \"综合练习与实验分析\"],\n  ]),\n  // 第一章节级蓝图；实际可读性由Publication门禁决定。\n  ...chapterSlots(\"PY101\", 1, [\n    [\"L01\", \"从零运行第一个Python程序\"],\n    [\"L02\", \"解释器怎样找到并执行脚本\"],\n    [\"L03\", \"用编辑器完成保存与重跑\"],\n    [\"L04\", \"为项目准备独立的虚拟环境\"],\n    [\"L05\", \"在Jupyter中按顺序运行单元格\"],\n    [\"L06\", \"让别人复现一次环境问题\"],\n  ]),\n  // 第二章接入2.1、2.2；2.3–2.6仍留在P7文档规划中。\n  ...chapterSlots(\"PY101\", 2, [\n    [\"L01\", \"用变量保留并更新程序里的值\"],\n    [\"L02\", \"分清文字、整数、小数和真假值\"],\n  ]),\n  ...chapterSlots(\"PY101\", 5, [\n    [\"L01\", \"Python 函数与参数\"],\n    [\"L02\", \"位置与关键字参数绑定\"],\n    [\"L03\", \"返回值与 print 的区别\"],\n    [\"L04\", \"函数内外的变量与作用域\"],\n    [\"L05\", \"简单默认参数\"],\n    [\"L06\", \"可选进阶：共享对象与接口陷阱\"],\n  ]),\n  ...mathCourseOutline,\n];\nif (\n  new Set(courseOutline.map((slot) => slot.lessonId)).size !==\n  courseOutline.length\n)\n  throw new Error(\"节级蓝图 ID 重复\");\nexport const mlV2LessonIds = [\n  \"ML201-C03-L01\",\n  \"ML201-C03-L02\",\n  \"ML201-C03-L03\",\n  \"ML201-C04-L02\",\n  \"ML201-C04-L03\",\n  \"ML201-C04-L04\",\n  \"ML201-C04-L05\",\n] as const;\n",
+      "afterSha256": "1b8c55ceb1ba05fc00e947865c380829e1b73545b54d581e1c03e6a75ac780f2"
+    },
+    {
+      "path": "src/lib/course-engine.ts",
+      "before": "import { courses, getCourse } from \"./curriculum\";\nimport { getCourseDirectory } from \"./course-directory\";\nimport { courseOutline } from \"../content/course-outline\";\nimport { linearRegressionLesson } from \"../content/lessons/linear-regression\";\nimport { foundationLessons, pythonAdvancedLesson } from \"../content/lessons/foundations-v2-1\";\nimport { regressionTaskLesson } from \"../content/lessons/ml201/regression-task\";\nimport { linearModelLesson } from \"../content/lessons/ml201/linear-model\";\nimport { lossFunctionsLesson } from \"../content/lessons/ml201/loss-functions\";\nimport { derivativeDirectionLesson } from \"../content/lessons/ml201/derivative-direction\";\nimport { mseGradientLesson } from \"../content/lessons/ml201/mse-gradient\";\nimport { manualUpdateLesson } from \"../content/lessons/ml201/manual-update\";\nimport { numpyRegressionLesson } from \"../content/lessons/ml201/numpy-regression\";\nimport { maV22Lessons } from \"../content/lessons/ma101\";\nimport { whatIsAiLesson } from \"../content/lessons/ai000/what-is-ai\";\nimport { capabilitiesLesson } from \"../content/lessons/ai000/capabilities-and-errors\";\nimport { automationLesson } from \"../content/lessons/ai000/automation-and-ai\";\nimport { generativeLesson } from \"../content/lessons/ai000/generative-ai-and-llm\";\nimport { supervisedLearningLesson } from \"../content/lessons/ai000/supervised-learning\";\nimport { unsupervisedLearningLesson } from \"../content/lessons/ai000/unsupervised-learning\";\nimport { selfSupervisedLesson } from \"../content/lessons/ai000/self-supervised-learning\";\nimport { reinforcementLearningLesson } from \"../content/lessons/ai000/reinforcement-learning\";\nimport { dataFeaturesLabelsLesson } from \"../content/lessons/ai000/data-features-labels\";\nimport { modelsAndParametersLesson } from \"../content/lessons/ai000/models-and-parameters\";\nimport { usingFixedModelLesson } from \"../content/lessons/ai000/using-a-fixed-model\";\nimport { naturalLanguageLesson } from \"../content/lessons/ai000/natural-language-and-llm\";\nimport { computerVisionLesson } from \"../content/lessons/ai000/computer-vision\";\nimport { generativeWorkLesson } from \"../content/lessons/ai000/generative-work\";\nimport { rlApplicabilityLesson } from \"../content/lessons/ai000/rl-applicability\";\nimport { unreliableAnswersLesson } from \"../content/lessons/ai000/unreliable-answers\";\nimport { responsibleUseLesson } from \"../content/lessons/ai000/responsible-ai-use\";\nimport { whyFoundationsLesson } from \"../content/lessons/ai000/why-foundations\";\nimport { directionLearningRoutesLesson } from \"../content/lessons/ai000/direction-learning-routes\";\nimport { problemAnalysisCapstoneLesson } from \"../content/lessons/ai000/problem-analysis-capstone\";\nimport { privacyFairnessLesson } from \"../content/lessons/ai000/privacy-bias-fairness\";\nimport { multimodalLesson } from \"../content/lessons/ai000/multimodal-ai\";\nimport { trainingValidationTestLesson } from \"../content/lessons/ai000/training-validation-test\";\nimport { aiMlDlLesson } from \"../content/lessons/ai000/ai-ml-dl\";\nimport { pythonFirstRunLesson } from \"../content/lessons/py101/first-run\";\nimport { pythonScriptPathsLesson } from \"../content/lessons/py101/script-paths\";\nimport { pythonEditorRerunLesson } from \"../content/lessons/py101/editor-rerun\";\nimport { pythonProjectEnvironmentsLesson } from \"../content/lessons/py101/project-environments\";\nimport { pythonNotebookCellOrderLesson } from \"../content/lessons/py101/notebook-cell-order\";\nimport { pythonEnvironmentReproductionLesson } from \"../content/lessons/py101/environment-reproduction\";\nimport { pythonVariablesAndAssignmentLesson } from \"../content/lessons/py101/variables-and-assignment\";\nimport { pythonBasicValueTypesLesson } from \"../content/lessons/py101/basic-value-types\";\nimport {\n  publicationManifest,\n  readablePublications,\n  lessonHref,\n} from \"../content/publication-manifest\";\nimport {\n  isReadable,\n  type Course,\n  type Lesson,\n  type LessonSummary,\n  type Publication,\n} from \"../content/models\";\n\nconst contents: Lesson[] = [\n  pythonBasicValueTypesLesson,\n  pythonVariablesAndAssignmentLesson,\n  pythonEnvironmentReproductionLesson,\n  pythonScriptPathsLesson,\n  pythonEditorRerunLesson,\n  pythonProjectEnvironmentsLesson,\n  pythonNotebookCellOrderLesson,\n  pythonFirstRunLesson,\n  whatIsAiLesson,\n  capabilitiesLesson,\n  automationLesson,\n  aiMlDlLesson,\n  generativeLesson,\n  supervisedLearningLesson,\n  unsupervisedLearningLesson,\n  selfSupervisedLesson,\n  reinforcementLearningLesson,\n  dataFeaturesLabelsLesson,\n  modelsAndParametersLesson,\n  trainingValidationTestLesson,\n  usingFixedModelLesson,\n  naturalLanguageLesson,\n  computerVisionLesson,\n  multimodalLesson,\n  generativeWorkLesson,\n  rlApplicabilityLesson,\n  unreliableAnswersLesson,\n  privacyFairnessLesson,\n  responsibleUseLesson,\n  whyFoundationsLesson,\n  directionLearningRoutesLesson,\n  problemAnalysisCapstoneLesson,\n  ...maV22Lessons,\n  regressionTaskLesson,\n  linearModelLesson,\n  lossFunctionsLesson,\n  derivativeDirectionLesson,\n  mseGradientLesson,\n  manualUpdateLesson,\n  numpyRegressionLesson,\n  linearRegressionLesson,\n  ...foundationLessons,\n  pythonAdvancedLesson,\n];\nexport const lessonRegistry: ReadonlyMap<string, Lesson> = new Map(\n  contents.map((lesson) => [lesson.id, lesson]),\n);\n\nexport function validateRegistry(\n  entries: Publication[],\n  lessons: readonly Lesson[],\n) {\n  if (new Set(entries.map((e) => e.lessonId)).size !== entries.length)\n    throw new Error(\"发布清单课时 ID 重复\");\n  if (new Set(lessons.map((e) => e.id)).size !== lessons.length)\n    throw new Error(\"内容课时 ID 重复\");\n  if (\n    new Set(\n      entries\n        .filter((e) => e.catalogRole !== \"legacy\")\n        .map((e) => `${e.chapterId}:${e.order}`),\n    ).size !== entries.filter((e) => e.catalogRole !== \"legacy\").length\n  )\n    throw new Error(\"同章课时顺序重复\");\n  for (const entry of entries) {\n    const catalog = getCourse(entry.courseId);\n    const chapterIndex = catalog?.chapters.findIndex(\n      (_, index) =>\n        `${catalog.id}-C${String(index + 1).padStart(2, \"0\")}` ===\n        entry.chapterId,\n    );\n    if (\n      !catalog ||\n      chapterIndex === undefined ||\n      chapterIndex < 0 ||\n      !entry.lessonId.startsWith(`${entry.chapterId}-L`)\n    )\n      throw new Error(`发布清单引用无效课程或章节：${entry.lessonId}`);\n    if (entry.catalogRole !== \"legacy\") {\n      const slot = courseOutline.find((s) => s.lessonId === entry.lessonId);\n      if (\n        !slot ||\n        slot.chapterId !== entry.chapterId ||\n        slot.title !== entry.title ||\n        slot.order !== entry.order\n      )\n        throw new Error(`教材与节级蓝图不一致：${entry.lessonId}`);\n    }\n    const lesson = lessons.find((l) => l.id === entry.lessonId);\n    if (!lesson) throw new Error(`缺少教材：${entry.lessonId}`);\n    for (const key of [\n      \"courseId\",\n      \"chapterId\",\n      \"title\",\n      \"contentVersion\",\n    ] as const)\n      if (lesson[key] !== entry[key])\n        throw new Error(`教材与清单不一致：${entry.lessonId}.${key}`);\n  }\n  for (const lesson of lessons)\n    if (!entries.some((e) => e.lessonId === lesson.id))\n      throw new Error(`教材未登记：${lesson.id}`);\n}\nvalidateRegistry(publicationManifest, contents);\n\nexport function getLearningCourse(courseId: string): Course | undefined {\n  const catalog = getCourse(courseId);\n  if (!catalog) return undefined;\n  return getCourseDirectory(catalog);\n}\nexport function resolveLesson(courseId: string, lessonId: string) {\n  const publication = publicationManifest.find(\n    (e) => e.courseId === courseId && e.lessonId === lessonId,\n  );\n  if (!publication || !isReadable(publication)) return undefined;\n  const course = getLearningCourse(courseId);\n  const lesson = lessonRegistry.get(lessonId);\n  const chapter = course?.chapters.find((c) => c.id === publication.chapterId);\n  return course && lesson && chapter\n    ? { course, chapter, lesson, publication }\n    : undefined;\n}\nexport function getAdjacentLessons(course: Course, lessonId: string) {\n  const lessons = course.chapters\n    .flatMap((c) => c.lessons)\n    .filter((e) => e.catalogRole !== \"legacy\" && isReadable(e));\n  const index = lessons.findIndex((l) => l.lessonId === lessonId);\n  if (index < 0) return {};\n  return { previous: lessons[index - 1], next: lessons[index + 1] };\n}\nexport const lessonSummaries: LessonSummary[] = readablePublications.map(\n  (entry) => ({\n    ...entry,\n    href: lessonHref(entry),\n    courseName: getCourse(entry.courseId)!.name,\n    level: getCourse(entry.courseId)!.lvl,\n    displayNumber: getLearningCourse(entry.courseId)\n      ?.chapters.flatMap((ch) => ch.lessons)\n      .find((l) => l.lessonId === entry.lessonId)?.displayNumber,\n    sectionTitles: lessonRegistry\n      .get(entry.lessonId)!\n      .sections.map(({ id, title }) => ({ id, title })),\n  }),\n);\nexport const learningCourses = courses.map((c) => getLearningCourse(c.id)!);\n",
+      "afterSha256": "e93ebb0cbfa3f54de383d7b52584e7cacc01b4554f5cf46c0c11656314585d41"
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "before": "import { isReadable, publicationSchema } from \"./models\";\nimport { legacyMathSlots, maV22LessonIds } from \"./math-outline\";\nimport { courseOutline, mlV2LessonIds } from \"./course-outline\";\n\nconst revisedCoreLessons: Record<string, number> = { \"MA101-C02-L03\": 2, \"PY101-C05-L01\": 2 };\n\n// 发布权限独立于原始课程规划。技术证据不替代人工审核。\nexport const publicationManifest = [\n  {lessonId:\"PY101-C02-L02\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"分清文字、整数、小数和真假值\",contentVersion:1,order:2,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p9/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C02-L01\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"用变量保留并更新程序里的值\",contentVersion:1,order:1,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p9/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L06\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"让别人复现一次环境问题\",contentVersion:1,order:6,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p8/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L05\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"在Jupyter中按顺序运行单元格\",contentVersion:1,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p7/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L04\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"为项目准备独立的虚拟环境\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p4/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L03\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"用编辑器完成保存与重跑\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p3/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L02\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"解释器怎样找到并执行脚本\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p6/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L01\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"从零运行第一个Python程序\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p2/FIRST_LESSON_AMENDMENT.md\"},\n  {lessonId:\"AI000-C07-L03\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"综合实践：分析 AI 问题并制定学习计划\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_3_AND_COURSE_REVIEW.md\"},\n  {lessonId:\"AI000-C07-L02\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"AI 不同技术方向需要哪些基础？\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_2_REVIEW.md\"},\n  {lessonId:\"AI000-C07-L01\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"为什么学习 Python、数学与数据分析？\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_1_REVIEW.md\"},\n  {lessonId:\"AI000-C06-L03\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"版权、误用与负责任地使用 AI\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C06-L02\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"数据隐私、偏差与公平性\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C06-L01\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"为什么 AI 会产生不可靠的回答？\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_6_1_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L05\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"强化学习适合哪些应用问题？\",contentVersion:1,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C05-L03\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"多模态 AI：连接文字、图片与声音\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L04\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"生成模型：从要求到可核对的作品\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L02\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"计算机视觉：让机器理解图像\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_5_2_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L01\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"自然语言处理与大语言模型\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L04\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"模型训练好以后，如何完成预测？\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L03\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"训练、验证与测试各有什么作用？\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L02\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"模型和参数是怎样得到的？\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_VISUAL_CONTENT_REFINEMENT.md\"},\n  {lessonId:\"AI000-C04-L01\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"数据、特征与标签\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_VISUAL_CONTENT_REFINEMENT.md\"},\n  {lessonId:\"AI000-C03-L04\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"强化学习：通过行动与反馈学习\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L03\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"自监督学习：怎样从数据本身构造学习任务？\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L02\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"无监督学习：没有标签也能发现规律吗？\",contentVersion:2,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L01\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"监督学习：从有答案的例子中学习\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  ...courseOutline.filter(slot => slot.courseId === \"AI000\" && [\"AI000-C01-L02\",\"AI000-C01-L03\",\"AI000-C02-L02\"].includes(slot.lessonId)).map(slot => ({...slot,contentVersion:slot.lessonId === \"AI000-C01-L02\" ? 2 : 1,status:\"pending-review\",access:\"preview\",technicalEvidence:slot.lessonId === \"AI000-C02-L02\" ? \"docs/AI000_R3_REFINEMENT_REPORT.md\" : \"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"})),\n  {\n    lessonId: \"AI000-C02-L01\",\n    courseId: \"AI000\",\n    chapterId: \"AI000-C02\",\n    title: \"AI、机器学习与深度学习，到底是什么关系？\",\n    contentVersion: 2,\n    order: 1,\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\",\n  },\n  {\n    lessonId: \"AI000-C01-L01\",\n    courseId: \"AI000\",\n    chapterId: \"AI000-C01\",\n    title: \"人工智能究竟是什么？\",\n    contentVersion: 2,\n    order: 1,\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\",\n  },\n  ...courseOutline\n    .filter((slot) => mlV2LessonIds.some((id) => id === slot.lessonId) || slot.chapterId === \"PY101-C05\" || maV22LessonIds.some((id) => id === slot.lessonId))\n    .map((slot) => ({\n      ...slot,\n      contentVersion: revisedCoreLessons[slot.lessonId] ?? 1,\n      optionalLesson: slot.lessonId === \"PY101-C05-L06\",\n      catalogRole: \"current\",\n      status: \"pending-review\",\n      access: \"preview\",\n      technicalEvidence: slot.lessonId === \"MA101-C02-L03\" || slot.lessonId === \"ML201-C04-L04\" || (slot.courseId === \"PY101\" && slot.lessonId !== \"PY101-C05-L06\")\n        ? \"docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md\"\n        : slot.courseId === \"MA101\" ? \"docs/MA101_EDITORIAL_REVIEW_V1.md\" : \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\",\n    })),\n  ...legacyMathSlots.map((slot) => ({ ...slot, catalogRole: \"legacy\", contentVersion: 1, status: \"pending-review\", access: \"preview\", technicalEvidence: \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\" })),\n  {\n    lessonId: \"ML201-C04-L01\",\n    courseId: \"ML201\",\n    chapterId: \"ML201-C04\",\n    title: \"线性回归与梯度下降\",\n    contentVersion: 1,\n    order: 1,\n    catalogRole: \"legacy\",\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence: \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\",\n  },\n].map((entry) => publicationSchema.parse(entry));\n\nexport const readablePublications = publicationManifest.filter(isReadable);\nexport const lessonHref = (entry: { courseId: string; lessonId: string }) =>\n  `/learn/${entry.courseId}/${entry.lessonId}`;\n",
+      "afterSha256": "a6988d56cd0988d19f4748aa4b35d496b9bf1fe1c9d5fcc73015be4d5d7e01a6"
+    },
+    {
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "before": "import { lessonSchema, type ContentBlock } from \"../../models\";\nimport { valueTypeCode, valueTypeBlockNames, type ValueTypeKey } from \"../../resources/python-value-types\";\nconst p = (text: string): ContentBlock => ({ type: \"paragraph\", text });\nconst text = (filename: string, code: string): ContentBlock => ({ type: \"code\", filename, code, language: \"text\" });\nconst sample = (key: ValueTypeKey): ContentBlock => ({ type: \"code\", filename: valueTypeBlockNames[key], code: valueTypeCode[key], language: \"python\" });\nconst lines = (key: ValueTypeKey, start: number, end: number) => valueTypeCode[key].split(\"\\n\").slice(start, end).map((line, i) => `第${start + i + 1}行：${line}`).join(\"；\");\n\n// 课前简报、预解、官方事实及真实运行：docs/py101-p9/。无新下载，学生自行建.py。\nexport const pythonBasicValueTypesLesson = lessonSchema.parse({\n  id: \"PY101-C02-L02\", courseId: \"PY101\", chapterId: \"PY101-C02\", title: \"分清文字、整数、小数和真假值\",\n  contentVersion: 1, optionalLesson: false,\n  subtitle: \"两个值都显示3，怎样知道一个是数量、另一个是文字？先预测，再用type取得证据。\",\n  prerequisites: \"已完成第一章与2.1：能选合法名称、赋值和重新赋值，区分名称与引号文字，使用print，保存并从终端完整运行.py。沿用已有Python 3和编辑器，无需安装库；手机可读，代码操作需要电脑。\",\n  prerequisiteLinks: [\n    { title: \"2.1 名称与当前值\", href: \"/learn/PY101/PY101-C02-L01#name-and-value\", note: \"复习赋值、绑定和名称读取。\" },\n    { title: \"2.1 名称与引号内文字\", href: \"/learn/PY101/PY101-C02-L01#literal-or-name\", note: \"复习固定字符串与名称读取的差别。\" },\n    { title: \"2.1 保存并运行完整脚本\", href: \"/learn/PY101/PY101-C02-L01#predict-run\", note: \"补齐预测、保存及实际执行。\" },\n    { title: \"1.3 保存与重跑\", href: \"/learn/PY101/PY101-C01-L03#save-rerun\", note: \"核对保存状态和准确执行目标。\" },\n  ],\n  objectives: [\n    \"按文字标记、完整件数、测量值和真假状态的用途，独立选择Python字面量、写入变量并说明理由\",\n    \"在真实.py中用type取得str、int、float、bool的类型证据，解释为什么相同显示不代表相同类型\",\n    \"保持名称不变，预测并验证整数与数字文本的重新绑定，换新数值重跑并解释当前值与类型的关系\",\n  ],\n  assessmentMap: [{ objective: 1, exerciseIds: [\"write-four-values\"] }, { objective: 2, exerciseIds: [\"write-four-values\", \"same-display-different-type\"] }, { objective: 3, exerciseIds: [\"same-display-different-type\"] }],\n  learningTime: { reading: [12,18], practice: [6,10], coding: [12,18], basis: \"editorial-estimate\" },\n  sections: [\n    { id: \"same-display\", title: \"两个值都显示3，就一样吗？\", navGroup: \"values\", navLabel: \"先看值\", blocks: [\n      p(\"整理物品时，一份记录要保存物品数量，另一份记录要保存标签上印的文字。数量是3，标签文字恰好也是“3”。用2.1学过的赋值，可以分别交给两个名称。它们在屏幕上会有什么不同？先在本地笔记写下下面两个print的预测。\"),\n      sample(\"sameDisplay\"),\n      p(\"在自己的练习文件夹新建same_display.py，输入这四行，行首不加缩进，源码放在.venv外。保存后用pwd和Windows的dir（macOS为ls）确认目标，再在终端完整运行对应命令；沿用之前已核验的Python。若此前Windows一直用py，就保持py。\"),\n      text(\"Windows · PowerShell · 文件所在目录\", \"python same_display.py\"),\n      text(\"macOS · 终端 · 文件所在目录\", \"python3 same_display.py\"),\n      text(\"普通输出 · 运行后核对\", \"3\\n3\"),\n      p(\"两行确实都显示3。第一份值3没有引号，是整数；第二份值\\\"3\\\"有配对引号，是字符串，保存的是文字。数字字符放进字符串后仍然是文字，不会因为外观看起来像数量就自动变成整数。\"),\n      p(\"类型描述值属于哪种数据类别。整数的类型名是int，字符串的类型名是str。print把值显示为文字，引号本身不显示，所以这两次普通输出没有把原来的类型差别呈现出来。我们稍后会用一个观察工具核对，先再认识两种常用的值。\"),\n    ] },\n    { id: \"add-measurement\", title: \"测量值怎样写进程序？\", navGroup: \"values\", navLabel: \"先看值\", blocks: [\n      p(\"同一批物品还要记录单件质量，单位约定为千克，数值为1.5。把下面两行另存为measurement.py，先预测，再把运行命令中的文件名换成它，保存并完整执行。\"),\n      sample(\"measurement\"), text(\"测量例 · 预期输出\", \"1.5\"),\n      p(\"1.5这种带小数点的数值写法在这里得到float类型，通常称为浮点数；如果写成\\\"1.5\\\"，得到的仍是str文字。程序中数值不加引号，单位由记录说明，不把kg直接接在数值后面。\"),\n      p(\"float有表示精度的限制，不能保证任意十进制小数都能精确保存。本课先学习辨认和观察这种类型，暂时不做精度运算。int可以表示完整件数，float适合本例中的测量记录，两者的用途要结合你保存的内容判断。\"),\n    ] },\n    { id: \"ready-state\", title: \"准备好了，是状态还是文字？\", navGroup: \"values\", navLabel: \"先看值\", blocks: [\n      p(\"除了数量和质量，还可以记录“是否已经准备好”。True表示真，False表示假，这两个值属于bool类型，也叫布尔值。Python中必须按True、False的大小写写，开头大写，其余小写；它们本身不加引号。\"),\n      p(\"下面让is_ready记录已准备好，让is_waiting记录当前没有在等待。ready_text则只保存标签上写的True这个单词。先预测三条普通输出，再保存为ready_state.py并完整运行。\"),\n      sample(\"booleanValues\"), text(\"状态与文字 · 预期输出\", \"True\\nTrue\\nFalse\"),\n      p(\"前两行看起来相同：True是真假状态值，\\\"True\\\"是带引号的字符串。第三行False也是bool值。名字里的is只是帮助人读懂用途，并不替Python决定类型；值实际怎样写才是接下来要核对的依据。\"),\n    ] },\n    { id: \"inspect-type\", title: \"用type看当前值属于哪一类\", navGroup: \"inspect\", navLabel: \"观察类型\", blocks: [\n      p(\"type是Python自带的类型观察工具。把一个值或已有名称放在它的括号中，它会取得这个值的类型。这里使用一个参数，也就是括号中交给它的一份值；观察不会把原值转换成另一类型。自己选变量名时，先把print和type这两个名字留给现成工具。\"),\n      p(\"回到same_display.py，在原四行之后追加下面这一行；这个文件前面已经给item_count赋值为3。先从里面看：item_count读取当前值3；type(item_count)取得它的类型；外层print再把类型结果显示出来。两层括号分别成对，执行观察时先得到里面的结果，再交给外面的print。写下新增一行的预测，再保存并从头运行same_display.py。\"),\n      sample(\"firstType\"), text(\"新增类型输出 · 接在两行3之后\", \"<class 'int'>\"),\n      p(\"<class 'int'>是Python显示“这是int类型”的一种形式。连同尖括号、单引号一起看，这是刚才程序的输出，不是要复制到.py中的新语句；本课不需要学习class定义。\"),\n      p(\"现在另建inspect_pair.py，使用原来的3和\\\"3\\\"。先写两次类型预测，再保存并运行下面的完整小程序。\"),\n      sample(\"pairTypes\"), text(\"两份值的类型 · 预期输出\", \"<class 'int'>\\n<class 'str'>\"),\n      p(\"两次普通print都显示3，因为字符串显示时不带包住它的引号；两次type结果不同，因为原值分别是整数和字符串。普通显示回答“显示出来是什么”，type观察回答“当前值属于哪类”，需要把这两份证据一起看。\"),\n      p(\"再回到ready_state.py，在原有代码末尾加上这三行。它们读取该文件前面已经赋值的三个名称，先预测各自类型，再保存并从头运行整个文件。\"),\n      sample(\"booleanTypes\"), text(\"追加的三条类型输出 · 接在原三条普通输出后\", \"<class 'bool'>\\n<class 'str'>\\n<class 'bool'>\"),\n      p(\"True和False在这里都观察为bool，带引号的\\\"True\\\"观察为str。若本来想写状态却得到str，先检查是否把True或False放进了引号；若报NameError且提到true或false，再核对字面量大小写和实际代码，不把这种拼写问题当成缺包。\"),\n    ] },\n    { id: \"four-types\", title: \"把四种值和观察结果放在一起\", navGroup: \"inspect\", navLabel: \"观察类型\", blocks: [\n      p(\"把前面的观察组合成four_values.py：前四行赋值，中间四行显示值，最后四行显示类型。空行只是分开这三组，方便阅读。先预测八行输出，再保存，从终端完整运行它。\"),\n      sample(\"main\"), text(\"完整主例 · 八行预期输出\", \"3\\n3\\n1.5\\nTrue\\n<class 'int'>\\n<class 'str'>\\n<class 'float'>\\n<class 'bool'>\"),\n      p(\"将真实结果和预测逐行比较。item_mass对应的1.5为float，is_ready对应的True为bool；前两行普通显示相同，末尾的类型记录却能区分整数与数字文本。下面这张表只收拢已经观察过的四种写法，独立练习还要换成你自己的值。\"),\n      { type: \"table\", caption: \"四种基本值的写法与本课用途\", columns: [\"类型\", \"例子\", \"本课主要用途\"], rows: [\n        [\"str\", '\\\"Box A\\\"', \"文字、标记\"], [\"int\", \"3\", \"完整件数\"], [\"float\", \"1.5\", \"测量数值\"], [\"bool\", \"True或False\", \"真假状态\"],\n      ] },\n    ] },\n    { id: \"same-name-new-type\", title: \"名字没换，当前值的类型可以换\", navGroup: \"rebind\", navLabel: \"同名与类型\", blocks: [\n      p(\"2.1中，你给同一名称换过另一段任务文字。这次把batch_count先交给整数8，再改为对应数字文本\\\"8\\\"。先预测下面四行输出：哪两行显示的文字相同，哪两行给出不同类型？名称有没有换？写好再保存为changing_type.py并完整运行。\"),\n      sample(\"rebind\"), text(\"同名重新赋值 · 预期输出\", \"8\\n<class 'int'>\\n8\\n<class 'str'>\"),\n      p(\"名称一直是batch_count。第一次读取时，它对应整数8；第二次赋值后，它对应字符串\\\"8\\\"。类型来自当前读到的值，没有永久固定在变量名上。这次赋值让同一名称改为对应另一份值，并没有把原来那个整数本身改成字符串。\"),\n      p(\"所以只看名称叫不叫count，或者普通输出有没有数字字符，都不足以判断类型。先看本次实际执行的赋值，再用type观察当前值，就能核对自己的判断。\"),\n    ] },\n    { id: \"practice\", title: \"换成自己的值，留下类型证据\", navGroup: \"practice\", navLabel: \"独立练习\", blocks: [\n      p(\"先不看参考答案，独立写两份短.py。每份只需源码、实际命令、预测与真实输出，加几句理由；网页输入框是临时思考区，正式代码和运行记录保存在本地。\"),\n      { type: \"exercise\", id: \"write-four-values\", title: \"自己建立四类值\", kind: \"代码\",\n        prompt: \"新建与正文不同的.py，自选一个新实际情境，例如个人用品整理或活动准备，不照抄正文物品。为文字标记、完整件数、测量值和真假状态各选一个合法名称及合适的新值。运行前记下四个值、预期显示和类型；自己写四份赋值，用print显示值，再用print(type(名称))观察类型。保存并真实运行，逐项核对预测。交付源码、运行命令、四项预测与真实结果，并简短说明每种值为何适合用途；测量项注明单位即可，不需要拼接输出、安装库或转换类型。接受不同情境、名称、数值和配对引号。\",\n        hints: [\"先看你选的值怎样写：有没有引号，是完整整数、带小数点的数值，还是真假状态？要保存的是文字还是数量？\", \"先组织四份赋值，再逐项显示值和类型；每次type读取的名称要与赋值一致。保持两层括号配对，仍由你填入情境、名字、新值和预测，再保存运行。\"],\n        solution: [\n          \"例如改用绘画用品情境，新建drawing_kit.py。下面每个“第几行”都各写一行，分隔说明不输入源码；你自己的情境和值应另选。\",\n          `先保存四份值：${lines(\"ownFour\",0,4)}。标签是文字用str，6支铅笔是完整件数用int，17.5厘米长度是测量值用float，尚未装好用False表示bool状态。`,\n          `接着显示四份值：${lines(\"ownFour\",4,8)}。再观察四个类型：${lines(\"ownFour\",8,12)}。名称先赋值再读取，print与type的括号分别配对。`,\n          \"先预测八行：Sketch kit、6、17.5、False、<class 'str'>、<class 'int'>、<class 'float'>、<class 'bool'>。保存后运行python drawing_kit.py（macOS用python3，已核验的py也可），交本人真实结果与对照，而非只抄这组预期。\",\n          \"常错是将6写成\\\"6\\\"、将False写成\\\"False\\\"，它们能运行却会得到str；写成false而此前没有该名称会NameError；漏一边引号可能SyntaxError。若测量写成17，观察为int；17.0则为float。根据实际用途和type结果修正，接受不同合法名称、单引号、中文标签或其他新的合理值。\",\n        ],\n        rubric: [\n          \"真实新.py含自选情境、合法名称与四种新值，分别满足文字/完整件数/测量/真假状态的用途；理由与字面量对应。\",\n          \"有运行前四项值/显示/类型预测，实际命令及完整输出；能用本人type结果确认str、int、float、bool，差异有核对。\",\n          \"测量单位清楚，True/False和引号使用正确，显示与类型观察均真实执行；复制参考答案、Quiz或读完标记不代替代码成果。\",\n        ],\n      },\n      { type: \"exercise\", id: \"same-display-different-type\", title: \"相同显示，不同类型\", kind: \"代码\",\n        prompt: \"另建一个短.py，自选与正文不同的合法名称和一个新的非负完整件数（不使用3或8）。先让该名称对应这个整数，显示值和type结果；再让同一名称对应表示同一数量的带引号数字文本，再显示值和type。运行前预测两次普通显示及两次类型输出，保存并实际运行。然后保持名称相同，把两阶段都换成另一组对应的整数/数字文本，重新预测、保存和完整运行。交付改前/改后源码、命令、两轮预测与真实结果，再简短解释为什么显示相同而类型不同、为何不能由名称判断类型。任务只需赋值、print和type，不使用转换或运算。\",\n        hints: [\"沿实际执行顺序看同一个名字：第一次对应的值带引号吗？后一次呢？分别预测普通显示与类型观察。\", \"为每次赋值配上显示值和显示类型两步，保证两个阶段读取同一名称；换新数量时检查整数和数字文本是否仍对应，再由你保存重跑并核对。\"],\n        solution: [\n          `例如新建crate_types.py，选crate_total和完整件数12。六行依次为：${lines(\"ownRebind\",0,6)}。两阶段保持同名，整数不加引号，数字文本使用配对引号。`,\n          \"先预测四行12、<class 'int'>、12、<class 'str'>，再运行python crate_types.py（macOS用python3）。普通显示相同，因为文字12打印时不显示包住它的引号；类型分别来自整数和字符串。\",\n          `第二轮仍用crate_total，换27和\\\"27\\\"，六行依次为：${lines(\"ownChanged\",0,6)}。先预测27/int/27/str（类型的完整显示形式同上），保存并完整运行，交本人真实四行结果。`,\n          \"名称没有改变，后一次赋值让它对应另一类型的值；type读取本次当前值，而不是从crate_total的拼写猜类型。接受其他新整数和合法名称，数字文本用单引号或双引号都可。\",\n          \"常错是两个阶段换了不同名称、只打印值未观察类型、把字符串再次写成无引号数字，或改新数量后没保存重跑。若只改一阶段，普通显示会不同，先对照题意与实际源码修正；不要引入转换来绕过两种字面量写法。\",\n        ],\n        rubric: [\n          \"同一合法名称在两个阶段分别对应整数和表示同一数量的字符串，源码包含两次普通显示和两次type观察，内容由学生另选。\",\n          \"两轮均先预测普通输出与类型再实际运行；换另一组数量后保存完整重跑，源码、命令与真实结果可对应。\",\n          \"结合自己的输出解释显示相同不等于类型相同，名称未固定为某种类型，当前读到的值决定本次类型结果；只交解释或参考输出不足完成。\",\n        ],\n      },\n    ] },\n    { id: \"next-step\", title: \"先确认值的类型，再准备使用它\", navGroup: \"finish\", navLabel: \"回顾与后续\", blocks: [\n      { type: \"summary\", points: [\"给文字、完整件数、测量值和真假状态选择合适的字面量，分别观察str、int、float、bool。\", \"普通print可能让不同类型看起来相同；读取名称，取得type结果，再显示它，可以核对类型。\", \"同一名称可以先后对应不同类型的值。预测、保存和完整重跑，检查每一次读取发生时对应什么。\"] },\n      p(\"保留两份自己写的程序及短记录，换一个值后能重新预测和核对，才有这次代码操作的证据。网页读完只记录阅读，type输出本身也不能替代你对用途和结果的解释。\"),\n      p(\"接下来规划2.3「用表达式算出一个结果」，目前尚无可读正文，2.4–2.6也仍在规划。阅读器的下一可读课可能跳到第5章函数试读，它还需要表达式与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。\"),\n    ] },\n  ], resources: [],\n  references: [\n    { title: \"Python内置类型\", href: \"https://docs.python.org/3.14/library/stdtypes.html\", note: \"核对字符串、整数、浮点数和布尔值的基本意义。\" },\n    { title: \"type单参数观察\", href: \"https://docs.python.org/3.14/library/functions.html#type\", note: \"核对取得值类型的行为，本课不涉及三参数形式。\" },\n    { title: \"Python入门\", href: \"https://docs.python.org/3/tutorial/introduction.html\", note: \"数值、字符串及赋值的短例。\" },\n    { title: \"数据模型中的值与类型\", href: \"https://docs.python.org/3.14/reference/datamodel.html#objects-values-and-types\", note: \"核对类型与值的关系，不要求学习对象机制。\" },\n    { title: \"浮点数的表示限制\", href: \"https://docs.python.org/3.14/tutorial/floatingpoint.html\", note: \"核对精度边界，详细原理留后续按需学习。\" },\n  ],\n});\n",
+      "afterSha256": "1b053a6204a405a332af401f303fd159f9338304ce518c8ad4425531c727beed"
+    },
+    {
+      "path": "scripts/validate-python.ts",
+      "before": "import { spawnSync } from \"node:child_process\";\nimport { writeFile } from \"node:fs/promises\";\nimport { evidencePath } from \"./evidence-path\";\nimport { lessonRegistry } from \"../src/lib/course-engine\";\nimport { corePrograms, regressionCoreCode } from \"../src/content/resources/core-programs\";\nimport { programs, gradientDescentCode } from \"../src/content/resources/programs\";\nimport { notebookCode, notebookBlockNames } from \"../src/content/resources/python-notebook\";\nimport { reproductionCode, reproductionBlockNames } from \"../src/content/resources/python-reproduction\";\nimport { runVariableExample } from \"./python-variable-checks\";\nimport { runValueTypeExample } from \"./validate-py101-value-types\";\n\nconst python = process.env.AIVORA_PYTHON ?? \"python\";\nfunction run(args: string[]) {\n  const result = spawnSync(python, args, {\n    encoding: \"utf8\",\n    env: { ...process.env, PYTHONIOENCODING: \"utf-8\" },\n    timeout: 30_000,\n  });\n  if (result.error || result.status !== 0)\n    throw new Error(`Python 校验失败：${result.error ?? result.stderr}`);\n  return {\n    exitCode: result.status,\n    stdout: result.stdout.replace(/\\r\\n/g, \"\\n\").trim(),\n    stderr: result.stderr.replace(/\\r\\n/g, \"\\n\").trim(),\n  };\n}\nconst environment = run([\n  \"-c\",\n  \"import sys,numpy; print(sys.version.split()[0]); print('NumPy',numpy.__version__)\",\n]);\nconst unit = run([\n  \"-m\",\n  \"unittest\",\n  \"discover\",\n  \"-s\",\n  \"tests\",\n  \"-p\",\n  \"test_*.py\",\n  \"-v\",\n]);\nconst examples = [...lessonRegistry.values()].flatMap((lesson) =>\n  lesson.sections.flatMap((section) =>\n    section.blocks.flatMap<Record<string, unknown>>((block) => {\n      if (block.type !== \"code\" || block.language !== \"python\") return [];\n      if (lesson.id === \"PY101-C02-L01\") {\n        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runVariableExample(block.filename, block.code) }];\n      }\n      if (lesson.id === \"PY101-C02-L02\") {\n        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runValueTypeExample(block.filename, block.code) }];\n      }\n      let setup = \"\";\n      if (lesson.id === \"PY101-C01-L06\") {\n        const key = (Object.keys(reproductionCode) as (keyof typeof reproductionCode)[]).find(key => reproductionBlockNames[key] === block.filename);\n        if (!key || block.code !== reproductionCode[key]) throw new Error(`未登记的复现课源码：${block.filename}`);\n        if (key === \"show\") setup = reproductionCode.assign;\n      }\n      if (lesson.id === \"PY101-C01-L05\") {\n        const key = (Object.keys(notebookCode) as (keyof typeof notebookCode)[]).find(key => notebookBlockNames[key] === block.filename);\n        if (!key || block.code !== notebookCode[key]) throw new Error(`未登记的Notebook单元格：${block.filename}`);\n        if (key === \"showMarker\") setup = notebookCode.setDraft;\n        if (key === \"showDelivery\") setup = notebookCode.setDelivery;\n      }\n      // Notebook使用前格上下文；仍实际执行每块。重启/旧状态/预期NameError另由真实内核专项检验。\n      const result = run([\"-c\", setup ? setup + \"\\n\" + block.code : block.code]);\n      if (lesson.id === \"PY101-C01-L06\") {\n        const expected: Record<string, string> = { [reproductionBlockNames.notice]: \"Notice N8\", [reproductionBlockNames.target]: \"Target R9\", [reproductionBlockNames.assign]: \"\", [reproductionBlockNames.show]: \"Checked F3\" };\n        if (block.filename in expected && result.stdout !== expected[block.filename]) throw new Error(`复现课输出不符：${block.filename}`);\n      }\n      if (lesson.id === \"PY101-C01-L05\") {\n        const expected: Record<string, string> = { [notebookBlockNames.setDraft]: \"\", [notebookBlockNames.setReady]: \"\", [notebookBlockNames.showMarker]: \"Draft A\", [notebookBlockNames.setDelivery]: \"\", [notebookBlockNames.showDelivery]: \"Packed C7\" };\n        if (block.filename in expected && result.stdout !== expected[block.filename]) throw new Error(`Notebook顺序输出不符：${block.filename}`);\n      }\n      if (lesson.id === \"PY101-C01-L04\") {\n        const independentExpected: Record<string, string> = { \"project-a/main.py\": \"Project A A4\", \"project-b/main.py\": \"Project B B6\" };\n        if (independentExpected[block.filename] !== undefined && result.stdout !== independentExpected[block.filename]) throw new Error(`虚拟环境课源码输出不符：${block.filename}`);\n        if (block.filename.startsWith(\"observe_env.py\")) {\n          for (const label of [\"Interpreter:\", \"Environment:\", \"Base Python:\", \"Version:\"]) if (!result.stdout.includes(label)) throw new Error(`诊断字段遗漏：${label}`);\n          // 全网页校验在当前基础Python执行；目标venv判据另由真实环境专项验证。\n        }\n      }\n      const expected = ({ \"第一条Python指令\": \"Hello, Aivora!\", \"first_run.py\": \"Hello, Aivora!\\nFile: first_run.py\", \"read_vector_components.py\": \"4 0 7\", \"add_two_vectors.py\": \"[2, 3]\", \"scale_vector.py\": \"[-6, -4]\", \"double_without_function.py\":\"6\", \"double_definition.py\":\"\", \"one_update.py\":\"-13.0 -8.0 1.3 0.8 1.685\", \"one_update_checks.py\":\"-13.0 -8.0 1.3 0.8 1.685\" } as Record<string,string>)[block.filename];\n      if (expected !== undefined && result.stdout !== expected)\n        throw new Error(`教材输出与预期不一致：${block.filename}`);\n      return [\n        {\n          lessonId: lesson.id,\n          sectionId: section.id,\n          filename: block.filename,\n          ...([\"PY101-C01-L05\", \"PY101-C01-L06\"].includes(lesson.id) ? { executionMode: setup ? \"ordered-cells\" : \"independent-cell\", setup } : {}),\n          ...(expected !== undefined ? { expected } : {}),\n          ...result,\n        },\n      ];\n    }),\n  ),\n);\nconst expectedOutputs: Record<keyof typeof corePrograms, string> = {\n  \"function-basics\": \"6\", \"function-binding\": \"12\\n12\", \"function-return\": \"4\\n4 None\",\n  \"function-scope\": \"5\\n10\", \"function-defaults\": \"6\\n12\", \"vector-basics\": \"[4, 3] [2, 4]\",\n  \"vector-dot\": \"5\", \"matrix-shape\": \"[[1, 4], [2, 5], [3, 6]]\",\n  \"matrix-product\": \"[[4 6]\\n [1 3]]\", \"numpy-shapes\": \"(2,) (2,)\\n(2, 1) (1, 2)\\n5\",\n};\nconst coreComparisons = Object.entries(corePrograms).map(([id, sample]) => {\n  const core = run([\"-c\", sample.core + \"\\n\" + sample.checks]);\n  const full = run([\"-c\", programs[id as keyof typeof corePrograms].code]);\n  if (core.stdout !== expectedOutputs[id as keyof typeof corePrograms] || core.stdout !== full.stdout)\n    throw new Error(`核心/完整版输出与预期不一致：${id}`);\n  return { id, expected: expectedOutputs[id as keyof typeof corePrograms], ...core, fullMatches: true };\n});\nconst trainingComparison = run([\"-c\", `import numpy as np\ncore, full = {}, {}\nexec(${JSON.stringify(regressionCoreCode)}, core)\nexec(${JSON.stringify(gradientDescentCode)}, full)\nnp.testing.assert_allclose([core['w'], core['b'], core['final_loss']], [full['w'], full['b'], full['final_loss']], atol=1e-12, rtol=0)\nnp.testing.assert_allclose([core['w'], core['b']], [2,1], atol=1e-7, rtol=0)\nassert core['final_loss'] < 1e-10\nprint('core/full training match; independent expected line y=2x+1')\n`]);\nconst report = {\n  checkedAt: new Date().toISOString(),\n  environment: environment.stdout,\n  unittest: unit,\n  examples,\n  coreComparisons,\n  trainingComparison,\n  note: \"技术校验通过；不代表人工内容审核、试学或正式发布。代码来自仓库静态教材，仅开发阶段执行。\",\n};\nconst reportPath = evidencePath(\"TEACHING_V2_3_PYTHON_RESULTS.json\");\nawait writeFile(\n  reportPath,\n  JSON.stringify(report, null, 2) + \"\\n\",\n);\nconsole.log(\n  `Python 单元测试通过，${examples.length} 个网页代码块按成功/受控错误契约实际执行通过，${coreComparisons.length} 组核心/完整版一致。证据：${reportPath}`,\n);\n",
+      "afterSha256": "302b10c535f89bed7b11580820b71c2dcec4f98a0dca865406a4b06f794fb06d"
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "before": "import { createHash } from \"node:crypto\";\nimport { readFileSync } from \"node:fs\";\n\ntype SourceChange = { path: string; before: string; afterSha256: string };\ntype ObjectChange = { id: string; before: unknown; afterSha256: string };\n// 使用同一个登记器按新到旧撤销已批准修订；不为每轮再嵌套一个专用兼容器。\ntype RevisionPlan = { baseline: string; sources: SourceChange[]; lessons: ObjectChange[]; publications: ObjectChange[]; addedLessonIds: string[]; workspaceOnly: { path: string; workspaceSha256: string; repositorySha256: string }[]; protectedText: { path: string; baselineSha256: string; lfSha256: string }[] };\nconst plans = [\"py101-p9\", \"py101-p8\", \"py101-p7\", \"py101-p6\", \"py101-p5\", \"py101-p4\", \"py101-p3\", \"py101-p2\"].map(round => JSON.parse(readFileSync(new URL(`../docs/${round}/APPROVED_CHANGES.json`, import.meta.url), \"utf8\")) as RevisionPlan);\nfunction revisions(throughBaseline?: string) {\n  const index = plans.findIndex(plan => plan.baseline === throughBaseline);\n  return index < 0 ? plans : plans.slice(0, index + 1);\n}\nconst sources = JSON.parse(readFileSync(new URL(\"../docs/py101-p1/SOURCE_CHANGES.json\", import.meta.url), \"utf8\")) as SourceChange[];\nconst sha = (source: string) => createHash(\"sha256\").update(source).digest(\"hex\");\nfunction undoSource(entries: SourceChange[], path: string, source: string) {\n  const entry = entries.find(row => row.path === path);\n  return entry && sha(source.replaceAll(\"\\r\\n\", \"\\n\")) === entry.afterSha256 ? entry.before : source;\n}\nexport const approvedPy101Additions = [...new Set(plans.flatMap(plan => plan.addedLessonIds))];\nexport function beforeApprovedPy101Source(path: string, source: string, throughBaseline?: string) {\n  return revisions(throughBaseline).reduce((value, plan) => undoSource(plan.sources, path, value), source);\n}\n// 自动回归允许原工作区与干净检出两种精确版本；工作区审计脚本仍严格要求原始指纹。\nexport function protectedPy101FileMatches(path: string, bytes: Buffer, expected: string, throughBaseline?: string) {\n  const digest = createHash(\"sha256\").update(bytes).digest(\"hex\");\n  if (digest === expected) return true;\n  const text = bytes.toString(\"utf8\");\n  // Git检出可转换文本换行；二进制仍逐字节比较，绝不以UTF-8解码后的图像作摘要。\n  const validText = !text.includes(\"\\0\") && Buffer.from(text).equals(bytes);\n  const variants = (value: string) => { const lf = value.replaceAll(\"\\r\\n\", \"\\n\"); return [lf, lf.replaceAll(\"\\n\", \"\\r\\n\")]; };\n  const matches = (value: string, target: string) => validText && variants(value).some(source => sha(source) === target);\n  if (matches(text, expected)) return true;\n  const relevant = revisions(throughBaseline);\n  const portable = relevant.flatMap(plan => plan.protectedText).find(row => row.path === path && row.baselineSha256 === expected);\n  if (portable && validText && sha(text.replaceAll(\"\\r\\n\", \"\\n\")) === portable.lfSha256) return true;\n  const local = relevant.flatMap(plan => plan.workspaceOnly).find(row => row.path === path && row.workspaceSha256 === expected);\n  if (local?.workspaceSha256 === expected && (local.repositorySha256 === digest || matches(text, local.repositorySha256))) return true;\n  return matches(beforeApprovedPy101Source(path, text, throughBaseline), expected);\n}\nexport function beforeApprovedPy101Object(kind: \"lessons\" | \"publications\", id: string, value: unknown, throughBaseline?: string) {\n  return revisions(throughBaseline).reduce((current, plan) => {\n    const entry = plan[kind].find(row => row.id === id);\n    return entry && sha(JSON.stringify(current)) === entry.afterSha256 ? entry.before : current;\n  }, value);\n}\n// 只有完整文件摘要命中才还原；未登记的任何附加修改必须继续暴露给旧保护测试。\nexport function beforePy101P1Source(path: string, source: string) {\n  return undoSource(sources, path, beforeApprovedPy101Source(path, source));\n}\n",
+      "afterSha256": "3d920bc39cbe83be257ceb734adc77c484e03ee8695c4e529462252439d83955"
+    },
+    {
+      "path": "tests/content.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { readFile, stat } from \"node:fs/promises\";\nimport { createHash } from \"node:crypto\";\nimport katex from \"katex\";\nimport sharp from \"sharp\";\nimport { lessonRegistry, resolveLesson } from \"../src/lib/course-engine\";\nimport { programs } from \"../src/content/resources/programs\";\nimport { readablePublications } from \"../src/content/publication-manifest\";\nimport { assertRegisteredInventory } from \"./helpers/registered-content\";\n\ntest(\"四门不同类型教材用同一模型，公式可严格解析，图片有正确尺寸和可读替代文字\", async () => {\n  assertRegisteredInventory();\n  for (const publication of readablePublications) {\n    const { lesson } = resolveLesson(\n      publication.courseId,\n      publication.lessonId,\n    )!;\n    const blocks = lesson.sections.flatMap((s) => s.blocks);\n    if (lesson.courseId === \"AI000\") {\n      assert.equal(blocks.filter((block) => block.type === \"exercise\").length, lesson.id === \"AI000-C01-L02\" ? 3 : 2);\n      // 不设每课配图门槛；原14幅精确图由兼容测试逐幅保护，5.1采用可回查表格。\n      assert.ok(blocks.some((block) => block.type === \"table\"));\n      // 结课页仅复用text块复制Markdown模板，不引入可执行课程代码。\n      assert.ok(blocks.every((block) => block.type !== \"experiment\" && (block.type !== \"code\" || (lesson.id === \"AI000-C07-L03\" && block.language === \"text\" && block.filename === \"AI000-final-report.md\"))));\n      assert.equal(blocks.filter(block => block.type === \"code\").length, lesson.id === \"AI000-C07-L03\" ? 1 : 0);\n      assert.equal(blocks.filter(block => block.type === \"math\").length, lesson.id === \"AI000-C05-L05\" ? 2 : 0);\n    } else if (lesson.courseId === \"MA101\" && publication.catalogRole !== \"legacy\") {\n      assert.ok(lesson.sections.filter((section) => section.tier === \"core\").flatMap((section) => section.blocks).filter((block) => block.type === \"exercise\").length >= 2);\n      assert.ok(blocks.some((block) => block.type === \"vector-figure\"));\n      assert.ok(lesson.sections.filter((section) => section.tier === \"core\").every((section) => !section.blocks.some((block) => block.type === \"code\")));\n    } else if (lesson.chapterId === \"PY101-C01\" || [\"PY101-C02-L01\", \"PY101-C02-L02\"].includes(lesson.id)) {\n      // 操作型首章及变量入门用目标对应的核心开放题验收；旧样章仍保留下面的Quiz契约。\n      const tasks = lesson.sections.filter(s => s.tier === \"core\").flatMap(s => s.blocks).filter(b => b.type === \"exercise\");\n      assert.ok(tasks.length > 0);\n      for (const row of lesson.assessmentMap) assert.ok(row.exerciseIds.every(id => tasks.some(task => task.id === id)));\n      assert.ok(blocks.some(b => b.type === \"code\" && b.language === \"python\"));\n    } else {\n      assert.ok(blocks.filter((b) => b.type === \"quiz\").length >= 2);\n      assert.ok(blocks.some((b) => b.type === \"code\"));\n    }\n    assert.equal(publication.status, \"pending-review\");\n    assert.equal(publication.reviewEvidence, undefined);\n    for (const block of blocks) {\n      if (block.type === \"math\")\n        assert.doesNotThrow(() =>\n          katex.renderToString(block.latex, {\n            throwOnError: true,\n            strict: \"error\",\n            trust: false,\n          }),\n        );\n      if (block.type === \"image\") {\n        const bytes = await readFile(`public${block.src}`);\n        const metadata = await sharp(bytes).metadata();\n        assert.equal(metadata.format, block.src.endsWith(\".webp\") ? \"webp\" : \"png\");\n        assert.equal(metadata.width, block.width);\n        assert.equal(metadata.height, block.height);\n        assert.ok(block.alt.length > 30);\n        if (block.mobile) {\n          const mobileBytes = await readFile(`public${block.mobile.src}`);\n          const mobileMetadata = await sharp(mobileBytes).metadata();\n          assert.equal(mobileMetadata.format, block.mobile.src.endsWith(\".webp\") ? \"webp\" : \"png\");\n          assert.equal(mobileMetadata.width, block.mobile.width);\n          assert.equal(mobileMetadata.height, block.mobile.height);\n        }\n      }\n    }\n    for (const resource of lesson.resources)\n      assert.ok((await stat(`public${resource.href}`)).size > 0);\n  }\n  assert.deepEqual(\n    [...new Set([...lessonRegistry.values()].map((l) => l.courseId))].sort(),\n    [\"AI000\", \"MA101\", \"ML201\", \"PY101\"],\n  );\n});\ntest(\"全部下载脚本、Notebook 和网页完整代码同源，Notebook 不伪造执行结果\", async () => {\n  const codeBlocks = [...lessonRegistry.values()]\n    .flatMap((l) => l.sections.flatMap((s) => s.blocks))\n    .filter((b) => b.type === \"code\");\n  for (const program of Object.values(programs)) {\n    assert.equal(\n      await readFile(`public/downloads/${program.filename}.py`, \"utf8\"),\n      program.code,\n    );\n    assert.ok(\n      codeBlocks.some(\n        (block) =>\n          block.code === program.code &&\n          block.filename === `${program.filename}.py`,\n      ),\n    );\n    const notebook = JSON.parse(\n      await readFile(`public/downloads/${program.filename}.ipynb`, \"utf8\"),\n    );\n    assert.equal(notebook.cells[1].source.join(\"\"), program.code);\n    assert.equal(notebook.cells[1].execution_count, null);\n    assert.deepEqual(notebook.cells[1].outputs, []);\n  }\n});\ntest(\"课程体系 V1.0 的原始 Markdown 和 JSON 字节未变\", async () => {\n  for (const [path, hash] of [\n    [\n      \"curriculum/AI技术课程体系_V1.0.md\",\n      \"b863f49f3da43225b009b7053dff79d6b5985bf8da9327f7701bc40c0c9d5a73\",\n    ],\n    [\n      \"curriculum/AI技术课程目录_V1.0.json\",\n      \"a7f5723c2ac659bfe271eeeffc050c2d96c46fd68e29391051c88f5db2812366\",\n    ],\n  ])\n    assert.equal(\n      createHash(\"sha256\")\n        .update(await readFile(path))\n        .digest(\"hex\"),\n      hash,\n    );\n});\n",
+      "afterSha256": "d2d54770d39181791b380e8a9190025c3904ef6546329ced3cd9d6d8b7e7a5bf"
+    },
+    {
+      "path": "tests/py101-basic-value-types.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { readFileSync } from \"node:fs\";\nimport { pythonBasicValueTypesLesson as lesson } from \"../src/content/lessons/py101/basic-value-types\";\nimport { courseOutline } from \"../src/content/course-outline\";\nimport { publicationManifest } from \"../src/content/publication-manifest\";\nimport { isReadable, publicationSchema } from \"../src/content/models\";\nimport { getLearningCourse, getAdjacentLessons, lessonRegistry, resolveLesson } from \"../src/lib/course-engine\";\nimport { createProgressStore, parseReadingProgress, progressKey } from \"../src/lib/learning-progress\";\nimport { lessonProgressScope } from \"../src/lib/use-learning-progress\";\nimport { valueTypeCode, valueTypeBlockNames, valueTypeSetups } from \"../src/content/resources/python-value-types\";\nimport { valueTypeKey, checkValueTypeResult, valueTypeExpected } from \"../scripts/validate-py101-value-types\";\nimport { beforeApprovedPy101Source } from \"../scripts/py101-p1-compatibility\";\nimport { assertRegisteredInventory, assertCourseAvailability } from \"./helpers/registered-content\";\nconst read = (name: string) => JSON.parse(readFileSync(`docs/py101-p9/${name}.json`, \"utf8\"));\n\ntest(\"2.2身份r1/order2与实际草稿门禁，技术证据/人工状态受原模型约束\", () => {\n  const entry = publicationManifest.find(p => p.lessonId === lesson.id)!;\n  assert.deepEqual([entry.title, entry.contentVersion, entry.order, entry.optionalLesson], [lesson.title, 1, 2, false]);\n  assert.deepEqual(courseOutline.filter(s => s.chapterId === \"PY101-C02\").map(s => [s.lessonId,s.order]), [[\"PY101-C02-L01\",1],[lesson.id,2]]);\n  const draft = read(\"DRAFT_GATE\");\n  assert.deepEqual([draft.status,draft.access,draft.readable,draft.resolveUndefined,draft.directoryHrefAbsent], [\"draft\",\"private\",false,true,true]);\n  assert.equal(isReadable({...entry,status:\"draft\",access:\"private\",technicalEvidence:undefined}), false);\n  assert.throws(() => publicationSchema.parse({...entry,status:\"draft\",access:\"preview\"}));\n  assert.throws(() => publicationSchema.parse({...entry,status:\"pending-review\",access:\"preview\",technicalEvidence:undefined}));\n  assert.equal(entry.reviewEvidence, undefined);\n  if (entry.status === \"draft\") assert.equal(resolveLesson(\"PY101\",lesson.id), undefined);\n  else {\n    assert.equal(entry.status,\"pending-review\"); assert.equal(entry.access,\"preview\");\n    assert.equal(entry.technicalEvidence,\"docs/py101-p9/TECHNICAL_REPORT.md\"); assert.ok(resolveLesson(\"PY101\",lesson.id));\n  }\n  assertRegisteredInventory(); assertCourseAvailability(\"PY101\");\n});\n\ntest(\"三目标由两道core代码题覆盖，两级提示不代填新值，反馈和编辑估时完整\", () => {\n  const tasks = lesson.sections.filter(s => s.tier === \"core\").flatMap(s => s.blocks).filter(b => b.type === \"exercise\");\n  assert.deepEqual(tasks.map(t => t.id), [\"write-four-values\",\"same-display-different-type\"]);\n  assert.deepEqual(lesson.assessmentMap, [{objective:1,exerciseIds:[tasks[0].id]},{objective:2,exerciseIds:tasks.map(t=>t.id)},{objective:3,exerciseIds:[tasks[1].id]}]);\n  for (const task of tasks) {\n    assert.equal(task.kind,\"代码\"); assert.equal(task.hints.length,2); assert.ok(task.solution.length>=4); assert.ok(task.rubric.length>=3);\n    assert.doesNotMatch(task.hints.join(\"\"), /Sketch kit|crate_total|pencil_count|<class| = /);\n  }\n  assert.deepEqual(lesson.learningTime,{reading:[12,18],practice:[6,10],coding:[12,18],basis:\"editorial-estimate\"});\n  assert.equal(lesson.optionalLesson,false); assert.deepEqual(lesson.resources,[]);\n});\n\ntest(\"全部网页Python同源登记，片段有明确上下文；不借转换或控制流考类型\", () => {\n  const blocks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === \"code\").filter(b => b.language === \"python\");\n  assert.deepEqual(blocks.map(b => valueTypeKey(b.filename,b.code)), [\"sameDisplay\",\"measurement\",\"booleanValues\",\"firstType\",\"pairTypes\",\"booleanTypes\",\"main\",\"rebind\"]);\n  assert.equal(valueTypeSetups.firstType,'item_count = 3');\n  assert.equal(valueTypeSetups.booleanTypes, valueTypeCode.booleanValues.split(\"\\n\").slice(0,3).join(\"\\n\"));\n  for (const block of blocks) assert.doesNotMatch(block.code,/\\b(input|int|float|str|bool|isinstance)\\s*\\(|\\b(import|if|for|while|def|try|except|class)\\b|==/);\n  assert.throws(() => valueTypeKey(\"unknown.py\",\"print(3)\"));\n  assert.throws(() => valueTypeKey(valueTypeBlockNames.main,valueTypeCode.main.replace('\"3\"','3')));\n});\n\ntest(\"类型输出框保留尖括号/引号，验证器拒绝类型错判、异常与缺行\", () => {\n  const output = lesson.sections.flatMap(s=>s.blocks).find(b=>b.type===\"code\"&&b.filename===\"完整主例 · 八行预期输出\");\n  assert.ok(output?.type===\"code\"); assert.equal(output.language,\"text\"); assert.equal(output.code+\"\\n\",valueTypeExpected.main);\n  checkValueTypeResult(\"pairTypes\",{exitCode:0,stdout:\"<class 'int'>\\n<class 'str'>\\n\",stderr:\"\"});\n  assert.throws(()=>checkValueTypeResult(\"pairTypes\",{exitCode:0,stdout:\"<class 'int'>\\n<class 'int'>\\n\",stderr:\"\"}));\n  assert.throws(()=>checkValueTypeResult(\"main\",{exitCode:1,stdout:valueTypeExpected.main,stderr:\"NameError\"}));\n  assert.throws(()=>checkValueTypeResult(\"booleanTypes\",{exitCode:0,stdout:\"<class 'bool'>\\n<class 'bool'>\\n\",stderr:\"\"}));\n});\n\ntest(\"真实Windows记录覆盖四值、True与文字、两阶段重绑定、替代与错误\", () => {\n  const evidence = read(\"PYTHON_RUNS\"), row = (label:string) => evidence.rows.find((r:{label:string})=>r.label===label);\n  assert.equal(evidence.platform,\"win32\"); assert.equal(evidence.allAssertionsPassed,true);\n  for (const key of [\"main\",\"pairTypes\",\"booleanTypes\",\"rebind\",\"ownFour\",\"ownRebind\",\"ownChanged\"] as const) {\n    assert.equal(row(key).exitCode,0); assert.equal(row(key).stderr,\"\"); assert.equal(row(key).stdout,valueTypeExpected[key]);\n  }\n  assert.equal(row(\"booleanValues\").stdout,\"True\\nTrue\\nFalse\\n\");\n  assert.equal(row(\"single-quotes\").stdout,\"12\\n<class 'str'>\\n\");\n  assert.equal(row(\"false-and-text\").stdout,\"False\\n<class 'bool'>\\nFalse\\n<class 'str'>\\n\");\n  assert.equal(row(\"saved-before\").filename,row(\"saved-after\").filename);\n  assert.equal(row(\"saved-before\").stdout,\"1.5\\n<class 'float'>\\n\"); assert.equal(row(\"saved-after\").stdout,\"1.5\\n<class 'str'>\\n\");\n  for(const label of [\"misspelling:true\",\"misspelling:false\",\"unpaired-quote\"]) {assert.equal(row(label).exitCode,1);assert.equal(row(label).stdout,\"\");assert.match(row(label).stderr,label===\"unpaired-quote\"?/SyntaxError/:/NameError/);}\n  assert.doesNotMatch(JSON.stringify(evidence),/[A-Za-z]:\\\\\\\\Users\\\\\\\\|token=/);\n});\n\ntest(\"2.1仅末段状态勘误，全部目标/两题/源码/锚点与r1进度scope保持\", () => {\n  const base = read(\"BASELINE\"), current=lessonRegistry.get(\"PY101-C02-L01\")!, expected=structuredClone(base.amendmentBefore);\n  expected.sections.at(-1).blocks[expected.sections.at(-1).blocks.length-1]=current.sections.at(-1)!.blocks.at(-1);\n  assert.deepEqual(current,expected);assert.equal(current.contentVersion,1);\n  assert.deepEqual(lessonProgressScope(current),lessonProgressScope(base.amendmentBefore));\n  const source=readFileSync(\"src/lib/course-engine.ts\",\"utf8\"), plan=read(\"APPROVED_CHANGES\");\n  assert.equal(beforeApprovedPy101Source(\"src/lib/course-engine.ts\",source,base.head),plan.sources.find((r:{path:string})=>r.path===\"src/lib/course-engine.ts\").before);\n  assert.equal(beforeApprovedPy101Source(\"src/lib/course-engine.ts\",source+\"\\n// unauthorized\",base.head),source+\"\\n// unauthorized\");\n});\n\ntest(\"2.1到2.2导航与错误归属，2.3–2.6无注册/Publication/可读路径\", () => {\n  const course=getLearningCourse(\"PY101\")!;assert.equal(course.status,\"planned\");\n  if(isReadable(publicationManifest.find(p=>p.lessonId===lesson.id)!)) {\n    assert.equal(getAdjacentLessons(course,\"PY101-C02-L01\").next?.lessonId,lesson.id);\n    assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,\"PY101-C02-L01\");\n    assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,\"PY101-C05-L01\");\n  }\n  for(let i=3;i<=6;i++){const id=`PY101-C02-L0${i}`;assert.equal(courseOutline.some(s=>s.lessonId===id),false);assert.equal(lessonRegistry.has(id),false);assert.equal(publicationManifest.some(p=>p.lessonId===id),false);assert.equal(resolveLesson(\"PY101\",id),undefined);}\n  assert.equal(resolveLesson(\"ML201\",lesson.id),undefined);\n});\n\ntest(\"2.2新r1重载独立，不继承或改写所有旧课/旧修订完成记录\", () => {\n  const memory=new Map<string,string>(),storage={getItem:(k:string)=>memory.get(k)??null,setItem:(k:string,v:string)=>{memory.set(k,v);}};\n  const store=createProgressStore(()=>storage);\n  for(const old of lessonRegistry.values())if(old.id!==lesson.id){const scope=lessonProgressScope(old);store.save(scope,100,scope.sectionIds[0],true);if(scope.contentVersion>1)store.save({...scope,contentVersion:1},100,scope.sectionIds[0],true);}\n  const before=new Map(memory),scope=lessonProgressScope(lesson);assert.equal(progressKey(scope),\"aivora:learning:v2:PY101:PY101-C02-L02:r1\");assert.equal(store.getSnapshot(scope),null);\n  store.save(scope,55,\"same-name-new-type\");const reloaded=parseReadingProgress(createProgressStore(()=>storage).getSnapshot(scope),scope);\n  assert.equal(reloaded?.section,\"same-name-new-type\");assert.equal(reloaded?.completed,false);for(const [k,v]of before)assert.equal(memory.get(k),v);\n});\n",
+      "afterSha256": "71fa5efb29e397e3fbb5bde13a4b2d50af292fcb6dfd612328b5dbe575154f6a"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "PY101-C02-L02",
+      "before": {
+        "id": "PY101-C02-L02",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "contentVersion": 1,
+        "title": "分清文字、整数、小数和真假值",
+        "subtitle": "两个值都显示3，怎样知道一个是数量、另一个是文字？先预测，再用type取得证据。",
+        "learningTime": {
+          "reading": [
+            12,
+            18
+          ],
+          "practice": [
+            6,
+            10
+          ],
+          "coding": [
+            12,
+            18
+          ],
+          "basis": "editorial-estimate"
+        },
+        "optionalLesson": false,
+        "assessmentMap": [
+          {
+            "objective": 1,
+            "exerciseIds": [
+              "write-four-values"
+            ]
+          },
+          {
+            "objective": 2,
+            "exerciseIds": [
+              "write-four-values",
+              "same-display-different-type"
+            ]
+          },
+          {
+            "objective": 3,
+            "exerciseIds": [
+              "same-display-different-type"
+            ]
+          }
+        ],
+        "prerequisites": "已完成第一章与2.1：能选合法名称、赋值和重新赋值，区分名称与引号文字，使用print，保存并从终端完整运行.py。沿用已有Python 3和编辑器，无需安装库；手机可读，代码操作需要电脑。",
+        "prerequisiteLinks": [
+          {
+            "title": "2.1 名称与当前值",
+            "href": "/learn/PY101/PY101-C02-L01#name-and-value",
+            "note": "复习赋值、绑定和名称读取。"
+          },
+          {
+            "title": "2.1 名称与引号内文字",
+            "href": "/learn/PY101/PY101-C02-L01#literal-or-name",
+            "note": "复习固定字符串与名称读取的差别。"
+          },
+          {
+            "title": "2.1 保存并运行完整脚本",
+            "href": "/learn/PY101/PY101-C02-L01#predict-run",
+            "note": "补齐预测、保存及实际执行。"
+          },
+          {
+            "title": "1.3 保存与重跑",
+            "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+            "note": "核对保存状态和准确执行目标。"
+          }
+        ],
+        "objectives": [
+          "按文字标记、完整件数、测量值和真假状态的用途，独立选择Python字面量、写入变量并说明理由",
+          "在真实.py中用type取得str、int、float、bool的类型证据，解释为什么相同显示不代表相同类型",
+          "保持名称不变，预测并验证整数与数字文本的重新绑定，换新数值重跑并解释当前值与类型的关系"
+        ],
+        "sections": [
+          {
+            "id": "same-display",
+            "title": "两个值都显示3，就一样吗？",
+            "navGroup": "values",
+            "navLabel": "先看值",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "整理物品时，一份记录要保存物品数量，另一份记录要保存标签上印的文字。数量是3，标签文字恰好也是“3”。用2.1学过的赋值，可以分别交给两个名称。它们在屏幕上会有什么不同？先在本地笔记写下下面两个print的预测。"
+              },
+              {
+                "type": "code",
+                "code": "item_count = 3\ncount_text = \"3\"\nprint(item_count)\nprint(count_text)",
+                "filename": "same_display.py",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "在自己的练习文件夹新建same_display.py，输入这四行，行首不加缩进，源码放在.venv外。保存后用pwd和Windows的dir（macOS为ls）确认目标，再在终端完整运行对应命令；沿用之前已核验的Python。若此前Windows一直用py，就保持py。"
+              },
+              {
+                "type": "code",
+                "code": "python same_display.py",
+                "filename": "Windows · PowerShell · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "python3 same_display.py",
+                "filename": "macOS · 终端 · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "3\n3",
+                "filename": "普通输出 · 运行后核对",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "两行确实都显示3。第一份值3没有引号，是整数；第二份值\"3\"有配对引号，是字符串，保存的是文字。数字字符放进字符串后仍然是文字，不会因为外观看起来像数量就自动变成整数。"
+              },
+              {
+                "type": "paragraph",
+                "text": "类型描述值属于哪种数据类别。整数的类型名是int，字符串的类型名是str。print把值显示为文字，引号本身不显示，所以这两次普通输出没有把原来的类型差别呈现出来。我们稍后会用一个观察工具核对，先再认识两种常用的值。"
+              }
+            ]
+          },
+          {
+            "id": "add-measurement",
+            "title": "测量值怎样写进程序？",
+            "navGroup": "values",
+            "navLabel": "先看值",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "同一批物品还要记录单件质量，单位约定为千克，数值为1.5。把下面两行另存为measurement.py，先预测，再把运行命令中的文件名换成它，保存并完整执行。"
+              },
+              {
+                "type": "code",
+                "code": "item_mass = 1.5\nprint(item_mass)",
+                "filename": "measurement.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "1.5",
+                "filename": "测量例 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "1.5这种带小数点的数值写法在这里得到float类型，通常称为浮点数；如果写成\"1.5\"，得到的仍是str文字。程序中数值不加引号，单位由记录说明，不把kg直接接在数值后面。"
+              },
+              {
+                "type": "paragraph",
+                "text": "float有表示精度的限制，不能保证任意十进制小数都能精确保存。本课先学习辨认和观察这种类型，暂时不做精度运算。int可以表示完整件数，float适合本例中的测量记录，两者的用途要结合你保存的内容判断。"
+              }
+            ]
+          },
+          {
+            "id": "ready-state",
+            "title": "准备好了，是状态还是文字？",
+            "navGroup": "values",
+            "navLabel": "先看值",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "除了数量和质量，还可以记录“是否已经准备好”。True表示真，False表示假，这两个值属于bool类型，也叫布尔值。Python中必须按True、False的大小写写，开头大写，其余小写；它们本身不加引号。"
+              },
+              {
+                "type": "paragraph",
+                "text": "下面让is_ready记录已准备好，让is_waiting记录当前没有在等待。ready_text则只保存标签上写的True这个单词。先预测三条普通输出，再保存为ready_state.py并完整运行。"
+              },
+              {
+                "type": "code",
+                "code": "is_ready = True\nready_text = \"True\"\nis_waiting = False\nprint(is_ready)\nprint(ready_text)\nprint(is_waiting)",
+                "filename": "ready_state.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "True\nTrue\nFalse",
+                "filename": "状态与文字 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "前两行看起来相同：True是真假状态值，\"True\"是带引号的字符串。第三行False也是bool值。名字里的is只是帮助人读懂用途，并不替Python决定类型；值实际怎样写才是接下来要核对的依据。"
+              }
+            ]
+          },
+          {
+            "id": "inspect-type",
+            "title": "用type看当前值属于哪一类",
+            "navGroup": "inspect",
+            "navLabel": "观察类型",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "type是Python自带的类型观察工具。把一个值或已有名称放在它的括号中，它会取得这个值的类型。这里使用一个参数，也就是括号中交给它的一份值；观察不会把原值转换成另一类型。自己选变量名时，先把print和type这两个名字留给现成工具。"
+              },
+              {
+                "type": "paragraph",
+                "text": "回到same_display.py，在原四行之后追加下面这一行；这个文件前面已经给item_count赋值为3。先从里面看：item_count读取当前值3；type(item_count)取得它的类型；外层print再把类型结果显示出来。两层括号分别成对，执行观察时先得到里面的结果，再交给外面的print。写下新增一行的预测，再保存并从头运行same_display.py。"
+              },
+              {
+                "type": "code",
+                "code": "print(type(item_count))",
+                "filename": "类型观察片段 · 接在item_count赋值之后",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "<class 'int'>",
+                "filename": "新增类型输出 · 接在两行3之后",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "<class 'int'>是Python显示“这是int类型”的一种形式。连同尖括号、单引号一起看，这是刚才程序的输出，不是要复制到.py中的新语句；本课不需要学习class定义。"
+              },
+              {
+                "type": "paragraph",
+                "text": "现在另建inspect_pair.py，使用原来的3和\"3\"。先写两次类型预测，再保存并运行下面的完整小程序。"
+              },
+              {
+                "type": "code",
+                "code": "item_count = 3\ncount_text = \"3\"\nprint(type(item_count))\nprint(type(count_text))",
+                "filename": "inspect_pair.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "<class 'int'>\n<class 'str'>",
+                "filename": "两份值的类型 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "两次普通print都显示3，因为字符串显示时不带包住它的引号；两次type结果不同，因为原值分别是整数和字符串。普通显示回答“显示出来是什么”，type观察回答“当前值属于哪类”，需要把这两份证据一起看。"
+              },
+              {
+                "type": "paragraph",
+                "text": "再回到ready_state.py，在原有代码末尾加上这三行。它们读取该文件前面已经赋值的三个名称，先预测各自类型，再保存并从头运行整个文件。"
+              },
+              {
+                "type": "code",
+                "code": "print(type(is_ready))\nprint(type(ready_text))\nprint(type(is_waiting))",
+                "filename": "类型观察片段 · 接在ready_state.py的赋值之后",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "<class 'bool'>\n<class 'str'>\n<class 'bool'>",
+                "filename": "追加的三条类型输出 · 接在原三条普通输出后",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "True和False在这里都观察为bool，带引号的\"True\"观察为str。若本来想写状态却得到str，先检查是否把True或False放进了引号；若报NameError且提到true或false，再核对字面量大小写和实际代码，不把这种拼写问题当成缺包。"
+              }
+            ]
+          },
+          {
+            "id": "four-types",
+            "title": "把四种值和观察结果放在一起",
+            "navGroup": "inspect",
+            "navLabel": "观察类型",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "把前面的观察组合成four_values.py：前四行赋值，中间四行显示值，最后四行显示类型。空行只是分开这三组，方便阅读。先预测八行输出，再保存，从终端完整运行它。"
+              },
+              {
+                "type": "code",
+                "code": "item_count = 3\ncount_text = \"3\"\nitem_mass = 1.5\nis_ready = True\n\nprint(item_count)\nprint(count_text)\nprint(item_mass)\nprint(is_ready)\n\nprint(type(item_count))\nprint(type(count_text))\nprint(type(item_mass))\nprint(type(is_ready))",
+                "filename": "four_values.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "3\n3\n1.5\nTrue\n<class 'int'>\n<class 'str'>\n<class 'float'>\n<class 'bool'>",
+                "filename": "完整主例 · 八行预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "将真实结果和预测逐行比较。item_mass对应的1.5为float，is_ready对应的True为bool；前两行普通显示相同，末尾的类型记录却能区分整数与数字文本。下面这张表只收拢已经观察过的四种写法，独立练习还要换成你自己的值。"
+              },
+              {
+                "type": "table",
+                "caption": "四种基本值的写法与本课用途",
+                "columns": [
+                  "类型",
+                  "例子",
+                  "本课主要用途"
+                ],
+                "rows": [
+                  [
+                    "str",
+                    "\"Box A\"",
+                    "文字、标记"
+                  ],
+                  [
+                    "int",
+                    "3",
+                    "完整件数"
+                  ],
+                  [
+                    "float",
+                    "1.5",
+                    "测量数值"
+                  ],
+                  [
+                    "bool",
+                    "True或False",
+                    "真假状态"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "id": "same-name-new-type",
+            "title": "名字没换，当前值的类型可以换",
+            "navGroup": "rebind",
+            "navLabel": "同名与类型",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "2.1中，你给同一名称换过另一段任务文字。这次把batch_count先交给整数8，再改为对应数字文本\"8\"。先预测下面四行输出：哪两行显示的文字相同，哪两行给出不同类型？名称有没有换？写好再保存为changing_type.py并完整运行。"
+              },
+              {
+                "type": "code",
+                "code": "batch_count = 8\nprint(batch_count)\nprint(type(batch_count))\n\nbatch_count = \"8\"\nprint(batch_count)\nprint(type(batch_count))",
+                "filename": "changing_type.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "8\n<class 'int'>\n8\n<class 'str'>",
+                "filename": "同名重新赋值 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "名称一直是batch_count。第一次读取时，它对应整数8；第二次赋值后，它对应字符串\"8\"。类型来自当前读到的值，没有永久固定在变量名上。这次赋值让同一名称改为对应另一份值，并没有把原来那个整数本身改成字符串。"
+              },
+              {
+                "type": "paragraph",
+                "text": "所以只看名称叫不叫count，或者普通输出有没有数字字符，都不足以判断类型。先看本次实际执行的赋值，再用type观察当前值，就能核对自己的判断。"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "换成自己的值，留下类型证据",
+            "navGroup": "practice",
+            "navLabel": "独立练习",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "先不看参考答案，独立写两份短.py。每份只需源码、实际命令、预测与真实输出，加几句理由；网页输入框是临时思考区，正式代码和运行记录保存在本地。"
+              },
+              {
+                "type": "exercise",
+                "id": "write-four-values",
+                "title": "自己建立四类值",
+                "kind": "代码",
+                "prompt": "新建与正文不同的.py，自选一个新实际情境，例如个人用品整理或活动准备，不照抄正文物品。为文字标记、完整件数、测量值和真假状态各选一个合法名称及合适的新值。运行前记下四个值、预期显示和类型；自己写四份赋值，用print显示值，再用print(type(名称))观察类型。保存并真实运行，逐项核对预测。交付源码、运行命令、四项预测与真实结果，并简短说明每种值为何适合用途；测量项注明单位即可，不需要拼接输出、安装库或转换类型。接受不同情境、名称、数值和配对引号。",
+                "hints": [
+                  "先看你选的值怎样写：有没有引号，是完整整数、带小数点的数值，还是真假状态？要保存的是文字还是数量？",
+                  "先组织四份赋值，再逐项显示值和类型；每次type读取的名称要与赋值一致。保持两层括号配对，仍由你填入情境、名字、新值和预测，再保存运行。"
+                ],
+                "solution": [
+                  "例如改用绘画用品情境，新建drawing_kit.py。下面每个“第几行”都各写一行，分隔说明不输入源码；你自己的情境和值应另选。",
+                  "先保存四份值：第1行：kit_label = \"Sketch kit\"；第2行：pencil_count = 6；第3行：pencil_length_cm = 17.5；第4行：is_packed = False。标签是文字用str，6支铅笔是完整件数用int，17.5厘米长度是测量值用float，尚未装好用False表示bool状态。",
+                  "接着显示四份值：第5行：print(kit_label)；第6行：print(pencil_count)；第7行：print(pencil_length_cm)；第8行：print(is_packed)。再观察四个类型：第9行：print(type(kit_label))；第10行：print(type(pencil_count))；第11行：print(type(pencil_length_cm))；第12行：print(type(is_packed))。名称先赋值再读取，print与type的括号分别配对。",
+                  "先预测八行：Sketch kit、6、17.5、False、<class 'str'>、<class 'int'>、<class 'float'>、<class 'bool'>。保存后运行python drawing_kit.py（macOS用python3，已核验的py也可），交本人真实结果与对照，而非只抄这组预期。",
+                  "常错是将6写成\"6\"、将False写成\"False\"，它们能运行却会得到str；写成false而此前没有该名称会NameError；漏一边引号可能SyntaxError。若测量写成17，观察为int；17.0则为float。根据实际用途和type结果修正，接受不同合法名称、单引号、中文标签或其他新的合理值。"
+                ],
+                "rubric": [
+                  "真实新.py含自选情境、合法名称与四种新值，分别满足文字/完整件数/测量/真假状态的用途；理由与字面量对应。",
+                  "有运行前四项值/显示/类型预测，实际命令及完整输出；能用本人type结果确认str、int、float、bool，差异有核对。",
+                  "测量单位清楚，True/False和引号使用正确，显示与类型观察均真实执行；复制参考答案、Quiz或读完标记不代替代码成果。"
+                ]
+              },
+              {
+                "type": "exercise",
+                "id": "same-display-different-type",
+                "title": "相同显示，不同类型",
+                "kind": "代码",
+                "prompt": "另建一个短.py，自选与正文不同的合法名称和一个新的非负完整件数（不使用3或8）。先让该名称对应这个整数，显示值和type结果；再让同一名称对应表示同一数量的带引号数字文本，再显示值和type。运行前预测两次普通显示及两次类型输出，保存并实际运行。然后保持名称相同，把两阶段都换成另一组对应的整数/数字文本，重新预测、保存和完整运行。交付改前/改后源码、命令、两轮预测与真实结果，再简短解释为什么显示相同而类型不同、为何不能由名称判断类型。任务只需赋值、print和type，不使用转换或运算。",
+                "hints": [
+                  "沿实际执行顺序看同一个名字：第一次对应的值带引号吗？后一次呢？分别预测普通显示与类型观察。",
+                  "为每次赋值配上显示值和显示类型两步，保证两个阶段读取同一名称；换新数量时检查整数和数字文本是否仍对应，再由你保存重跑并核对。"
+                ],
+                "solution": [
+                  "例如新建crate_types.py，选crate_total和完整件数12。六行依次为：第1行：crate_total = 12；第2行：print(crate_total)；第3行：print(type(crate_total))；第4行：crate_total = \"12\"；第5行：print(crate_total)；第6行：print(type(crate_total))。两阶段保持同名，整数不加引号，数字文本使用配对引号。",
+                  "先预测四行12、<class 'int'>、12、<class 'str'>，再运行python crate_types.py（macOS用python3）。普通显示相同，因为文字12打印时不显示包住它的引号；类型分别来自整数和字符串。",
+                  "第二轮仍用crate_total，换27和\"27\"，六行依次为：第1行：crate_total = 27；第2行：print(crate_total)；第3行：print(type(crate_total))；第4行：crate_total = \"27\"；第5行：print(crate_total)；第6行：print(type(crate_total))。先预测27/int/27/str（类型的完整显示形式同上），保存并完整运行，交本人真实四行结果。",
+                  "名称没有改变，后一次赋值让它对应另一类型的值；type读取本次当前值，而不是从crate_total的拼写猜类型。接受其他新整数和合法名称，数字文本用单引号或双引号都可。",
+                  "常错是两个阶段换了不同名称、只打印值未观察类型、把字符串再次写成无引号数字，或改新数量后没保存重跑。若只改一阶段，普通显示会不同，先对照题意与实际源码修正；不要引入转换来绕过两种字面量写法。"
+                ],
+                "rubric": [
+                  "同一合法名称在两个阶段分别对应整数和表示同一数量的字符串，源码包含两次普通显示和两次type观察，内容由学生另选。",
+                  "两轮均先预测普通输出与类型再实际运行；换另一组数量后保存完整重跑，源码、命令与真实结果可对应。",
+                  "结合自己的输出解释显示相同不等于类型相同，名称未固定为某种类型，当前读到的值决定本次类型结果；只交解释或参考输出不足完成。"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "next-step",
+            "title": "先确认值的类型，再准备使用它",
+            "navGroup": "finish",
+            "navLabel": "回顾与后续",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "summary",
+                "points": [
+                  "给文字、完整件数、测量值和真假状态选择合适的字面量，分别观察str、int、float、bool。",
+                  "普通print可能让不同类型看起来相同；读取名称，取得type结果，再显示它，可以核对类型。",
+                  "同一名称可以先后对应不同类型的值。预测、保存和完整重跑，检查每一次读取发生时对应什么。"
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "保留两份自己写的程序及短记录，换一个值后能重新预测和核对，才有这次代码操作的证据。网页读完只记录阅读，type输出本身也不能替代你对用途和结果的解释。"
+              },
+              {
+                "type": "paragraph",
+                "text": "接下来规划2.3「用表达式算出一个结果」，目前尚无可读正文，2.4–2.6也仍在规划。阅读器的下一可读课可能跳到第5章函数试读，它还需要表达式与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。"
+              }
+            ]
+          }
+        ],
+        "resources": [],
+        "references": [
+          {
+            "title": "Python内置类型",
+            "href": "https://docs.python.org/3.14/library/stdtypes.html",
+            "note": "核对字符串、整数、浮点数和布尔值的基本意义。"
+          },
+          {
+            "title": "type单参数观察",
+            "href": "https://docs.python.org/3.14/library/functions.html#type",
+            "note": "核对取得值类型的行为，本课不涉及三参数形式。"
+          },
+          {
+            "title": "Python入门",
+            "href": "https://docs.python.org/3/tutorial/introduction.html",
+            "note": "数值、字符串及赋值的短例。"
+          },
+          {
+            "title": "数据模型中的值与类型",
+            "href": "https://docs.python.org/3.14/reference/datamodel.html#objects-values-and-types",
+            "note": "核对类型与值的关系，不要求学习对象机制。"
+          },
+          {
+            "title": "浮点数的表示限制",
+            "href": "https://docs.python.org/3.14/tutorial/floatingpoint.html",
+            "note": "核对精度边界，详细原理留后续按需学习。"
+          }
+        ]
+      },
+      "afterSha256": "47b641470d7d65350e658f2a01c1ade51b21a231dc98e0fe329cbdf024e3ae38"
+    }
+  ],
+  "publications": [
+    {
+      "id": "PY101-C02-L02",
+      "before": {
+        "lessonId": "PY101-C02-L02",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "title": "分清文字、整数、小数和真假值",
+        "contentVersion": 1,
+        "order": 2,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p9/TECHNICAL_REPORT.md"
+      },
+      "afterSha256": "cddc1df67c98ea7bd15a676355295ec3af9b6df79fc445efd979dd0acd1ee379"
+    }
+  ],
+  "workspaceOnly": [],
+  "protectedText": []
+}

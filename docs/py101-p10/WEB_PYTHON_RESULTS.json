@@ -1,0 +1,216 @@
+{
+  "checkedAt": "2026-10-30T04:50:34.137Z",
+  "environment": "3.14.2\nNumPy 2.5.2",
+  "unitTests": 25,
+  "unitExitCode": 0,
+  "totalWebBlocks": 94,
+  "coreComparisonCount": 10,
+  "examples": [
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "expression-to-value",
+      "filename": "boxes.py · 第一轮",
+      "key": "multiply",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "12\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nper_box = 3\nprint(box_count * per_box)"
+      ],
+      "exitCode": 0,
+      "stdout": "12\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "expression-to-value",
+      "filename": "boxes.py · 完整五行",
+      "key": "total",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "16\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\nprint(total)"
+      ],
+      "exitCode": 0,
+      "stdout": "16\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "take-some-away",
+      "filename": "追加片段 · boxes.py末尾",
+      "key": "subtract",
+      "executionMode": "ordered-fragment",
+      "setup": "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare",
+      "expectedStdout": "14\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\nremaining = total - 2\nprint(remaining)"
+      ],
+      "exitCode": 0,
+      "stdout": "14\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "order-and-grouping",
+      "filename": "order_boxes.py",
+      "key": "precedence",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "16\n16\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nper_box = 3\nspare = 4\nprint(box_count * per_box + spare)\nprint(spare + box_count * per_box)"
+      ],
+      "exitCode": 0,
+      "stdout": "16\r\n16\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "order-and-grouping",
+      "filename": "追加片段 · boxes.py末尾的分组对照",
+      "key": "grouping",
+      "executionMode": "ordered-fragment",
+      "setup": "box_count = 4\nper_box = 3\nspare = 4",
+      "expectedStdout": "24\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nper_box = 3\nspare = 4\nprint((box_count + spare) * per_box)"
+      ],
+      "exitCode": 0,
+      "stdout": "24\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "order-and-grouping",
+      "filename": "more_boxes.py",
+      "key": "moreBoxes",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "24\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nadded_boxes = 4\nper_box = 3\nprint((box_count + added_boxes) * per_box)"
+      ],
+      "exitCode": 0,
+      "stdout": "24\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "divide-and-meaning",
+      "filename": "追加片段 · boxes.py中的平均分配",
+      "key": "division",
+      "executionMode": "ordered-fragment",
+      "setup": "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare",
+      "expectedStdout": "4.0\n<class 'float'>\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\naverage = total / box_count\nprint(average)\nprint(type(average))"
+      ],
+      "exitCode": 0,
+      "stdout": "4.0\r\n<class 'float'>\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "divide-and-meaning",
+      "filename": "share_water.py",
+      "key": "nonIntegral",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "3.5\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "volume_l = 7\ncontainer_count = 2\nprint(volume_l / container_count)"
+      ],
+      "exitCode": 0,
+      "stdout": "3.5\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "same-level-order",
+      "filename": "same_level.py",
+      "key": "leftGrouping",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "8.0\n2.0\n9\n5\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "print(12 / 3 * 2)\nprint(12 / (3 * 2))\nprint(10 - 3 + 2)\nprint(10 - (3 + 2))"
+      ],
+      "exitCode": 0,
+      "stdout": "8.0\r\n2.0\r\n9\r\n5\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "put-it-together",
+      "filename": "box_relations.py",
+      "key": "main",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "16\n24\n4.0\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\n\nprint(total)\nprint((box_count + spare) * per_box)\nprint(total / box_count)"
+      ],
+      "exitCode": 0,
+      "stdout": "16\r\n24\r\n4.0\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "put-it-together",
+      "filename": "revise_boxes.py",
+      "key": "revise",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "16\n14\n4.0\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\nremaining = total - 2\naverage = total / box_count\nprint(total)\nprint(remaining)\nprint(average)"
+      ],
+      "exitCode": 0,
+      "stdout": "16\r\n14\r\n4.0\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "zero-divisor",
+      "filename": "zero_divisor.py · 预期ZeroDivisionError",
+      "key": "zeroDivide",
+      "executionMode": "controlled-error",
+      "setup": "",
+      "expectedStdout": "",
+      "expectedExitCode": 1,
+      "expectedError": "ZeroDivisionError",
+      "args": [
+        "-c",
+        "print(8 / 0)"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\r\n  File \"<string>\", line 1, in <module>\r\n    print(8 / 0)\r\n          ~~^~~\r\nZeroDivisionError: division by zero\r\n"
+    }
+  ],
+  "note": "Only new lesson details committed; all historical controlled errors and full global logs retained in ignored author directory."
+}

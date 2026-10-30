@@ -10,14 +10,14 @@ import { createProgressStore, parseReadingProgress, progressKey } from "../src/l
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
 import { valueTypeCode, valueTypeBlockNames, valueTypeSetups } from "../src/content/resources/python-value-types";
 import { valueTypeKey, checkValueTypeResult, valueTypeExpected } from "../scripts/validate-py101-value-types";
-import { beforeApprovedPy101Source } from "../scripts/py101-p1-compatibility";
+import { beforeApprovedPy101Source, beforeApprovedPy101Object } from "../scripts/py101-p1-compatibility";
 import { assertRegisteredInventory, assertCourseAvailability } from "./helpers/registered-content";
 const read = (name: string) => JSON.parse(readFileSync(`docs/py101-p9/${name}.json`, "utf8"));
 
 test("2.2身份r1/order2与实际草稿门禁，技术证据/人工状态受原模型约束", () => {
   const entry = publicationManifest.find(p => p.lessonId === lesson.id)!;
   assert.deepEqual([entry.title, entry.contentVersion, entry.order, entry.optionalLesson], [lesson.title, 1, 2, false]);
-  assert.deepEqual(courseOutline.filter(s => s.chapterId === "PY101-C02").map(s => [s.lessonId,s.order]), [["PY101-C02-L01",1],[lesson.id,2]]);
+  assert.deepEqual(courseOutline.filter(s => s.chapterId === "PY101-C02").map(s => [s.lessonId,s.order]), publicationManifest.filter(p => p.chapterId === "PY101-C02").sort((a,b) => a.order-b.order).map(p => [p.lessonId,p.order]));
   const draft = read("DRAFT_GATE");
   assert.deepEqual([draft.status,draft.access,draft.readable,draft.resolveUndefined,draft.directoryHrefAbsent], ["draft","private",false,true,true]);
   assert.equal(isReadable({...entry,status:"draft",access:"private",technicalEvidence:undefined}), false);
@@ -27,7 +27,8 @@ test("2.2身份r1/order2与实际草稿门禁，技术证据/人工状态受原�
   if (entry.status === "draft") assert.equal(resolveLesson("PY101",lesson.id), undefined);
   else {
     assert.equal(entry.status,"pending-review"); assert.equal(entry.access,"preview");
-    assert.equal(entry.technicalEvidence,"docs/py101-p9/TECHNICAL_REPORT.md"); assert.ok(resolveLesson("PY101",lesson.id));
+    const historical=beforeApprovedPy101Object("publications",lesson.id,entry) as typeof entry;
+    assert.equal(historical.technicalEvidence,"docs/py101-p9/TECHNICAL_REPORT.md"); assert.ok(resolveLesson("PY101",lesson.id));
   }
   assertRegisteredInventory(); assertCourseAvailability("PY101");
 });
@@ -88,14 +89,15 @@ test("2.1仅末段状态勘误，全部目标/两题/源码/锚点与r1进度sco
   assert.equal(beforeApprovedPy101Source("src/lib/course-engine.ts",source+"\n// unauthorized",base.head),source+"\n// unauthorized");
 });
 
-test("2.1到2.2导航与错误归属，2.3–2.6无注册/Publication/可读路径", () => {
+test("2.1到2.2导航与错误归属，后续可读性按实际登记核对", () => {
   const course=getLearningCourse("PY101")!;assert.equal(course.status,"planned");
   if(isReadable(publicationManifest.find(p=>p.lessonId===lesson.id)!)) {
     assert.equal(getAdjacentLessons(course,"PY101-C02-L01").next?.lessonId,lesson.id);
     assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"PY101-C02-L01");
-    assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"PY101-C05-L01");
+    const readable=course.chapters.flatMap(c=>c.lessons).filter(s=>s.href);
+    assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,readable[readable.findIndex(s=>s.lessonId===lesson.id)+1]?.lessonId);
   }
-  for(let i=3;i<=6;i++){const id=`PY101-C02-L0${i}`;assert.equal(courseOutline.some(s=>s.lessonId===id),false);assert.equal(lessonRegistry.has(id),false);assert.equal(publicationManifest.some(p=>p.lessonId===id),false);assert.equal(resolveLesson("PY101",id),undefined);}
+  for(let i=3;i<=6;i++){const id=`PY101-C02-L0${i}`;if(lessonRegistry.has(id))continue;assert.equal(courseOutline.some(s=>s.lessonId===id),false);assert.equal(lessonRegistry.has(id),false);assert.equal(publicationManifest.some(p=>p.lessonId===id),false);assert.equal(resolveLesson("PY101",id),undefined);}
   assert.equal(resolveLesson("ML201",lesson.id),undefined);
 });
 
