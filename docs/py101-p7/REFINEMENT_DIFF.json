@@ -1,0 +1,27 @@
+{
+  "lessonId": "PY101-C01-L05",
+  "section": "first-cells",
+  "beforeExplanatoryParagraph": {
+    "type": "paragraph",
+    "text": "这里只临时认识一种新写法：marker是当前运行内核暂时记住的名字，等号让它对应右边的文字。print(marker)显示这个名字此刻对应的内容，引号里的Draft A仍是已学过的字符串。完整变量、类型和赋值规则在后续章节学习。"
+  },
+  "addedBlocks": [
+    {
+      "type": "paragraph",
+      "text": "自己取新名字时，本课先采用一种简单写法：用英文字母开头，后面可以接英文字母、数字或下划线，名字中不放空格。例如task_name、label2都可以；for、class是Python保留词，不能拿来作这里的名字。"
+    },
+    {
+      "type": "paragraph",
+      "text": "赋值处和print处的名字要拼写一致，大小写也要相同；Python把task_name和Task_name看作两个不同的名字。这些是本课便于操作的命名建议，不是全部合法名称规则：Python也允许下划线开头的名字，以及用某些中文等文字组成的名字，其他合法写法同样可以使用。"
+    }
+  ],
+  "beforeObjectSha256": "6d8582d3681428b0ced87ef71efe2c948ae115ef95dbdbb073f267cfb0c7dd5c",
+  "afterObjectSha256": "cb7dcb527be15c6ca896662d7d553b815f36254fdb0d7ac65ee632bf15568bbf",
+  "beforeSourceSha256LF": "df1985f4d97212b0886ed39a0b4be4bb4ca5a4d6cee2fa17d29cd5c41994853c",
+  "afterSourceSha256LF": "817612655222591e4429697e62552e8d38f8b7a638d83264d3068f1fe1da8d61",
+  "contentVersion": 1,
+  "objectivesAndAssessmentMapUnchanged": true,
+  "bothExercisesEntireObjectsUnchanged": true,
+  "allOldBlocksRetained": true,
+  "progressScopeUnchanged": true
+}

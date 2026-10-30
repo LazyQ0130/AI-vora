@@ -7,7 +7,7 @@ const revisedCoreLessons: Record<string, number> = { "MA101-C02-L03": 2, "PY101-
 // 发布权限独立于原始课程规划。技术证据不替代人工审核。
 export const publicationManifest = [
   {lessonId:"PY101-C01-L06",courseId:"PY101",chapterId:"PY101-C01",title:"让别人复现一次环境问题",contentVersion:1,order:6,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p5/TECHNICAL_REPORT.md"},
-  {lessonId:"PY101-C01-L05",courseId:"PY101",chapterId:"PY101-C01",title:"在Jupyter中按顺序运行单元格",contentVersion:1,order:5,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p5/TRANSITION_AMENDMENT.md"},
+  {lessonId:"PY101-C01-L05",courseId:"PY101",chapterId:"PY101-C01",title:"在Jupyter中按顺序运行单元格",contentVersion:1,order:5,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p7/TECHNICAL_REPORT.md"},
   {lessonId:"PY101-C01-L04",courseId:"PY101",chapterId:"PY101-C01",title:"为项目准备独立的虚拟环境",contentVersion:1,order:4,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p4/TRANSITION_AMENDMENT.md"},
   {lessonId:"PY101-C01-L03",courseId:"PY101",chapterId:"PY101-C01",title:"用编辑器完成保存与重跑",contentVersion:1,order:3,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p3/TRANSITION_AMENDMENT.md"},
   {lessonId:"PY101-C01-L02",courseId:"PY101",chapterId:"PY101-C01",title:"解释器怎样找到并执行脚本",contentVersion:1,order:2,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p6/TRANSITION_AMENDMENT.md"},

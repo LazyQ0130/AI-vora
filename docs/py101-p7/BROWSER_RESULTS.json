@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-30",
+  "baseline": "e12a19472f677123d5f30c0e76e6f71ea463640d",
+  "browser": "real IAB through computer-use / Browser Use",
+  "url": "http://127.0.0.1:3008/learn/PY101/PY101-C01-L05#first-cells",
+  "sourceScope": "external clean export with four authorized source overlays; original user modifications excluded",
+  "mode": "Next.js 16.4.3 webpack development preview, not production build",
+  "originalPort3000ShowedOldTextAfterReload": true,
+  "newParagraphsObservedBeforePractice": true,
+  "otherLegalNamesExplicitlyAllowed": true,
+  "exercise1": {
+    "id": "create-own-notebook",
+    "hint1Opened": true,
+    "hint2Opened": true,
+    "solutionAndRubricOpened": true
+  },
+  "exercise2": {
+    "id": "recover-cell-order",
+    "hint1Opened": true,
+    "hint2Opened": true,
+    "solutionAndRubricOpened": true
+  },
+  "pageClaimsPendingHumanReview": true,
+  "adjacent14and16Present": true,
+  "viewport": {
+    "width": 484,
+    "height": 871
+  },
+  "documentScrollWidth": 469,
+  "wholePageHorizontalOverflow": false,
+  "markedComplete": false,
+  "storageCleared": false,
+  "readingPositionMayAutoSave": true,
+  "screenshots": [
+    "naming-review.jpg",
+    "exercise-review.jpg"
+  ],
+  "scope": "focused rendering/control verification; no learner trial, no new full responsive matrix"
+}

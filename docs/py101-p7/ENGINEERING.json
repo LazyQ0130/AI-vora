@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-30",
+  "baseline": "e12a19472f677123d5f30c0e76e6f71ea463640d",
+  "validation": {
+    "typecheck": {
+      "exitCode": 0,
+      "logSha256": "eb270fe917abe52808b7426b18327b1b22992b8df3d702a515917bdb8685ba95"
+    },
+    "lint": {
+      "exitCode": 0,
+      "logSha256": "682dfcd1b13f9a0f7e95ad490d7dd8e2ecc5009942b86a5e49d32f0d68bdf3c7"
+    },
+    "npm test": {
+      "exitCode": 0,
+      "logSha256": "3d32f7ca1d5fc2a46b6575c0fb9221c7e6c2d4415b04614dec768295326404dd",
+      "tests": 315,
+      "pass": 315,
+      "fail": 0
+    },
+    "test:python": {
+      "exitCode": 0,
+      "logSha256": "ada046ee11e716a7ccb13f09a6557a971134c7792593314c6b360cf0c29b10cb"
+    },
+    "review:teaching": {
+      "exitCode": 0,
+      "logSha256": "0910344774b4fae3664ccc5fecf6357cf5b92e9246834f8fdd01841866c01f37"
+    },
+    "clean npm test": {
+      "exitCode": 0,
+      "logSha256": "a2c75f7fe015a4e32d61c2835b137b91cae3243e884736144a74854583bd6883",
+      "tests": 314,
+      "pass": 314,
+      "fail": 0
+    }
+  },
+  "node": "v24.16.0",
+  "candidateSourceSha256LF": {
+    "src/content/lessons/py101/notebook-cell-order.ts": "817612655222591e4429697e62552e8d38f8b7a638d83264d3068f1fe1da8d61",
+    "src/content/publication-manifest.ts": "4c3905358d0d53d3c3b05f38ab8a2cd579a95663ea2233739b7f2d69c2c5642b",
+    "scripts/py101-p1-compatibility.ts": "ddddfb5daecaba7774530be6c6bd365ac36c77b50d135002183e5d0e4640d720",
+    "tests/py101-environment-reproduction.test.ts": "f32872912d87b1f2129423fd26203f511410691a88150dd19afd24c717fde3e1"
+  },
+  "cleanScope": "index baseline exported outside repository, four authorized source overlays, public P7 evidence, linked node_modules; user modifications absent",
+  "testCountDifference": "315 workspace vs 314 clean: original uncommitted reading test omitted",
+  "runtimeChanges": false,
+  "downloadsRegenerated": false,
+  "productionBuildAndRoutesRun": false,
+  "focusedBrowserPreview": "Next.js webpack development export on own port 3008",
+  "historicalTurbopackLimitClaimedFixed": false,
+  "rawMachineFilesTracked": false,
+  "previewShutdown": {
+    "ownedPort3008Closed": true,
+    "ownedProcessesRemaining": 0,
+    "originalPort3000StillListening": true,
+    "method": "interrupt own tool-hosted development session; no original server stopped",
+    "hostSessionExitCode": 1
+  },
+  "finalChecks": {
+    "originalTrackedFilesByteIdentical": 4,
+    "originalUntrackedFilesByteIdentical": 7,
+    "privatePathTokenScanPassed": true,
+    "p6AndDownloadsAndCurriculumUnchanged": true,
+    "relativeLinksAndJsonValid": true
+  }
+}

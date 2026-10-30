@@ -1,0 +1,136 @@
+{
+  "date": "2026-10-30",
+  "platform": "win32",
+  "python": "3.14.2",
+  "method": "real CPython subprocess per case; independent stdout/error-type expectations",
+  "cases": [
+    {
+      "label": "task_name",
+      "source": "task_name = \"Ready\"\nprint(task_name)\n",
+      "expected": {
+        "exitCode": 0,
+        "stdout": "Ready\n",
+        "errorType": null
+      },
+      "actual": {
+        "exitCode": 0,
+        "stdout": "Ready\n",
+        "stderr": ""
+      }
+    },
+    {
+      "label": "label2",
+      "source": "label2 = \"Saved\"\nprint(label2)\n",
+      "expected": {
+        "exitCode": 0,
+        "stdout": "Saved\n",
+        "errorType": null
+      },
+      "actual": {
+        "exitCode": 0,
+        "stdout": "Saved\n",
+        "stderr": ""
+      }
+    },
+    {
+      "label": "space",
+      "source": "my plan = \"Ready\"\n",
+      "expected": {
+        "exitCode": 1,
+        "stdout": "",
+        "errorType": "SyntaxError"
+      },
+      "actual": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "  File \"<string>\", line 1\n    my plan = \"Ready\"\n       ^^^^\nSyntaxError: invalid syntax\n"
+      }
+    },
+    {
+      "label": "digit-first",
+      "source": "1plan = \"Ready\"\n",
+      "expected": {
+        "exitCode": 1,
+        "stdout": "",
+        "errorType": "SyntaxError"
+      },
+      "actual": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "  File \"<string>\", line 1\n    1plan = \"Ready\"\n    ^\nSyntaxError: invalid decimal literal\n"
+      }
+    },
+    {
+      "label": "underscore",
+      "source": "_label = \"Allowed\"\nprint(_label)\n",
+      "expected": {
+        "exitCode": 0,
+        "stdout": "Allowed\n",
+        "errorType": null
+      },
+      "actual": {
+        "exitCode": 0,
+        "stdout": "Allowed\n",
+        "stderr": ""
+      }
+    },
+    {
+      "label": "keyword-for",
+      "source": "for = \"Ready\"\n",
+      "expected": {
+        "exitCode": 1,
+        "stdout": "",
+        "errorType": "SyntaxError"
+      },
+      "actual": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "  File \"<string>\", line 1\n    for = \"Ready\"\n        ^\nSyntaxError: invalid syntax\n"
+      }
+    },
+    {
+      "label": "keyword-class",
+      "source": "class = \"Ready\"\n",
+      "expected": {
+        "exitCode": 1,
+        "stdout": "",
+        "errorType": "SyntaxError"
+      },
+      "actual": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "  File \"<string>\", line 1\n    class = \"Ready\"\n          ^\nSyntaxError: invalid syntax\n"
+      }
+    },
+    {
+      "label": "case-mismatch",
+      "source": "task_name = \"Ready\"\nprint(Task_name)\n",
+      "expected": {
+        "exitCode": 1,
+        "stdout": "",
+        "errorType": "NameError"
+      },
+      "actual": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 2, in <module>\n    print(Task_name)\n          ^^^^^^^^^\nNameError: name 'Task_name' is not defined. Did you mean: 'task_name'?\n"
+      }
+    },
+    {
+      "label": "non-ASCII-Chinese",
+      "source": "任务 = \"Allowed\"\nprint(任务)\n",
+      "expected": {
+        "exitCode": 0,
+        "stdout": "Allowed\n",
+        "errorType": null
+      },
+      "actual": {
+        "exitCode": 0,
+        "stdout": "Allowed\n",
+        "stderr": ""
+      }
+    }
+  ],
+  "allAssertionsPassed": true,
+  "scope": "author technical verification, not a learner trial"
+}

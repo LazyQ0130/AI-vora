@@ -23,7 +23,8 @@ test("P5保护真实基线的全部旧文件/教材，1.5只改最后过渡段�
     assert.equal(sha(beforeApprovedPy101Object(kind, id, value, base.head)), hash, id);
   }
   for (const [path, file] of Object.entries(base.files as Record<string, { sha256: string }>)) assert.ok(protectedPy101FileMatches(path, readFileSync(path), file.sha256, base.head), path);
-  const current = lessonRegistry.get("PY101-C01-L05")!, expected = structuredClone(base.amendmentBefore);
+  // 先精确撤销后续批准修订，仍核对P5当时仅改末段的历史事实。
+  const current = beforeApprovedPy101Object("lessons", "PY101-C01-L05", lessonRegistry.get("PY101-C01-L05"), JSON.parse(readFileSync("docs/py101-p6/BASELINE.json", "utf8")).head) as typeof lesson, expected = structuredClone(base.amendmentBefore);
   expected.sections.at(-1).blocks[expected.sections.at(-1).blocks.length - 1] = current.sections.at(-1)!.blocks.at(-1);
   assert.deepEqual(current, expected); assert.equal(current.contentVersion, 1); assert.deepEqual(lessonProgressScope(current), lessonProgressScope(base.amendmentBefore));
   assert.equal(protectedPy101FileMatches("src/lib/course-engine.ts", Buffer.concat([readFileSync("src/lib/course-engine.ts"), Buffer.from("\n// unauthorized")]), base.files["src/lib/course-engine.ts"].sha256, base.head), false);

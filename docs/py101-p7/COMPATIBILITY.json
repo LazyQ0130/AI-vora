@@ -1,0 +1,20 @@
+{
+  "baseline": "e12a19472f677123d5f30c0e76e6f71ea463640d",
+  "lessonCount": 53,
+  "publicationCount": 53,
+  "changedLessonIds": [
+    "PY101-C01-L05"
+  ],
+  "changedPublicationIds": [
+    "PY101-C01-L05"
+  ],
+  "allOtherLessonPublicationObjectsUnchanged": true,
+  "progressKey": "aivora:learning:v2:PY101:PY101-C01-L05:r1",
+  "oldCompletionStillReadable": true,
+  "browserStorageNotCleared": true,
+  "originalFilesByteIdentical": 11,
+  "chapterTwoRegisteredSlots": 0,
+  "chapterTwoReadableLessons": 0,
+  "courseStatus": "planned",
+  "noSourceChangesBeyondAllowedPaths": true
+}

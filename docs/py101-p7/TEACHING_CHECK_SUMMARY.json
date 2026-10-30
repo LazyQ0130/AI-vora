@@ -1,0 +1,194 @@
+{
+  "date": "2026-10-30",
+  "command": "AIVORA_EVIDENCE_DIR=docs/py101-p7 npm run review:teaching",
+  "checkedRegisteredLessons": 53,
+  "allSchemaChecksCompleted": true,
+  "focusLesson": {
+    "id": "PY101-C01-L05",
+    "title": "在Jupyter中按顺序运行单元格",
+    "href": "/learn/PY101/PY101-C01-L05",
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "pending-review",
+    "contentVersion": 1,
+    "learningTime": {
+      "reading": [
+        12,
+        18
+      ],
+      "practice": [
+        6,
+        10
+      ],
+      "coding": [
+        20,
+        30
+      ],
+      "basis": "editorial-estimate"
+    },
+    "objectives": [
+      {
+        "objective": 1,
+        "text": "在项目环境启动本地Jupyter，确认内核并创建、运行和保存含文字与代码的Notebook",
+        "exercises": [
+          {
+            "id": "create-own-notebook",
+            "title": "建立自己的Notebook并重启复跑",
+            "kind": "实验",
+            "tier": "core",
+            "prompt": "在目标项目环境中自己新建Notebook，自选.ipynb文件名，不直接交下载稿。写至少一格Markdown说明；自选与正文不同的名字和短文字，将最小赋值、print显示分成代码格，再用现成观察格核对内核。先预测输出，按文档顺序实际运行并保存。重新打开后确认目标内核，明确重启，从头完整运行，再保存。交付真实.ipynb及简短证据：位置、启动命令/版本、实际内核路径、预测/输出、重启动作和全部运行结果；不含访问token。只有文字报告或旧输出截图不足以完成。",
+            "hints": 2,
+            "rubric": [
+              "新文件命名/位置正确，含自写说明与自选名字/文字的最小代码，实际目标内核有路径证据。",
+              "有运行前预测、真实输出与保存的.ipynb，说明代码如何依次提供和使用名字。",
+              "重新打开并核对内核，从明确干净状态完整执行成功再保存；不以下载点击、旧输出或读完标记代替。"
+            ]
+          }
+        ]
+      },
+      {
+        "objective": 2,
+        "text": "预测并观察旧状态与乱序错误，解释原因，用重启和按序执行恢复",
+        "exercises": [
+          {
+            "id": "recover-cell-order",
+            "title": "出库标签为什么在重启后失败？",
+            "kind": "实验",
+            "tier": "core",
+            "prompt": "在dispatch-note.ipynb中，用正确环境的干净内核，先预测并实际运行后面的显示单元格，保存真实错误与执行顺序。保持现有两段源码语法和内核选择不变，独立判断原因，决定需要怎样调整运行或排列。恢复后做一次短观察：只把提供名字格中的文字改成自选新标记，暂不执行它；预测并重跑显示格，记录和解释结果。再让最终文本与执行结果一致，重新打开后确认目标内核、明确重启，按文档顺序完整运行所有核心代码并保存.ipynb。交付错误/短观察的预测与现象、原因、修复、干净重跑和保存证据，解释为何不依赖旧状态。题目不混入未保存、缺包和环境错误。",
+            "hints": 2,
+            "rubric": [
+              "从干净内核真正复现显示格先运行的NameError，保留顺序与现象，不捏造其他故障。",
+              "解释名字尚未在当前内核定义，给出合理修复；短观察有预测、真实旧值及文本尚未执行的解释。",
+              "重新打开后确认目标内核，再从明确干净状态按文档顺序全跑成功，保存.ipynb及最终自选标记的实际结果，说明为何不依赖旧状态；报告不能替代文件与执行。"
+            ]
+          }
+        ]
+      },
+      {
+        "objective": 3,
+        "text": "重新打开保存的Notebook，在正确的干净内核中从头完整运行并保留实际证据",
+        "exercises": [
+          {
+            "id": "create-own-notebook",
+            "title": "建立自己的Notebook并重启复跑",
+            "kind": "实验",
+            "tier": "core",
+            "prompt": "在目标项目环境中自己新建Notebook，自选.ipynb文件名，不直接交下载稿。写至少一格Markdown说明；自选与正文不同的名字和短文字，将最小赋值、print显示分成代码格，再用现成观察格核对内核。先预测输出，按文档顺序实际运行并保存。重新打开后确认目标内核，明确重启，从头完整运行，再保存。交付真实.ipynb及简短证据：位置、启动命令/版本、实际内核路径、预测/输出、重启动作和全部运行结果；不含访问token。只有文字报告或旧输出截图不足以完成。",
+            "hints": 2,
+            "rubric": [
+              "新文件命名/位置正确，含自写说明与自选名字/文字的最小代码，实际目标内核有路径证据。",
+              "有运行前预测、真实输出与保存的.ipynb，说明代码如何依次提供和使用名字。",
+              "重新打开并核对内核，从明确干净状态完整执行成功再保存；不以下载点击、旧输出或读完标记代替。"
+            ]
+          },
+          {
+            "id": "recover-cell-order",
+            "title": "出库标签为什么在重启后失败？",
+            "kind": "实验",
+            "tier": "core",
+            "prompt": "在dispatch-note.ipynb中，用正确环境的干净内核，先预测并实际运行后面的显示单元格，保存真实错误与执行顺序。保持现有两段源码语法和内核选择不变，独立判断原因，决定需要怎样调整运行或排列。恢复后做一次短观察：只把提供名字格中的文字改成自选新标记，暂不执行它；预测并重跑显示格，记录和解释结果。再让最终文本与执行结果一致，重新打开后确认目标内核、明确重启，按文档顺序完整运行所有核心代码并保存.ipynb。交付错误/短观察的预测与现象、原因、修复、干净重跑和保存证据，解释为何不依赖旧状态。题目不混入未保存、缺包和环境错误。",
+            "hints": 2,
+            "rubric": [
+              "从干净内核真正复现显示格先运行的NameError，保留顺序与现象，不捏造其他故障。",
+              "解释名字尚未在当前内核定义，给出合理修复；短观察有预测、真实旧值及文本尚未执行的解释。",
+              "重新打开后确认目标内核，再从明确干净状态按文档顺序全跑成功，保存.ipynb及最终自选标记的实际结果，说明为何不依赖旧状态；报告不能替代文件与执行。"
+            ]
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "id": "why-notebook",
+        "title": "把说明和几段代码放在同一份文档里",
+        "tier": "core",
+        "pythonBlocks": []
+      },
+      {
+        "id": "local-start",
+        "title": "从项目环境启动本地Notebook",
+        "tier": "core",
+        "pythonBlocks": []
+      },
+      {
+        "id": "first-cells",
+        "title": "新建文档，先说明，再运行两格",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "first-notebook.ipynb · 代码格一",
+            "lines": 1
+          },
+          {
+            "filename": "first-notebook.ipynb · 代码格二",
+            "lines": 1
+          }
+        ]
+      },
+      {
+        "id": "kernel-check",
+        "title": "运行代码的是内核，浏览器负责显示",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "现成内核观察格",
+            "lines": 2
+          }
+        ]
+      },
+      {
+        "id": "stale-state",
+        "title": "文字改了，为什么仍然显示Draft A？",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "first-notebook.ipynb · 修改代码格一",
+            "lines": 1
+          }
+        ]
+      },
+      {
+        "id": "restart-order",
+        "title": "重启后先显示，会发生什么？",
+        "tier": "core",
+        "pythonBlocks": []
+      },
+      {
+        "id": "clean-run",
+        "title": "用一次干净执行检查整份文档",
+        "tier": "core",
+        "pythonBlocks": []
+      },
+      {
+        "id": "save-stop",
+        "title": "保存文件，再关闭会话与服务",
+        "tier": "core",
+        "pythonBlocks": []
+      },
+      {
+        "id": "practice",
+        "title": "交付自己的文档与一次恢复记录",
+        "tier": "core",
+        "pythonBlocks": [
+          {
+            "filename": "dispatch-note.ipynb · 代码格一",
+            "lines": 1
+          },
+          {
+            "filename": "dispatch-note.ipynb · 代码格二",
+            "lines": 1
+          }
+        ]
+      },
+      {
+        "id": "next-step",
+        "title": "把能重跑的文件交给下一次自己",
+        "tier": "core",
+        "pythonBlocks": []
+      }
+    ]
+  },
+  "fullGeneratedMatrixSha256": "8aaa53434e2eb48677249de8a3c1f82158a53b5f1673dd12b16d3610ed44acb7",
+  "scope": "compact public result; full generated matrix and unrelated math byproduct retained in ignored machine files; no human review implied"
+}

@@ -1,0 +1,220 @@
+{
+  "date": "2026-10-30",
+  "python": "3.14.2",
+  "platform": "win32",
+  "blueprintExamplesReadFromMarkdown": 9,
+  "cases": [
+    {
+      "label": "c2-1-main",
+      "source": "task_name = \"Pack notebooks\"\nprint(task_name)\ntask_name = \"Check labels\"\nprint(task_name)\n",
+      "stdin": "",
+      "expected": {
+        "stdout": "Pack notebooks\nCheck labels\n",
+        "exitCode": 0,
+        "errorType": null
+      },
+      "actual": {
+        "stdout": "Pack notebooks\nCheck labels\n",
+        "stderr": "",
+        "exitCode": 0
+      }
+    },
+    {
+      "label": "c2-2-main",
+      "source": "item_count = 3\ncount_text = \"3\"\nitem_mass = 1.5\nis_ready = True\nprint(item_count)\nprint(count_text)\nprint(item_mass)\nprint(is_ready)\nprint(type(item_count))\nprint(type(count_text))\nprint(type(item_mass))\nprint(type(is_ready))\n",
+      "stdin": "",
+      "expected": {
+        "stdout": "3\n3\n1.5\nTrue\n<class 'int'>\n<class 'str'>\n<class 'float'>\n<class 'bool'>\n",
+        "exitCode": 0,
+        "errorType": null
+      },
+      "actual": {
+        "stdout": "3\n3\n1.5\nTrue\n<class 'int'>\n<class 'str'>\n<class 'float'>\n<class 'bool'>\n",
+        "stderr": "",
+        "exitCode": 0
+      }
+    },
+    {
+      "label": "c2-3-main",
+      "source": "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\nprint(total)\nprint((box_count + spare) * per_box)\nprint(total / box_count)\n",
+      "stdin": "",
+      "expected": {
+        "stdout": "16\n24\n4.0\n",
+        "exitCode": 0,
+        "errorType": null
+      },
+      "actual": {
+        "stdout": "16\n24\n4.0\n",
+        "stderr": "",
+        "exitCode": 0
+      }
+    },
+    {
+      "label": "c2-4-main",
+      "source": "count = 5\nlimit = 6\nwithin_limit = count <= limit\nprint(within_limit)\nprint(count == limit)\nprint(count != limit)\n",
+      "stdin": "",
+      "expected": {
+        "stdout": "True\nFalse\nTrue\n",
+        "exitCode": 0,
+        "errorType": null
+      },
+      "actual": {
+        "stdout": "True\nFalse\nTrue\n",
+        "stderr": "",
+        "exitCode": 0
+      }
+    },
+    {
+      "label": "c2-5-main",
+      "source": "label = input(\"Label: \")\ncount_text = input(\"Count: \")\ncount = int(count_text)\nprint(label)\nprint(count * 3)\n",
+      "stdin": "Box A\n4\n",
+      "expected": {
+        "stdout": "Label: Count: Box A\n12\n",
+        "exitCode": 0,
+        "errorType": null
+      },
+      "actual": {
+        "stdout": "Label: Count: Box A\n12\n",
+        "stderr": "",
+        "exitCode": 0
+      }
+    },
+    {
+      "label": "c2-5-float",
+      "source": "mass_text = input(\"Mass kg: \")\nmass = float(mass_text)\nprint(mass * 2)\n",
+      "stdin": "1.5\n",
+      "expected": {
+        "stdout": "Mass kg: 3.0\n",
+        "exitCode": 0,
+        "errorType": null
+      },
+      "actual": {
+        "stdout": "Mass kg: 3.0\n",
+        "stderr": "",
+        "exitCode": 0
+      }
+    },
+    {
+      "label": "c2-6-main",
+      "source": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\ncount = int(count_text)\nmass = float(mass_text)\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")\n",
+      "stdin": "Parcel\n4\n1.5\n",
+      "expected": {
+        "stdout": "Item: Count: Mass kg: Item: Parcel\nCount: 4\nTotal kg: 6.0\nWithin 10 kg: True\n",
+        "exitCode": 0,
+        "errorType": null
+      },
+      "actual": {
+        "stdout": "Item: Count: Mass kg: Item: Parcel\nCount: 4\nTotal kg: 6.0\nWithin 10 kg: True\n",
+        "stderr": "",
+        "exitCode": 0
+      }
+    },
+    {
+      "label": "c2-1-literal",
+      "source": "task_name = \"Ready\"\nprint(\"task_name\")\nprint(task_name)\n",
+      "stdin": "",
+      "expected": {
+        "stdout": "task_name\nReady\n",
+        "exitCode": 0,
+        "errorType": null
+      },
+      "actual": {
+        "stdout": "task_name\nReady\n",
+        "stderr": "",
+        "exitCode": 0
+      }
+    },
+    {
+      "label": "c2-1-before-definition",
+      "source": "print(dispatch_label)\ndispatch_label = \"Packed T7\"\n",
+      "stdin": "",
+      "expected": {
+        "stdout": "",
+        "exitCode": 1,
+        "errorType": "NameError"
+      },
+      "actual": {
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    print(dispatch_label)\n          ^^^^^^^^^^^^^^\nNameError: name 'dispatch_label' is not defined\n",
+        "exitCode": 1
+      }
+    },
+    {
+      "label": "c2-1-repaired",
+      "source": "dispatch_label = \"Packed T7\"\nprint(dispatch_label)\n",
+      "stdin": "",
+      "expected": {
+        "stdout": "Packed T7\n",
+        "exitCode": 0,
+        "errorType": null
+      },
+      "actual": {
+        "stdout": "Packed T7\n",
+        "stderr": "",
+        "exitCode": 0
+      }
+    },
+    {
+      "label": "c2-4-equal-boundary",
+      "source": "count = 6\nlimit = 6\nwithin_limit = count <= limit\nprint(within_limit)\nprint(count == limit)\nprint(count != limit)\n",
+      "stdin": "",
+      "expected": {
+        "stdout": "True\nTrue\nFalse\n",
+        "exitCode": 0,
+        "errorType": null
+      },
+      "actual": {
+        "stdout": "True\nTrue\nFalse\n",
+        "stderr": "",
+        "exitCode": 0
+      }
+    },
+    {
+      "label": "c2-4-over-boundary",
+      "source": "count = 7\nlimit = 6\nwithin_limit = count <= limit\nprint(within_limit)\nprint(count == limit)\nprint(count != limit)\n",
+      "stdin": "",
+      "expected": {
+        "stdout": "False\nFalse\nTrue\n",
+        "exitCode": 0,
+        "errorType": null
+      },
+      "actual": {
+        "stdout": "False\nFalse\nTrue\n",
+        "stderr": "",
+        "exitCode": 0
+      }
+    },
+    {
+      "label": "c2-5-non-integer-input",
+      "source": "label = input(\"Label: \")\ncount_text = input(\"Count: \")\ncount = int(count_text)\nprint(label)\nprint(count * 3)\n",
+      "stdin": "Box A\n4.5\n",
+      "expected": {
+        "stdout": "Label: Count: ",
+        "exitCode": 1,
+        "errorType": "ValueError"
+      },
+      "actual": {
+        "stdout": "Label: Count: ",
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 3, in <module>\n    count = int(count_text)\nValueError: invalid literal for int() with base 10: '4.5'\n",
+        "exitCode": 1
+      }
+    },
+    {
+      "label": "c2-6-equal-boundary",
+      "source": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\ncount = int(count_text)\nmass = float(mass_text)\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")\n",
+      "stdin": "Parcel\n4\n2.5\n",
+      "expected": {
+        "stdout": "Item: Count: Mass kg: Item: Parcel\nCount: 4\nTotal kg: 10.0\nWithin 10 kg: True\n",
+        "exitCode": 0,
+        "errorType": null
+      },
+      "actual": {
+        "stdout": "Item: Count: Mass kg: Item: Parcel\nCount: 4\nTotal kg: 10.0\nWithin 10 kg: True\n",
+        "stderr": "",
+        "exitCode": 0
+      }
+    }
+  ],
+  "allAssertionsPassed": true,
+  "note": "author planning precheck; redirected stdin is not echoed, prompts are part of captured stdout; not a learner trial"
+}
