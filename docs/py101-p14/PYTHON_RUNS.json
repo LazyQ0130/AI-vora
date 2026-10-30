@@ -1,0 +1,298 @@
+{
+  "checkedAt": "2026-10-30T16:25:49.892848+00:00",
+  "python": "Python 3.14.2",
+  "os": "Windows-11-10.0.26300-SP0",
+  "shell": "PowerShell 7.6.5",
+  "evidenceType": "author-real-process-stdin",
+  "rows": [
+    {
+      "caseId": "author-fixed",
+      "filename": "material_fixed.py",
+      "savedSource": "bin_label = \"Cable set M\"\npiece_count = 4\npiece_length_m = 2.5\nlimit_m = 18\nready_flag = True\nprint(bin_label)\nprint(type(bin_label))\nprint(type(piece_count))\nprint(type(piece_length_m))\nprint(type(ready_flag))\ntotal_length_m = piece_count * piece_length_m\nwithin_limit = total_length_m <= limit_m\nprint(total_length_m)\nprint(within_limit)\nbin_label = \"Cable set N\"\nprint(bin_label)\n",
+      "savedSha256": "4c3a4a57177c70987d97520122f737f6cdd1a3e4ddde28028b20f69a7b0dafa4",
+      "cwd": "<AUTHOR_ROOT>/python-lab",
+      "command": [
+        "python",
+        "material_fixed.py"
+      ],
+      "stdin": "",
+      "stdout": "Cable set M\r\n<class 'str'>\r\n<class 'int'>\r\n<class 'float'>\r\n<class 'bool'>\r\n10.0\r\nTrue\r\nCable set N\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 35928,
+      "expected": {
+        "stdout": "Cable set M\n<class 'str'>\n<class 'int'>\n<class 'float'>\n<class 'bool'>\n10.0\nTrue\nCable set N\n",
+        "exitCode": 0,
+        "stderrPolicy": "empty"
+      },
+      "passed": true
+    },
+    {
+      "caseId": "author-low-a",
+      "filename": "material_input.py",
+      "savedSource": "bin_label = input(\"Bin: \")\npieces_text = input(\"Pieces: \")\nlength_text = input(\"Each m: \")\npiece_count = int(pieces_text)\npiece_length_m = float(length_text)\nlimit_m = 18\ntotal_length_m = piece_count * piece_length_m\nwithin_limit = total_length_m <= limit_m\nprint(type(pieces_text))\nprint(type(piece_count))\nprint(type(length_text))\nprint(type(piece_length_m))\nprint(f\"Bin: {bin_label}\")\nprint(f\"Pieces: {piece_count}\")\nprint(f\"Total m: {total_length_m}\")\nprint(f\"Within {limit_m} m: {within_limit}\")\n",
+      "savedSha256": "fd4f8fe83c39764f867655e0012e75dabed2c092f4ea8300ef3de88a32186fd6",
+      "cwd": "<AUTHOR_ROOT>/python-lab",
+      "command": [
+        "python",
+        "material_input.py"
+      ],
+      "stdin": "Coil A\n4\n2.5\n",
+      "stdout": "Bin: Pieces: Each m: <class 'str'>\r\n<class 'int'>\r\n<class 'str'>\r\n<class 'float'>\r\nBin: Coil A\r\nPieces: 4\r\nTotal m: 10.0\r\nWithin 18 m: True\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 36704,
+      "expected": {
+        "stdout": "Bin: Pieces: Each m: <class 'str'>\n<class 'int'>\n<class 'str'>\n<class 'float'>\nBin: Coil A\nPieces: 4\nTotal m: 10.0\nWithin 18 m: True\n",
+        "exitCode": 0,
+        "stderrPolicy": "empty"
+      },
+      "passed": true
+    },
+    {
+      "caseId": "author-low-b",
+      "filename": "material_input.py",
+      "savedSource": "bin_label = input(\"Bin: \")\npieces_text = input(\"Pieces: \")\nlength_text = input(\"Each m: \")\npiece_count = int(pieces_text)\npiece_length_m = float(length_text)\nlimit_m = 18\ntotal_length_m = piece_count * piece_length_m\nwithin_limit = total_length_m <= limit_m\nprint(type(pieces_text))\nprint(type(piece_count))\nprint(type(length_text))\nprint(type(piece_length_m))\nprint(f\"Bin: {bin_label}\")\nprint(f\"Pieces: {piece_count}\")\nprint(f\"Total m: {total_length_m}\")\nprint(f\"Within {limit_m} m: {within_limit}\")\n",
+      "savedSha256": "fd4f8fe83c39764f867655e0012e75dabed2c092f4ea8300ef3de88a32186fd6",
+      "cwd": "<AUTHOR_ROOT>/python-lab",
+      "command": [
+        "python",
+        "material_input.py"
+      ],
+      "stdin": "Coil B\n3\n4.5\n",
+      "stdout": "Bin: Pieces: Each m: <class 'str'>\r\n<class 'int'>\r\n<class 'str'>\r\n<class 'float'>\r\nBin: Coil B\r\nPieces: 3\r\nTotal m: 13.5\r\nWithin 18 m: True\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 25032,
+      "expected": {
+        "stdout": "Bin: Pieces: Each m: <class 'str'>\n<class 'int'>\n<class 'str'>\n<class 'float'>\nBin: Coil B\nPieces: 3\nTotal m: 13.5\nWithin 18 m: True\n",
+        "exitCode": 0,
+        "stderrPolicy": "empty"
+      },
+      "passed": true
+    },
+    {
+      "caseId": "author-equal",
+      "filename": "material_input.py",
+      "savedSource": "bin_label = input(\"Bin: \")\npieces_text = input(\"Pieces: \")\nlength_text = input(\"Each m: \")\npiece_count = int(pieces_text)\npiece_length_m = float(length_text)\nlimit_m = 18\ntotal_length_m = piece_count * piece_length_m\nwithin_limit = total_length_m <= limit_m\nprint(type(pieces_text))\nprint(type(piece_count))\nprint(type(length_text))\nprint(type(piece_length_m))\nprint(f\"Bin: {bin_label}\")\nprint(f\"Pieces: {piece_count}\")\nprint(f\"Total m: {total_length_m}\")\nprint(f\"Within {limit_m} m: {within_limit}\")\n",
+      "savedSha256": "fd4f8fe83c39764f867655e0012e75dabed2c092f4ea8300ef3de88a32186fd6",
+      "cwd": "<AUTHOR_ROOT>/python-lab",
+      "command": [
+        "python",
+        "material_input.py"
+      ],
+      "stdin": "Coil C\n6\n3.0\n",
+      "stdout": "Bin: Pieces: Each m: <class 'str'>\r\n<class 'int'>\r\n<class 'str'>\r\n<class 'float'>\r\nBin: Coil C\r\nPieces: 6\r\nTotal m: 18.0\r\nWithin 18 m: True\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 16336,
+      "expected": {
+        "stdout": "Bin: Pieces: Each m: <class 'str'>\n<class 'int'>\n<class 'str'>\n<class 'float'>\nBin: Coil C\nPieces: 6\nTotal m: 18.0\nWithin 18 m: True\n",
+        "exitCode": 0,
+        "stderrPolicy": "empty"
+      },
+      "passed": true
+    },
+    {
+      "caseId": "author-high",
+      "filename": "material_input.py",
+      "savedSource": "bin_label = input(\"Bin: \")\npieces_text = input(\"Pieces: \")\nlength_text = input(\"Each m: \")\npiece_count = int(pieces_text)\npiece_length_m = float(length_text)\nlimit_m = 18\ntotal_length_m = piece_count * piece_length_m\nwithin_limit = total_length_m <= limit_m\nprint(type(pieces_text))\nprint(type(piece_count))\nprint(type(length_text))\nprint(type(piece_length_m))\nprint(f\"Bin: {bin_label}\")\nprint(f\"Pieces: {piece_count}\")\nprint(f\"Total m: {total_length_m}\")\nprint(f\"Within {limit_m} m: {within_limit}\")\n",
+      "savedSha256": "fd4f8fe83c39764f867655e0012e75dabed2c092f4ea8300ef3de88a32186fd6",
+      "cwd": "<AUTHOR_ROOT>/python-lab",
+      "command": [
+        "python",
+        "material_input.py"
+      ],
+      "stdin": "Coil D\n4\n5.0\n",
+      "stdout": "Bin: Pieces: Each m: <class 'str'>\r\n<class 'int'>\r\n<class 'str'>\r\n<class 'float'>\r\nBin: Coil D\r\nPieces: 4\r\nTotal m: 20.0\r\nWithin 18 m: False\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 19284,
+      "expected": {
+        "stdout": "Bin: Pieces: Each m: <class 'str'>\n<class 'int'>\n<class 'str'>\n<class 'float'>\nBin: Coil D\nPieces: 4\nTotal m: 20.0\nWithin 18 m: False\n",
+        "exitCode": 0,
+        "stderrPolicy": "empty"
+      },
+      "passed": true
+    },
+    {
+      "caseId": "author-format-error",
+      "filename": "material_format_copy.py",
+      "savedSource": "bin_label = input(\"Bin: \")\npieces_text = input(\"Pieces: \")\nlength_text = input(\"Each m: \")\npiece_count = int(pieces_text)\npiece_length_m = float(length_text)\nlimit_m = 18\ntotal_length_m = piece_count * piece_length_m\nwithin_limit = total_length_m <= limit_m\nprint(type(pieces_text))\nprint(type(piece_count))\nprint(type(length_text))\nprint(type(piece_length_m))\nprint(f\"Bin: {bin_label}\")\nprint(f\"Pieces: {piece_count}\")\nprint(f\"Total m: {total_length_m}\")\nprint(f\"Within {limit_m} m: {within_limit}\")\n",
+      "savedSha256": "fd4f8fe83c39764f867655e0012e75dabed2c092f4ea8300ef3de88a32186fd6",
+      "cwd": "<AUTHOR_ROOT>/python-lab",
+      "command": [
+        "python",
+        "material_format_copy.py"
+      ],
+      "stdin": "Coil bad\n4.5\n2.5\n",
+      "stdout": "Bin: Pieces: Each m: ",
+      "stderr": "Traceback (most recent call last):\r\n  File \"<AUTHOR_ROOT>/python-lab\\material_format_copy.py\", line 4, in <module>\r\n    piece_count = int(pieces_text)\r\nValueError: invalid literal for int() with base 10: '4.5'\r\n",
+      "exitCode": 1,
+      "pid": 2812,
+      "expected": {
+        "stdout": "Bin: Pieces: Each m: ",
+        "exitCode": 1,
+        "stderrPolicy": "ValueError: invalid literal for int() with base 10: '4.5'"
+      },
+      "passed": true
+    },
+    {
+      "caseId": "author-format-restart",
+      "filename": "material_format_copy.py",
+      "savedSource": "bin_label = input(\"Bin: \")\npieces_text = input(\"Pieces: \")\nlength_text = input(\"Each m: \")\npiece_count = int(pieces_text)\npiece_length_m = float(length_text)\nlimit_m = 18\ntotal_length_m = piece_count * piece_length_m\nwithin_limit = total_length_m <= limit_m\nprint(type(pieces_text))\nprint(type(piece_count))\nprint(type(length_text))\nprint(type(piece_length_m))\nprint(f\"Bin: {bin_label}\")\nprint(f\"Pieces: {piece_count}\")\nprint(f\"Total m: {total_length_m}\")\nprint(f\"Within {limit_m} m: {within_limit}\")\n",
+      "savedSha256": "fd4f8fe83c39764f867655e0012e75dabed2c092f4ea8300ef3de88a32186fd6",
+      "cwd": "<AUTHOR_ROOT>/python-lab",
+      "command": [
+        "python",
+        "material_format_copy.py"
+      ],
+      "stdin": "Coil recovered\n4\n2.25\n",
+      "stdout": "Bin: Pieces: Each m: <class 'str'>\r\n<class 'int'>\r\n<class 'str'>\r\n<class 'float'>\r\nBin: Coil recovered\r\nPieces: 4\r\nTotal m: 9.0\r\nWithin 18 m: True\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 18920,
+      "expected": {
+        "stdout": "Bin: Pieces: Each m: <class 'str'>\n<class 'int'>\n<class 'str'>\n<class 'float'>\nBin: Coil recovered\nPieces: 4\nTotal m: 9.0\nWithin 18 m: True\n",
+        "exitCode": 0,
+        "stderrPolicy": "empty"
+      },
+      "passed": true
+    },
+    {
+      "caseId": "organizer-B1",
+      "filename": "organizer_values.py",
+      "savedSource": "material_name = \"Festival trim\"\nstrip_count = 5\nstrip_length_m = 1.5\nis_ready = False\nprint(material_name)\nprint(strip_count)\nprint(strip_length_m)\nprint(is_ready)\nprint(type(material_name))\nprint(type(strip_count))\nprint(type(strip_length_m))\nprint(type(is_ready))\n",
+      "savedSha256": "8859f25f08be7f82fceacf84d8d1735841b8e4944817e067260f3e7fbc688fa5",
+      "cwd": "<AUTHOR_ROOT>/python-lab",
+      "command": [
+        "python",
+        "organizer_values.py"
+      ],
+      "stdin": "",
+      "stdout": "Festival trim\r\n5\r\n1.5\r\nFalse\r\n<class 'str'>\r\n<class 'int'>\r\n<class 'float'>\r\n<class 'bool'>\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 30768,
+      "expected": {
+        "stdout": "Festival trim\n5\n1.5\nFalse\n<class 'str'>\n<class 'int'>\n<class 'float'>\n<class 'bool'>\n",
+        "exitCode": 0,
+        "stderrPolicy": "empty"
+      },
+      "passed": true
+    },
+    {
+      "caseId": "organizer-B2-low",
+      "filename": "organizer_boundary.py",
+      "savedSource": "strip_count = 5\nstrip_length_m = 1.25\nlimit_m = 7.5\ntotal_m = strip_count * strip_length_m\nwithin_limit = total_m <= limit_m\nprint(total_m)\nprint(within_limit)\n",
+      "savedSha256": "65077e83d9819ae673bc1bcdcdca96a5485ba7b46bd2b6522f3582effc80fcdf",
+      "cwd": "<AUTHOR_ROOT>/python-lab",
+      "command": [
+        "python",
+        "organizer_boundary.py"
+      ],
+      "stdin": "",
+      "stdout": "6.25\r\nTrue\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 19656,
+      "expected": {
+        "stdout": "6.25\nTrue\n",
+        "exitCode": 0,
+        "stderrPolicy": "empty"
+      },
+      "passed": true
+    },
+    {
+      "caseId": "organizer-B2-equal",
+      "filename": "organizer_boundary.py",
+      "savedSource": "strip_count = 5\nstrip_length_m = 1.5\nlimit_m = 7.5\ntotal_m = strip_count * strip_length_m\nwithin_limit = total_m <= limit_m\nprint(total_m)\nprint(within_limit)\n",
+      "savedSha256": "c65e86191fb651e499ef9c0c48263f21786317f8aaf68d5858cf4dcc012e4e65",
+      "cwd": "<AUTHOR_ROOT>/python-lab",
+      "command": [
+        "python",
+        "organizer_boundary.py"
+      ],
+      "stdin": "",
+      "stdout": "7.5\r\nTrue\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 7904,
+      "expected": {
+        "stdout": "7.5\nTrue\n",
+        "exitCode": 0,
+        "stderrPolicy": "empty"
+      },
+      "passed": true
+    },
+    {
+      "caseId": "organizer-B2-high",
+      "filename": "organizer_boundary.py",
+      "savedSource": "strip_count = 5\nstrip_length_m = 2.0\nlimit_m = 7.5\ntotal_m = strip_count * strip_length_m\nwithin_limit = total_m <= limit_m\nprint(total_m)\nprint(within_limit)\n",
+      "savedSha256": "932d6c0e5a991f38d1ee1279409cf26960455ef38fee4dc876f7887e5e711cf6",
+      "cwd": "<AUTHOR_ROOT>/python-lab",
+      "command": [
+        "python",
+        "organizer_boundary.py"
+      ],
+      "stdin": "",
+      "stdout": "10.0\r\nFalse\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 26820,
+      "expected": {
+        "stdout": "10.0\nFalse\n",
+        "exitCode": 0,
+        "stderrPolicy": "empty"
+      },
+      "passed": true
+    },
+    {
+      "caseId": "organizer-B3-low",
+      "filename": "organizer_interactive.py",
+      "savedSource": "material_name = input(\"Material: \")\nstrips_text = input(\"Strips: \")\nlength_text = input(\"Each m: \")\nstrip_count = int(strips_text)\nstrip_length_m = float(length_text)\nlimit_m = 7.5\ntotal_m = strip_count * strip_length_m\nwithin_limit = total_m <= limit_m\nprint(f\"Material: {material_name}\")\nprint(f\"Strips: {strip_count}\")\nprint(f\"Total m: {total_m}\")\nprint(f\"Within {limit_m} m: {within_limit}\")\n",
+      "savedSha256": "ff5589e9ee9555b8a77996fd48f62e94dfc5c7e4bc611bebd5e6a87f3ffe790e",
+      "cwd": "<AUTHOR_ROOT>/python-lab",
+      "command": [
+        "python",
+        "organizer_interactive.py"
+      ],
+      "stdin": "Stage Blue\n5\n1.25\n",
+      "stdout": "Material: Strips: Each m: Material: Stage Blue\r\nStrips: 5\r\nTotal m: 6.25\r\nWithin 7.5 m: True\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 24852,
+      "expected": {
+        "stdout": "Material: Strips: Each m: Material: Stage Blue\nStrips: 5\nTotal m: 6.25\nWithin 7.5 m: True\n",
+        "exitCode": 0,
+        "stderrPolicy": "empty"
+      },
+      "passed": true
+    },
+    {
+      "caseId": "organizer-B3-equal",
+      "filename": "organizer_interactive.py",
+      "savedSource": "material_name = input(\"Material: \")\nstrips_text = input(\"Strips: \")\nlength_text = input(\"Each m: \")\nstrip_count = int(strips_text)\nstrip_length_m = float(length_text)\nlimit_m = 7.5\ntotal_m = strip_count * strip_length_m\nwithin_limit = total_m <= limit_m\nprint(f\"Material: {material_name}\")\nprint(f\"Strips: {strip_count}\")\nprint(f\"Total m: {total_m}\")\nprint(f\"Within {limit_m} m: {within_limit}\")\n",
+      "savedSha256": "ff5589e9ee9555b8a77996fd48f62e94dfc5c7e4bc611bebd5e6a87f3ffe790e",
+      "cwd": "<AUTHOR_ROOT>/python-lab",
+      "command": [
+        "python",
+        "organizer_interactive.py"
+      ],
+      "stdin": "Stage Gold\n5\n1.5\n",
+      "stdout": "Material: Strips: Each m: Material: Stage Gold\r\nStrips: 5\r\nTotal m: 7.5\r\nWithin 7.5 m: True\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 27192,
+      "expected": {
+        "stdout": "Material: Strips: Each m: Material: Stage Gold\nStrips: 5\nTotal m: 7.5\nWithin 7.5 m: True\n",
+        "exitCode": 0,
+        "stderrPolicy": "empty"
+      },
+      "passed": true
+    }
+  ],
+  "allAssertionsPassed": true,
+  "humanPilotConducted": false,
+  "macOSActuallyTested": false
+}

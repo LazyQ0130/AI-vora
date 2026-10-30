@@ -1,0 +1,51 @@
+{
+  "sourceCommit": "containing audit commit; resolved to full SHA in the documentation binding commit",
+  "baseline": "895bb7644735aa4e28d721e272e04b996c1c8eec",
+  "courseSourceFiles": [
+    {
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "lfSha256": "bced151d15ddff7f6cc929f603650aeb6f70b0baf9c10a85663c5c60eb26cc52"
+    },
+    {
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "lfSha256": "8cd9aae38c75589c53b450aee9d697cbbdb9630f41d753092aa767b5a57d2678"
+    },
+    {
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "lfSha256": "9acb438345bd5a5e84432b72fbf326704c0bcbf609f441bd552a06d7b5a31ac5"
+    },
+    {
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "lfSha256": "f2cc82e47042e32b38f8334942cbce7ba4b6e3f433ccc72978d8e7fd4a212162"
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "lfSha256": "b18d2f3f59fd0e993fb95d3847cc3732e7d1ea9745ec247f7c5a0f78463d836a"
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "lfSha256": "cbcae457414db4b2f209f6840ccaad8bd11521ec7d5425654b23ee3a2a1f348e"
+    },
+    {
+      "path": "tests/py101-numeric-comparisons.test.ts",
+      "lfSha256": "15f3b58e0489818ccd339ca0b2279c5f8241c3710622cd5db9cddd9bdcd5448d"
+    },
+    {
+      "path": "tests/py101-input-and-conversion.test.ts",
+      "lfSha256": "898faabb744b60b6fb73d0f173020c9764b9a50806f5c27034fa266615dabde8"
+    },
+    {
+      "path": "tests/py101-readable-output.test.ts",
+      "lfSha256": "8f1880e35ed20127ea3c6d06ef82b1f62a552660d81ffb8aeae268a6d0560572"
+    },
+    {
+      "path": "tests/py101-chapter-two-audit.test.ts",
+      "lfSha256": "8e97b13f60236211490fe3507689a240b8108554226e56ebb91dc34844b77d47"
+    }
+  ],
+  "sourceChangeScope": "four terminal status paragraphs, four evidence pointers, exact compatibility registration and related tests; no runtime changes",
+  "teacherReviewConducted": false,
+  "editorReviewConducted": false,
+  "studentPilotConducted": false,
+  "humanHandoffReproductionConducted": false
+}

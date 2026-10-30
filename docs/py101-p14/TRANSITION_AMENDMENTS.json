@@ -1,0 +1,298 @@
+{
+  "baseline": "895bb7644735aa4e28d721e272e04b996c1c8eec",
+  "records": [
+    {
+      "lessonId": "PY101-C02-L01",
+      "file": "src/content/lessons/py101/variables-and-assignment.ts",
+      "sectionId": "next-step",
+      "blockIndex": 2,
+      "before": "接着学习2.2「分清文字、整数、小数和真假值」，它已有待人工审核试读，将用实际类型观察接续本节的名称与值。2.3、2.4也已有待人工审核试读，2.5–2.6尚未制作；第5章函数试读还需要表达式与控制流程等中间先修，不能把阅读器的可读课时导航当作直接跳学建议。整门PY101仍在筹备。",
+      "after": "接着学习2.2「分清文字、整数、小数和真假值」，它已有待人工审核试读，将用实际类型观察接续本节的名称与值。2.3–2.6也均已有待人工审核试读；第5章函数试读还需要表达式与控制流程等中间先修，不能把阅读器的可读课时导航当作直接跳学建议。整门PY101仍在筹备。",
+      "beforeObjectSha256": "3e17af71ba303d80a9148336f812cdf18132db0cf4e49c137543443435dcd7f9",
+      "afterObjectSha256": "f1df6afaf46b084d53f2b711b11bf96cc276b6c102100f5102396dd82f5270c3",
+      "publicationBefore": {
+        "lessonId": "PY101-C02-L01",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "title": "用变量保留并更新程序里的值",
+        "contentVersion": 1,
+        "order": 1,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p11/TRANSITION_AMENDMENTS.md"
+      },
+      "publicationAfter": {
+        "lessonId": "PY101-C02-L01",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "title": "用变量保留并更新程序里的值",
+        "contentVersion": 1,
+        "order": 1,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p14/TRANSITION_AMENDMENTS.md"
+      },
+      "contentVersionBefore": 1,
+      "contentVersionAfter": 1,
+      "progressScopeBefore": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L01",
+        "contentVersion": 1,
+        "sectionIds": [
+          "changing-task",
+          "name-and-value",
+          "choose-name",
+          "read-and-update",
+          "predict-run",
+          "change-one-value",
+          "literal-or-name",
+          "fresh-script",
+          "first-read-error",
+          "practice",
+          "next-step"
+        ]
+      },
+      "progressScopeAfter": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L01",
+        "contentVersion": 1,
+        "sectionIds": [
+          "changing-task",
+          "name-and-value",
+          "choose-name",
+          "read-and-update",
+          "predict-run",
+          "change-one-value",
+          "literal-or-name",
+          "fresh-script",
+          "first-read-error",
+          "practice",
+          "next-step"
+        ]
+      },
+      "onlyOneParagraphChanged": true,
+      "coreAssessmentResourcesCodeAnchorsAndTimeUnchanged": true
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "file": "src/content/lessons/py101/basic-value-types.ts",
+      "sectionId": "next-step",
+      "blockIndex": 2,
+      "before": "接着学习2.3「用表达式算出一个结果」，它已有待人工审核试读，2.4–2.6仍在规划。第5章函数试读还需要表达式与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。",
+      "after": "接着学习2.3「用表达式算出一个结果」，它与2.4–2.6均已有待人工审核试读。第5章函数试读还需要表达式与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。",
+      "beforeObjectSha256": "47b641470d7d65350e658f2a01c1ade51b21a231dc98e0fe329cbdf024e3ae38",
+      "afterObjectSha256": "4d08818ba271d4bd63bbe9ebe7a56534747c078f9f282a45c743c559a6214291",
+      "publicationBefore": {
+        "lessonId": "PY101-C02-L02",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "title": "分清文字、整数、小数和真假值",
+        "contentVersion": 1,
+        "order": 2,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p10/TRANSITION_AMENDMENT.md"
+      },
+      "publicationAfter": {
+        "lessonId": "PY101-C02-L02",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "title": "分清文字、整数、小数和真假值",
+        "contentVersion": 1,
+        "order": 2,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p14/TRANSITION_AMENDMENTS.md"
+      },
+      "contentVersionBefore": 1,
+      "contentVersionAfter": 1,
+      "progressScopeBefore": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L02",
+        "contentVersion": 1,
+        "sectionIds": [
+          "same-display",
+          "add-measurement",
+          "ready-state",
+          "inspect-type",
+          "four-types",
+          "same-name-new-type",
+          "practice",
+          "next-step"
+        ]
+      },
+      "progressScopeAfter": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L02",
+        "contentVersion": 1,
+        "sectionIds": [
+          "same-display",
+          "add-measurement",
+          "ready-state",
+          "inspect-type",
+          "four-types",
+          "same-name-new-type",
+          "practice",
+          "next-step"
+        ]
+      },
+      "onlyOneParagraphChanged": true,
+      "coreAssessmentResourcesCodeAnchorsAndTimeUnchanged": true
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "file": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "sectionId": "next-step",
+      "blockIndex": 2,
+      "before": "接着学习2.4「让比较表达式给出真假结果」，它已有待人工审核试读，2.5–2.6仍在规划。第5章函数试读还需要比较、输入输出与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。",
+      "after": "接着学习2.4「让比较表达式给出真假结果」，它与2.5–2.6均已有待人工审核试读。第5章函数试读还需要比较、输入输出与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。",
+      "beforeObjectSha256": "90a6119fd773ff6cc62266951bfd8107f56236d68da76faa38c4e37bd9512253",
+      "afterObjectSha256": "bd548dc654271eeac72cab8af416984f07155e5cd146241b7e5b1c4ac9c6a8b1",
+      "publicationBefore": {
+        "lessonId": "PY101-C02-L03",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "title": "用表达式算出一个结果",
+        "contentVersion": 1,
+        "order": 3,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p11/TRANSITION_AMENDMENTS.md"
+      },
+      "publicationAfter": {
+        "lessonId": "PY101-C02-L03",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "title": "用表达式算出一个结果",
+        "contentVersion": 1,
+        "order": 3,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p14/TRANSITION_AMENDMENTS.md"
+      },
+      "contentVersionBefore": 1,
+      "contentVersionAfter": 1,
+      "progressScopeBefore": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L03",
+        "contentVersion": 1,
+        "sectionIds": [
+          "quantities-and-units",
+          "expression-to-value",
+          "take-some-away",
+          "order-and-grouping",
+          "divide-and-meaning",
+          "same-level-order",
+          "put-it-together",
+          "zero-divisor",
+          "practice",
+          "next-step"
+        ]
+      },
+      "progressScopeAfter": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L03",
+        "contentVersion": 1,
+        "sectionIds": [
+          "quantities-and-units",
+          "expression-to-value",
+          "take-some-away",
+          "order-and-grouping",
+          "divide-and-meaning",
+          "same-level-order",
+          "put-it-together",
+          "zero-divisor",
+          "practice",
+          "next-step"
+        ]
+      },
+      "onlyOneParagraphChanged": true,
+      "coreAssessmentResourcesCodeAnchorsAndTimeUnchanged": true
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "file": "src/content/lessons/py101/numeric-comparisons.ts",
+      "sectionId": "next-step",
+      "blockIndex": 2,
+      "before": "接着学习2.5「取得用户输入，再转成需要的数值」，它已有待人工审核试读，2.6尚未制作。第5章函数试读还需输出与控制流程等中间先修，阅读器的下一可读导航不表示直接跳学建议。整门PY101仍在筹备。",
+      "after": "接着学习2.5「取得用户输入，再转成需要的数值」，它与2.6均已有待人工审核试读。第5章函数试读还需输出与控制流程等中间先修，阅读器的下一可读导航不表示直接跳学建议。整门PY101仍在筹备。",
+      "beforeObjectSha256": "cfec59a758db3df02d07bd4fbedfa49f93fc1aeedef6044ce9e85713a533d62c",
+      "afterObjectSha256": "e2a0a8d45f518b265bccb7daca617ff77b6e77e02d720494374ec57f001c18e4",
+      "publicationBefore": {
+        "lessonId": "PY101-C02-L04",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "title": "让比较表达式给出真假结果",
+        "contentVersion": 1,
+        "order": 4,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p12/TRANSITION_AMENDMENTS.md"
+      },
+      "publicationAfter": {
+        "lessonId": "PY101-C02-L04",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "title": "让比较表达式给出真假结果",
+        "contentVersion": 1,
+        "order": 4,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p14/TRANSITION_AMENDMENTS.md"
+      },
+      "contentVersionBefore": 1,
+      "contentVersionAfter": 1,
+      "progressScopeBefore": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L04",
+        "contentVersion": 1,
+        "sectionIds": [
+          "most-six",
+          "compare-limit",
+          "keep-result",
+          "equal-or-different",
+          "above-limit",
+          "main-example",
+          "boundary-runs",
+          "practice",
+          "next-step"
+        ]
+      },
+      "progressScopeAfter": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L04",
+        "contentVersion": 1,
+        "sectionIds": [
+          "most-six",
+          "compare-limit",
+          "keep-result",
+          "equal-or-different",
+          "above-limit",
+          "main-example",
+          "boundary-runs",
+          "practice",
+          "next-step"
+        ]
+      },
+      "onlyOneParagraphChanged": true,
+      "coreAssessmentResourcesCodeAnchorsAndTimeUnchanged": true
+    }
+  ],
+  "allAssertionsPassed": true
+}

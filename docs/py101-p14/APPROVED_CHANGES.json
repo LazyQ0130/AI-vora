@@ -1,0 +1,2209 @@
+{
+  "baseline": "895bb7644735aa4e28d721e272e04b996c1c8eec",
+  "addedLessonIds": [],
+  "sources": [
+    {
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "before": "import { lessonSchema, type ContentBlock } from \"../../models\";\nimport { variableCode, variableBlockNames, type VariableCodeKey } from \"../../resources/python-variables\";\nconst p = (text: string): ContentBlock => ({ type: \"paragraph\", text });\nconst code = (filename: string, text: string): ContentBlock => ({ type: \"code\", filename, code: text, language: \"text\" });\nconst sample = (key: VariableCodeKey): ContentBlock => ({ type: \"code\", filename: variableBlockNames[key], code: variableCode[key], language: \"python\" });\nconst sourceLines = (key: VariableCodeKey) => variableCode[key].split(\"\\n\").map((line, i) => `第${i + 1}行：${line}`).join(\"；\");\n\n// 编辑简报、起草前预解、官方来源与真实运行证据：docs/py101-p8/。\nexport const pythonVariablesAndAssignmentLesson = lessonSchema.parse({\n  id: \"PY101-C02-L01\", courseId: \"PY101\", chapterId: \"PY101-C02\", contentVersion: 1,\n  title: \"用变量保留并更新程序里的值\", optionalLesson: false,\n  subtitle: \"自己给任务文字取个名字，预测更新前后的输出，再修复一次读得太早的错误。\",\n  prerequisites: \"已完成第一章：能在电脑上创建、保存和完整运行.py，使用print及成对引号，核对文件位置与解释器；接触过1.5的最小赋值和名称读取。沿用已可运行的Python 3与编辑器，不重新安装软件。手机可阅读，独立代码实践需要电脑。\",\n  prerequisiteLinks: [\n    { title: \"1.1 从终端执行文件\", href: \"/learn/PY101/PY101-C01-L01#run-script\", note: \"补齐.py和print的运行。\" },\n    { title: \"1.3 保存后完整重跑\", href: \"/learn/PY101/PY101-C01-L03#save-rerun\", note: \"核对保存状态、cwd与实际目标。\" },\n    { title: \"1.5 最小赋值经验\", href: \"/learn/PY101/PY101-C01-L05#first-cells\", note: \"回顾名字、文字与命名建议；本节转到普通脚本。\" },\n    { title: \"1.6 读懂相关错误\", href: \"/learn/PY101/PY101-C01-L06#read-evidence\", note: \"保留错误类型及对应代码行。\" },\n  ],\n  objectives: [\n    \"在自己创建的.py中用合法名称保存文字并输出当前值，区分名称和引号内的固定文字\",\n    \"预测同一名称重新赋值前后的输出，只修改第二次赋值，保存重跑并解释哪一行变化\",\n    \"按执行顺序找出首次赋值前的读取，记录实际错误，保留名称读取语义修复并从头运行\",\n  ],\n  assessmentMap: [{ objective: 1, exerciseIds: [\"keep-and-update\"] }, { objective: 2, exerciseIds: [\"keep-and-update\"] }, { objective: 3, exerciseIds: [\"repair-first-read\"] }],\n  learningTime: { reading: [10, 15], practice: [5, 8], coding: [10, 15], basis: \"editorial-estimate\" },\n  sections: [\n    { id: \"changing-task\", title: \"任务变了，程序怎样接着使用新文字？\", navGroup: \"start\", navLabel: \"名称与值\", blocks: [\n      p(\"一个小程序先显示当前任务“打包笔记本”，稍后要改为“检查标签”。如果把同一任务文字在各处重复写死，修改时容易漏掉一处。我们可以先给这份文字取一个名字，使用时读这个名字，需要变化时再给它新的值。\"),\n      p(\"在1.5，你用marker和两格代码观察过内核记住的内容。这次回到普通.py文件：自己选名字、写出赋值与读取，并判断程序运行到不同位置时会显示什么。所有例子只用Python自带功能。\"),\n    ] },\n    { id: \"name-and-value\", title: \"先把一份文字交给名称\", navGroup: \"start\", navLabel: \"名称与值\", blocks: [\n      p(\"先看这一行，暂时只理解它的作用，下一段会把它与其他行组合成完整脚本：\"),\n      sample(\"assign\"),\n      p(\"task_name是我们选择的名称，意思是任务名称；\\\"Pack notebooks\\\"是这次给它的文字值。和1.1一样，配对英文引号标记字符串的开始和结束，引号不是名称的一部分。\"),\n      p(\"执行这条语句时，=让左边的task_name对应右边的值，这个动作叫赋值。这种运行时的对应关系叫绑定。=在这里执行一个动作，并不要求你判断数学等式是否成立。\"),\n      p(\"本节把能绑定到值、供后续读取的名称称为变量，task_name就是变量名。它帮助后面的代码找到当前对应的值。之后再次赋值，可以改变这份对应关系；理解变量时，先抓住名称和当前值这两件事。单独执行赋值不会像print那样显示一行文字。\"),\n    ] },\n    { id: \"choose-name\", title: \"自己选一个能使用的名称\", navGroup: \"start\", navLabel: \"名称与值\", blocks: [\n      p(\"沿用1.5的便捷建议：用英文字母开头，后面接英文字母、数字或下划线，名称中不放空格。例如task_name、label2都符合这种写法。task_name中的下划线把两个词连成一个名称；my plan含空格、1plan以数字开头，都不能用作这里的变量名。\"),\n      p(\"Python有一些保留给语言本身的词，称为关键字，例如for、class，不能拿来作普通变量名。本次可选带含义的task_label、next_task等名字，也避开print，留着这个已有的输出工具。赋值处和读取处的拼写、大小写要一致；task_name和Task_name是两个名字。\"),\n      p(\"这些英文写法方便初次练习，不是Python全部合法名称的清单。下划线开头的名称以及用某些中文等文字组成的名称也可以合法使用。练习接受其他合法名称；一个清楚表达用途的名字，比只写一个字母更容易检查。\"),\n    ] },\n    { id: \"read-and-update\", title: \"读取当前值，再给同一名称新值\", navGroup: \"execution\", navLabel: \"读取与更新\", blocks: [\n      p(\"在刚才的赋值之后接上这一行：\"), sample(\"read\"),\n      p(\"print(task_name)先读取task_name此刻对应的值，再显示它，所以这里会显示Pack notebooks。括号里没有引号，读取的是名称；写print不会自动给尚未有值的名称赋值。\"),\n      p(\"再在这次读取后面写：\"), sample(\"update\"),\n      p(\"这还是同一个task_name。执行这一行时，它改为对应Check labels，称为重新赋值。后续再执行print(task_name)，会读到新的文字。名称保持相同，当前值可以随执行的赋值改变。\"),\n    ] },\n    { id: \"predict-run\", title: \"先预测四行代码，再运行完整脚本\", navGroup: \"execution\", navLabel: \"读取与更新\", blocks: [\n      p(\"在自己的练习文件夹新建task_labels.py，源码放在.venv外。用编辑器把下面四行写入，行首都不加缩进。先在本地笔记写下两行预测：第一次print执行时，之前已经发生哪次赋值？第二次print之前又发生了什么？写好再保存运行。\"),\n      sample(\"main\"),\n      p(\"确认编辑器已保存，终端用pwd和Windows的dir（macOS为ls）确认当前目录包含这份文件。沿用第一章已核验的解释器命令：Windows在PowerShell运行下面第一条，macOS在终端运行第二条；若此前一直用py，保持使用py。命令输入在终端提示符后，不放进.py，也不只运行编辑器选区。\"),\n      code(\"Windows · PowerShell · 文件所在目录\", \"python task_labels.py\"),\n      code(\"macOS · 终端 · 文件所在目录\", \"python3 task_labels.py\"),\n      p(\"如果沿用项目.venv而未激活，也可以按1.4直接调用已核验的环境解释器，脚本参数仍为task_labels.py。本节不创建新环境。实际结果应为：\"),\n      code(\"完整运行 · 预期输出\", \"Pack notebooks\\nCheck labels\"),\n      { type: \"table\", caption: \"沿实际执行顺序看当前值\", columns: [\"刚执行到哪里\", \"task_name当前对应什么\", \"这一步的显示\"], rows: [\n        [\"第1行赋值后\", \"Pack notebooks\", \"无普通输出\"],\n        [\"第2行print\", \"Pack notebooks\", \"Pack notebooks\"],\n        [\"第3行重新赋值后\", \"Check labels\", \"无普通输出\"],\n        [\"第4行print\", \"Check labels\", \"Check labels\"],\n      ] },\n      p(\"第一条print已经把旧值显示出来，第三行才开始执行新的赋值。后来的赋值会影响后续读取，不会倒过来改写已经显示的第一行。判断某次输出时，要看它执行之前真正发生的动作。\"),\n    ] },\n    { id: \"change-one-value\", title: \"只改第二次赋值，会改变哪一行？\", navGroup: \"execution\", navLabel: \"读取与更新\", blocks: [\n      p(\"现在自己另选一项任务，只改第三行引号内的文字，其他三行保持不动。先写两行新预测，再保存，用同一条命令从头运行整个文件，比较这一次和上一次的真实输出。\"),\n      p(\"例如把第二次赋值的文字换成Sort envelopes，第一行仍应为Pack notebooks，第二行变为Sort envelopes。原因是第一次读取之前的赋值没有改变，而第二次读取之前执行了修改后的赋值。用你自己选的文字再核对一次，不用把这个变式也抄进文件末尾。\"),\n      p(\"若仍显示旧文字，先按1.3核对保存标记、当前目录与执行目标，再比较源码。编辑内容、保存文件与运行程序是三个动作，新的输出来自这次实际执行。\"),\n    ] },\n    { id: \"literal-or-name\", title: \"有引号的文字和无引号的名称\", navGroup: \"compare\", navLabel: \"区分与排错\", blocks: [\n      p(\"回顾1.1：引号围起来的是固定字符串。另建name_or_text.py，先预测下面两次显示会不会相同，再保存并完整运行；命令中的文件名换成name_or_text.py。\"),\n      sample(\"literal\"), code(\"对照 · 预期输出\", \"task_name\\nReady\"),\n      p(\"print(\\\"task_name\\\")直接显示引号里的task_name这几个字符，没有读取这个名称。print(task_name)读取当前绑定的值，所以显示Ready。两行都使用print，差别在括号中的内容：固定文字，还是名称读取。\"),\n      p(\"如果想保存Ready这段文字，就保留它两端的引号。去掉后，Ready会被当成另一个名称；若本次程序没有给它提供值，读取就可能失败。下一段用一个更容易定位的完整脚本实际观察这种未定义名称错误。\"),\n    ] },\n    { id: \"fresh-script\", title: \"每次从终端启动，是本次脚本的执行\", navGroup: \"compare\", navLabel: \"区分与排错\", blocks: [\n      p(\"本节使用的是常规终端命令启动的新Python脚本进程：每次运行，都会从文件开头按源码顺序执行这几条语句。上一次运行结束时给名称赋过值，不会让下一次新进程自动拥有那个绑定。源码文件保存了语句，这次真正执行到赋值时才建立对应关系。\"),\n      p(\"1.5的Notebook可以在仍运行的同一内核中保留先前执行过的名称；那是另一种执行方式。这里不用Notebook旧状态补齐.py中缺失的步骤。把脚本保存并从头运行，是检查当前文件本身是否足够的办法。\"),\n    ] },\n    { id: \"first-read-error\", title: \"赋值写在后面，为什么第一行仍报错？\", navGroup: \"compare\", navLabel: \"区分与排错\", blocks: [\n      p(\"在新的dispatch_label.py中保存下面两行。先预测这次能否显示Packed T7，再从终端完整执行它。这是有意安排的失败实验，预期会出现NameError；保留你实际看到的相关代码行及错误末行。\"),\n      sample(\"firstRead\"),\n      p(\"运行到第一行时，程序需要读取dispatch_label，却还没有执行第二行的赋值，所以本次没有正常的任务输出。错误类型是NameError，描述会提到dispatch_label未定义；文件路径、行号排版与箭头可能随环境或Python版本变化，以自己的真实回溯为准。后面有赋值文本，并不等于它已经执行。\"),\n      p(\"修复要让提供值的赋值先于读取执行。保留通过名称显示任务的做法，自己调整顺序，保存后从头运行，核对是否正常显示Packed T7。这次原因来自已给定脚本的执行顺序；无需重装Python、安装包或改PATH。其他NameError仍要结合对应代码判断，不能都套用同一根因。\"),\n    ] },\n    { id: \"practice\", title: \"自己写一次更新，再独立修复一次读取\", navGroup: \"practice\", navLabel: \"独立练习\", blocks: [\n      p(\"先合上示例和参考答案完成任务。网页输入框只是临时笔记；正式成果保存在本地.py及短记录里。只需列出源码、命令、预测与实际结果，不必抄成长篇报告。\"),\n      { type: \"exercise\", id: \"keep-and-update\", title: \"自己的任务标签会怎样改变？\", kind: \"代码\",\n        prompt: \"创建与正文不同的.py文件，自选新的任务情境、一个合法名称和两段不同文字。自己写第一次赋值与名称读取，再写同一名称的第二次赋值与名称读取。运行前预测两行输出，保存并真实执行。随后只改第二次赋值的文字，再预测、保存并完整运行一次。交付实际源码（保留改前/改后差异）、运行命令、两次预测和两次真实输出；简短说明为什么第一行不随后面的赋值倒退改变，再用一句话区分名称与引号里的文字。名称不必是task_name，接受其他合法写法；不能只交参考输出。\",\n        hints: [\"沿程序从上到下走到每一次print，观察此前最近执行过哪次给这个名称赋值的语句。\", \"把自己的两次赋值和两次读取分别标出，核对实际顺序。只改后一次赋值后，重新预测哪些读取会遇到它；仍由你独立选名、填新文字、保存和执行。\"],\n        solution: [\n          \"例如布展任务另建gallery_plan.py，选display_note：它以字母开头，只有字母和下划线，且不是关键字。以下只是一种参考，其他合法名称和任务内容同样接受。\",\n          `参考初稿从上到下写四行，分号只是这里的分隔说明，不输入文件：${sourceLines(\"ownInitial\")}。两段文字用配对引号包住，两次print中的名称与赋值拼写一致。先预测Hang posters、Place signs两行，再保存；Windows可用python gallery_plan.py，macOS用python3 gallery_plan.py，保留本人真实结果。`,\n          `只修改后一次赋值后的四行依次为：${sourceLines(\"ownChanged\")}。重新预测后完整运行，应为Hang posters、Open doors。第一次print发生在后一次赋值之前，因此第一行保持原样，第二行读取更新后的值。`,\n          \"display_note是不带引号、用于读取的名称，\\\"Hang posters\\\"等是引号内固定文字。若把print中的名称加上引号，会改成显示名称文字本身，已经改变读取含义。\",\n          \"常错包括：只改编辑区未保存、命令指向另一文件、赋值/读取拼写或大小写不同。后两种名称差异若导致读取未定义名称，可能出现NameError；漏掉配对引号可能是SyntaxError，把应为文字的内容写成未定义名称也可能NameError。按实际行检查，不只抄错误名。接受配对单引号和中文文字，但必须保留自选内容与两次实际执行。\",\n        ],\n        rubric: [\n          \"实际新.py使用自选合法名称与新情境，两段文字不同；有同名两次赋值及两次名称读取，源码和运行命令对应。\",\n          \"两轮都有运行前两行预测和真实输出；改后只改变第二次赋值，结果与执行位置相符，差异有核对。\",\n          \"结合本人代码说明第一行已在更新前显示，不会被后来赋值改写；能区分名称读取与引号内固定文字。读完标记、复制样例或只有解释不代替代码与运行。\",\n        ],\n      },\n      p(\"下一题使用first-read-error中的两行dispatch_label起始源码，可回到上方代码框复制到另建的repair_label.py。它故意在第一次赋值前读取名称；不要先套用修复参考。\"),\n      { type: \"exercise\", id: \"repair-first-read\", title: \"为什么脚本还没开始显示任务就报错？\", kind: \"实验\",\n        prompt: \"确认repair_label.py的真实位置与保存状态，内容为上方dispatch_label两行故障源码。先预测首次运行现象，再从终端实际执行，保留真实错误类型、相关代码行和末行。按这次执行顺序判断：读取时，这个名称是否已经有值？自己决定安全修复方法，保留变量赋值与名称读取的语义，保存并从头重跑。交付修复前后源码、命令、错误及恢复后的真实输出，再简短解释本次新脚本为何不能依赖以前Notebook内核的状态。只改成print(\\\"Packed T7\\\")跳过了名称读取，不能算本题完成；不通过重装、改PATH或删环境解决。\",\n        hints: [\"从这次脚本第一条执行语句开始看。它需要的名字，在此前的本次执行中已经获得值了吗？\", \"分别找到提供值的赋值语句与读取语句，比较它们在文件中的位置；考虑怎样调整依赖顺序并保留名称读取，然后自行保存与完整重跑。\"],\n        solution: [\n          \"新脚本先执行print(dispatch_label)，该名称尚未被本次执行绑定，因此真正运行会出现NameError，且没有Packed T7正常输出。赋值虽然写在文件第二行，但报错发生时还没有执行到那里。先保存本人实际回溯和对应行，不用参考文字代替故障证据。\",\n          `一种修复后的repair_label.py分两行写：${sourceLines(\"repaired\")}。先提供值再读取。可以把赋值移到读取前，也可以把读取移到赋值后；保留同一名称和任务文字即可。`,\n          \"保存后从文件所在目录运行python repair_label.py（macOS用python3，已验证的py也可）。预期正常输出Packed T7，实际结果需自己保留；恢复成功要对应保存的整份源码。\",\n          \"本节从终端启动新的脚本进程，不会继承先前另一个Notebook内核中的名称。即使旧内核曾有同名变量，也要让当前文件自己提供读取前所需的值。\",\n          \"常错是只把print改成固定文字、只跑选区、依赖旧交互窗口或只写“调整顺序”而没保存重跑。若改了名称，要在赋值和读取处一致修改并说明；若真实错误不同，先核对实际文件和代码，不伪造NameError。\",\n        ],\n        rubric: [\n          \"在已确认的保存文件上真正复现首次读取错误，保留实际命令、相关代码与NameError，不以预贴错误文字替代。\",\n          \"依据本次执行先后指出读取时尚未绑定；修复仍含赋值及名称读取，提供值先执行，未用输出常量绕开任务。\",\n          \"保存修复源码并从头运行，保留真实Packed T7输出与命令；能解释新脚本进程和旧Notebook内核状态的区别。\",\n        ],\n      },\n    ] },\n    { id: \"next-step\", title: \"用自己的文件检查这三件事\", navGroup: \"finish\", navLabel: \"回顾与后续\", blocks: [\n      { type: \"summary\", points: [\"给值选择合法名称，执行赋值后再通过名称读取；引号中的内容表示固定文字。\", \"按执行位置预测当前值，重新赋值影响后续读取；保存并完整重跑验证自己的改动。\", \"遇到本次未定义名称错误，结合相关代码与执行先后检查提供值的步骤，再保留语义修复和复跑。\"] },\n      p(\"保留两个自己的.py及短记录，能现场换一个名字或任务文字并再次验证，才有独立操作的证据。网页读完只记录阅读，不会自动判断这些程序是否达标。\"),\n      p(\"接着学习2.2「分清文字、整数、小数和真假值」，它已有待人工审核试读，将用实际类型观察接续本节的名称与值。2.3、2.4也已有待人工审核试读，2.5–2.6尚未制作；第5章函数试读还需要表达式与控制流程等中间先修，不能把阅读器的可读课时导航当作直接跳学建议。整门PY101仍在筹备。\"),\n    ] },\n  ],\n  resources: [],\n  references: [\n    { title: \"Python赋值语句\", href: \"https://docs.python.org/3.14/reference/simple_stmts.html#assignment-statements\", note: \"核对名称的绑定和重新绑定。\" },\n    { title: \"表达式中的名称\", href: \"https://docs.python.org/3/reference/expressions.html#identifiers-names\", note: \"核对名称读取与未绑定情形。\" },\n    { title: \"合法名称与关键字\", href: \"https://docs.python.org/3.14/reference/lexical_analysis.html#identifiers\", note: \"名称字符、大小写和保留词。\" },\n    { title: \"错误与异常\", href: \"https://docs.python.org/3/tutorial/errors.html\", note: \"识别错误类型和相关代码位置；本节不教异常处理。\" },\n    { title: \"Python入门\", href: \"https://docs.python.org/3/tutorial/introduction.html\", note: \"赋值、字符串及最小例子。\" },\n    { title: \"从终端执行脚本\", href: \"https://docs.python.org/3.14/using/cmdline.html#interface-options\", note: \"脚本文件参数和常规执行方式。\" },\n  ],\n});\n",
+      "afterSha256": "bced151d15ddff7f6cc929f603650aeb6f70b0baf9c10a85663c5c60eb26cc52"
+    },
+    {
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "before": "import { lessonSchema, type ContentBlock } from \"../../models\";\nimport { valueTypeCode, valueTypeBlockNames, type ValueTypeKey } from \"../../resources/python-value-types\";\nconst p = (text: string): ContentBlock => ({ type: \"paragraph\", text });\nconst text = (filename: string, code: string): ContentBlock => ({ type: \"code\", filename, code, language: \"text\" });\nconst sample = (key: ValueTypeKey): ContentBlock => ({ type: \"code\", filename: valueTypeBlockNames[key], code: valueTypeCode[key], language: \"python\" });\nconst lines = (key: ValueTypeKey, start: number, end: number) => valueTypeCode[key].split(\"\\n\").slice(start, end).map((line, i) => `第${start + i + 1}行：${line}`).join(\"；\");\n\n// 课前简报、预解、官方事实及真实运行：docs/py101-p9/。无新下载，学生自行建.py。\nexport const pythonBasicValueTypesLesson = lessonSchema.parse({\n  id: \"PY101-C02-L02\", courseId: \"PY101\", chapterId: \"PY101-C02\", title: \"分清文字、整数、小数和真假值\",\n  contentVersion: 1, optionalLesson: false,\n  subtitle: \"两个值都显示3，怎样知道一个是数量、另一个是文字？先预测，再用type取得证据。\",\n  prerequisites: \"已完成第一章与2.1：能选合法名称、赋值和重新赋值，区分名称与引号文字，使用print，保存并从终端完整运行.py。沿用已有Python 3和编辑器，无需安装库；手机可读，代码操作需要电脑。\",\n  prerequisiteLinks: [\n    { title: \"2.1 名称与当前值\", href: \"/learn/PY101/PY101-C02-L01#name-and-value\", note: \"复习赋值、绑定和名称读取。\" },\n    { title: \"2.1 名称与引号内文字\", href: \"/learn/PY101/PY101-C02-L01#literal-or-name\", note: \"复习固定字符串与名称读取的差别。\" },\n    { title: \"2.1 保存并运行完整脚本\", href: \"/learn/PY101/PY101-C02-L01#predict-run\", note: \"补齐预测、保存及实际执行。\" },\n    { title: \"1.3 保存与重跑\", href: \"/learn/PY101/PY101-C01-L03#save-rerun\", note: \"核对保存状态和准确执行目标。\" },\n  ],\n  objectives: [\n    \"按文字标记、完整件数、测量值和真假状态的用途，独立选择Python字面量、写入变量并说明理由\",\n    \"在真实.py中用type取得str、int、float、bool的类型证据，解释为什么相同显示不代表相同类型\",\n    \"保持名称不变，预测并验证整数与数字文本的重新绑定，换新数值重跑并解释当前值与类型的关系\",\n  ],\n  assessmentMap: [{ objective: 1, exerciseIds: [\"write-four-values\"] }, { objective: 2, exerciseIds: [\"write-four-values\", \"same-display-different-type\"] }, { objective: 3, exerciseIds: [\"same-display-different-type\"] }],\n  learningTime: { reading: [12,18], practice: [6,10], coding: [12,18], basis: \"editorial-estimate\" },\n  sections: [\n    { id: \"same-display\", title: \"两个值都显示3，就一样吗？\", navGroup: \"values\", navLabel: \"先看值\", blocks: [\n      p(\"整理物品时，一份记录要保存物品数量，另一份记录要保存标签上印的文字。数量是3，标签文字恰好也是“3”。用2.1学过的赋值，可以分别交给两个名称。它们在屏幕上会有什么不同？先在本地笔记写下下面两个print的预测。\"),\n      sample(\"sameDisplay\"),\n      p(\"在自己的练习文件夹新建same_display.py，输入这四行，行首不加缩进，源码放在.venv外。保存后用pwd和Windows的dir（macOS为ls）确认目标，再在终端完整运行对应命令；沿用之前已核验的Python。若此前Windows一直用py，就保持py。\"),\n      text(\"Windows · PowerShell · 文件所在目录\", \"python same_display.py\"),\n      text(\"macOS · 终端 · 文件所在目录\", \"python3 same_display.py\"),\n      text(\"普通输出 · 运行后核对\", \"3\\n3\"),\n      p(\"两行确实都显示3。第一份值3没有引号，是整数；第二份值\\\"3\\\"有配对引号，是字符串，保存的是文字。数字字符放进字符串后仍然是文字，不会因为外观看起来像数量就自动变成整数。\"),\n      p(\"类型描述值属于哪种数据类别。整数的类型名是int，字符串的类型名是str。print把值显示为文字，引号本身不显示，所以这两次普通输出没有把原来的类型差别呈现出来。我们稍后会用一个观察工具核对，先再认识两种常用的值。\"),\n    ] },\n    { id: \"add-measurement\", title: \"测量值怎样写进程序？\", navGroup: \"values\", navLabel: \"先看值\", blocks: [\n      p(\"同一批物品还要记录单件质量，单位约定为千克，数值为1.5。把下面两行另存为measurement.py，先预测，再把运行命令中的文件名换成它，保存并完整执行。\"),\n      sample(\"measurement\"), text(\"测量例 · 预期输出\", \"1.5\"),\n      p(\"1.5这种带小数点的数值写法在这里得到float类型，通常称为浮点数；如果写成\\\"1.5\\\"，得到的仍是str文字。程序中数值不加引号，单位由记录说明，不把kg直接接在数值后面。\"),\n      p(\"float有表示精度的限制，不能保证任意十进制小数都能精确保存。本课先学习辨认和观察这种类型，暂时不做精度运算。int可以表示完整件数，float适合本例中的测量记录，两者的用途要结合你保存的内容判断。\"),\n    ] },\n    { id: \"ready-state\", title: \"准备好了，是状态还是文字？\", navGroup: \"values\", navLabel: \"先看值\", blocks: [\n      p(\"除了数量和质量，还可以记录“是否已经准备好”。True表示真，False表示假，这两个值属于bool类型，也叫布尔值。Python中必须按True、False的大小写写，开头大写，其余小写；它们本身不加引号。\"),\n      p(\"下面让is_ready记录已准备好，让is_waiting记录当前没有在等待。ready_text则只保存标签上写的True这个单词。先预测三条普通输出，再保存为ready_state.py并完整运行。\"),\n      sample(\"booleanValues\"), text(\"状态与文字 · 预期输出\", \"True\\nTrue\\nFalse\"),\n      p(\"前两行看起来相同：True是真假状态值，\\\"True\\\"是带引号的字符串。第三行False也是bool值。名字里的is只是帮助人读懂用途，并不替Python决定类型；值实际怎样写才是接下来要核对的依据。\"),\n    ] },\n    { id: \"inspect-type\", title: \"用type看当前值属于哪一类\", navGroup: \"inspect\", navLabel: \"观察类型\", blocks: [\n      p(\"type是Python自带的类型观察工具。把一个值或已有名称放在它的括号中，它会取得这个值的类型。这里使用一个参数，也就是括号中交给它的一份值；观察不会把原值转换成另一类型。自己选变量名时，先把print和type这两个名字留给现成工具。\"),\n      p(\"回到same_display.py，在原四行之后追加下面这一行；这个文件前面已经给item_count赋值为3。先从里面看：item_count读取当前值3；type(item_count)取得它的类型；外层print再把类型结果显示出来。两层括号分别成对，执行观察时先得到里面的结果，再交给外面的print。写下新增一行的预测，再保存并从头运行same_display.py。\"),\n      sample(\"firstType\"), text(\"新增类型输出 · 接在两行3之后\", \"<class 'int'>\"),\n      p(\"<class 'int'>是Python显示“这是int类型”的一种形式。连同尖括号、单引号一起看，这是刚才程序的输出，不是要复制到.py中的新语句；本课不需要学习class定义。\"),\n      p(\"现在另建inspect_pair.py，使用原来的3和\\\"3\\\"。先写两次类型预测，再保存并运行下面的完整小程序。\"),\n      sample(\"pairTypes\"), text(\"两份值的类型 · 预期输出\", \"<class 'int'>\\n<class 'str'>\"),\n      p(\"两次普通print都显示3，因为字符串显示时不带包住它的引号；两次type结果不同，因为原值分别是整数和字符串。普通显示回答“显示出来是什么”，type观察回答“当前值属于哪类”，需要把这两份证据一起看。\"),\n      p(\"再回到ready_state.py，在原有代码末尾加上这三行。它们读取该文件前面已经赋值的三个名称，先预测各自类型，再保存并从头运行整个文件。\"),\n      sample(\"booleanTypes\"), text(\"追加的三条类型输出 · 接在原三条普通输出后\", \"<class 'bool'>\\n<class 'str'>\\n<class 'bool'>\"),\n      p(\"True和False在这里都观察为bool，带引号的\\\"True\\\"观察为str。若本来想写状态却得到str，先检查是否把True或False放进了引号；若报NameError且提到true或false，再核对字面量大小写和实际代码，不把这种拼写问题当成缺包。\"),\n    ] },\n    { id: \"four-types\", title: \"把四种值和观察结果放在一起\", navGroup: \"inspect\", navLabel: \"观察类型\", blocks: [\n      p(\"把前面的观察组合成four_values.py：前四行赋值，中间四行显示值，最后四行显示类型。空行只是分开这三组，方便阅读。先预测八行输出，再保存，从终端完整运行它。\"),\n      sample(\"main\"), text(\"完整主例 · 八行预期输出\", \"3\\n3\\n1.5\\nTrue\\n<class 'int'>\\n<class 'str'>\\n<class 'float'>\\n<class 'bool'>\"),\n      p(\"将真实结果和预测逐行比较。item_mass对应的1.5为float，is_ready对应的True为bool；前两行普通显示相同，末尾的类型记录却能区分整数与数字文本。下面这张表只收拢已经观察过的四种写法，独立练习还要换成你自己的值。\"),\n      { type: \"table\", caption: \"四种基本值的写法与本课用途\", columns: [\"类型\", \"例子\", \"本课主要用途\"], rows: [\n        [\"str\", '\\\"Box A\\\"', \"文字、标记\"], [\"int\", \"3\", \"完整件数\"], [\"float\", \"1.5\", \"测量数值\"], [\"bool\", \"True或False\", \"真假状态\"],\n      ] },\n    ] },\n    { id: \"same-name-new-type\", title: \"名字没换，当前值的类型可以换\", navGroup: \"rebind\", navLabel: \"同名与类型\", blocks: [\n      p(\"2.1中，你给同一名称换过另一段任务文字。这次把batch_count先交给整数8，再改为对应数字文本\\\"8\\\"。先预测下面四行输出：哪两行显示的文字相同，哪两行给出不同类型？名称有没有换？写好再保存为changing_type.py并完整运行。\"),\n      sample(\"rebind\"), text(\"同名重新赋值 · 预期输出\", \"8\\n<class 'int'>\\n8\\n<class 'str'>\"),\n      p(\"名称一直是batch_count。第一次读取时，它对应整数8；第二次赋值后，它对应字符串\\\"8\\\"。类型来自当前读到的值，没有永久固定在变量名上。这次赋值让同一名称改为对应另一份值，并没有把原来那个整数本身改成字符串。\"),\n      p(\"所以只看名称叫不叫count，或者普通输出有没有数字字符，都不足以判断类型。先看本次实际执行的赋值，再用type观察当前值，就能核对自己的判断。\"),\n    ] },\n    { id: \"practice\", title: \"换成自己的值，留下类型证据\", navGroup: \"practice\", navLabel: \"独立练习\", blocks: [\n      p(\"先不看参考答案，独立写两份短.py。每份只需源码、实际命令、预测与真实输出，加几句理由；网页输入框是临时思考区，正式代码和运行记录保存在本地。\"),\n      { type: \"exercise\", id: \"write-four-values\", title: \"自己建立四类值\", kind: \"代码\",\n        prompt: \"新建与正文不同的.py，自选一个新实际情境，例如个人用品整理或活动准备，不照抄正文物品。为文字标记、完整件数、测量值和真假状态各选一个合法名称及合适的新值。运行前记下四个值、预期显示和类型；自己写四份赋值，用print显示值，再用print(type(名称))观察类型。保存并真实运行，逐项核对预测。交付源码、运行命令、四项预测与真实结果，并简短说明每种值为何适合用途；测量项注明单位即可，不需要拼接输出、安装库或转换类型。接受不同情境、名称、数值和配对引号。\",\n        hints: [\"先看你选的值怎样写：有没有引号，是完整整数、带小数点的数值，还是真假状态？要保存的是文字还是数量？\", \"先组织四份赋值，再逐项显示值和类型；每次type读取的名称要与赋值一致。保持两层括号配对，仍由你填入情境、名字、新值和预测，再保存运行。\"],\n        solution: [\n          \"例如改用绘画用品情境，新建drawing_kit.py。下面每个“第几行”都各写一行，分隔说明不输入源码；你自己的情境和值应另选。\",\n          `先保存四份值：${lines(\"ownFour\",0,4)}。标签是文字用str，6支铅笔是完整件数用int，17.5厘米长度是测量值用float，尚未装好用False表示bool状态。`,\n          `接着显示四份值：${lines(\"ownFour\",4,8)}。再观察四个类型：${lines(\"ownFour\",8,12)}。名称先赋值再读取，print与type的括号分别配对。`,\n          \"先预测八行：Sketch kit、6、17.5、False、<class 'str'>、<class 'int'>、<class 'float'>、<class 'bool'>。保存后运行python drawing_kit.py（macOS用python3，已核验的py也可），交本人真实结果与对照，而非只抄这组预期。\",\n          \"常错是将6写成\\\"6\\\"、将False写成\\\"False\\\"，它们能运行却会得到str；写成false而此前没有该名称会NameError；漏一边引号可能SyntaxError。若测量写成17，观察为int；17.0则为float。根据实际用途和type结果修正，接受不同合法名称、单引号、中文标签或其他新的合理值。\",\n        ],\n        rubric: [\n          \"真实新.py含自选情境、合法名称与四种新值，分别满足文字/完整件数/测量/真假状态的用途；理由与字面量对应。\",\n          \"有运行前四项值/显示/类型预测，实际命令及完整输出；能用本人type结果确认str、int、float、bool，差异有核对。\",\n          \"测量单位清楚，True/False和引号使用正确，显示与类型观察均真实执行；复制参考答案、Quiz或读完标记不代替代码成果。\",\n        ],\n      },\n      { type: \"exercise\", id: \"same-display-different-type\", title: \"相同显示，不同类型\", kind: \"代码\",\n        prompt: \"另建一个短.py，自选与正文不同的合法名称和一个新的非负完整件数（不使用3或8）。先让该名称对应这个整数，显示值和type结果；再让同一名称对应表示同一数量的带引号数字文本，再显示值和type。运行前预测两次普通显示及两次类型输出，保存并实际运行。然后保持名称相同，把两阶段都换成另一组对应的整数/数字文本，重新预测、保存和完整运行。交付改前/改后源码、命令、两轮预测与真实结果，再简短解释为什么显示相同而类型不同、为何不能由名称判断类型。任务只需赋值、print和type，不使用转换或运算。\",\n        hints: [\"沿实际执行顺序看同一个名字：第一次对应的值带引号吗？后一次呢？分别预测普通显示与类型观察。\", \"为每次赋值配上显示值和显示类型两步，保证两个阶段读取同一名称；换新数量时检查整数和数字文本是否仍对应，再由你保存重跑并核对。\"],\n        solution: [\n          `例如新建crate_types.py，选crate_total和完整件数12。六行依次为：${lines(\"ownRebind\",0,6)}。两阶段保持同名，整数不加引号，数字文本使用配对引号。`,\n          \"先预测四行12、<class 'int'>、12、<class 'str'>，再运行python crate_types.py（macOS用python3）。普通显示相同，因为文字12打印时不显示包住它的引号；类型分别来自整数和字符串。\",\n          `第二轮仍用crate_total，换27和\\\"27\\\"，六行依次为：${lines(\"ownChanged\",0,6)}。先预测27/int/27/str（类型的完整显示形式同上），保存并完整运行，交本人真实四行结果。`,\n          \"名称没有改变，后一次赋值让它对应另一类型的值；type读取本次当前值，而不是从crate_total的拼写猜类型。接受其他新整数和合法名称，数字文本用单引号或双引号都可。\",\n          \"常错是两个阶段换了不同名称、只打印值未观察类型、把字符串再次写成无引号数字，或改新数量后没保存重跑。若只改一阶段，普通显示会不同，先对照题意与实际源码修正；不要引入转换来绕过两种字面量写法。\",\n        ],\n        rubric: [\n          \"同一合法名称在两个阶段分别对应整数和表示同一数量的字符串，源码包含两次普通显示和两次type观察，内容由学生另选。\",\n          \"两轮均先预测普通输出与类型再实际运行；换另一组数量后保存完整重跑，源码、命令与真实结果可对应。\",\n          \"结合自己的输出解释显示相同不等于类型相同，名称未固定为某种类型，当前读到的值决定本次类型结果；只交解释或参考输出不足完成。\",\n        ],\n      },\n    ] },\n    { id: \"next-step\", title: \"先确认值的类型，再准备使用它\", navGroup: \"finish\", navLabel: \"回顾与后续\", blocks: [\n      { type: \"summary\", points: [\"给文字、完整件数、测量值和真假状态选择合适的字面量，分别观察str、int、float、bool。\", \"普通print可能让不同类型看起来相同；读取名称，取得type结果，再显示它，可以核对类型。\", \"同一名称可以先后对应不同类型的值。预测、保存和完整重跑，检查每一次读取发生时对应什么。\"] },\n      p(\"保留两份自己写的程序及短记录，换一个值后能重新预测和核对，才有这次代码操作的证据。网页读完只记录阅读，type输出本身也不能替代你对用途和结果的解释。\"),\n      p(\"接着学习2.3「用表达式算出一个结果」，它已有待人工审核试读，2.4–2.6仍在规划。第5章函数试读还需要表达式与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。\"),\n    ] },\n  ], resources: [],\n  references: [\n    { title: \"Python内置类型\", href: \"https://docs.python.org/3.14/library/stdtypes.html\", note: \"核对字符串、整数、浮点数和布尔值的基本意义。\" },\n    { title: \"type单参数观察\", href: \"https://docs.python.org/3.14/library/functions.html#type\", note: \"核对取得值类型的行为，本课不涉及三参数形式。\" },\n    { title: \"Python入门\", href: \"https://docs.python.org/3/tutorial/introduction.html\", note: \"数值、字符串及赋值的短例。\" },\n    { title: \"数据模型中的值与类型\", href: \"https://docs.python.org/3.14/reference/datamodel.html#objects-values-and-types\", note: \"核对类型与值的关系，不要求学习对象机制。\" },\n    { title: \"浮点数的表示限制\", href: \"https://docs.python.org/3.14/tutorial/floatingpoint.html\", note: \"核对精度边界，详细原理留后续按需学习。\" },\n  ],\n});\n",
+      "afterSha256": "8cd9aae38c75589c53b450aee9d697cbbdb9630f41d753092aa767b5a57d2678"
+    },
+    {
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "before": "import { lessonSchema, type ContentBlock } from \"../../models\";\nimport { arithmeticCode, arithmeticBlockNames, type ArithmeticKey } from \"../../resources/python-arithmetic\";\nconst p = (text: string): ContentBlock => ({ type: \"paragraph\", text });\nconst output = (filename: string, code: string): ContentBlock => ({ type: \"code\", language: \"text\", filename, code });\nconst sample = (key: ArithmeticKey): ContentBlock => ({ type: \"code\", language: \"python\", filename: arithmeticBlockNames[key], code: arithmeticCode[key] });\nconst lines = (key: ArithmeticKey, start = 0, end = arithmeticCode[key].split(\"\\n\").length) => arithmeticCode[key].split(\"\\n\").slice(start, end).map((line, i) => `第${start + i + 1}行：${line}`).join(\"；\");\n\n// 简报、运行前手算、官方事实与保存文件实跑见docs/py101-p10；无新增下载或阅读器组件。\nexport const pythonArithmeticExpressionsLesson = lessonSchema.parse({\n  id: \"PY101-C02-L03\", courseId: \"PY101\", chapterId: \"PY101-C02\", title: \"用表达式算出一个结果\",\n  contentVersion: 1, optionalLesson: false,\n  subtitle: \"从盒数、每盒件数和散件写出计算：先手算，再检查Python算出的数字是否符合题意。\",\n  prerequisites: \"已完成第一章及2.1–2.2：能用合法名称保存int/float数值，用print和type观察，先预测再保存、从终端完整运行.py。沿用已有Python 3与编辑器，不安装新库；手机可读，代码操作需要电脑。\",\n  prerequisiteLinks: [\n    { title: \"2.1 赋值与名称读取\", href: \"/learn/PY101/PY101-C02-L01#name-and-value\", note: \"回顾名称怎样取得右边的值。\" },\n    { title: \"2.1 预测与完整运行\", href: \"/learn/PY101/PY101-C02-L01#predict-run\", note: \"确认本次真正执行的是保存的整份脚本。\" },\n    { title: \"2.2 数值与文字\", href: \"/learn/PY101/PY101-C02-L02#add-measurement\", note: \"数值不加引号，测量值与单位分清。\" },\n    { title: \"2.2 类型观察\", href: \"/learn/PY101/PY101-C02-L02#inspect-type\", note: \"需要时复习print(type(名称))的内外两步。\" },\n    { title: \"1.3 保存与重跑\", href: \"/learn/PY101/PY101-C01-L03#save-rerun\", note: \"输出没变化时检查保存状态和实际执行目标。\" },\n  ],\n  objectives: [\n    \"从新的数量情境识别数值与单位，用变量和加减乘除写出有实际含义的计算，保存运行并核对\",\n    \"预测乘除、加减与括号分组的结果，实际运行验证，并解释两种分组分别描述什么数量关系\",\n    \"只改一个已知数量重新预测和完整运行，核对结果及单位，并排查修正一次与题意不符的表达式\",\n  ],\n  assessmentMap: [{ objective: 1, exerciseIds: [\"calculate-and-revise\", \"compare-grouping\"] }, { objective: 2, exerciseIds: [\"compare-grouping\"] }, { objective: 3, exerciseIds: [\"calculate-and-revise\", \"compare-grouping\"] }],\n  learningTime: { reading: [12,18], practice: [6,10], coding: [15,22], basis: \"editorial-estimate\" },\n  sections: [\n    { id: \"quantities-and-units\", title: \"先弄清楚每个数字在数什么\", navGroup: \"relation\", navLabel: \"数量关系\", blocks: [\n      p(\"整理物品时，有4盒，每盒3件，另外散放4件。一共有多少件？先不用Python，在本地笔记写下手算过程和答案。你会先数盒里的物品，再把散件加进去，还是把所有数字直接相加？\"),\n      { type: \"table\", caption: \"本例名称与数量的对应\", columns: [\"名称\", \"当前值\", \"含义与单位\"], rows: [[\"box_count\",\"4\",\"盒数，单位盒\"],[\"per_box\",\"3\",\"每盒件数，单位件/盒\"],[\"spare\",\"4\",\"散放数量，单位件\"],[\"total\",\"待计算\",\"总数量，单位件\"]] },\n      p(\"盒里的数量是4乘3，得到12件；再加4件散件，得到16件。盒数乘以每盒件数后，结果才和散件一样以“件”为单位，能够相加。接下来把这句关系写成Python，让修改后的数量也能按同一关系计算。\"),\n    ] },\n    { id: \"expression-to-value\", title: \"让右边先算出一个值\", navGroup: \"relation\", navLabel: \"数量关系\", blocks: [\n      p(\"Python用*表示乘法，对应手算中的乘号。例如box_count * per_box，就是用盒数乘每盒件数。两个数字或名称之间要明确写*，数学排版的×和省略乘号的写法不用于这里的Python源码。\"),\n      p(\"像box_count * per_box这样，由数值、名称和运算符组成、可以求出一个值的写法，称为数值表达式。先预测下方print会显示什么，再新建boxes.py，输入并保存这三行，行首不缩进，源码放在.venv外。\"),\n      sample(\"multiply\"),\n      p(\"在文件所在目录沿用第一章已核验的解释器。Windows用pwd、dir确认文件，再执行下面第一条；macOS用pwd、ls确认后执行第二条。一直使用py的Windows环境可保持py。本课后续新文件只替换命令中的文件名，始终保存并从头运行整份.py。\"),\n      output(\"Windows · PowerShell · 文件所在目录\", \"python boxes.py\"), output(\"macOS · 终端 · 文件所在目录\", \"python3 boxes.py\"), output(\"第一次观察 · 预期输出\", \"12\"),\n      p(\"现在加入散件。Python用+表示加法；box_count * per_box + spare表达“先求盒里件数，再加散件”。用下面完整五行替换boxes.py原来的三行，先写新预测，再保存运行。\"),\n      sample(\"total\"), output(\"加入散件 · 预期输出\", \"16\"),\n      p(\"执行total这一行时，右边先读到4、3、4，按关系算出16，=再让total对应这个结果。*和+负责计算，=负责赋值，它们的角色不同。最后print(total)读取并显示16；给结果取名，后续还能接着使用它。\"),\n      p(\"这里输入的是2.2学过的数值，不把4写成\\\"4\\\"。带引号会变成字符串，不能期待它按本例的整数关系参与所有运算。单位保留在你的记录里，数值后面不直接接“盒”或“件”。\"),\n    ] },\n    { id: \"take-some-away\", title: \"取走两件后，怎样接着算？\", navGroup: \"relation\", navLabel: \"数量关系\", blocks: [\n      p(\"刚算出一共16件，现在取走2件，剩余应是总数减2，即14件。Python用-表示减法。remaining = total - 2先求出剩余数量，再让remaining保存结果。\"),\n      p(\"回到已保存五行的boxes.py，在末尾追加下面两行，保留前面的赋值和总数计算。先预测新增加的输出，再保存、完整重跑。这个片段依赖本次文件前面已经算出的total，不能放进空文件直接运行。\"),\n      sample(\"subtract\"), output(\"新增一行输出 · 接在16之后\", \"14\"),\n      p(\"现在两条普通输出依次是16、14，分别表示总件数和取走后的剩余。取走数量也以“件”为单位；本例取走不超过总数。写自己的计算时，把数字的意义与是否合理一起核对。\"),\n    ] },\n    { id: \"order-and-grouping\", title: \"括号改变分组，也要检查单位\", navGroup: \"reasoning\", navLabel: \"分组与分配\", blocks: [\n      p(\"在这些数值计算中，乘法和除法优先于加法和减法。原式先写乘法，可能让人误以为总是从最左边逐项计算。另建order_boxes.py，把同一个加法写到前面作对照；先手算两行，再保存运行。\"),\n      sample(\"precedence\"), output(\"优先级对照 · 预期输出\", \"16\\n16\"),\n      p(\"第二式spare + box_count * per_box仍先求4乘3，再把散件4加上去，得到16。若不顾优先级，先把最左边两个4相加再乘3，就会算成24，已经换了分组。\"),\n      p(\"表达式中的一对括号可以明确分组，让括号里的加法先求值。下面print外面那对括号仍用于输出，里面那对括号把box_count + spare分成一组。先预测，再把这一行追加到boxes.py末尾，保存重跑；新增结果会接在原来的16、14之后。\"),\n      sample(\"grouping\"), output(\"分组对照 · 新增输出\", \"24\"),\n      p(\"Python先把4和4相加得到8，再乘3，确实得到24。但原问题中box_count数的是盒，spare数的是件，把4盒和4件加成8盒，单位与含义不匹配。因此24是这段代码的计算结果，却不是原问题的总件数。能运行出数字，还要核对表达式是否写对了现实关系。\"),\n      p(\"换一个条件，括号式就可能有意义：原来4盒，又增加4盒，每盒同样是3件。added_boxes现在数新增的盒，能与原盒数相加。先预测，再将下面完整程序保存为more_boxes.py并运行。\"),\n      sample(\"moreBoxes\"), output(\"同容量新增盒 · 预期输出\", \"24\"),\n      p(\"这里是8盒，每盒3件，共24件。两种情境数字恰好相同，spare和added_boxes的现实含义却不同。括号决定怎样计算，题目条件决定这份计算有没有意义。\"),\n    ] },\n    { id: \"divide-and-meaning\", title: \"重新平均分配，除法在算什么？\", navGroup: \"reasoning\", navLabel: \"分组与分配\", blocks: [\n      p(\"回到最初的16件。单独考虑一次重新分配：把全部16件重新平均放进原来的4盒，每盒分到多少件？Python用/表示除法，total / box_count就是总件数除以盒数。本例除数是正整数4，不能为零。\"),\n      p(\"在boxes.py末尾追加下面三行。它读取前面已经算出的total与box_count，average是新选的名称。先写平均数和类型预测，再保存、从头运行；type的内外两步沿用2.2。\"),\n      sample(\"division\"), output(\"追加的两行输出 · 接在16、14、24之后\", \"4.0\\n<class 'float'>\"),\n      p(\"4.0表示这次全部重新分配后平均每盒4件，不是说原来每盒有4件；原来每盒3件，另有4件散件。本次分配没有先取走两件，前面的remaining只是另一个问题的结果，total仍是16。\"),\n      p(\"本课使用Python自带的整数和浮点数做普通数值运算。/得到float结果，即使16和4都是int且数学上恰好整除，也显示为4.0；type观察为<class 'float'>。这不是计算出错，也不需要为了去掉.0引入类型转换。\"),\n      p(\"不能整除时也能有合理的除法。例如把7升水均分到2个相同容器，先手算每个容器多少升，再将下方完整程序保存为share_water.py运行。水量可以分成小数升，这次结果的单位为升/容器。\"),\n      sample(\"nonIntegral\"), output(\"水量重新分配 · 预期输出\", \"3.5\"),\n    ] },\n    { id: \"same-level-order\", title: \"同一级的运算怎样分组？\", navGroup: \"reasoning\", navLabel: \"分组与分配\", blocks: [\n      p(\"*与/在同一级，+与-也在同一级。这里每个运算符连接左右两个数值，称为二元运算。这些同级二元运算没有额外括号时按左结合规则分组，也就是先将左边的一步结果接到后一步。12 / 3 * 2相当于先12除3得到4.0，再乘2，得到8.0；若写成12 / (3 * 2)，则先求除数6，结果是2.0。\"),\n      p(\"再看10 - 3 + 2：先10减3得7，再加2得9。它可以描述10张卡片取走3张后又增加2张；10 - (3 + 2)则描述合计取走5张，剩5张。先写下面四行预测，再另存same_level.py完整运行。\"),\n      sample(\"leftGrouping\"), output(\"同级分组 · 预期输出\", \"8.0\\n2.0\\n9\\n5\"),\n      p(\"判断一条混合式子时，先看括号，再看乘除与加减的优先级；处于同一级的这几种运算再按左结合分组。不要把这句话简化成“任何计算都直接从最左边算”，也不需要背一整张包含未学运算的优先级表。\"),\n    ] },\n    { id: \"put-it-together\", title: \"用同一份关系预测新数量\", navGroup: \"revise\", navLabel: \"改值验证\", blocks: [\n      p(\"现在已分别观察过总数、括号反例和重新分配。把下面完整主例另存为box_relations.py，先预测三行，保存运行，再为每行写下含义和单位。第二条特意保留错误的现实分组，用来检查自己是否只盯着数字。\"),\n      sample(\"main\"), output(\"完整主例 · 三行预期输出\", \"16\\n24\\n4.0\"),\n      { type: \"table\", caption: \"数字要和问题条件一起读\", columns: [\"显示\", \"这条表达式的含义\", \"本例中的判断\"], rows: [[\"16\",\"4盒内数量加4件散件\",\"原问题总数，16件\"],[\"24\",\"先把盒数和散件数相加再乘每盒件数\",\"单位错配，不能作原总数\"],[\"4.0\",\"全部16件重新平均分到4盒\",\"本次分配的平均数，件/盒\"]] },\n      p(\"再建revise_boxes.py，只保留有正确现实含义的三个结果：原总数、取走2件后的剩余、全部总数重新分配的平均数。注意最后一项用total，而非取走后的remaining，这三个输出分别回答各自的问题。先手算，再保存运行下面完整程序。\"),\n      sample(\"revise\"), output(\"改值前 · 预期输出\", \"16\\n14\\n4.0\"),\n      p(\"现在只把per_box的赋值由3改成5，其他行保持不变。先在笔记写三个新预测，说明每盒多2件会怎样影响4盒总数，再保存，用同一命令完整运行revise_boxes.py，对照两轮真实输出和单位。不要把新程序追加到旧程序末尾，也不要先照抄下面的核对结果。\"),\n      p(\"核对时，新总数应为24件，取走2件后余22件，全部24件重分4盒为6.0件/盒。若结果仍是旧数字，先查保存状态与执行文件；若保存正确但数值不符，就从数量、单位和表达式分组逐项查，而不只是把预测改成屏幕数字。\"),\n    ] },\n    { id: \"zero-divisor\", title: \"除数为零时，要读懂失败原因\", navGroup: \"revise\", navLabel: \"改值验证\", blocks: [\n      p(\"平均分配要有明确的非零除数。把8除以0无法得到这里的普通数值结果，下面是故意安排的失败例；你可以只读现象，不需要反复运行它。\"),\n      sample(\"zeroDivide\"), output(\"错误末行 · 路径和回溯以实际环境为准\", \"ZeroDivisionError: division by zero\"),\n      p(\"这个例子没有正常数值输出，错误类型是ZeroDivisionError。遇到同类现象，核对当前除数的值与题目条件；核心练习选择明确的正整数盒数。此处先识别原因，不写try/except处理异常。\"),\n    ] },\n    { id: \"practice\", title: \"换一个情境，自己写并核对关系\", navGroup: \"practice\", navLabel: \"独立练习\", blocks: [\n      p(\"先不看参考答案，独立写两份新.py。网页输入框只作临时思考区；本人源码、命令、预测和实际输出保存在本地。解释写清数字为什么变化，以及数字在数什么即可。\"),\n      { type: \"exercise\", id: \"calculate-and-revise\", title: \"独立计算，再只改一个数量\", kind: \"代码\",\n        prompt: \"自行建立一个与正文不同的整理情境，例如若干储物篮中的卡片，另有散放卡片，后来取走一些。自己选择合理的小正整数及合法且有意义的名称，不照搬正文整组数字；取走数量不超过总数。先列出各数量及单位，手算总数和剩余，再在新的.py中独立写出成组数量加散件、取走后的剩余及两次print。保存真实运行，核对预测。随后只改一项已知数量，保持其他赋值与计算关系不变，重新手算、保存、完整运行。交付两轮源码及差异、变量/单位、命令、两轮预测与真实输出，简短解释哪些输出变化及其原因。接受其他合理情境、合法名称和等价表达式。\",\n        hints: [\"先找组数、每组多少、散件和取走多少。组数与每组数量结合后得到的单位，是否能与散件相加、与取走数量相减？\", \"按变量和单位核对成组数量、总数、剩余三步，再为两次显示写预测。只改一项时检查其余赋值是否保持，并由你自己填写数值、表达式和实际结果。\"],\n        solution: [\n          \"例如改用挂绳整理：5袋，每袋6条，散放3条，取走4条。新建cords.py。以下“第几行”只是分隔说明，每条语句各写一行，不把分隔文字输入源码。\",\n          `先写四个已知量：${lines(\"ownCalculate\",0,4)}。bag_count单位袋，per_bag单位条/袋，loose和taken单位条。接着：${lines(\"ownCalculate\",4,8)}。乘法求袋里的条数，加散条求总数，减取走条数求剩余。`,\n          \"先手算5乘6得30条，加3得33条，再减4余29条。预测两行33、29，保存后运行python cords.py（macOS用python3，已核验的py也可），保留本人实际输出逐项核对。\",\n          `只把袋数改为7，其他赋值和关系不变，八行依次为：${lines(\"ownChanged\")}。先算7乘6加3为45条，减4余41条，再保存并完整运行，应看到45、41。多2袋，每袋6条，总数与剩余都增加12条，取走数量没有改变。`,\n          \"常错是只改了某个print常量、漏散件、从每袋数量而非总数扣取走、改多项却声称只改一项，或未保存/执行错文件。先用单位和手算定位，再修改源码完整重跑；不能只抄参考输出。你自己的情境与数字应另选，合理的分步或等价计算同样接受。\",\n        ],\n        rubric: [\n          \"实际新.py含本人自选数量、合法名称和单位，成组/散件/取走关系合理；总数与剩余均真实计算、显示，不能只打印预先算好的常量。\",\n          \"改前与改后都有运行前手算预测、实际命令与完整输出；只有一项已知数量改变，其余赋值及计算关系保持，剩余数量有合理意义。\",\n          \"结合两轮本人结果解释变化原因与单位，预测差异有核对；代码、保存和实际执行可对应。文字方案、Quiz或网页读完标记不足代替操作。\",\n        ],\n      },\n      { type: \"exercise\", id: \"compare-grouping\", title: \"括号式算得通，符合题意吗？\", kind: \"代码\",\n        prompt: \"另建一份.py，用新的贴纸情境，自选盒数、每盒贴纸数和散放张数，三个数均为小正整数，每盒至少2张，不照搬正文整组数据。先手算两种分组：盒内总张数加散张；盒数与散张数先相加再乘每盒数。确保两结果不同，必要时重新选值。在运行前写两式预测，独立用变量写两式，保存真实运行。说明哪个符合散放贴纸原问题，另一个把哪两种单位混在一起；再给出改变题目条件、让括号式有意义的一种情境。用相同数据另写全部总张数重新平均分到原盒数的除法，预测并核对输出，解释float与非零除数；若不能整张均分，说明只是平均数或另选能整张均分的数据。最后定位不符合原题的那条表达式，将该行改为符合原散件关系的计算，保存重跑，保留修复前后源码与真实输出。交本人命令、单位、预测、两次运行和简短理由，不能只写“先算括号”。\",\n        hints: [\"分别说出两个加号把什么数量加在一起：它们的单位相同吗？除法中的总数是否包含散件，这次分配的盒数有没有被你改变？\", \"核对散件到底按张数还是盒数记录，分别手算并运行两种分组，再设计另一个使括号分组成立的条件。找到不符合原问题的那行后自行修正和复跑，仍由你选择数据与最终表达式。\"],\n        solution: [\n          `例如改用彩纸，3筒、每筒5张、散6张，新建paper_grouping.py。七行分别为：${lines(\"ownGrouping\")}。tube_count单位筒、per_tube单位张/筒、loose_sheets单位张，total_sheets为原总张数。`,\n          \"先预测：3乘5加6为21张；先3加6再乘5得到45；全部21张重新均分3筒，每筒7张，/显示7.0。保存后运行python paper_grouping.py（macOS用python3），保留本人三行真实输出。\",\n          \"第二式把3筒和6张相加再当成9筒，单位错配，所以45不是原题总张数。若条件改成原3筒另增加6筒、每筒仍5张，括号式就有意义，会得到45张；改变的是题意，不能把原来散6张偷换成6筒而不说明。\",\n          `定位第6行，改成符合原散件关系的表达式；完整修复稿七行为：${lines(\"ownRepaired\")}。重新保存运行，应得21、21、7.0。两个计总输出现在一致，原总数和重分平均数不变。保留实际修复差异和新输出，不只写“有问题”。`,\n          \"7.0为内置整数除法的float显示，不表示原来每筒已有7张；重新分配前原每筒是5张。若自己选的总数不能整张均分，所得小数只是平均数，不能宣称每筒实际放小数张；可重新选数据。常错还包括误用错误分组结果作总数、除以散件数、盒数为零，或只改答案而没重跑。接受不同合法名称、合理新情境及等价的正确表达式。\",\n        ],\n        rubric: [\n          \"两种分组都由本人新数据/变量写出，运行前分别预测并真实执行，结果不同，源码与命令对应，不能只交固定数字答案。\",\n          \"指出原题应先计盒内张数再加散张，解释错误分组的盒/张错配；另给相同容量新增盒等使括号式有意义的条件。\",\n          \"平均分配使用原题全部总数和非零原盒数，预测/真实除法及float解释正确，平均数与可实际整张均分的条件写清。\",\n          \"定位不合题意的表达式，修复该行、保存并完整重跑，交改前/改后源码与真实结果；解释修复为何恢复原问题关系，而非只改预测迎合输出。\",\n        ],\n      },\n    ] },\n    { id: \"next-step\", title: \"结果有意义，计算才回答了问题\", navGroup: \"finish\", navLabel: \"回顾与后续\", blocks: [\n      { type: \"summary\", points: [\"先写清数值和单位，再用+、-、*、/表达数量关系；右边先求值，=保存结果。\", \"乘除先于加减，括号明确分组，这几种同级二元运算按左结合；计算规则与现实单位都要核对。\", \"使用内置整数或浮点数做/除法得到float，除数非零。只改一个已知量后先预测、保存、完整重跑，检查结果仍在回答原问题。\"] },\n      p(\"保留自己两份.py、改值及修复前后的短记录。能用新数量解释计算和单位，再以本人运行核对，才有独立操作证据；网页读完或程序显示了数字都不能替代这些检查。\"),\n      p(\"接着学习2.4「让比较表达式给出真假结果」，它已有待人工审核试读，2.5–2.6仍在规划。第5章函数试读还需要比较、输入输出与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。\"),\n    ] },\n  ], resources: [],\n  references: [\n    { title: \"Python计算器入门\", href: \"https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator\", note: \"核对四则、括号和除法的基本行为。\" },\n    { title: \"运算优先级\", href: \"https://docs.python.org/3.14/reference/expressions.html#operator-precedence\", note: \"核对乘除/加减层级与本课同级左结合规则。\" },\n    { title: \"二元算术运算\", href: \"https://docs.python.org/3.14/reference/expressions.html#binary-arithmetic-operations\", note: \"核对内置数值除法及零除数错误。\" },\n    { title: \"赋值语句\", href: \"https://docs.python.org/3.14/reference/simple_stmts.html#assignment-statements\", note: \"核对先取得右侧结果再绑定名称。\" },\n    { title: \"内置数值类型\", href: \"https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex\", note: \"本课只使用已学int/float，不展开其他数值系统。\" },\n  ],\n});\n",
+      "afterSha256": "9acb438345bd5a5e84432b72fbf326704c0bcbf609f441bd552a06d7b5a31ac5"
+    },
+    {
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "before": "import { lessonSchema, type ContentBlock } from \"../../models\";\nimport { comparisonCode, comparisonBlockNames, type ComparisonKey } from \"../../resources/python-comparisons\";\nconst p = (text: string): ContentBlock => ({ type: \"paragraph\", text });\nconst output = (filename: string, code: string): ContentBlock => ({ type: \"code\", language: \"text\", filename, code });\nconst sample = (key: ComparisonKey): ContentBlock => ({ type: \"code\", language: \"python\", filename: comparisonBlockNames[key], code: comparisonCode[key] });\nconst lines = (key: ComparisonKey) => comparisonCode[key].split(\"\\n\").map((line,i) => `第${i+1}行：${line}`).join(\"；\");\n\n// 课前简报、独立预解、官方事实与保存文件实跑：docs/py101-p11。沿用现有Reader，无新下载。\nexport const pythonNumericComparisonsLesson = lessonSchema.parse({\n  id: \"PY101-C02-L04\", courseId: \"PY101\", chapterId: \"PY101-C02\", title: \"让比较表达式给出真假结果\",\n  contentVersion: 1, optionalLesson: false,\n  subtitle: \"最多能放6件，刚好6件算不算满足？先写判断，再用三个边界值核对。\",\n  prerequisites: \"已完成第一章和2.1–2.3：会用变量保存整数，使用print，认识True/False与bool，理解右侧表达式求值再赋值，能预测、保存并从终端完整运行.py。沿用现有Python 3和编辑器，不装库；手机可读，代码操作需要电脑。\",\n  prerequisiteLinks: [\n    { title: \"2.1 读取与更新\", href: \"/learn/PY101/PY101-C02-L01#read-and-update\", note: \"回顾=赋值和读取当前值。\" },\n    { title: \"2.2 真假状态\", href: \"/learn/PY101/PY101-C02-L02#ready-state\", note: \"回顾True、False与字符串的差别。\" },\n    { title: \"2.2 观察类型\", href: \"/learn/PY101/PY101-C02-L02#inspect-type\", note: \"需要时复习type的观察用途。\" },\n    { title: \"2.3 先求右侧结果\", href: \"/learn/PY101/PY101-C02-L03#expression-to-value\", note: \"把已有数值表达式经验接到比较结果。\" },\n    { title: \"1.3 保存与重跑\", href: \"/learn/PY101/PY101-C01-L03#save-rerun\", note: \"核对保存状态与实际运行文件。\" },\n  ],\n  objectives: [\n    \"根据新的数量规则选择数值比较运算符，在自己创建的.py中取得真实True/False并解释判断含义\",\n    \"区分赋值=与相等比较==，正确使用相等和不等比较，先预测再核对实际布尔结果\",\n    \"固定限制值，手动改成低于、等于、高于的三个实际值，保存重跑并说明比较是否包含边界\",\n  ],\n  assessmentMap: [{ objective: 1, exerciseIds: [\"compare-and-explain\", \"test-boundary-values\"] }, { objective: 2, exerciseIds: [\"compare-and-explain\"] }, { objective: 3, exerciseIds: [\"test-boundary-values\"] }],\n  learningTime: { reading: [10,15], practice: [6,10], coding: [12,18], basis: \"editorial-estimate\" },\n  sections: [\n    { id: \"most-six\", title: \"刚好装到上限，也算满足吗？\", navGroup: \"meaning\", navLabel: \"规则与判断\", blocks: [\n      p(\"一个收纳盒最多允许放6件物品，现在放了5件。先用一句话判断：现在是否满足“最多6件”？如果再放1件，恰好6件呢？“最多”包括刚好达到上限的情况，超过6件才不满足这条规定。\"),\n      p(\"把实际件数交给count，把最大件数交给limit。两个值都是整数，也都以“件”为单位，可以直接比较。这里的边界就是限制值6；接下来要让Python给出能核对的真假结果。\"),\n    ] },\n    { id: \"compare-limit\", title: \"把“最多”写成一个比较式\", navGroup: \"meaning\", navLabel: \"规则与判断\", blocks: [\n      p(\"Python用<表示小于：左边严格小于右边时才为真，恰好相等不算。<=表示小于或等于，既包括小于，也包括相等。<=是两个字符连续写成的一个比较运算符，中间不拆开。\"),\n      p(\"count <= limit把实际数量放左边、限制值放右边，判断实际数量是否小于或等于限制。像这样用比较运算符连接两个值的写法，叫比较表达式。本节比较普通整数，结果是2.2认识的布尔值True或False。先写下5件与最多6件的预测，再输入下方完整程序。\"),\n      sample(\"basic\"),\n      p(\"在自己的练习文件夹新建capacity_check.py，行首不加缩进，源码放在.venv外。保存后用pwd和Windows的dir确认文件，沿用已核验的解释器运行第一条命令；macOS用pwd、ls确认后运行第二条。此前一直用py的Windows环境可保持py。后面的新文件只替换命令中的文件名，每次都保存并从头运行整份.py。\"),\n      output(\"Windows · PowerShell · 文件所在目录\", \"python capacity_check.py\"), output(\"macOS · 终端 · 文件所在目录\", \"python3 capacity_check.py\"), output(\"首次比较 · 预期输出\", \"True\"),\n      p(\"True回答的是“5是否小于或等于6”，与本题“最多6件”一致。比较只取得这个判断；程序还没有根据结果选择行动。先能写出并解释真假结果，就可以完成本节任务。\"),\n    ] },\n    { id: \"keep-result\", title: \"比较的结果也能交给一个名称\", navGroup: \"assignment\", navLabel: \"赋值与比较\", blocks: [\n      p(\"2.3中，右边先算出数量，再由=保存结果。比较也可以这样做：右侧count <= limit先得到True，=再让within_limit对应这个布尔值，随后print读取它。名称表示“在限制之内”，保存的是这一次的真假结果。\"),\n      p(\"在capacity_check.py原三行末尾追加下面两行，保留该文件前面的count和limit赋值。先预测新增输出，再保存完整运行；它依赖前两项赋值，不能放进空文件直接执行。改数值后也要完整重跑，让比较那一行再次执行。\"),\n      sample(\"saveResult\"), output(\"新增一行 · 接在首次True之后\", \"True\"),\n    ] },\n    { id: \"equal-or-different\", title: \"=保存值，==判断是否相等\", navGroup: \"assignment\", navLabel: \"赋值与比较\", blocks: [\n      p(\"若想问“是不是刚好达到6件”，用==比较左右两个值是否相等。它是一个比较运算符，得到True或False，不是执行两次赋值。!=则判断两值是否不相等。符号都连续写；=仍负责给名称赋值，不能代替==来问相不相等。\"),\n      p(\"在capacity_check.py末尾继续加这两行。先根据该文件仍为5和6的当前值分别预测，再保存从头运行。新增两行输出各在回答什么？\"),\n      sample(\"equalNot\"), output(\"追加的两行 · 接在两个True之后\", \"False\\nTrue\"),\n      p(\"5与6不相等，所以==得到False，!=得到True。这两次比较没有把count改成6；它仍保存5。区别可以再用一份合法的小程序观察：先给count赋5并比较，再重新赋6并比较。先预测两行，再保存为assignment_or_comparison.py完整运行。\"),\n      sample(\"assignCompare\"), output(\"赋值后再比较 · 预期输出\", \"False\\nTrue\"),\n      p(\"第一条赋值让count对应5，所以和6相等的判断是假；后一次赋值让它对应6，再作相等判断就是真。两条print中的==取得判断，改变当前数值的是各自前面的=。本题只需这些合法操作来分清两者。\"),\n    ] },\n    { id: \"above-limit\", title: \"超过上限，与至少达到有什么不同？\", navGroup: \"meaning-two\", navLabel: \"超过与达到\", blocks: [\n      p(\"现在单独看7件与上限6件。>表示大于，左边严格超过右边时为真；>=表示大于或等于，表示“至少达到”，也包括刚好等于。这两个问题与“最多”不同：超过上限时，至少达到上限也为真，但并不表示满足最多6件的规定。\"),\n      p(\"先预测下面三行，分别判断7是否超过6、是否至少达到6、是否仍满足最多6。另存为above_limit.py，保存并完整运行。\"),\n      sample(\"greater\"), output(\"超过/至少达到/最多 · 预期输出\", \"True\\nTrue\\nFalse\"),\n      p(\"前两行都为True，因为7确实大于6，也满足大于或等于6。最后一行为False，因为本次已经超过最大件数。等于6时>和>=还会不会相同，稍后用边界实验核对。\"),\n    ] },\n    { id: \"main-example\", title: \"把三项判断放回同一份记录\", navGroup: \"boundary\", navLabel: \"边界验证\", blocks: [\n      p(\"回到最初5件、最多6件的条件。下面完整主例将不超过、刚好等于、不等于三项判断集中起来。先预测三行，并各写一句含义，再另存capacity_results.py保存运行。\"),\n      sample(\"main\"), output(\"完整主例 · 三行预期输出\", \"True\\nFalse\\nTrue\"),\n      p(\"within_limit保存5不超过6的结果；第二行说明尚未刚好达到6，第三行说明两值不同。每一行都要和自己的判断问题对应，不能只把三个真假词背成固定答案。\"),\n    ] },\n    { id: \"boundary-runs\", title: \"固定上限，验证边界附近三个值\", navGroup: \"boundary\", navLabel: \"边界验证\", blocks: [\n      p(\"新建boundary_values.py，保持limit为6。下面三条print依次问严格小于、最多、恰好等于。先在笔记写count为5时的三行预测，再保存并完整运行下面的文件，保留源码、命令和真实输出。\"),\n      sample(\"boundaryLow\"), output(\"低于边界 · 运行后核对\", \"True\\nTrue\\nFalse\"),\n      p(\"第二轮只把count的赋值改为6，limit和三条比较都不动。先写新预测，保存，用同一命令完整运行，保留本轮源码与输出。第三轮再只把count改为7，重新预测、保存和运行。三次运行是三份真实证据，一次截图或手抄表格不能代替。\"),\n      { type: \"table\", caption: \"三轮运行后，按相同输出顺序核对\", columns: [\"count（件）\", \"count < limit\", \"count <= limit\", \"count == limit\"], rows: [[\"5\",\"True\",\"True\",\"False\"],[\"6\",\"False\",\"True\",\"True\"],[\"7\",\"False\",\"False\",\"False\"]] },\n      p(\"最值得看的是count恰好为6：<得到False，<=得到True。前者不包含相等，后者包含相等。若题目规定“最多6件”，6件满足；若规定“必须少于6件”，6件就不满足。符号本身不固定代表允许或禁止，要先读清实际规则。\"),\n      p(\"再把等值位置单独拿出来，同时核对已经解释过的六种比较。先预测，保存six_comparisons.py运行。第一条print只是已学的固定文字标签At capacity，后面六条才依次显示比较结果；引号只围住这段文字，不围住整数。\"),\n      sample(\"allAtCapacity\"), output(\"等值位置 · 标签及六条预期结果\", \"At capacity\\nFalse\\nTrue\\nFalse\\nTrue\\nTrue\\nFalse\"),\n      { type: \"table\", caption: \"同为6件时，不同规则问的是不同问题\", columns: [\"规则\", \"本例比较\", \"6件时\"], rows: [[\"最多6件\",\"count <= limit\",\"True\"],[\"少于6件\",\"count < limit\",\"False\"],[\"至少6件\",\"count >= limit\",\"True\"],[\"多于6件\",\"count > limit\",\"False\"],[\"恰好6件\",\"count == limit\",\"True\"],[\"不等于6件\",\"count != limit\",\"False\"]] },\n      p(\"这里每一式只比较左右两个普通整数。两题也先按这个范围操作，分别运行并解释结果；组合多个条件或根据真假改变执行路线，是之后的内容。\"),\n    ] },\n    { id: \"practice\", title: \"自己选规则，再验证含不含边界\", navGroup: \"practice\", navLabel: \"独立练习\", blocks: [\n      p(\"先合上参考答案，自建两份短.py。正式成果保存在本地，网页输入框只是临时思考区。每轮留源码、命令、预测和真实输出，用简短文字说明规则即可。\"),\n      { type: \"exercise\", id: \"compare-and-explain\", title: \"写出自己的三项数量判断\", kind: \"代码\",\n        prompt: \"另选与正文不同的容量情境，例如收纳架，自行确定合理的整数上限和实际数量，单位相同。不要照抄正文5/6整组数据或count、limit、within_limit这些变量名。创建新的.py，自选合法且有意义的名称保存两个量，写出实际值小于或等于上限、是否恰好等于上限、是否不等于上限三项比较。运行前分别预测True/False，保存并实际运行，逐项将真实结果对应到规则。交本人源码、变量/单位、命令、三项预测与实际结果，再简短说明=、==、!=各自做什么；至少结合一条真实赋值和一条真实相等比较说明。可以直接显示比较，也可先保存布尔结果再显示，不使用if或输入函数。\",\n        hints: [\"先用自己的话问：实际数量有没有超过上限，是否恰好到达，两个值是否不同？两个数量的单位一致吗？\", \"检查左边实际量和右边上限是否读到你保存的值，再逐项核对比较含义。赋值用于保存，判断相等和不等各有符号；仍由你选名称、数值、最终代码与预测。\"],\n        solution: [\n          `例如改用图书推车，现装9册、容量12册，新建book_cart.py，六行分别为：${lines(\"ownCompare\")}。每条语句各写一行，“第几行”和分隔文字不输入源码。`,\n          \"loaded_books是实际册数，cart_capacity是最多册数，两者单位都是册；fits_cart接住本次小于或等于的布尔结果。先预测True、False、True，再保存运行python book_cart.py（macOS用python3，已核验的py也可），保留本人实际三行结果核对。\",\n          \"9没有超过12，所以第一项为真；9没有刚好达到12，所以相等比较为假；两个值不同，所以不等比较为真。若换成自己选择的数据，必须按自己真实值重新解释，不把这组输出当所有情境的答案。\",\n          \"前两行的=分别给名称提供整数，第三行的=保存右侧比较结果；第五行的==只问两值是否相等，最后一行的!=问是否不同。==是一个比较运算符，不是赋值两次。\",\n          \"常错包括把实际值/上限位置颠倒、用赋值代替比较、只打印预写True/False，或改了文件未保存。沿源码核对数量和规则，再真实重跑。接受其他新情境、合理上限、合法名称及等价正确写法；不能只交符号表或复制参考输出。\",\n        ],\n        rubric: [\n          \"本人新.py含自选容量情境、新整数与合法名称，实际量/上限单位相同，真实写出<=、==、!=三项比较并显示结果，而非只打印答案常量。\",\n          \"运行前有三项预测，实际命令/源码/完整三项结果对应；逐项解释是在判断最多、恰好还是不同，并核对预测差异。\",\n          \"结合本人赋值与相等/不等比较说明=、==、!=的不同作用，变量读取拼写一致，实际操作可复现；Quiz、文字方案或读完标记不能代替代码。\",\n        ],\n      },\n      { type: \"exercise\", id: \"test-boundary-values\", title: \"上限不变，独立运行三种边界\", kind: \"代码\",\n        prompt: \"另建新.py，自选一种“最多可装若干件”的新情境和正整数上限，不用正文上限6。自己选合法名称，固定上限，在同一个文件写出实际量<上限、实际量<=上限两项判断，再选>或>=加一项验证，并说明它问的是超过还是至少达到。先把实际量设为低于上限，预测三项、保存并真实运行；第二轮只改实际量使它恰好等于上限，再预测、保存、完整运行；第三轮只改实际量使它高于上限，再完整重复。交三轮具体值、对应源码、命令、运行前预测和真实输出，上限及比较式保持不变。说明相等时<与<=为何不同，以及“最多”和“必须少于”分别是否包含边界。不用循环自动测试，不只抄三行真假表。\",\n        hints: [\"先在纸上标出低于、恰好等于、高于三个位置，各选一个实际量。上限是否始终是同一个数？相等位置最能区分哪些规则？\", \"逐项看符号是否带等号，额外判断问的是超过还是至少达到。把证据分成三次预测、保存和运行，每次只改实际量，仍由你填数据、代码与真实结果。\"],\n        solution: [\n          `例如展板最多放10幅画，先放9幅。新建display_boundary.py，五行分别为：${lines(\"ownBoundaryLow\")}。每条语句单独一行，数量单位都是幅，第三项>=问是否至少达到上限，不代表是否仍允许放入。`,\n          \"第一轮9低于10，先预测True、True、False，保存后运行python display_boundary.py（macOS用python3），留本人真实输出。第一项严格小于为真，第二项最多为真，第三项至少达到为假。\",\n          `第二轮只改实际量为10，五行依次为：${lines(\"ownBoundaryEqual\")}。先预测False、True、True，再保存并用同一命令完整运行。相等不满足严格小于，但满足小于或等于，也满足至少达到。`,\n          `第三轮只改实际量为11，五行依次为：${lines(\"ownBoundaryHigh\")}。先预测False、False、True，再保存完整运行。已经超过最多10幅；>=仍为True，因为至少达到10也包含更大值，并不只表示刚好装满。`,\n          \"最多10幅包含10，必须少于10幅排除10；三个实际值不同，上限和三项规则都没改变。若额外选>，三轮那一项应是False、False、True，相等时不包含边界。接受其他新上限、三个合理整数、合法名称与正确的额外判断。\",\n          \"常错是第二轮连上限也改了、三轮仍读旧文件、未完整重跑、只交最终高于一轮或把>=说成刚好相等。逐轮核对保存源码、值与命令，保留真实差异和说明，不用一张参考表冒充三次运行。\",\n        ],\n        rubric: [\n          \"本人固定同一新上限，三个实际整数确实分别低于、等于、高于，上限/比较式在三轮保持，只改实际量；源码均不使用未教控制流程。\",\n          \"三轮都保留保存源码、实际命令、事先三项预测与真实完整输出，<、<=及额外>或>=与本轮值对应，不把一次运行冒充三轮。\",\n          \"能结合相等一轮解释<排除边界而<=包含边界，说明最多/少于的实际规则，并正确解释额外比较是超过或至少达到。合理替代名和新整数可达标，抄表或网页读完不算操作证据。\",\n        ],\n      },\n    ] },\n    { id: \"next-step\", title: \"先读规则，再用边界检查真假\", navGroup: \"finish\", navLabel: \"回顾与后续\", blocks: [\n      { type: \"summary\", points: [\"本课的普通整数比较得到True或False，结果回答的是所写出的数量关系。\", \"=保存值，==判断相等，!=判断不同；严格小于/大于与含等号的比较在相等位置有区别。\", \"固定规则与上限，低于、等于、高于三轮先预测、保存并完整运行，再核对含不含边界。\"] },\n      p(\"保留本人两份.py及短记录，能换一个上限重新验证、解释每个真假结果，才有独立代码证据。网页读完不代表已经会选符号，比较结果本身也没有替程序选择行动。\"),\n      p(\"接着学习2.5「取得用户输入，再转成需要的数值」，它已有待人工审核试读，2.6尚未制作。第5章函数试读还需输出与控制流程等中间先修，阅读器的下一可读导航不表示直接跳学建议。整门PY101仍在筹备。\"),\n    ] },\n  ], resources: [],\n  references: [\n    { title: \"Python比较表达式\", href: \"https://docs.python.org/3.14/reference/expressions.html#comparisons\", note: \"核对比较符号及普通数值结果。\" },\n    { title: \"值比较\", href: \"https://docs.python.org/3/reference/expressions.html#value-comparisons\", note: \"本课只使用同单位普通整数，其他比较规则延后。\" },\n    { title: \"赋值语句\", href: \"https://docs.python.org/3.14/reference/simple_stmts.html#assignment-statements\", note: \"核对取得右侧结果再绑定名称。\" },\n    { title: \"布尔类型\", href: \"https://docs.python.org/3.14/library/stdtypes.html#boolean-type-bool\", note: \"核对True、False与bool，衔接2.2。\" },\n  ],\n});\n",
+      "afterSha256": "f2cc82e47042e32b38f8334942cbce7ba4b6e3f433ccc72978d8e7fd4a212162"
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "before": "import { isReadable, publicationSchema } from \"./models\";\nimport { legacyMathSlots, maV22LessonIds } from \"./math-outline\";\nimport { courseOutline, mlV2LessonIds } from \"./course-outline\";\n\nconst revisedCoreLessons: Record<string, number> = { \"MA101-C02-L03\": 2, \"PY101-C05-L01\": 2 };\n\n// 发布权限独立于原始课程规划。技术证据不替代人工审核。\nexport const publicationManifest = [\n  {lessonId:\"PY101-C02-L06\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"把输入和计算整理成清楚的输出\",contentVersion:1,order:6,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p13/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C02-L05\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"取得用户输入，再转成需要的数值\",contentVersion:1,order:5,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p13/TRANSITION_AMENDMENTS.md\"},\n  {lessonId:\"PY101-C02-L04\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"让比较表达式给出真假结果\",contentVersion:1,order:4,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p12/TRANSITION_AMENDMENTS.md\"},\n  {lessonId:\"PY101-C02-L03\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"用表达式算出一个结果\",contentVersion:1,order:3,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p11/TRANSITION_AMENDMENTS.md\"},\n  {lessonId:\"PY101-C02-L02\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"分清文字、整数、小数和真假值\",contentVersion:1,order:2,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p10/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C02-L01\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"用变量保留并更新程序里的值\",contentVersion:1,order:1,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p11/TRANSITION_AMENDMENTS.md\"},\n  {lessonId:\"PY101-C01-L06\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"让别人复现一次环境问题\",contentVersion:1,order:6,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p8/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L05\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"在Jupyter中按顺序运行单元格\",contentVersion:1,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p7/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L04\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"为项目准备独立的虚拟环境\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p4/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L03\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"用编辑器完成保存与重跑\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p3/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L02\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"解释器怎样找到并执行脚本\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p6/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L01\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"从零运行第一个Python程序\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p2/FIRST_LESSON_AMENDMENT.md\"},\n  {lessonId:\"AI000-C07-L03\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"综合实践：分析 AI 问题并制定学习计划\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_3_AND_COURSE_REVIEW.md\"},\n  {lessonId:\"AI000-C07-L02\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"AI 不同技术方向需要哪些基础？\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_2_REVIEW.md\"},\n  {lessonId:\"AI000-C07-L01\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"为什么学习 Python、数学与数据分析？\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_1_REVIEW.md\"},\n  {lessonId:\"AI000-C06-L03\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"版权、误用与负责任地使用 AI\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C06-L02\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"数据隐私、偏差与公平性\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C06-L01\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"为什么 AI 会产生不可靠的回答？\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_6_1_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L05\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"强化学习适合哪些应用问题？\",contentVersion:1,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C05-L03\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"多模态 AI：连接文字、图片与声音\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L04\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"生成模型：从要求到可核对的作品\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L02\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"计算机视觉：让机器理解图像\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_5_2_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L01\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"自然语言处理与大语言模型\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L04\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"模型训练好以后，如何完成预测？\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L03\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"训练、验证与测试各有什么作用？\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L02\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"模型和参数是怎样得到的？\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_VISUAL_CONTENT_REFINEMENT.md\"},\n  {lessonId:\"AI000-C04-L01\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"数据、特征与标签\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_VISUAL_CONTENT_REFINEMENT.md\"},\n  {lessonId:\"AI000-C03-L04\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"强化学习：通过行动与反馈学习\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L03\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"自监督学习：怎样从数据本身构造学习任务？\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L02\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"无监督学习：没有标签也能发现规律吗？\",contentVersion:2,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L01\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"监督学习：从有答案的例子中学习\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  ...courseOutline.filter(slot => slot.courseId === \"AI000\" && [\"AI000-C01-L02\",\"AI000-C01-L03\",\"AI000-C02-L02\"].includes(slot.lessonId)).map(slot => ({...slot,contentVersion:slot.lessonId === \"AI000-C01-L02\" ? 2 : 1,status:\"pending-review\",access:\"preview\",technicalEvidence:slot.lessonId === \"AI000-C02-L02\" ? \"docs/AI000_R3_REFINEMENT_REPORT.md\" : \"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"})),\n  {\n    lessonId: \"AI000-C02-L01\",\n    courseId: \"AI000\",\n    chapterId: \"AI000-C02\",\n    title: \"AI、机器学习与深度学习，到底是什么关系？\",\n    contentVersion: 2,\n    order: 1,\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\",\n  },\n  {\n    lessonId: \"AI000-C01-L01\",\n    courseId: \"AI000\",\n    chapterId: \"AI000-C01\",\n    title: \"人工智能究竟是什么？\",\n    contentVersion: 2,\n    order: 1,\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\",\n  },\n  ...courseOutline\n    .filter((slot) => mlV2LessonIds.some((id) => id === slot.lessonId) || slot.chapterId === \"PY101-C05\" || maV22LessonIds.some((id) => id === slot.lessonId))\n    .map((slot) => ({\n      ...slot,\n      contentVersion: revisedCoreLessons[slot.lessonId] ?? 1,\n      optionalLesson: slot.lessonId === \"PY101-C05-L06\",\n      catalogRole: \"current\",\n      status: \"pending-review\",\n      access: \"preview\",\n      technicalEvidence: slot.lessonId === \"MA101-C02-L03\" || slot.lessonId === \"ML201-C04-L04\" || (slot.courseId === \"PY101\" && slot.lessonId !== \"PY101-C05-L06\")\n        ? \"docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md\"\n        : slot.courseId === \"MA101\" ? \"docs/MA101_EDITORIAL_REVIEW_V1.md\" : \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\",\n    })),\n  ...legacyMathSlots.map((slot) => ({ ...slot, catalogRole: \"legacy\", contentVersion: 1, status: \"pending-review\", access: \"preview\", technicalEvidence: \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\" })),\n  {\n    lessonId: \"ML201-C04-L01\",\n    courseId: \"ML201\",\n    chapterId: \"ML201-C04\",\n    title: \"线性回归与梯度下降\",\n    contentVersion: 1,\n    order: 1,\n    catalogRole: \"legacy\",\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence: \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\",\n  },\n].map((entry) => publicationSchema.parse(entry));\n\nexport const readablePublications = publicationManifest.filter(isReadable);\nexport const lessonHref = (entry: { courseId: string; lessonId: string }) =>\n  `/learn/${entry.courseId}/${entry.lessonId}`;\n",
+      "afterSha256": "b18d2f3f59fd0e993fb95d3847cc3732e7d1ea9745ec247f7c5a0f78463d836a"
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "before": "import { createHash } from \"node:crypto\";\nimport { readFileSync } from \"node:fs\";\n\ntype SourceChange = { path: string; before: string; afterSha256: string };\ntype ObjectChange = { id: string; before: unknown; afterSha256: string };\n// 使用同一个登记器按新到旧撤销已批准修订；不为每轮再嵌套一个专用兼容器。\ntype RevisionPlan = { baseline: string; sources: SourceChange[]; lessons: ObjectChange[]; publications: ObjectChange[]; addedLessonIds: string[]; workspaceOnly: { path: string; workspaceSha256: string; repositorySha256: string }[]; protectedText: { path: string; baselineSha256: string; lfSha256: string }[] };\nconst plans = [\"py101-p13\", \"py101-p12\", \"py101-p11\", \"py101-p10\", \"py101-p9\", \"py101-p8\", \"py101-p7\", \"py101-p6\", \"py101-p5\", \"py101-p4\", \"py101-p3\", \"py101-p2\"].map(round => JSON.parse(readFileSync(new URL(`../docs/${round}/APPROVED_CHANGES.json`, import.meta.url), \"utf8\")) as RevisionPlan);\nfunction revisions(throughBaseline?: string) {\n  const index = plans.findIndex(plan => plan.baseline === throughBaseline);\n  return index < 0 ? plans : plans.slice(0, index + 1);\n}\nconst sources = JSON.parse(readFileSync(new URL(\"../docs/py101-p1/SOURCE_CHANGES.json\", import.meta.url), \"utf8\")) as SourceChange[];\nconst sha = (source: string) => createHash(\"sha256\").update(source).digest(\"hex\");\nfunction undoSource(entries: SourceChange[], path: string, source: string) {\n  const entry = entries.find(row => row.path === path);\n  return entry && sha(source.replaceAll(\"\\r\\n\", \"\\n\")) === entry.afterSha256 ? entry.before : source;\n}\nexport const approvedPy101Additions = [...new Set(plans.flatMap(plan => plan.addedLessonIds))];\nexport function beforeApprovedPy101Source(path: string, source: string, throughBaseline?: string) {\n  return revisions(throughBaseline).reduce((value, plan) => undoSource(plan.sources, path, value), source);\n}\n// 自动回归允许原工作区与干净检出两种精确版本；工作区审计脚本仍严格要求原始指纹。\nexport function protectedPy101FileMatches(path: string, bytes: Buffer, expected: string, throughBaseline?: string) {\n  const digest = createHash(\"sha256\").update(bytes).digest(\"hex\");\n  if (digest === expected) return true;\n  const text = bytes.toString(\"utf8\");\n  // Git检出可转换文本换行；二进制仍逐字节比较，绝不以UTF-8解码后的图像作摘要。\n  const validText = !text.includes(\"\\0\") && Buffer.from(text).equals(bytes);\n  const variants = (value: string) => { const lf = value.replaceAll(\"\\r\\n\", \"\\n\"); return [lf, lf.replaceAll(\"\\n\", \"\\r\\n\")]; };\n  const matches = (value: string, target: string) => validText && variants(value).some(source => sha(source) === target);\n  if (matches(text, expected)) return true;\n  const relevant = revisions(throughBaseline);\n  const portable = relevant.flatMap(plan => plan.protectedText).find(row => row.path === path && row.baselineSha256 === expected);\n  if (portable && validText && sha(text.replaceAll(\"\\r\\n\", \"\\n\")) === portable.lfSha256) return true;\n  const local = relevant.flatMap(plan => plan.workspaceOnly).find(row => row.path === path && row.workspaceSha256 === expected);\n  if (local?.workspaceSha256 === expected && (local.repositorySha256 === digest || matches(text, local.repositorySha256))) return true;\n  return matches(beforeApprovedPy101Source(path, text, throughBaseline), expected);\n}\nexport function beforeApprovedPy101Object(kind: \"lessons\" | \"publications\", id: string, value: unknown, throughBaseline?: string) {\n  return revisions(throughBaseline).reduce((current, plan) => {\n    const entry = plan[kind].find(row => row.id === id);\n    return entry && sha(JSON.stringify(current)) === entry.afterSha256 ? entry.before : current;\n  }, value);\n}\n// 只有完整文件摘要命中才还原；未登记的任何附加修改必须继续暴露给旧保护测试。\nexport function beforePy101P1Source(path: string, source: string) {\n  return undoSource(sources, path, beforeApprovedPy101Source(path, source));\n}\n",
+      "afterSha256": "cbcae457414db4b2f209f6840ccaad8bd11521ec7d5425654b23ee3a2a1f348e"
+    },
+    {
+      "path": "tests/py101-numeric-comparisons.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { createHash } from \"node:crypto\";\nimport { readFileSync } from \"node:fs\";\nimport { pythonNumericComparisonsLesson as lesson } from \"../src/content/lessons/py101/numeric-comparisons\";\nimport { comparisonCode, comparisonBlockNames, comparisonSetups } from \"../src/content/resources/python-comparisons\";\nimport { comparisonKey, comparisonExpected, checkComparisonResult } from \"../scripts/validate-py101-comparisons\";\nimport { publicationManifest } from \"../src/content/publication-manifest\";\nimport { courseOutline } from \"../src/content/course-outline\";\nimport { isReadable, publicationSchema } from \"../src/content/models\";\nimport { lessonRegistry, resolveLesson, getLearningCourse, getAdjacentLessons } from \"../src/lib/course-engine\";\nimport { progressKey, createProgressStore, parseReadingProgress } from \"../src/lib/learning-progress\";\nimport { lessonProgressScope } from \"../src/lib/use-learning-progress\";\nimport { beforeApprovedPy101Source, beforeApprovedPy101Object } from \"../scripts/py101-p1-compatibility\";\nimport { assertRegisteredInventory, assertCourseAvailability } from \"./helpers/registered-content\";\nconst read=(name:string)=>JSON.parse(readFileSync(`docs/py101-p11/${name}.json`,\"utf8\"));\nconst sha=(v:unknown)=>createHash(\"sha256\").update(JSON.stringify(v)).digest(\"hex\");\n\ntest(\"2.4身份/order4/r1与实际草稿门禁，技术后试读不冒充人工审核\",()=>{\n  const entry=publicationManifest.find(p=>p.lessonId===lesson.id)!;\n  assert.deepEqual([entry.title,entry.courseId,entry.chapterId,entry.order,entry.contentVersion,entry.optionalLesson],[lesson.title,\"PY101\",\"PY101-C02\",4,1,false]);assert.equal(courseOutline.find(s=>s.lessonId===lesson.id)?.order,4);\n  const g=read(\"DRAFT_GATE\");assert.deepEqual([g.status,g.access,g.readable,g.resolveUndefined,g.directoryHrefAbsent],[\"draft\",\"private\",false,true,true]);\n  assert.equal(isReadable({...entry,status:\"draft\",access:\"private\",technicalEvidence:undefined}),false);assert.throws(()=>publicationSchema.parse({...entry,status:\"draft\",access:\"preview\"}));assert.throws(()=>publicationSchema.parse({...entry,status:\"pending-review\",access:\"preview\",technicalEvidence:undefined}));assert.equal(entry.reviewEvidence,undefined);\n  if(entry.status===\"draft\")assert.equal(resolveLesson(\"PY101\",lesson.id),undefined);else{assert.deepEqual([entry.status,entry.access,(beforeApprovedPy101Object(\"publications\",lesson.id,entry) as typeof entry).technicalEvidence],[\"pending-review\",\"preview\",\"docs/py101-p11/TECHNICAL_REPORT.md\"]);assert.ok(resolveLesson(\"PY101\",lesson.id));}\n  assertRegisteredInventory();assertCourseAvailability(\"PY101\");\n});\n\ntest(\"三目标映射两项核心代码操作，提示不代填真假表，分项估时与反馈齐全\",()=>{\n  const tasks=lesson.sections.filter(s=>s.tier===\"core\").flatMap(s=>s.blocks).filter(b=>b.type===\"exercise\");assert.deepEqual(tasks.map(t=>t.id),[\"compare-and-explain\",\"test-boundary-values\"]);\n  assert.deepEqual(lesson.assessmentMap,[{objective:1,exerciseIds:tasks.map(t=>t.id)},{objective:2,exerciseIds:[tasks[0].id]},{objective:3,exerciseIds:[tasks[1].id]}]);\n  for(const t of tasks){assert.equal(t.kind,\"代码\");assert.equal(t.hints.length,2);assert.ok(t.solution.length>=4);assert.ok(t.rubric.length>=3);assert.doesNotMatch(t.hints.join(\"\"),/loaded_books|cart_capacity|art_total|True|False| = /);}\n  assert.match(tasks[1].prompt,/第二轮只改实际量/);assert.match(tasks[1].prompt,/第三轮只改实际量/);assert.deepEqual(lesson.learningTime,{reading:[10,15],practice:[6,10],coding:[12,18],basis:\"editorial-estimate\"});assert.deepEqual(lesson.resources,[]);\n});\n\ntest(\"六符号同源且每式仅比较两值，未知/改写代码不能被网页验证器略过\",()=>{\n  const blocks=lesson.sections.flatMap(s=>s.blocks).filter(b=>b.type===\"code\").filter(b=>b.language===\"python\");assert.deepEqual(blocks.map(b=>comparisonKey(b.filename,b.code)),[\"basic\",\"saveResult\",\"equalNot\",\"assignCompare\",\"greater\",\"main\",\"boundaryLow\",\"allAtCapacity\"]);\n  assert.equal(comparisonSetups.saveResult,\"count = 5\\nlimit = 6\");assert.equal(comparisonSetups.equalNot,comparisonSetups.saveResult);\n  const operators=new Set<string>();for(const b of blocks){assert.doesNotMatch(b.code,/\\b(input|int|float|bool|str)\\s*\\(|\\b(if|elif|else|for|while|and|or|not|is|import|def|try|except)\\b/);for(const line of b.code.split(\"\\n\")){const matches=line.match(/<=|>=|==|!=|[<>]/g)??[];assert.ok(matches.length<=1,\"不引入链式比较\");matches.forEach(op=>operators.add(op));}}\n  assert.deepEqual([...operators].sort(),[\"<\",\"<=\",\">\",\">=\",\"==\",\"!=\"].sort());assert.throws(()=>comparisonKey(\"unknown.py\",\"print(True)\"));assert.throws(()=>comparisonKey(comparisonBlockNames.main,comparisonCode.main.replace(\"<=\",\"<\")));\n});\n\ntest(\"主例、相等/不等与边界预期独立，错误类型/缺行/无关异常均被拒绝\",()=>{\n  assert.equal(comparisonExpected.main,\"True\\nFalse\\nTrue\\n\");assert.equal(comparisonExpected.assignCompare,\"False\\nTrue\\n\");assert.equal(comparisonExpected.greater,\"True\\nTrue\\nFalse\\n\");assert.equal(comparisonExpected.boundaryEqual,\"False\\nTrue\\nTrue\\n\");assert.equal(comparisonExpected.allAtCapacity,\"At capacity\\nFalse\\nTrue\\nFalse\\nTrue\\nTrue\\nFalse\\n\");\n  checkComparisonResult(\"boundaryEqual\",{exitCode:0,stdout:\"False\\nTrue\\nTrue\\n\",stderr:\"\"});\n  assert.throws(()=>checkComparisonResult(\"boundaryEqual\",{exitCode:0,stdout:\"False\\nFalse\\nTrue\\n\",stderr:\"\"}));assert.throws(()=>checkComparisonResult(\"main\",{exitCode:1,stdout:comparisonExpected.main,stderr:\"TypeError\"}));assert.throws(()=>checkComparisonResult(\"basic\",{exitCode:0,stdout:\"1\\n\",stderr:\"\"}));assert.throws(()=>checkComparisonResult(\"main\",{exitCode:0,stdout:\"True\\nFalse\\n\",stderr:\"\"}));\n});\n\ntest(\"真实保存文件三轮只改实际值，两个新题参考与陌生数据均有实际输出\",()=>{\n  const evidence=read(\"PYTHON_RUNS\"),row=(label:string)=>evidence.rows.find((r:{label:string})=>r.label===label);assert.equal(evidence.platform,\"win32\");assert.equal(evidence.allAssertionsPassed,true);\n  for(const k of Object.keys(comparisonCode) as (keyof typeof comparisonCode)[]){const r=row(k);checkComparisonResult(k,r);assert.equal(r.savedSource,(comparisonSetups[k]?comparisonSetups[k]+\"\\n\":\"\")+comparisonCode[k]);}\n  for(const [low,equal,high,from,to,above]of [[\"boundaryLow\",\"boundaryEqual\",\"boundaryHigh\",\"count = 5\",\"count = 6\",\"count = 7\"],[\"ownBoundaryLow\",\"ownBoundaryEqual\",\"ownBoundaryHigh\",\"art_total = 9\",\"art_total = 10\",\"art_total = 11\"],[\"new-boundary-low\",\"new-boundary-equal\",\"new-boundary-high\",\"stock_total = 13\",\"stock_total = 15\",\"stock_total = 18\"]]){\n    assert.equal(row(low).filename,row(equal).filename);assert.equal(row(equal).filename,row(high).filename);assert.equal(row(low).savedSource.replace(from,to),row(equal).savedSource);assert.equal(row(low).savedSource.replace(from,above),row(high).savedSource);\n  }\n  assert.equal(row(\"follow-appends\").stdout,\"True\\nTrue\\nFalse\\nTrue\\n\");assert.equal(row(\"stored-bool-type\").stdout,\"True\\nFalse\\nTrue\\n<class 'bool'>\\n\");assert.equal(row(\"new-equal-context\").stdout,\"True\\nTrue\\nFalse\\n\");assert.equal(row(\"new-boundary-high\").stdout,\"False\\nFalse\\nTrue\\n\");\n  assert.equal(new Set(evidence.rows.map((r:{shellPid:number})=>r.shellPid)).size,evidence.rows.length);assert.doesNotMatch(JSON.stringify(evidence),/[A-Za-z]:\\\\\\\\Users\\\\\\\\|token=/);\n});\n\ntest(\"2.1和2.3仅各末段状态/依据指针，核心与r1 scope保持且未知改写不获豁免\",()=>{\n  const base=read(\"BASELINE\"),ids=Object.keys(base.amendmentsBefore);\n  assert.deepEqual(ids.sort(),[\"PY101-C02-L01\",\"PY101-C02-L03\"]);\n  for(const id of ids){const before=base.amendmentsBefore[id],current=lessonRegistry.get(id)!,expected=structuredClone(before.lesson);expected.sections.at(-1).blocks[expected.sections.at(-1).blocks.length-1]=current.sections.at(-1)!.blocks.at(-1);assert.deepEqual(current,expected);assert.equal(current.contentVersion,1);assert.deepEqual(lessonProgressScope(current),lessonProgressScope(before.lesson));const pub=publicationManifest.find(p=>p.lessonId===id)!;assert.deepEqual(pub,{...before.publication,technicalEvidence:pub.technicalEvidence});if(pub.technicalEvidence!==before.publication.technicalEvidence)assert.equal(pub.technicalEvidence,\"docs/py101-p11/TRANSITION_AMENDMENTS.md\");const tampered=structuredClone(current);tampered.title+=\" 未登记\";assert.deepEqual(beforeApprovedPy101Object(\"lessons\",id,tampered,base.head),tampered);}\n  for(const [id,digest]of Object.entries(base.lessons))if(!ids.includes(id))assert.equal(sha(beforeApprovedPy101Object(\"lessons\",id,lessonRegistry.get(id),base.head)),digest,id);for(const [id,digest]of Object.entries(base.publications))if(!ids.includes(id))assert.equal(sha(beforeApprovedPy101Object(\"publications\",id,publicationManifest.find(p=>p.lessonId===id),base.head)),digest,id);\n  const source=readFileSync(\"src/lib/course-engine.ts\",\"utf8\"),plan=read(\"APPROVED_CHANGES\");assert.equal(beforeApprovedPy101Source(\"src/lib/course-engine.ts\",source,base.head),plan.sources.find((r:{path:string})=>r.path===\"src/lib/course-engine.ts\").before);assert.equal(beforeApprovedPy101Source(\"src/lib/course-engine.ts\",source+\"\\n// unauthorized\",base.head),source+\"\\n// unauthorized\");\n});\n\ntest(\"2.3到2.4相邻，2.5/2.6不注册且错误归属不可读，整课仍planned\",()=>{\n  const course=getLearningCourse(\"PY101\")!;assert.equal(course.status,\"planned\");if(isReadable(publicationManifest.find(p=>p.lessonId===lesson.id)!)){assert.equal(getAdjacentLessons(course,\"PY101-C02-L03\").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,\"PY101-C02-L03\");const readable=course.chapters.flatMap(c=>c.lessons).filter(s=>s.href);assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,readable[readable.findIndex(s=>s.lessonId===lesson.id)+1]?.lessonId);}\n  for(const id of [\"PY101-C02-L05\",\"PY101-C02-L06\"]){if(lessonRegistry.has(id))continue;assert.equal(courseOutline.some(s=>s.lessonId===id),false);assert.equal(lessonRegistry.has(id),false);assert.equal(publicationManifest.some(p=>p.lessonId===id),false);assert.equal(resolveLesson(\"PY101\",id),undefined);}assert.equal(resolveLesson(\"ML201\",lesson.id),undefined);\n});\n\ntest(\"2.4新r1重载独立，不继承或覆盖旧课和旧修订完成记录\",()=>{\n  const memory=new Map<string,string>(),storage={getItem:(k:string)=>memory.get(k)??null,setItem:(k:string,v:string)=>{memory.set(k,v);}},store=createProgressStore(()=>storage);\n  for(const old of lessonRegistry.values())if(old.id!==lesson.id){const s=lessonProgressScope(old);store.save(s,100,s.sectionIds[0],true);if(s.contentVersion>1)store.save({...s,contentVersion:1},100,s.sectionIds[0],true);}\n  const before=new Map(memory),scope=lessonProgressScope(lesson);assert.equal(progressKey(scope),\"aivora:learning:v2:PY101:PY101-C02-L04:r1\");assert.equal(store.getSnapshot(scope),null);store.save(scope,51,\"boundary-runs\");const restored=parseReadingProgress(createProgressStore(()=>storage).getSnapshot(scope),scope);assert.equal(restored?.section,\"boundary-runs\");assert.equal(restored?.completed,false);for(const [k,v]of before)assert.equal(memory.get(k),v);\n});\n",
+      "afterSha256": "15f3b58e0489818ccd339ca0b2279c5f8241c3710622cd5db9cddd9bdcd5448d"
+    },
+    {
+      "path": "tests/py101-input-and-conversion.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport {readFileSync} from \"node:fs\";\nimport {createHash} from \"node:crypto\";\nimport {pythonInputAndConversionLesson as lesson} from \"../src/content/lessons/py101/input-and-conversion\";\nimport {inputCode,inputBlockNames,type InputKey} from \"../src/content/resources/python-input-conversion\";\nimport {inputKey,inputContract,inputContracts,checkInputResult} from \"../scripts/validate-py101-input\";\nimport {publicationManifest} from \"../src/content/publication-manifest\";\nimport {courseOutline} from \"../src/content/course-outline\";\nimport {isReadable,publicationSchema} from \"../src/content/models\";\nimport {lessonRegistry,resolveLesson,getLearningCourse,getAdjacentLessons} from \"../src/lib/course-engine\";\nimport {progressKey,createProgressStore,parseReadingProgress} from \"../src/lib/learning-progress\";\nimport {lessonProgressScope} from \"../src/lib/use-learning-progress\";\nimport {beforeApprovedPy101Object,beforeApprovedPy101Source} from \"../scripts/py101-p1-compatibility\";\nimport {assertRegisteredInventory,assertCourseAvailability} from \"./helpers/registered-content\";\nconst read=(n:string)=>JSON.parse(readFileSync(`docs/py101-p12/${n}.json`,\"utf8\"));\nconst sha=(v:unknown)=>createHash(\"sha256\").update(JSON.stringify(v)).digest(\"hex\");\ntest(\"2.5唯一身份/order5/r1、真实draft门禁与证据后preview，非人工通过\",()=>{\n const entry=publicationManifest.find(p=>p.lessonId===lesson.id)!;assert.deepEqual([entry.title,entry.courseId,entry.chapterId,entry.order,entry.contentVersion,entry.optionalLesson],[lesson.title,\"PY101\",\"PY101-C02\",5,1,false]);assert.equal(courseOutline.find(s=>s.lessonId===lesson.id)?.order,5);\n const g=read(\"DRAFT_GATE\");assert.deepEqual([g.status,g.access,g.readable,g.resolveUndefined,g.directoryHrefAbsent],[\"draft\",\"private\",false,true,true]);assert.equal(entry.reviewEvidence,undefined);\n assert.throws(()=>publicationSchema.parse({...entry,status:\"draft\",access:\"preview\"}));assert.throws(()=>publicationSchema.parse({...entry,status:\"pending-review\",access:\"preview\",technicalEvidence:undefined}));\n if(entry.status===\"draft\")assert.equal(resolveLesson(\"PY101\",lesson.id),undefined);else{assert.deepEqual([entry.status,entry.access,(beforeApprovedPy101Object(\"publications\",lesson.id,entry) as typeof entry).technicalEvidence],[\"pending-review\",\"preview\",\"docs/py101-p12/TECHNICAL_REPORT.md\"]);assert.ok(resolveLesson(\"PY101\",lesson.id));}assertRegisteredInventory();assertCourseAvailability(\"PY101\");\n});\ntest(\"三目标由两道核心自写题覆盖，双提示/解释/错因/rubric与分项估时\",()=>{\n const tasks=lesson.sections.filter(s=>s.tier===\"core\").flatMap(s=>s.blocks).filter(b=>b.type===\"exercise\");assert.deepEqual(tasks.map(t=>t.id),[\"interactive-label-and-count\",\"measure-and-recheck\"]);\n assert.deepEqual(lesson.assessmentMap,[{objective:1,exerciseIds:[tasks[0].id]},{objective:2,exerciseIds:tasks.map(t=>t.id)},{objective:3,exerciseIds:[tasks[1].id]}]);\n for(const t of tasks){assert.equal(t.kind,\"代码\");assert.equal(t.hints.length,2);assert.ok(t.solution.length>=4);assert.ok(t.rubric.length>=3);assert.doesNotMatch(t.hints.join(\"\"),/Hall C|Porch E|venue_name|length_text|15张|30张/);assert.match(t.prompt,/两组/);assert.match(t.prompt,/type/);}assert.match(tasks[1].prompt,/真实ValueError完整回溯/);assert.match(tasks[1].prompt,/重新启动/);\n assert.deepEqual(lesson.learningTime,{reading:[12,18],practice:[8,12],coding:[18,28],basis:\"editorial-estimate\"});assert.deepEqual(lesson.resources,[]);\n});\ntest(\"所有12块同源登记stdin，分步转换且不使用未教语法或隐式字符串计算\",()=>{\n const blocks=lesson.sections.flatMap(s=>s.blocks).filter(b=>b.type===\"code\").filter(b=>b.language===\"python\");assert.equal(blocks.length,12);assert.deepEqual(new Set(blocks.map(b=>inputKey(b.filename,b.code))),new Set(Object.keys(inputCode)));\n for(const b of blocks){assert.doesNotMatch(b.code,/\\b(if|elif|else|try|except|while|for|eval|def|import)\\b|\\b(?:int|float)\\(input\\(|f[\"']|\\.isdigit\\(/);for(const line of b.code.split(\"\\n\"))if(line.includes(\"input(\"))assert.match(line,/^[a-z_]+ = input\\(\"[A-Za-z ]+: \"\\)$/);assert.ok(inputContracts[inputKey(b.filename,b.code)].length>0);}\n assert.throws(()=>inputKey(\"unknown.py\",inputCode.main));assert.throws(()=>inputKey(inputBlockNames.main,inputCode.main.replace('Count: ','Count:')));assert.throws(()=>inputContract(\"main\",\"box-four\",\"Box A\\n\"));assert.throws(()=>inputContract(\"main\",\"unknown\",\"Box A\\n4\\n\"));\n});\ntest(\"程序stdout含无换行提示而无伪造回显，ValueError不能由其他失败冒充\",()=>{\n assert.equal(inputContracts.main[0].stdout,\"Label: Count: Box A\\n12\\n\");assert.equal(inputContracts.main[1].stdout,\"Label: Count: Tool B\\n6\\n\");assert.equal(inputContracts.rawCount[0].stdout,\"Count: 4\\n<class 'str'>\\n\");\n checkInputResult(\"main\",\"box-four\",\"Box A\\n4\\n\",{exitCode:0,stdout:inputContracts.main[0].stdout,stderr:\"\"});\n for(const r of [{exitCode:0,stdout:\"Label: Box A\\nCount: 4\\nBox A\\n12\\n\",stderr:\"\"},{exitCode:1,stdout:inputContracts.main[0].stdout,stderr:\"\"},{exitCode:0,stdout:inputContracts.main[0].stdout,stderr:\"warning\"}])assert.throws(()=>checkInputResult(\"main\",\"box-four\",\"Box A\\n4\\n\",r));\n assert.throws(()=>checkInputResult(\"integerError\",\"word\",\"four\\n\",{exitCode:1,stdout:\"Count: \",stderr:\"EOFError: EOF when reading a line\\n\"}));\n});\ntest(\"保存文件真实进程覆盖两组合法、四项ValueError及新PID恢复，不模拟input\",()=>{\n const e=read(\"PYTHON_RUNS\");assert.equal(e.platform,\"win32\");assert.equal(e.allAssertionsPassed,true);assert.equal(e.rows.length,Object.values(inputContracts).reduce((n,c)=>n+c.length,0));\n for(const key of Object.keys(inputCode)as InputKey[])for(const c of inputContracts[key]){const r=e.rows.find((r:{key:string;caseId:string})=>r.key===key&&r.caseId===c.id);assert.ok(r);assert.equal(r.savedSource,inputCode[key]+\"\\n\");assert.equal(r.savedSha256,createHash(\"sha256\").update(r.savedSource).digest(\"hex\"));checkInputResult(key,c.id,c.stdin,r);}\n for(const key of [\"main\",\"mass\",\"ownInteger\",\"ownMeasure\",\"integerError\",\"floatError\",\"measureError\"]){const rows=e.rows.filter((r:{key:string})=>r.key===key);assert.equal(new Set(rows.map((r:{savedSha256:string})=>r.savedSha256)).size,1);assert.equal(new Set(rows.map((r:{pid:number})=>r.pid)).size,rows.length);}\n assert.equal(e.rows.filter((r:{exitCode:number})=>r.exitCode===1).length,4);assert.doesNotMatch(JSON.stringify(e),/[A-Za-z]:\\\\Users\\\\|token=/);\n});\ntest(\"2.4仅末段状态/依据更新保r1，其他旧对象完整不变，未知改写仍暴露\",()=>{\n const base=read(\"BASELINE\"),id=\"PY101-C02-L04\",before=base.amendmentsBefore[id],current=lessonRegistry.get(id)!,expected=structuredClone(before.lesson);expected.sections.at(-1).blocks[expected.sections.at(-1).blocks.length-1]=current.sections.at(-1)!.blocks.at(-1);assert.deepEqual(current,expected);assert.deepEqual(lessonProgressScope(current),lessonProgressScope(before.lesson));assert.equal(current.contentVersion,1);\n const pub=publicationManifest.find(p=>p.lessonId===id)!;assert.deepEqual(pub,{...before.publication,technicalEvidence:pub.technicalEvidence});if(pub.technicalEvidence!==before.publication.technicalEvidence)assert.equal(pub.technicalEvidence,\"docs/py101-p12/TRANSITION_AMENDMENTS.md\");\n for(const [k,v]of Object.entries(base.lessons))if(k!==id)assert.equal(sha(beforeApprovedPy101Object(\"lessons\",k,lessonRegistry.get(k),base.head)),v,k);for(const [k,v]of Object.entries(base.publications))if(k!==id)assert.equal(sha(beforeApprovedPy101Object(\"publications\",k,publicationManifest.find(p=>p.lessonId===k),base.head)),v,k);\n const tampered=structuredClone(current);tampered.title+=\" 未登记\";assert.deepEqual(beforeApprovedPy101Object(\"lessons\",id,tampered,base.head),tampered);const source=readFileSync(\"src/lib/course-engine.ts\",\"utf8\");assert.equal(beforeApprovedPy101Source(\"src/lib/course-engine.ts\",source+\"\\n// extra\",base.head),source+\"\\n// extra\");\n});\ntest(\"2.4到2.5按实际可读相邻，后续按真实注册，错误归属404与整课planned\",()=>{\n const c=getLearningCourse(\"PY101\")!;assert.equal(c.status,\"planned\");if(isReadable(publicationManifest.find(p=>p.lessonId===lesson.id)!)){assert.equal(getAdjacentLessons(c,\"PY101-C02-L04\").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(c,lesson.id).previous?.lessonId,\"PY101-C02-L04\");const readable=c.chapters.flatMap(ch=>ch.lessons).filter(s=>s.href);assert.equal(getAdjacentLessons(c,lesson.id).next?.lessonId,readable[readable.findIndex(s=>s.lessonId===lesson.id)+1]?.lessonId);}\n const missing=\"PY101-C02-L06\";if(!lessonRegistry.has(missing)){assert.equal(courseOutline.some(s=>s.lessonId===missing),false);assert.equal(lessonRegistry.has(missing),false);assert.equal(publicationManifest.some(p=>p.lessonId===missing),false);assert.equal(resolveLesson(\"PY101\",missing),undefined);}assert.equal(resolveLesson(\"ML201\",lesson.id),undefined);\n});\ntest(\"新2.5/r1独立重载，不继承或覆盖所有旧课r1/r2与其他课程完成记录\",()=>{\n const memory=new Map<string,string>(),storage={getItem:(k:string)=>memory.get(k)??null,setItem:(k:string,v:string)=>{memory.set(k,v);}},store=createProgressStore(()=>storage);\n for(const old of lessonRegistry.values())if(old.id!==lesson.id){const s=lessonProgressScope(old);store.save(s,100,s.sectionIds[0],true);if(s.contentVersion>1)store.save({...s,contentVersion:1},100,s.sectionIds[0],true);}const before=new Map(memory),scope=lessonProgressScope(lesson);assert.equal(progressKey(scope),\"aivora:learning:v2:PY101:PY101-C02-L05:r1\");assert.equal(store.getSnapshot(scope),null);store.save(scope,50,\"raw-count\");const restored=parseReadingProgress(createProgressStore(()=>storage).getSnapshot(scope),scope);assert.equal(restored?.section,\"raw-count\");assert.equal(restored?.completed,false);for(const[k,v]of before)assert.equal(memory.get(k),v);\n});\n",
+      "afterSha256": "898faabb744b60b6fb73d0f173020c9764b9a50806f5c27034fa266615dabde8"
+    },
+    {
+      "path": "tests/py101-readable-output.test.ts",
+      "before": "import test from\"node:test\";\nimport assert from\"node:assert/strict\";\nimport {readFileSync}from\"node:fs\";\nimport {createHash}from\"node:crypto\";\nimport {pythonReadableOutputLesson as lesson}from\"../src/content/lessons/py101/readable-output\";\nimport {readableCode,readableBlockNames,type ReadableKey}from\"../src/content/resources/python-readable-output\";\nimport {readableKey,readableContract,readableContracts,checkReadableResult}from\"../scripts/validate-py101-readable-output\";\nimport {publicationManifest}from\"../src/content/publication-manifest\";\nimport {courseOutline}from\"../src/content/course-outline\";\nimport {isReadable,publicationSchema}from\"../src/content/models\";\nimport {lessonRegistry,resolveLesson,getLearningCourse,getAdjacentLessons}from\"../src/lib/course-engine\";\nimport {progressKey,createProgressStore,parseReadingProgress}from\"../src/lib/learning-progress\";\nimport {lessonProgressScope}from\"../src/lib/use-learning-progress\";\nimport {beforeApprovedPy101Object,beforeApprovedPy101Source}from\"../scripts/py101-p1-compatibility\";\nimport {assertRegisteredInventory,assertCourseAvailability}from\"./helpers/registered-content\";\nconst read=(name:string)=>JSON.parse(readFileSync(`docs/py101-p13/${name}.json`,\"utf8\"));\nconst sha=(v:unknown)=>createHash(\"sha256\").update(JSON.stringify(v)).digest(\"hex\");\ntest(\"2.6唯一身份/order6/r1与真实draft门禁，技术后试读而非人工通过\",()=>{\n const e=publicationManifest.find(p=>p.lessonId===lesson.id)!;assert.deepEqual([e.title,e.courseId,e.chapterId,e.order,e.contentVersion,e.optionalLesson],[lesson.title,\"PY101\",\"PY101-C02\",6,1,false]);assert.equal(courseOutline.find(s=>s.lessonId===lesson.id)?.order,6);const g=read(\"DRAFT_GATE\");assert.deepEqual([g.status,g.access,g.readable,g.resolveUndefined,g.directoryHrefAbsent],[\"draft\",\"private\",false,true,true]);assert.equal(e.reviewEvidence,undefined);\n assert.throws(()=>publicationSchema.parse({...e,status:\"draft\",access:\"preview\"}));assert.throws(()=>publicationSchema.parse({...e,status:\"pending-review\",access:\"preview\",technicalEvidence:undefined}));if(e.status===\"draft\")assert.equal(resolveLesson(\"PY101\",lesson.id),undefined);else{assert.deepEqual([e.status,e.access,e.technicalEvidence],[\"pending-review\",\"preview\",\"docs/py101-p13/TECHNICAL_REPORT.md\"]);assert.ok(resolveLesson(\"PY101\",lesson.id));}assertRegisteredInventory();assertCourseAvailability(\"PY101\");\n});\ntest(\"三目标由两道自写代码题覆盖，双提示/解释/错因/单位与独立三轮证据\",()=>{\n const tasks=lesson.sections.filter(s=>s.tier===\"core\").flatMap(s=>s.blocks).filter(b=>b.type===\"exercise\");assert.deepEqual(tasks.map(t=>t.id),[\"write-clear-summary\",\"verify-summary-boundary\"]);assert.deepEqual(lesson.assessmentMap,[{objective:1,exerciseIds:[tasks[0].id]},{objective:2,exerciseIds:tasks.map(t=>t.id)},{objective:3,exerciseIds:[tasks[1].id]}]);for(const t of tasks){assert.equal(t.kind,\"代码\");assert.equal(t.hints.length,2);assert.ok(t.solution.length>=4);assert.ok(t.rubric.length>=3);assert.doesNotMatch(t.hints.join(\"\"),/Banner A|Garden B|total_length|within_limit|12米|True|False| = /);assert.match(t.prompt,/单位/);}\n assert.match(tasks[0].prompt,/两组/);assert.match(tasks[1].prompt,/低于、恰好等于、高于/);assert.match(tasks[1].prompt,/题一\\/题二阶段源码/);assert.deepEqual(lesson.learningTime,{reading:[12,18],practice:[8,12],coding:[22,32],basis:\"editorial-estimate\"});assert.deepEqual(lesson.resources,[]);\n});\ntest(\"全部12块同源与明确stdin，f字段仅简单名称，无超纲语法或格式指定\",()=>{\n const blocks=lesson.sections.flatMap(s=>s.blocks).filter(b=>b.type===\"code\").filter(b=>b.language===\"python\");assert.equal(blocks.length,12);assert.deepEqual(new Set(blocks.map(b=>readableKey(b.filename,b.code))),new Set(Object.keys(readableCode)));\n for(const b of blocks){assert.doesNotMatch(b.code,/\\b(if|elif|else|for|while|def|import|try|except|eval|open)\\b|\\.format\\(|\\b(?:int|float)\\(input\\(/);for(const m of b.code.matchAll(/\\{([^}]+)\\}/g))assert.match(m[1],/^[a-z_]+$/);assert.ok(readableContracts[readableKey(b.filename,b.code)].length>0);}\n assert.throws(()=>readableKey(\"unknown.py\",readableCode.main));assert.throws(()=>readableKey(readableBlockNames.main,readableCode.main.replace('print(f\"Total','print(\"Total')));assert.throws(()=>readableContract(\"main\",\"parcel-low\",\"Parcel\\n4\\n\"));assert.throws(()=>readableContract(\"main\",\"unknown\",\"\"));\n});\ntest(\"普通字符串不插入、f与中文单位实际插入，真假只对应同一总量规则\",()=>{\n assert.equal(readableContracts.literal[0].stdout,\"Total kg: {total_mass}\\n\");assert.equal(readableContracts.insert[0].stdout,\"Total kg: 6.0\\n\");assert.equal(readableContracts.chinese[0].stdout,\"总质量（千克）：6.0\\n\");const low=readableContracts.main[0],equal=readableContracts.main[1],high=readableContracts.main[2];assert.match(equal.stdout,/Total kg: 10\\.0\\nWithin 10 kg: True\\n$/);assert.match(high.stdout,/Total kg: 12\\.0\\nWithin 10 kg: False\\n$/);assert.ok(low.stdout.startsWith(\"Item: Count: Mass kg: Item: Parcel\\n\"));\n for(const r of [{exitCode:0,stdout:low.stdout.replace(\"True\",\"False\"),stderr:\"\"},{exitCode:1,stdout:low.stdout,stderr:\"\"},{exitCode:0,stdout:low.stdout,stderr:\"warning\"},{exitCode:0,stdout:\"Item: Parcel\\nCount: 4\\nMass kg: 1.5\\n\"+low.stdout,stderr:\"\"}])assert.throws(()=>checkReadableResult(\"main\",low.id,low.stdin,r));\n assert.throws(()=>checkReadableResult(\"nameError\",\"unbound-field\",\"\",{exitCode:1,stdout:\"\",stderr:\"TypeError: invalid format\\n\"}));\n});\ntest(\"真实保存文件含两题新数据、低等高边界、失败与新PID恢复，预期未模拟执行\",()=>{\n const e=read(\"PYTHON_RUNS\");assert.equal(e.platform,\"win32\");assert.equal(e.allAssertionsPassed,true);assert.equal(e.rows.length,Object.values(readableContracts).reduce((n,c)=>n+c.length,0));for(const key of Object.keys(readableCode)as ReadableKey[])for(const c of readableContracts[key]){const r=e.rows.find((r:{key:string;caseId:string})=>r.key===key&&r.caseId===c.id);assert.ok(r);assert.equal(r.savedSource,readableCode[key]+\"\\n\");assert.equal(r.savedSha256,createHash(\"sha256\").update(r.savedSource).digest(\"hex\"));checkReadableResult(key,c.id,c.stdin,r);}\n for(const key of [\"main\",\"ownSummary\",\"ownBoundary\"]){const rows=e.rows.filter((r:{key:string})=>r.key===key);assert.equal(new Set(rows.map((r:{savedSha256:string})=>r.savedSha256)).size,1);assert.equal(new Set(rows.map((r:{pid:number})=>r.pid)).size,rows.length);}\n const error=e.rows.find((r:{key:string})=>r.key===\"nameError\"),repair=e.rows.find((r:{key:string})=>r.key===\"nameRepair\");assert.equal(error.filename,repair.filename);assert.equal(error.savedSource.replace(\"{total_mas}\",\"{total_mass}\"),repair.savedSource);assert.notEqual(error.pid,repair.pid);assert.equal(e.rows.filter((r:{exitCode:number})=>r.exitCode===1).length,2);assert.doesNotMatch(JSON.stringify(e),/[A-Za-z]:\\\\Users\\\\|token=/);\n});\ntest(\"2.5仅末段状态与依据变化保r1，其他所有旧对象不变且未知改写不获豁免\",()=>{\n const base=read(\"BASELINE\"),id=\"PY101-C02-L05\",before=base.amendmentsBefore[id],current=lessonRegistry.get(id)!,expected=structuredClone(before.lesson);expected.sections.at(-1).blocks[expected.sections.at(-1).blocks.length-1]=current.sections.at(-1)!.blocks.at(-1);assert.deepEqual(current,expected);assert.deepEqual(lessonProgressScope(current),lessonProgressScope(before.lesson));assert.equal(current.contentVersion,1);const pub=publicationManifest.find(p=>p.lessonId===id)!;assert.deepEqual(pub,{...before.publication,technicalEvidence:pub.technicalEvidence});if(pub.technicalEvidence!==before.publication.technicalEvidence)assert.equal(pub.technicalEvidence,\"docs/py101-p13/TRANSITION_AMENDMENTS.md\");\n for(const[k,v]of Object.entries(base.lessons))if(k!==id)assert.equal(sha(lessonRegistry.get(k)),v,k);for(const[k,v]of Object.entries(base.publications))if(k!==id)assert.equal(sha(publicationManifest.find(p=>p.lessonId===k)),v,k);const tampered=structuredClone(current);tampered.title+=\" 未登记\";assert.deepEqual(beforeApprovedPy101Object(\"lessons\",id,tampered,base.head),tampered);const source=readFileSync(\"src/lib/course-engine.ts\",\"utf8\");assert.equal(beforeApprovedPy101Source(\"src/lib/course-engine.ts\",source+\"\\n// extra\",base.head),source+\"\\n// extra\");\n});\ntest(\"第二章真实六槽位及2.5到2.6相邻，第三章未注册，错误归属不可读且整课planned\",()=>{\n const c=getLearningCourse(\"PY101\")!;assert.equal(c.status,\"planned\");assert.deepEqual(c.chapters[1].lessons.map(s=>s.lessonId),[1,2,3,4,5,6].map(n=>`PY101-C02-L0${n}`));if(isReadable(publicationManifest.find(p=>p.lessonId===lesson.id)!)){assert.equal(getAdjacentLessons(c,\"PY101-C02-L05\").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(c,lesson.id).previous?.lessonId,\"PY101-C02-L05\");assert.equal(getAdjacentLessons(c,lesson.id).next?.lessonId,\"PY101-C05-L01\");}assert.equal(c.chapters[2].lessons.length,0);assert.equal([...lessonRegistry.keys()].some(k=>k.startsWith(\"PY101-C03-\")),false);assert.equal(publicationManifest.some(p=>p.lessonId.startsWith(\"PY101-C03-\")),false);assert.equal(resolveLesson(\"ML201\",lesson.id),undefined);\n});\ntest(\"新2.6/r1重载独立，全部旧课版本与其他课程完成记录逐字保留\",()=>{\n const memory=new Map<string,string>(),storage={getItem:(k:string)=>memory.get(k)??null,setItem:(k:string,v:string)=>{memory.set(k,v);}},store=createProgressStore(()=>storage);for(const old of lessonRegistry.values())if(old.id!==lesson.id){const s=lessonProgressScope(old);store.save(s,100,s.sectionIds[0],true);if(s.contentVersion>1)store.save({...s,contentVersion:1},100,s.sectionIds[0],true);}const before=new Map(memory),scope=lessonProgressScope(lesson);assert.equal(progressKey(scope),\"aivora:learning:v2:PY101:PY101-C02-L06:r1\");assert.equal(store.getSnapshot(scope),null);store.save(scope,50,\"boundary-runs\");const restored=parseReadingProgress(createProgressStore(()=>storage).getSnapshot(scope),scope);assert.equal(restored?.section,\"boundary-runs\");assert.equal(restored?.completed,false);for(const[k,v]of before)assert.equal(memory.get(k),v);\n});\n",
+      "afterSha256": "8f1880e35ed20127ea3c6d06ef82b1f62a552660d81ffb8aeae268a6d0560572"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "PY101-C02-L01",
+      "before": {
+        "id": "PY101-C02-L01",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "contentVersion": 1,
+        "title": "用变量保留并更新程序里的值",
+        "subtitle": "自己给任务文字取个名字，预测更新前后的输出，再修复一次读得太早的错误。",
+        "learningTime": {
+          "reading": [
+            10,
+            15
+          ],
+          "practice": [
+            5,
+            8
+          ],
+          "coding": [
+            10,
+            15
+          ],
+          "basis": "editorial-estimate"
+        },
+        "optionalLesson": false,
+        "assessmentMap": [
+          {
+            "objective": 1,
+            "exerciseIds": [
+              "keep-and-update"
+            ]
+          },
+          {
+            "objective": 2,
+            "exerciseIds": [
+              "keep-and-update"
+            ]
+          },
+          {
+            "objective": 3,
+            "exerciseIds": [
+              "repair-first-read"
+            ]
+          }
+        ],
+        "prerequisites": "已完成第一章：能在电脑上创建、保存和完整运行.py，使用print及成对引号，核对文件位置与解释器；接触过1.5的最小赋值和名称读取。沿用已可运行的Python 3与编辑器，不重新安装软件。手机可阅读，独立代码实践需要电脑。",
+        "prerequisiteLinks": [
+          {
+            "title": "1.1 从终端执行文件",
+            "href": "/learn/PY101/PY101-C01-L01#run-script",
+            "note": "补齐.py和print的运行。"
+          },
+          {
+            "title": "1.3 保存后完整重跑",
+            "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+            "note": "核对保存状态、cwd与实际目标。"
+          },
+          {
+            "title": "1.5 最小赋值经验",
+            "href": "/learn/PY101/PY101-C01-L05#first-cells",
+            "note": "回顾名字、文字与命名建议；本节转到普通脚本。"
+          },
+          {
+            "title": "1.6 读懂相关错误",
+            "href": "/learn/PY101/PY101-C01-L06#read-evidence",
+            "note": "保留错误类型及对应代码行。"
+          }
+        ],
+        "objectives": [
+          "在自己创建的.py中用合法名称保存文字并输出当前值，区分名称和引号内的固定文字",
+          "预测同一名称重新赋值前后的输出，只修改第二次赋值，保存重跑并解释哪一行变化",
+          "按执行顺序找出首次赋值前的读取，记录实际错误，保留名称读取语义修复并从头运行"
+        ],
+        "sections": [
+          {
+            "id": "changing-task",
+            "title": "任务变了，程序怎样接着使用新文字？",
+            "navGroup": "start",
+            "navLabel": "名称与值",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "一个小程序先显示当前任务“打包笔记本”，稍后要改为“检查标签”。如果把同一任务文字在各处重复写死，修改时容易漏掉一处。我们可以先给这份文字取一个名字，使用时读这个名字，需要变化时再给它新的值。"
+              },
+              {
+                "type": "paragraph",
+                "text": "在1.5，你用marker和两格代码观察过内核记住的内容。这次回到普通.py文件：自己选名字、写出赋值与读取，并判断程序运行到不同位置时会显示什么。所有例子只用Python自带功能。"
+              }
+            ]
+          },
+          {
+            "id": "name-and-value",
+            "title": "先把一份文字交给名称",
+            "navGroup": "start",
+            "navLabel": "名称与值",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "先看这一行，暂时只理解它的作用，下一段会把它与其他行组合成完整脚本："
+              },
+              {
+                "type": "code",
+                "code": "task_name = \"Pack notebooks\"",
+                "filename": "赋值片段 · 稍后组合",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "task_name是我们选择的名称，意思是任务名称；\"Pack notebooks\"是这次给它的文字值。和1.1一样，配对英文引号标记字符串的开始和结束，引号不是名称的一部分。"
+              },
+              {
+                "type": "paragraph",
+                "text": "执行这条语句时，=让左边的task_name对应右边的值，这个动作叫赋值。这种运行时的对应关系叫绑定。=在这里执行一个动作，并不要求你判断数学等式是否成立。"
+              },
+              {
+                "type": "paragraph",
+                "text": "本节把能绑定到值、供后续读取的名称称为变量，task_name就是变量名。它帮助后面的代码找到当前对应的值。之后再次赋值，可以改变这份对应关系；理解变量时，先抓住名称和当前值这两件事。单独执行赋值不会像print那样显示一行文字。"
+              }
+            ]
+          },
+          {
+            "id": "choose-name",
+            "title": "自己选一个能使用的名称",
+            "navGroup": "start",
+            "navLabel": "名称与值",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "沿用1.5的便捷建议：用英文字母开头，后面接英文字母、数字或下划线，名称中不放空格。例如task_name、label2都符合这种写法。task_name中的下划线把两个词连成一个名称；my plan含空格、1plan以数字开头，都不能用作这里的变量名。"
+              },
+              {
+                "type": "paragraph",
+                "text": "Python有一些保留给语言本身的词，称为关键字，例如for、class，不能拿来作普通变量名。本次可选带含义的task_label、next_task等名字，也避开print，留着这个已有的输出工具。赋值处和读取处的拼写、大小写要一致；task_name和Task_name是两个名字。"
+              },
+              {
+                "type": "paragraph",
+                "text": "这些英文写法方便初次练习，不是Python全部合法名称的清单。下划线开头的名称以及用某些中文等文字组成的名称也可以合法使用。练习接受其他合法名称；一个清楚表达用途的名字，比只写一个字母更容易检查。"
+              }
+            ]
+          },
+          {
+            "id": "read-and-update",
+            "title": "读取当前值，再给同一名称新值",
+            "navGroup": "execution",
+            "navLabel": "读取与更新",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "在刚才的赋值之后接上这一行："
+              },
+              {
+                "type": "code",
+                "code": "print(task_name)",
+                "filename": "读取片段 · 接在首次赋值之后",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "print(task_name)先读取task_name此刻对应的值，再显示它，所以这里会显示Pack notebooks。括号里没有引号，读取的是名称；写print不会自动给尚未有值的名称赋值。"
+              },
+              {
+                "type": "paragraph",
+                "text": "再在这次读取后面写："
+              },
+              {
+                "type": "code",
+                "code": "task_name = \"Check labels\"",
+                "filename": "更新片段 · 接在首次读取之后",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "这还是同一个task_name。执行这一行时，它改为对应Check labels，称为重新赋值。后续再执行print(task_name)，会读到新的文字。名称保持相同，当前值可以随执行的赋值改变。"
+              }
+            ]
+          },
+          {
+            "id": "predict-run",
+            "title": "先预测四行代码，再运行完整脚本",
+            "navGroup": "execution",
+            "navLabel": "读取与更新",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "在自己的练习文件夹新建task_labels.py，源码放在.venv外。用编辑器把下面四行写入，行首都不加缩进。先在本地笔记写下两行预测：第一次print执行时，之前已经发生哪次赋值？第二次print之前又发生了什么？写好再保存运行。"
+              },
+              {
+                "type": "code",
+                "code": "task_name = \"Pack notebooks\"\nprint(task_name)\ntask_name = \"Check labels\"\nprint(task_name)",
+                "filename": "task_labels.py",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "确认编辑器已保存，终端用pwd和Windows的dir（macOS为ls）确认当前目录包含这份文件。沿用第一章已核验的解释器命令：Windows在PowerShell运行下面第一条，macOS在终端运行第二条；若此前一直用py，保持使用py。命令输入在终端提示符后，不放进.py，也不只运行编辑器选区。"
+              },
+              {
+                "type": "code",
+                "code": "python task_labels.py",
+                "filename": "Windows · PowerShell · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "python3 task_labels.py",
+                "filename": "macOS · 终端 · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "如果沿用项目.venv而未激活，也可以按1.4直接调用已核验的环境解释器，脚本参数仍为task_labels.py。本节不创建新环境。实际结果应为："
+              },
+              {
+                "type": "code",
+                "code": "Pack notebooks\nCheck labels",
+                "filename": "完整运行 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "table",
+                "caption": "沿实际执行顺序看当前值",
+                "columns": [
+                  "刚执行到哪里",
+                  "task_name当前对应什么",
+                  "这一步的显示"
+                ],
+                "rows": [
+                  [
+                    "第1行赋值后",
+                    "Pack notebooks",
+                    "无普通输出"
+                  ],
+                  [
+                    "第2行print",
+                    "Pack notebooks",
+                    "Pack notebooks"
+                  ],
+                  [
+                    "第3行重新赋值后",
+                    "Check labels",
+                    "无普通输出"
+                  ],
+                  [
+                    "第4行print",
+                    "Check labels",
+                    "Check labels"
+                  ]
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "第一条print已经把旧值显示出来，第三行才开始执行新的赋值。后来的赋值会影响后续读取，不会倒过来改写已经显示的第一行。判断某次输出时，要看它执行之前真正发生的动作。"
+              }
+            ]
+          },
+          {
+            "id": "change-one-value",
+            "title": "只改第二次赋值，会改变哪一行？",
+            "navGroup": "execution",
+            "navLabel": "读取与更新",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "现在自己另选一项任务，只改第三行引号内的文字，其他三行保持不动。先写两行新预测，再保存，用同一条命令从头运行整个文件，比较这一次和上一次的真实输出。"
+              },
+              {
+                "type": "paragraph",
+                "text": "例如把第二次赋值的文字换成Sort envelopes，第一行仍应为Pack notebooks，第二行变为Sort envelopes。原因是第一次读取之前的赋值没有改变，而第二次读取之前执行了修改后的赋值。用你自己选的文字再核对一次，不用把这个变式也抄进文件末尾。"
+              },
+              {
+                "type": "paragraph",
+                "text": "若仍显示旧文字，先按1.3核对保存标记、当前目录与执行目标，再比较源码。编辑内容、保存文件与运行程序是三个动作，新的输出来自这次实际执行。"
+              }
+            ]
+          },
+          {
+            "id": "literal-or-name",
+            "title": "有引号的文字和无引号的名称",
+            "navGroup": "compare",
+            "navLabel": "区分与排错",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "回顾1.1：引号围起来的是固定字符串。另建name_or_text.py，先预测下面两次显示会不会相同，再保存并完整运行；命令中的文件名换成name_or_text.py。"
+              },
+              {
+                "type": "code",
+                "code": "task_name = \"Ready\"\nprint(\"task_name\")\nprint(task_name)",
+                "filename": "name_or_text.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "task_name\nReady",
+                "filename": "对照 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "print(\"task_name\")直接显示引号里的task_name这几个字符，没有读取这个名称。print(task_name)读取当前绑定的值，所以显示Ready。两行都使用print，差别在括号中的内容：固定文字，还是名称读取。"
+              },
+              {
+                "type": "paragraph",
+                "text": "如果想保存Ready这段文字，就保留它两端的引号。去掉后，Ready会被当成另一个名称；若本次程序没有给它提供值，读取就可能失败。下一段用一个更容易定位的完整脚本实际观察这种未定义名称错误。"
+              }
+            ]
+          },
+          {
+            "id": "fresh-script",
+            "title": "每次从终端启动，是本次脚本的执行",
+            "navGroup": "compare",
+            "navLabel": "区分与排错",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "本节使用的是常规终端命令启动的新Python脚本进程：每次运行，都会从文件开头按源码顺序执行这几条语句。上一次运行结束时给名称赋过值，不会让下一次新进程自动拥有那个绑定。源码文件保存了语句，这次真正执行到赋值时才建立对应关系。"
+              },
+              {
+                "type": "paragraph",
+                "text": "1.5的Notebook可以在仍运行的同一内核中保留先前执行过的名称；那是另一种执行方式。这里不用Notebook旧状态补齐.py中缺失的步骤。把脚本保存并从头运行，是检查当前文件本身是否足够的办法。"
+              }
+            ]
+          },
+          {
+            "id": "first-read-error",
+            "title": "赋值写在后面，为什么第一行仍报错？",
+            "navGroup": "compare",
+            "navLabel": "区分与排错",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "在新的dispatch_label.py中保存下面两行。先预测这次能否显示Packed T7，再从终端完整执行它。这是有意安排的失败实验，预期会出现NameError；保留你实际看到的相关代码行及错误末行。"
+              },
+              {
+                "type": "code",
+                "code": "print(dispatch_label)\ndispatch_label = \"Packed T7\"",
+                "filename": "dispatch_label.py · 预期出现NameError",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "运行到第一行时，程序需要读取dispatch_label，却还没有执行第二行的赋值，所以本次没有正常的任务输出。错误类型是NameError，描述会提到dispatch_label未定义；文件路径、行号排版与箭头可能随环境或Python版本变化，以自己的真实回溯为准。后面有赋值文本，并不等于它已经执行。"
+              },
+              {
+                "type": "paragraph",
+                "text": "修复要让提供值的赋值先于读取执行。保留通过名称显示任务的做法，自己调整顺序，保存后从头运行，核对是否正常显示Packed T7。这次原因来自已给定脚本的执行顺序；无需重装Python、安装包或改PATH。其他NameError仍要结合对应代码判断，不能都套用同一根因。"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "自己写一次更新，再独立修复一次读取",
+            "navGroup": "practice",
+            "navLabel": "独立练习",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "先合上示例和参考答案完成任务。网页输入框只是临时笔记；正式成果保存在本地.py及短记录里。只需列出源码、命令、预测与实际结果，不必抄成长篇报告。"
+              },
+              {
+                "type": "exercise",
+                "id": "keep-and-update",
+                "title": "自己的任务标签会怎样改变？",
+                "kind": "代码",
+                "prompt": "创建与正文不同的.py文件，自选新的任务情境、一个合法名称和两段不同文字。自己写第一次赋值与名称读取，再写同一名称的第二次赋值与名称读取。运行前预测两行输出，保存并真实执行。随后只改第二次赋值的文字，再预测、保存并完整运行一次。交付实际源码（保留改前/改后差异）、运行命令、两次预测和两次真实输出；简短说明为什么第一行不随后面的赋值倒退改变，再用一句话区分名称与引号里的文字。名称不必是task_name，接受其他合法写法；不能只交参考输出。",
+                "hints": [
+                  "沿程序从上到下走到每一次print，观察此前最近执行过哪次给这个名称赋值的语句。",
+                  "把自己的两次赋值和两次读取分别标出，核对实际顺序。只改后一次赋值后，重新预测哪些读取会遇到它；仍由你独立选名、填新文字、保存和执行。"
+                ],
+                "solution": [
+                  "例如布展任务另建gallery_plan.py，选display_note：它以字母开头，只有字母和下划线，且不是关键字。以下只是一种参考，其他合法名称和任务内容同样接受。",
+                  "参考初稿从上到下写四行，分号只是这里的分隔说明，不输入文件：第1行：display_note = \"Hang posters\"；第2行：print(display_note)；第3行：display_note = \"Place signs\"；第4行：print(display_note)。两段文字用配对引号包住，两次print中的名称与赋值拼写一致。先预测Hang posters、Place signs两行，再保存；Windows可用python gallery_plan.py，macOS用python3 gallery_plan.py，保留本人真实结果。",
+                  "只修改后一次赋值后的四行依次为：第1行：display_note = \"Hang posters\"；第2行：print(display_note)；第3行：display_note = \"Open doors\"；第4行：print(display_note)。重新预测后完整运行，应为Hang posters、Open doors。第一次print发生在后一次赋值之前，因此第一行保持原样，第二行读取更新后的值。",
+                  "display_note是不带引号、用于读取的名称，\"Hang posters\"等是引号内固定文字。若把print中的名称加上引号，会改成显示名称文字本身，已经改变读取含义。",
+                  "常错包括：只改编辑区未保存、命令指向另一文件、赋值/读取拼写或大小写不同。后两种名称差异若导致读取未定义名称，可能出现NameError；漏掉配对引号可能是SyntaxError，把应为文字的内容写成未定义名称也可能NameError。按实际行检查，不只抄错误名。接受配对单引号和中文文字，但必须保留自选内容与两次实际执行。"
+                ],
+                "rubric": [
+                  "实际新.py使用自选合法名称与新情境，两段文字不同；有同名两次赋值及两次名称读取，源码和运行命令对应。",
+                  "两轮都有运行前两行预测和真实输出；改后只改变第二次赋值，结果与执行位置相符，差异有核对。",
+                  "结合本人代码说明第一行已在更新前显示，不会被后来赋值改写；能区分名称读取与引号内固定文字。读完标记、复制样例或只有解释不代替代码与运行。"
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "下一题使用first-read-error中的两行dispatch_label起始源码，可回到上方代码框复制到另建的repair_label.py。它故意在第一次赋值前读取名称；不要先套用修复参考。"
+              },
+              {
+                "type": "exercise",
+                "id": "repair-first-read",
+                "title": "为什么脚本还没开始显示任务就报错？",
+                "kind": "实验",
+                "prompt": "确认repair_label.py的真实位置与保存状态，内容为上方dispatch_label两行故障源码。先预测首次运行现象，再从终端实际执行，保留真实错误类型、相关代码行和末行。按这次执行顺序判断：读取时，这个名称是否已经有值？自己决定安全修复方法，保留变量赋值与名称读取的语义，保存并从头重跑。交付修复前后源码、命令、错误及恢复后的真实输出，再简短解释本次新脚本为何不能依赖以前Notebook内核的状态。只改成print(\"Packed T7\")跳过了名称读取，不能算本题完成；不通过重装、改PATH或删环境解决。",
+                "hints": [
+                  "从这次脚本第一条执行语句开始看。它需要的名字，在此前的本次执行中已经获得值了吗？",
+                  "分别找到提供值的赋值语句与读取语句，比较它们在文件中的位置；考虑怎样调整依赖顺序并保留名称读取，然后自行保存与完整重跑。"
+                ],
+                "solution": [
+                  "新脚本先执行print(dispatch_label)，该名称尚未被本次执行绑定，因此真正运行会出现NameError，且没有Packed T7正常输出。赋值虽然写在文件第二行，但报错发生时还没有执行到那里。先保存本人实际回溯和对应行，不用参考文字代替故障证据。",
+                  "一种修复后的repair_label.py分两行写：第1行：dispatch_label = \"Packed T7\"；第2行：print(dispatch_label)。先提供值再读取。可以把赋值移到读取前，也可以把读取移到赋值后；保留同一名称和任务文字即可。",
+                  "保存后从文件所在目录运行python repair_label.py（macOS用python3，已验证的py也可）。预期正常输出Packed T7，实际结果需自己保留；恢复成功要对应保存的整份源码。",
+                  "本节从终端启动新的脚本进程，不会继承先前另一个Notebook内核中的名称。即使旧内核曾有同名变量，也要让当前文件自己提供读取前所需的值。",
+                  "常错是只把print改成固定文字、只跑选区、依赖旧交互窗口或只写“调整顺序”而没保存重跑。若改了名称，要在赋值和读取处一致修改并说明；若真实错误不同，先核对实际文件和代码，不伪造NameError。"
+                ],
+                "rubric": [
+                  "在已确认的保存文件上真正复现首次读取错误，保留实际命令、相关代码与NameError，不以预贴错误文字替代。",
+                  "依据本次执行先后指出读取时尚未绑定；修复仍含赋值及名称读取，提供值先执行，未用输出常量绕开任务。",
+                  "保存修复源码并从头运行，保留真实Packed T7输出与命令；能解释新脚本进程和旧Notebook内核状态的区别。"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "next-step",
+            "title": "用自己的文件检查这三件事",
+            "navGroup": "finish",
+            "navLabel": "回顾与后续",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "summary",
+                "points": [
+                  "给值选择合法名称，执行赋值后再通过名称读取；引号中的内容表示固定文字。",
+                  "按执行位置预测当前值，重新赋值影响后续读取；保存并完整重跑验证自己的改动。",
+                  "遇到本次未定义名称错误，结合相关代码与执行先后检查提供值的步骤，再保留语义修复和复跑。"
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "保留两个自己的.py及短记录，能现场换一个名字或任务文字并再次验证，才有独立操作的证据。网页读完只记录阅读，不会自动判断这些程序是否达标。"
+              },
+              {
+                "type": "paragraph",
+                "text": "接着学习2.2「分清文字、整数、小数和真假值」，它已有待人工审核试读，将用实际类型观察接续本节的名称与值。2.3、2.4也已有待人工审核试读，2.5–2.6尚未制作；第5章函数试读还需要表达式与控制流程等中间先修，不能把阅读器的可读课时导航当作直接跳学建议。整门PY101仍在筹备。"
+              }
+            ]
+          }
+        ],
+        "resources": [],
+        "references": [
+          {
+            "title": "Python赋值语句",
+            "href": "https://docs.python.org/3.14/reference/simple_stmts.html#assignment-statements",
+            "note": "核对名称的绑定和重新绑定。"
+          },
+          {
+            "title": "表达式中的名称",
+            "href": "https://docs.python.org/3/reference/expressions.html#identifiers-names",
+            "note": "核对名称读取与未绑定情形。"
+          },
+          {
+            "title": "合法名称与关键字",
+            "href": "https://docs.python.org/3.14/reference/lexical_analysis.html#identifiers",
+            "note": "名称字符、大小写和保留词。"
+          },
+          {
+            "title": "错误与异常",
+            "href": "https://docs.python.org/3/tutorial/errors.html",
+            "note": "识别错误类型和相关代码位置；本节不教异常处理。"
+          },
+          {
+            "title": "Python入门",
+            "href": "https://docs.python.org/3/tutorial/introduction.html",
+            "note": "赋值、字符串及最小例子。"
+          },
+          {
+            "title": "从终端执行脚本",
+            "href": "https://docs.python.org/3.14/using/cmdline.html#interface-options",
+            "note": "脚本文件参数和常规执行方式。"
+          }
+        ]
+      },
+      "afterSha256": "f1df6afaf46b084d53f2b711b11bf96cc276b6c102100f5102396dd82f5270c3"
+    },
+    {
+      "id": "PY101-C02-L02",
+      "before": {
+        "id": "PY101-C02-L02",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "contentVersion": 1,
+        "title": "分清文字、整数、小数和真假值",
+        "subtitle": "两个值都显示3，怎样知道一个是数量、另一个是文字？先预测，再用type取得证据。",
+        "learningTime": {
+          "reading": [
+            12,
+            18
+          ],
+          "practice": [
+            6,
+            10
+          ],
+          "coding": [
+            12,
+            18
+          ],
+          "basis": "editorial-estimate"
+        },
+        "optionalLesson": false,
+        "assessmentMap": [
+          {
+            "objective": 1,
+            "exerciseIds": [
+              "write-four-values"
+            ]
+          },
+          {
+            "objective": 2,
+            "exerciseIds": [
+              "write-four-values",
+              "same-display-different-type"
+            ]
+          },
+          {
+            "objective": 3,
+            "exerciseIds": [
+              "same-display-different-type"
+            ]
+          }
+        ],
+        "prerequisites": "已完成第一章与2.1：能选合法名称、赋值和重新赋值，区分名称与引号文字，使用print，保存并从终端完整运行.py。沿用已有Python 3和编辑器，无需安装库；手机可读，代码操作需要电脑。",
+        "prerequisiteLinks": [
+          {
+            "title": "2.1 名称与当前值",
+            "href": "/learn/PY101/PY101-C02-L01#name-and-value",
+            "note": "复习赋值、绑定和名称读取。"
+          },
+          {
+            "title": "2.1 名称与引号内文字",
+            "href": "/learn/PY101/PY101-C02-L01#literal-or-name",
+            "note": "复习固定字符串与名称读取的差别。"
+          },
+          {
+            "title": "2.1 保存并运行完整脚本",
+            "href": "/learn/PY101/PY101-C02-L01#predict-run",
+            "note": "补齐预测、保存及实际执行。"
+          },
+          {
+            "title": "1.3 保存与重跑",
+            "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+            "note": "核对保存状态和准确执行目标。"
+          }
+        ],
+        "objectives": [
+          "按文字标记、完整件数、测量值和真假状态的用途，独立选择Python字面量、写入变量并说明理由",
+          "在真实.py中用type取得str、int、float、bool的类型证据，解释为什么相同显示不代表相同类型",
+          "保持名称不变，预测并验证整数与数字文本的重新绑定，换新数值重跑并解释当前值与类型的关系"
+        ],
+        "sections": [
+          {
+            "id": "same-display",
+            "title": "两个值都显示3，就一样吗？",
+            "navGroup": "values",
+            "navLabel": "先看值",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "整理物品时，一份记录要保存物品数量，另一份记录要保存标签上印的文字。数量是3，标签文字恰好也是“3”。用2.1学过的赋值，可以分别交给两个名称。它们在屏幕上会有什么不同？先在本地笔记写下下面两个print的预测。"
+              },
+              {
+                "type": "code",
+                "code": "item_count = 3\ncount_text = \"3\"\nprint(item_count)\nprint(count_text)",
+                "filename": "same_display.py",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "在自己的练习文件夹新建same_display.py，输入这四行，行首不加缩进，源码放在.venv外。保存后用pwd和Windows的dir（macOS为ls）确认目标，再在终端完整运行对应命令；沿用之前已核验的Python。若此前Windows一直用py，就保持py。"
+              },
+              {
+                "type": "code",
+                "code": "python same_display.py",
+                "filename": "Windows · PowerShell · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "python3 same_display.py",
+                "filename": "macOS · 终端 · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "3\n3",
+                "filename": "普通输出 · 运行后核对",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "两行确实都显示3。第一份值3没有引号，是整数；第二份值\"3\"有配对引号，是字符串，保存的是文字。数字字符放进字符串后仍然是文字，不会因为外观看起来像数量就自动变成整数。"
+              },
+              {
+                "type": "paragraph",
+                "text": "类型描述值属于哪种数据类别。整数的类型名是int，字符串的类型名是str。print把值显示为文字，引号本身不显示，所以这两次普通输出没有把原来的类型差别呈现出来。我们稍后会用一个观察工具核对，先再认识两种常用的值。"
+              }
+            ]
+          },
+          {
+            "id": "add-measurement",
+            "title": "测量值怎样写进程序？",
+            "navGroup": "values",
+            "navLabel": "先看值",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "同一批物品还要记录单件质量，单位约定为千克，数值为1.5。把下面两行另存为measurement.py，先预测，再把运行命令中的文件名换成它，保存并完整执行。"
+              },
+              {
+                "type": "code",
+                "code": "item_mass = 1.5\nprint(item_mass)",
+                "filename": "measurement.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "1.5",
+                "filename": "测量例 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "1.5这种带小数点的数值写法在这里得到float类型，通常称为浮点数；如果写成\"1.5\"，得到的仍是str文字。程序中数值不加引号，单位由记录说明，不把kg直接接在数值后面。"
+              },
+              {
+                "type": "paragraph",
+                "text": "float有表示精度的限制，不能保证任意十进制小数都能精确保存。本课先学习辨认和观察这种类型，暂时不做精度运算。int可以表示完整件数，float适合本例中的测量记录，两者的用途要结合你保存的内容判断。"
+              }
+            ]
+          },
+          {
+            "id": "ready-state",
+            "title": "准备好了，是状态还是文字？",
+            "navGroup": "values",
+            "navLabel": "先看值",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "除了数量和质量，还可以记录“是否已经准备好”。True表示真，False表示假，这两个值属于bool类型，也叫布尔值。Python中必须按True、False的大小写写，开头大写，其余小写；它们本身不加引号。"
+              },
+              {
+                "type": "paragraph",
+                "text": "下面让is_ready记录已准备好，让is_waiting记录当前没有在等待。ready_text则只保存标签上写的True这个单词。先预测三条普通输出，再保存为ready_state.py并完整运行。"
+              },
+              {
+                "type": "code",
+                "code": "is_ready = True\nready_text = \"True\"\nis_waiting = False\nprint(is_ready)\nprint(ready_text)\nprint(is_waiting)",
+                "filename": "ready_state.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "True\nTrue\nFalse",
+                "filename": "状态与文字 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "前两行看起来相同：True是真假状态值，\"True\"是带引号的字符串。第三行False也是bool值。名字里的is只是帮助人读懂用途，并不替Python决定类型；值实际怎样写才是接下来要核对的依据。"
+              }
+            ]
+          },
+          {
+            "id": "inspect-type",
+            "title": "用type看当前值属于哪一类",
+            "navGroup": "inspect",
+            "navLabel": "观察类型",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "type是Python自带的类型观察工具。把一个值或已有名称放在它的括号中，它会取得这个值的类型。这里使用一个参数，也就是括号中交给它的一份值；观察不会把原值转换成另一类型。自己选变量名时，先把print和type这两个名字留给现成工具。"
+              },
+              {
+                "type": "paragraph",
+                "text": "回到same_display.py，在原四行之后追加下面这一行；这个文件前面已经给item_count赋值为3。先从里面看：item_count读取当前值3；type(item_count)取得它的类型；外层print再把类型结果显示出来。两层括号分别成对，执行观察时先得到里面的结果，再交给外面的print。写下新增一行的预测，再保存并从头运行same_display.py。"
+              },
+              {
+                "type": "code",
+                "code": "print(type(item_count))",
+                "filename": "类型观察片段 · 接在item_count赋值之后",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "<class 'int'>",
+                "filename": "新增类型输出 · 接在两行3之后",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "<class 'int'>是Python显示“这是int类型”的一种形式。连同尖括号、单引号一起看，这是刚才程序的输出，不是要复制到.py中的新语句；本课不需要学习class定义。"
+              },
+              {
+                "type": "paragraph",
+                "text": "现在另建inspect_pair.py，使用原来的3和\"3\"。先写两次类型预测，再保存并运行下面的完整小程序。"
+              },
+              {
+                "type": "code",
+                "code": "item_count = 3\ncount_text = \"3\"\nprint(type(item_count))\nprint(type(count_text))",
+                "filename": "inspect_pair.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "<class 'int'>\n<class 'str'>",
+                "filename": "两份值的类型 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "两次普通print都显示3，因为字符串显示时不带包住它的引号；两次type结果不同，因为原值分别是整数和字符串。普通显示回答“显示出来是什么”，type观察回答“当前值属于哪类”，需要把这两份证据一起看。"
+              },
+              {
+                "type": "paragraph",
+                "text": "再回到ready_state.py，在原有代码末尾加上这三行。它们读取该文件前面已经赋值的三个名称，先预测各自类型，再保存并从头运行整个文件。"
+              },
+              {
+                "type": "code",
+                "code": "print(type(is_ready))\nprint(type(ready_text))\nprint(type(is_waiting))",
+                "filename": "类型观察片段 · 接在ready_state.py的赋值之后",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "<class 'bool'>\n<class 'str'>\n<class 'bool'>",
+                "filename": "追加的三条类型输出 · 接在原三条普通输出后",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "True和False在这里都观察为bool，带引号的\"True\"观察为str。若本来想写状态却得到str，先检查是否把True或False放进了引号；若报NameError且提到true或false，再核对字面量大小写和实际代码，不把这种拼写问题当成缺包。"
+              }
+            ]
+          },
+          {
+            "id": "four-types",
+            "title": "把四种值和观察结果放在一起",
+            "navGroup": "inspect",
+            "navLabel": "观察类型",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "把前面的观察组合成four_values.py：前四行赋值，中间四行显示值，最后四行显示类型。空行只是分开这三组，方便阅读。先预测八行输出，再保存，从终端完整运行它。"
+              },
+              {
+                "type": "code",
+                "code": "item_count = 3\ncount_text = \"3\"\nitem_mass = 1.5\nis_ready = True\n\nprint(item_count)\nprint(count_text)\nprint(item_mass)\nprint(is_ready)\n\nprint(type(item_count))\nprint(type(count_text))\nprint(type(item_mass))\nprint(type(is_ready))",
+                "filename": "four_values.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "3\n3\n1.5\nTrue\n<class 'int'>\n<class 'str'>\n<class 'float'>\n<class 'bool'>",
+                "filename": "完整主例 · 八行预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "将真实结果和预测逐行比较。item_mass对应的1.5为float，is_ready对应的True为bool；前两行普通显示相同，末尾的类型记录却能区分整数与数字文本。下面这张表只收拢已经观察过的四种写法，独立练习还要换成你自己的值。"
+              },
+              {
+                "type": "table",
+                "caption": "四种基本值的写法与本课用途",
+                "columns": [
+                  "类型",
+                  "例子",
+                  "本课主要用途"
+                ],
+                "rows": [
+                  [
+                    "str",
+                    "\"Box A\"",
+                    "文字、标记"
+                  ],
+                  [
+                    "int",
+                    "3",
+                    "完整件数"
+                  ],
+                  [
+                    "float",
+                    "1.5",
+                    "测量数值"
+                  ],
+                  [
+                    "bool",
+                    "True或False",
+                    "真假状态"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "id": "same-name-new-type",
+            "title": "名字没换，当前值的类型可以换",
+            "navGroup": "rebind",
+            "navLabel": "同名与类型",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "2.1中，你给同一名称换过另一段任务文字。这次把batch_count先交给整数8，再改为对应数字文本\"8\"。先预测下面四行输出：哪两行显示的文字相同，哪两行给出不同类型？名称有没有换？写好再保存为changing_type.py并完整运行。"
+              },
+              {
+                "type": "code",
+                "code": "batch_count = 8\nprint(batch_count)\nprint(type(batch_count))\n\nbatch_count = \"8\"\nprint(batch_count)\nprint(type(batch_count))",
+                "filename": "changing_type.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "8\n<class 'int'>\n8\n<class 'str'>",
+                "filename": "同名重新赋值 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "名称一直是batch_count。第一次读取时，它对应整数8；第二次赋值后，它对应字符串\"8\"。类型来自当前读到的值，没有永久固定在变量名上。这次赋值让同一名称改为对应另一份值，并没有把原来那个整数本身改成字符串。"
+              },
+              {
+                "type": "paragraph",
+                "text": "所以只看名称叫不叫count，或者普通输出有没有数字字符，都不足以判断类型。先看本次实际执行的赋值，再用type观察当前值，就能核对自己的判断。"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "换成自己的值，留下类型证据",
+            "navGroup": "practice",
+            "navLabel": "独立练习",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "先不看参考答案，独立写两份短.py。每份只需源码、实际命令、预测与真实输出，加几句理由；网页输入框是临时思考区，正式代码和运行记录保存在本地。"
+              },
+              {
+                "type": "exercise",
+                "id": "write-four-values",
+                "title": "自己建立四类值",
+                "kind": "代码",
+                "prompt": "新建与正文不同的.py，自选一个新实际情境，例如个人用品整理或活动准备，不照抄正文物品。为文字标记、完整件数、测量值和真假状态各选一个合法名称及合适的新值。运行前记下四个值、预期显示和类型；自己写四份赋值，用print显示值，再用print(type(名称))观察类型。保存并真实运行，逐项核对预测。交付源码、运行命令、四项预测与真实结果，并简短说明每种值为何适合用途；测量项注明单位即可，不需要拼接输出、安装库或转换类型。接受不同情境、名称、数值和配对引号。",
+                "hints": [
+                  "先看你选的值怎样写：有没有引号，是完整整数、带小数点的数值，还是真假状态？要保存的是文字还是数量？",
+                  "先组织四份赋值，再逐项显示值和类型；每次type读取的名称要与赋值一致。保持两层括号配对，仍由你填入情境、名字、新值和预测，再保存运行。"
+                ],
+                "solution": [
+                  "例如改用绘画用品情境，新建drawing_kit.py。下面每个“第几行”都各写一行，分隔说明不输入源码；你自己的情境和值应另选。",
+                  "先保存四份值：第1行：kit_label = \"Sketch kit\"；第2行：pencil_count = 6；第3行：pencil_length_cm = 17.5；第4行：is_packed = False。标签是文字用str，6支铅笔是完整件数用int，17.5厘米长度是测量值用float，尚未装好用False表示bool状态。",
+                  "接着显示四份值：第5行：print(kit_label)；第6行：print(pencil_count)；第7行：print(pencil_length_cm)；第8行：print(is_packed)。再观察四个类型：第9行：print(type(kit_label))；第10行：print(type(pencil_count))；第11行：print(type(pencil_length_cm))；第12行：print(type(is_packed))。名称先赋值再读取，print与type的括号分别配对。",
+                  "先预测八行：Sketch kit、6、17.5、False、<class 'str'>、<class 'int'>、<class 'float'>、<class 'bool'>。保存后运行python drawing_kit.py（macOS用python3，已核验的py也可），交本人真实结果与对照，而非只抄这组预期。",
+                  "常错是将6写成\"6\"、将False写成\"False\"，它们能运行却会得到str；写成false而此前没有该名称会NameError；漏一边引号可能SyntaxError。若测量写成17，观察为int；17.0则为float。根据实际用途和type结果修正，接受不同合法名称、单引号、中文标签或其他新的合理值。"
+                ],
+                "rubric": [
+                  "真实新.py含自选情境、合法名称与四种新值，分别满足文字/完整件数/测量/真假状态的用途；理由与字面量对应。",
+                  "有运行前四项值/显示/类型预测，实际命令及完整输出；能用本人type结果确认str、int、float、bool，差异有核对。",
+                  "测量单位清楚，True/False和引号使用正确，显示与类型观察均真实执行；复制参考答案、Quiz或读完标记不代替代码成果。"
+                ]
+              },
+              {
+                "type": "exercise",
+                "id": "same-display-different-type",
+                "title": "相同显示，不同类型",
+                "kind": "代码",
+                "prompt": "另建一个短.py，自选与正文不同的合法名称和一个新的非负完整件数（不使用3或8）。先让该名称对应这个整数，显示值和type结果；再让同一名称对应表示同一数量的带引号数字文本，再显示值和type。运行前预测两次普通显示及两次类型输出，保存并实际运行。然后保持名称相同，把两阶段都换成另一组对应的整数/数字文本，重新预测、保存和完整运行。交付改前/改后源码、命令、两轮预测与真实结果，再简短解释为什么显示相同而类型不同、为何不能由名称判断类型。任务只需赋值、print和type，不使用转换或运算。",
+                "hints": [
+                  "沿实际执行顺序看同一个名字：第一次对应的值带引号吗？后一次呢？分别预测普通显示与类型观察。",
+                  "为每次赋值配上显示值和显示类型两步，保证两个阶段读取同一名称；换新数量时检查整数和数字文本是否仍对应，再由你保存重跑并核对。"
+                ],
+                "solution": [
+                  "例如新建crate_types.py，选crate_total和完整件数12。六行依次为：第1行：crate_total = 12；第2行：print(crate_total)；第3行：print(type(crate_total))；第4行：crate_total = \"12\"；第5行：print(crate_total)；第6行：print(type(crate_total))。两阶段保持同名，整数不加引号，数字文本使用配对引号。",
+                  "先预测四行12、<class 'int'>、12、<class 'str'>，再运行python crate_types.py（macOS用python3）。普通显示相同，因为文字12打印时不显示包住它的引号；类型分别来自整数和字符串。",
+                  "第二轮仍用crate_total，换27和\"27\"，六行依次为：第1行：crate_total = 27；第2行：print(crate_total)；第3行：print(type(crate_total))；第4行：crate_total = \"27\"；第5行：print(crate_total)；第6行：print(type(crate_total))。先预测27/int/27/str（类型的完整显示形式同上），保存并完整运行，交本人真实四行结果。",
+                  "名称没有改变，后一次赋值让它对应另一类型的值；type读取本次当前值，而不是从crate_total的拼写猜类型。接受其他新整数和合法名称，数字文本用单引号或双引号都可。",
+                  "常错是两个阶段换了不同名称、只打印值未观察类型、把字符串再次写成无引号数字，或改新数量后没保存重跑。若只改一阶段，普通显示会不同，先对照题意与实际源码修正；不要引入转换来绕过两种字面量写法。"
+                ],
+                "rubric": [
+                  "同一合法名称在两个阶段分别对应整数和表示同一数量的字符串，源码包含两次普通显示和两次type观察，内容由学生另选。",
+                  "两轮均先预测普通输出与类型再实际运行；换另一组数量后保存完整重跑，源码、命令与真实结果可对应。",
+                  "结合自己的输出解释显示相同不等于类型相同，名称未固定为某种类型，当前读到的值决定本次类型结果；只交解释或参考输出不足完成。"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "next-step",
+            "title": "先确认值的类型，再准备使用它",
+            "navGroup": "finish",
+            "navLabel": "回顾与后续",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "summary",
+                "points": [
+                  "给文字、完整件数、测量值和真假状态选择合适的字面量，分别观察str、int、float、bool。",
+                  "普通print可能让不同类型看起来相同；读取名称，取得type结果，再显示它，可以核对类型。",
+                  "同一名称可以先后对应不同类型的值。预测、保存和完整重跑，检查每一次读取发生时对应什么。"
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "保留两份自己写的程序及短记录，换一个值后能重新预测和核对，才有这次代码操作的证据。网页读完只记录阅读，type输出本身也不能替代你对用途和结果的解释。"
+              },
+              {
+                "type": "paragraph",
+                "text": "接着学习2.3「用表达式算出一个结果」，它已有待人工审核试读，2.4–2.6仍在规划。第5章函数试读还需要表达式与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。"
+              }
+            ]
+          }
+        ],
+        "resources": [],
+        "references": [
+          {
+            "title": "Python内置类型",
+            "href": "https://docs.python.org/3.14/library/stdtypes.html",
+            "note": "核对字符串、整数、浮点数和布尔值的基本意义。"
+          },
+          {
+            "title": "type单参数观察",
+            "href": "https://docs.python.org/3.14/library/functions.html#type",
+            "note": "核对取得值类型的行为，本课不涉及三参数形式。"
+          },
+          {
+            "title": "Python入门",
+            "href": "https://docs.python.org/3/tutorial/introduction.html",
+            "note": "数值、字符串及赋值的短例。"
+          },
+          {
+            "title": "数据模型中的值与类型",
+            "href": "https://docs.python.org/3.14/reference/datamodel.html#objects-values-and-types",
+            "note": "核对类型与值的关系，不要求学习对象机制。"
+          },
+          {
+            "title": "浮点数的表示限制",
+            "href": "https://docs.python.org/3.14/tutorial/floatingpoint.html",
+            "note": "核对精度边界，详细原理留后续按需学习。"
+          }
+        ]
+      },
+      "afterSha256": "4d08818ba271d4bd63bbe9ebe7a56534747c078f9f282a45c743c559a6214291"
+    },
+    {
+      "id": "PY101-C02-L03",
+      "before": {
+        "id": "PY101-C02-L03",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "contentVersion": 1,
+        "title": "用表达式算出一个结果",
+        "subtitle": "从盒数、每盒件数和散件写出计算：先手算，再检查Python算出的数字是否符合题意。",
+        "learningTime": {
+          "reading": [
+            12,
+            18
+          ],
+          "practice": [
+            6,
+            10
+          ],
+          "coding": [
+            15,
+            22
+          ],
+          "basis": "editorial-estimate"
+        },
+        "optionalLesson": false,
+        "assessmentMap": [
+          {
+            "objective": 1,
+            "exerciseIds": [
+              "calculate-and-revise",
+              "compare-grouping"
+            ]
+          },
+          {
+            "objective": 2,
+            "exerciseIds": [
+              "compare-grouping"
+            ]
+          },
+          {
+            "objective": 3,
+            "exerciseIds": [
+              "calculate-and-revise",
+              "compare-grouping"
+            ]
+          }
+        ],
+        "prerequisites": "已完成第一章及2.1–2.2：能用合法名称保存int/float数值，用print和type观察，先预测再保存、从终端完整运行.py。沿用已有Python 3与编辑器，不安装新库；手机可读，代码操作需要电脑。",
+        "prerequisiteLinks": [
+          {
+            "title": "2.1 赋值与名称读取",
+            "href": "/learn/PY101/PY101-C02-L01#name-and-value",
+            "note": "回顾名称怎样取得右边的值。"
+          },
+          {
+            "title": "2.1 预测与完整运行",
+            "href": "/learn/PY101/PY101-C02-L01#predict-run",
+            "note": "确认本次真正执行的是保存的整份脚本。"
+          },
+          {
+            "title": "2.2 数值与文字",
+            "href": "/learn/PY101/PY101-C02-L02#add-measurement",
+            "note": "数值不加引号，测量值与单位分清。"
+          },
+          {
+            "title": "2.2 类型观察",
+            "href": "/learn/PY101/PY101-C02-L02#inspect-type",
+            "note": "需要时复习print(type(名称))的内外两步。"
+          },
+          {
+            "title": "1.3 保存与重跑",
+            "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+            "note": "输出没变化时检查保存状态和实际执行目标。"
+          }
+        ],
+        "objectives": [
+          "从新的数量情境识别数值与单位，用变量和加减乘除写出有实际含义的计算，保存运行并核对",
+          "预测乘除、加减与括号分组的结果，实际运行验证，并解释两种分组分别描述什么数量关系",
+          "只改一个已知数量重新预测和完整运行，核对结果及单位，并排查修正一次与题意不符的表达式"
+        ],
+        "sections": [
+          {
+            "id": "quantities-and-units",
+            "title": "先弄清楚每个数字在数什么",
+            "navGroup": "relation",
+            "navLabel": "数量关系",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "整理物品时，有4盒，每盒3件，另外散放4件。一共有多少件？先不用Python，在本地笔记写下手算过程和答案。你会先数盒里的物品，再把散件加进去，还是把所有数字直接相加？"
+              },
+              {
+                "type": "table",
+                "caption": "本例名称与数量的对应",
+                "columns": [
+                  "名称",
+                  "当前值",
+                  "含义与单位"
+                ],
+                "rows": [
+                  [
+                    "box_count",
+                    "4",
+                    "盒数，单位盒"
+                  ],
+                  [
+                    "per_box",
+                    "3",
+                    "每盒件数，单位件/盒"
+                  ],
+                  [
+                    "spare",
+                    "4",
+                    "散放数量，单位件"
+                  ],
+                  [
+                    "total",
+                    "待计算",
+                    "总数量，单位件"
+                  ]
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "盒里的数量是4乘3，得到12件；再加4件散件，得到16件。盒数乘以每盒件数后，结果才和散件一样以“件”为单位，能够相加。接下来把这句关系写成Python，让修改后的数量也能按同一关系计算。"
+              }
+            ]
+          },
+          {
+            "id": "expression-to-value",
+            "title": "让右边先算出一个值",
+            "navGroup": "relation",
+            "navLabel": "数量关系",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Python用*表示乘法，对应手算中的乘号。例如box_count * per_box，就是用盒数乘每盒件数。两个数字或名称之间要明确写*，数学排版的×和省略乘号的写法不用于这里的Python源码。"
+              },
+              {
+                "type": "paragraph",
+                "text": "像box_count * per_box这样，由数值、名称和运算符组成、可以求出一个值的写法，称为数值表达式。先预测下方print会显示什么，再新建boxes.py，输入并保存这三行，行首不缩进，源码放在.venv外。"
+              },
+              {
+                "type": "code",
+                "code": "box_count = 4\nper_box = 3\nprint(box_count * per_box)",
+                "filename": "boxes.py · 第一轮",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "在文件所在目录沿用第一章已核验的解释器。Windows用pwd、dir确认文件，再执行下面第一条；macOS用pwd、ls确认后执行第二条。一直使用py的Windows环境可保持py。本课后续新文件只替换命令中的文件名，始终保存并从头运行整份.py。"
+              },
+              {
+                "type": "code",
+                "code": "python boxes.py",
+                "filename": "Windows · PowerShell · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "python3 boxes.py",
+                "filename": "macOS · 终端 · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "12",
+                "filename": "第一次观察 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "现在加入散件。Python用+表示加法；box_count * per_box + spare表达“先求盒里件数，再加散件”。用下面完整五行替换boxes.py原来的三行，先写新预测，再保存运行。"
+              },
+              {
+                "type": "code",
+                "code": "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\nprint(total)",
+                "filename": "boxes.py · 完整五行",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "16",
+                "filename": "加入散件 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "执行total这一行时，右边先读到4、3、4，按关系算出16，=再让total对应这个结果。*和+负责计算，=负责赋值，它们的角色不同。最后print(total)读取并显示16；给结果取名，后续还能接着使用它。"
+              },
+              {
+                "type": "paragraph",
+                "text": "这里输入的是2.2学过的数值，不把4写成\"4\"。带引号会变成字符串，不能期待它按本例的整数关系参与所有运算。单位保留在你的记录里，数值后面不直接接“盒”或“件”。"
+              }
+            ]
+          },
+          {
+            "id": "take-some-away",
+            "title": "取走两件后，怎样接着算？",
+            "navGroup": "relation",
+            "navLabel": "数量关系",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "刚算出一共16件，现在取走2件，剩余应是总数减2，即14件。Python用-表示减法。remaining = total - 2先求出剩余数量，再让remaining保存结果。"
+              },
+              {
+                "type": "paragraph",
+                "text": "回到已保存五行的boxes.py，在末尾追加下面两行，保留前面的赋值和总数计算。先预测新增加的输出，再保存、完整重跑。这个片段依赖本次文件前面已经算出的total，不能放进空文件直接运行。"
+              },
+              {
+                "type": "code",
+                "code": "remaining = total - 2\nprint(remaining)",
+                "filename": "追加片段 · boxes.py末尾",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "14",
+                "filename": "新增一行输出 · 接在16之后",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "现在两条普通输出依次是16、14，分别表示总件数和取走后的剩余。取走数量也以“件”为单位；本例取走不超过总数。写自己的计算时，把数字的意义与是否合理一起核对。"
+              }
+            ]
+          },
+          {
+            "id": "order-and-grouping",
+            "title": "括号改变分组，也要检查单位",
+            "navGroup": "reasoning",
+            "navLabel": "分组与分配",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "在这些数值计算中，乘法和除法优先于加法和减法。原式先写乘法，可能让人误以为总是从最左边逐项计算。另建order_boxes.py，把同一个加法写到前面作对照；先手算两行，再保存运行。"
+              },
+              {
+                "type": "code",
+                "code": "box_count = 4\nper_box = 3\nspare = 4\nprint(box_count * per_box + spare)\nprint(spare + box_count * per_box)",
+                "filename": "order_boxes.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "16\n16",
+                "filename": "优先级对照 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "第二式spare + box_count * per_box仍先求4乘3，再把散件4加上去，得到16。若不顾优先级，先把最左边两个4相加再乘3，就会算成24，已经换了分组。"
+              },
+              {
+                "type": "paragraph",
+                "text": "表达式中的一对括号可以明确分组，让括号里的加法先求值。下面print外面那对括号仍用于输出，里面那对括号把box_count + spare分成一组。先预测，再把这一行追加到boxes.py末尾，保存重跑；新增结果会接在原来的16、14之后。"
+              },
+              {
+                "type": "code",
+                "code": "print((box_count + spare) * per_box)",
+                "filename": "追加片段 · boxes.py末尾的分组对照",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "24",
+                "filename": "分组对照 · 新增输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "Python先把4和4相加得到8，再乘3，确实得到24。但原问题中box_count数的是盒，spare数的是件，把4盒和4件加成8盒，单位与含义不匹配。因此24是这段代码的计算结果，却不是原问题的总件数。能运行出数字，还要核对表达式是否写对了现实关系。"
+              },
+              {
+                "type": "paragraph",
+                "text": "换一个条件，括号式就可能有意义：原来4盒，又增加4盒，每盒同样是3件。added_boxes现在数新增的盒，能与原盒数相加。先预测，再将下面完整程序保存为more_boxes.py并运行。"
+              },
+              {
+                "type": "code",
+                "code": "box_count = 4\nadded_boxes = 4\nper_box = 3\nprint((box_count + added_boxes) * per_box)",
+                "filename": "more_boxes.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "24",
+                "filename": "同容量新增盒 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "这里是8盒，每盒3件，共24件。两种情境数字恰好相同，spare和added_boxes的现实含义却不同。括号决定怎样计算，题目条件决定这份计算有没有意义。"
+              }
+            ]
+          },
+          {
+            "id": "divide-and-meaning",
+            "title": "重新平均分配，除法在算什么？",
+            "navGroup": "reasoning",
+            "navLabel": "分组与分配",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "回到最初的16件。单独考虑一次重新分配：把全部16件重新平均放进原来的4盒，每盒分到多少件？Python用/表示除法，total / box_count就是总件数除以盒数。本例除数是正整数4，不能为零。"
+              },
+              {
+                "type": "paragraph",
+                "text": "在boxes.py末尾追加下面三行。它读取前面已经算出的total与box_count，average是新选的名称。先写平均数和类型预测，再保存、从头运行；type的内外两步沿用2.2。"
+              },
+              {
+                "type": "code",
+                "code": "average = total / box_count\nprint(average)\nprint(type(average))",
+                "filename": "追加片段 · boxes.py中的平均分配",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "4.0\n<class 'float'>",
+                "filename": "追加的两行输出 · 接在16、14、24之后",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "4.0表示这次全部重新分配后平均每盒4件，不是说原来每盒有4件；原来每盒3件，另有4件散件。本次分配没有先取走两件，前面的remaining只是另一个问题的结果，total仍是16。"
+              },
+              {
+                "type": "paragraph",
+                "text": "本课使用Python自带的整数和浮点数做普通数值运算。/得到float结果，即使16和4都是int且数学上恰好整除，也显示为4.0；type观察为<class 'float'>。这不是计算出错，也不需要为了去掉.0引入类型转换。"
+              },
+              {
+                "type": "paragraph",
+                "text": "不能整除时也能有合理的除法。例如把7升水均分到2个相同容器，先手算每个容器多少升，再将下方完整程序保存为share_water.py运行。水量可以分成小数升，这次结果的单位为升/容器。"
+              },
+              {
+                "type": "code",
+                "code": "volume_l = 7\ncontainer_count = 2\nprint(volume_l / container_count)",
+                "filename": "share_water.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "3.5",
+                "filename": "水量重新分配 · 预期输出",
+                "language": "text"
+              }
+            ]
+          },
+          {
+            "id": "same-level-order",
+            "title": "同一级的运算怎样分组？",
+            "navGroup": "reasoning",
+            "navLabel": "分组与分配",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "*与/在同一级，+与-也在同一级。这里每个运算符连接左右两个数值，称为二元运算。这些同级二元运算没有额外括号时按左结合规则分组，也就是先将左边的一步结果接到后一步。12 / 3 * 2相当于先12除3得到4.0，再乘2，得到8.0；若写成12 / (3 * 2)，则先求除数6，结果是2.0。"
+              },
+              {
+                "type": "paragraph",
+                "text": "再看10 - 3 + 2：先10减3得7，再加2得9。它可以描述10张卡片取走3张后又增加2张；10 - (3 + 2)则描述合计取走5张，剩5张。先写下面四行预测，再另存same_level.py完整运行。"
+              },
+              {
+                "type": "code",
+                "code": "print(12 / 3 * 2)\nprint(12 / (3 * 2))\nprint(10 - 3 + 2)\nprint(10 - (3 + 2))",
+                "filename": "same_level.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "8.0\n2.0\n9\n5",
+                "filename": "同级分组 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "判断一条混合式子时，先看括号，再看乘除与加减的优先级；处于同一级的这几种运算再按左结合分组。不要把这句话简化成“任何计算都直接从最左边算”，也不需要背一整张包含未学运算的优先级表。"
+              }
+            ]
+          },
+          {
+            "id": "put-it-together",
+            "title": "用同一份关系预测新数量",
+            "navGroup": "revise",
+            "navLabel": "改值验证",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "现在已分别观察过总数、括号反例和重新分配。把下面完整主例另存为box_relations.py，先预测三行，保存运行，再为每行写下含义和单位。第二条特意保留错误的现实分组，用来检查自己是否只盯着数字。"
+              },
+              {
+                "type": "code",
+                "code": "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\n\nprint(total)\nprint((box_count + spare) * per_box)\nprint(total / box_count)",
+                "filename": "box_relations.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "16\n24\n4.0",
+                "filename": "完整主例 · 三行预期输出",
+                "language": "text"
+              },
+              {
+                "type": "table",
+                "caption": "数字要和问题条件一起读",
+                "columns": [
+                  "显示",
+                  "这条表达式的含义",
+                  "本例中的判断"
+                ],
+                "rows": [
+                  [
+                    "16",
+                    "4盒内数量加4件散件",
+                    "原问题总数，16件"
+                  ],
+                  [
+                    "24",
+                    "先把盒数和散件数相加再乘每盒件数",
+                    "单位错配，不能作原总数"
+                  ],
+                  [
+                    "4.0",
+                    "全部16件重新平均分到4盒",
+                    "本次分配的平均数，件/盒"
+                  ]
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "再建revise_boxes.py，只保留有正确现实含义的三个结果：原总数、取走2件后的剩余、全部总数重新分配的平均数。注意最后一项用total，而非取走后的remaining，这三个输出分别回答各自的问题。先手算，再保存运行下面完整程序。"
+              },
+              {
+                "type": "code",
+                "code": "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\nremaining = total - 2\naverage = total / box_count\nprint(total)\nprint(remaining)\nprint(average)",
+                "filename": "revise_boxes.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "16\n14\n4.0",
+                "filename": "改值前 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "现在只把per_box的赋值由3改成5，其他行保持不变。先在笔记写三个新预测，说明每盒多2件会怎样影响4盒总数，再保存，用同一命令完整运行revise_boxes.py，对照两轮真实输出和单位。不要把新程序追加到旧程序末尾，也不要先照抄下面的核对结果。"
+              },
+              {
+                "type": "paragraph",
+                "text": "核对时，新总数应为24件，取走2件后余22件，全部24件重分4盒为6.0件/盒。若结果仍是旧数字，先查保存状态与执行文件；若保存正确但数值不符，就从数量、单位和表达式分组逐项查，而不只是把预测改成屏幕数字。"
+              }
+            ]
+          },
+          {
+            "id": "zero-divisor",
+            "title": "除数为零时，要读懂失败原因",
+            "navGroup": "revise",
+            "navLabel": "改值验证",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "平均分配要有明确的非零除数。把8除以0无法得到这里的普通数值结果，下面是故意安排的失败例；你可以只读现象，不需要反复运行它。"
+              },
+              {
+                "type": "code",
+                "code": "print(8 / 0)",
+                "filename": "zero_divisor.py · 预期ZeroDivisionError",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "ZeroDivisionError: division by zero",
+                "filename": "错误末行 · 路径和回溯以实际环境为准",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "这个例子没有正常数值输出，错误类型是ZeroDivisionError。遇到同类现象，核对当前除数的值与题目条件；核心练习选择明确的正整数盒数。此处先识别原因，不写try/except处理异常。"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "换一个情境，自己写并核对关系",
+            "navGroup": "practice",
+            "navLabel": "独立练习",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "先不看参考答案，独立写两份新.py。网页输入框只作临时思考区；本人源码、命令、预测和实际输出保存在本地。解释写清数字为什么变化，以及数字在数什么即可。"
+              },
+              {
+                "type": "exercise",
+                "id": "calculate-and-revise",
+                "title": "独立计算，再只改一个数量",
+                "kind": "代码",
+                "prompt": "自行建立一个与正文不同的整理情境，例如若干储物篮中的卡片，另有散放卡片，后来取走一些。自己选择合理的小正整数及合法且有意义的名称，不照搬正文整组数字；取走数量不超过总数。先列出各数量及单位，手算总数和剩余，再在新的.py中独立写出成组数量加散件、取走后的剩余及两次print。保存真实运行，核对预测。随后只改一项已知数量，保持其他赋值与计算关系不变，重新手算、保存、完整运行。交付两轮源码及差异、变量/单位、命令、两轮预测与真实输出，简短解释哪些输出变化及其原因。接受其他合理情境、合法名称和等价表达式。",
+                "hints": [
+                  "先找组数、每组多少、散件和取走多少。组数与每组数量结合后得到的单位，是否能与散件相加、与取走数量相减？",
+                  "按变量和单位核对成组数量、总数、剩余三步，再为两次显示写预测。只改一项时检查其余赋值是否保持，并由你自己填写数值、表达式和实际结果。"
+                ],
+                "solution": [
+                  "例如改用挂绳整理：5袋，每袋6条，散放3条，取走4条。新建cords.py。以下“第几行”只是分隔说明，每条语句各写一行，不把分隔文字输入源码。",
+                  "先写四个已知量：第1行：bag_count = 5；第2行：per_bag = 6；第3行：loose = 3；第4行：taken = 4。bag_count单位袋，per_bag单位条/袋，loose和taken单位条。接着：第5行：total_cords = bag_count * per_bag + loose；第6行：remaining_cords = total_cords - taken；第7行：print(total_cords)；第8行：print(remaining_cords)。乘法求袋里的条数，加散条求总数，减取走条数求剩余。",
+                  "先手算5乘6得30条，加3得33条，再减4余29条。预测两行33、29，保存后运行python cords.py（macOS用python3，已核验的py也可），保留本人实际输出逐项核对。",
+                  "只把袋数改为7，其他赋值和关系不变，八行依次为：第1行：bag_count = 7；第2行：per_bag = 6；第3行：loose = 3；第4行：taken = 4；第5行：total_cords = bag_count * per_bag + loose；第6行：remaining_cords = total_cords - taken；第7行：print(total_cords)；第8行：print(remaining_cords)。先算7乘6加3为45条，减4余41条，再保存并完整运行，应看到45、41。多2袋，每袋6条，总数与剩余都增加12条，取走数量没有改变。",
+                  "常错是只改了某个print常量、漏散件、从每袋数量而非总数扣取走、改多项却声称只改一项，或未保存/执行错文件。先用单位和手算定位，再修改源码完整重跑；不能只抄参考输出。你自己的情境与数字应另选，合理的分步或等价计算同样接受。"
+                ],
+                "rubric": [
+                  "实际新.py含本人自选数量、合法名称和单位，成组/散件/取走关系合理；总数与剩余均真实计算、显示，不能只打印预先算好的常量。",
+                  "改前与改后都有运行前手算预测、实际命令与完整输出；只有一项已知数量改变，其余赋值及计算关系保持，剩余数量有合理意义。",
+                  "结合两轮本人结果解释变化原因与单位，预测差异有核对；代码、保存和实际执行可对应。文字方案、Quiz或网页读完标记不足代替操作。"
+                ]
+              },
+              {
+                "type": "exercise",
+                "id": "compare-grouping",
+                "title": "括号式算得通，符合题意吗？",
+                "kind": "代码",
+                "prompt": "另建一份.py，用新的贴纸情境，自选盒数、每盒贴纸数和散放张数，三个数均为小正整数，每盒至少2张，不照搬正文整组数据。先手算两种分组：盒内总张数加散张；盒数与散张数先相加再乘每盒数。确保两结果不同，必要时重新选值。在运行前写两式预测，独立用变量写两式，保存真实运行。说明哪个符合散放贴纸原问题，另一个把哪两种单位混在一起；再给出改变题目条件、让括号式有意义的一种情境。用相同数据另写全部总张数重新平均分到原盒数的除法，预测并核对输出，解释float与非零除数；若不能整张均分，说明只是平均数或另选能整张均分的数据。最后定位不符合原题的那条表达式，将该行改为符合原散件关系的计算，保存重跑，保留修复前后源码与真实输出。交本人命令、单位、预测、两次运行和简短理由，不能只写“先算括号”。",
+                "hints": [
+                  "分别说出两个加号把什么数量加在一起：它们的单位相同吗？除法中的总数是否包含散件，这次分配的盒数有没有被你改变？",
+                  "核对散件到底按张数还是盒数记录，分别手算并运行两种分组，再设计另一个使括号分组成立的条件。找到不符合原问题的那行后自行修正和复跑，仍由你选择数据与最终表达式。"
+                ],
+                "solution": [
+                  "例如改用彩纸，3筒、每筒5张、散6张，新建paper_grouping.py。七行分别为：第1行：tube_count = 3；第2行：per_tube = 5；第3行：loose_sheets = 6；第4行：total_sheets = tube_count * per_tube + loose_sheets；第5行：print(total_sheets)；第6行：print((tube_count + loose_sheets) * per_tube)；第7行：print(total_sheets / tube_count)。tube_count单位筒、per_tube单位张/筒、loose_sheets单位张，total_sheets为原总张数。",
+                  "先预测：3乘5加6为21张；先3加6再乘5得到45；全部21张重新均分3筒，每筒7张，/显示7.0。保存后运行python paper_grouping.py（macOS用python3），保留本人三行真实输出。",
+                  "第二式把3筒和6张相加再当成9筒，单位错配，所以45不是原题总张数。若条件改成原3筒另增加6筒、每筒仍5张，括号式就有意义，会得到45张；改变的是题意，不能把原来散6张偷换成6筒而不说明。",
+                  "定位第6行，改成符合原散件关系的表达式；完整修复稿七行为：第1行：tube_count = 3；第2行：per_tube = 5；第3行：loose_sheets = 6；第4行：total_sheets = tube_count * per_tube + loose_sheets；第5行：print(total_sheets)；第6行：print(tube_count * per_tube + loose_sheets)；第7行：print(total_sheets / tube_count)。重新保存运行，应得21、21、7.0。两个计总输出现在一致，原总数和重分平均数不变。保留实际修复差异和新输出，不只写“有问题”。",
+                  "7.0为内置整数除法的float显示，不表示原来每筒已有7张；重新分配前原每筒是5张。若自己选的总数不能整张均分，所得小数只是平均数，不能宣称每筒实际放小数张；可重新选数据。常错还包括误用错误分组结果作总数、除以散件数、盒数为零，或只改答案而没重跑。接受不同合法名称、合理新情境及等价的正确表达式。"
+                ],
+                "rubric": [
+                  "两种分组都由本人新数据/变量写出，运行前分别预测并真实执行，结果不同，源码与命令对应，不能只交固定数字答案。",
+                  "指出原题应先计盒内张数再加散张，解释错误分组的盒/张错配；另给相同容量新增盒等使括号式有意义的条件。",
+                  "平均分配使用原题全部总数和非零原盒数，预测/真实除法及float解释正确，平均数与可实际整张均分的条件写清。",
+                  "定位不合题意的表达式，修复该行、保存并完整重跑，交改前/改后源码与真实结果；解释修复为何恢复原问题关系，而非只改预测迎合输出。"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "next-step",
+            "title": "结果有意义，计算才回答了问题",
+            "navGroup": "finish",
+            "navLabel": "回顾与后续",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "summary",
+                "points": [
+                  "先写清数值和单位，再用+、-、*、/表达数量关系；右边先求值，=保存结果。",
+                  "乘除先于加减，括号明确分组，这几种同级二元运算按左结合；计算规则与现实单位都要核对。",
+                  "使用内置整数或浮点数做/除法得到float，除数非零。只改一个已知量后先预测、保存、完整重跑，检查结果仍在回答原问题。"
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "保留自己两份.py、改值及修复前后的短记录。能用新数量解释计算和单位，再以本人运行核对，才有独立操作证据；网页读完或程序显示了数字都不能替代这些检查。"
+              },
+              {
+                "type": "paragraph",
+                "text": "接着学习2.4「让比较表达式给出真假结果」，它已有待人工审核试读，2.5–2.6仍在规划。第5章函数试读还需要比较、输入输出与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。"
+              }
+            ]
+          }
+        ],
+        "resources": [],
+        "references": [
+          {
+            "title": "Python计算器入门",
+            "href": "https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator",
+            "note": "核对四则、括号和除法的基本行为。"
+          },
+          {
+            "title": "运算优先级",
+            "href": "https://docs.python.org/3.14/reference/expressions.html#operator-precedence",
+            "note": "核对乘除/加减层级与本课同级左结合规则。"
+          },
+          {
+            "title": "二元算术运算",
+            "href": "https://docs.python.org/3.14/reference/expressions.html#binary-arithmetic-operations",
+            "note": "核对内置数值除法及零除数错误。"
+          },
+          {
+            "title": "赋值语句",
+            "href": "https://docs.python.org/3.14/reference/simple_stmts.html#assignment-statements",
+            "note": "核对先取得右侧结果再绑定名称。"
+          },
+          {
+            "title": "内置数值类型",
+            "href": "https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex",
+            "note": "本课只使用已学int/float，不展开其他数值系统。"
+          }
+        ]
+      },
+      "afterSha256": "bd548dc654271eeac72cab8af416984f07155e5cd146241b7e5b1c4ac9c6a8b1"
+    },
+    {
+      "id": "PY101-C02-L04",
+      "before": {
+        "id": "PY101-C02-L04",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "contentVersion": 1,
+        "title": "让比较表达式给出真假结果",
+        "subtitle": "最多能放6件，刚好6件算不算满足？先写判断，再用三个边界值核对。",
+        "learningTime": {
+          "reading": [
+            10,
+            15
+          ],
+          "practice": [
+            6,
+            10
+          ],
+          "coding": [
+            12,
+            18
+          ],
+          "basis": "editorial-estimate"
+        },
+        "optionalLesson": false,
+        "assessmentMap": [
+          {
+            "objective": 1,
+            "exerciseIds": [
+              "compare-and-explain",
+              "test-boundary-values"
+            ]
+          },
+          {
+            "objective": 2,
+            "exerciseIds": [
+              "compare-and-explain"
+            ]
+          },
+          {
+            "objective": 3,
+            "exerciseIds": [
+              "test-boundary-values"
+            ]
+          }
+        ],
+        "prerequisites": "已完成第一章和2.1–2.3：会用变量保存整数，使用print，认识True/False与bool，理解右侧表达式求值再赋值，能预测、保存并从终端完整运行.py。沿用现有Python 3和编辑器，不装库；手机可读，代码操作需要电脑。",
+        "prerequisiteLinks": [
+          {
+            "title": "2.1 读取与更新",
+            "href": "/learn/PY101/PY101-C02-L01#read-and-update",
+            "note": "回顾=赋值和读取当前值。"
+          },
+          {
+            "title": "2.2 真假状态",
+            "href": "/learn/PY101/PY101-C02-L02#ready-state",
+            "note": "回顾True、False与字符串的差别。"
+          },
+          {
+            "title": "2.2 观察类型",
+            "href": "/learn/PY101/PY101-C02-L02#inspect-type",
+            "note": "需要时复习type的观察用途。"
+          },
+          {
+            "title": "2.3 先求右侧结果",
+            "href": "/learn/PY101/PY101-C02-L03#expression-to-value",
+            "note": "把已有数值表达式经验接到比较结果。"
+          },
+          {
+            "title": "1.3 保存与重跑",
+            "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+            "note": "核对保存状态与实际运行文件。"
+          }
+        ],
+        "objectives": [
+          "根据新的数量规则选择数值比较运算符，在自己创建的.py中取得真实True/False并解释判断含义",
+          "区分赋值=与相等比较==，正确使用相等和不等比较，先预测再核对实际布尔结果",
+          "固定限制值，手动改成低于、等于、高于的三个实际值，保存重跑并说明比较是否包含边界"
+        ],
+        "sections": [
+          {
+            "id": "most-six",
+            "title": "刚好装到上限，也算满足吗？",
+            "navGroup": "meaning",
+            "navLabel": "规则与判断",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "一个收纳盒最多允许放6件物品，现在放了5件。先用一句话判断：现在是否满足“最多6件”？如果再放1件，恰好6件呢？“最多”包括刚好达到上限的情况，超过6件才不满足这条规定。"
+              },
+              {
+                "type": "paragraph",
+                "text": "把实际件数交给count，把最大件数交给limit。两个值都是整数，也都以“件”为单位，可以直接比较。这里的边界就是限制值6；接下来要让Python给出能核对的真假结果。"
+              }
+            ]
+          },
+          {
+            "id": "compare-limit",
+            "title": "把“最多”写成一个比较式",
+            "navGroup": "meaning",
+            "navLabel": "规则与判断",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Python用<表示小于：左边严格小于右边时才为真，恰好相等不算。<=表示小于或等于，既包括小于，也包括相等。<=是两个字符连续写成的一个比较运算符，中间不拆开。"
+              },
+              {
+                "type": "paragraph",
+                "text": "count <= limit把实际数量放左边、限制值放右边，判断实际数量是否小于或等于限制。像这样用比较运算符连接两个值的写法，叫比较表达式。本节比较普通整数，结果是2.2认识的布尔值True或False。先写下5件与最多6件的预测，再输入下方完整程序。"
+              },
+              {
+                "type": "code",
+                "code": "count = 5\nlimit = 6\nprint(count <= limit)",
+                "filename": "capacity_check.py · 首次比较",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "在自己的练习文件夹新建capacity_check.py，行首不加缩进，源码放在.venv外。保存后用pwd和Windows的dir确认文件，沿用已核验的解释器运行第一条命令；macOS用pwd、ls确认后运行第二条。此前一直用py的Windows环境可保持py。后面的新文件只替换命令中的文件名，每次都保存并从头运行整份.py。"
+              },
+              {
+                "type": "code",
+                "code": "python capacity_check.py",
+                "filename": "Windows · PowerShell · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "python3 capacity_check.py",
+                "filename": "macOS · 终端 · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "True",
+                "filename": "首次比较 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "True回答的是“5是否小于或等于6”，与本题“最多6件”一致。比较只取得这个判断；程序还没有根据结果选择行动。先能写出并解释真假结果，就可以完成本节任务。"
+              }
+            ]
+          },
+          {
+            "id": "keep-result",
+            "title": "比较的结果也能交给一个名称",
+            "navGroup": "assignment",
+            "navLabel": "赋值与比较",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "2.3中，右边先算出数量，再由=保存结果。比较也可以这样做：右侧count <= limit先得到True，=再让within_limit对应这个布尔值，随后print读取它。名称表示“在限制之内”，保存的是这一次的真假结果。"
+              },
+              {
+                "type": "paragraph",
+                "text": "在capacity_check.py原三行末尾追加下面两行，保留该文件前面的count和limit赋值。先预测新增输出，再保存完整运行；它依赖前两项赋值，不能放进空文件直接执行。改数值后也要完整重跑，让比较那一行再次执行。"
+              },
+              {
+                "type": "code",
+                "code": "within_limit = count <= limit\nprint(within_limit)",
+                "filename": "追加片段 · capacity_check.py保存结果",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "True",
+                "filename": "新增一行 · 接在首次True之后",
+                "language": "text"
+              }
+            ]
+          },
+          {
+            "id": "equal-or-different",
+            "title": "=保存值，==判断是否相等",
+            "navGroup": "assignment",
+            "navLabel": "赋值与比较",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "若想问“是不是刚好达到6件”，用==比较左右两个值是否相等。它是一个比较运算符，得到True或False，不是执行两次赋值。!=则判断两值是否不相等。符号都连续写；=仍负责给名称赋值，不能代替==来问相不相等。"
+              },
+              {
+                "type": "paragraph",
+                "text": "在capacity_check.py末尾继续加这两行。先根据该文件仍为5和6的当前值分别预测，再保存从头运行。新增两行输出各在回答什么？"
+              },
+              {
+                "type": "code",
+                "code": "print(count == limit)\nprint(count != limit)",
+                "filename": "追加片段 · capacity_check.py相等与不等",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "False\nTrue",
+                "filename": "追加的两行 · 接在两个True之后",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "5与6不相等，所以==得到False，!=得到True。这两次比较没有把count改成6；它仍保存5。区别可以再用一份合法的小程序观察：先给count赋5并比较，再重新赋6并比较。先预测两行，再保存为assignment_or_comparison.py完整运行。"
+              },
+              {
+                "type": "code",
+                "code": "count = 5\nprint(count == 6)\ncount = 6\nprint(count == 6)",
+                "filename": "assignment_or_comparison.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "False\nTrue",
+                "filename": "赋值后再比较 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "第一条赋值让count对应5，所以和6相等的判断是假；后一次赋值让它对应6，再作相等判断就是真。两条print中的==取得判断，改变当前数值的是各自前面的=。本题只需这些合法操作来分清两者。"
+              }
+            ]
+          },
+          {
+            "id": "above-limit",
+            "title": "超过上限，与至少达到有什么不同？",
+            "navGroup": "meaning-two",
+            "navLabel": "超过与达到",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "现在单独看7件与上限6件。>表示大于，左边严格超过右边时为真；>=表示大于或等于，表示“至少达到”，也包括刚好等于。这两个问题与“最多”不同：超过上限时，至少达到上限也为真，但并不表示满足最多6件的规定。"
+              },
+              {
+                "type": "paragraph",
+                "text": "先预测下面三行，分别判断7是否超过6、是否至少达到6、是否仍满足最多6。另存为above_limit.py，保存并完整运行。"
+              },
+              {
+                "type": "code",
+                "code": "count = 7\nlimit = 6\nprint(count > limit)\nprint(count >= limit)\nprint(count <= limit)",
+                "filename": "above_limit.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "True\nTrue\nFalse",
+                "filename": "超过/至少达到/最多 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "前两行都为True，因为7确实大于6，也满足大于或等于6。最后一行为False，因为本次已经超过最大件数。等于6时>和>=还会不会相同，稍后用边界实验核对。"
+              }
+            ]
+          },
+          {
+            "id": "main-example",
+            "title": "把三项判断放回同一份记录",
+            "navGroup": "boundary",
+            "navLabel": "边界验证",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "回到最初5件、最多6件的条件。下面完整主例将不超过、刚好等于、不等于三项判断集中起来。先预测三行，并各写一句含义，再另存capacity_results.py保存运行。"
+              },
+              {
+                "type": "code",
+                "code": "count = 5\nlimit = 6\nwithin_limit = count <= limit\n\nprint(within_limit)\nprint(count == limit)\nprint(count != limit)",
+                "filename": "capacity_results.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "True\nFalse\nTrue",
+                "filename": "完整主例 · 三行预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "within_limit保存5不超过6的结果；第二行说明尚未刚好达到6，第三行说明两值不同。每一行都要和自己的判断问题对应，不能只把三个真假词背成固定答案。"
+              }
+            ]
+          },
+          {
+            "id": "boundary-runs",
+            "title": "固定上限，验证边界附近三个值",
+            "navGroup": "boundary",
+            "navLabel": "边界验证",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "新建boundary_values.py，保持limit为6。下面三条print依次问严格小于、最多、恰好等于。先在笔记写count为5时的三行预测，再保存并完整运行下面的文件，保留源码、命令和真实输出。"
+              },
+              {
+                "type": "code",
+                "code": "count = 5\nlimit = 6\nprint(count < limit)\nprint(count <= limit)\nprint(count == limit)",
+                "filename": "boundary_values.py · 低于限制",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "True\nTrue\nFalse",
+                "filename": "低于边界 · 运行后核对",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "第二轮只把count的赋值改为6，limit和三条比较都不动。先写新预测，保存，用同一命令完整运行，保留本轮源码与输出。第三轮再只把count改为7，重新预测、保存和运行。三次运行是三份真实证据，一次截图或手抄表格不能代替。"
+              },
+              {
+                "type": "table",
+                "caption": "三轮运行后，按相同输出顺序核对",
+                "columns": [
+                  "count（件）",
+                  "count < limit",
+                  "count <= limit",
+                  "count == limit"
+                ],
+                "rows": [
+                  [
+                    "5",
+                    "True",
+                    "True",
+                    "False"
+                  ],
+                  [
+                    "6",
+                    "False",
+                    "True",
+                    "True"
+                  ],
+                  [
+                    "7",
+                    "False",
+                    "False",
+                    "False"
+                  ]
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "最值得看的是count恰好为6：<得到False，<=得到True。前者不包含相等，后者包含相等。若题目规定“最多6件”，6件满足；若规定“必须少于6件”，6件就不满足。符号本身不固定代表允许或禁止，要先读清实际规则。"
+              },
+              {
+                "type": "paragraph",
+                "text": "再把等值位置单独拿出来，同时核对已经解释过的六种比较。先预测，保存six_comparisons.py运行。第一条print只是已学的固定文字标签At capacity，后面六条才依次显示比较结果；引号只围住这段文字，不围住整数。"
+              },
+              {
+                "type": "code",
+                "code": "count = 6\nlimit = 6\nprint(\"At capacity\")\nprint(count < limit)\nprint(count <= limit)\nprint(count > limit)\nprint(count >= limit)\nprint(count == limit)\nprint(count != limit)",
+                "filename": "six_comparisons.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "At capacity\nFalse\nTrue\nFalse\nTrue\nTrue\nFalse",
+                "filename": "等值位置 · 标签及六条预期结果",
+                "language": "text"
+              },
+              {
+                "type": "table",
+                "caption": "同为6件时，不同规则问的是不同问题",
+                "columns": [
+                  "规则",
+                  "本例比较",
+                  "6件时"
+                ],
+                "rows": [
+                  [
+                    "最多6件",
+                    "count <= limit",
+                    "True"
+                  ],
+                  [
+                    "少于6件",
+                    "count < limit",
+                    "False"
+                  ],
+                  [
+                    "至少6件",
+                    "count >= limit",
+                    "True"
+                  ],
+                  [
+                    "多于6件",
+                    "count > limit",
+                    "False"
+                  ],
+                  [
+                    "恰好6件",
+                    "count == limit",
+                    "True"
+                  ],
+                  [
+                    "不等于6件",
+                    "count != limit",
+                    "False"
+                  ]
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "这里每一式只比较左右两个普通整数。两题也先按这个范围操作，分别运行并解释结果；组合多个条件或根据真假改变执行路线，是之后的内容。"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "自己选规则，再验证含不含边界",
+            "navGroup": "practice",
+            "navLabel": "独立练习",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "先合上参考答案，自建两份短.py。正式成果保存在本地，网页输入框只是临时思考区。每轮留源码、命令、预测和真实输出，用简短文字说明规则即可。"
+              },
+              {
+                "type": "exercise",
+                "id": "compare-and-explain",
+                "title": "写出自己的三项数量判断",
+                "kind": "代码",
+                "prompt": "另选与正文不同的容量情境，例如收纳架，自行确定合理的整数上限和实际数量，单位相同。不要照抄正文5/6整组数据或count、limit、within_limit这些变量名。创建新的.py，自选合法且有意义的名称保存两个量，写出实际值小于或等于上限、是否恰好等于上限、是否不等于上限三项比较。运行前分别预测True/False，保存并实际运行，逐项将真实结果对应到规则。交本人源码、变量/单位、命令、三项预测与实际结果，再简短说明=、==、!=各自做什么；至少结合一条真实赋值和一条真实相等比较说明。可以直接显示比较，也可先保存布尔结果再显示，不使用if或输入函数。",
+                "hints": [
+                  "先用自己的话问：实际数量有没有超过上限，是否恰好到达，两个值是否不同？两个数量的单位一致吗？",
+                  "检查左边实际量和右边上限是否读到你保存的值，再逐项核对比较含义。赋值用于保存，判断相等和不等各有符号；仍由你选名称、数值、最终代码与预测。"
+                ],
+                "solution": [
+                  "例如改用图书推车，现装9册、容量12册，新建book_cart.py，六行分别为：第1行：loaded_books = 9；第2行：cart_capacity = 12；第3行：fits_cart = loaded_books <= cart_capacity；第4行：print(fits_cart)；第5行：print(loaded_books == cart_capacity)；第6行：print(loaded_books != cart_capacity)。每条语句各写一行，“第几行”和分隔文字不输入源码。",
+                  "loaded_books是实际册数，cart_capacity是最多册数，两者单位都是册；fits_cart接住本次小于或等于的布尔结果。先预测True、False、True，再保存运行python book_cart.py（macOS用python3，已核验的py也可），保留本人实际三行结果核对。",
+                  "9没有超过12，所以第一项为真；9没有刚好达到12，所以相等比较为假；两个值不同，所以不等比较为真。若换成自己选择的数据，必须按自己真实值重新解释，不把这组输出当所有情境的答案。",
+                  "前两行的=分别给名称提供整数，第三行的=保存右侧比较结果；第五行的==只问两值是否相等，最后一行的!=问是否不同。==是一个比较运算符，不是赋值两次。",
+                  "常错包括把实际值/上限位置颠倒、用赋值代替比较、只打印预写True/False，或改了文件未保存。沿源码核对数量和规则，再真实重跑。接受其他新情境、合理上限、合法名称及等价正确写法；不能只交符号表或复制参考输出。"
+                ],
+                "rubric": [
+                  "本人新.py含自选容量情境、新整数与合法名称，实际量/上限单位相同，真实写出<=、==、!=三项比较并显示结果，而非只打印答案常量。",
+                  "运行前有三项预测，实际命令/源码/完整三项结果对应；逐项解释是在判断最多、恰好还是不同，并核对预测差异。",
+                  "结合本人赋值与相等/不等比较说明=、==、!=的不同作用，变量读取拼写一致，实际操作可复现；Quiz、文字方案或读完标记不能代替代码。"
+                ]
+              },
+              {
+                "type": "exercise",
+                "id": "test-boundary-values",
+                "title": "上限不变，独立运行三种边界",
+                "kind": "代码",
+                "prompt": "另建新.py，自选一种“最多可装若干件”的新情境和正整数上限，不用正文上限6。自己选合法名称，固定上限，在同一个文件写出实际量<上限、实际量<=上限两项判断，再选>或>=加一项验证，并说明它问的是超过还是至少达到。先把实际量设为低于上限，预测三项、保存并真实运行；第二轮只改实际量使它恰好等于上限，再预测、保存、完整运行；第三轮只改实际量使它高于上限，再完整重复。交三轮具体值、对应源码、命令、运行前预测和真实输出，上限及比较式保持不变。说明相等时<与<=为何不同，以及“最多”和“必须少于”分别是否包含边界。不用循环自动测试，不只抄三行真假表。",
+                "hints": [
+                  "先在纸上标出低于、恰好等于、高于三个位置，各选一个实际量。上限是否始终是同一个数？相等位置最能区分哪些规则？",
+                  "逐项看符号是否带等号，额外判断问的是超过还是至少达到。把证据分成三次预测、保存和运行，每次只改实际量，仍由你填数据、代码与真实结果。"
+                ],
+                "solution": [
+                  "例如展板最多放10幅画，先放9幅。新建display_boundary.py，五行分别为：第1行：art_total = 9；第2行：display_limit = 10；第3行：print(art_total < display_limit)；第4行：print(art_total <= display_limit)；第5行：print(art_total >= display_limit)。每条语句单独一行，数量单位都是幅，第三项>=问是否至少达到上限，不代表是否仍允许放入。",
+                  "第一轮9低于10，先预测True、True、False，保存后运行python display_boundary.py（macOS用python3），留本人真实输出。第一项严格小于为真，第二项最多为真，第三项至少达到为假。",
+                  "第二轮只改实际量为10，五行依次为：第1行：art_total = 10；第2行：display_limit = 10；第3行：print(art_total < display_limit)；第4行：print(art_total <= display_limit)；第5行：print(art_total >= display_limit)。先预测False、True、True，再保存并用同一命令完整运行。相等不满足严格小于，但满足小于或等于，也满足至少达到。",
+                  "第三轮只改实际量为11，五行依次为：第1行：art_total = 11；第2行：display_limit = 10；第3行：print(art_total < display_limit)；第4行：print(art_total <= display_limit)；第5行：print(art_total >= display_limit)。先预测False、False、True，再保存完整运行。已经超过最多10幅；>=仍为True，因为至少达到10也包含更大值，并不只表示刚好装满。",
+                  "最多10幅包含10，必须少于10幅排除10；三个实际值不同，上限和三项规则都没改变。若额外选>，三轮那一项应是False、False、True，相等时不包含边界。接受其他新上限、三个合理整数、合法名称与正确的额外判断。",
+                  "常错是第二轮连上限也改了、三轮仍读旧文件、未完整重跑、只交最终高于一轮或把>=说成刚好相等。逐轮核对保存源码、值与命令，保留真实差异和说明，不用一张参考表冒充三次运行。"
+                ],
+                "rubric": [
+                  "本人固定同一新上限，三个实际整数确实分别低于、等于、高于，上限/比较式在三轮保持，只改实际量；源码均不使用未教控制流程。",
+                  "三轮都保留保存源码、实际命令、事先三项预测与真实完整输出，<、<=及额外>或>=与本轮值对应，不把一次运行冒充三轮。",
+                  "能结合相等一轮解释<排除边界而<=包含边界，说明最多/少于的实际规则，并正确解释额外比较是超过或至少达到。合理替代名和新整数可达标，抄表或网页读完不算操作证据。"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "next-step",
+            "title": "先读规则，再用边界检查真假",
+            "navGroup": "finish",
+            "navLabel": "回顾与后续",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "summary",
+                "points": [
+                  "本课的普通整数比较得到True或False，结果回答的是所写出的数量关系。",
+                  "=保存值，==判断相等，!=判断不同；严格小于/大于与含等号的比较在相等位置有区别。",
+                  "固定规则与上限，低于、等于、高于三轮先预测、保存并完整运行，再核对含不含边界。"
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "保留本人两份.py及短记录，能换一个上限重新验证、解释每个真假结果，才有独立代码证据。网页读完不代表已经会选符号，比较结果本身也没有替程序选择行动。"
+              },
+              {
+                "type": "paragraph",
+                "text": "接着学习2.5「取得用户输入，再转成需要的数值」，它已有待人工审核试读，2.6尚未制作。第5章函数试读还需输出与控制流程等中间先修，阅读器的下一可读导航不表示直接跳学建议。整门PY101仍在筹备。"
+              }
+            ]
+          }
+        ],
+        "resources": [],
+        "references": [
+          {
+            "title": "Python比较表达式",
+            "href": "https://docs.python.org/3.14/reference/expressions.html#comparisons",
+            "note": "核对比较符号及普通数值结果。"
+          },
+          {
+            "title": "值比较",
+            "href": "https://docs.python.org/3/reference/expressions.html#value-comparisons",
+            "note": "本课只使用同单位普通整数，其他比较规则延后。"
+          },
+          {
+            "title": "赋值语句",
+            "href": "https://docs.python.org/3.14/reference/simple_stmts.html#assignment-statements",
+            "note": "核对取得右侧结果再绑定名称。"
+          },
+          {
+            "title": "布尔类型",
+            "href": "https://docs.python.org/3.14/library/stdtypes.html#boolean-type-bool",
+            "note": "核对True、False与bool，衔接2.2。"
+          }
+        ]
+      },
+      "afterSha256": "e2a0a8d45f518b265bccb7daca617ff77b6e77e02d720494374ec57f001c18e4"
+    }
+  ],
+  "publications": [
+    {
+      "id": "PY101-C02-L01",
+      "before": {
+        "lessonId": "PY101-C02-L01",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "title": "用变量保留并更新程序里的值",
+        "contentVersion": 1,
+        "order": 1,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p11/TRANSITION_AMENDMENTS.md"
+      },
+      "afterSha256": "fccd64f6d3d95d287a093b69c16de112b0ed4cbde4c7a8479071c1952182030f"
+    },
+    {
+      "id": "PY101-C02-L02",
+      "before": {
+        "lessonId": "PY101-C02-L02",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "title": "分清文字、整数、小数和真假值",
+        "contentVersion": 1,
+        "order": 2,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p10/TRANSITION_AMENDMENT.md"
+      },
+      "afterSha256": "a2361f37c6bb7140886e8498352974b6c992f00154f6fc24bc02b15c7a11f396"
+    },
+    {
+      "id": "PY101-C02-L03",
+      "before": {
+        "lessonId": "PY101-C02-L03",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "title": "用表达式算出一个结果",
+        "contentVersion": 1,
+        "order": 3,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p11/TRANSITION_AMENDMENTS.md"
+      },
+      "afterSha256": "dda8b0f6e4ca8afc553416fa8a70d7ffb15d44333135a83195b379df147ae554"
+    },
+    {
+      "id": "PY101-C02-L04",
+      "before": {
+        "lessonId": "PY101-C02-L04",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "title": "让比较表达式给出真假结果",
+        "contentVersion": 1,
+        "order": 4,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p12/TRANSITION_AMENDMENTS.md"
+      },
+      "afterSha256": "49c2acafe82ead47bb791df8a22e18ff701c20dda5d9f7baea3999c38b117462"
+    }
+  ],
+  "workspaceOnly": [],
+  "protectedText": []
+}

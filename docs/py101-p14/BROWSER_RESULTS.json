@@ -1,0 +1,97 @@
+{
+  "checkedAt": "2026-10-30T16:37:23.267Z",
+  "base": "http://127.0.0.1:3030",
+  "scope": "production workspace; four amended paragraphs and adjacent navigation; desktop 1440/mobile 390 only",
+  "statusChecks": [
+    {
+      "statusParagraph": "接着学习2.5「取得用户输入，再转成需要的数值」，它与2.6均已有待人工审核试读。第5章函数试读还需输出与控制流程等中间先修，阅读器的下一可读导航不表示直接跳学建议。整门PY101仍在筹备。",
+      "url": "http://127.0.0.1:3030/learn/PY101/PY101-C02-L04"
+    },
+    {
+      "statusParagraph": "接着学习2.4「让比较表达式给出真假结果」，它与2.5–2.6均已有待人工审核试读。第5章函数试读还需要比较、输入输出与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。",
+      "url": "http://127.0.0.1:3030/learn/PY101/PY101-C02-L03"
+    },
+    {
+      "statusParagraph": "接着学习2.3「用表达式算出一个结果」，它与2.4–2.6均已有待人工审核试读。第5章函数试读还需要表达式与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。",
+      "url": "http://127.0.0.1:3030/learn/PY101/PY101-C02-L02"
+    },
+    {
+      "statusParagraph": "接着学习2.2「分清文字、整数、小数和真假值」，它已有待人工审核试读，将用实际类型观察接续本节的名称与值。2.3–2.6也均已有待人工审核试读；第5章函数试读还需要表达式与控制流程等中间先修，不能把阅读器的可读课时导航当作直接跳学建议。整门PY101仍在筹备。",
+      "url": "http://127.0.0.1:3030/learn/PY101/PY101-C02-L01"
+    }
+  ],
+  "navigationChecks": [
+    {
+      "url": "http://127.0.0.1:3030/learn/PY101/PY101-C02-L01#next-step",
+      "heading": "用变量保留并更新程序里的值",
+      "adjacent": [
+        {
+          "href": "/learn/PY101/PY101-C01-L06",
+          "text": "上一节 · 1.6 让别人复现一次环境问题"
+        },
+        {
+          "href": "/learn/PY101/PY101-C02-L02",
+          "text": "下一节 · 2.2 分清文字、整数、小数和真假值"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:3030/learn/PY101/PY101-C02-L02",
+      "heading": "分清文字、整数、小数和真假值",
+      "adjacent": [
+        {
+          "href": "/learn/PY101/PY101-C02-L01",
+          "text": "上一节 · 2.1 用变量保留并更新程序里的值"
+        },
+        {
+          "href": "/learn/PY101/PY101-C02-L03",
+          "text": "下一节 · 2.3 用表达式算出一个结果"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:3030/learn/PY101/PY101-C02-L03",
+      "heading": "用表达式算出一个结果",
+      "adjacent": [
+        {
+          "href": "/learn/PY101/PY101-C02-L02",
+          "text": "上一节 · 2.2 分清文字、整数、小数和真假值"
+        },
+        {
+          "href": "/learn/PY101/PY101-C02-L04",
+          "text": "下一节 · 2.4 让比较表达式给出真假结果"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:3030/learn/PY101/PY101-C02-L04",
+      "heading": "让比较表达式给出真假结果",
+      "adjacent": [
+        {
+          "href": "/learn/PY101/PY101-C02-L03",
+          "text": "上一节 · 2.3 用表达式算出一个结果"
+        },
+        {
+          "href": "/learn/PY101/PY101-C02-L05",
+          "text": "下一节 · 2.5 取得用户输入，再转成需要的数值"
+        }
+      ]
+    }
+  ],
+  "diagnostics": [
+    "Initial p:last-child selector selected the preceding short-record paragraph; final status checks use the last p in all next-step paragraphs.",
+    "Initial screenshot taken before smooth scrolling settled showed the title area; final captures checked section top after scrolling."
+  ],
+  "console": [],
+  "allFourExactTransitionComparisonsPassed": true,
+  "screenshots": [
+    {
+      "path": "docs/py101-p14/transition-desktop.jpg",
+      "sha256": "ae0811e1f6a35bad52000354df19c455b40404f993e936e7aa8c18f02b0b442b"
+    },
+    {
+      "path": "docs/py101-p14/transition-mobile.jpg",
+      "sha256": "5c11178e8091350d3195d2718f8f39cd0b0373c0ce3d7ec60aa19aa58558c1e5"
+    }
+  ]
+}
