@@ -1,6 +1,8 @@
 # 中文教学编辑审核包（待真人）
 
-2026-10-31。教学核心固定基线`895bb7644735aa4e28d721e272e04b996c1c8eec`；P14仅四处状态末段，完整对象与实际改后稿见TRANSITION_AMENDMENTS。正式审稿时把实际课程提交SHA填入下表，并核对本目录所属版本；不能用滚动main代替固定稿。六节r1/pending-review/preview，PY101为planned。
+固定审阅课程提交：`507a6e84ef1dbe46c8bec9dc7e726a6a1e512076`。该提交含P14四处勘误；随后仅文档的版本绑定不改课程源码，逐文件摘要见[AUDITED_REVISION.json](AUDITED_REVISION.json)。
+
+2026-10-31。开工教学核心基线`895bb7644735aa4e28d721e272e04b996c1c8eec`；P14仅四处状态末段，完整对象与实际改后稿见TRANSITION_AMENDMENTS。正式审稿时把实际课程提交SHA填入下表，并核对本目录所属版本；不能用滚动main代替固定稿。六节r1/pending-review/preview，PY101为planned。
 
 本包可与[教师包](TEACHER_REVIEW_PACK.md)共用六节入口、18目标、12题/rubric链接；[知识矩阵](PREREQUISITE_TRACE.md)按首教/必写/只读区分，[逐题审核](CROSS_LESSON_AUDIT.md)保留实际两级提示原文。AI的观察仅供定位，不预填真人结论。
 

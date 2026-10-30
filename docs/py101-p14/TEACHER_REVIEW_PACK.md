@@ -1,6 +1,8 @@
 # Python专业教师审核包（待真人）
 
-2026-10-31。实际教学核心提交：`895bb7644735aa4e28d721e272e04b996c1c8eec`（P13）；P14对该稿仅实施四处末段状态与Publication技术引用勘误，核心完全相同。P14实际稿件由本目录所属提交和TRANSITION_AMENDMENTS完整对象摘要绑定，正式开始时请核对后填写审阅SHA，不将滚动main当固定版本。没有教师审稿、签署或学生结果。
+固定审阅课程提交：`507a6e84ef1dbe46c8bec9dc7e726a6a1e512076`。该提交含P14四处勘误；随后仅文档的版本绑定不改课程源码，逐文件摘要见[AUDITED_REVISION.json](AUDITED_REVISION.json)。
+
+2026-10-31。开工教学核心基线：`895bb7644735aa4e28d721e272e04b996c1c8eec`（P13）；P14对该稿仅实施四处末段状态与Publication技术引用勘误，核心完全相同。P14实际稿件由本目录所属提交和TRANSITION_AMENDMENTS完整对象摘要绑定，正式开始时请核对后填写审阅SHA，不将滚动main当固定版本。没有教师审稿、签署或学生结果。
 
 六节均r1、非可选、pending-review/preview；PY101整课planned。第二章不是整课模块化/CSV结业目标。以下本地试读入口需先按README用已有依赖运行npm run build，再npm start -- --port 3030；远程预览时换成组织者实际核验基址。临时验收服务器不视为持续部署。
 

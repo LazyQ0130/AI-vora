@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "containing audit commit; resolved to full SHA in the documentation binding commit",
+  "sourceCommit": "507a6e84ef1dbe46c8bec9dc7e726a6a1e512076",
   "baseline": "895bb7644735aa4e28d721e272e04b996c1c8eec",
   "courseSourceFiles": [
     {
@@ -47,5 +47,6 @@
   "teacherReviewConducted": false,
   "editorReviewConducted": false,
   "studentPilotConducted": false,
-  "humanHandoffReproductionConducted": false
+  "humanHandoffReproductionConducted": false,
+  "bindingNote": "Review packs pin this existing complete source commit; the subsequent documentation-only binding commit changes no course code."
 }
