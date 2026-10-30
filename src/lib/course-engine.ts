@@ -42,6 +42,7 @@ import { pythonProjectEnvironmentsLesson } from "../content/lessons/py101/projec
 import { pythonNotebookCellOrderLesson } from "../content/lessons/py101/notebook-cell-order";
 import { pythonEnvironmentReproductionLesson } from "../content/lessons/py101/environment-reproduction";
 import { pythonVariablesAndAssignmentLesson } from "../content/lessons/py101/variables-and-assignment";
+import { pythonBasicValueTypesLesson } from "../content/lessons/py101/basic-value-types";
 import {
   publicationManifest,
   readablePublications,
@@ -56,6 +57,7 @@ import {
 } from "../content/models";
 
 const contents: Lesson[] = [
+  pythonBasicValueTypesLesson,
   pythonVariablesAndAssignmentLesson,
   pythonEnvironmentReproductionLesson,
   pythonScriptPathsLesson,

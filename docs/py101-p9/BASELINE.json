@@ -1,0 +1,2464 @@
+{
+  "head": "3d625d5067772a37aa747566f123a714d648b813",
+  "files": {
+    "curriculum/AI技术课程体系_V1.0.md": {
+      "sha256": "b863f49f3da43225b009b7053dff79d6b5985bf8da9327f7701bc40c0c9d5a73",
+      "lfSha256": "b863f49f3da43225b009b7053dff79d6b5985bf8da9327f7701bc40c0c9d5a73"
+    },
+    "curriculum/AI技术课程目录_V1.0.json": {
+      "sha256": "a7f5723c2ac659bfe271eeeffc050c2d96c46fd68e29391051c88f5db2812366",
+      "lfSha256": "a7f5723c2ac659bfe271eeeffc050c2d96c46fd68e29391051c88f5db2812366"
+    },
+    "docs/py101-p6/.gitignore": {
+      "sha256": "74eed77a20f8aef259b975f5bfa7618856ba53f38f832c7caa066894a764c2cd",
+      "lfSha256": "74eed77a20f8aef259b975f5bfa7618856ba53f38f832c7caa066894a764c2cd"
+    },
+    "docs/py101-p6/APPROVED_CHANGES.json": {
+      "sha256": "f37f41e219ff26141aa79f67f39e4842ac7f410d39bde7e7348f3562e26f4d35",
+      "lfSha256": "f37f41e219ff26141aa79f67f39e4842ac7f410d39bde7e7348f3562e26f4d35"
+    },
+    "docs/py101-p6/BASELINE.json": {
+      "sha256": "1fade0806436e33a95ebb682d1bfaf7c8edadb48932993d1c18de1af88391ce2",
+      "lfSha256": "c3e70d2514ffb5bac9de1aace0d3b4480ce2251ca49dc2f7b32d494fc499130f"
+    },
+    "docs/py101-p6/BASELINE_AND_SCOPE.md": {
+      "sha256": "86bc5cba5f5adad5bf127abcc0caed49a3cb782ecb56d02631f4852e965a0148",
+      "lfSha256": "86bc5cba5f5adad5bf127abcc0caed49a3cb782ecb56d02631f4852e965a0148"
+    },
+    "docs/py101-p6/COMPATIBILITY.json": {
+      "sha256": "3ac27f559ed94b6c3ca58ee1070e5562e00b1a597a3b5cec2ae26f85fc740728",
+      "lfSha256": "3ac27f559ed94b6c3ca58ee1070e5562e00b1a597a3b5cec2ae26f85fc740728"
+    },
+    "docs/py101-p6/CROSS_LESSON_AUDIT.md": {
+      "sha256": "24979ce9bbe568207e6f6c86598db330bb5758d3bd63512a80b06a67847b8027",
+      "lfSha256": "24979ce9bbe568207e6f6c86598db330bb5758d3bd63512a80b06a67847b8027"
+    },
+    "docs/py101-p6/DELIVERY_REPORT.md": {
+      "sha256": "5237f135eac991c3210ba91582bd6d84932b6941209bf84d48ef7380200d27f9",
+      "lfSha256": "5237f135eac991c3210ba91582bd6d84932b6941209bf84d48ef7380200d27f9"
+    },
+    "docs/py101-p6/EDITORIAL_REVIEW_PACK.md": {
+      "sha256": "6c832c51b9a253446b998dad8618b68c93efe5f4001989b1bce3480737f13b15",
+      "lfSha256": "6c832c51b9a253446b998dad8618b68c93efe5f4001989b1bce3480737f13b15"
+    },
+    "docs/py101-p6/ENGINEERING.json": {
+      "sha256": "b8eedb4b600cca136d32facf48391af81af4035488ba0f6258b21de5bc75573e",
+      "lfSha256": "6550e92e7f646392be271e8efadd7749a0a1626c3f7a9b6a4d51e2766b55f8b1"
+    },
+    "docs/py101-p6/PILOT_ORGANIZER_KEY.md": {
+      "sha256": "40b5f87d9a24e6a04d55b94bdfc75f6ae67be0e52c858524293d0ca2f9b566c4",
+      "lfSha256": "40b5f87d9a24e6a04d55b94bdfc75f6ae67be0e52c858524293d0ca2f9b566c4"
+    },
+    "docs/py101-p6/PILOT_PROTOCOL.md": {
+      "sha256": "bfd54b46509be42af5368b4734008ab13e8fd0dd440fcfbb712ab441a4538bf4",
+      "lfSha256": "bfd54b46509be42af5368b4734008ab13e8fd0dd440fcfbb712ab441a4538bf4"
+    },
+    "docs/py101-p6/PILOT_STUDENT_TASKS.md": {
+      "sha256": "622ca40a340817781d9a580900e4fd40063e8961aa390ac72cd6a3968a0747f0",
+      "lfSha256": "622ca40a340817781d9a580900e4fd40063e8961aa390ac72cd6a3968a0747f0"
+    },
+    "docs/py101-p6/POWERSHELL_51_PROBE.json": {
+      "sha256": "bfe3e0429d39185b082534cf4a4a379098498edba760b928e5f0eecaa42d009f",
+      "lfSha256": "065ca406389f50a4e25e4a251c80a38e88c1cba9731bdbba9fc7e31244fda1cb"
+    },
+    "docs/py101-p6/PRECHECK_RESULTS.json": {
+      "sha256": "345b47abdee5e1c7f7d6f206aa1ef41b180decaeece8bdaf0159d460f16dc6da",
+      "lfSha256": "6f6cac9206ae2c8ad3cd13acb6db32f1df7a34fadd58c21db1c0be30ef6aa0a4"
+    },
+    "docs/py101-p6/PREREQUISITE_TRACE.md": {
+      "sha256": "758d05f21cd1eef32f7ba2ec59c2f25711111bc1c2c49f7b3affa30d3171413d",
+      "lfSha256": "758d05f21cd1eef32f7ba2ec59c2f25711111bc1c2c49f7b3affa30d3171413d"
+    },
+    "docs/py101-p6/SCOPE_BASELINE.json": {
+      "sha256": "f9e1c6d3ddd1bedac631ce6c22902e15a925e92b2ef63135c8dba6cf6ebb9268",
+      "lfSha256": "f9e1c6d3ddd1bedac631ce6c22902e15a925e92b2ef63135c8dba6cf6ebb9268"
+    },
+    "docs/py101-p6/TEACHER_REVIEW_PACK.md": {
+      "sha256": "53592e279c0399b55e2f18f7748bd4d8e840099be51ada0591d2c0cdaa1fc213",
+      "lfSha256": "7494a97eb084cabc5ab6afa19ee3acea8cf680d35203294f83033f551c182768"
+    },
+    "docs/py101-p6/TECHNICAL_PRECHECK.md": {
+      "sha256": "7d7e642917cf69a89ed77fd0a75577c4b8a30a87ee85b1f4044bd1c20fcbbf5f",
+      "lfSha256": "7d7e642917cf69a89ed77fd0a75577c4b8a30a87ee85b1f4044bd1c20fcbbf5f"
+    },
+    "docs/py101-p6/TRANSITION_AMENDMENT.json": {
+      "sha256": "a77f700f2eef8e0aeec613ef9ded9f0d2f5374272178548a9965f09fc980ec16",
+      "lfSha256": "a77f700f2eef8e0aeec613ef9ded9f0d2f5374272178548a9965f09fc980ec16"
+    },
+    "docs/py101-p6/TRANSITION_AMENDMENT.md": {
+      "sha256": "373671a43275a1006c029b1b54e6ae36917a841b0a034b6a38e2cb6aacb8be7b",
+      "lfSha256": "373671a43275a1006c029b1b54e6ae36917a841b0a034b6a38e2cb6aacb8be7b"
+    },
+    "docs/py101-p6/pilot-student/observe_env.py": {
+      "sha256": "ae5208e0670e328acfbe3cd0f3817c61db669cf0625cb2f972b7b610be147b0a",
+      "lfSha256": "ae5208e0670e328acfbe3cd0f3817c61db669cf0625cb2f972b7b610be147b0a"
+    },
+    "docs/py101-p6/pilot-student/parcel-note.ipynb": {
+      "sha256": "24bfe39ead0829ef29b429d92b31dc7ab4f038928bf8528293198772dd139201",
+      "lfSha256": "24bfe39ead0829ef29b429d92b31dc7ab4f038928bf8528293198772dd139201"
+    },
+    "docs/py101-p7/.gitignore": {
+      "sha256": "1bb6b3560ce556af4eaad404d36f8adec8b810ad52e81b53a10fdeaa39e020da",
+      "lfSha256": "74eed77a20f8aef259b975f5bfa7618856ba53f38f832c7caa066894a764c2cd"
+    },
+    "docs/py101-p7/APPROVED_CHANGES.json": {
+      "sha256": "5cab951e636d7b3d8126b391767d3f89128d47c3b526341a5529d9e8bba78d5f",
+      "lfSha256": "5cab951e636d7b3d8126b391767d3f89128d47c3b526341a5529d9e8bba78d5f"
+    },
+    "docs/py101-p7/BASELINE.json": {
+      "sha256": "c52c75b6547e358c84a8cdfe37ac65a2f16eab371544d9105be582a6fe31869f",
+      "lfSha256": "7590c304bb4a251c299a99646a896ae524813b35d85b54314fa358ac99871038"
+    },
+    "docs/py101-p7/BASELINE_AND_SCOPE.md": {
+      "sha256": "6002117c902a55bbe09a401548aadf69fd3401b0f9d8fbc3372e2e3db468946b",
+      "lfSha256": "6002117c902a55bbe09a401548aadf69fd3401b0f9d8fbc3372e2e3db468946b"
+    },
+    "docs/py101-p7/BLUEPRINT_RUNS.json": {
+      "sha256": "03ded658f2a4111e9c7bb53300955ddcc96e590c8a9db137fe42e9ec8674b482",
+      "lfSha256": "531ed8fe6b938de28bd10f04c62d872ce29305a212169c7ffc53e8129006ee0a"
+    },
+    "docs/py101-p7/BROWSER_RESULTS.json": {
+      "sha256": "013021c098799187ba2d4abb60b4080e9aa61f3367a1ca70a3eabc24165b6941",
+      "lfSha256": "013021c098799187ba2d4abb60b4080e9aa61f3367a1ca70a3eabc24165b6941"
+    },
+    "docs/py101-p7/CHAPTER_2_BLUEPRINT.md": {
+      "sha256": "a12f9caabad5d596731b70d23b2ac08f6090e3c165483cf1aef0509998590f1f",
+      "lfSha256": "a12f9caabad5d596731b70d23b2ac08f6090e3c165483cf1aef0509998590f1f"
+    },
+    "docs/py101-p7/COMPATIBILITY.json": {
+      "sha256": "eef755f0c390aed0d306f5e8a1812a752e3afe913cc57ae49dc404127ae2fa7c",
+      "lfSha256": "eef755f0c390aed0d306f5e8a1812a752e3afe913cc57ae49dc404127ae2fa7c"
+    },
+    "docs/py101-p7/DELIVERY_REPORT.md": {
+      "sha256": "8f13c99c277e230bf37570be5f214c2564d828a6d3244a7a8d3fe685f75ddb22",
+      "lfSha256": "8f13c99c277e230bf37570be5f214c2564d828a6d3244a7a8d3fe685f75ddb22"
+    },
+    "docs/py101-p7/ENGINEERING.json": {
+      "sha256": "9ae50b07bfa6fa41f8bb253784d28471600a3dd904474cf276d2b8330b87449d",
+      "lfSha256": "46f1105e9a1fb33d333575784082701a6431c968b7ba8e9792bbb17a58d9bda6"
+    },
+    "docs/py101-p7/NAME_RUNS.json": {
+      "sha256": "5336328386fee2b84ef7e2cc1702aef772338f45d29269bdb1ae40a1f8fd811f",
+      "lfSha256": "44a546b14ca09dda707b5979e9075d4219a7cf1bf9c1a13c17fd474c7bbd663b"
+    },
+    "docs/py101-p7/OBJECT_BASELINE.json": {
+      "sha256": "867738651c98ea572bcf17592e51299689cd732c341f84dd972914107542bc57",
+      "lfSha256": "867738651c98ea572bcf17592e51299689cd732c341f84dd972914107542bc57"
+    },
+    "docs/py101-p7/P6_02_REFINEMENT.md": {
+      "sha256": "8a8d62a462c0807685163625d8aecb4b6ab9e265944c928b893be40c7b829e2f",
+      "lfSha256": "8a8d62a462c0807685163625d8aecb4b6ab9e265944c928b893be40c7b829e2f"
+    },
+    "docs/py101-p7/REFINEMENT_DIFF.json": {
+      "sha256": "522433b264b6e6cb417c9d54e6d49736400c630d37cd142a3121325ae8f5e8ab",
+      "lfSha256": "522433b264b6e6cb417c9d54e6d49736400c630d37cd142a3121325ae8f5e8ab"
+    },
+    "docs/py101-p7/SOURCE_FACTS.md": {
+      "sha256": "8a2939f536c31e56d74b52ec2f6a7b59f373ccfc68706be371ef3244fdd7f422",
+      "lfSha256": "8a2939f536c31e56d74b52ec2f6a7b59f373ccfc68706be371ef3244fdd7f422"
+    },
+    "docs/py101-p7/TEACHING_CHECK_SUMMARY.json": {
+      "sha256": "45b4618d496cfe6f4125e3cc7371c1f91290e593adc5b18f84dcf35ad28e8ba2",
+      "lfSha256": "ebdede4f35b3f6c7f7cae532c8fe3b57c8ea98040ef41c0e1221788e66aaa43c"
+    },
+    "docs/py101-p7/TEACHING_V2_3_PYTHON_RESULTS.json": {
+      "sha256": "d423ae3def7761075aa9af825cec3f6cc26fe794ccc99a59e0cf2d28ba6b86e4",
+      "lfSha256": "5849fd78aade4d8b5a0b7972699739932b78190de88d435a98266121d62e9a4c"
+    },
+    "docs/py101-p7/TECHNICAL_REPORT.md": {
+      "sha256": "ebfc950c4b6f2f85ce0d33d2fb9276089c62f66f3e8da53f5c01b8d29db5dc2c",
+      "lfSha256": "ebfc950c4b6f2f85ce0d33d2fb9276089c62f66f3e8da53f5c01b8d29db5dc2c"
+    },
+    "docs/py101-p7/exercise-review.jpg": {
+      "sha256": "2d98d4c3f4964407645679204a0b0cfa93f6649fb3fe51411564a2f00103c894"
+    },
+    "docs/py101-p7/naming-review.jpg": {
+      "sha256": "e34b2327e844744d7a261f4389f1f1f091a0a48f39e0ed37b2ac8ff55e4c8fd8"
+    },
+    "docs/py101-p8/APPROVED_CHANGES.json": {
+      "sha256": "0838c58e304ced45ea582f3c8b57381907388a696888cd5a0984e06121749af3",
+      "lfSha256": "0838c58e304ced45ea582f3c8b57381907388a696888cd5a0984e06121749af3"
+    },
+    "docs/py101-p8/BASELINE.json": {
+      "sha256": "8df7be3d0ee2d20ae8e17e4529e43975eb8c2e143c63ab9c03a9d31f553b0317",
+      "lfSha256": "8df7be3d0ee2d20ae8e17e4529e43975eb8c2e143c63ab9c03a9d31f553b0317"
+    },
+    "docs/py101-p8/BASELINE_AND_SCOPE.md": {
+      "sha256": "c97dbefab12fc713f238ba957a8440d0e835ff972bebbe3818076f2d420319e1",
+      "lfSha256": "c97dbefab12fc713f238ba957a8440d0e835ff972bebbe3818076f2d420319e1"
+    },
+    "docs/py101-p8/BROWSER_REPORT.md": {
+      "sha256": "20e2ac91f2c91f7363485adf3a3e2ba7af267d3e01359f6ce817e8d57433ec0f",
+      "lfSha256": "20e2ac91f2c91f7363485adf3a3e2ba7af267d3e01359f6ce817e8d57433ec0f"
+    },
+    "docs/py101-p8/BROWSER_RESULTS.json": {
+      "sha256": "184fbe95a76d476dde709baaf7466c154b9446ad828ab543397f836a6f0f89a7",
+      "lfSha256": "184fbe95a76d476dde709baaf7466c154b9446ad828ab543397f836a6f0f89a7"
+    },
+    "docs/py101-p8/CLEAN_CANDIDATE.json": {
+      "sha256": "9fe06dd11040b63ebb0c2bcffbdb5d5acbd81f340735ff4bd467c5c1d6d3a2c3",
+      "lfSha256": "a59bcc3fd1b2f9f8358396b712cf03bac3585d5c35ffacdbb28e5eab1ebf9a8b"
+    },
+    "docs/py101-p8/COMPATIBILITY.json": {
+      "sha256": "3b64630d8f539c0f0871b1ec0947e4f43c25859157d6c7059f596309d44b09e0",
+      "lfSha256": "3b64630d8f539c0f0871b1ec0947e4f43c25859157d6c7059f596309d44b09e0"
+    },
+    "docs/py101-p8/DELIVERY_REPORT.md": {
+      "sha256": "0b4cd0bed8d5f31b9a7bfea1e5dd5c40676308bee6a2bdf9bacb8f0dff085359",
+      "lfSha256": "0b4cd0bed8d5f31b9a7bfea1e5dd5c40676308bee6a2bdf9bacb8f0dff085359"
+    },
+    "docs/py101-p8/DRAFT_GATE.json": {
+      "sha256": "13f7d0e732be48b3454d1307541bc6a6d08d518f3d4825db3750bd34b3ab49ac",
+      "lfSha256": "12ed02938226a75b88694ff6dbdc17a09907f87d4eefbded61e953b986303351"
+    },
+    "docs/py101-p8/EDITORIAL_BRIEF.md": {
+      "sha256": "6acd38b82714910b24c074dfe1e140c73b012c5a4fa73b4c65a7fd3850cf8d76",
+      "lfSha256": "6acd38b82714910b24c074dfe1e140c73b012c5a4fa73b4c65a7fd3850cf8d76"
+    },
+    "docs/py101-p8/EDITORIAL_RECHECK.md": {
+      "sha256": "82434e28dcab1f8b126165de29b8046fa2bf88d2b4f242ab7dd9eaf0f1b2c7cd",
+      "lfSha256": "82434e28dcab1f8b126165de29b8046fa2bf88d2b4f242ab7dd9eaf0f1b2c7cd"
+    },
+    "docs/py101-p8/ENGINEERING_CLEAN.json": {
+      "sha256": "3e9dbb63c04ba822e1d2ae4796453172ada83a763fb0e741fd345dd2f2eb3de1",
+      "lfSha256": "4f9995ae4ac285032fd6ef6b814ef02af2f0614815383c64113c3b2aad97f485"
+    },
+    "docs/py101-p8/ENGINEERING_WORKSPACE.json": {
+      "sha256": "d7d8f8f191755104fd99ac16e393162ffed4ed5161c6ad15b8e4c3774bfe4e98",
+      "lfSha256": "8cb7c6cc86cb2b4f1fcaf37fbefd6084ddb804a0c63cebb37e3d2bba0952d963"
+    },
+    "docs/py101-p8/P8_ROUTES.json": {
+      "sha256": "0d59978ffb185b2592f7f908c334da415383b0ece5a736fb77fc8d5ed93d39eb",
+      "lfSha256": "584afc17dfced7c64b338aa305a50ca698278742b04b7a33524c401ba35a104f"
+    },
+    "docs/py101-p8/PRE_SOLUTIONS.md": {
+      "sha256": "7e4ed66571c573ee8dc67bff0cd515f2963fe986aefba4d1e75d19b05a4ca59f",
+      "lfSha256": "7e4ed66571c573ee8dc67bff0cd515f2963fe986aefba4d1e75d19b05a4ca59f"
+    },
+    "docs/py101-p8/PYTHON_RUNS.json": {
+      "sha256": "f87f43f4cbba495be7f0d9713ca04470293c04c1edf8a821ac1f09a6088d1b03",
+      "lfSha256": "f87f43f4cbba495be7f0d9713ca04470293c04c1edf8a821ac1f09a6088d1b03"
+    },
+    "docs/py101-p8/SOURCE_FACTS.md": {
+      "sha256": "19423233e5c8ad612d8bac95b2667699874c5d8963ddd51c0216884d39fa473f",
+      "lfSha256": "19423233e5c8ad612d8bac95b2667699874c5d8963ddd51c0216884d39fa473f"
+    },
+    "docs/py101-p8/TEACHING_CHECK_SUMMARY.json": {
+      "sha256": "643587e0800fcabe1bd62cad4e5f0cca51948878a84a0cd0d0358c401bfca6f9",
+      "lfSha256": "be6cae023a67a20e1a705143fbfeb66021b7cb63cdafc08842da2714ef0e3641"
+    },
+    "docs/py101-p8/TEACHING_V2_3_ROUTE_RESULTS.json": {
+      "sha256": "fcf1c15dc4b3fb95735e7a1644fa1f758b2801e82c2f70efaefd3778b4acd1fb",
+      "lfSha256": "fcf1c15dc4b3fb95735e7a1644fa1f758b2801e82c2f70efaefd3778b4acd1fb"
+    },
+    "docs/py101-p8/TECHNICAL_REPORT.md": {
+      "sha256": "5fcacc3fce483afc9907516120e05520622a644954cf99717880b78440929671",
+      "lfSha256": "5fcacc3fce483afc9907516120e05520622a644954cf99717880b78440929671"
+    },
+    "docs/py101-p8/TRANSITION_AMENDMENT.json": {
+      "sha256": "3d7e05e0e1bb944386b76c85e387e47f3c4fe3282f9be8ae38bf8259ab6cc70d",
+      "lfSha256": "3d7e05e0e1bb944386b76c85e387e47f3c4fe3282f9be8ae38bf8259ab6cc70d"
+    },
+    "docs/py101-p8/TRANSITION_AMENDMENT.md": {
+      "sha256": "228a6861f3641545c50a1f13330ac3a2cac696113aa8cf58724bb8c9632f595d",
+      "lfSha256": "228a6861f3641545c50a1f13330ac3a2cac696113aa8cf58724bb8c9632f595d"
+    },
+    "docs/py101-p8/WEB_PYTHON_RESULTS.json": {
+      "sha256": "1c2b8b39b311eeb578c22d8f3e6b8904ee71ddb84e9637f51d9ef7267e8d396c",
+      "lfSha256": "35372655875e94a020065df385a41020277f8c37f0c9608645f207402a8238a6"
+    },
+    "docs/py101-p8/WORKSPACE_BASELINE.json": {
+      "sha256": "a3eba34cabd03dcb61cb35290f60412f23a41fd90270166819eebb32e9e336ea",
+      "lfSha256": "89a8733d446e33b358e093a1ea65902bec4649dff96f5cf7e87700e3a48e4f97"
+    },
+    "docs/py101-p8/WORKSPACE_PROTECTION.json": {
+      "sha256": "27beb95247f79caea45aa83bb38cae285e4d99638d1ca24d5fc2ea63f1d481d8",
+      "lfSha256": "1aa2ade343c96668a97a1c2d4fac783f9ac1b64f2e3aac276007dd900d225c88"
+    },
+    "docs/py101-p8/WORKSPACE_ROUTE_RESULTS.json": {
+      "sha256": "93d2ed77f67996cfe5d75c53ff3db62f2efbfb9f06fd36b1f12f106494639c38",
+      "lfSha256": "3fe83bbc84db45dad412146a6171cbc021fe8e71bfa0ee91cd481a184fa1313c"
+    },
+    "docs/py101-p8/desktop.jpg": {
+      "sha256": "a9e1b35f92571cb0722c5145879581b4d9e3f33adc4e2aa7ac414e6c399bb4ca"
+    },
+    "docs/py101-p8/draft/TEACHING_V2_3_ROUTE_RESULTS.json": {
+      "sha256": "2d43d26070cf86c44a24ba4dbac2dc98f858454988afa3aabc85d342fdd8f1e0",
+      "lfSha256": "2d43d26070cf86c44a24ba4dbac2dc98f858454988afa3aabc85d342fdd8f1e0"
+    },
+    "docs/py101-p8/mobile.jpg": {
+      "sha256": "a80f123d22f2bbdd1fc64c1a87bbb0ce16a7de7281b5380af3a970bcee4fdcad"
+    },
+    "docs/py101-p8/narrow-320.jpg": {
+      "sha256": "ae302e26e57e2415db3c80c9b66bb4e98680d38c2a7c27b0252c777ab1dc6c93"
+    },
+    "docs/py101-p8/tablet.jpg": {
+      "sha256": "479bee3dd897d1af1f1f82890bd1abfe54c2495a23d7c9d16060f52a84d950d1"
+    },
+    "public/artwork/ai-map-v3.webp": {
+      "sha256": "c974f1c88ab651b894eff1f59f86ed1c94365461cefc75edadb9358a9015a317"
+    },
+    "public/artwork/course-ai-map-v2.webp": {
+      "sha256": "990639019b52b50efad54f75ae6622b5b38f459051ed9ae4c3ae48660afdb87f"
+    },
+    "public/artwork/course-machine-learning-v2.webp": {
+      "sha256": "3fdf7f3d01632f9538c98ff2fd75d2a488af8a586033f2083c15d74a78038fa9"
+    },
+    "public/artwork/course-mathematics-v2.webp": {
+      "sha256": "39768a42bda62d07a97d06ba8ac34c2b636fc3611004b01f5ccfbbaa042159c0"
+    },
+    "public/artwork/course-neural-network-v2.webp": {
+      "sha256": "7a52f149a32c2e91d1ee7e63355863fef2563443b99de162dc72ca98123c3864"
+    },
+    "public/artwork/course-programming-v2.webp": {
+      "sha256": "7685b99f9606d99f747b9be5d1d7df58fe4f952934d83ac4ce176ca7c50e1044"
+    },
+    "public/artwork/courses-v5/ai000-ai-technology-map.webp": {
+      "sha256": "39742d8745ce649a47cbad5a05bfe408563f0a787fbae1ba52a930f4a1e373ea"
+    },
+    "public/artwork/courses-v5/cv401-computer-vision.webp": {
+      "sha256": "e84f7cfeb2a001b71f7a4881551e2707d515ac2d260d55bf18e16f88f53171f0"
+    },
+    "public/artwork/courses-v5/dl301-neural-backpropagation.webp": {
+      "sha256": "76c10a3f776f90a2067ee222bd88af62c3e2110836aad29c75932fb45a80a062"
+    },
+    "public/artwork/courses-v5/dl302-pytorch-training.webp": {
+      "sha256": "a5b141e5c951c27e42811e7167fd1a801b02ab357a035a740c7e94673bb0242b"
+    },
+    "public/artwork/courses-v5/dl303-deep-learning-architectures.webp": {
+      "sha256": "128620984235915f9c9b0b6a2a4d88f4b76d7dcbc9ced8ea31bbc1a283e7860e"
+    },
+    "public/artwork/courses-v5/ds101-scientific-data-analysis.webp": {
+      "sha256": "d35607d09f22bd7704552a3f1e47eb186723cf102be08e36b9fc5483f0ef1c6e"
+    },
+    "public/artwork/courses-v5/gm401-generative-models.webp": {
+      "sha256": "f11df9e694ec0a16ed901c47dfef270dd3d8f4d65bcd2a57efddc5b1951b9faa"
+    },
+    "public/artwork/courses-v5/llm401-language-model-foundations.webp": {
+      "sha256": "093de8c05947eb6c73a67bd2829854ca37e83eda0dea9fd5e77ec9aa6bf41ce0"
+    },
+    "public/artwork/courses-v5/llm402-llm-finetuning-inference.webp": {
+      "sha256": "6287f4b4debe619e7ca774beec6a184ed0b58b624a226f7728268b7a258c9dd7"
+    },
+    "public/artwork/courses-v5/ma101-linear-algebra-calculus.webp": {
+      "sha256": "67ebf075243d72ebcb27ed4a39bff780f381dd7cacb1447a0aff376b5c991328"
+    },
+    "public/artwork/courses-v5/ml201-supervised-learning.webp": {
+      "sha256": "6d81435b2515bb1c3108c959d9de63dec3e51c8e7dfe25b39a8aadf0332c4a9c"
+    },
+    "public/artwork/courses-v5/ml202-classical-algorithms.webp": {
+      "sha256": "b1dfd059a17d243e1efaa904f54c284dc90ceca923f1c7cf7cb5de98765922e1"
+    },
+    "public/artwork/courses-v5/ml203-model-evaluation.webp": {
+      "sha256": "bb34ae87f9f0c70335cc4b8d46a77dbf6d78c2fea497238b2e729ef10cb1592b"
+    },
+    "public/artwork/courses-v5/mm401-multimodal-alignment.webp": {
+      "sha256": "091cea91a770e2569e2ca265f8062abe42e2f2518037b4563a2cc1db5fdacd37"
+    },
+    "public/artwork/courses-v5/nlp401-natural-language-processing.webp": {
+      "sha256": "0a734c06b80a5ebe0d7d09c92759e8f5ce06f8325eb46ed0269e1e4d877470a7"
+    },
+    "public/artwork/courses-v5/py101-python-programming.webp": {
+      "sha256": "d6f612a7769d5925f84ef2a81d939aade7f0bd1599ae3ac5d8298bb8e153c06e"
+    },
+    "public/artwork/courses-v5/res501-research-reproduction.webp": {
+      "sha256": "2f6440646a80e69b6a7e28dcf8e0e5cb33ef0d3b29dc13066c5190a0057d141e"
+    },
+    "public/artwork/courses-v5/rl401-reinforcement-learning.webp": {
+      "sha256": "37c2c93305c5383a0b358af5ed8dce5e0b472fdf9f53dafd0d8150e0d085be86"
+    },
+    "public/artwork/courses-v5/st101-probability-statistics.webp": {
+      "sha256": "1b64d18bac414480a5546e6afc362132f6dad7df08e8111103d0d376ed0d35b8"
+    },
+    "public/artwork/courses-v5/sys501-mlops-deployment.webp": {
+      "sha256": "97a11ccf2ab5f79a38c50e211692d3db6eaeb2a4a193536c9d2ae1a6468ce1db"
+    },
+    "public/artwork/hero-horizon-v2.webp": {
+      "sha256": "f5e76cf34cfcc2c1642b21716dda1ae8adeb8619988dc038e2de091d79626f92"
+    },
+    "public/artwork/math-foundations-v3.webp": {
+      "sha256": "88ab745a2f11b242f82b4463f00316d72a7d5c88e9c5956b45b5dece2215218f"
+    },
+    "public/artwork/python-workbench-v3.webp": {
+      "sha256": "98677472e04672cd1bfc538c050aa23b143b5292438bc4f5ce004ae21615e2c6"
+    },
+    "public/artwork/supervised-learning-v3.webp": {
+      "sha256": "962a34a733c52c935b3c9167499e353c7ae0c4249efc4cd072b8d4922079e1f9"
+    },
+    "public/brand/aivora-horizontal.svg": {
+      "sha256": "54357130205ef121a0bf681ce15cfa68a6c0f94c4789e8ee1db2774f3f9e4b8e",
+      "lfSha256": "54357130205ef121a0bf681ce15cfa68a6c0f94c4789e8ee1db2774f3f9e4b8e"
+    },
+    "public/brand/aivora-mark.svg": {
+      "sha256": "89e39eeae87b6d0bb385f096da105c7dc8f58d8e2e8265fa18c656b4f0fd956d",
+      "lfSha256": "89e39eeae87b6d0bb385f096da105c7dc8f58d8e2e8265fa18c656b4f0fd956d"
+    },
+    "public/brand/aivora-mono.svg": {
+      "sha256": "8d670cf38e239f9862f4efdaa44aa771d80c20381a08f4d2a6f4419e272405af",
+      "lfSha256": "8d670cf38e239f9862f4efdaa44aa771d80c20381a08f4d2a6f4419e272405af"
+    },
+    "public/downloads/README.md": {
+      "sha256": "a9536ac5cfe96103782bf25a6c0c56550e84466c962f30db2a11c4d3d069b6a9",
+      "lfSha256": "a9536ac5cfe96103782bf25a6c0c56550e84466c962f30db2a11c4d3d069b6a9"
+    },
+    "public/downloads/dispatch-note.ipynb": {
+      "sha256": "ffdf8aeba41f7b5538233f00fa056a5cc06d491c14e62ecc7b27e68b6fcf8f6c",
+      "lfSha256": "ffdf8aeba41f7b5538233f00fa056a5cc06d491c14e62ecc7b27e68b6fcf8f6c"
+    },
+    "public/downloads/first-notebook.ipynb": {
+      "sha256": "4177466c366ac7c781ccabf44b4c6052c23ff4324163b6880529185190742ee3",
+      "lfSha256": "4177466c366ac7c781ccabf44b4c6052c23ff4324163b6880529185190742ee3"
+    },
+    "public/downloads/first_run.ipynb": {
+      "sha256": "ffc3b76c48c3ce79353f0d5432964c1cfb3675c210443fb7ce8322a6fd078fb9",
+      "lfSha256": "ffc3b76c48c3ce79353f0d5432964c1cfb3675c210443fb7ce8322a6fd078fb9"
+    },
+    "public/downloads/first_run.py": {
+      "sha256": "415795b1b0f399f53976b6a91415522371bc9cadb2f017692ffe25489a52aa22",
+      "lfSha256": "415795b1b0f399f53976b6a91415522371bc9cadb2f017692ffe25489a52aa22"
+    },
+    "public/downloads/function_basics.ipynb": {
+      "sha256": "c4ab7db72bc5ef0d4c2f74c74d30a206f34de77ca0da07929bd7b3ba9121ac83",
+      "lfSha256": "c4ab7db72bc5ef0d4c2f74c74d30a206f34de77ca0da07929bd7b3ba9121ac83"
+    },
+    "public/downloads/function_basics.py": {
+      "sha256": "836a24d2c2ed64fef97cb90cb1396e9aacb18c1c0c56ba6f9411c09319ae4d26",
+      "lfSha256": "836a24d2c2ed64fef97cb90cb1396e9aacb18c1c0c56ba6f9411c09319ae4d26"
+    },
+    "public/downloads/function_binding.ipynb": {
+      "sha256": "4cb0bc358f4274b0923d2dca360fba3b63d9878fda0fd966626012c0bb0d08e0",
+      "lfSha256": "4cb0bc358f4274b0923d2dca360fba3b63d9878fda0fd966626012c0bb0d08e0"
+    },
+    "public/downloads/function_binding.py": {
+      "sha256": "c144775b03f0fca63b30961d30dfdf74be653b6248fa9e7b57740e1106dc2611",
+      "lfSha256": "c144775b03f0fca63b30961d30dfdf74be653b6248fa9e7b57740e1106dc2611"
+    },
+    "public/downloads/function_defaults.ipynb": {
+      "sha256": "81bd2dff62c89b4976b4c94b354ed524a6ddcf2bb7ce2279e2ca7de5e25e0c57",
+      "lfSha256": "81bd2dff62c89b4976b4c94b354ed524a6ddcf2bb7ce2279e2ca7de5e25e0c57"
+    },
+    "public/downloads/function_defaults.py": {
+      "sha256": "359f34e32ae616965bc381868febccadf215e097dc4c513c2b84db147d2bcb94",
+      "lfSha256": "359f34e32ae616965bc381868febccadf215e097dc4c513c2b84db147d2bcb94"
+    },
+    "public/downloads/function_return.ipynb": {
+      "sha256": "8b5516665c9b7f71d0c5d5b5539136ab2b25c50de2f5a406aff63d54f53e2981",
+      "lfSha256": "8b5516665c9b7f71d0c5d5b5539136ab2b25c50de2f5a406aff63d54f53e2981"
+    },
+    "public/downloads/function_return.py": {
+      "sha256": "f48d348115e79471190213f449e902c38164425553a720d12a2592073676b3a4",
+      "lfSha256": "f48d348115e79471190213f449e902c38164425553a720d12a2592073676b3a4"
+    },
+    "public/downloads/function_scope.ipynb": {
+      "sha256": "a08d1b15e42e9b2aa4d95604d866847b307ddc3b4abae231656148487fe316c7",
+      "lfSha256": "a08d1b15e42e9b2aa4d95604d866847b307ddc3b4abae231656148487fe316c7"
+    },
+    "public/downloads/function_scope.py": {
+      "sha256": "46dc1bed7174475a6cff09d1ba8560ed94f53f519aed1d01a2e575b38bd34f23",
+      "lfSha256": "46dc1bed7174475a6cff09d1ba8560ed94f53f519aed1d01a2e575b38bd34f23"
+    },
+    "public/downloads/linear_regression.ipynb": {
+      "sha256": "7cc44dc5a2195c9f611379f9d0a6296760932f2386fab33d35b66d7ff599927b",
+      "lfSha256": "7cc44dc5a2195c9f611379f9d0a6296760932f2386fab33d35b66d7ff599927b"
+    },
+    "public/downloads/linear_regression.py": {
+      "sha256": "f834fb336437d39ee523c050ed18471b7f62542c2dadc68674174f97b3962ed7",
+      "lfSha256": "f834fb336437d39ee523c050ed18471b7f62542c2dadc68674174f97b3962ed7"
+    },
+    "public/downloads/matrix_product.ipynb": {
+      "sha256": "cfcc3e0321ac28e9e1eaea94ac466ed9986bf897991b4c13b9d28d24a8bc61ba",
+      "lfSha256": "cfcc3e0321ac28e9e1eaea94ac466ed9986bf897991b4c13b9d28d24a8bc61ba"
+    },
+    "public/downloads/matrix_product.py": {
+      "sha256": "c9e8a6ddf57692270d8670b73f6dc361994f851f516c07290be4243021ee2ced",
+      "lfSha256": "c9e8a6ddf57692270d8670b73f6dc361994f851f516c07290be4243021ee2ced"
+    },
+    "public/downloads/matrix_shape.ipynb": {
+      "sha256": "dc33b6e5e9fdd3acc4ec3986a1ad7ea84a45a9979dc9c451635b42ff03ab287c",
+      "lfSha256": "dc33b6e5e9fdd3acc4ec3986a1ad7ea84a45a9979dc9c451635b42ff03ab287c"
+    },
+    "public/downloads/matrix_shape.py": {
+      "sha256": "7392be63d668077e91d7758dc23cc95daff9f7b32183259caa1252869ae199e3",
+      "lfSha256": "7392be63d668077e91d7758dc23cc95daff9f7b32183259caa1252869ae199e3"
+    },
+    "public/downloads/ml_gradient_descent.ipynb": {
+      "sha256": "a2ca13a280896a7fdc94d0ab4c3110e78fa8533d72778f80cf271dfa35f9627b",
+      "lfSha256": "a2ca13a280896a7fdc94d0ab4c3110e78fa8533d72778f80cf271dfa35f9627b"
+    },
+    "public/downloads/ml_gradient_descent.py": {
+      "sha256": "3bc1d7e29aba5a4ca83c751538c16ddb3d58d4cadbc68b73fc666e83a1bdc332",
+      "lfSha256": "3bc1d7e29aba5a4ca83c751538c16ddb3d58d4cadbc68b73fc666e83a1bdc332"
+    },
+    "public/downloads/ml_losses.ipynb": {
+      "sha256": "4193176ef70d7534275105ec65dfd11045135d81411cf044ab5053a6ab3b4839",
+      "lfSha256": "4193176ef70d7534275105ec65dfd11045135d81411cf044ab5053a6ab3b4839"
+    },
+    "public/downloads/ml_losses.py": {
+      "sha256": "b038dc09723138ac494a9b6f0a4e20c697739f783e8b9655bb0fc8a892c04037",
+      "lfSha256": "b038dc09723138ac494a9b6f0a4e20c697739f783e8b9655bb0fc8a892c04037"
+    },
+    "public/downloads/numpy_shapes.ipynb": {
+      "sha256": "ad1411d050aaeb41d5703a7ed4d1b4020a2e0fa49943a026862532359fd5f4a2",
+      "lfSha256": "ad1411d050aaeb41d5703a7ed4d1b4020a2e0fa49943a026862532359fd5f4a2"
+    },
+    "public/downloads/numpy_shapes.py": {
+      "sha256": "84201ffe9549a4af3d5672094c43518132dd50f6071781901b40d58a1c4fd3c6",
+      "lfSha256": "84201ffe9549a4af3d5672094c43518132dd50f6071781901b40d58a1c4fd3c6"
+    },
+    "public/downloads/python_functions.ipynb": {
+      "sha256": "33410e97bf2067585adeb24a659a0570cabbee7755d578bea13743c136c02b27",
+      "lfSha256": "33410e97bf2067585adeb24a659a0570cabbee7755d578bea13743c136c02b27"
+    },
+    "public/downloads/python_functions.py": {
+      "sha256": "cc492aa647832f7c1b45eeff43f2a134347f9bf074599c0ca1eec19e96e50333",
+      "lfSha256": "cc492aa647832f7c1b45eeff43f2a134347f9bf074599c0ca1eec19e96e50333"
+    },
+    "public/downloads/review-note.ipynb": {
+      "sha256": "ff6a93dc3d4e625b97a4b37ffc21ce2ea33c033435d90b1c40c8312d28d5d1ea",
+      "lfSha256": "ff6a93dc3d4e625b97a4b37ffc21ce2ea33c033435d90b1c40c8312d28d5d1ea"
+    },
+    "public/downloads/vector_basics.ipynb": {
+      "sha256": "3ab37cea3c240d541bd22a5cafeafe729b17e3b0b4533790aa607228c1193f95",
+      "lfSha256": "3ab37cea3c240d541bd22a5cafeafe729b17e3b0b4533790aa607228c1193f95"
+    },
+    "public/downloads/vector_basics.py": {
+      "sha256": "405b7366205c1bc994f042118ca136d0aa2f2e9834e830b2830f3555083deb24",
+      "lfSha256": "405b7366205c1bc994f042118ca136d0aa2f2e9834e830b2830f3555083deb24"
+    },
+    "public/downloads/vector_dot.ipynb": {
+      "sha256": "d5648cd776d42a3c84e4190282b12a383d1fa2084947dab6f245177fd021cf9a",
+      "lfSha256": "d5648cd776d42a3c84e4190282b12a383d1fa2084947dab6f245177fd021cf9a"
+    },
+    "public/downloads/vector_dot.py": {
+      "sha256": "ada2ba92f92a7dafad298163ca264cdbdc1c7ab2fa0c18800366f34f296b6077",
+      "lfSha256": "ada2ba92f92a7dafad298163ca264cdbdc1c7ab2fa0c18800366f34f296b6077"
+    },
+    "public/downloads/vector_matrix.ipynb": {
+      "sha256": "2c84b24ba49896d819da1fd915ed2f5aba73de6c84311b032679372ff762e7ec",
+      "lfSha256": "2c84b24ba49896d819da1fd915ed2f5aba73de6c84311b032679372ff762e7ec"
+    },
+    "public/downloads/vector_matrix.py": {
+      "sha256": "c8fef244ee93a63fa20dabd55f9fcf9a4c14b35b34ba8e53a313b8657a38cc0f",
+      "lfSha256": "c8fef244ee93a63fa20dabd55f9fcf9a4c14b35b34ba8e53a313b8657a38cc0f"
+    },
+    "public/images/lessons/ai000/ai000-c01-l01-mail-sorting.webp": {
+      "sha256": "caa439305a92436da90439934bcda0fb18d79c9726d0c991f80e4a4422662a8d"
+    },
+    "public/images/lessons/ai000/ai000-c01-l02-mail-review.webp": {
+      "sha256": "ccab00526d55a25702663327b55745e4a11ec1c5b4200e24d026db32247e9ec9"
+    },
+    "public/images/lessons/ai000/ai000-c01-l03-automation-diagnosis.webp": {
+      "sha256": "9efe207533c2865dd8029f0b1ee6999ea6e77ded289f718983acd528f2c315e6"
+    },
+    "public/images/lessons/ai000/ai000-c02-l01-photo-recognition.webp": {
+      "sha256": "2868d5ffe083921aac8122116f2ccafe664a4a9531953376959c430173f40389"
+    },
+    "public/images/lessons/ai000/ai000-c02-l02-poster-creation.webp": {
+      "sha256": "cbb6ffc783764e34c881157b912cd069648046baa1f70f79fc4f5d497c5f26bf"
+    },
+    "public/images/lessons/ai000/ai000-c03-l01-photo-label-pairing.webp": {
+      "sha256": "b95b2f1e0ba2c8da1195760ea9d056494cbd9d7fe536b956cb5554d3616a390c"
+    },
+    "public/images/lessons/ai000/ai000-c03-l02-library-observation.webp": {
+      "sha256": "5d6bb67afb3d5865a3deb38104d92e4af8b8e939c4af155b05858ee61989722f"
+    },
+    "public/images/lessons/ai000/ai000-c03-l03-masked-document.webp": {
+      "sha256": "7de74b94a43be9de49cd96d286f062291dd135a1f669a9466b53f7dc0cb7d5c9"
+    },
+    "public/images/lessons/ai000/ai000-c03-l04-delivery-robot.webp": {
+      "sha256": "9c256def053fc66b8929fcc1acdfbde6fd11c670cf174e2a2d954384bd817121"
+    },
+    "public/images/lessons/ai000/ai000-c04-l01-parcel-registration.webp": {
+      "sha256": "d497489ef6c8087fdb00423e88f5c1ed1f9c24d3a4aa80b1ec45bd5bc7322528"
+    },
+    "public/images/lessons/ai000/ai000-c04-l02-queue-estimate.webp": {
+      "sha256": "36571f7c0b29a5f079a5b86ec02dc5a2d108427a9dffe7f921fbd5a18fdb1281"
+    },
+    "public/images/lessons/ai000/ai000-c04-l03-records-reserved.webp": {
+      "sha256": "53b1a796962cba41a122de9a6be218a091cc4c501ee7a5aa10101a68282a1bdf"
+    },
+    "public/images/lessons/ai000/ai000-c04-l04-model-inference.webp": {
+      "sha256": "82c16f06819f12ca51a96974676f89e1d715b8e053d41aa3d8b56f3de46fb917"
+    },
+    "public/learning/ml-v2/calibration-samples-mobile.png": {
+      "sha256": "885e4afa3ec9ebe3837fc9edccf04533f41fc595c3c951f146d0d3d89cf2508f"
+    },
+    "public/learning/ml-v2/calibration-samples.png": {
+      "sha256": "65918f94fb8284689636f36d0d763c26af37a18c1029ff1549d3e452173496a6"
+    },
+    "public/learning/ml-v2/first-update-mobile.png": {
+      "sha256": "50c8e8f098856f307ffa30f395f8996aa0eb92c67fe19564e611cca085ae7c3d"
+    },
+    "public/learning/ml-v2/first-update.png": {
+      "sha256": "f2e2a13dae143fd67321df2a78f2f27e3ef4f00109861239610e796df7ee4449"
+    },
+    "public/learning/ml-v2/gradient-direction-mobile.png": {
+      "sha256": "603f7b1272ed38319a34176904e96e2b27b050619d9ebfbe60562e68ce89e495"
+    },
+    "public/learning/ml-v2/gradient-direction.png": {
+      "sha256": "ef8df54b36d36ed4a2611808a2777607b086bda84614f11496a005455fa72e67"
+    },
+    "public/learning/ml-v2/parameter-lines-mobile.png": {
+      "sha256": "089b76787771e6d3f6447b238bf7f39dc93746bbdee0f11712ae9da631d524d1"
+    },
+    "public/learning/ml-v2/parameter-lines.png": {
+      "sha256": "87ee91be8155037e25e01e05a01d990bd765159be64c622c724638a56b6e5dd4"
+    },
+    "public/learning/ml-v2/training-loss-mobile.png": {
+      "sha256": "98a5b69385b78dc8fdb56f4e09e176a9a77234e59ce2c4861e6da24f523e9297"
+    },
+    "public/learning/ml-v2/training-loss.png": {
+      "sha256": "42c59a9c14f24d3db0d47dee072bbaa6dc923d74084e7b8b8f96aa199018b1a5"
+    },
+    "public/learning/python-function-call-mobile.png": {
+      "sha256": "363e9062dd6f6f7fd053dd1a8ff70edab0967dcfb2c52b892b974aab7a08509c"
+    },
+    "public/learning/python-function-call.png": {
+      "sha256": "4b3ec72f3e09bb4c79501c16363b9aba87bf02db58d0b7f84b87159d663fe259"
+    },
+    "public/learning/v2-1/array-shapes-mobile.png": {
+      "sha256": "433ea5f39d5d8c11f45fbb6990a16f7a55956cc115b8a78253afec4eab9d9d91"
+    },
+    "public/learning/v2-1/array-shapes.png": {
+      "sha256": "0006b23a9702f6f5c2feb519f82852a367575d5f499287953432643583f5c4ee"
+    },
+    "public/learning/v2-1/function-flow-mobile.png": {
+      "sha256": "6a37a8f2badea30e77048473aca1f66ededfec40ea2834c40c546f93772f8db6"
+    },
+    "public/learning/v2-1/function-flow.png": {
+      "sha256": "d19839cc7a1343a53b6b92e0b3f2f358f717b52379149f6c3b7b14523a181397"
+    },
+    "public/learning/v2-1/matrix-product-mobile.png": {
+      "sha256": "16fe8065258d9042a3f8d3b3142dc5621b15445c9876ac25137770abf6605e4f"
+    },
+    "public/learning/v2-1/matrix-product.png": {
+      "sha256": "6554ace99a3d72bc6e4a366006a2670f624ab967a65f409c7ddf0e4dd1804b5c"
+    },
+    "public/learning/v2-1/numeric-evidence.json": {
+      "sha256": "cbc7813b465e0699113254f7e5c1ae6898f3efd9ef7089de26e29a3406abc9ca",
+      "lfSha256": "befe6c563777825fcf97d0fba7eb8c3f32eee508432a4a4655346fda96950c21"
+    },
+    "public/learning/vector-addition-mobile.png": {
+      "sha256": "b703164f6c0db1d06e1d4c3a60f1542c9d8b6c7f59f0e0fe0ce84cae209e9832"
+    },
+    "public/learning/vector-addition.png": {
+      "sha256": "d7ebc7acd66237e9d3db06950033298d47218b2970974a5ea44c6a0c7d17c745"
+    },
+    "scripts/add-ai000-illustrations.mjs": {
+      "sha256": "417dd51e090faf3dc05a7d0eacc7ad30ca750f901d3dc2ce1999985083397e4f",
+      "lfSha256": "417dd51e090faf3dc05a7d0eacc7ad30ca750f901d3dc2ce1999985083397e4f"
+    },
+    "scripts/ai000-applicability-compatibility.ts": {
+      "sha256": "4fad991b48fdcce52664f7263dafc3bb4e275a63f9a63db46d86ddfca60643b0",
+      "lfSha256": "4fad991b48fdcce52664f7263dafc3bb4e275a63f9a63db46d86ddfca60643b0"
+    },
+    "scripts/ai000-capstone-compatibility.ts": {
+      "sha256": "6f3d234c563226e9c0e654ce0c1547de328ee10475c3b787f756735a0ecd870b",
+      "lfSha256": "6f3d234c563226e9c0e654ce0c1547de328ee10475c3b787f756735a0ecd870b"
+    },
+    "scripts/ai000-creative-compatibility.ts": {
+      "sha256": "596d768153d00c8cd664ea4249c0b5522520be9b7bb1b23be33ccdbfdfd3503c",
+      "lfSha256": "e04b25aa58c3560fa7b5bd3c1677ba3f974793461f713e0859d93b0ae9984245"
+    },
+    "scripts/ai000-directions-compatibility.ts": {
+      "sha256": "6df5204bdcdf34f2934b2e0f1c762b13234b970443491cf32bf16e44d03c889a",
+      "lfSha256": "6df5204bdcdf34f2934b2e0f1c762b13234b970443491cf32bf16e44d03c889a"
+    },
+    "scripts/ai000-editorial-compatibility.ts": {
+      "sha256": "6d0bf7c53a1c592a40147237c8be603beea9b715b557d6be2a3d9af4a7af466b",
+      "lfSha256": "6d0bf7c53a1c592a40147237c8be603beea9b715b557d6be2a3d9af4a7af466b"
+    },
+    "scripts/ai000-foundations-compatibility.ts": {
+      "sha256": "9c8a40abd6e3dc1ef11c7a45b2cbcc2cd8434ec77d987cf33cc87f14795b0280",
+      "lfSha256": "9c8a40abd6e3dc1ef11c7a45b2cbcc2cd8434ec77d987cf33cc87f14795b0280"
+    },
+    "scripts/ai000-illustration-compatibility.ts": {
+      "sha256": "4dc42bf6355e586a43763529d9c191fc7190d007b1c6687dfb4f563f665dcd5e",
+      "lfSha256": "8577b6055bf64603e42555a19d5e61c28cae3c05f39f0f077e890d599c73f8e4"
+    },
+    "scripts/ai000-multimodal-compatibility.ts": {
+      "sha256": "1e7f8f600e30b3b53d648145cfbfe46827f478892825daf8b7f0433c848c8888",
+      "lfSha256": "fe901dcbcd174e530fb76a5f512209f60b11db572692a7d1a19605e51816159a"
+    },
+    "scripts/ai000-privacy-compatibility.ts": {
+      "sha256": "1d5c3902f04aa2ee7aa449e81890f9f5986b9d965c0d6c9265e6bd3c16350bc8",
+      "lfSha256": "8241077c1b56c970f1b9888d48a850b2d1afceb9882773c65a58a1661a20d8c1"
+    },
+    "scripts/ai000-quality-compatibility.ts": {
+      "sha256": "ee21b8170dad613e852c65d1e545cfd642584735d9036df86d9c049f651089d2",
+      "lfSha256": "ee21b8170dad613e852c65d1e545cfd642584735d9036df86d9c049f651089d2"
+    },
+    "scripts/ai000-r3-compatibility.ts": {
+      "sha256": "96a7b6cc6c39aead9566c216f1ca885fdfcaf59b5ea8921f9dd996582d423174",
+      "lfSha256": "96a7b6cc6c39aead9566c216f1ca885fdfcaf59b5ea8921f9dd996582d423174"
+    },
+    "scripts/ai000-refinement-compatibility.ts": {
+      "sha256": "54f2337e625b306eb69d46aa5b8732b7c75021e34c0eb42059dd0ccad2a86fc3",
+      "lfSha256": "54f2337e625b306eb69d46aa5b8732b7c75021e34c0eb42059dd0ccad2a86fc3"
+    },
+    "scripts/ai000-reliability-compatibility.ts": {
+      "sha256": "877e3d6b9dba976632ab996819bc8b96130ac7bb24ac3732661d3692b746e9a8",
+      "lfSha256": "877e3d6b9dba976632ab996819bc8b96130ac7bb24ac3732661d3692b746e9a8"
+    },
+    "scripts/ai000-responsible-compatibility.ts": {
+      "sha256": "65c9f4f36d38eae3f09894abdc95557bcf7adb0a91d8286dee730a6c9c6e46df",
+      "lfSha256": "4de146ed6a4cf80e936bdfafaac6eaa4457289849b6e7b3606a5f2f6a903ebf9"
+    },
+    "scripts/ai000-study-time-compatibility.ts": {
+      "sha256": "a29a5107c83fcd05d194f82b7e8d07e74e7c26d6d3e09a7dcd8809130f90eb9d",
+      "lfSha256": "e0ad5af6200e2a14a9204af3cdd105d378fa3df13534b91af7d648dbb74972aa"
+    },
+    "scripts/ai000-vision-compatibility.ts": {
+      "sha256": "c432486cb9650b88bd66743c261461fb421a9ae41372956219a751b02856bc88",
+      "lfSha256": "c432486cb9650b88bd66743c261461fb421a9ae41372956219a751b02856bc88"
+    },
+    "scripts/audit-py101-p3.ts": {
+      "sha256": "eac8fd9e6321d7af402cdaa123ceeeadf0485679476de60211a0e72c397f8104",
+      "lfSha256": "eac8fd9e6321d7af402cdaa123ceeeadf0485679476de60211a0e72c397f8104"
+    },
+    "scripts/check-ai000-content.ts": {
+      "sha256": "bdf3d555eda3ee9b6c08845c743c2ee6e7b55d18860613b0afa7a09e26d3ab74",
+      "lfSha256": "e5fdbcf2cc32a1e452917bffcb0aaa05f649e54f4ceda60f9b28885c9eac0557"
+    },
+    "scripts/check-ai000-relationships.ts": {
+      "sha256": "a7d47dba98c61871ca25ee878e2f66d64d6845107e8e15da1e22779a5f5694ab",
+      "lfSha256": "7b3cf2a2fabff3312d93e872a3dd04e7b76640dff996af4c8fc3aceb128974fe"
+    },
+    "scripts/check-reading-experience.ts": {
+      "sha256": "9c3ab8b75f9dcb0d389c2e0e14965b497dca5e985f9f2d9a4a7c2904fce41d25",
+      "lfSha256": "9c3ab8b75f9dcb0d389c2e0e14965b497dca5e985f9f2d9a4a7c2904fce41d25"
+    },
+    "scripts/evidence-path.ts": {
+      "sha256": "a418217da3112df7380242b2d2f27887d30bdb87f788d268d43d2739ae5fd36d",
+      "lfSha256": "a418217da3112df7380242b2d2f27887d30bdb87f788d268d43d2739ae5fd36d"
+    },
+    "scripts/optimize-artwork.mjs": {
+      "sha256": "421427ff7d679fd014e767376407b6bca3ada22e42f4ddfd851718aa9f4a1fb0",
+      "lfSha256": "421427ff7d679fd014e767376407b6bca3ada22e42f4ddfd851718aa9f4a1fb0"
+    },
+    "scripts/prepare-ai000-illustrations.mjs": {
+      "sha256": "9dab6d4d8666a09273609e03d364f7cef97fd6161904f37d758a74faacabb86d",
+      "lfSha256": "9dab6d4d8666a09273609e03d364f7cef97fd6161904f37d758a74faacabb86d"
+    },
+    "scripts/prepare-ai000-release-readiness.ts": {
+      "sha256": "c562feafbb337c6f2159a608b674160dc076bf226cebefecfc28274dec608329",
+      "lfSha256": "c562feafbb337c6f2159a608b674160dc076bf226cebefecfc28274dec608329"
+    },
+    "scripts/prepare-course-covers.mjs": {
+      "sha256": "95c4e0c64dfcc6972d6cfd5312d0ae802a59e08cc5b6db2df6476fd05b2c247c",
+      "lfSha256": "95c4e0c64dfcc6972d6cfd5312d0ae802a59e08cc5b6db2df6476fd05b2c247c"
+    },
+    "scripts/prepare-downloads.ts": {
+      "sha256": "76a02b3f26b71eb0ec70a05e596f62543e6d737b9ed2beeb43559f2d8200bba2",
+      "lfSha256": "76a02b3f26b71eb0ec70a05e596f62543e6d737b9ed2beeb43559f2d8200bba2"
+    },
+    "scripts/py101-p0-compatibility.ts": {
+      "sha256": "62dc27e90258db68c0d95fee850c06dc759a9801be3233eae67547e6277c6cb2",
+      "lfSha256": "62dc27e90258db68c0d95fee850c06dc759a9801be3233eae67547e6277c6cb2"
+    },
+    "scripts/py101-p1-compatibility.ts": {
+      "sha256": "1f6230fb3843e7f4f7f443fa8e18e6c843c30f6bf169d4b1cdb37ee383a580f9",
+      "lfSha256": "1f6230fb3843e7f4f7f443fa8e18e6c843c30f6bf169d4b1cdb37ee383a580f9"
+    },
+    "scripts/python-variable-checks.ts": {
+      "sha256": "d1ecc301338a3db644939f9b6c1006633af3d9e718393151de7167ce5dc9907c",
+      "lfSha256": "d1ecc301338a3db644939f9b6c1006633af3d9e718393151de7167ce5dc9907c"
+    },
+    "scripts/recheck-ai000-7-1.py": {
+      "sha256": "fe4172190a1239228bf88ec8734135acb54f56a4d04e1b7279f0390fa001c432",
+      "lfSha256": "fe4172190a1239228bf88ec8734135acb54f56a4d04e1b7279f0390fa001c432"
+    },
+    "scripts/recheck-ai000-7-2.py": {
+      "sha256": "050cec0f80986740dedf145aa71bc6a8681a1b07b6040276fca1b03b8a50dcd6",
+      "lfSha256": "050cec0f80986740dedf145aa71bc6a8681a1b07b6040276fca1b03b8a50dcd6"
+    },
+    "scripts/recheck-ai000-7-3.py": {
+      "sha256": "42b69f0e5fe15d335612961853b92e4268a7d07937dc17cf90c2b25f0988a490",
+      "lfSha256": "42b69f0e5fe15d335612961853b92e4268a7d07937dc17cf90c2b25f0988a490"
+    },
+    "scripts/register-py101-p0-sources.ts": {
+      "sha256": "e4bcb872fad58a3d7222d6ccc77010a76d04fae70759e5e15bb2a7b0a0bd48cf",
+      "lfSha256": "e4bcb872fad58a3d7222d6ccc77010a76d04fae70759e5e15bb2a7b0a0bd48cf"
+    },
+    "scripts/register-py101-p1-sources.ts": {
+      "sha256": "539f59f8496b442f16c22fc0ca0299a553b6f8af82f61419c58aee5ab7725209",
+      "lfSha256": "539f59f8496b442f16c22fc0ca0299a553b6f8af82f61419c58aee5ab7725209"
+    },
+    "scripts/register-py101-p2-changes.ts": {
+      "sha256": "a72bb434a32400f200b09b32d8cf8be3dc4fe560f4690854d3a96316dfef5ac0",
+      "lfSha256": "a72bb434a32400f200b09b32d8cf8be3dc4fe560f4690854d3a96316dfef5ac0"
+    },
+    "scripts/render-lesson-diagrams.py": {
+      "sha256": "e7d76e2f892882f0ea64918b50bedad99ec427401fc8352ceecf68b8e0a3a68e",
+      "lfSha256": "e7d76e2f892882f0ea64918b50bedad99ec427401fc8352ceecf68b8e0a3a68e"
+    },
+    "scripts/render-ml-v2-diagrams.py": {
+      "sha256": "4b6dda89bf793875625bdee00f299154bd4b16c091c42c5cb18c309a16a1c108",
+      "lfSha256": "4b6dda89bf793875625bdee00f299154bd4b16c091c42c5cb18c309a16a1c108"
+    },
+    "scripts/render-v2-1-diagrams.py": {
+      "sha256": "3b53d8d21c12519b41804e819aaf013326fb1c54710c56c2796fc989aba63f1d",
+      "lfSha256": "3b53d8d21c12519b41804e819aaf013326fb1c54710c56c2796fc989aba63f1d"
+    },
+    "scripts/review-ai000-3-1.ts": {
+      "sha256": "f0643e25c7a23e16a92a1a6522f4e89817386b2ee76dffbf8f1bd637b369bb4d",
+      "lfSha256": "1f71d2d5be4b243d4cd23b34b28e8044dbac7dbf4bd8f6ff91dbcffcf118d29f"
+    },
+    "scripts/review-ai000-3-2.ts": {
+      "sha256": "90da725edd2d15ffdd54fcf5348be1a82713de3091d31e0fe342cffab266bbb7",
+      "lfSha256": "2649b40c387f7f13cda73b2548c8cb64ea4ce82297353957dbdf95db15c3b276"
+    },
+    "scripts/review-ai000-3-3.ts": {
+      "sha256": "58db7cdd901d7040055ce503e2b8ac9859b1281a81bf42308c8267e56a179d57",
+      "lfSha256": "58db7cdd901d7040055ce503e2b8ac9859b1281a81bf42308c8267e56a179d57"
+    },
+    "scripts/review-ai000-3-4.ts": {
+      "sha256": "094a69632cc4ce39903b79b1cdc8db5b7293b2abc5026466c4ff9065a7852cb3",
+      "lfSha256": "094a69632cc4ce39903b79b1cdc8db5b7293b2abc5026466c4ff9065a7852cb3"
+    },
+    "scripts/review-ai000-4-1.ts": {
+      "sha256": "b213d3a3eb70c31f57aa52d1f3aede3461381f0b3d2fc48145387008ddccc61a",
+      "lfSha256": "b213d3a3eb70c31f57aa52d1f3aede3461381f0b3d2fc48145387008ddccc61a"
+    },
+    "scripts/review-ai000-4-2.ts": {
+      "sha256": "47902478f5d74c19694d57d067bea616a74c3bc8579a498ed2e641fc3bc6f4e3",
+      "lfSha256": "47902478f5d74c19694d57d067bea616a74c3bc8579a498ed2e641fc3bc6f4e3"
+    },
+    "scripts/review-ai000-4-3.ts": {
+      "sha256": "2d3328bf64173ab94f72353b076178489cc1b72a8ef2208001074487f8fa37cc",
+      "lfSha256": "ee27994d4445df06c4c3b77eabd2545df624f2852c93c319a9a4eb1773ba9e95"
+    },
+    "scripts/review-ai000-4-4.ts": {
+      "sha256": "f15fbbb559f1d3b2f33354c40229f706af16909ad47311cec24b1a00d48954ee",
+      "lfSha256": "f15fbbb559f1d3b2f33354c40229f706af16909ad47311cec24b1a00d48954ee"
+    },
+    "scripts/review-ai000-5-1.ts": {
+      "sha256": "55b7db8ad6de433096727011f5fa3a5f3c8400add8e24fca5c762d192dd66dda",
+      "lfSha256": "55b7db8ad6de433096727011f5fa3a5f3c8400add8e24fca5c762d192dd66dda"
+    },
+    "scripts/review-ai000-5-2.ts": {
+      "sha256": "9888de2b2f415d8d2c78fa87d50de710ea3c6a182eedf0aa81af21558681899c",
+      "lfSha256": "8552126602759e222019b542305848c03133162b971521e8e032e45470d35438"
+    },
+    "scripts/review-ai000-5-3.ts": {
+      "sha256": "d6bb81d167f11cfa4f6b651dae82962688d2acd52b540d0ee8b9c40f21f65ab8",
+      "lfSha256": "d6bb81d167f11cfa4f6b651dae82962688d2acd52b540d0ee8b9c40f21f65ab8"
+    },
+    "scripts/review-ai000-5-4.ts": {
+      "sha256": "9a248a0936dbbe9216cf1e7cacf979ba6ea4c86083d0072cf4594e890acef600",
+      "lfSha256": "2793a60a8e1750d78af9fac1c8b0ddad9a25f893f637a94eef10a0d4b84b40e5"
+    },
+    "scripts/review-ai000-5-5.ts": {
+      "sha256": "e5a39581663117b6dd7799edf47fab328304bb49f288137bbc63b584f24422b8",
+      "lfSha256": "e5a39581663117b6dd7799edf47fab328304bb49f288137bbc63b584f24422b8"
+    },
+    "scripts/review-ai000-6-1.ts": {
+      "sha256": "15d35c9c107500160fa7c800f3e77b2ae487f1e5a23b7a1da06859698feb2a47",
+      "lfSha256": "15d35c9c107500160fa7c800f3e77b2ae487f1e5a23b7a1da06859698feb2a47"
+    },
+    "scripts/review-ai000-6-2.ts": {
+      "sha256": "ad12a4bd315b9135f76fe60ca43144faefc2dc542003402ecd444eaa7dd43008",
+      "lfSha256": "9b1889ef00ed710739b3bc41883d7ef9a32d74262801f5a266d76af29e3ae947"
+    },
+    "scripts/review-ai000-6-3.ts": {
+      "sha256": "6a6a92f978a9c26002c32bf1502862f8661de4abd04e99dad02aff85e2a63ab3",
+      "lfSha256": "60cbb30132e3b5a119c8cc8f3c5792b1df3c61ce740b10c4407af08a7f8ccbb4"
+    },
+    "scripts/review-ai000-7-1.ts": {
+      "sha256": "d55a3079fbacfadb13b9f71c050282c4cd54b6a9544bb5bb95233f0fe29251f1",
+      "lfSha256": "d55a3079fbacfadb13b9f71c050282c4cd54b6a9544bb5bb95233f0fe29251f1"
+    },
+    "scripts/review-ai000-7-2.ts": {
+      "sha256": "bac3ac742ee46212f7f4bde952f14a73b9c657e87c27e1a6dfab8e83aed015bd",
+      "lfSha256": "bac3ac742ee46212f7f4bde952f14a73b9c657e87c27e1a6dfab8e83aed015bd"
+    },
+    "scripts/review-ai000-7-3.ts": {
+      "sha256": "38a86c5bb17a0870d61d5b8edb3db3d2cd2e1efad6481ed4f7b2b155c1cfcc7f",
+      "lfSha256": "38a86c5bb17a0870d61d5b8edb3db3d2cd2e1efad6481ed4f7b2b155c1cfcc7f"
+    },
+    "scripts/review-ai000-course.ts": {
+      "sha256": "84de91b638ceba6ebabcc1240b7bdfe90a87951eb28c5915b0c4c240ea054a79",
+      "lfSha256": "84de91b638ceba6ebabcc1240b7bdfe90a87951eb28c5915b0c4c240ea054a79"
+    },
+    "scripts/review-ai000-quality.ts": {
+      "sha256": "024edd826d63df28392c6125a1195484532b3af4cd4150129629c7021611b2a3",
+      "lfSha256": "6125e255f9c81fa19387de3ce8f61afa67918a67f39fe0d3933ecc80b9353e1b"
+    },
+    "scripts/review-ai000-r3.ts": {
+      "sha256": "ca9307b13f2083860950d7c20daa3e1be419b8ba780ef5fd1bb4bed6e0745382",
+      "lfSha256": "ca9307b13f2083860950d7c20daa3e1be419b8ba780ef5fd1bb4bed6e0745382"
+    },
+    "scripts/review-ai000-v2.ts": {
+      "sha256": "572d7ee60dcb2a824c9c4bb3ec636186c3fcecaa4f24ab6090b8a02b6634b64f",
+      "lfSha256": "470a097e38ec95acf3ffd9fa62f8b8f8daddae59ead219117035f09f7cbf56cc"
+    },
+    "scripts/review-ai000-visual-refinement.ts": {
+      "sha256": "f775c67dfafc40c4362288665a22d389ae32add591ed6ba7e1ee69e7e115c1ce",
+      "lfSha256": "f775c67dfafc40c4362288665a22d389ae32add591ed6ba7e1ee69e7e115c1ce"
+    },
+    "scripts/review-py101-p0.ts": {
+      "sha256": "be3baddc70589bd0b03135fbea8ed066d1530694447afad1d120dde2e01ed5f2",
+      "lfSha256": "be3baddc70589bd0b03135fbea8ed066d1530694447afad1d120dde2e01ed5f2"
+    },
+    "scripts/review-py101-p1.ts": {
+      "sha256": "3dca0487041a617387295108994eaee46c0395b07186a8dee00a581ff72b2f4e",
+      "lfSha256": "3dca0487041a617387295108994eaee46c0395b07186a8dee00a581ff72b2f4e"
+    },
+    "scripts/review-py101-p2.ts": {
+      "sha256": "8dc41278e1f4699113e20d7689d43bca6003dc89c9645a5cc94e1ce3c9f854bf",
+      "lfSha256": "8dc41278e1f4699113e20d7689d43bca6003dc89c9645a5cc94e1ce3c9f854bf"
+    },
+    "scripts/review-py101-p8.ts": {
+      "sha256": "08ce94ada6a5f4094887bc4025c04426a9c2b6d5d894a535b1f4272e3a032cf4",
+      "lfSha256": "08ce94ada6a5f4094887bc4025c04426a9c2b6d5d894a535b1f4272e3a032cf4"
+    },
+    "scripts/review-teaching.ts": {
+      "sha256": "3f227477730afb928ec67c049b0b12b1996d6f34cb35a48988c8172fcc5de399",
+      "lfSha256": "aee5d3a9f3b484603603b193e4b3f078751d294675cf4cb220de26df056d6ae4"
+    },
+    "scripts/review-v2-3.ts": {
+      "sha256": "627ec8b2a8c52232026c3a5f06bb1b211f674552706008ace49eaa8629ae5a27",
+      "lfSha256": "627ec8b2a8c52232026c3a5f06bb1b211f674552706008ace49eaa8629ae5a27"
+    },
+    "scripts/validate-ai000-illustrations.mjs": {
+      "sha256": "3c22c66447afe122f8e2398ae1e02537330e2c0f843f673c1fb934bd5784ca6c",
+      "lfSha256": "3c22c66447afe122f8e2398ae1e02537330e2c0f843f673c1fb934bd5784ca6c"
+    },
+    "scripts/validate-notebook-state.py": {
+      "sha256": "886d19a17fc0a74eb131b521c110d8ec3af60423baf9cf70904ac6fb51fe1fa7",
+      "lfSha256": "886d19a17fc0a74eb131b521c110d8ec3af60423baf9cf70904ac6fb51fe1fa7"
+    },
+    "scripts/validate-py101-editor.ts": {
+      "sha256": "d409f8cd7ff1d422ba0c84ec2f78f96081849098838a336e3ed926d4d7f7590a",
+      "lfSha256": "d409f8cd7ff1d422ba0c84ec2f78f96081849098838a336e3ed926d4d7f7590a"
+    },
+    "scripts/validate-py101-notebook.ts": {
+      "sha256": "bc4b71d163dee349b76894708338ccb7a6b0250a759df38c0439246abccc1c2d",
+      "lfSha256": "bc4b71d163dee349b76894708338ccb7a6b0250a759df38c0439246abccc1c2d"
+    },
+    "scripts/validate-py101-p0.ts": {
+      "sha256": "695d32403f0e099ebce7e7dfdecf93df15e91b70f462eadf369c287c6a0887ed",
+      "lfSha256": "695d32403f0e099ebce7e7dfdecf93df15e91b70f462eadf369c287c6a0887ed"
+    },
+    "scripts/validate-py101-p1.ts": {
+      "sha256": "371bcf074ba7946216f029746facd810d3103f8b73d979fbc3307b079be56e33",
+      "lfSha256": "371bcf074ba7946216f029746facd810d3103f8b73d979fbc3307b079be56e33"
+    },
+    "scripts/validate-py101-reproduction-notebook.ts": {
+      "sha256": "6119905b149b824ed03b432723df430931234608a41d2d9e5463dd106ee9a4b1",
+      "lfSha256": "6119905b149b824ed03b432723df430931234608a41d2d9e5463dd106ee9a4b1"
+    },
+    "scripts/validate-py101-reproduction.ts": {
+      "sha256": "200317f90298c91d795e782ca0eb7541feb58c06e602e54e6e770edf5e9c58f5",
+      "lfSha256": "200317f90298c91d795e782ca0eb7541feb58c06e602e54e6e770edf5e9c58f5"
+    },
+    "scripts/validate-py101-variables.ts": {
+      "sha256": "e617820f89cc2d26a67009c0e436b2184bce65a91dfd0a72ac5ed8fa0802e490",
+      "lfSha256": "e617820f89cc2d26a67009c0e436b2184bce65a91dfd0a72ac5ed8fa0802e490"
+    },
+    "scripts/validate-py101-venv.ts": {
+      "sha256": "3b2818204f719100c960bf0b8a2d31811c8f85d54d0c430bc7b16a664215e80f",
+      "lfSha256": "3b2818204f719100c960bf0b8a2d31811c8f85d54d0c430bc7b16a664215e80f"
+    },
+    "scripts/validate-python.ts": {
+      "sha256": "741d8c327b3350ff3e2b860a26ddedd31227b03c471e7d7dffe83daafb131dbc",
+      "lfSha256": "88090f259d66ef3aac2285ae45e7bdef8ea706457bbd30c9973f16e24d6edf93"
+    },
+    "scripts/validate-reproduction-kernel.py": {
+      "sha256": "4a04c29c834f1e271f5ede124cad1175fd0bc22f2a1e41d6299c6ee6c8d0ac59",
+      "lfSha256": "4a04c29c834f1e271f5ede124cad1175fd0bc22f2a1e41d6299c6ee6c8d0ac59"
+    },
+    "scripts/validate-routes.ts": {
+      "sha256": "1b19055d4134be11baf632612ed9cfc54a6c7e2700983812643c01a937032a5c",
+      "lfSha256": "1b19055d4134be11baf632612ed9cfc54a6c7e2700983812643c01a937032a5c"
+    },
+    "src/app/ai000-lesson.css": {
+      "sha256": "dcc93d72bc813258d8026eb8aa1db4f54b20f0da8de6c4816adf2cf7677421c3",
+      "lfSha256": "1585d97b57a67317ef757fa01f1226c67a539f3e5c60ec9679cea5742b178880"
+    },
+    "src/app/course-covers-v3.css": {
+      "sha256": "eb192a97e2f50725ea0202ed6828dedc526b262076dd7f6446f38e2c87a91f00",
+      "lfSha256": "eb192a97e2f50725ea0202ed6828dedc526b262076dd7f6446f38e2c87a91f00"
+    },
+    "src/app/course-covers-v5.css": {
+      "sha256": "51c8c217d94b48f42149145cb18d9921c082a1dfd04e236d103299da5ba8e1ce",
+      "lfSha256": "51c8c217d94b48f42149145cb18d9921c082a1dfd04e236d103299da5ba8e1ce"
+    },
+    "src/app/courses/[id]/page.tsx": {
+      "sha256": "3904f18a649e84a90b1bc675c73c099b74713cbb84198f337c290e2d4bc87a1a",
+      "lfSha256": "323b60eddd99253e33315ceeb73168abbc8f90904422ba3ab8a8d8fadac15ecc"
+    },
+    "src/app/courses/page.tsx": {
+      "sha256": "96ae17845cadd76a68d63ac2c53e7e29c95e049752cd759273ada06b2f9689fc",
+      "lfSha256": "96ae17845cadd76a68d63ac2c53e7e29c95e049752cd759273ada06b2f9689fc"
+    },
+    "src/app/dashboard/page.tsx": {
+      "sha256": "64835600d87409726aec77b8a2c6f55aa31b4b54d05ca9538db3a0eb4f7f9e5f",
+      "lfSha256": "64835600d87409726aec77b8a2c6f55aa31b4b54d05ca9538db3a0eb4f7f9e5f"
+    },
+    "src/app/error.tsx": {
+      "sha256": "2dca94c64e92cb85d023e2cbb205a922580d1478e79080f926a6862c74d0dc27",
+      "lfSha256": "2dca94c64e92cb85d023e2cbb205a922580d1478e79080f926a6862c74d0dc27"
+    },
+    "src/app/globals.css": {
+      "sha256": "24b15829b54f21189e636adf18d4b448eaaf2828de4f3ec1172d34b70ff936e5",
+      "lfSha256": "24b15829b54f21189e636adf18d4b448eaaf2828de4f3ec1172d34b70ff936e5"
+    },
+    "src/app/layout.tsx": {
+      "sha256": "4b158454f9500de7eb81f627c5f3219dd010757d591a81b508732ca39834d1ca",
+      "lfSha256": "4b158454f9500de7eb81f627c5f3219dd010757d591a81b508732ca39834d1ca"
+    },
+    "src/app/learn/[courseId]/[lessonId]/page.tsx": {
+      "sha256": "8eee57fe880b96674bf99eba73b144d561abd287cd553da44c56c7bfd024c058",
+      "lfSha256": "573c7020c4693e88adcc95cee41484d6d196f2589d7a6b95d59d0cdf0e571db9"
+    },
+    "src/app/learning-system.css": {
+      "sha256": "b420b741870b7180358545c6356e7966fded296243eb51f371712c42898b6bb5",
+      "lfSha256": "b420b741870b7180358545c6356e7966fded296243eb51f371712c42898b6bb5"
+    },
+    "src/app/loading.tsx": {
+      "sha256": "76bcbf4f8aea38850749928268819c576986fcf6ca4b8968553fbfa8a348f476",
+      "lfSha256": "76bcbf4f8aea38850749928268819c576986fcf6ca4b8968553fbfa8a348f476"
+    },
+    "src/app/not-found.tsx": {
+      "sha256": "378cd881dd2a1cbe3ab26f7e86496685af1cf9aa85e1fddacaab99eeb8aebbc8",
+      "lfSha256": "378cd881dd2a1cbe3ab26f7e86496685af1cf9aa85e1fddacaab99eeb8aebbc8"
+    },
+    "src/app/page.tsx": {
+      "sha256": "8ad9febf8ce2229947bb453c1b0caf63b01aba36884b3152d6841ecbbab62b01",
+      "lfSha256": "8ad9febf8ce2229947bb453c1b0caf63b01aba36884b3152d6841ecbbab62b01"
+    },
+    "src/app/paths/page.tsx": {
+      "sha256": "2f6a7f2de989dcaf74722259cacab602a40b12bb2b5097eebc7f8dfd6847f836",
+      "lfSha256": "2f6a7f2de989dcaf74722259cacab602a40b12bb2b5097eebc7f8dfd6847f836"
+    },
+    "src/app/projects/page.tsx": {
+      "sha256": "16484be5a3e00a28a62b97726ab123405193f02ed8b9dee533b3e778a6874dc8",
+      "lfSha256": "16484be5a3e00a28a62b97726ab123405193f02ed8b9dee533b3e778a6874dc8"
+    },
+    "src/app/reader.css": {
+      "sha256": "c00a578b07507e9db01a7e49394a1271e1f52b7d10b291b621164e5784b45ae1",
+      "lfSha256": "44fcd476a3d88a42c97c5d35103d04ce440214f97bd091366f6e9de2fa71dd10"
+    },
+    "src/app/teaching-v2-1.css": {
+      "sha256": "41c366bcd06c4fbf1fdc78f8715c6f54c9d591117e8cc24bc4b397f08b9a48f9",
+      "lfSha256": "41c366bcd06c4fbf1fdc78f8715c6f54c9d591117e8cc24bc4b397f08b9a48f9"
+    },
+    "src/app/teaching-v2-2.css": {
+      "sha256": "96269582a0d64beb7e8ab05d5b49e8c15b95e7094ee52e081cb83d6c73faffe7",
+      "lfSha256": "aa9c4e881700e2cd10e1ee89b55af275c25833e17b21ba145149ae56dc7011e2"
+    },
+    "src/app/template.tsx": {
+      "sha256": "c0ffa9554becb54279415496cef215bb426615d6e3e062abc15187edcebe9364",
+      "lfSha256": "c0ffa9554becb54279415496cef215bb426615d6e3e062abc15187edcebe9364"
+    },
+    "src/app/usability.css": {
+      "sha256": "014d0a8140e516fdf71255455a154e4fb693ced471c93965b6e656ae8369b110",
+      "lfSha256": "014d0a8140e516fdf71255455a154e4fb693ced471c93965b6e656ae8369b110"
+    },
+    "src/app/visual-v2.css": {
+      "sha256": "2241e9d1d9bee8153961655da98b2f3dac2a9136a84ef3b0f4ce85f1e4e1d29a",
+      "lfSha256": "2241e9d1d9bee8153961655da98b2f3dac2a9136a84ef3b0f4ce85f1e4e1d29a"
+    },
+    "src/components/catalog.tsx": {
+      "sha256": "72db981d6f10f7952e4638b4c0c54417a1e4ba84acae793e519643bb4ac7098d",
+      "lfSha256": "72db981d6f10f7952e4638b4c0c54417a1e4ba84acae793e519643bb4ac7098d"
+    },
+    "src/components/course-card.tsx": {
+      "sha256": "0ca3fdcb0e956b6801591fe2c48a725f607b81a9bc34c8a5ef804336c2dee5f5",
+      "lfSha256": "0ca3fdcb0e956b6801591fe2c48a725f607b81a9bc34c8a5ef804336c2dee5f5"
+    },
+    "src/components/dashboard.tsx": {
+      "sha256": "a38b052d3dd96cef2a6f686a872662c3b5365e77317916275454c2ccf7fe24a0",
+      "lfSha256": "a38b052d3dd96cef2a6f686a872662c3b5365e77317916275454c2ccf7fe24a0"
+    },
+    "src/components/hero-art.tsx": {
+      "sha256": "b1e89c7eb0081d4bb8beb4945f2d96dbfa096621c3cbe354be195bf7593e776f",
+      "lfSha256": "b1e89c7eb0081d4bb8beb4945f2d96dbfa096621c3cbe354be195bf7593e776f"
+    },
+    "src/components/home.tsx": {
+      "sha256": "1b83a984596046954c1be462819d61ba65fd58ae3bc9d5d4385df6865c95e44c",
+      "lfSha256": "1b83a984596046954c1be462819d61ba65fd58ae3bc9d5d4385df6865c95e44c"
+    },
+    "src/components/lesson/ai-borrowing-figure.tsx": {
+      "sha256": "2850e0c44910e9365626ee1445141cafa2d7013aeb746c4567cef29df99ad643",
+      "lfSha256": "2850e0c44910e9365626ee1445141cafa2d7013aeb746c4567cef29df99ad643"
+    },
+    "src/components/lesson/ai-creative-figure.tsx": {
+      "sha256": "388bb20d8fa998db102e9bc48d2d19b833a4c1a829810c9425100190a9f5284d",
+      "lfSha256": "0b6f76b41c87c1525539fcfbe516bff9636421bb2482987cff5f42b077938eab"
+    },
+    "src/components/lesson/ai-data-use-figure.tsx": {
+      "sha256": "ad3386a3ffe729c9f5ff07d86494fc1ee333cdda9a40ddbb4bdf6c7be0255191",
+      "lfSha256": "5d4defff64a5b6be91480f717e1710a4bc022a3aa1305fb4c55cdfc68f4948aa"
+    },
+    "src/components/lesson/ai-features-target-figure.tsx": {
+      "sha256": "a1cee6b2dae802203a32303de8367da05f7be5c2d26d131a22833ac04036edfd",
+      "lfSha256": "a1cee6b2dae802203a32303de8367da05f7be5c2d26d131a22833ac04036edfd"
+    },
+    "src/components/lesson/ai-generation-figure.tsx": {
+      "sha256": "98a0736e29a93dcb27243d65d34e81cca1080b544af09363e60d3b4113b40e8c",
+      "lfSha256": "98a0736e29a93dcb27243d65d34e81cca1080b544af09363e60d3b4113b40e8c"
+    },
+    "src/components/lesson/ai-inference-figure.tsx": {
+      "sha256": "f6d162b256ae49c073ca782d4ae4e18d16a8001ca5f67887ea12529e931539b0",
+      "lfSha256": "f6d162b256ae49c073ca782d4ae4e18d16a8001ca5f67887ea12529e931539b0"
+    },
+    "src/components/lesson/ai-knowledge-figure.tsx": {
+      "sha256": "eb65f24740ed3a1a0ed237e2afd92277366ce930cd1bd1f5f33b375d43ecaa16",
+      "lfSha256": "eb65f24740ed3a1a0ed237e2afd92277366ce930cd1bd1f5f33b375d43ecaa16"
+    },
+    "src/components/lesson/ai-multimodal-figure.tsx": {
+      "sha256": "25393cb663b8cb5bdfe16431ecffb57745dccbf158a6befe47ca497425a85efd",
+      "lfSha256": "25393cb663b8cb5bdfe16431ecffb57745dccbf158a6befe47ca497425a85efd"
+    },
+    "src/components/lesson/ai-parameters-figure.tsx": {
+      "sha256": "5bb4f6ce91d198eb746db4a26e289a3b645bf572aa8bfddd1a017d18ad089060",
+      "lfSha256": "5bb4f6ce91d198eb746db4a26e289a3b645bf572aa8bfddd1a017d18ad089060"
+    },
+    "src/components/lesson/ai-reinforcement-figure.tsx": {
+      "sha256": "74602f13e9c5d2a5dbae3f105ca7562181bc2399e485c7ff8dae550e630a364c",
+      "lfSha256": "74602f13e9c5d2a5dbae3f105ca7562181bc2399e485c7ff8dae550e630a364c"
+    },
+    "src/components/lesson/ai-relationship-figure.tsx": {
+      "sha256": "2b9d823cff00ae5a8565be6be0d5c2a5286c7c3a58d1c5696fa155752c9d4a9b",
+      "lfSha256": "2b9d823cff00ae5a8565be6be0d5c2a5286c7c3a58d1c5696fa155752c9d4a9b"
+    },
+    "src/components/lesson/ai-self-supervised-figure.tsx": {
+      "sha256": "0e52c49929bbd94d387acab10bf41272f3938116d71c570cc00c1d4eb60bc241",
+      "lfSha256": "0e52c49929bbd94d387acab10bf41272f3938116d71c570cc00c1d4eb60bc241"
+    },
+    "src/components/lesson/ai-supervised-figure.tsx": {
+      "sha256": "36f91e73d952a07b9c8848de21c26fa247e48e7601d232fd2075714e1b8f5d09",
+      "lfSha256": "36f91e73d952a07b9c8848de21c26fa247e48e7601d232fd2075714e1b8f5d09"
+    },
+    "src/components/lesson/ai-task-figure.tsx": {
+      "sha256": "699230936b748c65b89319c1321b11575fb1cb3ee01bf0a870effe338968036a",
+      "lfSha256": "7e33851808b2c549a4a0d711a657af0a1ce4d9365f051ca576b1c1c94ee36021"
+    },
+    "src/components/lesson/ai-vision-figure.tsx": {
+      "sha256": "9172bb2f9c57244d292db4782a275e264434e0a44af0c707c8f07835b704623f",
+      "lfSha256": "81d630c53681f8b3b10bc9d90116dbfe983b6c26a545c9702557d187a4546701"
+    },
+    "src/components/lesson/article-contents.tsx": {
+      "sha256": "ee97025346c2fd0460746ed954ebca885e61e2a839ad8f803c94e0de20eeebac",
+      "lfSha256": "ee97025346c2fd0460746ed954ebca885e61e2a839ad8f803c94e0de20eeebac"
+    },
+    "src/components/lesson/blocks.tsx": {
+      "sha256": "fc8d0c6e51f33bcfebd37b619a53ace0f4ec0d9f27bdbf15f07ca27010a82b66",
+      "lfSha256": "fc8d0c6e51f33bcfebd37b619a53ace0f4ec0d9f27bdbf15f07ca27010a82b66"
+    },
+    "src/components/lesson/chapter-toc.tsx": {
+      "sha256": "037b6cbc129d7272b6b2ac3fce38d9f744762ad8f80049a4e5a3d370cc09f8a9",
+      "lfSha256": "d4bf164024ede2d05ccfb9145970e5d069a9ed7c202c8a731943490f572572fa"
+    },
+    "src/components/lesson/content-renderer.tsx": {
+      "sha256": "02943d78fd238f3f08dea777a1a54f8398ffafcba63d9cd75992811d56e7866a",
+      "lfSha256": "02943d78fd238f3f08dea777a1a54f8398ffafcba63d9cd75992811d56e7866a"
+    },
+    "src/components/lesson/course-contents.tsx": {
+      "sha256": "094365369364e649591c8ced22ea3cac59612f5953e1481a6932300e0f2561db",
+      "lfSha256": "c69190845bb979c5874dfeb0d60619207941a02a0e83e7052fbe3f3a47485e17"
+    },
+    "src/components/lesson/guided-exercise.tsx": {
+      "sha256": "338b1433f8fff357d2f0ae2f998b100744b56a775f69979bd952818afbec3b63",
+      "lfSha256": "338b1433f8fff357d2f0ae2f998b100744b56a775f69979bd952818afbec3b63"
+    },
+    "src/components/lesson/learning-support.tsx": {
+      "sha256": "8e0cdcc1d0eaca41b5e3ba8e421f25361d5fc80c1ecf932ff05dd10da8d689a6",
+      "lfSha256": "8e0cdcc1d0eaca41b5e3ba8e421f25361d5fc80c1ecf932ff05dd10da8d689a6"
+    },
+    "src/components/lesson/legacy-anchors.tsx": {
+      "sha256": "44f2082ea09e4f9c00ca84d875876dae5edd54ac07bd7f9931e6755f862d83a9",
+      "lfSha256": "44f2082ea09e4f9c00ca84d875876dae5edd54ac07bd7f9931e6755f862d83a9"
+    },
+    "src/components/lesson/reader.tsx": {
+      "sha256": "fa0fbf213d3f8dab8bffbfc607f036da184f1926d170b4cf3d4d6d86e0b1a293",
+      "lfSha256": "39f99e4184d88e0dc8886ca9c219a49198fd4dd863ffb561ff54945714c81b80"
+    },
+    "src/components/lesson/regression-experiment.tsx": {
+      "sha256": "a76df14efcd3bc47609f3285572d9ccd54e2925bcdf0cf86b0f82a20e6a93d19",
+      "lfSha256": "a76df14efcd3bc47609f3285572d9ccd54e2925bcdf0cf86b0f82a20e6a93d19"
+    },
+    "src/components/lesson/teaching-section.tsx": {
+      "sha256": "c38088de63bae844aa6578bd87de1a943dada74a34fa0cb4af74081d5b3eba94",
+      "lfSha256": "c38088de63bae844aa6578bd87de1a943dada74a34fa0cb4af74081d5b3eba94"
+    },
+    "src/components/lesson/vector-figure.tsx": {
+      "sha256": "b6311e5054857281e6c51a72cd949d9cf8332d94155ef76150ab590b310455e3",
+      "lfSha256": "b6311e5054857281e6c51a72cd949d9cf8332d94155ef76150ab590b310455e3"
+    },
+    "src/components/paths-explorer.tsx": {
+      "sha256": "126cbad7c2eb5c513cba1fa84228fd44eee9b16d371e0e3bfa153ac7639c88bc",
+      "lfSha256": "126cbad7c2eb5c513cba1fa84228fd44eee9b16d371e0e3bfa153ac7639c88bc"
+    },
+    "src/components/projects.tsx": {
+      "sha256": "28771361f6df765d3ed96d8ce5070fec57e5b55416de1cbefc7f09815f7d4839",
+      "lfSha256": "28771361f6df765d3ed96d8ce5070fec57e5b55416de1cbefc7f09815f7d4839"
+    },
+    "src/components/site-shell.tsx": {
+      "sha256": "186ecc4f75c1e53fd249eb932717928780c21a8854f83b52496e65159d263789",
+      "lfSha256": "186ecc4f75c1e53fd249eb932717928780c21a8854f83b52496e65159d263789"
+    },
+    "src/components/ui.tsx": {
+      "sha256": "c3d709d66a20b2e5e8f4f9116f4e610002dc9ebfae56250d494668a0a5314de6",
+      "lfSha256": "c3d709d66a20b2e5e8f4f9116f4e610002dc9ebfae56250d494668a0a5314de6"
+    },
+    "src/content/ai000-outline.ts": {
+      "sha256": "c58394c4c619956bd17806e49bfacf2697e04c0f3a3637cbb180c178196ae2af",
+      "lfSha256": "c58394c4c619956bd17806e49bfacf2697e04c0f3a3637cbb180c178196ae2af"
+    },
+    "src/content/ai000-study-time.ts": {
+      "sha256": "b033d0eb359b07310270a564fef1803b79f4082ed8b57b292c78bd8fe1249cd1",
+      "lfSha256": "cad2e2b197eb7224ff4f1a740a0cd01ef4c4583421b7f9787bdd0a4a7be747c7"
+    },
+    "src/content/course-outline.ts": {
+      "sha256": "3cd214c072b780ce643c82b8f74d360391d3d76249ac9bc2ae49383fb7545207",
+      "lfSha256": "6b121a24392967465cd4f4a9a334e60091d4c9e440029dc2d71e7bcf4de35532"
+    },
+    "src/content/glossary.ts": {
+      "sha256": "26a62cdd85d3da0c46307b0a78d4ba7629aa2ba69cd07d5bbca442f7d0b8309f",
+      "lfSha256": "26a62cdd85d3da0c46307b0a78d4ba7629aa2ba69cd07d5bbca442f7d0b8309f"
+    },
+    "src/content/lessons/ai000/ai-ml-dl.ts": {
+      "sha256": "16c057b3a79b64a4d53aa13005aa646f22aa578cb7dfce4770400301aba8470a",
+      "lfSha256": "eb2e92c4aada08b94a8d9422ecf933266c95b33cca7efe284d12b53db8dda791"
+    },
+    "src/content/lessons/ai000/automation-and-ai.ts": {
+      "sha256": "4e9003788437ce1a69c563669518d6a968a9f8e77744144f542d9915784facd8",
+      "lfSha256": "6567b6c21468219883cab5288db2a811217f238ec7ecc394e965d53c332458d5"
+    },
+    "src/content/lessons/ai000/borrowing-example.ts": {
+      "sha256": "61b5e8afeb381cba08d1f63704734d22e90c521c5559434a4a48b14d508c8049",
+      "lfSha256": "61b5e8afeb381cba08d1f63704734d22e90c521c5559434a4a48b14d508c8049"
+    },
+    "src/content/lessons/ai000/capabilities-and-errors.ts": {
+      "sha256": "db0a83505629f011b04d32005ce57e2261a316006618c528a79079e8754f0a13",
+      "lfSha256": "bccf3146bedcd8aad9f4deb19cdfb9c447d126ef48cd344007fd7c14878df1b7"
+    },
+    "src/content/lessons/ai000/capstone-example.ts": {
+      "sha256": "f8116053098b5337eb6cacd6105eea0919ac8bc7a5ba54713c1e9f317ce3bac4",
+      "lfSha256": "f8116053098b5337eb6cacd6105eea0919ac8bc7a5ba54713c1e9f317ce3bac4"
+    },
+    "src/content/lessons/ai000/computer-vision.ts": {
+      "sha256": "d029eded00a7edadbee765bbfbc9a36702d7329eadac40423edadab5e726dc91",
+      "lfSha256": "d029eded00a7edadbee765bbfbc9a36702d7329eadac40423edadab5e726dc91"
+    },
+    "src/content/lessons/ai000/creative-work-example.ts": {
+      "sha256": "974263de21656a90398cdb9df8440827aeacccc9df08a01281386847afebcd04",
+      "lfSha256": "e0c6dc7a8e18ecf1e371a022df795d87cd2f55e41dcaf6fa377348baa1214ac9"
+    },
+    "src/content/lessons/ai000/data-features-labels.ts": {
+      "sha256": "2744b824a451be2f053fc4cc6ab80cff0cc2ec50129501f6da969f609e613bb5",
+      "lfSha256": "2744b824a451be2f053fc4cc6ab80cff0cc2ec50129501f6da969f609e613bb5"
+    },
+    "src/content/lessons/ai000/data-use-example.ts": {
+      "sha256": "7af4f43d6044447f783f456ecea647e031dad94ff01ad845e62d6e7c96a139aa",
+      "lfSha256": "7af4f43d6044447f783f456ecea647e031dad94ff01ad845e62d6e7c96a139aa"
+    },
+    "src/content/lessons/ai000/delivery-example.ts": {
+      "sha256": "97af48c1cd389f408164167dace282d219bb23b3c9aa689e1ea1869e4222c777",
+      "lfSha256": "97af48c1cd389f408164167dace282d219bb23b3c9aa689e1ea1869e4222c777"
+    },
+    "src/content/lessons/ai000/direction-learning-routes.ts": {
+      "sha256": "1472a0cd2212e403cf0713491abfb3dd362f67fb51ba3f411d41611ec3236081",
+      "lfSha256": "1472a0cd2212e403cf0713491abfb3dd362f67fb51ba3f411d41611ec3236081"
+    },
+    "src/content/lessons/ai000/direction-route-example.ts": {
+      "sha256": "eef97a4d9650d365c81d8a4c45e2ae13d4083a0ca3301195ac9afdd85a1ea8ed",
+      "lfSha256": "eef97a4d9650d365c81d8a4c45e2ae13d4083a0ca3301195ac9afdd85a1ea8ed"
+    },
+    "src/content/lessons/ai000/fixed-model-example.ts": {
+      "sha256": "56b595a6bfc3fcbd65e275ad73fba0a4db53b283b0a70c132dcfad1f4ff2262b",
+      "lfSha256": "56b595a6bfc3fcbd65e275ad73fba0a4db53b283b0a70c132dcfad1f4ff2262b"
+    },
+    "src/content/lessons/ai000/foundations-example.ts": {
+      "sha256": "e7bc4df740d7461bef34bc0c5ce6b7a663d7b5b4b4c738658788389d603aa389",
+      "lfSha256": "e7bc4df740d7461bef34bc0c5ce6b7a663d7b5b4b4c738658788389d603aa389"
+    },
+    "src/content/lessons/ai000/generative-ai-and-llm.ts": {
+      "sha256": "46a46c44b5ea256f9d8f3bc84c3e8034883c58dc5517ad702fc01c52c92dd559",
+      "lfSha256": "2d02f9e1d426a8c2db4c3337bb8e17ab7f282fcde4fbeb6f306e0f6be69464a4"
+    },
+    "src/content/lessons/ai000/generative-work.ts": {
+      "sha256": "eb06aaa8fbe9a303598d2e56b11b5f07483595759966eb039c0af421f280b942",
+      "lfSha256": "0bcee9938cfbc9358fa313eca527128e3efe2d539ab70013503155c450367ef1"
+    },
+    "src/content/lessons/ai000/illustrations.ts": {
+      "sha256": "4788629abbc59fca093d0e9abe56780b68ee50bdef911e36474d27717610fd4e",
+      "lfSha256": "4788629abbc59fca093d0e9abe56780b68ee50bdef911e36474d27717610fd4e"
+    },
+    "src/content/lessons/ai000/language-service-example.ts": {
+      "sha256": "6e7e937645c2a01bd4e6d82c47195274cd704e8fcda6f5257e5419fa3203f6e0",
+      "lfSha256": "6e7e937645c2a01bd4e6d82c47195274cd704e8fcda6f5257e5419fa3203f6e0"
+    },
+    "src/content/lessons/ai000/mail-example.ts": {
+      "sha256": "ed8446f3d4ab32fdf9f52f901b6ae597f7566b91952d268b117591c54b9eaa15",
+      "lfSha256": "ed8446f3d4ab32fdf9f52f901b6ae597f7566b91952d268b117591c54b9eaa15"
+    },
+    "src/content/lessons/ai000/model-parameter-example.ts": {
+      "sha256": "d63d9f9ee217d05f7c8536b65271de8a5c9f2e389e93b700993c23db66feaafb",
+      "lfSha256": "d63d9f9ee217d05f7c8536b65271de8a5c9f2e389e93b700993c23db66feaafb"
+    },
+    "src/content/lessons/ai000/models-and-parameters.ts": {
+      "sha256": "43f6b6f53cc5973c105b0bdadd6f194a3564cf0553da28ae670aa5d29cccc404",
+      "lfSha256": "43f6b6f53cc5973c105b0bdadd6f194a3564cf0553da28ae670aa5d29cccc404"
+    },
+    "src/content/lessons/ai000/multimodal-ai.ts": {
+      "sha256": "7a597ffd283764c3da1d8f63ec3e4427bb371bac2ca22bba2829c47e0200ff0c",
+      "lfSha256": "28cde19cd922d5c1130eee11a9586c03ef300f8af1d6087fd98fa54615250885"
+    },
+    "src/content/lessons/ai000/multimodal-example.ts": {
+      "sha256": "9af2230cac7b116e90ec5775900458421e2304f7d03cd064a58e1d211969539c",
+      "lfSha256": "9af2230cac7b116e90ec5775900458421e2304f7d03cd064a58e1d211969539c"
+    },
+    "src/content/lessons/ai000/natural-language-and-llm.ts": {
+      "sha256": "73f77bb586145bfca31c4c2d67368c314a4f36686c7213cc23708145f07d513f",
+      "lfSha256": "75f52433e87b250550901da950608ad15955a802758343155263741854f8e4a9"
+    },
+    "src/content/lessons/ai000/parcel-example.ts": {
+      "sha256": "cc28b483035ba608afdd220c79ef55d3933d294ca0e5ef18adab0a996f915b55",
+      "lfSha256": "cc28b483035ba608afdd220c79ef55d3933d294ca0e5ef18adab0a996f915b55"
+    },
+    "src/content/lessons/ai000/parcel-time-example.ts": {
+      "sha256": "1d36640bed45559da9632ef87cc69c4d966ba39194598460daec8e8682f990cc",
+      "lfSha256": "1d36640bed45559da9632ef87cc69c4d966ba39194598460daec8e8682f990cc"
+    },
+    "src/content/lessons/ai000/privacy-bias-fairness.ts": {
+      "sha256": "db699d82d2ea37b86ea2dc7805b52f949e686cf16b10e5cb80fc3749bc9b72af",
+      "lfSha256": "db699d82d2ea37b86ea2dc7805b52f949e686cf16b10e5cb80fc3749bc9b72af"
+    },
+    "src/content/lessons/ai000/privacy-fairness-example.ts": {
+      "sha256": "0baa00f7afd14b7813cabd10717ece530f4f0bad3cd4b49cb456c3519b0c09d5",
+      "lfSha256": "0baa00f7afd14b7813cabd10717ece530f4f0bad3cd4b49cb456c3519b0c09d5"
+    },
+    "src/content/lessons/ai000/problem-analysis-capstone.ts": {
+      "sha256": "8fb9a2b706953a0bb98285e38975001956014f70562c757747300f10fce30528",
+      "lfSha256": "8fb9a2b706953a0bb98285e38975001956014f70562c757747300f10fce30528"
+    },
+    "src/content/lessons/ai000/reinforcement-learning.ts": {
+      "sha256": "5599dcb937d41137e89d666fa6e39e0a3aa9401688c1de93ad1fe7833b2460c6",
+      "lfSha256": "26f68bf17935e978dcfe76176a82f8303d6dc62de3b41b328cf82fe50ef8bda5"
+    },
+    "src/content/lessons/ai000/reliability-example.ts": {
+      "sha256": "612870fb6497561d796e58aec88e3c6a56c2c9e696d99d18d3d72f26c9c62764",
+      "lfSha256": "612870fb6497561d796e58aec88e3c6a56c2c9e696d99d18d3d72f26c9c62764"
+    },
+    "src/content/lessons/ai000/responsible-ai-use.ts": {
+      "sha256": "b1a36d0c90859e8b7d8fa42b2cdb1adf92c3d1c71e1233991257ee7bb73c6355",
+      "lfSha256": "b1a36d0c90859e8b7d8fa42b2cdb1adf92c3d1c71e1233991257ee7bb73c6355"
+    },
+    "src/content/lessons/ai000/responsible-use-example.ts": {
+      "sha256": "1a355c2296b37c05a65e2be270284316524e0ff904398d3b775d0bc3ea3994c0",
+      "lfSha256": "1a355c2296b37c05a65e2be270284316524e0ff904398d3b775d0bc3ea3994c0"
+    },
+    "src/content/lessons/ai000/rl-applicability.ts": {
+      "sha256": "265a8bed6cfd6063fe82adb0348f4596d14b1e3ad7106a42d70ce136e38ea99d",
+      "lfSha256": "265a8bed6cfd6063fe82adb0348f4596d14b1e3ad7106a42d70ce136e38ea99d"
+    },
+    "src/content/lessons/ai000/rl-application-example.ts": {
+      "sha256": "2b4cca5d8494895c7729c7ab6358f11b21805782611df91161fb83050dbb5b91",
+      "lfSha256": "2b4cca5d8494895c7729c7ab6358f11b21805782611df91161fb83050dbb5b91"
+    },
+    "src/content/lessons/ai000/self-supervised-example.ts": {
+      "sha256": "add7a8057014dc27ca0311d6a8c0a884b9491251b058824451106449ec38bd53",
+      "lfSha256": "add7a8057014dc27ca0311d6a8c0a884b9491251b058824451106449ec38bd53"
+    },
+    "src/content/lessons/ai000/self-supervised-learning.ts": {
+      "sha256": "fc4d245028c882cc3ebba826b0f56c99b3ecbe07e31596aba5b2cd0aeae8882c",
+      "lfSha256": "7a6e2fcebb3c46bf8c4f4d1f75c8c02551c0bd8844b0d7ba2988cdc9c8726380"
+    },
+    "src/content/lessons/ai000/shared.ts": {
+      "sha256": "0b74b75ae08f1c96fca0814f96fbe1b5f1f2dad90bb51f75138897bb06eff0a2",
+      "lfSha256": "0b74b75ae08f1c96fca0814f96fbe1b5f1f2dad90bb51f75138897bb06eff0a2"
+    },
+    "src/content/lessons/ai000/supervised-learning.ts": {
+      "sha256": "285c809123c3f3e4f8d994a7349164b27709007f20474e0e3c5665d012daba03",
+      "lfSha256": "f0331bf340146e590b11b830d6f4e97d9b1446ea538a05464c8a50279799e895"
+    },
+    "src/content/lessons/ai000/training-validation-test.ts": {
+      "sha256": "1bfc050df31c62cdc7581ff7a8a7ac31f650036ed8d30e3fbed1aa5b6512811b",
+      "lfSha256": "8c883db717724d2b99a7aa114ce83b75387da5ae6ca59c4390cc0c7c53a7951c"
+    },
+    "src/content/lessons/ai000/unreliable-answers.ts": {
+      "sha256": "3706fb1d1a4ee043b5944d58e0d63949784f753bbf51b683d6003d21cb84cb0b",
+      "lfSha256": "b38969036d715243539a2f771fd42b0420e51c9e662e6b7a157f504426e14b7f"
+    },
+    "src/content/lessons/ai000/unsupervised-learning.ts": {
+      "sha256": "ca2c293cd87b1e95554664b668fab6af1b4be8e6992057462e4fa12f2bcf6150",
+      "lfSha256": "fc7ab2542068357464b8d650f0efb3ce8668bb87f234ee3fca15ed1954ebf24b"
+    },
+    "src/content/lessons/ai000/using-a-fixed-model.ts": {
+      "sha256": "b83b5e4711adad230b060cab33c68b227a8aea79e67507f22fb171194f6e4dfe",
+      "lfSha256": "571766e7299468bf45b65d750456f187807b9ea3af0604b8e68b7e014e5ab86e"
+    },
+    "src/content/lessons/ai000/vision-example.ts": {
+      "sha256": "162337ccf1ee8c6696369101c8b7c428e322755f479531e533c06b41fe2a04a2",
+      "lfSha256": "162337ccf1ee8c6696369101c8b7c428e322755f479531e533c06b41fe2a04a2"
+    },
+    "src/content/lessons/ai000/what-is-ai.ts": {
+      "sha256": "a3e83a5987bbc7bc011a6a21a239e9083d2d680390696d8a6428a22362808102",
+      "lfSha256": "05ff9073d2afb1d7322b03b69cb94a512713f29aa0be66528ae4f2dc1fd2d1e5"
+    },
+    "src/content/lessons/ai000/why-foundations.ts": {
+      "sha256": "94d521ab655cf6ac4fd56211f824cf0d3113cb2e31434fa3f1781aebe59cdcba",
+      "lfSha256": "94d521ab655cf6ac4fd56211f824cf0d3113cb2e31434fa3f1781aebe59cdcba"
+    },
+    "src/content/lessons/foundations-v2-1.ts": {
+      "sha256": "ee8fd4dd2c14fa0b5ab348a601cd1db229ec31286eb747b0c2c94bd629b85244",
+      "lfSha256": "ee8fd4dd2c14fa0b5ab348a601cd1db229ec31286eb747b0c2c94bd629b85244"
+    },
+    "src/content/lessons/linear-regression.ts": {
+      "sha256": "fb4157c0533f47f560f32fe339afdb31b2f8823a5acc3fb5c266051bc9fcffa5",
+      "lfSha256": "fb4157c0533f47f560f32fe339afdb31b2f8823a5acc3fb5c266051bc9fcffa5"
+    },
+    "src/content/lessons/ma101/index.ts": {
+      "sha256": "40757dc7829f58aeb073fe9a6354e6485897a8896f2a81d58f58e6d4f0a83034",
+      "lfSha256": "40757dc7829f58aeb073fe9a6354e6485897a8896f2a81d58f58e6d4f0a83034"
+    },
+    "src/content/lessons/ma101/shared.ts": {
+      "sha256": "b6878c4eb72c52e5e263bab85881ecafa774885bb1b39fe515c76e75fa2e9d5a",
+      "lfSha256": "b6878c4eb72c52e5e263bab85881ecafa774885bb1b39fe515c76e75fa2e9d5a"
+    },
+    "src/content/lessons/ma101/vector-addition.ts": {
+      "sha256": "a8dbc3cc913d9df6b7d53f758b986c1933f04989eb4ec7f0746c12be50ebce4f",
+      "lfSha256": "956f7cfbd39f97bfc81757303c9c50be877e27a3b3844f673b34ef30d023ecbb"
+    },
+    "src/content/lessons/ma101/vector-meaning.ts": {
+      "sha256": "4f58715c673eacea7c5c827a4ac323c84d890d340ac26a5eaa685165f7cf3a18",
+      "lfSha256": "8c2c20ba6e32c446a10235a841c27834f5ce7499d99d89fb11b639955181076d"
+    },
+    "src/content/lessons/ma101/vector-representation.ts": {
+      "sha256": "da169d2b38b10fdf2375b474a13a8467ae4aab28556c9e3f71f4624f05d35f9e",
+      "lfSha256": "da169d2b38b10fdf2375b474a13a8467ae4aab28556c9e3f71f4624f05d35f9e"
+    },
+    "src/content/lessons/ma101/vector-scaling.ts": {
+      "sha256": "dc0ccd52dda63b948f09f7a904b87b6e01c455407b93c05db6ab8b8fc6d5337a",
+      "lfSha256": "dc0ccd52dda63b948f09f7a904b87b6e01c455407b93c05db6ab8b8fc6d5337a"
+    },
+    "src/content/lessons/ml201/core-assessments.ts": {
+      "sha256": "6d8d09166f63296e7e45a8502f0802c1f6b68584648b64366cb0571451586b54",
+      "lfSha256": "6d8d09166f63296e7e45a8502f0802c1f6b68584648b64366cb0571451586b54"
+    },
+    "src/content/lessons/ml201/derivative-direction.ts": {
+      "sha256": "cfc65647e0ef5414a3cb04b135ba52115754e1044e43059721773d78258c9a53",
+      "lfSha256": "1c1f0d76ca8a8cfb3c055519101484bb119d2f17b952ea3541bd894d9044eebf"
+    },
+    "src/content/lessons/ml201/linear-model.ts": {
+      "sha256": "e73c744b51aa4318944eb872f21863075e1262f49106b1b866f658e67dbf8859",
+      "lfSha256": "c6f19a719fad64e505d46c3e70df6243e8a45c2d7724274137099d5ea01e447f"
+    },
+    "src/content/lessons/ml201/loss-functions.ts": {
+      "sha256": "6f9b441cf19d6dc3e2c859de4df40db01a27ed0a93415f5556114a760a1680d4",
+      "lfSha256": "287131d25bba41b886aeab25a1f025dc7403b19fbc8deeb878cea29f548036bd"
+    },
+    "src/content/lessons/ml201/manual-update.ts": {
+      "sha256": "0719736381370cfbc04f4b1afb1c769142f5bb23733cbcbed934898597de278c",
+      "lfSha256": "48e5372f4dc308e8a11e92b86e7f1594064741273d2233e70993e83a0245af2f"
+    },
+    "src/content/lessons/ml201/mse-gradient.ts": {
+      "sha256": "f7105b7fd0b8544f7da880b43839c918690c09e313ef1654d16a83e56f338d07",
+      "lfSha256": "aa9e699d7cf6afde76fe30f8c9dc85decbe2b1794e849cdef135a3661b920b22"
+    },
+    "src/content/lessons/ml201/numpy-regression.ts": {
+      "sha256": "d4e3ebc7fcb6ba404c7a2c883df85ca19d4f7daa6c7a4a66ea512ba788fe3ddc",
+      "lfSha256": "8883161c7323833a3bf2ef48aa58ea266db6bcdacb2587b0c9c71550d4658e20"
+    },
+    "src/content/lessons/ml201/regression-task.ts": {
+      "sha256": "283efe7f9cea5bda1cbb7f11cacf69362e05be311af18a386935f58b4826286b",
+      "lfSha256": "63cfbc5f414763d7304348055138355ac4d05d57a5b2befd9abc5861839465df"
+    },
+    "src/content/lessons/ml201/shared.ts": {
+      "sha256": "4ba26381293e3c146ec154289354141672f82931ea36ca0eade0a06ae53cec32",
+      "lfSha256": "97ae989412b7a926abcc2a924835ae3c21a3f164796589106cc35f0835c18829"
+    },
+    "src/content/lessons/ml201/teaching-profiles.ts": {
+      "sha256": "cea6fad96ab78c067e2eac2f3a71660b64c384d59d12c304fdc088ad44ea8654",
+      "lfSha256": "9fa594cdc72d73ebffcab3ea1fef1209ca85c763dff59ded6b9bc8f9649a3253"
+    },
+    "src/content/lessons/py101/editor-rerun.ts": {
+      "sha256": "42389bdad9fd2f7e42c6fd3475edd05e057b76a8fd2734485de2d393ffc5322b",
+      "lfSha256": "42389bdad9fd2f7e42c6fd3475edd05e057b76a8fd2734485de2d393ffc5322b"
+    },
+    "src/content/lessons/py101/environment-reproduction.ts": {
+      "sha256": "c8e5da7d23b2af6b7c52e62db34f7344fe11f5bcead7349d3bbc0443cad9d2e5",
+      "lfSha256": "d2eeed2e56f2f2d1409a7ecf956280011c908b892005867a30a54b2c6e5acb31"
+    },
+    "src/content/lessons/py101/first-run.ts": {
+      "sha256": "e818dd98818e4425ad03b2e5d5034d8c98a509b2b7988a3a012fca3a3e898432",
+      "lfSha256": "e818dd98818e4425ad03b2e5d5034d8c98a509b2b7988a3a012fca3a3e898432"
+    },
+    "src/content/lessons/py101/notebook-cell-order.ts": {
+      "sha256": "817612655222591e4429697e62552e8d38f8b7a638d83264d3068f1fe1da8d61",
+      "lfSha256": "817612655222591e4429697e62552e8d38f8b7a638d83264d3068f1fe1da8d61"
+    },
+    "src/content/lessons/py101/project-environments.ts": {
+      "sha256": "d78b7d383b033a5e74aed5d2bf6c9574c0dd41734611223811bed9079e001f05",
+      "lfSha256": "d78b7d383b033a5e74aed5d2bf6c9574c0dd41734611223811bed9079e001f05"
+    },
+    "src/content/lessons/py101/script-paths.ts": {
+      "sha256": "2875ca12d623ef770640129f2db380e16e859025b464cecd1388e1275e4b1a42",
+      "lfSha256": "2875ca12d623ef770640129f2db380e16e859025b464cecd1388e1275e4b1a42"
+    },
+    "src/content/lessons/py101/variables-and-assignment.ts": {
+      "sha256": "7c8048e8eeb8eb689e037b8ce04c825b6858f1ba6b2ede85ac63318d7d6631de",
+      "lfSha256": "7c8048e8eeb8eb689e037b8ce04c825b6858f1ba6b2ede85ac63318d7d6631de"
+    },
+    "src/content/lessons/python-functions.ts": {
+      "sha256": "f6cd84c91779daf289e69f7cedbd895f709471ce40ad707e988938b914055f54",
+      "lfSha256": "985a591253332f84d5230074e8d976f675c8e7fa8aaa4737c70ac7eaf9ba6475"
+    },
+    "src/content/lessons/vector-matrix.ts": {
+      "sha256": "9867ffea3162740f0fac2eebb4878254b29f1e4891a5dcf479f5787f308e1b8d",
+      "lfSha256": "7e9072630d9e1a71a7aa582ee60de01c81706039ea3205667a720b5023486ff6"
+    },
+    "src/content/math-outline.ts": {
+      "sha256": "15d11c64319e06da32c77c45641ae0c32101d2bff698477392806005b66938dc",
+      "lfSha256": "15d11c64319e06da32c77c45641ae0c32101d2bff698477392806005b66938dc"
+    },
+    "src/content/models.ts": {
+      "sha256": "c6d10758322631a7493a63ce7d5d7bdbfe297ebd9b36f5fd950668b93d2da556",
+      "lfSha256": "2a3a119bbe87d7898add6d5ba9ac9bcd84d38221987a092181386cd91ca09754"
+    },
+    "src/content/publication-manifest.ts": {
+      "sha256": "fca93b800f1823c41dae4e02717bbd8f0484e02f46152d2cae9b77339b18570a",
+      "lfSha256": "f744ae5275c9083c1cf80606630a790085563a905e0b131e5a666fd4c29827b8"
+    },
+    "src/content/resources/core-programs.ts": {
+      "sha256": "ad663ae97b9fe8989ec6df7a0f64d7237cda9c4e1d23fe3320436aa7ddbefc1f",
+      "lfSha256": "ad663ae97b9fe8989ec6df7a0f64d7237cda9c4e1d23fe3320436aa7ddbefc1f"
+    },
+    "src/content/resources/programs.ts": {
+      "sha256": "56aef68bdd4b5ef16d404407ab3c784aa1cda4ca91b1f6e4729aba65847e028f",
+      "lfSha256": "56aef68bdd4b5ef16d404407ab3c784aa1cda4ca91b1f6e4729aba65847e028f"
+    },
+    "src/content/resources/python-editor.ts": {
+      "sha256": "f3df0a157a7361c2e599f09c517b2230cbddb04954e76a2c6c91a0b8f3ef0bb9",
+      "lfSha256": "f3df0a157a7361c2e599f09c517b2230cbddb04954e76a2c6c91a0b8f3ef0bb9"
+    },
+    "src/content/resources/python-notebook.ts": {
+      "sha256": "6377d5cf3d9dc798e6c4a41bada96c9fad1491c6bc12723ce251e1ee0c0535d2",
+      "lfSha256": "6377d5cf3d9dc798e6c4a41bada96c9fad1491c6bc12723ce251e1ee0c0535d2"
+    },
+    "src/content/resources/python-paths.ts": {
+      "sha256": "313a289cb86c7d0fa5759adf647415fb4369bcffbf2833c53785a44cfd75c655",
+      "lfSha256": "313a289cb86c7d0fa5759adf647415fb4369bcffbf2833c53785a44cfd75c655"
+    },
+    "src/content/resources/python-reproduction.ts": {
+      "sha256": "334dd9cb105268848c8decb7f44bfe08b763a4594873a8551dadc2bb39c9fd64",
+      "lfSha256": "334dd9cb105268848c8decb7f44bfe08b763a4594873a8551dadc2bb39c9fd64"
+    },
+    "src/content/resources/python-variables.ts": {
+      "sha256": "9430e4a114a1f0ce154e561daac1defc09d6905994891cef3cea5c1ba048d1e8",
+      "lfSha256": "9430e4a114a1f0ce154e561daac1defc09d6905994891cef3cea5c1ba048d1e8"
+    },
+    "src/content/resources/python-venv.ts": {
+      "sha256": "80ae7e52c5b1c5eeae5352f230ef5304c83b08305db039d95e6dfbe690f280d8",
+      "lfSha256": "80ae7e52c5b1c5eeae5352f230ef5304c83b08305db039d95e6dfbe690f280d8"
+    },
+    "src/content/sample.ts": {
+      "sha256": "3a1ed80bc9c489958ad5554ec367aebd141aa7d9dc143299a77826fbe3966610",
+      "lfSha256": "3a1ed80bc9c489958ad5554ec367aebd141aa7d9dc143299a77826fbe3966610"
+    },
+    "src/lib/artwork.ts": {
+      "sha256": "ec8217b7dcf6c6cf32325ca08e23d8a03ad5bc598cad96ab1ba4ffd3d4a51e56",
+      "lfSha256": "ec8217b7dcf6c6cf32325ca08e23d8a03ad5bc598cad96ab1ba4ffd3d4a51e56"
+    },
+    "src/lib/course-directory.ts": {
+      "sha256": "24850ca19a9414e972c5fbb2d674d70ab65be58667dad794b1aa7198d51d0767",
+      "lfSha256": "24850ca19a9414e972c5fbb2d674d70ab65be58667dad794b1aa7198d51d0767"
+    },
+    "src/lib/course-engine.ts": {
+      "sha256": "81b571008b907c79c0bbbf07c702aeaca7e107e3644c52468a93c0e143d21f7d",
+      "lfSha256": "61f908a564bffb06969ff315d6df5a6e673ff886852ca44d86d1ff59ef55dfcf"
+    },
+    "src/lib/course-labels.ts": {
+      "sha256": "58ee28aaacf0128ade7d75de496a13d97679286f3e990fee6e0664ccdc0be943",
+      "lfSha256": "58ee28aaacf0128ade7d75de496a13d97679286f3e990fee6e0664ccdc0be943"
+    },
+    "src/lib/course-learning-time.ts": {
+      "sha256": "dffa493394b6620432e01d9e5c5514e877c1737ff4ad2b423fe3386afea27a69",
+      "lfSha256": "dffa493394b6620432e01d9e5c5514e877c1737ff4ad2b423fe3386afea27a69"
+    },
+    "src/lib/course-numbering.ts": {
+      "sha256": "84f8f324260d7fafb190ec3345ee8f784acd0ee9b2cea7793da614cf7305ea50",
+      "lfSha256": "84f8f324260d7fafb190ec3345ee8f784acd0ee9b2cea7793da614cf7305ea50"
+    },
+    "src/lib/course-presentation.ts": {
+      "sha256": "1b2f07eee6c333e11e8b0d726ea7502f333801a3803f4fec75e48bd7326f95a0",
+      "lfSha256": "1b2f07eee6c333e11e8b0d726ea7502f333801a3803f4fec75e48bd7326f95a0"
+    },
+    "src/lib/course-reading-summary.ts": {
+      "sha256": "66b9eae8bdaf4d4db5210e52fe36d2fa1e58f2aa3a5126d8cda1cd90c7550c0d",
+      "lfSha256": "66b9eae8bdaf4d4db5210e52fe36d2fa1e58f2aa3a5126d8cda1cd90c7550c0d"
+    },
+    "src/lib/course-search.ts": {
+      "sha256": "2eeb8974176a53e30d47d83982fef29e6188b16cc6b681ba0eee6759943df2dc",
+      "lfSha256": "2eeb8974176a53e30d47d83982fef29e6188b16cc6b681ba0eee6759943df2dc"
+    },
+    "src/lib/curriculum.ts": {
+      "sha256": "98911db985e1aa6736eb313d709a5fbdecc26861a6a5d97a1c1fd67eef64685d",
+      "lfSha256": "79d1329e5b86bc52826d1fa7acddef3d968f193e8575b930249ad1ad464abab0"
+    },
+    "src/lib/learning-progress.ts": {
+      "sha256": "47974dfb7fd344c086b685311d1207560ba344cd1d80cb5ffe3a3f9a85183070",
+      "lfSha256": "47974dfb7fd344c086b685311d1207560ba344cd1d80cb5ffe3a3f9a85183070"
+    },
+    "src/lib/lesson-exercises.ts": {
+      "sha256": "179bf88d0cb4538cb2d3d541dd8e2aea7e04d906c217173da6342ddf5a5c63c9",
+      "lfSha256": "179bf88d0cb4538cb2d3d541dd8e2aea7e04d906c217173da6342ddf5a5c63c9"
+    },
+    "src/lib/paths.ts": {
+      "sha256": "0696e596bda24199aa853938a8bd5eb8a85d42e764554f7c510ce08e6928d449",
+      "lfSha256": "0696e596bda24199aa853938a8bd5eb8a85d42e764554f7c510ce08e6928d449"
+    },
+    "src/lib/progress.ts": {
+      "sha256": "ecc17cd7dee18145bbd8a3fa36477d39fc87c35818a517df26f7c0bc99e25031",
+      "lfSha256": "ecc17cd7dee18145bbd8a3fa36477d39fc87c35818a517df26f7c0bc99e25031"
+    },
+    "src/lib/regression.ts": {
+      "sha256": "d27af2acac73db5771cef82fd61f2d1a11e2e4dfe32b271b06ae6e8a27b3591b",
+      "lfSha256": "d27af2acac73db5771cef82fd61f2d1a11e2e4dfe32b271b06ae6e8a27b3591b"
+    },
+    "src/lib/use-learning-progress.ts": {
+      "sha256": "b634548ef94332333206d4022cb9705460595818ebb1f511591d553b9fb10778",
+      "lfSha256": "b634548ef94332333206d4022cb9705460595818ebb1f511591d553b9fb10778"
+    },
+    "src/lib/use-progress.ts": {
+      "sha256": "e9ec46108472148618cc9f471e9bfbe5a31e2efcc06652d8e43a6f2a27472162",
+      "lfSha256": "e9ec46108472148618cc9f471e9bfbe5a31e2efcc06652d8e43a6f2a27472162"
+    },
+    "src/lib/vector-teaching.ts": {
+      "sha256": "984d9c8ff8f26108d8b222494d46f039d8e85c97254cc07e06dde71a87c7b1a3",
+      "lfSha256": "984d9c8ff8f26108d8b222494d46f039d8e85c97254cc07e06dde71a87c7b1a3"
+    },
+    "tests/ai000-capstone.test.ts": {
+      "sha256": "ea83dc52a9634e469b87edc8ca78ec4a9766a94fd9e7bec5b83cc627723c078c",
+      "lfSha256": "ea83dc52a9634e469b87edc8ca78ec4a9766a94fd9e7bec5b83cc627723c078c"
+    },
+    "tests/ai000-creative.test.ts": {
+      "sha256": "204a895f8bd5216f61eee9941e6504566bee58543e7ff9b1e7a93490038f9ec8",
+      "lfSha256": "204a895f8bd5216f61eee9941e6504566bee58543e7ff9b1e7a93490038f9ec8"
+    },
+    "tests/ai000-data-features.test.ts": {
+      "sha256": "5f35cb3ef6cd4254b29b9cc01e69c99adadd48546044bf0ecd9fe13ee11276f4",
+      "lfSha256": "5f35cb3ef6cd4254b29b9cc01e69c99adadd48546044bf0ecd9fe13ee11276f4"
+    },
+    "tests/ai000-data-use.test.ts": {
+      "sha256": "014db4b556ff7e0b93e85951b991c70252aa3de323423e502a25730754759db7",
+      "lfSha256": "014db4b556ff7e0b93e85951b991c70252aa3de323423e502a25730754759db7"
+    },
+    "tests/ai000-directions.test.ts": {
+      "sha256": "570e8c84f9251573f700b97f0bafbb030c84ef2f574bbce6ec7e54cafd8f3662",
+      "lfSha256": "570e8c84f9251573f700b97f0bafbb030c84ef2f574bbce6ec7e54cafd8f3662"
+    },
+    "tests/ai000-foundations.test.ts": {
+      "sha256": "7c99b40afb0d191f3edbb049924ff61f3372226707e1eeba45c489762f72a552",
+      "lfSha256": "7c99b40afb0d191f3edbb049924ff61f3372226707e1eeba45c489762f72a552"
+    },
+    "tests/ai000-illustrations.test.ts": {
+      "sha256": "743999145c8b654d5ac774c5c74026fdf3ae86e0045480899e151d6fbbd5c030",
+      "lfSha256": "743999145c8b654d5ac774c5c74026fdf3ae86e0045480899e151d6fbbd5c030"
+    },
+    "tests/ai000-inference.test.ts": {
+      "sha256": "3dbe351fbc7744b8f3f1b3de836f0f7813e667edd3602061332cb8e49f685f99",
+      "lfSha256": "3dbe351fbc7744b8f3f1b3de836f0f7813e667edd3602061332cb8e49f685f99"
+    },
+    "tests/ai000-lesson.test.ts": {
+      "sha256": "e4bb32c3e00447176c681f4abddfd45d0b2bb6feb1d56a8254b8463294cdfde1",
+      "lfSha256": "e4bb32c3e00447176c681f4abddfd45d0b2bb6feb1d56a8254b8463294cdfde1"
+    },
+    "tests/ai000-model-parameters.test.ts": {
+      "sha256": "58d81cf241c08263354ca1671c0e7c758a2ef31c583aca39b8bcf46a315de601",
+      "lfSha256": "58d81cf241c08263354ca1671c0e7c758a2ef31c583aca39b8bcf46a315de601"
+    },
+    "tests/ai000-multimodal.test.ts": {
+      "sha256": "b5d80ccad30aa85a4e68a3e02ce52634c5740590260401573a5a806f6db5e600",
+      "lfSha256": "b5d80ccad30aa85a4e68a3e02ce52634c5740590260401573a5a806f6db5e600"
+    },
+    "tests/ai000-nlp.test.ts": {
+      "sha256": "f0ff3b8207398d354b6849cbbaf9726a498d7c286e453fac386f15391df96acc",
+      "lfSha256": "f0ff3b8207398d354b6849cbbaf9726a498d7c286e453fac386f15391df96acc"
+    },
+    "tests/ai000-privacy-fairness.test.ts": {
+      "sha256": "29740b83b01ccb0871a5255b70b2aba152522c7790de738064d602e6f849deba",
+      "lfSha256": "29740b83b01ccb0871a5255b70b2aba152522c7790de738064d602e6f849deba"
+    },
+    "tests/ai000-quality.test.ts": {
+      "sha256": "bb2685221dbefb86e94f1ff43a6d847d845b6c9f638dd002bb818065aff7b1f8",
+      "lfSha256": "bb2685221dbefb86e94f1ff43a6d847d845b6c9f638dd002bb818065aff7b1f8"
+    },
+    "tests/ai000-r3.test.ts": {
+      "sha256": "aa5d52fd8a49747fb57b34c8ed5446713b7589c42e586585db2449f7fe9039c1",
+      "lfSha256": "aa5d52fd8a49747fb57b34c8ed5446713b7589c42e586585db2449f7fe9039c1"
+    },
+    "tests/ai000-reinforcement.test.ts": {
+      "sha256": "9724620d06288f88d865885f28987af6ebb25f9b21bf5df68cbb5491c08c2a3e",
+      "lfSha256": "9724620d06288f88d865885f28987af6ebb25f9b21bf5df68cbb5491c08c2a3e"
+    },
+    "tests/ai000-relationships.test.ts": {
+      "sha256": "7a30caa7da4e660c2de90bb2508ded01d38e7645c3570f5154d62a6f6fc08697",
+      "lfSha256": "7a30caa7da4e660c2de90bb2508ded01d38e7645c3570f5154d62a6f6fc08697"
+    },
+    "tests/ai000-reliability.test.ts": {
+      "sha256": "1deee71200153ec5301028cdfd5b3f76e8e589dd3caaa7115b83655daa16eba4",
+      "lfSha256": "1deee71200153ec5301028cdfd5b3f76e8e589dd3caaa7115b83655daa16eba4"
+    },
+    "tests/ai000-responsible-use.test.ts": {
+      "sha256": "06e488e7789155537a97cadcd687dc6d4059f752ece023902a61ed01dbc2aa90",
+      "lfSha256": "06e488e7789155537a97cadcd687dc6d4059f752ece023902a61ed01dbc2aa90"
+    },
+    "tests/ai000-rl-applicability.test.ts": {
+      "sha256": "a12213d7bdb71aa6f90f219558bcb23049646760055d83050efcb6a2b9dfbff3",
+      "lfSha256": "a12213d7bdb71aa6f90f219558bcb23049646760055d83050efcb6a2b9dfbff3"
+    },
+    "tests/ai000-self-supervised.test.ts": {
+      "sha256": "3eef74f303c0a3e363fe1ce2b3d4cb799606294e8ee484810b3ef79ba2417058",
+      "lfSha256": "3eef74f303c0a3e363fe1ce2b3d4cb799606294e8ee484810b3ef79ba2417058"
+    },
+    "tests/ai000-supervised.test.ts": {
+      "sha256": "87bae77ecc13f34e8498d0073997142ee78482b43f34c741eb4d37f084690bd2",
+      "lfSha256": "87bae77ecc13f34e8498d0073997142ee78482b43f34c741eb4d37f084690bd2"
+    },
+    "tests/ai000-unsupervised.test.ts": {
+      "sha256": "ae600a606f25e5c1a42b5901249748aba5c072a2fc7c6fefadbbe1933843ac45",
+      "lfSha256": "ae600a606f25e5c1a42b5901249748aba5c072a2fc7c6fefadbbe1933843ac45"
+    },
+    "tests/ai000-v2.test.ts": {
+      "sha256": "e25158bfde913166f6d7c171bbed7e6ad65649fe5306b8fb86792e231644551d",
+      "lfSha256": "e25158bfde913166f6d7c171bbed7e6ad65649fe5306b8fb86792e231644551d"
+    },
+    "tests/ai000-vision.test.ts": {
+      "sha256": "61245223ac84ba734d5312cde98e8c98715c2dbe3e7eb7375a1d2736bebfe49a",
+      "lfSha256": "61245223ac84ba734d5312cde98e8c98715c2dbe3e7eb7375a1d2736bebfe49a"
+    },
+    "tests/artwork.test.ts": {
+      "sha256": "3f49839e52c025a50a683c7d372f9bf32d57544d44a42afddd67b9298cefc9d9",
+      "lfSha256": "3f49839e52c025a50a683c7d372f9bf32d57544d44a42afddd67b9298cefc9d9"
+    },
+    "tests/content.test.ts": {
+      "sha256": "d4cff388525a855ab2606e692c2ba29af2f6df42e90bd67725f0602db9e54ad2",
+      "lfSha256": "d4cff388525a855ab2606e692c2ba29af2f6df42e90bd67725f0602db9e54ad2"
+    },
+    "tests/course-engine.test.ts": {
+      "sha256": "8f41c7bad36afc757efd3893147346e242783e4b20140785655f862f8343ccf8",
+      "lfSha256": "8f41c7bad36afc757efd3893147346e242783e4b20140785655f862f8343ccf8"
+    },
+    "tests/course-hierarchy.test.ts": {
+      "sha256": "54ea6fc744f20f5dcdb333952c300a146447dff1c66e493c91dae001bf1b492a",
+      "lfSha256": "54ea6fc744f20f5dcdb333952c300a146447dff1c66e493c91dae001bf1b492a"
+    },
+    "tests/course-presentation.test.ts": {
+      "sha256": "4167860a773420f6293fdcbf628152258c9c000f40ef487ed38a34ca29079ba6",
+      "lfSha256": "4167860a773420f6293fdcbf628152258c9c000f40ef487ed38a34ca29079ba6"
+    },
+    "tests/cross-discipline-editorial.test.ts": {
+      "sha256": "ea3841bea1c03846fa5dd81cc44a7bf050c2f78b8867769b4169e8415b91096a",
+      "lfSha256": "a8440440a050ad8482bf2e06c3a8233a425d9c362555f65e6fd8fee40c08a745"
+    },
+    "tests/curriculum.test.ts": {
+      "sha256": "327d8b2ce7acfe2c26ee2f2c99f74ebcf31b092b0f1272d7cec176e2e9c81ed5",
+      "lfSha256": "537e5bf1e6345b0aef6ba50516f3d518c9f72c537d15b04496abcd5ce51dfcbf"
+    },
+    "tests/helpers/registered-content.ts": {
+      "sha256": "df48d41e7747b93e729cdbeeece5cc1eb346c351861876ec138723d9e7d55c91",
+      "lfSha256": "df48d41e7747b93e729cdbeeece5cc1eb346c351861876ec138723d9e7d55c91"
+    },
+    "tests/learning-progress.test.ts": {
+      "sha256": "e3202f91c80741c57cc78363ae5ab905ebbf148cdca2f46587ebc19d068c5eb2",
+      "lfSha256": "e3202f91c80741c57cc78363ae5ab905ebbf148cdca2f46587ebc19d068c5eb2"
+    },
+    "tests/ml-v2-compat.test.ts": {
+      "sha256": "0aa36e2c059b23253ff4c07b4b9b1b7315e2a97884189df0c6dc7c18d3f6731b",
+      "lfSha256": "0aa36e2c059b23253ff4c07b4b9b1b7315e2a97884189df0c6dc7c18d3f6731b"
+    },
+    "tests/progress.test.ts": {
+      "sha256": "fbfac52eddb0770c790651b4385a2249c38b4d6922074811ee8a5b8bc864514e",
+      "lfSha256": "fbfac52eddb0770c790651b4385a2249c38b4d6922074811ee8a5b8bc864514e"
+    },
+    "tests/py101-editor-rerun.test.ts": {
+      "sha256": "5a499d0c69354baca2721dfae3d7b23599b9867d6cc735a123cf53db76dd0259",
+      "lfSha256": "5a499d0c69354baca2721dfae3d7b23599b9867d6cc735a123cf53db76dd0259"
+    },
+    "tests/py101-environment-reproduction.test.ts": {
+      "sha256": "838d4699408971ff57080522c506cb474a46b09862e8eb9b59922ce1111511a8",
+      "lfSha256": "809f10a79bf092e08e1eaf276de14b97712f84af25ae357e6d90b702a107cc87"
+    },
+    "tests/py101-first-run.test.ts": {
+      "sha256": "860911e30bb6642e6a3c98090235cb381e256a9cf41d577483620ca59704a128",
+      "lfSha256": "860911e30bb6642e6a3c98090235cb381e256a9cf41d577483620ca59704a128"
+    },
+    "tests/py101-notebook-cell-order.test.ts": {
+      "sha256": "8335c26671cd406364a8adab6d7aafbe00c52c4e439072cae57b230a5760ed93",
+      "lfSha256": "8335c26671cd406364a8adab6d7aafbe00c52c4e439072cae57b230a5760ed93"
+    },
+    "tests/py101-project-environments.test.ts": {
+      "sha256": "e4593149764a2220e4a2c80fb3298ce20c5585c783bdd18275654fd74cd18e96",
+      "lfSha256": "e4593149764a2220e4a2c80fb3298ce20c5585c783bdd18275654fd74cd18e96"
+    },
+    "tests/py101-script-paths.test.ts": {
+      "sha256": "a486362f62dd834914934bade22335b967e60b2b9dc61ec861c93daa2731d6d4",
+      "lfSha256": "a486362f62dd834914934bade22335b967e60b2b9dc61ec861c93daa2731d6d4"
+    },
+    "tests/py101-variables-and-assignment.test.ts": {
+      "sha256": "6cbf5e82a7e2079714f1f46e8b66c818802463a400402735d3fecec957ce661a",
+      "lfSha256": "dfaf5f39addd1cff06137c4b8190be1cd5ae0abf51fd4c594146ee6878726f8d"
+    },
+    "tests/reading-experience.test.ts": {
+      "sha256": "072d10fefa6902dbaa2c03084eb7ac289eeb75e570a4a4067ffe23850ace19e0",
+      "lfSha256": "072d10fefa6902dbaa2c03084eb7ac289eeb75e570a4a4067ffe23850ace19e0"
+    },
+    "tests/regression.test.ts": {
+      "sha256": "5c46d0c9bd35438b6243f5f91ce16153837ccce84dacc6997a22668299a872bd",
+      "lfSha256": "5c46d0c9bd35438b6243f5f91ce16153837ccce84dacc6997a22668299a872bd"
+    },
+    "tests/storage.test.ts": {
+      "sha256": "b8751936e8cec92567251ba94ea3c4670b930f9cb633bab76550042b3dd9b8b7",
+      "lfSha256": "b8751936e8cec92567251ba94ea3c4670b930f9cb633bab76550042b3dd9b8b7"
+    },
+    "tests/teaching-v2-1.test.ts": {
+      "sha256": "09daecd48c19c679b614fccc07d854a92b145d207bf1734c57c756d7b455a88c",
+      "lfSha256": "cfc422551c996afe4be687a9eb8ecacc19baa31bf37bfa4e76c21bc9d8baf429"
+    },
+    "tests/teaching-v2-2.test.ts": {
+      "sha256": "1d16dd4831d676e529ea054f3d96d180140243f2a697c4175e9f59bc61ae4c04",
+      "lfSha256": "1d16dd4831d676e529ea054f3d96d180140243f2a697c4175e9f59bc61ae4c04"
+    },
+    "tests/teaching-v2-3.test.ts": {
+      "sha256": "8300675aac804a69a8b9d9791924530ffca5cad76185e70f76998a0187562939",
+      "lfSha256": "8300675aac804a69a8b9d9791924530ffca5cad76185e70f76998a0187562939"
+    },
+    "tests/teaching-v2.test.ts": {
+      "sha256": "440a716ec388e31c035de39151b834b6b5eae61ab596042644c6845015c4dca3",
+      "lfSha256": "440a716ec388e31c035de39151b834b6b5eae61ab596042644c6845015c4dca3"
+    },
+    "tests/test_math_v2_2.py": {
+      "sha256": "b9c6a004dad4b7bbbf903d5dbf7160b405034dfbe81044e069f14a26a6008d5a",
+      "lfSha256": "b9c6a004dad4b7bbbf903d5dbf7160b405034dfbe81044e069f14a26a6008d5a"
+    },
+    "tests/test_ml_v2.py": {
+      "sha256": "d0b7e016de882bee30ebace12522649b9e3f20347feba7584141b366330877da",
+      "lfSha256": "d0b7e016de882bee30ebace12522649b9e3f20347feba7584141b366330877da"
+    },
+    "tests/test_sample.py": {
+      "sha256": "0943b494419e2e32b843c66dc09a031f2c9eeff1555a31694b2ceb218a2345ea",
+      "lfSha256": "0943b494419e2e32b843c66dc09a031f2c9eeff1555a31694b2ceb218a2345ea"
+    },
+    "tests/test_teaching_samples.py": {
+      "sha256": "4ab43f4a986eadfa16e015ac1cde22c44bb1a7fd60a8b41b4d2973c8c913e1f9",
+      "lfSha256": "4ab43f4a986eadfa16e015ac1cde22c44bb1a7fd60a8b41b4d2973c8c913e1f9"
+    },
+    "tests/test_teaching_v2_1.py": {
+      "sha256": "43197bca3c79a72c6d6fc3ca22ed2a9d12de8ece17762e53f2670a9380a58a96",
+      "lfSha256": "43197bca3c79a72c6d6fc3ca22ed2a9d12de8ece17762e53f2670a9380a58a96"
+    },
+    "tests/test_teaching_v2_3.py": {
+      "sha256": "7f01a18cef5abea9bcc4a21ef9f08ca8e0cc801b1980831c1a2d410609fb539d",
+      "lfSha256": "7f01a18cef5abea9bcc4a21ef9f08ca8e0cc801b1980831c1a2d410609fb539d"
+    }
+  },
+  "lessons": {
+    "PY101-C02-L01": "26ee917217081ad4bfa2466df1a7bc8ab29df517ec5e490944d79ecf3c57ed2c",
+    "PY101-C01-L06": "693d64e1e8147aa5c67cfa68ab895012073131be40875938d5c88db2cab12fd8",
+    "PY101-C01-L02": "3c26a32760d7c224caaa7ac3eaeb81ce086c8b59f6613bff9bc5c4e75c9faa30",
+    "PY101-C01-L03": "d942514914d40c35ef8de70f3b6905ae64d8980895a7fc2a0ada277400eec568",
+    "PY101-C01-L04": "84f1afb2deaba6b65371e9aae3d4e5ce88318490b968df4c87fd3d01b1ae1365",
+    "PY101-C01-L05": "cb7dcb527be15c6ca896662d7d553b815f36254fdb0d7ac65ee632bf15568bbf",
+    "PY101-C01-L01": "26fba207d52d7b47e6a926101aa0373a521773dbc61049a513c8c79e4222a555",
+    "AI000-C01-L01": "b54ed519e222dfa1d6afb22a5130e2a7a89fdd63b461c516b5a9877a0b600d21",
+    "AI000-C01-L02": "9bc7e303099a1ffff86c49530c36f289ad9c2ac8a8af6ed52fc8cf0e23fbfcb5",
+    "AI000-C01-L03": "40660658b98b8d52de1229c1e477d2f34b0a6114944479d9a17df98ec6c88c4f",
+    "AI000-C02-L01": "b42bf7de8752817c3763d854d9d537962f90a7176bb764132cd727c35e8bb6bb",
+    "AI000-C02-L02": "69e6402a98a8419e15c9e34de96f341a5812fdbdea7451e97cd92c686d5bba48",
+    "AI000-C03-L01": "a425d7f5a9f1de93530461e12a2aa5029e133bf9d97e51ef0b1acdf6b2e1b8c0",
+    "AI000-C03-L02": "aa35407804c649879ea6ab892385f384c758b07b9449d1baa541f60646f4b4f8",
+    "AI000-C03-L03": "13da68be4b8c258b0faf8b851b93eb13c407877a6b86680c04b41c5a5e11c87d",
+    "AI000-C03-L04": "7d00e690328db87795c17ee9d533549a3235748915b0fb62cd7318104d90584c",
+    "AI000-C04-L01": "e08439af1430c994e26f149867df47d82fbf84708ae302d2b7a0d76e9a4243b6",
+    "AI000-C04-L02": "3113c34484d8c4fe4154cd105945b4fb64ae9288248834963e7ecc8e902cef30",
+    "AI000-C04-L03": "144fdc35778d64bb5bf474543575eab477e0c289ec229171348ecab4ada63ee9",
+    "AI000-C04-L04": "67e6ae10715f1a4c1b101bd4c9026d583532aea74f0a0080028b55e9a90d8685",
+    "AI000-C05-L01": "877e708d6be97f1a8f30ea652a5117dfd42a65b0196f8c6052a8cb5f6fc93556",
+    "AI000-C05-L02": "9da3339c8ca2d85efb5fb885359520117e351166a92bae635ef6dac648d4629f",
+    "AI000-C05-L03": "52486c75c158433c4107a58f1c8b780fafdcaedb04f00327128e8eee2234135c",
+    "AI000-C05-L04": "52cd5dfdbf2d19a06282ab10dd0e0b5a7bf6ed4a876e5fb0104f056478e5bd7a",
+    "AI000-C05-L05": "8efe0189d3dc8f4b4fa6232c97384b943feaf4168002e15e94ca7331fa5fd178",
+    "AI000-C06-L01": "c538b91c94ead2cdaaa1e3f301863b257c3e56636bd2f25cc153e95e27c8a9d1",
+    "AI000-C06-L02": "282f337be3f2dea72f959ea33947a81ca68f2c8796cdcdaacf887d0397cdabca",
+    "AI000-C06-L03": "592d72aee4cafe9f043e0464d76aa36b291e7ef687b80145cf2d7a213402bbbd",
+    "AI000-C07-L01": "474faef4f895471e2b172b462e2dcb1ddfb185f4424b52967783f6e0d620643e",
+    "AI000-C07-L02": "1cf66f16b883b68920ad18a06571fd21cbb7da579f78643c3b0ebc08f1b40b23",
+    "AI000-C07-L03": "e60e96f6c2b8dc93e50546e1700fe32533cac6951d3e971f70757deb740c4679",
+    "MA101-C02-L03": "e469e3e0ebb497e7a3831914d0d4d68bd0bc23b5c30557e4a8b235098d44428e",
+    "MA101-C02-L04": "4ed8fd14a580511106503adbbdad6241c24fef48663904c3016147ca0d5bde25",
+    "MA101-C02-L05": "2e710caf4345d49ec860bf2fe1c304e8cf6e0a4e1aa7b5eccf8b9fee35006095",
+    "MA101-C02-L06": "2fe1d35d3597fc62d049c700b484aa36982edfde813c408605f7d4e5d071cf38",
+    "ML201-C03-L01": "7675d8830b5432d1387fc18591883e7e43f55f73dc2d9e0afdfa45678b9e73e0",
+    "ML201-C03-L02": "53820bd813d01ba59a237d1218a1966f16d0c49f04ec4cd7b21b6016525b4530",
+    "ML201-C03-L03": "92091377137a4c3062d9c1d74f1825562c168526bd539efbf5dc01ff8b3889c0",
+    "ML201-C04-L02": "d9758378cb21e5786bd3c21b142c3f8063859bfc4d3f30a4f5efd4019f173f5d",
+    "ML201-C04-L03": "7675813c6dbf06e2eaae249f2468c6a632807208dc51d5857b072468e783efef",
+    "ML201-C04-L04": "5fa68ffaff83b64af0fcc4dff973dc3ab9976a4b5915f05fdc9e8f499da61c79",
+    "ML201-C04-L05": "e0547cd116e39acacceea45bd8cac6a1a2c13bc7df91066007db53fbe716287e",
+    "ML201-C04-L01": "60ff0636fa10563eef3fa1a16dc4935a63ac73ac524181d2902eefb1c917decf",
+    "PY101-C05-L01": "d052dd48c61d6741bdaccd49de80dac7338b3c9ec45386fc768f93be3993e218",
+    "PY101-C05-L02": "1efaabac8ba11a3ae26b554131c34e917fd4ce2536705ac4c610ec818bdc807d",
+    "PY101-C05-L03": "464401c5d3def09f82a43a764f47bba66bb5a7a1354b8e3b90c985c386669874",
+    "PY101-C05-L04": "0195e241298b62d9c690e9548b7882c29f47a08c72f84aa75989c5cf47f4e4ab",
+    "PY101-C05-L05": "4879e722b463c049da187e291284b7864fce427cfff7da5ea7f0091a2ff2c1bd",
+    "MA101-C02-L01": "0697e683df11d31942e05aa714adf6813f0bb62854cde24c900e36d4e0911734",
+    "MA101-C02-L02": "87e4ffe53218a1b2ef4d94f736fb42f414c1db0b2752a73d5b41d93bc274992f",
+    "MA101-C03-L01": "39410918d20e8cba4ff8a7f6fe49e072a54d4a10408af4514f8e906e3466a2c7",
+    "MA101-C03-L02": "0941f935abd9bd1dbe9a50e698eeaf70ef3da2d1bcb195d057be9f6ffda50b52",
+    "MA101-C03-L03": "66f4d7586db4f6ebf9d1b8474d9802965154e8c02a2bf8210959baf6d5d84585",
+    "PY101-C05-L06": "8ac18f1b83b6a6610a18493d80d0eac2fc6e447d4a70b24331a9eacd2eb3b7be"
+  },
+  "publications": {
+    "PY101-C02-L01": "6ab0fd978a2dc826e3d4f0ab4490bdc6ece6c933e497300cdca88f9621fb126d",
+    "PY101-C01-L06": "f07c140b9a06e2e51071b84f03af53c3c89978b4c583e8e760cc4614eb6e50d6",
+    "PY101-C01-L05": "bbc7adac5cb4ae96101705339d33acfe16654ad6ab9ef9fbd8ba506053ed946d",
+    "PY101-C01-L04": "204a6ea893b7a04efb046c00fa75a077d8471a94d8c8e0a6e9aa78084b6813fa",
+    "PY101-C01-L03": "d0f5d4cda33cd2941f87115957ec449c59e4c39083db51f2ba37720116c6c005",
+    "PY101-C01-L02": "c18177c94ae07d875f0bca9ca19d8f3deb9a0541e0f3fc994daf02475a52db74",
+    "PY101-C01-L01": "542feeebb9600e1a419aeaf91ac216b1c68f971c59c36934651d8a53d4c0f7d1",
+    "AI000-C07-L03": "df7d487e3870c6a7d18a132ba846d8603599c8a3f036b7d6b863dbe75503da78",
+    "AI000-C07-L02": "dbe98f35077fe579bc61b1c6ff84719c9a43c7d80204aac59ca7122a07b9cb0e",
+    "AI000-C07-L01": "5b8b9accabcaac258d7202af40bd41df26625252d0f0c2e3f68558e02bb8c58e",
+    "AI000-C06-L03": "f9662b2cb43dfaf49d315c58d45eceade737c9db16b0504b428c298c2da59445",
+    "AI000-C06-L02": "3ad51b180720076094a0f479b4a3bf1eab24e702f5887a2c77aa1049a84e57c6",
+    "AI000-C06-L01": "3ab7dcc39fa0aa75481e41700e9f70419bb7de6bdd312bc0a42e14a6e49dc468",
+    "AI000-C05-L05": "e432f9bd7305ea536d38181864f2ed24f4e53a9d889d6469d61c4b3a223cfeef",
+    "AI000-C05-L03": "cde14b6f3dfd69577fd431227c8c119e85226b03cc507eac918906a9e10d8d9c",
+    "AI000-C05-L04": "79144a7b946e66b8a5d9ee00d92b760eae22d34ca56d101d2a561d6b9e1a8386",
+    "AI000-C05-L02": "5fee20815aab3b352dec12deb5b0f4e1a56ab23307c19ed0e83454d5a28df062",
+    "AI000-C05-L01": "a05702f453f61d710015293c73ef277e7d8c488a76a2184dbe659c3f16494775",
+    "AI000-C04-L04": "0406e29dac402e39bbca48106f3c2b89d6f7bc8ec9f74dd6ece89220a73314eb",
+    "AI000-C04-L03": "f90f1988592a92929269db65872bca653ca298d83e533a58f6899b0a41c06392",
+    "AI000-C04-L02": "8ad22eeaf7ee0f5acd209a64fbefca01c8e4c206cfd8a10ddb760e23c7ffe8e5",
+    "AI000-C04-L01": "a012ae41f6fd1a3a9b67978719d9fcf5e996db3e6dc738d2e76269a62669ea6a",
+    "AI000-C03-L04": "f643eb9f02037c51b93158914239a4ad075f619e305f5ed47e4e77d28c53708b",
+    "AI000-C03-L03": "dce9fe3a39c9c42a0cbe1d8a4222d4b49b8fb4bf01fb7d2985666b54c8aa6100",
+    "AI000-C03-L02": "cfe72bc20f8df4f6f57168b0f79e2cff103fae9a515bca8444ba9aeb7027de1a",
+    "AI000-C03-L01": "9d4b1e9f14dbf641729d30fd8f82a8cdc25742e749d4125e8d0afef84eb0681c",
+    "AI000-C01-L02": "94d6a567973ba6be887d46c538acf76f4bb4741f6fc6e82fbc01204641c3ecda",
+    "AI000-C01-L03": "edfb889e8be5da2f031889d1a29411eec1b6404c981357c2d77448ed86e4e0d4",
+    "AI000-C02-L02": "05234fcc51bbe0f2e42fe8995ad89face00b4d1a6353ae8b1b119700f42e8575",
+    "AI000-C02-L01": "93b2fda5f012eb318de7bf0d31f1ea253721760360470748f1db736bc46c98ff",
+    "AI000-C01-L01": "17e82b8624f892918b9d28afbe4a63f8cddfdf638abdb6003bdb47c0f46483f9",
+    "ML201-C03-L01": "0de24dcb1ff2d00082bba4cb91feb275e9c3101f37e6d5f05fc5af9b37d6a1a4",
+    "ML201-C03-L02": "26210000a012027b60cffe4f5c6c7f77a54f561763b827110539714f5907e95a",
+    "ML201-C03-L03": "89ea5672f516f4bed663bc949e13049d9661ed609dd7e0b47104b2783c1166c4",
+    "ML201-C04-L02": "192316b466cd59f5a2b3ead6fd966949f47161a9c0031802843bf169d1774fc3",
+    "ML201-C04-L03": "3ab384cb73e2e40648cad0d7f727cf6e0d3ad16fd93d230474d6d66c82d3e4c2",
+    "ML201-C04-L04": "14753e00727de91f31bbb132f8e39eaae3c5f430545a6b749dac966d32f1c8d4",
+    "ML201-C04-L05": "0272b0283eb20d8efdeab388c4a856d395b06e307be6e95bd2cfd202fb7a1873",
+    "PY101-C05-L01": "8e807c4232cdf6750b24fae803c677e0aa3dbd68eb7aae8ab2d34c4dd81a08d4",
+    "PY101-C05-L02": "c9f2000ecb9b22a4b7f2f2b62053b43c509d75281d387a7bcc454da884eed234",
+    "PY101-C05-L03": "ecda65af86b932199cc1f2d4e93f3f4cc8e0f01730eeaae5e80f2a06e6229cae",
+    "PY101-C05-L04": "367b1d459b1c0ab5435534184132df4f008904af1ebc7a63d7509d949112da2a",
+    "PY101-C05-L05": "eb30b435921ebd20ec8c4ac86c3f0e7bba95fcaba153dd3613887df628a0dcfc",
+    "PY101-C05-L06": "c64e2c1762ad0be0b56c9156ac28901a0e56576b806333f906e8672ffaec811f",
+    "MA101-C02-L03": "61cc24e838b8ba5103b1211bba151cc336cf43c08f06e6d923c52c5acf0597f0",
+    "MA101-C02-L04": "abf3c04ab5b11513aa793cd1cf1d4437fa65331af17776e10d91466588910c4e",
+    "MA101-C02-L05": "796a25e2cb4e291139f92c28a6bbcf3e4135a49761fe3c608d82f86b5b10f327",
+    "MA101-C02-L06": "1997a694ffa0dcda12b191e785ea1716c5f49e28aec73efa975183da6dded7b3",
+    "MA101-C02-L01": "0098aec0436f51f8c5cb396715cb3c01f38a0ca97d3ea3f45a33db45becb002c",
+    "MA101-C02-L02": "6a467c1dfdd7c5552ecf9f300168f7ed93070e5b67aa7ffe6ba2743a25a5df0b",
+    "MA101-C03-L01": "1dce65ebf7fb85d187b04eb80a81334c6051ba0e3ac4a46086a5f55ac4af7937",
+    "MA101-C03-L02": "0b2491f2c0366393ff8dbb667bcabdb1faf5569d2bc26e64f6eba0222bd8c35b",
+    "MA101-C03-L03": "26c3b1ce02ecda88f8db7999e714d187a4ba1e92a5f4df2bbd1f4539cc6e5ba3",
+    "ML201-C04-L01": "a934e09a7cc912d972854997c06e44e6e2ced1a7bc32eb947d0aeecc7a7c380e"
+  },
+  "amendmentBefore": {
+    "id": "PY101-C02-L01",
+    "courseId": "PY101",
+    "chapterId": "PY101-C02",
+    "contentVersion": 1,
+    "title": "用变量保留并更新程序里的值",
+    "subtitle": "自己给任务文字取个名字，预测更新前后的输出，再修复一次读得太早的错误。",
+    "learningTime": {
+      "reading": [
+        10,
+        15
+      ],
+      "practice": [
+        5,
+        8
+      ],
+      "coding": [
+        10,
+        15
+      ],
+      "basis": "editorial-estimate"
+    },
+    "optionalLesson": false,
+    "assessmentMap": [
+      {
+        "objective": 1,
+        "exerciseIds": [
+          "keep-and-update"
+        ]
+      },
+      {
+        "objective": 2,
+        "exerciseIds": [
+          "keep-and-update"
+        ]
+      },
+      {
+        "objective": 3,
+        "exerciseIds": [
+          "repair-first-read"
+        ]
+      }
+    ],
+    "prerequisites": "已完成第一章：能在电脑上创建、保存和完整运行.py，使用print及成对引号，核对文件位置与解释器；接触过1.5的最小赋值和名称读取。沿用已可运行的Python 3与编辑器，不重新安装软件。手机可阅读，独立代码实践需要电脑。",
+    "prerequisiteLinks": [
+      {
+        "title": "1.1 从终端执行文件",
+        "href": "/learn/PY101/PY101-C01-L01#run-script",
+        "note": "补齐.py和print的运行。"
+      },
+      {
+        "title": "1.3 保存后完整重跑",
+        "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+        "note": "核对保存状态、cwd与实际目标。"
+      },
+      {
+        "title": "1.5 最小赋值经验",
+        "href": "/learn/PY101/PY101-C01-L05#first-cells",
+        "note": "回顾名字、文字与命名建议；本节转到普通脚本。"
+      },
+      {
+        "title": "1.6 读懂相关错误",
+        "href": "/learn/PY101/PY101-C01-L06#read-evidence",
+        "note": "保留错误类型及对应代码行。"
+      }
+    ],
+    "objectives": [
+      "在自己创建的.py中用合法名称保存文字并输出当前值，区分名称和引号内的固定文字",
+      "预测同一名称重新赋值前后的输出，只修改第二次赋值，保存重跑并解释哪一行变化",
+      "按执行顺序找出首次赋值前的读取，记录实际错误，保留名称读取语义修复并从头运行"
+    ],
+    "sections": [
+      {
+        "id": "changing-task",
+        "title": "任务变了，程序怎样接着使用新文字？",
+        "navGroup": "start",
+        "navLabel": "名称与值",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "一个小程序先显示当前任务“打包笔记本”，稍后要改为“检查标签”。如果把同一任务文字在各处重复写死，修改时容易漏掉一处。我们可以先给这份文字取一个名字，使用时读这个名字，需要变化时再给它新的值。"
+          },
+          {
+            "type": "paragraph",
+            "text": "在1.5，你用marker和两格代码观察过内核记住的内容。这次回到普通.py文件：自己选名字、写出赋值与读取，并判断程序运行到不同位置时会显示什么。所有例子只用Python自带功能。"
+          }
+        ]
+      },
+      {
+        "id": "name-and-value",
+        "title": "先把一份文字交给名称",
+        "navGroup": "start",
+        "navLabel": "名称与值",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "先看这一行，暂时只理解它的作用，下一段会把它与其他行组合成完整脚本："
+          },
+          {
+            "type": "code",
+            "code": "task_name = \"Pack notebooks\"",
+            "filename": "赋值片段 · 稍后组合",
+            "language": "python"
+          },
+          {
+            "type": "paragraph",
+            "text": "task_name是我们选择的名称，意思是任务名称；\"Pack notebooks\"是这次给它的文字值。和1.1一样，配对英文引号标记字符串的开始和结束，引号不是名称的一部分。"
+          },
+          {
+            "type": "paragraph",
+            "text": "执行这条语句时，=让左边的task_name对应右边的值，这个动作叫赋值。这种运行时的对应关系叫绑定。=在这里执行一个动作，并不要求你判断数学等式是否成立。"
+          },
+          {
+            "type": "paragraph",
+            "text": "本节把能绑定到值、供后续读取的名称称为变量，task_name就是变量名。它帮助后面的代码找到当前对应的值。之后再次赋值，可以改变这份对应关系；理解变量时，先抓住名称和当前值这两件事。单独执行赋值不会像print那样显示一行文字。"
+          }
+        ]
+      },
+      {
+        "id": "choose-name",
+        "title": "自己选一个能使用的名称",
+        "navGroup": "start",
+        "navLabel": "名称与值",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "沿用1.5的便捷建议：用英文字母开头，后面接英文字母、数字或下划线，名称中不放空格。例如task_name、label2都符合这种写法。task_name中的下划线把两个词连成一个名称；my plan含空格、1plan以数字开头，都不能用作这里的变量名。"
+          },
+          {
+            "type": "paragraph",
+            "text": "Python有一些保留给语言本身的词，称为关键字，例如for、class，不能拿来作普通变量名。本次可选带含义的task_label、next_task等名字，也避开print，留着这个已有的输出工具。赋值处和读取处的拼写、大小写要一致；task_name和Task_name是两个名字。"
+          },
+          {
+            "type": "paragraph",
+            "text": "这些英文写法方便初次练习，不是Python全部合法名称的清单。下划线开头的名称以及用某些中文等文字组成的名称也可以合法使用。练习接受其他合法名称；一个清楚表达用途的名字，比只写一个字母更容易检查。"
+          }
+        ]
+      },
+      {
+        "id": "read-and-update",
+        "title": "读取当前值，再给同一名称新值",
+        "navGroup": "execution",
+        "navLabel": "读取与更新",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "在刚才的赋值之后接上这一行："
+          },
+          {
+            "type": "code",
+            "code": "print(task_name)",
+            "filename": "读取片段 · 接在首次赋值之后",
+            "language": "python"
+          },
+          {
+            "type": "paragraph",
+            "text": "print(task_name)先读取task_name此刻对应的值，再显示它，所以这里会显示Pack notebooks。括号里没有引号，读取的是名称；写print不会自动给尚未有值的名称赋值。"
+          },
+          {
+            "type": "paragraph",
+            "text": "再在这次读取后面写："
+          },
+          {
+            "type": "code",
+            "code": "task_name = \"Check labels\"",
+            "filename": "更新片段 · 接在首次读取之后",
+            "language": "python"
+          },
+          {
+            "type": "paragraph",
+            "text": "这还是同一个task_name。执行这一行时，它改为对应Check labels，称为重新赋值。后续再执行print(task_name)，会读到新的文字。名称保持相同，当前值可以随执行的赋值改变。"
+          }
+        ]
+      },
+      {
+        "id": "predict-run",
+        "title": "先预测四行代码，再运行完整脚本",
+        "navGroup": "execution",
+        "navLabel": "读取与更新",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "在自己的练习文件夹新建task_labels.py，源码放在.venv外。用编辑器把下面四行写入，行首都不加缩进。先在本地笔记写下两行预测：第一次print执行时，之前已经发生哪次赋值？第二次print之前又发生了什么？写好再保存运行。"
+          },
+          {
+            "type": "code",
+            "code": "task_name = \"Pack notebooks\"\nprint(task_name)\ntask_name = \"Check labels\"\nprint(task_name)",
+            "filename": "task_labels.py",
+            "language": "python"
+          },
+          {
+            "type": "paragraph",
+            "text": "确认编辑器已保存，终端用pwd和Windows的dir（macOS为ls）确认当前目录包含这份文件。沿用第一章已核验的解释器命令：Windows在PowerShell运行下面第一条，macOS在终端运行第二条；若此前一直用py，保持使用py。命令输入在终端提示符后，不放进.py，也不只运行编辑器选区。"
+          },
+          {
+            "type": "code",
+            "code": "python task_labels.py",
+            "filename": "Windows · PowerShell · 文件所在目录",
+            "language": "text"
+          },
+          {
+            "type": "code",
+            "code": "python3 task_labels.py",
+            "filename": "macOS · 终端 · 文件所在目录",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果沿用项目.venv而未激活，也可以按1.4直接调用已核验的环境解释器，脚本参数仍为task_labels.py。本节不创建新环境。实际结果应为："
+          },
+          {
+            "type": "code",
+            "code": "Pack notebooks\nCheck labels",
+            "filename": "完整运行 · 预期输出",
+            "language": "text"
+          },
+          {
+            "type": "table",
+            "caption": "沿实际执行顺序看当前值",
+            "columns": [
+              "刚执行到哪里",
+              "task_name当前对应什么",
+              "这一步的显示"
+            ],
+            "rows": [
+              [
+                "第1行赋值后",
+                "Pack notebooks",
+                "无普通输出"
+              ],
+              [
+                "第2行print",
+                "Pack notebooks",
+                "Pack notebooks"
+              ],
+              [
+                "第3行重新赋值后",
+                "Check labels",
+                "无普通输出"
+              ],
+              [
+                "第4行print",
+                "Check labels",
+                "Check labels"
+              ]
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "第一条print已经把旧值显示出来，第三行才开始执行新的赋值。后来的赋值会影响后续读取，不会倒过来改写已经显示的第一行。判断某次输出时，要看它执行之前真正发生的动作。"
+          }
+        ]
+      },
+      {
+        "id": "change-one-value",
+        "title": "只改第二次赋值，会改变哪一行？",
+        "navGroup": "execution",
+        "navLabel": "读取与更新",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "现在自己另选一项任务，只改第三行引号内的文字，其他三行保持不动。先写两行新预测，再保存，用同一条命令从头运行整个文件，比较这一次和上一次的真实输出。"
+          },
+          {
+            "type": "paragraph",
+            "text": "例如把第二次赋值的文字换成Sort envelopes，第一行仍应为Pack notebooks，第二行变为Sort envelopes。原因是第一次读取之前的赋值没有改变，而第二次读取之前执行了修改后的赋值。用你自己选的文字再核对一次，不用把这个变式也抄进文件末尾。"
+          },
+          {
+            "type": "paragraph",
+            "text": "若仍显示旧文字，先按1.3核对保存标记、当前目录与执行目标，再比较源码。编辑内容、保存文件与运行程序是三个动作，新的输出来自这次实际执行。"
+          }
+        ]
+      },
+      {
+        "id": "literal-or-name",
+        "title": "有引号的文字和无引号的名称",
+        "navGroup": "compare",
+        "navLabel": "区分与排错",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "回顾1.1：引号围起来的是固定字符串。另建name_or_text.py，先预测下面两次显示会不会相同，再保存并完整运行；命令中的文件名换成name_or_text.py。"
+          },
+          {
+            "type": "code",
+            "code": "task_name = \"Ready\"\nprint(\"task_name\")\nprint(task_name)",
+            "filename": "name_or_text.py",
+            "language": "python"
+          },
+          {
+            "type": "code",
+            "code": "task_name\nReady",
+            "filename": "对照 · 预期输出",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "print(\"task_name\")直接显示引号里的task_name这几个字符，没有读取这个名称。print(task_name)读取当前绑定的值，所以显示Ready。两行都使用print，差别在括号中的内容：固定文字，还是名称读取。"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果想保存Ready这段文字，就保留它两端的引号。去掉后，Ready会被当成另一个名称；若本次程序没有给它提供值，读取就可能失败。下一段用一个更容易定位的完整脚本实际观察这种未定义名称错误。"
+          }
+        ]
+      },
+      {
+        "id": "fresh-script",
+        "title": "每次从终端启动，是本次脚本的执行",
+        "navGroup": "compare",
+        "navLabel": "区分与排错",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "本节使用的是常规终端命令启动的新Python脚本进程：每次运行，都会从文件开头按源码顺序执行这几条语句。上一次运行结束时给名称赋过值，不会让下一次新进程自动拥有那个绑定。源码文件保存了语句，这次真正执行到赋值时才建立对应关系。"
+          },
+          {
+            "type": "paragraph",
+            "text": "1.5的Notebook可以在仍运行的同一内核中保留先前执行过的名称；那是另一种执行方式。这里不用Notebook旧状态补齐.py中缺失的步骤。把脚本保存并从头运行，是检查当前文件本身是否足够的办法。"
+          }
+        ]
+      },
+      {
+        "id": "first-read-error",
+        "title": "赋值写在后面，为什么第一行仍报错？",
+        "navGroup": "compare",
+        "navLabel": "区分与排错",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "在新的dispatch_label.py中保存下面两行。先预测这次能否显示Packed T7，再从终端完整执行它。这是有意安排的失败实验，预期会出现NameError；保留你实际看到的相关代码行及错误末行。"
+          },
+          {
+            "type": "code",
+            "code": "print(dispatch_label)\ndispatch_label = \"Packed T7\"",
+            "filename": "dispatch_label.py · 预期出现NameError",
+            "language": "python"
+          },
+          {
+            "type": "paragraph",
+            "text": "运行到第一行时，程序需要读取dispatch_label，却还没有执行第二行的赋值，所以本次没有正常的任务输出。错误类型是NameError，描述会提到dispatch_label未定义；文件路径、行号排版与箭头可能随环境或Python版本变化，以自己的真实回溯为准。后面有赋值文本，并不等于它已经执行。"
+          },
+          {
+            "type": "paragraph",
+            "text": "修复要让提供值的赋值先于读取执行。保留通过名称显示任务的做法，自己调整顺序，保存后从头运行，核对是否正常显示Packed T7。这次原因来自已给定脚本的执行顺序；无需重装Python、安装包或改PATH。其他NameError仍要结合对应代码判断，不能都套用同一根因。"
+          }
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "自己写一次更新，再独立修复一次读取",
+        "navGroup": "practice",
+        "navLabel": "独立练习",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "先合上示例和参考答案完成任务。网页输入框只是临时笔记；正式成果保存在本地.py及短记录里。只需列出源码、命令、预测与实际结果，不必抄成长篇报告。"
+          },
+          {
+            "type": "exercise",
+            "id": "keep-and-update",
+            "title": "自己的任务标签会怎样改变？",
+            "kind": "代码",
+            "prompt": "创建与正文不同的.py文件，自选新的任务情境、一个合法名称和两段不同文字。自己写第一次赋值与名称读取，再写同一名称的第二次赋值与名称读取。运行前预测两行输出，保存并真实执行。随后只改第二次赋值的文字，再预测、保存并完整运行一次。交付实际源码（保留改前/改后差异）、运行命令、两次预测和两次真实输出；简短说明为什么第一行不随后面的赋值倒退改变，再用一句话区分名称与引号里的文字。名称不必是task_name，接受其他合法写法；不能只交参考输出。",
+            "hints": [
+              "沿程序从上到下走到每一次print，观察此前最近执行过哪次给这个名称赋值的语句。",
+              "把自己的两次赋值和两次读取分别标出，核对实际顺序。只改后一次赋值后，重新预测哪些读取会遇到它；仍由你独立选名、填新文字、保存和执行。"
+            ],
+            "solution": [
+              "例如布展任务另建gallery_plan.py，选display_note：它以字母开头，只有字母和下划线，且不是关键字。以下只是一种参考，其他合法名称和任务内容同样接受。",
+              "参考初稿从上到下写四行，分号只是这里的分隔说明，不输入文件：第1行：display_note = \"Hang posters\"；第2行：print(display_note)；第3行：display_note = \"Place signs\"；第4行：print(display_note)。两段文字用配对引号包住，两次print中的名称与赋值拼写一致。先预测Hang posters、Place signs两行，再保存；Windows可用python gallery_plan.py，macOS用python3 gallery_plan.py，保留本人真实结果。",
+              "只修改后一次赋值后的四行依次为：第1行：display_note = \"Hang posters\"；第2行：print(display_note)；第3行：display_note = \"Open doors\"；第4行：print(display_note)。重新预测后完整运行，应为Hang posters、Open doors。第一次print发生在后一次赋值之前，因此第一行保持原样，第二行读取更新后的值。",
+              "display_note是不带引号、用于读取的名称，\"Hang posters\"等是引号内固定文字。若把print中的名称加上引号，会改成显示名称文字本身，已经改变读取含义。",
+              "常错包括：只改编辑区未保存、命令指向另一文件、赋值/读取拼写或大小写不同。后两种名称差异若导致读取未定义名称，可能出现NameError；漏掉配对引号可能是SyntaxError，把应为文字的内容写成未定义名称也可能NameError。按实际行检查，不只抄错误名。接受配对单引号和中文文字，但必须保留自选内容与两次实际执行。"
+            ],
+            "rubric": [
+              "实际新.py使用自选合法名称与新情境，两段文字不同；有同名两次赋值及两次名称读取，源码和运行命令对应。",
+              "两轮都有运行前两行预测和真实输出；改后只改变第二次赋值，结果与执行位置相符，差异有核对。",
+              "结合本人代码说明第一行已在更新前显示，不会被后来赋值改写；能区分名称读取与引号内固定文字。读完标记、复制样例或只有解释不代替代码与运行。"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "下一题使用first-read-error中的两行dispatch_label起始源码，可回到上方代码框复制到另建的repair_label.py。它故意在第一次赋值前读取名称；不要先套用修复参考。"
+          },
+          {
+            "type": "exercise",
+            "id": "repair-first-read",
+            "title": "为什么脚本还没开始显示任务就报错？",
+            "kind": "实验",
+            "prompt": "确认repair_label.py的真实位置与保存状态，内容为上方dispatch_label两行故障源码。先预测首次运行现象，再从终端实际执行，保留真实错误类型、相关代码行和末行。按这次执行顺序判断：读取时，这个名称是否已经有值？自己决定安全修复方法，保留变量赋值与名称读取的语义，保存并从头重跑。交付修复前后源码、命令、错误及恢复后的真实输出，再简短解释本次新脚本为何不能依赖以前Notebook内核的状态。只改成print(\"Packed T7\")跳过了名称读取，不能算本题完成；不通过重装、改PATH或删环境解决。",
+            "hints": [
+              "从这次脚本第一条执行语句开始看。它需要的名字，在此前的本次执行中已经获得值了吗？",
+              "分别找到提供值的赋值语句与读取语句，比较它们在文件中的位置；考虑怎样调整依赖顺序并保留名称读取，然后自行保存与完整重跑。"
+            ],
+            "solution": [
+              "新脚本先执行print(dispatch_label)，该名称尚未被本次执行绑定，因此真正运行会出现NameError，且没有Packed T7正常输出。赋值虽然写在文件第二行，但报错发生时还没有执行到那里。先保存本人实际回溯和对应行，不用参考文字代替故障证据。",
+              "一种修复后的repair_label.py分两行写：第1行：dispatch_label = \"Packed T7\"；第2行：print(dispatch_label)。先提供值再读取。可以把赋值移到读取前，也可以把读取移到赋值后；保留同一名称和任务文字即可。",
+              "保存后从文件所在目录运行python repair_label.py（macOS用python3，已验证的py也可）。预期正常输出Packed T7，实际结果需自己保留；恢复成功要对应保存的整份源码。",
+              "本节从终端启动新的脚本进程，不会继承先前另一个Notebook内核中的名称。即使旧内核曾有同名变量，也要让当前文件自己提供读取前所需的值。",
+              "常错是只把print改成固定文字、只跑选区、依赖旧交互窗口或只写“调整顺序”而没保存重跑。若改了名称，要在赋值和读取处一致修改并说明；若真实错误不同，先核对实际文件和代码，不伪造NameError。"
+            ],
+            "rubric": [
+              "在已确认的保存文件上真正复现首次读取错误，保留实际命令、相关代码与NameError，不以预贴错误文字替代。",
+              "依据本次执行先后指出读取时尚未绑定；修复仍含赋值及名称读取，提供值先执行，未用输出常量绕开任务。",
+              "保存修复源码并从头运行，保留真实Packed T7输出与命令；能解释新脚本进程和旧Notebook内核状态的区别。"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "next-step",
+        "title": "用自己的文件检查这三件事",
+        "navGroup": "finish",
+        "navLabel": "回顾与后续",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "summary",
+            "points": [
+              "给值选择合法名称，执行赋值后再通过名称读取；引号中的内容表示固定文字。",
+              "按执行位置预测当前值，重新赋值影响后续读取；保存并完整重跑验证自己的改动。",
+              "遇到本次未定义名称错误，结合相关代码与执行先后检查提供值的步骤，再保留语义修复和复跑。"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "保留两个自己的.py及短记录，能现场换一个名字或任务文字并再次验证，才有独立操作的证据。网页读完只记录阅读，不会自动判断这些程序是否达标。"
+          },
+          {
+            "type": "paragraph",
+            "text": "第二章接着规划2.2「分清文字、整数、小数和真假值」，目前尚无可读正文；2.3–2.6也仍是规划。阅读器的“下一可读课”可能跳到第5章函数试读，那还需要表达式与控制流程等中间先修，不能当作零基础跳学建议。整门PY101仍在筹备。"
+          }
+        ]
+      }
+    ],
+    "resources": [],
+    "references": [
+      {
+        "title": "Python赋值语句",
+        "href": "https://docs.python.org/3.14/reference/simple_stmts.html#assignment-statements",
+        "note": "核对名称的绑定和重新绑定。"
+      },
+      {
+        "title": "表达式中的名称",
+        "href": "https://docs.python.org/3/reference/expressions.html#identifiers-names",
+        "note": "核对名称读取与未绑定情形。"
+      },
+      {
+        "title": "合法名称与关键字",
+        "href": "https://docs.python.org/3.14/reference/lexical_analysis.html#identifiers",
+        "note": "名称字符、大小写和保留词。"
+      },
+      {
+        "title": "错误与异常",
+        "href": "https://docs.python.org/3/tutorial/errors.html",
+        "note": "识别错误类型和相关代码位置；本节不教异常处理。"
+      },
+      {
+        "title": "Python入门",
+        "href": "https://docs.python.org/3/tutorial/introduction.html",
+        "note": "赋值、字符串及最小例子。"
+      },
+      {
+        "title": "从终端执行脚本",
+        "href": "https://docs.python.org/3.14/using/cmdline.html#interface-options",
+        "note": "脚本文件参数和常规执行方式。"
+      }
+    ]
+  },
+  "publicationBefore": {
+    "lessonId": "PY101-C02-L01",
+    "courseId": "PY101",
+    "chapterId": "PY101-C02",
+    "title": "用变量保留并更新程序里的值",
+    "contentVersion": 1,
+    "order": 1,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "pending-review",
+    "access": "preview",
+    "technicalEvidence": "docs/py101-p8/TECHNICAL_REPORT.md"
+  }
+}

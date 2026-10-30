@@ -10,13 +10,13 @@ import { createProgressStore, parseReadingProgress, progressKey } from "../src/l
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
 import { variableCode, variableBlockNames } from "../src/content/resources/python-variables";
 import { variableKey, checkVariableResult } from "../scripts/python-variable-checks";
-import { beforeApprovedPy101Source } from "../scripts/py101-p1-compatibility";
+import { beforeApprovedPy101Source, beforeApprovedPy101Object } from "../scripts/py101-p1-compatibility";
 import { assertRegisteredInventory, assertCourseAvailability } from "./helpers/registered-content";
 
-test("2.1身份/顺序/初稿门禁；只有这一节进入第二章", () => {
+test("2.1身份/顺序/初稿门禁；第二章按实际注册顺序接入", () => {
   const entry = publicationManifest.find(p => p.lessonId === lesson.id)!;
   assert.deepEqual([entry.title, entry.contentVersion, entry.order, entry.optionalLesson], [lesson.title, 1, 1, false]);
-  assert.deepEqual(courseOutline.filter(s => s.chapterId === "PY101-C02").map(s => [s.lessonId, s.order]), [[lesson.id, 1]]);
+  assert.deepEqual(courseOutline.filter(s => s.chapterId === "PY101-C02").map(s => [s.lessonId, s.order]), publicationManifest.filter(p => p.chapterId === "PY101-C02").sort((a,b) => a.order - b.order).map(p => [p.lessonId, p.order]));
   const draft = JSON.parse(readFileSync("docs/py101-p8/DRAFT_GATE.json", "utf8"));
   assert.deepEqual([draft.status, draft.access, draft.readable, draft.resolveUndefined, draft.directoryHrefAbsent], ["draft", "private", false, true, true]);
   assert.equal(isReadable({ ...entry, status: "draft", access: "private", technicalEvidence: undefined }), false);
@@ -25,7 +25,8 @@ test("2.1身份/顺序/初稿门禁；只有这一节进入第二章", () => {
   if (entry.status === "draft") assert.equal(resolveLesson("PY101", lesson.id), undefined);
   else {
     assert.equal(entry.status, "pending-review"); assert.equal(entry.access, "preview");
-    assert.equal(entry.technicalEvidence, "docs/py101-p8/TECHNICAL_REPORT.md");
+    const historical = beforeApprovedPy101Object("publications", lesson.id, entry) as typeof entry;
+    assert.equal(historical.technicalEvidence, "docs/py101-p8/TECHNICAL_REPORT.md");
     assert.ok(resolveLesson("PY101", lesson.id));
   }
   assert.equal(entry.reviewEvidence, undefined); assert.equal(lesson.optionalLesson, false);
@@ -76,10 +77,12 @@ test("第一章顺序、可读相邻导航、第五章先修和未制作/错误�
   if (isReadable(publicationManifest.find(p => p.lessonId === lesson.id)!)) {
     assert.equal(getAdjacentLessons(course, "PY101-C01-L06").next?.lessonId, lesson.id);
     assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, "PY101-C01-L06");
-    assert.equal(getAdjacentLessons(course, lesson.id).next?.lessonId, "PY101-C05-L01");
+    const readable = course.chapters.flatMap(c => c.lessons).filter(s => s.href);
+    assert.equal(getAdjacentLessons(course, lesson.id).next?.lessonId, readable[readable.findIndex(s => s.lessonId === lesson.id) + 1]?.lessonId);
   }
   for (let i = 2; i <= 6; i++) {
     const id = `PY101-C02-L0${i}`;
+    if (lessonRegistry.has(id)) continue; // 后续正式注册不再冒充P8当时的未制作状态。
     assert.equal(lessonRegistry.has(id), false); assert.equal(publicationManifest.some(p => p.lessonId === id), false);
     assert.equal(resolveLesson("PY101", id), undefined);
   }

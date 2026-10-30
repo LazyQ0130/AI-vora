@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-10-30T04:17:03.759921+00:00",
+  "base": "http://127.0.0.1:3021",
+  "rows": [
+    {
+      "path": "/learn/PY101/PY101-C02-L02",
+      "expected": 200,
+      "actual": 200,
+      "notFoundPage": null
+    },
+    {
+      "path": "/learn/PY101/PY101-C02-L01",
+      "expected": 200,
+      "actual": 200,
+      "notFoundPage": null
+    },
+    {
+      "path": "/learn/PY101/PY101-C02-L03",
+      "expected": 404,
+      "actual": 404,
+      "notFoundPage": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C02-L04",
+      "expected": 404,
+      "actual": 404,
+      "notFoundPage": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C02-L05",
+      "expected": 404,
+      "actual": 404,
+      "notFoundPage": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C02-L06",
+      "expected": 404,
+      "actual": 404,
+      "notFoundPage": true
+    },
+    {
+      "path": "/learn/ML201/PY101-C02-L02",
+      "expected": 404,
+      "actual": 404,
+      "notFoundPage": true
+    },
+    {
+      "path": "/courses/PY101",
+      "expected": 200,
+      "actual": 200,
+      "notFoundPage": null
+    }
+  ],
+  "allAssertionsPassed": true
+}

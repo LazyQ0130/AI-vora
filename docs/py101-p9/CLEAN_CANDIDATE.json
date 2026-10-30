@@ -1,0 +1,77 @@
+{
+  "checkedAt": "2026-10-30T04:23:16.351843+00:00",
+  "baseline": "3d625d5067772a37aa747566f123a714d648b813",
+  "source": "git archive HEAD plus explicit authorized task files",
+  "excludedOriginalModified": 4,
+  "excludedOriginalUntracked": 7,
+  "productSourcesEqualBrowserBuildInputs": true,
+  "allTaskCodeEqualCleanChecks": true,
+  "files": [
+    {
+      "path": "src/content/course-outline.ts",
+      "lfSha256": "33d50bb8114273ef149a63449b7ed9a799d96c4c1a6261b8df2ee4d040f18955",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/lib/course-engine.ts",
+      "lfSha256": "85ca031b57f38ac007eb1f6c6844a582a4426e518ebe56c7af3fadecc308539d",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "lfSha256": "0b64066c57e2f9a988652df15066fbf1a04ad2e820dbcfa3884823ca4ea5ce33",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "lfSha256": "44dd2b41383dab4cc3336aa6f71c152644a8eccd213e9deee65eba19a81ce44d",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "scripts/validate-python.ts",
+      "lfSha256": "6d9206562a9012899b8d7beb9e0004ee7a196b80732a8c5605da2bab3f09c2f5",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "lfSha256": "22b5298e0b2de03b3d86c14051b5127729b54829dc7ccb24cca03ca2a212757a",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "tests/content.test.ts",
+      "lfSha256": "426ff8b31e40156aac0391d18b38013bd3092dcdf6579e0ed044ba351c2d8a12",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "tests/py101-variables-and-assignment.test.ts",
+      "lfSha256": "3beec0ecbbf5322b024b161177abfb979d2a0ec1c915a6247146ec3fa4967983",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "tests/py101-environment-reproduction.test.ts",
+      "lfSha256": "0a4ea7a667a824c958ec0581cefefebb49f4d2d62771e8016f0ef7121ac8e9a7",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "lfSha256": "a72f19d289377d3344847f8fe47b652386f49ccf02bcc000c34001707bda17c3",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/content/resources/python-value-types.ts",
+      "lfSha256": "ceebf972bf0c3509cbea37eb72c091685b33c2d7df25df20656b430f78e6622d",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "scripts/validate-py101-value-types.ts",
+      "lfSha256": "7fa3d4cf665fde42085a09d5ea1a71669099a6b96f64c146069bb6da1f289921",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "tests/py101-basic-value-types.test.ts",
+      "lfSha256": "d10aa69f80ad1d0d806ad6f25ba28ec485ecf638d07d23bf81958927defe68f7",
+      "matchesCleanCandidate": true
+    }
+  ],
+  "note": "Node dependency junction reused; supported Webpack build served on3021. Working checkout separately passed default Turbopack build. New publication preview projection is now identical to final source."
+}

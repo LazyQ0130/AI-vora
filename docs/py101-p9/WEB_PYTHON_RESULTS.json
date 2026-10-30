@@ -1,0 +1,139 @@
+{
+  "checkedAt": "2026-10-30T04:22:14.689Z",
+  "environment": "3.14.2\nNumPy 2.5.2",
+  "unitTests": 25,
+  "unitExitCode": 0,
+  "totalWebBlocks": 82,
+  "coreComparisonCount": 10,
+  "examples": [
+    {
+      "lessonId": "PY101-C02-L02",
+      "sectionId": "same-display",
+      "filename": "same_display.py",
+      "key": "sameDisplay",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "3\n3\n",
+      "args": [
+        "-c",
+        "item_count = 3\ncount_text = \"3\"\nprint(item_count)\nprint(count_text)"
+      ],
+      "exitCode": 0,
+      "stdout": "3\r\n3\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "sectionId": "add-measurement",
+      "filename": "measurement.py",
+      "key": "measurement",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "1.5\n",
+      "args": [
+        "-c",
+        "item_mass = 1.5\nprint(item_mass)"
+      ],
+      "exitCode": 0,
+      "stdout": "1.5\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "sectionId": "ready-state",
+      "filename": "ready_state.py",
+      "key": "booleanValues",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "True\nTrue\nFalse\n",
+      "args": [
+        "-c",
+        "is_ready = True\nready_text = \"True\"\nis_waiting = False\nprint(is_ready)\nprint(ready_text)\nprint(is_waiting)"
+      ],
+      "exitCode": 0,
+      "stdout": "True\r\nTrue\r\nFalse\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "sectionId": "inspect-type",
+      "filename": "类型观察片段 · 接在item_count赋值之后",
+      "key": "firstType",
+      "executionMode": "ordered-fragment",
+      "setup": "item_count = 3",
+      "expectedStdout": "<class 'int'>\n",
+      "args": [
+        "-c",
+        "item_count = 3\nprint(type(item_count))"
+      ],
+      "exitCode": 0,
+      "stdout": "<class 'int'>\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "sectionId": "inspect-type",
+      "filename": "inspect_pair.py",
+      "key": "pairTypes",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "<class 'int'>\n<class 'str'>\n",
+      "args": [
+        "-c",
+        "item_count = 3\ncount_text = \"3\"\nprint(type(item_count))\nprint(type(count_text))"
+      ],
+      "exitCode": 0,
+      "stdout": "<class 'int'>\r\n<class 'str'>\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "sectionId": "inspect-type",
+      "filename": "类型观察片段 · 接在ready_state.py的赋值之后",
+      "key": "booleanTypes",
+      "executionMode": "ordered-fragment",
+      "setup": "is_ready = True\nready_text = \"True\"\nis_waiting = False",
+      "expectedStdout": "<class 'bool'>\n<class 'str'>\n<class 'bool'>\n",
+      "args": [
+        "-c",
+        "is_ready = True\nready_text = \"True\"\nis_waiting = False\nprint(type(is_ready))\nprint(type(ready_text))\nprint(type(is_waiting))"
+      ],
+      "exitCode": 0,
+      "stdout": "<class 'bool'>\r\n<class 'str'>\r\n<class 'bool'>\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "sectionId": "four-types",
+      "filename": "four_values.py",
+      "key": "main",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "3\n3\n1.5\nTrue\n<class 'int'>\n<class 'str'>\n<class 'float'>\n<class 'bool'>\n",
+      "args": [
+        "-c",
+        "item_count = 3\ncount_text = \"3\"\nitem_mass = 1.5\nis_ready = True\n\nprint(item_count)\nprint(count_text)\nprint(item_mass)\nprint(is_ready)\n\nprint(type(item_count))\nprint(type(count_text))\nprint(type(item_mass))\nprint(type(is_ready))"
+      ],
+      "exitCode": 0,
+      "stdout": "3\r\n3\r\n1.5\r\nTrue\r\n<class 'int'>\r\n<class 'str'>\r\n<class 'float'>\r\n<class 'bool'>\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "sectionId": "same-name-new-type",
+      "filename": "changing_type.py",
+      "key": "rebind",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "8\n<class 'int'>\n8\n<class 'str'>\n",
+      "args": [
+        "-c",
+        "batch_count = 8\nprint(batch_count)\nprint(type(batch_count))\n\nbatch_count = \"8\"\nprint(batch_count)\nprint(type(batch_count))"
+      ],
+      "exitCode": 0,
+      "stdout": "8\r\n<class 'int'>\r\n8\r\n<class 'str'>\r\n",
+      "stderr": ""
+    }
+  ],
+  "note": "Focused new-lesson evidence; all old controlled-error contracts retained in full ignored author logs."
+}

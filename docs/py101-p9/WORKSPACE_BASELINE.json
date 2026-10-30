@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-10-30T04:05:26.948312+00:00",
+  "head": "3d625d5067772a37aa747566f123a714d648b813",
+  "originMain": "3d625d5067772a37aa747566f123a714d648b813",
+  "status": " M next-env.d.ts\n M scripts/ai000-r3-compatibility.ts\n M src/components/lesson/reader.tsx\n M tests/reading-experience.test.ts\n?? .codex-remote-attachments/\n?? ml31-interactions.yaml\n?? ml31.png\n?? ml31.yaml\n?? py101-desktop.png\n?? py101-mobile.png\n?? py101.yaml\n",
+  "files": [
+    {
+      "kind": "modified",
+      "path": "next-env.d.ts",
+      "sha256": "0f70629890b72a0a82e91972cc032c04b658b26c265373cb711cf576bfbf8fcc",
+      "bytes": 296
+    },
+    {
+      "kind": "modified",
+      "path": "scripts/ai000-r3-compatibility.ts",
+      "sha256": "96a7b6cc6c39aead9566c216f1ca885fdfcaf59b5ea8921f9dd996582d423174",
+      "bytes": 2145
+    },
+    {
+      "kind": "modified",
+      "path": "src/components/lesson/reader.tsx",
+      "sha256": "fa0fbf213d3f8dab8bffbfc607f036da184f1926d170b4cf3d4d6d86e0b1a293",
+      "bytes": 17510
+    },
+    {
+      "kind": "modified",
+      "path": "tests/reading-experience.test.ts",
+      "sha256": "072d10fefa6902dbaa2c03084eb7ac289eeb75e570a4a4067ffe23850ace19e0",
+      "bytes": 6905
+    },
+    {
+      "kind": "untracked",
+      "path": ".codex-remote-attachments/01a176db-beeb-7e41-a213-01ce2c08e64b/a3685fd7-85df-4646-9a08-c86fee7284d1/1-Aivora_课程内容编写与编辑规范_V1.0.md",
+      "sha256": "2c3c9e5583494c09cdabafc0e9f50297bc03878bc75e9189eb5a4ffb6bf07dd9",
+      "bytes": 23552
+    },
+    {
+      "kind": "untracked",
+      "path": "ml31-interactions.yaml",
+      "sha256": "267519e584aa45083db7226ada33c47dd568edfb1cf00b494e064e37b0af0a9c",
+      "bytes": 26155
+    },
+    {
+      "kind": "untracked",
+      "path": "ml31.png",
+      "sha256": "2fdf30d556348c7a21a39a88556ac7e9f40ff4a31668ff069a7ccc649a6f31fe",
+      "bytes": 131288
+    },
+    {
+      "kind": "untracked",
+      "path": "ml31.yaml",
+      "sha256": "c03c467c06e734d9ce4f8d99c6868a1cb8c70107489839128c6eefa5d755d38f",
+      "bytes": 24763
+    },
+    {
+      "kind": "untracked",
+      "path": "py101-desktop.png",
+      "sha256": "c4647b2a4aa069ed82447d7d845beef14ad21a1e744ae48ceb20182cc16017f9",
+      "bytes": 150862
+    },
+    {
+      "kind": "untracked",
+      "path": "py101-mobile.png",
+      "sha256": "8f845f6e1636a49f63ae420a3921607b4f861fd4a93c51335fdb5714a5423801",
+      "bytes": 92190
+    },
+    {
+      "kind": "untracked",
+      "path": "py101.yaml",
+      "sha256": "62f14674005e5d565df4cecb24905e844fc8cbe75ed7d4ef7960fb115b0d41fc",
+      "bytes": 32222
+    }
+  ]
+}

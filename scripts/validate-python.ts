@@ -7,6 +7,7 @@ import { programs, gradientDescentCode } from "../src/content/resources/programs
 import { notebookCode, notebookBlockNames } from "../src/content/resources/python-notebook";
 import { reproductionCode, reproductionBlockNames } from "../src/content/resources/python-reproduction";
 import { runVariableExample } from "./python-variable-checks";
+import { runValueTypeExample } from "./validate-py101-value-types";
 
 const python = process.env.AIVORA_PYTHON ?? "python";
 function run(args: string[]) {
@@ -43,6 +44,9 @@ const examples = [...lessonRegistry.values()].flatMap((lesson) =>
       if (block.type !== "code" || block.language !== "python") return [];
       if (lesson.id === "PY101-C02-L01") {
         return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runVariableExample(block.filename, block.code) }];
+      }
+      if (lesson.id === "PY101-C02-L02") {
+        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runValueTypeExample(block.filename, block.code) }];
       }
       let setup = "";
       if (lesson.id === "PY101-C01-L06") {

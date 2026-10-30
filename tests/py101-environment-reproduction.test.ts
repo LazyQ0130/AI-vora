@@ -42,8 +42,8 @@ test("1.6注册r1和草稿门禁，首章六槽顺序与相邻导航，整课筹
   if (entry.status === "draft") { assert.equal(entry.access, "private"); assert.equal(resolveLesson("PY101", lesson.id), undefined); }
   else { assert.equal(entry.status, "pending-review"); assert.equal(entry.access, "preview"); const historical = beforeApprovedPy101Object("publications", lesson.id, entry) as typeof entry; assert.ok(historical.technicalEvidence?.startsWith("docs/py101-p5/")); assert.equal(entry.reviewEvidence, undefined); assert.equal(getAdjacentLessons(course, "PY101-C01-L05").next?.lessonId, lesson.id); assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, "PY101-C01-L05"); const readable = course.chapters.flatMap(c => c.lessons).filter(s => s.href); assert.equal(getAdjacentLessons(course, lesson.id).next?.lessonId, readable[readable.findIndex(s => s.lessonId === lesson.id) + 1]?.lessonId); }
   assert.equal(resolveLesson("ML201", lesson.id), undefined);
-  // 第二章是否可读取决于实际清单；P8只接入2.1，不再假定本章永久为空。
-  assert.deepEqual(course.chapters[1].lessons.filter(s => s.href).map(s => s.lessonId), publicationManifest.filter(p => p.chapterId === "PY101-C02" && isReadable(p)).map(p => p.lessonId));
+  // 阅读顺序由order决定；发布清单按修订接入顺序存放，新增可读课时后仍应验证目录顺序。
+  assert.deepEqual(course.chapters[1].lessons.filter(s => s.href).map(s => s.lessonId), publicationManifest.filter(p => p.chapterId === "PY101-C02" && isReadable(p)).sort((a,b) => a.order - b.order).map(p => p.lessonId));
 });
 
 test("三目标映射两项真实任务，提示分层且不泄露目标命令，保留答案与rubric", () => {

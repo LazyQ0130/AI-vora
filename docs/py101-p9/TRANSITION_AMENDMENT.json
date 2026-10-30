@@ -1,0 +1,11 @@
+{
+  "lessonId": "PY101-C02-L01",
+  "section": "next-step",
+  "before": "第二章接着规划2.2「分清文字、整数、小数和真假值」，目前尚无可读正文；2.3–2.6也仍是规划。阅读器的“下一可读课”可能跳到第5章函数试读，那还需要表达式与控制流程等中间先修，不能当作零基础跳学建议。整门PY101仍在筹备。",
+  "after": "接着学习2.2「分清文字、整数、小数和真假值」，它已有待人工审核试读，将用实际类型观察接续本节的名称与值。2.3–2.6仍只有规划；第5章函数试读还需要表达式与控制流程等中间先修，不能把阅读器的可读课时导航当作直接跳学建议。整门PY101仍在筹备。",
+  "contentVersion": 1,
+  "objectivesAndExercisesUnchanged": true,
+  "progressScopeUnchanged": true,
+  "beforeObjectSha256": "26ee917217081ad4bfa2466df1a7bc8ab29df517ec5e490944d79ecf3c57ed2c",
+  "afterObjectSha256": "f269e4242667ef1f3fad714fdda6dadc20b4881d098ae95a3e8b7f3bd53495a6"
+}

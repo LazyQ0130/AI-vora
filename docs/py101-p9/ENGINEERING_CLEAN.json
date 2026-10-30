@@ -1,0 +1,120 @@
+{
+  "label": "clean",
+  "rows": [
+    {
+      "command": "npm run typecheck",
+      "startedAt": "2026-10-30T04:21:20.859895+00:00",
+      "exitCode": 0,
+      "tail": [
+        "> aivora-web@0.1.0 typecheck",
+        "> tsc --noEmit"
+      ]
+    },
+    {
+      "command": "npm run lint",
+      "startedAt": "2026-10-30T04:21:22.777289+00:00",
+      "exitCode": 0,
+      "tail": [
+        "> aivora-web@0.1.0 lint",
+        "> eslint ."
+      ]
+    },
+    {
+      "command": "npm run test",
+      "exitCode": 0,
+      "tail": [
+        "✔ V2.3 核心验收与拓展隔离；复杂表示和反求倍率不再是基础目标 (1.8907ms)",
+        "✔ V2.3 比例明确按东、北排序，正文、数值表与图注相互对应 (19.4347ms)",
+        "✔ 七节草稿具备先修、分步知识单元、可运行代码、分层提示及独立自查答案，所有公式严格解析 (83.8834ms)",
+        "✔ 教材补修与衔接指向真实正文或存在的章级规划 (2.5899ms)",
+        "✔ 新组件拒绝缺失答案的练习、列数错误表格和重复练习 ID (2.0738ms)",
+        "✔ 新版完成率从零开始，旧版读完记录仅保留历史，不抬高新版完成率 (0.7397ms)",
+        "✔ 内部 ID 与显示顺序分离，规划节无链接；技术开放后上下节自动越过规划内容 (1.9457ms)",
+        "ℹ tests 329",
+        "ℹ suites 0",
+        "ℹ pass 329",
+        "ℹ fail 0",
+        "ℹ cancelled 0",
+        "ℹ skipped 0",
+        "ℹ todo 0",
+        "ℹ duration_ms 10552.4674"
+      ],
+      "note": "Test exited 0; helper stdout GBK encoding error occurred only after complete log write."
+    },
+    {
+      "command": "npm run prepare:downloads",
+      "startedAt": "2026-10-30T04:22:09.908546+00:00",
+      "exitCode": 0,
+      "tail": [
+        "> aivora-web@0.1.0 prepare:downloads",
+        "> tsx scripts/prepare-downloads.ts",
+        "",
+        "已同源生成 16 组 Python / Notebook 下载文件",
+        "另生成 3 份按单元格组织的Notebook；空输出，不写入机器版本或路径。"
+      ]
+    },
+    {
+      "command": "npm run test:python",
+      "startedAt": "2026-10-30T04:22:10.359981+00:00",
+      "exitCode": 0,
+      "tail": [
+        "> aivora-web@0.1.0 test:python",
+        "> tsx scripts/validate-python.ts",
+        "",
+        "Python 单元测试通过，82 个网页代码块按成功/受控错误契约实际执行通过，10 组核心/完整版一致。证据：<WORKSPACE>\\.workbuddy\\py101-p9\\final-clean\\TEACHING_V2_3_PYTHON_RESULTS.json"
+      ]
+    },
+    {
+      "command": "npm run review:teaching",
+      "startedAt": "2026-10-30T04:22:14.743590+00:00",
+      "exitCode": 0,
+      "tail": [
+        "> aivora-web@0.1.0 review:teaching",
+        "> tsx scripts/review-teaching.ts",
+        "",
+        "55 节教材的目标映射、时间估计与分层代码清单已输出"
+      ]
+    },
+    {
+      "command": "npm run test:routes",
+      "exitCode": 0,
+      "checkedAt": "2026-10-30T04:22:51.120Z",
+      "base": "http://127.0.0.1:3021",
+      "passed": 106,
+      "total": 106
+    },
+    {
+      "command": "npm run build -- --webpack",
+      "exitCode": 0,
+      "bundler": "Webpack",
+      "logSha256": "97a129b3de8e6ce6549946a6de3e31f0eeca3f7265cbb4bf97e36eb0903aacf5",
+      "note": "Production browser candidate; dependency junction reused. No claim of clean Turbopack build."
+    }
+  ],
+  "node": "24.16.0",
+  "next": "16.4.3",
+  "python": "3.14.2",
+  "testCounts": {
+    "tests": 329,
+    "pass": 329,
+    "fail": 0,
+    "skipped": 0
+  },
+  "cwd": "<CLEAN-CANDIDATE>",
+  "allFinalCommandsPassed": true,
+  "initialFailure": {
+    "command": "npm test",
+    "failed": 1,
+    "location": "tests/py101-environment-reproduction.test.ts:46",
+    "actual": [
+      "PY101-C02-L01",
+      "PY101-C02-L02"
+    ],
+    "expected": [
+      "PY101-C02-L02",
+      "PY101-C02-L01"
+    ],
+    "resolution": "Sort expected manifest entries by order. No historical snapshot or assertion removed."
+  },
+  "helperNote": "A local helper stdout GBK error occurred after successful test log write. UTF-8 helper output repaired; remaining commands ran normally. This was not a failing npm test."
+}

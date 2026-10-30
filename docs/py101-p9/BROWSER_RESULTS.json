@@ -1,0 +1,177 @@
+{
+  "testedAt": "2026-10-30T04:15:37.821Z",
+  "base": "http://127.0.0.1:3021",
+  "build": "clean candidate / production Webpack / provisional preview projection",
+  "checks": [
+    {
+      "label": "initial-new-progress",
+      "existingNewRecord": null,
+      "oldKeys": [
+        "aivora:learning:v2:AI000:AI000-C05-L05:r1",
+        "aivora:learning:v2:AI000:AI000-C06-L01:r1",
+        "aivora:learning:v2:AI000:AI000-C06-L02:r1",
+        "aivora:learning:v2:AI000:AI000-C06-L03:r1",
+        "aivora:learning:v2:AI000:AI000-C04-L01:r1",
+        "aivora:learning:v2:AI000:AI000-C05-L04:r1",
+        "aivora:learning:v2:AI000:AI000-C05-L03:r2"
+      ]
+    },
+    {
+      "label": "desktop-layout",
+      "documentWidth": 1425,
+      "h1": "分清文字、整数、小数和真假值",
+      "sectionIds": [
+        "same-display",
+        "add-measurement",
+        "ready-state",
+        "inspect-type",
+        "four-types",
+        "same-name-new-type",
+        "practice",
+        "next-step"
+      ],
+      "typeTextPresent": true,
+      "unexpectedClassElements": 0,
+      "viewport": 1425,
+      "width": 1440
+    },
+    {
+      "label": "exercise-disclosures",
+      "openCount": 6,
+      "firstAnswerHasLine12": true,
+      "secondRubricVisible": true
+    },
+    {
+      "label": "copy-type-output-native",
+      "passed": true,
+      "text": "3\n3\n1.5\nTrue\n<class 'int'>\n<class 'str'>\n<class 'float'>\n<class 'bool'>"
+    },
+    {
+      "label": "copy-main-native",
+      "passed": true,
+      "text": "item_count = 3\ncount_text = \"3\"\nitem_mass = 1.5\nis_ready = True\n\nprint(item_count)\nprint(count_text)\nprint(item_mass)\nprint(is_ready)\n\nprint(type(item_count))\nprint(type(count_text))\nprint(type(item_mass))\nprint(type(is_ready))"
+    },
+    {
+      "label": "tablet-directory",
+      "links": [
+        "两个值都显示3，就一样吗？",
+        "测量值怎样写进程序？",
+        "准备好了，是状态还是文字？",
+        "用type看当前值属于哪一类",
+        "把四种值和观察结果放在一起",
+        "名字没换，当前值的类型可以换",
+        "换成自己的值，留下类型证据",
+        "先确认值的类型，再准备使用它"
+      ],
+      "documentWidth": 768,
+      "viewport": 768,
+      "width": 768
+    },
+    {
+      "label": "phone-copy-type-output",
+      "passed": true,
+      "text": "3\n3\n1.5\nTrue\n<class 'int'>\n<class 'str'>\n<class 'float'>\n<class 'bool'>"
+    },
+    {
+      "label": "phone-layout-and-type-text",
+      "documentWidth": 375,
+      "focused": "复制代码",
+      "hash": "#four-types",
+      "typeText": [
+        "1item_count = 32count_text = \"3\"3item_mass = 1.54is_ready = True5\n6print(item_count)7print(count_text)8print(item_mass)9print(is_ready)10\n11print(type(item_count))12print(type(count_text))13print(type(item_mass))14print(type(is_ready))",
+        "132331.54True5<class 'int'>6<class 'str'>7<class 'float'>8<class 'bool'>"
+      ],
+      "unexpectedClassElements": 0,
+      "viewport": 375,
+      "width": 390
+    },
+    {
+      "label": "narrow-layout",
+      "documentWidth": 305,
+      "scrollable": [],
+      "viewport": 305,
+      "width": 320
+    },
+    {
+      "label": "narrow-anchor",
+      "documentWidth": 305,
+      "focused": "名字没换，当前值的类型可以换",
+      "hash": "#same-name-new-type",
+      "headingTop": 210.1979217529297,
+      "viewport": 305
+    },
+    {
+      "label": "old-transition-navigation",
+      "transitionCorrect": true,
+      "nextHref": "/learn/PY101/PY101-C02-L02"
+    },
+    {
+      "label": "desktop-anchor-final",
+      "focused": "名字没换，当前值的类型可以换",
+      "hash": "#same-name-new-type",
+      "top": 175.84375
+    },
+    {
+      "label": "progress-reload-isolation",
+      "newRecord": {
+        "version": 2,
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L02",
+        "contentVersion": 1,
+        "percent": 90,
+        "completed": false,
+        "section": "same-name-new-type",
+        "updatedAt": 1793333978322
+      },
+      "resume": "#same-name-new-type",
+      "oldKeys": [
+        "aivora:learning:v2:AI000:AI000-C05-L05:r1",
+        "aivora:learning:v2:AI000:AI000-C06-L01:r1",
+        "aivora:learning:v2:AI000:AI000-C06-L02:r1",
+        "aivora:learning:v2:PY101:PY101-C02-L01:r1",
+        "aivora:learning:v2:AI000:AI000-C05-L04:r1",
+        "aivora:learning:v2:AI000:AI000-C06-L03:r1",
+        "aivora:learning:v2:AI000:AI000-C04-L01:r1",
+        "aivora:learning:v2:AI000:AI000-C05-L03:r2"
+      ],
+      "allOldBytesUnchanged": true,
+      "originalRecordsUnchanged": true
+    },
+    {
+      "label": "resume-link",
+      "focused": "名字没换，当前值的类型可以换",
+      "hash": "#same-name-new-type",
+      "top": 175.84375,
+      "futureText": "先确认值的类型，再准备使用它给文字、完整件数、测量值和真假状态选择合适的字面量，分别观察str、int、float、bool。普通print可能让不同类型看起来相同；读取名称，取得type结果，再显示它，可以核对类型。同一名称可以先后对应不同类型的值。预测、保存和完整重跑，检查每一次读取发生时对应什么。保留两份自己写的程序及短记录，换一个值后能重新预测和核对，才有这次代码操作的证据。网页读完只记录阅读，type输出本身也不能替代你对用途和结果的解释。接下来规划2.3「用表达式算出一个结果」，目前尚无可读正文，2.4–2.6也仍在规划。阅读器的下一可读课可能跳到第5章函数试读，它还需要表达式与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。"
+    },
+    {
+      "label": "wrong-course-browser-404",
+      "heading": "这里，还没有被探索。",
+      "passed": true
+    },
+    {
+      "label": "planned-directory",
+      "chapter": [
+        "/learn/PY101/PY101-C02-L01",
+        "/learn/PY101/PY101-C02-L02"
+      ],
+      "futureLinks": 0,
+      "plannedText": true
+    }
+  ],
+  "diagnostics": [
+    {
+      "label": "copy-main-exact",
+      "passed": false,
+      "reason": "High-level clipboard bridge returned stale previous-task clipboard; native browser navigator.clipboard checked separately."
+    },
+    {
+      "label": "copy-main-confirmed",
+      "passed": false,
+      "reason": "High-level clipboard bridge returned stale previous-task clipboard; native browser navigator.clipboard checked separately."
+    }
+  ],
+  "consoleErrors": [],
+  "finalChecksPassed": true,
+  "note": "Final native clipboard checks passed; initial clipboard bridge observations are diagnostics. Browser checks are technical evidence only; no learner completion or achievement was inferred."
+}

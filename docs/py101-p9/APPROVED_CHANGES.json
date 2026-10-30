@@ -1,0 +1,559 @@
+{
+  "baseline": "3d625d5067772a37aa747566f123a714d648b813",
+  "addedLessonIds": [
+    "PY101-C02-L02"
+  ],
+  "sources": [
+    {
+      "path": "src/content/course-outline.ts",
+      "before": "import { z } from \"zod\";\nimport { mathCourseOutline } from \"./math-outline\";\nimport { ai000ChapterLessons } from \"./ai000-outline\";\n\nconst slotSchema = z.object({\n  courseId: z.string().regex(/^[A-Z]+\\d{3}$/),\n  chapterId: z.string().regex(/^[A-Z]+\\d{3}-C\\d{2}$/),\n  lessonId: z.string().regex(/^[A-Z]+\\d{3}-C\\d{2}-L\\d{2}$/),\n  title: z.string().min(1),\n  order: z.number().int().positive(),\n});\nfunction chapterSlots(\n  courseId: string,\n  chapter: number,\n  lessons: [string, string][],\n) {\n  const chapterId = `${courseId}-C${String(chapter).padStart(2, \"0\")}`;\n  return lessons.map(([suffix, title], index) =>\n    slotSchema.parse({\n      courseId,\n      chapterId,\n      lessonId: `${chapterId}-${suffix}`,\n      title,\n      order: index + 1,\n    }),\n  );\n}\n// 节级编辑蓝图；不修改 V1.0 章级事实，也不表示这些课时已写完。\nexport const courseOutline = [\n  ...ai000ChapterLessons.flatMap((titles, index) => chapterSlots(\"AI000\", index + 1,\n    titles.map((title, order) => [`L${String(order + 1).padStart(2, \"0\")}`, title]))),\n  ...chapterSlots(\"ML201\", 1, [\n    [\"L01\", \"什么是机器学习\"],\n    [\"L02\", \"如何定义预测任务\"],\n    [\"L03\", \"数据、特征与标签\"],\n  ]),\n  ...chapterSlots(\"ML201\", 2, [\n    [\"L01\", \"训练集、验证集和测试集\"],\n    [\"L02\", \"数据泄漏是怎样发生的\"],\n  ]),\n  ...chapterSlots(\"ML201\", 3, [\n    [\"L01\", \"从现实问题认识回归\"],\n    [\"L02\", \"线性回归模型：权重与偏置\"],\n    [\"L03\", \"预测误差、MAE 与 MSE\"],\n    [\"L04\", \"最小二乘法的基本思想\"],\n  ]),\n  // L01 由旧综合试读占用；显示顺序独立于稳定 ID。\n  ...chapterSlots(\"ML201\", 4, [\n    [\"L02\", \"从导数理解优化方向\"],\n    [\"L03\", \"梯度下降的数学原理\"],\n    [\"L04\", \"手动计算一次参数更新\"],\n    [\"L05\", \"使用 NumPy 实现线性回归\"],\n    [\"L06\", \"学习率与收敛实验\"],\n    [\"L07\", \"综合练习与实验分析\"],\n  ]),\n  // 第一章节级蓝图；实际可读性由Publication门禁决定。\n  ...chapterSlots(\"PY101\", 1, [\n    [\"L01\", \"从零运行第一个Python程序\"],\n    [\"L02\", \"解释器怎样找到并执行脚本\"],\n    [\"L03\", \"用编辑器完成保存与重跑\"],\n    [\"L04\", \"为项目准备独立的虚拟环境\"],\n    [\"L05\", \"在Jupyter中按顺序运行单元格\"],\n    [\"L06\", \"让别人复现一次环境问题\"],\n  ]),\n  // 第二章只接入2.1；2.2–2.6仍留在P7文档规划中。\n  ...chapterSlots(\"PY101\", 2, [\n    [\"L01\", \"用变量保留并更新程序里的值\"],\n  ]),\n  ...chapterSlots(\"PY101\", 5, [\n    [\"L01\", \"Python 函数与参数\"],\n    [\"L02\", \"位置与关键字参数绑定\"],\n    [\"L03\", \"返回值与 print 的区别\"],\n    [\"L04\", \"函数内外的变量与作用域\"],\n    [\"L05\", \"简单默认参数\"],\n    [\"L06\", \"可选进阶：共享对象与接口陷阱\"],\n  ]),\n  ...mathCourseOutline,\n];\nif (\n  new Set(courseOutline.map((slot) => slot.lessonId)).size !==\n  courseOutline.length\n)\n  throw new Error(\"节级蓝图 ID 重复\");\nexport const mlV2LessonIds = [\n  \"ML201-C03-L01\",\n  \"ML201-C03-L02\",\n  \"ML201-C03-L03\",\n  \"ML201-C04-L02\",\n  \"ML201-C04-L03\",\n  \"ML201-C04-L04\",\n  \"ML201-C04-L05\",\n] as const;\n",
+      "afterSha256": "33d50bb8114273ef149a63449b7ed9a799d96c4c1a6261b8df2ee4d040f18955"
+    },
+    {
+      "path": "src/lib/course-engine.ts",
+      "before": "import { courses, getCourse } from \"./curriculum\";\nimport { getCourseDirectory } from \"./course-directory\";\nimport { courseOutline } from \"../content/course-outline\";\nimport { linearRegressionLesson } from \"../content/lessons/linear-regression\";\nimport { foundationLessons, pythonAdvancedLesson } from \"../content/lessons/foundations-v2-1\";\nimport { regressionTaskLesson } from \"../content/lessons/ml201/regression-task\";\nimport { linearModelLesson } from \"../content/lessons/ml201/linear-model\";\nimport { lossFunctionsLesson } from \"../content/lessons/ml201/loss-functions\";\nimport { derivativeDirectionLesson } from \"../content/lessons/ml201/derivative-direction\";\nimport { mseGradientLesson } from \"../content/lessons/ml201/mse-gradient\";\nimport { manualUpdateLesson } from \"../content/lessons/ml201/manual-update\";\nimport { numpyRegressionLesson } from \"../content/lessons/ml201/numpy-regression\";\nimport { maV22Lessons } from \"../content/lessons/ma101\";\nimport { whatIsAiLesson } from \"../content/lessons/ai000/what-is-ai\";\nimport { capabilitiesLesson } from \"../content/lessons/ai000/capabilities-and-errors\";\nimport { automationLesson } from \"../content/lessons/ai000/automation-and-ai\";\nimport { generativeLesson } from \"../content/lessons/ai000/generative-ai-and-llm\";\nimport { supervisedLearningLesson } from \"../content/lessons/ai000/supervised-learning\";\nimport { unsupervisedLearningLesson } from \"../content/lessons/ai000/unsupervised-learning\";\nimport { selfSupervisedLesson } from \"../content/lessons/ai000/self-supervised-learning\";\nimport { reinforcementLearningLesson } from \"../content/lessons/ai000/reinforcement-learning\";\nimport { dataFeaturesLabelsLesson } from \"../content/lessons/ai000/data-features-labels\";\nimport { modelsAndParametersLesson } from \"../content/lessons/ai000/models-and-parameters\";\nimport { usingFixedModelLesson } from \"../content/lessons/ai000/using-a-fixed-model\";\nimport { naturalLanguageLesson } from \"../content/lessons/ai000/natural-language-and-llm\";\nimport { computerVisionLesson } from \"../content/lessons/ai000/computer-vision\";\nimport { generativeWorkLesson } from \"../content/lessons/ai000/generative-work\";\nimport { rlApplicabilityLesson } from \"../content/lessons/ai000/rl-applicability\";\nimport { unreliableAnswersLesson } from \"../content/lessons/ai000/unreliable-answers\";\nimport { responsibleUseLesson } from \"../content/lessons/ai000/responsible-ai-use\";\nimport { whyFoundationsLesson } from \"../content/lessons/ai000/why-foundations\";\nimport { directionLearningRoutesLesson } from \"../content/lessons/ai000/direction-learning-routes\";\nimport { problemAnalysisCapstoneLesson } from \"../content/lessons/ai000/problem-analysis-capstone\";\nimport { privacyFairnessLesson } from \"../content/lessons/ai000/privacy-bias-fairness\";\nimport { multimodalLesson } from \"../content/lessons/ai000/multimodal-ai\";\nimport { trainingValidationTestLesson } from \"../content/lessons/ai000/training-validation-test\";\nimport { aiMlDlLesson } from \"../content/lessons/ai000/ai-ml-dl\";\nimport { pythonFirstRunLesson } from \"../content/lessons/py101/first-run\";\nimport { pythonScriptPathsLesson } from \"../content/lessons/py101/script-paths\";\nimport { pythonEditorRerunLesson } from \"../content/lessons/py101/editor-rerun\";\nimport { pythonProjectEnvironmentsLesson } from \"../content/lessons/py101/project-environments\";\nimport { pythonNotebookCellOrderLesson } from \"../content/lessons/py101/notebook-cell-order\";\nimport { pythonEnvironmentReproductionLesson } from \"../content/lessons/py101/environment-reproduction\";\nimport { pythonVariablesAndAssignmentLesson } from \"../content/lessons/py101/variables-and-assignment\";\nimport {\n  publicationManifest,\n  readablePublications,\n  lessonHref,\n} from \"../content/publication-manifest\";\nimport {\n  isReadable,\n  type Course,\n  type Lesson,\n  type LessonSummary,\n  type Publication,\n} from \"../content/models\";\n\nconst contents: Lesson[] = [\n  pythonVariablesAndAssignmentLesson,\n  pythonEnvironmentReproductionLesson,\n  pythonScriptPathsLesson,\n  pythonEditorRerunLesson,\n  pythonProjectEnvironmentsLesson,\n  pythonNotebookCellOrderLesson,\n  pythonFirstRunLesson,\n  whatIsAiLesson,\n  capabilitiesLesson,\n  automationLesson,\n  aiMlDlLesson,\n  generativeLesson,\n  supervisedLearningLesson,\n  unsupervisedLearningLesson,\n  selfSupervisedLesson,\n  reinforcementLearningLesson,\n  dataFeaturesLabelsLesson,\n  modelsAndParametersLesson,\n  trainingValidationTestLesson,\n  usingFixedModelLesson,\n  naturalLanguageLesson,\n  computerVisionLesson,\n  multimodalLesson,\n  generativeWorkLesson,\n  rlApplicabilityLesson,\n  unreliableAnswersLesson,\n  privacyFairnessLesson,\n  responsibleUseLesson,\n  whyFoundationsLesson,\n  directionLearningRoutesLesson,\n  problemAnalysisCapstoneLesson,\n  ...maV22Lessons,\n  regressionTaskLesson,\n  linearModelLesson,\n  lossFunctionsLesson,\n  derivativeDirectionLesson,\n  mseGradientLesson,\n  manualUpdateLesson,\n  numpyRegressionLesson,\n  linearRegressionLesson,\n  ...foundationLessons,\n  pythonAdvancedLesson,\n];\nexport const lessonRegistry: ReadonlyMap<string, Lesson> = new Map(\n  contents.map((lesson) => [lesson.id, lesson]),\n);\n\nexport function validateRegistry(\n  entries: Publication[],\n  lessons: readonly Lesson[],\n) {\n  if (new Set(entries.map((e) => e.lessonId)).size !== entries.length)\n    throw new Error(\"发布清单课时 ID 重复\");\n  if (new Set(lessons.map((e) => e.id)).size !== lessons.length)\n    throw new Error(\"内容课时 ID 重复\");\n  if (\n    new Set(\n      entries\n        .filter((e) => e.catalogRole !== \"legacy\")\n        .map((e) => `${e.chapterId}:${e.order}`),\n    ).size !== entries.filter((e) => e.catalogRole !== \"legacy\").length\n  )\n    throw new Error(\"同章课时顺序重复\");\n  for (const entry of entries) {\n    const catalog = getCourse(entry.courseId);\n    const chapterIndex = catalog?.chapters.findIndex(\n      (_, index) =>\n        `${catalog.id}-C${String(index + 1).padStart(2, \"0\")}` ===\n        entry.chapterId,\n    );\n    if (\n      !catalog ||\n      chapterIndex === undefined ||\n      chapterIndex < 0 ||\n      !entry.lessonId.startsWith(`${entry.chapterId}-L`)\n    )\n      throw new Error(`发布清单引用无效课程或章节：${entry.lessonId}`);\n    if (entry.catalogRole !== \"legacy\") {\n      const slot = courseOutline.find((s) => s.lessonId === entry.lessonId);\n      if (\n        !slot ||\n        slot.chapterId !== entry.chapterId ||\n        slot.title !== entry.title ||\n        slot.order !== entry.order\n      )\n        throw new Error(`教材与节级蓝图不一致：${entry.lessonId}`);\n    }\n    const lesson = lessons.find((l) => l.id === entry.lessonId);\n    if (!lesson) throw new Error(`缺少教材：${entry.lessonId}`);\n    for (const key of [\n      \"courseId\",\n      \"chapterId\",\n      \"title\",\n      \"contentVersion\",\n    ] as const)\n      if (lesson[key] !== entry[key])\n        throw new Error(`教材与清单不一致：${entry.lessonId}.${key}`);\n  }\n  for (const lesson of lessons)\n    if (!entries.some((e) => e.lessonId === lesson.id))\n      throw new Error(`教材未登记：${lesson.id}`);\n}\nvalidateRegistry(publicationManifest, contents);\n\nexport function getLearningCourse(courseId: string): Course | undefined {\n  const catalog = getCourse(courseId);\n  if (!catalog) return undefined;\n  return getCourseDirectory(catalog);\n}\nexport function resolveLesson(courseId: string, lessonId: string) {\n  const publication = publicationManifest.find(\n    (e) => e.courseId === courseId && e.lessonId === lessonId,\n  );\n  if (!publication || !isReadable(publication)) return undefined;\n  const course = getLearningCourse(courseId);\n  const lesson = lessonRegistry.get(lessonId);\n  const chapter = course?.chapters.find((c) => c.id === publication.chapterId);\n  return course && lesson && chapter\n    ? { course, chapter, lesson, publication }\n    : undefined;\n}\nexport function getAdjacentLessons(course: Course, lessonId: string) {\n  const lessons = course.chapters\n    .flatMap((c) => c.lessons)\n    .filter((e) => e.catalogRole !== \"legacy\" && isReadable(e));\n  const index = lessons.findIndex((l) => l.lessonId === lessonId);\n  if (index < 0) return {};\n  return { previous: lessons[index - 1], next: lessons[index + 1] };\n}\nexport const lessonSummaries: LessonSummary[] = readablePublications.map(\n  (entry) => ({\n    ...entry,\n    href: lessonHref(entry),\n    courseName: getCourse(entry.courseId)!.name,\n    level: getCourse(entry.courseId)!.lvl,\n    displayNumber: getLearningCourse(entry.courseId)\n      ?.chapters.flatMap((ch) => ch.lessons)\n      .find((l) => l.lessonId === entry.lessonId)?.displayNumber,\n    sectionTitles: lessonRegistry\n      .get(entry.lessonId)!\n      .sections.map(({ id, title }) => ({ id, title })),\n  }),\n);\nexport const learningCourses = courses.map((c) => getLearningCourse(c.id)!);\n",
+      "afterSha256": "85ca031b57f38ac007eb1f6c6844a582a4426e518ebe56c7af3fadecc308539d"
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "before": "import { isReadable, publicationSchema } from \"./models\";\nimport { legacyMathSlots, maV22LessonIds } from \"./math-outline\";\nimport { courseOutline, mlV2LessonIds } from \"./course-outline\";\n\nconst revisedCoreLessons: Record<string, number> = { \"MA101-C02-L03\": 2, \"PY101-C05-L01\": 2 };\n\n// 发布权限独立于原始课程规划。技术证据不替代人工审核。\nexport const publicationManifest = [\n  {lessonId:\"PY101-C02-L01\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"用变量保留并更新程序里的值\",contentVersion:1,order:1,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p8/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L06\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"让别人复现一次环境问题\",contentVersion:1,order:6,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p8/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L05\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"在Jupyter中按顺序运行单元格\",contentVersion:1,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p7/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L04\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"为项目准备独立的虚拟环境\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p4/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L03\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"用编辑器完成保存与重跑\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p3/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L02\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"解释器怎样找到并执行脚本\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p6/TRANSITION_AMENDMENT.md\"},\n  {lessonId:\"PY101-C01-L01\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"从零运行第一个Python程序\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p2/FIRST_LESSON_AMENDMENT.md\"},\n  {lessonId:\"AI000-C07-L03\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"综合实践：分析 AI 问题并制定学习计划\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_3_AND_COURSE_REVIEW.md\"},\n  {lessonId:\"AI000-C07-L02\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"AI 不同技术方向需要哪些基础？\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_2_REVIEW.md\"},\n  {lessonId:\"AI000-C07-L01\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"为什么学习 Python、数学与数据分析？\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_1_REVIEW.md\"},\n  {lessonId:\"AI000-C06-L03\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"版权、误用与负责任地使用 AI\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C06-L02\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"数据隐私、偏差与公平性\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C06-L01\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"为什么 AI 会产生不可靠的回答？\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_6_1_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L05\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"强化学习适合哪些应用问题？\",contentVersion:1,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C05-L03\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"多模态 AI：连接文字、图片与声音\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L04\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"生成模型：从要求到可核对的作品\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L02\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"计算机视觉：让机器理解图像\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_5_2_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L01\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"自然语言处理与大语言模型\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L04\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"模型训练好以后，如何完成预测？\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L03\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"训练、验证与测试各有什么作用？\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L02\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"模型和参数是怎样得到的？\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_VISUAL_CONTENT_REFINEMENT.md\"},\n  {lessonId:\"AI000-C04-L01\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"数据、特征与标签\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_VISUAL_CONTENT_REFINEMENT.md\"},\n  {lessonId:\"AI000-C03-L04\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"强化学习：通过行动与反馈学习\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L03\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"自监督学习：怎样从数据本身构造学习任务？\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L02\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"无监督学习：没有标签也能发现规律吗？\",contentVersion:2,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L01\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"监督学习：从有答案的例子中学习\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  ...courseOutline.filter(slot => slot.courseId === \"AI000\" && [\"AI000-C01-L02\",\"AI000-C01-L03\",\"AI000-C02-L02\"].includes(slot.lessonId)).map(slot => ({...slot,contentVersion:slot.lessonId === \"AI000-C01-L02\" ? 2 : 1,status:\"pending-review\",access:\"preview\",technicalEvidence:slot.lessonId === \"AI000-C02-L02\" ? \"docs/AI000_R3_REFINEMENT_REPORT.md\" : \"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"})),\n  {\n    lessonId: \"AI000-C02-L01\",\n    courseId: \"AI000\",\n    chapterId: \"AI000-C02\",\n    title: \"AI、机器学习与深度学习，到底是什么关系？\",\n    contentVersion: 2,\n    order: 1,\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\",\n  },\n  {\n    lessonId: \"AI000-C01-L01\",\n    courseId: \"AI000\",\n    chapterId: \"AI000-C01\",\n    title: \"人工智能究竟是什么？\",\n    contentVersion: 2,\n    order: 1,\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\",\n  },\n  ...courseOutline\n    .filter((slot) => mlV2LessonIds.some((id) => id === slot.lessonId) || slot.chapterId === \"PY101-C05\" || maV22LessonIds.some((id) => id === slot.lessonId))\n    .map((slot) => ({\n      ...slot,\n      contentVersion: revisedCoreLessons[slot.lessonId] ?? 1,\n      optionalLesson: slot.lessonId === \"PY101-C05-L06\",\n      catalogRole: \"current\",\n      status: \"pending-review\",\n      access: \"preview\",\n      technicalEvidence: slot.lessonId === \"MA101-C02-L03\" || slot.lessonId === \"ML201-C04-L04\" || (slot.courseId === \"PY101\" && slot.lessonId !== \"PY101-C05-L06\")\n        ? \"docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md\"\n        : slot.courseId === \"MA101\" ? \"docs/MA101_EDITORIAL_REVIEW_V1.md\" : \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\",\n    })),\n  ...legacyMathSlots.map((slot) => ({ ...slot, catalogRole: \"legacy\", contentVersion: 1, status: \"pending-review\", access: \"preview\", technicalEvidence: \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\" })),\n  {\n    lessonId: \"ML201-C04-L01\",\n    courseId: \"ML201\",\n    chapterId: \"ML201-C04\",\n    title: \"线性回归与梯度下降\",\n    contentVersion: 1,\n    order: 1,\n    catalogRole: \"legacy\",\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence: \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\",\n  },\n].map((entry) => publicationSchema.parse(entry));\n\nexport const readablePublications = publicationManifest.filter(isReadable);\nexport const lessonHref = (entry: { courseId: string; lessonId: string }) =>\n  `/learn/${entry.courseId}/${entry.lessonId}`;\n",
+      "afterSha256": "0b64066c57e2f9a988652df15066fbf1a04ad2e820dbcfa3884823ca4ea5ce33"
+    },
+    {
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "before": "import { lessonSchema, type ContentBlock } from \"../../models\";\nimport { variableCode, variableBlockNames, type VariableCodeKey } from \"../../resources/python-variables\";\nconst p = (text: string): ContentBlock => ({ type: \"paragraph\", text });\nconst code = (filename: string, text: string): ContentBlock => ({ type: \"code\", filename, code: text, language: \"text\" });\nconst sample = (key: VariableCodeKey): ContentBlock => ({ type: \"code\", filename: variableBlockNames[key], code: variableCode[key], language: \"python\" });\nconst sourceLines = (key: VariableCodeKey) => variableCode[key].split(\"\\n\").map((line, i) => `第${i + 1}行：${line}`).join(\"；\");\n\n// 编辑简报、起草前预解、官方来源与真实运行证据：docs/py101-p8/。\nexport const pythonVariablesAndAssignmentLesson = lessonSchema.parse({\n  id: \"PY101-C02-L01\", courseId: \"PY101\", chapterId: \"PY101-C02\", contentVersion: 1,\n  title: \"用变量保留并更新程序里的值\", optionalLesson: false,\n  subtitle: \"自己给任务文字取个名字，预测更新前后的输出，再修复一次读得太早的错误。\",\n  prerequisites: \"已完成第一章：能在电脑上创建、保存和完整运行.py，使用print及成对引号，核对文件位置与解释器；接触过1.5的最小赋值和名称读取。沿用已可运行的Python 3与编辑器，不重新安装软件。手机可阅读，独立代码实践需要电脑。\",\n  prerequisiteLinks: [\n    { title: \"1.1 从终端执行文件\", href: \"/learn/PY101/PY101-C01-L01#run-script\", note: \"补齐.py和print的运行。\" },\n    { title: \"1.3 保存后完整重跑\", href: \"/learn/PY101/PY101-C01-L03#save-rerun\", note: \"核对保存状态、cwd与实际目标。\" },\n    { title: \"1.5 最小赋值经验\", href: \"/learn/PY101/PY101-C01-L05#first-cells\", note: \"回顾名字、文字与命名建议；本节转到普通脚本。\" },\n    { title: \"1.6 读懂相关错误\", href: \"/learn/PY101/PY101-C01-L06#read-evidence\", note: \"保留错误类型及对应代码行。\" },\n  ],\n  objectives: [\n    \"在自己创建的.py中用合法名称保存文字并输出当前值，区分名称和引号内的固定文字\",\n    \"预测同一名称重新赋值前后的输出，只修改第二次赋值，保存重跑并解释哪一行变化\",\n    \"按执行顺序找出首次赋值前的读取，记录实际错误，保留名称读取语义修复并从头运行\",\n  ],\n  assessmentMap: [{ objective: 1, exerciseIds: [\"keep-and-update\"] }, { objective: 2, exerciseIds: [\"keep-and-update\"] }, { objective: 3, exerciseIds: [\"repair-first-read\"] }],\n  learningTime: { reading: [10, 15], practice: [5, 8], coding: [10, 15], basis: \"editorial-estimate\" },\n  sections: [\n    { id: \"changing-task\", title: \"任务变了，程序怎样接着使用新文字？\", navGroup: \"start\", navLabel: \"名称与值\", blocks: [\n      p(\"一个小程序先显示当前任务“打包笔记本”，稍后要改为“检查标签”。如果把同一任务文字在各处重复写死，修改时容易漏掉一处。我们可以先给这份文字取一个名字，使用时读这个名字，需要变化时再给它新的值。\"),\n      p(\"在1.5，你用marker和两格代码观察过内核记住的内容。这次回到普通.py文件：自己选名字、写出赋值与读取，并判断程序运行到不同位置时会显示什么。所有例子只用Python自带功能。\"),\n    ] },\n    { id: \"name-and-value\", title: \"先把一份文字交给名称\", navGroup: \"start\", navLabel: \"名称与值\", blocks: [\n      p(\"先看这一行，暂时只理解它的作用，下一段会把它与其他行组合成完整脚本：\"),\n      sample(\"assign\"),\n      p(\"task_name是我们选择的名称，意思是任务名称；\\\"Pack notebooks\\\"是这次给它的文字值。和1.1一样，配对英文引号标记字符串的开始和结束，引号不是名称的一部分。\"),\n      p(\"执行这条语句时，=让左边的task_name对应右边的值，这个动作叫赋值。这种运行时的对应关系叫绑定。=在这里执行一个动作，并不要求你判断数学等式是否成立。\"),\n      p(\"本节把能绑定到值、供后续读取的名称称为变量，task_name就是变量名。它帮助后面的代码找到当前对应的值。之后再次赋值，可以改变这份对应关系；理解变量时，先抓住名称和当前值这两件事。单独执行赋值不会像print那样显示一行文字。\"),\n    ] },\n    { id: \"choose-name\", title: \"自己选一个能使用的名称\", navGroup: \"start\", navLabel: \"名称与值\", blocks: [\n      p(\"沿用1.5的便捷建议：用英文字母开头，后面接英文字母、数字或下划线，名称中不放空格。例如task_name、label2都符合这种写法。task_name中的下划线把两个词连成一个名称；my plan含空格、1plan以数字开头，都不能用作这里的变量名。\"),\n      p(\"Python有一些保留给语言本身的词，称为关键字，例如for、class，不能拿来作普通变量名。本次可选带含义的task_label、next_task等名字，也避开print，留着这个已有的输出工具。赋值处和读取处的拼写、大小写要一致；task_name和Task_name是两个名字。\"),\n      p(\"这些英文写法方便初次练习，不是Python全部合法名称的清单。下划线开头的名称以及用某些中文等文字组成的名称也可以合法使用。练习接受其他合法名称；一个清楚表达用途的名字，比只写一个字母更容易检查。\"),\n    ] },\n    { id: \"read-and-update\", title: \"读取当前值，再给同一名称新值\", navGroup: \"execution\", navLabel: \"读取与更新\", blocks: [\n      p(\"在刚才的赋值之后接上这一行：\"), sample(\"read\"),\n      p(\"print(task_name)先读取task_name此刻对应的值，再显示它，所以这里会显示Pack notebooks。括号里没有引号，读取的是名称；写print不会自动给尚未有值的名称赋值。\"),\n      p(\"再在这次读取后面写：\"), sample(\"update\"),\n      p(\"这还是同一个task_name。执行这一行时，它改为对应Check labels，称为重新赋值。后续再执行print(task_name)，会读到新的文字。名称保持相同，当前值可以随执行的赋值改变。\"),\n    ] },\n    { id: \"predict-run\", title: \"先预测四行代码，再运行完整脚本\", navGroup: \"execution\", navLabel: \"读取与更新\", blocks: [\n      p(\"在自己的练习文件夹新建task_labels.py，源码放在.venv外。用编辑器把下面四行写入，行首都不加缩进。先在本地笔记写下两行预测：第一次print执行时，之前已经发生哪次赋值？第二次print之前又发生了什么？写好再保存运行。\"),\n      sample(\"main\"),\n      p(\"确认编辑器已保存，终端用pwd和Windows的dir（macOS为ls）确认当前目录包含这份文件。沿用第一章已核验的解释器命令：Windows在PowerShell运行下面第一条，macOS在终端运行第二条；若此前一直用py，保持使用py。命令输入在终端提示符后，不放进.py，也不只运行编辑器选区。\"),\n      code(\"Windows · PowerShell · 文件所在目录\", \"python task_labels.py\"),\n      code(\"macOS · 终端 · 文件所在目录\", \"python3 task_labels.py\"),\n      p(\"如果沿用项目.venv而未激活，也可以按1.4直接调用已核验的环境解释器，脚本参数仍为task_labels.py。本节不创建新环境。实际结果应为：\"),\n      code(\"完整运行 · 预期输出\", \"Pack notebooks\\nCheck labels\"),\n      { type: \"table\", caption: \"沿实际执行顺序看当前值\", columns: [\"刚执行到哪里\", \"task_name当前对应什么\", \"这一步的显示\"], rows: [\n        [\"第1行赋值后\", \"Pack notebooks\", \"无普通输出\"],\n        [\"第2行print\", \"Pack notebooks\", \"Pack notebooks\"],\n        [\"第3行重新赋值后\", \"Check labels\", \"无普通输出\"],\n        [\"第4行print\", \"Check labels\", \"Check labels\"],\n      ] },\n      p(\"第一条print已经把旧值显示出来，第三行才开始执行新的赋值。后来的赋值会影响后续读取，不会倒过来改写已经显示的第一行。判断某次输出时，要看它执行之前真正发生的动作。\"),\n    ] },\n    { id: \"change-one-value\", title: \"只改第二次赋值，会改变哪一行？\", navGroup: \"execution\", navLabel: \"读取与更新\", blocks: [\n      p(\"现在自己另选一项任务，只改第三行引号内的文字，其他三行保持不动。先写两行新预测，再保存，用同一条命令从头运行整个文件，比较这一次和上一次的真实输出。\"),\n      p(\"例如把第二次赋值的文字换成Sort envelopes，第一行仍应为Pack notebooks，第二行变为Sort envelopes。原因是第一次读取之前的赋值没有改变，而第二次读取之前执行了修改后的赋值。用你自己选的文字再核对一次，不用把这个变式也抄进文件末尾。\"),\n      p(\"若仍显示旧文字，先按1.3核对保存标记、当前目录与执行目标，再比较源码。编辑内容、保存文件与运行程序是三个动作，新的输出来自这次实际执行。\"),\n    ] },\n    { id: \"literal-or-name\", title: \"有引号的文字和无引号的名称\", navGroup: \"compare\", navLabel: \"区分与排错\", blocks: [\n      p(\"回顾1.1：引号围起来的是固定字符串。另建name_or_text.py，先预测下面两次显示会不会相同，再保存并完整运行；命令中的文件名换成name_or_text.py。\"),\n      sample(\"literal\"), code(\"对照 · 预期输出\", \"task_name\\nReady\"),\n      p(\"print(\\\"task_name\\\")直接显示引号里的task_name这几个字符，没有读取这个名称。print(task_name)读取当前绑定的值，所以显示Ready。两行都使用print，差别在括号中的内容：固定文字，还是名称读取。\"),\n      p(\"如果想保存Ready这段文字，就保留它两端的引号。去掉后，Ready会被当成另一个名称；若本次程序没有给它提供值，读取就可能失败。下一段用一个更容易定位的完整脚本实际观察这种未定义名称错误。\"),\n    ] },\n    { id: \"fresh-script\", title: \"每次从终端启动，是本次脚本的执行\", navGroup: \"compare\", navLabel: \"区分与排错\", blocks: [\n      p(\"本节使用的是常规终端命令启动的新Python脚本进程：每次运行，都会从文件开头按源码顺序执行这几条语句。上一次运行结束时给名称赋过值，不会让下一次新进程自动拥有那个绑定。源码文件保存了语句，这次真正执行到赋值时才建立对应关系。\"),\n      p(\"1.5的Notebook可以在仍运行的同一内核中保留先前执行过的名称；那是另一种执行方式。这里不用Notebook旧状态补齐.py中缺失的步骤。把脚本保存并从头运行，是检查当前文件本身是否足够的办法。\"),\n    ] },\n    { id: \"first-read-error\", title: \"赋值写在后面，为什么第一行仍报错？\", navGroup: \"compare\", navLabel: \"区分与排错\", blocks: [\n      p(\"在新的dispatch_label.py中保存下面两行。先预测这次能否显示Packed T7，再从终端完整执行它。这是有意安排的失败实验，预期会出现NameError；保留你实际看到的相关代码行及错误末行。\"),\n      sample(\"firstRead\"),\n      p(\"运行到第一行时，程序需要读取dispatch_label，却还没有执行第二行的赋值，所以本次没有正常的任务输出。错误类型是NameError，描述会提到dispatch_label未定义；文件路径、行号排版与箭头可能随环境或Python版本变化，以自己的真实回溯为准。后面有赋值文本，并不等于它已经执行。\"),\n      p(\"修复要让提供值的赋值先于读取执行。保留通过名称显示任务的做法，自己调整顺序，保存后从头运行，核对是否正常显示Packed T7。这次原因来自已给定脚本的执行顺序；无需重装Python、安装包或改PATH。其他NameError仍要结合对应代码判断，不能都套用同一根因。\"),\n    ] },\n    { id: \"practice\", title: \"自己写一次更新，再独立修复一次读取\", navGroup: \"practice\", navLabel: \"独立练习\", blocks: [\n      p(\"先合上示例和参考答案完成任务。网页输入框只是临时笔记；正式成果保存在本地.py及短记录里。只需列出源码、命令、预测与实际结果，不必抄成长篇报告。\"),\n      { type: \"exercise\", id: \"keep-and-update\", title: \"自己的任务标签会怎样改变？\", kind: \"代码\",\n        prompt: \"创建与正文不同的.py文件，自选新的任务情境、一个合法名称和两段不同文字。自己写第一次赋值与名称读取，再写同一名称的第二次赋值与名称读取。运行前预测两行输出，保存并真实执行。随后只改第二次赋值的文字，再预测、保存并完整运行一次。交付实际源码（保留改前/改后差异）、运行命令、两次预测和两次真实输出；简短说明为什么第一行不随后面的赋值倒退改变，再用一句话区分名称与引号里的文字。名称不必是task_name，接受其他合法写法；不能只交参考输出。\",\n        hints: [\"沿程序从上到下走到每一次print，观察此前最近执行过哪次给这个名称赋值的语句。\", \"把自己的两次赋值和两次读取分别标出，核对实际顺序。只改后一次赋值后，重新预测哪些读取会遇到它；仍由你独立选名、填新文字、保存和执行。\"],\n        solution: [\n          \"例如布展任务另建gallery_plan.py，选display_note：它以字母开头，只有字母和下划线，且不是关键字。以下只是一种参考，其他合法名称和任务内容同样接受。\",\n          `参考初稿从上到下写四行，分号只是这里的分隔说明，不输入文件：${sourceLines(\"ownInitial\")}。两段文字用配对引号包住，两次print中的名称与赋值拼写一致。先预测Hang posters、Place signs两行，再保存；Windows可用python gallery_plan.py，macOS用python3 gallery_plan.py，保留本人真实结果。`,\n          `只修改后一次赋值后的四行依次为：${sourceLines(\"ownChanged\")}。重新预测后完整运行，应为Hang posters、Open doors。第一次print发生在后一次赋值之前，因此第一行保持原样，第二行读取更新后的值。`,\n          \"display_note是不带引号、用于读取的名称，\\\"Hang posters\\\"等是引号内固定文字。若把print中的名称加上引号，会改成显示名称文字本身，已经改变读取含义。\",\n          \"常错包括：只改编辑区未保存、命令指向另一文件、赋值/读取拼写或大小写不同。后两种名称差异若导致读取未定义名称，可能出现NameError；漏掉配对引号可能是SyntaxError，把应为文字的内容写成未定义名称也可能NameError。按实际行检查，不只抄错误名。接受配对单引号和中文文字，但必须保留自选内容与两次实际执行。\",\n        ],\n        rubric: [\n          \"实际新.py使用自选合法名称与新情境，两段文字不同；有同名两次赋值及两次名称读取，源码和运行命令对应。\",\n          \"两轮都有运行前两行预测和真实输出；改后只改变第二次赋值，结果与执行位置相符，差异有核对。\",\n          \"结合本人代码说明第一行已在更新前显示，不会被后来赋值改写；能区分名称读取与引号内固定文字。读完标记、复制样例或只有解释不代替代码与运行。\",\n        ],\n      },\n      p(\"下一题使用first-read-error中的两行dispatch_label起始源码，可回到上方代码框复制到另建的repair_label.py。它故意在第一次赋值前读取名称；不要先套用修复参考。\"),\n      { type: \"exercise\", id: \"repair-first-read\", title: \"为什么脚本还没开始显示任务就报错？\", kind: \"实验\",\n        prompt: \"确认repair_label.py的真实位置与保存状态，内容为上方dispatch_label两行故障源码。先预测首次运行现象，再从终端实际执行，保留真实错误类型、相关代码行和末行。按这次执行顺序判断：读取时，这个名称是否已经有值？自己决定安全修复方法，保留变量赋值与名称读取的语义，保存并从头重跑。交付修复前后源码、命令、错误及恢复后的真实输出，再简短解释本次新脚本为何不能依赖以前Notebook内核的状态。只改成print(\\\"Packed T7\\\")跳过了名称读取，不能算本题完成；不通过重装、改PATH或删环境解决。\",\n        hints: [\"从这次脚本第一条执行语句开始看。它需要的名字，在此前的本次执行中已经获得值了吗？\", \"分别找到提供值的赋值语句与读取语句，比较它们在文件中的位置；考虑怎样调整依赖顺序并保留名称读取，然后自行保存与完整重跑。\"],\n        solution: [\n          \"新脚本先执行print(dispatch_label)，该名称尚未被本次执行绑定，因此真正运行会出现NameError，且没有Packed T7正常输出。赋值虽然写在文件第二行，但报错发生时还没有执行到那里。先保存本人实际回溯和对应行，不用参考文字代替故障证据。\",\n          `一种修复后的repair_label.py分两行写：${sourceLines(\"repaired\")}。先提供值再读取。可以把赋值移到读取前，也可以把读取移到赋值后；保留同一名称和任务文字即可。`,\n          \"保存后从文件所在目录运行python repair_label.py（macOS用python3，已验证的py也可）。预期正常输出Packed T7，实际结果需自己保留；恢复成功要对应保存的整份源码。\",\n          \"本节从终端启动新的脚本进程，不会继承先前另一个Notebook内核中的名称。即使旧内核曾有同名变量，也要让当前文件自己提供读取前所需的值。\",\n          \"常错是只把print改成固定文字、只跑选区、依赖旧交互窗口或只写“调整顺序”而没保存重跑。若改了名称，要在赋值和读取处一致修改并说明；若真实错误不同，先核对实际文件和代码，不伪造NameError。\",\n        ],\n        rubric: [\n          \"在已确认的保存文件上真正复现首次读取错误，保留实际命令、相关代码与NameError，不以预贴错误文字替代。\",\n          \"依据本次执行先后指出读取时尚未绑定；修复仍含赋值及名称读取，提供值先执行，未用输出常量绕开任务。\",\n          \"保存修复源码并从头运行，保留真实Packed T7输出与命令；能解释新脚本进程和旧Notebook内核状态的区别。\",\n        ],\n      },\n    ] },\n    { id: \"next-step\", title: \"用自己的文件检查这三件事\", navGroup: \"finish\", navLabel: \"回顾与后续\", blocks: [\n      { type: \"summary\", points: [\"给值选择合法名称，执行赋值后再通过名称读取；引号中的内容表示固定文字。\", \"按执行位置预测当前值，重新赋值影响后续读取；保存并完整重跑验证自己的改动。\", \"遇到本次未定义名称错误，结合相关代码与执行先后检查提供值的步骤，再保留语义修复和复跑。\"] },\n      p(\"保留两个自己的.py及短记录，能现场换一个名字或任务文字并再次验证，才有独立操作的证据。网页读完只记录阅读，不会自动判断这些程序是否达标。\"),\n      p(\"第二章接着规划2.2「分清文字、整数、小数和真假值」，目前尚无可读正文；2.3–2.6也仍是规划。阅读器的“下一可读课”可能跳到第5章函数试读，那还需要表达式与控制流程等中间先修，不能当作零基础跳学建议。整门PY101仍在筹备。\"),\n    ] },\n  ],\n  resources: [],\n  references: [\n    { title: \"Python赋值语句\", href: \"https://docs.python.org/3.14/reference/simple_stmts.html#assignment-statements\", note: \"核对名称的绑定和重新绑定。\" },\n    { title: \"表达式中的名称\", href: \"https://docs.python.org/3/reference/expressions.html#identifiers-names\", note: \"核对名称读取与未绑定情形。\" },\n    { title: \"合法名称与关键字\", href: \"https://docs.python.org/3.14/reference/lexical_analysis.html#identifiers\", note: \"名称字符、大小写和保留词。\" },\n    { title: \"错误与异常\", href: \"https://docs.python.org/3/tutorial/errors.html\", note: \"识别错误类型和相关代码位置；本节不教异常处理。\" },\n    { title: \"Python入门\", href: \"https://docs.python.org/3/tutorial/introduction.html\", note: \"赋值、字符串及最小例子。\" },\n    { title: \"从终端执行脚本\", href: \"https://docs.python.org/3.14/using/cmdline.html#interface-options\", note: \"脚本文件参数和常规执行方式。\" },\n  ],\n});\n",
+      "afterSha256": "44dd2b41383dab4cc3336aa6f71c152644a8eccd213e9deee65eba19a81ce44d"
+    },
+    {
+      "path": "scripts/validate-python.ts",
+      "before": "import { spawnSync } from \"node:child_process\";\nimport { writeFile } from \"node:fs/promises\";\nimport { evidencePath } from \"./evidence-path\";\nimport { lessonRegistry } from \"../src/lib/course-engine\";\nimport { corePrograms, regressionCoreCode } from \"../src/content/resources/core-programs\";\nimport { programs, gradientDescentCode } from \"../src/content/resources/programs\";\nimport { notebookCode, notebookBlockNames } from \"../src/content/resources/python-notebook\";\nimport { reproductionCode, reproductionBlockNames } from \"../src/content/resources/python-reproduction\";\nimport { runVariableExample } from \"./python-variable-checks\";\n\nconst python = process.env.AIVORA_PYTHON ?? \"python\";\nfunction run(args: string[]) {\n  const result = spawnSync(python, args, {\n    encoding: \"utf8\",\n    env: { ...process.env, PYTHONIOENCODING: \"utf-8\" },\n    timeout: 30_000,\n  });\n  if (result.error || result.status !== 0)\n    throw new Error(`Python 校验失败：${result.error ?? result.stderr}`);\n  return {\n    exitCode: result.status,\n    stdout: result.stdout.replace(/\\r\\n/g, \"\\n\").trim(),\n    stderr: result.stderr.replace(/\\r\\n/g, \"\\n\").trim(),\n  };\n}\nconst environment = run([\n  \"-c\",\n  \"import sys,numpy; print(sys.version.split()[0]); print('NumPy',numpy.__version__)\",\n]);\nconst unit = run([\n  \"-m\",\n  \"unittest\",\n  \"discover\",\n  \"-s\",\n  \"tests\",\n  \"-p\",\n  \"test_*.py\",\n  \"-v\",\n]);\nconst examples = [...lessonRegistry.values()].flatMap((lesson) =>\n  lesson.sections.flatMap((section) =>\n    section.blocks.flatMap<Record<string, unknown>>((block) => {\n      if (block.type !== \"code\" || block.language !== \"python\") return [];\n      if (lesson.id === \"PY101-C02-L01\") {\n        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runVariableExample(block.filename, block.code) }];\n      }\n      let setup = \"\";\n      if (lesson.id === \"PY101-C01-L06\") {\n        const key = (Object.keys(reproductionCode) as (keyof typeof reproductionCode)[]).find(key => reproductionBlockNames[key] === block.filename);\n        if (!key || block.code !== reproductionCode[key]) throw new Error(`未登记的复现课源码：${block.filename}`);\n        if (key === \"show\") setup = reproductionCode.assign;\n      }\n      if (lesson.id === \"PY101-C01-L05\") {\n        const key = (Object.keys(notebookCode) as (keyof typeof notebookCode)[]).find(key => notebookBlockNames[key] === block.filename);\n        if (!key || block.code !== notebookCode[key]) throw new Error(`未登记的Notebook单元格：${block.filename}`);\n        if (key === \"showMarker\") setup = notebookCode.setDraft;\n        if (key === \"showDelivery\") setup = notebookCode.setDelivery;\n      }\n      // Notebook使用前格上下文；仍实际执行每块。重启/旧状态/预期NameError另由真实内核专项检验。\n      const result = run([\"-c\", setup ? setup + \"\\n\" + block.code : block.code]);\n      if (lesson.id === \"PY101-C01-L06\") {\n        const expected: Record<string, string> = { [reproductionBlockNames.notice]: \"Notice N8\", [reproductionBlockNames.target]: \"Target R9\", [reproductionBlockNames.assign]: \"\", [reproductionBlockNames.show]: \"Checked F3\" };\n        if (block.filename in expected && result.stdout !== expected[block.filename]) throw new Error(`复现课输出不符：${block.filename}`);\n      }\n      if (lesson.id === \"PY101-C01-L05\") {\n        const expected: Record<string, string> = { [notebookBlockNames.setDraft]: \"\", [notebookBlockNames.setReady]: \"\", [notebookBlockNames.showMarker]: \"Draft A\", [notebookBlockNames.setDelivery]: \"\", [notebookBlockNames.showDelivery]: \"Packed C7\" };\n        if (block.filename in expected && result.stdout !== expected[block.filename]) throw new Error(`Notebook顺序输出不符：${block.filename}`);\n      }\n      if (lesson.id === \"PY101-C01-L04\") {\n        const independentExpected: Record<string, string> = { \"project-a/main.py\": \"Project A A4\", \"project-b/main.py\": \"Project B B6\" };\n        if (independentExpected[block.filename] !== undefined && result.stdout !== independentExpected[block.filename]) throw new Error(`虚拟环境课源码输出不符：${block.filename}`);\n        if (block.filename.startsWith(\"observe_env.py\")) {\n          for (const label of [\"Interpreter:\", \"Environment:\", \"Base Python:\", \"Version:\"]) if (!result.stdout.includes(label)) throw new Error(`诊断字段遗漏：${label}`);\n          // 全网页校验在当前基础Python执行；目标venv判据另由真实环境专项验证。\n        }\n      }\n      const expected = ({ \"第一条Python指令\": \"Hello, Aivora!\", \"first_run.py\": \"Hello, Aivora!\\nFile: first_run.py\", \"read_vector_components.py\": \"4 0 7\", \"add_two_vectors.py\": \"[2, 3]\", \"scale_vector.py\": \"[-6, -4]\", \"double_without_function.py\":\"6\", \"double_definition.py\":\"\", \"one_update.py\":\"-13.0 -8.0 1.3 0.8 1.685\", \"one_update_checks.py\":\"-13.0 -8.0 1.3 0.8 1.685\" } as Record<string,string>)[block.filename];\n      if (expected !== undefined && result.stdout !== expected)\n        throw new Error(`教材输出与预期不一致：${block.filename}`);\n      return [\n        {\n          lessonId: lesson.id,\n          sectionId: section.id,\n          filename: block.filename,\n          ...([\"PY101-C01-L05\", \"PY101-C01-L06\"].includes(lesson.id) ? { executionMode: setup ? \"ordered-cells\" : \"independent-cell\", setup } : {}),\n          ...(expected !== undefined ? { expected } : {}),\n          ...result,\n        },\n      ];\n    }),\n  ),\n);\nconst expectedOutputs: Record<keyof typeof corePrograms, string> = {\n  \"function-basics\": \"6\", \"function-binding\": \"12\\n12\", \"function-return\": \"4\\n4 None\",\n  \"function-scope\": \"5\\n10\", \"function-defaults\": \"6\\n12\", \"vector-basics\": \"[4, 3] [2, 4]\",\n  \"vector-dot\": \"5\", \"matrix-shape\": \"[[1, 4], [2, 5], [3, 6]]\",\n  \"matrix-product\": \"[[4 6]\\n [1 3]]\", \"numpy-shapes\": \"(2,) (2,)\\n(2, 1) (1, 2)\\n5\",\n};\nconst coreComparisons = Object.entries(corePrograms).map(([id, sample]) => {\n  const core = run([\"-c\", sample.core + \"\\n\" + sample.checks]);\n  const full = run([\"-c\", programs[id as keyof typeof corePrograms].code]);\n  if (core.stdout !== expectedOutputs[id as keyof typeof corePrograms] || core.stdout !== full.stdout)\n    throw new Error(`核心/完整版输出与预期不一致：${id}`);\n  return { id, expected: expectedOutputs[id as keyof typeof corePrograms], ...core, fullMatches: true };\n});\nconst trainingComparison = run([\"-c\", `import numpy as np\ncore, full = {}, {}\nexec(${JSON.stringify(regressionCoreCode)}, core)\nexec(${JSON.stringify(gradientDescentCode)}, full)\nnp.testing.assert_allclose([core['w'], core['b'], core['final_loss']], [full['w'], full['b'], full['final_loss']], atol=1e-12, rtol=0)\nnp.testing.assert_allclose([core['w'], core['b']], [2,1], atol=1e-7, rtol=0)\nassert core['final_loss'] < 1e-10\nprint('core/full training match; independent expected line y=2x+1')\n`]);\nconst report = {\n  checkedAt: new Date().toISOString(),\n  environment: environment.stdout,\n  unittest: unit,\n  examples,\n  coreComparisons,\n  trainingComparison,\n  note: \"技术校验通过；不代表人工内容审核、试学或正式发布。代码来自仓库静态教材，仅开发阶段执行。\",\n};\nconst reportPath = evidencePath(\"TEACHING_V2_3_PYTHON_RESULTS.json\");\nawait writeFile(\n  reportPath,\n  JSON.stringify(report, null, 2) + \"\\n\",\n);\nconsole.log(\n  `Python 单元测试通过，${examples.length} 个网页代码块按成功/受控错误契约实际执行通过，${coreComparisons.length} 组核心/完整版一致。证据：${reportPath}`,\n);\n",
+      "afterSha256": "6d9206562a9012899b8d7beb9e0004ee7a196b80732a8c5605da2bab3f09c2f5"
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "before": "import { createHash } from \"node:crypto\";\nimport { readFileSync } from \"node:fs\";\n\ntype SourceChange = { path: string; before: string; afterSha256: string };\ntype ObjectChange = { id: string; before: unknown; afterSha256: string };\n// 使用同一个登记器按新到旧撤销已批准修订；不为每轮再嵌套一个专用兼容器。\ntype RevisionPlan = { baseline: string; sources: SourceChange[]; lessons: ObjectChange[]; publications: ObjectChange[]; addedLessonIds: string[]; workspaceOnly: { path: string; workspaceSha256: string; repositorySha256: string }[]; protectedText: { path: string; baselineSha256: string; lfSha256: string }[] };\nconst plans = [\"py101-p8\", \"py101-p7\", \"py101-p6\", \"py101-p5\", \"py101-p4\", \"py101-p3\", \"py101-p2\"].map(round => JSON.parse(readFileSync(new URL(`../docs/${round}/APPROVED_CHANGES.json`, import.meta.url), \"utf8\")) as RevisionPlan);\nfunction revisions(throughBaseline?: string) {\n  const index = plans.findIndex(plan => plan.baseline === throughBaseline);\n  return index < 0 ? plans : plans.slice(0, index + 1);\n}\nconst sources = JSON.parse(readFileSync(new URL(\"../docs/py101-p1/SOURCE_CHANGES.json\", import.meta.url), \"utf8\")) as SourceChange[];\nconst sha = (source: string) => createHash(\"sha256\").update(source).digest(\"hex\");\nfunction undoSource(entries: SourceChange[], path: string, source: string) {\n  const entry = entries.find(row => row.path === path);\n  return entry && sha(source.replaceAll(\"\\r\\n\", \"\\n\")) === entry.afterSha256 ? entry.before : source;\n}\nexport const approvedPy101Additions = [...new Set(plans.flatMap(plan => plan.addedLessonIds))];\nexport function beforeApprovedPy101Source(path: string, source: string, throughBaseline?: string) {\n  return revisions(throughBaseline).reduce((value, plan) => undoSource(plan.sources, path, value), source);\n}\n// 自动回归允许原工作区与干净检出两种精确版本；工作区审计脚本仍严格要求原始指纹。\nexport function protectedPy101FileMatches(path: string, bytes: Buffer, expected: string, throughBaseline?: string) {\n  const digest = createHash(\"sha256\").update(bytes).digest(\"hex\");\n  if (digest === expected) return true;\n  const text = bytes.toString(\"utf8\");\n  // Git检出可转换文本换行；二进制仍逐字节比较，绝不以UTF-8解码后的图像作摘要。\n  const validText = !text.includes(\"\\0\") && Buffer.from(text).equals(bytes);\n  const variants = (value: string) => { const lf = value.replaceAll(\"\\r\\n\", \"\\n\"); return [lf, lf.replaceAll(\"\\n\", \"\\r\\n\")]; };\n  const matches = (value: string, target: string) => validText && variants(value).some(source => sha(source) === target);\n  if (matches(text, expected)) return true;\n  const relevant = revisions(throughBaseline);\n  const portable = relevant.flatMap(plan => plan.protectedText).find(row => row.path === path && row.baselineSha256 === expected);\n  if (portable && validText && sha(text.replaceAll(\"\\r\\n\", \"\\n\")) === portable.lfSha256) return true;\n  const local = relevant.flatMap(plan => plan.workspaceOnly).find(row => row.path === path && row.workspaceSha256 === expected);\n  if (local?.workspaceSha256 === expected && (local.repositorySha256 === digest || matches(text, local.repositorySha256))) return true;\n  return matches(beforeApprovedPy101Source(path, text, throughBaseline), expected);\n}\nexport function beforeApprovedPy101Object(kind: \"lessons\" | \"publications\", id: string, value: unknown, throughBaseline?: string) {\n  return revisions(throughBaseline).reduce((current, plan) => {\n    const entry = plan[kind].find(row => row.id === id);\n    return entry && sha(JSON.stringify(current)) === entry.afterSha256 ? entry.before : current;\n  }, value);\n}\n// 只有完整文件摘要命中才还原；未登记的任何附加修改必须继续暴露给旧保护测试。\nexport function beforePy101P1Source(path: string, source: string) {\n  return undoSource(sources, path, beforeApprovedPy101Source(path, source));\n}\n",
+      "afterSha256": "22b5298e0b2de03b3d86c14051b5127729b54829dc7ccb24cca03ca2a212757a"
+    },
+    {
+      "path": "tests/content.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { readFile, stat } from \"node:fs/promises\";\nimport { createHash } from \"node:crypto\";\nimport katex from \"katex\";\nimport sharp from \"sharp\";\nimport { lessonRegistry, resolveLesson } from \"../src/lib/course-engine\";\nimport { programs } from \"../src/content/resources/programs\";\nimport { readablePublications } from \"../src/content/publication-manifest\";\nimport { assertRegisteredInventory } from \"./helpers/registered-content\";\n\ntest(\"四门不同类型教材用同一模型，公式可严格解析，图片有正确尺寸和可读替代文字\", async () => {\n  assertRegisteredInventory();\n  for (const publication of readablePublications) {\n    const { lesson } = resolveLesson(\n      publication.courseId,\n      publication.lessonId,\n    )!;\n    const blocks = lesson.sections.flatMap((s) => s.blocks);\n    if (lesson.courseId === \"AI000\") {\n      assert.equal(blocks.filter((block) => block.type === \"exercise\").length, lesson.id === \"AI000-C01-L02\" ? 3 : 2);\n      // 不设每课配图门槛；原14幅精确图由兼容测试逐幅保护，5.1采用可回查表格。\n      assert.ok(blocks.some((block) => block.type === \"table\"));\n      // 结课页仅复用text块复制Markdown模板，不引入可执行课程代码。\n      assert.ok(blocks.every((block) => block.type !== \"experiment\" && (block.type !== \"code\" || (lesson.id === \"AI000-C07-L03\" && block.language === \"text\" && block.filename === \"AI000-final-report.md\"))));\n      assert.equal(blocks.filter(block => block.type === \"code\").length, lesson.id === \"AI000-C07-L03\" ? 1 : 0);\n      assert.equal(blocks.filter(block => block.type === \"math\").length, lesson.id === \"AI000-C05-L05\" ? 2 : 0);\n    } else if (lesson.courseId === \"MA101\" && publication.catalogRole !== \"legacy\") {\n      assert.ok(lesson.sections.filter((section) => section.tier === \"core\").flatMap((section) => section.blocks).filter((block) => block.type === \"exercise\").length >= 2);\n      assert.ok(blocks.some((block) => block.type === \"vector-figure\"));\n      assert.ok(lesson.sections.filter((section) => section.tier === \"core\").every((section) => !section.blocks.some((block) => block.type === \"code\")));\n    } else if (lesson.chapterId === \"PY101-C01\" || lesson.id === \"PY101-C02-L01\") {\n      // 操作型首章及变量入门用目标对应的核心开放题验收；旧样章仍保留下面的Quiz契约。\n      const tasks = lesson.sections.filter(s => s.tier === \"core\").flatMap(s => s.blocks).filter(b => b.type === \"exercise\");\n      assert.ok(tasks.length > 0);\n      for (const row of lesson.assessmentMap) assert.ok(row.exerciseIds.every(id => tasks.some(task => task.id === id)));\n      assert.ok(blocks.some(b => b.type === \"code\" && b.language === \"python\"));\n    } else {\n      assert.ok(blocks.filter((b) => b.type === \"quiz\").length >= 2);\n      assert.ok(blocks.some((b) => b.type === \"code\"));\n    }\n    assert.equal(publication.status, \"pending-review\");\n    assert.equal(publication.reviewEvidence, undefined);\n    for (const block of blocks) {\n      if (block.type === \"math\")\n        assert.doesNotThrow(() =>\n          katex.renderToString(block.latex, {\n            throwOnError: true,\n            strict: \"error\",\n            trust: false,\n          }),\n        );\n      if (block.type === \"image\") {\n        const bytes = await readFile(`public${block.src}`);\n        const metadata = await sharp(bytes).metadata();\n        assert.equal(metadata.format, block.src.endsWith(\".webp\") ? \"webp\" : \"png\");\n        assert.equal(metadata.width, block.width);\n        assert.equal(metadata.height, block.height);\n        assert.ok(block.alt.length > 30);\n        if (block.mobile) {\n          const mobileBytes = await readFile(`public${block.mobile.src}`);\n          const mobileMetadata = await sharp(mobileBytes).metadata();\n          assert.equal(mobileMetadata.format, block.mobile.src.endsWith(\".webp\") ? \"webp\" : \"png\");\n          assert.equal(mobileMetadata.width, block.mobile.width);\n          assert.equal(mobileMetadata.height, block.mobile.height);\n        }\n      }\n    }\n    for (const resource of lesson.resources)\n      assert.ok((await stat(`public${resource.href}`)).size > 0);\n  }\n  assert.deepEqual(\n    [...new Set([...lessonRegistry.values()].map((l) => l.courseId))].sort(),\n    [\"AI000\", \"MA101\", \"ML201\", \"PY101\"],\n  );\n});\ntest(\"全部下载脚本、Notebook 和网页完整代码同源，Notebook 不伪造执行结果\", async () => {\n  const codeBlocks = [...lessonRegistry.values()]\n    .flatMap((l) => l.sections.flatMap((s) => s.blocks))\n    .filter((b) => b.type === \"code\");\n  for (const program of Object.values(programs)) {\n    assert.equal(\n      await readFile(`public/downloads/${program.filename}.py`, \"utf8\"),\n      program.code,\n    );\n    assert.ok(\n      codeBlocks.some(\n        (block) =>\n          block.code === program.code &&\n          block.filename === `${program.filename}.py`,\n      ),\n    );\n    const notebook = JSON.parse(\n      await readFile(`public/downloads/${program.filename}.ipynb`, \"utf8\"),\n    );\n    assert.equal(notebook.cells[1].source.join(\"\"), program.code);\n    assert.equal(notebook.cells[1].execution_count, null);\n    assert.deepEqual(notebook.cells[1].outputs, []);\n  }\n});\ntest(\"课程体系 V1.0 的原始 Markdown 和 JSON 字节未变\", async () => {\n  for (const [path, hash] of [\n    [\n      \"curriculum/AI技术课程体系_V1.0.md\",\n      \"b863f49f3da43225b009b7053dff79d6b5985bf8da9327f7701bc40c0c9d5a73\",\n    ],\n    [\n      \"curriculum/AI技术课程目录_V1.0.json\",\n      \"a7f5723c2ac659bfe271eeeffc050c2d96c46fd68e29391051c88f5db2812366\",\n    ],\n  ])\n    assert.equal(\n      createHash(\"sha256\")\n        .update(await readFile(path))\n        .digest(\"hex\"),\n      hash,\n    );\n});\n",
+      "afterSha256": "426ff8b31e40156aac0391d18b38013bd3092dcdf6579e0ed044ba351c2d8a12"
+    },
+    {
+      "path": "tests/py101-variables-and-assignment.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { readFileSync } from \"node:fs\";\nimport { pythonVariablesAndAssignmentLesson as lesson } from \"../src/content/lessons/py101/variables-and-assignment\";\nimport { courseOutline } from \"../src/content/course-outline\";\nimport { publicationManifest } from \"../src/content/publication-manifest\";\nimport { isReadable, publicationSchema } from \"../src/content/models\";\nimport { getLearningCourse, getAdjacentLessons, lessonRegistry, resolveLesson } from \"../src/lib/course-engine\";\nimport { createProgressStore, parseReadingProgress, progressKey } from \"../src/lib/learning-progress\";\nimport { lessonProgressScope } from \"../src/lib/use-learning-progress\";\nimport { variableCode, variableBlockNames } from \"../src/content/resources/python-variables\";\nimport { variableKey, checkVariableResult } from \"../scripts/python-variable-checks\";\nimport { beforeApprovedPy101Source } from \"../scripts/py101-p1-compatibility\";\nimport { assertRegisteredInventory, assertCourseAvailability } from \"./helpers/registered-content\";\n\ntest(\"2.1身份/顺序/初稿门禁；只有这一节进入第二章\", () => {\n  const entry = publicationManifest.find(p => p.lessonId === lesson.id)!;\n  assert.deepEqual([entry.title, entry.contentVersion, entry.order, entry.optionalLesson], [lesson.title, 1, 1, false]);\n  assert.deepEqual(courseOutline.filter(s => s.chapterId === \"PY101-C02\").map(s => [s.lessonId, s.order]), [[lesson.id, 1]]);\n  const draft = JSON.parse(readFileSync(\"docs/py101-p8/DRAFT_GATE.json\", \"utf8\"));\n  assert.deepEqual([draft.status, draft.access, draft.readable, draft.resolveUndefined, draft.directoryHrefAbsent], [\"draft\", \"private\", false, true, true]);\n  assert.equal(isReadable({ ...entry, status: \"draft\", access: \"private\", technicalEvidence: undefined }), false);\n  assert.throws(() => publicationSchema.parse({ ...entry, status: \"draft\", access: \"preview\" }));\n  assert.throws(() => publicationSchema.parse({ ...entry, status: \"pending-review\", access: \"preview\", technicalEvidence: undefined }));\n  if (entry.status === \"draft\") assert.equal(resolveLesson(\"PY101\", lesson.id), undefined);\n  else {\n    assert.equal(entry.status, \"pending-review\"); assert.equal(entry.access, \"preview\");\n    assert.equal(entry.technicalEvidence, \"docs/py101-p8/TECHNICAL_REPORT.md\");\n    assert.ok(resolveLesson(\"PY101\", lesson.id));\n  }\n  assert.equal(entry.reviewEvidence, undefined); assert.equal(lesson.optionalLesson, false);\n  assertRegisteredInventory(); assertCourseAvailability(\"PY101\");\n});\n\ntest(\"三项目标对应两项core开放代码任务，分层提示与反馈完整\", () => {\n  const tasks = lesson.sections.filter(s => s.tier === \"core\").flatMap(s => s.blocks).filter(b => b.type === \"exercise\");\n  assert.deepEqual(tasks.map(t => t.id), [\"keep-and-update\", \"repair-first-read\"]);\n  assert.deepEqual(lesson.assessmentMap, [{ objective: 1, exerciseIds: [tasks[0].id] }, { objective: 2, exerciseIds: [tasks[0].id] }, { objective: 3, exerciseIds: [tasks[1].id] }]);\n  for (const task of tasks) {\n    assert.equal(task.hints.length, 2); assert.ok(task.solution.length >= 4); assert.ok(task.rubric.length >= 3);\n    assert.doesNotMatch(task.hints.join(\"\"), /display_note|Hang posters|Packed T7|dispatch_label =/);\n  }\n  assert.equal(lesson.learningTime.basis, \"editorial-estimate\");\n  assert.deepEqual(lesson.learningTime, { reading: [10,15], practice: [5,8], coding: [10,15], basis: \"editorial-estimate\" });\n  assert.deepEqual(lesson.resources, []);\n});\n\ntest(\"网页Python片段必须全量登记同源，未知和擅自更改不能静默跳过\", () => {\n  const blocks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === \"code\").filter(b => b.language === \"python\");\n  assert.deepEqual(blocks.map(b => variableKey(b.filename, b.code)), [\"assign\", \"read\", \"update\", \"main\", \"literal\", \"firstRead\"]);\n  assert.throws(() => variableKey(\"unknown.py\", \"print('unknown')\"));\n  assert.throws(() => variableKey(variableBlockNames.firstRead, variableCode.repaired));\n  assert.throws(() => checkVariableResult(\"firstRead\", { exitCode: 0, stdout: \"\", stderr: \"NameError: name 'dispatch_label' is not defined\" }));\n  assert.throws(() => checkVariableResult(\"main\", { exitCode: 1, stdout: \"Pack notebooks\\nCheck labels\\n\", stderr: \"unexpected\" }));\n  checkVariableResult(\"firstRead\", { exitCode: 1, stdout: \"\", stderr: \"NameError: name 'dispatch_label' is not defined\" });\n});\n\ntest(\"真实保存文件记录覆盖主例、只改后赋值、引号对照、错误恢复与新进程\", () => {\n  const evidence = JSON.parse(readFileSync(\"docs/py101-p8/PYTHON_RUNS.json\", \"utf8\"));\n  assert.equal(evidence.platform, \"win32\"); assert.equal(evidence.allAssertionsPassed, true);\n  const row = (label: string) => evidence.rows.find((r: {label: string}) => r.label === label);\n  assert.equal(row(\"main\").stdout, \"Pack notebooks\\nCheck labels\\n\");\n  assert.equal(row(\"changedMain\").stdout, \"Pack notebooks\\nSort envelopes\\n\");\n  assert.equal(row(\"literal\").stdout, \"task_name\\nReady\\n\");\n  for (const label of [\"firstRead\", \"fresh-process-after-success\"]) { assert.equal(row(label).exitCode, 1); assert.equal(row(label).stdout, \"\"); assert.match(row(label).stderr, /NameError/); }\n  assert.equal(row(\"repair-same-file\").stdout, \"Packed T7\\n\");\n  assert.equal(row(\"own-file-before\").filename, row(\"own-file-after\").filename);\n  assert.equal(row(\"own-file-before\").savedSource.replace('\"Seal cartons\"', '\"Stack cartons\"'), row(\"own-file-after\").savedSource);\n  assert.equal(new Set(evidence.rows.map((r: {shellPid: number}) => r.shellPid)).size, evidence.rows.length);\n  assert.doesNotMatch(JSON.stringify(evidence), /[A-Za-z]:\\\\\\\\Users\\\\\\\\|token=/);\n});\n\ntest(\"第一章顺序、可读相邻导航、第五章先修和未制作/错误归属边界\", () => {\n  const course = getLearningCourse(\"PY101\")!; assert.equal(course.status, \"planned\");\n  assert.deepEqual(course.chapters[0].lessons.map(s => [s.lessonId, s.order]), Array.from({length:6}, (_, i) => [`PY101-C01-L0${i+1}`, i+1]));\n  if (isReadable(publicationManifest.find(p => p.lessonId === lesson.id)!)) {\n    assert.equal(getAdjacentLessons(course, \"PY101-C01-L06\").next?.lessonId, lesson.id);\n    assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, \"PY101-C01-L06\");\n    assert.equal(getAdjacentLessons(course, lesson.id).next?.lessonId, \"PY101-C05-L01\");\n  }\n  for (let i = 2; i <= 6; i++) {\n    const id = `PY101-C02-L0${i}`;\n    assert.equal(lessonRegistry.has(id), false); assert.equal(publicationManifest.some(p => p.lessonId === id), false);\n    assert.equal(resolveLesson(\"PY101\", id), undefined);\n  }\n  assert.equal(resolveLesson(\"ML201\", lesson.id), undefined);\n});\n\ntest(\"新2.1/r1读取和重载与全部旧PY进度、第五章旧r1及ML旧记录隔离\", () => {\n  const memory = new Map<string, string>(), storage = {getItem: (k: string) => memory.get(k) ?? null, setItem: (k: string, v: string) => { memory.set(k,v); }};\n  const store = createProgressStore(() => storage);\n  for (const old of lessonRegistry.values()) if ((old.courseId === \"PY101\" && old.id !== lesson.id) || old.id === \"ML201-C04-L01\") {\n    const scope = lessonProgressScope(old); store.save(scope, 100, scope.sectionIds[0], true);\n    if (scope.contentVersion > 1) store.save({...scope, contentVersion: 1}, 100, scope.sectionIds[0], true);\n  }\n  const before = new Map(memory), scope = lessonProgressScope(lesson);\n  assert.equal(progressKey(scope), \"aivora:learning:v2:PY101:PY101-C02-L01:r1\"); assert.equal(store.getSnapshot(scope), null);\n  store.save(scope, 52, \"literal-or-name\");\n  assert.equal(parseReadingProgress(createProgressStore(() => storage).getSnapshot(scope), scope)?.section, \"literal-or-name\");\n  assert.equal(parseReadingProgress(store.getSnapshot(scope), scope)?.completed, false);\n  for (const [key, value] of before) assert.equal(memory.get(key), value);\n});\n\ntest(\"历史恢复仅接受完整已登记文件，附加修改继续暴露\", () => {\n  const source = readFileSync(\"src/lib/course-engine.ts\", \"utf8\");\n  const base = JSON.parse(readFileSync(\"docs/py101-p8/APPROVED_CHANGES.json\", \"utf8\"));\n  assert.equal(beforeApprovedPy101Source(\"src/lib/course-engine.ts\", source, base.baseline), base.sources.find((s: {path: string}) => s.path === \"src/lib/course-engine.ts\").before);\n  assert.equal(beforeApprovedPy101Source(\"src/lib/course-engine.ts\", source + \"\\n// unauthorized\", base.baseline), source + \"\\n// unauthorized\");\n});\n",
+      "afterSha256": "3beec0ecbbf5322b024b161177abfb979d2a0ec1c915a6247146ec3fa4967983"
+    },
+    {
+      "path": "tests/py101-environment-reproduction.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { createHash } from \"node:crypto\";\nimport { readFileSync } from \"node:fs\";\nimport { pythonEnvironmentReproductionLesson as lesson } from \"../src/content/lessons/py101/environment-reproduction\";\nimport { lessonRegistry, getLearningCourse, getAdjacentLessons, resolveLesson } from \"../src/lib/course-engine\";\nimport { publicationManifest } from \"../src/content/publication-manifest\";\nimport { isReadable } from \"../src/content/models\";\nimport { reproductionCode, reproductionCommands, reproductionBlockNames, reproductionNotebook } from \"../src/content/resources/python-reproduction\";\nimport { notebookDownload } from \"../src/content/resources/python-notebook\";\nimport { environmentProbe } from \"../src/content/resources/python-venv\";\nimport { beforeApprovedPy101Object, protectedPy101FileMatches, approvedPy101Additions } from \"../scripts/py101-p1-compatibility\";\nimport { createProgressStore, parseReadingProgress, progressKey } from \"../src/lib/learning-progress\";\nimport { lessonProgressScope } from \"../src/lib/use-learning-progress\";\nimport { assertRegisteredInventory, assertCourseAvailability } from \"./helpers/registered-content\";\nconst read = (name: string) => JSON.parse(readFileSync(`docs/py101-p5/${name}.json`, \"utf8\"));\n\ntest(\"P5保护真实基线的全部旧文件/教材，1.5只改最后过渡段且保留r1范围\", () => {\n  const base = read(\"BASELINE\"), sha = (v: unknown) => createHash(\"sha256\").update(JSON.stringify(v)).digest(\"hex\");\n  const later = approvedPy101Additions.filter(id => id !== lesson.id && !(id in base.lessons));\n  assert.deepEqual([...lessonRegistry.keys()].sort(), [...Object.keys(base.lessons), lesson.id, ...later].sort());\n  for (const kind of [\"lessons\", \"publications\"] as const) for (const [id, hash] of Object.entries(base[kind])) {\n    const value = kind === \"lessons\" ? lessonRegistry.get(id) : publicationManifest.find(p => p.lessonId === id);\n    assert.equal(sha(beforeApprovedPy101Object(kind, id, value, base.head)), hash, id);\n  }\n  for (const [path, file] of Object.entries(base.files as Record<string, { sha256: string }>)) assert.ok(protectedPy101FileMatches(path, readFileSync(path), file.sha256, base.head), path);\n  // 先精确撤销后续批准修订，仍核对P5当时仅改末段的历史事实。\n  const current = beforeApprovedPy101Object(\"lessons\", \"PY101-C01-L05\", lessonRegistry.get(\"PY101-C01-L05\"), JSON.parse(readFileSync(\"docs/py101-p6/BASELINE.json\", \"utf8\")).head) as typeof lesson, expected = structuredClone(base.amendmentBefore);\n  expected.sections.at(-1).blocks[expected.sections.at(-1).blocks.length - 1] = current.sections.at(-1)!.blocks.at(-1);\n  assert.deepEqual(current, expected); assert.equal(current.contentVersion, 1); assert.deepEqual(lessonProgressScope(current), lessonProgressScope(base.amendmentBefore));\n  assert.equal(protectedPy101FileMatches(\"src/lib/course-engine.ts\", Buffer.concat([readFileSync(\"src/lib/course-engine.ts\"), Buffer.from(\"\\n// unauthorized\")]), base.files[\"src/lib/course-engine.ts\"].sha256, base.head), false);\n  assertRegisteredInventory(); assertCourseAvailability(\"PY101\");\n});\n\ntest(\"1.6注册r1和草稿门禁，首章六槽顺序与相邻导航，整课筹备且错误归属不可读\", () => {\n  const entry = publicationManifest.find(p => p.lessonId === lesson.id)!;\n  assert.deepEqual([entry.title, entry.order, entry.contentVersion], [lesson.title, 6, 1]);\n  assert.equal(isReadable({ ...entry, status: \"draft\", access: \"private\", technicalEvidence: undefined }), false);\n  const gate = read(\"DRAFT_GATE\"); assert.deepEqual([gate.status, gate.access, gate.readable], [\"draft\", \"private\", false]);\n  const course = getLearningCourse(\"PY101\")!; assert.equal(course.status, \"planned\"); assert.equal(course.chapters.length, 10);\n  assert.deepEqual(course.chapters[0].lessons.map(s => [s.lessonId, s.order]), Array.from({length: 6}, (_, i) => [`PY101-C01-L0${i+1}`, i+1]));\n  if (entry.status === \"draft\") { assert.equal(entry.access, \"private\"); assert.equal(resolveLesson(\"PY101\", lesson.id), undefined); }\n  else { assert.equal(entry.status, \"pending-review\"); assert.equal(entry.access, \"preview\"); const historical = beforeApprovedPy101Object(\"publications\", lesson.id, entry) as typeof entry; assert.ok(historical.technicalEvidence?.startsWith(\"docs/py101-p5/\")); assert.equal(entry.reviewEvidence, undefined); assert.equal(getAdjacentLessons(course, \"PY101-C01-L05\").next?.lessonId, lesson.id); assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, \"PY101-C01-L05\"); const readable = course.chapters.flatMap(c => c.lessons).filter(s => s.href); assert.equal(getAdjacentLessons(course, lesson.id).next?.lessonId, readable[readable.findIndex(s => s.lessonId === lesson.id) + 1]?.lessonId); }\n  assert.equal(resolveLesson(\"ML201\", lesson.id), undefined);\n  // 第二章是否可读取决于实际清单；P8只接入2.1，不再假定本章永久为空。\n  assert.deepEqual(course.chapters[1].lessons.filter(s => s.href).map(s => s.lessonId), publicationManifest.filter(p => p.chapterId === \"PY101-C02\" && isReadable(p)).map(p => p.lessonId));\n});\n\ntest(\"三目标映射两项真实任务，提示分层且不泄露目标命令，保留答案与rubric\", () => {\n  const tasks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === \"exercise\");\n  assert.deepEqual(tasks.map(t => t.id), [\"reproduce-script-issue\", \"recover-notebook-record\"]);\n  assert.deepEqual(lesson.assessmentMap, [{ objective: 1, exerciseIds: [tasks[0].id] }, { objective: 2, exerciseIds: tasks.map(t => t.id) }, { objective: 3, exerciseIds: tasks.map(t => t.id) }]);\n  for (const task of tasks) { assert.equal(task.hints.length, 2); assert.ok(task.solution.length >= 4); assert.ok(task.rubric.length >= 3); assert.doesNotMatch(task.hints.join(\"\"), /Scripts\\\\python|bin\\/python|Checked F3|先运行.*赋值.*再运行.*显示/); }\n  assert.equal(lesson.learningTime.basis, \"editorial-estimate\");\n});\n\ntest(\"Python核心只复用已教源码，观察工具同源；主例仅修脚本参数\", () => {\n  const blocks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === \"code\");\n  assert.deepEqual(blocks.filter(b => b.language === \"python\").map(b => [b.filename, b.code]).sort(), (Object.keys(reproductionCode) as (keyof typeof reproductionCode)[]).map(k => [reproductionBlockNames[k], reproductionCode[k]]).sort());\n  assert.equal(reproductionCode.environmentProbe, environmentProbe);\n  for (const key of [\"notice\", \"target\", \"assign\", \"show\"] as const) assert.doesNotMatch(reproductionCode[key], /\\b(import|def|for|while|try|except|if|open)\\b/);\n  for (const platform of [\"windows\", \"mac\"] as const) assert.equal(reproductionCommands.goodPath[platform].replace(platform === \"windows\" ? \".\\\\scripts\\\\notice.py\" : \"scripts/notice.py\", platform === \"windows\" ? \".\\\\notice.py\" : \"notice.py\"), reproductionCommands.badPath[platform]);\n});\n\ntest(\"P5下载与单元格同源且无运行状态/机器路径，旧下载由基线保护\", () => {\n  const actual = JSON.parse(readFileSync(\"public/downloads/review-note.ipynb\", \"utf8\"));\n  assert.deepEqual(actual, notebookDownload(reproductionNotebook)); assert.equal(actual.nbformat, 4); assert.equal(actual.nbformat_minor, 5);\n  for (const cell of actual.cells) if (cell.cell_type === \"code\") { assert.equal(cell.execution_count, null); assert.deepEqual(cell.outputs, []); }\n  assert.doesNotMatch(JSON.stringify(actual), /C:\\\\\\\\Users|token=|kernel-[a-f0-9]+\\.json|aivora-p5-/);\n  assert.ok(lesson.resources.some(r => r.href === \"/downloads/review-note.ipynb\"));\n});\n\ntest(\"真实Shell和Jupyter证据包含已知故障、恢复、新会话、同源代码与安全结束\", () => {\n  const cli = read(\"CLI_RESULTS\"), kernel = read(\"NOTEBOOK_RESULTS\");\n  assert.equal(cli.allAssertionsPassed, true); assert.equal(new Set(cli.rows.map((r: {shellPid: number}) => r.shellPid)).size, cli.rows.length);\n  for (const session of [\"initial\", \"new-shell-replay\"]) {\n    const row = (suffix: string) => cli.rows.find((r: {label: string}) => r.label === `${session}:${suffix}`);\n    assert.notEqual(row(\"wrong-script-argument\").exitCode, 0); assert.match(row(\"wrong-script-argument\").stderr, /can't open file/);\n    assert.equal(row(\"correct-script-argument\").stdout.trim(), \"Notice N8\"); assert.equal(row(\"correct-script-argument\").exitCode, 0);\n    assert.equal(row(\"wrong-script-argument\").command, reproductionCommands.badPath.windows);\n    for (const phase of [\"wrong\", \"right\"]) { assert.equal(row(`${phase}-environment-program`).stdout.trim(), \"Target R9\"); assert.equal(row(`${phase}-environment-program`).exitCode, 0); assert.match(row(`${phase}-environment-diagnostic`).stdout, phase === \"wrong\" ? /other\\\\.venv/ : /target\\\\.venv/); }\n  }\n  assert.equal(kernel.kernelShutdown, true);\n  const failure = kernel.steps.find((s: {label?: string}) => s.label === \"first-display-real-error\");\n  assert.equal(failure.source, reproductionCode.show); assert.equal(failure.outputs[0].ename, \"NameError\"); assert.ok(failure.outputs[0].traceback.length > 1);\n  assert.equal(kernel.savedNotebook.cells[2].outputs[0].text, \"Checked F3\\n\"); assert.equal(kernel.savedNotebook.cells[1].source, reproductionCode.assign);\n  assert.ok(kernel.steps.some((s: {operation?: string}) => s.operation === \"reopen-saved-file\"));\n  assert.doesNotMatch(JSON.stringify([cli,kernel]), /C:\\\\\\\\Users\\\\\\\\QYF|token=|aivora-p5-[a-f0-9]/);\n});\n\ntest(\"1.6新r1进度重载且不写旧五课、第五章修订与其他课程记录\", () => {\n  const memory = new Map<string,string>(), storage = { getItem: (k: string) => memory.get(k) ?? null, setItem: (k: string,v: string) => {memory.set(k,v);} };\n  const store = createProgressStore(() => storage);\n  for (const id of [\"PY101-C01-L01\", \"PY101-C01-L02\", \"PY101-C01-L03\", \"PY101-C01-L04\", \"PY101-C01-L05\", \"PY101-C05-L01\", \"ML201-C04-L01\"]) { const scope = lessonProgressScope(lessonRegistry.get(id)!); store.save(scope,100,scope.sectionIds[0],true); if (scope.contentVersion > 1) store.save({...scope,contentVersion:1},100,scope.sectionIds[0],true); }\n  const old = new Map(memory), scope = lessonProgressScope(lesson); assert.equal(progressKey(scope), \"aivora:learning:v2:PY101:PY101-C01-L06:r1\"); assert.equal(store.getSnapshot(scope), null);\n  store.save(scope,46,\"minimal-record\"); assert.equal(parseReadingProgress(createProgressStore(() => storage).getSnapshot(scope),scope)?.section,\"minimal-record\");\n  for (const [k,v] of old) assert.equal(memory.get(k),v);\n});\n",
+      "afterSha256": "0a4ea7a667a824c958ec0581cefefebb49f4d2d62771e8016f0ef7121ac8e9a7"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "PY101-C02-L01",
+      "before": {
+        "id": "PY101-C02-L01",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "contentVersion": 1,
+        "title": "用变量保留并更新程序里的值",
+        "subtitle": "自己给任务文字取个名字，预测更新前后的输出，再修复一次读得太早的错误。",
+        "learningTime": {
+          "reading": [
+            10,
+            15
+          ],
+          "practice": [
+            5,
+            8
+          ],
+          "coding": [
+            10,
+            15
+          ],
+          "basis": "editorial-estimate"
+        },
+        "optionalLesson": false,
+        "assessmentMap": [
+          {
+            "objective": 1,
+            "exerciseIds": [
+              "keep-and-update"
+            ]
+          },
+          {
+            "objective": 2,
+            "exerciseIds": [
+              "keep-and-update"
+            ]
+          },
+          {
+            "objective": 3,
+            "exerciseIds": [
+              "repair-first-read"
+            ]
+          }
+        ],
+        "prerequisites": "已完成第一章：能在电脑上创建、保存和完整运行.py，使用print及成对引号，核对文件位置与解释器；接触过1.5的最小赋值和名称读取。沿用已可运行的Python 3与编辑器，不重新安装软件。手机可阅读，独立代码实践需要电脑。",
+        "prerequisiteLinks": [
+          {
+            "title": "1.1 从终端执行文件",
+            "href": "/learn/PY101/PY101-C01-L01#run-script",
+            "note": "补齐.py和print的运行。"
+          },
+          {
+            "title": "1.3 保存后完整重跑",
+            "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+            "note": "核对保存状态、cwd与实际目标。"
+          },
+          {
+            "title": "1.5 最小赋值经验",
+            "href": "/learn/PY101/PY101-C01-L05#first-cells",
+            "note": "回顾名字、文字与命名建议；本节转到普通脚本。"
+          },
+          {
+            "title": "1.6 读懂相关错误",
+            "href": "/learn/PY101/PY101-C01-L06#read-evidence",
+            "note": "保留错误类型及对应代码行。"
+          }
+        ],
+        "objectives": [
+          "在自己创建的.py中用合法名称保存文字并输出当前值，区分名称和引号内的固定文字",
+          "预测同一名称重新赋值前后的输出，只修改第二次赋值，保存重跑并解释哪一行变化",
+          "按执行顺序找出首次赋值前的读取，记录实际错误，保留名称读取语义修复并从头运行"
+        ],
+        "sections": [
+          {
+            "id": "changing-task",
+            "title": "任务变了，程序怎样接着使用新文字？",
+            "navGroup": "start",
+            "navLabel": "名称与值",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "一个小程序先显示当前任务“打包笔记本”，稍后要改为“检查标签”。如果把同一任务文字在各处重复写死，修改时容易漏掉一处。我们可以先给这份文字取一个名字，使用时读这个名字，需要变化时再给它新的值。"
+              },
+              {
+                "type": "paragraph",
+                "text": "在1.5，你用marker和两格代码观察过内核记住的内容。这次回到普通.py文件：自己选名字、写出赋值与读取，并判断程序运行到不同位置时会显示什么。所有例子只用Python自带功能。"
+              }
+            ]
+          },
+          {
+            "id": "name-and-value",
+            "title": "先把一份文字交给名称",
+            "navGroup": "start",
+            "navLabel": "名称与值",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "先看这一行，暂时只理解它的作用，下一段会把它与其他行组合成完整脚本："
+              },
+              {
+                "type": "code",
+                "code": "task_name = \"Pack notebooks\"",
+                "filename": "赋值片段 · 稍后组合",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "task_name是我们选择的名称，意思是任务名称；\"Pack notebooks\"是这次给它的文字值。和1.1一样，配对英文引号标记字符串的开始和结束，引号不是名称的一部分。"
+              },
+              {
+                "type": "paragraph",
+                "text": "执行这条语句时，=让左边的task_name对应右边的值，这个动作叫赋值。这种运行时的对应关系叫绑定。=在这里执行一个动作，并不要求你判断数学等式是否成立。"
+              },
+              {
+                "type": "paragraph",
+                "text": "本节把能绑定到值、供后续读取的名称称为变量，task_name就是变量名。它帮助后面的代码找到当前对应的值。之后再次赋值，可以改变这份对应关系；理解变量时，先抓住名称和当前值这两件事。单独执行赋值不会像print那样显示一行文字。"
+              }
+            ]
+          },
+          {
+            "id": "choose-name",
+            "title": "自己选一个能使用的名称",
+            "navGroup": "start",
+            "navLabel": "名称与值",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "沿用1.5的便捷建议：用英文字母开头，后面接英文字母、数字或下划线，名称中不放空格。例如task_name、label2都符合这种写法。task_name中的下划线把两个词连成一个名称；my plan含空格、1plan以数字开头，都不能用作这里的变量名。"
+              },
+              {
+                "type": "paragraph",
+                "text": "Python有一些保留给语言本身的词，称为关键字，例如for、class，不能拿来作普通变量名。本次可选带含义的task_label、next_task等名字，也避开print，留着这个已有的输出工具。赋值处和读取处的拼写、大小写要一致；task_name和Task_name是两个名字。"
+              },
+              {
+                "type": "paragraph",
+                "text": "这些英文写法方便初次练习，不是Python全部合法名称的清单。下划线开头的名称以及用某些中文等文字组成的名称也可以合法使用。练习接受其他合法名称；一个清楚表达用途的名字，比只写一个字母更容易检查。"
+              }
+            ]
+          },
+          {
+            "id": "read-and-update",
+            "title": "读取当前值，再给同一名称新值",
+            "navGroup": "execution",
+            "navLabel": "读取与更新",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "在刚才的赋值之后接上这一行："
+              },
+              {
+                "type": "code",
+                "code": "print(task_name)",
+                "filename": "读取片段 · 接在首次赋值之后",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "print(task_name)先读取task_name此刻对应的值，再显示它，所以这里会显示Pack notebooks。括号里没有引号，读取的是名称；写print不会自动给尚未有值的名称赋值。"
+              },
+              {
+                "type": "paragraph",
+                "text": "再在这次读取后面写："
+              },
+              {
+                "type": "code",
+                "code": "task_name = \"Check labels\"",
+                "filename": "更新片段 · 接在首次读取之后",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "这还是同一个task_name。执行这一行时，它改为对应Check labels，称为重新赋值。后续再执行print(task_name)，会读到新的文字。名称保持相同，当前值可以随执行的赋值改变。"
+              }
+            ]
+          },
+          {
+            "id": "predict-run",
+            "title": "先预测四行代码，再运行完整脚本",
+            "navGroup": "execution",
+            "navLabel": "读取与更新",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "在自己的练习文件夹新建task_labels.py，源码放在.venv外。用编辑器把下面四行写入，行首都不加缩进。先在本地笔记写下两行预测：第一次print执行时，之前已经发生哪次赋值？第二次print之前又发生了什么？写好再保存运行。"
+              },
+              {
+                "type": "code",
+                "code": "task_name = \"Pack notebooks\"\nprint(task_name)\ntask_name = \"Check labels\"\nprint(task_name)",
+                "filename": "task_labels.py",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "确认编辑器已保存，终端用pwd和Windows的dir（macOS为ls）确认当前目录包含这份文件。沿用第一章已核验的解释器命令：Windows在PowerShell运行下面第一条，macOS在终端运行第二条；若此前一直用py，保持使用py。命令输入在终端提示符后，不放进.py，也不只运行编辑器选区。"
+              },
+              {
+                "type": "code",
+                "code": "python task_labels.py",
+                "filename": "Windows · PowerShell · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "python3 task_labels.py",
+                "filename": "macOS · 终端 · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "如果沿用项目.venv而未激活，也可以按1.4直接调用已核验的环境解释器，脚本参数仍为task_labels.py。本节不创建新环境。实际结果应为："
+              },
+              {
+                "type": "code",
+                "code": "Pack notebooks\nCheck labels",
+                "filename": "完整运行 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "table",
+                "caption": "沿实际执行顺序看当前值",
+                "columns": [
+                  "刚执行到哪里",
+                  "task_name当前对应什么",
+                  "这一步的显示"
+                ],
+                "rows": [
+                  [
+                    "第1行赋值后",
+                    "Pack notebooks",
+                    "无普通输出"
+                  ],
+                  [
+                    "第2行print",
+                    "Pack notebooks",
+                    "Pack notebooks"
+                  ],
+                  [
+                    "第3行重新赋值后",
+                    "Check labels",
+                    "无普通输出"
+                  ],
+                  [
+                    "第4行print",
+                    "Check labels",
+                    "Check labels"
+                  ]
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "第一条print已经把旧值显示出来，第三行才开始执行新的赋值。后来的赋值会影响后续读取，不会倒过来改写已经显示的第一行。判断某次输出时，要看它执行之前真正发生的动作。"
+              }
+            ]
+          },
+          {
+            "id": "change-one-value",
+            "title": "只改第二次赋值，会改变哪一行？",
+            "navGroup": "execution",
+            "navLabel": "读取与更新",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "现在自己另选一项任务，只改第三行引号内的文字，其他三行保持不动。先写两行新预测，再保存，用同一条命令从头运行整个文件，比较这一次和上一次的真实输出。"
+              },
+              {
+                "type": "paragraph",
+                "text": "例如把第二次赋值的文字换成Sort envelopes，第一行仍应为Pack notebooks，第二行变为Sort envelopes。原因是第一次读取之前的赋值没有改变，而第二次读取之前执行了修改后的赋值。用你自己选的文字再核对一次，不用把这个变式也抄进文件末尾。"
+              },
+              {
+                "type": "paragraph",
+                "text": "若仍显示旧文字，先按1.3核对保存标记、当前目录与执行目标，再比较源码。编辑内容、保存文件与运行程序是三个动作，新的输出来自这次实际执行。"
+              }
+            ]
+          },
+          {
+            "id": "literal-or-name",
+            "title": "有引号的文字和无引号的名称",
+            "navGroup": "compare",
+            "navLabel": "区分与排错",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "回顾1.1：引号围起来的是固定字符串。另建name_or_text.py，先预测下面两次显示会不会相同，再保存并完整运行；命令中的文件名换成name_or_text.py。"
+              },
+              {
+                "type": "code",
+                "code": "task_name = \"Ready\"\nprint(\"task_name\")\nprint(task_name)",
+                "filename": "name_or_text.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "task_name\nReady",
+                "filename": "对照 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "print(\"task_name\")直接显示引号里的task_name这几个字符，没有读取这个名称。print(task_name)读取当前绑定的值，所以显示Ready。两行都使用print，差别在括号中的内容：固定文字，还是名称读取。"
+              },
+              {
+                "type": "paragraph",
+                "text": "如果想保存Ready这段文字，就保留它两端的引号。去掉后，Ready会被当成另一个名称；若本次程序没有给它提供值，读取就可能失败。下一段用一个更容易定位的完整脚本实际观察这种未定义名称错误。"
+              }
+            ]
+          },
+          {
+            "id": "fresh-script",
+            "title": "每次从终端启动，是本次脚本的执行",
+            "navGroup": "compare",
+            "navLabel": "区分与排错",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "本节使用的是常规终端命令启动的新Python脚本进程：每次运行，都会从文件开头按源码顺序执行这几条语句。上一次运行结束时给名称赋过值，不会让下一次新进程自动拥有那个绑定。源码文件保存了语句，这次真正执行到赋值时才建立对应关系。"
+              },
+              {
+                "type": "paragraph",
+                "text": "1.5的Notebook可以在仍运行的同一内核中保留先前执行过的名称；那是另一种执行方式。这里不用Notebook旧状态补齐.py中缺失的步骤。把脚本保存并从头运行，是检查当前文件本身是否足够的办法。"
+              }
+            ]
+          },
+          {
+            "id": "first-read-error",
+            "title": "赋值写在后面，为什么第一行仍报错？",
+            "navGroup": "compare",
+            "navLabel": "区分与排错",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "在新的dispatch_label.py中保存下面两行。先预测这次能否显示Packed T7，再从终端完整执行它。这是有意安排的失败实验，预期会出现NameError；保留你实际看到的相关代码行及错误末行。"
+              },
+              {
+                "type": "code",
+                "code": "print(dispatch_label)\ndispatch_label = \"Packed T7\"",
+                "filename": "dispatch_label.py · 预期出现NameError",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "运行到第一行时，程序需要读取dispatch_label，却还没有执行第二行的赋值，所以本次没有正常的任务输出。错误类型是NameError，描述会提到dispatch_label未定义；文件路径、行号排版与箭头可能随环境或Python版本变化，以自己的真实回溯为准。后面有赋值文本，并不等于它已经执行。"
+              },
+              {
+                "type": "paragraph",
+                "text": "修复要让提供值的赋值先于读取执行。保留通过名称显示任务的做法，自己调整顺序，保存后从头运行，核对是否正常显示Packed T7。这次原因来自已给定脚本的执行顺序；无需重装Python、安装包或改PATH。其他NameError仍要结合对应代码判断，不能都套用同一根因。"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "自己写一次更新，再独立修复一次读取",
+            "navGroup": "practice",
+            "navLabel": "独立练习",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "先合上示例和参考答案完成任务。网页输入框只是临时笔记；正式成果保存在本地.py及短记录里。只需列出源码、命令、预测与实际结果，不必抄成长篇报告。"
+              },
+              {
+                "type": "exercise",
+                "id": "keep-and-update",
+                "title": "自己的任务标签会怎样改变？",
+                "kind": "代码",
+                "prompt": "创建与正文不同的.py文件，自选新的任务情境、一个合法名称和两段不同文字。自己写第一次赋值与名称读取，再写同一名称的第二次赋值与名称读取。运行前预测两行输出，保存并真实执行。随后只改第二次赋值的文字，再预测、保存并完整运行一次。交付实际源码（保留改前/改后差异）、运行命令、两次预测和两次真实输出；简短说明为什么第一行不随后面的赋值倒退改变，再用一句话区分名称与引号里的文字。名称不必是task_name，接受其他合法写法；不能只交参考输出。",
+                "hints": [
+                  "沿程序从上到下走到每一次print，观察此前最近执行过哪次给这个名称赋值的语句。",
+                  "把自己的两次赋值和两次读取分别标出，核对实际顺序。只改后一次赋值后，重新预测哪些读取会遇到它；仍由你独立选名、填新文字、保存和执行。"
+                ],
+                "solution": [
+                  "例如布展任务另建gallery_plan.py，选display_note：它以字母开头，只有字母和下划线，且不是关键字。以下只是一种参考，其他合法名称和任务内容同样接受。",
+                  "参考初稿从上到下写四行，分号只是这里的分隔说明，不输入文件：第1行：display_note = \"Hang posters\"；第2行：print(display_note)；第3行：display_note = \"Place signs\"；第4行：print(display_note)。两段文字用配对引号包住，两次print中的名称与赋值拼写一致。先预测Hang posters、Place signs两行，再保存；Windows可用python gallery_plan.py，macOS用python3 gallery_plan.py，保留本人真实结果。",
+                  "只修改后一次赋值后的四行依次为：第1行：display_note = \"Hang posters\"；第2行：print(display_note)；第3行：display_note = \"Open doors\"；第4行：print(display_note)。重新预测后完整运行，应为Hang posters、Open doors。第一次print发生在后一次赋值之前，因此第一行保持原样，第二行读取更新后的值。",
+                  "display_note是不带引号、用于读取的名称，\"Hang posters\"等是引号内固定文字。若把print中的名称加上引号，会改成显示名称文字本身，已经改变读取含义。",
+                  "常错包括：只改编辑区未保存、命令指向另一文件、赋值/读取拼写或大小写不同。后两种名称差异若导致读取未定义名称，可能出现NameError；漏掉配对引号可能是SyntaxError，把应为文字的内容写成未定义名称也可能NameError。按实际行检查，不只抄错误名。接受配对单引号和中文文字，但必须保留自选内容与两次实际执行。"
+                ],
+                "rubric": [
+                  "实际新.py使用自选合法名称与新情境，两段文字不同；有同名两次赋值及两次名称读取，源码和运行命令对应。",
+                  "两轮都有运行前两行预测和真实输出；改后只改变第二次赋值，结果与执行位置相符，差异有核对。",
+                  "结合本人代码说明第一行已在更新前显示，不会被后来赋值改写；能区分名称读取与引号内固定文字。读完标记、复制样例或只有解释不代替代码与运行。"
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "下一题使用first-read-error中的两行dispatch_label起始源码，可回到上方代码框复制到另建的repair_label.py。它故意在第一次赋值前读取名称；不要先套用修复参考。"
+              },
+              {
+                "type": "exercise",
+                "id": "repair-first-read",
+                "title": "为什么脚本还没开始显示任务就报错？",
+                "kind": "实验",
+                "prompt": "确认repair_label.py的真实位置与保存状态，内容为上方dispatch_label两行故障源码。先预测首次运行现象，再从终端实际执行，保留真实错误类型、相关代码行和末行。按这次执行顺序判断：读取时，这个名称是否已经有值？自己决定安全修复方法，保留变量赋值与名称读取的语义，保存并从头重跑。交付修复前后源码、命令、错误及恢复后的真实输出，再简短解释本次新脚本为何不能依赖以前Notebook内核的状态。只改成print(\"Packed T7\")跳过了名称读取，不能算本题完成；不通过重装、改PATH或删环境解决。",
+                "hints": [
+                  "从这次脚本第一条执行语句开始看。它需要的名字，在此前的本次执行中已经获得值了吗？",
+                  "分别找到提供值的赋值语句与读取语句，比较它们在文件中的位置；考虑怎样调整依赖顺序并保留名称读取，然后自行保存与完整重跑。"
+                ],
+                "solution": [
+                  "新脚本先执行print(dispatch_label)，该名称尚未被本次执行绑定，因此真正运行会出现NameError，且没有Packed T7正常输出。赋值虽然写在文件第二行，但报错发生时还没有执行到那里。先保存本人实际回溯和对应行，不用参考文字代替故障证据。",
+                  "一种修复后的repair_label.py分两行写：第1行：dispatch_label = \"Packed T7\"；第2行：print(dispatch_label)。先提供值再读取。可以把赋值移到读取前，也可以把读取移到赋值后；保留同一名称和任务文字即可。",
+                  "保存后从文件所在目录运行python repair_label.py（macOS用python3，已验证的py也可）。预期正常输出Packed T7，实际结果需自己保留；恢复成功要对应保存的整份源码。",
+                  "本节从终端启动新的脚本进程，不会继承先前另一个Notebook内核中的名称。即使旧内核曾有同名变量，也要让当前文件自己提供读取前所需的值。",
+                  "常错是只把print改成固定文字、只跑选区、依赖旧交互窗口或只写“调整顺序”而没保存重跑。若改了名称，要在赋值和读取处一致修改并说明；若真实错误不同，先核对实际文件和代码，不伪造NameError。"
+                ],
+                "rubric": [
+                  "在已确认的保存文件上真正复现首次读取错误，保留实际命令、相关代码与NameError，不以预贴错误文字替代。",
+                  "依据本次执行先后指出读取时尚未绑定；修复仍含赋值及名称读取，提供值先执行，未用输出常量绕开任务。",
+                  "保存修复源码并从头运行，保留真实Packed T7输出与命令；能解释新脚本进程和旧Notebook内核状态的区别。"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "next-step",
+            "title": "用自己的文件检查这三件事",
+            "navGroup": "finish",
+            "navLabel": "回顾与后续",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "summary",
+                "points": [
+                  "给值选择合法名称，执行赋值后再通过名称读取；引号中的内容表示固定文字。",
+                  "按执行位置预测当前值，重新赋值影响后续读取；保存并完整重跑验证自己的改动。",
+                  "遇到本次未定义名称错误，结合相关代码与执行先后检查提供值的步骤，再保留语义修复和复跑。"
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "保留两个自己的.py及短记录，能现场换一个名字或任务文字并再次验证，才有独立操作的证据。网页读完只记录阅读，不会自动判断这些程序是否达标。"
+              },
+              {
+                "type": "paragraph",
+                "text": "第二章接着规划2.2「分清文字、整数、小数和真假值」，目前尚无可读正文；2.3–2.6也仍是规划。阅读器的“下一可读课”可能跳到第5章函数试读，那还需要表达式与控制流程等中间先修，不能当作零基础跳学建议。整门PY101仍在筹备。"
+              }
+            ]
+          }
+        ],
+        "resources": [],
+        "references": [
+          {
+            "title": "Python赋值语句",
+            "href": "https://docs.python.org/3.14/reference/simple_stmts.html#assignment-statements",
+            "note": "核对名称的绑定和重新绑定。"
+          },
+          {
+            "title": "表达式中的名称",
+            "href": "https://docs.python.org/3/reference/expressions.html#identifiers-names",
+            "note": "核对名称读取与未绑定情形。"
+          },
+          {
+            "title": "合法名称与关键字",
+            "href": "https://docs.python.org/3.14/reference/lexical_analysis.html#identifiers",
+            "note": "名称字符、大小写和保留词。"
+          },
+          {
+            "title": "错误与异常",
+            "href": "https://docs.python.org/3/tutorial/errors.html",
+            "note": "识别错误类型和相关代码位置；本节不教异常处理。"
+          },
+          {
+            "title": "Python入门",
+            "href": "https://docs.python.org/3/tutorial/introduction.html",
+            "note": "赋值、字符串及最小例子。"
+          },
+          {
+            "title": "从终端执行脚本",
+            "href": "https://docs.python.org/3.14/using/cmdline.html#interface-options",
+            "note": "脚本文件参数和常规执行方式。"
+          }
+        ]
+      },
+      "afterSha256": "f269e4242667ef1f3fad714fdda6dadc20b4881d098ae95a3e8b7f3bd53495a6"
+    }
+  ],
+  "publications": [
+    {
+      "id": "PY101-C02-L01",
+      "before": {
+        "lessonId": "PY101-C02-L01",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "title": "用变量保留并更新程序里的值",
+        "contentVersion": 1,
+        "order": 1,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p8/TECHNICAL_REPORT.md"
+      },
+      "afterSha256": "6c5b9148c48055f2fa58a0ef6d21051e67a3f80e5287a47d6fc2ea955cc5e0ae"
+    }
+  ],
+  "workspaceOnly": [],
+  "protectedText": []
+}
