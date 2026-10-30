@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-30T05:45:53.672Z",
+  "oldLessonCount": 56,
+  "unchangedOtherLessonObjects": 54,
+  "protectedFileCount": 2818,
+  "protectedPortableDigest": "b23dcc0ecd2b120b6d8f28540699d7c2c00641f4e9da14ac8cb2458059723e47",
+  "onlyAllowedSourceChanges": [
+    "src/content/course-outline.ts",
+    "src/lib/course-engine.ts",
+    "src/content/publication-manifest.ts",
+    "src/content/lessons/py101/variables-and-assignment.ts",
+    "src/content/lessons/py101/arithmetic-expressions.ts",
+    "scripts/validate-python.ts",
+    "scripts/py101-p1-compatibility.ts",
+    "tests/content.test.ts",
+    "tests/py101-arithmetic-expressions.test.ts"
+  ],
+  "amendedLessonIds": [
+    "PY101-C02-L01",
+    "PY101-C02-L03"
+  ],
+  "newLessonIds": [
+    "PY101-C02-L04"
+  ],
+  "allAssertionsPassed": true
+}

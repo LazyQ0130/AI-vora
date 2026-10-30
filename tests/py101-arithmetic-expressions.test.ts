@@ -11,7 +11,7 @@ import { isReadable, publicationSchema } from "../src/content/models";
 import { getLearningCourse, getAdjacentLessons, lessonRegistry, resolveLesson } from "../src/lib/course-engine";
 import { createProgressStore, parseReadingProgress, progressKey } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
-import { beforeApprovedPy101Source } from "../scripts/py101-p1-compatibility";
+import { beforeApprovedPy101Source, beforeApprovedPy101Object } from "../scripts/py101-p1-compatibility";
 import { assertRegisteredInventory, assertCourseAvailability } from "./helpers/registered-content";
 const read = (name: string) => JSON.parse(readFileSync(`docs/py101-p10/${name}.json`, "utf8"));
 const sha = (v: unknown) => createHash("sha256").update(JSON.stringify(v)).digest("hex");
@@ -26,7 +26,7 @@ test("2.3身份/order3/r1与真实草稿门禁，技术后试读而非人工审�
   assert.throws(()=>publicationSchema.parse({...entry,status:"pending-review",access:"preview",technicalEvidence:undefined}));
   assert.equal(entry.reviewEvidence,undefined);
   if(entry.status==="draft")assert.equal(resolveLesson("PY101",lesson.id),undefined);
-  else {assert.deepEqual([entry.status,entry.access,entry.technicalEvidence],["pending-review","preview","docs/py101-p10/TECHNICAL_REPORT.md"]);assert.ok(resolveLesson("PY101",lesson.id));}
+  else {const historical=beforeApprovedPy101Object("publications",lesson.id,entry) as typeof entry;assert.deepEqual([entry.status,entry.access,historical.technicalEvidence],["pending-review","preview","docs/py101-p10/TECHNICAL_REPORT.md"]);assert.ok(resolveLesson("PY101",lesson.id));}
   assertRegisteredInventory();assertCourseAvailability("PY101");
 });
 
@@ -78,19 +78,19 @@ test("2.2仅末段状态勘误保r1；其余全部旧Lesson/发布对象、作�
   const base=read("BASELINE"),current=lessonRegistry.get("PY101-C02-L02")!,expected=structuredClone(base.amendmentBefore);
   expected.sections.at(-1).blocks[expected.sections.at(-1).blocks.length-1]=current.sections.at(-1)!.blocks.at(-1);assert.deepEqual(current,expected);
   assert.equal(current.contentVersion,1);assert.deepEqual(lessonProgressScope(current),lessonProgressScope(base.amendmentBefore));
-  for(const [id,digest]of Object.entries(base.lessons))if(id!==current.id)assert.equal(sha(lessonRegistry.get(id)),digest,id);
-  for(const [id,digest]of Object.entries(base.publications))if(id!==current.id)assert.equal(sha(publicationManifest.find(p=>p.lessonId===id)),digest,id);
+  for(const [id,digest]of Object.entries(base.lessons))if(id!==current.id)assert.equal(sha(beforeApprovedPy101Object("lessons",id,lessonRegistry.get(id),base.head)),digest,id);
+  for(const [id,digest]of Object.entries(base.publications))if(id!==current.id)assert.equal(sha(beforeApprovedPy101Object("publications",id,publicationManifest.find(p=>p.lessonId===id),base.head)),digest,id);
   const source=readFileSync("src/lib/course-engine.ts","utf8"),plan=read("APPROVED_CHANGES");
   assert.equal(beforeApprovedPy101Source("src/lib/course-engine.ts",source,base.head),plan.sources.find((r:{path:string})=>r.path==="src/lib/course-engine.ts").before);
   assert.equal(beforeApprovedPy101Source("src/lib/course-engine.ts",source+"\n// unauthorized",base.head),source+"\n// unauthorized");
 });
 
-test("2.2到2.3相邻且整课planned，2.4–2.6不注册，错误课程不可读", () => {
+test("2.2到2.3相邻且整课planned，后续按实际注册，错误课程不可读", () => {
   const course=getLearningCourse("PY101")!;assert.equal(course.status,"planned");
   if(isReadable(publicationManifest.find(p=>p.lessonId===lesson.id)!)){
-    assert.equal(getAdjacentLessons(course,"PY101-C02-L02").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"PY101-C02-L02");assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,"PY101-C05-L01");
+    assert.equal(getAdjacentLessons(course,"PY101-C02-L02").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"PY101-C02-L02");const readable=course.chapters.flatMap(c=>c.lessons).filter(s=>s.href);assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,readable[readable.findIndex(s=>s.lessonId===lesson.id)+1]?.lessonId);
   }
-  for(let n=4;n<=6;n++){const id=`PY101-C02-L0${n}`;assert.equal(courseOutline.some(s=>s.lessonId===id),false);assert.equal(lessonRegistry.has(id),false);assert.equal(publicationManifest.some(p=>p.lessonId===id),false);assert.equal(resolveLesson("PY101",id),undefined);}
+  for(let n=4;n<=6;n++){const id=`PY101-C02-L0${n}`;if(lessonRegistry.has(id))continue;assert.equal(courseOutline.some(s=>s.lessonId===id),false);assert.equal(lessonRegistry.has(id),false);assert.equal(publicationManifest.some(p=>p.lessonId===id),false);assert.equal(resolveLesson("PY101",id),undefined);}
   assert.equal(resolveLesson("ML201",lesson.id),undefined);
 });
 

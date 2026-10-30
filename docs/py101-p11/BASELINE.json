@@ -1,0 +1,3067 @@
+{
+  "head": "b85e329b4688c0b55bbaf3f6c849a0732bc8455b",
+  "files": {
+    "curriculum/AI技术课程体系_V1.0.md": {
+      "sha256": "b863f49f3da43225b009b7053dff79d6b5985bf8da9327f7701bc40c0c9d5a73",
+      "lfSha256": "b863f49f3da43225b009b7053dff79d6b5985bf8da9327f7701bc40c0c9d5a73"
+    },
+    "curriculum/AI技术课程目录_V1.0.json": {
+      "sha256": "a7f5723c2ac659bfe271eeeffc050c2d96c46fd68e29391051c88f5db2812366",
+      "lfSha256": "a7f5723c2ac659bfe271eeeffc050c2d96c46fd68e29391051c88f5db2812366"
+    },
+    "docs/py101-p10/APPROVED_CHANGES.json": {
+      "sha256": "e0f106521272cfb46bf464f4ef1b2c8251ca7dd657ececa111facbaa22599534",
+      "lfSha256": "e0f106521272cfb46bf464f4ef1b2c8251ca7dd657ececa111facbaa22599534"
+    },
+    "docs/py101-p10/BASELINE.json": {
+      "sha256": "1f42577e0f01545c26a465128e5cc7390ca3af16afce5f6028a3485652834623",
+      "lfSha256": "1f42577e0f01545c26a465128e5cc7390ca3af16afce5f6028a3485652834623"
+    },
+    "docs/py101-p10/BASELINE_AND_SCOPE.md": {
+      "sha256": "228f6117535418d7322b4d23fbdc8c2f09d8f306f288f88d36cc9282c94d58e4",
+      "lfSha256": "228f6117535418d7322b4d23fbdc8c2f09d8f306f288f88d36cc9282c94d58e4"
+    },
+    "docs/py101-p10/BROWSER_REPORT.md": {
+      "sha256": "04a97d9f754d97272babb576df23620791a12679f4746f01d77920d5bef3ee27",
+      "lfSha256": "04a97d9f754d97272babb576df23620791a12679f4746f01d77920d5bef3ee27"
+    },
+    "docs/py101-p10/BROWSER_RESULTS.json": {
+      "sha256": "40782790e99f3b81af921468c0a81cd37636b800f7012a503e5bb4dd3bdff332",
+      "lfSha256": "40782790e99f3b81af921468c0a81cd37636b800f7012a503e5bb4dd3bdff332"
+    },
+    "docs/py101-p10/CANDIDATE_BUILD_LIMITATION.json": {
+      "sha256": "d4594ad0a877ff81d779cb9cc8a11539777e4b3f4b24fe5102f07b84b45b84ef",
+      "lfSha256": "7cef9f1102122e2344383342c25074e46d292473b0bbe131dac6a97678962411"
+    },
+    "docs/py101-p10/CLEAN_CANDIDATE.json": {
+      "sha256": "6ed25213d53410e45122a7163e7385e105c18b2fe34f8fa61b71cd5dc4916add",
+      "lfSha256": "f980d043601d920869e3dc9a596d24dbecb35c73aa4d4b6000bd7afd0f9ce364"
+    },
+    "docs/py101-p10/COMPATIBILITY.json": {
+      "sha256": "1346ebfdfef0b5bd0e07415a772a5c9e68105c0a4d930ed57af6c75a912c0157",
+      "lfSha256": "1346ebfdfef0b5bd0e07415a772a5c9e68105c0a4d930ed57af6c75a912c0157"
+    },
+    "docs/py101-p10/DELIVERY_REPORT.md": {
+      "sha256": "1b95ee7a8a477b25dfd78fc1a2312094884a6c40087e28622ab5969d44cf2f3d",
+      "lfSha256": "1b95ee7a8a477b25dfd78fc1a2312094884a6c40087e28622ab5969d44cf2f3d"
+    },
+    "docs/py101-p10/DRAFT_GATE.json": {
+      "sha256": "7e57c26c4daeef813e7cfc51fd0c19019854a67e67c174cd6e788e13c911a60f",
+      "lfSha256": "9e799d7c35e7274916b9e144d41c114d2a175beda491f0d5507b4dccb8efc13a"
+    },
+    "docs/py101-p10/EDITORIAL_BRIEF.md": {
+      "sha256": "d0e403b5047ef8dd404af93ba04e499dac166d92516a1fe9208518a15c95ca1c",
+      "lfSha256": "d0e403b5047ef8dd404af93ba04e499dac166d92516a1fe9208518a15c95ca1c"
+    },
+    "docs/py101-p10/EDITORIAL_RECHECK.md": {
+      "sha256": "bddc6cf2393d32efff531b865d5303f581358d2ce87eaaacbba86a506a67a9b0",
+      "lfSha256": "bddc6cf2393d32efff531b865d5303f581358d2ce87eaaacbba86a506a67a9b0"
+    },
+    "docs/py101-p10/ENGINEERING_CLEAN.json": {
+      "sha256": "2ff291f81908637dae461f5d1ae07178c1e730ba2b363dfaf7a4c7583d31b6aa",
+      "lfSha256": "8aac2e63278c3e6ea940d11164f1db83b51cbacac9298abb8c3afe0df5799945"
+    },
+    "docs/py101-p10/ENGINEERING_WORKSPACE.json": {
+      "sha256": "4e2e79c35c89f223bc3a4d63b70a25936f5af8cb462cbd146b834bebd9d5f792",
+      "lfSha256": "eb769017b3ea409a0e6d03cd0af3e269d5c527fd18e67ee6cf3f48393118fe99"
+    },
+    "docs/py101-p10/P10_ROUTES.json": {
+      "sha256": "2bf84104903903c0043dad4d73f8d6529b4313853a7cad8b7251e63cf580c922",
+      "lfSha256": "72eec7ee2d3be75f808838dd1a63d7223bc738c29831d2f7b965ca8c5fcf9f98"
+    },
+    "docs/py101-p10/PRE_SOLUTIONS.md": {
+      "sha256": "d8b172a7dc898b98122519737d7b7ac853a0c96c886d78a2b4473167675513c2",
+      "lfSha256": "d8b172a7dc898b98122519737d7b7ac853a0c96c886d78a2b4473167675513c2"
+    },
+    "docs/py101-p10/PYTHON_RUNS.json": {
+      "sha256": "5c410afc0cb6d59075b594809f8688197c6d3d8395ebacfaf488f7b335246a62",
+      "lfSha256": "5c410afc0cb6d59075b594809f8688197c6d3d8395ebacfaf488f7b335246a62"
+    },
+    "docs/py101-p10/ROUTE_RESULTS.json": {
+      "sha256": "ff1eff75467142d1e5bd00e6e230d839b430085c08943b832247c3a28b55552c",
+      "lfSha256": "2fe9fd5cee917ae60ebef726e354c1afa65588532fb614dfb972e295375e3c62"
+    },
+    "docs/py101-p10/SOURCE_FACTS.md": {
+      "sha256": "d0ec4fc11c13a04a57489f8381b47b8d725a1a3540c11e9f10238be7a60ecdf2",
+      "lfSha256": "d0ec4fc11c13a04a57489f8381b47b8d725a1a3540c11e9f10238be7a60ecdf2"
+    },
+    "docs/py101-p10/TEACHING_CHECK_SUMMARY.json": {
+      "sha256": "2ae69fa8e070649b42f4bc205e3752961b650bed643c1f107714eee27b057577",
+      "lfSha256": "b5fbccbf9340d9e5795ac3181edd587acdbf564f375802cc5273016e6ca119e3"
+    },
+    "docs/py101-p10/TECHNICAL_REPORT.md": {
+      "sha256": "711313eb3ce744db9dd4c3d3c4028ee8bd6bb546eb00efa4f93337e992a81fd5",
+      "lfSha256": "711313eb3ce744db9dd4c3d3c4028ee8bd6bb546eb00efa4f93337e992a81fd5"
+    },
+    "docs/py101-p10/TRANSITION_AMENDMENT.json": {
+      "sha256": "bcfd52ed27c20c15c432bae755c5cdbc35fa38d26bbc8ca2e201005406eee0fb",
+      "lfSha256": "bcfd52ed27c20c15c432bae755c5cdbc35fa38d26bbc8ca2e201005406eee0fb"
+    },
+    "docs/py101-p10/TRANSITION_AMENDMENT.md": {
+      "sha256": "0c110b01a3bf48c63ce8c92fc46f74b57edd597caeb7d5ec0f3d95d289fd61d9",
+      "lfSha256": "0c110b01a3bf48c63ce8c92fc46f74b57edd597caeb7d5ec0f3d95d289fd61d9"
+    },
+    "docs/py101-p10/WEB_PYTHON_RESULTS.json": {
+      "sha256": "abdb22e113c65a4c45c79ace5ee7aa8d9a42b043eb823ec13117f9b3a2faaee7",
+      "lfSha256": "8acac8753321c9c6f1f18fec16515cf76227ab043877b73cfe4c23844a6f2fb8"
+    },
+    "docs/py101-p10/WORKSPACE_BASELINE.json": {
+      "sha256": "ce509ea2ff26534b87e625ea99ec7839d8c1b2c968de715922681b62adbcf3ff",
+      "lfSha256": "3261a2e36b24470dfdc6e4386d7d056d101cb62c958e331a81a0319178779da3"
+    },
+    "docs/py101-p10/WORKSPACE_PROTECTION.json": {
+      "sha256": "b86e5a940c246834a3d1e050b455264f431372ea1de6eb34bd17e30efa9b4135",
+      "lfSha256": "146127168eea8a70cd83f272d0395501c1577eb70cca52e2e81410d8917dce7a"
+    },
+    "docs/py101-p10/desktop.jpg": {
+      "sha256": "59df1f5b28b55c6005ae836e3b5222a80e8197fbefadb3926ab45ba7c186e2e3"
+    },
+    "docs/py101-p10/mobile.jpg": {
+      "sha256": "33a67c8767fa1ae0e07da3e909b0da4c75d27a87e22b11fd25a0c14e249ff2c7"
+    },
+    "docs/py101-p10/narrow-320.jpg": {
+      "sha256": "f06e653dab739504919a1ad6fa0648d86e7a364c241ab47489147e421122b381"
+    },
+    "docs/py101-p10/tablet.jpg": {
+      "sha256": "03ac6bfbf52151a31864010c1ce5b6e3fa1fd529d3faf1d4e73aa2f301e8f038"
+    },
+    "docs/py101-p9/APPROVED_CHANGES.json": {
+      "sha256": "4ec0eb66be8b9a0e49bb7fe3ad739e519ae7f6a7909a10fb2259f7ccbb98e05f",
+      "lfSha256": "4ec0eb66be8b9a0e49bb7fe3ad739e519ae7f6a7909a10fb2259f7ccbb98e05f"
+    },
+    "docs/py101-p9/BASELINE.json": {
+      "sha256": "99b98c73f67ee34675ba7aa2e6892ea2eb31c4b37803509fefb5bd759e3a7e47",
+      "lfSha256": "99b98c73f67ee34675ba7aa2e6892ea2eb31c4b37803509fefb5bd759e3a7e47"
+    },
+    "docs/py101-p9/BASELINE_AND_SCOPE.md": {
+      "sha256": "38492831dce5437aa1eee409fe68b9363648daaf98ff785dfde23bbcea204344",
+      "lfSha256": "38492831dce5437aa1eee409fe68b9363648daaf98ff785dfde23bbcea204344"
+    },
+    "docs/py101-p9/BROWSER_REPORT.md": {
+      "sha256": "ab2564fe116e9dfdfda3094f644c13e1ef3a18128f1111309674e4f86001991d",
+      "lfSha256": "ab2564fe116e9dfdfda3094f644c13e1ef3a18128f1111309674e4f86001991d"
+    },
+    "docs/py101-p9/BROWSER_RESULTS.json": {
+      "sha256": "608f9f1a19b10a1b1088ed1cc9f0f6f79ecd6961f36a7b5d08a44b0ad11c91c4",
+      "lfSha256": "608f9f1a19b10a1b1088ed1cc9f0f6f79ecd6961f36a7b5d08a44b0ad11c91c4"
+    },
+    "docs/py101-p9/CLEAN_CANDIDATE.json": {
+      "sha256": "38853b763e48dc0a5bb6b4024e19c16447bb1cdcbf1a24ca796098889bc06380",
+      "lfSha256": "f310a30e45d23dcca7be83e3fcda8984f7aa73cd2ac9ced0b44b15758bebb53e"
+    },
+    "docs/py101-p9/COMPATIBILITY.json": {
+      "sha256": "5c86a12fc79c3231f49266a4a91a3df52df30765c4ad94ff2e8ad3152b1dd76a",
+      "lfSha256": "5c86a12fc79c3231f49266a4a91a3df52df30765c4ad94ff2e8ad3152b1dd76a"
+    },
+    "docs/py101-p9/DELIVERY_REPORT.md": {
+      "sha256": "a0cb4e288f9e7d98a34a8bd7d500b979b477a7fb3daeca0997d1abb11d63768d",
+      "lfSha256": "a0cb4e288f9e7d98a34a8bd7d500b979b477a7fb3daeca0997d1abb11d63768d"
+    },
+    "docs/py101-p9/DRAFT_GATE.json": {
+      "sha256": "1a605aa809cb9ee962f5aef5222ff535c799c43b87d23b6e85d8ed788e352529",
+      "lfSha256": "e4d8fc30bfbfee74df80bd28471ef12ababf741e880cafbfc64d2b27e2b7d17f"
+    },
+    "docs/py101-p9/EDITORIAL_BRIEF.md": {
+      "sha256": "7723262f42c33ba8bf5556573663725363a1ab5c1effd69165e0ba998d83fea5",
+      "lfSha256": "7723262f42c33ba8bf5556573663725363a1ab5c1effd69165e0ba998d83fea5"
+    },
+    "docs/py101-p9/EDITORIAL_RECHECK.md": {
+      "sha256": "69f234de857598cbb28cc1f7c6d7dc514a47b092f82ff32b7464b923d07ea320",
+      "lfSha256": "69f234de857598cbb28cc1f7c6d7dc514a47b092f82ff32b7464b923d07ea320"
+    },
+    "docs/py101-p9/ENGINEERING_CLEAN.json": {
+      "sha256": "336201b383657277d2997045ab233d55a1262ba63e1e580c011f51524397a7fb",
+      "lfSha256": "92d44ed517ded266e07e2ef9da6398aa298366690b27ded2630d98c460d25ebd"
+    },
+    "docs/py101-p9/ENGINEERING_WORKSPACE.json": {
+      "sha256": "cbc3c47cb3271d614cf6e6d8b6086259f04c59b1e9d7013a92889ae05411b34c",
+      "lfSha256": "4ad8c7e272247802c43b4cfcb80b9fd05208ab3850bb20e413febeaa6d1e6064"
+    },
+    "docs/py101-p9/P9_ROUTES.json": {
+      "sha256": "60c52233707d8ae95580acf0d8706604fef7e87e601e30718dd1deffad87aad1",
+      "lfSha256": "ea7818735ec6182ee319c14d0992df48536696af802952088ff645455f494fc3"
+    },
+    "docs/py101-p9/PRE_SOLUTIONS.md": {
+      "sha256": "2194ed69a2a313c12a34c22cc84a580130e69f136947748495cc9f3ccd56b88a",
+      "lfSha256": "2194ed69a2a313c12a34c22cc84a580130e69f136947748495cc9f3ccd56b88a"
+    },
+    "docs/py101-p9/PYTHON_RUNS.json": {
+      "sha256": "2543cf4d9a38a684967a2516d810724e1d1f7c282966539cc446dbf996e48642",
+      "lfSha256": "2543cf4d9a38a684967a2516d810724e1d1f7c282966539cc446dbf996e48642"
+    },
+    "docs/py101-p9/ROUTE_RESULTS.json": {
+      "sha256": "c3ffde9e56fc2841d4e1fabf1b0bb68a649e3dc58be92b6bfda4d0470702e463",
+      "lfSha256": "99f7e9a556d8b81fd8bb6409c8cabd38dbd928d84c49ef95481f3063ea3ff1f7"
+    },
+    "docs/py101-p9/SOURCE_FACTS.md": {
+      "sha256": "bc2cf1f022cdad0dedcb7ccf84bd2d6cf7a8a5004e94ca6a19c1dc81ea08ba0c",
+      "lfSha256": "bc2cf1f022cdad0dedcb7ccf84bd2d6cf7a8a5004e94ca6a19c1dc81ea08ba0c"
+    },
+    "docs/py101-p9/TEACHING_CHECK_SUMMARY.json": {
+      "sha256": "7f34c0b6b4835c3c04d28c912249eb214c2ace12bbb12d91bacd53e97af1c377",
+      "lfSha256": "f1ba2c10b28f9f05ed45875fb90b2947013ac6e8442e969bd57872ec0b7f7247"
+    },
+    "docs/py101-p9/TECHNICAL_REPORT.md": {
+      "sha256": "ac6103be3c26dd002c11b1cca517b1c6ed5186f639e2c7212afc870224436fae",
+      "lfSha256": "ac6103be3c26dd002c11b1cca517b1c6ed5186f639e2c7212afc870224436fae"
+    },
+    "docs/py101-p9/TRANSITION_AMENDMENT.json": {
+      "sha256": "e2ec857918b1869ce52fb39c5bfb20921366aeba403d6d43cec7a3dd1fa038fd",
+      "lfSha256": "e2ec857918b1869ce52fb39c5bfb20921366aeba403d6d43cec7a3dd1fa038fd"
+    },
+    "docs/py101-p9/TRANSITION_AMENDMENT.md": {
+      "sha256": "cc9e85c663c62a093edf65b42149278b3b2b017a9cf7148f351e9fc5c87e6c35",
+      "lfSha256": "cc9e85c663c62a093edf65b42149278b3b2b017a9cf7148f351e9fc5c87e6c35"
+    },
+    "docs/py101-p9/WEB_PYTHON_RESULTS.json": {
+      "sha256": "b5518d8d2d83625880b45c6de65472e3e1cdd3ec1d59757cb00444a7370f6ba3",
+      "lfSha256": "b5dea03a0c8f1c053131dc941102e1e9036d4199b9113698c64c31cb9f94d4c3"
+    },
+    "docs/py101-p9/WORKSPACE_BASELINE.json": {
+      "sha256": "b26ef3d7d4a28e746f6b07403d7c08c64695ffe5a98d898b0d73422eeb6c0060",
+      "lfSha256": "39277a91eca0b91d13b4a27ce12f7447ed2abc690027edc3b8c696718f05f737"
+    },
+    "docs/py101-p9/WORKSPACE_PROTECTION.json": {
+      "sha256": "a3b7621ea7cbfffd40cc60bce4db5e96252f057c7e4475cd22bcf8d2ec2df503",
+      "lfSha256": "9dbfac6e0af03ee567c24bde32e3f55442558413e48c1f368a540b385e3c5102"
+    },
+    "docs/py101-p9/desktop.jpg": {
+      "sha256": "fc96fd2c4b007f909ac5c5736dabd887c808ad2ca8e532b283286c5b2ddd3752"
+    },
+    "docs/py101-p9/mobile.jpg": {
+      "sha256": "8e4792c15b2143a6f79798d0ec1983d8e5e1e7e56a8af1b70f285bd6cc140bfb"
+    },
+    "docs/py101-p9/narrow-320.jpg": {
+      "sha256": "13eb48636b9229fd5e34350647f99ae668651b19144b94b0ed82e16dd456f5fc"
+    },
+    "docs/py101-p9/tablet.jpg": {
+      "sha256": "332d786953913ca97e87927819bb7586e81dcaab20e23394e881afbe982df07b"
+    },
+    "public/artwork/ai-map-v3.webp": {
+      "sha256": "c974f1c88ab651b894eff1f59f86ed1c94365461cefc75edadb9358a9015a317"
+    },
+    "public/artwork/course-ai-map-v2.webp": {
+      "sha256": "990639019b52b50efad54f75ae6622b5b38f459051ed9ae4c3ae48660afdb87f"
+    },
+    "public/artwork/course-machine-learning-v2.webp": {
+      "sha256": "3fdf7f3d01632f9538c98ff2fd75d2a488af8a586033f2083c15d74a78038fa9"
+    },
+    "public/artwork/course-mathematics-v2.webp": {
+      "sha256": "39768a42bda62d07a97d06ba8ac34c2b636fc3611004b01f5ccfbbaa042159c0"
+    },
+    "public/artwork/course-neural-network-v2.webp": {
+      "sha256": "7a52f149a32c2e91d1ee7e63355863fef2563443b99de162dc72ca98123c3864"
+    },
+    "public/artwork/course-programming-v2.webp": {
+      "sha256": "7685b99f9606d99f747b9be5d1d7df58fe4f952934d83ac4ce176ca7c50e1044"
+    },
+    "public/artwork/courses-v5/ai000-ai-technology-map.webp": {
+      "sha256": "39742d8745ce649a47cbad5a05bfe408563f0a787fbae1ba52a930f4a1e373ea"
+    },
+    "public/artwork/courses-v5/cv401-computer-vision.webp": {
+      "sha256": "e84f7cfeb2a001b71f7a4881551e2707d515ac2d260d55bf18e16f88f53171f0"
+    },
+    "public/artwork/courses-v5/dl301-neural-backpropagation.webp": {
+      "sha256": "76c10a3f776f90a2067ee222bd88af62c3e2110836aad29c75932fb45a80a062"
+    },
+    "public/artwork/courses-v5/dl302-pytorch-training.webp": {
+      "sha256": "a5b141e5c951c27e42811e7167fd1a801b02ab357a035a740c7e94673bb0242b"
+    },
+    "public/artwork/courses-v5/dl303-deep-learning-architectures.webp": {
+      "sha256": "128620984235915f9c9b0b6a2a4d88f4b76d7dcbc9ced8ea31bbc1a283e7860e"
+    },
+    "public/artwork/courses-v5/ds101-scientific-data-analysis.webp": {
+      "sha256": "d35607d09f22bd7704552a3f1e47eb186723cf102be08e36b9fc5483f0ef1c6e"
+    },
+    "public/artwork/courses-v5/gm401-generative-models.webp": {
+      "sha256": "f11df9e694ec0a16ed901c47dfef270dd3d8f4d65bcd2a57efddc5b1951b9faa"
+    },
+    "public/artwork/courses-v5/llm401-language-model-foundations.webp": {
+      "sha256": "093de8c05947eb6c73a67bd2829854ca37e83eda0dea9fd5e77ec9aa6bf41ce0"
+    },
+    "public/artwork/courses-v5/llm402-llm-finetuning-inference.webp": {
+      "sha256": "6287f4b4debe619e7ca774beec6a184ed0b58b624a226f7728268b7a258c9dd7"
+    },
+    "public/artwork/courses-v5/ma101-linear-algebra-calculus.webp": {
+      "sha256": "67ebf075243d72ebcb27ed4a39bff780f381dd7cacb1447a0aff376b5c991328"
+    },
+    "public/artwork/courses-v5/ml201-supervised-learning.webp": {
+      "sha256": "6d81435b2515bb1c3108c959d9de63dec3e51c8e7dfe25b39a8aadf0332c4a9c"
+    },
+    "public/artwork/courses-v5/ml202-classical-algorithms.webp": {
+      "sha256": "b1dfd059a17d243e1efaa904f54c284dc90ceca923f1c7cf7cb5de98765922e1"
+    },
+    "public/artwork/courses-v5/ml203-model-evaluation.webp": {
+      "sha256": "bb34ae87f9f0c70335cc4b8d46a77dbf6d78c2fea497238b2e729ef10cb1592b"
+    },
+    "public/artwork/courses-v5/mm401-multimodal-alignment.webp": {
+      "sha256": "091cea91a770e2569e2ca265f8062abe42e2f2518037b4563a2cc1db5fdacd37"
+    },
+    "public/artwork/courses-v5/nlp401-natural-language-processing.webp": {
+      "sha256": "0a734c06b80a5ebe0d7d09c92759e8f5ce06f8325eb46ed0269e1e4d877470a7"
+    },
+    "public/artwork/courses-v5/py101-python-programming.webp": {
+      "sha256": "d6f612a7769d5925f84ef2a81d939aade7f0bd1599ae3ac5d8298bb8e153c06e"
+    },
+    "public/artwork/courses-v5/res501-research-reproduction.webp": {
+      "sha256": "2f6440646a80e69b6a7e28dcf8e0e5cb33ef0d3b29dc13066c5190a0057d141e"
+    },
+    "public/artwork/courses-v5/rl401-reinforcement-learning.webp": {
+      "sha256": "37c2c93305c5383a0b358af5ed8dce5e0b472fdf9f53dafd0d8150e0d085be86"
+    },
+    "public/artwork/courses-v5/st101-probability-statistics.webp": {
+      "sha256": "1b64d18bac414480a5546e6afc362132f6dad7df08e8111103d0d376ed0d35b8"
+    },
+    "public/artwork/courses-v5/sys501-mlops-deployment.webp": {
+      "sha256": "97a11ccf2ab5f79a38c50e211692d3db6eaeb2a4a193536c9d2ae1a6468ce1db"
+    },
+    "public/artwork/hero-horizon-v2.webp": {
+      "sha256": "f5e76cf34cfcc2c1642b21716dda1ae8adeb8619988dc038e2de091d79626f92"
+    },
+    "public/artwork/math-foundations-v3.webp": {
+      "sha256": "88ab745a2f11b242f82b4463f00316d72a7d5c88e9c5956b45b5dece2215218f"
+    },
+    "public/artwork/python-workbench-v3.webp": {
+      "sha256": "98677472e04672cd1bfc538c050aa23b143b5292438bc4f5ce004ae21615e2c6"
+    },
+    "public/artwork/supervised-learning-v3.webp": {
+      "sha256": "962a34a733c52c935b3c9167499e353c7ae0c4249efc4cd072b8d4922079e1f9"
+    },
+    "public/brand/aivora-horizontal.svg": {
+      "sha256": "54357130205ef121a0bf681ce15cfa68a6c0f94c4789e8ee1db2774f3f9e4b8e",
+      "lfSha256": "54357130205ef121a0bf681ce15cfa68a6c0f94c4789e8ee1db2774f3f9e4b8e"
+    },
+    "public/brand/aivora-mark.svg": {
+      "sha256": "89e39eeae87b6d0bb385f096da105c7dc8f58d8e2e8265fa18c656b4f0fd956d",
+      "lfSha256": "89e39eeae87b6d0bb385f096da105c7dc8f58d8e2e8265fa18c656b4f0fd956d"
+    },
+    "public/brand/aivora-mono.svg": {
+      "sha256": "8d670cf38e239f9862f4efdaa44aa771d80c20381a08f4d2a6f4419e272405af",
+      "lfSha256": "8d670cf38e239f9862f4efdaa44aa771d80c20381a08f4d2a6f4419e272405af"
+    },
+    "public/downloads/README.md": {
+      "sha256": "a9536ac5cfe96103782bf25a6c0c56550e84466c962f30db2a11c4d3d069b6a9",
+      "lfSha256": "a9536ac5cfe96103782bf25a6c0c56550e84466c962f30db2a11c4d3d069b6a9"
+    },
+    "public/downloads/dispatch-note.ipynb": {
+      "sha256": "ffdf8aeba41f7b5538233f00fa056a5cc06d491c14e62ecc7b27e68b6fcf8f6c",
+      "lfSha256": "ffdf8aeba41f7b5538233f00fa056a5cc06d491c14e62ecc7b27e68b6fcf8f6c"
+    },
+    "public/downloads/first-notebook.ipynb": {
+      "sha256": "4177466c366ac7c781ccabf44b4c6052c23ff4324163b6880529185190742ee3",
+      "lfSha256": "4177466c366ac7c781ccabf44b4c6052c23ff4324163b6880529185190742ee3"
+    },
+    "public/downloads/first_run.ipynb": {
+      "sha256": "ffc3b76c48c3ce79353f0d5432964c1cfb3675c210443fb7ce8322a6fd078fb9",
+      "lfSha256": "ffc3b76c48c3ce79353f0d5432964c1cfb3675c210443fb7ce8322a6fd078fb9"
+    },
+    "public/downloads/first_run.py": {
+      "sha256": "415795b1b0f399f53976b6a91415522371bc9cadb2f017692ffe25489a52aa22",
+      "lfSha256": "415795b1b0f399f53976b6a91415522371bc9cadb2f017692ffe25489a52aa22"
+    },
+    "public/downloads/function_basics.ipynb": {
+      "sha256": "c4ab7db72bc5ef0d4c2f74c74d30a206f34de77ca0da07929bd7b3ba9121ac83",
+      "lfSha256": "c4ab7db72bc5ef0d4c2f74c74d30a206f34de77ca0da07929bd7b3ba9121ac83"
+    },
+    "public/downloads/function_basics.py": {
+      "sha256": "836a24d2c2ed64fef97cb90cb1396e9aacb18c1c0c56ba6f9411c09319ae4d26",
+      "lfSha256": "836a24d2c2ed64fef97cb90cb1396e9aacb18c1c0c56ba6f9411c09319ae4d26"
+    },
+    "public/downloads/function_binding.ipynb": {
+      "sha256": "4cb0bc358f4274b0923d2dca360fba3b63d9878fda0fd966626012c0bb0d08e0",
+      "lfSha256": "4cb0bc358f4274b0923d2dca360fba3b63d9878fda0fd966626012c0bb0d08e0"
+    },
+    "public/downloads/function_binding.py": {
+      "sha256": "c144775b03f0fca63b30961d30dfdf74be653b6248fa9e7b57740e1106dc2611",
+      "lfSha256": "c144775b03f0fca63b30961d30dfdf74be653b6248fa9e7b57740e1106dc2611"
+    },
+    "public/downloads/function_defaults.ipynb": {
+      "sha256": "81bd2dff62c89b4976b4c94b354ed524a6ddcf2bb7ce2279e2ca7de5e25e0c57",
+      "lfSha256": "81bd2dff62c89b4976b4c94b354ed524a6ddcf2bb7ce2279e2ca7de5e25e0c57"
+    },
+    "public/downloads/function_defaults.py": {
+      "sha256": "359f34e32ae616965bc381868febccadf215e097dc4c513c2b84db147d2bcb94",
+      "lfSha256": "359f34e32ae616965bc381868febccadf215e097dc4c513c2b84db147d2bcb94"
+    },
+    "public/downloads/function_return.ipynb": {
+      "sha256": "8b5516665c9b7f71d0c5d5b5539136ab2b25c50de2f5a406aff63d54f53e2981",
+      "lfSha256": "8b5516665c9b7f71d0c5d5b5539136ab2b25c50de2f5a406aff63d54f53e2981"
+    },
+    "public/downloads/function_return.py": {
+      "sha256": "f48d348115e79471190213f449e902c38164425553a720d12a2592073676b3a4",
+      "lfSha256": "f48d348115e79471190213f449e902c38164425553a720d12a2592073676b3a4"
+    },
+    "public/downloads/function_scope.ipynb": {
+      "sha256": "a08d1b15e42e9b2aa4d95604d866847b307ddc3b4abae231656148487fe316c7",
+      "lfSha256": "a08d1b15e42e9b2aa4d95604d866847b307ddc3b4abae231656148487fe316c7"
+    },
+    "public/downloads/function_scope.py": {
+      "sha256": "46dc1bed7174475a6cff09d1ba8560ed94f53f519aed1d01a2e575b38bd34f23",
+      "lfSha256": "46dc1bed7174475a6cff09d1ba8560ed94f53f519aed1d01a2e575b38bd34f23"
+    },
+    "public/downloads/linear_regression.ipynb": {
+      "sha256": "7cc44dc5a2195c9f611379f9d0a6296760932f2386fab33d35b66d7ff599927b",
+      "lfSha256": "7cc44dc5a2195c9f611379f9d0a6296760932f2386fab33d35b66d7ff599927b"
+    },
+    "public/downloads/linear_regression.py": {
+      "sha256": "f834fb336437d39ee523c050ed18471b7f62542c2dadc68674174f97b3962ed7",
+      "lfSha256": "f834fb336437d39ee523c050ed18471b7f62542c2dadc68674174f97b3962ed7"
+    },
+    "public/downloads/matrix_product.ipynb": {
+      "sha256": "cfcc3e0321ac28e9e1eaea94ac466ed9986bf897991b4c13b9d28d24a8bc61ba",
+      "lfSha256": "cfcc3e0321ac28e9e1eaea94ac466ed9986bf897991b4c13b9d28d24a8bc61ba"
+    },
+    "public/downloads/matrix_product.py": {
+      "sha256": "c9e8a6ddf57692270d8670b73f6dc361994f851f516c07290be4243021ee2ced",
+      "lfSha256": "c9e8a6ddf57692270d8670b73f6dc361994f851f516c07290be4243021ee2ced"
+    },
+    "public/downloads/matrix_shape.ipynb": {
+      "sha256": "dc33b6e5e9fdd3acc4ec3986a1ad7ea84a45a9979dc9c451635b42ff03ab287c",
+      "lfSha256": "dc33b6e5e9fdd3acc4ec3986a1ad7ea84a45a9979dc9c451635b42ff03ab287c"
+    },
+    "public/downloads/matrix_shape.py": {
+      "sha256": "7392be63d668077e91d7758dc23cc95daff9f7b32183259caa1252869ae199e3",
+      "lfSha256": "7392be63d668077e91d7758dc23cc95daff9f7b32183259caa1252869ae199e3"
+    },
+    "public/downloads/ml_gradient_descent.ipynb": {
+      "sha256": "a2ca13a280896a7fdc94d0ab4c3110e78fa8533d72778f80cf271dfa35f9627b",
+      "lfSha256": "a2ca13a280896a7fdc94d0ab4c3110e78fa8533d72778f80cf271dfa35f9627b"
+    },
+    "public/downloads/ml_gradient_descent.py": {
+      "sha256": "3bc1d7e29aba5a4ca83c751538c16ddb3d58d4cadbc68b73fc666e83a1bdc332",
+      "lfSha256": "3bc1d7e29aba5a4ca83c751538c16ddb3d58d4cadbc68b73fc666e83a1bdc332"
+    },
+    "public/downloads/ml_losses.ipynb": {
+      "sha256": "4193176ef70d7534275105ec65dfd11045135d81411cf044ab5053a6ab3b4839",
+      "lfSha256": "4193176ef70d7534275105ec65dfd11045135d81411cf044ab5053a6ab3b4839"
+    },
+    "public/downloads/ml_losses.py": {
+      "sha256": "b038dc09723138ac494a9b6f0a4e20c697739f783e8b9655bb0fc8a892c04037",
+      "lfSha256": "b038dc09723138ac494a9b6f0a4e20c697739f783e8b9655bb0fc8a892c04037"
+    },
+    "public/downloads/numpy_shapes.ipynb": {
+      "sha256": "ad1411d050aaeb41d5703a7ed4d1b4020a2e0fa49943a026862532359fd5f4a2",
+      "lfSha256": "ad1411d050aaeb41d5703a7ed4d1b4020a2e0fa49943a026862532359fd5f4a2"
+    },
+    "public/downloads/numpy_shapes.py": {
+      "sha256": "84201ffe9549a4af3d5672094c43518132dd50f6071781901b40d58a1c4fd3c6",
+      "lfSha256": "84201ffe9549a4af3d5672094c43518132dd50f6071781901b40d58a1c4fd3c6"
+    },
+    "public/downloads/python_functions.ipynb": {
+      "sha256": "33410e97bf2067585adeb24a659a0570cabbee7755d578bea13743c136c02b27",
+      "lfSha256": "33410e97bf2067585adeb24a659a0570cabbee7755d578bea13743c136c02b27"
+    },
+    "public/downloads/python_functions.py": {
+      "sha256": "cc492aa647832f7c1b45eeff43f2a134347f9bf074599c0ca1eec19e96e50333",
+      "lfSha256": "cc492aa647832f7c1b45eeff43f2a134347f9bf074599c0ca1eec19e96e50333"
+    },
+    "public/downloads/review-note.ipynb": {
+      "sha256": "ff6a93dc3d4e625b97a4b37ffc21ce2ea33c033435d90b1c40c8312d28d5d1ea",
+      "lfSha256": "ff6a93dc3d4e625b97a4b37ffc21ce2ea33c033435d90b1c40c8312d28d5d1ea"
+    },
+    "public/downloads/vector_basics.ipynb": {
+      "sha256": "3ab37cea3c240d541bd22a5cafeafe729b17e3b0b4533790aa607228c1193f95",
+      "lfSha256": "3ab37cea3c240d541bd22a5cafeafe729b17e3b0b4533790aa607228c1193f95"
+    },
+    "public/downloads/vector_basics.py": {
+      "sha256": "405b7366205c1bc994f042118ca136d0aa2f2e9834e830b2830f3555083deb24",
+      "lfSha256": "405b7366205c1bc994f042118ca136d0aa2f2e9834e830b2830f3555083deb24"
+    },
+    "public/downloads/vector_dot.ipynb": {
+      "sha256": "d5648cd776d42a3c84e4190282b12a383d1fa2084947dab6f245177fd021cf9a",
+      "lfSha256": "d5648cd776d42a3c84e4190282b12a383d1fa2084947dab6f245177fd021cf9a"
+    },
+    "public/downloads/vector_dot.py": {
+      "sha256": "ada2ba92f92a7dafad298163ca264cdbdc1c7ab2fa0c18800366f34f296b6077",
+      "lfSha256": "ada2ba92f92a7dafad298163ca264cdbdc1c7ab2fa0c18800366f34f296b6077"
+    },
+    "public/downloads/vector_matrix.ipynb": {
+      "sha256": "2c84b24ba49896d819da1fd915ed2f5aba73de6c84311b032679372ff762e7ec",
+      "lfSha256": "2c84b24ba49896d819da1fd915ed2f5aba73de6c84311b032679372ff762e7ec"
+    },
+    "public/downloads/vector_matrix.py": {
+      "sha256": "c8fef244ee93a63fa20dabd55f9fcf9a4c14b35b34ba8e53a313b8657a38cc0f",
+      "lfSha256": "c8fef244ee93a63fa20dabd55f9fcf9a4c14b35b34ba8e53a313b8657a38cc0f"
+    },
+    "public/images/lessons/ai000/ai000-c01-l01-mail-sorting.webp": {
+      "sha256": "caa439305a92436da90439934bcda0fb18d79c9726d0c991f80e4a4422662a8d"
+    },
+    "public/images/lessons/ai000/ai000-c01-l02-mail-review.webp": {
+      "sha256": "ccab00526d55a25702663327b55745e4a11ec1c5b4200e24d026db32247e9ec9"
+    },
+    "public/images/lessons/ai000/ai000-c01-l03-automation-diagnosis.webp": {
+      "sha256": "9efe207533c2865dd8029f0b1ee6999ea6e77ded289f718983acd528f2c315e6"
+    },
+    "public/images/lessons/ai000/ai000-c02-l01-photo-recognition.webp": {
+      "sha256": "2868d5ffe083921aac8122116f2ccafe664a4a9531953376959c430173f40389"
+    },
+    "public/images/lessons/ai000/ai000-c02-l02-poster-creation.webp": {
+      "sha256": "cbb6ffc783764e34c881157b912cd069648046baa1f70f79fc4f5d497c5f26bf"
+    },
+    "public/images/lessons/ai000/ai000-c03-l01-photo-label-pairing.webp": {
+      "sha256": "b95b2f1e0ba2c8da1195760ea9d056494cbd9d7fe536b956cb5554d3616a390c"
+    },
+    "public/images/lessons/ai000/ai000-c03-l02-library-observation.webp": {
+      "sha256": "5d6bb67afb3d5865a3deb38104d92e4af8b8e939c4af155b05858ee61989722f"
+    },
+    "public/images/lessons/ai000/ai000-c03-l03-masked-document.webp": {
+      "sha256": "7de74b94a43be9de49cd96d286f062291dd135a1f669a9466b53f7dc0cb7d5c9"
+    },
+    "public/images/lessons/ai000/ai000-c03-l04-delivery-robot.webp": {
+      "sha256": "9c256def053fc66b8929fcc1acdfbde6fd11c670cf174e2a2d954384bd817121"
+    },
+    "public/images/lessons/ai000/ai000-c04-l01-parcel-registration.webp": {
+      "sha256": "d497489ef6c8087fdb00423e88f5c1ed1f9c24d3a4aa80b1ec45bd5bc7322528"
+    },
+    "public/images/lessons/ai000/ai000-c04-l02-queue-estimate.webp": {
+      "sha256": "36571f7c0b29a5f079a5b86ec02dc5a2d108427a9dffe7f921fbd5a18fdb1281"
+    },
+    "public/images/lessons/ai000/ai000-c04-l03-records-reserved.webp": {
+      "sha256": "53b1a796962cba41a122de9a6be218a091cc4c501ee7a5aa10101a68282a1bdf"
+    },
+    "public/images/lessons/ai000/ai000-c04-l04-model-inference.webp": {
+      "sha256": "82c16f06819f12ca51a96974676f89e1d715b8e053d41aa3d8b56f3de46fb917"
+    },
+    "public/learning/ml-v2/calibration-samples-mobile.png": {
+      "sha256": "885e4afa3ec9ebe3837fc9edccf04533f41fc595c3c951f146d0d3d89cf2508f"
+    },
+    "public/learning/ml-v2/calibration-samples.png": {
+      "sha256": "65918f94fb8284689636f36d0d763c26af37a18c1029ff1549d3e452173496a6"
+    },
+    "public/learning/ml-v2/first-update-mobile.png": {
+      "sha256": "50c8e8f098856f307ffa30f395f8996aa0eb92c67fe19564e611cca085ae7c3d"
+    },
+    "public/learning/ml-v2/first-update.png": {
+      "sha256": "f2e2a13dae143fd67321df2a78f2f27e3ef4f00109861239610e796df7ee4449"
+    },
+    "public/learning/ml-v2/gradient-direction-mobile.png": {
+      "sha256": "603f7b1272ed38319a34176904e96e2b27b050619d9ebfbe60562e68ce89e495"
+    },
+    "public/learning/ml-v2/gradient-direction.png": {
+      "sha256": "ef8df54b36d36ed4a2611808a2777607b086bda84614f11496a005455fa72e67"
+    },
+    "public/learning/ml-v2/parameter-lines-mobile.png": {
+      "sha256": "089b76787771e6d3f6447b238bf7f39dc93746bbdee0f11712ae9da631d524d1"
+    },
+    "public/learning/ml-v2/parameter-lines.png": {
+      "sha256": "87ee91be8155037e25e01e05a01d990bd765159be64c622c724638a56b6e5dd4"
+    },
+    "public/learning/ml-v2/training-loss-mobile.png": {
+      "sha256": "98a5b69385b78dc8fdb56f4e09e176a9a77234e59ce2c4861e6da24f523e9297"
+    },
+    "public/learning/ml-v2/training-loss.png": {
+      "sha256": "42c59a9c14f24d3db0d47dee072bbaa6dc923d74084e7b8b8f96aa199018b1a5"
+    },
+    "public/learning/python-function-call-mobile.png": {
+      "sha256": "363e9062dd6f6f7fd053dd1a8ff70edab0967dcfb2c52b892b974aab7a08509c"
+    },
+    "public/learning/python-function-call.png": {
+      "sha256": "4b3ec72f3e09bb4c79501c16363b9aba87bf02db58d0b7f84b87159d663fe259"
+    },
+    "public/learning/v2-1/array-shapes-mobile.png": {
+      "sha256": "433ea5f39d5d8c11f45fbb6990a16f7a55956cc115b8a78253afec4eab9d9d91"
+    },
+    "public/learning/v2-1/array-shapes.png": {
+      "sha256": "0006b23a9702f6f5c2feb519f82852a367575d5f499287953432643583f5c4ee"
+    },
+    "public/learning/v2-1/function-flow-mobile.png": {
+      "sha256": "6a37a8f2badea30e77048473aca1f66ededfec40ea2834c40c546f93772f8db6"
+    },
+    "public/learning/v2-1/function-flow.png": {
+      "sha256": "d19839cc7a1343a53b6b92e0b3f2f358f717b52379149f6c3b7b14523a181397"
+    },
+    "public/learning/v2-1/matrix-product-mobile.png": {
+      "sha256": "16fe8065258d9042a3f8d3b3142dc5621b15445c9876ac25137770abf6605e4f"
+    },
+    "public/learning/v2-1/matrix-product.png": {
+      "sha256": "6554ace99a3d72bc6e4a366006a2670f624ab967a65f409c7ddf0e4dd1804b5c"
+    },
+    "public/learning/v2-1/numeric-evidence.json": {
+      "sha256": "cbc7813b465e0699113254f7e5c1ae6898f3efd9ef7089de26e29a3406abc9ca",
+      "lfSha256": "befe6c563777825fcf97d0fba7eb8c3f32eee508432a4a4655346fda96950c21"
+    },
+    "public/learning/vector-addition-mobile.png": {
+      "sha256": "b703164f6c0db1d06e1d4c3a60f1542c9d8b6c7f59f0e0fe0ce84cae209e9832"
+    },
+    "public/learning/vector-addition.png": {
+      "sha256": "d7ebc7acd66237e9d3db06950033298d47218b2970974a5ea44c6a0c7d17c745"
+    },
+    "scripts/add-ai000-illustrations.mjs": {
+      "sha256": "417dd51e090faf3dc05a7d0eacc7ad30ca750f901d3dc2ce1999985083397e4f",
+      "lfSha256": "417dd51e090faf3dc05a7d0eacc7ad30ca750f901d3dc2ce1999985083397e4f"
+    },
+    "scripts/ai000-applicability-compatibility.ts": {
+      "sha256": "4fad991b48fdcce52664f7263dafc3bb4e275a63f9a63db46d86ddfca60643b0",
+      "lfSha256": "4fad991b48fdcce52664f7263dafc3bb4e275a63f9a63db46d86ddfca60643b0"
+    },
+    "scripts/ai000-capstone-compatibility.ts": {
+      "sha256": "6f3d234c563226e9c0e654ce0c1547de328ee10475c3b787f756735a0ecd870b",
+      "lfSha256": "6f3d234c563226e9c0e654ce0c1547de328ee10475c3b787f756735a0ecd870b"
+    },
+    "scripts/ai000-creative-compatibility.ts": {
+      "sha256": "596d768153d00c8cd664ea4249c0b5522520be9b7bb1b23be33ccdbfdfd3503c",
+      "lfSha256": "e04b25aa58c3560fa7b5bd3c1677ba3f974793461f713e0859d93b0ae9984245"
+    },
+    "scripts/ai000-directions-compatibility.ts": {
+      "sha256": "6df5204bdcdf34f2934b2e0f1c762b13234b970443491cf32bf16e44d03c889a",
+      "lfSha256": "6df5204bdcdf34f2934b2e0f1c762b13234b970443491cf32bf16e44d03c889a"
+    },
+    "scripts/ai000-editorial-compatibility.ts": {
+      "sha256": "6d0bf7c53a1c592a40147237c8be603beea9b715b557d6be2a3d9af4a7af466b",
+      "lfSha256": "6d0bf7c53a1c592a40147237c8be603beea9b715b557d6be2a3d9af4a7af466b"
+    },
+    "scripts/ai000-foundations-compatibility.ts": {
+      "sha256": "9c8a40abd6e3dc1ef11c7a45b2cbcc2cd8434ec77d987cf33cc87f14795b0280",
+      "lfSha256": "9c8a40abd6e3dc1ef11c7a45b2cbcc2cd8434ec77d987cf33cc87f14795b0280"
+    },
+    "scripts/ai000-illustration-compatibility.ts": {
+      "sha256": "4dc42bf6355e586a43763529d9c191fc7190d007b1c6687dfb4f563f665dcd5e",
+      "lfSha256": "8577b6055bf64603e42555a19d5e61c28cae3c05f39f0f077e890d599c73f8e4"
+    },
+    "scripts/ai000-multimodal-compatibility.ts": {
+      "sha256": "1e7f8f600e30b3b53d648145cfbfe46827f478892825daf8b7f0433c848c8888",
+      "lfSha256": "fe901dcbcd174e530fb76a5f512209f60b11db572692a7d1a19605e51816159a"
+    },
+    "scripts/ai000-privacy-compatibility.ts": {
+      "sha256": "1d5c3902f04aa2ee7aa449e81890f9f5986b9d965c0d6c9265e6bd3c16350bc8",
+      "lfSha256": "8241077c1b56c970f1b9888d48a850b2d1afceb9882773c65a58a1661a20d8c1"
+    },
+    "scripts/ai000-quality-compatibility.ts": {
+      "sha256": "ee21b8170dad613e852c65d1e545cfd642584735d9036df86d9c049f651089d2",
+      "lfSha256": "ee21b8170dad613e852c65d1e545cfd642584735d9036df86d9c049f651089d2"
+    },
+    "scripts/ai000-r3-compatibility.ts": {
+      "sha256": "96a7b6cc6c39aead9566c216f1ca885fdfcaf59b5ea8921f9dd996582d423174",
+      "lfSha256": "96a7b6cc6c39aead9566c216f1ca885fdfcaf59b5ea8921f9dd996582d423174"
+    },
+    "scripts/ai000-refinement-compatibility.ts": {
+      "sha256": "54f2337e625b306eb69d46aa5b8732b7c75021e34c0eb42059dd0ccad2a86fc3",
+      "lfSha256": "54f2337e625b306eb69d46aa5b8732b7c75021e34c0eb42059dd0ccad2a86fc3"
+    },
+    "scripts/ai000-reliability-compatibility.ts": {
+      "sha256": "877e3d6b9dba976632ab996819bc8b96130ac7bb24ac3732661d3692b746e9a8",
+      "lfSha256": "877e3d6b9dba976632ab996819bc8b96130ac7bb24ac3732661d3692b746e9a8"
+    },
+    "scripts/ai000-responsible-compatibility.ts": {
+      "sha256": "65c9f4f36d38eae3f09894abdc95557bcf7adb0a91d8286dee730a6c9c6e46df",
+      "lfSha256": "4de146ed6a4cf80e936bdfafaac6eaa4457289849b6e7b3606a5f2f6a903ebf9"
+    },
+    "scripts/ai000-study-time-compatibility.ts": {
+      "sha256": "a29a5107c83fcd05d194f82b7e8d07e74e7c26d6d3e09a7dcd8809130f90eb9d",
+      "lfSha256": "e0ad5af6200e2a14a9204af3cdd105d378fa3df13534b91af7d648dbb74972aa"
+    },
+    "scripts/ai000-vision-compatibility.ts": {
+      "sha256": "c432486cb9650b88bd66743c261461fb421a9ae41372956219a751b02856bc88",
+      "lfSha256": "c432486cb9650b88bd66743c261461fb421a9ae41372956219a751b02856bc88"
+    },
+    "scripts/audit-py101-p3.ts": {
+      "sha256": "eac8fd9e6321d7af402cdaa123ceeeadf0485679476de60211a0e72c397f8104",
+      "lfSha256": "eac8fd9e6321d7af402cdaa123ceeeadf0485679476de60211a0e72c397f8104"
+    },
+    "scripts/check-ai000-content.ts": {
+      "sha256": "bdf3d555eda3ee9b6c08845c743c2ee6e7b55d18860613b0afa7a09e26d3ab74",
+      "lfSha256": "e5fdbcf2cc32a1e452917bffcb0aaa05f649e54f4ceda60f9b28885c9eac0557"
+    },
+    "scripts/check-ai000-relationships.ts": {
+      "sha256": "a7d47dba98c61871ca25ee878e2f66d64d6845107e8e15da1e22779a5f5694ab",
+      "lfSha256": "7b3cf2a2fabff3312d93e872a3dd04e7b76640dff996af4c8fc3aceb128974fe"
+    },
+    "scripts/check-reading-experience.ts": {
+      "sha256": "9c3ab8b75f9dcb0d389c2e0e14965b497dca5e985f9f2d9a4a7c2904fce41d25",
+      "lfSha256": "9c3ab8b75f9dcb0d389c2e0e14965b497dca5e985f9f2d9a4a7c2904fce41d25"
+    },
+    "scripts/evidence-path.ts": {
+      "sha256": "a418217da3112df7380242b2d2f27887d30bdb87f788d268d43d2739ae5fd36d",
+      "lfSha256": "a418217da3112df7380242b2d2f27887d30bdb87f788d268d43d2739ae5fd36d"
+    },
+    "scripts/optimize-artwork.mjs": {
+      "sha256": "421427ff7d679fd014e767376407b6bca3ada22e42f4ddfd851718aa9f4a1fb0",
+      "lfSha256": "421427ff7d679fd014e767376407b6bca3ada22e42f4ddfd851718aa9f4a1fb0"
+    },
+    "scripts/prepare-ai000-illustrations.mjs": {
+      "sha256": "9dab6d4d8666a09273609e03d364f7cef97fd6161904f37d758a74faacabb86d",
+      "lfSha256": "9dab6d4d8666a09273609e03d364f7cef97fd6161904f37d758a74faacabb86d"
+    },
+    "scripts/prepare-ai000-release-readiness.ts": {
+      "sha256": "c562feafbb337c6f2159a608b674160dc076bf226cebefecfc28274dec608329",
+      "lfSha256": "c562feafbb337c6f2159a608b674160dc076bf226cebefecfc28274dec608329"
+    },
+    "scripts/prepare-course-covers.mjs": {
+      "sha256": "95c4e0c64dfcc6972d6cfd5312d0ae802a59e08cc5b6db2df6476fd05b2c247c",
+      "lfSha256": "95c4e0c64dfcc6972d6cfd5312d0ae802a59e08cc5b6db2df6476fd05b2c247c"
+    },
+    "scripts/prepare-downloads.ts": {
+      "sha256": "76a02b3f26b71eb0ec70a05e596f62543e6d737b9ed2beeb43559f2d8200bba2",
+      "lfSha256": "76a02b3f26b71eb0ec70a05e596f62543e6d737b9ed2beeb43559f2d8200bba2"
+    },
+    "scripts/py101-p0-compatibility.ts": {
+      "sha256": "62dc27e90258db68c0d95fee850c06dc759a9801be3233eae67547e6277c6cb2",
+      "lfSha256": "62dc27e90258db68c0d95fee850c06dc759a9801be3233eae67547e6277c6cb2"
+    },
+    "scripts/py101-p1-compatibility.ts": {
+      "sha256": "3d920bc39cbe83be257ceb734adc77c484e03ee8695c4e529462252439d83955",
+      "lfSha256": "3d920bc39cbe83be257ceb734adc77c484e03ee8695c4e529462252439d83955"
+    },
+    "scripts/python-variable-checks.ts": {
+      "sha256": "d1ecc301338a3db644939f9b6c1006633af3d9e718393151de7167ce5dc9907c",
+      "lfSha256": "d1ecc301338a3db644939f9b6c1006633af3d9e718393151de7167ce5dc9907c"
+    },
+    "scripts/recheck-ai000-7-1.py": {
+      "sha256": "fe4172190a1239228bf88ec8734135acb54f56a4d04e1b7279f0390fa001c432",
+      "lfSha256": "fe4172190a1239228bf88ec8734135acb54f56a4d04e1b7279f0390fa001c432"
+    },
+    "scripts/recheck-ai000-7-2.py": {
+      "sha256": "050cec0f80986740dedf145aa71bc6a8681a1b07b6040276fca1b03b8a50dcd6",
+      "lfSha256": "050cec0f80986740dedf145aa71bc6a8681a1b07b6040276fca1b03b8a50dcd6"
+    },
+    "scripts/recheck-ai000-7-3.py": {
+      "sha256": "42b69f0e5fe15d335612961853b92e4268a7d07937dc17cf90c2b25f0988a490",
+      "lfSha256": "42b69f0e5fe15d335612961853b92e4268a7d07937dc17cf90c2b25f0988a490"
+    },
+    "scripts/register-py101-p0-sources.ts": {
+      "sha256": "e4bcb872fad58a3d7222d6ccc77010a76d04fae70759e5e15bb2a7b0a0bd48cf",
+      "lfSha256": "e4bcb872fad58a3d7222d6ccc77010a76d04fae70759e5e15bb2a7b0a0bd48cf"
+    },
+    "scripts/register-py101-p1-sources.ts": {
+      "sha256": "539f59f8496b442f16c22fc0ca0299a553b6f8af82f61419c58aee5ab7725209",
+      "lfSha256": "539f59f8496b442f16c22fc0ca0299a553b6f8af82f61419c58aee5ab7725209"
+    },
+    "scripts/register-py101-p2-changes.ts": {
+      "sha256": "a72bb434a32400f200b09b32d8cf8be3dc4fe560f4690854d3a96316dfef5ac0",
+      "lfSha256": "a72bb434a32400f200b09b32d8cf8be3dc4fe560f4690854d3a96316dfef5ac0"
+    },
+    "scripts/render-lesson-diagrams.py": {
+      "sha256": "e7d76e2f892882f0ea64918b50bedad99ec427401fc8352ceecf68b8e0a3a68e",
+      "lfSha256": "e7d76e2f892882f0ea64918b50bedad99ec427401fc8352ceecf68b8e0a3a68e"
+    },
+    "scripts/render-ml-v2-diagrams.py": {
+      "sha256": "4b6dda89bf793875625bdee00f299154bd4b16c091c42c5cb18c309a16a1c108",
+      "lfSha256": "4b6dda89bf793875625bdee00f299154bd4b16c091c42c5cb18c309a16a1c108"
+    },
+    "scripts/render-v2-1-diagrams.py": {
+      "sha256": "3b53d8d21c12519b41804e819aaf013326fb1c54710c56c2796fc989aba63f1d",
+      "lfSha256": "3b53d8d21c12519b41804e819aaf013326fb1c54710c56c2796fc989aba63f1d"
+    },
+    "scripts/review-ai000-3-1.ts": {
+      "sha256": "f0643e25c7a23e16a92a1a6522f4e89817386b2ee76dffbf8f1bd637b369bb4d",
+      "lfSha256": "1f71d2d5be4b243d4cd23b34b28e8044dbac7dbf4bd8f6ff91dbcffcf118d29f"
+    },
+    "scripts/review-ai000-3-2.ts": {
+      "sha256": "90da725edd2d15ffdd54fcf5348be1a82713de3091d31e0fe342cffab266bbb7",
+      "lfSha256": "2649b40c387f7f13cda73b2548c8cb64ea4ce82297353957dbdf95db15c3b276"
+    },
+    "scripts/review-ai000-3-3.ts": {
+      "sha256": "58db7cdd901d7040055ce503e2b8ac9859b1281a81bf42308c8267e56a179d57",
+      "lfSha256": "58db7cdd901d7040055ce503e2b8ac9859b1281a81bf42308c8267e56a179d57"
+    },
+    "scripts/review-ai000-3-4.ts": {
+      "sha256": "094a69632cc4ce39903b79b1cdc8db5b7293b2abc5026466c4ff9065a7852cb3",
+      "lfSha256": "094a69632cc4ce39903b79b1cdc8db5b7293b2abc5026466c4ff9065a7852cb3"
+    },
+    "scripts/review-ai000-4-1.ts": {
+      "sha256": "b213d3a3eb70c31f57aa52d1f3aede3461381f0b3d2fc48145387008ddccc61a",
+      "lfSha256": "b213d3a3eb70c31f57aa52d1f3aede3461381f0b3d2fc48145387008ddccc61a"
+    },
+    "scripts/review-ai000-4-2.ts": {
+      "sha256": "47902478f5d74c19694d57d067bea616a74c3bc8579a498ed2e641fc3bc6f4e3",
+      "lfSha256": "47902478f5d74c19694d57d067bea616a74c3bc8579a498ed2e641fc3bc6f4e3"
+    },
+    "scripts/review-ai000-4-3.ts": {
+      "sha256": "2d3328bf64173ab94f72353b076178489cc1b72a8ef2208001074487f8fa37cc",
+      "lfSha256": "ee27994d4445df06c4c3b77eabd2545df624f2852c93c319a9a4eb1773ba9e95"
+    },
+    "scripts/review-ai000-4-4.ts": {
+      "sha256": "f15fbbb559f1d3b2f33354c40229f706af16909ad47311cec24b1a00d48954ee",
+      "lfSha256": "f15fbbb559f1d3b2f33354c40229f706af16909ad47311cec24b1a00d48954ee"
+    },
+    "scripts/review-ai000-5-1.ts": {
+      "sha256": "55b7db8ad6de433096727011f5fa3a5f3c8400add8e24fca5c762d192dd66dda",
+      "lfSha256": "55b7db8ad6de433096727011f5fa3a5f3c8400add8e24fca5c762d192dd66dda"
+    },
+    "scripts/review-ai000-5-2.ts": {
+      "sha256": "9888de2b2f415d8d2c78fa87d50de710ea3c6a182eedf0aa81af21558681899c",
+      "lfSha256": "8552126602759e222019b542305848c03133162b971521e8e032e45470d35438"
+    },
+    "scripts/review-ai000-5-3.ts": {
+      "sha256": "d6bb81d167f11cfa4f6b651dae82962688d2acd52b540d0ee8b9c40f21f65ab8",
+      "lfSha256": "d6bb81d167f11cfa4f6b651dae82962688d2acd52b540d0ee8b9c40f21f65ab8"
+    },
+    "scripts/review-ai000-5-4.ts": {
+      "sha256": "9a248a0936dbbe9216cf1e7cacf979ba6ea4c86083d0072cf4594e890acef600",
+      "lfSha256": "2793a60a8e1750d78af9fac1c8b0ddad9a25f893f637a94eef10a0d4b84b40e5"
+    },
+    "scripts/review-ai000-5-5.ts": {
+      "sha256": "e5a39581663117b6dd7799edf47fab328304bb49f288137bbc63b584f24422b8",
+      "lfSha256": "e5a39581663117b6dd7799edf47fab328304bb49f288137bbc63b584f24422b8"
+    },
+    "scripts/review-ai000-6-1.ts": {
+      "sha256": "15d35c9c107500160fa7c800f3e77b2ae487f1e5a23b7a1da06859698feb2a47",
+      "lfSha256": "15d35c9c107500160fa7c800f3e77b2ae487f1e5a23b7a1da06859698feb2a47"
+    },
+    "scripts/review-ai000-6-2.ts": {
+      "sha256": "ad12a4bd315b9135f76fe60ca43144faefc2dc542003402ecd444eaa7dd43008",
+      "lfSha256": "9b1889ef00ed710739b3bc41883d7ef9a32d74262801f5a266d76af29e3ae947"
+    },
+    "scripts/review-ai000-6-3.ts": {
+      "sha256": "6a6a92f978a9c26002c32bf1502862f8661de4abd04e99dad02aff85e2a63ab3",
+      "lfSha256": "60cbb30132e3b5a119c8cc8f3c5792b1df3c61ce740b10c4407af08a7f8ccbb4"
+    },
+    "scripts/review-ai000-7-1.ts": {
+      "sha256": "d55a3079fbacfadb13b9f71c050282c4cd54b6a9544bb5bb95233f0fe29251f1",
+      "lfSha256": "d55a3079fbacfadb13b9f71c050282c4cd54b6a9544bb5bb95233f0fe29251f1"
+    },
+    "scripts/review-ai000-7-2.ts": {
+      "sha256": "bac3ac742ee46212f7f4bde952f14a73b9c657e87c27e1a6dfab8e83aed015bd",
+      "lfSha256": "bac3ac742ee46212f7f4bde952f14a73b9c657e87c27e1a6dfab8e83aed015bd"
+    },
+    "scripts/review-ai000-7-3.ts": {
+      "sha256": "38a86c5bb17a0870d61d5b8edb3db3d2cd2e1efad6481ed4f7b2b155c1cfcc7f",
+      "lfSha256": "38a86c5bb17a0870d61d5b8edb3db3d2cd2e1efad6481ed4f7b2b155c1cfcc7f"
+    },
+    "scripts/review-ai000-course.ts": {
+      "sha256": "84de91b638ceba6ebabcc1240b7bdfe90a87951eb28c5915b0c4c240ea054a79",
+      "lfSha256": "84de91b638ceba6ebabcc1240b7bdfe90a87951eb28c5915b0c4c240ea054a79"
+    },
+    "scripts/review-ai000-quality.ts": {
+      "sha256": "024edd826d63df28392c6125a1195484532b3af4cd4150129629c7021611b2a3",
+      "lfSha256": "6125e255f9c81fa19387de3ce8f61afa67918a67f39fe0d3933ecc80b9353e1b"
+    },
+    "scripts/review-ai000-r3.ts": {
+      "sha256": "ca9307b13f2083860950d7c20daa3e1be419b8ba780ef5fd1bb4bed6e0745382",
+      "lfSha256": "ca9307b13f2083860950d7c20daa3e1be419b8ba780ef5fd1bb4bed6e0745382"
+    },
+    "scripts/review-ai000-v2.ts": {
+      "sha256": "572d7ee60dcb2a824c9c4bb3ec636186c3fcecaa4f24ab6090b8a02b6634b64f",
+      "lfSha256": "470a097e38ec95acf3ffd9fa62f8b8f8daddae59ead219117035f09f7cbf56cc"
+    },
+    "scripts/review-ai000-visual-refinement.ts": {
+      "sha256": "f775c67dfafc40c4362288665a22d389ae32add591ed6ba7e1ee69e7e115c1ce",
+      "lfSha256": "f775c67dfafc40c4362288665a22d389ae32add591ed6ba7e1ee69e7e115c1ce"
+    },
+    "scripts/review-py101-p0.ts": {
+      "sha256": "be3baddc70589bd0b03135fbea8ed066d1530694447afad1d120dde2e01ed5f2",
+      "lfSha256": "be3baddc70589bd0b03135fbea8ed066d1530694447afad1d120dde2e01ed5f2"
+    },
+    "scripts/review-py101-p1.ts": {
+      "sha256": "3dca0487041a617387295108994eaee46c0395b07186a8dee00a581ff72b2f4e",
+      "lfSha256": "3dca0487041a617387295108994eaee46c0395b07186a8dee00a581ff72b2f4e"
+    },
+    "scripts/review-py101-p2.ts": {
+      "sha256": "8dc41278e1f4699113e20d7689d43bca6003dc89c9645a5cc94e1ce3c9f854bf",
+      "lfSha256": "8dc41278e1f4699113e20d7689d43bca6003dc89c9645a5cc94e1ce3c9f854bf"
+    },
+    "scripts/review-py101-p8.ts": {
+      "sha256": "08ce94ada6a5f4094887bc4025c04426a9c2b6d5d894a535b1f4272e3a032cf4",
+      "lfSha256": "08ce94ada6a5f4094887bc4025c04426a9c2b6d5d894a535b1f4272e3a032cf4"
+    },
+    "scripts/review-teaching.ts": {
+      "sha256": "3f227477730afb928ec67c049b0b12b1996d6f34cb35a48988c8172fcc5de399",
+      "lfSha256": "aee5d3a9f3b484603603b193e4b3f078751d294675cf4cb220de26df056d6ae4"
+    },
+    "scripts/review-v2-3.ts": {
+      "sha256": "627ec8b2a8c52232026c3a5f06bb1b211f674552706008ace49eaa8629ae5a27",
+      "lfSha256": "627ec8b2a8c52232026c3a5f06bb1b211f674552706008ace49eaa8629ae5a27"
+    },
+    "scripts/validate-ai000-illustrations.mjs": {
+      "sha256": "3c22c66447afe122f8e2398ae1e02537330e2c0f843f673c1fb934bd5784ca6c",
+      "lfSha256": "3c22c66447afe122f8e2398ae1e02537330e2c0f843f673c1fb934bd5784ca6c"
+    },
+    "scripts/validate-notebook-state.py": {
+      "sha256": "886d19a17fc0a74eb131b521c110d8ec3af60423baf9cf70904ac6fb51fe1fa7",
+      "lfSha256": "886d19a17fc0a74eb131b521c110d8ec3af60423baf9cf70904ac6fb51fe1fa7"
+    },
+    "scripts/validate-py101-arithmetic.ts": {
+      "sha256": "481bf40292b4f2e93cc514014d77cf192b504785c89d5bd355bb2209b4ecec55",
+      "lfSha256": "481bf40292b4f2e93cc514014d77cf192b504785c89d5bd355bb2209b4ecec55"
+    },
+    "scripts/validate-py101-editor.ts": {
+      "sha256": "d409f8cd7ff1d422ba0c84ec2f78f96081849098838a336e3ed926d4d7f7590a",
+      "lfSha256": "d409f8cd7ff1d422ba0c84ec2f78f96081849098838a336e3ed926d4d7f7590a"
+    },
+    "scripts/validate-py101-notebook.ts": {
+      "sha256": "bc4b71d163dee349b76894708338ccb7a6b0250a759df38c0439246abccc1c2d",
+      "lfSha256": "bc4b71d163dee349b76894708338ccb7a6b0250a759df38c0439246abccc1c2d"
+    },
+    "scripts/validate-py101-p0.ts": {
+      "sha256": "695d32403f0e099ebce7e7dfdecf93df15e91b70f462eadf369c287c6a0887ed",
+      "lfSha256": "695d32403f0e099ebce7e7dfdecf93df15e91b70f462eadf369c287c6a0887ed"
+    },
+    "scripts/validate-py101-p1.ts": {
+      "sha256": "371bcf074ba7946216f029746facd810d3103f8b73d979fbc3307b079be56e33",
+      "lfSha256": "371bcf074ba7946216f029746facd810d3103f8b73d979fbc3307b079be56e33"
+    },
+    "scripts/validate-py101-reproduction-notebook.ts": {
+      "sha256": "6119905b149b824ed03b432723df430931234608a41d2d9e5463dd106ee9a4b1",
+      "lfSha256": "6119905b149b824ed03b432723df430931234608a41d2d9e5463dd106ee9a4b1"
+    },
+    "scripts/validate-py101-reproduction.ts": {
+      "sha256": "200317f90298c91d795e782ca0eb7541feb58c06e602e54e6e770edf5e9c58f5",
+      "lfSha256": "200317f90298c91d795e782ca0eb7541feb58c06e602e54e6e770edf5e9c58f5"
+    },
+    "scripts/validate-py101-value-types.ts": {
+      "sha256": "7fa3d4cf665fde42085a09d5ea1a71669099a6b96f64c146069bb6da1f289921",
+      "lfSha256": "7fa3d4cf665fde42085a09d5ea1a71669099a6b96f64c146069bb6da1f289921"
+    },
+    "scripts/validate-py101-variables.ts": {
+      "sha256": "e617820f89cc2d26a67009c0e436b2184bce65a91dfd0a72ac5ed8fa0802e490",
+      "lfSha256": "e617820f89cc2d26a67009c0e436b2184bce65a91dfd0a72ac5ed8fa0802e490"
+    },
+    "scripts/validate-py101-venv.ts": {
+      "sha256": "3b2818204f719100c960bf0b8a2d31811c8f85d54d0c430bc7b16a664215e80f",
+      "lfSha256": "3b2818204f719100c960bf0b8a2d31811c8f85d54d0c430bc7b16a664215e80f"
+    },
+    "scripts/validate-python.ts": {
+      "sha256": "c81ca68036707851915e94e4f400fe63b1053d7b6dfa85b55f7691a3c51a4843",
+      "lfSha256": "302b10c535f89bed7b11580820b71c2dcec4f98a0dca865406a4b06f794fb06d"
+    },
+    "scripts/validate-reproduction-kernel.py": {
+      "sha256": "4a04c29c834f1e271f5ede124cad1175fd0bc22f2a1e41d6299c6ee6c8d0ac59",
+      "lfSha256": "4a04c29c834f1e271f5ede124cad1175fd0bc22f2a1e41d6299c6ee6c8d0ac59"
+    },
+    "scripts/validate-routes.ts": {
+      "sha256": "1b19055d4134be11baf632612ed9cfc54a6c7e2700983812643c01a937032a5c",
+      "lfSha256": "1b19055d4134be11baf632612ed9cfc54a6c7e2700983812643c01a937032a5c"
+    },
+    "src/app/ai000-lesson.css": {
+      "sha256": "dcc93d72bc813258d8026eb8aa1db4f54b20f0da8de6c4816adf2cf7677421c3",
+      "lfSha256": "1585d97b57a67317ef757fa01f1226c67a539f3e5c60ec9679cea5742b178880"
+    },
+    "src/app/course-covers-v3.css": {
+      "sha256": "eb192a97e2f50725ea0202ed6828dedc526b262076dd7f6446f38e2c87a91f00",
+      "lfSha256": "eb192a97e2f50725ea0202ed6828dedc526b262076dd7f6446f38e2c87a91f00"
+    },
+    "src/app/course-covers-v5.css": {
+      "sha256": "51c8c217d94b48f42149145cb18d9921c082a1dfd04e236d103299da5ba8e1ce",
+      "lfSha256": "51c8c217d94b48f42149145cb18d9921c082a1dfd04e236d103299da5ba8e1ce"
+    },
+    "src/app/courses/[id]/page.tsx": {
+      "sha256": "3904f18a649e84a90b1bc675c73c099b74713cbb84198f337c290e2d4bc87a1a",
+      "lfSha256": "323b60eddd99253e33315ceeb73168abbc8f90904422ba3ab8a8d8fadac15ecc"
+    },
+    "src/app/courses/page.tsx": {
+      "sha256": "96ae17845cadd76a68d63ac2c53e7e29c95e049752cd759273ada06b2f9689fc",
+      "lfSha256": "96ae17845cadd76a68d63ac2c53e7e29c95e049752cd759273ada06b2f9689fc"
+    },
+    "src/app/dashboard/page.tsx": {
+      "sha256": "64835600d87409726aec77b8a2c6f55aa31b4b54d05ca9538db3a0eb4f7f9e5f",
+      "lfSha256": "64835600d87409726aec77b8a2c6f55aa31b4b54d05ca9538db3a0eb4f7f9e5f"
+    },
+    "src/app/error.tsx": {
+      "sha256": "2dca94c64e92cb85d023e2cbb205a922580d1478e79080f926a6862c74d0dc27",
+      "lfSha256": "2dca94c64e92cb85d023e2cbb205a922580d1478e79080f926a6862c74d0dc27"
+    },
+    "src/app/globals.css": {
+      "sha256": "24b15829b54f21189e636adf18d4b448eaaf2828de4f3ec1172d34b70ff936e5",
+      "lfSha256": "24b15829b54f21189e636adf18d4b448eaaf2828de4f3ec1172d34b70ff936e5"
+    },
+    "src/app/layout.tsx": {
+      "sha256": "4b158454f9500de7eb81f627c5f3219dd010757d591a81b508732ca39834d1ca",
+      "lfSha256": "4b158454f9500de7eb81f627c5f3219dd010757d591a81b508732ca39834d1ca"
+    },
+    "src/app/learn/[courseId]/[lessonId]/page.tsx": {
+      "sha256": "8eee57fe880b96674bf99eba73b144d561abd287cd553da44c56c7bfd024c058",
+      "lfSha256": "573c7020c4693e88adcc95cee41484d6d196f2589d7a6b95d59d0cdf0e571db9"
+    },
+    "src/app/learning-system.css": {
+      "sha256": "b420b741870b7180358545c6356e7966fded296243eb51f371712c42898b6bb5",
+      "lfSha256": "b420b741870b7180358545c6356e7966fded296243eb51f371712c42898b6bb5"
+    },
+    "src/app/loading.tsx": {
+      "sha256": "76bcbf4f8aea38850749928268819c576986fcf6ca4b8968553fbfa8a348f476",
+      "lfSha256": "76bcbf4f8aea38850749928268819c576986fcf6ca4b8968553fbfa8a348f476"
+    },
+    "src/app/not-found.tsx": {
+      "sha256": "378cd881dd2a1cbe3ab26f7e86496685af1cf9aa85e1fddacaab99eeb8aebbc8",
+      "lfSha256": "378cd881dd2a1cbe3ab26f7e86496685af1cf9aa85e1fddacaab99eeb8aebbc8"
+    },
+    "src/app/page.tsx": {
+      "sha256": "8ad9febf8ce2229947bb453c1b0caf63b01aba36884b3152d6841ecbbab62b01",
+      "lfSha256": "8ad9febf8ce2229947bb453c1b0caf63b01aba36884b3152d6841ecbbab62b01"
+    },
+    "src/app/paths/page.tsx": {
+      "sha256": "2f6a7f2de989dcaf74722259cacab602a40b12bb2b5097eebc7f8dfd6847f836",
+      "lfSha256": "2f6a7f2de989dcaf74722259cacab602a40b12bb2b5097eebc7f8dfd6847f836"
+    },
+    "src/app/projects/page.tsx": {
+      "sha256": "16484be5a3e00a28a62b97726ab123405193f02ed8b9dee533b3e778a6874dc8",
+      "lfSha256": "16484be5a3e00a28a62b97726ab123405193f02ed8b9dee533b3e778a6874dc8"
+    },
+    "src/app/reader.css": {
+      "sha256": "c00a578b07507e9db01a7e49394a1271e1f52b7d10b291b621164e5784b45ae1",
+      "lfSha256": "44fcd476a3d88a42c97c5d35103d04ce440214f97bd091366f6e9de2fa71dd10"
+    },
+    "src/app/teaching-v2-1.css": {
+      "sha256": "41c366bcd06c4fbf1fdc78f8715c6f54c9d591117e8cc24bc4b397f08b9a48f9",
+      "lfSha256": "41c366bcd06c4fbf1fdc78f8715c6f54c9d591117e8cc24bc4b397f08b9a48f9"
+    },
+    "src/app/teaching-v2-2.css": {
+      "sha256": "96269582a0d64beb7e8ab05d5b49e8c15b95e7094ee52e081cb83d6c73faffe7",
+      "lfSha256": "aa9c4e881700e2cd10e1ee89b55af275c25833e17b21ba145149ae56dc7011e2"
+    },
+    "src/app/template.tsx": {
+      "sha256": "c0ffa9554becb54279415496cef215bb426615d6e3e062abc15187edcebe9364",
+      "lfSha256": "c0ffa9554becb54279415496cef215bb426615d6e3e062abc15187edcebe9364"
+    },
+    "src/app/usability.css": {
+      "sha256": "014d0a8140e516fdf71255455a154e4fb693ced471c93965b6e656ae8369b110",
+      "lfSha256": "014d0a8140e516fdf71255455a154e4fb693ced471c93965b6e656ae8369b110"
+    },
+    "src/app/visual-v2.css": {
+      "sha256": "2241e9d1d9bee8153961655da98b2f3dac2a9136a84ef3b0f4ce85f1e4e1d29a",
+      "lfSha256": "2241e9d1d9bee8153961655da98b2f3dac2a9136a84ef3b0f4ce85f1e4e1d29a"
+    },
+    "src/components/catalog.tsx": {
+      "sha256": "72db981d6f10f7952e4638b4c0c54417a1e4ba84acae793e519643bb4ac7098d",
+      "lfSha256": "72db981d6f10f7952e4638b4c0c54417a1e4ba84acae793e519643bb4ac7098d"
+    },
+    "src/components/course-card.tsx": {
+      "sha256": "0ca3fdcb0e956b6801591fe2c48a725f607b81a9bc34c8a5ef804336c2dee5f5",
+      "lfSha256": "0ca3fdcb0e956b6801591fe2c48a725f607b81a9bc34c8a5ef804336c2dee5f5"
+    },
+    "src/components/dashboard.tsx": {
+      "sha256": "a38b052d3dd96cef2a6f686a872662c3b5365e77317916275454c2ccf7fe24a0",
+      "lfSha256": "a38b052d3dd96cef2a6f686a872662c3b5365e77317916275454c2ccf7fe24a0"
+    },
+    "src/components/hero-art.tsx": {
+      "sha256": "b1e89c7eb0081d4bb8beb4945f2d96dbfa096621c3cbe354be195bf7593e776f",
+      "lfSha256": "b1e89c7eb0081d4bb8beb4945f2d96dbfa096621c3cbe354be195bf7593e776f"
+    },
+    "src/components/home.tsx": {
+      "sha256": "1b83a984596046954c1be462819d61ba65fd58ae3bc9d5d4385df6865c95e44c",
+      "lfSha256": "1b83a984596046954c1be462819d61ba65fd58ae3bc9d5d4385df6865c95e44c"
+    },
+    "src/components/lesson/ai-borrowing-figure.tsx": {
+      "sha256": "2850e0c44910e9365626ee1445141cafa2d7013aeb746c4567cef29df99ad643",
+      "lfSha256": "2850e0c44910e9365626ee1445141cafa2d7013aeb746c4567cef29df99ad643"
+    },
+    "src/components/lesson/ai-creative-figure.tsx": {
+      "sha256": "388bb20d8fa998db102e9bc48d2d19b833a4c1a829810c9425100190a9f5284d",
+      "lfSha256": "0b6f76b41c87c1525539fcfbe516bff9636421bb2482987cff5f42b077938eab"
+    },
+    "src/components/lesson/ai-data-use-figure.tsx": {
+      "sha256": "ad3386a3ffe729c9f5ff07d86494fc1ee333cdda9a40ddbb4bdf6c7be0255191",
+      "lfSha256": "5d4defff64a5b6be91480f717e1710a4bc022a3aa1305fb4c55cdfc68f4948aa"
+    },
+    "src/components/lesson/ai-features-target-figure.tsx": {
+      "sha256": "a1cee6b2dae802203a32303de8367da05f7be5c2d26d131a22833ac04036edfd",
+      "lfSha256": "a1cee6b2dae802203a32303de8367da05f7be5c2d26d131a22833ac04036edfd"
+    },
+    "src/components/lesson/ai-generation-figure.tsx": {
+      "sha256": "98a0736e29a93dcb27243d65d34e81cca1080b544af09363e60d3b4113b40e8c",
+      "lfSha256": "98a0736e29a93dcb27243d65d34e81cca1080b544af09363e60d3b4113b40e8c"
+    },
+    "src/components/lesson/ai-inference-figure.tsx": {
+      "sha256": "f6d162b256ae49c073ca782d4ae4e18d16a8001ca5f67887ea12529e931539b0",
+      "lfSha256": "f6d162b256ae49c073ca782d4ae4e18d16a8001ca5f67887ea12529e931539b0"
+    },
+    "src/components/lesson/ai-knowledge-figure.tsx": {
+      "sha256": "eb65f24740ed3a1a0ed237e2afd92277366ce930cd1bd1f5f33b375d43ecaa16",
+      "lfSha256": "eb65f24740ed3a1a0ed237e2afd92277366ce930cd1bd1f5f33b375d43ecaa16"
+    },
+    "src/components/lesson/ai-multimodal-figure.tsx": {
+      "sha256": "25393cb663b8cb5bdfe16431ecffb57745dccbf158a6befe47ca497425a85efd",
+      "lfSha256": "25393cb663b8cb5bdfe16431ecffb57745dccbf158a6befe47ca497425a85efd"
+    },
+    "src/components/lesson/ai-parameters-figure.tsx": {
+      "sha256": "5bb4f6ce91d198eb746db4a26e289a3b645bf572aa8bfddd1a017d18ad089060",
+      "lfSha256": "5bb4f6ce91d198eb746db4a26e289a3b645bf572aa8bfddd1a017d18ad089060"
+    },
+    "src/components/lesson/ai-reinforcement-figure.tsx": {
+      "sha256": "74602f13e9c5d2a5dbae3f105ca7562181bc2399e485c7ff8dae550e630a364c",
+      "lfSha256": "74602f13e9c5d2a5dbae3f105ca7562181bc2399e485c7ff8dae550e630a364c"
+    },
+    "src/components/lesson/ai-relationship-figure.tsx": {
+      "sha256": "2b9d823cff00ae5a8565be6be0d5c2a5286c7c3a58d1c5696fa155752c9d4a9b",
+      "lfSha256": "2b9d823cff00ae5a8565be6be0d5c2a5286c7c3a58d1c5696fa155752c9d4a9b"
+    },
+    "src/components/lesson/ai-self-supervised-figure.tsx": {
+      "sha256": "0e52c49929bbd94d387acab10bf41272f3938116d71c570cc00c1d4eb60bc241",
+      "lfSha256": "0e52c49929bbd94d387acab10bf41272f3938116d71c570cc00c1d4eb60bc241"
+    },
+    "src/components/lesson/ai-supervised-figure.tsx": {
+      "sha256": "36f91e73d952a07b9c8848de21c26fa247e48e7601d232fd2075714e1b8f5d09",
+      "lfSha256": "36f91e73d952a07b9c8848de21c26fa247e48e7601d232fd2075714e1b8f5d09"
+    },
+    "src/components/lesson/ai-task-figure.tsx": {
+      "sha256": "699230936b748c65b89319c1321b11575fb1cb3ee01bf0a870effe338968036a",
+      "lfSha256": "7e33851808b2c549a4a0d711a657af0a1ce4d9365f051ca576b1c1c94ee36021"
+    },
+    "src/components/lesson/ai-vision-figure.tsx": {
+      "sha256": "9172bb2f9c57244d292db4782a275e264434e0a44af0c707c8f07835b704623f",
+      "lfSha256": "81d630c53681f8b3b10bc9d90116dbfe983b6c26a545c9702557d187a4546701"
+    },
+    "src/components/lesson/article-contents.tsx": {
+      "sha256": "ee97025346c2fd0460746ed954ebca885e61e2a839ad8f803c94e0de20eeebac",
+      "lfSha256": "ee97025346c2fd0460746ed954ebca885e61e2a839ad8f803c94e0de20eeebac"
+    },
+    "src/components/lesson/blocks.tsx": {
+      "sha256": "fc8d0c6e51f33bcfebd37b619a53ace0f4ec0d9f27bdbf15f07ca27010a82b66",
+      "lfSha256": "fc8d0c6e51f33bcfebd37b619a53ace0f4ec0d9f27bdbf15f07ca27010a82b66"
+    },
+    "src/components/lesson/chapter-toc.tsx": {
+      "sha256": "037b6cbc129d7272b6b2ac3fce38d9f744762ad8f80049a4e5a3d370cc09f8a9",
+      "lfSha256": "d4bf164024ede2d05ccfb9145970e5d069a9ed7c202c8a731943490f572572fa"
+    },
+    "src/components/lesson/content-renderer.tsx": {
+      "sha256": "02943d78fd238f3f08dea777a1a54f8398ffafcba63d9cd75992811d56e7866a",
+      "lfSha256": "02943d78fd238f3f08dea777a1a54f8398ffafcba63d9cd75992811d56e7866a"
+    },
+    "src/components/lesson/course-contents.tsx": {
+      "sha256": "094365369364e649591c8ced22ea3cac59612f5953e1481a6932300e0f2561db",
+      "lfSha256": "c69190845bb979c5874dfeb0d60619207941a02a0e83e7052fbe3f3a47485e17"
+    },
+    "src/components/lesson/guided-exercise.tsx": {
+      "sha256": "338b1433f8fff357d2f0ae2f998b100744b56a775f69979bd952818afbec3b63",
+      "lfSha256": "338b1433f8fff357d2f0ae2f998b100744b56a775f69979bd952818afbec3b63"
+    },
+    "src/components/lesson/learning-support.tsx": {
+      "sha256": "8e0cdcc1d0eaca41b5e3ba8e421f25361d5fc80c1ecf932ff05dd10da8d689a6",
+      "lfSha256": "8e0cdcc1d0eaca41b5e3ba8e421f25361d5fc80c1ecf932ff05dd10da8d689a6"
+    },
+    "src/components/lesson/legacy-anchors.tsx": {
+      "sha256": "44f2082ea09e4f9c00ca84d875876dae5edd54ac07bd7f9931e6755f862d83a9",
+      "lfSha256": "44f2082ea09e4f9c00ca84d875876dae5edd54ac07bd7f9931e6755f862d83a9"
+    },
+    "src/components/lesson/reader.tsx": {
+      "sha256": "fa0fbf213d3f8dab8bffbfc607f036da184f1926d170b4cf3d4d6d86e0b1a293",
+      "lfSha256": "39f99e4184d88e0dc8886ca9c219a49198fd4dd863ffb561ff54945714c81b80"
+    },
+    "src/components/lesson/regression-experiment.tsx": {
+      "sha256": "a76df14efcd3bc47609f3285572d9ccd54e2925bcdf0cf86b0f82a20e6a93d19",
+      "lfSha256": "a76df14efcd3bc47609f3285572d9ccd54e2925bcdf0cf86b0f82a20e6a93d19"
+    },
+    "src/components/lesson/teaching-section.tsx": {
+      "sha256": "c38088de63bae844aa6578bd87de1a943dada74a34fa0cb4af74081d5b3eba94",
+      "lfSha256": "c38088de63bae844aa6578bd87de1a943dada74a34fa0cb4af74081d5b3eba94"
+    },
+    "src/components/lesson/vector-figure.tsx": {
+      "sha256": "b6311e5054857281e6c51a72cd949d9cf8332d94155ef76150ab590b310455e3",
+      "lfSha256": "b6311e5054857281e6c51a72cd949d9cf8332d94155ef76150ab590b310455e3"
+    },
+    "src/components/paths-explorer.tsx": {
+      "sha256": "126cbad7c2eb5c513cba1fa84228fd44eee9b16d371e0e3bfa153ac7639c88bc",
+      "lfSha256": "126cbad7c2eb5c513cba1fa84228fd44eee9b16d371e0e3bfa153ac7639c88bc"
+    },
+    "src/components/projects.tsx": {
+      "sha256": "28771361f6df765d3ed96d8ce5070fec57e5b55416de1cbefc7f09815f7d4839",
+      "lfSha256": "28771361f6df765d3ed96d8ce5070fec57e5b55416de1cbefc7f09815f7d4839"
+    },
+    "src/components/site-shell.tsx": {
+      "sha256": "186ecc4f75c1e53fd249eb932717928780c21a8854f83b52496e65159d263789",
+      "lfSha256": "186ecc4f75c1e53fd249eb932717928780c21a8854f83b52496e65159d263789"
+    },
+    "src/components/ui.tsx": {
+      "sha256": "c3d709d66a20b2e5e8f4f9116f4e610002dc9ebfae56250d494668a0a5314de6",
+      "lfSha256": "c3d709d66a20b2e5e8f4f9116f4e610002dc9ebfae56250d494668a0a5314de6"
+    },
+    "src/content/ai000-outline.ts": {
+      "sha256": "c58394c4c619956bd17806e49bfacf2697e04c0f3a3637cbb180c178196ae2af",
+      "lfSha256": "c58394c4c619956bd17806e49bfacf2697e04c0f3a3637cbb180c178196ae2af"
+    },
+    "src/content/ai000-study-time.ts": {
+      "sha256": "b033d0eb359b07310270a564fef1803b79f4082ed8b57b292c78bd8fe1249cd1",
+      "lfSha256": "cad2e2b197eb7224ff4f1a740a0cd01ef4c4583421b7f9787bdd0a4a7be747c7"
+    },
+    "src/content/course-outline.ts": {
+      "sha256": "0b921f0b0f3bed0b308bf464bc5499d087487043760a3a5e0a149f924243da67",
+      "lfSha256": "1b8c55ceb1ba05fc00e947865c380829e1b73545b54d581e1c03e6a75ac780f2"
+    },
+    "src/content/glossary.ts": {
+      "sha256": "26a62cdd85d3da0c46307b0a78d4ba7629aa2ba69cd07d5bbca442f7d0b8309f",
+      "lfSha256": "26a62cdd85d3da0c46307b0a78d4ba7629aa2ba69cd07d5bbca442f7d0b8309f"
+    },
+    "src/content/lessons/ai000/ai-ml-dl.ts": {
+      "sha256": "16c057b3a79b64a4d53aa13005aa646f22aa578cb7dfce4770400301aba8470a",
+      "lfSha256": "eb2e92c4aada08b94a8d9422ecf933266c95b33cca7efe284d12b53db8dda791"
+    },
+    "src/content/lessons/ai000/automation-and-ai.ts": {
+      "sha256": "4e9003788437ce1a69c563669518d6a968a9f8e77744144f542d9915784facd8",
+      "lfSha256": "6567b6c21468219883cab5288db2a811217f238ec7ecc394e965d53c332458d5"
+    },
+    "src/content/lessons/ai000/borrowing-example.ts": {
+      "sha256": "61b5e8afeb381cba08d1f63704734d22e90c521c5559434a4a48b14d508c8049",
+      "lfSha256": "61b5e8afeb381cba08d1f63704734d22e90c521c5559434a4a48b14d508c8049"
+    },
+    "src/content/lessons/ai000/capabilities-and-errors.ts": {
+      "sha256": "db0a83505629f011b04d32005ce57e2261a316006618c528a79079e8754f0a13",
+      "lfSha256": "bccf3146bedcd8aad9f4deb19cdfb9c447d126ef48cd344007fd7c14878df1b7"
+    },
+    "src/content/lessons/ai000/capstone-example.ts": {
+      "sha256": "f8116053098b5337eb6cacd6105eea0919ac8bc7a5ba54713c1e9f317ce3bac4",
+      "lfSha256": "f8116053098b5337eb6cacd6105eea0919ac8bc7a5ba54713c1e9f317ce3bac4"
+    },
+    "src/content/lessons/ai000/computer-vision.ts": {
+      "sha256": "d029eded00a7edadbee765bbfbc9a36702d7329eadac40423edadab5e726dc91",
+      "lfSha256": "d029eded00a7edadbee765bbfbc9a36702d7329eadac40423edadab5e726dc91"
+    },
+    "src/content/lessons/ai000/creative-work-example.ts": {
+      "sha256": "974263de21656a90398cdb9df8440827aeacccc9df08a01281386847afebcd04",
+      "lfSha256": "e0c6dc7a8e18ecf1e371a022df795d87cd2f55e41dcaf6fa377348baa1214ac9"
+    },
+    "src/content/lessons/ai000/data-features-labels.ts": {
+      "sha256": "2744b824a451be2f053fc4cc6ab80cff0cc2ec50129501f6da969f609e613bb5",
+      "lfSha256": "2744b824a451be2f053fc4cc6ab80cff0cc2ec50129501f6da969f609e613bb5"
+    },
+    "src/content/lessons/ai000/data-use-example.ts": {
+      "sha256": "7af4f43d6044447f783f456ecea647e031dad94ff01ad845e62d6e7c96a139aa",
+      "lfSha256": "7af4f43d6044447f783f456ecea647e031dad94ff01ad845e62d6e7c96a139aa"
+    },
+    "src/content/lessons/ai000/delivery-example.ts": {
+      "sha256": "97af48c1cd389f408164167dace282d219bb23b3c9aa689e1ea1869e4222c777",
+      "lfSha256": "97af48c1cd389f408164167dace282d219bb23b3c9aa689e1ea1869e4222c777"
+    },
+    "src/content/lessons/ai000/direction-learning-routes.ts": {
+      "sha256": "1472a0cd2212e403cf0713491abfb3dd362f67fb51ba3f411d41611ec3236081",
+      "lfSha256": "1472a0cd2212e403cf0713491abfb3dd362f67fb51ba3f411d41611ec3236081"
+    },
+    "src/content/lessons/ai000/direction-route-example.ts": {
+      "sha256": "eef97a4d9650d365c81d8a4c45e2ae13d4083a0ca3301195ac9afdd85a1ea8ed",
+      "lfSha256": "eef97a4d9650d365c81d8a4c45e2ae13d4083a0ca3301195ac9afdd85a1ea8ed"
+    },
+    "src/content/lessons/ai000/fixed-model-example.ts": {
+      "sha256": "56b595a6bfc3fcbd65e275ad73fba0a4db53b283b0a70c132dcfad1f4ff2262b",
+      "lfSha256": "56b595a6bfc3fcbd65e275ad73fba0a4db53b283b0a70c132dcfad1f4ff2262b"
+    },
+    "src/content/lessons/ai000/foundations-example.ts": {
+      "sha256": "e7bc4df740d7461bef34bc0c5ce6b7a663d7b5b4b4c738658788389d603aa389",
+      "lfSha256": "e7bc4df740d7461bef34bc0c5ce6b7a663d7b5b4b4c738658788389d603aa389"
+    },
+    "src/content/lessons/ai000/generative-ai-and-llm.ts": {
+      "sha256": "46a46c44b5ea256f9d8f3bc84c3e8034883c58dc5517ad702fc01c52c92dd559",
+      "lfSha256": "2d02f9e1d426a8c2db4c3337bb8e17ab7f282fcde4fbeb6f306e0f6be69464a4"
+    },
+    "src/content/lessons/ai000/generative-work.ts": {
+      "sha256": "eb06aaa8fbe9a303598d2e56b11b5f07483595759966eb039c0af421f280b942",
+      "lfSha256": "0bcee9938cfbc9358fa313eca527128e3efe2d539ab70013503155c450367ef1"
+    },
+    "src/content/lessons/ai000/illustrations.ts": {
+      "sha256": "4788629abbc59fca093d0e9abe56780b68ee50bdef911e36474d27717610fd4e",
+      "lfSha256": "4788629abbc59fca093d0e9abe56780b68ee50bdef911e36474d27717610fd4e"
+    },
+    "src/content/lessons/ai000/language-service-example.ts": {
+      "sha256": "6e7e937645c2a01bd4e6d82c47195274cd704e8fcda6f5257e5419fa3203f6e0",
+      "lfSha256": "6e7e937645c2a01bd4e6d82c47195274cd704e8fcda6f5257e5419fa3203f6e0"
+    },
+    "src/content/lessons/ai000/mail-example.ts": {
+      "sha256": "ed8446f3d4ab32fdf9f52f901b6ae597f7566b91952d268b117591c54b9eaa15",
+      "lfSha256": "ed8446f3d4ab32fdf9f52f901b6ae597f7566b91952d268b117591c54b9eaa15"
+    },
+    "src/content/lessons/ai000/model-parameter-example.ts": {
+      "sha256": "d63d9f9ee217d05f7c8536b65271de8a5c9f2e389e93b700993c23db66feaafb",
+      "lfSha256": "d63d9f9ee217d05f7c8536b65271de8a5c9f2e389e93b700993c23db66feaafb"
+    },
+    "src/content/lessons/ai000/models-and-parameters.ts": {
+      "sha256": "43f6b6f53cc5973c105b0bdadd6f194a3564cf0553da28ae670aa5d29cccc404",
+      "lfSha256": "43f6b6f53cc5973c105b0bdadd6f194a3564cf0553da28ae670aa5d29cccc404"
+    },
+    "src/content/lessons/ai000/multimodal-ai.ts": {
+      "sha256": "7a597ffd283764c3da1d8f63ec3e4427bb371bac2ca22bba2829c47e0200ff0c",
+      "lfSha256": "28cde19cd922d5c1130eee11a9586c03ef300f8af1d6087fd98fa54615250885"
+    },
+    "src/content/lessons/ai000/multimodal-example.ts": {
+      "sha256": "9af2230cac7b116e90ec5775900458421e2304f7d03cd064a58e1d211969539c",
+      "lfSha256": "9af2230cac7b116e90ec5775900458421e2304f7d03cd064a58e1d211969539c"
+    },
+    "src/content/lessons/ai000/natural-language-and-llm.ts": {
+      "sha256": "73f77bb586145bfca31c4c2d67368c314a4f36686c7213cc23708145f07d513f",
+      "lfSha256": "75f52433e87b250550901da950608ad15955a802758343155263741854f8e4a9"
+    },
+    "src/content/lessons/ai000/parcel-example.ts": {
+      "sha256": "cc28b483035ba608afdd220c79ef55d3933d294ca0e5ef18adab0a996f915b55",
+      "lfSha256": "cc28b483035ba608afdd220c79ef55d3933d294ca0e5ef18adab0a996f915b55"
+    },
+    "src/content/lessons/ai000/parcel-time-example.ts": {
+      "sha256": "1d36640bed45559da9632ef87cc69c4d966ba39194598460daec8e8682f990cc",
+      "lfSha256": "1d36640bed45559da9632ef87cc69c4d966ba39194598460daec8e8682f990cc"
+    },
+    "src/content/lessons/ai000/privacy-bias-fairness.ts": {
+      "sha256": "db699d82d2ea37b86ea2dc7805b52f949e686cf16b10e5cb80fc3749bc9b72af",
+      "lfSha256": "db699d82d2ea37b86ea2dc7805b52f949e686cf16b10e5cb80fc3749bc9b72af"
+    },
+    "src/content/lessons/ai000/privacy-fairness-example.ts": {
+      "sha256": "0baa00f7afd14b7813cabd10717ece530f4f0bad3cd4b49cb456c3519b0c09d5",
+      "lfSha256": "0baa00f7afd14b7813cabd10717ece530f4f0bad3cd4b49cb456c3519b0c09d5"
+    },
+    "src/content/lessons/ai000/problem-analysis-capstone.ts": {
+      "sha256": "8fb9a2b706953a0bb98285e38975001956014f70562c757747300f10fce30528",
+      "lfSha256": "8fb9a2b706953a0bb98285e38975001956014f70562c757747300f10fce30528"
+    },
+    "src/content/lessons/ai000/reinforcement-learning.ts": {
+      "sha256": "5599dcb937d41137e89d666fa6e39e0a3aa9401688c1de93ad1fe7833b2460c6",
+      "lfSha256": "26f68bf17935e978dcfe76176a82f8303d6dc62de3b41b328cf82fe50ef8bda5"
+    },
+    "src/content/lessons/ai000/reliability-example.ts": {
+      "sha256": "612870fb6497561d796e58aec88e3c6a56c2c9e696d99d18d3d72f26c9c62764",
+      "lfSha256": "612870fb6497561d796e58aec88e3c6a56c2c9e696d99d18d3d72f26c9c62764"
+    },
+    "src/content/lessons/ai000/responsible-ai-use.ts": {
+      "sha256": "b1a36d0c90859e8b7d8fa42b2cdb1adf92c3d1c71e1233991257ee7bb73c6355",
+      "lfSha256": "b1a36d0c90859e8b7d8fa42b2cdb1adf92c3d1c71e1233991257ee7bb73c6355"
+    },
+    "src/content/lessons/ai000/responsible-use-example.ts": {
+      "sha256": "1a355c2296b37c05a65e2be270284316524e0ff904398d3b775d0bc3ea3994c0",
+      "lfSha256": "1a355c2296b37c05a65e2be270284316524e0ff904398d3b775d0bc3ea3994c0"
+    },
+    "src/content/lessons/ai000/rl-applicability.ts": {
+      "sha256": "265a8bed6cfd6063fe82adb0348f4596d14b1e3ad7106a42d70ce136e38ea99d",
+      "lfSha256": "265a8bed6cfd6063fe82adb0348f4596d14b1e3ad7106a42d70ce136e38ea99d"
+    },
+    "src/content/lessons/ai000/rl-application-example.ts": {
+      "sha256": "2b4cca5d8494895c7729c7ab6358f11b21805782611df91161fb83050dbb5b91",
+      "lfSha256": "2b4cca5d8494895c7729c7ab6358f11b21805782611df91161fb83050dbb5b91"
+    },
+    "src/content/lessons/ai000/self-supervised-example.ts": {
+      "sha256": "add7a8057014dc27ca0311d6a8c0a884b9491251b058824451106449ec38bd53",
+      "lfSha256": "add7a8057014dc27ca0311d6a8c0a884b9491251b058824451106449ec38bd53"
+    },
+    "src/content/lessons/ai000/self-supervised-learning.ts": {
+      "sha256": "fc4d245028c882cc3ebba826b0f56c99b3ecbe07e31596aba5b2cd0aeae8882c",
+      "lfSha256": "7a6e2fcebb3c46bf8c4f4d1f75c8c02551c0bd8844b0d7ba2988cdc9c8726380"
+    },
+    "src/content/lessons/ai000/shared.ts": {
+      "sha256": "0b74b75ae08f1c96fca0814f96fbe1b5f1f2dad90bb51f75138897bb06eff0a2",
+      "lfSha256": "0b74b75ae08f1c96fca0814f96fbe1b5f1f2dad90bb51f75138897bb06eff0a2"
+    },
+    "src/content/lessons/ai000/supervised-learning.ts": {
+      "sha256": "285c809123c3f3e4f8d994a7349164b27709007f20474e0e3c5665d012daba03",
+      "lfSha256": "f0331bf340146e590b11b830d6f4e97d9b1446ea538a05464c8a50279799e895"
+    },
+    "src/content/lessons/ai000/training-validation-test.ts": {
+      "sha256": "1bfc050df31c62cdc7581ff7a8a7ac31f650036ed8d30e3fbed1aa5b6512811b",
+      "lfSha256": "8c883db717724d2b99a7aa114ce83b75387da5ae6ca59c4390cc0c7c53a7951c"
+    },
+    "src/content/lessons/ai000/unreliable-answers.ts": {
+      "sha256": "3706fb1d1a4ee043b5944d58e0d63949784f753bbf51b683d6003d21cb84cb0b",
+      "lfSha256": "b38969036d715243539a2f771fd42b0420e51c9e662e6b7a157f504426e14b7f"
+    },
+    "src/content/lessons/ai000/unsupervised-learning.ts": {
+      "sha256": "ca2c293cd87b1e95554664b668fab6af1b4be8e6992057462e4fa12f2bcf6150",
+      "lfSha256": "fc7ab2542068357464b8d650f0efb3ce8668bb87f234ee3fca15ed1954ebf24b"
+    },
+    "src/content/lessons/ai000/using-a-fixed-model.ts": {
+      "sha256": "b83b5e4711adad230b060cab33c68b227a8aea79e67507f22fb171194f6e4dfe",
+      "lfSha256": "571766e7299468bf45b65d750456f187807b9ea3af0604b8e68b7e014e5ab86e"
+    },
+    "src/content/lessons/ai000/vision-example.ts": {
+      "sha256": "162337ccf1ee8c6696369101c8b7c428e322755f479531e533c06b41fe2a04a2",
+      "lfSha256": "162337ccf1ee8c6696369101c8b7c428e322755f479531e533c06b41fe2a04a2"
+    },
+    "src/content/lessons/ai000/what-is-ai.ts": {
+      "sha256": "a3e83a5987bbc7bc011a6a21a239e9083d2d680390696d8a6428a22362808102",
+      "lfSha256": "05ff9073d2afb1d7322b03b69cb94a512713f29aa0be66528ae4f2dc1fd2d1e5"
+    },
+    "src/content/lessons/ai000/why-foundations.ts": {
+      "sha256": "94d521ab655cf6ac4fd56211f824cf0d3113cb2e31434fa3f1781aebe59cdcba",
+      "lfSha256": "94d521ab655cf6ac4fd56211f824cf0d3113cb2e31434fa3f1781aebe59cdcba"
+    },
+    "src/content/lessons/foundations-v2-1.ts": {
+      "sha256": "ee8fd4dd2c14fa0b5ab348a601cd1db229ec31286eb747b0c2c94bd629b85244",
+      "lfSha256": "ee8fd4dd2c14fa0b5ab348a601cd1db229ec31286eb747b0c2c94bd629b85244"
+    },
+    "src/content/lessons/linear-regression.ts": {
+      "sha256": "fb4157c0533f47f560f32fe339afdb31b2f8823a5acc3fb5c266051bc9fcffa5",
+      "lfSha256": "fb4157c0533f47f560f32fe339afdb31b2f8823a5acc3fb5c266051bc9fcffa5"
+    },
+    "src/content/lessons/ma101/index.ts": {
+      "sha256": "40757dc7829f58aeb073fe9a6354e6485897a8896f2a81d58f58e6d4f0a83034",
+      "lfSha256": "40757dc7829f58aeb073fe9a6354e6485897a8896f2a81d58f58e6d4f0a83034"
+    },
+    "src/content/lessons/ma101/shared.ts": {
+      "sha256": "b6878c4eb72c52e5e263bab85881ecafa774885bb1b39fe515c76e75fa2e9d5a",
+      "lfSha256": "b6878c4eb72c52e5e263bab85881ecafa774885bb1b39fe515c76e75fa2e9d5a"
+    },
+    "src/content/lessons/ma101/vector-addition.ts": {
+      "sha256": "a8dbc3cc913d9df6b7d53f758b986c1933f04989eb4ec7f0746c12be50ebce4f",
+      "lfSha256": "956f7cfbd39f97bfc81757303c9c50be877e27a3b3844f673b34ef30d023ecbb"
+    },
+    "src/content/lessons/ma101/vector-meaning.ts": {
+      "sha256": "4f58715c673eacea7c5c827a4ac323c84d890d340ac26a5eaa685165f7cf3a18",
+      "lfSha256": "8c2c20ba6e32c446a10235a841c27834f5ce7499d99d89fb11b639955181076d"
+    },
+    "src/content/lessons/ma101/vector-representation.ts": {
+      "sha256": "da169d2b38b10fdf2375b474a13a8467ae4aab28556c9e3f71f4624f05d35f9e",
+      "lfSha256": "da169d2b38b10fdf2375b474a13a8467ae4aab28556c9e3f71f4624f05d35f9e"
+    },
+    "src/content/lessons/ma101/vector-scaling.ts": {
+      "sha256": "dc0ccd52dda63b948f09f7a904b87b6e01c455407b93c05db6ab8b8fc6d5337a",
+      "lfSha256": "dc0ccd52dda63b948f09f7a904b87b6e01c455407b93c05db6ab8b8fc6d5337a"
+    },
+    "src/content/lessons/ml201/core-assessments.ts": {
+      "sha256": "6d8d09166f63296e7e45a8502f0802c1f6b68584648b64366cb0571451586b54",
+      "lfSha256": "6d8d09166f63296e7e45a8502f0802c1f6b68584648b64366cb0571451586b54"
+    },
+    "src/content/lessons/ml201/derivative-direction.ts": {
+      "sha256": "cfc65647e0ef5414a3cb04b135ba52115754e1044e43059721773d78258c9a53",
+      "lfSha256": "1c1f0d76ca8a8cfb3c055519101484bb119d2f17b952ea3541bd894d9044eebf"
+    },
+    "src/content/lessons/ml201/linear-model.ts": {
+      "sha256": "e73c744b51aa4318944eb872f21863075e1262f49106b1b866f658e67dbf8859",
+      "lfSha256": "c6f19a719fad64e505d46c3e70df6243e8a45c2d7724274137099d5ea01e447f"
+    },
+    "src/content/lessons/ml201/loss-functions.ts": {
+      "sha256": "6f9b441cf19d6dc3e2c859de4df40db01a27ed0a93415f5556114a760a1680d4",
+      "lfSha256": "287131d25bba41b886aeab25a1f025dc7403b19fbc8deeb878cea29f548036bd"
+    },
+    "src/content/lessons/ml201/manual-update.ts": {
+      "sha256": "0719736381370cfbc04f4b1afb1c769142f5bb23733cbcbed934898597de278c",
+      "lfSha256": "48e5372f4dc308e8a11e92b86e7f1594064741273d2233e70993e83a0245af2f"
+    },
+    "src/content/lessons/ml201/mse-gradient.ts": {
+      "sha256": "f7105b7fd0b8544f7da880b43839c918690c09e313ef1654d16a83e56f338d07",
+      "lfSha256": "aa9e699d7cf6afde76fe30f8c9dc85decbe2b1794e849cdef135a3661b920b22"
+    },
+    "src/content/lessons/ml201/numpy-regression.ts": {
+      "sha256": "d4e3ebc7fcb6ba404c7a2c883df85ca19d4f7daa6c7a4a66ea512ba788fe3ddc",
+      "lfSha256": "8883161c7323833a3bf2ef48aa58ea266db6bcdacb2587b0c9c71550d4658e20"
+    },
+    "src/content/lessons/ml201/regression-task.ts": {
+      "sha256": "283efe7f9cea5bda1cbb7f11cacf69362e05be311af18a386935f58b4826286b",
+      "lfSha256": "63cfbc5f414763d7304348055138355ac4d05d57a5b2befd9abc5861839465df"
+    },
+    "src/content/lessons/ml201/shared.ts": {
+      "sha256": "4ba26381293e3c146ec154289354141672f82931ea36ca0eade0a06ae53cec32",
+      "lfSha256": "97ae989412b7a926abcc2a924835ae3c21a3f164796589106cc35f0835c18829"
+    },
+    "src/content/lessons/ml201/teaching-profiles.ts": {
+      "sha256": "cea6fad96ab78c067e2eac2f3a71660b64c384d59d12c304fdc088ad44ea8654",
+      "lfSha256": "9fa594cdc72d73ebffcab3ea1fef1209ca85c763dff59ded6b9bc8f9649a3253"
+    },
+    "src/content/lessons/py101/arithmetic-expressions.ts": {
+      "sha256": "1d7f72d09285878244aa961942887bc52ddbff80fb44a7d6afb9309844f1f092",
+      "lfSha256": "e38a1a0e5851ee69744026c602cf45dd6572bce9b8a1ad1d9760c92977ec9440"
+    },
+    "src/content/lessons/py101/basic-value-types.ts": {
+      "sha256": "8330eb007e1ce3ce1fc724ee0e4fba9875b7fd590787db083e7b69a9da4902d2",
+      "lfSha256": "1b053a6204a405a332af401f303fd159f9338304ce518c8ad4425531c727beed"
+    },
+    "src/content/lessons/py101/editor-rerun.ts": {
+      "sha256": "42389bdad9fd2f7e42c6fd3475edd05e057b76a8fd2734485de2d393ffc5322b",
+      "lfSha256": "42389bdad9fd2f7e42c6fd3475edd05e057b76a8fd2734485de2d393ffc5322b"
+    },
+    "src/content/lessons/py101/environment-reproduction.ts": {
+      "sha256": "c8e5da7d23b2af6b7c52e62db34f7344fe11f5bcead7349d3bbc0443cad9d2e5",
+      "lfSha256": "d2eeed2e56f2f2d1409a7ecf956280011c908b892005867a30a54b2c6e5acb31"
+    },
+    "src/content/lessons/py101/first-run.ts": {
+      "sha256": "e818dd98818e4425ad03b2e5d5034d8c98a509b2b7988a3a012fca3a3e898432",
+      "lfSha256": "e818dd98818e4425ad03b2e5d5034d8c98a509b2b7988a3a012fca3a3e898432"
+    },
+    "src/content/lessons/py101/notebook-cell-order.ts": {
+      "sha256": "817612655222591e4429697e62552e8d38f8b7a638d83264d3068f1fe1da8d61",
+      "lfSha256": "817612655222591e4429697e62552e8d38f8b7a638d83264d3068f1fe1da8d61"
+    },
+    "src/content/lessons/py101/project-environments.ts": {
+      "sha256": "d78b7d383b033a5e74aed5d2bf6c9574c0dd41734611223811bed9079e001f05",
+      "lfSha256": "d78b7d383b033a5e74aed5d2bf6c9574c0dd41734611223811bed9079e001f05"
+    },
+    "src/content/lessons/py101/script-paths.ts": {
+      "sha256": "2875ca12d623ef770640129f2db380e16e859025b464cecd1388e1275e4b1a42",
+      "lfSha256": "2875ca12d623ef770640129f2db380e16e859025b464cecd1388e1275e4b1a42"
+    },
+    "src/content/lessons/py101/variables-and-assignment.ts": {
+      "sha256": "c5f42d3463ea96b0a259fee9a67950be6f1af6dc063691011d5233bf0b34329c",
+      "lfSha256": "44dd2b41383dab4cc3336aa6f71c152644a8eccd213e9deee65eba19a81ce44d"
+    },
+    "src/content/lessons/python-functions.ts": {
+      "sha256": "f6cd84c91779daf289e69f7cedbd895f709471ce40ad707e988938b914055f54",
+      "lfSha256": "985a591253332f84d5230074e8d976f675c8e7fa8aaa4737c70ac7eaf9ba6475"
+    },
+    "src/content/lessons/vector-matrix.ts": {
+      "sha256": "9867ffea3162740f0fac2eebb4878254b29f1e4891a5dcf479f5787f308e1b8d",
+      "lfSha256": "7e9072630d9e1a71a7aa582ee60de01c81706039ea3205667a720b5023486ff6"
+    },
+    "src/content/math-outline.ts": {
+      "sha256": "15d11c64319e06da32c77c45641ae0c32101d2bff698477392806005b66938dc",
+      "lfSha256": "15d11c64319e06da32c77c45641ae0c32101d2bff698477392806005b66938dc"
+    },
+    "src/content/models.ts": {
+      "sha256": "c6d10758322631a7493a63ce7d5d7bdbfe297ebd9b36f5fd950668b93d2da556",
+      "lfSha256": "2a3a119bbe87d7898add6d5ba9ac9bcd84d38221987a092181386cd91ca09754"
+    },
+    "src/content/publication-manifest.ts": {
+      "sha256": "83197341bf5140c483ab9646417b4155e6d3f0a1a7b0e6b6483777aea88a46c6",
+      "lfSha256": "a6988d56cd0988d19f4748aa4b35d496b9bf1fe1c9d5fcc73015be4d5d7e01a6"
+    },
+    "src/content/resources/core-programs.ts": {
+      "sha256": "ad663ae97b9fe8989ec6df7a0f64d7237cda9c4e1d23fe3320436aa7ddbefc1f",
+      "lfSha256": "ad663ae97b9fe8989ec6df7a0f64d7237cda9c4e1d23fe3320436aa7ddbefc1f"
+    },
+    "src/content/resources/programs.ts": {
+      "sha256": "56aef68bdd4b5ef16d404407ab3c784aa1cda4ca91b1f6e4729aba65847e028f",
+      "lfSha256": "56aef68bdd4b5ef16d404407ab3c784aa1cda4ca91b1f6e4729aba65847e028f"
+    },
+    "src/content/resources/python-arithmetic.ts": {
+      "sha256": "d70eea66c7fd9f6d3df366522f8b8ed58479ad0d076bdca9c3bc6b99137a90b0",
+      "lfSha256": "d70eea66c7fd9f6d3df366522f8b8ed58479ad0d076bdca9c3bc6b99137a90b0"
+    },
+    "src/content/resources/python-editor.ts": {
+      "sha256": "f3df0a157a7361c2e599f09c517b2230cbddb04954e76a2c6c91a0b8f3ef0bb9",
+      "lfSha256": "f3df0a157a7361c2e599f09c517b2230cbddb04954e76a2c6c91a0b8f3ef0bb9"
+    },
+    "src/content/resources/python-notebook.ts": {
+      "sha256": "6377d5cf3d9dc798e6c4a41bada96c9fad1491c6bc12723ce251e1ee0c0535d2",
+      "lfSha256": "6377d5cf3d9dc798e6c4a41bada96c9fad1491c6bc12723ce251e1ee0c0535d2"
+    },
+    "src/content/resources/python-paths.ts": {
+      "sha256": "313a289cb86c7d0fa5759adf647415fb4369bcffbf2833c53785a44cfd75c655",
+      "lfSha256": "313a289cb86c7d0fa5759adf647415fb4369bcffbf2833c53785a44cfd75c655"
+    },
+    "src/content/resources/python-reproduction.ts": {
+      "sha256": "334dd9cb105268848c8decb7f44bfe08b763a4594873a8551dadc2bb39c9fd64",
+      "lfSha256": "334dd9cb105268848c8decb7f44bfe08b763a4594873a8551dadc2bb39c9fd64"
+    },
+    "src/content/resources/python-value-types.ts": {
+      "sha256": "ceebf972bf0c3509cbea37eb72c091685b33c2d7df25df20656b430f78e6622d",
+      "lfSha256": "ceebf972bf0c3509cbea37eb72c091685b33c2d7df25df20656b430f78e6622d"
+    },
+    "src/content/resources/python-variables.ts": {
+      "sha256": "9430e4a114a1f0ce154e561daac1defc09d6905994891cef3cea5c1ba048d1e8",
+      "lfSha256": "9430e4a114a1f0ce154e561daac1defc09d6905994891cef3cea5c1ba048d1e8"
+    },
+    "src/content/resources/python-venv.ts": {
+      "sha256": "80ae7e52c5b1c5eeae5352f230ef5304c83b08305db039d95e6dfbe690f280d8",
+      "lfSha256": "80ae7e52c5b1c5eeae5352f230ef5304c83b08305db039d95e6dfbe690f280d8"
+    },
+    "src/content/sample.ts": {
+      "sha256": "3a1ed80bc9c489958ad5554ec367aebd141aa7d9dc143299a77826fbe3966610",
+      "lfSha256": "3a1ed80bc9c489958ad5554ec367aebd141aa7d9dc143299a77826fbe3966610"
+    },
+    "src/lib/artwork.ts": {
+      "sha256": "ec8217b7dcf6c6cf32325ca08e23d8a03ad5bc598cad96ab1ba4ffd3d4a51e56",
+      "lfSha256": "ec8217b7dcf6c6cf32325ca08e23d8a03ad5bc598cad96ab1ba4ffd3d4a51e56"
+    },
+    "src/lib/course-directory.ts": {
+      "sha256": "24850ca19a9414e972c5fbb2d674d70ab65be58667dad794b1aa7198d51d0767",
+      "lfSha256": "24850ca19a9414e972c5fbb2d674d70ab65be58667dad794b1aa7198d51d0767"
+    },
+    "src/lib/course-engine.ts": {
+      "sha256": "37762c6fd8d1e4b1e170ce0045cbb37e5bbd3a1c3eed51cc731c6fb530287063",
+      "lfSha256": "e93ebb0cbfa3f54de383d7b52584e7cacc01b4554f5cf46c0c11656314585d41"
+    },
+    "src/lib/course-labels.ts": {
+      "sha256": "58ee28aaacf0128ade7d75de496a13d97679286f3e990fee6e0664ccdc0be943",
+      "lfSha256": "58ee28aaacf0128ade7d75de496a13d97679286f3e990fee6e0664ccdc0be943"
+    },
+    "src/lib/course-learning-time.ts": {
+      "sha256": "dffa493394b6620432e01d9e5c5514e877c1737ff4ad2b423fe3386afea27a69",
+      "lfSha256": "dffa493394b6620432e01d9e5c5514e877c1737ff4ad2b423fe3386afea27a69"
+    },
+    "src/lib/course-numbering.ts": {
+      "sha256": "84f8f324260d7fafb190ec3345ee8f784acd0ee9b2cea7793da614cf7305ea50",
+      "lfSha256": "84f8f324260d7fafb190ec3345ee8f784acd0ee9b2cea7793da614cf7305ea50"
+    },
+    "src/lib/course-presentation.ts": {
+      "sha256": "1b2f07eee6c333e11e8b0d726ea7502f333801a3803f4fec75e48bd7326f95a0",
+      "lfSha256": "1b2f07eee6c333e11e8b0d726ea7502f333801a3803f4fec75e48bd7326f95a0"
+    },
+    "src/lib/course-reading-summary.ts": {
+      "sha256": "66b9eae8bdaf4d4db5210e52fe36d2fa1e58f2aa3a5126d8cda1cd90c7550c0d",
+      "lfSha256": "66b9eae8bdaf4d4db5210e52fe36d2fa1e58f2aa3a5126d8cda1cd90c7550c0d"
+    },
+    "src/lib/course-search.ts": {
+      "sha256": "2eeb8974176a53e30d47d83982fef29e6188b16cc6b681ba0eee6759943df2dc",
+      "lfSha256": "2eeb8974176a53e30d47d83982fef29e6188b16cc6b681ba0eee6759943df2dc"
+    },
+    "src/lib/curriculum.ts": {
+      "sha256": "98911db985e1aa6736eb313d709a5fbdecc26861a6a5d97a1c1fd67eef64685d",
+      "lfSha256": "79d1329e5b86bc52826d1fa7acddef3d968f193e8575b930249ad1ad464abab0"
+    },
+    "src/lib/learning-progress.ts": {
+      "sha256": "47974dfb7fd344c086b685311d1207560ba344cd1d80cb5ffe3a3f9a85183070",
+      "lfSha256": "47974dfb7fd344c086b685311d1207560ba344cd1d80cb5ffe3a3f9a85183070"
+    },
+    "src/lib/lesson-exercises.ts": {
+      "sha256": "179bf88d0cb4538cb2d3d541dd8e2aea7e04d906c217173da6342ddf5a5c63c9",
+      "lfSha256": "179bf88d0cb4538cb2d3d541dd8e2aea7e04d906c217173da6342ddf5a5c63c9"
+    },
+    "src/lib/paths.ts": {
+      "sha256": "0696e596bda24199aa853938a8bd5eb8a85d42e764554f7c510ce08e6928d449",
+      "lfSha256": "0696e596bda24199aa853938a8bd5eb8a85d42e764554f7c510ce08e6928d449"
+    },
+    "src/lib/progress.ts": {
+      "sha256": "ecc17cd7dee18145bbd8a3fa36477d39fc87c35818a517df26f7c0bc99e25031",
+      "lfSha256": "ecc17cd7dee18145bbd8a3fa36477d39fc87c35818a517df26f7c0bc99e25031"
+    },
+    "src/lib/regression.ts": {
+      "sha256": "d27af2acac73db5771cef82fd61f2d1a11e2e4dfe32b271b06ae6e8a27b3591b",
+      "lfSha256": "d27af2acac73db5771cef82fd61f2d1a11e2e4dfe32b271b06ae6e8a27b3591b"
+    },
+    "src/lib/use-learning-progress.ts": {
+      "sha256": "b634548ef94332333206d4022cb9705460595818ebb1f511591d553b9fb10778",
+      "lfSha256": "b634548ef94332333206d4022cb9705460595818ebb1f511591d553b9fb10778"
+    },
+    "src/lib/use-progress.ts": {
+      "sha256": "e9ec46108472148618cc9f471e9bfbe5a31e2efcc06652d8e43a6f2a27472162",
+      "lfSha256": "e9ec46108472148618cc9f471e9bfbe5a31e2efcc06652d8e43a6f2a27472162"
+    },
+    "src/lib/vector-teaching.ts": {
+      "sha256": "984d9c8ff8f26108d8b222494d46f039d8e85c97254cc07e06dde71a87c7b1a3",
+      "lfSha256": "984d9c8ff8f26108d8b222494d46f039d8e85c97254cc07e06dde71a87c7b1a3"
+    },
+    "tests/ai000-capstone.test.ts": {
+      "sha256": "ea83dc52a9634e469b87edc8ca78ec4a9766a94fd9e7bec5b83cc627723c078c",
+      "lfSha256": "ea83dc52a9634e469b87edc8ca78ec4a9766a94fd9e7bec5b83cc627723c078c"
+    },
+    "tests/ai000-creative.test.ts": {
+      "sha256": "204a895f8bd5216f61eee9941e6504566bee58543e7ff9b1e7a93490038f9ec8",
+      "lfSha256": "204a895f8bd5216f61eee9941e6504566bee58543e7ff9b1e7a93490038f9ec8"
+    },
+    "tests/ai000-data-features.test.ts": {
+      "sha256": "5f35cb3ef6cd4254b29b9cc01e69c99adadd48546044bf0ecd9fe13ee11276f4",
+      "lfSha256": "5f35cb3ef6cd4254b29b9cc01e69c99adadd48546044bf0ecd9fe13ee11276f4"
+    },
+    "tests/ai000-data-use.test.ts": {
+      "sha256": "014db4b556ff7e0b93e85951b991c70252aa3de323423e502a25730754759db7",
+      "lfSha256": "014db4b556ff7e0b93e85951b991c70252aa3de323423e502a25730754759db7"
+    },
+    "tests/ai000-directions.test.ts": {
+      "sha256": "570e8c84f9251573f700b97f0bafbb030c84ef2f574bbce6ec7e54cafd8f3662",
+      "lfSha256": "570e8c84f9251573f700b97f0bafbb030c84ef2f574bbce6ec7e54cafd8f3662"
+    },
+    "tests/ai000-foundations.test.ts": {
+      "sha256": "7c99b40afb0d191f3edbb049924ff61f3372226707e1eeba45c489762f72a552",
+      "lfSha256": "7c99b40afb0d191f3edbb049924ff61f3372226707e1eeba45c489762f72a552"
+    },
+    "tests/ai000-illustrations.test.ts": {
+      "sha256": "743999145c8b654d5ac774c5c74026fdf3ae86e0045480899e151d6fbbd5c030",
+      "lfSha256": "743999145c8b654d5ac774c5c74026fdf3ae86e0045480899e151d6fbbd5c030"
+    },
+    "tests/ai000-inference.test.ts": {
+      "sha256": "3dbe351fbc7744b8f3f1b3de836f0f7813e667edd3602061332cb8e49f685f99",
+      "lfSha256": "3dbe351fbc7744b8f3f1b3de836f0f7813e667edd3602061332cb8e49f685f99"
+    },
+    "tests/ai000-lesson.test.ts": {
+      "sha256": "e4bb32c3e00447176c681f4abddfd45d0b2bb6feb1d56a8254b8463294cdfde1",
+      "lfSha256": "e4bb32c3e00447176c681f4abddfd45d0b2bb6feb1d56a8254b8463294cdfde1"
+    },
+    "tests/ai000-model-parameters.test.ts": {
+      "sha256": "58d81cf241c08263354ca1671c0e7c758a2ef31c583aca39b8bcf46a315de601",
+      "lfSha256": "58d81cf241c08263354ca1671c0e7c758a2ef31c583aca39b8bcf46a315de601"
+    },
+    "tests/ai000-multimodal.test.ts": {
+      "sha256": "b5d80ccad30aa85a4e68a3e02ce52634c5740590260401573a5a806f6db5e600",
+      "lfSha256": "b5d80ccad30aa85a4e68a3e02ce52634c5740590260401573a5a806f6db5e600"
+    },
+    "tests/ai000-nlp.test.ts": {
+      "sha256": "f0ff3b8207398d354b6849cbbaf9726a498d7c286e453fac386f15391df96acc",
+      "lfSha256": "f0ff3b8207398d354b6849cbbaf9726a498d7c286e453fac386f15391df96acc"
+    },
+    "tests/ai000-privacy-fairness.test.ts": {
+      "sha256": "29740b83b01ccb0871a5255b70b2aba152522c7790de738064d602e6f849deba",
+      "lfSha256": "29740b83b01ccb0871a5255b70b2aba152522c7790de738064d602e6f849deba"
+    },
+    "tests/ai000-quality.test.ts": {
+      "sha256": "bb2685221dbefb86e94f1ff43a6d847d845b6c9f638dd002bb818065aff7b1f8",
+      "lfSha256": "bb2685221dbefb86e94f1ff43a6d847d845b6c9f638dd002bb818065aff7b1f8"
+    },
+    "tests/ai000-r3.test.ts": {
+      "sha256": "aa5d52fd8a49747fb57b34c8ed5446713b7589c42e586585db2449f7fe9039c1",
+      "lfSha256": "aa5d52fd8a49747fb57b34c8ed5446713b7589c42e586585db2449f7fe9039c1"
+    },
+    "tests/ai000-reinforcement.test.ts": {
+      "sha256": "9724620d06288f88d865885f28987af6ebb25f9b21bf5df68cbb5491c08c2a3e",
+      "lfSha256": "9724620d06288f88d865885f28987af6ebb25f9b21bf5df68cbb5491c08c2a3e"
+    },
+    "tests/ai000-relationships.test.ts": {
+      "sha256": "7a30caa7da4e660c2de90bb2508ded01d38e7645c3570f5154d62a6f6fc08697",
+      "lfSha256": "7a30caa7da4e660c2de90bb2508ded01d38e7645c3570f5154d62a6f6fc08697"
+    },
+    "tests/ai000-reliability.test.ts": {
+      "sha256": "1deee71200153ec5301028cdfd5b3f76e8e589dd3caaa7115b83655daa16eba4",
+      "lfSha256": "1deee71200153ec5301028cdfd5b3f76e8e589dd3caaa7115b83655daa16eba4"
+    },
+    "tests/ai000-responsible-use.test.ts": {
+      "sha256": "06e488e7789155537a97cadcd687dc6d4059f752ece023902a61ed01dbc2aa90",
+      "lfSha256": "06e488e7789155537a97cadcd687dc6d4059f752ece023902a61ed01dbc2aa90"
+    },
+    "tests/ai000-rl-applicability.test.ts": {
+      "sha256": "a12213d7bdb71aa6f90f219558bcb23049646760055d83050efcb6a2b9dfbff3",
+      "lfSha256": "a12213d7bdb71aa6f90f219558bcb23049646760055d83050efcb6a2b9dfbff3"
+    },
+    "tests/ai000-self-supervised.test.ts": {
+      "sha256": "3eef74f303c0a3e363fe1ce2b3d4cb799606294e8ee484810b3ef79ba2417058",
+      "lfSha256": "3eef74f303c0a3e363fe1ce2b3d4cb799606294e8ee484810b3ef79ba2417058"
+    },
+    "tests/ai000-supervised.test.ts": {
+      "sha256": "87bae77ecc13f34e8498d0073997142ee78482b43f34c741eb4d37f084690bd2",
+      "lfSha256": "87bae77ecc13f34e8498d0073997142ee78482b43f34c741eb4d37f084690bd2"
+    },
+    "tests/ai000-unsupervised.test.ts": {
+      "sha256": "ae600a606f25e5c1a42b5901249748aba5c072a2fc7c6fefadbbe1933843ac45",
+      "lfSha256": "ae600a606f25e5c1a42b5901249748aba5c072a2fc7c6fefadbbe1933843ac45"
+    },
+    "tests/ai000-v2.test.ts": {
+      "sha256": "e25158bfde913166f6d7c171bbed7e6ad65649fe5306b8fb86792e231644551d",
+      "lfSha256": "e25158bfde913166f6d7c171bbed7e6ad65649fe5306b8fb86792e231644551d"
+    },
+    "tests/ai000-vision.test.ts": {
+      "sha256": "61245223ac84ba734d5312cde98e8c98715c2dbe3e7eb7375a1d2736bebfe49a",
+      "lfSha256": "61245223ac84ba734d5312cde98e8c98715c2dbe3e7eb7375a1d2736bebfe49a"
+    },
+    "tests/artwork.test.ts": {
+      "sha256": "3f49839e52c025a50a683c7d372f9bf32d57544d44a42afddd67b9298cefc9d9",
+      "lfSha256": "3f49839e52c025a50a683c7d372f9bf32d57544d44a42afddd67b9298cefc9d9"
+    },
+    "tests/content.test.ts": {
+      "sha256": "d2d54770d39181791b380e8a9190025c3904ef6546329ced3cd9d6d8b7e7a5bf",
+      "lfSha256": "d2d54770d39181791b380e8a9190025c3904ef6546329ced3cd9d6d8b7e7a5bf"
+    },
+    "tests/course-engine.test.ts": {
+      "sha256": "8f41c7bad36afc757efd3893147346e242783e4b20140785655f862f8343ccf8",
+      "lfSha256": "8f41c7bad36afc757efd3893147346e242783e4b20140785655f862f8343ccf8"
+    },
+    "tests/course-hierarchy.test.ts": {
+      "sha256": "54ea6fc744f20f5dcdb333952c300a146447dff1c66e493c91dae001bf1b492a",
+      "lfSha256": "54ea6fc744f20f5dcdb333952c300a146447dff1c66e493c91dae001bf1b492a"
+    },
+    "tests/course-presentation.test.ts": {
+      "sha256": "4167860a773420f6293fdcbf628152258c9c000f40ef487ed38a34ca29079ba6",
+      "lfSha256": "4167860a773420f6293fdcbf628152258c9c000f40ef487ed38a34ca29079ba6"
+    },
+    "tests/cross-discipline-editorial.test.ts": {
+      "sha256": "ea3841bea1c03846fa5dd81cc44a7bf050c2f78b8867769b4169e8415b91096a",
+      "lfSha256": "a8440440a050ad8482bf2e06c3a8233a425d9c362555f65e6fd8fee40c08a745"
+    },
+    "tests/curriculum.test.ts": {
+      "sha256": "327d8b2ce7acfe2c26ee2f2c99f74ebcf31b092b0f1272d7cec176e2e9c81ed5",
+      "lfSha256": "537e5bf1e6345b0aef6ba50516f3d518c9f72c537d15b04496abcd5ce51dfcbf"
+    },
+    "tests/helpers/registered-content.ts": {
+      "sha256": "df48d41e7747b93e729cdbeeece5cc1eb346c351861876ec138723d9e7d55c91",
+      "lfSha256": "df48d41e7747b93e729cdbeeece5cc1eb346c351861876ec138723d9e7d55c91"
+    },
+    "tests/learning-progress.test.ts": {
+      "sha256": "e3202f91c80741c57cc78363ae5ab905ebbf148cdca2f46587ebc19d068c5eb2",
+      "lfSha256": "e3202f91c80741c57cc78363ae5ab905ebbf148cdca2f46587ebc19d068c5eb2"
+    },
+    "tests/ml-v2-compat.test.ts": {
+      "sha256": "0aa36e2c059b23253ff4c07b4b9b1b7315e2a97884189df0c6dc7c18d3f6731b",
+      "lfSha256": "0aa36e2c059b23253ff4c07b4b9b1b7315e2a97884189df0c6dc7c18d3f6731b"
+    },
+    "tests/progress.test.ts": {
+      "sha256": "fbfac52eddb0770c790651b4385a2249c38b4d6922074811ee8a5b8bc864514e",
+      "lfSha256": "fbfac52eddb0770c790651b4385a2249c38b4d6922074811ee8a5b8bc864514e"
+    },
+    "tests/py101-arithmetic-expressions.test.ts": {
+      "sha256": "fdbeca215fad2819293fa33b55b3fdbfa87b49b0894f15789ed69676af9982de",
+      "lfSha256": "fdbeca215fad2819293fa33b55b3fdbfa87b49b0894f15789ed69676af9982de"
+    },
+    "tests/py101-basic-value-types.test.ts": {
+      "sha256": "71fa5efb29e397e3fbb5bde13a4b2d50af292fcb6dfd612328b5dbe575154f6a",
+      "lfSha256": "71fa5efb29e397e3fbb5bde13a4b2d50af292fcb6dfd612328b5dbe575154f6a"
+    },
+    "tests/py101-editor-rerun.test.ts": {
+      "sha256": "5a499d0c69354baca2721dfae3d7b23599b9867d6cc735a123cf53db76dd0259",
+      "lfSha256": "5a499d0c69354baca2721dfae3d7b23599b9867d6cc735a123cf53db76dd0259"
+    },
+    "tests/py101-environment-reproduction.test.ts": {
+      "sha256": "8539681e61c132172aeb73ec12ecf1a5a50a0d81cc5a928b182491c1d012c97c",
+      "lfSha256": "0a4ea7a667a824c958ec0581cefefebb49f4d2d62771e8016f0ef7121ac8e9a7"
+    },
+    "tests/py101-first-run.test.ts": {
+      "sha256": "860911e30bb6642e6a3c98090235cb381e256a9cf41d577483620ca59704a128",
+      "lfSha256": "860911e30bb6642e6a3c98090235cb381e256a9cf41d577483620ca59704a128"
+    },
+    "tests/py101-notebook-cell-order.test.ts": {
+      "sha256": "8335c26671cd406364a8adab6d7aafbe00c52c4e439072cae57b230a5760ed93",
+      "lfSha256": "8335c26671cd406364a8adab6d7aafbe00c52c4e439072cae57b230a5760ed93"
+    },
+    "tests/py101-project-environments.test.ts": {
+      "sha256": "e4593149764a2220e4a2c80fb3298ce20c5585c783bdd18275654fd74cd18e96",
+      "lfSha256": "e4593149764a2220e4a2c80fb3298ce20c5585c783bdd18275654fd74cd18e96"
+    },
+    "tests/py101-script-paths.test.ts": {
+      "sha256": "a486362f62dd834914934bade22335b967e60b2b9dc61ec861c93daa2731d6d4",
+      "lfSha256": "a486362f62dd834914934bade22335b967e60b2b9dc61ec861c93daa2731d6d4"
+    },
+    "tests/py101-variables-and-assignment.test.ts": {
+      "sha256": "f91a08a52fc63d35282ebe139c1c3b36c7e8d2268ec916280a74fd8b05ff5983",
+      "lfSha256": "3beec0ecbbf5322b024b161177abfb979d2a0ec1c915a6247146ec3fa4967983"
+    },
+    "tests/reading-experience.test.ts": {
+      "sha256": "072d10fefa6902dbaa2c03084eb7ac289eeb75e570a4a4067ffe23850ace19e0",
+      "lfSha256": "072d10fefa6902dbaa2c03084eb7ac289eeb75e570a4a4067ffe23850ace19e0"
+    },
+    "tests/regression.test.ts": {
+      "sha256": "5c46d0c9bd35438b6243f5f91ce16153837ccce84dacc6997a22668299a872bd",
+      "lfSha256": "5c46d0c9bd35438b6243f5f91ce16153837ccce84dacc6997a22668299a872bd"
+    },
+    "tests/storage.test.ts": {
+      "sha256": "b8751936e8cec92567251ba94ea3c4670b930f9cb633bab76550042b3dd9b8b7",
+      "lfSha256": "b8751936e8cec92567251ba94ea3c4670b930f9cb633bab76550042b3dd9b8b7"
+    },
+    "tests/teaching-v2-1.test.ts": {
+      "sha256": "09daecd48c19c679b614fccc07d854a92b145d207bf1734c57c756d7b455a88c",
+      "lfSha256": "cfc422551c996afe4be687a9eb8ecacc19baa31bf37bfa4e76c21bc9d8baf429"
+    },
+    "tests/teaching-v2-2.test.ts": {
+      "sha256": "1d16dd4831d676e529ea054f3d96d180140243f2a697c4175e9f59bc61ae4c04",
+      "lfSha256": "1d16dd4831d676e529ea054f3d96d180140243f2a697c4175e9f59bc61ae4c04"
+    },
+    "tests/teaching-v2-3.test.ts": {
+      "sha256": "8300675aac804a69a8b9d9791924530ffca5cad76185e70f76998a0187562939",
+      "lfSha256": "8300675aac804a69a8b9d9791924530ffca5cad76185e70f76998a0187562939"
+    },
+    "tests/teaching-v2.test.ts": {
+      "sha256": "440a716ec388e31c035de39151b834b6b5eae61ab596042644c6845015c4dca3",
+      "lfSha256": "440a716ec388e31c035de39151b834b6b5eae61ab596042644c6845015c4dca3"
+    },
+    "tests/test_math_v2_2.py": {
+      "sha256": "b9c6a004dad4b7bbbf903d5dbf7160b405034dfbe81044e069f14a26a6008d5a",
+      "lfSha256": "b9c6a004dad4b7bbbf903d5dbf7160b405034dfbe81044e069f14a26a6008d5a"
+    },
+    "tests/test_ml_v2.py": {
+      "sha256": "d0b7e016de882bee30ebace12522649b9e3f20347feba7584141b366330877da",
+      "lfSha256": "d0b7e016de882bee30ebace12522649b9e3f20347feba7584141b366330877da"
+    },
+    "tests/test_sample.py": {
+      "sha256": "0943b494419e2e32b843c66dc09a031f2c9eeff1555a31694b2ceb218a2345ea",
+      "lfSha256": "0943b494419e2e32b843c66dc09a031f2c9eeff1555a31694b2ceb218a2345ea"
+    },
+    "tests/test_teaching_samples.py": {
+      "sha256": "4ab43f4a986eadfa16e015ac1cde22c44bb1a7fd60a8b41b4d2973c8c913e1f9",
+      "lfSha256": "4ab43f4a986eadfa16e015ac1cde22c44bb1a7fd60a8b41b4d2973c8c913e1f9"
+    },
+    "tests/test_teaching_v2_1.py": {
+      "sha256": "43197bca3c79a72c6d6fc3ca22ed2a9d12de8ece17762e53f2670a9380a58a96",
+      "lfSha256": "43197bca3c79a72c6d6fc3ca22ed2a9d12de8ece17762e53f2670a9380a58a96"
+    },
+    "tests/test_teaching_v2_3.py": {
+      "sha256": "7f01a18cef5abea9bcc4a21ef9f08ca8e0cc801b1980831c1a2d410609fb539d",
+      "lfSha256": "7f01a18cef5abea9bcc4a21ef9f08ca8e0cc801b1980831c1a2d410609fb539d"
+    }
+  },
+  "allProtectedFileCount": 2818,
+  "allProtectedPortableDigest": "b23dcc0ecd2b120b6d8f28540699d7c2c00641f4e9da14ac8cb2458059723e47",
+  "protectedManifestNote": "All tracked content/docs audited using a locally retained per-file manifest; public baseline keeps focused hashes and aggregate to avoid duplicating all historical snapshots.",
+  "lessons": {
+    "PY101-C02-L03": "03b06799ebc639969f776ea0b8e88b7d4dc782fc3371442297260ab3f67e340d",
+    "PY101-C02-L02": "47b641470d7d65350e658f2a01c1ade51b21a231dc98e0fe329cbdf024e3ae38",
+    "PY101-C02-L01": "f269e4242667ef1f3fad714fdda6dadc20b4881d098ae95a3e8b7f3bd53495a6",
+    "PY101-C01-L06": "693d64e1e8147aa5c67cfa68ab895012073131be40875938d5c88db2cab12fd8",
+    "PY101-C01-L02": "3c26a32760d7c224caaa7ac3eaeb81ce086c8b59f6613bff9bc5c4e75c9faa30",
+    "PY101-C01-L03": "d942514914d40c35ef8de70f3b6905ae64d8980895a7fc2a0ada277400eec568",
+    "PY101-C01-L04": "84f1afb2deaba6b65371e9aae3d4e5ce88318490b968df4c87fd3d01b1ae1365",
+    "PY101-C01-L05": "cb7dcb527be15c6ca896662d7d553b815f36254fdb0d7ac65ee632bf15568bbf",
+    "PY101-C01-L01": "26fba207d52d7b47e6a926101aa0373a521773dbc61049a513c8c79e4222a555",
+    "AI000-C01-L01": "b54ed519e222dfa1d6afb22a5130e2a7a89fdd63b461c516b5a9877a0b600d21",
+    "AI000-C01-L02": "9bc7e303099a1ffff86c49530c36f289ad9c2ac8a8af6ed52fc8cf0e23fbfcb5",
+    "AI000-C01-L03": "40660658b98b8d52de1229c1e477d2f34b0a6114944479d9a17df98ec6c88c4f",
+    "AI000-C02-L01": "b42bf7de8752817c3763d854d9d537962f90a7176bb764132cd727c35e8bb6bb",
+    "AI000-C02-L02": "69e6402a98a8419e15c9e34de96f341a5812fdbdea7451e97cd92c686d5bba48",
+    "AI000-C03-L01": "a425d7f5a9f1de93530461e12a2aa5029e133bf9d97e51ef0b1acdf6b2e1b8c0",
+    "AI000-C03-L02": "aa35407804c649879ea6ab892385f384c758b07b9449d1baa541f60646f4b4f8",
+    "AI000-C03-L03": "13da68be4b8c258b0faf8b851b93eb13c407877a6b86680c04b41c5a5e11c87d",
+    "AI000-C03-L04": "7d00e690328db87795c17ee9d533549a3235748915b0fb62cd7318104d90584c",
+    "AI000-C04-L01": "e08439af1430c994e26f149867df47d82fbf84708ae302d2b7a0d76e9a4243b6",
+    "AI000-C04-L02": "3113c34484d8c4fe4154cd105945b4fb64ae9288248834963e7ecc8e902cef30",
+    "AI000-C04-L03": "144fdc35778d64bb5bf474543575eab477e0c289ec229171348ecab4ada63ee9",
+    "AI000-C04-L04": "67e6ae10715f1a4c1b101bd4c9026d583532aea74f0a0080028b55e9a90d8685",
+    "AI000-C05-L01": "877e708d6be97f1a8f30ea652a5117dfd42a65b0196f8c6052a8cb5f6fc93556",
+    "AI000-C05-L02": "9da3339c8ca2d85efb5fb885359520117e351166a92bae635ef6dac648d4629f",
+    "AI000-C05-L03": "52486c75c158433c4107a58f1c8b780fafdcaedb04f00327128e8eee2234135c",
+    "AI000-C05-L04": "52cd5dfdbf2d19a06282ab10dd0e0b5a7bf6ed4a876e5fb0104f056478e5bd7a",
+    "AI000-C05-L05": "8efe0189d3dc8f4b4fa6232c97384b943feaf4168002e15e94ca7331fa5fd178",
+    "AI000-C06-L01": "c538b91c94ead2cdaaa1e3f301863b257c3e56636bd2f25cc153e95e27c8a9d1",
+    "AI000-C06-L02": "282f337be3f2dea72f959ea33947a81ca68f2c8796cdcdaacf887d0397cdabca",
+    "AI000-C06-L03": "592d72aee4cafe9f043e0464d76aa36b291e7ef687b80145cf2d7a213402bbbd",
+    "AI000-C07-L01": "474faef4f895471e2b172b462e2dcb1ddfb185f4424b52967783f6e0d620643e",
+    "AI000-C07-L02": "1cf66f16b883b68920ad18a06571fd21cbb7da579f78643c3b0ebc08f1b40b23",
+    "AI000-C07-L03": "e60e96f6c2b8dc93e50546e1700fe32533cac6951d3e971f70757deb740c4679",
+    "MA101-C02-L03": "e469e3e0ebb497e7a3831914d0d4d68bd0bc23b5c30557e4a8b235098d44428e",
+    "MA101-C02-L04": "4ed8fd14a580511106503adbbdad6241c24fef48663904c3016147ca0d5bde25",
+    "MA101-C02-L05": "2e710caf4345d49ec860bf2fe1c304e8cf6e0a4e1aa7b5eccf8b9fee35006095",
+    "MA101-C02-L06": "2fe1d35d3597fc62d049c700b484aa36982edfde813c408605f7d4e5d071cf38",
+    "ML201-C03-L01": "7675d8830b5432d1387fc18591883e7e43f55f73dc2d9e0afdfa45678b9e73e0",
+    "ML201-C03-L02": "53820bd813d01ba59a237d1218a1966f16d0c49f04ec4cd7b21b6016525b4530",
+    "ML201-C03-L03": "92091377137a4c3062d9c1d74f1825562c168526bd539efbf5dc01ff8b3889c0",
+    "ML201-C04-L02": "d9758378cb21e5786bd3c21b142c3f8063859bfc4d3f30a4f5efd4019f173f5d",
+    "ML201-C04-L03": "7675813c6dbf06e2eaae249f2468c6a632807208dc51d5857b072468e783efef",
+    "ML201-C04-L04": "5fa68ffaff83b64af0fcc4dff973dc3ab9976a4b5915f05fdc9e8f499da61c79",
+    "ML201-C04-L05": "e0547cd116e39acacceea45bd8cac6a1a2c13bc7df91066007db53fbe716287e",
+    "ML201-C04-L01": "60ff0636fa10563eef3fa1a16dc4935a63ac73ac524181d2902eefb1c917decf",
+    "PY101-C05-L01": "d052dd48c61d6741bdaccd49de80dac7338b3c9ec45386fc768f93be3993e218",
+    "PY101-C05-L02": "1efaabac8ba11a3ae26b554131c34e917fd4ce2536705ac4c610ec818bdc807d",
+    "PY101-C05-L03": "464401c5d3def09f82a43a764f47bba66bb5a7a1354b8e3b90c985c386669874",
+    "PY101-C05-L04": "0195e241298b62d9c690e9548b7882c29f47a08c72f84aa75989c5cf47f4e4ab",
+    "PY101-C05-L05": "4879e722b463c049da187e291284b7864fce427cfff7da5ea7f0091a2ff2c1bd",
+    "MA101-C02-L01": "0697e683df11d31942e05aa714adf6813f0bb62854cde24c900e36d4e0911734",
+    "MA101-C02-L02": "87e4ffe53218a1b2ef4d94f736fb42f414c1db0b2752a73d5b41d93bc274992f",
+    "MA101-C03-L01": "39410918d20e8cba4ff8a7f6fe49e072a54d4a10408af4514f8e906e3466a2c7",
+    "MA101-C03-L02": "0941f935abd9bd1dbe9a50e698eeaf70ef3da2d1bcb195d057be9f6ffda50b52",
+    "MA101-C03-L03": "66f4d7586db4f6ebf9d1b8474d9802965154e8c02a2bf8210959baf6d5d84585",
+    "PY101-C05-L06": "8ac18f1b83b6a6610a18493d80d0eac2fc6e447d4a70b24331a9eacd2eb3b7be"
+  },
+  "publications": {
+    "PY101-C02-L03": "10e33afc1915e44c73892d16a38a057c64d9decedbe0b23ec897bc132a403cbc",
+    "PY101-C02-L02": "cddc1df67c98ea7bd15a676355295ec3af9b6df79fc445efd979dd0acd1ee379",
+    "PY101-C02-L01": "6c5b9148c48055f2fa58a0ef6d21051e67a3f80e5287a47d6fc2ea955cc5e0ae",
+    "PY101-C01-L06": "f07c140b9a06e2e51071b84f03af53c3c89978b4c583e8e760cc4614eb6e50d6",
+    "PY101-C01-L05": "bbc7adac5cb4ae96101705339d33acfe16654ad6ab9ef9fbd8ba506053ed946d",
+    "PY101-C01-L04": "204a6ea893b7a04efb046c00fa75a077d8471a94d8c8e0a6e9aa78084b6813fa",
+    "PY101-C01-L03": "d0f5d4cda33cd2941f87115957ec449c59e4c39083db51f2ba37720116c6c005",
+    "PY101-C01-L02": "c18177c94ae07d875f0bca9ca19d8f3deb9a0541e0f3fc994daf02475a52db74",
+    "PY101-C01-L01": "542feeebb9600e1a419aeaf91ac216b1c68f971c59c36934651d8a53d4c0f7d1",
+    "AI000-C07-L03": "df7d487e3870c6a7d18a132ba846d8603599c8a3f036b7d6b863dbe75503da78",
+    "AI000-C07-L02": "dbe98f35077fe579bc61b1c6ff84719c9a43c7d80204aac59ca7122a07b9cb0e",
+    "AI000-C07-L01": "5b8b9accabcaac258d7202af40bd41df26625252d0f0c2e3f68558e02bb8c58e",
+    "AI000-C06-L03": "f9662b2cb43dfaf49d315c58d45eceade737c9db16b0504b428c298c2da59445",
+    "AI000-C06-L02": "3ad51b180720076094a0f479b4a3bf1eab24e702f5887a2c77aa1049a84e57c6",
+    "AI000-C06-L01": "3ab7dcc39fa0aa75481e41700e9f70419bb7de6bdd312bc0a42e14a6e49dc468",
+    "AI000-C05-L05": "e432f9bd7305ea536d38181864f2ed24f4e53a9d889d6469d61c4b3a223cfeef",
+    "AI000-C05-L03": "cde14b6f3dfd69577fd431227c8c119e85226b03cc507eac918906a9e10d8d9c",
+    "AI000-C05-L04": "79144a7b946e66b8a5d9ee00d92b760eae22d34ca56d101d2a561d6b9e1a8386",
+    "AI000-C05-L02": "5fee20815aab3b352dec12deb5b0f4e1a56ab23307c19ed0e83454d5a28df062",
+    "AI000-C05-L01": "a05702f453f61d710015293c73ef277e7d8c488a76a2184dbe659c3f16494775",
+    "AI000-C04-L04": "0406e29dac402e39bbca48106f3c2b89d6f7bc8ec9f74dd6ece89220a73314eb",
+    "AI000-C04-L03": "f90f1988592a92929269db65872bca653ca298d83e533a58f6899b0a41c06392",
+    "AI000-C04-L02": "8ad22eeaf7ee0f5acd209a64fbefca01c8e4c206cfd8a10ddb760e23c7ffe8e5",
+    "AI000-C04-L01": "a012ae41f6fd1a3a9b67978719d9fcf5e996db3e6dc738d2e76269a62669ea6a",
+    "AI000-C03-L04": "f643eb9f02037c51b93158914239a4ad075f619e305f5ed47e4e77d28c53708b",
+    "AI000-C03-L03": "dce9fe3a39c9c42a0cbe1d8a4222d4b49b8fb4bf01fb7d2985666b54c8aa6100",
+    "AI000-C03-L02": "cfe72bc20f8df4f6f57168b0f79e2cff103fae9a515bca8444ba9aeb7027de1a",
+    "AI000-C03-L01": "9d4b1e9f14dbf641729d30fd8f82a8cdc25742e749d4125e8d0afef84eb0681c",
+    "AI000-C01-L02": "94d6a567973ba6be887d46c538acf76f4bb4741f6fc6e82fbc01204641c3ecda",
+    "AI000-C01-L03": "edfb889e8be5da2f031889d1a29411eec1b6404c981357c2d77448ed86e4e0d4",
+    "AI000-C02-L02": "05234fcc51bbe0f2e42fe8995ad89face00b4d1a6353ae8b1b119700f42e8575",
+    "AI000-C02-L01": "93b2fda5f012eb318de7bf0d31f1ea253721760360470748f1db736bc46c98ff",
+    "AI000-C01-L01": "17e82b8624f892918b9d28afbe4a63f8cddfdf638abdb6003bdb47c0f46483f9",
+    "ML201-C03-L01": "0de24dcb1ff2d00082bba4cb91feb275e9c3101f37e6d5f05fc5af9b37d6a1a4",
+    "ML201-C03-L02": "26210000a012027b60cffe4f5c6c7f77a54f561763b827110539714f5907e95a",
+    "ML201-C03-L03": "89ea5672f516f4bed663bc949e13049d9661ed609dd7e0b47104b2783c1166c4",
+    "ML201-C04-L02": "192316b466cd59f5a2b3ead6fd966949f47161a9c0031802843bf169d1774fc3",
+    "ML201-C04-L03": "3ab384cb73e2e40648cad0d7f727cf6e0d3ad16fd93d230474d6d66c82d3e4c2",
+    "ML201-C04-L04": "14753e00727de91f31bbb132f8e39eaae3c5f430545a6b749dac966d32f1c8d4",
+    "ML201-C04-L05": "0272b0283eb20d8efdeab388c4a856d395b06e307be6e95bd2cfd202fb7a1873",
+    "PY101-C05-L01": "8e807c4232cdf6750b24fae803c677e0aa3dbd68eb7aae8ab2d34c4dd81a08d4",
+    "PY101-C05-L02": "c9f2000ecb9b22a4b7f2f2b62053b43c509d75281d387a7bcc454da884eed234",
+    "PY101-C05-L03": "ecda65af86b932199cc1f2d4e93f3f4cc8e0f01730eeaae5e80f2a06e6229cae",
+    "PY101-C05-L04": "367b1d459b1c0ab5435534184132df4f008904af1ebc7a63d7509d949112da2a",
+    "PY101-C05-L05": "eb30b435921ebd20ec8c4ac86c3f0e7bba95fcaba153dd3613887df628a0dcfc",
+    "PY101-C05-L06": "c64e2c1762ad0be0b56c9156ac28901a0e56576b806333f906e8672ffaec811f",
+    "MA101-C02-L03": "61cc24e838b8ba5103b1211bba151cc336cf43c08f06e6d923c52c5acf0597f0",
+    "MA101-C02-L04": "abf3c04ab5b11513aa793cd1cf1d4437fa65331af17776e10d91466588910c4e",
+    "MA101-C02-L05": "796a25e2cb4e291139f92c28a6bbcf3e4135a49761fe3c608d82f86b5b10f327",
+    "MA101-C02-L06": "1997a694ffa0dcda12b191e785ea1716c5f49e28aec73efa975183da6dded7b3",
+    "MA101-C02-L01": "0098aec0436f51f8c5cb396715cb3c01f38a0ca97d3ea3f45a33db45becb002c",
+    "MA101-C02-L02": "6a467c1dfdd7c5552ecf9f300168f7ed93070e5b67aa7ffe6ba2743a25a5df0b",
+    "MA101-C03-L01": "1dce65ebf7fb85d187b04eb80a81334c6051ba0e3ac4a46086a5f55ac4af7937",
+    "MA101-C03-L02": "0b2491f2c0366393ff8dbb667bcabdb1faf5569d2bc26e64f6eba0222bd8c35b",
+    "MA101-C03-L03": "26c3b1ce02ecda88f8db7999e714d187a4ba1e92a5f4df2bbd1f4539cc6e5ba3",
+    "ML201-C04-L01": "a934e09a7cc912d972854997c06e44e6e2ced1a7bc32eb947d0aeecc7a7c380e"
+  },
+  "amendmentsBefore": {
+    "PY101-C02-L01": {
+      "lesson": {
+        "id": "PY101-C02-L01",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "contentVersion": 1,
+        "title": "用变量保留并更新程序里的值",
+        "subtitle": "自己给任务文字取个名字，预测更新前后的输出，再修复一次读得太早的错误。",
+        "learningTime": {
+          "reading": [
+            10,
+            15
+          ],
+          "practice": [
+            5,
+            8
+          ],
+          "coding": [
+            10,
+            15
+          ],
+          "basis": "editorial-estimate"
+        },
+        "optionalLesson": false,
+        "assessmentMap": [
+          {
+            "objective": 1,
+            "exerciseIds": [
+              "keep-and-update"
+            ]
+          },
+          {
+            "objective": 2,
+            "exerciseIds": [
+              "keep-and-update"
+            ]
+          },
+          {
+            "objective": 3,
+            "exerciseIds": [
+              "repair-first-read"
+            ]
+          }
+        ],
+        "prerequisites": "已完成第一章：能在电脑上创建、保存和完整运行.py，使用print及成对引号，核对文件位置与解释器；接触过1.5的最小赋值和名称读取。沿用已可运行的Python 3与编辑器，不重新安装软件。手机可阅读，独立代码实践需要电脑。",
+        "prerequisiteLinks": [
+          {
+            "title": "1.1 从终端执行文件",
+            "href": "/learn/PY101/PY101-C01-L01#run-script",
+            "note": "补齐.py和print的运行。"
+          },
+          {
+            "title": "1.3 保存后完整重跑",
+            "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+            "note": "核对保存状态、cwd与实际目标。"
+          },
+          {
+            "title": "1.5 最小赋值经验",
+            "href": "/learn/PY101/PY101-C01-L05#first-cells",
+            "note": "回顾名字、文字与命名建议；本节转到普通脚本。"
+          },
+          {
+            "title": "1.6 读懂相关错误",
+            "href": "/learn/PY101/PY101-C01-L06#read-evidence",
+            "note": "保留错误类型及对应代码行。"
+          }
+        ],
+        "objectives": [
+          "在自己创建的.py中用合法名称保存文字并输出当前值，区分名称和引号内的固定文字",
+          "预测同一名称重新赋值前后的输出，只修改第二次赋值，保存重跑并解释哪一行变化",
+          "按执行顺序找出首次赋值前的读取，记录实际错误，保留名称读取语义修复并从头运行"
+        ],
+        "sections": [
+          {
+            "id": "changing-task",
+            "title": "任务变了，程序怎样接着使用新文字？",
+            "navGroup": "start",
+            "navLabel": "名称与值",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "一个小程序先显示当前任务“打包笔记本”，稍后要改为“检查标签”。如果把同一任务文字在各处重复写死，修改时容易漏掉一处。我们可以先给这份文字取一个名字，使用时读这个名字，需要变化时再给它新的值。"
+              },
+              {
+                "type": "paragraph",
+                "text": "在1.5，你用marker和两格代码观察过内核记住的内容。这次回到普通.py文件：自己选名字、写出赋值与读取，并判断程序运行到不同位置时会显示什么。所有例子只用Python自带功能。"
+              }
+            ]
+          },
+          {
+            "id": "name-and-value",
+            "title": "先把一份文字交给名称",
+            "navGroup": "start",
+            "navLabel": "名称与值",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "先看这一行，暂时只理解它的作用，下一段会把它与其他行组合成完整脚本："
+              },
+              {
+                "type": "code",
+                "code": "task_name = \"Pack notebooks\"",
+                "filename": "赋值片段 · 稍后组合",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "task_name是我们选择的名称，意思是任务名称；\"Pack notebooks\"是这次给它的文字值。和1.1一样，配对英文引号标记字符串的开始和结束，引号不是名称的一部分。"
+              },
+              {
+                "type": "paragraph",
+                "text": "执行这条语句时，=让左边的task_name对应右边的值，这个动作叫赋值。这种运行时的对应关系叫绑定。=在这里执行一个动作，并不要求你判断数学等式是否成立。"
+              },
+              {
+                "type": "paragraph",
+                "text": "本节把能绑定到值、供后续读取的名称称为变量，task_name就是变量名。它帮助后面的代码找到当前对应的值。之后再次赋值，可以改变这份对应关系；理解变量时，先抓住名称和当前值这两件事。单独执行赋值不会像print那样显示一行文字。"
+              }
+            ]
+          },
+          {
+            "id": "choose-name",
+            "title": "自己选一个能使用的名称",
+            "navGroup": "start",
+            "navLabel": "名称与值",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "沿用1.5的便捷建议：用英文字母开头，后面接英文字母、数字或下划线，名称中不放空格。例如task_name、label2都符合这种写法。task_name中的下划线把两个词连成一个名称；my plan含空格、1plan以数字开头，都不能用作这里的变量名。"
+              },
+              {
+                "type": "paragraph",
+                "text": "Python有一些保留给语言本身的词，称为关键字，例如for、class，不能拿来作普通变量名。本次可选带含义的task_label、next_task等名字，也避开print，留着这个已有的输出工具。赋值处和读取处的拼写、大小写要一致；task_name和Task_name是两个名字。"
+              },
+              {
+                "type": "paragraph",
+                "text": "这些英文写法方便初次练习，不是Python全部合法名称的清单。下划线开头的名称以及用某些中文等文字组成的名称也可以合法使用。练习接受其他合法名称；一个清楚表达用途的名字，比只写一个字母更容易检查。"
+              }
+            ]
+          },
+          {
+            "id": "read-and-update",
+            "title": "读取当前值，再给同一名称新值",
+            "navGroup": "execution",
+            "navLabel": "读取与更新",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "在刚才的赋值之后接上这一行："
+              },
+              {
+                "type": "code",
+                "code": "print(task_name)",
+                "filename": "读取片段 · 接在首次赋值之后",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "print(task_name)先读取task_name此刻对应的值，再显示它，所以这里会显示Pack notebooks。括号里没有引号，读取的是名称；写print不会自动给尚未有值的名称赋值。"
+              },
+              {
+                "type": "paragraph",
+                "text": "再在这次读取后面写："
+              },
+              {
+                "type": "code",
+                "code": "task_name = \"Check labels\"",
+                "filename": "更新片段 · 接在首次读取之后",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "这还是同一个task_name。执行这一行时，它改为对应Check labels，称为重新赋值。后续再执行print(task_name)，会读到新的文字。名称保持相同，当前值可以随执行的赋值改变。"
+              }
+            ]
+          },
+          {
+            "id": "predict-run",
+            "title": "先预测四行代码，再运行完整脚本",
+            "navGroup": "execution",
+            "navLabel": "读取与更新",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "在自己的练习文件夹新建task_labels.py，源码放在.venv外。用编辑器把下面四行写入，行首都不加缩进。先在本地笔记写下两行预测：第一次print执行时，之前已经发生哪次赋值？第二次print之前又发生了什么？写好再保存运行。"
+              },
+              {
+                "type": "code",
+                "code": "task_name = \"Pack notebooks\"\nprint(task_name)\ntask_name = \"Check labels\"\nprint(task_name)",
+                "filename": "task_labels.py",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "确认编辑器已保存，终端用pwd和Windows的dir（macOS为ls）确认当前目录包含这份文件。沿用第一章已核验的解释器命令：Windows在PowerShell运行下面第一条，macOS在终端运行第二条；若此前一直用py，保持使用py。命令输入在终端提示符后，不放进.py，也不只运行编辑器选区。"
+              },
+              {
+                "type": "code",
+                "code": "python task_labels.py",
+                "filename": "Windows · PowerShell · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "python3 task_labels.py",
+                "filename": "macOS · 终端 · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "如果沿用项目.venv而未激活，也可以按1.4直接调用已核验的环境解释器，脚本参数仍为task_labels.py。本节不创建新环境。实际结果应为："
+              },
+              {
+                "type": "code",
+                "code": "Pack notebooks\nCheck labels",
+                "filename": "完整运行 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "table",
+                "caption": "沿实际执行顺序看当前值",
+                "columns": [
+                  "刚执行到哪里",
+                  "task_name当前对应什么",
+                  "这一步的显示"
+                ],
+                "rows": [
+                  [
+                    "第1行赋值后",
+                    "Pack notebooks",
+                    "无普通输出"
+                  ],
+                  [
+                    "第2行print",
+                    "Pack notebooks",
+                    "Pack notebooks"
+                  ],
+                  [
+                    "第3行重新赋值后",
+                    "Check labels",
+                    "无普通输出"
+                  ],
+                  [
+                    "第4行print",
+                    "Check labels",
+                    "Check labels"
+                  ]
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "第一条print已经把旧值显示出来，第三行才开始执行新的赋值。后来的赋值会影响后续读取，不会倒过来改写已经显示的第一行。判断某次输出时，要看它执行之前真正发生的动作。"
+              }
+            ]
+          },
+          {
+            "id": "change-one-value",
+            "title": "只改第二次赋值，会改变哪一行？",
+            "navGroup": "execution",
+            "navLabel": "读取与更新",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "现在自己另选一项任务，只改第三行引号内的文字，其他三行保持不动。先写两行新预测，再保存，用同一条命令从头运行整个文件，比较这一次和上一次的真实输出。"
+              },
+              {
+                "type": "paragraph",
+                "text": "例如把第二次赋值的文字换成Sort envelopes，第一行仍应为Pack notebooks，第二行变为Sort envelopes。原因是第一次读取之前的赋值没有改变，而第二次读取之前执行了修改后的赋值。用你自己选的文字再核对一次，不用把这个变式也抄进文件末尾。"
+              },
+              {
+                "type": "paragraph",
+                "text": "若仍显示旧文字，先按1.3核对保存标记、当前目录与执行目标，再比较源码。编辑内容、保存文件与运行程序是三个动作，新的输出来自这次实际执行。"
+              }
+            ]
+          },
+          {
+            "id": "literal-or-name",
+            "title": "有引号的文字和无引号的名称",
+            "navGroup": "compare",
+            "navLabel": "区分与排错",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "回顾1.1：引号围起来的是固定字符串。另建name_or_text.py，先预测下面两次显示会不会相同，再保存并完整运行；命令中的文件名换成name_or_text.py。"
+              },
+              {
+                "type": "code",
+                "code": "task_name = \"Ready\"\nprint(\"task_name\")\nprint(task_name)",
+                "filename": "name_or_text.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "task_name\nReady",
+                "filename": "对照 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "print(\"task_name\")直接显示引号里的task_name这几个字符，没有读取这个名称。print(task_name)读取当前绑定的值，所以显示Ready。两行都使用print，差别在括号中的内容：固定文字，还是名称读取。"
+              },
+              {
+                "type": "paragraph",
+                "text": "如果想保存Ready这段文字，就保留它两端的引号。去掉后，Ready会被当成另一个名称；若本次程序没有给它提供值，读取就可能失败。下一段用一个更容易定位的完整脚本实际观察这种未定义名称错误。"
+              }
+            ]
+          },
+          {
+            "id": "fresh-script",
+            "title": "每次从终端启动，是本次脚本的执行",
+            "navGroup": "compare",
+            "navLabel": "区分与排错",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "本节使用的是常规终端命令启动的新Python脚本进程：每次运行，都会从文件开头按源码顺序执行这几条语句。上一次运行结束时给名称赋过值，不会让下一次新进程自动拥有那个绑定。源码文件保存了语句，这次真正执行到赋值时才建立对应关系。"
+              },
+              {
+                "type": "paragraph",
+                "text": "1.5的Notebook可以在仍运行的同一内核中保留先前执行过的名称；那是另一种执行方式。这里不用Notebook旧状态补齐.py中缺失的步骤。把脚本保存并从头运行，是检查当前文件本身是否足够的办法。"
+              }
+            ]
+          },
+          {
+            "id": "first-read-error",
+            "title": "赋值写在后面，为什么第一行仍报错？",
+            "navGroup": "compare",
+            "navLabel": "区分与排错",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "在新的dispatch_label.py中保存下面两行。先预测这次能否显示Packed T7，再从终端完整执行它。这是有意安排的失败实验，预期会出现NameError；保留你实际看到的相关代码行及错误末行。"
+              },
+              {
+                "type": "code",
+                "code": "print(dispatch_label)\ndispatch_label = \"Packed T7\"",
+                "filename": "dispatch_label.py · 预期出现NameError",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "运行到第一行时，程序需要读取dispatch_label，却还没有执行第二行的赋值，所以本次没有正常的任务输出。错误类型是NameError，描述会提到dispatch_label未定义；文件路径、行号排版与箭头可能随环境或Python版本变化，以自己的真实回溯为准。后面有赋值文本，并不等于它已经执行。"
+              },
+              {
+                "type": "paragraph",
+                "text": "修复要让提供值的赋值先于读取执行。保留通过名称显示任务的做法，自己调整顺序，保存后从头运行，核对是否正常显示Packed T7。这次原因来自已给定脚本的执行顺序；无需重装Python、安装包或改PATH。其他NameError仍要结合对应代码判断，不能都套用同一根因。"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "自己写一次更新，再独立修复一次读取",
+            "navGroup": "practice",
+            "navLabel": "独立练习",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "先合上示例和参考答案完成任务。网页输入框只是临时笔记；正式成果保存在本地.py及短记录里。只需列出源码、命令、预测与实际结果，不必抄成长篇报告。"
+              },
+              {
+                "type": "exercise",
+                "id": "keep-and-update",
+                "title": "自己的任务标签会怎样改变？",
+                "kind": "代码",
+                "prompt": "创建与正文不同的.py文件，自选新的任务情境、一个合法名称和两段不同文字。自己写第一次赋值与名称读取，再写同一名称的第二次赋值与名称读取。运行前预测两行输出，保存并真实执行。随后只改第二次赋值的文字，再预测、保存并完整运行一次。交付实际源码（保留改前/改后差异）、运行命令、两次预测和两次真实输出；简短说明为什么第一行不随后面的赋值倒退改变，再用一句话区分名称与引号里的文字。名称不必是task_name，接受其他合法写法；不能只交参考输出。",
+                "hints": [
+                  "沿程序从上到下走到每一次print，观察此前最近执行过哪次给这个名称赋值的语句。",
+                  "把自己的两次赋值和两次读取分别标出，核对实际顺序。只改后一次赋值后，重新预测哪些读取会遇到它；仍由你独立选名、填新文字、保存和执行。"
+                ],
+                "solution": [
+                  "例如布展任务另建gallery_plan.py，选display_note：它以字母开头，只有字母和下划线，且不是关键字。以下只是一种参考，其他合法名称和任务内容同样接受。",
+                  "参考初稿从上到下写四行，分号只是这里的分隔说明，不输入文件：第1行：display_note = \"Hang posters\"；第2行：print(display_note)；第3行：display_note = \"Place signs\"；第4行：print(display_note)。两段文字用配对引号包住，两次print中的名称与赋值拼写一致。先预测Hang posters、Place signs两行，再保存；Windows可用python gallery_plan.py，macOS用python3 gallery_plan.py，保留本人真实结果。",
+                  "只修改后一次赋值后的四行依次为：第1行：display_note = \"Hang posters\"；第2行：print(display_note)；第3行：display_note = \"Open doors\"；第4行：print(display_note)。重新预测后完整运行，应为Hang posters、Open doors。第一次print发生在后一次赋值之前，因此第一行保持原样，第二行读取更新后的值。",
+                  "display_note是不带引号、用于读取的名称，\"Hang posters\"等是引号内固定文字。若把print中的名称加上引号，会改成显示名称文字本身，已经改变读取含义。",
+                  "常错包括：只改编辑区未保存、命令指向另一文件、赋值/读取拼写或大小写不同。后两种名称差异若导致读取未定义名称，可能出现NameError；漏掉配对引号可能是SyntaxError，把应为文字的内容写成未定义名称也可能NameError。按实际行检查，不只抄错误名。接受配对单引号和中文文字，但必须保留自选内容与两次实际执行。"
+                ],
+                "rubric": [
+                  "实际新.py使用自选合法名称与新情境，两段文字不同；有同名两次赋值及两次名称读取，源码和运行命令对应。",
+                  "两轮都有运行前两行预测和真实输出；改后只改变第二次赋值，结果与执行位置相符，差异有核对。",
+                  "结合本人代码说明第一行已在更新前显示，不会被后来赋值改写；能区分名称读取与引号内固定文字。读完标记、复制样例或只有解释不代替代码与运行。"
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "下一题使用first-read-error中的两行dispatch_label起始源码，可回到上方代码框复制到另建的repair_label.py。它故意在第一次赋值前读取名称；不要先套用修复参考。"
+              },
+              {
+                "type": "exercise",
+                "id": "repair-first-read",
+                "title": "为什么脚本还没开始显示任务就报错？",
+                "kind": "实验",
+                "prompt": "确认repair_label.py的真实位置与保存状态，内容为上方dispatch_label两行故障源码。先预测首次运行现象，再从终端实际执行，保留真实错误类型、相关代码行和末行。按这次执行顺序判断：读取时，这个名称是否已经有值？自己决定安全修复方法，保留变量赋值与名称读取的语义，保存并从头重跑。交付修复前后源码、命令、错误及恢复后的真实输出，再简短解释本次新脚本为何不能依赖以前Notebook内核的状态。只改成print(\"Packed T7\")跳过了名称读取，不能算本题完成；不通过重装、改PATH或删环境解决。",
+                "hints": [
+                  "从这次脚本第一条执行语句开始看。它需要的名字，在此前的本次执行中已经获得值了吗？",
+                  "分别找到提供值的赋值语句与读取语句，比较它们在文件中的位置；考虑怎样调整依赖顺序并保留名称读取，然后自行保存与完整重跑。"
+                ],
+                "solution": [
+                  "新脚本先执行print(dispatch_label)，该名称尚未被本次执行绑定，因此真正运行会出现NameError，且没有Packed T7正常输出。赋值虽然写在文件第二行，但报错发生时还没有执行到那里。先保存本人实际回溯和对应行，不用参考文字代替故障证据。",
+                  "一种修复后的repair_label.py分两行写：第1行：dispatch_label = \"Packed T7\"；第2行：print(dispatch_label)。先提供值再读取。可以把赋值移到读取前，也可以把读取移到赋值后；保留同一名称和任务文字即可。",
+                  "保存后从文件所在目录运行python repair_label.py（macOS用python3，已验证的py也可）。预期正常输出Packed T7，实际结果需自己保留；恢复成功要对应保存的整份源码。",
+                  "本节从终端启动新的脚本进程，不会继承先前另一个Notebook内核中的名称。即使旧内核曾有同名变量，也要让当前文件自己提供读取前所需的值。",
+                  "常错是只把print改成固定文字、只跑选区、依赖旧交互窗口或只写“调整顺序”而没保存重跑。若改了名称，要在赋值和读取处一致修改并说明；若真实错误不同，先核对实际文件和代码，不伪造NameError。"
+                ],
+                "rubric": [
+                  "在已确认的保存文件上真正复现首次读取错误，保留实际命令、相关代码与NameError，不以预贴错误文字替代。",
+                  "依据本次执行先后指出读取时尚未绑定；修复仍含赋值及名称读取，提供值先执行，未用输出常量绕开任务。",
+                  "保存修复源码并从头运行，保留真实Packed T7输出与命令；能解释新脚本进程和旧Notebook内核状态的区别。"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "next-step",
+            "title": "用自己的文件检查这三件事",
+            "navGroup": "finish",
+            "navLabel": "回顾与后续",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "summary",
+                "points": [
+                  "给值选择合法名称，执行赋值后再通过名称读取；引号中的内容表示固定文字。",
+                  "按执行位置预测当前值，重新赋值影响后续读取；保存并完整重跑验证自己的改动。",
+                  "遇到本次未定义名称错误，结合相关代码与执行先后检查提供值的步骤，再保留语义修复和复跑。"
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "保留两个自己的.py及短记录，能现场换一个名字或任务文字并再次验证，才有独立操作的证据。网页读完只记录阅读，不会自动判断这些程序是否达标。"
+              },
+              {
+                "type": "paragraph",
+                "text": "接着学习2.2「分清文字、整数、小数和真假值」，它已有待人工审核试读，将用实际类型观察接续本节的名称与值。2.3–2.6仍只有规划；第5章函数试读还需要表达式与控制流程等中间先修，不能把阅读器的可读课时导航当作直接跳学建议。整门PY101仍在筹备。"
+              }
+            ]
+          }
+        ],
+        "resources": [],
+        "references": [
+          {
+            "title": "Python赋值语句",
+            "href": "https://docs.python.org/3.14/reference/simple_stmts.html#assignment-statements",
+            "note": "核对名称的绑定和重新绑定。"
+          },
+          {
+            "title": "表达式中的名称",
+            "href": "https://docs.python.org/3/reference/expressions.html#identifiers-names",
+            "note": "核对名称读取与未绑定情形。"
+          },
+          {
+            "title": "合法名称与关键字",
+            "href": "https://docs.python.org/3.14/reference/lexical_analysis.html#identifiers",
+            "note": "名称字符、大小写和保留词。"
+          },
+          {
+            "title": "错误与异常",
+            "href": "https://docs.python.org/3/tutorial/errors.html",
+            "note": "识别错误类型和相关代码位置；本节不教异常处理。"
+          },
+          {
+            "title": "Python入门",
+            "href": "https://docs.python.org/3/tutorial/introduction.html",
+            "note": "赋值、字符串及最小例子。"
+          },
+          {
+            "title": "从终端执行脚本",
+            "href": "https://docs.python.org/3.14/using/cmdline.html#interface-options",
+            "note": "脚本文件参数和常规执行方式。"
+          }
+        ]
+      },
+      "publication": {
+        "lessonId": "PY101-C02-L01",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "title": "用变量保留并更新程序里的值",
+        "contentVersion": 1,
+        "order": 1,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p9/TRANSITION_AMENDMENT.md"
+      }
+    },
+    "PY101-C02-L03": {
+      "lesson": {
+        "id": "PY101-C02-L03",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "contentVersion": 1,
+        "title": "用表达式算出一个结果",
+        "subtitle": "从盒数、每盒件数和散件写出计算：先手算，再检查Python算出的数字是否符合题意。",
+        "learningTime": {
+          "reading": [
+            12,
+            18
+          ],
+          "practice": [
+            6,
+            10
+          ],
+          "coding": [
+            15,
+            22
+          ],
+          "basis": "editorial-estimate"
+        },
+        "optionalLesson": false,
+        "assessmentMap": [
+          {
+            "objective": 1,
+            "exerciseIds": [
+              "calculate-and-revise",
+              "compare-grouping"
+            ]
+          },
+          {
+            "objective": 2,
+            "exerciseIds": [
+              "compare-grouping"
+            ]
+          },
+          {
+            "objective": 3,
+            "exerciseIds": [
+              "calculate-and-revise",
+              "compare-grouping"
+            ]
+          }
+        ],
+        "prerequisites": "已完成第一章及2.1–2.2：能用合法名称保存int/float数值，用print和type观察，先预测再保存、从终端完整运行.py。沿用已有Python 3与编辑器，不安装新库；手机可读，代码操作需要电脑。",
+        "prerequisiteLinks": [
+          {
+            "title": "2.1 赋值与名称读取",
+            "href": "/learn/PY101/PY101-C02-L01#name-and-value",
+            "note": "回顾名称怎样取得右边的值。"
+          },
+          {
+            "title": "2.1 预测与完整运行",
+            "href": "/learn/PY101/PY101-C02-L01#predict-run",
+            "note": "确认本次真正执行的是保存的整份脚本。"
+          },
+          {
+            "title": "2.2 数值与文字",
+            "href": "/learn/PY101/PY101-C02-L02#add-measurement",
+            "note": "数值不加引号，测量值与单位分清。"
+          },
+          {
+            "title": "2.2 类型观察",
+            "href": "/learn/PY101/PY101-C02-L02#inspect-type",
+            "note": "需要时复习print(type(名称))的内外两步。"
+          },
+          {
+            "title": "1.3 保存与重跑",
+            "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+            "note": "输出没变化时检查保存状态和实际执行目标。"
+          }
+        ],
+        "objectives": [
+          "从新的数量情境识别数值与单位，用变量和加减乘除写出有实际含义的计算，保存运行并核对",
+          "预测乘除、加减与括号分组的结果，实际运行验证，并解释两种分组分别描述什么数量关系",
+          "只改一个已知数量重新预测和完整运行，核对结果及单位，并排查修正一次与题意不符的表达式"
+        ],
+        "sections": [
+          {
+            "id": "quantities-and-units",
+            "title": "先弄清楚每个数字在数什么",
+            "navGroup": "relation",
+            "navLabel": "数量关系",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "整理物品时，有4盒，每盒3件，另外散放4件。一共有多少件？先不用Python，在本地笔记写下手算过程和答案。你会先数盒里的物品，再把散件加进去，还是把所有数字直接相加？"
+              },
+              {
+                "type": "table",
+                "caption": "本例名称与数量的对应",
+                "columns": [
+                  "名称",
+                  "当前值",
+                  "含义与单位"
+                ],
+                "rows": [
+                  [
+                    "box_count",
+                    "4",
+                    "盒数，单位盒"
+                  ],
+                  [
+                    "per_box",
+                    "3",
+                    "每盒件数，单位件/盒"
+                  ],
+                  [
+                    "spare",
+                    "4",
+                    "散放数量，单位件"
+                  ],
+                  [
+                    "total",
+                    "待计算",
+                    "总数量，单位件"
+                  ]
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "盒里的数量是4乘3，得到12件；再加4件散件，得到16件。盒数乘以每盒件数后，结果才和散件一样以“件”为单位，能够相加。接下来把这句关系写成Python，让修改后的数量也能按同一关系计算。"
+              }
+            ]
+          },
+          {
+            "id": "expression-to-value",
+            "title": "让右边先算出一个值",
+            "navGroup": "relation",
+            "navLabel": "数量关系",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Python用*表示乘法，对应手算中的乘号。例如box_count * per_box，就是用盒数乘每盒件数。两个数字或名称之间要明确写*，数学排版的×和省略乘号的写法不用于这里的Python源码。"
+              },
+              {
+                "type": "paragraph",
+                "text": "像box_count * per_box这样，由数值、名称和运算符组成、可以求出一个值的写法，称为数值表达式。先预测下方print会显示什么，再新建boxes.py，输入并保存这三行，行首不缩进，源码放在.venv外。"
+              },
+              {
+                "type": "code",
+                "code": "box_count = 4\nper_box = 3\nprint(box_count * per_box)",
+                "filename": "boxes.py · 第一轮",
+                "language": "python"
+              },
+              {
+                "type": "paragraph",
+                "text": "在文件所在目录沿用第一章已核验的解释器。Windows用pwd、dir确认文件，再执行下面第一条；macOS用pwd、ls确认后执行第二条。一直使用py的Windows环境可保持py。本课后续新文件只替换命令中的文件名，始终保存并从头运行整份.py。"
+              },
+              {
+                "type": "code",
+                "code": "python boxes.py",
+                "filename": "Windows · PowerShell · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "python3 boxes.py",
+                "filename": "macOS · 终端 · 文件所在目录",
+                "language": "text"
+              },
+              {
+                "type": "code",
+                "code": "12",
+                "filename": "第一次观察 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "现在加入散件。Python用+表示加法；box_count * per_box + spare表达“先求盒里件数，再加散件”。用下面完整五行替换boxes.py原来的三行，先写新预测，再保存运行。"
+              },
+              {
+                "type": "code",
+                "code": "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\nprint(total)",
+                "filename": "boxes.py · 完整五行",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "16",
+                "filename": "加入散件 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "执行total这一行时，右边先读到4、3、4，按关系算出16，=再让total对应这个结果。*和+负责计算，=负责赋值，它们的角色不同。最后print(total)读取并显示16；给结果取名，后续还能接着使用它。"
+              },
+              {
+                "type": "paragraph",
+                "text": "这里输入的是2.2学过的数值，不把4写成\"4\"。带引号会变成字符串，不能期待它按本例的整数关系参与所有运算。单位保留在你的记录里，数值后面不直接接“盒”或“件”。"
+              }
+            ]
+          },
+          {
+            "id": "take-some-away",
+            "title": "取走两件后，怎样接着算？",
+            "navGroup": "relation",
+            "navLabel": "数量关系",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "刚算出一共16件，现在取走2件，剩余应是总数减2，即14件。Python用-表示减法。remaining = total - 2先求出剩余数量，再让remaining保存结果。"
+              },
+              {
+                "type": "paragraph",
+                "text": "回到已保存五行的boxes.py，在末尾追加下面两行，保留前面的赋值和总数计算。先预测新增加的输出，再保存、完整重跑。这个片段依赖本次文件前面已经算出的total，不能放进空文件直接运行。"
+              },
+              {
+                "type": "code",
+                "code": "remaining = total - 2\nprint(remaining)",
+                "filename": "追加片段 · boxes.py末尾",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "14",
+                "filename": "新增一行输出 · 接在16之后",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "现在两条普通输出依次是16、14，分别表示总件数和取走后的剩余。取走数量也以“件”为单位；本例取走不超过总数。写自己的计算时，把数字的意义与是否合理一起核对。"
+              }
+            ]
+          },
+          {
+            "id": "order-and-grouping",
+            "title": "括号改变分组，也要检查单位",
+            "navGroup": "reasoning",
+            "navLabel": "分组与分配",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "在这些数值计算中，乘法和除法优先于加法和减法。原式先写乘法，可能让人误以为总是从最左边逐项计算。另建order_boxes.py，把同一个加法写到前面作对照；先手算两行，再保存运行。"
+              },
+              {
+                "type": "code",
+                "code": "box_count = 4\nper_box = 3\nspare = 4\nprint(box_count * per_box + spare)\nprint(spare + box_count * per_box)",
+                "filename": "order_boxes.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "16\n16",
+                "filename": "优先级对照 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "第二式spare + box_count * per_box仍先求4乘3，再把散件4加上去，得到16。若不顾优先级，先把最左边两个4相加再乘3，就会算成24，已经换了分组。"
+              },
+              {
+                "type": "paragraph",
+                "text": "表达式中的一对括号可以明确分组，让括号里的加法先求值。下面print外面那对括号仍用于输出，里面那对括号把box_count + spare分成一组。先预测，再把这一行追加到boxes.py末尾，保存重跑；新增结果会接在原来的16、14之后。"
+              },
+              {
+                "type": "code",
+                "code": "print((box_count + spare) * per_box)",
+                "filename": "追加片段 · boxes.py末尾的分组对照",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "24",
+                "filename": "分组对照 · 新增输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "Python先把4和4相加得到8，再乘3，确实得到24。但原问题中box_count数的是盒，spare数的是件，把4盒和4件加成8盒，单位与含义不匹配。因此24是这段代码的计算结果，却不是原问题的总件数。能运行出数字，还要核对表达式是否写对了现实关系。"
+              },
+              {
+                "type": "paragraph",
+                "text": "换一个条件，括号式就可能有意义：原来4盒，又增加4盒，每盒同样是3件。added_boxes现在数新增的盒，能与原盒数相加。先预测，再将下面完整程序保存为more_boxes.py并运行。"
+              },
+              {
+                "type": "code",
+                "code": "box_count = 4\nadded_boxes = 4\nper_box = 3\nprint((box_count + added_boxes) * per_box)",
+                "filename": "more_boxes.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "24",
+                "filename": "同容量新增盒 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "这里是8盒，每盒3件，共24件。两种情境数字恰好相同，spare和added_boxes的现实含义却不同。括号决定怎样计算，题目条件决定这份计算有没有意义。"
+              }
+            ]
+          },
+          {
+            "id": "divide-and-meaning",
+            "title": "重新平均分配，除法在算什么？",
+            "navGroup": "reasoning",
+            "navLabel": "分组与分配",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "回到最初的16件。单独考虑一次重新分配：把全部16件重新平均放进原来的4盒，每盒分到多少件？Python用/表示除法，total / box_count就是总件数除以盒数。本例除数是正整数4，不能为零。"
+              },
+              {
+                "type": "paragraph",
+                "text": "在boxes.py末尾追加下面三行。它读取前面已经算出的total与box_count，average是新选的名称。先写平均数和类型预测，再保存、从头运行；type的内外两步沿用2.2。"
+              },
+              {
+                "type": "code",
+                "code": "average = total / box_count\nprint(average)\nprint(type(average))",
+                "filename": "追加片段 · boxes.py中的平均分配",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "4.0\n<class 'float'>",
+                "filename": "追加的两行输出 · 接在16、14、24之后",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "4.0表示这次全部重新分配后平均每盒4件，不是说原来每盒有4件；原来每盒3件，另有4件散件。本次分配没有先取走两件，前面的remaining只是另一个问题的结果，total仍是16。"
+              },
+              {
+                "type": "paragraph",
+                "text": "本课使用Python自带的整数和浮点数做普通数值运算。/得到float结果，即使16和4都是int且数学上恰好整除，也显示为4.0；type观察为<class 'float'>。这不是计算出错，也不需要为了去掉.0引入类型转换。"
+              },
+              {
+                "type": "paragraph",
+                "text": "不能整除时也能有合理的除法。例如把7升水均分到2个相同容器，先手算每个容器多少升，再将下方完整程序保存为share_water.py运行。水量可以分成小数升，这次结果的单位为升/容器。"
+              },
+              {
+                "type": "code",
+                "code": "volume_l = 7\ncontainer_count = 2\nprint(volume_l / container_count)",
+                "filename": "share_water.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "3.5",
+                "filename": "水量重新分配 · 预期输出",
+                "language": "text"
+              }
+            ]
+          },
+          {
+            "id": "same-level-order",
+            "title": "同一级的运算怎样分组？",
+            "navGroup": "reasoning",
+            "navLabel": "分组与分配",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "*与/在同一级，+与-也在同一级。这里每个运算符连接左右两个数值，称为二元运算。这些同级二元运算没有额外括号时按左结合规则分组，也就是先将左边的一步结果接到后一步。12 / 3 * 2相当于先12除3得到4.0，再乘2，得到8.0；若写成12 / (3 * 2)，则先求除数6，结果是2.0。"
+              },
+              {
+                "type": "paragraph",
+                "text": "再看10 - 3 + 2：先10减3得7，再加2得9。它可以描述10张卡片取走3张后又增加2张；10 - (3 + 2)则描述合计取走5张，剩5张。先写下面四行预测，再另存same_level.py完整运行。"
+              },
+              {
+                "type": "code",
+                "code": "print(12 / 3 * 2)\nprint(12 / (3 * 2))\nprint(10 - 3 + 2)\nprint(10 - (3 + 2))",
+                "filename": "same_level.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "8.0\n2.0\n9\n5",
+                "filename": "同级分组 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "判断一条混合式子时，先看括号，再看乘除与加减的优先级；处于同一级的这几种运算再按左结合分组。不要把这句话简化成“任何计算都直接从最左边算”，也不需要背一整张包含未学运算的优先级表。"
+              }
+            ]
+          },
+          {
+            "id": "put-it-together",
+            "title": "用同一份关系预测新数量",
+            "navGroup": "revise",
+            "navLabel": "改值验证",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "现在已分别观察过总数、括号反例和重新分配。把下面完整主例另存为box_relations.py，先预测三行，保存运行，再为每行写下含义和单位。第二条特意保留错误的现实分组，用来检查自己是否只盯着数字。"
+              },
+              {
+                "type": "code",
+                "code": "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\n\nprint(total)\nprint((box_count + spare) * per_box)\nprint(total / box_count)",
+                "filename": "box_relations.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "16\n24\n4.0",
+                "filename": "完整主例 · 三行预期输出",
+                "language": "text"
+              },
+              {
+                "type": "table",
+                "caption": "数字要和问题条件一起读",
+                "columns": [
+                  "显示",
+                  "这条表达式的含义",
+                  "本例中的判断"
+                ],
+                "rows": [
+                  [
+                    "16",
+                    "4盒内数量加4件散件",
+                    "原问题总数，16件"
+                  ],
+                  [
+                    "24",
+                    "先把盒数和散件数相加再乘每盒件数",
+                    "单位错配，不能作原总数"
+                  ],
+                  [
+                    "4.0",
+                    "全部16件重新平均分到4盒",
+                    "本次分配的平均数，件/盒"
+                  ]
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "再建revise_boxes.py，只保留有正确现实含义的三个结果：原总数、取走2件后的剩余、全部总数重新分配的平均数。注意最后一项用total，而非取走后的remaining，这三个输出分别回答各自的问题。先手算，再保存运行下面完整程序。"
+              },
+              {
+                "type": "code",
+                "code": "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\nremaining = total - 2\naverage = total / box_count\nprint(total)\nprint(remaining)\nprint(average)",
+                "filename": "revise_boxes.py",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "16\n14\n4.0",
+                "filename": "改值前 · 预期输出",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "现在只把per_box的赋值由3改成5，其他行保持不变。先在笔记写三个新预测，说明每盒多2件会怎样影响4盒总数，再保存，用同一命令完整运行revise_boxes.py，对照两轮真实输出和单位。不要把新程序追加到旧程序末尾，也不要先照抄下面的核对结果。"
+              },
+              {
+                "type": "paragraph",
+                "text": "核对时，新总数应为24件，取走2件后余22件，全部24件重分4盒为6.0件/盒。若结果仍是旧数字，先查保存状态与执行文件；若保存正确但数值不符，就从数量、单位和表达式分组逐项查，而不只是把预测改成屏幕数字。"
+              }
+            ]
+          },
+          {
+            "id": "zero-divisor",
+            "title": "除数为零时，要读懂失败原因",
+            "navGroup": "revise",
+            "navLabel": "改值验证",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "平均分配要有明确的非零除数。把8除以0无法得到这里的普通数值结果，下面是故意安排的失败例；你可以只读现象，不需要反复运行它。"
+              },
+              {
+                "type": "code",
+                "code": "print(8 / 0)",
+                "filename": "zero_divisor.py · 预期ZeroDivisionError",
+                "language": "python"
+              },
+              {
+                "type": "code",
+                "code": "ZeroDivisionError: division by zero",
+                "filename": "错误末行 · 路径和回溯以实际环境为准",
+                "language": "text"
+              },
+              {
+                "type": "paragraph",
+                "text": "这个例子没有正常数值输出，错误类型是ZeroDivisionError。遇到同类现象，核对当前除数的值与题目条件；核心练习选择明确的正整数盒数。此处先识别原因，不写try/except处理异常。"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "换一个情境，自己写并核对关系",
+            "navGroup": "practice",
+            "navLabel": "独立练习",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "先不看参考答案，独立写两份新.py。网页输入框只作临时思考区；本人源码、命令、预测和实际输出保存在本地。解释写清数字为什么变化，以及数字在数什么即可。"
+              },
+              {
+                "type": "exercise",
+                "id": "calculate-and-revise",
+                "title": "独立计算，再只改一个数量",
+                "kind": "代码",
+                "prompt": "自行建立一个与正文不同的整理情境，例如若干储物篮中的卡片，另有散放卡片，后来取走一些。自己选择合理的小正整数及合法且有意义的名称，不照搬正文整组数字；取走数量不超过总数。先列出各数量及单位，手算总数和剩余，再在新的.py中独立写出成组数量加散件、取走后的剩余及两次print。保存真实运行，核对预测。随后只改一项已知数量，保持其他赋值与计算关系不变，重新手算、保存、完整运行。交付两轮源码及差异、变量/单位、命令、两轮预测与真实输出，简短解释哪些输出变化及其原因。接受其他合理情境、合法名称和等价表达式。",
+                "hints": [
+                  "先找组数、每组多少、散件和取走多少。组数与每组数量结合后得到的单位，是否能与散件相加、与取走数量相减？",
+                  "按变量和单位核对成组数量、总数、剩余三步，再为两次显示写预测。只改一项时检查其余赋值是否保持，并由你自己填写数值、表达式和实际结果。"
+                ],
+                "solution": [
+                  "例如改用挂绳整理：5袋，每袋6条，散放3条，取走4条。新建cords.py。以下“第几行”只是分隔说明，每条语句各写一行，不把分隔文字输入源码。",
+                  "先写四个已知量：第1行：bag_count = 5；第2行：per_bag = 6；第3行：loose = 3；第4行：taken = 4。bag_count单位袋，per_bag单位条/袋，loose和taken单位条。接着：第5行：total_cords = bag_count * per_bag + loose；第6行：remaining_cords = total_cords - taken；第7行：print(total_cords)；第8行：print(remaining_cords)。乘法求袋里的条数，加散条求总数，减取走条数求剩余。",
+                  "先手算5乘6得30条，加3得33条，再减4余29条。预测两行33、29，保存后运行python cords.py（macOS用python3，已核验的py也可），保留本人实际输出逐项核对。",
+                  "只把袋数改为7，其他赋值和关系不变，八行依次为：第1行：bag_count = 7；第2行：per_bag = 6；第3行：loose = 3；第4行：taken = 4；第5行：total_cords = bag_count * per_bag + loose；第6行：remaining_cords = total_cords - taken；第7行：print(total_cords)；第8行：print(remaining_cords)。先算7乘6加3为45条，减4余41条，再保存并完整运行，应看到45、41。多2袋，每袋6条，总数与剩余都增加12条，取走数量没有改变。",
+                  "常错是只改了某个print常量、漏散件、从每袋数量而非总数扣取走、改多项却声称只改一项，或未保存/执行错文件。先用单位和手算定位，再修改源码完整重跑；不能只抄参考输出。你自己的情境与数字应另选，合理的分步或等价计算同样接受。"
+                ],
+                "rubric": [
+                  "实际新.py含本人自选数量、合法名称和单位，成组/散件/取走关系合理；总数与剩余均真实计算、显示，不能只打印预先算好的常量。",
+                  "改前与改后都有运行前手算预测、实际命令与完整输出；只有一项已知数量改变，其余赋值及计算关系保持，剩余数量有合理意义。",
+                  "结合两轮本人结果解释变化原因与单位，预测差异有核对；代码、保存和实际执行可对应。文字方案、Quiz或网页读完标记不足代替操作。"
+                ]
+              },
+              {
+                "type": "exercise",
+                "id": "compare-grouping",
+                "title": "括号式算得通，符合题意吗？",
+                "kind": "代码",
+                "prompt": "另建一份.py，用新的贴纸情境，自选盒数、每盒贴纸数和散放张数，三个数均为小正整数，每盒至少2张，不照搬正文整组数据。先手算两种分组：盒内总张数加散张；盒数与散张数先相加再乘每盒数。确保两结果不同，必要时重新选值。在运行前写两式预测，独立用变量写两式，保存真实运行。说明哪个符合散放贴纸原问题，另一个把哪两种单位混在一起；再给出改变题目条件、让括号式有意义的一种情境。用相同数据另写全部总张数重新平均分到原盒数的除法，预测并核对输出，解释float与非零除数；若不能整张均分，说明只是平均数或另选能整张均分的数据。最后定位不符合原题的那条表达式，将该行改为符合原散件关系的计算，保存重跑，保留修复前后源码与真实输出。交本人命令、单位、预测、两次运行和简短理由，不能只写“先算括号”。",
+                "hints": [
+                  "分别说出两个加号把什么数量加在一起：它们的单位相同吗？除法中的总数是否包含散件，这次分配的盒数有没有被你改变？",
+                  "核对散件到底按张数还是盒数记录，分别手算并运行两种分组，再设计另一个使括号分组成立的条件。找到不符合原问题的那行后自行修正和复跑，仍由你选择数据与最终表达式。"
+                ],
+                "solution": [
+                  "例如改用彩纸，3筒、每筒5张、散6张，新建paper_grouping.py。七行分别为：第1行：tube_count = 3；第2行：per_tube = 5；第3行：loose_sheets = 6；第4行：total_sheets = tube_count * per_tube + loose_sheets；第5行：print(total_sheets)；第6行：print((tube_count + loose_sheets) * per_tube)；第7行：print(total_sheets / tube_count)。tube_count单位筒、per_tube单位张/筒、loose_sheets单位张，total_sheets为原总张数。",
+                  "先预测：3乘5加6为21张；先3加6再乘5得到45；全部21张重新均分3筒，每筒7张，/显示7.0。保存后运行python paper_grouping.py（macOS用python3），保留本人三行真实输出。",
+                  "第二式把3筒和6张相加再当成9筒，单位错配，所以45不是原题总张数。若条件改成原3筒另增加6筒、每筒仍5张，括号式就有意义，会得到45张；改变的是题意，不能把原来散6张偷换成6筒而不说明。",
+                  "定位第6行，改成符合原散件关系的表达式；完整修复稿七行为：第1行：tube_count = 3；第2行：per_tube = 5；第3行：loose_sheets = 6；第4行：total_sheets = tube_count * per_tube + loose_sheets；第5行：print(total_sheets)；第6行：print(tube_count * per_tube + loose_sheets)；第7行：print(total_sheets / tube_count)。重新保存运行，应得21、21、7.0。两个计总输出现在一致，原总数和重分平均数不变。保留实际修复差异和新输出，不只写“有问题”。",
+                  "7.0为内置整数除法的float显示，不表示原来每筒已有7张；重新分配前原每筒是5张。若自己选的总数不能整张均分，所得小数只是平均数，不能宣称每筒实际放小数张；可重新选数据。常错还包括误用错误分组结果作总数、除以散件数、盒数为零，或只改答案而没重跑。接受不同合法名称、合理新情境及等价的正确表达式。"
+                ],
+                "rubric": [
+                  "两种分组都由本人新数据/变量写出，运行前分别预测并真实执行，结果不同，源码与命令对应，不能只交固定数字答案。",
+                  "指出原题应先计盒内张数再加散张，解释错误分组的盒/张错配；另给相同容量新增盒等使括号式有意义的条件。",
+                  "平均分配使用原题全部总数和非零原盒数，预测/真实除法及float解释正确，平均数与可实际整张均分的条件写清。",
+                  "定位不合题意的表达式，修复该行、保存并完整重跑，交改前/改后源码与真实结果；解释修复为何恢复原问题关系，而非只改预测迎合输出。"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "next-step",
+            "title": "结果有意义，计算才回答了问题",
+            "navGroup": "finish",
+            "navLabel": "回顾与后续",
+            "tier": "core",
+            "blocks": [
+              {
+                "type": "summary",
+                "points": [
+                  "先写清数值和单位，再用+、-、*、/表达数量关系；右边先求值，=保存结果。",
+                  "乘除先于加减，括号明确分组，这几种同级二元运算按左结合；计算规则与现实单位都要核对。",
+                  "使用内置整数或浮点数做/除法得到float，除数非零。只改一个已知量后先预测、保存、完整重跑，检查结果仍在回答原问题。"
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "保留自己两份.py、改值及修复前后的短记录。能用新数量解释计算和单位，再以本人运行核对，才有独立操作证据；网页读完或程序显示了数字都不能替代这些检查。"
+              },
+              {
+                "type": "paragraph",
+                "text": "接下来规划2.4「让比较表达式给出真假结果」，目前没有可读正文，2.5–2.6也仍在规划。阅读器下一可读课可能跳到第5章函数试读，它还需要比较、输入输出与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。"
+              }
+            ]
+          }
+        ],
+        "resources": [],
+        "references": [
+          {
+            "title": "Python计算器入门",
+            "href": "https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator",
+            "note": "核对四则、括号和除法的基本行为。"
+          },
+          {
+            "title": "运算优先级",
+            "href": "https://docs.python.org/3.14/reference/expressions.html#operator-precedence",
+            "note": "核对乘除/加减层级与本课同级左结合规则。"
+          },
+          {
+            "title": "二元算术运算",
+            "href": "https://docs.python.org/3.14/reference/expressions.html#binary-arithmetic-operations",
+            "note": "核对内置数值除法及零除数错误。"
+          },
+          {
+            "title": "赋值语句",
+            "href": "https://docs.python.org/3.14/reference/simple_stmts.html#assignment-statements",
+            "note": "核对先取得右侧结果再绑定名称。"
+          },
+          {
+            "title": "内置数值类型",
+            "href": "https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex",
+            "note": "本课只使用已学int/float，不展开其他数值系统。"
+          }
+        ]
+      },
+      "publication": {
+        "lessonId": "PY101-C02-L03",
+        "courseId": "PY101",
+        "chapterId": "PY101-C02",
+        "title": "用表达式算出一个结果",
+        "contentVersion": 1,
+        "order": 3,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "pending-review",
+        "access": "preview",
+        "technicalEvidence": "docs/py101-p10/TECHNICAL_REPORT.md"
+      }
+    }
+  }
+}

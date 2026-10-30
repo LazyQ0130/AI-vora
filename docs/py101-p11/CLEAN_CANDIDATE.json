@@ -1,0 +1,77 @@
+{
+  "checkedAt": "2026-10-30T05:44:20.069080+00:00",
+  "baseline": "b85e329b4688c0b55bbaf3f6c849a0732bc8455b",
+  "source": "git archive HEAD plus explicit task files",
+  "excludedOriginalModified": 4,
+  "excludedOriginalUntracked": 7,
+  "productSourcesEqualBrowserBuildInputs": true,
+  "allTaskCodeEqualCleanChecks": true,
+  "files": [
+    {
+      "path": "src/content/course-outline.ts",
+      "lfSha256": "3480d6b6c688308a83df5e7b38d5c88117aaa967e861bb7e565959e8503236e3",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/lib/course-engine.ts",
+      "lfSha256": "f7479d771e7a2a04e232f60bd03f7daa9ca1d49038dc6a9ea715b1f8024e5a47",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "lfSha256": "7aa939ed63c4e02735daa650c0dcb253d087666d1a8509bced7b13584d98f731",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "lfSha256": "a2ab480333fc99390084fd096ee2b834a7394877e8d15b580df129d36ae7b311",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "lfSha256": "d5f539905512733e759a1e247fb73f220b6310e4b77d7b01710941134f3c06a0",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "scripts/validate-python.ts",
+      "lfSha256": "972ec7f1682b89a3d6dff3eb8bef57eb9990df1f2d8e41d5010ea1b8d04eeb15",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "lfSha256": "41dae6cba905d23ffae988aec21caab31125528d3dd6324238a442fc114bd027",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "tests/content.test.ts",
+      "lfSha256": "580fd964b5e63815dfcbbb7f2c7cc3368c24123ecc406e4b1c5cb0110d89162c",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "tests/py101-arithmetic-expressions.test.ts",
+      "lfSha256": "6a5c7fc0d0f7c5add4ae6ace849db036f96e5efb2db4fc24964d7c2eaefa2783",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "lfSha256": "d6bd22530bdf4ed305cb7ec79a2f8fc645e964d2b32699456d838f103a4c48fd",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "src/content/resources/python-comparisons.ts",
+      "lfSha256": "fc3946d1c6c87ff1199b9608b5578b9740192b1a90a4ba95fb0ca93539eaab0d",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "scripts/validate-py101-comparisons.ts",
+      "lfSha256": "ac5ac4c45f2c3e164adde52a6d4df776f0d53e90f09603fe3be5aaf2d547e27e",
+      "matchesCleanCandidate": true
+    },
+    {
+      "path": "tests/py101-numeric-comparisons.test.ts",
+      "lfSha256": "e2cde16398df5df2a3ddc6e4c4b99162513e3170aafe6c81c9f8f749366719dc",
+      "matchesCleanCandidate": true
+    }
+  ],
+  "note": "Node dependency junction reused. Actual clean Turbopack failure retained; supported Webpack served on3025. Working checkout separately passed default Turbopack. Final source equals gated preview projection. Documentation-only finalization does not change product inputs."
+}

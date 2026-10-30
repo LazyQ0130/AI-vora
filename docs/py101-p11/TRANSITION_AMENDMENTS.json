@@ -1,0 +1,93 @@
+{
+  "records": [
+    {
+      "lessonId": "PY101-C02-L01",
+      "before": "接着学习2.2「分清文字、整数、小数和真假值」，它已有待人工审核试读，将用实际类型观察接续本节的名称与值。2.3–2.6仍只有规划；第5章函数试读还需要表达式与控制流程等中间先修，不能把阅读器的可读课时导航当作直接跳学建议。整门PY101仍在筹备。",
+      "after": "接着学习2.2「分清文字、整数、小数和真假值」，它已有待人工审核试读，将用实际类型观察接续本节的名称与值。2.3、2.4也已有待人工审核试读，2.5–2.6尚未制作；第5章函数试读还需要表达式与控制流程等中间先修，不能把阅读器的可读课时导航当作直接跳学建议。整门PY101仍在筹备。",
+      "contentVersion": 1,
+      "objectivesAndAssessmentsUnchanged": true,
+      "beforeObjectSha256": "f269e4242667ef1f3fad714fdda6dadc20b4881d098ae95a3e8b7f3bd53495a6",
+      "afterObjectSha256": "3e17af71ba303d80a9148336f812cdf18132db0cf4e49c137543443435dcd7f9",
+      "progressScopeBefore": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L01",
+        "contentVersion": 1,
+        "sectionIds": [
+          "changing-task",
+          "name-and-value",
+          "choose-name",
+          "read-and-update",
+          "predict-run",
+          "change-one-value",
+          "literal-or-name",
+          "fresh-script",
+          "first-read-error",
+          "practice",
+          "next-step"
+        ]
+      },
+      "progressScopeAfter": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L01",
+        "contentVersion": 1,
+        "sectionIds": [
+          "changing-task",
+          "name-and-value",
+          "choose-name",
+          "read-and-update",
+          "predict-run",
+          "change-one-value",
+          "literal-or-name",
+          "fresh-script",
+          "first-read-error",
+          "practice",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "before": "接下来规划2.4「让比较表达式给出真假结果」，目前没有可读正文，2.5–2.6也仍在规划。阅读器下一可读课可能跳到第5章函数试读，它还需要比较、输入输出与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。",
+      "after": "接着学习2.4「让比较表达式给出真假结果」，它已有待人工审核试读，2.5–2.6仍在规划。第5章函数试读还需要比较、输入输出与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。",
+      "contentVersion": 1,
+      "objectivesAndAssessmentsUnchanged": true,
+      "beforeObjectSha256": "03b06799ebc639969f776ea0b8e88b7d4dc782fc3371442297260ab3f67e340d",
+      "afterObjectSha256": "90a6119fd773ff6cc62266951bfd8107f56236d68da76faa38c4e37bd9512253",
+      "progressScopeBefore": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L03",
+        "contentVersion": 1,
+        "sectionIds": [
+          "quantities-and-units",
+          "expression-to-value",
+          "take-some-away",
+          "order-and-grouping",
+          "divide-and-meaning",
+          "same-level-order",
+          "put-it-together",
+          "zero-divisor",
+          "practice",
+          "next-step"
+        ]
+      },
+      "progressScopeAfter": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L03",
+        "contentVersion": 1,
+        "sectionIds": [
+          "quantities-and-units",
+          "expression-to-value",
+          "take-some-away",
+          "order-and-grouping",
+          "divide-and-meaning",
+          "same-level-order",
+          "put-it-together",
+          "zero-divisor",
+          "practice",
+          "next-step"
+        ]
+      }
+    }
+  ],
+  "allExactParagraphComparisonsPassed": true
+}

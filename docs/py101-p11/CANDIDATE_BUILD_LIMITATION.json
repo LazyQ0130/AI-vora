@@ -1,0 +1,8 @@
+{
+  "command": "npm run build",
+  "exitCode": 1,
+  "bundler": "Turbopack",
+  "diagnostic": "\n> aivora-web@0.1.0 build\n> next build\n\n▲ Next.js 16.4.3 (Turbopack)\n✓ Running next.config.ts took 27ms\n\n  Creating an optimized production build ...\n\n> Build error occurred\nError: Turbopack build failed with 1 error:\n./src/app\nError: Could not find the Next.js package (next/package.json)\nResolved from: <CLEAN-CANDIDATE>\\src\\app\nFilesystem root used for resolution: <CLEAN-CANDIDATE>\n\nPossible causes:\n  - node_modules is being reorganized by a concurrent install (e.g. pnpm adding a package with a `next` peer dependency). This is transient and should clear once the install completes.\n  - node_modules/next was removed, renamed, or has a broken symlink.\n  - The workspace root is incorrect — see turbopack.root in the Next.js config docs for how to configure it.\n  - In a monorepo, the Next.js package may only exist in a directory above the closest directory containing a package manager lockfile. The workspace root is detected by locating the nearest package manager lockfile.\n  - Next.js is installed globally rather than as a project dependency. This is not supported; install it locally.\n\nNote: To ensure a hermetic build and a portable cache, files outside of the workspace root are not compiled.\n\nhttps://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory\n\n\n    at <unknown> (Filesystem root used for resolution: <CLEAN-CANDIDATE>)\n    at <unknown> (https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory)\n",
+  "interpretation": "External node_modules junction lies outside candidate root; not repaired or claimed solved.",
+  "fallback": "npm run build -- --webpack"
+}

@@ -1,0 +1,191 @@
+{
+  "testedAt": "2026-10-30T05:38:33.186Z",
+  "base": "http://127.0.0.1:3025",
+  "build": "clean candidate / production Webpack / preview projection",
+  "checks": [
+    {
+      "label": "initial-progress",
+      "oldKeys": [],
+      "newRecord": null,
+      "passed": true
+    },
+    {
+      "label": "desktop-layout",
+      "boundaryButtons": [
+        "复制代码",
+        "复制代码",
+        "复制代码",
+        "复制代码"
+      ],
+      "documentWidth": 1425,
+      "h1": "让比较表达式给出真假结果",
+      "h2": [
+        "刚好装到上限，也算满足吗？",
+        "把“最多”写成一个比较式",
+        "比较的结果也能交给一个名称",
+        "=保存值，==判断是否相等",
+        "超过上限，与至少达到有什么不同？",
+        "把三项判断放回同一份记录",
+        "固定上限，验证边界附近三个值",
+        "自己选规则，再验证含不含边界",
+        "先读规则，再用边界检查真假"
+      ],
+      "viewport": 1425,
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "label": "desktop-copy-main",
+      "passed": true,
+      "text": "count = 5\nlimit = 6\nwithin_limit = count <= limit\n\nprint(within_limit)\nprint(count == limit)\nprint(count != limit)"
+    },
+    {
+      "label": "desktop-copy-six-confirmed",
+      "passed": true,
+      "text": "count = 6\nlimit = 6\nprint(\"At capacity\")\nprint(count < limit)\nprint(count <= limit)\nprint(count > limit)\nprint(count >= limit)\nprint(count == limit)\nprint(count != limit)"
+    },
+    {
+      "label": "exercise-disclosures",
+      "openCount": 6,
+      "rubricHeadings": [
+        "检查自己的解答",
+        "检查自己的解答"
+      ],
+      "referenceThreeRuns": true,
+      "passed": true
+    },
+    {
+      "label": "tablet-drawer",
+      "passed": true,
+      "width": 768,
+      "nodes": 9,
+      "goals": 3,
+      "tasks": 2
+    },
+    {
+      "label": "phone-copy-six-operators",
+      "width": 390,
+      "passed": true,
+      "text": "count = 6\nlimit = 6\nprint(\"At capacity\")\nprint(count < limit)\nprint(count <= limit)\nprint(count > limit)\nprint(count >= limit)\nprint(count == limit)\nprint(count != limit)"
+    },
+    {
+      "label": "narrow-320",
+      "clientWidth": 305,
+      "documentWidth": 305,
+      "pageLeft": 0,
+      "region": {
+        "clientWidth": 254,
+        "overflow": "auto",
+        "scrollLeft": 13.333333015441896,
+        "scrollWidth": 267,
+        "tabindex": "0"
+      },
+      "viewport": 320,
+      "passed": true
+    },
+    {
+      "label": "phone-exercise-anchor",
+      "dialog": false,
+      "focusTag": "H3",
+      "focusText": "上限不变，独立运行三种边界",
+      "hash": "#exercise-test-boundary-values",
+      "top": 260.0208435058594,
+      "passed": true
+    },
+    {
+      "label": "amendment-2.3",
+      "url": "http://127.0.0.1:3025/learn/PY101/PY101-C02-L03",
+      "text": "结果有意义，计算才回答了问题\n先写清数值和单位，再用+、-、*、/表达数量关系；右边先求值，=保存结果。\n乘除先于加减，括号明确分组，这几种同级二元运算按左结合；计算规则与现实单位都要核对。\n使用内置整数或浮点数做/除法得到float，除数非零。只改一个已知量后先预测、保存、完整重跑，检查结果仍在回答原问题。\n\n保留自己两份.py、改值及修复前后的短记录。能用新数量解释计算和单位，再以本人运行核对，才有独立操作证据；网页读完或程序显示了数字都不能替代这些检查。\n\n接着学习2.4「让比较表达式给出真假结果」，它已有待人工审核试读，2.5–2.6仍在规划。第5章函数试读还需要比较、输入输出与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。",
+      "next": "/learn/PY101/PY101-C02-L04",
+      "passed": true
+    },
+    {
+      "label": "amendment-2.1",
+      "url": "http://127.0.0.1:3025/learn/PY101/PY101-C02-L01",
+      "text": "用自己的文件检查这三件事\n给值选择合法名称，执行赋值后再通过名称读取；引号中的内容表示固定文字。\n按执行位置预测当前值，重新赋值影响后续读取；保存并完整重跑验证自己的改动。\n遇到本次未定义名称错误，结合相关代码与执行先后检查提供值的步骤，再保留语义修复和复跑。\n\n保留两个自己的.py及短记录，能现场换一个名字或任务文字并再次验证，才有独立操作的证据。网页读完只记录阅读，不会自动判断这些程序是否达标。\n\n接着学习2.2「分清文字、整数、小数和真假值」，它已有待人工审核试读，将用实际类型观察接续本节的名称与值。2.3、2.4也已有待人工审核试读，2.5–2.6尚未制作；第5章函数试读还需要表达式与控制流程等中间先修，不能把阅读器的可读课时导航当作直接跳学建议。整门PY101仍在筹备。",
+      "passed": true
+    },
+    {
+      "label": "desktop-boundary-anchor",
+      "focusTag": "H2",
+      "focusText": "把三项判断放回同一份记录",
+      "hash": "#main-example",
+      "top": 206.64584350585935,
+      "passed": true
+    },
+    {
+      "label": "progress-reload-isolation",
+      "passed": true,
+      "oldRecordsBefore": {
+        "aivora:learning:v2:PY101:PY101-C02-L01:r1": "{\"version\":2,\"courseId\":\"PY101\",\"lessonId\":\"PY101-C02-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":false,\"section\":\"practice\",\"updatedAt\":1793338925335}",
+        "aivora:learning:v2:PY101:PY101-C02-L03:r1": "{\"version\":2,\"courseId\":\"PY101\",\"lessonId\":\"PY101-C02-L03\",\"contentVersion\":1,\"percent\":100,\"completed\":false,\"section\":\"practice\",\"updatedAt\":1793338924642}",
+        "aivora:learning:v2:PY101:PY101-C05-L01:r2": "{\"version\":2,\"courseId\":\"PY101\",\"lessonId\":\"PY101-C05-L01\",\"contentVersion\":2,\"percent\":100,\"completed\":false,\"section\":\"summary\",\"updatedAt\":1793338933756}"
+      },
+      "recordsAfter": {
+        "aivora:learning:v2:PY101:PY101-C02-L01:r1": "{\"version\":2,\"courseId\":\"PY101\",\"lessonId\":\"PY101-C02-L01\",\"contentVersion\":1,\"percent\":100,\"completed\":false,\"section\":\"practice\",\"updatedAt\":1793338925335}",
+        "aivora:learning:v2:PY101:PY101-C02-L03:r1": "{\"version\":2,\"courseId\":\"PY101\",\"lessonId\":\"PY101-C02-L03\",\"contentVersion\":1,\"percent\":100,\"completed\":false,\"section\":\"practice\",\"updatedAt\":1793338924642}",
+        "aivora:learning:v2:PY101:PY101-C02-L04:r1": "{\"version\":2,\"courseId\":\"PY101\",\"lessonId\":\"PY101-C02-L04\",\"contentVersion\":1,\"percent\":100,\"completed\":false,\"section\":\"main-example\",\"updatedAt\":1793338941782}",
+        "aivora:learning:v2:PY101:PY101-C05-L01:r2": "{\"version\":2,\"courseId\":\"PY101\",\"lessonId\":\"PY101-C05-L01\",\"contentVersion\":2,\"percent\":100,\"completed\":false,\"section\":\"summary\",\"updatedAt\":1793338933756}"
+      },
+      "resumeHref": "#main-example"
+    },
+    {
+      "label": "resume-anchor",
+      "focusTag": "H2",
+      "focusText": "把三项判断放回同一份记录",
+      "hash": "#main-example",
+      "top": 206.64584350585935,
+      "passed": true
+    },
+    {
+      "label": "new-next-step",
+      "text": "先读规则，再用边界检查真假\n本课的普通整数比较得到True或False，结果回答的是所写出的数量关系。\n=保存值，==判断相等，!=判断不同；严格小于/大于与含等号的比较在相等位置有区别。\n固定规则与上限，低于、等于、高于三轮先预测、保存并完整运行，再核对含不含边界。\n\n保留本人两份.py及短记录，能换一个上限重新验证、解释每个真假结果，才有独立代码证据。网页读完不代表已经会选符号，比较结果本身也没有替程序选择行动。\n\n接下来规划2.5「取得用户输入，再转成需要的数值」，目前没有可读正文，2.6也仍在规划。按课程顺序还需完成输入输出与控制流程等中间内容，再进入第5章函数试读；阅读器的下一可读导航不表示直接跳学建议。整门PY101仍在筹备。",
+      "passed": true
+    },
+    {
+      "label": "wrong-course-404",
+      "text": "跳到主要内容\nAivora\n系统化 AI 技术学习平台\n首页\n课程体系\n学习路径\n实践项目\n探索知识\nCtrl K\n学习中心\n开始试读\nA DIFFERENT PATH AWAITS\n4\n4\n这里，还没有被探索。\n\n页面或课程单元不存在，回到知识地图，重新找到你的方向。\n\n返回首页\n探索课程体系\nAivora\n系统化 AI 技术学习平台\n\n让 AI 知识，成为可掌握的未来。\n\n探索课程\n学习路径\n实践项目\n试读样章\n© 2026 Aivora\n课程筹备中 · 可体验试读样章",
+      "passed": true
+    },
+    {
+      "label": "course-planned",
+      "text": "跳到主要内容\nAivora\n系统化 AI 技术学习平台\n首页\n课程体系\n学习路径\n实践项目\n探索知识\nCtrl K\n学习中心\n开始试读\n返回课程体系\nL1 · 编程与数据\nPython 编程与工程入门\n\n能独立编写模块化 Python 程序，处理数据文件、定位常见错误并使用虚拟环境与 Notebook。\n\n10 章规划\n预计 26–36 小时\n\n本课程正在筹备，下方为章节规划。目前包含可阅读样章，教材仍待人工审核。\n\nLEARNING OUTCOME\n学会什么，如何验证\n\n给定未见过的小型 CSV，完成读取、清洗、统计与文件输出；可复现运行。\n\nTHE COURSE BLUEPRINT\n课程章节\n10 章 · 规划中\nCOURSE CONTENTS\nPython 编程与工程入门\n\n10 章 · 15 节核心课已制作\n\n已制作课时阅读比例\n27%\n0 / 15 节已标记读完 · 仅当前浏览器\n筹备、可选与旧版课时不计入比例；已读不代表掌握。\n第 1 章：\n环境、解释器、虚拟环境、IDE 与 Jupyter\n1.1\n从零运行第一个Python程序\n1.2\n解释器怎样找到并执行脚本\n1.3\n用编辑器完成保存与重跑\n1.4\n为项目准备独立的虚拟环境\n1.5\n在Jupyter中按顺序运行单元格\n1.6\n让别人复现一次环境问题\n第 2 章：\n变量、基本类型、表达式与输入输出\n2.1\n用变量保留并更新程序里的值\n2.2\n分清文字、整数、小数和真假值\n2.3\n用表达式算出一个结果\n2.4\n让比较表达式给出真假结果\n第 3 章：\n分支、循环、推导式与常见控制流程\n第 4 章：\n列表、元组、字典、集合与字符串处理\n第 5 章：\n函数、作用域、参数、类型标注与文档字符串\n5.1\nPython 函数与参数\n5.2\n位置与关键字参数绑定\n5.3\n返回值与 print 的区别\n5.4\n函数内外的变量与作用域\n5.5\n简单默认参数\n5.6\n可选进阶：共享对象与接口陷阱\n可选\n第 6 章：\n模块、包、第三方依赖及项目结构\n第 7 章：\n文件、CSV/JSON、路径与编码\n第 8 章：\n异常处理、调试、断言及基础测试\n第 9 章：\n类与对象、迭代器、生成器的必要用法\n第 10 章：\n简单命令行项目、Git 基础及代码风格\nLEARN BY DOING\n在实验与项目中理解\n规划实验\n关键实验\n\n实现统计函数、读取 CSV 文件、调试错误脚本、为函数编写单元测试。\n\n规划项目\n命令行数据清洗与统计小工具\n\n给定未见过的小型 CSV，完成读取、清洗、统计与文件输出；可复现运行。\n\n课程规划中\n从理解到可复现的实践\n\n图文 · 公式 · 代码 · 小测 · 项目\n\n阅读样章\n课程教材尚未正式发布\nBEFORE YOU START\n建议先修能力\n\n无；适合零基础\n\n面向所有专业与身份的学习者，按已有能力选择起点。\n\nAivora\n系统化 AI 技术学习平台\n\n让 AI 知识，成为可掌握的未来。\n\n探索课程\n学习路径\n实践项目\n试读样章\n© 2026 Aivora\n课程筹备中 · 可体验试读样章",
+      "chapter2Links": [
+        "/learn/PY101/PY101-C02-L01",
+        "/learn/PY101/PY101-C02-L02",
+        "/learn/PY101/PY101-C02-L03",
+        "/learn/PY101/PY101-C02-L04"
+      ],
+      "passed": true
+    },
+    {
+      "label": "2.5-404",
+      "text": "跳到主要内容\nAivora\n系统化 AI 技术学习平台\n首页\n课程体系\n学习路径\n实践项目\n探索知识\nCtrl K\n学习中心\n开始试读\nA DIFFERENT PATH AWAITS\n4\n4\n这里，还没有被探索。\n\n页面或课程单元不存在，回到知识地图，重新找到你的方向。\n\n返回首页\n探索课程体系\nAivora\n系统化 AI 技术学习平台\n\n让 AI 知识，成为可掌握的未来。\n\n探索课程\n学习路径\n实践项目\n试读样章\n© 2026 Aivora\n课程筹备中 · 可体验试读样章",
+      "passed": true
+    },
+    {
+      "label": "2.6-404",
+      "text": "跳到主要内容\nAivora\n系统化 AI 技术学习平台\n首页\n课程体系\n学习路径\n实践项目\n探索知识\nCtrl K\n学习中心\n开始试读\nA DIFFERENT PATH AWAITS\n4\n4\n这里，还没有被探索。\n\n页面或课程单元不存在，回到知识地图，重新找到你的方向。\n\n返回首页\n探索课程体系\nAivora\n系统化 AI 技术学习平台\n\n让 AI 知识，成为可掌握的未来。\n\n探索课程\n学习路径\n实践项目\n试读样章\n© 2026 Aivora\n课程筹备中 · 可体验试读样章",
+      "passed": true
+    },
+    {
+      "label": "tablet-heading-anchor",
+      "dialog": false,
+      "focusTag": "H2",
+      "focusText": "固定上限，验证边界附近三个值",
+      "hash": "#boundary-runs",
+      "top": 252.77084350585935,
+      "passed": true
+    }
+  ],
+  "consoleErrors": [],
+  "diagnostics": [
+    {
+      "label": "desktop-copy-six-operators",
+      "passed": false,
+      "text": "16\n24\n4.0"
+    }
+  ],
+  "allConfirmedChecksPassed": true,
+  "diagnosticNote": "First immediate paste read stale earlier clipboard output (16/24/4.0). Retained as initial observation; cause not established. Rechecked after visible 已复制 feedback: desktop and phone exact source passed, including six operators, ASCII quotes and LF newlines. No permission changes."
+}
