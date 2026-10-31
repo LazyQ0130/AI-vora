@@ -49,6 +49,7 @@ import { pythonInputAndConversionLesson } from "../content/lessons/py101/input-a
 import { pythonReadableOutputLesson } from "../content/lessons/py101/readable-output";
 import { pythonConditionalExecutionLesson } from "../content/lessons/py101/conditional-execution";
 import { pythonConditionalBranchesLesson } from "../content/lessons/py101/conditional-branches";
+import { pythonBooleanCombinationsLesson } from "../content/lessons/py101/boolean-combinations";
 import {
   publicationManifest,
   readablePublications,
@@ -63,6 +64,7 @@ import {
 } from "../content/models";
 
 const contents: Lesson[] = [
+  pythonBooleanCombinationsLesson,
   pythonConditionalBranchesLesson,
   pythonConditionalExecutionLesson,
   pythonReadableOutputLesson,

@@ -1,0 +1,15 @@
+✔ P18 only 3.3/r1/order3, real private gate, evidence-bound preview and adjacent 3.2 (2.4206ms)
+✔ P18 three observable goals, two core authored tasks and staged and/or/not before use (0.4109ms)
+✔ P18 every complete web Python block has exact source and nonempty canonical execution coverage; unknown/altered source rejected (2.1011ms)
+✔ P18 five-value facts, wrong-or counterexamples, not meanings and four short-circuit paths match real saved execution (1.2854ms)
+✔ P18 confines bool claims, distinguishes precomputed operands, and rejects the general always-bool misconception (0.7366ms)
+✔ P18 every old Lesson/Publication/scope remains identical, including 3.1/3.2 r1 and first two chapters r2 (5.0807ms)
+✔ P18 full-hash historical approval rejects unknown changes and new r1 storage leaves every old revision string intact (2.5123ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 384.5256

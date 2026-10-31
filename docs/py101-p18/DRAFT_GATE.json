@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-31T07:53:03.120Z",
+  "publication": {
+    "lessonId": "PY101-C03-L03",
+    "courseId": "PY101",
+    "chapterId": "PY101-C03",
+    "title": "多个条件怎样共同决定结果",
+    "contentVersion": 1,
+    "order": 3,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "draft",
+    "access": "private"
+  },
+  "readable": false,
+  "resolveUndefined": true,
+  "directoryHrefAbsent": true
+}

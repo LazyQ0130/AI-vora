@@ -1,0 +1,71 @@
+{
+  "method": "Displayed token text reconstructed; Prism empty-line placeholders normalized only; separate real Copy verification below",
+  "rows": [
+    {
+      "key": "named",
+      "filename": "quantity_parts.py",
+      "sha256": "3964af8ef9491c6c3e401a4dc1bd1db76e2856c53c9fdefe226a2bfb878ade07",
+      "exactSource": true
+    },
+    {
+      "key": "andResult",
+      "filename": "combined_result.py",
+      "sha256": "0c39a72827d3dd6ccd32c76b0baa3338c62869a4a59d49f20f09db9c8811b3eb",
+      "exactSource": true
+    },
+    {
+      "key": "andIf",
+      "filename": "saved_condition.py",
+      "sha256": "3fe2fdad4995b7d34cd62063266e29f39596f821833c34c43821cb48088e1da4",
+      "exactSource": true
+    },
+    {
+      "key": "main",
+      "filename": "quantity_range.py",
+      "sha256": "895b44470855a921661fe4e6f37e275af0a751cf30172082e46bb610e305fcac",
+      "exactSource": true
+    },
+    {
+      "key": "review",
+      "filename": "needs_review.py",
+      "sha256": "273dd9a0fd4f49a9f6faa6831d24f4d7a54e3c7ba2231091216f2664e98b84a3",
+      "exactSource": true
+    },
+    {
+      "key": "notValue",
+      "filename": "reverse_bool.py",
+      "sha256": "5f56f1ad564ceae49d65840ab4369394cae4ec6187b0e6e867993ffb19c3fb62",
+      "exactSource": true
+    },
+    {
+      "key": "notRange",
+      "filename": "reverse_ready.py",
+      "sha256": "17fbd24bda7e7c0a3f49004c050e121d385f1448064ea3c08fc1de071610990d",
+      "exactSource": true
+    },
+    {
+      "key": "notComparison",
+      "filename": "below_minimum.py",
+      "sha256": "6d561dd0c49dc4c27a9595bffc6913d8fccbb71729d53e4bbe3e1b86b5da8246",
+      "exactSource": true
+    },
+    {
+      "key": "fault",
+      "filename": "repair_connector.py · 修复前",
+      "sha256": "ce932a9ab963058017e591c1a0b945f1d85c0b7c89633630380125fdcb6f6daf",
+      "exactSource": true
+    },
+    {
+      "key": "own",
+      "filename": "book_range.py · 题一参考",
+      "sha256": "1545515e2bbbcf49b6380ae1e3c0ef4d62d1cc910420968a051295e83eb9d84f",
+      "exactSource": true
+    },
+    {
+      "key": "fixed",
+      "filename": "repair_connector.py · 一词修复参考",
+      "sha256": "4b5e4dbf6379690db84935871b1c04bb62762e2805ea57d6809f234489be1ab4",
+      "exactSource": true
+    }
+  ]
+}

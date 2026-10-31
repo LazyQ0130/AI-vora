@@ -1,0 +1,18 @@
+
+> aivora-web@0.1.0 typecheck
+> tsc --noEmit
+
+tests/py101-boolean-combinations.test.ts(42,162): error TS2339: Property 'code' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; } | { type: "ai-task-figure"; kind: "mail-flow" | "mail-outcomes" | "method-hierarchy" | "method-and-task" | "knowledge-trace" | ... 17 more ... | "creative-tech-posters"; alt: string; caption: string; } | ... 13 more ... | { ...; }'.
+  Property 'code' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; }'.
+tests/py101-boolean-combinations.test.ts(47,86): error TS2339: Property 'filename' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; } | { type: "ai-task-figure"; kind: "mail-flow" | "mail-outcomes" | "method-hierarchy" | "method-and-task" | "knowledge-trace" | ... 17 more ... | "creative-tech-posters"; alt: string; caption: string; } | ... 13 more ... | { ...; }'.
+  Property 'filename' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; }'.
+tests/py101-boolean-combinations.test.ts(47,98): error TS2339: Property 'code' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; } | { type: "ai-task-figure"; kind: "mail-flow" | "mail-outcomes" | "method-hierarchy" | "method-and-task" | "knowledge-trace" | ... 17 more ... | "creative-tech-posters"; alt: string; caption: string; } | ... 13 more ... | { ...; }'.
+  Property 'code' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; }'.
+tests/py101-boolean-combinations.test.ts(48,54): error TS2339: Property 'filename' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; } | { type: "ai-task-figure"; kind: "mail-flow" | "mail-outcomes" | "method-hierarchy" | "method-and-task" | "knowledge-trace" | ... 17 more ... | "creative-tech-posters"; alt: string; caption: string; } | ... 13 more ... | { ...; }'.
+  Property 'filename' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; }'.
+tests/py101-boolean-combinations.test.ts(48,66): error TS2339: Property 'code' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; } | { type: "ai-task-figure"; kind: "mail-flow" | "mail-outcomes" | "method-hierarchy" | "method-and-task" | "knowledge-trace" | ... 17 more ... | "creative-tech-posters"; alt: string; caption: string; } | ... 13 more ... | { ...; }'.
+  Property 'code' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; }'.
+tests/py101-boolean-combinations.test.ts(48,136): error TS2339: Property 'code' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; } | { type: "ai-task-figure"; kind: "mail-flow" | "mail-outcomes" | "method-hierarchy" | "method-and-task" | "knowledge-trace" | ... 17 more ... | "creative-tech-posters"; alt: string; caption: string; } | ... 13 more ... | { ...; }'.
+  Property 'code' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; }'.
+tests/py101-boolean-combinations.test.ts(48,166): error TS2339: Property 'code' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; } | { type: "ai-task-figure"; kind: "mail-flow" | "mail-outcomes" | "method-hierarchy" | "method-and-task" | "knowledge-trace" | ... 17 more ... | "creative-tech-posters"; alt: string; caption: string; } | ... 13 more ... | { ...; }'.
+  Property 'code' does not exist on type '{ type: "table"; caption: string; columns: string[]; rows: string[][]; }'.

@@ -1,0 +1,78 @@
+{
+  "checkedAt": "2026-10-31T07:56:06.169Z",
+  "publication": {
+    "lessonId": "PY101-C03-L03",
+    "courseId": "PY101",
+    "chapterId": "PY101-C03",
+    "title": "多个条件怎样共同决定结果",
+    "contentVersion": 1,
+    "order": 3,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "draft",
+    "access": "private"
+  },
+  "productionServer": "next start",
+  "rows": [
+    {
+      "path": "/learn/PY101/PY101-C03-L03",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C03-L01",
+      "expected": 200,
+      "actual": 200,
+      "passed": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C03-L02",
+      "expected": 200,
+      "actual": 200,
+      "passed": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C03-L04",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C03-L05",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C03-L06",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C03-L07",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C03-L08",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/learn/ML201/PY101-C03-L03",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/learn/AI000/PY101-C03-L03",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    }
+  ]
+}

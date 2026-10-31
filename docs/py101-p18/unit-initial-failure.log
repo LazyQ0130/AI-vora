@@ -1,0 +1,41 @@
+✔ P18 only 3.3/r1/order3, real private gate, evidence-bound preview and adjacent 3.2 (2.6968ms)
+✔ P18 three observable goals, two core authored tasks and staged and/or/not before use (0.4785ms)
+✔ P18 every complete web Python block has exact source and nonempty canonical execution coverage; unknown/altered source rejected (2.3458ms)
+✖ P18 five-value facts, wrong-or counterexamples, not meanings and four short-circuit paths match real saved execution (1.2842ms)
+✔ P18 confines bool claims, distinguishes precomputed operands, and rejects the general always-bool misconception (0.7787ms)
+✔ P18 every old Lesson/Publication/scope remains identical, including 3.1/3.2 r1 and first two chapters r2 (5.6203ms)
+✔ P18 full-hash historical approval rejects unknown changes and new r1 storage leaves every old revision string intact (2.8339ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 446.1561
+
+✖ failing tests:
+
+test at tests\py101-boolean-combinations.test.ts:54:1
+✖ P18 five-value facts, wrong-or counterexamples, not meanings and four short-circuit paths match real saved execution (1.2842ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'Check finished\r\n'
+  - 'Check finished\n'
+                    ^
+
+      at TestContext.<anonymous> (<WORKSPACE>\tests\py101-boolean-combinations.test.ts:59:270)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'Check finished\r\n',
+    expected: 'Check finished\n',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

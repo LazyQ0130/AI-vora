@@ -1,0 +1,1216 @@
+{
+  "checkedAt": "2026-10-31T07:52:17.282Z",
+  "platform": "win32",
+  "node": "v24.16.0",
+  "python": {
+    "version": "3.14.2",
+    "executable": "<BASE-PYTHON>\\python.exe",
+    "prefix": "<BASE-PYTHON>"
+  },
+  "preSolutionsSha256": "8f538edfecf4a41695e7c4e31572fda57734732eec2a8c4cfa58480c294b236e",
+  "method": "Manual literal predictions; saved/reread/hashed .py executed in real CPython. Identical main/repair sources explicitly reuse the same execution. Author-only stdlib opcode observation evaluates unmodified student source, no observer syntax in student lesson.",
+  "rows": [
+    {
+      "key": "named",
+      "id": "named-2",
+      "filename": "named-2.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\named-2.py"
+      ],
+      "pid": 23060,
+      "savedSource": "count = 2\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\n\nprint(enough)\nprint(within_stock)\n",
+      "savedSha256": "a171aa7b7459b109224f000a64d4a85619fb8e93ba75ef9e213e5c498b000aff",
+      "predictedStdout": "False\nTrue\n",
+      "exitCode": 0,
+      "stdout": "False\r\nTrue\r\n",
+      "stderr": "",
+      "executionId": "named-2",
+      "evidenceReused": false
+    },
+    {
+      "key": "main",
+      "id": "main-2",
+      "filename": "main-2.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\main-2.py"
+      ],
+      "pid": 24024,
+      "savedSource": "count = 2\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "f40580ab900aded23b6cdf0b60d714e7bb528d09ee90c05588df82dfd2cd3d1c",
+      "predictedStdout": "Check finished\n",
+      "exitCode": 0,
+      "stdout": "Check finished\r\n",
+      "stderr": "",
+      "executionId": "main-2",
+      "evidenceReused": false
+    },
+    {
+      "key": "review",
+      "id": "review-2",
+      "filename": "review-2.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\review-2.py"
+      ],
+      "pid": 19312,
+      "savedSource": "count = 2\nminimum = 3\nstock = 6\n\ntoo_few = count < minimum\ntoo_many = count > stock\nneeds_review = too_few or too_many\n\nprint(needs_review)\n",
+      "savedSha256": "2de712df228e1c51d8f891dbe11dff4f39f9c40e8ad8979428e80f0a54a425e6",
+      "predictedStdout": "True\n",
+      "exitCode": 0,
+      "stdout": "True\r\n",
+      "stderr": "",
+      "executionId": "review-2",
+      "evidenceReused": false
+    },
+    {
+      "key": "notRange",
+      "id": "not-range-2",
+      "filename": "not-range-2.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\not-range-2.py"
+      ],
+      "pid": 22600,
+      "savedSource": "count = 2\nminimum = 3\nstock = 6\n\nquantity_ready = (count >= minimum) and (count <= stock)\n\nprint(quantity_ready)\nprint(not quantity_ready)\n",
+      "savedSha256": "0a2cb59502c4da3ee54170f11e763f8c1a316465a756c800db60076d49ff9c2a",
+      "predictedStdout": "False\nTrue\n",
+      "exitCode": 0,
+      "stdout": "False\r\nTrue\r\n",
+      "stderr": "",
+      "executionId": "not-range-2",
+      "evidenceReused": false
+    },
+    {
+      "key": "fault",
+      "businessCorrect": false,
+      "id": "fault-2",
+      "filename": "fault-2.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\fault-2.py"
+      ],
+      "pid": 9660,
+      "savedSource": "count = 2\nminimum = 3\nstock = 6\n\nif (count >= minimum) or (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "eafacd7ea4d6f3ca1a757c526d41f5fcd58c16a4380a4929ddd48111fa5de36e",
+      "predictedStdout": "Quantity ready\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Quantity ready\r\nCheck finished\r\n",
+      "stderr": "",
+      "executionId": "fault-2",
+      "evidenceReused": false
+    },
+    {
+      "key": "fixed",
+      "businessCorrect": true,
+      "id": "fixed-2",
+      "filename": "main-2.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\main-2.py"
+      ],
+      "pid": 24024,
+      "savedSource": "count = 2\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "f40580ab900aded23b6cdf0b60d714e7bb528d09ee90c05588df82dfd2cd3d1c",
+      "predictedStdout": "Check finished\n",
+      "exitCode": 0,
+      "stdout": "Check finished\r\n",
+      "stderr": "",
+      "executionId": "main-2",
+      "evidenceReused": true
+    },
+    {
+      "key": "named",
+      "id": "named-3",
+      "filename": "named-3.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\named-3.py"
+      ],
+      "pid": 22468,
+      "savedSource": "count = 3\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\n\nprint(enough)\nprint(within_stock)\n",
+      "savedSha256": "3b6be36e0bf7378e30ca53e592f23e497ec5eb00ec0977dc590a2b8db88a1068",
+      "predictedStdout": "True\nTrue\n",
+      "exitCode": 0,
+      "stdout": "True\r\nTrue\r\n",
+      "stderr": "",
+      "executionId": "named-3",
+      "evidenceReused": false
+    },
+    {
+      "key": "main",
+      "id": "main-3",
+      "filename": "main-3.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\main-3.py"
+      ],
+      "pid": 23704,
+      "savedSource": "count = 3\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "aee2305bfc2acdb4dd74a00707f15f318afac2a6d286baa5a9b21f09a085da46",
+      "predictedStdout": "Quantity ready\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Quantity ready\r\nCheck finished\r\n",
+      "stderr": "",
+      "executionId": "main-3",
+      "evidenceReused": false
+    },
+    {
+      "key": "review",
+      "id": "review-3",
+      "filename": "review-3.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\review-3.py"
+      ],
+      "pid": 16188,
+      "savedSource": "count = 3\nminimum = 3\nstock = 6\n\ntoo_few = count < minimum\ntoo_many = count > stock\nneeds_review = too_few or too_many\n\nprint(needs_review)\n",
+      "savedSha256": "bc59cb1280e79a7d2b386c812a70832b65a4a4c60a0be2972e69dc55eca0ddfb",
+      "predictedStdout": "False\n",
+      "exitCode": 0,
+      "stdout": "False\r\n",
+      "stderr": "",
+      "executionId": "review-3",
+      "evidenceReused": false
+    },
+    {
+      "key": "notRange",
+      "id": "not-range-3",
+      "filename": "not-range-3.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\not-range-3.py"
+      ],
+      "pid": 7184,
+      "savedSource": "count = 3\nminimum = 3\nstock = 6\n\nquantity_ready = (count >= minimum) and (count <= stock)\n\nprint(quantity_ready)\nprint(not quantity_ready)\n",
+      "savedSha256": "6e9b4d72c0e8a634a124074d198541d4c4d09aa4967e56bae3069822c8fd4b39",
+      "predictedStdout": "True\nFalse\n",
+      "exitCode": 0,
+      "stdout": "True\r\nFalse\r\n",
+      "stderr": "",
+      "executionId": "not-range-3",
+      "evidenceReused": false
+    },
+    {
+      "key": "fault",
+      "businessCorrect": true,
+      "id": "fault-3",
+      "filename": "fault-3.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\fault-3.py"
+      ],
+      "pid": 8736,
+      "savedSource": "count = 3\nminimum = 3\nstock = 6\n\nif (count >= minimum) or (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "95f2ef21b6e255762794f1e2af79e715b08e166422b225e64d20cab41defe8f7",
+      "predictedStdout": "Quantity ready\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Quantity ready\r\nCheck finished\r\n",
+      "stderr": "",
+      "executionId": "fault-3",
+      "evidenceReused": false
+    },
+    {
+      "key": "fixed",
+      "businessCorrect": true,
+      "id": "fixed-3",
+      "filename": "main-3.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\main-3.py"
+      ],
+      "pid": 23704,
+      "savedSource": "count = 3\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "aee2305bfc2acdb4dd74a00707f15f318afac2a6d286baa5a9b21f09a085da46",
+      "predictedStdout": "Quantity ready\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Quantity ready\r\nCheck finished\r\n",
+      "stderr": "",
+      "executionId": "main-3",
+      "evidenceReused": true
+    },
+    {
+      "key": "named",
+      "id": "named-5",
+      "filename": "named-5.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\named-5.py"
+      ],
+      "pid": 20816,
+      "savedSource": "count = 5\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\n\nprint(enough)\nprint(within_stock)\n",
+      "savedSha256": "f7e26fd6838dec9bc49aee35934906bda5bb3110f864861d11a9a8b60ac3ec2f",
+      "predictedStdout": "True\nTrue\n",
+      "exitCode": 0,
+      "stdout": "True\r\nTrue\r\n",
+      "stderr": "",
+      "executionId": "named-5",
+      "evidenceReused": false
+    },
+    {
+      "key": "main",
+      "id": "main-5",
+      "filename": "main-5.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\main-5.py"
+      ],
+      "pid": 24356,
+      "savedSource": "count = 5\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "6ae9b1bf34dca54d3cf771d255414dfaf21a45b45e3ac492c5bdf6648926058a",
+      "predictedStdout": "Quantity ready\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Quantity ready\r\nCheck finished\r\n",
+      "stderr": "",
+      "executionId": "main-5",
+      "evidenceReused": false
+    },
+    {
+      "key": "review",
+      "id": "review-5",
+      "filename": "review-5.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\review-5.py"
+      ],
+      "pid": 22716,
+      "savedSource": "count = 5\nminimum = 3\nstock = 6\n\ntoo_few = count < minimum\ntoo_many = count > stock\nneeds_review = too_few or too_many\n\nprint(needs_review)\n",
+      "savedSha256": "3669f9f4299b88d27d22e3a204b5beb189572b4414db15b76ef3ede24e57dc76",
+      "predictedStdout": "False\n",
+      "exitCode": 0,
+      "stdout": "False\r\n",
+      "stderr": "",
+      "executionId": "review-5",
+      "evidenceReused": false
+    },
+    {
+      "key": "notRange",
+      "id": "not-range-5",
+      "filename": "not-range-5.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\not-range-5.py"
+      ],
+      "pid": 18272,
+      "savedSource": "count = 5\nminimum = 3\nstock = 6\n\nquantity_ready = (count >= minimum) and (count <= stock)\n\nprint(quantity_ready)\nprint(not quantity_ready)\n",
+      "savedSha256": "10cfbd4c92eba3b8737ea31603b232e1fe33439f2875fcbd47eb3bcb6e51176c",
+      "predictedStdout": "True\nFalse\n",
+      "exitCode": 0,
+      "stdout": "True\r\nFalse\r\n",
+      "stderr": "",
+      "executionId": "not-range-5",
+      "evidenceReused": false
+    },
+    {
+      "key": "fault",
+      "businessCorrect": true,
+      "id": "fault-5",
+      "filename": "fault-5.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\fault-5.py"
+      ],
+      "pid": 23268,
+      "savedSource": "count = 5\nminimum = 3\nstock = 6\n\nif (count >= minimum) or (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "82bdfcd0e85f0cfba480c3ec63a5b292fe46ed34efd488b40b0972c31ec79166",
+      "predictedStdout": "Quantity ready\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Quantity ready\r\nCheck finished\r\n",
+      "stderr": "",
+      "executionId": "fault-5",
+      "evidenceReused": false
+    },
+    {
+      "key": "fixed",
+      "businessCorrect": true,
+      "id": "fixed-5",
+      "filename": "main-5.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\main-5.py"
+      ],
+      "pid": 24356,
+      "savedSource": "count = 5\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "6ae9b1bf34dca54d3cf771d255414dfaf21a45b45e3ac492c5bdf6648926058a",
+      "predictedStdout": "Quantity ready\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Quantity ready\r\nCheck finished\r\n",
+      "stderr": "",
+      "executionId": "main-5",
+      "evidenceReused": true
+    },
+    {
+      "key": "named",
+      "id": "named-6",
+      "filename": "named-6.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\named-6.py"
+      ],
+      "pid": 17068,
+      "savedSource": "count = 6\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\n\nprint(enough)\nprint(within_stock)\n",
+      "savedSha256": "5bd569cdd9561ae4711f9780e568f2ee044c1308e1d0a8183eb981b52aff6921",
+      "predictedStdout": "True\nTrue\n",
+      "exitCode": 0,
+      "stdout": "True\r\nTrue\r\n",
+      "stderr": "",
+      "executionId": "named-6",
+      "evidenceReused": false
+    },
+    {
+      "key": "main",
+      "id": "main-6",
+      "filename": "main-6.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\main-6.py"
+      ],
+      "pid": 13848,
+      "savedSource": "count = 6\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "761afa89997e65b4a79116546181a454b72a4d88369f3a7130aae91232590256",
+      "predictedStdout": "Quantity ready\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Quantity ready\r\nCheck finished\r\n",
+      "stderr": "",
+      "executionId": "main-6",
+      "evidenceReused": false
+    },
+    {
+      "key": "review",
+      "id": "review-6",
+      "filename": "review-6.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\review-6.py"
+      ],
+      "pid": 700,
+      "savedSource": "count = 6\nminimum = 3\nstock = 6\n\ntoo_few = count < minimum\ntoo_many = count > stock\nneeds_review = too_few or too_many\n\nprint(needs_review)\n",
+      "savedSha256": "04e7af339b47a3a46a2786df6671715eb5c35f733cd4969db8e8b725e9b38fef",
+      "predictedStdout": "False\n",
+      "exitCode": 0,
+      "stdout": "False\r\n",
+      "stderr": "",
+      "executionId": "review-6",
+      "evidenceReused": false
+    },
+    {
+      "key": "notRange",
+      "id": "not-range-6",
+      "filename": "not-range-6.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\not-range-6.py"
+      ],
+      "pid": 7648,
+      "savedSource": "count = 6\nminimum = 3\nstock = 6\n\nquantity_ready = (count >= minimum) and (count <= stock)\n\nprint(quantity_ready)\nprint(not quantity_ready)\n",
+      "savedSha256": "e7b4d570163f86f581c8dc9ee3233fff55f2638488907ad7ff2013289297be99",
+      "predictedStdout": "True\nFalse\n",
+      "exitCode": 0,
+      "stdout": "True\r\nFalse\r\n",
+      "stderr": "",
+      "executionId": "not-range-6",
+      "evidenceReused": false
+    },
+    {
+      "key": "fault",
+      "businessCorrect": true,
+      "id": "fault-6",
+      "filename": "fault-6.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\fault-6.py"
+      ],
+      "pid": 23220,
+      "savedSource": "count = 6\nminimum = 3\nstock = 6\n\nif (count >= minimum) or (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "76d1ba048d6278d9a36fd3dd5b9f2f2df1e944454b7683dfdb7a6ef12ff4bfd3",
+      "predictedStdout": "Quantity ready\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Quantity ready\r\nCheck finished\r\n",
+      "stderr": "",
+      "executionId": "fault-6",
+      "evidenceReused": false
+    },
+    {
+      "key": "fixed",
+      "businessCorrect": true,
+      "id": "fixed-6",
+      "filename": "main-6.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\main-6.py"
+      ],
+      "pid": 13848,
+      "savedSource": "count = 6\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "761afa89997e65b4a79116546181a454b72a4d88369f3a7130aae91232590256",
+      "predictedStdout": "Quantity ready\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Quantity ready\r\nCheck finished\r\n",
+      "stderr": "",
+      "executionId": "main-6",
+      "evidenceReused": true
+    },
+    {
+      "key": "named",
+      "id": "named-7",
+      "filename": "named-7.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\named-7.py"
+      ],
+      "pid": 23500,
+      "savedSource": "count = 7\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\n\nprint(enough)\nprint(within_stock)\n",
+      "savedSha256": "cd2dc2d05be9fc0594909c8fe4eaa6fa41304db37decae5fb06c6d2c3000d16f",
+      "predictedStdout": "True\nFalse\n",
+      "exitCode": 0,
+      "stdout": "True\r\nFalse\r\n",
+      "stderr": "",
+      "executionId": "named-7",
+      "evidenceReused": false
+    },
+    {
+      "key": "main",
+      "id": "main-7",
+      "filename": "main-7.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\main-7.py"
+      ],
+      "pid": 21232,
+      "savedSource": "count = 7\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "dd8241e8dc41085c43d1a5623dd6dfa23a64d91e3c0b0b8100b171626790b9f0",
+      "predictedStdout": "Check finished\n",
+      "exitCode": 0,
+      "stdout": "Check finished\r\n",
+      "stderr": "",
+      "executionId": "main-7",
+      "evidenceReused": false
+    },
+    {
+      "key": "review",
+      "id": "review-7",
+      "filename": "review-7.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\review-7.py"
+      ],
+      "pid": 18996,
+      "savedSource": "count = 7\nminimum = 3\nstock = 6\n\ntoo_few = count < minimum\ntoo_many = count > stock\nneeds_review = too_few or too_many\n\nprint(needs_review)\n",
+      "savedSha256": "454c59cab7e1e138431c9ee93dc8198d8cfc07fe1b4fa1d5a734bcc877191ae5",
+      "predictedStdout": "True\n",
+      "exitCode": 0,
+      "stdout": "True\r\n",
+      "stderr": "",
+      "executionId": "review-7",
+      "evidenceReused": false
+    },
+    {
+      "key": "notRange",
+      "id": "not-range-7",
+      "filename": "not-range-7.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\not-range-7.py"
+      ],
+      "pid": 23796,
+      "savedSource": "count = 7\nminimum = 3\nstock = 6\n\nquantity_ready = (count >= minimum) and (count <= stock)\n\nprint(quantity_ready)\nprint(not quantity_ready)\n",
+      "savedSha256": "c448958473059b8d8bc80f3adba3e38e020976786e8555da5c827673c7795034",
+      "predictedStdout": "False\nTrue\n",
+      "exitCode": 0,
+      "stdout": "False\r\nTrue\r\n",
+      "stderr": "",
+      "executionId": "not-range-7",
+      "evidenceReused": false
+    },
+    {
+      "key": "fault",
+      "businessCorrect": false,
+      "id": "fault-7",
+      "filename": "fault-7.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\fault-7.py"
+      ],
+      "pid": 1648,
+      "savedSource": "count = 7\nminimum = 3\nstock = 6\n\nif (count >= minimum) or (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "86ba66dcdb109558c9c202ea866ed1379bdc785e7cb1e0e48e17d01f570ba405",
+      "predictedStdout": "Quantity ready\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Quantity ready\r\nCheck finished\r\n",
+      "stderr": "",
+      "executionId": "fault-7",
+      "evidenceReused": false
+    },
+    {
+      "key": "fixed",
+      "businessCorrect": true,
+      "id": "fixed-7",
+      "filename": "main-7.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\main-7.py"
+      ],
+      "pid": 21232,
+      "savedSource": "count = 7\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "dd8241e8dc41085c43d1a5623dd6dfa23a64d91e3c0b0b8100b171626790b9f0",
+      "predictedStdout": "Check finished\n",
+      "exitCode": 0,
+      "stdout": "Check finished\r\n",
+      "stderr": "",
+      "executionId": "main-7",
+      "evidenceReused": true
+    },
+    {
+      "key": "andResult",
+      "id": "and-result-2",
+      "filename": "and-result-2.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\and-result-2.py"
+      ],
+      "pid": 23668,
+      "savedSource": "count = 2\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\nquantity_ready = enough and within_stock\n\nprint(quantity_ready)\n",
+      "savedSha256": "85def369ce9deebac7ddd66e6213405b0dde0ea16db3dc097732b4d581eb3eec",
+      "predictedStdout": "False\n",
+      "exitCode": 0,
+      "stdout": "False\r\n",
+      "stderr": "",
+      "executionId": "and-result-2",
+      "evidenceReused": false
+    },
+    {
+      "key": "andResult",
+      "id": "and-result-5",
+      "filename": "and-result-5.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\and-result-5.py"
+      ],
+      "pid": 8132,
+      "savedSource": "count = 5\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\nquantity_ready = enough and within_stock\n\nprint(quantity_ready)\n",
+      "savedSha256": "8791753da3bc7134d7456769e06f689ff9d82a3173037761632bcf4487b9bcdb",
+      "predictedStdout": "True\n",
+      "exitCode": 0,
+      "stdout": "True\r\n",
+      "stderr": "",
+      "executionId": "and-result-5",
+      "evidenceReused": false
+    },
+    {
+      "key": "andResult",
+      "id": "and-result-7",
+      "filename": "and-result-7.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\and-result-7.py"
+      ],
+      "pid": 6412,
+      "savedSource": "count = 7\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\nquantity_ready = enough and within_stock\n\nprint(quantity_ready)\n",
+      "savedSha256": "52701a8575844393a7d47d2f8cefa13754fbc4c95f89453445f11151af1690f2",
+      "predictedStdout": "False\n",
+      "exitCode": 0,
+      "stdout": "False\r\n",
+      "stderr": "",
+      "executionId": "and-result-7",
+      "evidenceReused": false
+    },
+    {
+      "key": "andIf",
+      "id": "saved-if",
+      "filename": "saved-if.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\saved-if.py"
+      ],
+      "pid": 17220,
+      "savedSource": "count = 5\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\nquantity_ready = enough and within_stock\n\nif quantity_ready:\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "933e3035b95044dc44c16d633a1bcbc1d0d0b01cfcd400694c392606a1abe24f",
+      "predictedStdout": "Quantity ready\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Quantity ready\r\nCheck finished\r\n",
+      "stderr": "",
+      "executionId": "saved-if",
+      "evidenceReused": false
+    },
+    {
+      "key": "notValue",
+      "id": "not-true",
+      "filename": "not-true.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\not-true.py"
+      ],
+      "pid": 23800,
+      "savedSource": "quantity_ready = True\nprint(not quantity_ready)\n",
+      "savedSha256": "0581b537670c27c2fbe81e3f04dada0c43095e1835118478b205401bcc8ed1f8",
+      "predictedStdout": "False\n",
+      "exitCode": 0,
+      "stdout": "False\r\n",
+      "stderr": "",
+      "executionId": "not-true",
+      "evidenceReused": false
+    },
+    {
+      "key": "notValue",
+      "id": "not-false",
+      "filename": "not-false.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\not-false.py"
+      ],
+      "pid": 5212,
+      "savedSource": "quantity_ready = False\nprint(not quantity_ready)\n",
+      "savedSha256": "1a3122c7992d975627dea746076f8ff236a3b269d3564bc24479db9628af3829",
+      "predictedStdout": "True\n",
+      "exitCode": 0,
+      "stdout": "True\r\n",
+      "stderr": "",
+      "executionId": "not-false",
+      "evidenceReused": false
+    },
+    {
+      "key": "notComparison",
+      "id": "not-comparison-2",
+      "filename": "not-comparison-2.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\not-comparison-2.py"
+      ],
+      "pid": 8812,
+      "savedSource": "count = 2\nminimum = 3\n\nprint(not (count >= minimum))\n",
+      "savedSha256": "03260ee6dab9da6c79e277a556ca3c5a071941120ef4215315e823b2e8f0693a",
+      "predictedStdout": "True\n",
+      "exitCode": 0,
+      "stdout": "True\r\n",
+      "stderr": "",
+      "executionId": "not-comparison-2",
+      "evidenceReused": false
+    },
+    {
+      "key": "notComparison",
+      "id": "not-comparison-3",
+      "filename": "not-comparison-3.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\not-comparison-3.py"
+      ],
+      "pid": 20756,
+      "savedSource": "count = 3\nminimum = 3\n\nprint(not (count >= minimum))\n",
+      "savedSha256": "3b1a60011d49bf1b2c7602cfeeb3ecaa120ce80b001aefae39fd0aa0d85db5d4",
+      "predictedStdout": "False\n",
+      "exitCode": 0,
+      "stdout": "False\r\n",
+      "stderr": "",
+      "executionId": "not-comparison-3",
+      "evidenceReused": false
+    },
+    {
+      "key": "notComparison",
+      "id": "not-comparison-7",
+      "filename": "not-comparison-7.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\not-comparison-7.py"
+      ],
+      "pid": 24784,
+      "savedSource": "count = 7\nminimum = 3\n\nprint(not (count >= minimum))\n",
+      "savedSha256": "b0c476fa5b8030055f8669ebeeddbb580a59a143fdf96ff5ed04707633152499",
+      "predictedStdout": "False\n",
+      "exitCode": 0,
+      "stdout": "False\r\n",
+      "stderr": "",
+      "executionId": "not-comparison-7",
+      "evidenceReused": false
+    },
+    {
+      "key": "own",
+      "id": "own-3",
+      "filename": "own-3.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\own-3.py"
+      ],
+      "pid": 17888,
+      "savedSource": "books = 3\nminimum_books = 4\navailable_books = 9\n\nenough_books = books >= minimum_books\nwithin_available = books <= available_books\nready = enough_books and within_available\nneeds_check = (books < minimum_books) or (books > available_books)\n\nprint(enough_books)\nprint(within_available)\nprint(ready)\nprint(needs_check)\nprint(not ready)\n\nif ready:\n    print(\"Book batch ready\")\n\nprint(\"Book check finished\")\n",
+      "savedSha256": "3310db43631eb128cd954e9ed529c20d5da3e8387e0178dbfe8df6dbbb4a2fba",
+      "predictedStdout": "False\nTrue\nFalse\nTrue\nTrue\nBook check finished\n",
+      "exitCode": 0,
+      "stdout": "False\r\nTrue\r\nFalse\r\nTrue\r\nTrue\r\nBook check finished\r\n",
+      "stderr": "",
+      "executionId": "own-3",
+      "evidenceReused": false
+    },
+    {
+      "key": "own",
+      "id": "own-4",
+      "filename": "own-4.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\own-4.py"
+      ],
+      "pid": 23564,
+      "savedSource": "books = 4\nminimum_books = 4\navailable_books = 9\n\nenough_books = books >= minimum_books\nwithin_available = books <= available_books\nready = enough_books and within_available\nneeds_check = (books < minimum_books) or (books > available_books)\n\nprint(enough_books)\nprint(within_available)\nprint(ready)\nprint(needs_check)\nprint(not ready)\n\nif ready:\n    print(\"Book batch ready\")\n\nprint(\"Book check finished\")\n",
+      "savedSha256": "7557c47f264841590599ded5073dea6eb2aba1a78f3b945189eb15b158d989af",
+      "predictedStdout": "True\nTrue\nTrue\nFalse\nFalse\nBook batch ready\nBook check finished\n",
+      "exitCode": 0,
+      "stdout": "True\r\nTrue\r\nTrue\r\nFalse\r\nFalse\r\nBook batch ready\r\nBook check finished\r\n",
+      "stderr": "",
+      "executionId": "own-4",
+      "evidenceReused": false
+    },
+    {
+      "key": "own",
+      "id": "own-6",
+      "filename": "own-6.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\own-6.py"
+      ],
+      "pid": 10928,
+      "savedSource": "books = 6\nminimum_books = 4\navailable_books = 9\n\nenough_books = books >= minimum_books\nwithin_available = books <= available_books\nready = enough_books and within_available\nneeds_check = (books < minimum_books) or (books > available_books)\n\nprint(enough_books)\nprint(within_available)\nprint(ready)\nprint(needs_check)\nprint(not ready)\n\nif ready:\n    print(\"Book batch ready\")\n\nprint(\"Book check finished\")\n",
+      "savedSha256": "dfcfd6459231f99e1d64b5c7be36caf90481c86c0a03d076cddecd7515ceeabc",
+      "predictedStdout": "True\nTrue\nTrue\nFalse\nFalse\nBook batch ready\nBook check finished\n",
+      "exitCode": 0,
+      "stdout": "True\r\nTrue\r\nTrue\r\nFalse\r\nFalse\r\nBook batch ready\r\nBook check finished\r\n",
+      "stderr": "",
+      "executionId": "own-6",
+      "evidenceReused": false
+    },
+    {
+      "key": "own",
+      "id": "own-9",
+      "filename": "own-9.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\own-9.py"
+      ],
+      "pid": 23636,
+      "savedSource": "books = 9\nminimum_books = 4\navailable_books = 9\n\nenough_books = books >= minimum_books\nwithin_available = books <= available_books\nready = enough_books and within_available\nneeds_check = (books < minimum_books) or (books > available_books)\n\nprint(enough_books)\nprint(within_available)\nprint(ready)\nprint(needs_check)\nprint(not ready)\n\nif ready:\n    print(\"Book batch ready\")\n\nprint(\"Book check finished\")\n",
+      "savedSha256": "4de0c584dc18c85a72f5652763a01be4847d23ce008b4e97b3b20523eb5e9236",
+      "predictedStdout": "True\nTrue\nTrue\nFalse\nFalse\nBook batch ready\nBook check finished\n",
+      "exitCode": 0,
+      "stdout": "True\r\nTrue\r\nTrue\r\nFalse\r\nFalse\r\nBook batch ready\r\nBook check finished\r\n",
+      "stderr": "",
+      "executionId": "own-9",
+      "evidenceReused": false
+    },
+    {
+      "key": "own",
+      "id": "own-10",
+      "filename": "own-10.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\own-10.py"
+      ],
+      "pid": 24064,
+      "savedSource": "books = 10\nminimum_books = 4\navailable_books = 9\n\nenough_books = books >= minimum_books\nwithin_available = books <= available_books\nready = enough_books and within_available\nneeds_check = (books < minimum_books) or (books > available_books)\n\nprint(enough_books)\nprint(within_available)\nprint(ready)\nprint(needs_check)\nprint(not ready)\n\nif ready:\n    print(\"Book batch ready\")\n\nprint(\"Book check finished\")\n",
+      "savedSha256": "7239775afebda1395149e4f9f9fa32dab6c18053f1eb7a90fd388da2c491b63b",
+      "predictedStdout": "True\nFalse\nFalse\nTrue\nTrue\nBook check finished\n",
+      "exitCode": 0,
+      "stdout": "True\r\nFalse\r\nFalse\r\nTrue\r\nTrue\r\nBook check finished\r\n",
+      "stderr": "",
+      "executionId": "own-10",
+      "evidenceReused": false
+    },
+    {
+      "key": "unseen",
+      "businessCorrect": true,
+      "id": "unseen-10",
+      "filename": "unseen-10.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\unseen-10.py"
+      ],
+      "pid": 25308,
+      "savedSource": "tickets = 10\nlower = 11\navailable = 18\n\nreview = (tickets < lower) or (tickets > available)\nprint(review)\n\nif not review:\n    print(\"Tickets ready\")\n\nprint(\"Ticket check finished\")\n",
+      "savedSha256": "636e98e002a59bde019df02d4fff4bf27dbca866dcb4eadbccb60731fe37e9ec",
+      "predictedStdout": "True\nTicket check finished\n",
+      "exitCode": 0,
+      "stdout": "True\r\nTicket check finished\r\n",
+      "stderr": "",
+      "executionId": "unseen-10",
+      "evidenceReused": false
+    },
+    {
+      "key": "unseen",
+      "businessCorrect": true,
+      "id": "unseen-11",
+      "filename": "unseen-11.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\unseen-11.py"
+      ],
+      "pid": 23144,
+      "savedSource": "tickets = 11\nlower = 11\navailable = 18\n\nreview = (tickets < lower) or (tickets > available)\nprint(review)\n\nif not review:\n    print(\"Tickets ready\")\n\nprint(\"Ticket check finished\")\n",
+      "savedSha256": "378266dfc03dc836df72f36f217d750c4a65d126260630da39d4cf39bb4cced8",
+      "predictedStdout": "False\nTickets ready\nTicket check finished\n",
+      "exitCode": 0,
+      "stdout": "False\r\nTickets ready\r\nTicket check finished\r\n",
+      "stderr": "",
+      "executionId": "unseen-11",
+      "evidenceReused": false
+    },
+    {
+      "key": "unseen",
+      "businessCorrect": true,
+      "id": "unseen-14",
+      "filename": "unseen-14.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\unseen-14.py"
+      ],
+      "pid": 25332,
+      "savedSource": "tickets = 14\nlower = 11\navailable = 18\n\nreview = (tickets < lower) or (tickets > available)\nprint(review)\n\nif not review:\n    print(\"Tickets ready\")\n\nprint(\"Ticket check finished\")\n",
+      "savedSha256": "d8ff08cb77047c09f554fb30bb7127fd0c6f1f242e95517fa369590280f13600",
+      "predictedStdout": "False\nTickets ready\nTicket check finished\n",
+      "exitCode": 0,
+      "stdout": "False\r\nTickets ready\r\nTicket check finished\r\n",
+      "stderr": "",
+      "executionId": "unseen-14",
+      "evidenceReused": false
+    },
+    {
+      "key": "unseen",
+      "businessCorrect": true,
+      "id": "unseen-18",
+      "filename": "unseen-18.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\unseen-18.py"
+      ],
+      "pid": 8988,
+      "savedSource": "tickets = 18\nlower = 11\navailable = 18\n\nreview = (tickets < lower) or (tickets > available)\nprint(review)\n\nif not review:\n    print(\"Tickets ready\")\n\nprint(\"Ticket check finished\")\n",
+      "savedSha256": "2fa78ad1084d7d3dfe7c712df42668d26ec1b821efb1ecaa8e29ec8986f4e0ce",
+      "predictedStdout": "False\nTickets ready\nTicket check finished\n",
+      "exitCode": 0,
+      "stdout": "False\r\nTickets ready\r\nTicket check finished\r\n",
+      "stderr": "",
+      "executionId": "unseen-18",
+      "evidenceReused": false
+    },
+    {
+      "key": "unseen",
+      "businessCorrect": true,
+      "id": "unseen-19",
+      "filename": "unseen-19.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\unseen-19.py"
+      ],
+      "pid": 8848,
+      "savedSource": "tickets = 19\nlower = 11\navailable = 18\n\nreview = (tickets < lower) or (tickets > available)\nprint(review)\n\nif not review:\n    print(\"Tickets ready\")\n\nprint(\"Ticket check finished\")\n",
+      "savedSha256": "5c09e9b41d7f77a4c89785e4b50e1f3a9cad8aba0a220c75c566f95acaa485fd",
+      "predictedStdout": "True\nTicket check finished\n",
+      "exitCode": 0,
+      "stdout": "True\r\nTicket check finished\r\n",
+      "stderr": "",
+      "executionId": "unseen-19",
+      "evidenceReused": false
+    },
+    {
+      "key": "author-bool-pairs",
+      "businessCorrect": true,
+      "id": "bool-false-false",
+      "filename": "bool-false-false.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\bool-false-false.py"
+      ],
+      "pid": 652,
+      "savedSource": "left = False\nright = False\nprint(left and right)\nprint(left or right)\nprint(not (left and right))\n",
+      "savedSha256": "30e9c89078bce7e6c66040ae632a6e53dfdb630fe13a48292da26915dc1ad7c3",
+      "predictedStdout": "False\nFalse\nTrue\n",
+      "exitCode": 0,
+      "stdout": "False\r\nFalse\r\nTrue\r\n",
+      "stderr": "",
+      "executionId": "bool-false-false",
+      "evidenceReused": false
+    },
+    {
+      "key": "author-bool-pairs",
+      "businessCorrect": true,
+      "id": "bool-false-true",
+      "filename": "bool-false-true.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\bool-false-true.py"
+      ],
+      "pid": 14344,
+      "savedSource": "left = False\nright = True\nprint(left and right)\nprint(left or right)\nprint(not (left and right))\n",
+      "savedSha256": "d5a5815fd9cb8521f4338edcdb84b2f62409fe032ce6217c377f0141879b6316",
+      "predictedStdout": "False\nTrue\nTrue\n",
+      "exitCode": 0,
+      "stdout": "False\r\nTrue\r\nTrue\r\n",
+      "stderr": "",
+      "executionId": "bool-false-true",
+      "evidenceReused": false
+    },
+    {
+      "key": "author-bool-pairs",
+      "businessCorrect": true,
+      "id": "bool-true-false",
+      "filename": "bool-true-false.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\bool-true-false.py"
+      ],
+      "pid": 21464,
+      "savedSource": "left = True\nright = False\nprint(left and right)\nprint(left or right)\nprint(not (left and right))\n",
+      "savedSha256": "279a935b31463baa887fa1fdcdddaddbc892c8c78e692807a9e4f3a332330d51",
+      "predictedStdout": "False\nTrue\nTrue\n",
+      "exitCode": 0,
+      "stdout": "False\r\nTrue\r\nTrue\r\n",
+      "stderr": "",
+      "executionId": "bool-true-false",
+      "evidenceReused": false
+    },
+    {
+      "key": "author-bool-pairs",
+      "businessCorrect": true,
+      "id": "bool-true-true",
+      "filename": "bool-true-true.py",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "<P18-LAB>\\bool-true-true.py"
+      ],
+      "pid": 23456,
+      "savedSource": "left = True\nright = True\nprint(left and right)\nprint(left or right)\nprint(not (left and right))\n",
+      "savedSha256": "bf86ef41996806451a9d2650562032978d17832c6e532ed3bfb73851c2ca8d4f",
+      "predictedStdout": "True\nTrue\nFalse\n",
+      "exitCode": 0,
+      "stdout": "True\r\nTrue\r\nFalse\r\n",
+      "stderr": "",
+      "executionId": "bool-true-true",
+      "evidenceReused": false
+    }
+  ],
+  "uniqueProcessCount": 48,
+  "traces": [
+    {
+      "id": "and-left-false",
+      "filename": "and-left-false.py",
+      "savedSource": "count = 2\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "f40580ab900aded23b6cdf0b60d714e7bb528d09ee90c05588df82dfd2cd3d1c",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "observe_short_circuit.py",
+        "and-left-false.py"
+      ],
+      "predictedComparisons": [
+        0
+      ],
+      "predictedStdout": "Check finished\n",
+      "programSha256": "f40580ab900aded23b6cdf0b60d714e7bb528d09ee90c05588df82dfd2cd3d1c",
+      "compareSites": [
+        {
+          "ordinal": 0,
+          "operation": "bool(>=)",
+          "line": 5,
+          "startColumn": 4,
+          "endColumn": 20
+        },
+        {
+          "ordinal": 1,
+          "operation": "bool(<=)",
+          "line": 5,
+          "startColumn": 27,
+          "endColumn": 41
+        }
+      ],
+      "executedComparisons": [
+        0
+      ],
+      "programStdout": "Check finished\n",
+      "stdout": "{\"programSha256\": \"f40580ab900aded23b6cdf0b60d714e7bb528d09ee90c05588df82dfd2cd3d1c\", \"compareSites\": [{\"ordinal\": 0, \"operation\": \"bool(>=)\", \"line\": 5, \"startColumn\": 4, \"endColumn\": 20}, {\"ordinal\": 1, \"operation\": \"bool(<=)\", \"line\": 5, \"startColumn\": 27, \"endColumn\": 41}], \"executedComparisons\": [0], \"programStdout\": \"Check finished\\n\"}\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 2100
+    },
+    {
+      "id": "and-left-true",
+      "filename": "and-left-true.py",
+      "savedSource": "count = 7\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "dd8241e8dc41085c43d1a5623dd6dfa23a64d91e3c0b0b8100b171626790b9f0",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "observe_short_circuit.py",
+        "and-left-true.py"
+      ],
+      "predictedComparisons": [
+        0,
+        1
+      ],
+      "predictedStdout": "Check finished\n",
+      "programSha256": "dd8241e8dc41085c43d1a5623dd6dfa23a64d91e3c0b0b8100b171626790b9f0",
+      "compareSites": [
+        {
+          "ordinal": 0,
+          "operation": "bool(>=)",
+          "line": 5,
+          "startColumn": 4,
+          "endColumn": 20
+        },
+        {
+          "ordinal": 1,
+          "operation": "bool(<=)",
+          "line": 5,
+          "startColumn": 27,
+          "endColumn": 41
+        }
+      ],
+      "executedComparisons": [
+        0,
+        1
+      ],
+      "programStdout": "Check finished\n",
+      "stdout": "{\"programSha256\": \"dd8241e8dc41085c43d1a5623dd6dfa23a64d91e3c0b0b8100b171626790b9f0\", \"compareSites\": [{\"ordinal\": 0, \"operation\": \"bool(>=)\", \"line\": 5, \"startColumn\": 4, \"endColumn\": 20}, {\"ordinal\": 1, \"operation\": \"bool(<=)\", \"line\": 5, \"startColumn\": 27, \"endColumn\": 41}], \"executedComparisons\": [0, 1], \"programStdout\": \"Check finished\\n\"}\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 16756
+    },
+    {
+      "id": "or-left-true",
+      "filename": "or-left-true.py",
+      "savedSource": "count = 7\nminimum = 3\nstock = 6\n\nif (count >= minimum) or (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "86ba66dcdb109558c9c202ea866ed1379bdc785e7cb1e0e48e17d01f570ba405",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "observe_short_circuit.py",
+        "or-left-true.py"
+      ],
+      "predictedComparisons": [
+        0
+      ],
+      "predictedStdout": "Quantity ready\nCheck finished\n",
+      "programSha256": "86ba66dcdb109558c9c202ea866ed1379bdc785e7cb1e0e48e17d01f570ba405",
+      "compareSites": [
+        {
+          "ordinal": 0,
+          "operation": "bool(>=)",
+          "line": 5,
+          "startColumn": 4,
+          "endColumn": 20
+        },
+        {
+          "ordinal": 1,
+          "operation": "bool(<=)",
+          "line": 5,
+          "startColumn": 26,
+          "endColumn": 40
+        }
+      ],
+      "executedComparisons": [
+        0
+      ],
+      "programStdout": "Quantity ready\nCheck finished\n",
+      "stdout": "{\"programSha256\": \"86ba66dcdb109558c9c202ea866ed1379bdc785e7cb1e0e48e17d01f570ba405\", \"compareSites\": [{\"ordinal\": 0, \"operation\": \"bool(>=)\", \"line\": 5, \"startColumn\": 4, \"endColumn\": 20}, {\"ordinal\": 1, \"operation\": \"bool(<=)\", \"line\": 5, \"startColumn\": 26, \"endColumn\": 40}], \"executedComparisons\": [0], \"programStdout\": \"Quantity ready\\nCheck finished\\n\"}\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 2828
+    },
+    {
+      "id": "or-left-false",
+      "filename": "or-left-false.py",
+      "savedSource": "count = 2\nminimum = 3\nstock = 6\n\nif (count >= minimum) or (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "eafacd7ea4d6f3ca1a757c526d41f5fcd58c16a4380a4929ddd48111fa5de36e",
+      "cwd": "<P18-LAB>",
+      "command": [
+        "python",
+        "observe_short_circuit.py",
+        "or-left-false.py"
+      ],
+      "predictedComparisons": [
+        0,
+        1
+      ],
+      "predictedStdout": "Quantity ready\nCheck finished\n",
+      "programSha256": "eafacd7ea4d6f3ca1a757c526d41f5fcd58c16a4380a4929ddd48111fa5de36e",
+      "compareSites": [
+        {
+          "ordinal": 0,
+          "operation": "bool(>=)",
+          "line": 5,
+          "startColumn": 4,
+          "endColumn": 20
+        },
+        {
+          "ordinal": 1,
+          "operation": "bool(<=)",
+          "line": 5,
+          "startColumn": 26,
+          "endColumn": 40
+        }
+      ],
+      "executedComparisons": [
+        0,
+        1
+      ],
+      "programStdout": "Quantity ready\nCheck finished\n",
+      "stdout": "{\"programSha256\": \"eafacd7ea4d6f3ca1a757c526d41f5fcd58c16a4380a4929ddd48111fa5de36e\", \"compareSites\": [{\"ordinal\": 0, \"operation\": \"bool(>=)\", \"line\": 5, \"startColumn\": 4, \"endColumn\": 20}, {\"ordinal\": 1, \"operation\": \"bool(<=)\", \"line\": 5, \"startColumn\": 26, \"endColumn\": 40}], \"executedComparisons\": [0, 1], \"programStdout\": \"Quantity ready\\nCheck finished\\n\"}\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 21808
+    }
+  ],
+  "observerSource": "import contextlib, dis, hashlib, io, json, pathlib, sys\ntarget = pathlib.Path(sys.argv[1]).resolve()\nsource = target.read_text(encoding=\"utf-8\")\nprogram = compile(source, str(target), \"exec\")\nsites = [i for i in dis.get_instructions(program) if i.opname == \"COMPARE_OP\"]\nassert len(sites) == 2\noffsets = {i.offset: n for n, i in enumerate(sites)}\nevents = []\ndef observe(code, instruction_offset):\n    if code is program and instruction_offset in offsets:\n        events.append(offsets[instruction_offset])\nbuffer = io.StringIO()\ntool = 3\nsys.monitoring.use_tool_id(tool, \"aivora-p18-author\")\nsys.monitoring.register_callback(tool, sys.monitoring.events.INSTRUCTION, observe)\nsys.monitoring.set_local_events(tool, program, sys.monitoring.events.INSTRUCTION)\nwith contextlib.redirect_stdout(buffer):\n    try:\n        exec(program, {\"__name__\": \"__main__\"})\n    finally:\n        sys.monitoring.set_local_events(tool, program, 0)\n        sys.monitoring.free_tool_id(tool)\nprint(json.dumps({\"programSha256\": hashlib.sha256(target.read_bytes()).hexdigest(), \"compareSites\": [{\"ordinal\": n, \"operation\": i.argrepr, \"line\": i.positions.lineno, \"startColumn\": i.positions.col_offset, \"endColumn\": i.positions.end_col_offset} for n, i in enumerate(sites)], \"executedComparisons\": events, \"programStdout\": buffer.getvalue()}))\n",
+  "observerSha256": "ef8aadc0620e7aed9a642960dca750901f47746b39e99fe204c4f147388c1b01",
+  "allAssertionsPassed": true,
+  "studentPilot": false,
+  "macOSRuntimeVerified": false
+}

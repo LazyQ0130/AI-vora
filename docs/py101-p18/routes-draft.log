@@ -1,0 +1,5 @@
+
+> aivora-web@0.1.0 test:routes
+> tsx scripts/validate-routes.ts
+
+113/113 HTTP 路由与规划/错误归属 404 校验通过

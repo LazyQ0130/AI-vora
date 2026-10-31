@@ -1,0 +1,70 @@
+{
+  "baseline": "59da65c56aa2023df805ceb802627e1afcef2580",
+  "lessonId": "PY101-C03-L03",
+  "contentVersion": 1,
+  "lessonSha256": "8c3849dd0e7100e4fc5dd89045ec759393e43f9bf68d8e24246bcc5654006ed0",
+  "publicationSha256": "23bbf0336ad56eb3a76c91f8df13be67fdbcbf1835c430611c718f9132759dc4",
+  "files": [
+    {
+      "path": "scripts/review-py101-p18.ts",
+      "lfSha256": "5a5ecd58173d508a4ae79b8d1e301e1b31bb8722682a6210084761c268ef7363"
+    },
+    {
+      "path": "scripts/validate-py101-boolean.ts",
+      "lfSha256": "8cd216c59e15b6b1f7a8e41e4a7c7c2cb07660b65282f37e1bb13e2c24c9bed8"
+    },
+    {
+      "path": "scripts/validate-py101-boolean-routes.ts",
+      "lfSha256": "50d5088c7bfcd29fdf5e9e29473af639e348318b7812226c0c1a3c2cae908025"
+    },
+    {
+      "path": "src/content/lessons/py101/boolean-combinations.ts",
+      "lfSha256": "d015acbb9d84bd69e01c364d5753dfa56473e09b9df282afa26a7db7591a6cb9"
+    },
+    {
+      "path": "src/content/resources/python-boolean-combinations.ts",
+      "lfSha256": "0b93ed744d6d5d1cbb4e304d9efb7e966a299ee60aadbc36e52ba3d46bd55fa5"
+    },
+    {
+      "path": "tests/helpers/py101-p17-view.ts",
+      "lfSha256": "f4826f2cb1fab179c1325f3229f44ee06a4683ff30069628e3fe21fe8388116e"
+    },
+    {
+      "path": "tests/py101-boolean-combinations.test.ts",
+      "lfSha256": "16b8281a516c03c13ac8633c8753b910f91c42788745da8c51fdf1fa2288d7a9"
+    },
+    {
+      "path": "src/content/course-outline.ts",
+      "lfSha256": "e7bdb8cf26796f7fbf3726f632520130fa100527e402c2d385b253fe92d8ecec"
+    },
+    {
+      "path": "src/lib/course-engine.ts",
+      "lfSha256": "d6fcb850a5e0cc32e937546e8cd3fa095b6d9df0c5b1448bf6e92507d58c9e40"
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "lfSha256": "33fd73e00a31984080581f39483994389335442cb4c9113d556979c62fb8d7bf"
+    },
+    {
+      "path": "scripts/validate-python.ts",
+      "lfSha256": "21bb597f04e617b5fcc75fbe7f2ce3c74153e8e693fd373c250eb5ee98c39eb9"
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "lfSha256": "7e0b562b2c3bbb99b0331c1f3b499cfb4429652b7a61c7ae34ad782d30109155"
+    },
+    {
+      "path": "tests/content.test.ts",
+      "lfSha256": "2ebb90bb97f00be0e2becde873b20e9d13a209f584207b764dc6459691c1209b"
+    },
+    {
+      "path": "tests/py101-conditional-branches.test.ts",
+      "lfSha256": "8726c82175d09728f7a8cb1762768c702a524b993ce4ecabb09856a23145954c"
+    }
+  ],
+  "technicalEvidence": "docs/py101-p18/TECHNICAL_REPORT.md",
+  "teacherReviewConducted": false,
+  "chineseEditorialReviewConducted": false,
+  "studentPilotConducted": false,
+  "macOSRuntimeVerified": false
+}

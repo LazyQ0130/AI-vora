@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-10-31T07:59:50.277Z",
+  "python": "3.14.2",
+  "method": "Real browser Copy buttons -> clipboard text -> saved .py bytes -> exact resource comparison -> fresh CPython processes",
+  "rows": [
+    {
+      "file": "copied-and-main.py",
+      "key": "main",
+      "source": "count = 5\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")",
+      "sha256": "895b44470855a921661fe4e6f37e275af0a751cf30172082e46bb610e305fcac",
+      "canonicalSourceIdentical": true,
+      "cwd": "<WORKSPACE>/docs/py101-p18",
+      "command": [
+        "python",
+        "copied-and-main.py"
+      ],
+      "pid": 23340,
+      "predictedStdout": "Quantity ready\nCheck finished\n",
+      "stdout": "Quantity ready\r\nCheck finished\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "businessCorrect": true
+    },
+    {
+      "file": "copied-or-fault.py",
+      "key": "fault",
+      "source": "count = 2\nminimum = 3\nstock = 6\n\nif (count >= minimum) or (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")",
+      "sha256": "ce932a9ab963058017e591c1a0b945f1d85c0b7c89633630380125fdcb6f6daf",
+      "canonicalSourceIdentical": true,
+      "cwd": "<WORKSPACE>/docs/py101-p18",
+      "command": [
+        "python",
+        "copied-or-fault.py"
+      ],
+      "pid": 1572,
+      "predictedStdout": "Quantity ready\nCheck finished\n",
+      "stdout": "Quantity ready\r\nCheck finished\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "businessCorrect": false
+    }
+  ],
+  "studentPilot": false
+}

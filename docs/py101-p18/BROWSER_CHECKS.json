@@ -1,0 +1,192 @@
+{
+  "widths": [
+    {
+      "goals": [
+        "01根据新的数量规则，用简单比较与and/or/not分别表达同时满足、任一项满足和对结果取反，并解释各判断的实际含义",
+        "02固定上下界，选出区分两个子条件贡献的五组边界数据，先预测再实际运行，说明哪项导致总判断变化",
+        "03为错误连接词提出反例，真实复现误放行，修复后用合格值、两端失败值与相等边界验证规则"
+      ],
+      "headings": [
+        "5件材料，要分别通过哪两项检查？",
+        "and让两项都满足，才算准备好",
+        "两端都要测，相等也要测",
+        "不足或超限，任意一种都需要复核",
+        "not把已有判断的真假反过来",
+        "结果已经确定时，右侧可能不再检查",
+        "自己设计范围，再用反例修复连接词",
+        "完成后核对两题参考程序",
+        "让测试值真正检验每条要求"
+      ],
+      "height": 1000,
+      "scrollWidth": 1425,
+      "tasks": [
+        {
+          "open": 3,
+          "rubric": true,
+          "title": "让新数量同时满足两条实际规则"
+        },
+        {
+          "open": 3,
+          "rubric": true,
+          "title": "为什么不足的材料也被判定可以使用？"
+        }
+      ],
+      "width": 1440
+    },
+    {
+      "drawerClosed": true,
+      "focus": "_R_5jmklfiv5uberb_-title",
+      "hash": "#exercise-diagnose-connector",
+      "height": 1024,
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "codeRegions": [
+        {
+          "clientWidth": 308,
+          "name": "quantity_parts.py 示例代码，可横向滚动",
+          "overflowX": "auto",
+          "scrollWidth": 308
+        },
+        {
+          "clientWidth": 308,
+          "name": "combined_result.py 示例代码，可横向滚动",
+          "overflowX": "auto",
+          "scrollWidth": 346
+        },
+        {
+          "clientWidth": 308,
+          "name": "saved_condition.py 示例代码，可横向滚动",
+          "overflowX": "auto",
+          "scrollWidth": 346
+        },
+        {
+          "clientWidth": 308,
+          "name": "quantity_range.py 示例代码，可横向滚动",
+          "overflowX": "auto",
+          "scrollWidth": 367
+        },
+        {
+          "clientWidth": 308,
+          "name": "needs_review.py 示例代码，可横向滚动",
+          "overflowX": "auto",
+          "scrollWidth": 308
+        },
+        {
+          "clientWidth": 308,
+          "name": "reverse_bool.py 示例代码，可横向滚动",
+          "overflowX": "auto",
+          "scrollWidth": 308
+        },
+        {
+          "clientWidth": 308,
+          "name": "reverse_ready.py 示例代码，可横向滚动",
+          "overflowX": "auto",
+          "scrollWidth": 460
+        },
+        {
+          "clientWidth": 308,
+          "name": "below_minimum.py 示例代码，可横向滚动",
+          "overflowX": "auto",
+          "scrollWidth": 308
+        },
+        {
+          "clientWidth": 308,
+          "name": "repair_connector.py · 修复前 示例代码，可横向滚动",
+          "overflowX": "auto",
+          "scrollWidth": 360
+        },
+        {
+          "clientWidth": 283,
+          "name": "book_range.py · 题一参考 示例代码，可横向滚动",
+          "overflowX": "auto",
+          "scrollWidth": 532
+        },
+        {
+          "clientWidth": 283,
+          "name": "repair_connector.py · 一词修复参考 示例代码，可横向滚动",
+          "overflowX": "auto",
+          "scrollWidth": 367
+        }
+      ],
+      "height": 844,
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "focusTag": "H2",
+      "focusText": "两端都要测，相等也要测",
+      "hash": "#five-values",
+      "height": 812,
+      "scrollWidth": 305,
+      "table": [
+        {
+          "clientWidth": 254,
+          "overflowX": "auto",
+          "rect": {
+            "height": 588.8333740234375,
+            "width": 255.33334350585935,
+            "x": 24.666667938232425,
+            "y": 654.0833740234375
+          },
+          "scrollWidth": 330
+        }
+      ],
+      "width": 320,
+      "horizontalScrollVerified": 76
+    }
+  ],
+  "initialNewCompleted": false,
+  "copies": [
+    "copied-and-main.py",
+    "copied-or-fault.py"
+  ],
+  "progress": {
+    "beforeLeave": {
+      "focusTag": "H2",
+      "focusText": "结果已经确定时，右侧可能不再检查",
+      "hash": "#short-circuit"
+    },
+    "afterLeaveReturn": "#reverse-result",
+    "afterReload": "#separate-checks",
+    "initialAttempt": {
+      "afterLeaveReturn": "#reverse-result",
+      "afterReload": "#separate-checks",
+      "passed": false
+    },
+    "stableBeforeLeave": {
+      "hash": "#short-circuit",
+      "resume": "#short-circuit",
+      "sectionTop": 175.9479217529297
+    },
+    "fullNavigationReturn": "#short-circuit",
+    "fullReload": "#short-circuit",
+    "restoreFocus": {
+      "focusTag": "H2",
+      "focusText": "结果已经确定时，右侧可能不再检查",
+      "hash": "#short-circuit"
+    },
+    "oldCompletionPreserved": [
+      "PY101-C02-L04",
+      "PY101-C03-L01",
+      "PY101-C03-L02"
+    ],
+    "newCompletionNotInherited": true,
+    "scope": "aivora:learning:v2:PY101:PY101-C03-L03:r1",
+    "observation": "Rapid SPA round-trip read reverse-result then separate-checks. Retained as timing diagnostic, not a passing path; full navigation after visible bookmark stabilization and document reload both restored short-circuit. No Reader/storage edits."
+  },
+  "production": true,
+  "tabletFocus": {
+    "drawerClosed": true,
+    "focusTag": "H3",
+    "focusText": "为什么不足的材料也被判定可以使用？",
+    "hash": "#exercise-diagnose-connector",
+    "width": 768
+  },
+  "consoleErrors": [],
+  "wrongCourse404": true,
+  "futureLesson404": true,
+  "wholeCoursePlanned": true,
+  "copyInitialStaleDetected": true
+}

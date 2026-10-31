@@ -1,0 +1,18 @@
+{
+  "method": "Initial legacy sys.settrace observer; opcode events unexpectedly empty on this machine; rejected, not proof of short circuit",
+  "observerSource": "import contextlib, dis, hashlib, io, json, pathlib, sys\ntarget = pathlib.Path(sys.argv[1]).resolve()\nsource = target.read_text(encoding=\"utf-8\")\nprogram = compile(source, str(target), \"exec\")\nsites = [i for i in dis.get_instructions(program) if i.opname == \"COMPARE_OP\"]\nassert len(sites) == 2\noffsets = {i.offset: n for n, i in enumerate(sites)}\nevents = []\ndef observe(frame, event, arg):\n    if frame.f_code.co_filename != str(target):\n        return None\n    if event == \"call\":\n        frame.f_trace_opcodes = True\n        frame.f_trace_lines = False\n    elif event == \"opcode\" and frame.f_lasti in offsets:\n        events.append(offsets[frame.f_lasti])\n    return observe\nbuffer = io.StringIO()\nwith contextlib.redirect_stdout(buffer):\n    sys.settrace(observe)\n    try:\n        exec(program, {\"__name__\": \"__main__\"})\n    finally:\n        sys.settrace(None)\nprint(json.dumps({\"programSha256\": hashlib.sha256(target.read_bytes()).hexdigest(), \"compareSites\": [{\"ordinal\": n, \"operation\": i.argrepr, \"line\": i.positions.lineno, \"startColumn\": i.positions.col_offset, \"endColumn\": i.positions.end_col_offset} for n, i in enumerate(sites)], \"executedComparisons\": events, \"programStdout\": buffer.getvalue()}))\n",
+  "savedSource": "count = 2\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+  "command": [
+    "<PYTHON>",
+    "observe_short_circuit.py",
+    "and-left-false.py"
+  ],
+  "cwd": "<INITIAL-P18-LAB>",
+  "stdout": "{\"programSha256\": \"f40580ab900aded23b6cdf0b60d714e7bb528d09ee90c05588df82dfd2cd3d1c\", \"compareSites\": [{\"ordinal\": 0, \"operation\": \"bool(>=)\", \"line\": 5, \"startColumn\": 4, \"endColumn\": 20}, {\"ordinal\": 1, \"operation\": \"bool(<=)\", \"line\": 5, \"startColumn\": 27, \"endColumn\": 41}], \"executedComparisons\": [], \"programStdout\": \"Check finished\\n\"}\n",
+  "stderr": "",
+  "exitCode": 0,
+  "expectedComparisons": [
+    0
+  ],
+  "actualComparisons": []
+}

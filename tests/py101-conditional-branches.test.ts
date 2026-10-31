@@ -7,8 +7,8 @@ import { branchCode, branchBlockNames } from "../src/content/resources/python-co
 import { conditionalCode } from "../src/content/resources/python-conditional-execution";
 import { branchCases, branchKey } from "../scripts/validate-py101-branches";
 import { checkConditionalResult } from "../scripts/validate-py101-conditional";
-import { lessonRegistry, getLearningCourse, getAdjacentLessons, resolveLesson } from "../src/lib/course-engine";
-import { publicationManifest } from "../src/content/publication-manifest";
+import { lessonRegistry, getLearningCourse, getAdjacentLessons, resolveLesson } from "./helpers/py101-p17-view";
+import { publicationManifest } from "./helpers/py101-p17-view";
 import { publicationSchema, isReadable } from "../src/content/models";
 import { createProgressStore, parseReadingProgress, progressKey, type ProgressScope } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";

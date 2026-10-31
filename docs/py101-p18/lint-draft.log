@@ -1,0 +1,9 @@
+
+> aivora-web@0.1.0 lint
+> eslint .
+
+
+<WORKSPACE>\.workbuddy\py101-p15\audit.ts
+  23:294  warning  'paragraphs' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 1 problem (0 errors, 1 warning)

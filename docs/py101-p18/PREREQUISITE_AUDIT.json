@@ -1,0 +1,175 @@
+{
+  "head": "59da65c56aa2023df805ceb802627e1afcef2580",
+  "prerequisites": [
+    {
+      "lessonId": "PY101-C01-L03",
+      "contentVersion": 2,
+      "anchor": "save-rerun",
+      "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+      "readable": true,
+      "lessonSha256": "8989c2aa349cc2ebbfc3ab6cfb9aec29b0c6e5d92b2d88fa7d9dbc467b415380",
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C01-L03",
+        "contentVersion": 2,
+        "sectionIds": [
+          "four-roles",
+          "open-folder",
+          "save-rerun",
+          "integrated-terminal",
+          "select-interpreter",
+          "three-mismatches",
+          "practice",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "contentVersion": 2,
+      "anchor": "keep-result",
+      "href": "/learn/PY101/PY101-C02-L04#keep-result",
+      "readable": true,
+      "lessonSha256": "cf67ce18920c2961bc5310c73618aea6e2e992b727344ad3ab17fb7a39e623eb",
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L04",
+        "contentVersion": 2,
+        "sectionIds": [
+          "most-six",
+          "compare-limit",
+          "keep-result",
+          "equal-or-different",
+          "above-limit",
+          "main-example",
+          "boundary-runs",
+          "practice",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "contentVersion": 2,
+      "anchor": "boundary-runs",
+      "href": "/learn/PY101/PY101-C02-L04#boundary-runs",
+      "readable": true,
+      "lessonSha256": "cf67ce18920c2961bc5310c73618aea6e2e992b727344ad3ab17fb7a39e623eb",
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L04",
+        "contentVersion": 2,
+        "sectionIds": [
+          "most-six",
+          "compare-limit",
+          "keep-result",
+          "equal-or-different",
+          "above-limit",
+          "main-example",
+          "boundary-runs",
+          "practice",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "lessonId": "PY101-C03-L01",
+      "contentVersion": 1,
+      "anchor": "first-if",
+      "href": "/learn/PY101/PY101-C03-L01#first-if",
+      "readable": true,
+      "lessonSha256": "328312fe3d056eb32eb19a7543ee96e77d96a9677841a2d220bd2b797adb1e90",
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C03-L01",
+        "contentVersion": 1,
+        "sectionIds": [
+          "boolean-first",
+          "first-if",
+          "block-boundary",
+          "change-and-boundary",
+          "two-lines",
+          "practice",
+          "reference-programs",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "lessonId": "PY101-C03-L01",
+      "contentVersion": 1,
+      "anchor": "block-boundary",
+      "href": "/learn/PY101/PY101-C03-L01#block-boundary",
+      "readable": true,
+      "lessonSha256": "328312fe3d056eb32eb19a7543ee96e77d96a9677841a2d220bd2b797adb1e90",
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C03-L01",
+        "contentVersion": 1,
+        "sectionIds": [
+          "boolean-first",
+          "first-if",
+          "block-boundary",
+          "change-and-boundary",
+          "two-lines",
+          "practice",
+          "reference-programs",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "lessonId": "PY101-C03-L02",
+      "contentVersion": 1,
+      "anchor": "first-match",
+      "href": "/learn/PY101/PY101-C03-L02#first-match",
+      "readable": true,
+      "lessonSha256": "27198c10a1d2abfaa163596dfd27c80c43440e34e0fe02583e0c64375d5acf31",
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C03-L02",
+        "contentVersion": 1,
+        "sectionIds": [
+          "single-if",
+          "two-ways",
+          "three-ways",
+          "three-runs",
+          "first-match",
+          "independent-checks",
+          "practice",
+          "reference-programs",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "lessonId": "PY101-C03-L02",
+      "contentVersion": 1,
+      "anchor": "independent-checks",
+      "href": "/learn/PY101/PY101-C03-L02#independent-checks",
+      "readable": true,
+      "lessonSha256": "27198c10a1d2abfaa163596dfd27c80c43440e34e0fe02583e0c64375d5acf31",
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C03-L02",
+        "contentVersion": 1,
+        "sectionIds": [
+          "single-if",
+          "two-ways",
+          "three-ways",
+          "three-runs",
+          "first-match",
+          "independent-checks",
+          "practice",
+          "reference-programs",
+          "next-step"
+        ]
+      }
+    }
+  ],
+  "previousLessonFinalBlock": {
+    "type": "paragraph",
+    "text": "保留自己的两阶段分类与修复记录。接下来让一条条件同时考虑数量下限和库存上限，或表达几项要求满足任意一项；下一节再学习怎样把比较结果组合起来。"
+  },
+  "transitionDecision": "No amendment: 3.2 accurately introduces combining minimum/stock and any-one rules. Both 3.1 and 3.2 r1 remain wholly identical."
+}

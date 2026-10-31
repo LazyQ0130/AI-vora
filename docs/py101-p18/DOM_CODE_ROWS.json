@@ -1,0 +1,46 @@
+[
+  {
+    "code": "count = 5\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\n\nprint(enough)\nprint(within_stock)",
+    "filename": "quantity_parts.py"
+  },
+  {
+    "code": "count = 5\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\nquantity_ready = enough and within_stock\n\nprint(quantity_ready)",
+    "filename": "combined_result.py"
+  },
+  {
+    "code": "count = 5\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\nquantity_ready = enough and within_stock\n\nif quantity_ready:\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")",
+    "filename": "saved_condition.py"
+  },
+  {
+    "code": "count = 5\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")",
+    "filename": "quantity_range.py"
+  },
+  {
+    "code": "count = 2\nminimum = 3\nstock = 6\n\ntoo_few = count < minimum\ntoo_many = count > stock\nneeds_review = too_few or too_many\n\nprint(needs_review)",
+    "filename": "needs_review.py"
+  },
+  {
+    "code": "quantity_ready = True\nprint(not quantity_ready)",
+    "filename": "reverse_bool.py"
+  },
+  {
+    "code": "count = 2\nminimum = 3\nstock = 6\n\nquantity_ready = (count >= minimum) and (count <= stock)\n\nprint(quantity_ready)\nprint(not quantity_ready)",
+    "filename": "reverse_ready.py"
+  },
+  {
+    "code": "count = 2\nminimum = 3\n\nprint(not (count >= minimum))",
+    "filename": "below_minimum.py"
+  },
+  {
+    "code": "count = 2\nminimum = 3\nstock = 6\n\nif (count >= minimum) or (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")",
+    "filename": "repair_connector.py · 修复前"
+  },
+  {
+    "code": "books = 6\nminimum_books = 4\navailable_books = 9\n\nenough_books = books >= minimum_books\nwithin_available = books <= available_books\nready = enough_books and within_available\nneeds_check = (books < minimum_books) or (books > available_books)\n\nprint(enough_books)\nprint(within_available)\nprint(ready)\nprint(needs_check)\nprint(not ready)\n\nif ready:\n    print(\"Book batch ready\")\n\nprint(\"Book check finished\")",
+    "filename": "book_range.py · 题一参考"
+  },
+  {
+    "code": "count = 2\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")",
+    "filename": "repair_connector.py · 一词修复参考"
+  }
+]
