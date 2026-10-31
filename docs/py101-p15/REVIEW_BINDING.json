@@ -1,8 +1,8 @@
 {
   "baseline": "cb3927fa0be59a8108a30cf183361aa1f7c8a318",
   "version": 2,
-  "sourceCommit": null,
-  "sourceCommitBinding": "Filled only after a real complete course commit exists; object and file SHA values already pin these exact drafts.",
+  "sourceCommit": "74c7736d919fb1b3a77cd4af6076c4f7b546ff39",
+  "sourceCommitBinding": "Pins this already-existing complete course commit. The subsequent binding commit changes documentation only; no human review is implied.",
   "lessons": [
     {
       "id": "PY101-C01-L01",
