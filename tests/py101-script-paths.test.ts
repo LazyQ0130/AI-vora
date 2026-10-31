@@ -2,15 +2,17 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
-import { getAdjacentLessons, getLearningCourse, lessonRegistry, resolveLesson } from "../src/lib/course-engine";
-import { publicationManifest } from "../src/content/publication-manifest";
-import { pythonScriptPathsLesson as lesson } from "../src/content/lessons/py101/script-paths";
+import { getAdjacentLessons, getLearningCourse, lessonRegistry, resolveLesson } from "./helpers/py101-p14-view";
+import { publicationManifest } from "./helpers/py101-p14-view";
+import { pythonScriptPathsLesson as p15CurrentLesson } from "../src/content/lessons/py101/script-paths";
+import {historicalLesson} from "./helpers/py101-p14-view";
+const lesson=historicalLesson(p15CurrentLesson);
 import { pathFiles, pathCommands } from "../src/content/resources/python-paths";
 import { beforePy101P1Source, beforeApprovedPy101Object, approvedPy101Additions, protectedPy101FileMatches } from "../scripts/py101-p1-compatibility";
 import { createProgressStore, progressKey, parseReadingProgress } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
 
-test("P1旧基线继续保护，后续只接纳登记的新增课与完整摘要匹配的授权修订", () => {
+test("[P0–P14历史契约] P1旧基线继续保护，后续只接纳登记的新增课与完整摘要匹配的授权修订", () => {
   const before = JSON.parse(readFileSync("docs/py101-p1/BASELINE.json", "utf8")) as { lessons: Record<string, string>; publications: Record<string, string>; files: Record<string, string> };
   const sha = (value: string | Buffer) => createHash("sha256").update(value).digest("hex");
   assert.deepEqual([...lessonRegistry.keys()].sort(), [...Object.keys(before.lessons), lesson.id, ...approvedPy101Additions].sort());
@@ -20,7 +22,7 @@ test("P1旧基线继续保护，后续只接纳登记的新增课与完整摘要
   for (const [path, hash] of Object.entries(before.files)) assert.ok(protectedPy101FileMatches(path, readFileSync(path), hash), path);
 });
 
-test("1.1与1.2相邻，未接入课仍规划；错误课程不产生可读页面", () => {
+test("[P0–P14历史契约] 1.1与1.2相邻，未接入课仍规划；错误课程不产生可读页面", () => {
   const course = getLearningCourse("PY101")!;
   assert.equal(course.status, "planned"); assert.equal(lesson.contentVersion, 1);
   assert.equal(getAdjacentLessons(course, "PY101-C01-L01").next?.lessonId, lesson.id);
@@ -29,7 +31,7 @@ test("1.1与1.2相邻，未接入课仍规划；错误课程不产生可读页�
   assert.equal(resolveLesson("ML201", lesson.id), undefined);
 });
 
-test("新课进度不继承1.1或第5章完成，新保存不会重写旧r1/r2", () => {
+test("[P0–P14历史契约] 新课进度不继承1.1或第5章完成，新保存不会重写旧r1/r2", () => {
   const memory = new Map<string, string>();
   const port = { getItem: (key: string) => memory.get(key) ?? null, setItem: (key: string, value: string) => { memory.set(key, value); } };
   const store = createProgressStore(() => port);
@@ -44,7 +46,7 @@ test("新课进度不继承1.1或第5章完成，新保存不会重写旧r1/r2",
   for (const [key, value] of previous) assert.equal(memory.get(key), value);
 });
 
-test("正文文件同源、命令分平台；核心提示不直接交出目标路径", () => {
+test("[P0–P14历史契约] 正文文件同源、命令分平台；核心提示不直接交出目标路径", () => {
   const blocks = lesson.sections.flatMap(s => s.blocks), tasks = blocks.filter(b => b.type === "exercise");
   assert.equal(tasks.length, 2);
   for (const block of blocks) if (block.type === "code" && block.language === "python") assert.equal(block.code, pathFiles[block.filename as keyof typeof pathFiles]);
@@ -58,7 +60,7 @@ test("正文文件同源、命令分平台；核心提示不直接交出目标�
   }
 });
 
-test("P1兼容登记不吞额外源码修改，P0历史登记无需覆盖", () => {
+test("[P0–P14历史契约] P1兼容登记不吞额外源码修改，P0历史登记无需覆盖", () => {
   const sources = JSON.parse(readFileSync("docs/py101-p1/SOURCE_CHANGES.json", "utf8")) as { path: string; before: string }[];
   for (const entry of sources) {
     const current = readFileSync(entry.path, "utf8");

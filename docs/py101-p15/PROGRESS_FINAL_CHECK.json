@@ -1,0 +1,17 @@
+{
+  "method": "Read only CDP after all browser interactions; no storage writes or clearing.",
+  "oldRecords": [
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C02-L01:r1",
+      "unchanged": true
+    },
+    {
+      "key": "aivora:learning:v2:MA101:MA101-C02-L03:r2",
+      "unchanged": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C01-L04:r1",
+      "unchanged": true
+    }
+  ]
+}

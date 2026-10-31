@@ -1,11 +1,13 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { pythonBasicValueTypesLesson as lesson } from "../src/content/lessons/py101/basic-value-types";
+import { pythonBasicValueTypesLesson as p15CurrentLesson } from "../src/content/lessons/py101/basic-value-types";
+import {historicalLesson} from "./helpers/py101-p14-view";
+const lesson=historicalLesson(p15CurrentLesson);
 import { courseOutline } from "../src/content/course-outline";
-import { publicationManifest } from "../src/content/publication-manifest";
+import { publicationManifest } from "./helpers/py101-p14-view";
 import { isReadable, publicationSchema } from "../src/content/models";
-import { getLearningCourse, getAdjacentLessons, lessonRegistry, resolveLesson } from "../src/lib/course-engine";
+import { getLearningCourse, getAdjacentLessons, lessonRegistry, resolveLesson } from "./helpers/py101-p14-view";
 import { createProgressStore, parseReadingProgress, progressKey } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
 import { valueTypeCode, valueTypeBlockNames, valueTypeSetups } from "../src/content/resources/python-value-types";
@@ -14,7 +16,7 @@ import { beforeApprovedPy101Source, beforeApprovedPy101Object } from "../scripts
 import { assertRegisteredInventory, assertCourseAvailability } from "./helpers/registered-content";
 const read = (name: string) => JSON.parse(readFileSync(`docs/py101-p9/${name}.json`, "utf8"));
 
-test("2.2身份r1/order2与实际草稿门禁，技术证据/人工状态受原模型约束", () => {
+test("[P0–P14历史契约] 2.2身份r1/order2与实际草稿门禁，技术证据/人工状态受原模型约束", () => {
   const entry = publicationManifest.find(p => p.lessonId === lesson.id)!;
   assert.deepEqual([entry.title, entry.contentVersion, entry.order, entry.optionalLesson], [lesson.title, 1, 2, false]);
   assert.deepEqual(courseOutline.filter(s => s.chapterId === "PY101-C02").map(s => [s.lessonId,s.order]), publicationManifest.filter(p => p.chapterId === "PY101-C02").sort((a,b) => a.order-b.order).map(p => [p.lessonId,p.order]));
@@ -33,7 +35,7 @@ test("2.2身份r1/order2与实际草稿门禁，技术证据/人工状态受原�
   assertRegisteredInventory(); assertCourseAvailability("PY101");
 });
 
-test("三目标由两道core代码题覆盖，两级提示不代填新值，反馈和编辑估时完整", () => {
+test("[P0–P14历史契约] 三目标由两道core代码题覆盖，两级提示不代填新值，反馈和编辑估时完整", () => {
   const tasks = lesson.sections.filter(s => s.tier === "core").flatMap(s => s.blocks).filter(b => b.type === "exercise");
   assert.deepEqual(tasks.map(t => t.id), ["write-four-values","same-display-different-type"]);
   assert.deepEqual(lesson.assessmentMap, [{objective:1,exerciseIds:[tasks[0].id]},{objective:2,exerciseIds:tasks.map(t=>t.id)},{objective:3,exerciseIds:[tasks[1].id]}]);
@@ -45,7 +47,7 @@ test("三目标由两道core代码题覆盖，两级提示不代填新值，反�
   assert.equal(lesson.optionalLesson,false); assert.deepEqual(lesson.resources,[]);
 });
 
-test("全部网页Python同源登记，片段有明确上下文；不借转换或控制流考类型", () => {
+test("[P0–P14历史契约] 全部网页Python同源登记，片段有明确上下文；不借转换或控制流考类型", () => {
   const blocks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === "code").filter(b => b.language === "python");
   assert.deepEqual(blocks.map(b => valueTypeKey(b.filename,b.code)), ["sameDisplay","measurement","booleanValues","firstType","pairTypes","booleanTypes","main","rebind"]);
   assert.equal(valueTypeSetups.firstType,'item_count = 3');
@@ -55,7 +57,7 @@ test("全部网页Python同源登记，片段有明确上下文；不借转换�
   assert.throws(() => valueTypeKey(valueTypeBlockNames.main,valueTypeCode.main.replace('"3"','3')));
 });
 
-test("类型输出框保留尖括号/引号，验证器拒绝类型错判、异常与缺行", () => {
+test("[P0–P14历史契约] 类型输出框保留尖括号/引号，验证器拒绝类型错判、异常与缺行", () => {
   const output = lesson.sections.flatMap(s=>s.blocks).find(b=>b.type==="code"&&b.filename==="完整主例 · 八行预期输出");
   assert.ok(output?.type==="code"); assert.equal(output.language,"text"); assert.equal(output.code+"\n",valueTypeExpected.main);
   checkValueTypeResult("pairTypes",{exitCode:0,stdout:"<class 'int'>\n<class 'str'>\n",stderr:""});
@@ -64,7 +66,7 @@ test("类型输出框保留尖括号/引号，验证器拒绝类型错判、异�
   assert.throws(()=>checkValueTypeResult("booleanTypes",{exitCode:0,stdout:"<class 'bool'>\n<class 'bool'>\n",stderr:""}));
 });
 
-test("真实Windows记录覆盖四值、True与文字、两阶段重绑定、替代与错误", () => {
+test("[P0–P14历史契约] 真实Windows记录覆盖四值、True与文字、两阶段重绑定、替代与错误", () => {
   const evidence = read("PYTHON_RUNS"), row = (label:string) => evidence.rows.find((r:{label:string})=>r.label===label);
   assert.equal(evidence.platform,"win32"); assert.equal(evidence.allAssertionsPassed,true);
   for (const key of ["main","pairTypes","booleanTypes","rebind","ownFour","ownRebind","ownChanged"] as const) {
@@ -79,7 +81,7 @@ test("真实Windows记录覆盖四值、True与文字、两阶段重绑定、替
   assert.doesNotMatch(JSON.stringify(evidence),/[A-Za-z]:\\\\Users\\\\|token=/);
 });
 
-test("2.1仅末段状态勘误，全部目标/两题/源码/锚点与r1进度scope保持", () => {
+test("[P0–P14历史契约] 2.1仅末段状态勘误，全部目标/两题/源码/锚点与r1进度scope保持", () => {
   const base = read("BASELINE"), current=lessonRegistry.get("PY101-C02-L01")!, expected=structuredClone(base.amendmentBefore);
   expected.sections.at(-1).blocks[expected.sections.at(-1).blocks.length-1]=current.sections.at(-1)!.blocks.at(-1);
   assert.deepEqual(current,expected);assert.equal(current.contentVersion,1);
@@ -89,7 +91,7 @@ test("2.1仅末段状态勘误，全部目标/两题/源码/锚点与r1进度sco
   assert.equal(beforeApprovedPy101Source("src/lib/course-engine.ts",source+"\n// unauthorized",base.head),source+"\n// unauthorized");
 });
 
-test("2.1到2.2导航与错误归属，后续可读性按实际登记核对", () => {
+test("[P0–P14历史契约] 2.1到2.2导航与错误归属，后续可读性按实际登记核对", () => {
   const course=getLearningCourse("PY101")!;assert.equal(course.status,"planned");
   if(isReadable(publicationManifest.find(p=>p.lessonId===lesson.id)!)) {
     assert.equal(getAdjacentLessons(course,"PY101-C02-L01").next?.lessonId,lesson.id);
@@ -101,7 +103,7 @@ test("2.1到2.2导航与错误归属，后续可读性按实际登记核对", ()
   assert.equal(resolveLesson("ML201",lesson.id),undefined);
 });
 
-test("2.2新r1重载独立，不继承或改写所有旧课/旧修订完成记录", () => {
+test("[P0–P14历史契约] 2.2新r1重载独立，不继承或改写所有旧课/旧修订完成记录", () => {
   const memory=new Map<string,string>(),storage={getItem:(k:string)=>memory.get(k)??null,setItem:(k:string,v:string)=>{memory.set(k,v);}};
   const store=createProgressStore(()=>storage);
   for(const old of lessonRegistry.values())if(old.id!==lesson.id){const scope=lessonProgressScope(old);store.save(scope,100,scope.sectionIds[0],true);if(scope.contentVersion>1)store.save({...scope,contentVersion:1},100,scope.sectionIds[0],true);}

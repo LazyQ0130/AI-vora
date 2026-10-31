@@ -6,7 +6,7 @@ const sample=(key:InputKey):ContentBlock=>({type:"code",language:"python",filena
 
 // 简报、预解、官方核验与真实交互证据见docs/py101-p12。实际Python在学生本机运行。
 export const pythonInputAndConversionLesson=lessonSchema.parse({
-  id:"PY101-C02-L05",courseId:"PY101",chapterId:"PY101-C02",title:"取得用户输入，再转成需要的数值",contentVersion:1,optionalLesson:false,
+  id:"PY101-C02-L05",courseId:"PY101",chapterId:"PY101-C02",title:"取得用户输入，再转成需要的数值",contentVersion:2,optionalLesson:false,
   subtitle:"键入4，收到的为什么先是文字？先接住输入，再转换和计算，用另一组数据重新核对。",
   prerequisites:"已完成第一章及2.1–2.4：能创建、保存并从终端完整运行.py，会赋值、print和type，认识str/int/float以及乘法、单位和比较。沿用已有Python 3和编辑器，不安装库；手机可阅读，实际交互操作需要电脑。",
   prerequisiteLinks:[
@@ -30,17 +30,19 @@ export const pythonInputAndConversionLesson=lessonSchema.parse({
       p("看到提示后在终端键入Box A，按Enter提交。input取得这一行文字，不含提交时的末尾换行；=让label保存返回的字符串。随后print(label)才读取并显示它。先有等待和输入，才有后面的print。"),
       sample("label"),
       p("在自己的练习目录新建receive_label.py，源码放在.venv外，行首不缩进，保存上面两行。先预测何时看到Label: ，何时看到print显示的Box A。Box A是本次数据，不加在.py末尾。"),
-      p("终端用pwd和Windows的dir（macOS用ls）确认目录包含文件，沿用第一章核验过的解释器。Windows运行第一条命令，macOS运行第二条；此前一直使用py的Windows环境可保持py。命令放在shell提示符后，不写进.py，也不在Python的>>>后运行脚本命令。"),
+      p("保存文件后，在其所在目录执行下方对应命令。沿用已核验的python/py或python3；启动命令在Shell中输入，接下来的数据才在程序提示后键入。"),
       output("Windows · PowerShell · 文件所在目录","python receive_label.py"),output("macOS · 终端 · 文件所在目录","python3 receive_label.py"),
-      p("启动后先观察：Label: 出现且shell还没回来，是程序在等输入。现在实际键入Box A、按Enter，观察后续独立一行Box A，然后确认回到shell。保留命令、输入和实际画面。后面的新文件每次只替换命令里的文件名，保存后完整启动。Aivora网页展示教材并暂存笔记，Python交互在你本机终端进行。"),
+      p("看到Label:且Shell还没回来时，程序在等你。键入Box A、按Enter，观察下一行Box A，再确认Shell提示符回来。"),
+      p("后面的程序同样在本机终端运行，网页只提供教材和临时笔记。记录里把命令、提示、键入回显和print分开，避免把回显当成第二条print。"),
       output("带标注的交互示意 · 不是原始stdout","[程序提示，无换行] Label: \n[你在同一行键入] Box A\n[你按键] Enter\n[随后print，独立一行] Box A\n[shell重新出现] 本机命令提示符"),
       {type:"table",caption:"屏幕内容要分清来源",columns:["看到的内容","来源","是否为print结果"],rows:[["Label: （含末尾空格）","input提示，属于程序标准输出stdout","否"],["提示后键入的Box A","终端通常显示键盘回显","否"],["下一行Box A","print(label)","是"],["命令前后的shell提示符","PowerShell等shell","否"]]},
       p("自动验证也能把数据送入标准输入stdin。管道不会自动产生键盘回显，本例捕获的stdout可能直接是Label: Box A再换行，其中Box A来自print。不能把真人屏幕上的两次Box A都称作print，也不能为自动日志补造一行键入回显。"),
     ]},
     {id:"raw-count",title:"键入数字4，先看看取得的类型",navGroup:"conversion",navLabel:"先收再转",blocks:[
-      p("能收名称后，再问数量。新建inspect_input.py，先预测输入4后两条print各显示什么，再保存完整三行，运行python inspect_input.py（macOS用python3）。Count: 出现后只键入4、按Enter，不给终端里的4加引号。"),
+      p("能收名称后，再观察数字输入。新建inspect_input.py，先预测输入4后的值与类型，保存三行并启动；Count:出现后键入4，再按Enter。"),
       sample("rawCount"),output("输入4后 · 仅两条print结果","4\n<class 'str'>"),
-      p('你按的是数字字符，但input成功读到的值仍是字符串str。普通print显示4，不能证明它已经是整数；type把区别显示出来。<class \'str\'>只是类型观察结果，不是新源码。count_text保存的内容相当于数字文本"4"，名字帮助人理解，但不会替值决定类型。'),
+      p("键入的是数字字符，input取得的仍是str。若预测type会是int，就是从字符外观猜了类型。"),
+      p("在同一inspect_input.py中换输入7重跑：普通显示变化，type仍为str。count_text的名字只说明用途，不替值决定类型。"),
       p("若要让完整件数参与数值乘法，需要明确转换。先确认原始值的类型，再处理数量；文字看起来像数字，并不使它自动成为数值。"),
     ]},
     {id:"int-conversion",title:"另做一步整数转换，保留原始文字",navGroup:"conversion",navLabel:"先收再转",blocks:[
@@ -52,7 +54,8 @@ export const pythonInputAndConversionLesson=lessonSchema.parse({
       p("普通显示相同，类型却不同。分步写能看清哪份是输入文字、哪份是新整数；后续计算应读取count。把实际结果和预测核对，保留这个区别再进入主例。"),
     ]},
     {id:"main-example",title:"同一份脚本，接收两批不同物品",navGroup:"calculation",navLabel:"转换后计算",blocks:[
-      p("回到每件需3个标签的任务：3的单位是个/件。label保存物品名称文字，不是标签总数；count_text是件数文本，count是整数件数，count * 3求标签个数。新建item_labels.py，先写Box A/4这组输入和两条print的预测，再保存主例。"),
+      p("每件需要3个标签，3的单位为个/件。label是物品名称，count_text是件数文本，count是整数；用count * 3计算总标签数。"),
+      p("保存item_labels.py前，先为Box A/4预测两条print；启动后按两次提示分别输入。"),
       sample("main"),output("Windows · PowerShell · 文件所在目录","python item_labels.py"),output("macOS · 终端 · 文件所在目录","python3 item_labels.py"),
       p("启动后，Label: 出现才输入Box A、Enter；Count: 出现才输入4、Enter。两项数据分别提交，不合成一行。4件乘每件3个，实际核对下面两条print；提示和键盘回显不在这两行里。"),
       output("第一组Box A / 4 · 仅print结果，12为标签个数","Box A\n12"),
@@ -74,31 +77,45 @@ export const pythonInputAndConversionLesson=lessonSchema.parse({
     {id:"format-error",title:"输入格式不合要求，留错误再重启",navGroup:"errors",navLabel:"格式与恢复",blocks:[
       p("另建count_format_copy.py受控副本，保留已成功的主例。int不能把任意文本变为件数。先预测four是否符合要求，再保存下面三行，启动后在Count: 提示输入four、Enter。"),
       sample("integerError"),output("输入four · 错误末行示意，完整回溯自己保留","ValueError: invalid literal for int() with base 10: 'four'"),
-      p("第2行int(count_text)转换英文单词时会出现ValueError，后面的print没有执行。保存真实Traceback回溯、转换语句、实际输入、错误末行和退出状态；具体路径、箭头与排版以本机为准。错误说明这次文本不合转换要求，不表示Python环境损坏。"),
+      p("第2行int(count_text)无法将four解释为整数，因此出现ValueError，后面的print没有执行。保留实际输入、转换行和相关完整回溯。错误来自文本格式，不是环境损坏。"),
       p("异常后程序已经结束，shell重新出现。直接键入7不会交给已结束的程序；要重新执行python count_format_copy.py（macOS用python3），等Count: 后输入7、Enter，核对print显示7并正常结束。这是新启动的一轮恢复。"),
       p("再启动该副本输入4.5，留真实失败。这个小数文本同样不能按本例int的整数文本要求转换，也会ValueError，并不会自动得到4。不用int(float(...))绕过完整件数要求，那会引入另一种转换并改变题意；也不必重装、安装包或改PATH。"),
       p("float也有要求。新建mass_format_copy.py，先预测bad，再保存运行下方副本，输入bad并保留真实ValueError与退出记录。重新启动后输入1.75，核对两件3.5千克且正常结束。"),
       sample("floatError"),output("输入bad · 错误末行示意","ValueError: could not convert string to float: 'bad'"),
-      p("本轮只识别转换位置、实际文本及未满足的格式，错误后重新执行。完整校验和自动重试后续再学。不使用eval处理输入：它会求值Python表达式并可能执行不可信代码，本任务只需int/float。错误属于stderr，不把错误名当正常print结果，也不补造成功输出。"),
+      p("本节只识别输入格式与转换位置，终止后重新运行。后续再处理自动校验与重试。int/float已足够完成本题；eval会求值输入表达式并可能执行不可信代码，不用于这里。错误记录属于stderr，不改写成正常输出。"),
     ]},
     {id:"practice",title:"换自己的主题和数据，完成两份新程序",navGroup:"practice",navLabel:"独立练习",blocks:[
-      p("先合上参考，自建两份.py。网页输入框只是临时笔记，本人源码和运行记录保存在本地。每轮分清命令、提示、键入回显及print结果，先预测再运行。"),
+      p("先独立写程序，再按需展开提示。基本交付是本人源码和本题真实运行结果；同一会话的环境、文件位置和命令只记一次，后面可引用编号。预测可口述或记一行；边界、改值和恢复题按题干保留必要对照。"),
       {type:"exercise",id:"interactive-label-and-count",title:"自己的物品标签和数量",kind:"代码",
-        prompt:"自选不同于正文的物品或活动主题，自己设计两条清楚提示、合法名称和新.py。input取得文字标签，另一次input取得整数数量文本，明确分步int转换，再用乘法计算有意义的总用量，print标签与结果。固定合理正整数的每份用量，注明每份和总量单位。为同一源码先预测两组不同的新合法输入，再保存并从终端分别键入运行，不照抄Box A/4、Tool B/2。交本人.py、命令、两组输入/预测/真实结果；用type实际观察原文本str与转换后int，可另存观察副本，并解释源码不变时结果为何能不同。",
+        prompt:"自选新物品/活动、名称与两条提示，独立创建.py。input取得标签及整数数量文本，分步int转换，再乘固定每份用量并print。写清每份和总量单位。为同一源码选两组新合法输入，先预测再在本机终端分别输入运行，不用Box A/4或Tool B/2。交源码、一张两组输入/预测/print结果表和一次命令。另用type实际观察str→int一次即可，留两条类型结果，解释源码不改为何结果变化，区分提示/回显/print。",
         hints:["哪些内容需要原样保留为文字？哪个完整数量需要参与乘法？先看每份用量与总量的单位。","按接收文本、另行转换、计算、显示组织。为同一文件安排两次输入，再用type核对读取的是哪个名称；主题、数值、源码和预测由你决定。"],
-        solution:["参考活动入场牌，每组5张。页尾折叠参考区给出event_badges.py，先完成自己程序再展开。它的第1行接收场地，第2行接收组数文本，第3行int建立整数teams。第4行显示场地，第5行乘5算张数并显示。",
-          "第一轮Hall C/3先预测Hall C、15张，运行python event_badges.py（macOS用python3）；同源码第二轮Hall D/6先预测Hall D、30张，再重新启动。每次提示后分别输入、Enter，保留本人实际记录；参考数字不能代替你的新输入。",
-          "另存观察副本，在所有赋值之后加print(type(venue_name))、print(type(team_text))、print(type(teams))，分别应观察str、str、int。5张/组乘3组为15张，乘6组为30张。",
-          "常错是转换后仍用原文本计算、输入附加单位、未保存或运行错文件。沿名称和语句核对，分清提示/回显/print；格式错后重新启动给合法文本。接受其他主题、新整数、合法名、成对单引号及先存结果再print的写法，仍须有本人两轮证据。"],
-        rubric:["本人新.py两次运行时input取得标签和整数文本，明确分步int转换并使用转换结果，提示、名称和情境由本人设计。","两组新合法输入均有事先预测、同一保存源码、真实命令和结果，乘法关系与每份/总量单位对应。","实际type观察能解释str/int，提示、终端回显和print分清；复制参考、文字设想或读完标记不能替代代码。"]},
+        solution:[
+  "参考活动入场牌，每组5张。页尾折叠参考区给出event_badges.py，先完成自己程序再展开。它的第1行接收场地，第2行接收组数文本，第3行int建立整数teams。第4行显示场地，第5行乘5算张数并显示。",
+  "第一轮Hall C/3先预测Hall C、15张，运行python event_badges.py（macOS用python3）；同源码第二轮Hall D/6先预测Hall D、30张，再重新启动。每次提示后分别输入、Enter，保留本人实际记录；参考数字不能代替你的新输入。",
+  "另存观察副本，在所有赋值之后加print(type(venue_name))、print(type(team_text))、print(type(teams))，分别应观察str、str、int。5张/组乘3组为15张，乘6组为30张。",
+  "常错是转换后仍用原文本计算、输入附加单位、未保存或运行错文件。沿名称和语句核对，分清提示/回显/print；格式错后重新启动给合法文本。接受其他主题、新整数、合法名、成对单引号及先存结果再print的写法，仍须有本人两轮证据。",
+  "交付按本题题干与rubric：源码可用一份加差异，运行记录用短表；相同命令、环境和版本引用会话卡，不重复誊写。"
+],
+        rubric:[
+  "本人新.py两次input，分步int后真实乘法，自选情境/名称/提示。",
+  "同一源码两组新输入有事前预测与真实print，单位正确，命令只记一次。",
+  "至少一次实际type证明str→int，无须每组重复诊断；能区分提示、键入回显和print。"
+]},
       {type:"exercise",id:"measure-and-recheck",title:"小数测量与错误格式恢复",kind:"代码",
-        prompt:"自选与正文不同的测量情境，例如一段材料长度，自定合法名称、清楚提示、单位和固定合理正整数件数。新.py用input接收测量文本，另行float转换，再乘件数显示总量。先预测两组不同合法小数输入，保存并实际分别运行核对；用type观察原str/新float，可另存观察版。另建受控副本保留成功程序，输入一次明显不合格文字，留真实ValueError完整回溯、相关转换行和退出记录，解释为何不合格式。随后重新启动副本，用合法值实际确认恢复。交源码、命令、两组合法输入/预测/输出、一次错误和新进程恢复以及单位说明，不写异常捕获、循环或eval。",
+        prompt:"自选新测量情境、名称、提示、单位及固定件数。新.py用input收测量文本，分步float后乘件数。选两组合法小数，先预测再实跑，type观察str→float一次。另建受控副本，真输入一次无效文本，留完整相关ValueError、转换行和非零退出；重新启动用合法值验证恢复。交源码、两组输入/预测/结果表、一次类型对照、错误→新进程恢复记录；相同命令引用一次编号。不写异常捕获、循环或eval。",
         hints:["区分原始测量文本、转换后数值和总量。单段与总量单位是什么，固定几段才符合情境？","核对float在哪一行、实际文字是否合数字格式；异常终止后怎样重新执行并等提示再输入？保留你选择的数据、预测和最终实现。"],
-        solution:["参考4段等长装饰绳，完整cord_lengths.py与受控cord_format_copy.py见页尾。第1行收单段米数文本，第2行float得到length，第3行乘4并print总米数。原值和新值的type分别应是str、float。",
-          "1.25米先预测总5.0米，保存后运行python cord_lengths.py（macOS用python3）。同源码第二轮2.5米先预测10.0米，再启动运行。两轮都留本人输入、命令和真实结果，不把参考预测当实跑。",
-          "副本输入oops，第2行float失败；保存真实Traceback、ValueError和非零退出，没有总量print。之后再次执行副本，提示出现才输入0.75、Enter，实际核对3.0米、正常结束。恢复来自新进程，不是已经结束的程序自己重试。",
-          "常错是把m一起输入、改用int或原字符串计算、丢掉错误、没有重启。按真实输入/转换行检查，不改环境。接受其他测量、新小数、合法名、合理件数和等价已学计算，单位与两轮合法/错误/恢复证据必须齐全。"],
-        rubric:["本人程序真实input、分步float并计算，情境/单位/固定件数合理，原始与转换后类型有实际观察。","两组新合法输入有本人预测、命令、源码与真实结果，总量及单位正确，源码未写死输入。","独立副本确有ValueError，留输入、转换行、完整回溯与非零退出，指出输入格式原因。","重新启动副本后合法值实际成功，无未教异常捕获/循环/eval；抄错误名或设想恢复不足。"]},
+        solution:[
+  "参考4段等长装饰绳，完整cord_lengths.py与受控cord_format_copy.py见页尾。第1行收单段米数文本，第2行float得到length，第3行乘4并print总米数。原值和新值的type分别应是str、float。",
+  "1.25米先预测总5.0米，保存后运行python cord_lengths.py（macOS用python3）。同源码第二轮2.5米先预测10.0米，再启动运行。两轮都留本人输入、命令和真实结果，不把参考预测当实跑。",
+  "副本输入oops，第2行float失败；保存真实Traceback、ValueError和非零退出，没有总量print。之后再次执行副本，提示出现才输入0.75、Enter，实际核对3.0米、正常结束。恢复来自新进程，不是已经结束的程序自己重试。",
+  "常错是把m一起输入、改用int或原字符串计算、丢掉错误、没有重启。按真实输入/转换行检查，不改环境。接受其他测量、新小数、合法名、合理件数和等价已学计算，单位与两轮合法/错误/恢复证据必须齐全。",
+  "交付按本题题干与rubric：源码可用一份加差异，运行记录用短表；相同命令、环境和版本引用会话卡，不重复誊写。"
+],
+        rubric:[
+  "真实input、分步float及计算，情境/单位合理，一次实际类型对照即可。",
+  "两组新合法输入均先预测后运行，源码与真实结果对应，命令可引用。",
+  "受控副本真ValueError及非零退出，能指出具体格式条件；重启后合法值真实恢复，无try/循环/eval。"
+]},
     ]},
     {id:"reference-programs",title:"完成后再展开：两题完整参考程序",navGroup:"reference",navLabel:"参考程序",tier:"verification",blocks:[
       p("先独立做题再核对。以下是完整参考路径，复制时另存新文件，保留原作；各题解答解释了每行、单位、两组预测和命令。参考代码只用正文已解释的语法。"),sample("ownInteger"),sample("ownMeasure"),sample("measureError"),
@@ -106,8 +123,8 @@ export const pythonInputAndConversionLesson=lessonSchema.parse({
     ]},
     {id:"next-step",title:"先接住文字，再用真实输入核对计算",navGroup:"finish",navLabel:"回顾与后续",blocks:[
       {type:"summary",points:["input显示提示并等待一行，Enter提交后取得str；提示、终端回显与print来源不同。","原始文本与转换结果分开，用type观察；完整数量用int，小数测量用float，转换后再做数值计算。","同一保存脚本，两组新合法输入先预测再实跑；受控格式错误留回溯，终止后重启用合法值确认恢复。"]},
-      p("保留自己的两份.py及短记录，能换新数据、解释类型/单位和一次转换失败，才有独立操作证据。作者程序运行或网页读完都不能证明学生已经学会。"),
-      p("本课已完成输入与转换基础，接着学习2.6「把输入和计算整理成清楚的输出」，它已有待人工审核试读，将组合输入、计算、比较与可读输出。第5章函数试读仍需第三、第四章等中间先修，下一可读导航不表示直接跳学建议。整门PY101仍在筹备。"),
+      p("保留自己的程序、两组新输入、类型行和一次错误恢复记录。能解释为什么计算使用转换后的值，就可以带着这份结果学习输出。"),
+      p("下一节2.6将输入、转换、计算与比较整理成带说明和单位的输出，让别人知道结果在回答什么。第5章函数仍需控制流程等中间先修，按课程顺序补齐后再读。"),
     ]},
   ],resources:[],
   references:[

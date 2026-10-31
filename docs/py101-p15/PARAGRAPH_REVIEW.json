@@ -1,0 +1,4573 @@
+{
+  "reviewKind": "AI-assisted current-source editorial review, not professional human review",
+  "criteria": [
+    "one cohesive purpose",
+    "normal action/result before fault branch",
+    "new syntax before required use",
+    "repeated limitation language",
+    "stable anchors",
+    "maintenance status in body",
+    "diagnostic prediction"
+  ],
+  "decisions": [
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 0,
+      "originalLine": 27,
+      "characters": 84,
+      "before": "你想让电脑显示一句问候。我们先让它显示 Hello, Aivora!，接着把问候换成自己的文字。下面是第一条Python指令；运行成功后，屏幕应出现下一框中的一行文字。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 1,
+      "originalLine": 30,
+      "characters": 102,
+      "before": "Windows：打开开始菜单，搜索并打开 PowerShell。macOS：在「应用程序 → 实用工具」中打开「终端」。终端是接收文字命令、显示执行结果的窗口。先在这个窗口输入下面对应系统的命令，按回车。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "Windows在开始菜单打开PowerShell；macOS在「应用程序 → 实用工具」打开「终端」。这个窗口接收命令并显示结果。输入下方对应系统的版本命令，按回车。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 2,
+      "originalLine": 33,
+      "characters": 155,
+      "before": "若出现 Python 3.x.x（例如 Python 3.14.2），说明这个命令能启动解释器。解释器是执行Python代码的软件，版本号说明这次用的是哪一版。记下你的实际版本。若没有版本号、打开商店或出现找不到命令，转到下一段「还没有可用的Python时」，装好后回到这里。已有受支持的3.x能用，就先继续。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "看到Python 3.x.x，说明命令已启动解释器——执行Python代码的软件。记下实际版本，接着运行第一行程序。"
+        },
+        {
+          "type": "callout",
+          "title": "版本命令没有成功时",
+          "text": "没有版本号、打开商店或找不到命令，就转到「还没有可用的Python时」。安装/下载或权限受阻请教学支持处理；已有可用的受支持3.x可继续。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 3,
+      "originalLine": 34,
+      "characters": 187,
+      "before": "Windows输入 python，macOS输入 python3，再按回车。看到 >>> 后，解释器正在等待Python指令。只把上面的 print(\"Hello, Aivora!\") 复制进去并回车；>>> 是窗口自己显示的提示符，不复制。若你已经用 py --version 验证了Windows的 py 命令，也可用 py 进入，后文的 python 一律换成 py。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "Windows输入python，macOS输入python3，回车后应看到>>>，表示解释器正在等Python代码。只输入上面的print语句并回车；>>>由窗口显示，不复制。"
+        },
+        {
+          "type": "paragraph",
+          "text": "Windows若已用py --version验证py，就用py进入，并在后文一致替换python。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 4,
+      "originalLine": 35,
+      "characters": 130,
+      "before": "你应看到 Hello, Aivora!，下一行重新出现 >>>。文字来自刚才的指令；>>> 表示可以继续输入。完成这一行后，在 >>> 后输入 quit() 并回车，回到PowerShell或系统终端。quit() 这里只用于离开交互窗口；本节不展开它的定义。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "问候出现后，下一行的>>>表示可以继续输入。现在在它后面输入quit()并回车，回到系统终端；接着把程序保存成能反复运行的文件。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 5,
+      "originalLine": 42,
+      "characters": 200,
+      "before": "Windows新安装：打开下方Python官方下载页，选择 Python Install Manager（安装管理器），从官网提供的安装文件或Microsoft Store安装。它负责取得和启动解释器；不是写代码的编辑器。按安装提示完成后，关闭旧PowerShell窗口并新开一个，再运行 python --version。首次调用在没有运行时的情况下可能联网下载当前稳定版，等下载完成后再检查版本。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "Windows新安装时打开下方Python官网，选择Python Install Manager。按官网提供的安装文件或Microsoft Store路线完成安装；管理器负责取得和启动解释器。"
+        },
+        {
+          "type": "paragraph",
+          "text": "安装后关闭旧PowerShell并新开窗口，执行python --version。若首次调用正在下载运行时，等下载完成，再检查实际版本。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 6,
+      "originalLine": 43,
+      "characters": 149,
+      "before": "当前官方路线使用Install Manager，不依赖旧版安装器的「Add Python to PATH」截图。通常可面向当前用户安装，学校或单位设备仍可能禁止安装。遇到权限提示、组织限制或下载失败时，保留提示，请管理员或教学支持提供获准的本地Python；不需要取得管理员密码或关闭防护来做本课。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "学校或单位设备可能限制安装。遇到授权、组织限制或下载失败，保留提示，请管理员或教学支持提供获准环境。"
+        },
+        {
+          "type": "callout",
+          "title": "按当前官方安装说明操作",
+          "text": "Install Manager与旧安装器流程不同，不必寻找旧截图中的Add Python to PATH选项；也不以取得管理员密码或关闭防护作为学习步骤。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 7,
+      "originalLine": 44,
+      "characters": 187,
+      "before": "Windows已有安装：再试 py --version。python 是运行Python的常用命令；当前Install Manager的 py 也能运行解释器，并支持版本选择和管理。旧版Python Launcher也叫 py，因此两者未必选中同一版本，py list 也不是每台旧电脑都支持。以实际成功的版本命令为准，选定一个后全课一致使用；不为本课删除已有Python。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "Windows已有Python时，也可试py --version。选定一个实际能运行的入口，后面保持一致。"
+        },
+        {
+          "type": "paragraph",
+          "text": "py可能来自当前Install Manager，也可能是旧Python Launcher；它与python不一定选同一版本，py list也不适用于所有旧安装。保留已有Python，按实际版本结果核对。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 8,
+      "originalLine": 45,
+      "characters": 186,
+      "before": "若 python 和 py 都找不到：先确认安装确实完成、重开终端，再在开始菜单搜索「管理应用执行别名」，查看是否存在官方的 Python (default) 项及其启用状态。别名是系统把命令交给程序的入口。可以将这一观察与 py --version 的结果一并交给教学支持；完整PATH配置留待有需要时处理。若 python 打开商店，也按这个方向检查，不反复盲点安装。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "如果python和py都不可用，先确认安装完成，再重开终端重试。仍失败时，在开始菜单查看「管理应用执行别名」中官方Python (default)的状态。"
+        },
+        {
+          "type": "paragraph",
+          "text": "别名是系统将命令交给程序的入口。把别名观察和版本命令结果交给教学支持；python打开商店时也从这里排查，避免反复安装。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 9,
+      "originalLine": 46,
+      "characters": 223,
+      "before": "macOS新安装：从官网下载适配macOS的稳定版 .pkg，打开后先读安装器列出的系统要求，再按提示安装。官方通用安装包支持相应版本的Apple Silicon与Intel机型；标准安装需要管理员授权。没有权限就请管理员或教学支持准备已获准的本地环境。安装后按官方说明运行「应用程序 / Python 3.x」中的 Install Certificates.command 完成证书配置，随后新开终端，运行 python3 --version。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "macOS从Python官网下载稳定版.pkg，先核对安装器列出的系统要求，再安装。官方通用安装包支持其系统要求内的Apple Silicon与Intel机型；标准安装需要管理员授权。"
+        },
+        {
+          "type": "paragraph",
+          "text": "安装后，按官方说明运行「应用程序 / Python 3.x」中的Install Certificates.command配置证书。新开终端，执行python3 --version确认。"
+        },
+        {
+          "type": "callout",
+          "title": "没有安装权限时",
+          "text": "请管理员或教学支持准备获准的本地环境，再回到第一行程序。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 10,
+      "originalLine": 47,
+      "characters": 142,
+      "before": "macOS统一用 python3；有些电脑不提供 python。若提示安装Apple开发工具，先取消这条分支，按Python官网路线或找教学支持核对；不要修改或删除Apple管理的 /usr/bin/python3。若版本不可用，确认安装完成并重开终端；把实际命令和提示交给支持人员。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "macOS统一用python3。若命令引出Apple开发工具安装，先取消该分支，按Python官网路线或找教学支持核对。保留Apple管理的/usr/bin/python3；版本仍不可用时，提交实际命令和提示。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 11,
+      "originalLine": 53,
+      "characters": 57,
+      "before": "获得版本号后，回到「先让电脑说一句话」完成那一行输出。后面的代码只使用Python自带的功能，不需要安装第三方库。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 12,
+      "originalLine": 59,
+      "characters": 127,
+      "before": "print 是Python自带的显示指令：把圆括号里的内容写到输出窗口。这里的英文双引号把一段文字的开始和结束标出来；引号本身不会显示。括号和引号都要成对，建议切换英文输入法输入这些符号。Hello, Aivora! 里面的空格、逗号、感叹号会原样显示。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "print把括号中的内容显示出来。成对英文引号界定文字，引号本身不显示；空格、逗号和感叹号会保留。先切到英文输入法，把括号和引号配对。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 13,
+      "originalLine": 60,
+      "characters": 111,
+      "before": "这种用引号围起来的文字叫字符串。英文单引号也能标记字符串，开头结尾应使用同一种；本节先用双引号。每执行一条这样的 print，默认在显示完后换到下一行。先试着预测：连续写两条，会得到一行还是两行？保存成文件后就能直接观察。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 14,
+      "originalLine": 67,
+      "characters": 120,
+      "before": "交互窗口适合立即试一行；要反复运行自己的几条指令，可以保存成脚本文件。脚本是存有程序指令的文本文件，这里用 .py 结尾的文件名。先在你能写入、容易找到的位置创建一个新文件夹 aivora-python，例如自己的「文档」中。记下它的位置。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 15,
+      "originalLine": 68,
+      "characters": 186,
+      "before": "Windows打开记事本，它在这里充当编辑器：用来输入并保存代码。新建文档，复制下面两行。选择「文件 → 另存为」，进入刚建的 aivora-python 文件夹，文件名填 first_run.py；文件类型选「所有文件」，编码选 UTF-8，再保存。UTF-8是一种保存文字的方式，可保留中文。用文件属性确认实际名字是 first_run.py，结尾没有多出 .txt。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "Windows打开记事本，把下方两行写进新文档。选择「文件 → 另存为」，进入刚建的aivora-python文件夹。"
+        },
+        {
+          "type": "paragraph",
+          "text": "文件名填first_run.py，类型选「所有文件」，编码选UTF-8后保存。UTF-8可保存中文；再用文件属性核对完整名称没有多出.txt。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 16,
+      "originalLine": 69,
+      "characters": 238,
+      "before": "macOS可打开官方安装附带的「应用程序 → Python 3.x → IDLE」。IDLE包含编辑窗口和交互窗口；在菜单选择 File → New File，向新编辑窗口复制下面两行，再 File → Save，选 aivora-python 文件夹，保存为 first_run.py。若找不到IDLE，可在已经验证过的终端输入 python3 -m idlelib 启动它；该命令只是打开随Python提供的编辑工具，本节不展开模块语法。无法启动时向教学支持确认安装组件。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "macOS打开Python安装附带的IDLE，选择File → New File，向新的编辑窗口写入下方两行。再选File → Save，存到aivora-python，命名first_run.py。"
+        },
+        {
+          "type": "callout",
+          "title": "找不到IDLE时",
+          "text": "可在已验证的终端用python3 -m idlelib打开随Python提供的编辑工具。此命令只作启动工具使用；仍打不开时请教学支持检查安装组件。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 17,
+      "originalLine": 71,
+      "characters": 79,
+      "before": "代码框的复制按钮只复制两行源码。不要把文件名、行号、>>>、命令或预期输出写进文件。保存后的文件会留在电脑上；网页练习框中的输入只是临时自查，刷新后可能丢失。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 18,
+      "originalLine": 73,
+      "characters": 77,
+      "before": "下载提供相同的两行起始代码，方便核对。如果使用下载，请移到刚建的文件夹并确认名字；练习仍要求你亲自修改。第一节只用.py；Notebook的使用另有规划。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "下载与代码框是同一份起始代码，可移入练习文件夹核对文件名。接下来要在自己的.py里修改文字；Notebook文档的操作放到1.5。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 19,
+      "originalLine": 79,
+      "characters": 164,
+      "before": "回到PowerShell或系统终端。当前目录就是这个窗口此刻用来寻找文件的文件夹；刚保存文件不会自动改变终端所在的位置。cd 是改变当前目录的命令。Windows在资源管理器进入 aivora-python，点击地址栏复制完整路径；输入 cd、一个空格和英文双引号，把路径粘贴在引号内。下面路径只是示例，换成你电脑上实际的位置。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "回到系统终端，先找到刚保存文件的位置。当前目录是终端此刻查找文件的起点，保存文件并不会自动改变它。"
+        },
+        {
+          "type": "paragraph",
+          "text": "Windows在资源管理器打开aivora-python，复制地址栏完整路径。用cd加空格和一对英文引号，将实际路径放进引号；下方只是路径形式示例。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 20,
+      "originalLine": 81,
+      "characters": 111,
+      "before": "pwd 显示当前目录，dir 列出其中的文件。确认列表中确实有 first_run.py，再执行下面一行。终端显示的 PS C:\\…> 等前缀不需要输入。若仍看到 >>>，先输入 quit() 退出解释器，再输入终端命令。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "pwd显示当前目录，dir列出文件。列表中找到first_run.py后，执行下一条命令；PS C:\\…>等终端前缀不用输入。看到>>>时，先用quit()回到系统终端。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 21,
+      "originalLine": 83,
+      "characters": 84,
+      "before": "macOS同样先 cd 到实际保存位置；下面用自己的文稿目录作示例，实际文件夹不同就替换整段路径。pwd显示位置，ls列出文件。引号让含空格的路径也能作为一个整体传入。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 22,
+      "originalLine": 85,
+      "characters": 112,
+      "before": "两种系统都应得到下面的两行输出。执行完后回到系统终端的命令提示处，说明这次脚本运行已经结束。第二行是程序自己写出的提示文字；它不会自动检测文件名，改名时也不会自动跟着改。确认文件来源主要看pwd、文件清单和运行命令中的路径。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "这次应出现下方两行文字，随后终端重新等待命令，表示脚本已经结束。"
+        },
+        {
+          "type": "paragraph",
+          "text": "第二行File: first_run.py是源码中的固定文字，不会检测或跟随文件改名。确认实际执行目标，要结合cwd、文件清单与命令路径。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 23,
+      "originalLine": 87,
+      "characters": 122,
+      "before": "这次过程可以逐项指出：first_run.py保存两条指令；python（或选定的py、macOS的python3）启动解释器读取文件；两条print按从上到下的顺序产生两行输出。屏幕上的旧输出不会因编辑文件自动更新，每次检查修改都要重新执行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 24,
+      "originalLine": 93,
+      "characters": 118,
+      "before": "先不看答案，把第一行引号内的文字换成一件你今天想完成的小事，保留第二行。运行前，在纸上或本地笔记预测两行输出；保存文件，再用刚才的命令执行。逐行比较预测和实际结果。若第一行还显示旧问候，先确认已保存，以及运行命令是否指向正在编辑的文件。",
+      "decision": "rewrite",
+      "reason": "补旧结果的诊断反馈；预测口头即可，保留最小改值验证",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "把第一行引号内的问候换成今天想做的一件事，第二行保留。先口头预测两行，再保存，用同一命令运行并核对。"
+        },
+        {
+          "type": "paragraph",
+          "text": "若仍出现旧问候，先确认保存，再给第一行加一个新标记重跑。新标记也没有出现时，按pwd和命令查找实际文件，区分未保存和跑错目标。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 25,
+      "originalLine": 94,
+      "characters": 103,
+      "before": "这一轮只改引号内的文字，括号和配对引号保持完整。文字可以用中文；若中文显示异常，先确认文件保存为UTF-8，再临时换成英文短句核对执行过程，把显示问题单独记录。接下来的核心练习会要求你独立改两行并新增一行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 26,
+      "originalLine": 100,
+      "characters": 118,
+      "before": "先读错误信息，再决定查哪一处。命令找不到时还没开始执行源码；can’t open file 表示没有打开指定文件；SyntaxError表示代码写法无法被解释器解析。报错的大小写、路径和具体措辞可能随版本变化，优先看它指向的文件及行号。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "先看失败发生在哪一步：命令不可用，还没开始执行源码；can’t open file表示文件没有打开；SyntaxError表示源码无法解析。按下表检查错误指向的文件和行号。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 27,
+      "originalLine": 109,
+      "characters": 114,
+      "before": "想观察语法错误，可在自己的练习文件第一行临时删掉结尾的英文引号，保存再运行。文件会在解析阶段失败，这次不会产生原来两行正常输出；终端中更早的旧输出仍可能留着。把引号补回、保存、重跑，才算验证恢复。无需为这个错误重装Python。",
+      "decision": "retain",
+      "reason": "保留与此处故障或安全边界直接相关的技术条件。"
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 28,
+      "originalLine": 132,
+      "characters": 92,
+      "before": "把最终.py和两次练习的简短记录留在本地。下次即使关掉终端，也能找到文件、确认解释器、运行命令并核对自己的输出，这才是本节留下的编程成果。网页上的「读完」只记录阅读，不会替你验证程序。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "保留自己的.py和实际结果。下次重新打开终端，沿记录找到文件、执行同一命令，就能再次看到自己的三行提示。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "originalIndex": 29,
+      "originalLine": 133,
+      "characters": 118,
+      "before": "建议下一节学习1.2「解释器怎样找到并执行脚本」，把本节的一次成功运行推广到不同目录。1.2已有待人工审核的试读教材，完成后可继续1.3「用编辑器完成保存与重跑」的待审核试读。第5章函数课还需要变量、表达式和控制流程等基础，补齐后再读。",
+      "decision": "rewrite",
+      "reason": "移走制作/审核状态，改为稳定的学习目的与先修衔接",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "下一节1.2让同一程序从不同目录正确运行；1.3再把修改、保存与重跑放进编辑器。先走完这条短程序主线，再学习项目环境和Notebook工具。第5章函数需要变量、表达式与控制流程基础，补齐后再读。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 0,
+      "originalLine": 30,
+      "characters": 78,
+      "before": "上一节，你在文件所在的目录输入命令，成功运行了程序。现在换一个位置：电脑里明明有run.py，python run.py还一定能找到它吗？先用一个文件验证。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "上一节的程序已经能运行。现在要从别的文件夹找到同一份程序：命令里要写怎样的路线？先准备一份能辨认的run.py。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 1,
+      "originalLine": 31,
+      "characters": 128,
+      "before": "在自己的练习位置新建path-lab文件夹，再在其中新建alpha文件夹，把下面一行保存为alpha里的run.py。目录树中的缩进表示包含关系；path-lab本身此时没有run.py。所有代码使用本地Python 3.x自带的print，无需第三方库。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 2,
+      "originalLine": 34,
+      "characters": 171,
+      "before": "用1.1的方法cd到你自己的path-lab完整位置。执行pwd，看末尾确实是path-lab；Windows用dir，macOS用ls，确认这里列出alpha文件夹。先预测下面的命令会打印Alpha A1，还是打不开文件，再执行对应系统的一条。Windows若一直使用py，将本课所有python替换为py；macOS继续用python3。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "先cd到自己的path-lab，用pwd确认起点，再用dir（macOS为ls）确认alpha文件夹。先沿下方路线进入alpha找到run.py，预测输出，再执行。"
+        },
+        {
+          "type": "paragraph",
+          "text": "Windows沿用已核验的python或py，macOS沿用python3；后面的路径实验保持同一解释器入口。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 3,
+      "originalLine": 36,
+      "characters": 156,
+      "before": "本例会出现can’t open file或No such file or directory一类信息，本次没有Alpha A1输出。python命令已经启动了解释器，失败的是打开run.py：当前目录里没有这份文件。它不会因为alpha目录里有同名文件就自动进去寻找。保留这条失败信息，接着只改命令中的脚本路径。",
+      "decision": "rewrite",
+      "reason": "对错误预测给原因及单条件路径验证",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "这条命令会报告can’t open file或同类提示，没有本次Alpha A1输出。解释器已启动，但当前目录没有run.py。"
+        },
+        {
+          "type": "paragraph",
+          "text": "若你预测能找到alpha里的文件，就把“电脑里有文件”混成了“相对路径已经指到文件”。现在恢复上方带alpha的脚本路线，文件和print都保持不动，再验证。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 4,
+      "originalLine": 39,
+      "characters": 68,
+      "before": "这一改动没有移动文件，也没有修改print。变化的是告诉解释器去哪里读文件。后面我们就用当前目录、传入的路径和实际结果，解释每一次定位。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "看到Alpha A1，说明解释器已沿这条路线读到文件。现在保持文件和cwd，只把脚本参数缩成run.py：先预测还能否找到，再观察一次受控失败。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 5,
+      "originalLine": 42,
+      "characters": 92,
+      "before": "当前工作目录是终端此刻使用的文件夹，pwd显示它。运行这些命令时，解释器通常继承这个位置；相对脚本路径就从这里开始解析。相对路径没有从盘符或系统根目录写起，而是说明从当前目录往哪里走。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 6,
+      "originalLine": 43,
+      "characters": 118,
+      "before": "在path-lab中，.\\alpha\\run.py表示：从这里进入alpha，再找到run.py。Windows用反斜杠分隔目录；macOS写./alpha/run.py，用正斜杠。.表示当前目录，所以上一段命令中的点是明确写出了起点。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 7,
+      "originalLine": 44,
+      "characters": 113,
+      "before": "现在先cd alpha，再pwd确认末尾是path-lab/alpha。此时执行下面一条，预期仍为Alpha A1。run.py和.\\run.py在这里都指向当前目录中的同一文件；macOS对应run.py和./run.py。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 8,
+      "originalLine": 51,
+      "characters": 69,
+      "before": "..表示上一级目录。它每出现一次就向上走一级，不表示随便找另一个文件夹。先确定pwd显示的起点，再从左到右读路径，就能判断每一段走到哪里。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 9,
+      "originalLine": 54,
+      "characters": 79,
+      "before": "回到path-lab，为它增加beta文件夹，在beta里新建另一份run.py，内容如下。原来的alpha/run.py保留。先看完整布局，再比较相同命令。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 10,
+      "originalLine": 57,
+      "characters": 54,
+      "before": "先cd到beta并用pwd确认。预测python run.py会读取alpha还是beta中的文件，再运行：",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 11,
+      "originalLine": 59,
+      "characters": 124,
+      "before": "这次输出Beta B2。在alpha时，run.py指向alpha/run.py；在beta时，它指向beta/run.py。文件名相同，完整位置和内容却不同。要在beta中运行alpha的文件，可以先向上一级到path-lab，再进入alpha：",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 12,
+      "originalLine": 61,
+      "characters": 129,
+      "before": "预期输出Alpha A1。核对方法是从pwd的beta起步，逐段走..、alpha、run.py；结果应与打开这份目标源码看到的文字一致。输出标记只帮助交叉核对，不能单独证明路径：如果把Alpha A1的源码复制到beta，beta也会打印Alpha A1。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 13,
+      "originalLine": 64,
+      "characters": 114,
+      "before": "如果想从多个目录运行同一个alpha/run.py，还可以把它的完整位置交给解释器。这叫绝对路径：Windows通常从盘符和根分隔符开始，如C:\\…；macOS从系统根目录/开始，如/Users/…。它不以此刻的当前目录为起点。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 14,
+      "originalLine": 65,
+      "characters": 146,
+      "before": "先在文件管理器中确认alpha/run.py的完整位置，或者cd到alpha后用pwd取得文件夹完整路径，再接上run.py。下面用文档目录举例：把整条路径换成你自己的实际位置，不要原样复制「你的用户名」。Windows这里是终端命令中的路径，反斜杠写一个即可；没有在编写Python字符串。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "先确认alpha/run.py的完整位置：可在文件管理器查看，也可到alpha用pwd取得目录，再接上run.py。将下方整条示例路径换成自己的位置。"
+        },
+        {
+          "type": "paragraph",
+          "text": "这是终端命令中的路径，Windows反斜杠写一个即可。含空格时将完整脚本路径一起放进英文引号。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 15,
+      "originalLine": 67,
+      "characters": 112,
+      "before": "先在path-lab运行这条替换好的绝对路径命令，再cd到beta，pwd确认位置后原样再运行同一条命令。两次预期都是Alpha A1。当前目录变了，绝对路径仍指向同一个alpha/run.py；相对路径则要随起点重新判断。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 16,
+      "originalLine": 71,
+      "characters": 113,
+      "before": "回到path-lab，增加名为my scripts的文件夹，注意两个单词之间有一个空格。把下一行保存为其中的run.py。现在path-lab下有alpha、beta、my scripts三个并列文件夹，各有一份run.py。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 17,
+      "originalLine": 73,
+      "characters": 33,
+      "before": "在path-lab执行下面这条未加引号的命令，先预测能否找到文件：",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 18,
+      "originalLine": 75,
+      "characters": 153,
+      "before": "本例会失败：终端用空格分开命令的不同参数，把.\\my（macOS为./my）当成脚本路径，其余scripts\\run.py成了另一个参数。本例没有my这个文件，所以Python报告打不开my，而不是运行my scripts里的run.py。参数就是命令后交给程序的一项信息，这里应该把整个脚本路径作为一项。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "未加引号时，空格把路径拆成了不同参数：.\\my（macOS为./my）成了脚本路径，后面的scripts部分被分开。这里没有my文件，所以打开失败。"
+        },
+        {
+          "type": "paragraph",
+          "text": "参数是命令后交给程序的一项信息。这里需要让完整的my scripts/run.py成为一项，再重跑观察。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 19,
+      "originalLine": 76,
+      "characters": 20,
+      "before": "用一对英文双引号包住完整路径，重跑核对：",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 20,
+      "originalLine": 79,
+      "characters": 87,
+      "before": "引号把含空格的路径作为一个整体交给程序；不会给文件改名，也不会改源码里的文字。完整绝对路径只要含空格，也同样整段引用。使用普通英文引号即可，本节路径不包含引号或其他特殊符号。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 21,
+      "originalLine": 82,
+      "characters": 113,
+      "before": "先cd到beta并用pwd确认位置，再运行前面替换好的alpha绝对路径，运行结束后再执行pwd。两次pwd应相同，都是beta；输出是Alpha A1。这同时说明：传入的目标路径决定读哪份脚本，启动时的当前目录仍可以在别处。",
+      "decision": "rewrite",
+      "reason": "路径/cwd预测的诊断性反馈与一次最小对照",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "在beta用pwd确认起点，运行alpha脚本的绝对路径，结束后再pwd。两次位置都应是beta，程序输出则来自alpha。"
+        },
+        {
+          "type": "paragraph",
+          "text": "如果你预测pwd会变到alpha，就把“脚本所在位置”和“终端当前目录”混在一起了。显式cd到alpha再pwd作一次对照，就能看见真正改变终端位置的动作。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 22,
+      "originalLine": 83,
+      "characters": 102,
+      "before": "这里的短脚本只做print，没有切换目录的动作。运行结束后，父终端通常仍停在原目录；启动一个.py文件不会替你执行cd。以后程序可能读取其他文件，那些文件怎样定位需要另学；此处先把脚本目标与当前目录分开。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 23,
+      "originalLine": 87,
+      "characters": 90,
+      "before": "遇到找不到文件或输出意外，按这个顺序检查：pwd看起点；dir或ls看这里有哪些名字；从起点逐段走命令中的路径；打开目标源码核对是否误跑同名文件。下面三种现象都不需要先重装解释器。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "找不到文件或输出意外时，先pwd找起点，再dir/ls核对名字，最后沿脚本参数逐段定位并查看源码。下表把现象对应到最小修复动作。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 24,
+      "originalLine": 93,
+      "characters": 105,
+      "before": "本节错误都是文件定位与传参问题。版本命令本身都不能运行时，回到1.1的环境段处理；如果出现SyntaxError，则先核对源码符号，而不是把所有报错都归为路径问题。故障恢复另预留5–15分钟，时间仍是编辑估计。",
+      "decision": "retain",
+      "reason": "保留与此处故障或安全边界直接相关的技术条件。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 25,
+      "originalLine": 96,
+      "characters": 54,
+      "before": "以下是两道核心任务。先完成预测与操作，再按需要展开提示；页面输入只作临时思考，源码和真实运行记录保存在本地。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 26,
+      "originalLine": 113,
+      "characters": 90,
+      "before": "保留两道任务的源码、预测和实际记录。现在看到python run.py时，你应该先问：当前目录在哪，这条路径具体指向哪份文件？同名文件、空格和目录变化都可以通过这两项信息逐一核对。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "保留源码和两道任务的短表。每次看到python run.py，先从当前目录走一遍路径，就能核对是否在运行想要的文件。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "originalIndex": 27,
+      "originalLine": 114,
+      "characters": 140,
+      "before": "下一节建议1.3「用编辑器完成保存与重跑」。你已有保存、运行、辨认目标文件和排查路径的基础，接着检查编辑器里打开的文件、集成终端的位置与选中的解释器是否对应。1.3–1.6均已有待人工审核的试读教材，可按第一章顺序继续。第5章函数课还需要变量、表达式和控制流程等基础，补齐后再读。",
+      "decision": "rewrite",
+      "reason": "以可见成果推进动机，移走发布状态",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "下一节1.3把这份路径判断用到编辑器：打开正确文件夹，修改程序，保存后检查实际命令与结果。第5章函数仍需要变量、表达式和控制流程等基础。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 0,
+      "originalLine": 21,
+      "characters": 93,
+      "before": "前两节，你已经能保存文件并从终端运行。本节把这些动作放进编辑器：在main.py里改一行，先不运行，想想怎样证明下一次执行真的读到了这次修改。只看到想要的文字还不够，还要对上文件与命令。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "前两节已能让自己的程序在指定位置运行。现在用VS Code更方便地修改它：改好一行后，怎样让下一次执行读到新内容？先完成一次可靠的保存与重跑。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 1,
+      "originalLine": 23,
+      "characters": 110,
+      "before": "VS Code让文件查找、修改和保存更方便，但运行Python并不以使用它为前提。Python扩展给VS Code增加语言支持与Python运行入口；安装扩展不等于安装解释器。仍使用1.1中已经验证可运行的Python。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 2,
+      "originalLine": 26,
+      "characters": 178,
+      "before": "在自己的aivora-python文件夹中新建editor-lab，用前两节的方法在其中准备main.py和notes.py。先在文件管理器确认两份文件属于同一个editor-lab，再在VS Code选择「文件 → 打开文件夹 / File → Open Folder」，选中editor-lab。项目文件夹只是组织文件的位置，不是Python特殊语法。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "在aivora-python内新建editor-lab，准备下方main.py和notes.py。确认两文件属于这个文件夹。"
+        },
+        {
+          "type": "paragraph",
+          "text": "在VS Code选「文件 → 打开文件夹」，打开editor-lab。左侧目录根应显示它；项目文件夹只是整理文件的位置，不是新Python语法。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 3,
+      "originalLine": 28,
+      "characters": 153,
+      "before": "左侧文件资源管理器的根应为editor-lab。点main.py，文件标签显示名称，编辑区域显示Draft A1那条print；点notes.py可切换文件。打开整个文件夹便于同时核对邻近文件和终端起点；只打开单个文件仍能编辑，但容易漏看项目位置。同名时，在资源管理器查看所属文件夹或悬停标签核对完整位置。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "点击main.py，标签应显示文件名，编辑区应有Draft A1；点击notes.py可以切换。整文件夹视图让你同时看到相邻文件。"
+        },
+        {
+          "type": "paragraph",
+          "text": "遇到同名文件，在文件资源管理器或悬停标签查看完整位置。只打开一个文件也能编辑，但需要另行确认所属目录。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 4,
+      "originalLine": 29,
+      "characters": 114,
+      "before": "若尚无官方Python扩展，在扩展视图搜索Python并核对发布者Microsoft，按官方文档安装；已有则直接使用。本课只需这项Python支持，不安装其他运行扩展。安装或系统授权问题按官方帮助处理，不用练习制造系统配置变化。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 5,
+      "originalLine": 32,
+      "characters": 157,
+      "before": "先打开系统外部终端，cd到自己的editor-lab，pwd并列出文件。Windows用dir，macOS用ls。执行对应平台的一条，初始预期是一行Draft A1。Windows若前两节用py，以下所有python均替换为py；macOS用python3。命令输入在系统终端提示符后，不在Python的>>>里。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "先在外部终端cd到editor-lab，pwd并列出文件，再执行下方对应命令。初始应输出Draft A1。沿用已验证的python/py或python3，命令放在Shell提示符后。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 6,
+      "originalLine": 34,
+      "characters": 93,
+      "before": "在自己的记录里先写新预期：第一行Ready B2，第二行Saved copy。回到main.py改第一条文字，再增加一条print，如下。两条指令从上到下执行，print默认在末尾换行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 7,
+      "originalLine": 35,
+      "characters": 116,
+      "before": "先观察标签：常见界面用小圆点表示未保存，具体标记随主题和版本变化。编辑区的内容可以暂时只在内存中，这份正在编辑的副本叫编辑缓冲区。写回磁盘后，独立终端运行磁盘文件才能读到它。开启自动保存时，副本也可能已自动写回，以实际保存状态为准。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "先看未保存标记，常见界面是标签上的小圆点。编辑中的副本叫编辑缓冲区；独立终端执行的是磁盘文件。"
+        },
+        {
+          "type": "paragraph",
+          "text": "若自动保存已经写回磁盘，未保存实验的条件就不成立。以实际标记和结果为准，先按正常保存流程完成本轮。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 8,
+      "originalLine": 36,
+      "characters": 140,
+      "before": "按Windows的Ctrl+S、macOS的Command+S，或选「文件 → 保存 / File → Save」。首次另存时确认文件名main.py、位置editor-lab；不要存成main.py.txt。保存后未保存标记应消失。回到刚才核对位置的外部终端，用同一条命令再跑。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "按Ctrl+S（macOS为Command+S）或选「文件 → 保存」。确认main.py位于editor-lab，未保存标记消失。"
+        },
+        {
+          "type": "paragraph",
+          "text": "回到刚核对过位置的外部终端，用同一命令重跑。下方两行才是这次保存后要看到的结果。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 9,
+      "originalLine": 37,
+      "characters": 90,
+      "before": "逐行对照预测。把证据连在一起：编辑文件的完整位置、保存状态、终端pwd、输入命令、最终源码和本次实际两行输出。独特标记便于辨认版本，但不能单凭标记证明路径；不同文件也可存相同文字。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "逐行核对新输出。新标记没有出现时，先查保存，再查命令指向的完整文件；不同位置也可能存着相同文字。文件位置和实际命令在会话记录中记一次即可。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 10,
+      "originalLine": 40,
+      "characters": 124,
+      "before": "选「查看 → 终端 / View → Terminal」打开集成终端。它是放在VS Code里的终端，仍在运行PowerShell、zsh等shell；不是另一种Python解释器。外部终端与集成终端可以完成相同任务，但cwd和命令环境须分别核对。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 11,
+      "originalLine": 41,
+      "characters": 126,
+      "before": "新终端通常从工作区根开始；已有终端、设置或之前的cd都可能改变位置。输入pwd，再用Windows的dir或macOS的ls列出文件。若不是自己的editor-lab，按1.2的方法cd到准确位置后再确认，不能仅凭面板在VS Code里就认定位置正确。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 12,
+      "originalLine": 43,
+      "characters": 96,
+      "before": "最后一条应输出Ready B2与Saved copy，和外部终端一致。不同终端结果不同，先比较各自pwd、脚本参数和保存内容，再检查解释器。保留本次命令与结果，别把终端更早的输出当成这次结果。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 13,
+      "originalLine": 46,
+      "characters": 211,
+      "before": "先激活main.py。打开命令面板：Windows用Ctrl+Shift+P，macOS用Command+Shift+P，也可用「查看 → 命令面板 / View → Command Palette」。搜索Python: Select Interpreter（Python: 选择解释器），从已安装候选中选前两节验证可用的Python。记录版本和位置，可从候选说明、状态栏或详情查看。不要选择创建环境，本课不创建虚拟环境。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "先打开main.py。按Ctrl+Shift+P（macOS为Command+Shift+P）打开命令面板，搜索Python: Select Interpreter，选择前两节已验证可用的Python。"
+        },
+        {
+          "type": "paragraph",
+          "text": "在候选说明或详情核对路径和版本。此步选已有解释器；项目环境的创建在1.4学习。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 14,
+      "originalLine": 47,
+      "characters": 178,
+      "before": "选定后，用官方Python扩展的「运行Python文件 / Run Python File」入口，或命令面板的Python: Run Python File in Terminal，运行整个main.py。在集成终端查看实际命令中的解释器位置和脚本位置，核对两行结果。不要选运行选区/行、调试或其他扩展的Run Code，那些入口的执行对象与行为可能不同。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "用官方Python扩展的整文件入口Run Python File，或命令面板的Python: Run Python File in Terminal执行main.py。核对终端实际解释器路径、脚本位置及两行结果。"
+        },
+        {
+          "type": "callout",
+          "title": "区分整文件与选区",
+          "text": "运行选区/行、调试和其他扩展的Run Code不是同一个入口。本课用保存后的整份文件作对照。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 15,
+      "originalLine": 48,
+      "characters": 164,
+      "before": "Python扩展的某些运行命令会先自动保存；官方教程描述的右键Run Python File in Terminal就有此行为。菜单随版本变化，本课主流程仍先手动保存再运行，不能推断「点击任何运行按钮都会执行旧磁盘内容」。本机核验VS Code 1.143.1、Python扩展2026.10.0；其他版本看实际命令和保存状态。",
+      "decision": "rewrite",
+      "reason": "保留入口差异事实，移走作者VS Code/扩展机器版本",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "部分官方运行入口会先自动保存。因而本课先手动保存，再运行整文件；不能把“点了某个运行按钮”一律当作读取旧磁盘的证据。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 16,
+      "originalLine": 49,
+      "characters": 161,
+      "before": "编辑器选定项与终端直接输入python时找到的解释器要分别检查。选择解释器不保证所有已有终端的命令环境都改变。下方是只读诊断工具，在集成终端输入，得到本次进程的解释器完整位置和版本，再到外部终端执行同一条。macOS开头换为python3，Windows此前用py则换为py。引号内原样保留，不把它当成本课要掌握的新语法。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "编辑器选中的Python与终端命令python找到的Python分别核对，已有终端未必随选择改变。"
+        },
+        {
+          "type": "paragraph",
+          "text": "下面的只读工具取得本次解释器位置和版本。在集成、外部终端各原样运行一次；macOS开头换python3，Windows沿用py时换py。它是观察工具，不是本课要求编写的模块代码。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 17,
+      "originalLine": 50,
+      "characters": 112,
+      "before": "把两个终端的实际位置/版本与编辑器选定项、官方运行命令比较。本课不讲解import和sys模块，也不考默写诊断命令。没有候选或命令不可用时，回查1.1的安装与可运行命令；不要通过重装、安装多个版本或修改系统PATH猜测修复。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 18,
+      "originalLine": 53,
+      "characters": 172,
+      "before": "A：文件未保存。先把自己的main.py改回初始一行并保存，在外部终端确认Draft A1。再在编辑器改为两行新内容，暂不保存、不点运行按钮；确认未保存标记仍在。从已核对pwd的独立外部终端运行同一路径main.py。磁盘仍旧时会输出Draft A1。接着在编辑器保存，再从同一外部终端重跑，应变为两行。这个前后对照才支持「刚才未保存」的判断。",
+      "decision": "rewrite",
+      "reason": "把控制条件、动作和验证拆成可执行的因果对照",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "A：观察未保存。先将main.py恢复一行并保存，外部终端运行确认Draft A1。再改成两行，保持未保存标记，暂不点运行入口。"
+        },
+        {
+          "type": "paragraph",
+          "text": "从同一外部终端运行同一路径：磁盘仍旧就显示Draft A1。随后只做保存，再重跑；变成两行，才支持刚才是未保存造成的差异。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 19,
+      "originalLine": 54,
+      "characters": 98,
+      "before": "若自动保存让标记立即消失，磁盘已更新，实验条件不成立，可能直接得到新输出。不要记录为未保存故障。可在自己的练习窗口记录差异并继续正常流程；若自行临时调整自动保存，记住原状态并恢复，不改别人的配置。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 20,
+      "originalLine": 55,
+      "characters": 182,
+      "before": "B：执行另一份文件。保留已保存的两行main.py，运行同目录notes.py会得到Notes N4，即使编辑区仍在main.py。也可在editor-lab中新建other文件夹，保存下方同名main.py；从other运行main.py得到Other folder C3。核对pwd、脚本参数和两份源码，再指定正确目标或切回目标目录重跑，别只反复修改当前标签。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "B：观察另一目标。main.py已保存时，执行notes.py会显示Notes N4，编辑区开着main.py也不改变命令目标。"
+        },
+        {
+          "type": "paragraph",
+          "text": "还可在other中新建下方同名main.py，从other运行会得到Other folder C3。用pwd和脚本参数定位，再指定根目录目标重跑。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 21,
+      "originalLine": 56,
+      "characters": 120,
+      "before": "C：解释器与预期不符。记录编辑器选定路径/版本，查看官方运行命令，再分别用只读诊断比较集成与外部终端。本机若相同，就记录「未出现解释器错配」，不必制造第二个Python。若不同，检查运行入口、已有终端是否旧会话、选定项是否为先前可用的安装。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 22,
+      "originalLine": 57,
+      "characters": 125,
+      "before": "保持源码与目标不变，分别从官方入口和终端命令运行并比较实际解释器位置，是可观察的排查：路径不同说明环境不同，即使print结果相同。选回已有且验证可用的解释器，再用官方入口重跑；检查新终端，仍不同则保留两条路径寻求安装支持，不用更改PATH掩盖差异。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 23,
+      "originalLine": 76,
+      "characters": 118,
+      "before": "保存源码与简表。下次关闭编辑器再打开，能回答：在编辑哪份文件？是否写回磁盘？pwd在哪？哪个Python执行了哪个参数？为什么出现这个结果？再遇错配，按保存状态、目标位置与解释器证据检查并重跑。网页测验与读完只帮助阅读，不验收本地程序。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "保留自己的程序与结果。下一次打开项目时，用“编辑哪份、保存了吗、从哪里启动、启动哪个Python”核对一次；不必把同一环境反复誊写。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "originalIndex": 24,
+      "originalLine": 77,
+      "characters": 133,
+      "before": "接着学习1.4「为项目准备独立的虚拟环境」，它已有待人工审核的试读教材。进入前应能独立打开文件夹、保存并运行.py，确认cwd、目标文件及解释器位置/版本，遇到本课一种错配能恢复。本节不要求提前创建环境或安装依赖。第5章仍需变量、表达式与控制流程等基础，补齐后再读。",
+      "decision": "rewrite",
+      "reason": "明确前三节可见成果及后续工具专题动机，移走出版状态",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "前三节已经形成“写程序—从不同位置找到它—修改后可靠重跑”的主线。1.4开始处理多个项目的工具环境：为每个项目选对Python。进入前能完成本节的保存、目标定位与解释器核对即可。第5章还需变量、表达式与控制流程等基础。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 0,
+      "originalLine": 22,
+      "characters": 117,
+      "before": "你已经能让一个.py运行。现在同时维护两个小项目：一个整理个人记录，一个制作物品标签。假设以后它们需要不同的软件工具，或者同一工具的不同版本。如果都向同一个安装位置增减软件，改动就可能影响另一项目。怎样让每个项目分别维护自己的那一份？",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 1,
+      "originalLine": 23,
+      "characters": 124,
+      "before": "先准备python-projects文件夹，其中新建project-a和project-b，各保存下面的main.py。两份源码只打印不同标记，先预测输出。这里暂不安装软件包；我们要先建立可区分的环境，没有声称这两行print已经产生了包版本冲突。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "在python-projects中建立project-a和project-b，各保存下方main.py并预测输出。两行print用于区分项目；暂不安装包，先练习给每个项目选对环境。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 2,
+      "originalLine": 26,
+      "characters": 117,
+      "before": "虚拟环境是基于已有Python安装创建的一套项目运行环境，通常提供独立的软件包安装位置。创建它所依据的安装叫基础Python。两个项目可以使用同一版本的基础Python，同时拥有不同环境；创建环境没有替你安装一个全新Python版本。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 3,
+      "originalLine": 27,
+      "characters": 104,
+      "before": "本课用Python自带的venv工具。它让项目分别管理Python相关软件，范围不包括完整操作系统隔离：同一台机器上的文件、其他进程和网络资源仍需按各自规则管理。以后系统学习依赖时，再向指定环境安装所需软件。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 4,
+      "originalLine": 30,
+      "characters": 155,
+      "before": "从一个新开的终端开始，用1.3的诊断核对基础Python的位置与版本；不能因为旧终端的python还能运行，就假定它仍是原来那份。cd到project-a的实际完整位置，用pwd确认末尾是python-projects/project-a，再用dir（macOS为ls）确认main.py。此处称为项目根目录。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "新开终端，用1.3的诊断核对基础Python位置和版本。然后cd到project-a，pwd确认项目根，用dir（macOS为ls）找到main.py。"
+        },
+        {
+          "type": "paragraph",
+          "text": "旧终端还能运行python，不保证它仍指向预期安装；这次核对会作为两个项目共用的基础记录。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 5,
+      "originalLine": 31,
+      "characters": 126,
+      "before": "以下Windows命令以已确认的python为基础入口。若你一直用py，先用同一py入口取得版本与解释器位置、核对为目标安装，再将创建命令改为py -m venv .venv；不同py安装与配置的选择规则可能不同。macOS保持已验证的python3。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 6,
+      "originalLine": 33,
+      "characters": 106,
+      "before": "-m venv表示调用这个Python提供的环境创建工具；最后的.venv是要创建的目录名。它位于当前项目根内，不是另一个要cd进去写代码的项目。创建可能需要片刻，成功时也可能没有额外文字；等命令结束后核对文件。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 7,
+      "originalLine": 35,
+      "characters": 171,
+      "before": "Windows应能找到.venv中的Scripts/python.exe，macOS应能找到.venv/bin/python；macOS普通ls可能隐藏点开头目录，ls -a可显示。若目标已存在，先确认来源与内容；若创建失败，保存完整错误，回查基础解释器和目录，不清空旧环境、不盲目重装或修改全局设置。可在新的明确练习位置重做，保留现有文件。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "创建结束后，Windows应能找到.venv/Scripts/python.exe，macOS为.venv/bin/python；macOS可用ls -a查看隐藏目录。"
+        },
+        {
+          "type": "callout",
+          "title": "已有环境或创建失败",
+          "text": "先核对现有目录的来源；不要清空或移动它。创建失败时保存错误并检查基础Python与位置，需要重做就另选明确的新练习位置。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 8,
+      "originalLine": 36,
+      "characters": 85,
+      "before": "再到project-b的实际位置，pwd和文件清单确认后，独立重复同样的创建与检查。最终布局如下。两处都叫.venv，但完整位置不同；main.py始终与.venv并列。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 9,
+      "originalLine": 40,
+      "characters": 148,
+      "before": "先cd回project-a根，pwd确认，再执行对应平台的一条。这次把解释器也写成路径：命令前半段指向本项目.venv中的Python，后半段main.py指向要执行的源码。Windows的&用于启动后面用引号包住的程序路径，引号可以保留路径中的空格；这是PowerShell命令，不写进.py。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "回到project-a根，执行下方命令。前半段指向环境Python，后半段main.py指向源码；两部分都从当前目录判断位置。"
+        },
+        {
+          "type": "paragraph",
+          "text": "PowerShell的&启动后面的程序路径，引号保留路径中的空格。图中箭头表示“Shell启动解释器，再执行脚本”；直接指定路径也能使用环境。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 10,
+      "originalLine": 43,
+      "characters": 96,
+      "before": "到project-b根用同一形式执行，预期为Project B B6。两次相对命令看起来一样，但从不同cwd出发，分别指向A和B的环境解释器与脚本。这一步没有运行激活脚本，已经使用了项目环境。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 11,
+      "originalLine": 44,
+      "characters": 82,
+      "before": "目前的print只证明脚本能执行。它没有显示解释器身份：即使用B的解释器执行A的这条print，仍可能得到Project A A4。下面用一份现成观察工具补齐证据。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "输出来自脚本，但还没显示图中的解释器身份。下面用现成观察工具核对真实位置。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 12,
+      "originalLine": 47,
+      "characters": 108,
+      "before": "把下面整段分别保存为两个项目根中的observe_env.py，与main.py、.venv并列。它只读取本次Python进程的信息，不创建或修改环境。原样使用即可；本课不要求编写import或解释sys的全部语法。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 13,
+      "originalLine": 49,
+      "characters": 91,
+      "before": "先从project-a根运行下方命令，再从project-b根运行同样形式的命令。运行前预测：哪两项位置应不同，哪两项可能相同？路径以你机器的真实输出为准，不照抄别人的用户名或版本。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 14,
+      "originalLine": 57,
+      "characters": 151,
+      "before": "正常标准库venv中，Environment与Base Python应不同。这个比较支持「进程处在虚拟环境」的判断；再把Interpreter、Environment与目标项目路径对上，才能判断是否是你要的那个环境。仅看到字符串.venv、提示符(.venv)，或两个版本号不同，都不足以完成这个核对。",
+      "decision": "rewrite",
+      "reason": "给版本/提示符误判提供明确诊断和最小解释器替换验证",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "先比较Environment与Base Python：标准venv里两者不同，支持当前进程处于虚拟环境的判断。再将Interpreter、Environment与目标项目对应，确认是不是要用的那一份。"
+        },
+        {
+          "type": "paragraph",
+          "text": "若只看Version，两个同版本环境会被混作一个；若只看(.venv)，两个同名目录也无法区分。用A解释器和B解释器各运行一次观察工具，保留路径后缀作对照。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 15,
+      "originalLine": 58,
+      "characters": 93,
+      "before": "为A和B各留下短记录：项目完整位置、创建命令、实际运行命令、四行诊断、运行前预测及main.py真实输出。可以把一条诊断命令与对应的脚本命令放在一起记录，避免把另一终端更早的结果混进来。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "为A、B各留一次创建命令、运行结果和四行诊断。公共基础Python/版本只登记一次；后续命令不变可引用编号，环境身份有变化时再留新诊断。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 16,
+      "originalLine": 61,
+      "characters": 84,
+      "before": "直接调用成功后，再看激活。它在当前shell会话中调整命令查找，使简短的python通常指向环境解释器，省去每次输入完整路径。在对应项目根，按正在使用的shell执行：",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 17,
+      "originalLine": 63,
+      "characters": 166,
+      "before": "Windows这一组用于PowerShell，macOS这一组用于常见zsh/bash。最后一条诊断仍应指向当前项目.venv，随后可用python main.py运行。若PowerShell提示策略阻止Activate.ps1，保留错误并立即使用上一段直接调用解释器的命令，环境仍可能完全可用；本课无需修改执行策略或系统PATH。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "上面分别是PowerShell与zsh/bash的激活命令。激活后再运行诊断，路径仍应属于当前项目，随后可用python main.py。"
+        },
+        {
+          "type": "callout",
+          "title": "PowerShell阻止Activate.ps1时",
+          "text": "保存原提示，改用direct-run中的环境Python路径运行并诊断。环境可能已可用，无需修改执行策略或系统PATH。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 18,
+      "originalLine": 64,
+      "characters": 117,
+      "before": "激活没有创建第二个环境，也不是使用环境的唯一方式。结束当前激活时，在同一个shell输入deactivate；之后再次运行诊断确认实际解释器。关闭或换一个终端后，应重新pwd、定位项目并核对解释器；不能把先前会话状态当作新终端的保证。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 19,
+      "originalLine": 66,
+      "characters": 111,
+      "before": "只cd到另一个项目，通常不会把已激活环境自动换成另一份。切换时最短可核验的做法是：确认新项目位置，直接调用该项目.venv中的解释器，并重新诊断。终端若仍激活着A，明确写出B解释器路径依然能使用B，不必为修复反复修改源码。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 20,
+      "originalLine": 69,
+      "characters": 202,
+      "before": "沿用1.3的方法，在VS Code单独打开project-a文件夹，打开main.py或observe_env.py。调用Python: Select Interpreter，核对候选的完整位置，选择project-a/.venv对应的解释器。若未发现，可刷新列表或通过「输入解释器路径」定位实际存在的Scripts/python.exe（macOS为bin/python），不要因此另建来源不明的环境。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "在VS Code单独打开project-a，打开main.py或observe_env.py，再用Python: Select Interpreter选project-a/.venv。先看候选完整路径。"
+        },
+        {
+          "type": "paragraph",
+          "text": "未找到候选时，可刷新或用「输入解释器路径」定位已存在的Scripts/python.exe（macOS为bin/python），先确认文件，而不是另建环境。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 21,
+      "originalLine": 70,
+      "characters": 140,
+      "before": "保存后用官方Python文件运行入口执行observe_env.py，再运行main.py。在集成终端核对实际解释器/脚本命令与四行诊断。Python扩展与Python Environments扩展的界面可能不同，不依赖状态栏或按钮的固定位置，也不混用第三方Run Code入口。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "保存文件，用官方Python整文件入口分别执行observe_env.py和main.py。核对终端命令、四行诊断及输出。界面可能随扩展变化，判断依据仍是实际进程。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 22,
+      "originalLine": 71,
+      "characters": 123,
+      "before": "再单独打开project-b文件夹，选它自己的.venv并重新执行。同一版本号可以出现两次，关键是项目位置与实际前缀。新终端可能由扩展自动激活，取决于设置；切换解释器后，已有终端不保证同步改变。分别检查旧终端和新终端中的实际命令，仍以诊断为依据。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 23,
+      "originalLine": 74,
+      "characters": 96,
+      "before": "回到project-a根，确认main.py与observe_env.py均已保存，目标是用A自己的环境。现在故意指定B的环境执行A的脚本。这里控制脚本、保存状态和基础版本不变，只改变解释器：",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 24,
+      "originalLine": 76,
+      "characters": 168,
+      "before": "普通输出仍为Project A A4，诊断的Environment却会落到project-b/.venv。这足以发现环境错配。修复时保持A的脚本不动，改为本课直接调用A解释器的命令，再跑main.py与observe_env.py：文字可以不变，Interpreter与Environment应回到A。保留前后记录，才能说明修复了什么。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "这次仍会显示Project A A4，但Environment位于project-b/.venv，说明用了B。保持A源码不动，只换回A解释器，重跑脚本和观察工具。"
+        },
+        {
+          "type": "paragraph",
+          "text": "文字和版本可以不变；Interpreter与Environment回到A，才是本次环境修复的证据。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 25,
+      "originalLine": 87,
+      "characters": 110,
+      "before": ".venv是可按说明重新建立的环境目录，自己的源码留在项目根。换电脑或改变项目位置时，通常在目标位置重新创建环境，不复制整个.venv来代替创建；其中一些脚本会记住原位置。以后学习依赖管理，再补充如何重建所需软件的记录。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 26,
+      "originalLine": 88,
+      "characters": 151,
+      "before": "使用Git管理项目时，通常不提交.venv。可在项目的.gitignore文本文件加入下面一行；它只是让Git忽略环境目录，不影响Python执行。Python 3.13及以后venv默认还可能生成环境内部的.gitignore，旧版本有差异，不能靠它代替检查项目忽略规则。Git提交操作留给后续课程。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "使用Git时，通常将.venv/写进项目.gitignore，忽略可重建的环境目录；源码仍保留。下方规则不会改变Python执行。"
+        },
+        {
+          "type": "paragraph",
+          "text": "较新Python可能在环境内部生成.gitignore，仍需核对项目本身的忽略规则。Git操作的完整流程放在后续课程。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 27,
+      "originalLine": 106,
+      "characters": 112,
+      "before": "保留项目源码与运行记录。项目目录里有自己的环境目录，命令启动其中的解释器，解释器执行指定源码，诊断和输出供你核对。换终端或项目后沿这条关系重新定位，就能发现「程序成功但环境选错」的问题。网页的读完标记不能替代这两道本地操作。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "以后重开项目，按图核对cwd、解释器和脚本，再看诊断是否属于目标环境。项目源码与短记录留好，环境可在需要时按说明重建。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "originalIndex": 28,
+      "originalLine": 107,
+      "characters": 138,
+      "before": "接着学习1.5「在Jupyter中按顺序运行单元格」，它已有待人工审核的试读教材。进入前应能独立创建项目环境、找到实际解释器、直接执行并诊断，恢复错误环境选择；Notebook内核与Jupyter安装由下一节首次教授。第5章函数课仍需变量、表达式与控制流程等基础，补齐后再读。",
+      "decision": "rewrite",
+      "reason": "移走制作状态，说明Notebook专题的真实需求与先修",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "1.5要把说明和分段代码放进Notebook。先确认自己能创建环境、直接运行环境Python并诊断；下一节再区分Notebook服务器与执行代码的内核。第5章仍需变量、表达式和控制流程基础。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 0,
+      "originalLine": 24,
+      "characters": 117,
+      "before": "你已经会把几行Python保存成.py并运行。现在想在同一份记录里先写一段说明，再逐段运行代码、保留各段结果。Jupyter Notebook提供这种文档，文件以.ipynb结尾。文档中的一小块文字或代码叫单元格，可以分别编辑和运行。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 1,
+      "originalLine": 25,
+      "characters": 80,
+      "before": "方便逐格运行，也带来一个疑问：上方代码已经改成新文字，下方却仍显示旧结果；重启后，同一格甚至报错。本节用两格短代码亲自观察，再把自己的文档整理成从头能跑的版本。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 2,
+      "originalLine": 28,
+      "characters": 117,
+      "before": "在自己的练习位置准备notebook-lab；可沿用1.4已核对的项目环境，或按1.4在这个新目录创建.venv。cd到项目根，用pwd和文件清单确认位置及环境解释器。Notebook文件放在项目根，与.venv并列，不进入环境目录。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 3,
+      "originalLine": 30,
+      "characters": 107,
+      "before": "先用环境中明确的Python核对pip位置。pip是这里用来安装Notebook程序的工具；只需认识这一次用途，完整依赖管理留后续。下列结果中的安装位置应属于本项目.venv，Python版本应与已核对的环境一致。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 4,
+      "originalLine": 32,
+      "characters": 114,
+      "before": "首次安装需要网络下载Notebook及其必要依赖，正常等待与下载故障都另计时间。使用同一环境解释器执行下一条，等安装成功、终端返回提示符再继续。已有可用Notebook时先核对环境中的版本，不重复安装其他Python或整套工具。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 5,
+      "originalLine": 34,
+      "characters": 177,
+      "before": "若遇网络、权限、证书或版本兼容错误，保存命令和完整提示，向教学支持核对获准网络、Python支持范围及安装位置；不关闭安全保护、不改全局配置或随意换不可信镜像。安装成功后，用上面同一环境的Python路径，把-m pip --version部分换为-m notebook --version执行，记下实际Notebook版本，再从项目根执行下方启动命令：",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "安装成功后，用同一环境Python执行-m notebook --version，记一次版本，再从项目根启动下方服务。"
+        },
+        {
+          "type": "callout",
+          "title": "安装没有成功时",
+          "text": "保存命令和相关错误，请支持人员核对网络、权限、证书、版本支持和安装位置。保留认证和安全保护，不随意更换不可信镜像或修改全局配置。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 6,
+      "originalLine": 36,
+      "characters": 130,
+      "before": "这次终端会持续显示服务日志，通常不会立即回到输入提示符。它启动本地Notebook服务器，用来提供网页界面和管理会话。浏览器若没自动打开，就复制日志中实际给出的本地访问地址。检查是localhost或127.0.0.1，端口以本次日志为准，不假定总是8888。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 7,
+      "originalLine": 37,
+      "characters": 106,
+      "before": "地址可能带token，它是本次访问凭据，只在自己的浏览器使用，不贴进作业、Git或公开截图。保留默认本地监听和认证，不使用0.0.0.0开放服务。这里运行的是你电脑上的Jupyter，Aivora网页只提供教材。",
+      "decision": "retain",
+      "reason": "保留与此处故障或安全边界直接相关的技术条件。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 8,
+      "originalLine": 40,
+      "characters": 171,
+      "before": "本课以Notebook 7的浏览器界面为例。在文件列表使用New / New Notebook创建Python Notebook；若出现内核选择，先选本项目可用的Python内核，稍后用实际路径核验。用File → Rename将Untitled命名为first-notebook.ipynb，并确认保存位置为项目根；界面文字可能随版本变化。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "在Notebook 7文件列表选New / New Notebook，建立Python文档。若需要选内核，先选目标项目候选，稍后用实际路径核对。"
+        },
+        {
+          "type": "paragraph",
+          "text": "用File → Rename命名first-notebook.ipynb，确认它位于项目根。菜单文字可随版本变化，文件和内核仍需分别核对。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 9,
+      "originalLine": 41,
+      "characters": 111,
+      "before": "选中第一格，用工具栏的单元格类型列表把Code改为Markdown。Markdown文字格用于说明，写入下面这一句即可，不需要学习完整排版语法。按Shift+Enter运行它，文字应变成阅读状态，未被当作Python执行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 10,
+      "originalLine": 43,
+      "characters": 89,
+      "before": "接着新建两个Code代码格（运行末尾一格后，Shift+Enter通常会选到或新增下一格，也可用工具栏的加号）。第二格只放下面一行，第三格只放print那一行，不把两行合成一格。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 11,
+      "originalLine": 45,
+      "characters": 114,
+      "before": "这里只临时认识一种新写法：marker是当前运行内核暂时记住的名字，等号让它对应右边的文字。print(marker)显示这个名字此刻对应的内容，引号里的Draft A仍是已学过的字符串。完整变量、类型和赋值规则在后续章节学习。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 12,
+      "originalLine": 46,
+      "characters": 106,
+      "before": "自己取新名字时，本课先采用一种简单写法：用英文字母开头，后面可以接英文字母、数字或下划线，名字中不放空格。例如task_name、label2都可以；for、class是Python保留词，不能拿来作这里的名字。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 13,
+      "originalLine": 47,
+      "characters": 136,
+      "before": "赋值处和print处的名字要拼写一致，大小写也要相同；Python把task_name和Task_name看作两个不同的名字。这些是本课便于操作的命名建议，不是全部合法名称规则：Python也允许下划线开头的名字，以及用某些中文等文字组成的名字，其他合法写法同样可以使用。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "赋值处与print处保持同样拼写和大小写；task_name与Task_name是不同名字。这是本次便于操作的命名约定，下划线开头和某些中文名字等其他合法写法也可使用。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 14,
+      "originalLine": 48,
+      "characters": 132,
+      "before": "先预测第三格输出，再选第二格按Shift+Enter，接着运行第三格。第三格下方应出现Draft A。第二格没有普通输出，仍已执行。执行时编号可暂显示[*]，结束后变为数字；短代码变化很快，未必看得见忙碌标记。运行编号和状态帮助观察提交与结束，最后仍核对真实结果。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "先预测显示格，再依次运行赋值格和显示格，应看到Draft A。赋值格没有普通输出，也已执行。"
+        },
+        {
+          "type": "paragraph",
+          "text": "执行计数与忙碌标记帮助观察状态，但短代码可能太快看不清。核对哪格真正执行过，以及本次实际结果即可。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 15,
+      "originalLine": 57,
+      "characters": 97,
+      "before": "浏览器把代码交给内核执行，再显示返回结果。启动服务器的Python与代码内核不能未经核验就当成同一份。在文档末尾再建一个Code格，原样运行下面的只读观察工具，不要求自己写import/sys。",
+      "decision": "rewrite",
+      "reason": "用原创关系图取代重复角色说明，修正浏览器到内核之间的服务通路",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "沿图中两条通路观察：浏览器经服务器请求内核执行；服务器也负责打开和保存.ipynb。执行与存盘是不同动作。现在在末尾Code格运行下方只读工具，检查实际内核。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 16,
+      "originalLine": 59,
+      "characters": 148,
+      "before": "把输出的完整解释器位置与目标项目.venv对应：Windows应属于其Scripts/python.exe，macOS属于bin/python。内核标题只写Python 3或版本相同不足为证。若不符，查看Kernel菜单的Change Kernel或右上角内核选择，选目标环境对应项，再重新诊断。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "将内核工具输出与目标.venv对应：Windows应是Scripts/python.exe，macOS为bin/python。标题Python 3或相同版本号不足以定位。"
+        },
+        {
+          "type": "paragraph",
+          "text": "不符时，在Kernel菜单Change Kernel或内核选择中选目标项，再诊断一次。服务器Python和内核Python要分别核对。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 17,
+      "originalLine": 60,
+      "characters": 188,
+      "before": "主流程在项目环境安装Notebook后，通常已有Python内核可用，无需人人额外执行用户级内核注册。列表缺少目标时，先确认安装/启动来自同一项目、该环境有ipykernel；按官方帮助请支持人员检查发现方式，再做有条件的修复，不猜选另一个Python。VS Code的Notebook Kernel选择也不同于普通.py解释器选择，本课继续用浏览器Notebook完成操作。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "在项目环境安装Notebook后通常已有可用内核，先完成上面的选择与诊断。"
+        },
+        {
+          "type": "callout",
+          "title": "内核列表缺少目标时",
+          "text": "请支持人员检查安装/启动是否来自目标项目、ipykernel及内核发现方式，再按官方说明处理。无需人人注册用户级内核；本课使用浏览器Notebook，VS Code的Kernel选择是另一入口。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 18,
+      "originalLine": 63,
+      "characters": 73,
+      "before": "保持当前内核运行，把第二格改成下方内容，暂不执行这格。先预测：此刻只重跑第三格，会显示Draft A还是Ready B？写下判断，再选第三格运行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 19,
+      "originalLine": 65,
+      "characters": 81,
+      "before": "这一次仍应显示Draft A。编辑只改变单元格文本；内核上次真正执行的还是Draft A那次赋值，名字对应的内容没有自动更新。按保存也只是写文件，并不执行新代码。",
+      "decision": "rewrite",
+      "reason": "补旧状态预测的错误含义与单格重跑验证",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "这次仍显示Draft A，说明保存或编辑没有替内核执行新赋值。如果你预测Ready B，就混淆了单元格文本和内核已经执行的状态。"
+        },
+        {
+          "type": "paragraph",
+          "text": "只运行改后的赋值格，再运行显示格，结果应变Ready B。这个最小对照不需要重装或更换内核。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 20,
+      "originalLine": 66,
+      "characters": 82,
+      "before": "再实际运行改后的第二格，随后运行第三格，输出才变成Ready B。上方文本、下方先前的输出和内核当前状态可以一时不一致，记录真实执行过哪一格，才能解释屏幕上的结果。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 21,
+      "originalLine": 71,
+      "characters": 102,
+      "before": "先保存当前文档。使用Kernel菜单中的Restart Kernel重启，并在确认框确认。此步选择仅重启，暂不选重启并全部运行。等待内核恢复空闲后，先运行第三格print(marker)，不先运行第二格。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 22,
+      "originalLine": 72,
+      "characters": 118,
+      "before": "这次应出现NameError，错误中会提到marker尚未定义。重启清除了此前记住的名字；虽然赋值代码仍在文档中、文件也存在并已保存，它还没在这个新内核执行。内核路径在前一步已核验，本实验只改变执行顺序，无需重装Python或更换环境。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 23,
+      "originalLine": 73,
+      "characters": 81,
+      "before": "保留刚才先运行哪格、实际错误和解释。现在运行提供marker的第二格，再运行第三格，应恢复Ready B。恢复不是让错误文字消失就结束，还要完成下一步的从头核验。",
+      "decision": "retain",
+      "reason": "保留与此处故障或安全边界直接相关的技术条件。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 24,
+      "originalLine": 76,
+      "characters": 185,
+      "before": "把文档排成说明、marker赋值、print(marker)、观察工具的顺序，赋值文本保留Ready B。使用当前界面的Restart Kernel and Run All Cells；也可先Restart Kernel确认重启，再用Run菜单的Run All Cells。两种方式都要先清除状态，再按文档从上到下运行。仅在旧内核点Run All可能掩盖缺少定义的问题。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "把文档排为说明、marker赋值、显示、观察工具，保留Ready B。先Restart Kernel确认重启，再Run All Cells；也可使用界面提供的Restart Kernel and Run All Cells。"
+        },
+        {
+          "type": "paragraph",
+          "text": "两种方式都先清掉旧状态，再从头执行。仅在旧内核Run All，可能继续借用之前留下的名字。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 25,
+      "originalLine": 77,
+      "characters": 111,
+      "before": "等待所有必要代码格结束，检查：显示格为Ready B、没有错误、观察格仍指向目标.venv。执行计数说明提交顺序，会随重跑变化；屏幕上下排列和旧计数本身不证明刚从干净状态成功执行。把重启动作、实际输出和环境位置一起记下来。",
+      "decision": "retain",
+      "reason": "保留与此处故障或安全边界直接相关的技术条件。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 26,
+      "originalLine": 79,
+      "characters": 60,
+      "before": "下载是最终可按顺序运行的同源核对稿，初始没有输出；第一次动手仍建议自己创建主例。下载并运行核对稿不能替代后面的独立新题。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 27,
+      "originalLine": 82,
+      "characters": 139,
+      "before": "使用File → Save Notebook或工具栏保存，Windows通常Ctrl+S、macOS为Command+S；确认保存标记，并在本地文件管理器或项目清单确认first-notebook.ipynb确实存在。它可能保存刚才输出，但不会让运行时名字自动进入另一个新内核。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "用File → Save Notebook或保存按钮存盘，再在项目清单确认first-notebook.ipynb存在。文件可以存代码、说明和当前输出，不能把内核所有内存状态打包带到另一个新内核。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 28,
+      "originalLine": 83,
+      "characters": 104,
+      "before": "保存后关闭这份文档，从Jupyter文件列表重新打开，核对文件名与内核，再明确重启并全部运行，检查Ready B和环境路径，最后再保存。只关浏览器标签可能重新连接尚未结束的内核，不把重开页面当作干净执行证明。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 29,
+      "originalLine": 84,
+      "characters": 263,
+      "before": "结束时先保存；用File → Close and Shut Down Notebook关闭当前文档会话，或用Kernel → Shut Down Kernel关闭内核，在Running列表确认它不再运行。回到启动服务的那个终端按Ctrl+C；若出现关闭确认，按实际提示确认，等待服务退出并返回命令提示符。若终端宿主的中断流程不清楚，Notebook 7还可用File → Shut Down并确认，看到Server stopped后回启动终端核对已退出。只关闭网页不代表本地服务器已停止，也不要终止其他项目的Python进程。",
+      "decision": "rewrite",
+      "reason": "将263字关闭段重写为文档/内核、服务器、备用关闭三步，各有观察结果",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "结束时先保存文档，再用File → Close and Shut Down Notebook或Kernel → Shut Down Kernel关闭这份内核，在Running列表确认不再运行。"
+        },
+        {
+          "type": "paragraph",
+          "text": "回到启动服务的终端按Ctrl+C，按实际关闭确认作答，等服务退出、Shell提示符回来。"
+        },
+        {
+          "type": "paragraph",
+          "text": "若宿主中断流程不清楚，可用Notebook 7的File → Shut Down并确认；看到Server stopped后，再回启动终端核对退出。只关网页不会保证停服，也不要结束其他项目的Python进程。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 30,
+      "originalLine": 85,
+      "characters": 147,
+      "before": "若启动候选命令无法找到Notebook入口，先确认同一环境内安装成功；可按官方说明使用该环境实际存在的Scripts/jupyter-notebook.exe（macOS为bin/jupyter-notebook）启动。命令和版本问题保留完整提示交支持人员，不用关闭认证或更改全局PATH解决。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "若Notebook入口命令找不到，先核对同一环境内是否安装成功。可请支持人员按官方说明检查实际Scripts/jupyter-notebook.exe（macOS为bin/jupyter-notebook）入口，保留错误；不以关闭认证或改全局PATH处理。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 31,
+      "originalLine": 94,
+      "characters": 97,
+      "before": "下一题换成出库标签，保持相同的已核验项目内核。可下载起始文档，也可自己用下方两格建立dispatch-note.ipynb。文件与代码均已保存，只有最小赋值与print，不存在缺包或解释器错配。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 32,
+      "originalLine": 105,
+      "characters": 83,
+      "before": "留好自己的.ipynb与短记录：哪个环境启动，实际内核在哪，先执行了哪些格，重启后能否按文档顺序重现结果。屏幕上的旧输出可以帮助回看，干净重跑才检验当前代码是否完整。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "保留自己的.ipynb和一次实际内核身份记录。下次从干净内核按文档顺序跑完，才知道文件里的代码足够；旧输出只供回看。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "originalIndex": 33,
+      "originalLine": 106,
+      "characters": 134,
+      "before": "下一节1.6「让别人复现一次环境问题」现已提供待审核试读。它会组合脚本、路径、编辑器、虚拟环境与Notebook的已有操作，本节无需提前学习依赖锁定或远程服务。阅读器按可读课时导航，函数试读仍需变量、表达式和控制流程等基础，不能把本次最小赋值实验当成已学完整变量章节。",
+      "decision": "rewrite",
+      "reason": "用协作复现的真实需要衔接，移走审核和导航开发信息",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "1.6要把脚本、环境和Notebook问题写成别人能照做的复现单。先完成本节的内核核对、重启与全跑，再学习交接。第5章仍需变量、表达式和控制流程基础；这里的两格赋值只用来观察状态。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 0,
+      "originalLine": 24,
+      "characters": 92,
+      "before": "你向别人求助：“我运行Python时出错了。”对方拿到同一份文件却运行成功。究竟是文件位置、启动的Python，还是Notebook上一次记住的内容不同？只凭回忆，很难把两次操作对齐。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 1,
+      "originalLine": 25,
+      "characters": 91,
+      "before": "复现就是按明确条件重新操作，观察问题是否再次出现。我们先用一条已经学过的print制造受控的文件定位问题，记下条件；随后换两个情境，练习把记录交给别人。记录要短，但要能据此真正操作。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 2,
+      "originalLine": 28,
+      "characters": 132,
+      "before": "在自己的练习位置新建repro-lab/notice-tool，按1.4为notice-tool准备.venv。用编辑器建立scripts目录和notice.py，保存下列源码。print和引号里的文字来自1.1，这里无需新Python语法。文件位于环境目录之外。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "在新练习位置建立repro-lab/notice-tool，按1.4准备它的.venv。再建scripts/notice.py，保存下方一条print；源码与环境目录分开。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 3,
+      "originalLine": 31,
+      "characters": 177,
+      "before": "在终端进入notice-tool，先用pwd确认当前目录，Windows用dir scripts、macOS用ls scripts确认源码位置；使用1.4的现成诊断核对本项目Python路径与版本。把实际系统和Shell名称一起记下。下面的命令只故意写错脚本参数，环境和文件保存状态均保持正确。先预测：它会显示Notice N8，还是还没执行源码就失败？",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "进入notice-tool，pwd确认项目根，dir scripts（macOS为ls scripts）确认文件。用已有诊断核对项目Python，系统/Shell和版本填一次共用环境卡。"
+        },
+        {
+          "type": "paragraph",
+          "text": "下面只写错脚本参数，解释器和保存状态保持正确。先预测能否显示Notice N8，再执行本平台命令。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 4,
+      "originalLine": 33,
+      "characters": 122,
+      "before": "这些是Shell命令，输入终端，不放进.py或Notebook代码格。Windows的&调用引号中的环境解释器；后面的相对路径从当前目录找文件。这里请求的是根下notice.py，而实际文件在scripts内。执行一次，保留自己得到的完整提示。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 5,
+      "originalLine": 36,
+      "characters": 122,
+      "before": "命令记录你做了什么。标准输出（stdout）接收print这样的正常结果；错误输出（stderr）提供故障线索，终端可能把两者显示在同一个窗口。抄录时分别标明，不能把命令或提示符当程序输出。本例应没有Notice N8，因为解释器还没打开脚本。",
+      "decision": "retain",
+      "reason": "保留与此处故障或安全边界直接相关的技术条件。"
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 6,
+      "originalLine": 37,
+      "characters": 107,
+      "before": "下面是本轮Windows、Python 3.14.2的实际错误，项目绝对位置已换为占位符。自己的错误文字可能不同；要辨认“哪个解释器无法打开哪个文件”，保留第一条相关错误及必要上下文，而不只交一个Errno关键词。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "下面是一种Windows文件定位错误的形式，位置用占位符表示。重点找出哪个解释器打不开哪个目标；自己取证时保存相关完整提示，不用照抄教材路径。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 7,
+      "originalLine": 39,
+      "characters": 145,
+      "before": "退出状态是外部程序结束时返回给Shell的辅助信号。Python通常以0表示正常完成，非零表示失败，不能只靠一个数字判断原因。在刚才的Python命令后立即执行对应观察行，中间不要先运行其他外部程序。echo在这里让Shell显示上次状态，不是Python的print，也不用把它写入源码。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "退出状态是程序返回Shell的辅助信号：Python通常以0表示正常完成，非零表示失败。原因还要结合错误行。"
+        },
+        {
+          "type": "paragraph",
+          "text": "紧接刚才的Python命令执行下方观察行，避免先运行别的外部程序覆盖状态。echo是Shell命令，放在终端。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 8,
+      "originalLine": 41,
+      "characters": 88,
+      "before": "本轮文件定位失败实测为2，修复后为0；记录自己实际得到的值，不必逐字背诵这个版本的错误。若无法确认字段，写“尚未核实”及下一步核查方式；例如重新执行目标命令后立即观察退出状态。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "这个文件定位例常见退出状态为2，修复后为0，以自己实际结果为准。未知字段写“尚未核实”，可重新执行目标命令后立即核对，别编造数值。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 9,
+      "originalLine": 46,
+      "characters": 73,
+      "before": "长回溯要连同出错代码行和相关末行保存；不要只截NameError一个词。若出现与预期不同的故障，先记录事实再检查条件，不把真实错误改写成教材预期。",
+      "decision": "retain",
+      "reason": "保留与此处故障或安全边界直接相关的技术条件。"
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 10,
+      "originalLine": 49,
+      "characters": 84,
+      "before": "保持notice-tool为cwd，继续使用原来的环境Python和已保存源码，只把参数改为实际的scripts/notice.py。先写下预期，再执行下方本平台命令。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 11,
+      "originalLine": 52,
+      "characters": 76,
+      "before": "本轮修复后stderr为空、退出状态0。原因是脚本参数现在从同一个cwd指向真实文件；没有更换解释器，也没有改源码。保留两条命令，才能看出究竟改了什么。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "参数指到真实文件后，应看到Notice N8，stderr为空、状态0。保持同一cwd、解释器和源码，只对照两条脚本参数，就能说明修复了哪里。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 12,
+      "originalLine": 53,
+      "characters": 141,
+      "before": "新开一个独立终端窗口或终端标签，重新进入notice-tool并用pwd核对位置。不要依赖旧终端的激活状态；按记录明确指定同一环境Python，先执行错误参数，再执行正确参数，分别保存实际结果。这证明当前机器上按这些条件能重现并恢复；另一台机器的绝对路径、版本与报错文字仍可能不同。",
+      "decision": "retain",
+      "reason": "保留与此处故障或安全边界直接相关的技术条件。"
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 13,
+      "originalLine": 56,
+      "characters": 87,
+      "before": "主例做完后，把已有证据整理成下面六项，每项几行即可。目标是让接手的人知道从哪里开始、做什么、比较什么。真正不适用的字段写“不适用”；尚不清楚的字段写“尚未核实”并列核查办法。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "把已有材料压成下面六项最小复现单：别人需要知道起点、操作、预期和实际差异，以及怎样恢复。相同环境和命令可引用一次编号；不适用写明，未知项注明核查办法。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 14,
+      "originalLine": 58,
+      "characters": 156,
+      "before": "例如主例目标为Notice N8，文件位置是scripts/notice.py，cwd是notice-tool根；操作记录必须同时保留错误参数和修复后的参数。把真实源码一起交接，不能只说“换个路径好了”。Notebook题的单元格错误没有普通脚本进程退出码，写“不适用，记录内核错误消息及运行顺序”，不编造一个。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "主例中，目标是scripts/notice.py，cwd是notice-tool根。单里保留错误与修复参数，并附源码，接手者才能真的照做。"
+        },
+        {
+          "type": "paragraph",
+          "text": "Notebook格错误没有普通脚本退出码，该栏写“不适用”；改记内核身份、重启条件、实际格顺序与相关回溯。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 15,
+      "originalLine": 59,
+      "characters": 150,
+      "before": "自己本地核对时使用真实路径，公开记录时可将共同前缀换成<练习根>。约定读者把它替换为自己实际创建的练习目录，后面的handoff-lab/target与other仍完整保留；命令从相应cwd执行。占位符是位置说明，不能原样当作已存在的目录输入。不要为了脱敏抹掉区分两个项目、两个Python的后半段。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "本地用真实位置核对；对外将共同前缀换成<练习根>，保留target/other等后缀。接手者换成自己的位置后，仍能分清两个项目与解释器。占位符不是实际目录。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 16,
+      "originalLine": 60,
+      "characters": 146,
+      "before": "只附必要源码、Notebook和操作结果。密码、API密钥、Notebook访问token、隐私文件、整个.venv及机器专属配置不公开；环境由对方按已有基础流程重建。无需收集全部环境变量、完整PATH或pip freeze。尚未有别人实际操作时，结论写“同机新会话已验证；他人复现待验证”。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "交接只附必要源码、Notebook和最小复现单。密码、token、私有文件、整个.venv和机器配置不公开；也不收集完整PATH或全部环境变量。"
+        },
+        {
+          "type": "paragraph",
+          "text": "同机新会话验证后，若尚无另一人操作，就写“同机已复验，真人接手待验证”。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 17,
+      "originalLine": 63,
+      "characters": 123,
+      "before": "这次用新的handoff-lab布局，目标是target的程序必须由target自己的环境运行。按1.4分别建立两个项目环境，保持现有系统Python，不需要不同版本或装额外包。把run.py和现成observe_env.py保存到target。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 18,
+      "originalLine": 66,
+      "characters": 168,
+      "before": "下面是1.4的完整只读观察工具，原样复制到observe_env.py，用与run.py相同的解释器在终端运行。观察Interpreter和Environment是否属于目标项目，Base Python帮助区分环境与基础Python，Version记录版本。本题要求比较输出位置，不要求独立编写import、点号、split或下标语法。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "下面是1.4已用过的只读工具，原样保存为observe_env.py，并用与run.py相同的解释器运行。比较Interpreter与Environment的目标后缀，公共基础/版本可引用环境卡。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 19,
+      "originalLine": 68,
+      "characters": 75,
+      "before": "从target根执行下列受控故障命令。它们使用other的Python，但脚本仍是target内的文件；先预测普通文字与环境身份各会怎样，再真实运行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 20,
+      "originalLine": 79,
+      "characters": 136,
+      "before": "第二条求助只有：“Notebook打开后运行某个格子出错，但刚才还成功过。”你需要先列出它缺少的条件，再亲自取得证据。沿用1.5已可用的本地Jupyter，在目标项目打开review-note.ipynb，可下载下方起始材料。文件默认按顺序可运行，故障由你的执行操作产生。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "另一条求助说：“Notebook某格报错，刚才还成功。”别人还不知道实际内核、起始状态和格顺序。沿用1.5已可用的Jupyter，在目标项目打开review-note.ipynb，亲自补齐这些条件。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 21,
+      "originalLine": 81,
+      "characters": 142,
+      "before": "文档先有Markdown说明，再把以下两行分别放在两个Code格。回顾1.5：先运行赋值格，当前内核才记住batch_label对应的文字；print(batch_label)读取当前对应值，print(\"batch_label\")只会打印引号里的文字。这里仍只用最小赋值与名称读取。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 22,
+      "originalLine": 83,
+      "characters": 116,
+      "before": "末尾保留下面的现成只读观察格，在Notebook代码格运行，观察实际Python是否属于目标.venv。import/sys仅作已提供的工具，不要求独立编写。按1.5核对Kernel选择；同一个Python 3标题不能代替路径证据。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 23,
+      "originalLine": 93,
+      "characters": 128,
+      "before": "现在你能把本地脚本保存并重跑，核对文件位置与实际解释器，区分项目环境，在Jupyter按序执行，并把一次问题整理成别人可以按条件尝试的短记录。两题的真实文件和新会话证据才用于自查，网页“读完”只记录阅读。另一位人类实际按记录操作之前，把同伴复现列为待验证。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "保留两题真实文件与最小复现单。新会话里先重现、再恢复，能检查记录是否足够；再由另一人照做，才有真人接手复现的证据。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "originalIndex": 24,
+      "originalLine": 94,
+      "characters": 187,
+      "before": "第一章1.1–1.6帮助你准备了文件、环境与运行能力。接下来按原课程体系进入第二章“变量、基本类型、表达式与输入输出”：2.1「用变量保留并更新程序里的值」已有待人工审核试读，将在普通.py脚本中系统练习名称赋值、读取、更新和执行顺序。第二章其余课时仍只有规划。第5章函数试读还需要表达式与控制流程等中间先修，阅读器的可读课时导航不代表可以直接跳学。整门PY101仍在筹备。",
+      "decision": "rewrite",
+      "reason": "移走过时开发状态，以初期成果和工具专题收束第一章",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "第一章的前三节让你写出并可靠重跑短程序，后三节补项目环境、Notebook与协作复现。接着进入2.1，在普通.py里系统学习变量的赋值、读取和更新。第5章函数还依赖表达式与控制流程等中间知识，按先修顺序补齐后再读。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 0,
+      "originalLine": 29,
+      "characters": 96,
+      "before": "一个小程序先显示当前任务“打包笔记本”，稍后要改为“检查标签”。如果把同一任务文字在各处重复写死，修改时容易漏掉一处。我们可以先给这份文字取一个名字，使用时读这个名字，需要变化时再给它新的值。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 1,
+      "originalLine": 30,
+      "characters": 91,
+      "before": "在1.5，你用marker和两格代码观察过内核记住的内容。这次回到普通.py文件：自己选名字、写出赋值与读取，并判断程序运行到不同位置时会显示什么。所有例子只用Python自带功能。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 2,
+      "originalLine": 33,
+      "characters": 34,
+      "before": "先看这一行，暂时只理解它的作用，下一段会把它与其他行组合成完整脚本：",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 3,
+      "originalLine": 35,
+      "characters": 88,
+      "before": "task_name是我们选择的名称，意思是任务名称；\"Pack notebooks\"是这次给它的文字值。和1.1一样，配对英文引号标记字符串的开始和结束，引号不是名称的一部分。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 4,
+      "originalLine": 36,
+      "characters": 78,
+      "before": "执行这条语句时，=让左边的task_name对应右边的值，这个动作叫赋值。这种运行时的对应关系叫绑定。=在这里执行一个动作，并不要求你判断数学等式是否成立。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 5,
+      "originalLine": 37,
+      "characters": 115,
+      "before": "本节把能绑定到值、供后续读取的名称称为变量，task_name就是变量名。它帮助后面的代码找到当前对应的值。之后再次赋值，可以改变这份对应关系；理解变量时，先抓住名称和当前值这两件事。单独执行赋值不会像print那样显示一行文字。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 6,
+      "originalLine": 40,
+      "characters": 127,
+      "before": "沿用1.5的便捷建议：用英文字母开头，后面接英文字母、数字或下划线，名称中不放空格。例如task_name、label2都符合这种写法。task_name中的下划线把两个词连成一个名称；my plan含空格、1plan以数字开头，都不能用作这里的变量名。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 7,
+      "originalLine": 41,
+      "characters": 144,
+      "before": "Python有一些保留给语言本身的词，称为关键字，例如for、class，不能拿来作普通变量名。本次可选带含义的task_label、next_task等名字，也避开print，留着这个已有的输出工具。赋值处和读取处的拼写、大小写要一致；task_name和Task_name是两个名字。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 8,
+      "originalLine": 42,
+      "characters": 98,
+      "before": "这些英文写法方便初次练习，不是Python全部合法名称的清单。下划线开头的名称以及用某些中文等文字组成的名称也可以合法使用。练习接受其他合法名称；一个清楚表达用途的名字，比只写一个字母更容易检查。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 9,
+      "originalLine": 45,
+      "characters": 14,
+      "before": "在刚才的赋值之后接上这一行：",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 10,
+      "originalLine": 46,
+      "characters": 98,
+      "before": "print(task_name)先读取task_name此刻对应的值，再显示它，所以这里会显示Pack notebooks。括号里没有引号，读取的是名称；写print不会自动给尚未有值的名称赋值。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 11,
+      "originalLine": 47,
+      "characters": 10,
+      "before": "再在这次读取后面写：",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 12,
+      "originalLine": 48,
+      "characters": 99,
+      "before": "这还是同一个task_name。执行这一行时，它改为对应Check labels，称为重新赋值。后续再执行print(task_name)，会读到新的文字。名称保持相同，当前值可以随执行的赋值改变。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 13,
+      "originalLine": 51,
+      "characters": 118,
+      "before": "在自己的练习文件夹新建task_labels.py，源码放在.venv外。用编辑器把下面四行写入，行首都不加缩进。先在本地笔记写下两行预测：第一次print执行时，之前已经发生哪次赋值？第二次print之前又发生了什么？写好再保存运行。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "新建task_labels.py，写入下方四行，行首不缩进。先沿两次print的位置预测各读到什么，再保存整份文件。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 14,
+      "originalLine": 53,
+      "characters": 151,
+      "before": "确认编辑器已保存，终端用pwd和Windows的dir（macOS为ls）确认当前目录包含这份文件。沿用第一章已核验的解释器命令：Windows在PowerShell运行下面第一条，macOS在终端运行第二条；若此前一直用py，保持使用py。命令输入在终端提示符后，不放进.py，也不只运行编辑器选区。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "沿用第一章已核验的Python，在文件所在目录执行下方对应命令。首次先用pwd和文件清单核对位置；后面的程序只替换文件名，保存后整份重跑。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 15,
+      "originalLine": 56,
+      "characters": 74,
+      "before": "如果沿用项目.venv而未激活，也可以按1.4直接调用已核验的环境解释器，脚本参数仍为task_labels.py。本节不创建新环境。实际结果应为：",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 16,
+      "originalLine": 64,
+      "characters": 83,
+      "before": "第一条print已经把旧值显示出来，第三行才开始执行新的赋值。后来的赋值会影响后续读取，不会倒过来改写已经显示的第一行。判断某次输出时，要看它执行之前真正发生的动作。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 17,
+      "originalLine": 67,
+      "characters": 74,
+      "before": "现在自己另选一项任务，只改第三行引号内的文字，其他三行保持不动。先写两行新预测，再保存，用同一条命令从头运行整个文件，比较这一次和上一次的真实输出。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "只把第三行的任务换成自己选的新文字，其余行保持。先预测哪一行输出会变，再保存，用同一命令从头运行。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 18,
+      "originalLine": 68,
+      "characters": 134,
+      "before": "例如把第二次赋值的文字换成Sort envelopes，第一行仍应为Pack notebooks，第二行变为Sort envelopes。原因是第一次读取之前的赋值没有改变，而第二次读取之前执行了修改后的赋值。用你自己选的文字再核对一次，不用把这个变式也抄进文件末尾。",
+      "decision": "rewrite",
+      "reason": "从重新赋值的错误预测追到时刻混淆，以一次只改后值验证",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "例如后次赋值改为Sort envelopes，第一行仍为Pack notebooks。如果你预测两行都会变化，就是把最后一次赋值套回了前面的时刻。"
+        },
+        {
+          "type": "paragraph",
+          "text": "把后次文字再换一个新标记重跑：第一次print早已发生，只在后一次读取中看到改动。用自己的结果核对这个顺序。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 19,
+      "originalLine": 69,
+      "characters": 69,
+      "before": "若仍显示旧文字，先按1.3核对保存标记、当前目录与执行目标，再比较源码。编辑内容、保存文件与运行程序是三个动作，新的输出来自这次实际执行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 20,
+      "originalLine": 72,
+      "characters": 86,
+      "before": "回顾1.1：引号围起来的是固定字符串。另建name_or_text.py，先预测下面两次显示会不会相同，再保存并完整运行；命令中的文件名换成name_or_text.py。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 21,
+      "originalLine": 74,
+      "characters": 118,
+      "before": "print(\"task_name\")直接显示引号里的task_name这几个字符，没有读取这个名称。print(task_name)读取当前绑定的值，所以显示Ready。两行都使用print，差别在括号中的内容：固定文字，还是名称读取。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 22,
+      "originalLine": 75,
+      "characters": 95,
+      "before": "如果想保存Ready这段文字，就保留它两端的引号。去掉后，Ready会被当成另一个名称；若本次程序没有给它提供值，读取就可能失败。下一段用一个更容易定位的完整脚本实际观察这种未定义名称错误。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 23,
+      "originalLine": 78,
+      "characters": 113,
+      "before": "本节使用的是常规终端命令启动的新Python脚本进程：每次运行，都会从文件开头按源码顺序执行这几条语句。上一次运行结束时给名称赋过值，不会让下一次新进程自动拥有那个绑定。源码文件保存了语句，这次真正执行到赋值时才建立对应关系。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 24,
+      "originalLine": 79,
+      "characters": 100,
+      "before": "1.5的Notebook可以在仍运行的同一内核中保留先前执行过的名称；那是另一种执行方式。这里不用Notebook旧状态补齐.py中缺失的步骤。把脚本保存并从头运行，是检查当前文件本身是否足够的办法。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 25,
+      "originalLine": 82,
+      "characters": 103,
+      "before": "在新的dispatch_label.py中保存下面两行。先预测这次能否显示Packed T7，再从终端完整执行它。这是有意安排的失败实验，预期会出现NameError；保留你实际看到的相关代码行及错误末行。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "另建dispatch_label.py，保存下方两行。先预测能否显示任务，再整份运行，留实际错误类型、相关行及错误末行。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 26,
+      "originalLine": 84,
+      "characters": 152,
+      "before": "运行到第一行时，程序需要读取dispatch_label，却还没有执行第二行的赋值，所以本次没有正常的任务输出。错误类型是NameError，描述会提到dispatch_label未定义；文件路径、行号排版与箭头可能随环境或Python版本变化，以自己的真实回溯为准。后面有赋值文本，并不等于它已经执行。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "第一行读取dispatch_label时，本次尚未执行第二行赋值，因此出现NameError，没有本次正常任务输出。"
+        },
+        {
+          "type": "paragraph",
+          "text": "赋值文本写在后面，不代表已经执行。路径和回溯排版按实际环境保留，解释要落到读取那一刻。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 27,
+      "originalLine": 85,
+      "characters": 134,
+      "before": "修复要让提供值的赋值先于读取执行。保留通过名称显示任务的做法，自己调整顺序，保存后从头运行，核对是否正常显示Packed T7。这次原因来自已给定脚本的执行顺序；无需重装Python、安装包或改PATH。其他NameError仍要结合对应代码判断，不能都套用同一根因。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "让提供值先于读取执行。自己调整两行顺序，保留名称读取，保存后从头重跑，核对Packed T7。原因是本次脚本的执行顺序，其他NameError仍需看对应代码。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 28,
+      "originalLine": 88,
+      "characters": 72,
+      "before": "先合上示例和参考答案完成任务。网页输入框只是临时笔记；正式成果保存在本地.py及短记录里。只需列出源码、命令、预测与实际结果，不必抄成长篇报告。",
+      "decision": "rewrite",
+      "reason": "明确基本必交与共享记录；逐题新条件见r2题干，不强制长报告",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "先独立写程序，再按需展开提示。基本交付是本人源码和本题真实运行结果；同一会话的环境、文件位置和命令只记一次，后面可引用编号。预测可口述或记一行；边界、改值和恢复题按题干保留必要对照。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 29,
+      "originalLine": 105,
+      "characters": 99,
+      "before": "下一题使用first-read-error中的两行dispatch_label起始源码，可回到上方代码框复制到另建的repair_label.py。它故意在第一次赋值前读取名称；不要先套用修复参考。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 30,
+      "originalLine": 125,
+      "characters": 69,
+      "before": "保留两个自己的.py及短记录，能现场换一个名字或任务文字并再次验证，才有独立操作的证据。网页读完只记录阅读，不会自动判断这些程序是否达标。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "保留自己的程序、两轮结果和修复记录。能现场换值并解释读取顺序，比反复抄写同一运行命令更有用。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "originalIndex": 31,
+      "originalLine": 126,
+      "characters": 130,
+      "before": "接着学习2.2「分清文字、整数、小数和真假值」，它已有待人工审核试读，将用实际类型观察接续本节的名称与值。2.3–2.6也均已有待人工审核试读；第5章函数试读还需要表达式与控制流程等中间先修，不能把阅读器的可读课时导航当作直接跳学建议。整门PY101仍在筹备。",
+      "decision": "rewrite",
+      "reason": "移除审核/筹备状态，保留知识目的与第五章先修",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "下一节2.2用type观察值的类型。先能保存和更新名称，再区分文字、整数、小数和真假值，就有了后续计算的基础。第5章函数仍需要表达式与控制流程等中间先修。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 0,
+      "originalLine": 29,
+      "characters": 106,
+      "before": "整理物品时，一份记录要保存物品数量，另一份记录要保存标签上印的文字。数量是3，标签文字恰好也是“3”。用2.1学过的赋值，可以分别交给两个名称。它们在屏幕上会有什么不同？先在本地笔记写下下面两个print的预测。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 1,
+      "originalLine": 31,
+      "characters": 135,
+      "before": "在自己的练习文件夹新建same_display.py，输入这四行，行首不加缩进，源码放在.venv外。保存后用pwd和Windows的dir（macOS为ls）确认目标，再在终端完整运行对应命令；沿用之前已核验的Python。若此前Windows一直用py，就保持py。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "新建same_display.py，保存四行源码，在文件所在目录用下方命令整份运行。沿用已验证的Python；先预测两次普通显示是否不同。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 2,
+      "originalLine": 35,
+      "characters": 84,
+      "before": "两行确实都显示3。第一份值3没有引号，是整数；第二份值\"3\"有配对引号，是字符串，保存的是文字。数字字符放进字符串后仍然是文字，不会因为外观看起来像数量就自动变成整数。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 3,
+      "originalLine": 36,
+      "characters": 108,
+      "before": "类型描述值属于哪种数据类别。整数的类型名是int，字符串的类型名是str。print把值显示为文字，引号本身不显示，所以这两次普通输出没有把原来的类型差别呈现出来。我们稍后会用一个观察工具核对，先再认识两种常用的值。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 4,
+      "originalLine": 39,
+      "characters": 79,
+      "before": "同一批物品还要记录单件质量，单位约定为千克，数值为1.5。把下面两行另存为measurement.py，先预测，再把运行命令中的文件名换成它，保存并完整执行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 5,
+      "originalLine": 41,
+      "characters": 87,
+      "before": "1.5这种带小数点的数值写法在这里得到float类型，通常称为浮点数；如果写成\"1.5\"，得到的仍是str文字。程序中数值不加引号，单位由记录说明，不把kg直接接在数值后面。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 6,
+      "originalLine": 42,
+      "characters": 101,
+      "before": "float有表示精度的限制，不能保证任意十进制小数都能精确保存。本课先学习辨认和观察这种类型，暂时不做精度运算。int可以表示完整件数，float适合本例中的测量记录，两者的用途要结合你保存的内容判断。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 7,
+      "originalLine": 45,
+      "characters": 104,
+      "before": "除了数量和质量，还可以记录“是否已经准备好”。True表示真，False表示假，这两个值属于bool类型，也叫布尔值。Python中必须按True、False的大小写写，开头大写，其余小写；它们本身不加引号。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 8,
+      "originalLine": 46,
+      "characters": 101,
+      "before": "下面让is_ready记录已准备好，让is_waiting记录当前没有在等待。ready_text则只保存标签上写的True这个单词。先预测三条普通输出，再保存为ready_state.py并完整运行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 9,
+      "originalLine": 48,
+      "characters": 99,
+      "before": "前两行看起来相同：True是真假状态值，\"True\"是带引号的字符串。第三行False也是bool值。名字里的is只是帮助人读懂用途，并不替Python决定类型；值实际怎样写才是接下来要核对的依据。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 10,
+      "originalLine": 51,
+      "characters": 119,
+      "before": "type是Python自带的类型观察工具。把一个值或已有名称放在它的括号中，它会取得这个值的类型。这里使用一个参数，也就是括号中交给它的一份值；观察不会把原值转换成另一类型。自己选变量名时，先把print和type这两个名字留给现成工具。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 11,
+      "originalLine": 52,
+      "characters": 189,
+      "before": "回到same_display.py，在原四行之后追加下面这一行；这个文件前面已经给item_count赋值为3。先从里面看：item_count读取当前值3；type(item_count)取得它的类型；外层print再把类型结果显示出来。两层括号分别成对，执行观察时先得到里面的结果，再交给外面的print。写下新增一行的预测，再保存并从头运行same_display.py。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "回到same_display.py，在原四行后追加下方观察语句。先从内层看：item_count读到3，type取得它的类型，外层print再显示这个结果。"
+        },
+        {
+          "type": "paragraph",
+          "text": "两层括号分别配对。先预测新增一行，再保存从头运行；本次没有把3转换成另一类型。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 12,
+      "originalLine": 54,
+      "characters": 90,
+      "before": "<class 'int'>是Python显示“这是int类型”的一种形式。连同尖括号、单引号一起看，这是刚才程序的输出，不是要复制到.py中的新语句；本课不需要学习class定义。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 13,
+      "originalLine": 55,
+      "characters": 55,
+      "before": "现在另建inspect_pair.py，使用原来的3和\"3\"。先写两次类型预测，再保存并运行下面的完整小程序。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 14,
+      "originalLine": 57,
+      "characters": 102,
+      "before": "两次普通print都显示3，因为字符串显示时不带包住它的引号；两次type结果不同，因为原值分别是整数和字符串。普通显示回答“显示出来是什么”，type观察回答“当前值属于哪类”，需要把这两份证据一起看。",
+      "decision": "rewrite",
+      "reason": "补同显异型的错误诊断和新值验证",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "两次普通显示都是3，type却分别给int和str。如果你先前认为显示相同就类型相同，混淆的是“屏幕文字”和“原值类别”。"
+        },
+        {
+          "type": "paragraph",
+          "text": "在inspect_pair.py里把两份值对应换成7和文字7，先预测，再重跑两次type核对；只改数值，不引入转换。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 15,
+      "originalLine": 58,
+      "characters": 71,
+      "before": "再回到ready_state.py，在原有代码末尾加上这三行。它们读取该文件前面已经赋值的三个名称，先预测各自类型，再保存并从头运行整个文件。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 16,
+      "originalLine": 60,
+      "characters": 128,
+      "before": "True和False在这里都观察为bool，带引号的\"True\"观察为str。若本来想写状态却得到str，先检查是否把True或False放进了引号；若报NameError且提到true或false，再核对字面量大小写和实际代码，不把这种拼写问题当成缺包。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 17,
+      "originalLine": 63,
+      "characters": 83,
+      "before": "把前面的观察组合成four_values.py：前四行赋值，中间四行显示值，最后四行显示类型。空行只是分开这三组，方便阅读。先预测八行输出，再保存，从终端完整运行它。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 18,
+      "originalLine": 65,
+      "characters": 118,
+      "before": "将真实结果和预测逐行比较。item_mass对应的1.5为float，is_ready对应的True为bool；前两行普通显示相同，末尾的类型记录却能区分整数与数字文本。下面这张表只收拢已经观察过的四种写法，独立练习还要换成你自己的值。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 19,
+      "originalLine": 71,
+      "characters": 121,
+      "before": "2.1中，你给同一名称换过另一段任务文字。这次把batch_count先交给整数8，再改为对应数字文本\"8\"。先预测下面四行输出：哪两行显示的文字相同，哪两行给出不同类型？名称有没有换？写好再保存为changing_type.py并完整运行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 20,
+      "originalLine": 73,
+      "characters": 107,
+      "before": "名称一直是batch_count。第一次读取时，它对应整数8；第二次赋值后，它对应字符串\"8\"。类型来自当前读到的值，没有永久固定在变量名上。这次赋值让同一名称改为对应另一份值，并没有把原来那个整数本身改成字符串。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 21,
+      "originalLine": 74,
+      "characters": 72,
+      "before": "所以只看名称叫不叫count，或者普通输出有没有数字字符，都不足以判断类型。先看本次实际执行的赋值，再用type观察当前值，就能核对自己的判断。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 22,
+      "originalLine": 77,
+      "characters": 71,
+      "before": "先不看参考答案，独立写两份短.py。每份只需源码、实际命令、预测与真实输出，加几句理由；网页输入框是临时思考区，正式代码和运行记录保存在本地。",
+      "decision": "rewrite",
+      "reason": "明确基本必交与共享记录；逐题新条件见r2题干，不强制长报告",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "先独立写程序，再按需展开提示。基本交付是本人源码和本题真实运行结果；同一会话的环境、文件位置和命令只记一次，后面可引用编号。预测可口述或记一行；边界、改值和恢复题按题干保留必要对照。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 23,
+      "originalLine": 113,
+      "characters": 75,
+      "before": "保留两份自己写的程序及短记录，换一个值后能重新预测和核对，才有这次代码操作的证据。网页读完只记录阅读，type输出本身也不能替代你对用途和结果的解释。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "保留自己的两份程序及类型结果。名字保持不变而当前值变化时，再读一次type，就能核对本次类型来自哪里。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "originalIndex": 24,
+      "originalLine": 114,
+      "characters": 90,
+      "before": "接着学习2.3「用表达式算出一个结果」，它与2.4–2.6均已有待人工审核试读。第5章函数试读还需要表达式与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。",
+      "decision": "rewrite",
+      "reason": "移除制作范围与出版状态",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "下一节2.3把这些数值写成计算表达式。先分清数量与数字文本，才能检查算式和单位是否符合实际问题。第5章函数还需要表达式与控制流程基础。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 0,
+      "originalLine": 30,
+      "characters": 84,
+      "before": "整理物品时，有4盒，每盒3件，另外散放4件。一共有多少件？先不用Python，在本地笔记写下手算过程和答案。你会先数盒里的物品，再把散件加进去，还是把所有数字直接相加？",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 1,
+      "originalLine": 32,
+      "characters": 94,
+      "before": "盒里的数量是4乘3，得到12件；再加4件散件，得到16件。盒数乘以每盒件数后，结果才和散件一样以“件”为单位，能够相加。接下来把这句关系写成Python，让修改后的数量也能按同一关系计算。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 2,
+      "originalLine": 35,
+      "characters": 99,
+      "before": "Python用*表示乘法，对应手算中的乘号。例如box_count * per_box，就是用盒数乘每盒件数。两个数字或名称之间要明确写*，数学排版的×和省略乘号的写法不用于这里的Python源码。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 3,
+      "originalLine": 36,
+      "characters": 109,
+      "before": "像box_count * per_box这样，由数值、名称和运算符组成、可以求出一个值的写法，称为数值表达式。先预测下方print会显示什么，再新建boxes.py，输入并保存这三行，行首不缩进，源码放在.venv外。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 4,
+      "originalLine": 38,
+      "characters": 125,
+      "before": "在文件所在目录沿用第一章已核验的解释器。Windows用pwd、dir确认文件，再执行下面第一条；macOS用pwd、ls确认后执行第二条。一直使用py的Windows环境可保持py。本课后续新文件只替换命令中的文件名，始终保存并从头运行整份.py。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "在文件所在目录执行下方对应命令。沿用已核验的python/py或python3；后面每次换文件名后，仍先保存，再整份运行。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 5,
+      "originalLine": 40,
+      "characters": 98,
+      "before": "现在加入散件。Python用+表示加法；box_count * per_box + spare表达“先求盒里件数，再加散件”。用下面完整五行替换boxes.py原来的三行，先写新预测，再保存运行。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 6,
+      "originalLine": 42,
+      "characters": 106,
+      "before": "执行total这一行时，右边先读到4、3、4，按关系算出16，=再让total对应这个结果。*和+负责计算，=负责赋值，它们的角色不同。最后print(total)读取并显示16；给结果取名，后续还能接着使用它。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 7,
+      "originalLine": 43,
+      "characters": 81,
+      "before": "这里输入的是2.2学过的数值，不把4写成\"4\"。带引号会变成字符串，不能期待它按本例的整数关系参与所有运算。单位保留在你的记录里，数值后面不直接接“盒”或“件”。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 8,
+      "originalLine": 46,
+      "characters": 88,
+      "before": "刚算出一共16件，现在取走2件，剩余应是总数减2，即14件。Python用-表示减法。remaining = total - 2先求出剩余数量，再让remaining保存结果。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 9,
+      "originalLine": 47,
+      "characters": 94,
+      "before": "回到已保存五行的boxes.py，在末尾追加下面两行，保留前面的赋值和总数计算。先预测新增加的输出，再保存、完整重跑。这个片段依赖本次文件前面已经算出的total，不能放进空文件直接运行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 10,
+      "originalLine": 49,
+      "characters": 79,
+      "before": "现在两条普通输出依次是16、14，分别表示总件数和取走后的剩余。取走数量也以“件”为单位；本例取走不超过总数。写自己的计算时，把数字的意义与是否合理一起核对。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 11,
+      "originalLine": 52,
+      "characters": 91,
+      "before": "在这些数值计算中，乘法和除法优先于加法和减法。原式先写乘法，可能让人误以为总是从最左边逐项计算。另建order_boxes.py，把同一个加法写到前面作对照；先手算两行，再保存运行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 12,
+      "originalLine": 54,
+      "characters": 86,
+      "before": "第二式spare + box_count * per_box仍先求4乘3，再把散件4加上去，得到16。若不顾优先级，先把最左边两个4相加再乘3，就会算成24，已经换了分组。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 13,
+      "originalLine": 55,
+      "characters": 121,
+      "before": "表达式中的一对括号可以明确分组，让括号里的加法先求值。下面print外面那对括号仍用于输出，里面那对括号把box_count + spare分成一组。先预测，再把这一行追加到boxes.py末尾，保存重跑；新增结果会接在原来的16、14之后。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 14,
+      "originalLine": 57,
+      "characters": 127,
+      "before": "Python先把4和4相加得到8，再乘3，确实得到24。但原问题中box_count数的是盒，spare数的是件，把4盒和4件加成8盒，单位与含义不匹配。因此24是这段代码的计算结果，却不是原问题的总件数。能运行出数字，还要核对表达式是否写对了现实关系。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 15,
+      "originalLine": 58,
+      "characters": 94,
+      "before": "换一个条件，括号式就可能有意义：原来4盒，又增加4盒，每盒同样是3件。added_boxes现在数新增的盒，能与原盒数相加。先预测，再将下面完整程序保存为more_boxes.py并运行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 16,
+      "originalLine": 60,
+      "characters": 78,
+      "before": "这里是8盒，每盒3件，共24件。两种情境数字恰好相同，spare和added_boxes的现实含义却不同。括号决定怎样计算，题目条件决定这份计算有没有意义。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 17,
+      "originalLine": 63,
+      "characters": 101,
+      "before": "回到最初的16件。单独考虑一次重新分配：把全部16件重新平均放进原来的4盒，每盒分到多少件？Python用/表示除法，total / box_count就是总件数除以盒数。本例除数是正整数4，不能为零。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 18,
+      "originalLine": 64,
+      "characters": 93,
+      "before": "在boxes.py末尾追加下面三行。它读取前面已经算出的total与box_count，average是新选的名称。先写平均数和类型预测，再保存、从头运行；type的内外两步沿用2.2。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 19,
+      "originalLine": 66,
+      "characters": 91,
+      "before": "4.0表示这次全部重新分配后平均每盒4件，不是说原来每盒有4件；原来每盒3件，另有4件散件。本次分配没有先取走两件，前面的remaining只是另一个问题的结果，total仍是16。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 20,
+      "originalLine": 67,
+      "characters": 114,
+      "before": "本课使用Python自带的整数和浮点数做普通数值运算。/得到float结果，即使16和4都是int且数学上恰好整除，也显示为4.0；type观察为<class 'float'>。这不是计算出错，也不需要为了去掉.0引入类型转换。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 21,
+      "originalLine": 68,
+      "characters": 92,
+      "before": "不能整除时也能有合理的除法。例如把7升水均分到2个相同容器，先手算每个容器多少升，再将下方完整程序保存为share_water.py运行。水量可以分成小数升，这次结果的单位为升/容器。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 22,
+      "originalLine": 72,
+      "characters": 146,
+      "before": "*与/在同一级，+与-也在同一级。这里每个运算符连接左右两个数值，称为二元运算。这些同级二元运算没有额外括号时按左结合规则分组，也就是先将左边的一步结果接到后一步。12 / 3 * 2相当于先12除3得到4.0，再乘2，得到8.0；若写成12 / (3 * 2)，则先求除数6，结果是2.0。",
+      "decision": "rewrite",
+      "reason": "将术语、具体分组和常见错误判断对应起来",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "*与/同级，+与-同级。这里的二元运算各连接左右两个数值；没有另加括号时，同级按左结合分组。"
+        },
+        {
+          "type": "paragraph",
+          "text": "12 / 3 * 2先求12除3，再乘2，得8.0。若预测2.0，就是先把3乘2当了整个除数；那对应12 / (3 * 2)，已改变分组。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 23,
+      "originalLine": 73,
+      "characters": 104,
+      "before": "再看10 - 3 + 2：先10减3得7，再加2得9。它可以描述10张卡片取走3张后又增加2张；10 - (3 + 2)则描述合计取走5张，剩5张。先写下面四行预测，再另存same_level.py完整运行。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "10 - 3 + 2先取走3再增加2，结果9；10 - (3 + 2)则合计取走5，结果5。预测下方四行，再保存same_level.py运行，对照两种分组。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 24,
+      "originalLine": 75,
+      "characters": 90,
+      "before": "判断一条混合式子时，先看括号，再看乘除与加减的优先级；处于同一级的这几种运算再按左结合分组。不要把这句话简化成“任何计算都直接从最左边算”，也不需要背一整张包含未学运算的优先级表。",
+      "decision": "rewrite",
+      "reason": "提供一次最小加括号重跑，而非再抄优先级规则",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "对照same_level.py的前两行：只给3 * 2加上括号，除数就由3变成6。重跑能检验你是否把“同级左结合”误读成“总先算乘法”。其他式子先看括号与运算层级。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 25,
+      "originalLine": 78,
+      "characters": 100,
+      "before": "现在已分别观察过总数、括号反例和重新分配。把下面完整主例另存为box_relations.py，先预测三行，保存运行，再为每行写下含义和单位。第二条特意保留错误的现实分组，用来检查自己是否只盯着数字。",
+      "decision": "retain",
+      "reason": "保留与此处故障或安全边界直接相关的技术条件。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 26,
+      "originalLine": 81,
+      "characters": 120,
+      "before": "再建revise_boxes.py，只保留有正确现实含义的三个结果：原总数、取走2件后的剩余、全部总数重新分配的平均数。注意最后一项用total，而非取走后的remaining，这三个输出分别回答各自的问题。先手算，再保存运行下面完整程序。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 27,
+      "originalLine": 83,
+      "characters": 126,
+      "before": "现在只把per_box的赋值由3改成5，其他行保持不变。先在笔记写三个新预测，说明每盒多2件会怎样影响4盒总数，再保存，用同一命令完整运行revise_boxes.py，对照两轮真实输出和单位。不要把新程序追加到旧程序末尾，也不要先照抄下面的核对结果。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 28,
+      "originalLine": 84,
+      "characters": 103,
+      "before": "核对时，新总数应为24件，取走2件后余22件，全部24件重分4盒为6.0件/盒。若结果仍是旧数字，先查保存状态与执行文件；若保存正确但数值不符，就从数量、单位和表达式分组逐项查，而不只是把预测改成屏幕数字。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 29,
+      "originalLine": 87,
+      "characters": 62,
+      "before": "平均分配要有明确的非零除数。把8除以0无法得到这里的普通数值结果，下面是故意安排的失败例；你可以只读现象，不需要反复运行它。",
+      "decision": "retain",
+      "reason": "保留与此处故障或安全边界直接相关的技术条件。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 30,
+      "originalLine": 89,
+      "characters": 97,
+      "before": "这个例子没有正常数值输出，错误类型是ZeroDivisionError。遇到同类现象，核对当前除数的值与题目条件；核心练习选择明确的正整数盒数。此处先识别原因，不写try/except处理异常。",
+      "decision": "retain",
+      "reason": "保留与此处故障或安全边界直接相关的技术条件。"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 31,
+      "originalLine": 92,
+      "characters": 75,
+      "before": "先不看参考答案，独立写两份新.py。网页输入框只作临时思考区；本人源码、命令、预测和实际输出保存在本地。解释写清数字为什么变化，以及数字在数什么即可。",
+      "decision": "rewrite",
+      "reason": "明确基本必交与共享记录；逐题新条件见r2题干，不强制长报告",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "先独立写程序，再按需展开提示。基本交付是本人源码和本题真实运行结果；同一会话的环境、文件位置和命令只记一次，后面可引用编号。预测可口述或记一行；边界、改值和恢复题按题干保留必要对照。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 32,
+      "originalLine": 129,
+      "characters": 75,
+      "before": "保留自己两份.py、改值及修复前后的短记录。能用新数量解释计算和单位，再以本人运行核对，才有独立操作证据；网页读完或程序显示了数字都不能替代这些检查。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "保留两份程序、改动差异和真实结果。用自己的单位解释数字在数什么，再检查表达式；成功显示一个数还不足以证明题意正确。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "originalIndex": 33,
+      "originalLine": 130,
+      "characters": 96,
+      "before": "接着学习2.4「让比较表达式给出真假结果」，它与2.5–2.6均已有待人工审核试读。第5章函数试读还需要比较、输入输出与控制流程等中间先修；技术导航不表示可以直接跳学。整门PY101仍在筹备。",
+      "decision": "rewrite",
+      "reason": "移除制作状态，承接表达式到比较",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "下一节2.4用比较表达式检查数量是否符合限制。计算先得到值，比较再回答一个明确问题。第5章函数仍需要输入输出与控制流程等基础。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 0,
+      "originalLine": 30,
+      "characters": 85,
+      "before": "一个收纳盒最多允许放6件物品，现在放了5件。先用一句话判断：现在是否满足“最多6件”？如果再放1件，恰好6件呢？“最多”包括刚好达到上限的情况，超过6件才不满足这条规定。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 1,
+      "originalLine": 31,
+      "characters": 85,
+      "before": "把实际件数交给count，把最大件数交给limit。两个值都是整数，也都以“件”为单位，可以直接比较。这里的边界就是限制值6；接下来要让Python给出能核对的真假结果。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 2,
+      "originalLine": 34,
+      "characters": 81,
+      "before": "Python用<表示小于：左边严格小于右边时才为真，恰好相等不算。<=表示小于或等于，既包括小于，也包括相等。<=是两个字符连续写成的一个比较运算符，中间不拆开。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 3,
+      "originalLine": 35,
+      "characters": 127,
+      "before": "count <= limit把实际数量放左边、限制值放右边，判断实际数量是否小于或等于限制。像这样用比较运算符连接两个值的写法，叫比较表达式。本节比较普通整数，结果是2.2认识的布尔值True或False。先写下5件与最多6件的预测，再输入下方完整程序。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 4,
+      "originalLine": 37,
+      "characters": 165,
+      "before": "在自己的练习文件夹新建capacity_check.py，行首不加缩进，源码放在.venv外。保存后用pwd和Windows的dir确认文件，沿用已核验的解释器运行第一条命令；macOS用pwd、ls确认后运行第二条。此前一直用py的Windows环境可保持py。后面的新文件只替换命令中的文件名，每次都保存并从头运行整份.py。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "新建capacity_check.py，保存后在文件所在目录执行下方对应命令。沿用已核验的解释器，后续新文件替换文件名即可。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 5,
+      "originalLine": 39,
+      "characters": 78,
+      "before": "True回答的是“5是否小于或等于6”，与本题“最多6件”一致。比较只取得这个判断；程序还没有根据结果选择行动。先能写出并解释真假结果，就可以完成本节任务。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 6,
+      "originalLine": 42,
+      "characters": 113,
+      "before": "2.3中，右边先算出数量，再由=保存结果。比较也可以这样做：右侧count <= limit先得到True，=再让within_limit对应这个布尔值，随后print读取它。名称表示“在限制之内”，保存的是这一次的真假结果。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 7,
+      "originalLine": 43,
+      "characters": 111,
+      "before": "在capacity_check.py原三行末尾追加下面两行，保留该文件前面的count和limit赋值。先预测新增输出，再保存完整运行；它依赖前两项赋值，不能放进空文件直接执行。改数值后也要完整重跑，让比较那一行再次执行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 8,
+      "originalLine": 47,
+      "characters": 105,
+      "before": "若想问“是不是刚好达到6件”，用==比较左右两个值是否相等。它是一个比较运算符，得到True或False，不是执行两次赋值。!=则判断两值是否不相等。符号都连续写；=仍负责给名称赋值，不能代替==来问相不相等。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 9,
+      "originalLine": 48,
+      "characters": 68,
+      "before": "在capacity_check.py末尾继续加这两行。先根据该文件仍为5和6的当前值分别预测，再保存从头运行。新增两行输出各在回答什么？",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 10,
+      "originalLine": 50,
+      "characters": 132,
+      "before": "5与6不相等，所以==得到False，!=得到True。这两次比较没有把count改成6；它仍保存5。区别可以再用一份合法的小程序观察：先给count赋5并比较，再重新赋6并比较。先预测两行，再保存为assignment_or_comparison.py完整运行。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "5与6不相等，所以==为False、!=为True。比较没有把count改为6。另存assignment_or_comparison.py，用下方两次赋值对照：先预测，再保存运行。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 11,
+      "originalLine": 52,
+      "characters": 95,
+      "before": "第一条赋值让count对应5，所以和6相等的判断是假；后一次赋值让它对应6，再作相等判断就是真。两条print中的==取得判断，改变当前数值的是各自前面的=。本题只需这些合法操作来分清两者。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 12,
+      "originalLine": 55,
+      "characters": 102,
+      "before": "现在单独看7件与上限6件。>表示大于，左边严格超过右边时为真；>=表示大于或等于，表示“至少达到”，也包括刚好等于。这两个问题与“最多”不同：超过上限时，至少达到上限也为真，但并不表示满足最多6件的规定。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 13,
+      "originalLine": 56,
+      "characters": 62,
+      "before": "先预测下面三行，分别判断7是否超过6、是否至少达到6、是否仍满足最多6。另存为above_limit.py，保存并完整运行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 14,
+      "originalLine": 58,
+      "characters": 78,
+      "before": "前两行都为True，因为7确实大于6，也满足大于或等于6。最后一行为False，因为本次已经超过最大件数。等于6时>和>=还会不会相同，稍后用边界实验核对。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 15,
+      "originalLine": 61,
+      "characters": 84,
+      "before": "回到最初5件、最多6件的条件。下面完整主例将不超过、刚好等于、不等于三项判断集中起来。先预测三行，并各写一句含义，再另存capacity_results.py保存运行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 16,
+      "originalLine": 63,
+      "characters": 78,
+      "before": "within_limit保存5不超过6的结果；第二行说明尚未刚好达到6，第三行说明两值不同。每一行都要和自己的判断问题对应，不能只把三个真假词背成固定答案。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 17,
+      "originalLine": 66,
+      "characters": 102,
+      "before": "新建boundary_values.py，保持limit为6。下面三条print依次问严格小于、最多、恰好等于。先在笔记写count为5时的三行预测，再保存并完整运行下面的文件，保留源码、命令和真实输出。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 18,
+      "originalLine": 68,
+      "characters": 112,
+      "before": "第二轮只把count的赋值改为6，limit和三条比较都不动。先写新预测，保存，用同一命令完整运行，保留本轮源码与输出。第三轮再只把count改为7，重新预测、保存和运行。三次运行是三份真实证据，一次截图或手抄表格不能代替。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "第二轮只把count改为6；第三轮再只改为7。limit和三条比较都保持。每轮先记真假预测，再保存、整份运行，把实际结果填同一张三行表。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 19,
+      "originalLine": 70,
+      "characters": 109,
+      "before": "最值得看的是count恰好为6：<得到False，<=得到True。前者不包含相等，后者包含相等。若题目规定“最多6件”，6件满足；若规定“必须少于6件”，6件就不满足。符号本身不固定代表允许或禁止，要先读清实际规则。",
+      "decision": "rewrite",
+      "reason": "补相等边界的误读诊断和单符号对照",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "count等于6时，<为False，<=为True。若预测<=也是假，可能把“最多”读成了“必须少于”。"
+        },
+        {
+          "type": "paragraph",
+          "text": "保留等值6，只在副本将<=换为<再运行；结果的变化来自是否包含相等，而非数量或上限变了。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 20,
+      "originalLine": 71,
+      "characters": 115,
+      "before": "再把等值位置单独拿出来，同时核对已经解释过的六种比较。先预测，保存six_comparisons.py运行。第一条print只是已学的固定文字标签At capacity，后面六条才依次显示比较结果；引号只围住这段文字，不围住整数。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 21,
+      "originalLine": 74,
+      "characters": 64,
+      "before": "这里每一式只比较左右两个普通整数。两题也先按这个范围操作，分别运行并解释结果；组合多个条件或根据真假改变执行路线，是之后的内容。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 22,
+      "originalLine": 77,
+      "characters": 69,
+      "before": "先合上参考答案，自建两份短.py。正式成果保存在本地，网页输入框只是临时思考区。每轮留源码、命令、预测和真实输出，用简短文字说明规则即可。",
+      "decision": "rewrite",
+      "reason": "明确基本必交与共享记录；逐题新条件见r2题干，不强制长报告",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "先独立写程序，再按需展开提示。基本交付是本人源码和本题真实运行结果；同一会话的环境、文件位置和命令只记一次，后面可引用编号。预测可口述或记一行；边界、改值和恢复题按题干保留必要对照。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 23,
+      "originalLine": 114,
+      "characters": 74,
+      "before": "保留本人两份.py及短记录，能换一个上限重新验证、解释每个真假结果，才有独立代码证据。网页读完不代表已经会选符号，比较结果本身也没有替程序选择行动。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "保留两份程序和边界表。等值那一轮能帮你区分最多与少于；解释每个真假对应的问题，不只记住输出顺序。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "originalIndex": 24,
+      "originalLine": 115,
+      "characters": 95,
+      "before": "接着学习2.5「取得用户输入，再转成需要的数值」，它与2.6均已有待人工审核试读。第5章函数试读还需输出与控制流程等中间先修，阅读器的下一可读导航不表示直接跳学建议。整门PY101仍在筹备。",
+      "decision": "rewrite",
+      "reason": "移除待审/筹备状态并解释下一新能力",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "下一节2.5让运行程序的人提供数据，不再每次打开源码改数量。输入先是文字，之后才转换并计算。第5章函数还需要输入输出和控制流程等基础。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 0,
+      "originalLine": 28,
+      "characters": 115,
+      "before": "给物品准备标签，每件需要3个。以前把count = 4写在源码，再用print(count * 3)得到12。换一批件数就要改文件。现在希望运行程序的人输入物品名和件数，让同一份脚本处理不同数量。先只收一段名称，看看程序怎样等你。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 1,
+      "originalLine": 29,
+      "characters": 122,
+      "before": "input是Python自带的输入功能。input(\"Label: \")先显示字符串Label: 作为提示，再等待一行键盘输入。提示中的冒号和末尾空格方便使用者接着键入；英文引号界定源码里的文字，引号本身不显示。input不会给提示自动加换行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 2,
+      "originalLine": 30,
+      "characters": 106,
+      "before": "看到提示后在终端键入Box A，按Enter提交。input取得这一行文字，不含提交时的末尾换行；=让label保存返回的字符串。随后print(label)才读取并显示它。先有等待和输入，才有后面的print。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 3,
+      "originalLine": 32,
+      "characters": 104,
+      "before": "在自己的练习目录新建receive_label.py，源码放在.venv外，行首不缩进，保存上面两行。先预测何时看到Label: ，何时看到print显示的Box A。Box A是本次数据，不加在.py末尾。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 4,
+      "originalLine": 33,
+      "characters": 142,
+      "before": "终端用pwd和Windows的dir（macOS用ls）确认目录包含文件，沿用第一章核验过的解释器。Windows运行第一条命令，macOS运行第二条；此前一直使用py的Windows环境可保持py。命令放在shell提示符后，不写进.py，也不在Python的>>>后运行脚本命令。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "保存文件后，在其所在目录执行下方对应命令。沿用已核验的python/py或python3；启动命令在Shell中输入，接下来的数据才在程序提示后键入。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 5,
+      "originalLine": 35,
+      "characters": 155,
+      "before": "启动后先观察：Label: 出现且shell还没回来，是程序在等输入。现在实际键入Box A、按Enter，观察后续独立一行Box A，然后确认回到shell。保留命令、输入和实际画面。后面的新文件每次只替换命令里的文件名，保存后完整启动。Aivora网页展示教材并暂存笔记，Python交互在你本机终端进行。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "看到Label:且Shell还没回来时，程序在等你。键入Box A、按Enter，观察下一行Box A，再确认Shell提示符回来。"
+        },
+        {
+          "type": "paragraph",
+          "text": "后面的程序同样在本机终端运行，网页只提供教材和临时笔记。记录里把命令、提示、键入回显和print分开，避免把回显当成第二条print。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 6,
+      "originalLine": 38,
+      "characters": 123,
+      "before": "自动验证也能把数据送入标准输入stdin。管道不会自动产生键盘回显，本例捕获的stdout可能直接是Label: Box A再换行，其中Box A来自print。不能把真人屏幕上的两次Box A都称作print，也不能为自动日志补造一行键入回显。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 7,
+      "originalLine": 41,
+      "characters": 132,
+      "before": "能收名称后，再问数量。新建inspect_input.py，先预测输入4后两条print各显示什么，再保存完整三行，运行python inspect_input.py（macOS用python3）。Count: 出现后只键入4、按Enter，不给终端里的4加引号。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "能收名称后，再观察数字输入。新建inspect_input.py，先预测输入4后的值与类型，保存三行并启动；Count:出现后键入4，再按Enter。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 8,
+      "originalLine": 43,
+      "characters": 136,
+      "before": "你按的是数字字符，但input成功读到的值仍是字符串str。普通print显示4，不能证明它已经是整数；type把区别显示出来。<class 'str'>只是类型观察结果，不是新源码。count_text保存的内容相当于数字文本\"4\"，名字帮助人理解，但不会替值决定类型。",
+      "decision": "rewrite",
+      "reason": "用第二个数字输入验证input返回str，保留原始文本与类型区别",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "键入的是数字字符，input取得的仍是str。若预测type会是int，就是从字符外观猜了类型。"
+        },
+        {
+          "type": "paragraph",
+          "text": "在同一inspect_input.py中换输入7重跑：普通显示变化，type仍为str。count_text的名字只说明用途，不替值决定类型。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 9,
+      "originalLine": 44,
+      "characters": 57,
+      "before": "若要让完整件数参与数值乘法，需要明确转换。先确认原始值的类型，再处理数量；文字看起来像数字，并不使它自动成为数值。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 10,
+      "originalLine": 47,
+      "characters": 105,
+      "before": "int是Python自带的整数转换工具，把符合要求的整数文本交给它，可以建立一个整数值。本轮先用4、7、12这样的普通十进制整数文本。新建convert_count.py，先预测输入4后的值与类型，再保存运行：",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 11,
+      "originalLine": 49,
+      "characters": 118,
+      "before": "第1行先接收count_text；第2行int(count_text)读取文本并尝试建立整数，=让count接住结果；后两行显示整数和类型。转换后才有可作为件数计算的整数4。原count_text仍是str，int没有把它就地改成整数。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 12,
+      "originalLine": 50,
+      "characters": 76,
+      "before": "为了同时观察两份值，另存observe_conversion.py，先预测四行，再输入4运行下面的完整观察版。前两条print在转换前，后两条在转换后。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 13,
+      "originalLine": 52,
+      "characters": 70,
+      "before": "普通显示相同，类型却不同。分步写能看清哪份是输入文字、哪份是新整数；后续计算应读取count。把实际结果和预测核对，保留这个区别再进入主例。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 14,
+      "originalLine": 55,
+      "characters": 133,
+      "before": "回到每件需3个标签的任务：3的单位是个/件。label保存物品名称文字，不是标签总数；count_text是件数文本，count是整数件数，count * 3求标签个数。新建item_labels.py，先写Box A/4这组输入和两条print的预测，再保存主例。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "每件需要3个标签，3的单位为个/件。label是物品名称，count_text是件数文本，count是整数；用count * 3计算总标签数。"
+        },
+        {
+          "type": "paragraph",
+          "text": "保存item_labels.py前，先为Box A/4预测两条print；启动后按两次提示分别输入。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 15,
+      "originalLine": 57,
+      "characters": 99,
+      "before": "启动后，Label: 出现才输入Box A、Enter；Count: 出现才输入4、Enter。两项数据分别提交，不合成一行。4件乘每件3个，实际核对下面两条print；提示和键盘回显不在这两行里。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 16,
+      "originalLine": 59,
+      "characters": 99,
+      "before": "源码完全不改，先预测Tool B/2，再用同一命令重新启动并分别输入。2件乘3是6个标签，保留第二组真实记录。同一保存文件因运行时输入不同产生不同结果，不必打开源码改件数，这是相对2.3新增的能力。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 17,
+      "originalLine": 61,
+      "characters": 76,
+      "before": "若自动stdin依次提供Box A和4两行，提示没有换行，实际捕获如下。末尾有换行；这是自动捕获形式，不是真人终端的完整画面，Box A来自print。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 18,
+      "originalLine": 65,
+      "characters": 102,
+      "before": "单件物品的质量可能为1.5千克，要算两件总质量。这次允许小数，用Python自带的float将符合要求的数字文本转换为浮点数。mass_text保存输入，mass保存float结果，乘2后仍以千克为单位。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 19,
+      "originalLine": 66,
+      "characters": 95,
+      "before": "新建two_masses.py，先预测1.5这组，再保存完整三行运行。Mass kg: 后只键入1.5、Enter，不附加kg；本轮用小数点而非小数逗号。两件的2固定在源码中，不需要再键入。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 20,
+      "originalLine": 68,
+      "characters": 72,
+      "before": "1.5乘2是3.0千克。保留后先预测2.25，不改源码重新运行并输入，实际核对4.5千克。两组都留预测和真实结果，不能把质量写死在源码假装输入。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 21,
+      "originalLine": 70,
+      "characters": 73,
+      "before": "另建observe_mass.py观察类型，保存下面的完整版本。先预测输入1.5后的四行，再运行；它只观察原值/原类型/新值/新类型，不计算总量。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 22,
+      "originalLine": 72,
+      "characters": 85,
+      "before": "float适合本例测量，但有表示精度限制，不保证任意十进制小数都精确保存。3.0的.0是本次浮点显示，无需为了删掉它再转int；本课先核对计算关系和单位，输出格式留后续。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 23,
+      "originalLine": 75,
+      "characters": 99,
+      "before": "另建count_format_copy.py受控副本，保留已成功的主例。int不能把任意文本变为件数。先预测four是否符合要求，再保存下面三行，启动后在Count: 提示输入four、Enter。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 24,
+      "originalLine": 77,
+      "characters": 133,
+      "before": "第2行int(count_text)转换英文单词时会出现ValueError，后面的print没有执行。保存真实Traceback回溯、转换语句、实际输入、错误末行和退出状态；具体路径、箭头与排版以本机为准。错误说明这次文本不合转换要求，不表示Python环境损坏。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "第2行int(count_text)无法将four解释为整数，因此出现ValueError，后面的print没有执行。保留实际输入、转换行和相关完整回溯。错误来自文本格式，不是环境损坏。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 25,
+      "originalLine": 78,
+      "characters": 130,
+      "before": "异常后程序已经结束，shell重新出现。直接键入7不会交给已结束的程序；要重新执行python count_format_copy.py（macOS用python3），等Count: 后输入7、Enter，核对print显示7并正常结束。这是新启动的一轮恢复。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 26,
+      "originalLine": 79,
+      "characters": 123,
+      "before": "再启动该副本输入4.5，留真实失败。这个小数文本同样不能按本例int的整数文本要求转换，也会ValueError，并不会自动得到4。不用int(float(...))绕过完整件数要求，那会引入另一种转换并改变题意；也不必重装、安装包或改PATH。",
+      "decision": "retain",
+      "reason": "保留与此处故障或安全边界直接相关的技术条件。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 27,
+      "originalLine": 80,
+      "characters": 102,
+      "before": "float也有要求。新建mass_format_copy.py，先预测bad，再保存运行下方副本，输入bad并保留真实ValueError与退出记录。重新启动后输入1.75，核对两件3.5千克且正常结束。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 28,
+      "originalLine": 82,
+      "characters": 131,
+      "before": "本轮只识别转换位置、实际文本及未满足的格式，错误后重新执行。完整校验和自动重试后续再学。不使用eval处理输入：它会求值Python表达式并可能执行不可信代码，本任务只需int/float。错误属于stderr，不把错误名当正常print结果，也不补造成功输出。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "本节只识别输入格式与转换位置，终止后重新运行。后续再处理自动校验与重试。int/float已足够完成本题；eval会求值输入表达式并可能执行不可信代码，不用于这里。错误记录属于stderr，不改写成正常输出。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 29,
+      "originalLine": 85,
+      "characters": 71,
+      "before": "先合上参考，自建两份.py。网页输入框只是临时笔记，本人源码和运行记录保存在本地。每轮分清命令、提示、键入回显及print结果，先预测再运行。",
+      "decision": "rewrite",
+      "reason": "明确基本必交与共享记录；逐题新条件见r2题干，不强制长报告",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "先独立写程序，再按需展开提示。基本交付是本人源码和本题真实运行结果；同一会话的环境、文件位置和命令只记一次，后面可引用编号。预测可口述或记一行；边界、改值和恢复题按题干保留必要对照。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 30,
+      "originalLine": 104,
+      "characters": 69,
+      "before": "先独立做题再核对。以下是完整参考路径，复制时另存新文件，保留原作；各题解答解释了每行、单位、两组预测和命令。参考代码只用正文已解释的语法。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 31,
+      "originalLine": 105,
+      "characters": 115,
+      "before": "event_badges.py每轮收场地和组数两行；cord_lengths.py每轮只收单段米数。受控副本cord_format_copy.py先输入oops观察错误，再重新执行输入0.75核对恢复，不能把一次截图替代这些运行。",
+      "decision": "retain",
+      "reason": "保留与此处故障或安全边界直接相关的技术条件。"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 32,
+      "originalLine": 109,
+      "characters": 68,
+      "before": "保留自己的两份.py及短记录，能换新数据、解释类型/单位和一次转换失败，才有独立操作证据。作者程序运行或网页读完都不能证明学生已经学会。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "保留自己的程序、两组新输入、类型行和一次错误恢复记录。能解释为什么计算使用转换后的值，就可以带着这份结果学习输出。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "originalIndex": 33,
+      "originalLine": 110,
+      "characters": 114,
+      "before": "本课已完成输入与转换基础，接着学习2.6「把输入和计算整理成清楚的输出」，它已有待人工审核试读，将组合输入、计算、比较与可读输出。第5章函数试读仍需第三、第四章等中间先修，下一可读导航不表示直接跳学建议。整门PY101仍在筹备。",
+      "decision": "rewrite",
+      "reason": "移除审核/筹备/导航开发状态",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "下一节2.6将输入、转换、计算与比较整理成带说明和单位的输出，让别人知道结果在回答什么。第5章函数仍需控制流程等中间先修，按课程顺序补齐后再读。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 0,
+      "originalLine": 28,
+      "characters": 90,
+      "before": "程序算出总质量6.0千克，又判断出它不超过10千克。下面都是已经学过的赋值和print。先预测两行，再另存bare_results.py完整运行，看看只收到结果的人能知道多少信息。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 1,
+      "originalLine": 30,
+      "characters": 68,
+      "before": "这两行可以是正确结果，但6.0没写单位，也没说是单件还是总量；True没写出判断问题。希望让使用者看到下面的说明。先指出增加了哪些信息：",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 2,
+      "originalLine": 32,
+      "characters": 109,
+      "before": "Total kg表示总质量（千克），Within 10 kg在本例问是否不超过10千克。接下来先把一个已知值与说明放到同一行，之后再把输入和计算接回来。普通print仍可显示结果；本课增加的是让值与含义一起呈现的方法。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 3,
+      "originalLine": 35,
+      "characters": 153,
+      "before": "f-string（格式化字符串）在开头引号前写f。成对英文引号仍界定整段文字，Total kg: 是说明；{total_mass}这一对花括号标出插入位置。运行到这条字符串时，Python读取total_mass当前对应的值，组成文字，再由print显示。f紧挨开头引号，花括号内先只用已经赋值的简单名称。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "f-string在开头引号前加f。引号界定文字，Total kg:是说明，{total_mass}用花括号标出插入位置。"
+        },
+        {
+          "type": "paragraph",
+          "text": "执行到这里时，Python读total_mass当前值，组成字符串，再由print显示。先只将已绑定的简单名称放进花括号，f紧挨开头引号。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 4,
+      "originalLine": 36,
+      "characters": 210,
+      "before": "另建insert_mass.py，先预测下面一行显示什么，再保存运行。Windows在文件所在目录用python insert_mass.py，macOS用python3 insert_mass.py；一直使用已核验py的Windows环境可保持py。用pwd及dir（macOS用ls）核对目录；源码在.venv外、行首不缩进。命令写终端，不写进.py或Python的>>>。后面新文件替换同一命令的文件名并保存重跑。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "新建insert_mass.py，先预测显示内容，再保存运行。Windows在文件目录用python insert_mass.py，macOS用python3；已验证py的环境可继续用py。源码仍放在.venv外。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 5,
+      "originalLine": 38,
+      "characters": 64,
+      "before": "对照另存literal_mass.py：去掉开头f，仍是合法Python普通字符串。先预测花括号会消失还是原样显示，再运行核对。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 6,
+      "originalLine": 40,
+      "characters": 78,
+      "before": "普通字符串没有请求插入值，所以花括号和名称原样显示；它没有发生语法错误。对比两份源码和真实结果，指出哪个f在起作用，不能认为所有引号里的花括号都会自动替换。",
+      "decision": "rewrite",
+      "reason": "缺f预测的错误含义与只加前缀的最小验证",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "去掉f后，花括号及total_mass会原样显示。如果你仍预测6.0，就是把普通文字里的花括号也当成了插入请求。"
+        },
+        {
+          "type": "paragraph",
+          "text": "在literal_mass.py副本只补回开头f再重跑，应看到当前数值。这两种写法都合法，差别是有没有插入值。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 7,
+      "originalLine": 43,
+      "characters": 96,
+      "before": "再把三个已知值分别放进说明。item_name是物品名称，count是件数，total_mass是总千克数；三个花括号各读取自己的名称。先预测三行，再保存known_summary.py运行：",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 8,
+      "originalLine": 45,
+      "characters": 102,
+      "before": "每条print单独一行。Count在本例数的是件，Total kg明确总质量单位，不要在数值赋值后直接写kg；单位属于输出说明。中文说明同样合法，另存chinese_mass.py，先预测再运行下面两行：",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 9,
+      "originalLine": 47,
+      "characters": 115,
+      "before": "英文标签不是唯一正确形式，关键是让别人分清每个值的含义。6.0是本次float普通显示，不是故障，本节也不要求补成6.00。float有表示精度边界，若自己的其他合法输入显示较长小数，保留真实结果并核对，不为排版改类型或伪造日志。",
+      "decision": "retain",
+      "reason": "保留单一概念/首次语义说明，仍支持随后的独立操作。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 10,
+      "originalLine": 50,
+      "characters": 95,
+      "before": "现在把已知值换成本次使用者输入。物品名、完整件数、单件质量是三项不同的数据，先按2.5分别保存原文字。另建receive_parcel.py，保存下方完整三行；先预测会出现几次等待，再启动。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 11,
+      "originalLine": 52,
+      "characters": 123,
+      "before": "Item: 出现输入Parcel、Enter；Count: 出现输入4、Enter；Mass kg: 出现输入1.5、Enter。每项各占一行输入，不把三个值合成一行，也不在数值后附加单位。这版没有print，收齐三项后结束，尚不会显示计算结果。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 12,
+      "originalLine": 54,
+      "characters": 112,
+      "before": "input提示属于程序stdout但无自动换行，终端通常回显你键入的字符；它们都不是print结果。自动stdin输入没有同样的键盘回显，这版捕获stdout只有下面三个连续提示。标注的示意、终端流和原始stdout要分开。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 13,
+      "originalLine": 58,
+      "characters": 116,
+      "before": "接下来int(count_text)得到整数件数count，float(mass_text)得到单件质量mass；原来的两个_text仍是字符串。count * mass用件数乘千克/件，得到总千克数，先保存为total_mass。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 14,
+      "originalLine": 59,
+      "characters": 101,
+      "before": "本例规定总质量最多10千克，恰好10也满足。total_mass <= 10复用2.4的比较，先把True或False保存为within_limit。它只回答这个总质量问题，还没有执行批准或拒绝等行动。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 15,
+      "originalLine": 60,
+      "characters": 84,
+      "before": "另存calculate_parcel.py，保存下面完整累计版。先手算Parcel/4/1.5，再依次输入运行；末尾两条print暂时核对总量和比较，仍用普通裸值显示。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 16,
+      "originalLine": 62,
+      "characters": 81,
+      "before": "4件×1.5千克/件为6.0千克，6.0<=10为True。若此处与预测不同，先核对实际键入、转换后的名称和乘法；正确之后再整理文字，不靠改输出标签掩盖计算错误。",
+      "decision": "retain",
+      "reason": "保留与此处故障或安全边界直接相关的技术条件。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 17,
+      "originalLine": 65,
+      "characters": 139,
+      "before": "输入、转换、总量与比较都已观察，再用四条f-string替换末尾裸值输出。第1条读item_name，显示物品；第2条读整数count，显示件数；第3条读total_mass并写总千克数；第4条读within_limit，并明确它问是否不超过10千克。比较先保存，不藏进花括号。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "输入与计算都核对后，再用四条f-string替换裸值输出：分别读物品名、整数件数、总千克数和比较结果。"
+        },
+        {
+          "type": "paragraph",
+          "text": "最后一条明确问是否不超过10千克。比较先保存，花括号只负责取名称的值，不能用漂亮标签掩盖错误计算。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 18,
+      "originalLine": 66,
+      "characters": 64,
+      "before": "新建parcel_summary.py，先写Parcel/4/1.5的四行预测，再保存完整主例。下面空行只是分组，每次从头执行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 19,
+      "originalLine": 69,
+      "characters": 91,
+      "before": "这四行不是终端全部内容；input提示与键盘回显另行标记。自动stdin提供三行数据时，原始stdout的提示会紧邻第一条print，实际捕获形式如下，末尾有换行，不能补造三行回显：",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 20,
+      "originalLine": 73,
+      "characters": 124,
+      "before": "保留parcel_summary.py原样。第一轮Parcel/4/1.5已经是低于10；先保留自己的输入、预测与真实四行结果。第二轮先预测Crate B/4/2.5，重新执行同一命令，依次键入。手算4×2.5=10.0千克，最后一行该是真还是假？",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 21,
+      "originalLine": 74,
+      "characters": 83,
+      "before": "第三轮再先预测Crate C/4/3.0，完整重新启动并输入，手算总12.0千克。保留三轮命令、输入、源码和实际四行摘要，再按表核对，不用一次输出或抄表代替三次运行。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 22,
+      "originalLine": 76,
+      "characters": 109,
+      "before": "等于10.0时<=仍为True，因为最多包括等值；超过时False。这个真假只报告本次总质量是否不超过10千克，没有检查包装或运输条件，也没有自动执行拒绝。输出说明必须对应实际比较，不能把它改写成“所有条件下都安全”。",
+      "decision": "retain",
+      "reason": "保留与此处故障或安全边界直接相关的技术条件。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 23,
+      "originalLine": 79,
+      "characters": 78,
+      "before": "先合上参考，自建短.py，正式源码和真实运行保存在本地。网页框只是临时笔记；每轮先预测，命令/提示/输入回显/print分开标记，用简短说明解释数据流即可。",
+      "decision": "rewrite",
+      "reason": "明确基本必交与共享记录；逐题新条件见r2题干，不强制长报告",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "先独立写程序，再按需展开提示。基本交付是本人源码和本题真实运行结果；同一会话的环境、文件位置和命令只记一次，后面可引用编号。预测可口述或记一行；边界、改值和恢复题按题干保留必要对照。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 24,
+      "originalLine": 98,
+      "characters": 56,
+      "before": "先完成两题再展开参考，另存新文件保留原作。前两份完整程序的行义、预测与命令在各题解答中，不将列表文字当连写源码。",
+      "decision": "retain",
+      "reason": "保留本段围绕一个问题的用途、观察或必要先修；没有为字数指标机械拆段。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 25,
+      "originalLine": 99,
+      "characters": 116,
+      "before": "若想核对名称问题，在自己的field_copy.py副本先预测下面程序：花括号里的total_mas少一个s，本次没有绑定。按2.1检查名称，实际运行保留第2行NameError、相关回溯和退出状态；它与少f的合法字面输出原因不同。",
+      "decision": "retain",
+      "reason": "保留与此处故障或安全边界直接相关的技术条件。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 26,
+      "originalLine": 100,
+      "characters": 82,
+      "before": "保留错误后，将同一副本只修为total_mass，先预测再保存完整重跑下面修复版，应显示Total kg: 6.0且正常结束。无需核心题故意造错，也不加入异常捕获。",
+      "decision": "retain",
+      "reason": "保留与此处故障或安全边界直接相关的技术条件。"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 27,
+      "originalLine": 104,
+      "characters": 64,
+      "before": "保留本人代码和短记录，能现场换一组新数据、预测并解释每行含义，才有这些操作的证据。网页读完或作者测试通过不等于学生已能独立完成。",
+      "decision": "rewrite",
+      "reason": "按任务分开动作、观察结果与必要故障分支",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "保留自己的程序和摘要，能换新数据、先预测并解释每行含义，就能核对值从哪里来、单位和限制是否一致。"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "originalIndex": 28,
+      "originalLine": 105,
+      "characters": 150,
+      "before": "第二章六节的技术制作已齐，教材仍待人工教学审核，整门PY101继续筹备。课程体系下一章是「分支、循环、推导式与常见控制流程」，当前尚无正式节级规划或可读正文。本章还没有教授分支、循环、容器、函数或CSV数据工具。第5章虽有旧试读，仍需第三、第四章等中间先修；技术导航跳到第5章不是零基础直接学习建议。",
+      "decision": "rewrite",
+      "reason": "只保留稳定学习路径，不把未制作第三章说成可读，不夹开发状态",
+      "afterBlocks": [
+        {
+          "type": "paragraph",
+          "text": "第二章把变量、类型、计算、比较和输入输出连成了短程序。接下来学习第三章的控制流程，让程序依据条件选择动作或重复操作。先能独立完成本章的交互摘要，再学习这些新能力。第5章函数仍依赖第三、第四章的中间知识，不宜直接跳过。"
+        }
+      ]
+    }
+  ]
+}

@@ -2,9 +2,11 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
-import { pythonNotebookCellOrderLesson as lesson } from "../src/content/lessons/py101/notebook-cell-order";
-import { lessonRegistry, resolveLesson, getLearningCourse, getAdjacentLessons } from "../src/lib/course-engine";
-import { publicationManifest } from "../src/content/publication-manifest";
+import { pythonNotebookCellOrderLesson as p15CurrentLesson } from "../src/content/lessons/py101/notebook-cell-order";
+import {historicalLesson} from "./helpers/py101-p14-view";
+const lesson=historicalLesson(p15CurrentLesson);
+import { lessonRegistry, resolveLesson, getLearningCourse, getAdjacentLessons } from "./helpers/py101-p14-view";
+import { publicationManifest } from "./helpers/py101-p14-view";
 import { isReadable } from "../src/content/models";
 import { notebookCode, notebookBlockNames, notebookCommands, notebookDocuments, notebookDownload } from "../src/content/resources/python-notebook";
 import { beforeApprovedPy101Object, protectedPy101FileMatches, approvedPy101Additions } from "../scripts/py101-p1-compatibility";
@@ -12,7 +14,7 @@ import { createProgressStore, progressKey, parseReadingProgress } from "../src/l
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
 import { assertRegisteredInventory, assertCourseAvailability } from "./helpers/registered-content";
 
-test("P4按真实基线保护旧教材/文件，1.4只勘误最后状态段，拒绝附加改动", () => {
+test("[P0–P14历史契约] P4按真实基线保护旧教材/文件，1.4只勘误最后状态段，拒绝附加改动", () => {
   const base = JSON.parse(readFileSync("docs/py101-p4/BASELINE.json", "utf8"));
   const sha = (v: unknown) => createHash("sha256").update(JSON.stringify(v)).digest("hex");
   const later = approvedPy101Additions.filter(id => id !== lesson.id && !(id in base.lessons));
@@ -30,7 +32,7 @@ test("P4按真实基线保护旧教材/文件，1.4只勘误最后状态段，�
   assertRegisteredInventory(); assertCourseAvailability("PY101");
 });
 
-test("新课r1身份与草稿门禁一致，接1.4，未制作与错误归属不可读", () => {
+test("[P0–P14历史契约] 新课r1身份与草稿门禁一致，接1.4，未制作与错误归属不可读", () => {
   const entry = publicationManifest.find(p => p.lessonId === lesson.id)!;
   assert.equal(entry.title, lesson.title); assert.equal(entry.order, 5); assert.equal(entry.contentVersion, 1);
   assert.equal(entry.optionalLesson, false); assert.equal(lesson.optionalLesson, false);
@@ -44,7 +46,7 @@ test("新课r1身份与草稿门禁一致，接1.4，未制作与错误归属不
   }
 });
 
-test("三目标由真实Notebook两题覆盖，提示不泄露完整顺序，答案要求干净复跑", () => {
+test("[P0–P14历史契约] 三目标由真实Notebook两题覆盖，提示不泄露完整顺序，答案要求干净复跑", () => {
   const tasks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === "exercise");
   assert.deepEqual(tasks.map(t => t.id), ["create-own-notebook", "recover-cell-order"]);
   assert.deepEqual(lesson.assessmentMap, [{ objective: 1, exerciseIds: [tasks[0].id] }, { objective: 2, exerciseIds: [tasks[1].id] }, { objective: 3, exerciseIds: tasks.map(t => t.id) }]);
@@ -52,7 +54,7 @@ test("三目标由真实Notebook两题覆盖，提示不泄露完整顺序，答
   assert.match(tasks[0].prompt, /自己新建/); assert.match(tasks[0].prompt, /不同/); assert.match(tasks[1].prompt, /真实错误/); assert.match(tasks[1].prompt, /暂不执行/); assert.match(tasks[1].prompt, /明确重启/);
 });
 
-test("网页每个Python格均有明确同源身份；分平台安装命令不改全局安全配置", () => {
+test("[P0–P14历史契约] 网页每个Python格均有明确同源身份；分平台安装命令不改全局安全配置", () => {
   const blocks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === "code");
   assert.deepEqual(blocks.filter(b => b.language === "python").map(b => [b.filename, b.code]).sort(), (Object.keys(notebookCode) as (keyof typeof notebookCode)[]).map(k => [notebookBlockNames[k], notebookCode[k]]).sort());
   for (const pair of Object.values(notebookCommands)) for (const command of Object.values(pair)) assert.ok(blocks.some(b => b.code === command));
@@ -61,7 +63,7 @@ test("网页每个Python格均有明确同源身份；分平台安装命令不�
   assert.match(text, /只关闭网页不代表/); assert.match(text, /保存也只是写文件/); assert.match(text, /NameError/);
 });
 
-test("Notebook下载是有效4.5结构、源码同源、空输出无机器信息；旧资源另受摘要保护", () => {
+test("[P0–P14历史契约] Notebook下载是有效4.5结构、源码同源、空输出无机器信息；旧资源另受摘要保护", () => {
   for (const document of notebookDocuments) {
     const actual = JSON.parse(readFileSync(`public/downloads/${document.filename}.ipynb`, "utf8"));
     assert.deepEqual(actual, notebookDownload(document));
@@ -74,7 +76,7 @@ test("Notebook下载是有效4.5结构、源码同源、空输出无机器信息
   }
 });
 
-test("新1.5r1进度重载恢复，旧四课/第五章/其他课程和r1/r2保留", () => {
+test("[P0–P14历史契约] 新1.5r1进度重载恢复，旧四课/第五章/其他课程和r1/r2保留", () => {
   const memory = new Map<string, string>(), storage = { getItem: (k: string) => memory.get(k) ?? null, setItem: (k: string, v: string) => { memory.set(k,v); } };
   const store = createProgressStore(() => storage);
   for (const id of ["PY101-C01-L01", "PY101-C01-L02", "PY101-C01-L03", "PY101-C01-L04", "PY101-C05-L01", "ML201-C04-L01"]) { const scope = lessonProgressScope(lessonRegistry.get(id)!); store.save(scope,100,scope.sectionIds[0],true); if (scope.contentVersion > 1) store.save({...scope,contentVersion:1},100,scope.sectionIds[0],true); }

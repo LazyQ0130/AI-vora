@@ -1,0 +1,131 @@
+{
+  "createdBeforeExecution": "2026-10-31T05:31:19.329070+00:00",
+  "cases": [
+    {
+      "id": "marker-original",
+      "source": "print(\"Plan A\")\nprint(\"File saved\")\n",
+      "stdin": "",
+      "expectedStdout": "Plan A\nFile saved\n",
+      "expectedExit": 0,
+      "error": null
+    },
+    {
+      "id": "marker-changed",
+      "source": "print(\"Plan P15\")\nprint(\"File saved\")\n",
+      "stdin": "",
+      "expectedStdout": "Plan P15\nFile saved\n",
+      "expectedExit": 0,
+      "error": null
+    },
+    {
+      "id": "assignment-old-output",
+      "source": "task = \"Pack\"\nprint(task)\ntask = \"Sort\"\nprint(task)\n",
+      "stdin": "",
+      "expectedStdout": "Pack\nSort\n",
+      "expectedExit": 0,
+      "error": null
+    },
+    {
+      "id": "assignment-only-later-changed",
+      "source": "task = \"Pack\"\nprint(task)\ntask = \"Deliver\"\nprint(task)\n",
+      "stdin": "",
+      "expectedStdout": "Pack\nDeliver\n",
+      "expectedExit": 0,
+      "error": null
+    },
+    {
+      "id": "same-display-7",
+      "source": "amount = 7\nprint(amount)\nprint(type(amount))\namount = \"7\"\nprint(amount)\nprint(type(amount))\n",
+      "stdin": "",
+      "expectedStdout": "7\n<class 'int'>\n7\n<class 'str'>\n",
+      "expectedExit": 0,
+      "error": null
+    },
+    {
+      "id": "grouping",
+      "source": "print(12 / 3 * 2)\nprint(12 / (3 * 2))\nprint(10 - 3 + 2)\nprint(10 - (3 + 2))\n",
+      "stdin": "",
+      "expectedStdout": "8.0\n2.0\n9\n5\n",
+      "expectedExit": 0,
+      "error": null
+    },
+    {
+      "id": "equal-boundary",
+      "source": "count = 6\nlimit = 6\nprint(count < limit)\nprint(count <= limit)\n",
+      "stdin": "",
+      "expectedStdout": "False\nTrue\n",
+      "expectedExit": 0,
+      "error": null
+    },
+    {
+      "id": "input-str-4",
+      "source": "count_text = input(\"Count: \")\nprint(count_text)\nprint(type(count_text))\n",
+      "stdin": "4\n",
+      "expectedStdout": "Count: 4\n<class 'str'>\n",
+      "expectedExit": 0,
+      "error": null
+    },
+    {
+      "id": "input-str-7",
+      "source": "count_text = input(\"Count: \")\nprint(count_text)\nprint(type(count_text))\n",
+      "stdin": "7\n",
+      "expectedStdout": "Count: 7\n<class 'str'>\n",
+      "expectedExit": 0,
+      "error": null
+    },
+    {
+      "id": "input-convert-7",
+      "source": "count_text = input(\"Count: \")\ncount = int(count_text)\nprint(type(count))\nprint(count * 3)\n",
+      "stdin": "7\n",
+      "expectedStdout": "Count: <class 'int'>\n21\n",
+      "expectedExit": 0,
+      "error": null
+    },
+    {
+      "id": "bad-int-four",
+      "source": "count_text = input(\"Count: \")\ncount = int(count_text)\nprint(count)\n",
+      "stdin": "four\n",
+      "expectedStdout": "Count: ",
+      "expectedExit": 1,
+      "error": "ValueError"
+    },
+    {
+      "id": "bad-int-4.5",
+      "source": "count_text = input(\"Count: \")\ncount = int(count_text)\nprint(count)\n",
+      "stdin": "4.5\n",
+      "expectedStdout": "Count: ",
+      "expectedExit": 1,
+      "error": "ValueError"
+    },
+    {
+      "id": "recover-new-process",
+      "source": "count_text = input(\"Count: \")\ncount = int(count_text)\nprint(count)\n",
+      "stdin": "7\n",
+      "expectedStdout": "Count: 7\n",
+      "expectedExit": 0,
+      "error": null
+    },
+    {
+      "id": "literal-f-missing",
+      "source": "total_mass = 6.0\nprint(\"Total kg: {total_mass}\")\n",
+      "stdin": "",
+      "expectedStdout": "Total kg: {total_mass}\n",
+      "expectedExit": 0,
+      "error": null
+    },
+    {
+      "id": "literal-f-restored",
+      "source": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")\n",
+      "stdin": "",
+      "expectedStdout": "Total kg: 6.0\n",
+      "expectedExit": 0,
+      "error": null
+    }
+  ],
+  "additionalPredictions": [
+    "同一cwd的alpha/run.py成功，run.py缺失失败；父进程cwd不被子脚本改动",
+    "两个无pip新venv的版本相同，但executable/prefix不同；显式路径无需激活",
+    "未执行的新编辑文本不改变磁盘脚本；本实验不模拟VS Code自动保存",
+    "Notebook文本/内核状态用未改代码的P5 NOTEBOOK_RESULTS复核，不称本轮新GUI试学"
+  ]
+}

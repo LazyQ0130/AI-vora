@@ -1,0 +1,888 @@
+{
+  "baseline": "cb3927fa0be59a8108a30cf183361aa1f7c8a318",
+  "version": 2,
+  "sourceCommit": null,
+  "sourceCommitBinding": "Filled only after a real complete course commit exists; object and file SHA values already pin these exact drafts.",
+  "lessons": [
+    {
+      "id": "PY101-C01-L01",
+      "path": "src/content/lessons/py101/first-run.ts",
+      "contentVersion": 2,
+      "lessonSha256": "7654b50d1ab4f02a38c0e335685c26ff8d51f5eb6bb333ba3fcdfee4a32496bd",
+      "publicationSha256": "475215ae76648e5c6b013c1c7cc1386f88a990620fd7831955f148fb0331ebfc",
+      "sourceSha256": "6b83ff16939ccbbc33d629fbd864abc8e4e3f9b0e2f00d2c8b82ab2ad127c14e",
+      "beforeP": {
+        "count": 30,
+        "over100": 24,
+        "median": 119,
+        "max": 238,
+        "total": 3996,
+        "bands": {
+          "upTo60": 1,
+          "from61to100": 5,
+          "from101to160": 16,
+          "above160": 8
+        }
+      },
+      "afterP": {
+        "count": 39,
+        "over100": 7,
+        "median": 77,
+        "max": 122,
+        "total": 3029,
+        "bands": {
+          "upTo60": 11,
+          "from61to100": 21,
+          "from101to160": 7,
+          "above160": 0
+        }
+      },
+      "paragraphPlusCallout": {
+        "count": 44,
+        "over100": 7,
+        "median": 75.5,
+        "max": 122,
+        "total": 3371,
+        "bands": {
+          "upTo60": 12,
+          "from61to100": 25,
+          "from101to160": 7,
+          "above160": 0
+        }
+      },
+      "sections": 9,
+      "exerciseIds": [
+        "own-message",
+        "find-script"
+      ],
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C01-L01",
+        "contentVersion": 2,
+        "sectionIds": [
+          "first-output",
+          "local-python",
+          "print-text",
+          "save-script",
+          "run-script",
+          "change-message",
+          "locate-errors",
+          "practice",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "id": "PY101-C01-L02",
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "contentVersion": 2,
+      "lessonSha256": "ec3568890789ab981e9f50732b40f9c020c948a76c6db40e8101ef3f365b71c4",
+      "publicationSha256": "b0dd2a74cef5da2d859a673427efcc8b30a7721d497d19556c53a9987cdecc99",
+      "sourceSha256": "568952e0cd41ff756dcfc7cbb7a41e62007858ff91f2b5e2e6e9d7b7f12a4d2f",
+      "beforeP": {
+        "count": 28,
+        "over100": 16,
+        "median": 108.5,
+        "max": 171,
+        "total": 2851,
+        "bands": {
+          "upTo60": 4,
+          "from61to100": 8,
+          "from101to160": 15,
+          "above160": 1
+        }
+      },
+      "afterP": {
+        "count": 33,
+        "over100": 10,
+        "median": 75,
+        "max": 129,
+        "total": 2632,
+        "bands": {
+          "upTo60": 9,
+          "from61to100": 14,
+          "from101to160": 10,
+          "above160": 0
+        }
+      },
+      "paragraphPlusCallout": {
+        "count": 34,
+        "over100": 10,
+        "median": 76.5,
+        "max": 129,
+        "total": 2712,
+        "bands": {
+          "upTo60": 9,
+          "from61to100": 15,
+          "from101to160": 10,
+          "above160": 0
+        }
+      },
+      "sections": 9,
+      "exerciseIds": [
+        "trace-target",
+        "same-target-two-starts"
+      ],
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C01-L02",
+        "contentVersion": 2,
+        "sectionIds": [
+          "one-file",
+          "relative-route",
+          "same-name",
+          "absolute-target",
+          "space-argument",
+          "script-and-cwd",
+          "check-path",
+          "practice",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "id": "PY101-C01-L03",
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "contentVersion": 2,
+      "lessonSha256": "8989c2aa349cc2ebbfc3ab6cfb9aec29b0c6e5d92b2d88fa7d9dbc467b415380",
+      "publicationSha256": "57848394acbd9ca16250b6faae3d229ac2d13b80f60eaa39cb7a68e2760c05a6",
+      "sourceSha256": "6e4d6198436216836db319349b16e2b391474d0b0794d5836663e519fb4aaf3b",
+      "beforeP": {
+        "count": 25,
+        "over100": 20,
+        "median": 125,
+        "max": 211,
+        "total": 3364,
+        "bands": {
+          "upTo60": 0,
+          "from61to100": 5,
+          "from101to160": 13,
+          "above160": 7
+        }
+      },
+      "afterP": {
+        "count": 33,
+        "over100": 10,
+        "median": 72,
+        "max": 126,
+        "total": 2680,
+        "bands": {
+          "upTo60": 7,
+          "from61to100": 16,
+          "from101to160": 10,
+          "above160": 0
+        }
+      },
+      "paragraphPlusCallout": {
+        "count": 34,
+        "over100": 10,
+        "median": 71.5,
+        "max": 126,
+        "total": 2726,
+        "bands": {
+          "upTo60": 8,
+          "from61to100": 16,
+          "from101to160": 10,
+          "above160": 0
+        }
+      },
+      "sections": 8,
+      "exerciseIds": [
+        "reliable-edit",
+        "recover-target"
+      ],
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C01-L03",
+        "contentVersion": 2,
+        "sectionIds": [
+          "four-roles",
+          "open-folder",
+          "save-rerun",
+          "integrated-terminal",
+          "select-interpreter",
+          "three-mismatches",
+          "practice",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "id": "PY101-C01-L04",
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "contentVersion": 2,
+      "lessonSha256": "b7a6341505af0fd4a0172a5cc3b5056b3d2eb7852423a209544f156c8a3f7b44",
+      "publicationSha256": "d5956b28eb256abc2976189d93f8f5a2ef10a7ec0c40e984ce96698c6c23649f",
+      "sourceSha256": "62748640e051cf044633340233f36afbdbcb47f2f754384f396e86c447e1975f",
+      "beforeP": {
+        "count": 29,
+        "over100": 22,
+        "median": 117,
+        "max": 202,
+        "total": 3592,
+        "bands": {
+          "upTo60": 0,
+          "from61to100": 7,
+          "from101to160": 18,
+          "above160": 4
+        }
+      },
+      "afterP": {
+        "count": 35,
+        "over100": 11,
+        "median": 85,
+        "max": 126,
+        "total": 3041,
+        "bands": {
+          "upTo60": 5,
+          "from61to100": 19,
+          "from101to160": 11,
+          "above160": 0
+        }
+      },
+      "paragraphPlusCallout": {
+        "count": 37,
+        "over100": 11,
+        "median": 84,
+        "max": 126,
+        "total": 3161,
+        "bands": {
+          "upTo60": 7,
+          "from61to100": 19,
+          "from101to160": 11,
+          "above160": 0
+        }
+      },
+      "sections": 10,
+      "exerciseIds": [
+        "create-project-envs",
+        "repair-wrong-env"
+      ],
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C01-L04",
+        "contentVersion": 2,
+        "sectionIds": [
+          "two-projects",
+          "create-envs",
+          "direct-run",
+          "observe-env",
+          "activate-env",
+          "editor-env",
+          "recover-env",
+          "keep-source",
+          "practice",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "id": "PY101-C01-L05",
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "contentVersion": 2,
+      "lessonSha256": "05886e06f842c3de2436d68325b56c4f341a80061cc6841dec72fbd61215dcff",
+      "publicationSha256": "f1f6e840fca350e9d7c74b229f88c04c4053b52784c3019bd925164c51c3572d",
+      "sourceSha256": "a7cf55f3b24307c8714e4138c34d7c65e425b491b5c54bdf07361dd006111ee3",
+      "beforeP": {
+        "count": 34,
+        "over100": 24,
+        "median": 112.5,
+        "max": 263,
+        "total": 4100,
+        "bands": {
+          "upTo60": 1,
+          "from61to100": 9,
+          "from101to160": 19,
+          "above160": 5
+        }
+      },
+      "afterP": {
+        "count": 41,
+        "over100": 16,
+        "median": 89,
+        "max": 130,
+        "total": 3550,
+        "bands": {
+          "upTo60": 9,
+          "from61to100": 16,
+          "from101to160": 16,
+          "above160": 0
+        }
+      },
+      "paragraphPlusCallout": {
+        "count": 43,
+        "over100": 16,
+        "median": 89,
+        "max": 130,
+        "total": 3711,
+        "bands": {
+          "upTo60": 9,
+          "from61to100": 18,
+          "from101to160": 16,
+          "above160": 0
+        }
+      },
+      "sections": 10,
+      "exerciseIds": [
+        "create-own-notebook",
+        "recover-cell-order"
+      ],
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C01-L05",
+        "contentVersion": 2,
+        "sectionIds": [
+          "why-notebook",
+          "local-start",
+          "first-cells",
+          "kernel-check",
+          "stale-state",
+          "restart-order",
+          "clean-run",
+          "save-stop",
+          "practice",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "id": "PY101-C01-L06",
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "contentVersion": 2,
+      "lessonSha256": "8807b1d965b94ba8ffaed9181ce6c0842862ada3db205c01e432ec3911a6d934",
+      "publicationSha256": "a21fdfbc59243a196a0f22adbd563d669ca13da1b46821819c0a64dbd1f53e0a",
+      "sourceSha256": "19ea521b5b388ae85904796de6950fcfc0d83779ba1ea67c8c46f4ad0bd29e58",
+      "beforeP": {
+        "count": 25,
+        "over100": 17,
+        "median": 123,
+        "max": 187,
+        "total": 3064,
+        "bands": {
+          "upTo60": 0,
+          "from61to100": 8,
+          "from101to160": 14,
+          "above160": 3
+        }
+      },
+      "afterP": {
+        "count": 29,
+        "over100": 7,
+        "median": 78,
+        "max": 142,
+        "total": 2469,
+        "bands": {
+          "upTo60": 6,
+          "from61to100": 16,
+          "from101to160": 7,
+          "above160": 0
+        }
+      },
+      "paragraphPlusCallout": {
+        "count": 29,
+        "over100": 7,
+        "median": 78,
+        "max": 142,
+        "total": 2469,
+        "bands": {
+          "upTo60": 6,
+          "from61to100": 16,
+          "from101to160": 7,
+          "above160": 0
+        }
+      },
+      "sections": 8,
+      "exerciseIds": [
+        "reproduce-script-issue",
+        "recover-notebook-record"
+      ],
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C01-L06",
+        "contentVersion": 2,
+        "sectionIds": [
+          "unclear-request",
+          "prepare-case",
+          "read-evidence",
+          "repair-replay",
+          "minimal-record",
+          "script-handoff",
+          "notebook-handoff",
+          "chapter-handoff"
+        ]
+      }
+    },
+    {
+      "id": "PY101-C02-L01",
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "contentVersion": 2,
+      "lessonSha256": "8820957dbe36c02db5dc39fad869d3689e091293181de21eafe61fc539c9d325",
+      "publicationSha256": "1138459f1e1198748d6d0864592617e693fe5c2c40f996fc8c2a76141463bb31",
+      "sourceSha256": "c729ceadcb6d1a699fbb400d01e6c55ebf3d4c5d258860e0adeb7cf214b27b5f",
+      "beforeP": {
+        "count": 32,
+        "over100": 12,
+        "median": 98,
+        "max": 152,
+        "total": 3066,
+        "bands": {
+          "upTo60": 3,
+          "from61to100": 17,
+          "from101to160": 12,
+          "above160": 0
+        }
+      },
+      "afterP": {
+        "count": 34,
+        "over100": 5,
+        "median": 81,
+        "max": 144,
+        "total": 2686,
+        "bands": {
+          "upTo60": 10,
+          "from61to100": 19,
+          "from101to160": 5,
+          "above160": 0
+        }
+      },
+      "paragraphPlusCallout": {
+        "count": 34,
+        "over100": 5,
+        "median": 81,
+        "max": 144,
+        "total": 2686,
+        "bands": {
+          "upTo60": 10,
+          "from61to100": 19,
+          "from101to160": 5,
+          "above160": 0
+        }
+      },
+      "sections": 11,
+      "exerciseIds": [
+        "keep-and-update",
+        "repair-first-read"
+      ],
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L01",
+        "contentVersion": 2,
+        "sectionIds": [
+          "changing-task",
+          "name-and-value",
+          "choose-name",
+          "read-and-update",
+          "predict-run",
+          "change-one-value",
+          "literal-or-name",
+          "fresh-script",
+          "first-read-error",
+          "practice",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "id": "PY101-C02-L02",
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "contentVersion": 2,
+      "lessonSha256": "73949b3fc4a98a489161b2e348874d4a32574924ccadf2155955cb36d0d2e670",
+      "publicationSha256": "544f6c85a0d851cd3f40fefc6e6dd0f6ff90110c8633d3677cc4f07a28ed6d67",
+      "sourceSha256": "22898afbb918441138f2f07c4dfac734a1502564d04f2abd53d3567ca2fd4600",
+      "beforeP": {
+        "count": 25,
+        "over100": 13,
+        "median": 101,
+        "max": 189,
+        "total": 2495,
+        "bands": {
+          "upTo60": 1,
+          "from61to100": 11,
+          "from101to160": 12,
+          "above160": 1
+        }
+      },
+      "afterP": {
+        "count": 27,
+        "over100": 10,
+        "median": 87,
+        "max": 128,
+        "total": 2347,
+        "bands": {
+          "upTo60": 4,
+          "from61to100": 13,
+          "from101to160": 10,
+          "above160": 0
+        }
+      },
+      "paragraphPlusCallout": {
+        "count": 27,
+        "over100": 10,
+        "median": 87,
+        "max": 128,
+        "total": 2347,
+        "bands": {
+          "upTo60": 4,
+          "from61to100": 13,
+          "from101to160": 10,
+          "above160": 0
+        }
+      },
+      "sections": 8,
+      "exerciseIds": [
+        "write-four-values",
+        "same-display-different-type"
+      ],
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L02",
+        "contentVersion": 2,
+        "sectionIds": [
+          "same-display",
+          "add-measurement",
+          "ready-state",
+          "inspect-type",
+          "four-types",
+          "same-name-new-type",
+          "practice",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "id": "PY101-C02-L03",
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "contentVersion": 2,
+      "lessonSha256": "f80726b4912b5663c95a4b42e8acbbdc513f6d063677e873b1cc442403dbebe5",
+      "publicationSha256": "003fd5e75067d0584433083687d1d1f3f9c0f4973966f05b01841ec4d6988113",
+      "sourceSha256": "7c2413f65b81128248f9040e552f6a8209664f389cd744c521f2c458971dfa60",
+      "beforeP": {
+        "count": 34,
+        "over100": 12,
+        "median": 95,
+        "max": 146,
+        "total": 3339,
+        "bands": {
+          "upTo60": 0,
+          "from61to100": 22,
+          "from101to160": 12,
+          "above160": 0
+        }
+      },
+      "afterP": {
+        "count": 35,
+        "over100": 9,
+        "median": 92,
+        "max": 127,
+        "total": 3176,
+        "bands": {
+          "upTo60": 2,
+          "from61to100": 24,
+          "from101to160": 9,
+          "above160": 0
+        }
+      },
+      "paragraphPlusCallout": {
+        "count": 35,
+        "over100": 9,
+        "median": 92,
+        "max": 127,
+        "total": 3176,
+        "bands": {
+          "upTo60": 2,
+          "from61to100": 24,
+          "from101to160": 9,
+          "above160": 0
+        }
+      },
+      "sections": 10,
+      "exerciseIds": [
+        "calculate-and-revise",
+        "compare-grouping"
+      ],
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L03",
+        "contentVersion": 2,
+        "sectionIds": [
+          "quantities-and-units",
+          "expression-to-value",
+          "take-some-away",
+          "order-and-grouping",
+          "divide-and-meaning",
+          "same-level-order",
+          "put-it-together",
+          "zero-divisor",
+          "practice",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "id": "PY101-C02-L04",
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "contentVersion": 2,
+      "lessonSha256": "cf67ce18920c2961bc5310c73618aea6e2e992b727344ad3ab17fb7a39e623eb",
+      "publicationSha256": "4ae0dd3960af89ff033ad9b5d64989361e4b057d8c1af9c678d6a6f1394d2acc",
+      "sourceSha256": "ddff4a9589d29f8ab4cf7460aac459ee412371790fd635a03743862b8145ed71",
+      "beforeP": {
+        "count": 25,
+        "over100": 11,
+        "median": 95,
+        "max": 165,
+        "total": 2389,
+        "bands": {
+          "upTo60": 0,
+          "from61to100": 14,
+          "from101to160": 10,
+          "above160": 1
+        }
+      },
+      "afterP": {
+        "count": 26,
+        "over100": 7,
+        "median": 82.5,
+        "max": 127,
+        "total": 2155,
+        "bands": {
+          "upTo60": 3,
+          "from61to100": 16,
+          "from101to160": 7,
+          "above160": 0
+        }
+      },
+      "paragraphPlusCallout": {
+        "count": 26,
+        "over100": 7,
+        "median": 82.5,
+        "max": 127,
+        "total": 2155,
+        "bands": {
+          "upTo60": 3,
+          "from61to100": 16,
+          "from101to160": 7,
+          "above160": 0
+        }
+      },
+      "sections": 9,
+      "exerciseIds": [
+        "compare-and-explain",
+        "test-boundary-values"
+      ],
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L04",
+        "contentVersion": 2,
+        "sectionIds": [
+          "most-six",
+          "compare-limit",
+          "keep-result",
+          "equal-or-different",
+          "above-limit",
+          "main-example",
+          "boundary-runs",
+          "practice",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "id": "PY101-C02-L05",
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "contentVersion": 2,
+      "lessonSha256": "2b9714cf6ee5aa77df7e98cc96a74012b2021fe894164fe256d3c6b247f15456",
+      "publicationSha256": "3427a40407bebca0abc55367fc9673544dd4c9a36e5b7752a114fc64c6ed0a0e",
+      "sourceSha256": "94eb712ce296f484ba4f58df12d68662a2cde616d305e245353e16c0495b7d40",
+      "beforeP": {
+        "count": 34,
+        "over100": 20,
+        "median": 104.5,
+        "max": 155,
+        "total": 3550,
+        "bands": {
+          "upTo60": 1,
+          "from61to100": 13,
+          "from101to160": 20,
+          "above160": 0
+        }
+      },
+      "afterP": {
+        "count": 37,
+        "over100": 13,
+        "median": 91,
+        "max": 130,
+        "total": 3275,
+        "bands": {
+          "upTo60": 4,
+          "from61to100": 20,
+          "from101to160": 13,
+          "above160": 0
+        }
+      },
+      "paragraphPlusCallout": {
+        "count": 37,
+        "over100": 13,
+        "median": 91,
+        "max": 130,
+        "total": 3275,
+        "bands": {
+          "upTo60": 4,
+          "from61to100": 20,
+          "from101to160": 13,
+          "above160": 0
+        }
+      },
+      "sections": 9,
+      "exerciseIds": [
+        "interactive-label-and-count",
+        "measure-and-recheck"
+      ],
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L05",
+        "contentVersion": 2,
+        "sectionIds": [
+          "first-input",
+          "raw-count",
+          "int-conversion",
+          "main-example",
+          "float-conversion",
+          "format-error",
+          "practice",
+          "reference-programs",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "id": "PY101-C02-L06",
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "contentVersion": 2,
+      "lessonSha256": "99fbc8c0768f04a16375c047f439b49ad3f16db53fc24a299e62cb96c370c526",
+      "publicationSha256": "fbb6532d6cb49558a9568f92f1255704f36933a699c630c175451e160a22ed8c",
+      "sourceSha256": "7fb21dd07941e9f7469c70f0d399fb670be03788afd6054242ead403219fd718",
+      "beforeP": {
+        "count": 29,
+        "over100": 14,
+        "median": 96,
+        "max": 210,
+        "total": 2953,
+        "bands": {
+          "upTo60": 1,
+          "from61to100": 14,
+          "from101to160": 13,
+          "above160": 1
+        }
+      },
+      "afterP": {
+        "count": 32,
+        "over100": 12,
+        "median": 90.5,
+        "max": 124,
+        "total": 2775,
+        "bands": {
+          "upTo60": 7,
+          "from61to100": 13,
+          "from101to160": 12,
+          "above160": 0
+        }
+      },
+      "paragraphPlusCallout": {
+        "count": 32,
+        "over100": 12,
+        "median": 90.5,
+        "max": 124,
+        "total": 2775,
+        "bands": {
+          "upTo60": 7,
+          "from61to100": 13,
+          "from101to160": 12,
+          "above160": 0
+        }
+      },
+      "sections": 10,
+      "exerciseIds": [
+        "write-clear-summary",
+        "verify-summary-boundary"
+      ],
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L06",
+        "contentVersion": 2,
+        "sectionIds": [
+          "bare-results",
+          "first-format",
+          "labels-and-units",
+          "receive-values",
+          "calculate-check",
+          "main-example",
+          "boundary-runs",
+          "practice",
+          "reference-programs",
+          "chapter-end"
+        ]
+      }
+    }
+  ],
+  "teacherReviewConducted": false,
+  "chineseEditorReviewConducted": false,
+  "studentPilotConducted": false,
+  "macOSRuntimeVerifiedThisRound": false,
+  "supportingFiles": [
+    {
+      "path": "src/content/publication-manifest.ts",
+      "sha256": "e27a4ef4966c02ff6e0f2f2dcdff3420b9fd3711a78b7dfa2767e9b3cb139326",
+      "lfSha256": "e27a4ef4966c02ff6e0f2f2dcdff3420b9fd3711a78b7dfa2767e9b3cb139326"
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "sha256": "8447d8a1f251a4a2a2515c1ccc29e9a861fd7ee732867811f4570dcd83b8e985",
+      "lfSha256": "a726d52af8e64396f2a75ea3aba0a890b07f8d1b930fe1da53b88aeaaee57f52"
+    },
+    {
+      "path": "scripts/render-py101-runtime-diagrams.ts",
+      "sha256": "847131e4d9735a44f0d70ba7c4a1b53adc8d552f31b22d80b17719c3c1ef9ab5",
+      "lfSha256": "847131e4d9735a44f0d70ba7c4a1b53adc8d552f31b22d80b17719c3c1ef9ab5"
+    },
+    {
+      "path": "public/learning/py101/python-notebook-runtime-mobile.png",
+      "sha256": "7487a46291887b16263623315d70d4daeb05be1a27838814235eb0a23b450a2e",
+      "lfSha256": "5fdab68bb5903599994554ff4d4a4846c42935c86c5ed4e7bf4ca57361aebcfc"
+    },
+    {
+      "path": "public/learning/py101/python-notebook-runtime.png",
+      "sha256": "a6331ded3377b93dffb199adf93a23ceb2ebcc7a9cfe9f634d491be88ad59d5f",
+      "lfSha256": "17917d5aa0731da969b15785502bbef6045e852adc2e74aff8bdb26b05a3728c"
+    },
+    {
+      "path": "public/learning/py101/python-script-runtime-mobile.png",
+      "sha256": "bb90696b016aae5d34919d374d027b98450ecefd7baaf63ce4e3948e4fd48a0e",
+      "lfSha256": "616761a3038d315972be2cea3bc1a283a5dcdeb1f3dcb0e943f1e1ae5bccf095"
+    },
+    {
+      "path": "public/learning/py101/python-script-runtime.png",
+      "sha256": "94ded7d33939f6dfb434b2c083910ed5fd0fb198df559b68628ca7ca2287235d",
+      "lfSha256": "3ae9b759038be5455c2880b15d486ee4526655ff23966cdff3d4a6fdedd3f567"
+    },
+    {
+      "path": "docs/py101-p15/diagram-sources/python-notebook-runtime-mobile.svg",
+      "sha256": "ec1461362385d0a12d8007807a123ced779afdceed4027c226b00ef44b6e64eb",
+      "lfSha256": "ec1461362385d0a12d8007807a123ced779afdceed4027c226b00ef44b6e64eb"
+    },
+    {
+      "path": "docs/py101-p15/diagram-sources/python-notebook-runtime.svg",
+      "sha256": "fb3c250a91bf467012f78a9d48b9c6655d8660d1c8d0a8282786ea686032d826",
+      "lfSha256": "fb3c250a91bf467012f78a9d48b9c6655d8660d1c8d0a8282786ea686032d826"
+    },
+    {
+      "path": "docs/py101-p15/diagram-sources/python-script-runtime-mobile.svg",
+      "sha256": "f6ae71ed37dda62b447c89a64f0b73c8a844c9b1d332c0328635df38cb66ce04",
+      "lfSha256": "f6ae71ed37dda62b447c89a64f0b73c8a844c9b1d332c0328635df38cb66ce04"
+    },
+    {
+      "path": "docs/py101-p15/diagram-sources/python-script-runtime.svg",
+      "sha256": "fa8e436110ef59c6497e232037fdc35344e915f30be8c50b8a3f6ff603d72332",
+      "lfSha256": "fa8e436110ef59c6497e232037fdc35344e915f30be8c50b8a3f6ff603d72332"
+    }
+  ]
+}

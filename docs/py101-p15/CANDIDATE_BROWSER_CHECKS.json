@@ -1,0 +1,21 @@
+{
+  "graph": {
+    "client": 305,
+    "image": [
+      {
+        "complete": true,
+        "src": "http://127.0.0.1:3033/learning/py101/python-notebook-runtime-mobile.png",
+        "top": 318.26043701171875,
+        "width": 254
+      }
+    ],
+    "origin": "http://127.0.0.1:3033",
+    "scroll": 305,
+    "title": "在Jupyter中按顺序运行单元格",
+    "width": 320
+  },
+  "allSixExerciseDetailsExpanded": true,
+  "quizWrongShown": true,
+  "quizChangedClearsOldFeedback": true,
+  "quizCorrectShown": true
+}

@@ -1,0 +1,6 @@
+{
+  "route": "/downloads/first_run.py",
+  "method": "Browser downloadMedia on the observed article resource link; prior unscoped duplicate-link event attempt timed out and was not counted as success.",
+  "bytes": 52,
+  "equalsTrackedDownload": true
+}

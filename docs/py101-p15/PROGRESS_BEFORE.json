@@ -1,0 +1,10 @@
+{
+  "origin": "http://127.0.0.1:3032",
+  "initialLearningStorageWasEmpty": true,
+  "method": "created with r1 reader controls and navigation before replacing the build; no localStorage writes or clearing",
+  "records": {
+    "aivora:learning:v2:PY101:PY101-C02-L01:r1": "{\"version\":2,\"courseId\":\"PY101\",\"lessonId\":\"PY101-C02-L01\",\"contentVersion\":1,\"percent\":19,\"completed\":false,\"section\":\"read-and-update\",\"updatedAt\":1793423660764}",
+    "aivora:learning:v2:MA101:MA101-C02-L03:r2": "{\"version\":2,\"courseId\":\"MA101\",\"lessonId\":\"MA101-C02-L03\",\"contentVersion\":2,\"percent\":100,\"completed\":true,\"section\":\"summary\",\"updatedAt\":1793423630911}",
+    "aivora:learning:v2:PY101:PY101-C01-L04:r1": "{\"version\":2,\"courseId\":\"PY101\",\"lessonId\":\"PY101-C01-L04\",\"contentVersion\":1,\"percent\":100,\"completed\":true,\"section\":\"next-step\",\"updatedAt\":1793423604595}"
+  }
+}

@@ -2,9 +2,11 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
-import { pythonEnvironmentReproductionLesson as lesson } from "../src/content/lessons/py101/environment-reproduction";
-import { lessonRegistry, getLearningCourse, getAdjacentLessons, resolveLesson } from "../src/lib/course-engine";
-import { publicationManifest } from "../src/content/publication-manifest";
+import { pythonEnvironmentReproductionLesson as p15CurrentLesson } from "../src/content/lessons/py101/environment-reproduction";
+import {historicalLesson} from "./helpers/py101-p14-view";
+const lesson=historicalLesson(p15CurrentLesson);
+import { lessonRegistry, getLearningCourse, getAdjacentLessons, resolveLesson } from "./helpers/py101-p14-view";
+import { publicationManifest } from "./helpers/py101-p14-view";
 import { isReadable } from "../src/content/models";
 import { reproductionCode, reproductionCommands, reproductionBlockNames, reproductionNotebook } from "../src/content/resources/python-reproduction";
 import { notebookDownload } from "../src/content/resources/python-notebook";
@@ -15,7 +17,7 @@ import { lessonProgressScope } from "../src/lib/use-learning-progress";
 import { assertRegisteredInventory, assertCourseAvailability } from "./helpers/registered-content";
 const read = (name: string) => JSON.parse(readFileSync(`docs/py101-p5/${name}.json`, "utf8"));
 
-test("P5保护真实基线的全部旧文件/教材，1.5只改最后过渡段且保留r1范围", () => {
+test("[P0–P14历史契约] P5保护真实基线的全部旧文件/教材，1.5只改最后过渡段且保留r1范围", () => {
   const base = read("BASELINE"), sha = (v: unknown) => createHash("sha256").update(JSON.stringify(v)).digest("hex");
   const later = approvedPy101Additions.filter(id => id !== lesson.id && !(id in base.lessons));
   assert.deepEqual([...lessonRegistry.keys()].sort(), [...Object.keys(base.lessons), lesson.id, ...later].sort());
@@ -32,7 +34,7 @@ test("P5保护真实基线的全部旧文件/教材，1.5只改最后过渡段�
   assertRegisteredInventory(); assertCourseAvailability("PY101");
 });
 
-test("1.6注册r1和草稿门禁，首章六槽顺序与相邻导航，整课筹备且错误归属不可读", () => {
+test("[P0–P14历史契约] 1.6注册r1和草稿门禁，首章六槽顺序与相邻导航，整课筹备且错误归属不可读", () => {
   const entry = publicationManifest.find(p => p.lessonId === lesson.id)!;
   assert.deepEqual([entry.title, entry.order, entry.contentVersion], [lesson.title, 6, 1]);
   assert.equal(isReadable({ ...entry, status: "draft", access: "private", technicalEvidence: undefined }), false);
@@ -46,7 +48,7 @@ test("1.6注册r1和草稿门禁，首章六槽顺序与相邻导航，整课筹
   assert.deepEqual(course.chapters[1].lessons.filter(s => s.href).map(s => s.lessonId), publicationManifest.filter(p => p.chapterId === "PY101-C02" && isReadable(p)).sort((a,b) => a.order - b.order).map(p => p.lessonId));
 });
 
-test("三目标映射两项真实任务，提示分层且不泄露目标命令，保留答案与rubric", () => {
+test("[P0–P14历史契约] 三目标映射两项真实任务，提示分层且不泄露目标命令，保留答案与rubric", () => {
   const tasks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === "exercise");
   assert.deepEqual(tasks.map(t => t.id), ["reproduce-script-issue", "recover-notebook-record"]);
   assert.deepEqual(lesson.assessmentMap, [{ objective: 1, exerciseIds: [tasks[0].id] }, { objective: 2, exerciseIds: tasks.map(t => t.id) }, { objective: 3, exerciseIds: tasks.map(t => t.id) }]);
@@ -54,7 +56,7 @@ test("三目标映射两项真实任务，提示分层且不泄露目标命令�
   assert.equal(lesson.learningTime.basis, "editorial-estimate");
 });
 
-test("Python核心只复用已教源码，观察工具同源；主例仅修脚本参数", () => {
+test("[P0–P14历史契约] Python核心只复用已教源码，观察工具同源；主例仅修脚本参数", () => {
   const blocks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === "code");
   assert.deepEqual(blocks.filter(b => b.language === "python").map(b => [b.filename, b.code]).sort(), (Object.keys(reproductionCode) as (keyof typeof reproductionCode)[]).map(k => [reproductionBlockNames[k], reproductionCode[k]]).sort());
   assert.equal(reproductionCode.environmentProbe, environmentProbe);
@@ -62,7 +64,7 @@ test("Python核心只复用已教源码，观察工具同源；主例仅修脚�
   for (const platform of ["windows", "mac"] as const) assert.equal(reproductionCommands.goodPath[platform].replace(platform === "windows" ? ".\\scripts\\notice.py" : "scripts/notice.py", platform === "windows" ? ".\\notice.py" : "notice.py"), reproductionCommands.badPath[platform]);
 });
 
-test("P5下载与单元格同源且无运行状态/机器路径，旧下载由基线保护", () => {
+test("[P0–P14历史契约] P5下载与单元格同源且无运行状态/机器路径，旧下载由基线保护", () => {
   const actual = JSON.parse(readFileSync("public/downloads/review-note.ipynb", "utf8"));
   assert.deepEqual(actual, notebookDownload(reproductionNotebook)); assert.equal(actual.nbformat, 4); assert.equal(actual.nbformat_minor, 5);
   for (const cell of actual.cells) if (cell.cell_type === "code") { assert.equal(cell.execution_count, null); assert.deepEqual(cell.outputs, []); }
@@ -70,7 +72,7 @@ test("P5下载与单元格同源且无运行状态/机器路径，旧下载由�
   assert.ok(lesson.resources.some(r => r.href === "/downloads/review-note.ipynb"));
 });
 
-test("真实Shell和Jupyter证据包含已知故障、恢复、新会话、同源代码与安全结束", () => {
+test("[P0–P14历史契约] 真实Shell和Jupyter证据包含已知故障、恢复、新会话、同源代码与安全结束", () => {
   const cli = read("CLI_RESULTS"), kernel = read("NOTEBOOK_RESULTS");
   assert.equal(cli.allAssertionsPassed, true); assert.equal(new Set(cli.rows.map((r: {shellPid: number}) => r.shellPid)).size, cli.rows.length);
   for (const session of ["initial", "new-shell-replay"]) {
@@ -88,7 +90,7 @@ test("真实Shell和Jupyter证据包含已知故障、恢复、新会话、同�
   assert.doesNotMatch(JSON.stringify([cli,kernel]), /C:\\\\Users\\\\QYF|token=|aivora-p5-[a-f0-9]/);
 });
 
-test("1.6新r1进度重载且不写旧五课、第五章修订与其他课程记录", () => {
+test("[P0–P14历史契约] 1.6新r1进度重载且不写旧五课、第五章修订与其他课程记录", () => {
   const memory = new Map<string,string>(), storage = { getItem: (k: string) => memory.get(k) ?? null, setItem: (k: string,v: string) => {memory.set(k,v);} };
   const store = createProgressStore(() => storage);
   for (const id of ["PY101-C01-L01", "PY101-C01-L02", "PY101-C01-L03", "PY101-C01-L04", "PY101-C01-L05", "PY101-C05-L01", "ML201-C04-L01"]) { const scope = lessonProgressScope(lessonRegistry.get(id)!); store.save(scope,100,scope.sectionIds[0],true); if (scope.contentVersion > 1) store.save({...scope,contentVersion:1},100,scope.sectionIds[0],true); }

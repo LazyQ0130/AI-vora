@@ -1,0 +1,4247 @@
+[
+  {
+    "id": "PY101-C01-L01",
+    "articleSections": [
+      "first-output",
+      "local-python",
+      "print-text",
+      "save-script",
+      "run-script",
+      "change-message",
+      "locate-errors",
+      "practice",
+      "exercise-own-message",
+      "exercise-find-script",
+      "next-step"
+    ],
+    "bodyHasPublicationText": false,
+    "client": 1425,
+    "exercises": 2,
+    "paragraphFont": "16px",
+    "scroll": 1425,
+    "title": "从零运行第一个Python程序",
+    "width": 1440,
+    "expanded": true,
+    "quiz": {
+      "wrongFeedback": "radio \"A 终端负责执行Python语句；.py文件只是显示问候\"\n      - generic: A\n      - generic: 终端负责执行Python语句；.py文件只是显示问候\n      - radio \"B first_run.py保存指令；python启动解释器；问候是执行结果\"\n      - generic: B\n      - generic: first_run.py保存指令；python启动解释器；问候是执行结果\n      - radio \"C python负责保存编辑文字；终端里看到问候就说明文件已保存\" [checked]\n      - generic: C\n      - generic: python负责保存编辑文字；终端里看到问候就说明文件已保存\n    - button \"检查答案\" [active]:\n      - text: 检查答案\n    - status:\n      - strong: 再想一想\n      - paragraph: 磁盘文件由编辑器保存。改一个标记，保存再重跑；问候本身不能证明新修改已存盘。\n      - paragraph: 参考答案：B。三种角色对应正确；开放题还要亲自修改文件并实际运行。\n    - heading \"把两条指令保存成文件\" [level=2]\n    - paragraph: 交互窗口适合立即试一行；要反复运行自己的几条指令，可以保存成脚本文件。脚本是存有程序指令的文本文件，这里用 .py 结尾的文件名。先在你能写入、容易找到的位置创建一个新文件夹 aivora-python，例如自己的「文档」中。记下它的位置。\n    - paragraph: Windows打开记事本，把下方两行写进新文档。选择「文件 → 另存为」，进入刚建的aivora-python文件夹。\n    - paragraph: 文件名填first_run.py，类型选「所有文件」，编码选UTF-8后保存。UTF-8可保存中文；再用文件属性核对完整名称没有多出.txt。\n    - paragraph: macOS打开Python安装附带的IDLE，选择File → New File，向新的编辑窗口写入下方两行。再选File → Save，存到aivora-python，命名first_run.py。\n    - complementary:\n      - strong: 找不到IDLE时\n      - paragraph: 可在已验证的终端用python3 -m idlelib打开随Python提供的编辑工具。此命令只作启动工具使用；仍打不开时请教学支持检查安装组件。\n    - text: Python\n    - generic: first_run.py\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"first_run.py 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: print(\"Hello, Aivora!\")\n      - generic: \"2\"\n      - generic: \"print(\\\"File: first_run.py\\\")\"\n    - paragraph: 代码框的复制按钮只复制两行源码。不要把文件名、行号、>>>、命令或预期输出写进文件。保存后的文件会留在电脑上；网页练习框中的输入只是临时自查，刷新后可能丢失。\n    - text: 把练习带到自己的环境\n    - generic: 受支持的 Python 3.x · 无第三方依赖 · 本地终端运行（语法兼容3.10+）\n    - link \"下载Python 源码（Python）\":\n      - /url: /downloads/first_run.py\n      - text: Python 源码\n    - paragraph: 下载与代码框是同一份起始代码，可移入练习文件夹核对文件名。接下来要在自己的.py里修改文字；Notebook文档的操作放到1.5。\n    - heading \"在文件所在的位置执行\" [level=2]\n    - paragraph: 回到系统终端，先找到刚保存文件的位置。当前目录是终端此刻查找文件的起点，保存文件并不会自动改变它。\n    - paragraph: Windows在资源管理器打开aivora-python，复制地址栏完整路径。用cd加空格和一对英文引号，将实际路径放进引号；下方只是路径形式示例。\n    - text: text\n    - generic: Windows · PowerShell示例（逐行执行）\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"Windows · PowerShell示例（逐行执行） 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: cd \"C:\\Users\\你的用户名\\Documents\\aivora-python\"\n      - generic: \"2\"\n      - generic: pwd\n      - generic: \"3\"\n      - generic: dir\n    - paragraph: pwd显示当前目录，dir列出文件。列表中找到first_run.py后，执行下一条命令；PS C:\\…>等终端前缀不用输入。看到>>>时，先用quit()回到系统终端。\n    - text: text\n    - generic: Windows · PowerShell\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"Windows · PowerShell 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: python first_run.py\n    -",
+      "changedFeedback": "radio \"A 终端负责执行Python语句；.py文件只是显示问候\"\n      - generic: A\n      - generic: 终端负责执行Python语句；.py文件只是显示问候\n      - radio \"B first_run.py保存指令；python启动解释器；问候是执行结果\" [checked] [active]\n      - generic: B\n      - generic: first_run.py保存指令；python启动解释器；问候是执行结果\n      - radio \"C python负责保存编辑文字；终端里看到问候就说明文件已保存\"\n      - generic: C\n      - generic: python负责保存编辑文字；终端里看到问候就说明文件已保存\n    - button \"检查答案\":\n      - text: 检查答案\n    - heading \"把两条指令保存成文件\" [level=2]\n    - paragraph: 交互窗口适合立即试一行；要反复运行自己的几条指令，可以保存成脚本文件。脚本是存有程序指令的文本文件，这里用 .py 结尾的文件名。先在你能写入、容易找到的位置创建一个新文件夹 aivora-python，例如自己的「文档」中。记下它的位置。\n    - paragraph: Windows打开记事本，把下方两行写进新文档。选择「文件 → 另存为」，进入刚建的aivora-python文件夹。\n    - paragraph: 文件名填first_run.py，类型选「所有文件」，编码选UTF-8后保存。UTF-8可保存中文；再用文件属性核对完整名称没有多出.txt。\n    - paragraph: macOS打开Python安装附带的IDLE，选择File → New File，向新的编辑窗口写入下方两行。再选File → Save，存到aivora-python，命名first_run.py。\n    - complementary:\n      - strong: 找不到IDLE时\n      - paragraph: 可在已验证的终端用python3 -m idlelib打开随Python提供的编辑工具。此命令只作启动工具使用；仍打不开时请教学支持检查安装组件。\n    - text: Python\n    - generic: first_run.py\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"first_run.py 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: print(\"Hello, Aivora!\")\n      - generic: \"2\"\n      - generic: \"print(\\\"File: first_run.py\\\")\"\n    - paragraph: 代码框的复制按钮只复制两行源码。不要把文件名、行号、>>>、命令或预期输出写进文件。保存后的文件会留在电脑上；网页练习框中的输入只是临时自查，刷新后可能丢失。\n    - text: 把练习带到自己的环境\n    - generic: 受支持的 Python 3.x · 无第三方依赖 · 本地终端运行（语法兼容3.10+）\n    - link \"下载Python 源码（Python）\":\n      - /url: /downloads/first_run.py\n      - text: Python 源码\n    - paragraph: 下载与代码框是同一份起始代码，可移入练习文件夹核对文件名。接下来要在自己的.py里修改文",
+      "rightFeedback": "radio \"A 终端负责执行Python语句；.py文件只是显示问候\"\n      - generic: A\n      - generic: 终端负责执行Python语句；.py文件只是显示问候\n      - radio \"B first_run.py保存指令；python启动解释器；问候是执行结果\" [checked]\n      - generic: B\n      - generic: first_run.py保存指令；python启动解释器；问候是执行结果\n      - radio \"C python负责保存编辑文字；终端里看到问候就说明文件已保存\"\n      - generic: C\n      - generic: python负责保存编辑文字；终端里看到问候就说明文件已保存\n    - button \"检查答案\" [active]:\n      - text: 检查答案\n    - status:\n      - strong: 理解正确\n      - paragraph: 三种角色对应正确；开放题还要亲自修改文件并实际运行。\n    - heading \"把两条指令保存成文件\" [level=2]\n    - paragraph: 交互窗口适合立即试一行；要反复运行自己的几条指令，可以保存成脚本文件。脚本是存有程序指令的文本文件，这里用 .py 结尾的文件名。先在你能写入、容易找到的位置创建一个新文件夹 aivora-python，例如自己的「文档」中。记下它的位置。\n    - paragraph: Windows打开记事本，把下方两行写进新文档。选择「文件 → 另存为」，进入刚建的aivora-python文件夹。\n    - paragraph: 文件名填first_run.py，类型选「所有文件」，编码选UTF-8后保存。UTF-8可保存中文；再用文件属性核对完整名称没有多出.txt。\n    - paragraph: macOS打开Python安装附带的IDLE，选择File → New File，向新的编辑窗口写入下方两行。再选File → Save，存到aivora-python，命名first_run.py。\n    - complementary:\n      - strong: 找不到IDLE时\n      - paragraph: 可在已验证的终端用python3 -m idlelib打开随Python提供的编辑工具。此命令只作启动工具使用；仍打不开时请教学支持检查安装组件。\n    - text: Python\n    - generic: first_run.py\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"first_run.py 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: print(\"Hello, Aivora!\")\n      - generic: \"2\"\n      - generic: \"print(\\\"File: first_run.py\\\")\"\n    - paragraph: 代码框的复制按钮只复制两行源码。不要把文件名、行号、>>>、命令或预期输出写进文件。保存后的文件会留在电脑上；网页练习框中的输入只是临时自查，刷新后可能丢失。\n    - text: 把练习带到自己的环境\n    - generic: 受支持的 Python 3.x · 无第三方依赖 · 本地终端运行（语法兼容3.10+）\n    - link \"下载Python 源码（Python）\":\n      - /url: /downloads/first_run.py\n      - text: Python 源码\n    - paragraph: 下载与代码框是同一份起始代码，可移入练习文件夹核对文件名。接下来要在自己的.py里修改文字；Notebook文档的操作放到1.5。\n    - heading \"在文件所在的位置执行\" [level=2]\n    - paragraph: 回到系统终端，先找到刚保存文件的位置。当前目录是终端此刻查找文件的起点，保存文件并不会自动改变它。\n    - paragraph: Windows在资源管理器打开aivora-python，复制地址栏完整路径。用cd加空格和一对英文引号，将实际路径放进引号；下方只是路径形式示例。\n    - text: text\n    - generic: Windows · PowerShell示例（逐行执行）\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"Windows · PowerShell示例（逐行执行） 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: cd \"C:\\Users\\你的用户名\\Documents\\aivora-python\"\n      - generic: \"2\"\n      - generic: pwd\n      - generic: \"3\"\n      - generic: dir\n    - paragraph: pwd显示当前目录，dir列出文件。列表中找到first_run.py后，执行下一条命令；PS C:\\…>等终端前缀不用输入。看到>>>时，先用quit()回到系统终端。\n    - text: text\n    - generic: Windows · PowerShell\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"Windows · PowerShell 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: python first_run.py\n    - paragraph: macOS同样先 cd 到实际保存位置；下面用自己的文稿目录作示例，实际文件夹不同就替换整段路径。pwd显"
+    }
+  },
+  {
+    "id": "PY101-C01-L02",
+    "articleSections": [
+      "one-file",
+      "relative-route",
+      "same-name",
+      "absolute-target",
+      "space-argument",
+      "script-and-cwd",
+      "check-path",
+      "practice",
+      "exercise-trace-target",
+      "exercise-same-target-two-starts",
+      "next-step"
+    ],
+    "bodyHasPublicationText": false,
+    "client": 1425,
+    "exercises": 2,
+    "paragraphFont": "16px",
+    "scroll": 1425,
+    "title": "解释器怎样找到并执行脚本",
+    "width": 1440,
+    "expanded": true,
+    "quiz": {
+      "wrongFeedback": "radio \"A beta：运行文件没有自动改变父终端cwd\"\n      - generic: A\n      - generic: beta：运行文件没有自动改变父终端cwd\n      - radio \"B alpha：脚本放在那里，所以父终端跟着过去\" [checked]\n      - generic: B\n      - generic: alpha：脚本放在那里，所以父终端跟着过去\n      - radio \"C 脚本文件的完整路径：pwd显示刚执行的文件\"\n      - generic: C\n      - generic: 脚本文件的完整路径：pwd显示刚执行的文件\n    - button \"检查答案\" [active]:\n      - text: 检查答案\n    - status:\n      - strong: 再想一想\n      - paragraph: 混淆了脚本位置与父终端cwd；在beta用绝对路径执行，再pwd核对。\n      - paragraph: 参考答案：A。前后各执行一次pwd可验证仍在beta；cd才是本课改变终端位置的动作。\n    - heading \"先核对位置，再修命令\" [level=2]\n    - paragraph: 找不到文件或输出意外时，先pwd找起点，再dir/ls核对名字，最后沿脚本参数逐段定位并查看源码。下表把现象对应到最小修复动作。\n    - region \"路径问题的最小恢复动作\":\n      - table \"路径问题的最小恢复动作\":\n        - caption: 路径问题的最小恢复动作\n        - rowgroup:\n          - row \"现象 观察与判断 恢复后检验\":\n            - columnheader \"现象\"\n            - columnheader \"观察与判断\"\n            - columnheader \"恢复后检验\"\n        - rowgroup:\n          - row \"can’t open file / No such file 把报错中的目标与pwd、实际文件位置对照 修正相对路线或使用完整路径，重跑核对输出\":\n            - cell \"can’t open file / No such file\"\n            - cell \"把报错中的目标与pwd、实际文件位置对照\"\n            - cell \"修正相对路线或使用完整路径，重跑核对输出\"\n          - row \"程序成功结束，却打印另一份文字 可能运行了同名文件；查起点、命令目标和实际源码 改为想要的目标路径；核对内容和输出，不能只看文件名\":\n            - cell \"程序成功结束，却打印另一份文字\"\n            - cell \"可能运行了同名文件；查起点、命令目标和实际源码\"\n            - cell \"改为想要的目标路径；核对内容和输出，不能只看文件名\"\n          - row \"错误中只出现my，没有my scripts 查看含空格的脚本路径是否被分成多项 整段加英文引号，再确认正常输出\":\n            - cell \"错误中只出现my，没有my scripts\"\n            - cell \"查看含空格的脚本路径是否被分成多项\"\n            - cell \"整段加英文引号，再确认正常输出\"\n    - paragraph: 本节错误都是文件定位与传参问题。版本命令本身都不能运行时，回到1.1的环境段处理；如果出现SyntaxError，则先核对源码符号，而不是把所有报错都归为路径问题。故障恢复另预留5–15分钟，时间仍是编辑估计。\n    - heading \"换一个布局，自己决定怎样运行\" [level=2]\n    - paragraph: 以下是两道核心任务。先完成预测与操作，再按需要展开提示；页面输入只作临时思考，源码和真实运行记录保存在本地。\n    - text: text\n    - generic: 任务一目录（与正文不同）\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"任务一目录（与正文不同） 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: route-task/\n      - generic: \"2\"\n      - generic: ├── east/\n      - generic: \"3\"\n      - generic: │ └── check.py\n      - generic: \"4\"\n      - generic: └── west/\n      - generic: \"5\"\n      - generic: └── check.py\n    - text: Python\n    - generic: route-task/east/check.py\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"route-task/east/check.py 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: print(\"East E4\")\n    - text: Python\n    - generic: route-task/west/check.py\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"route-task/west/check.py 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: print(\"West W5\")\n    - region \"三条命令分别指向谁？\":\n      - generic: 实验练习 ",
+      "changedFeedback": "radio \"A beta：运行文件没有自动改变父终端cwd\" [checked] [active]\n      - generic: A\n      - generic: beta：运行文件没有自动改变父终端cwd\n      - radio \"B alpha：脚本放在那里，所以父终端跟着过去\"\n      - generic: B\n      - generic: alpha：脚本放在那里，所以父终端跟着过去\n      - radio \"C 脚本文件的完整路径：pwd显示刚执行的文件\"\n      - generic: C\n      - generic: 脚本文件的完整路径：pwd显示刚执行的文件\n    - button \"检查答案\":\n      - text: 检查答案\n    - heading \"先核对位置，再修命令\" [level=2]\n    - paragraph: 找不到文件或输出意外时，先pwd找起点，再dir/ls核对名字，最后沿脚本参数逐段定位并查看源码。下表把现象对应到最小修复动作。\n    - region \"路径问题的最小恢复动作\":\n      - table \"路径问题的最小恢复动作\":\n        - caption: 路径问题的最小恢复动作\n        - rowgroup:\n          - row \"现象 观察与判断 恢复后检验\":\n            - columnheader \"现象\"\n            - columnheader \"观察与判断\"\n            - columnheader \"恢复后检验\"\n        - rowgroup:\n          - row \"can’t open file / No such file 把报错中的目标与pwd、实际文件位置对照 修正相对路线或使用完整路径，重跑核对输出\":\n            - cell \"can’t open file / No such file\"\n            - cell \"把报错中的目标与pwd、实际文件位置对照\"\n            - cell \"修正相对路线或使用完整路径，重跑核对输出\"\n          - row \"程序成功结束，却打印另一份文字 可能运行了同名文件；查起点、命令目标和实际源码 改为想要的目标路径；核对内容和输出，不能只看文件名\":\n            - cell \"程序成功结束，却打印另一份文字\"\n            - cell \"可能运行了同名文件；查起点、命令目标和实际源码\"\n            - cell \"改为想要的目标路径；核对内容和输出，不能只看文件名\"\n          - row \"错误中只出现my，没有my scripts 查看含空格的脚本路径是否被分成多项 整段加英文引号，再确认正常输出\":\n            - cell \"错误中只出现my，没有my scripts\"\n            - cell \"查看含空格的脚本路径是否被分成多项\"\n            - cell \"整段加英文引号，再确认正常输出\"\n    - paragraph: 本节错误都是文件定位与传参问题。版本命令本身都不能运行时，回到1.1的环境段处理；如果出现SyntaxError，则先核对源码符号，而不是把所有报错都归为路径问题。故障恢复另预留5–15分钟，时间仍是编辑估计。\n    - heading \"换一个布局，自己决定怎样运行\" [level=2]\n    - paragraph: 以下是两道核心任务。先完成预测与操作，再按需要展开提示；页面输入只作临时思考，源码和真实运行记录保存在本地",
+      "rightFeedback": "radio \"A beta：运行文件没有自动改变父终端cwd\" [checked]\n      - generic: A\n      - generic: beta：运行文件没有自动改变父终端cwd\n      - radio \"B alpha：脚本放在那里，所以父终端跟着过去\"\n      - generic: B\n      - generic: alpha：脚本放在那里，所以父终端跟着过去\n      - radio \"C 脚本文件的完整路径：pwd显示刚执行的文件\"\n      - generic: C\n      - generic: 脚本文件的完整路径：pwd显示刚执行的文件\n    - button \"检查答案\" [active]:\n      - text: 检查答案\n    - status:\n      - strong: 理解正确\n      - paragraph: 前后各执行一次pwd可验证仍在beta；cd才是本课改变终端位置的动作。\n    - heading \"先核对位置，再修命令\" [level=2]\n    - paragraph: 找不到文件或输出意外时，先pwd找起点，再dir/ls核对名字，最后沿脚本参数逐段定位并查看源码。下表把现象对应到最小修复动作。\n    - region \"路径问题的最小恢复动作\":\n      - table \"路径问题的最小恢复动作\":\n        - caption: 路径问题的最小恢复动作\n        - rowgroup:\n          - row \"现象 观察与判断 恢复后检验\":\n            - columnheader \"现象\"\n            - columnheader \"观察与判断\"\n            - columnheader \"恢复后检验\"\n        - rowgroup:\n          - row \"can’t open file / No such file 把报错中的目标与pwd、实际文件位置对照 修正相对路线或使用完整路径，重跑核对输出\":\n            - cell \"can’t open file / No such file\"\n            - cell \"把报错中的目标与pwd、实际文件位置对照\"\n            - cell \"修正相对路线或使用完整路径，重跑核对输出\"\n          - row \"程序成功结束，却打印另一份文字 可能运行了同名文件；查起点、命令目标和实际源码 改为想要的目标路径；核对内容和输出，不能只看文件名\":\n            - cell \"程序成功结束，却打印另一份文字\"\n            - cell \"可能运行了同名文件；查起点、命令目标和实际源码\"\n            - cell \"改为想要的目标路径；核对内容和输出，不能只看文件名\"\n          - row \"错误中只出现my，没有my scripts 查看含空格的脚本路径是否被分成多项 整段加英文引号，再确认正常输出\":\n            - cell \"错误中只出现my，没有my scripts\"\n            - cell \"查看含空格的脚本路径是否被分成多项\"\n            - cell \"整段加英文引号，再确认正常输出\"\n    - paragraph: 本节错误都是文件定位与传参问题。版本命令本身都不能运行时，回到1.1的环境段处理；如果出现SyntaxError，则先核对源码符号，而不是把所有报错都归为路径问题。故障恢复另预留5–15分钟，时间仍是编辑估计。\n    - heading \"换一个布局，自己决定怎样运行\" [level=2]\n    - paragraph: 以下是两道核心任务。先完成预测与操作，再按需要展开提示；页面输入只作临时思考，源码和真实运行记录保存在本地。\n    - text: text\n    - generic: 任务一目录（与正文不同）\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"任务一目录（与正文不同） 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: route-task/\n      - generic: \"2\"\n      - generic: ├── east/\n      - generic: \"3\"\n      - generic: │ └── check.py\n      - generic: \"4\"\n      - generic: └── west/\n      - generic: \"5\"\n      - generic: └── check.py\n    - text: Python\n    - generic: route-task/east/check.py\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"route-task/east/check.py 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: print(\"East E4\")\n    - text: Python\n    - generic: route-task/west/check.py\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"route-task/west/check.py 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: print(\"West W5\")\n    - region \"三条命令分别指向谁？\":\n      - generic: 实验练习 · 自主核对\n      - heading \"三条命令分别指向谁？\" [level=3]\n      - paragrap"
+    }
+  },
+  {
+    "id": "PY101-C01-L03",
+    "articleSections": [
+      "four-roles",
+      "open-folder",
+      "save-rerun",
+      "integrated-terminal",
+      "select-interpreter",
+      "three-mismatches",
+      "practice",
+      "exercise-reliable-edit",
+      "exercise-recover-target",
+      "next-step"
+    ],
+    "bodyHasPublicationText": false,
+    "client": 1425,
+    "exercises": 2,
+    "paragraphFont": "16px",
+    "scroll": 1425,
+    "title": "用编辑器完成保存与重跑",
+    "width": 1440,
+    "expanded": true,
+    "quiz": {
+      "wrongFeedback": "radio \"A 保持未保存状态，反复在同一外部终端运行即可读到缓冲区\" [checked]\n      - generic: A\n      - generic: 保持未保存状态，反复在同一外部终端运行即可读到缓冲区\n      - radio \"B 换一个Python解释器，让它读取编辑器里未保存的文字\"\n      - generic: B\n      - generic: 换一个Python解释器，让它读取编辑器里未保存的文字\n      - radio \"C 保存同一路径文件，再用相同外部终端命令重跑比较\"\n      - generic: C\n      - generic: 保存同一路径文件，再用相同外部终端命令重跑比较\n    - button \"检查答案\" [active]:\n      - text: 检查答案\n    - status:\n      - strong: 再想一想\n      - paragraph: 独立外部终端启动脚本时读磁盘文件；重复命令不会替编辑器存盘。\n      - paragraph: 参考答案：C。只改变保存条件，比较前后标记；仍旧值时再核对完整路径。官方扩展有些入口会自动保存，不能混作这个实验。\n    - heading \"合上主例，交付两次可核验操作\" [level=2]\n    - text: Python\n    - generic: 练习一起始文件 · editor-lab/message.py\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"练习一起始文件 · editor-lab/message.py 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: \"print(\\\"Plan: read\\\")\"\n      - generic: \"2\"\n      - generic: \"print(\\\"Step: start\\\")\"\n    - region \"自己的三行任务卡\":\n      - generic: 代码练习 · 自主核对\n      - heading \"自己的三行任务卡\" [level=3]\n      - paragraph: 在editor-lab另建message.py，自选主题和标记，改两处文字并增一条print。口头预测三行，保存后在集成终端真正执行。交本人.py、真实输出及一条文件/命令记录；共用卡已有解释器身份时引用即可。保存标记、pwd与文件清单用于操作自查，有差异才附诊断。现场或一句话说明编辑器、源码、终端、解释器的作用。\n      - generic: 先记录你的思路或计算\n      - textbox \"先记录你的思路或计算\":\n        - /placeholder: 写下依据，再查看提示与解析…\n      - paragraph: 输入仅用于当前页面思考，不自动评分，也不改变阅读完成标记。\n      - generic \"提示 1\"\n      - paragraph: 找两对引号内要改的文字；新增输出对应哪种指令？标签、磁盘位置与终端各提供什么证据？\n      - generic \"提示 2\"\n      - paragraph: 依次核对所属文件夹、保存标记、pwd与清单，选择自己可用的解释器命令和目标参数。最后独立执行，核对行数、顺序、文字及自己的标记。\n      - generic \"参考解答与自查标准\"\n      - list:\n        - listitem: \"例如练习计划主题、P8标记，可用三条print依次输出Plan: practice P8、Step: save、Check: rerun。先口头预测三行再编辑。这只是样例，学生须自己选主题与标记。\"\n        - listitem: 资源管理器确认editor-lab/message.py，保存并确认标记消失。集成终端pwd确认editor-lab，dir或ls确认message.py；Windows运行python message.py（此前用py则保持py），macOS用python3 message.py。\n        - listitem: 保留真实三行结果，逐行对照预测；用共用卡核对实际解释器位置/版本。记录VS Code负责编辑管理、message.py存指令、终端接受命令并显示结果、解释器执行代码。\n        - listitem: 常见错因：修改网页、只跑选中行、未保存、命令写成main.py或只交抄来的输出。回到自己的文件与命令恢复。接受中文、自选文件名、单引号、绝对路径，前提是最终源码、命令、位置和结果对应。只有复制样例或阅读标记不通过。\n        - listitem: 交付按本题题干与rubric：源码可用一份加差异，运行记录用短表；相同命令、环境和版本引用会话卡，不重复誊写。\n      - heading \"检查自己的解答\" [level=4]\n      - list:\n        - listitem: 正确工作区内独立改两处并增一行，含自选标记，提交保存源码。\n        - listitem: 集成终端真实三行结果与文件和命令对应，核对事前口头预测。\n        - listitem: 能区分四种角色；保存/清单作为自查，解释器身份复用会话卡，异常才附额外诊断。\n    - region \"为什么输出一直没有变？\":\n      - generic: 实验练习 · 自主核对\n      - heading \"为什么输出一直没有变？\" [level=3]\n      - paragraph: 按正文准备已保存的根目录main.py与other/main.py，保持同一已验证解释器。编辑区打开根文件，终端在other执行相对main.py，真实复现Other folder C3。独立定位并改cwd或脚本参数，重跑原目标。交两份源码及短对照：故障/恢复cwd、命令、真实输出、目标原因。保存与解释器先自查，共用卡不重复抄；不能改p",
+      "changedFeedback": "radio \"A 保持未保存状态，反复在同一外部终端运行即可读到缓冲区\"\n      - generic: A\n      - generic: 保持未保存状态，反复在同一外部终端运行即可读到缓冲区\n      - radio \"B 换一个Python解释器，让它读取编辑器里未保存的文字\"\n      - generic: B\n      - generic: 换一个Python解释器，让它读取编辑器里未保存的文字\n      - radio \"C 保存同一路径文件，再用相同外部终端命令重跑比较\" [checked] [active]\n      - generic: C\n      - generic: 保存同一路径文件，再用相同外部终端命令重跑比较\n    - button \"检查答案\":\n      - text: 检查答案\n    - heading \"合上主例，交付两次可核验操作\" [level=2]\n    - text: Python\n    - generic: 练习一起始文件 · editor-lab/message.py\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"练习一起始文件 · editor-lab/message.py 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: \"print(\\\"Plan: read\\\")\"\n      - generic: \"2\"\n      - generic: \"print(\\\"Step: start\\\")\"\n    - region \"自己的三行任务卡\":\n      - generic: 代码练习 · 自主核对\n      - heading \"自己的三行任务卡\" [level=3]\n      - paragraph: 在editor-lab另建message.py，自选主题和标记，改两处文字并增一条print。口头预测三行，保存后在集成终端真正执行。交本人.py、真实输出及一条文件/命令记录；共用卡已有解释器身份时引用即可。保存标记、pwd与文件清单用于操作自查，有差异才附诊断。现场或一句话说明编辑器、源码、终端、解释器的作用。\n      - generic: 先记录你的思路或计算\n      - textbox \"先记录你的思路或计算\":\n        - /placeholder: 写下依据，再查看提示与解析…\n      - paragraph: 输入仅用于当前页面思考，不自动评分，也不改变阅读完成标记。\n      - generic \"提示 1\"\n      - paragraph: 找两对引号内要改的文字；新增输出对应哪种指令？标签、磁盘位置与终端各提供什么证据？\n      - generic \"提示 2\"\n      - paragraph: 依次核对所属文件夹、保存标记、pwd与清单，选择自己可用的解释器命令和目标参数。最后独立执行，核对行数、顺序、文字及自己的标记。\n      - generic \"参考解答与自查标准\"\n      - list:\n        - listitem: \"例如练习计划主题、P8标记，可用三条print依次输出Plan: practice P8、Step: save、Check: rerun。先口头预测三行再编辑。这只是样例，学生须自己选主题与标记。\"\n        - listitem: 资源管理器确认editor-lab/message.py，保存并确认标记消失。集成终端pwd确认editor-lab，dir或ls确认message.py；Windows运行python message.py（此",
+      "rightFeedback": "radio \"A 保持未保存状态，反复在同一外部终端运行即可读到缓冲区\"\n      - generic: A\n      - generic: 保持未保存状态，反复在同一外部终端运行即可读到缓冲区\n      - radio \"B 换一个Python解释器，让它读取编辑器里未保存的文字\"\n      - generic: B\n      - generic: 换一个Python解释器，让它读取编辑器里未保存的文字\n      - radio \"C 保存同一路径文件，再用相同外部终端命令重跑比较\" [checked]\n      - generic: C\n      - generic: 保存同一路径文件，再用相同外部终端命令重跑比较\n    - button \"检查答案\" [active]:\n      - text: 检查答案\n    - status:\n      - strong: 理解正确\n      - paragraph: 只改变保存条件，比较前后标记；仍旧值时再核对完整路径。官方扩展有些入口会自动保存，不能混作这个实验。\n    - heading \"合上主例，交付两次可核验操作\" [level=2]\n    - text: Python\n    - generic: 练习一起始文件 · editor-lab/message.py\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"练习一起始文件 · editor-lab/message.py 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: \"print(\\\"Plan: read\\\")\"\n      - generic: \"2\"\n      - generic: \"print(\\\"Step: start\\\")\"\n    - region \"自己的三行任务卡\":\n      - generic: 代码练习 · 自主核对\n      - heading \"自己的三行任务卡\" [level=3]\n      - paragraph: 在editor-lab另建message.py，自选主题和标记，改两处文字并增一条print。口头预测三行，保存后在集成终端真正执行。交本人.py、真实输出及一条文件/命令记录；共用卡已有解释器身份时引用即可。保存标记、pwd与文件清单用于操作自查，有差异才附诊断。现场或一句话说明编辑器、源码、终端、解释器的作用。\n      - generic: 先记录你的思路或计算\n      - textbox \"先记录你的思路或计算\":\n        - /placeholder: 写下依据，再查看提示与解析…\n      - paragraph: 输入仅用于当前页面思考，不自动评分，也不改变阅读完成标记。\n      - generic \"提示 1\"\n      - paragraph: 找两对引号内要改的文字；新增输出对应哪种指令？标签、磁盘位置与终端各提供什么证据？\n      - generic \"提示 2\"\n      - paragraph: 依次核对所属文件夹、保存标记、pwd与清单，选择自己可用的解释器命令和目标参数。最后独立执行，核对行数、顺序、文字及自己的标记。\n      - generic \"参考解答与自查标准\"\n      - list:\n        - listitem: \"例如练习计划主题、P8标记，可用三条print依次输出Plan: practice P8、Step: save、Check: rerun。先口头预测三行再编辑。这只是样例，学生须自己选主题与标记。\"\n        - listitem: 资源管理器确认editor-lab/message.py，保存并确认标记消失。集成终端pwd确认editor-lab，dir或ls确认message.py；Windows运行python message.py（此前用py则保持py），macOS用python3 message.py。\n        - listitem: 保留真实三行结果，逐行对照预测；用共用卡核对实际解释器位置/版本。记录VS Code负责编辑管理、message.py存指令、终端接受命令并显示结果、解释器执行代码。\n        - listitem: 常见错因：修改网页、只跑选中行、未保存、命令写成main.py或只交抄来的输出。回到自己的文件与命令恢复。接受中文、自选文件名、单引号、绝对路径，前提是最终源码、命令、位置和结果对应。只有复制样例或阅读标记不通过。\n        - listitem: 交付按本题题干与rubric：源码可用一份加差异，运行记录用短表；相同命令、环境和版本引用会话卡，不重复誊写。\n      - heading \"检查自己的解答\" [level=4]\n      - list:\n        - listitem: 正确工作区内独立改两处并增一行，含自选标记，提交保存源码。\n        - listitem: 集成终端真实三行结果与文件和命令对应，核对事前口头预测。\n        - listitem: 能区分四种角色；保存/清单作为自查，解释器身份复用会话卡，异常才附额外诊断。\n    - region \"为什么输出一直没有变？\":\n      - generic: 实验练习 · 自主核对\n      - heading \"为什么输出一直没有变？\" [level=3]\n      - paragraph: 按正文准备已保存的根目录main.py与other/main.py，保持同一已验证解释器。编辑区打开根文件，终端在other执行相对main.py，真实复现Other folder C3。独立定位并改cwd或脚本参数，重跑原目标。交两份源码及短对照：故障/恢复cwd、命令、真实输出、目标原因。保存与解释器先自查，共用卡不重复抄；不能改print迎合错误目标。\n      - generic: 先记录你的思路或计算\n      - textbox \""
+    }
+  },
+  {
+    "id": "PY101-C01-L04",
+    "articleSections": [
+      "two-projects",
+      "create-envs",
+      "direct-run",
+      "observe-env",
+      "activate-env",
+      "editor-env",
+      "recover-env",
+      "keep-source",
+      "practice",
+      "exercise-create-project-envs",
+      "exercise-repair-wrong-env",
+      "next-step"
+    ],
+    "bodyHasPublicationText": false,
+    "client": 1425,
+    "exercises": 2,
+    "paragraphFont": "16px",
+    "scroll": 1425,
+    "title": "为项目准备独立的虚拟环境",
+    "width": 1440,
+    "expanded": true,
+    "quiz": {
+      "wrongFeedback": "radio \"A 两个Version相同，已经足以证明环境相同\"\n      - generic: A\n      - generic: 两个Version相同，已经足以证明环境相同\n      - radio \"B 核对实际Interpreter和Environment是否属于目标项目A\"\n      - generic: B\n      - generic: 核对实际Interpreter和Environment是否属于目标项目A\n      - radio \"C 脚本输出Project A，足以证明启动的是A的Python\" [checked]\n      - generic: C\n      - generic: 脚本输出Project A，足以证明启动的是A的Python\n    - button \"检查答案\" [active]:\n      - text: 检查答案\n    - status:\n      - strong: 再想一想\n      - paragraph: 普通print由脚本决定，B的Python也可能成功显示Project A。用同次选择运行观察工具核对。\n      - paragraph: 参考答案：B。实际解释器与prefix对应目标环境，才支持本题要求；保留前后身份对照。\n    - heading \"保留源码，让环境能够重新建立\" [level=2]\n    - paragraph: .venv是可按说明重新建立的环境目录，自己的源码留在项目根。换电脑或改变项目位置时，通常在目标位置重新创建环境，不复制整个.venv来代替创建；其中一些脚本会记住原位置。以后学习依赖管理，再补充如何重建所需软件的记录。\n    - paragraph: 使用Git时，通常将.venv/写进项目.gitignore，忽略可重建的环境目录；源码仍保留。下方规则不会改变Python执行。\n    - paragraph: 较新Python可能在环境内部生成.gitignore，仍需核对项目本身的忽略规则。Git操作的完整流程放在后续课程。\n    - text: text\n    - generic: 项目.gitignore中的环境忽略规则\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"项目.gitignore中的环境忽略规则 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: .venv/\n    - heading \"在新的项目里独立完成两次操作\" [level=2]\n    - region \"建立自己的两个项目环境\":\n      - generic: 实验练习 · 自主核对\n      - heading \"建立自己的两个项目环境\" [level=3]\n      - paragraph: 另建两个自己命名的新项目，各在.venv外保存带自选标记的.py。口头预测输出，用同一已核对基础Python分别创建.venv，再用各环境解释器执行源码和现成observe_env.py。交两份源码及一张身份表：项目/环境/文件位置、创建/执行命令、真实程序输出、Interpreter与Environment。相同Base和Version只在会话卡记一次并引用；不同则分列。解释源码位置和同版本不同环境。\n      - generic: 先记录你的思路或计算\n      - textbox \"先记录你的思路或计算\":\n        - /placeholder: 写下依据，再查看提示与解析…\n      - paragraph: 输入仅用于当前页面思考，不自动评分，也不改变阅读完成标记。\n      - generic \"提示 1\"\n      - paragraph: 先区分项目根、源码、环境三个位置。两个目录都叫.venv时，还需要观察什么才能分辨？\n      - generic \"提示 2\"\n      - paragraph: 对每个项目依次核对pwd与源码位置、基础Python、创建后的解释器文件，再让该解释器运行源码和观察工具。比较两份真实前缀，自己补齐目标路径与最后执行。\n      - generic \"参考解答与自查标准\"\n      - list:\n        - listitem: 一种示例布局是新建workshop/report与workshop/tools/label，在report保存check.py输出自选提醒，在label保存tag.py输出另一标记。示例可为Report R8和Label L9，但你的主题与标记应自己决定；先预测（可口述）。两个源文件均位于环境外。\n        - listitem: 分别到两个项目根确认pwd，从已核对的基础Python运行python -m venv .venv；macOS用python3，已确认的py可用对应入口。检查各自Scripts/python.exe或bin/python，保留实际创建记录。\n        - listitem: 在report根可用Windows的& \".\\.venv\\Scripts\\python.exe\" .\\check.py，macOS用./.venv/bin/python check.py；label根把源码参数换成tag.py。两边保存并执行现成观察工具，记录Interpreter/Environment，Base与Version相同可引用一次真实共用记录和本次源码输出。\n        - listitem: 两个完整prefix分别属于report/.venv与tools/label/.venv，且各自不同于base_prefix，说明这两次进程使用不同项目环境。同一基础安装和版本不影响此判断；不需要安装第二个Python或第三方包。\n        - listitem: 常见错误是两次都在同一目录创建、源码放进.venv、只凭提示符判断、照抄示例路径。回看pwd/文件位置/实际诊断。接受自选文件名、含空格路径、绝对解释器路径或经实际验证的激活后执",
+      "changedFeedback": "radio \"A 两个Version相同，已经足以证明环境相同\"\n      - generic: A\n      - generic: 两个Version相同，已经足以证明环境相同\n      - radio \"B 核对实际Interpreter和Environment是否属于目标项目A\" [checked] [active]\n      - generic: B\n      - generic: 核对实际Interpreter和Environment是否属于目标项目A\n      - radio \"C 脚本输出Project A，足以证明启动的是A的Python\"\n      - generic: C\n      - generic: 脚本输出Project A，足以证明启动的是A的Python\n    - button \"检查答案\":\n      - text: 检查答案\n    - heading \"保留源码，让环境能够重新建立\" [level=2]\n    - paragraph: .venv是可按说明重新建立的环境目录，自己的源码留在项目根。换电脑或改变项目位置时，通常在目标位置重新创建环境，不复制整个.venv来代替创建；其中一些脚本会记住原位置。以后学习依赖管理，再补充如何重建所需软件的记录。\n    - paragraph: 使用Git时，通常将.venv/写进项目.gitignore，忽略可重建的环境目录；源码仍保留。下方规则不会改变Python执行。\n    - paragraph: 较新Python可能在环境内部生成.gitignore，仍需核对项目本身的忽略规则。Git操作的完整流程放在后续课程。\n    - text: text\n    - generic: 项目.gitignore中的环境忽略规则\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"项目.gitignore中的环境忽略规则 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: .venv/\n    - heading \"在新的项目里独立完成两次操作\" [level=2]\n    - region \"建立自己的两个项目环境\":\n      - generic: 实验练习 · 自主核对\n      - heading \"建立自己的两个项目环境\" [level=3]\n      - paragraph: 另建两个自己命名的新项目，各在.venv外保存带自选标记的.py。口头预测输出，用同一已核对基础Python分别创建.venv，再用各环境解释器执行源码和现成observe_env.py。交两份源码及一张身份表：项目/环境/文件位置、创建/执行命令、真实程序输出、Interpreter与Environment。相同Base和Version只在会话卡记一次并引用；不同则分列。解释源码位置和同版本不同环境。\n      - generic: 先记录你的思路或计算\n      - textbox \"先记录你的思路或计算\":\n        - /placeholder: 写下依据，再查看提示与解析…\n      - paragraph: 输入仅用于当前页面思考，不自动评分，也不改变阅读完成标记。\n      - generic \"提示 1\"\n      - paragraph: 先区分项目根、源码、环境三个位置。两个目录都叫.venv时，还需要观察什么才能分辨？\n      - generic \"提示 2\"\n      - paragraph: 对每个项目依次核对pwd与源码位置、基础Python、创建后的解释器文件，再让该解释器运行源码和观察工具。",
+      "rightFeedback": "radio \"A 两个Version相同，已经足以证明环境相同\"\n      - generic: A\n      - generic: 两个Version相同，已经足以证明环境相同\n      - radio \"B 核对实际Interpreter和Environment是否属于目标项目A\" [checked]\n      - generic: B\n      - generic: 核对实际Interpreter和Environment是否属于目标项目A\n      - radio \"C 脚本输出Project A，足以证明启动的是A的Python\"\n      - generic: C\n      - generic: 脚本输出Project A，足以证明启动的是A的Python\n    - button \"检查答案\" [active]:\n      - text: 检查答案\n    - status:\n      - strong: 理解正确\n      - paragraph: 实际解释器与prefix对应目标环境，才支持本题要求；保留前后身份对照。\n    - heading \"保留源码，让环境能够重新建立\" [level=2]\n    - paragraph: .venv是可按说明重新建立的环境目录，自己的源码留在项目根。换电脑或改变项目位置时，通常在目标位置重新创建环境，不复制整个.venv来代替创建；其中一些脚本会记住原位置。以后学习依赖管理，再补充如何重建所需软件的记录。\n    - paragraph: 使用Git时，通常将.venv/写进项目.gitignore，忽略可重建的环境目录；源码仍保留。下方规则不会改变Python执行。\n    - paragraph: 较新Python可能在环境内部生成.gitignore，仍需核对项目本身的忽略规则。Git操作的完整流程放在后续课程。\n    - text: text\n    - generic: 项目.gitignore中的环境忽略规则\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"项目.gitignore中的环境忽略规则 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: .venv/\n    - heading \"在新的项目里独立完成两次操作\" [level=2]\n    - region \"建立自己的两个项目环境\":\n      - generic: 实验练习 · 自主核对\n      - heading \"建立自己的两个项目环境\" [level=3]\n      - paragraph: 另建两个自己命名的新项目，各在.venv外保存带自选标记的.py。口头预测输出，用同一已核对基础Python分别创建.venv，再用各环境解释器执行源码和现成observe_env.py。交两份源码及一张身份表：项目/环境/文件位置、创建/执行命令、真实程序输出、Interpreter与Environment。相同Base和Version只在会话卡记一次并引用；不同则分列。解释源码位置和同版本不同环境。\n      - generic: 先记录你的思路或计算\n      - textbox \"先记录你的思路或计算\":\n        - /placeholder: 写下依据，再查看提示与解析…\n      - paragraph: 输入仅用于当前页面思考，不自动评分，也不改变阅读完成标记。\n      - generic \"提示 1\"\n      - paragraph: 先区分项目根、源码、环境三个位置。两个目录都叫.venv时，还需要观察什么才能分辨？\n      - generic \"提示 2\"\n      - paragraph: 对每个项目依次核对pwd与源码位置、基础Python、创建后的解释器文件，再让该解释器运行源码和观察工具。比较两份真实前缀，自己补齐目标路径与最后执行。\n      - generic \"参考解答与自查标准\"\n      - list:\n        - listitem: 一种示例布局是新建workshop/report与workshop/tools/label，在report保存check.py输出自选提醒，在label保存tag.py输出另一标记。示例可为Report R8和Label L9，但你的主题与标记应自己决定；先预测（可口述）。两个源文件均位于环境外。\n        - listitem: 分别到两个项目根确认pwd，从已核对的基础Python运行python -m venv .venv；macOS用python3，已确认的py可用对应入口。检查各自Scripts/python.exe或bin/python，保留实际创建记录。\n        - listitem: 在report根可用Windows的& \".\\.venv\\Scripts\\python.exe\" .\\check.py，macOS用./.venv/bin/python check.py；label根把源码参数换成tag.py。两边保存并执行现成观察工具，记录Interpreter/Environment，Base与Version相同可引用一次真实共用记录和本次源码输出。\n        - listitem: 两个完整prefix分别属于report/.venv与tools/label/.venv，且各自不同于base_prefix，说明这两次进程使用不同项目环境。同一基础安装和版本不影响此判断；不需要安装第二个Python或第三方包。\n        - listitem: 常见错误是两次都在同一目录创建、源码放进.venv、只凭提示符判断、照抄示例路径。回看pwd/文件位置/实际诊断。接受自选文件名、含空格路径、绝对解释器路径或经实际验证的激活后执行，条件是证据完整且指向各自环境。\n        - listitem: 交付按本题题干与rubric：源码可用一份加差异，运行记录用短表；相同命令、环境和"
+    }
+  },
+  {
+    "id": "PY101-C01-L05",
+    "articleSections": [
+      "why-notebook",
+      "local-start",
+      "first-cells",
+      "kernel-check",
+      "stale-state",
+      "restart-order",
+      "clean-run",
+      "save-stop",
+      "practice",
+      "exercise-create-own-notebook",
+      "exercise-recover-cell-order",
+      "next-step"
+    ],
+    "bodyHasPublicationText": false,
+    "client": 1425,
+    "exercises": 2,
+    "paragraphFont": "16px",
+    "scroll": 1425,
+    "title": "在Jupyter中按顺序运行单元格",
+    "width": 1440,
+    "expanded": true,
+    "quiz": {
+      "wrongFeedback": "radio \"A 编辑或保存没有执行赋值，内核仍持有旧值\"\n      - generic: A\n      - generic: 编辑或保存没有执行赋值，内核仍持有旧值\n      - radio \"B 保存.ipynb会自动执行赋值，因此内核应已有新值\" [checked]\n      - generic: B\n      - generic: 保存.ipynb会自动执行赋值，因此内核应已有新值\n      - radio \"C 关闭并重开网页必然清空内核，所以不可能读到旧值\"\n      - generic: C\n      - generic: 关闭并重开网页必然清空内核，所以不可能读到旧值\n    - button \"检查答案\" [active]:\n      - text: 检查答案\n    - status:\n      - strong: 再想一想\n      - paragraph: 保存文档和内核执行不同。观察只保存后再显示，结果仍可来自旧状态。\n      - paragraph: 参考答案：A。只执行改后的赋值格，再执行显示格；这个最小对照会更新值。\n    - heading \"重启后先显示，会发生什么？\" [level=2]\n    - paragraph: 先保存当前文档。使用Kernel菜单中的Restart Kernel重启，并在确认框确认。此步选择仅重启，暂不选重启并全部运行。等待内核恢复空闲后，先运行第三格print(marker)，不先运行第二格。\n    - paragraph: 这次应出现NameError，错误中会提到marker尚未定义。重启清除了此前记住的名字；虽然赋值代码仍在文档中、文件也存在并已保存，它还没在这个新内核执行。内核路径在前一步已核验，本实验只改变执行顺序，无需重装Python或更换环境。\n    - paragraph: 保留刚才先运行哪格、实际错误和解释。现在运行提供marker的第二格，再运行第三格，应恢复Ready B。恢复不是让错误文字消失就结束，还要完成下一步的从头核验。\n    - heading \"用一次干净执行检查整份文档\" [level=2]\n    - paragraph: 把文档排为说明、marker赋值、显示、观察工具，保留Ready B。先Restart Kernel确认重启，再Run All Cells；也可使用界面提供的Restart Kernel and Run All Cells。\n    - paragraph: 两种方式都先清掉旧状态，再从头执行。仅在旧内核Run All，可能继续借用之前留下的名字。\n    - paragraph: 等待所有必要代码格结束，检查：显示格为Ready B、没有错误、观察格仍指向目标.venv。执行计数说明提交顺序，会随重跑变化；屏幕上下排列和旧计数本身不证明刚从干净状态成功执行。把重启动作、实际输出和环境位置一起记下来。\n    - text: 把练习带到自己的环境\n    - generic: 最终核对稿：同源Ready B版本，空输出；用于对照，不替代独立新建练习。\n    - link \"下载first-notebook.ipynb（Notebook）\":\n      - /url: /downloads/first-notebook.ipynb\n      - text: first-notebook.ipynb\n    - paragraph: 下载是最终可按顺序运行的同源核对稿，初始没有输出；第一次动手仍建议自己创建主例。下载并运行核对稿不能替代后面的独立新题。\n    - heading \"保存文件，再关闭会话与服务\" [level=2]\n    - paragraph: 用File → Save Notebook或保存按钮存盘，再在项目清单确认first-notebook.ipynb存在。文件可以存代码、说明和当前输出，不能把内核所有内存状态打包带到另一个新内核。\n    - paragraph: 保存后关闭这份文档，从Jupyter文件列表重新打开，核对文件名与内核，再明确重启并全部运行，检查Ready B和环境路径，最后再保存。只关浏览器标签可能重新连接尚未结束的内核，不把重开页面当作干净执行证明。\n    - paragraph: 结束时先保存文档，再用File → Close and Shut Down Notebook或Kernel → Shut Down Kernel关闭这份内核，在Running列表确认不再运行。\n    - paragraph: 回到启动服务的终端按Ctrl+C，按实际关闭确认作答，等服务退出、Shell提示符回来。\n    - paragraph: 若宿主中断流程不清楚，可用Notebook 7的File → Shut Down并确认；看到Server stopped后，再回启动终端核对退出。只关网页不会保证停服，也不要结束其他项目的Python进程。\n    - paragraph: 若Notebook入口命令找不到，先核对同一环境内是否安装成功。可请支持人员按官方说明检查实际Scripts/jupyter-notebook.exe（macOS为bin/jupyter-notebook）入口，保留错误；不以关闭认证或改全局PATH处理。\n    - heading \"交付自己的文档与一次恢复记录\" [level=2]\n    - region \"建立自己的Notebook并重启复跑\":\n      - generic: 实验练习 · 自主核对\n      - heading \"建立自己的Notebook并重启复跑\" [level=3]\n      - paragraph: 在目标环境自己新建并命名.ipynb，写一格自己的Markdown说明；另选名字和文字，把赋值、print分成代码格。口头预测后按序运行，用现成工具核对内核并保存。重新打开，确认目标内核、明确重启，再从头全跑并保存。交.ipynb和一条会话卡记录：启动命令/版本、内核身份、重启/全跑的顺序及成功结论。代码与输出直接由文档承载，不重复誊写，不含to",
+      "changedFeedback": "radio \"A 编辑或保存没有执行赋值，内核仍持有旧值\" [checked] [active]\n      - generic: A\n      - generic: 编辑或保存没有执行赋值，内核仍持有旧值\n      - radio \"B 保存.ipynb会自动执行赋值，因此内核应已有新值\"\n      - generic: B\n      - generic: 保存.ipynb会自动执行赋值，因此内核应已有新值\n      - radio \"C 关闭并重开网页必然清空内核，所以不可能读到旧值\"\n      - generic: C\n      - generic: 关闭并重开网页必然清空内核，所以不可能读到旧值\n    - button \"检查答案\":\n      - text: 检查答案\n    - heading \"重启后先显示，会发生什么？\" [level=2]\n    - paragraph: 先保存当前文档。使用Kernel菜单中的Restart Kernel重启，并在确认框确认。此步选择仅重启，暂不选重启并全部运行。等待内核恢复空闲后，先运行第三格print(marker)，不先运行第二格。\n    - paragraph: 这次应出现NameError，错误中会提到marker尚未定义。重启清除了此前记住的名字；虽然赋值代码仍在文档中、文件也存在并已保存，它还没在这个新内核执行。内核路径在前一步已核验，本实验只改变执行顺序，无需重装Python或更换环境。\n    - paragraph: 保留刚才先运行哪格、实际错误和解释。现在运行提供marker的第二格，再运行第三格，应恢复Ready B。恢复不是让错误文字消失就结束，还要完成下一步的从头核验。\n    - heading \"用一次干净执行检查整份文档\" [level=2]\n    - paragraph: 把文档排为说明、marker赋值、显示、观察工具，保留Ready B。先Restart Kernel确认重启，再Run All Cells；也可使用界面提供的Restart Kernel and Run All Cells。\n    - paragraph: 两种方式都先清掉旧状态，再从头执行。仅在旧内核Run All，可能继续借用之前留下的名字。\n    - paragraph: 等待所有必要代码格结束，检查：显示格为Ready B、没有错误、观察格仍指向目标.venv。执行计数说明提交顺序，会随重跑变化；屏幕上下排列和旧计数本身不证明刚从干净状态成功执行。把重启动作、实际输出和环境位置一起记下来。\n    - text: 把练习带到自己的环境\n    - generic: 最终核对稿：同源Ready B版本，空输出；用于对照，不替代独立新建练习。\n    - link \"下载first-notebook.ipynb（Notebook）\":\n      - /url: /downloads/first-notebook.ipynb\n      - text: first-notebook.ipynb\n    - paragraph: 下载是最终可按顺序运行的同源核对稿，初始没有输出；第一次动手仍建议自己创建主例。下载并运行核对稿不能替代后面的独立新题。\n    - heading \"保存文件，再关闭会话与服务\" [level=2]\n    - paragraph: 用File → Save Notebook或保存按钮存盘，再在项目清单确认first-notebook.ipynb存在。文件可以存代码、说明和当前输出，不能把内核所有内存状态打包带到另一个新内核。\n    - paragraph: 保存后关闭这份文档，从Jupyter文件列表重新打开，核对文件名与内核",
+      "rightFeedback": "radio \"A 编辑或保存没有执行赋值，内核仍持有旧值\" [checked]\n      - generic: A\n      - generic: 编辑或保存没有执行赋值，内核仍持有旧值\n      - radio \"B 保存.ipynb会自动执行赋值，因此内核应已有新值\"\n      - generic: B\n      - generic: 保存.ipynb会自动执行赋值，因此内核应已有新值\n      - radio \"C 关闭并重开网页必然清空内核，所以不可能读到旧值\"\n      - generic: C\n      - generic: 关闭并重开网页必然清空内核，所以不可能读到旧值\n    - button \"检查答案\" [active]:\n      - text: 检查答案\n    - status:\n      - strong: 理解正确\n      - paragraph: 只执行改后的赋值格，再执行显示格；这个最小对照会更新值。\n    - heading \"重启后先显示，会发生什么？\" [level=2]\n    - paragraph: 先保存当前文档。使用Kernel菜单中的Restart Kernel重启，并在确认框确认。此步选择仅重启，暂不选重启并全部运行。等待内核恢复空闲后，先运行第三格print(marker)，不先运行第二格。\n    - paragraph: 这次应出现NameError，错误中会提到marker尚未定义。重启清除了此前记住的名字；虽然赋值代码仍在文档中、文件也存在并已保存，它还没在这个新内核执行。内核路径在前一步已核验，本实验只改变执行顺序，无需重装Python或更换环境。\n    - paragraph: 保留刚才先运行哪格、实际错误和解释。现在运行提供marker的第二格，再运行第三格，应恢复Ready B。恢复不是让错误文字消失就结束，还要完成下一步的从头核验。\n    - heading \"用一次干净执行检查整份文档\" [level=2]\n    - paragraph: 把文档排为说明、marker赋值、显示、观察工具，保留Ready B。先Restart Kernel确认重启，再Run All Cells；也可使用界面提供的Restart Kernel and Run All Cells。\n    - paragraph: 两种方式都先清掉旧状态，再从头执行。仅在旧内核Run All，可能继续借用之前留下的名字。\n    - paragraph: 等待所有必要代码格结束，检查：显示格为Ready B、没有错误、观察格仍指向目标.venv。执行计数说明提交顺序，会随重跑变化；屏幕上下排列和旧计数本身不证明刚从干净状态成功执行。把重启动作、实际输出和环境位置一起记下来。\n    - text: 把练习带到自己的环境\n    - generic: 最终核对稿：同源Ready B版本，空输出；用于对照，不替代独立新建练习。\n    - link \"下载first-notebook.ipynb（Notebook）\":\n      - /url: /downloads/first-notebook.ipynb\n      - text: first-notebook.ipynb\n    - paragraph: 下载是最终可按顺序运行的同源核对稿，初始没有输出；第一次动手仍建议自己创建主例。下载并运行核对稿不能替代后面的独立新题。\n    - heading \"保存文件，再关闭会话与服务\" [level=2]\n    - paragraph: 用File → Save Notebook或保存按钮存盘，再在项目清单确认first-notebook.ipynb存在。文件可以存代码、说明和当前输出，不能把内核所有内存状态打包带到另一个新内核。\n    - paragraph: 保存后关闭这份文档，从Jupyter文件列表重新打开，核对文件名与内核，再明确重启并全部运行，检查Ready B和环境路径，最后再保存。只关浏览器标签可能重新连接尚未结束的内核，不把重开页面当作干净执行证明。\n    - paragraph: 结束时先保存文档，再用File → Close and Shut Down Notebook或Kernel → Shut Down Kernel关闭这份内核，在Running列表确认不再运行。\n    - paragraph: 回到启动服务的终端按Ctrl+C，按实际关闭确认作答，等服务退出、Shell提示符回来。\n    - paragraph: 若宿主中断流程不清楚，可用Notebook 7的File → Shut Down并确认；看到Server stopped后，再回启动终端核对退出。只关网页不会保证停服，也不要结束其他项目的Python进程。\n    - paragraph: 若Notebook入口命令找不到，先核对同一环境内是否安装成功。可请支持人员按官方说明检查实际Scripts/jupyter-notebook.exe（macOS为bin/jupyter-notebook）入口，保留错误；不以关闭认证或改全局PATH处理。\n    - heading \"交付自己的文档与一次恢复记录\" [level=2]\n    - region \"建立自己的Notebook并重启复跑\":\n      - generic: 实验练习 · 自主核对\n      - heading \"建立自己的Notebook并重启复跑\" [level=3]\n      - paragraph: 在目标环境自己新建并命名.ipynb，写一格自己的Markdown说明；另选名字和文字，把赋值、print分成代码格。口头预测后按序运行，用现成工具核对内核并保存。重新打开，确认目标内核、明确重启，再从头全跑并保存。交.ipynb和一条会话卡记录：启动命令/版本、内核身份、重启/全跑的顺序及成功结论。代码与输出直接由文档承载，不重复誊写，不含token。\n      - generic: 先记录你的思路或计算\n      - textbox \"先记录你的思路或计"
+    }
+  },
+  {
+    "id": "PY101-C01-L06",
+    "articleSections": [
+      "unclear-request",
+      "prepare-case",
+      "read-evidence",
+      "repair-replay",
+      "minimal-record",
+      "script-handoff",
+      "exercise-reproduce-script-issue",
+      "notebook-handoff",
+      "exercise-recover-notebook-record",
+      "chapter-handoff"
+    ],
+    "bodyHasPublicationText": false,
+    "client": 1425,
+    "exercises": 2,
+    "paragraphFont": "16px",
+    "scroll": 1425,
+    "title": "让别人复现一次环境问题",
+    "width": 1440,
+    "expanded": true,
+    "quiz": {
+      "wrongFeedback": "radio \"A 退出状态0就代表选中了目标环境\" [checked]\n      - generic: A\n      - generic: 退出状态0就代表选中了目标环境\n      - radio \"B run.py放在target目录会强制任何Python切换为target环境\"\n      - generic: B\n      - generic: run.py放在target目录会强制任何Python切换为target环境\n      - radio \"C 用同一启动选择运行诊断，核对Interpreter/Environment与target要求\"\n      - generic: C\n      - generic: 用同一启动选择运行诊断，核对Interpreter/Environment与target要求\n    - button \"检查答案\" [active]:\n      - text: 检查答案\n    - status:\n      - strong: 再想一想\n      - paragraph: 0支持程序正常结束，不能证明环境身份。复现题中错误环境也能正常结束。\n      - paragraph: 参考答案：C。目标与实际身份相对照才能定位错配；复现单还要保留cwd与操作顺序。\n    - heading \"补全一份Notebook求助记录\" [level=2]\n    - paragraph: 另一条求助说：“Notebook某格报错，刚才还成功。”别人还不知道实际内核、起始状态和格顺序。沿用1.5已可用的Jupyter，在目标项目打开review-note.ipynb，亲自补齐这些条件。\n    - text: 把练习带到自己的环境\n    - generic: 第二题起始材料，空输出、默认可按序运行；仍须自行复现故障、补记录并干净重跑。\n    - link \"下载review-note.ipynb（Notebook）\":\n      - /url: /downloads/review-note.ipynb\n      - text: review-note.ipynb\n    - paragraph: 文档先有Markdown说明，再把以下两行分别放在两个Code格。回顾1.5：先运行赋值格，当前内核才记住batch_label对应的文字；print(batch_label)读取当前对应值，print(\"batch_label\")只会打印引号里的文字。这里仍只用最小赋值与名称读取。\n    - text: Python\n    - generic: review-note.ipynb · 提供名字格\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"review-note.ipynb · 提供名字格 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: batch_label = \"Checked F3\"\n    - text: Python\n    - generic: review-note.ipynb · 显示格\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"review-note.ipynb · 显示格 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: print(batch_label)\n    - paragraph: 末尾保留下面的现成只读观察格，在Notebook代码格运行，观察实际Python是否属于目标.venv。import/sys仅作已提供的工具，不要求独立编写。按1.5核对Kernel选择；同一个Python 3标题不能代替路径证据。\n    - text: Python\n    - generic: 现成内核观察格\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"现成内核观察格 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: import sys\n      - generic: \"2\"\n      - generic: print(sys.executable)\n    - region \"用真实内核补齐缺失的复现条件\":\n      - generic: 实验练习 · 自主核对\n      - heading \"用真实内核补齐缺失的复现条件\" [level=3]\n      - paragraph: 先指出原求助缺少的起始状态与执行顺序。在目标环境打开review-note.ipynb，核对内核，明确重启后先预测并执行显示格，留真实错误与相关代码，独立恢复。再重启按文档顺序全跑，确认Checked F3，保存后重新打开检查。交本人.ipynb和六项最小复现单。六项最小复现单只记：①目标与所附文件；②系统/Shell/Python版本（可引用共用卡）；③起点cwd与实际解释器/内核身份；④操作命令或格顺序及起始状态；⑤预期与相关真实输出/错误、适用的退出状态；⑥修复与新会话复验。重复字段引用编号，未知说明核查办法；不附完整PATH或环境变量。 Notebook格错误的普通脚本退出码写不适用，保留相关完整回溯；已有文档输出不再另抄，最后按1.5关闭自己的会话与服务。\n      - generic: 先记录你的思路或计算\n      - textbox \"先记录你的思路或计算\":\n        - /placeholder: 写下依据，再查看提示与解析…\n      - paragraph: 输入仅用于当前页面思考，不自动评分，也不改变阅读完成标记。\n      - generic \"提示 1\"\n      - paragraph: “刚才成功”没有说明当前内核从重启后执行过什么。接手的人要怎样知道起点和操作相同？\n      - generic \"提示 2\"\n      - para",
+      "changedFeedback": "radio \"A 退出状态0就代表选中了目标环境\"\n      - generic: A\n      - generic: 退出状态0就代表选中了目标环境\n      - radio \"B run.py放在target目录会强制任何Python切换为target环境\"\n      - generic: B\n      - generic: run.py放在target目录会强制任何Python切换为target环境\n      - radio \"C 用同一启动选择运行诊断，核对Interpreter/Environment与target要求\" [checked] [active]\n      - generic: C\n      - generic: 用同一启动选择运行诊断，核对Interpreter/Environment与target要求\n    - button \"检查答案\":\n      - text: 检查答案\n    - heading \"补全一份Notebook求助记录\" [level=2]\n    - paragraph: 另一条求助说：“Notebook某格报错，刚才还成功。”别人还不知道实际内核、起始状态和格顺序。沿用1.5已可用的Jupyter，在目标项目打开review-note.ipynb，亲自补齐这些条件。\n    - text: 把练习带到自己的环境\n    - generic: 第二题起始材料，空输出、默认可按序运行；仍须自行复现故障、补记录并干净重跑。\n    - link \"下载review-note.ipynb（Notebook）\":\n      - /url: /downloads/review-note.ipynb\n      - text: review-note.ipynb\n    - paragraph: 文档先有Markdown说明，再把以下两行分别放在两个Code格。回顾1.5：先运行赋值格，当前内核才记住batch_label对应的文字；print(batch_label)读取当前对应值，print(\"batch_label\")只会打印引号里的文字。这里仍只用最小赋值与名称读取。\n    - text: Python\n    - generic: review-note.ipynb · 提供名字格\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"review-note.ipynb · 提供名字格 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: batch_label = \"Checked F3\"\n    - text: Python\n    - generic: review-note.ipynb · 显示格\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"review-note.ipynb · 显示格 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: print(batch_label)\n    - paragraph: 末尾保留下面的现成只读观察格，在Notebook代码格运行，观察实际Python是否属于目标.venv。import/sys仅作已提供的工具，不要求独立编写。按1.5核对Kernel选择；同一个Python 3标题不能代替路径证据。\n    - text: Python\n    - generic: 现成内核观察格\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"现成内核",
+      "rightFeedback": "radio \"A 退出状态0就代表选中了目标环境\"\n      - generic: A\n      - generic: 退出状态0就代表选中了目标环境\n      - radio \"B run.py放在target目录会强制任何Python切换为target环境\"\n      - generic: B\n      - generic: run.py放在target目录会强制任何Python切换为target环境\n      - radio \"C 用同一启动选择运行诊断，核对Interpreter/Environment与target要求\" [checked]\n      - generic: C\n      - generic: 用同一启动选择运行诊断，核对Interpreter/Environment与target要求\n    - button \"检查答案\" [active]:\n      - text: 检查答案\n    - status:\n      - strong: 理解正确\n      - paragraph: 目标与实际身份相对照才能定位错配；复现单还要保留cwd与操作顺序。\n    - heading \"补全一份Notebook求助记录\" [level=2]\n    - paragraph: 另一条求助说：“Notebook某格报错，刚才还成功。”别人还不知道实际内核、起始状态和格顺序。沿用1.5已可用的Jupyter，在目标项目打开review-note.ipynb，亲自补齐这些条件。\n    - text: 把练习带到自己的环境\n    - generic: 第二题起始材料，空输出、默认可按序运行；仍须自行复现故障、补记录并干净重跑。\n    - link \"下载review-note.ipynb（Notebook）\":\n      - /url: /downloads/review-note.ipynb\n      - text: review-note.ipynb\n    - paragraph: 文档先有Markdown说明，再把以下两行分别放在两个Code格。回顾1.5：先运行赋值格，当前内核才记住batch_label对应的文字；print(batch_label)读取当前对应值，print(\"batch_label\")只会打印引号里的文字。这里仍只用最小赋值与名称读取。\n    - text: Python\n    - generic: review-note.ipynb · 提供名字格\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"review-note.ipynb · 提供名字格 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: batch_label = \"Checked F3\"\n    - text: Python\n    - generic: review-note.ipynb · 显示格\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"review-note.ipynb · 显示格 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: print(batch_label)\n    - paragraph: 末尾保留下面的现成只读观察格，在Notebook代码格运行，观察实际Python是否属于目标.venv。import/sys仅作已提供的工具，不要求独立编写。按1.5核对Kernel选择；同一个Python 3标题不能代替路径证据。\n    - text: Python\n    - generic: 现成内核观察格\n    - button \"复制代码\":\n      - generic: 复制代码\n    - region \"现成内核观察格 示例代码，可横向滚动\":\n      - generic: \"1\"\n      - generic: import sys\n      - generic: \"2\"\n      - generic: print(sys.executable)\n    - region \"用真实内核补齐缺失的复现条件\":\n      - generic: 实验练习 · 自主核对\n      - heading \"用真实内核补齐缺失的复现条件\" [level=3]\n      - paragraph: 先指出原求助缺少的起始状态与执行顺序。在目标环境打开review-note.ipynb，核对内核，明确重启后先预测并执行显示格，留真实错误与相关代码，独立恢复。再重启按文档顺序全跑，确认Checked F3，保存后重新打开检查。交本人.ipynb和六项最小复现单。六项最小复现单只记：①目标与所附文件；②系统/Shell/Python版本（可引用共用卡）；③起点cwd与实际解释器/内核身份；④操作命令或格顺序及起始状态；⑤预期与相关真实输出/错误、适用的退出状态；⑥修复与新会话复验。重复字段引用编号，未知说明核查办法；不附完整PATH或环境变量。 Notebook格错误的普通脚本退出码写不适用，保留相关完整回溯；已有文档输出不再另抄，最后按1.5关闭自己的会话与服务。\n      - generic: 先记录你的思路或计算\n      - textbox \"先记录你的思路或计算\":\n        - /placeholder: 写下依据，再查看提示与解析…\n      - paragraph: 输入仅用于当前页面思考，不自动评分，也不改变阅读完成标记。\n      - generic \"提示 1\"\n      - paragraph: “刚才成功”没有说明当前内核从重启后执行过什么。接手的人要怎样知道起点和操作相同？\n      - generic \"提示 2\"\n      - paragraph: 找到提供显示格所需名字的那格，核对它是否在当前内核执行；把内核身份、重启动作、实际顺序与完整相关错误补进记录"
+    }
+  },
+  {
+    "id": "PY101-C02-L01",
+    "articleSections": [
+      "changing-task",
+      "name-and-value",
+      "choose-name",
+      "read-and-update",
+      "predict-run",
+      "change-one-value",
+      "literal-or-name",
+      "fresh-script",
+      "first-read-error",
+      "practice",
+      "exercise-keep-and-update",
+      "exercise-repair-first-read",
+      "next-step"
+    ],
+    "bodyHasPublicationText": false,
+    "client": 1425,
+    "exercises": 2,
+    "paragraphFont": "16px",
+    "scroll": 1425,
+    "title": "用变量保留并更新程序里的值",
+    "width": 1440,
+    "expanded": true
+  },
+  {
+    "id": "PY101-C02-L02",
+    "articleSections": [
+      "same-display",
+      "add-measurement",
+      "ready-state",
+      "inspect-type",
+      "four-types",
+      "same-name-new-type",
+      "practice",
+      "exercise-write-four-values",
+      "exercise-same-display-different-type",
+      "next-step"
+    ],
+    "bodyHasPublicationText": false,
+    "client": 1425,
+    "exercises": 2,
+    "paragraphFont": "16px",
+    "scroll": 1425,
+    "title": "分清文字、整数、小数和真假值",
+    "width": 1440,
+    "expanded": true
+  },
+  {
+    "id": "PY101-C02-L03",
+    "articleSections": [
+      "quantities-and-units",
+      "expression-to-value",
+      "take-some-away",
+      "order-and-grouping",
+      "divide-and-meaning",
+      "same-level-order",
+      "put-it-together",
+      "zero-divisor",
+      "practice",
+      "exercise-calculate-and-revise",
+      "exercise-compare-grouping",
+      "next-step"
+    ],
+    "bodyHasPublicationText": false,
+    "client": 1425,
+    "exercises": 2,
+    "paragraphFont": "16px",
+    "scroll": 1425,
+    "title": "用表达式算出一个结果",
+    "width": 1440,
+    "expanded": true
+  },
+  {
+    "id": "PY101-C02-L04",
+    "articleSections": [
+      "most-six",
+      "compare-limit",
+      "keep-result",
+      "equal-or-different",
+      "above-limit",
+      "main-example",
+      "boundary-runs",
+      "practice",
+      "exercise-compare-and-explain",
+      "exercise-test-boundary-values",
+      "next-step"
+    ],
+    "bodyHasPublicationText": false,
+    "client": 1425,
+    "exercises": 2,
+    "paragraphFont": "16px",
+    "scroll": 1425,
+    "title": "让比较表达式给出真假结果",
+    "width": 1440,
+    "expanded": true
+  },
+  {
+    "id": "PY101-C02-L05",
+    "articleSections": [
+      "first-input",
+      "raw-count",
+      "int-conversion",
+      "main-example",
+      "float-conversion",
+      "format-error",
+      "practice",
+      "exercise-interactive-label-and-count",
+      "exercise-measure-and-recheck",
+      "reference-programs",
+      "next-step"
+    ],
+    "bodyHasPublicationText": false,
+    "client": 1425,
+    "exercises": 2,
+    "paragraphFont": "16px",
+    "scroll": 1425,
+    "title": "取得用户输入，再转成需要的数值",
+    "width": 1440,
+    "expanded": true
+  },
+  {
+    "id": "PY101-C02-L06",
+    "articleSections": [
+      "bare-results",
+      "first-format",
+      "labels-and-units",
+      "receive-values",
+      "calculate-check",
+      "main-example",
+      "boundary-runs",
+      "practice",
+      "exercise-write-clear-summary",
+      "exercise-verify-summary-boundary",
+      "reference-programs",
+      "chapter-end"
+    ],
+    "bodyHasPublicationText": false,
+    "client": 1425,
+    "exercises": 2,
+    "paragraphFont": "16px",
+    "scroll": 1425,
+    "title": "把输入和计算整理成清楚的输出",
+    "width": 1440,
+    "expanded": true
+  },
+  {
+    "id": "PY101-C01-L01",
+    "client": 753,
+    "codeOverflowRegions": [
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 753,
+    "title": "从零运行第一个Python程序",
+    "width": 768
+  },
+  {
+    "id": "PY101-C01-L02",
+    "client": 753,
+    "codeOverflowRegions": [
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 753,
+    "title": "解释器怎样找到并执行脚本",
+    "width": 768
+  },
+  {
+    "id": "PY101-C01-L03",
+    "client": 753,
+    "codeOverflowRegions": [
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 753,
+    "title": "用编辑器完成保存与重跑",
+    "width": 768
+  },
+  {
+    "id": "PY101-C01-L04",
+    "client": 753,
+    "codeOverflowRegions": [
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      }
+    ],
+    "exercises": 2,
+    "images": [
+      {
+        "src": "",
+        "width": 650
+      }
+    ],
+    "paragraphFont": "16px",
+    "scroll": 753,
+    "title": "为项目准备独立的虚拟环境",
+    "width": 768
+  },
+  {
+    "id": "PY101-C01-L05",
+    "client": 753,
+    "codeOverflowRegions": [
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      }
+    ],
+    "exercises": 2,
+    "images": [
+      {
+        "src": "",
+        "width": 650
+      }
+    ],
+    "paragraphFont": "16px",
+    "scroll": 753,
+    "title": "在Jupyter中按顺序运行单元格",
+    "width": 768
+  },
+  {
+    "id": "PY101-C01-L06",
+    "client": 753,
+    "codeOverflowRegions": [
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 843,
+        "overflow": "visible",
+        "scroll": 843
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 753,
+    "title": "让别人复现一次环境问题",
+    "width": 768
+  },
+  {
+    "id": "PY101-C02-L01",
+    "client": 753,
+    "codeOverflowRegions": [
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 753,
+    "title": "用变量保留并更新程序里的值",
+    "width": 768
+  },
+  {
+    "id": "PY101-C02-L02",
+    "client": 753,
+    "codeOverflowRegions": [
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 753,
+    "title": "分清文字、整数、小数和真假值",
+    "width": 768
+  },
+  {
+    "id": "PY101-C02-L03",
+    "client": 753,
+    "codeOverflowRegions": [
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 753,
+    "title": "用表达式算出一个结果",
+    "width": 768
+  },
+  {
+    "id": "PY101-C02-L04",
+    "client": 753,
+    "codeOverflowRegions": [
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 753,
+    "title": "让比较表达式给出真假结果",
+    "width": 768
+  },
+  {
+    "id": "PY101-C02-L05",
+    "client": 753,
+    "codeOverflowRegions": [
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 609,
+        "overflow": "visible",
+        "scroll": 609
+      },
+      {
+        "client": 609,
+        "overflow": "visible",
+        "scroll": 609
+      },
+      {
+        "client": 609,
+        "overflow": "visible",
+        "scroll": 609
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 753,
+    "title": "取得用户输入，再转成需要的数值",
+    "width": 768
+  },
+  {
+    "id": "PY101-C02-L06",
+    "client": 753,
+    "codeOverflowRegions": [
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 650,
+        "overflow": "visible",
+        "scroll": 650
+      },
+      {
+        "client": 609,
+        "overflow": "visible",
+        "scroll": 609
+      },
+      {
+        "client": 609,
+        "overflow": "visible",
+        "scroll": 609
+      },
+      {
+        "client": 609,
+        "overflow": "visible",
+        "scroll": 609
+      },
+      {
+        "client": 609,
+        "overflow": "visible",
+        "scroll": 609
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 753,
+    "title": "把输入和计算整理成清楚的输出",
+    "width": 768
+  },
+  {
+    "id": "PY101-C01-L01",
+    "client": 375,
+    "codeOverflowRegions": [
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 397,
+        "overflow": "visible",
+        "scroll": 397
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 375,
+    "title": "从零运行第一个Python程序",
+    "width": 390
+  },
+  {
+    "id": "PY101-C01-L02",
+    "client": 375,
+    "codeOverflowRegions": [
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 482,
+        "overflow": "visible",
+        "scroll": 482
+      },
+      {
+        "client": 475,
+        "overflow": "visible",
+        "scroll": 475
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 375,
+    "title": "解释器怎样找到并执行脚本",
+    "width": 390
+  },
+  {
+    "id": "PY101-C01-L03",
+    "client": 375,
+    "codeOverflowRegions": [
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 603,
+        "overflow": "visible",
+        "scroll": 603
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 375,
+    "title": "用编辑器完成保存与重跑",
+    "width": 390
+  },
+  {
+    "id": "PY101-C01-L04",
+    "client": 375,
+    "codeOverflowRegions": [
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 346,
+        "overflow": "visible",
+        "scroll": 346
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 353,
+        "overflow": "visible",
+        "scroll": 353
+      },
+      {
+        "client": 396,
+        "overflow": "visible",
+        "scroll": 396
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 475,
+        "overflow": "visible",
+        "scroll": 475
+      },
+      {
+        "client": 374,
+        "overflow": "visible",
+        "scroll": 374
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      }
+    ],
+    "exercises": 2,
+    "images": [
+      {
+        "src": "",
+        "width": 308
+      }
+    ],
+    "paragraphFont": "16px",
+    "scroll": 375,
+    "title": "为项目准备独立的虚拟环境",
+    "width": 390
+  },
+  {
+    "id": "PY101-C01-L05",
+    "client": 375,
+    "codeOverflowRegions": [
+      {
+        "client": 312,
+        "overflow": "visible",
+        "scroll": 312
+      },
+      {
+        "client": 396,
+        "overflow": "visible",
+        "scroll": 396
+      },
+      {
+        "client": 310,
+        "overflow": "visible",
+        "scroll": 310
+      },
+      {
+        "client": 446,
+        "overflow": "visible",
+        "scroll": 446
+      },
+      {
+        "client": 360,
+        "overflow": "visible",
+        "scroll": 360
+      },
+      {
+        "client": 417,
+        "overflow": "visible",
+        "scroll": 417
+      },
+      {
+        "client": 332,
+        "overflow": "visible",
+        "scroll": 332
+      },
+      {
+        "client": 455,
+        "overflow": "visible",
+        "scroll": 455
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      }
+    ],
+    "exercises": 2,
+    "images": [
+      {
+        "src": "",
+        "width": 308
+      }
+    ],
+    "paragraphFont": "16px",
+    "scroll": 375,
+    "title": "在Jupyter中按顺序运行单元格",
+    "width": 390
+  },
+  {
+    "id": "PY101-C01-L06",
+    "client": 375,
+    "codeOverflowRegions": [
+      {
+        "client": 338,
+        "overflow": "visible",
+        "scroll": 338
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 360,
+        "overflow": "visible",
+        "scroll": 360
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 831,
+        "overflow": "visible",
+        "scroll": 831
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 417,
+        "overflow": "visible",
+        "scroll": 417
+      },
+      {
+        "client": 317,
+        "overflow": "visible",
+        "scroll": 317
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 574,
+        "overflow": "visible",
+        "scroll": 574
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 353,
+        "overflow": "visible",
+        "scroll": 353
+      },
+      {
+        "client": 389,
+        "overflow": "visible",
+        "scroll": 389
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 446,
+        "overflow": "visible",
+        "scroll": 446
+      },
+      {
+        "client": 346,
+        "overflow": "visible",
+        "scroll": 346
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 375,
+    "title": "让别人复现一次环境问题",
+    "width": 390
+  },
+  {
+    "id": "PY101-C02-L01",
+    "client": 375,
+    "codeOverflowRegions": [
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 375,
+    "title": "用变量保留并更新程序里的值",
+    "width": 390
+  },
+  {
+    "id": "PY101-C02-L02",
+    "client": 375,
+    "codeOverflowRegions": [
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 375,
+    "title": "分清文字、整数、小数和真假值",
+    "width": 390
+  },
+  {
+    "id": "PY101-C02-L03",
+    "client": 375,
+    "codeOverflowRegions": [
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 310,
+        "overflow": "visible",
+        "scroll": 310
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 317,
+        "overflow": "visible",
+        "scroll": 317
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 360,
+        "overflow": "visible",
+        "scroll": 360
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 317,
+        "overflow": "visible",
+        "scroll": 317
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 310,
+        "overflow": "visible",
+        "scroll": 310
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 310,
+        "overflow": "visible",
+        "scroll": 310
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 375,
+    "title": "用表达式算出一个结果",
+    "width": 390
+  },
+  {
+    "id": "PY101-C02-L04",
+    "client": 375,
+    "codeOverflowRegions": [
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 375,
+    "title": "让比较表达式给出真假结果",
+    "width": 390
+  },
+  {
+    "id": "PY101-C02-L05",
+    "client": 375,
+    "codeOverflowRegions": [
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 475,
+        "overflow": "visible",
+        "scroll": 475
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 432,
+        "overflow": "visible",
+        "scroll": 432
+      },
+      {
+        "client": 283,
+        "overflow": "visible",
+        "scroll": 283
+      },
+      {
+        "client": 296,
+        "overflow": "visible",
+        "scroll": 296
+      },
+      {
+        "client": 296,
+        "overflow": "visible",
+        "scroll": 296
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 375,
+    "title": "取得用户输入，再转成需要的数值",
+    "width": 390
+  },
+  {
+    "id": "PY101-C02-L06",
+    "client": 375,
+    "codeOverflowRegions": [
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 321,
+        "overflow": "visible",
+        "scroll": 321
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 332,
+        "overflow": "visible",
+        "scroll": 332
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 308,
+        "overflow": "visible",
+        "scroll": 308
+      },
+      {
+        "client": 310,
+        "overflow": "visible",
+        "scroll": 310
+      },
+      {
+        "client": 410,
+        "overflow": "visible",
+        "scroll": 410
+      },
+      {
+        "client": 283,
+        "overflow": "visible",
+        "scroll": 283
+      },
+      {
+        "client": 289,
+        "overflow": "visible",
+        "scroll": 289
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 375,
+    "title": "把输入和计算整理成清楚的输出",
+    "width": 390
+  },
+  {
+    "id": "PY101-C01-L01",
+    "client": 305,
+    "codeOverflowRegions": [
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 397,
+        "overflow": "visible",
+        "scroll": 397
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 303,
+        "overflow": "visible",
+        "scroll": 303
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 305,
+    "title": "从零运行第一个Python程序",
+    "width": 320,
+    "expanded": true
+  },
+  {
+    "id": "PY101-C01-L02",
+    "client": 305,
+    "codeOverflowRegions": [
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 482,
+        "overflow": "visible",
+        "scroll": 482
+      },
+      {
+        "client": 475,
+        "overflow": "visible",
+        "scroll": 475
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 260,
+        "overflow": "visible",
+        "scroll": 260
+      },
+      {
+        "client": 267,
+        "overflow": "visible",
+        "scroll": 267
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 338,
+    "title": "解释器怎样找到并执行脚本",
+    "width": 320,
+    "expanded": true
+  },
+  {
+    "id": "PY101-C01-L03",
+    "client": 305,
+    "codeOverflowRegions": [
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 603,
+        "overflow": "visible",
+        "scroll": 603
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 305,
+    "title": "用编辑器完成保存与重跑",
+    "width": 320,
+    "expanded": true
+  },
+  {
+    "id": "PY101-C01-L04",
+    "client": 305,
+    "codeOverflowRegions": [
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 260,
+        "overflow": "visible",
+        "scroll": 260
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 346,
+        "overflow": "visible",
+        "scroll": 346
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 353,
+        "overflow": "visible",
+        "scroll": 353
+      },
+      {
+        "client": 396,
+        "overflow": "visible",
+        "scroll": 396
+      },
+      {
+        "client": 296,
+        "overflow": "visible",
+        "scroll": 296
+      },
+      {
+        "client": 260,
+        "overflow": "visible",
+        "scroll": 260
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 475,
+        "overflow": "visible",
+        "scroll": 475
+      },
+      {
+        "client": 374,
+        "overflow": "visible",
+        "scroll": 374
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      }
+    ],
+    "exercises": 2,
+    "images": [
+      {
+        "src": "",
+        "width": 254
+      }
+    ],
+    "paragraphFont": "16px",
+    "scroll": 305,
+    "title": "为项目准备独立的虚拟环境",
+    "width": 320,
+    "expanded": true
+  },
+  {
+    "id": "PY101-C01-L05",
+    "client": 305,
+    "codeOverflowRegions": [
+      {
+        "client": 312,
+        "overflow": "visible",
+        "scroll": 312
+      },
+      {
+        "client": 396,
+        "overflow": "visible",
+        "scroll": 396
+      },
+      {
+        "client": 310,
+        "overflow": "visible",
+        "scroll": 310
+      },
+      {
+        "client": 446,
+        "overflow": "visible",
+        "scroll": 446
+      },
+      {
+        "client": 360,
+        "overflow": "visible",
+        "scroll": 360
+      },
+      {
+        "client": 417,
+        "overflow": "visible",
+        "scroll": 417
+      },
+      {
+        "client": 332,
+        "overflow": "visible",
+        "scroll": 332
+      },
+      {
+        "client": 455,
+        "overflow": "visible",
+        "scroll": 455
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      }
+    ],
+    "exercises": 2,
+    "images": [
+      {
+        "src": "",
+        "width": 254
+      }
+    ],
+    "paragraphFont": "16px",
+    "scroll": 305,
+    "title": "在Jupyter中按顺序运行单元格",
+    "width": 320,
+    "expanded": true
+  },
+  {
+    "id": "PY101-C01-L06",
+    "client": 305,
+    "codeOverflowRegions": [
+      {
+        "client": 338,
+        "overflow": "visible",
+        "scroll": 338
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 360,
+        "overflow": "visible",
+        "scroll": 360
+      },
+      {
+        "client": 260,
+        "overflow": "visible",
+        "scroll": 260
+      },
+      {
+        "client": 831,
+        "overflow": "visible",
+        "scroll": 831
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 417,
+        "overflow": "visible",
+        "scroll": 417
+      },
+      {
+        "client": 317,
+        "overflow": "visible",
+        "scroll": 317
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 574,
+        "overflow": "visible",
+        "scroll": 574
+      },
+      {
+        "client": 279,
+        "overflow": "visible",
+        "scroll": 279
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 353,
+        "overflow": "visible",
+        "scroll": 353
+      },
+      {
+        "client": 389,
+        "overflow": "visible",
+        "scroll": 389
+      },
+      {
+        "client": 289,
+        "overflow": "visible",
+        "scroll": 289
+      },
+      {
+        "client": 446,
+        "overflow": "visible",
+        "scroll": 446
+      },
+      {
+        "client": 346,
+        "overflow": "visible",
+        "scroll": 346
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 305,
+    "title": "让别人复现一次环境问题",
+    "width": 320,
+    "expanded": true
+  },
+  {
+    "id": "PY101-C02-L01",
+    "client": 305,
+    "codeOverflowRegions": [
+      {
+        "client": 260,
+        "overflow": "visible",
+        "scroll": 260
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 260,
+        "overflow": "visible",
+        "scroll": 260
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 260,
+        "overflow": "visible",
+        "scroll": 260
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 305,
+    "title": "用变量保留并更新程序里的值",
+    "width": 320,
+    "expanded": true
+  },
+  {
+    "id": "PY101-C02-L02",
+    "client": 305,
+    "codeOverflowRegions": [
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 305,
+    "title": "分清文字、整数、小数和真假值",
+    "width": 320,
+    "expanded": true
+  },
+  {
+    "id": "PY101-C02-L03",
+    "client": 305,
+    "codeOverflowRegions": [
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 310,
+        "overflow": "visible",
+        "scroll": 310
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 303,
+        "overflow": "visible",
+        "scroll": 303
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 317,
+        "overflow": "visible",
+        "scroll": 317
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 360,
+        "overflow": "visible",
+        "scroll": 360
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 296,
+        "overflow": "visible",
+        "scroll": 296
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 317,
+        "overflow": "visible",
+        "scroll": 317
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 310,
+        "overflow": "visible",
+        "scroll": 310
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 310,
+        "overflow": "visible",
+        "scroll": 310
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 305,
+    "title": "用表达式算出一个结果",
+    "width": 320,
+    "expanded": true
+  },
+  {
+    "id": "PY101-C02-L04",
+    "client": 305,
+    "codeOverflowRegions": [
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 267,
+        "overflow": "visible",
+        "scroll": 267
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 267,
+        "overflow": "visible",
+        "scroll": 267
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 305,
+    "title": "让比较表达式给出真假结果",
+    "width": 320,
+    "expanded": true
+  },
+  {
+    "id": "PY101-C02-L05",
+    "client": 305,
+    "codeOverflowRegions": [
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 260,
+        "overflow": "visible",
+        "scroll": 260
+      },
+      {
+        "client": 267,
+        "overflow": "visible",
+        "scroll": 267
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 267,
+        "overflow": "visible",
+        "scroll": 267
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 267,
+        "overflow": "visible",
+        "scroll": 267
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 267,
+        "overflow": "visible",
+        "scroll": 267
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 274,
+        "overflow": "visible",
+        "scroll": 274
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 274,
+        "overflow": "visible",
+        "scroll": 274
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 267,
+        "overflow": "visible",
+        "scroll": 267
+      },
+      {
+        "client": 475,
+        "overflow": "visible",
+        "scroll": 475
+      },
+      {
+        "client": 274,
+        "overflow": "visible",
+        "scroll": 274
+      },
+      {
+        "client": 432,
+        "overflow": "visible",
+        "scroll": 432
+      },
+      {
+        "client": 267,
+        "overflow": "visible",
+        "scroll": 267
+      },
+      {
+        "client": 296,
+        "overflow": "visible",
+        "scroll": 296
+      },
+      {
+        "client": 296,
+        "overflow": "visible",
+        "scroll": 296
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 305,
+    "title": "取得用户输入，再转成需要的数值",
+    "width": 320,
+    "expanded": true
+  },
+  {
+    "id": "PY101-C02-L06",
+    "client": 305,
+    "codeOverflowRegions": [
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 289,
+        "overflow": "visible",
+        "scroll": 289
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 282,
+        "overflow": "visible",
+        "scroll": 282
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 289,
+        "overflow": "visible",
+        "scroll": 289
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 321,
+        "overflow": "visible",
+        "scroll": 321
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 274,
+        "overflow": "visible",
+        "scroll": 274
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 282,
+        "overflow": "visible",
+        "scroll": 282
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 332,
+        "overflow": "visible",
+        "scroll": 332
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 254,
+        "overflow": "visible",
+        "scroll": 254
+      },
+      {
+        "client": 303,
+        "overflow": "visible",
+        "scroll": 303
+      },
+      {
+        "client": 310,
+        "overflow": "visible",
+        "scroll": 310
+      },
+      {
+        "client": 410,
+        "overflow": "visible",
+        "scroll": 410
+      },
+      {
+        "client": 282,
+        "overflow": "visible",
+        "scroll": 282
+      },
+      {
+        "client": 289,
+        "overflow": "visible",
+        "scroll": 289
+      }
+    ],
+    "exercises": 2,
+    "images": [],
+    "paragraphFont": "16px",
+    "scroll": 305,
+    "title": "把输入和计算整理成清楚的输出",
+    "width": 320,
+    "expanded": true
+  }
+]

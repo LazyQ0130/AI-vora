@@ -1,0 +1,353 @@
+{
+  "platform": "win32",
+  "python": "3.14.2",
+  "type": "automated real saved Python processes; not human terminal typing",
+  "rows": [
+    {
+      "id": "marker-original",
+      "command": [
+        "D:\\Program Files\\python.exe",
+        "<lab>\\marker-original.py"
+      ],
+      "cwd": "<lab>",
+      "savedSource": "print(\"Plan A\")\r\nprint(\"File saved\")\r\n",
+      "savedSha256": "951d7242fab5e096f048716c4f39d2d7e08048d7645d69be488b361223e18ca3",
+      "stdin": "",
+      "stdout": "Plan A\r\nFile saved\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 20236,
+      "expectedStdout": "Plan A\nFile saved\n",
+      "expectedExit": 0,
+      "passed": true
+    },
+    {
+      "id": "marker-changed",
+      "command": [
+        "D:\\Program Files\\python.exe",
+        "<lab>\\marker-changed.py"
+      ],
+      "cwd": "<lab>",
+      "savedSource": "print(\"Plan P15\")\r\nprint(\"File saved\")\r\n",
+      "savedSha256": "fceff3ad39a5d4f9cc8767d205328f9b8c64cb34c67c42db33d4f5fd18a0663a",
+      "stdin": "",
+      "stdout": "Plan P15\r\nFile saved\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 22464,
+      "expectedStdout": "Plan P15\nFile saved\n",
+      "expectedExit": 0,
+      "passed": true
+    },
+    {
+      "id": "assignment-old-output",
+      "command": [
+        "D:\\Program Files\\python.exe",
+        "<lab>\\assignment-old-output.py"
+      ],
+      "cwd": "<lab>",
+      "savedSource": "task = \"Pack\"\r\nprint(task)\r\ntask = \"Sort\"\r\nprint(task)\r\n",
+      "savedSha256": "248a7df88b8d701805bec9a4e0e654e3b125081ecb9c27b184ef475a6efec0eb",
+      "stdin": "",
+      "stdout": "Pack\r\nSort\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 19188,
+      "expectedStdout": "Pack\nSort\n",
+      "expectedExit": 0,
+      "passed": true
+    },
+    {
+      "id": "assignment-only-later-changed",
+      "command": [
+        "D:\\Program Files\\python.exe",
+        "<lab>\\assignment-only-later-changed.py"
+      ],
+      "cwd": "<lab>",
+      "savedSource": "task = \"Pack\"\r\nprint(task)\r\ntask = \"Deliver\"\r\nprint(task)\r\n",
+      "savedSha256": "b6ad97e1f698195d7aa410857d30e48f3a64ffd02792301571477b648e000e39",
+      "stdin": "",
+      "stdout": "Pack\r\nDeliver\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 19792,
+      "expectedStdout": "Pack\nDeliver\n",
+      "expectedExit": 0,
+      "passed": true
+    },
+    {
+      "id": "same-display-7",
+      "command": [
+        "D:\\Program Files\\python.exe",
+        "<lab>\\same-display-7.py"
+      ],
+      "cwd": "<lab>",
+      "savedSource": "amount = 7\r\nprint(amount)\r\nprint(type(amount))\r\namount = \"7\"\r\nprint(amount)\r\nprint(type(amount))\r\n",
+      "savedSha256": "f4f3968ed692c8806afec85bf8732d677078b5b50874600f9631b23a85a2f12a",
+      "stdin": "",
+      "stdout": "7\r\n<class 'int'>\r\n7\r\n<class 'str'>\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 22004,
+      "expectedStdout": "7\n<class 'int'>\n7\n<class 'str'>\n",
+      "expectedExit": 0,
+      "passed": true
+    },
+    {
+      "id": "grouping",
+      "command": [
+        "D:\\Program Files\\python.exe",
+        "<lab>\\grouping.py"
+      ],
+      "cwd": "<lab>",
+      "savedSource": "print(12 / 3 * 2)\r\nprint(12 / (3 * 2))\r\nprint(10 - 3 + 2)\r\nprint(10 - (3 + 2))\r\n",
+      "savedSha256": "1858982c6303869f5c5a6b5be8a95c73392434dd790ce375c7ee3cf38f63d438",
+      "stdin": "",
+      "stdout": "8.0\r\n2.0\r\n9\r\n5\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 11500,
+      "expectedStdout": "8.0\n2.0\n9\n5\n",
+      "expectedExit": 0,
+      "passed": true
+    },
+    {
+      "id": "equal-boundary",
+      "command": [
+        "D:\\Program Files\\python.exe",
+        "<lab>\\equal-boundary.py"
+      ],
+      "cwd": "<lab>",
+      "savedSource": "count = 6\r\nlimit = 6\r\nprint(count < limit)\r\nprint(count <= limit)\r\n",
+      "savedSha256": "2198685daeeb2d14b79ec7f1215c12ac53d9e43fe5e22321fe5ebc5a07140b0c",
+      "stdin": "",
+      "stdout": "False\r\nTrue\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 17896,
+      "expectedStdout": "False\nTrue\n",
+      "expectedExit": 0,
+      "passed": true
+    },
+    {
+      "id": "input-str-4",
+      "command": [
+        "D:\\Program Files\\python.exe",
+        "<lab>\\input-str-4.py"
+      ],
+      "cwd": "<lab>",
+      "savedSource": "count_text = input(\"Count: \")\r\nprint(count_text)\r\nprint(type(count_text))\r\n",
+      "savedSha256": "644258e32568e96221b0c8d9d4ad80cf5a9c8efface6380abbb71b0885e9b418",
+      "stdin": "4\n",
+      "stdout": "Count: 4\r\n<class 'str'>\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 20908,
+      "expectedStdout": "Count: 4\n<class 'str'>\n",
+      "expectedExit": 0,
+      "passed": true
+    },
+    {
+      "id": "input-str-7",
+      "command": [
+        "D:\\Program Files\\python.exe",
+        "<lab>\\input-str-7.py"
+      ],
+      "cwd": "<lab>",
+      "savedSource": "count_text = input(\"Count: \")\r\nprint(count_text)\r\nprint(type(count_text))\r\n",
+      "savedSha256": "644258e32568e96221b0c8d9d4ad80cf5a9c8efface6380abbb71b0885e9b418",
+      "stdin": "7\n",
+      "stdout": "Count: 7\r\n<class 'str'>\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 13920,
+      "expectedStdout": "Count: 7\n<class 'str'>\n",
+      "expectedExit": 0,
+      "passed": true
+    },
+    {
+      "id": "input-convert-7",
+      "command": [
+        "D:\\Program Files\\python.exe",
+        "<lab>\\input-convert-7.py"
+      ],
+      "cwd": "<lab>",
+      "savedSource": "count_text = input(\"Count: \")\r\ncount = int(count_text)\r\nprint(type(count))\r\nprint(count * 3)\r\n",
+      "savedSha256": "f1d1876f8bb6120cb92d1b42efe3aa0dd395ec5bdf5113faa1c1f11df6ae6af3",
+      "stdin": "7\n",
+      "stdout": "Count: <class 'int'>\r\n21\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 11160,
+      "expectedStdout": "Count: <class 'int'>\n21\n",
+      "expectedExit": 0,
+      "passed": true
+    },
+    {
+      "id": "bad-int-four",
+      "command": [
+        "D:\\Program Files\\python.exe",
+        "<lab>\\bad-int-four.py"
+      ],
+      "cwd": "<lab>",
+      "savedSource": "count_text = input(\"Count: \")\r\ncount = int(count_text)\r\nprint(count)\r\n",
+      "savedSha256": "9dbf17bb96fa67c0115567da3ea9e6418de03e8ea772226b54ee7e9803db136a",
+      "stdin": "four\n",
+      "stdout": "Count: ",
+      "stderr": "Traceback (most recent call last):\r\n  File \"<lab>\\bad-int-four.py\", line 2, in <module>\r\n    count = int(count_text)\r\nValueError: invalid literal for int() with base 10: 'four'\r\n",
+      "exitCode": 1,
+      "pid": 19948,
+      "expectedStdout": "Count: ",
+      "expectedExit": 1,
+      "passed": true
+    },
+    {
+      "id": "bad-int-4.5",
+      "command": [
+        "D:\\Program Files\\python.exe",
+        "<lab>\\bad-int-4.5.py"
+      ],
+      "cwd": "<lab>",
+      "savedSource": "count_text = input(\"Count: \")\r\ncount = int(count_text)\r\nprint(count)\r\n",
+      "savedSha256": "9dbf17bb96fa67c0115567da3ea9e6418de03e8ea772226b54ee7e9803db136a",
+      "stdin": "4.5\n",
+      "stdout": "Count: ",
+      "stderr": "Traceback (most recent call last):\r\n  File \"<lab>\\bad-int-4.5.py\", line 2, in <module>\r\n    count = int(count_text)\r\nValueError: invalid literal for int() with base 10: '4.5'\r\n",
+      "exitCode": 1,
+      "pid": 20036,
+      "expectedStdout": "Count: ",
+      "expectedExit": 1,
+      "passed": true
+    },
+    {
+      "id": "recover-new-process",
+      "command": [
+        "D:\\Program Files\\python.exe",
+        "<lab>\\recover-new-process.py"
+      ],
+      "cwd": "<lab>",
+      "savedSource": "count_text = input(\"Count: \")\r\ncount = int(count_text)\r\nprint(count)\r\n",
+      "savedSha256": "9dbf17bb96fa67c0115567da3ea9e6418de03e8ea772226b54ee7e9803db136a",
+      "stdin": "7\n",
+      "stdout": "Count: 7\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 20112,
+      "expectedStdout": "Count: 7\n",
+      "expectedExit": 0,
+      "passed": true
+    },
+    {
+      "id": "literal-f-missing",
+      "command": [
+        "D:\\Program Files\\python.exe",
+        "<lab>\\literal-f-missing.py"
+      ],
+      "cwd": "<lab>",
+      "savedSource": "total_mass = 6.0\r\nprint(\"Total kg: {total_mass}\")\r\n",
+      "savedSha256": "cde20381c55d290a7293aeaea539a55eca562970186fa18f3ad762efe558afee",
+      "stdin": "",
+      "stdout": "Total kg: {total_mass}\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 21876,
+      "expectedStdout": "Total kg: {total_mass}\n",
+      "expectedExit": 0,
+      "passed": true
+    },
+    {
+      "id": "literal-f-restored",
+      "command": [
+        "D:\\Program Files\\python.exe",
+        "<lab>\\literal-f-restored.py"
+      ],
+      "cwd": "<lab>",
+      "savedSource": "total_mass = 6.0\r\nprint(f\"Total kg: {total_mass}\")\r\n",
+      "savedSha256": "5dc5e2ea2599b630f4e2efcd73b367489a5b6588665c6ed53fec81b5c1fc040b",
+      "stdin": "",
+      "stdout": "Total kg: 6.0\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 8404,
+      "expectedStdout": "Total kg: 6.0\n",
+      "expectedExit": 0,
+      "passed": true
+    },
+    {
+      "id": "path-alpha/run.py",
+      "command": [
+        "D:\\Program Files\\python.exe",
+        "alpha/run.py"
+      ],
+      "cwd": "<lab>",
+      "savedSource": "print(\"Alpha A1\")\n",
+      "savedSha256": "00e60cf8ce74cfd55de0305b25e090674a94d274594ce29bc2e67965a8aebf1a",
+      "stdin": "",
+      "stdout": "Alpha A1\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 3268,
+      "expectedStdout": "Alpha A1\n",
+      "expectedExit": 0,
+      "passed": true
+    },
+    {
+      "id": "path-run.py",
+      "command": [
+        "D:\\Program Files\\python.exe",
+        "run.py"
+      ],
+      "cwd": "<lab>",
+      "savedSource": "print(\"Alpha A1\")\n",
+      "savedSha256": "00e60cf8ce74cfd55de0305b25e090674a94d274594ce29bc2e67965a8aebf1a",
+      "stdin": "",
+      "stdout": "",
+      "stderr": "D:\\Program Files\\python.exe: can't open file '<lab>\\\\run.py': [Errno 2] No such file or directory\r\n",
+      "exitCode": 2,
+      "pid": 9088,
+      "expectedStdout": "",
+      "expectedExit": 2,
+      "passed": true
+    },
+    {
+      "id": "environment-a",
+      "command": [
+        "<lab>\\a\\.venv\\Scripts\\python.exe",
+        "<lab>\\a\\probe.py"
+      ],
+      "cwd": "<lab>\\a",
+      "savedSource": "import sys\r\nprint(sys.executable)\r\nprint(sys.prefix)\r\nprint(sys.base_prefix)\r\nprint(sys.version.split()[0])\r\n",
+      "savedSha256": "7a92109c485770e74e44b7f500102430bef9b0fd96433e0fa9427cde8bd11ede",
+      "stdin": "",
+      "stdout": "<lab>\\a\\.venv\\Scripts\\python.exe\r\n<lab>\\a\\.venv\r\nD:\\Program Files\r\n3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 20420,
+      "expectedStdout": null,
+      "expectedExit": 0,
+      "passed": true
+    },
+    {
+      "id": "environment-b",
+      "command": [
+        "<lab>\\b\\.venv\\Scripts\\python.exe",
+        "<lab>\\b\\probe.py"
+      ],
+      "cwd": "<lab>\\b",
+      "savedSource": "import sys\r\nprint(sys.executable)\r\nprint(sys.prefix)\r\nprint(sys.base_prefix)\r\nprint(sys.version.split()[0])\r\n",
+      "savedSha256": "7a92109c485770e74e44b7f500102430bef9b0fd96433e0fa9427cde8bd11ede",
+      "stdin": "",
+      "stdout": "<lab>\\b\\.venv\\Scripts\\python.exe\r\n<lab>\\b\\.venv\r\nD:\\Program Files\r\n3.14.2\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 4012,
+      "expectedStdout": null,
+      "expectedExit": 0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "notebookReuse": "docs/py101-p5/NOTEBOOK_RESULTS.json; code unchanged, no new Jupyter GUI claim",
+  "normalization": "Public paths replace only the own lab and base Python prefix; stdout order/echo/newlines otherwise retained. Raw records remain ignored locally.",
+  "privacyNormalization": "Only actual own workspace/user/temp path prefixes replaced recursively; raw machine logs remain ignored locally. Output ordering and newlines unchanged."
+}

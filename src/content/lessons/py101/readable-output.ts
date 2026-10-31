@@ -6,7 +6,7 @@ const sample=(key:ReadableKey):ContentBlock=>({type:"code",language:"python",fil
 
 // 课前简报/独立预解/事实/真实运行证据：docs/py101-p13。复用现有Reader，无新下载。
 export const pythonReadableOutputLesson=lessonSchema.parse({
- id:"PY101-C02-L06",courseId:"PY101",chapterId:"PY101-C02",title:"把输入和计算整理成清楚的输出",contentVersion:1,optionalLesson:false,
+ id:"PY101-C02-L06",courseId:"PY101",chapterId:"PY101-C02",title:"把输入和计算整理成清楚的输出",contentVersion:2,optionalLesson:false,
  subtitle:"6.0是什么，True又回答了什么？把已算好的值放进说明文字，再用真实输入检验边界。",
  prerequisites:"已完成第一章与2.1–2.5：会保存、终端完整运行.py，理解变量、str/int/float/bool、乘法与单位、<=比较及input后明确int/float转换。沿用已有Python 3和编辑器，不安装库；手机可读，代码与终端输入需要电脑。",
  prerequisiteLinks:[
@@ -32,12 +32,14 @@ export const pythonReadableOutputLesson=lessonSchema.parse({
    p("Total kg表示总质量（千克），Within 10 kg在本例问是否不超过10千克。接下来先把一个已知值与说明放到同一行，之后再把输入和计算接回来。普通print仍可显示结果；本课增加的是让值与含义一起呈现的方法。"),
   ]},
   {id:"first-format",title:"f前缀告诉Python：这里要放入当前值",navGroup:"format",navLabel:"文字与名称",blocks:[
-   p('f-string（格式化字符串）在开头引号前写f。成对英文引号仍界定整段文字，Total kg: 是说明；{total_mass}这一对花括号标出插入位置。运行到这条字符串时，Python读取total_mass当前对应的值，组成文字，再由print显示。f紧挨开头引号，花括号内先只用已经赋值的简单名称。'),
-   p("另建insert_mass.py，先预测下面一行显示什么，再保存运行。Windows在文件所在目录用python insert_mass.py，macOS用python3 insert_mass.py；一直使用已核验py的Windows环境可保持py。用pwd及dir（macOS用ls）核对目录；源码在.venv外、行首不缩进。命令写终端，不写进.py或Python的>>>。后面新文件替换同一命令的文件名并保存重跑。"),
+   p("f-string在开头引号前加f。引号界定文字，Total kg:是说明，{total_mass}用花括号标出插入位置。"),
+      p("执行到这里时，Python读total_mass当前值，组成字符串，再由print显示。先只将已绑定的简单名称放进花括号，f紧挨开头引号。"),
+   p("新建insert_mass.py，先预测显示内容，再保存运行。Windows在文件目录用python insert_mass.py，macOS用python3；已验证py的环境可继续用py。源码仍放在.venv外。"),
    sample("insert"),output("f-string · 预期print结果","Total kg: 6.0"),
    p("对照另存literal_mass.py：去掉开头f，仍是合法Python普通字符串。先预测花括号会消失还是原样显示，再运行核对。"),
    sample("literal"),output("普通字符串 · 预期print结果","Total kg: {total_mass}"),
-   p("普通字符串没有请求插入值，所以花括号和名称原样显示；它没有发生语法错误。对比两份源码和真实结果，指出哪个f在起作用，不能认为所有引号里的花括号都会自动替换。"),
+   p("去掉f后，花括号及total_mass会原样显示。如果你仍预测6.0，就是把普通文字里的花括号也当成了插入请求。"),
+      p("在literal_mass.py副本只补回开头f再重跑，应看到当前数值。这两种写法都合法，差别是有没有插入值。"),
   ]},
   {id:"labels-and-units",title:"每一行都说清名称、数量或单位",navGroup:"format",navLabel:"文字与名称",blocks:[
    p("再把三个已知值分别放进说明。item_name是物品名称，count是件数，total_mass是总千克数；三个花括号各读取自己的名称。先预测三行，再保存known_summary.py运行："),
@@ -62,7 +64,8 @@ export const pythonReadableOutputLesson=lessonSchema.parse({
    p("4件×1.5千克/件为6.0千克，6.0<=10为True。若此处与预测不同，先核对实际键入、转换后的名称和乘法；正确之后再整理文字，不靠改输出标签掩盖计算错误。"),
   ]},
   {id:"main-example",title:"最后接上四行可读摘要",navGroup:"summary",navLabel:"完整摘要",blocks:[
-   p("输入、转换、总量与比较都已观察，再用四条f-string替换末尾裸值输出。第1条读item_name，显示物品；第2条读整数count，显示件数；第3条读total_mass并写总千克数；第4条读within_limit，并明确它问是否不超过10千克。比较先保存，不藏进花括号。"),
+   p("输入与计算都核对后，再用四条f-string替换裸值输出：分别读物品名、整数件数、总千克数和比较结果。"),
+      p("最后一条明确问是否不超过10千克。比较先保存，花括号只负责取名称的值，不能用漂亮标签掩盖错误计算。"),
    p("新建parcel_summary.py，先写Parcel/4/1.5的四行预测，再保存完整主例。下面空行只是分组，每次从头执行。"),
    sample("main"),output("Windows · PowerShell · 文件所在目录","python parcel_summary.py"),output("macOS · 终端 · 文件所在目录","python3 parcel_summary.py"),
    output("Parcel / 4 / 1.5 · 仅四条print结果","Item: Parcel\nCount: 4\nTotal kg: 6.0\nWithin 10 kg: True"),
@@ -76,23 +79,37 @@ export const pythonReadableOutputLesson=lessonSchema.parse({
    p("等于10.0时<=仍为True，因为最多包括等值；超过时False。这个真假只报告本次总质量是否不超过10千克，没有检查包装或运输条件，也没有自动执行拒绝。输出说明必须对应实际比较，不能把它改写成“所有条件下都安全”。"),
   ]},
   {id:"practice",title:"自己选择情境，交出可读结果与边界证据",navGroup:"practice",navLabel:"独立练习",blocks:[
-   p("先合上参考，自建短.py，正式源码和真实运行保存在本地。网页框只是临时笔记；每轮先预测，命令/提示/输入回显/print分开标记，用简短说明解释数据流即可。"),
+   p("先独立写程序，再按需展开提示。基本交付是本人源码和本题真实运行结果；同一会话的环境、文件位置和命令只记一次，后面可引用编号。预测可口述或记一行；边界、改值和恢复题按题干保留必要对照。"),
    {type:"exercise",id:"write-clear-summary",title:"自己的可读计算摘要",kind:"代码",
-    prompt:"另选与正文不同的测量情境，例如材料件数和单件长度，自选合法名称和清楚提示，创建新.py。input取得文字标签、整数数量文本、小数测量文本，分别用int/float明确转换，再用乘法求有实际意义的总量。用简单f-string显示标签、件数和总量，写清各项含义与单位。先预测两组不同的新合法输入，保存同一源码后分别从终端实际输入运行，保留命令、两组输入/预测/print结果及数据流说明；不能照抄正文物品和整组数字。指出一条f-string去掉f后为何会不同，可另存副本观察。英文或中文输出均可，不用if、循环、函数或格式指定。",
+    prompt:"另选新测量情境、合法名称和三条提示，新.py用input收标签、整数件数、小数单件量，分步int/float后算总量。简单f-string显示标签、件数、总量及含义/单位。对同一源码选两组新合法输入，先预测再真运行。交源码、一张两组输入/预测/print摘要表和一次命令。用一句话或现场指认输入→转换→计算→显示；解释一条输出去掉f的差别，可另存副本自查。不用if/循环/函数/格式指定。",
     hints:["哪一项应保留为文字，哪两项要成为数值？单件测量乘件数后是什么单位？读者能从每行知道这是哪个量吗？","按输入、分步转换、计算、说明文字中的名称组织。花括号中先只放已经赋值的名称；自己确定主题、新数据和两轮预测。"],
-    solution:["参考横幅材料，每片长度以米计。页尾material_summary.py给出完整路径，先独立完成再展开。第1–3行收材料名/片数文本/单片米数；第4–5行转成pieces整数和length浮点；第6行两者相乘存总米数。",
-     "第7–9行分别显示材料名、片数、Total m总米数。Banner A/6/0.75先预测Material: Banner A、Pieces: 6、Total m: 4.5，保存运行python material_summary.py（macOS用python3）。同源码第二轮Banner B/10/0.5先预测总5.0米，再实际重新启动输入。",
-     "前者6片×0.75米/片=4.5米，后者10片×0.5米/片=5.0米。f-string只读取已经取得的名称，不会替你转换或重算输入。去掉最后一条f会显示文字{total_length}；补回f才能插入当前总值。",
-     "常错是花括号内错拼名称、少f、用原文本计算、把单片质量/长度当总量或遗漏单位。按输入→转换→总量→文字逐项核对。接受其他新情境/名称、中文标签、成对单引号或先保存中间结果，但需真实两轮和清楚单位；参考预测不是本人运行证据。"],
-    rubric:["本人新.py真实取得三输入并分步int/float转换，使用转换后数量求总量，名称/提示/情境由本人设计。","简单f-string插入正确已绑定名称，标签/件数/总量及单位让别人可辨；能区分少f的普通字符串。","两组新合法输入均有本人事先预测、同一保存源码、真实命令与输出，关系/单位和数据流解释可核对，抄参考或读完标记不足。"]},
+    solution:[
+  "参考横幅材料，每片长度以米计。页尾material_summary.py给出完整路径，先独立完成再展开。第1–3行收材料名/片数文本/单片米数；第4–5行转成pieces整数和length浮点；第6行两者相乘存总米数。",
+  "第7–9行分别显示材料名、片数、Total m总米数。Banner A/6/0.75先预测Material: Banner A、Pieces: 6、Total m: 4.5，保存运行python material_summary.py（macOS用python3）。同源码第二轮Banner B/10/0.5先预测总5.0米，再实际重新启动输入。",
+  "前者6片×0.75米/片=4.5米，后者10片×0.5米/片=5.0米。f-string只读取已经取得的名称，不会替你转换或重算输入。去掉最后一条f会显示文字{total_length}；补回f才能插入当前总值。",
+  "常错是花括号内错拼名称、少f、用原文本计算、把单片质量/长度当总量或遗漏单位。按输入→转换→总量→文字逐项核对。接受其他新情境/名称、中文标签、成对单引号或先保存中间结果，但需真实两轮和清楚单位；参考预测不是本人运行证据。",
+  "交付按本题题干与rubric：源码可用一份加差异，运行记录用短表；相同命令、环境和版本引用会话卡，不重复誊写。"
+],
+    rubric:[
+  "本人新程序三输入分步转换并真实计算，自选情境/名称/提示。",
+  "简单f-string读已绑定名称，含义及单位可辨，能区分去f的普通字符串。",
+  "两组新输入均有事前预测与真输出；一表/一次命令，数据流现场或短句说明，非长报告。"
+]},
    {type:"exercise",id:"verify-summary-boundary",title:"验证摘要边界，并解释真假回答了什么",kind:"代码",
-    prompt:"自选与物品质量主例不同的测量限制情境，例如材料总长度最多若干米。可复用题一结构，但保留题一/题二阶段源码与实际修改记录。真实input取得名称、正整数件数、小数单件测量，明确int/float转换并算总量；自己固定一个合理上限，用总量<=上限保存布尔结果，再用f-string显示名称、件数、总量/单位和明确的比较问题及真假。先选低于、恰好等于、高于上限三组合法输入，各先预测再完整运行同一源码，保留三组命令/输入/实际摘要和固定上限。选整数、0.5或0.25等易手算数据，让等值确实达到。解释等值为何True、超限False只表示此比较不满足而没有执行拒绝。不把一次运行重复计数，不用if/循环/复杂精度算法。",
+    prompt:"自选新测量限制情境，如总长度最多若干米；可复用题一源码，另记新增比较/输出的差异。真实input及int/float求总量，固定新上限，总量<=上限保存真假，用简单f-string显示名称/件数/总量单位/比较问题。选低/等/高三组合法输入，各先预测再完整运行同一文件；用整数、0.5或0.25安排确实等值。交源码加差异、一张三组输入/预测/实际摘要表及一次命令。解释等值True、超限False的范围，False未自动拒绝。不重复提交整份阶段源码，不把一次运行算成三轮；不引入控制流程或精度算法。",
     hints:["分清单件测量、总量和限制。应该拿哪一项与上限比较，输出里的真假文字又在问哪个问题？","先确定能恰好达到的边界，再在同一固定上限下安排低/等/高三组输入，先预测再逐轮执行。保留你决定的数据、比较名称和完整代码。"],
-    solution:["参考花坛围边，最多12米。页尾garden_boundary.py先收批次、段数和每段米数，转strips整数与strip_length浮点；length_limit固定12，total_length=strips * strip_length，within_limit保存总长<=上限。四条f-string分别显示批次、段数、总米数和Within 12 m问题。",
-     "同一文件Garden A/3/3先预测总9.0米/True，再运行python garden_boundary.py（macOS用python3）；Garden B/3/4先预测12.0米/True，重新输入运行；Garden C/3/5先预测15.0米/False，再完整重跑。每轮名称和段数也要和实际摘要对应，保留全部四行。",
-     "等值12.0满足最多12，<=包含相等；15.0超过所以False。True不证明其他条件都满足，False也没让程序拒绝输入，这段没有分支动作。输出Within {length_limit} m中的两个插入位置分别读取限制和真假值，花括号都只是简单名称。",
-     "常错是改了上限、比较单段而非总量、实际没到等值、三轮只抄参考或将False写成已拒绝。按实际输入重算，保留固定源码、预测和命令。接受其他合理新上限/数据/名称/中文问题；若复用题一，必须能看出新增比较与第三轮证据，不把题一一次运行算成三轮。"],
-    rubric:["本人真实输入/转换/计算，单件与总量关系、单位和固定上限正确，比较确实使用总量<=上限。","三组新数据分别低/等/高，各有预测、同一源码、真实命令与完整可读输出，上限不随轮次改变。","等值True/超限False正确，文字明确比较对象和单位，解释其范围及没有自动拒绝动作。","简单f-string与已学语法完成；若复用题一有阶段源码/修改记录和独立三轮，固定表或一次截图不能替代。"]},
+    solution:[
+  "参考花坛围边，最多12米。页尾garden_boundary.py先收批次、段数和每段米数，转strips整数与strip_length浮点；length_limit固定12，total_length=strips * strip_length，within_limit保存总长<=上限。四条f-string分别显示批次、段数、总米数和Within 12 m问题。",
+  "同一文件Garden A/3/3先预测总9.0米/True，再运行python garden_boundary.py（macOS用python3）；Garden B/3/4先预测12.0米/True，重新输入运行；Garden C/3/5先预测15.0米/False，再完整重跑。每轮名称和段数也要和实际摘要对应，保留实际摘要的四行。",
+  "等值12.0满足最多12，<=包含相等；15.0超过所以False。True不证明其他条件都满足，False也没让程序拒绝输入，这段没有分支动作。输出Within {length_limit} m中的两个插入位置分别读取限制和真假值，花括号都只是简单名称。",
+  "常错是改了上限、比较单段而非总量、实际没到等值、三轮只抄参考或将False写成已拒绝。按实际输入重算，保留固定源码、预测和命令。接受其他合理新上限/数据/名称/中文问题；若复用题一，必须能看出新增比较与第三轮证据，不把题一一次运行算成三轮。",
+  "交付按本题题干与rubric：源码可用一份加差异，运行记录用短表；相同命令、环境和版本引用会话卡，不重复誊写。"
+],
+    rubric:[
+  "本人输入/转换/计算/总量<=固定上限正确，单位与输出问题清楚。",
+  "低/等/高三组各有事前预测及完整真摘要，上限不改，源码一次加差异、命令一次。",
+  "等值True/超限False的范围正确，无自动拒绝；题一复用仍需独立三轮，非抄表或长报告。"
+]},
   ]},
   {id:"reference-programs",title:"做完再核对：完整参考与名称错拼副本",navGroup:"reference",navLabel:"参考核对",tier:"verification",blocks:[
    p("先完成两题再展开参考，另存新文件保留原作。前两份完整程序的行义、预测与命令在各题解答中，不将列表文字当连写源码。"),sample("ownSummary"),sample("ownBoundary"),
@@ -101,8 +118,8 @@ export const pythonReadableOutputLesson=lessonSchema.parse({
   ]},
   {id:"chapter-end",title:"第二章收束：能说明结果，也知道还没学什么",navGroup:"finish",navLabel:"章末衔接",blocks:[
    {type:"summary",points:["保存与更新变量，辨认基本类型，写有单位的数值表达式和比较。","从终端取得文字，明确int/float转换，再计算和保存判断。","用简单f-string把名称、数量、单位和比较问题一起显示，用真实低/等/高输入核对。"]},
-   p("保留本人代码和短记录，能现场换一组新数据、预测并解释每行含义，才有这些操作的证据。网页读完或作者测试通过不等于学生已能独立完成。"),
-   p("第二章六节的技术制作已齐，教材仍待人工教学审核，整门PY101继续筹备。课程体系下一章是「分支、循环、推导式与常见控制流程」，当前尚无正式节级规划或可读正文。本章还没有教授分支、循环、容器、函数或CSV数据工具。第5章虽有旧试读，仍需第三、第四章等中间先修；技术导航跳到第5章不是零基础直接学习建议。"),
+   p("保留自己的程序和摘要，能换新数据、先预测并解释每行含义，就能核对值从哪里来、单位和限制是否一致。"),
+   p("第二章把变量、类型、计算、比较和输入输出连成了短程序。接下来学习第三章的控制流程，让程序依据条件选择动作或重复操作。先能独立完成本章的交互摘要，再学习这些新能力。第5章函数仍依赖第三、第四章的中间知识，不宜直接跳过。"),
   ]},
  ],resources:[],references:[
   {title:"f-string教程",href:"https://docs.python.org/3.14/tutorial/inputoutput.html#formatted-string-literals",note:"先解释前缀与替换字段。"},

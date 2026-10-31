@@ -2,16 +2,18 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
-import { pythonEditorRerunLesson as lesson } from "../src/content/lessons/py101/editor-rerun";
-import { lessonRegistry, getLearningCourse, resolveLesson, getAdjacentLessons } from "../src/lib/course-engine";
-import { publicationManifest } from "../src/content/publication-manifest";
+import { pythonEditorRerunLesson as p15CurrentLesson } from "../src/content/lessons/py101/editor-rerun";
+import {historicalLesson} from "./helpers/py101-p14-view";
+const lesson=historicalLesson(p15CurrentLesson);
+import { lessonRegistry, getLearningCourse, resolveLesson, getAdjacentLessons } from "./helpers/py101-p14-view";
+import { publicationManifest } from "./helpers/py101-p14-view";
 import { beforeApprovedPy101Object, beforeApprovedPy101Source, protectedPy101FileMatches, approvedPy101Additions } from "../scripts/py101-p1-compatibility";
 import { createProgressStore, parseReadingProgress, progressKey } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
 import { editorFiles } from "../src/content/resources/python-editor";
 import { assertRegisteredInventory, assertCourseAvailability } from "./helpers/registered-content";
 
-test("P2登记只增加1.3，49旧课与发布、历史文件仍通过完整摘要保护", () => {
+test("[P0–P14历史契约] P2登记只增加1.3，49旧课与发布、历史文件仍通过完整摘要保护", () => {
   const base = JSON.parse(readFileSync("docs/py101-p2/BASELINE.json", "utf8"));
   const portablePath = "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md";
   const portableText = readFileSync(portablePath, "utf8").replaceAll("\r\n", "\n");
@@ -27,7 +29,7 @@ test("P2登记只增加1.3，49旧课与发布、历史文件仍通过完整摘�
   assertRegisteredInventory(); assertCourseAvailability("PY101");
 });
 
-test("1.1只改最终状态段，目标、考核与r1进度范围严格相同；额外修改不被撤销", () => {
+test("[P0–P14历史契约] 1.1只改最终状态段，目标、考核与r1进度范围严格相同；额外修改不被撤销", () => {
   const old = JSON.parse(readFileSync("docs/py101-p2/BASELINE_LESSONS.json", "utf8")).lesson;
   const now = lessonRegistry.get(old.id)!;
   const expected = structuredClone(old); const lastSection = expected.sections.at(-1); lastSection.blocks[lastSection.blocks.length - 1] = now.sections.at(-1)!.blocks.at(-1);
@@ -43,7 +45,7 @@ test("1.1只改最终状态段，目标、考核与r1进度范围严格相同；
   for (const path of ["next-env.d.ts", "scripts/ai000-r3-compatibility.ts", "src/components/lesson/reader.tsx", "tests/reading-experience.test.ts"]) assert.equal(protectedPy101FileMatches(path, Buffer.concat([readFileSync(path), Buffer.from("\n// undeclared")]), base.files[path]), false, path);
 });
 
-test("1.2接1.3，未制作课无正文与路由；错误归属不可读", () => {
+test("[P0–P14历史契约] 1.2接1.3，未制作课无正文与路由；错误归属不可读", () => {
   const course = getLearningCourse("PY101")!;
   assert.equal(course.status, "planned"); assert.equal(lesson.contentVersion, 1);
   assert.equal(getAdjacentLessons(course, "PY101-C01-L02").next?.lessonId, lesson.id);
@@ -52,7 +54,7 @@ test("1.2接1.3，未制作课无正文与路由；错误归属不可读", () =>
   assert.equal(resolveLesson("ML201", lesson.id), undefined);
 });
 
-test("1.3恢复自己的r1进度，保存不覆盖旧课、第五章r1/r2", () => {
+test("[P0–P14历史契约] 1.3恢复自己的r1进度，保存不覆盖旧课、第五章r1/r2", () => {
   const values = new Map<string, string>();
   const port = { getItem: (key: string) => values.get(key) ?? null, setItem: (key: string, value: string) => { values.set(key, value); } };
   const store = createProgressStore(() => port);
@@ -68,7 +70,7 @@ test("1.3恢复自己的r1进度，保存不覆盖旧课、第五章r1/r2", () =
   for (const [key, value] of previous) assert.equal(values.get(key), value);
 });
 
-test("目标映射实际开放练习，提示保留最终判断；所有Python块只含print与字符串", () => {
+test("[P0–P14历史契约] 目标映射实际开放练习，提示保留最终判断；所有Python块只含print与字符串", () => {
   const blocks = lesson.sections.flatMap(s => s.blocks), tasks = blocks.filter(b => b.type === "exercise");
   assert.equal(tasks.length, 2);
   assert.deepEqual(lesson.assessmentMap.map(m => m.objective), [1, 2, 3]);

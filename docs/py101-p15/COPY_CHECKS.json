@@ -1,0 +1,22 @@
+[
+  {
+    "label": "receive_label.py",
+    "text": ""
+  },
+  {
+    "label": "Windows · PowerShell · 文件所在目录",
+    "text": "python receive_label.py"
+  },
+  {
+    "label": "macOS · 终端 · 文件所在目录",
+    "text": "python3 receive_label.py"
+  },
+  {
+    "label": "inspect_input.py",
+    "text": "count_text = input(\"Count: \")\nprint(count_text)\nprint(type(count_text))"
+  },
+  {
+    "label": "receive_label.py retry after UI 已复制",
+    "text": "label = input(\"Label: \")\nprint(label)"
+  }
+]

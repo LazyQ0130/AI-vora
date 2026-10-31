@@ -1,0 +1,11 @@
+{
+  "initialObservedWidth": 338,
+  "clientWidth": 305,
+  "cause": "Three adjacent path tokens joined by CJK enumeration commas had no whitespace break; added spaces between prose tokens, no Python code or Reader change.",
+  "final": {
+    "client": 305,
+    "prompt": "按上方新布局准备两份check.py。在route-task/west保持cwd不变，依次研究本平台三条命令：当前check.py、 ../east/check.py、 ../check.py。用三行表先记目标或缺失判断及预期，再实际运行填结果。自行给其中一份源码加独特print标记，预测受影响路线，只重跑指向该文件的一条确认。交两份源码、三行表及这一次改值对照；命令可编号，逐段路线理由可现场说明。",
+    "scroll": 305,
+    "width": 320
+  }
+}

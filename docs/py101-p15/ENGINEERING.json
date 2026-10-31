@@ -1,0 +1,120 @@
+{
+  "assembledAt": "2026-10-31T05:43:23.868098+00:00",
+  "versions": {
+    "node": "24.16.0",
+    "python": "3.14.2",
+    "next": "16.4.3"
+  },
+  "workspace": {
+    "typecheck": 0,
+    "lint": 0,
+    "lintWarnings": 0,
+    "node": {
+      "exit": 0,
+      "tests": 373,
+      "pass": 373,
+      "skip": 0
+    },
+    "downloads": {
+      "exit": 0,
+      "programGroups": 16,
+      "cellNotebooks": 3
+    },
+    "python": {
+      "exit": 0,
+      "webBlocks": 126,
+      "coreComparisons": 10
+    },
+    "teaching": {
+      "exit": 0,
+      "lessons": 59
+    },
+    "build": {
+      "exit": 0,
+      "bundler": "Turbopack",
+      "staticPages": 86
+    },
+    "routes": {
+      "exit": 0,
+      "pass": 110,
+      "total": 110
+    }
+  },
+  "cleanCandidate": {
+    "tree": "34da52a5f55046a93660779af1a2687c23256fc8",
+    "exportedFiles": 3058,
+    "typecheck": 0,
+    "lint": 0,
+    "lintWarnings": 0,
+    "node": {
+      "exit": 0,
+      "tests": 372,
+      "pass": 372,
+      "skip": 0
+    },
+    "downloads": 0,
+    "python": {
+      "exit": 0,
+      "webBlocks": 126,
+      "coreComparisons": 10
+    },
+    "teaching": {
+      "exit": 0,
+      "lessons": 59
+    },
+    "buildTurbopack": {
+      "exit": 1,
+      "reason": "External node_modules junction resolves Next.js outside workspace root; portable root restriction preserved, no configuration workaround."
+    },
+    "buildWebpack": {
+      "exit": 0,
+      "staticPages": 86,
+      "officialSupport": "node_modules/next/dist/docs/01-app/03-api-reference/06-cli/next.md --webpack"
+    },
+    "routes": {
+      "exit": 0,
+      "pass": 110,
+      "total": 110
+    },
+    "allExportedBytesUnchangedAfterChecks": true,
+    "userChangesIncluded": false
+  },
+  "correctedAttempts": [
+    {
+      "phase": "workspace first build",
+      "exit": 1,
+      "cause": "New test union type needed explicit narrowing",
+      "fixed": "Type-only test correction, final build/typecheck passed"
+    },
+    {
+      "phase": "initial lint",
+      "exit": 0,
+      "warnings": 4,
+      "fixed": "Removed unused sourceLines/lines helpers after solution representation change; final lint zero warnings"
+    },
+    {
+      "phase": "first candidate UTF-8 filenames",
+      "exit": 1,
+      "cause": "Windows tar decoded two Chinese curriculum names incorrectly",
+      "fixed": "Kept failed directory; fresh Python UTF-8 extraction; 3051 exact member bytes checked before/after"
+    },
+    {
+      "phase": "320px path exercise",
+      "pageWidth": 338,
+      "fixedPageWidth": 305,
+      "fixed": "Added spaces between prose path tokens only, no code/Reader/CSS change"
+    }
+  ],
+  "rawMachineLogsCommitted": false,
+  "humanReviewOrStudentTrialClaimed": false,
+  "finalAnswerWordingRecheck": {
+    "lessons": [
+      "PY101-C01-L03",
+      "PY101-C01-L04"
+    ],
+    "fullHashesUpdated": true,
+    "workspaceNodeTests": 373,
+    "candidateNodeTests": 372,
+    "bothProductionBuildsRechecked": true
+  }
+}

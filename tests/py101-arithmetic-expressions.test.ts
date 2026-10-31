@@ -2,13 +2,15 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
-import { pythonArithmeticExpressionsLesson as lesson } from "../src/content/lessons/py101/arithmetic-expressions";
+import { pythonArithmeticExpressionsLesson as p15CurrentLesson } from "../src/content/lessons/py101/arithmetic-expressions";
+import {historicalLesson} from "./helpers/py101-p14-view";
+const lesson=historicalLesson(p15CurrentLesson);
 import { arithmeticCode, arithmeticBlockNames, arithmeticSetups } from "../src/content/resources/python-arithmetic";
 import { arithmeticKey, arithmeticExpected, checkArithmeticResult } from "../scripts/validate-py101-arithmetic";
 import { courseOutline } from "../src/content/course-outline";
-import { publicationManifest } from "../src/content/publication-manifest";
+import { publicationManifest } from "./helpers/py101-p14-view";
 import { isReadable, publicationSchema } from "../src/content/models";
-import { getLearningCourse, getAdjacentLessons, lessonRegistry, resolveLesson } from "../src/lib/course-engine";
+import { getLearningCourse, getAdjacentLessons, lessonRegistry, resolveLesson } from "./helpers/py101-p14-view";
 import { createProgressStore, parseReadingProgress, progressKey } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
 import { beforeApprovedPy101Source, beforeApprovedPy101Object } from "../scripts/py101-p1-compatibility";
@@ -16,7 +18,7 @@ import { assertRegisteredInventory, assertCourseAvailability } from "./helpers/r
 const read = (name: string) => JSON.parse(readFileSync(`docs/py101-p10/${name}.json`, "utf8"));
 const sha = (v: unknown) => createHash("sha256").update(JSON.stringify(v)).digest("hex");
 
-test("2.3身份/order3/r1与真实草稿门禁，技术后试读而非人工审核", () => {
+test("[P0–P14历史契约] 2.3身份/order3/r1与真实草稿门禁，技术后试读而非人工审核", () => {
   const entry = publicationManifest.find(p => p.lessonId === lesson.id)!;
   assert.deepEqual([entry.courseId,entry.chapterId,entry.title,entry.order,entry.contentVersion,entry.optionalLesson], ["PY101","PY101-C02",lesson.title,3,1,false]);
   assert.equal(courseOutline.find(s=>s.lessonId===lesson.id)?.order,3);
@@ -30,7 +32,7 @@ test("2.3身份/order3/r1与真实草稿门禁，技术后试读而非人工审�
   assertRegisteredInventory();assertCourseAvailability("PY101");
 });
 
-test("三目标用两道真实core代码题验收，改值与诊断分别留证，提示不代填", () => {
+test("[P0–P14历史契约] 三目标用两道真实core代码题验收，改值与诊断分别留证，提示不代填", () => {
   const tasks=lesson.sections.filter(s=>s.tier==="core").flatMap(s=>s.blocks).filter(b=>b.type==="exercise");
   assert.deepEqual(tasks.map(t=>t.id),["calculate-and-revise","compare-grouping"]);
   assert.deepEqual(lesson.assessmentMap,[{objective:1,exerciseIds:tasks.map(t=>t.id)},{objective:2,exerciseIds:[tasks[1].id]},{objective:3,exerciseIds:tasks.map(t=>t.id)}]);
@@ -39,7 +41,7 @@ test("三目标用两道真实core代码题验收，改值与诊断分别留证�
   assert.deepEqual(lesson.learningTime,{reading:[12,18],practice:[6,10],coding:[15,22],basis:"editorial-estimate"});assert.deepEqual(lesson.resources,[]);
 });
 
-test("网页全部Python有同源契约/上下文，失败例显式登记，未教语法不进核心代码", () => {
+test("[P0–P14历史契约] 网页全部Python有同源契约/上下文，失败例显式登记，未教语法不进核心代码", () => {
   const blocks=lesson.sections.flatMap(s=>s.blocks).filter(b=>b.type==="code").filter(b=>b.language==="python");
   assert.deepEqual(blocks.map(b=>arithmeticKey(b.filename,b.code)),["multiply","total","subtract","precedence","grouping","moreBoxes","division","nonIntegral","leftGrouping","main","revise","zeroDivide"]);
   assert.equal(arithmeticSetups.subtract,arithmeticCode.total.split("\n").slice(0,-1).join("\n"));assert.equal(arithmeticSetups.division,arithmeticSetups.subtract);
@@ -48,7 +50,7 @@ test("网页全部Python有同源契约/上下文，失败例显式登记，未�
   assert.throws(()=>arithmeticKey("unknown.py","print(16)"));assert.throws(()=>arithmeticKey(arithmeticBlockNames.main,arithmeticCode.main.replace(" + spare","")));
 });
 
-test("独立预期核对分组/减法/除法与float，受控零除契约拒绝伪成功及无关异常", () => {
+test("[P0–P14历史契约] 独立预期核对分组/减法/除法与float，受控零除契约拒绝伪成功及无关异常", () => {
   assert.equal(arithmeticExpected.main,"16\n24\n4.0\n");assert.equal(arithmeticExpected.leftGrouping,"8.0\n2.0\n9\n5\n");
   assert.equal(arithmeticExpected.division,"4.0\n<class 'float'>\n");assert.equal(arithmeticExpected.subtract,"14\n");
   checkArithmeticResult("zeroDivide",{exitCode:1,stdout:"",stderr:"Traceback\nZeroDivisionError: division by zero\n"});
@@ -60,7 +62,7 @@ test("独立预期核对分组/减法/除法与float，受控零除契约拒绝�
   assert.ok(outputs.some(b=>b.code==="16\n24\n4.0"));assert.ok(outputs.some(b=>b.code==="4.0\n<class 'float'>"));
 });
 
-test("真实保存文件记录覆盖主例、两题、改一项重跑、完整追加和已知失败", () => {
+test("[P0–P14历史契约] 真实保存文件记录覆盖主例、两题、改一项重跑、完整追加和已知失败", () => {
   const evidence=read("PYTHON_RUNS"),row=(label:string)=>evidence.rows.find((r:{label:string})=>r.label===label);
   assert.equal(evidence.platform,"win32");assert.equal(evidence.allAssertionsPassed,true);
   for(const key of Object.keys(arithmeticCode) as (keyof typeof arithmeticCode)[]){const r=row(key);checkArithmeticResult(key,r);assert.equal(r.savedSource,(arithmeticSetups[key]?arithmeticSetups[key]+"\n":"")+arithmeticCode[key]);}
@@ -74,7 +76,7 @@ test("真实保存文件记录覆盖主例、两题、改一项重跑、完整�
   assert.doesNotMatch(JSON.stringify(evidence),/[A-Za-z]:\\\\Users\\\\|token=/);
 });
 
-test("2.2仅末段状态勘误保r1；其余全部旧Lesson/发布对象、作用域保持", () => {
+test("[P0–P14历史契约] 2.2仅末段状态勘误保r1；其余全部旧Lesson/发布对象、作用域保持", () => {
   const base=read("BASELINE"),current=lessonRegistry.get("PY101-C02-L02")!,expected=structuredClone(base.amendmentBefore);
   expected.sections.at(-1).blocks[expected.sections.at(-1).blocks.length-1]=current.sections.at(-1)!.blocks.at(-1);assert.deepEqual(current,expected);
   assert.equal(current.contentVersion,1);assert.deepEqual(lessonProgressScope(current),lessonProgressScope(base.amendmentBefore));
@@ -85,7 +87,7 @@ test("2.2仅末段状态勘误保r1；其余全部旧Lesson/发布对象、作�
   assert.equal(beforeApprovedPy101Source("src/lib/course-engine.ts",source+"\n// unauthorized",base.head),source+"\n// unauthorized");
 });
 
-test("2.2到2.3相邻且整课planned，后续按实际注册，错误课程不可读", () => {
+test("[P0–P14历史契约] 2.2到2.3相邻且整课planned，后续按实际注册，错误课程不可读", () => {
   const course=getLearningCourse("PY101")!;assert.equal(course.status,"planned");
   if(isReadable(publicationManifest.find(p=>p.lessonId===lesson.id)!)){
     assert.equal(getAdjacentLessons(course,"PY101-C02-L02").next?.lessonId,lesson.id);assert.equal(getAdjacentLessons(course,lesson.id).previous?.lessonId,"PY101-C02-L02");const readable=course.chapters.flatMap(c=>c.lessons).filter(s=>s.href);assert.equal(getAdjacentLessons(course,lesson.id).next?.lessonId,readable[readable.findIndex(s=>s.lessonId===lesson.id)+1]?.lessonId);
@@ -94,7 +96,7 @@ test("2.2到2.3相邻且整课planned，后续按实际注册，错误课程不�
   assert.equal(resolveLesson("ML201",lesson.id),undefined);
 });
 
-test("2.3新r1恢复独立，不继承或覆盖所有旧课/旧修订完成记录", () => {
+test("[P0–P14历史契约] 2.3新r1恢复独立，不继承或覆盖所有旧课/旧修订完成记录", () => {
   const memory=new Map<string,string>(),storage={getItem:(k:string)=>memory.get(k)??null,setItem:(k:string,v:string)=>{memory.set(k,v);}},store=createProgressStore(()=>storage);
   for(const old of lessonRegistry.values())if(old.id!==lesson.id){const scope=lessonProgressScope(old);store.save(scope,100,scope.sectionIds[0],true);if(scope.contentVersion>1)store.save({...scope,contentVersion:1},100,scope.sectionIds[0],true);}
   const before=new Map(memory),scope=lessonProgressScope(lesson);assert.equal(progressKey(scope),"aivora:learning:v2:PY101:PY101-C02-L03:r1");assert.equal(store.getSnapshot(scope),null);

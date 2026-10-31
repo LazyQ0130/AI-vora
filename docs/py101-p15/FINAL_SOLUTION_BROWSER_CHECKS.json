@@ -1,0 +1,10 @@
+[
+  {
+    "lesson": 3,
+    "expectedNewWordingVisible": true
+  },
+  {
+    "lesson": 4,
+    "expectedNewWordingVisible": true
+  }
+]

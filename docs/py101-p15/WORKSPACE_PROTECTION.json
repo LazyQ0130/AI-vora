@@ -1,0 +1,118 @@
+{
+  "baseline": "cb3927fa0be59a8108a30cf183361aa1f7c8a318",
+  "baselineTrackedFiles": 2998,
+  "authorizedChangedTrackedFiles": [
+    "scripts/py101-p1-compatibility.ts",
+    "src/content/lessons/py101/arithmetic-expressions.ts",
+    "src/content/lessons/py101/basic-value-types.ts",
+    "src/content/lessons/py101/editor-rerun.ts",
+    "src/content/lessons/py101/environment-reproduction.ts",
+    "src/content/lessons/py101/first-run.ts",
+    "src/content/lessons/py101/input-and-conversion.ts",
+    "src/content/lessons/py101/notebook-cell-order.ts",
+    "src/content/lessons/py101/numeric-comparisons.ts",
+    "src/content/lessons/py101/project-environments.ts",
+    "src/content/lessons/py101/readable-output.ts",
+    "src/content/lessons/py101/script-paths.ts",
+    "src/content/lessons/py101/variables-and-assignment.ts",
+    "src/content/publication-manifest.ts",
+    "tests/cross-discipline-editorial.test.ts",
+    "tests/py101-arithmetic-expressions.test.ts",
+    "tests/py101-basic-value-types.test.ts",
+    "tests/py101-chapter-two-audit.test.ts",
+    "tests/py101-editor-rerun.test.ts",
+    "tests/py101-environment-reproduction.test.ts",
+    "tests/py101-first-run.test.ts",
+    "tests/py101-input-and-conversion.test.ts",
+    "tests/py101-notebook-cell-order.test.ts",
+    "tests/py101-numeric-comparisons.test.ts",
+    "tests/py101-project-environments.test.ts",
+    "tests/py101-readable-output.test.ts",
+    "tests/py101-script-paths.test.ts",
+    "tests/py101-variables-and-assignment.test.ts"
+  ],
+  "protectedTrackedUnchanged": 2970,
+  "unexpectedChanges": [],
+  "originalUserFiles": [
+    {
+      "alias": "next-env.d.ts",
+      "kind": "modified",
+      "bytes": 296,
+      "sha256": "0f70629890b72a0a82e91972cc032c04b658b26c265373cb711cf576bfbf8fcc",
+      "unchanged": true
+    },
+    {
+      "alias": "scripts/ai000-r3-compatibility.ts",
+      "kind": "modified",
+      "bytes": 2145,
+      "sha256": "96a7b6cc6c39aead9566c216f1ca885fdfcaf59b5ea8921f9dd996582d423174",
+      "unchanged": true
+    },
+    {
+      "alias": "src/components/lesson/reader.tsx",
+      "kind": "modified",
+      "bytes": 17510,
+      "sha256": "fa0fbf213d3f8dab8bffbfc607f036da184f1926d170b4cf3d4d6d86e0b1a293",
+      "unchanged": true
+    },
+    {
+      "alias": "tests/reading-experience.test.ts",
+      "kind": "modified",
+      "bytes": 6905,
+      "sha256": "072d10fefa6902dbaa2c03084eb7ac289eeb75e570a4a4067ffe23850ace19e0",
+      "unchanged": true
+    },
+    {
+      "alias": "original-private-attachment",
+      "kind": "untracked",
+      "bytes": 23552,
+      "sha256": "2c3c9e5583494c09cdabafc0e9f50297bc03878bc75e9189eb5a4ffb6bf07dd9",
+      "unchanged": true
+    },
+    {
+      "alias": "ml31-interactions.yaml",
+      "kind": "untracked",
+      "bytes": 26155,
+      "sha256": "267519e584aa45083db7226ada33c47dd568edfb1cf00b494e064e37b0af0a9c",
+      "unchanged": true
+    },
+    {
+      "alias": "ml31.png",
+      "kind": "untracked",
+      "bytes": 131288,
+      "sha256": "2fdf30d556348c7a21a39a88556ac7e9f40ff4a31668ff069a7ccc649a6f31fe",
+      "unchanged": true
+    },
+    {
+      "alias": "ml31.yaml",
+      "kind": "untracked",
+      "bytes": 24763,
+      "sha256": "c03c467c06e734d9ce4f8d99c6868a1cb8c70107489839128c6eefa5d755d38f",
+      "unchanged": true
+    },
+    {
+      "alias": "py101-desktop.png",
+      "kind": "untracked",
+      "bytes": 150862,
+      "sha256": "c4647b2a4aa069ed82447d7d845beef14ad21a1e744ae48ceb20182cc16017f9",
+      "unchanged": true
+    },
+    {
+      "alias": "py101-mobile.png",
+      "kind": "untracked",
+      "bytes": 92190,
+      "sha256": "8f845f6e1636a49f63ae420a3921607b4f861fd4a93c51335fdb5714a5423801",
+      "unchanged": true
+    },
+    {
+      "alias": "py101.yaml",
+      "kind": "untracked",
+      "bytes": 32222,
+      "sha256": "62f14674005e5d565df4cecb24905e844fc8cbe75ed7d4ef7960fb115b0d41fc",
+      "unchanged": true
+    }
+  ],
+  "originalUserFileCount": 11,
+  "allOriginalUserBytesUnchanged": true,
+  "note": "Full actual private paths remain only in ignored local baseline; historical reports/resources/downloads/other courses byte-audited, no deletion."
+}

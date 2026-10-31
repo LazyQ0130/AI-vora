@@ -1,14 +1,16 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { getAdjacentLessons, getLearningCourse, resolveLesson, lessonRegistry } from "../src/lib/course-engine";
+import { getAdjacentLessons, getLearningCourse, resolveLesson, lessonRegistry } from "./helpers/py101-p14-view";
 import { createProgressStore, progressKey, parseReadingProgress } from "../src/lib/learning-progress";
-import { pythonFirstRunLesson } from "../src/content/lessons/py101/first-run";
+import { pythonFirstRunLesson as p15CurrentLesson } from "../src/content/lessons/py101/first-run";
+import {historicalLesson} from "./helpers/py101-p14-view";
+const pythonFirstRunLesson=historicalLesson(p15CurrentLesson);
 import { programs } from "../src/content/resources/programs";
 import { readFileSync } from "node:fs";
 import { beforePy101Source } from "../scripts/py101-p0-compatibility";
-import { publicationManifest } from "../src/content/publication-manifest";
+import { publicationManifest } from "./helpers/py101-p14-view";
 
-test("PY101首章规划课不自动获得Publication、阅读路由或相邻导航", () => {
+test("[P0–P14历史契约] PY101首章规划课不自动获得Publication、阅读路由或相邻导航", () => {
   const course = getLearningCourse("PY101")!;
   assert.equal(course.status, "planned");
   const slots = course.chapters[0].lessons;
@@ -27,7 +29,7 @@ test("PY101首章规划课不自动获得Publication、阅读路由或相邻导�
   assert.equal(course.chapters[4].lessons[0].contentVersion, 2);
 });
 
-test("新首课进度与第五章和旧修订独立保存，保留旧值", () => {
+test("[P0–P14历史契约] 新首课进度与第五章和旧修订独立保存，保留旧值", () => {
   const data = new Map<string, string>();
   const store = createProgressStore(() => ({ getItem: key => data.get(key) ?? null, setItem: (key, value) => { data.set(key, value); } }));
   const first = { courseId: "PY101", lessonId: pythonFirstRunLesson.id, contentVersion: 1, sectionIds: pythonFirstRunLesson.sections.map(s => s.id) };
@@ -41,7 +43,7 @@ test("新首课进度与第五章和旧修订独立保存，保留旧值", () =>
   assert.equal(parseReadingProgress(store.getSnapshot(old), old)?.completed, true);
 });
 
-test("首课可复制Python主代码和完整下载同源且不夹带提示符", () => {
+test("[P0–P14历史契约] 首课可复制Python主代码和完整下载同源且不夹带提示符", () => {
   const blocks = pythonFirstRunLesson.sections.flatMap(s => s.blocks);
   const main = blocks.find(b => b.type === "code" && b.filename === "first_run.py");
   assert.ok(main?.type === "code");
@@ -51,7 +53,7 @@ test("首课可复制Python主代码和完整下载同源且不夹带提示符",
   assert.equal(pythonFirstRunLesson.resources[0].format, "Python");
 });
 
-test("本轮兼容登记仅撤销完整命中的必要源码，额外改动继续拒绝", () => {
+test("[P0–P14历史契约] 本轮兼容登记仅撤销完整命中的必要源码，额外改动继续拒绝", () => {
   const sources = JSON.parse(readFileSync("docs/py101-p0/SOURCE_CHANGES.json", "utf8")) as { path: string; before: string }[];
   for (const source of sources) {
     const current = readFileSync(source.path, "utf8");

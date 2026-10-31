@@ -2,9 +2,11 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
-import { pythonProjectEnvironmentsLesson as lesson } from "../src/content/lessons/py101/project-environments";
-import { lessonRegistry, getLearningCourse, getAdjacentLessons, resolveLesson } from "../src/lib/course-engine";
-import { publicationManifest } from "../src/content/publication-manifest";
+import { pythonProjectEnvironmentsLesson as p15CurrentLesson } from "../src/content/lessons/py101/project-environments";
+import {historicalLesson} from "./helpers/py101-p14-view";
+const lesson=historicalLesson(p15CurrentLesson);
+import { lessonRegistry, getLearningCourse, getAdjacentLessons, resolveLesson } from "./helpers/py101-p14-view";
+import { publicationManifest } from "./helpers/py101-p14-view";
 import { isReadable } from "../src/content/models";
 import { beforeApprovedPy101Object, protectedPy101FileMatches, approvedPy101Additions } from "../scripts/py101-p1-compatibility";
 import { assertRegisteredInventory, assertCourseAvailability } from "./helpers/registered-content";
@@ -12,7 +14,7 @@ import { environmentProbe, venvCommands } from "../src/content/resources/python-
 import { createProgressStore, parseReadingProgress, progressKey } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
 
-test("P3只接入指定新课，按本轮实际基线保护所有旧课、发布与文件", () => {
+test("[P0–P14历史契约] P3只接入指定新课，按本轮实际基线保护所有旧课、发布与文件", () => {
   const base = JSON.parse(readFileSync("docs/py101-p3/BASELINE.json", "utf8"));
   const sha = (value: unknown) => createHash("sha256").update(JSON.stringify(value)).digest("hex");
   const later = approvedPy101Additions.filter(id => id !== lesson.id && !(id in base.lessons));
@@ -24,7 +26,7 @@ test("P3只接入指定新课，按本轮实际基线保护所有旧课、发布
   assertRegisteredInventory(); assertCourseAvailability("PY101");
 });
 
-test("1.3仅状态过渡勘误，核心/锚点/r1范围不动，额外历史变化仍拒绝", () => {
+test("[P0–P14历史契约] 1.3仅状态过渡勘误，核心/锚点/r1范围不动，额外历史变化仍拒绝", () => {
   const base = JSON.parse(readFileSync("docs/py101-p3/BASELINE.json", "utf8"));
   const current = lessonRegistry.get("PY101-C01-L03")!;
   const expected = structuredClone(base.amendmentBefore), last = expected.sections.at(-1);
@@ -36,7 +38,7 @@ test("1.3仅状态过渡勘误，核心/锚点/r1范围不动，额外历史变�
   for (const path of [".gitignore", "src/lib/course-engine.ts", "src/content/lessons/py101/editor-rerun.ts"]) assert.equal(protectedPy101FileMatches(path, Buffer.concat([readFileSync(path), Buffer.from("\n# unauthorized")]), base.files[path].sha256, base.head), false, path);
 });
 
-test("1.4发布身份一致，私有草稿不能读，试读接1.3，未制作课继续不可读", () => {
+test("[P0–P14历史契约] 1.4发布身份一致，私有草稿不能读，试读接1.3，未制作课继续不可读", () => {
   const base = JSON.parse(readFileSync("docs/py101-p3/BASELINE.json", "utf8"));
   const entry = beforeApprovedPy101Object("publications", lesson.id, publicationManifest.find(p => p.lessonId === lesson.id)!, base.head) as (typeof publicationManifest)[number];
   assert.equal(entry.title, lesson.title); assert.equal(entry.contentVersion, 1); assert.equal(entry.order, 4); assert.equal(entry.optionalLesson, false);
@@ -48,7 +50,7 @@ test("1.4发布身份一致，私有草稿不能读，试读接1.3，未制作�
   for (const slot of course.chapters[0].lessons.filter(slot => slot.status === "planned")) { assert.equal(slot.href, undefined); assert.equal(lessonRegistry.has(slot.lessonId), false); assert.equal(resolveLesson("PY101", slot.lessonId), undefined); }
 });
 
-test("三目标由两个真实任务映射；诊断现成提供，提示二保留学生定位与执行", () => {
+test("[P0–P14历史契约] 三目标由两个真实任务映射；诊断现成提供，提示二保留学生定位与执行", () => {
   const blocks = lesson.sections.flatMap(s => s.blocks), tasks = blocks.filter(b => b.type === "exercise");
   assert.deepEqual(tasks.map(t => t.id), ["create-project-envs", "repair-wrong-env"]);
   assert.deepEqual(lesson.assessmentMap, [{ objective: 1, exerciseIds: [tasks[0].id] }, { objective: 2, exerciseIds: [tasks[0].id] }, { objective: 3, exerciseIds: [tasks[1].id] }]);
@@ -58,7 +60,7 @@ test("三目标由两个真实任务映射；诊断现成提供，提示二保�
   assert.match(environmentProbe, /sys\.executable/); assert.match(environmentProbe, /sys\.prefix/); assert.match(environmentProbe, /sys\.base_prefix/);
 });
 
-test("分平台命令保持引号/反斜杠；核心不依赖包安装、激活或安全设置修改", () => {
+test("[P0–P14历史契约] 分平台命令保持引号/反斜杠；核心不依赖包安装、激活或安全设置修改", () => {
   const codes = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === "code").map(b => b.code);
   for (const pair of Object.values(venvCommands)) { assert.ok(codes.includes(pair.windows)); assert.ok(codes.includes(pair.mac)); }
   assert.equal(venvCommands.run.windows, '& ".\\.venv\\Scripts\\python.exe" .\\main.py');
@@ -69,7 +71,7 @@ test("分平台命令保持引号/反斜杠；核心不依赖包安装、激活�
   assert.ok(readFileSync(".gitignore", "utf8").split(/\r?\n/).includes(".venv/"));
 });
 
-test("新1.4r1进度独立，重载可恢复，不覆盖1.1–1.3、第五章和旧修订", () => {
+test("[P0–P14历史契约] 新1.4r1进度独立，重载可恢复，不覆盖1.1–1.3、第五章和旧修订", () => {
   const memory = new Map<string, string>();
   const port = { getItem: (key: string) => memory.get(key) ?? null, setItem: (key: string, value: string) => { memory.set(key, value); } };
   const store = createProgressStore(() => port);

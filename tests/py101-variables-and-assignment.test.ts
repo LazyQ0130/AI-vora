@@ -1,11 +1,13 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { pythonVariablesAndAssignmentLesson as lesson } from "../src/content/lessons/py101/variables-and-assignment";
+import { pythonVariablesAndAssignmentLesson as p15CurrentLesson } from "../src/content/lessons/py101/variables-and-assignment";
+import {historicalLesson} from "./helpers/py101-p14-view";
+const lesson=historicalLesson(p15CurrentLesson);
 import { courseOutline } from "../src/content/course-outline";
-import { publicationManifest } from "../src/content/publication-manifest";
+import { publicationManifest } from "./helpers/py101-p14-view";
 import { isReadable, publicationSchema } from "../src/content/models";
-import { getLearningCourse, getAdjacentLessons, lessonRegistry, resolveLesson } from "../src/lib/course-engine";
+import { getLearningCourse, getAdjacentLessons, lessonRegistry, resolveLesson } from "./helpers/py101-p14-view";
 import { createProgressStore, parseReadingProgress, progressKey } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
 import { variableCode, variableBlockNames } from "../src/content/resources/python-variables";
@@ -13,7 +15,7 @@ import { variableKey, checkVariableResult } from "../scripts/python-variable-che
 import { beforeApprovedPy101Source, beforeApprovedPy101Object } from "../scripts/py101-p1-compatibility";
 import { assertRegisteredInventory, assertCourseAvailability } from "./helpers/registered-content";
 
-test("2.1身份/顺序/初稿门禁；第二章按实际注册顺序接入", () => {
+test("[P0–P14历史契约] 2.1身份/顺序/初稿门禁；第二章按实际注册顺序接入", () => {
   const entry = publicationManifest.find(p => p.lessonId === lesson.id)!;
   assert.deepEqual([entry.title, entry.contentVersion, entry.order, entry.optionalLesson], [lesson.title, 1, 1, false]);
   assert.deepEqual(courseOutline.filter(s => s.chapterId === "PY101-C02").map(s => [s.lessonId, s.order]), publicationManifest.filter(p => p.chapterId === "PY101-C02").sort((a,b) => a.order - b.order).map(p => [p.lessonId, p.order]));
@@ -33,7 +35,7 @@ test("2.1身份/顺序/初稿门禁；第二章按实际注册顺序接入", () 
   assertRegisteredInventory(); assertCourseAvailability("PY101");
 });
 
-test("三项目标对应两项core开放代码任务，分层提示与反馈完整", () => {
+test("[P0–P14历史契约] 三项目标对应两项core开放代码任务，分层提示与反馈完整", () => {
   const tasks = lesson.sections.filter(s => s.tier === "core").flatMap(s => s.blocks).filter(b => b.type === "exercise");
   assert.deepEqual(tasks.map(t => t.id), ["keep-and-update", "repair-first-read"]);
   assert.deepEqual(lesson.assessmentMap, [{ objective: 1, exerciseIds: [tasks[0].id] }, { objective: 2, exerciseIds: [tasks[0].id] }, { objective: 3, exerciseIds: [tasks[1].id] }]);
@@ -46,7 +48,7 @@ test("三项目标对应两项core开放代码任务，分层提示与反馈完�
   assert.deepEqual(lesson.resources, []);
 });
 
-test("网页Python片段必须全量登记同源，未知和擅自更改不能静默跳过", () => {
+test("[P0–P14历史契约] 网页Python片段必须全量登记同源，未知和擅自更改不能静默跳过", () => {
   const blocks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === "code").filter(b => b.language === "python");
   assert.deepEqual(blocks.map(b => variableKey(b.filename, b.code)), ["assign", "read", "update", "main", "literal", "firstRead"]);
   assert.throws(() => variableKey("unknown.py", "print('unknown')"));
@@ -56,7 +58,7 @@ test("网页Python片段必须全量登记同源，未知和擅自更改不能�
   checkVariableResult("firstRead", { exitCode: 1, stdout: "", stderr: "NameError: name 'dispatch_label' is not defined" });
 });
 
-test("真实保存文件记录覆盖主例、只改后赋值、引号对照、错误恢复与新进程", () => {
+test("[P0–P14历史契约] 真实保存文件记录覆盖主例、只改后赋值、引号对照、错误恢复与新进程", () => {
   const evidence = JSON.parse(readFileSync("docs/py101-p8/PYTHON_RUNS.json", "utf8"));
   assert.equal(evidence.platform, "win32"); assert.equal(evidence.allAssertionsPassed, true);
   const row = (label: string) => evidence.rows.find((r: {label: string}) => r.label === label);
@@ -71,7 +73,7 @@ test("真实保存文件记录覆盖主例、只改后赋值、引号对照、�
   assert.doesNotMatch(JSON.stringify(evidence), /[A-Za-z]:\\\\Users\\\\|token=/);
 });
 
-test("第一章顺序、可读相邻导航、第五章先修和未制作/错误归属边界", () => {
+test("[P0–P14历史契约] 第一章顺序、可读相邻导航、第五章先修和未制作/错误归属边界", () => {
   const course = getLearningCourse("PY101")!; assert.equal(course.status, "planned");
   assert.deepEqual(course.chapters[0].lessons.map(s => [s.lessonId, s.order]), Array.from({length:6}, (_, i) => [`PY101-C01-L0${i+1}`, i+1]));
   if (isReadable(publicationManifest.find(p => p.lessonId === lesson.id)!)) {
@@ -89,7 +91,7 @@ test("第一章顺序、可读相邻导航、第五章先修和未制作/错误�
   assert.equal(resolveLesson("ML201", lesson.id), undefined);
 });
 
-test("新2.1/r1读取和重载与全部旧PY进度、第五章旧r1及ML旧记录隔离", () => {
+test("[P0–P14历史契约] 新2.1/r1读取和重载与全部旧PY进度、第五章旧r1及ML旧记录隔离", () => {
   const memory = new Map<string, string>(), storage = {getItem: (k: string) => memory.get(k) ?? null, setItem: (k: string, v: string) => { memory.set(k,v); }};
   const store = createProgressStore(() => storage);
   for (const old of lessonRegistry.values()) if ((old.courseId === "PY101" && old.id !== lesson.id) || old.id === "ML201-C04-L01") {
@@ -104,7 +106,7 @@ test("新2.1/r1读取和重载与全部旧PY进度、第五章旧r1及ML旧记�
   for (const [key, value] of before) assert.equal(memory.get(key), value);
 });
 
-test("历史恢复仅接受完整已登记文件，附加修改继续暴露", () => {
+test("[P0–P14历史契约] 历史恢复仅接受完整已登记文件，附加修改继续暴露", () => {
   const source = readFileSync("src/lib/course-engine.ts", "utf8");
   const base = JSON.parse(readFileSync("docs/py101-p8/APPROVED_CHANGES.json", "utf8"));
   assert.equal(beforeApprovedPy101Source("src/lib/course-engine.ts", source, base.baseline), base.sources.find((s: {path: string}) => s.path === "src/lib/course-engine.ts").before);
