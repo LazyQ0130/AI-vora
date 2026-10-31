@@ -1,0 +1,1193 @@
+{
+  "lessonId": "PY101-C02-L06",
+  "sectionId": "chapter-end",
+  "before": "第二章把变量、类型、计算、比较和输入输出连成了短程序。接下来学习第三章的控制流程，让程序依据条件选择动作或重复操作。先能独立完成本章的交互摘要，再学习这些新能力。第5章函数仍依赖第三、第四章的中间知识，不宜直接跳过。",
+  "after": "第二章把变量、类型、计算、比较和输入输出连成了短程序。下一章先用if让程序根据比较结果选择是否执行一段代码，循环与其他控制流程随后学习。先能独立完成本章的交互摘要，再继续这些新能力。第5章函数仍依赖第三、第四章的中间知识，不宜直接跳过。",
+  "beforeLesson": {
+    "id": "PY101-C02-L06",
+    "courseId": "PY101",
+    "chapterId": "PY101-C02",
+    "contentVersion": 2,
+    "title": "把输入和计算整理成清楚的输出",
+    "subtitle": "6.0是什么，True又回答了什么？把已算好的值放进说明文字，再用真实输入检验边界。",
+    "learningTime": {
+      "reading": [
+        12,
+        18
+      ],
+      "practice": [
+        8,
+        12
+      ],
+      "coding": [
+        22,
+        32
+      ],
+      "basis": "editorial-estimate"
+    },
+    "optionalLesson": false,
+    "assessmentMap": [
+      {
+        "objective": 1,
+        "exerciseIds": [
+          "write-clear-summary"
+        ]
+      },
+      {
+        "objective": 2,
+        "exerciseIds": [
+          "write-clear-summary",
+          "verify-summary-boundary"
+        ]
+      },
+      {
+        "objective": 3,
+        "exerciseIds": [
+          "verify-summary-boundary"
+        ]
+      }
+    ],
+    "prerequisites": "已完成第一章与2.1–2.5：会保存、终端完整运行.py，理解变量、str/int/float/bool、乘法与单位、<=比较及input后明确int/float转换。沿用已有Python 3和编辑器，不安装库；手机可读，代码与终端输入需要电脑。",
+    "prerequisiteLinks": [
+      {
+        "title": "2.1 名称与当前值",
+        "href": "/learn/PY101/PY101-C02-L01#name-and-value",
+        "note": "复习读取名称需要本次已绑定值。"
+      },
+      {
+        "title": "2.3 计算与单位",
+        "href": "/learn/PY101/PY101-C02-L03#expression-to-value",
+        "note": "表达式回答的数量关系也要正确。"
+      },
+      {
+        "title": "2.4 相等边界",
+        "href": "/learn/PY101/PY101-C02-L04#boundary-runs",
+        "note": "<=包含刚好等于限制的情况。"
+      },
+      {
+        "title": "2.5 分步输入与转换",
+        "href": "/learn/PY101/PY101-C02-L05#main-example",
+        "note": "提示、键入回显、print结果分开记录。"
+      },
+      {
+        "title": "1.3 保存与重跑",
+        "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+        "note": "确认终端运行的是已保存文件。"
+      }
+    ],
+    "objectives": [
+      "把已绑定名称的值插入简单f-string，输出有实际含义和单位的文字，并区分普通字符串与格式化字符串",
+      "在自己创建的.py中组合输入、明确转换、数值计算、布尔比较与清楚输出，说明每一步的值来自哪里",
+      "为同一程序预测并真实运行新输入，验证低于、恰好等于、高于限制的结果与单位，解释真假判断的实际范围"
+    ],
+    "sections": [
+      {
+        "id": "bare-results",
+        "title": "数字算对了，别人能看懂吗？",
+        "navGroup": "meaning",
+        "navLabel": "输出含义",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "程序算出总质量6.0千克，又判断出它不超过10千克。下面都是已经学过的赋值和print。先预测两行，再另存bare_results.py完整运行，看看只收到结果的人能知道多少信息。"
+          },
+          {
+            "type": "code",
+            "code": "total_mass = 6.0\nwithin_limit = True\n\nprint(total_mass)\nprint(within_limit)",
+            "filename": "bare_results.py",
+            "language": "python"
+          },
+          {
+            "type": "code",
+            "code": "6.0\nTrue",
+            "filename": "裸值 · 预期两行",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "这两行可以是正确结果，但6.0没写单位，也没说是单件还是总量；True没写出判断问题。希望让使用者看到下面的说明。先指出增加了哪些信息："
+          },
+          {
+            "type": "code",
+            "code": "Total kg: 6.0\nWithin 10 kg: True",
+            "filename": "想要的显示 · 总质量与所判断的问题",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "Total kg表示总质量（千克），Within 10 kg在本例问是否不超过10千克。接下来先把一个已知值与说明放到同一行，之后再把输入和计算接回来。普通print仍可显示结果；本课增加的是让值与含义一起呈现的方法。"
+          }
+        ]
+      },
+      {
+        "id": "first-format",
+        "title": "f前缀告诉Python：这里要放入当前值",
+        "navGroup": "format",
+        "navLabel": "文字与名称",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "f-string在开头引号前加f。引号界定文字，Total kg:是说明，{total_mass}用花括号标出插入位置。"
+          },
+          {
+            "type": "paragraph",
+            "text": "执行到这里时，Python读total_mass当前值，组成字符串，再由print显示。先只将已绑定的简单名称放进花括号，f紧挨开头引号。"
+          },
+          {
+            "type": "paragraph",
+            "text": "新建insert_mass.py，先预测显示内容，再保存运行。Windows在文件目录用python insert_mass.py，macOS用python3；已验证py的环境可继续用py。源码仍放在.venv外。"
+          },
+          {
+            "type": "code",
+            "code": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")",
+            "filename": "insert_mass.py",
+            "language": "python"
+          },
+          {
+            "type": "code",
+            "code": "Total kg: 6.0",
+            "filename": "f-string · 预期print结果",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "对照另存literal_mass.py：去掉开头f，仍是合法Python普通字符串。先预测花括号会消失还是原样显示，再运行核对。"
+          },
+          {
+            "type": "code",
+            "code": "total_mass = 6.0\nprint(\"Total kg: {total_mass}\")",
+            "filename": "literal_mass.py",
+            "language": "python"
+          },
+          {
+            "type": "code",
+            "code": "Total kg: {total_mass}",
+            "filename": "普通字符串 · 预期print结果",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "去掉f后，花括号及total_mass会原样显示。如果你仍预测6.0，就是把普通文字里的花括号也当成了插入请求。"
+          },
+          {
+            "type": "paragraph",
+            "text": "在literal_mass.py副本只补回开头f再重跑，应看到当前数值。这两种写法都合法，差别是有没有插入值。"
+          }
+        ]
+      },
+      {
+        "id": "labels-and-units",
+        "title": "每一行都说清名称、数量或单位",
+        "navGroup": "format",
+        "navLabel": "文字与名称",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "再把三个已知值分别放进说明。item_name是物品名称，count是件数，total_mass是总千克数；三个花括号各读取自己的名称。先预测三行，再保存known_summary.py运行："
+          },
+          {
+            "type": "code",
+            "code": "item_name = \"Parcel\"\ncount = 4\ntotal_mass = 6.0\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")",
+            "filename": "known_summary.py",
+            "language": "python"
+          },
+          {
+            "type": "code",
+            "code": "Item: Parcel\nCount: 4\nTotal kg: 6.0",
+            "filename": "已知值摘要 · 预期print结果",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "每条print单独一行。Count在本例数的是件，Total kg明确总质量单位，不要在数值赋值后直接写kg；单位属于输出说明。中文说明同样合法，另存chinese_mass.py，先预测再运行下面两行："
+          },
+          {
+            "type": "code",
+            "code": "total_mass = 6.0\nprint(f\"总质量（千克）：{total_mass}\")",
+            "filename": "chinese_mass.py",
+            "language": "python"
+          },
+          {
+            "type": "code",
+            "code": "总质量（千克）：6.0",
+            "filename": "中文单位 · 预期print结果",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "英文标签不是唯一正确形式，关键是让别人分清每个值的含义。6.0是本次float普通显示，不是故障，本节也不要求补成6.00。float有表示精度边界，若自己的其他合法输入显示较长小数，保留真实结果并核对，不为排版改类型或伪造日志。"
+          }
+        ]
+      },
+      {
+        "id": "receive-values",
+        "title": "先收三项输入，暂时只观察提示",
+        "navGroup": "assembly",
+        "navLabel": "逐步组装",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "现在把已知值换成本次使用者输入。物品名、完整件数、单件质量是三项不同的数据，先按2.5分别保存原文字。另建receive_parcel.py，保存下方完整三行；先预测会出现几次等待，再启动。"
+          },
+          {
+            "type": "code",
+            "code": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")",
+            "filename": "receive_parcel.py",
+            "language": "python"
+          },
+          {
+            "type": "paragraph",
+            "text": "Item: 出现输入Parcel、Enter；Count: 出现输入4、Enter；Mass kg: 出现输入1.5、Enter。每项各占一行输入，不把三个值合成一行，也不在数值后附加单位。这版没有print，收齐三项后结束，尚不会显示计算结果。"
+          },
+          {
+            "type": "table",
+            "caption": "三份原输入的角色",
+            "columns": [
+              "名称",
+              "本次输入内容",
+              "此时的值类型/含义"
+            ],
+            "rows": [
+              [
+                "item_name",
+                "Parcel",
+                "str，物品名称"
+              ],
+              [
+                "count_text",
+                "4",
+                "str，待转换的件数文本"
+              ],
+              [
+                "mass_text",
+                "1.5",
+                "str，待转换的单件千克数文本"
+              ]
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "input提示属于程序stdout但无自动换行，终端通常回显你键入的字符；它们都不是print结果。自动stdin输入没有同样的键盘回显，这版捕获stdout只有下面三个连续提示。标注的示意、终端流和原始stdout要分开。"
+          },
+          {
+            "type": "code",
+            "code": "Item: Count: Mass kg: ",
+            "filename": "自动stdin捕获 · 无print、无键盘回显",
+            "language": "text"
+          }
+        ]
+      },
+      {
+        "id": "calculate-check",
+        "title": "把件数和单件质量变成总量，再比较",
+        "navGroup": "assembly",
+        "navLabel": "逐步组装",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "接下来int(count_text)得到整数件数count，float(mass_text)得到单件质量mass；原来的两个_text仍是字符串。count * mass用件数乘千克/件，得到总千克数，先保存为total_mass。"
+          },
+          {
+            "type": "paragraph",
+            "text": "本例规定总质量最多10千克，恰好10也满足。total_mass <= 10复用2.4的比较，先把True或False保存为within_limit。它只回答这个总质量问题，还没有执行批准或拒绝等行动。"
+          },
+          {
+            "type": "paragraph",
+            "text": "另存calculate_parcel.py，保存下面完整累计版。先手算Parcel/4/1.5，再依次输入运行；末尾两条print暂时核对总量和比较，仍用普通裸值显示。"
+          },
+          {
+            "type": "code",
+            "code": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(total_mass)\nprint(within_limit)",
+            "filename": "calculate_parcel.py",
+            "language": "python"
+          },
+          {
+            "type": "code",
+            "code": "6.0\nTrue",
+            "filename": "Parcel / 4 / 1.5 · 仅print结果",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "4件×1.5千克/件为6.0千克，6.0<=10为True。若此处与预测不同，先核对实际键入、转换后的名称和乘法；正确之后再整理文字，不靠改输出标签掩盖计算错误。"
+          }
+        ]
+      },
+      {
+        "id": "main-example",
+        "title": "最后接上四行可读摘要",
+        "navGroup": "summary",
+        "navLabel": "完整摘要",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "输入与计算都核对后，再用四条f-string替换裸值输出：分别读物品名、整数件数、总千克数和比较结果。"
+          },
+          {
+            "type": "paragraph",
+            "text": "最后一条明确问是否不超过10千克。比较先保存，花括号只负责取名称的值，不能用漂亮标签掩盖错误计算。"
+          },
+          {
+            "type": "paragraph",
+            "text": "新建parcel_summary.py，先写Parcel/4/1.5的四行预测，再保存完整主例。下面空行只是分组，每次从头执行。"
+          },
+          {
+            "type": "code",
+            "code": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")",
+            "filename": "parcel_summary.py",
+            "language": "python"
+          },
+          {
+            "type": "code",
+            "code": "python parcel_summary.py",
+            "filename": "Windows · PowerShell · 文件所在目录",
+            "language": "text"
+          },
+          {
+            "type": "code",
+            "code": "python3 parcel_summary.py",
+            "filename": "macOS · 终端 · 文件所在目录",
+            "language": "text"
+          },
+          {
+            "type": "code",
+            "code": "Item: Parcel\nCount: 4\nTotal kg: 6.0\nWithin 10 kg: True",
+            "filename": "Parcel / 4 / 1.5 · 仅四条print结果",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "这四行不是终端全部内容；input提示与键盘回显另行标记。自动stdin提供三行数据时，原始stdout的提示会紧邻第一条print，实际捕获形式如下，末尾有换行，不能补造三行回显："
+          },
+          {
+            "type": "code",
+            "code": "Item: Count: Mass kg: Item: Parcel\nCount: 4\nTotal kg: 6.0\nWithin 10 kg: True\n",
+            "filename": "自动stdin stdout · 提示与print连续",
+            "language": "text"
+          }
+        ]
+      },
+      {
+        "id": "boundary-runs",
+        "title": "源码不变，换低于、等于和高于上限的数据",
+        "navGroup": "summary",
+        "navLabel": "完整摘要",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "保留parcel_summary.py原样。第一轮Parcel/4/1.5已经是低于10；先保留自己的输入、预测与真实四行结果。第二轮先预测Crate B/4/2.5，重新执行同一命令，依次键入。手算4×2.5=10.0千克，最后一行该是真还是假？"
+          },
+          {
+            "type": "paragraph",
+            "text": "第三轮再先预测Crate C/4/3.0，完整重新启动并输入，手算总12.0千克。保留三轮命令、输入、源码和实际四行摘要，再按表核对，不用一次输出或抄表代替三次运行。"
+          },
+          {
+            "type": "table",
+            "caption": "完成三轮后核对总质量与同一比较",
+            "columns": [
+              "物品/件数/单件千克",
+              "总千克数",
+              "Within 10 kg"
+            ],
+            "rows": [
+              [
+                "Parcel / 4 / 1.5",
+                "6.0",
+                "True"
+              ],
+              [
+                "Crate B / 4 / 2.5",
+                "10.0",
+                "True"
+              ],
+              [
+                "Crate C / 4 / 3.0",
+                "12.0",
+                "False"
+              ]
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "等于10.0时<=仍为True，因为最多包括等值；超过时False。这个真假只报告本次总质量是否不超过10千克，没有检查包装或运输条件，也没有自动执行拒绝。输出说明必须对应实际比较，不能把它改写成“所有条件下都安全”。"
+          }
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "自己选择情境，交出可读结果与边界证据",
+        "navGroup": "practice",
+        "navLabel": "独立练习",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "先独立写程序，再按需展开提示。基本交付是本人源码和本题真实运行结果；同一会话的环境、文件位置和命令只记一次，后面可引用编号。预测可口述或记一行；边界、改值和恢复题按题干保留必要对照。"
+          },
+          {
+            "type": "exercise",
+            "id": "write-clear-summary",
+            "title": "自己的可读计算摘要",
+            "kind": "代码",
+            "prompt": "另选新测量情境、合法名称和三条提示，新.py用input收标签、整数件数、小数单件量，分步int/float后算总量。简单f-string显示标签、件数、总量及含义/单位。对同一源码选两组新合法输入，先预测再真运行。交源码、一张两组输入/预测/print摘要表和一次命令。用一句话或现场指认输入→转换→计算→显示；解释一条输出去掉f的差别，可另存副本自查。不用if/循环/函数/格式指定。",
+            "hints": [
+              "哪一项应保留为文字，哪两项要成为数值？单件测量乘件数后是什么单位？读者能从每行知道这是哪个量吗？",
+              "按输入、分步转换、计算、说明文字中的名称组织。花括号中先只放已经赋值的名称；自己确定主题、新数据和两轮预测。"
+            ],
+            "solution": [
+              "参考横幅材料，每片长度以米计。页尾material_summary.py给出完整路径，先独立完成再展开。第1–3行收材料名/片数文本/单片米数；第4–5行转成pieces整数和length浮点；第6行两者相乘存总米数。",
+              "第7–9行分别显示材料名、片数、Total m总米数。Banner A/6/0.75先预测Material: Banner A、Pieces: 6、Total m: 4.5，保存运行python material_summary.py（macOS用python3）。同源码第二轮Banner B/10/0.5先预测总5.0米，再实际重新启动输入。",
+              "前者6片×0.75米/片=4.5米，后者10片×0.5米/片=5.0米。f-string只读取已经取得的名称，不会替你转换或重算输入。去掉最后一条f会显示文字{total_length}；补回f才能插入当前总值。",
+              "常错是花括号内错拼名称、少f、用原文本计算、把单片质量/长度当总量或遗漏单位。按输入→转换→总量→文字逐项核对。接受其他新情境/名称、中文标签、成对单引号或先保存中间结果，但需真实两轮和清楚单位；参考预测不是本人运行证据。",
+              "交付按本题题干与rubric：源码可用一份加差异，运行记录用短表；相同命令、环境和版本引用会话卡，不重复誊写。"
+            ],
+            "rubric": [
+              "本人新程序三输入分步转换并真实计算，自选情境/名称/提示。",
+              "简单f-string读已绑定名称，含义及单位可辨，能区分去f的普通字符串。",
+              "两组新输入均有事前预测与真输出；一表/一次命令，数据流现场或短句说明，非长报告。"
+            ]
+          },
+          {
+            "type": "exercise",
+            "id": "verify-summary-boundary",
+            "title": "验证摘要边界，并解释真假回答了什么",
+            "kind": "代码",
+            "prompt": "自选新测量限制情境，如总长度最多若干米；可复用题一源码，另记新增比较/输出的差异。真实input及int/float求总量，固定新上限，总量<=上限保存真假，用简单f-string显示名称/件数/总量单位/比较问题。选低/等/高三组合法输入，各先预测再完整运行同一文件；用整数、0.5或0.25安排确实等值。交源码加差异、一张三组输入/预测/实际摘要表及一次命令。解释等值True、超限False的范围，False未自动拒绝。不重复提交整份阶段源码，不把一次运行算成三轮；不引入控制流程或精度算法。",
+            "hints": [
+              "分清单件测量、总量和限制。应该拿哪一项与上限比较，输出里的真假文字又在问哪个问题？",
+              "先确定能恰好达到的边界，再在同一固定上限下安排低/等/高三组输入，先预测再逐轮执行。保留你决定的数据、比较名称和完整代码。"
+            ],
+            "solution": [
+              "参考花坛围边，最多12米。页尾garden_boundary.py先收批次、段数和每段米数，转strips整数与strip_length浮点；length_limit固定12，total_length=strips * strip_length，within_limit保存总长<=上限。四条f-string分别显示批次、段数、总米数和Within 12 m问题。",
+              "同一文件Garden A/3/3先预测总9.0米/True，再运行python garden_boundary.py（macOS用python3）；Garden B/3/4先预测12.0米/True，重新输入运行；Garden C/3/5先预测15.0米/False，再完整重跑。每轮名称和段数也要和实际摘要对应，保留实际摘要的四行。",
+              "等值12.0满足最多12，<=包含相等；15.0超过所以False。True不证明其他条件都满足，False也没让程序拒绝输入，这段没有分支动作。输出Within {length_limit} m中的两个插入位置分别读取限制和真假值，花括号都只是简单名称。",
+              "常错是改了上限、比较单段而非总量、实际没到等值、三轮只抄参考或将False写成已拒绝。按实际输入重算，保留固定源码、预测和命令。接受其他合理新上限/数据/名称/中文问题；若复用题一，必须能看出新增比较与第三轮证据，不把题一一次运行算成三轮。",
+              "交付按本题题干与rubric：源码可用一份加差异，运行记录用短表；相同命令、环境和版本引用会话卡，不重复誊写。"
+            ],
+            "rubric": [
+              "本人输入/转换/计算/总量<=固定上限正确，单位与输出问题清楚。",
+              "低/等/高三组各有事前预测及完整真摘要，上限不改，源码一次加差异、命令一次。",
+              "等值True/超限False的范围正确，无自动拒绝；题一复用仍需独立三轮，非抄表或长报告。"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "reference-programs",
+        "title": "做完再核对：完整参考与名称错拼副本",
+        "navGroup": "reference",
+        "navLabel": "参考核对",
+        "tier": "verification",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "先完成两题再展开参考，另存新文件保留原作。前两份完整程序的行义、预测与命令在各题解答中，不将列表文字当连写源码。"
+          },
+          {
+            "type": "code",
+            "code": "material_name = input(\"Material: \")\npieces_text = input(\"Pieces: \")\nlength_text = input(\"Length m: \")\npieces = int(pieces_text)\nlength = float(length_text)\ntotal_length = pieces * length\nprint(f\"Material: {material_name}\")\nprint(f\"Pieces: {pieces}\")\nprint(f\"Total m: {total_length}\")",
+            "filename": "material_summary.py · 题一参考",
+            "language": "python"
+          },
+          {
+            "type": "code",
+            "code": "batch_name = input(\"Batch: \")\nstrips_text = input(\"Strips: \")\nstrip_text = input(\"Strip m: \")\nstrips = int(strips_text)\nstrip_length = float(strip_text)\nlength_limit = 12\ntotal_length = strips * strip_length\nwithin_limit = total_length <= length_limit\nprint(f\"Batch: {batch_name}\")\nprint(f\"Strips: {strips}\")\nprint(f\"Total m: {total_length}\")\nprint(f\"Within {length_limit} m: {within_limit}\")",
+            "filename": "garden_boundary.py · 题二参考",
+            "language": "python"
+          },
+          {
+            "type": "paragraph",
+            "text": "若想核对名称问题，在自己的field_copy.py副本先预测下面程序：花括号里的total_mas少一个s，本次没有绑定。按2.1检查名称，实际运行保留第2行NameError、相关回溯和退出状态；它与少f的合法字面输出原因不同。"
+          },
+          {
+            "type": "code",
+            "code": "total_mass = 6.0\nprint(f\"Total kg: {total_mas}\")",
+            "filename": "field_copy.py · 名称错拼副本",
+            "language": "python"
+          },
+          {
+            "type": "paragraph",
+            "text": "保留错误后，将同一副本只修为total_mass，先预测再保存完整重跑下面修复版，应显示Total kg: 6.0且正常结束。无需核心题故意造错，也不加入异常捕获。"
+          },
+          {
+            "type": "code",
+            "code": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")",
+            "filename": "field_copy.py · 名称修复副本",
+            "language": "python"
+          }
+        ]
+      },
+      {
+        "id": "chapter-end",
+        "title": "第二章收束：能说明结果，也知道还没学什么",
+        "navGroup": "finish",
+        "navLabel": "章末衔接",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "summary",
+            "points": [
+              "保存与更新变量，辨认基本类型，写有单位的数值表达式和比较。",
+              "从终端取得文字，明确int/float转换，再计算和保存判断。",
+              "用简单f-string把名称、数量、单位和比较问题一起显示，用真实低/等/高输入核对。"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "保留自己的程序和摘要，能换新数据、先预测并解释每行含义，就能核对值从哪里来、单位和限制是否一致。"
+          },
+          {
+            "type": "paragraph",
+            "text": "第二章把变量、类型、计算、比较和输入输出连成了短程序。接下来学习第三章的控制流程，让程序依据条件选择动作或重复操作。先能独立完成本章的交互摘要，再学习这些新能力。第5章函数仍依赖第三、第四章的中间知识，不宜直接跳过。"
+          }
+        ]
+      }
+    ],
+    "resources": [],
+    "references": [
+      {
+        "title": "f-string教程",
+        "href": "https://docs.python.org/3.14/tutorial/inputoutput.html#formatted-string-literals",
+        "note": "先解释前缀与替换字段。"
+      },
+      {
+        "title": "f-string词法规则",
+        "href": "https://docs.python.org/3.14/reference/lexical_analysis.html#f-strings",
+        "note": "本课只用已绑定简单名称。"
+      },
+      {
+        "title": "print与input",
+        "href": "https://docs.python.org/3.14/library/functions.html#print",
+        "note": "提示、终端回显和print分开。"
+      },
+      {
+        "title": "int/float转换",
+        "href": "https://docs.python.org/3.14/library/functions.html#int",
+        "note": "输入文本明确转换再计算。"
+      },
+      {
+        "title": "数值比较",
+        "href": "https://docs.python.org/3.14/reference/expressions.html#value-comparisons",
+        "note": "结果只对应实际数量关系。"
+      }
+    ]
+  },
+  "afterLesson": {
+    "id": "PY101-C02-L06",
+    "courseId": "PY101",
+    "chapterId": "PY101-C02",
+    "contentVersion": 2,
+    "title": "把输入和计算整理成清楚的输出",
+    "subtitle": "6.0是什么，True又回答了什么？把已算好的值放进说明文字，再用真实输入检验边界。",
+    "learningTime": {
+      "reading": [
+        12,
+        18
+      ],
+      "practice": [
+        8,
+        12
+      ],
+      "coding": [
+        22,
+        32
+      ],
+      "basis": "editorial-estimate"
+    },
+    "optionalLesson": false,
+    "assessmentMap": [
+      {
+        "objective": 1,
+        "exerciseIds": [
+          "write-clear-summary"
+        ]
+      },
+      {
+        "objective": 2,
+        "exerciseIds": [
+          "write-clear-summary",
+          "verify-summary-boundary"
+        ]
+      },
+      {
+        "objective": 3,
+        "exerciseIds": [
+          "verify-summary-boundary"
+        ]
+      }
+    ],
+    "prerequisites": "已完成第一章与2.1–2.5：会保存、终端完整运行.py，理解变量、str/int/float/bool、乘法与单位、<=比较及input后明确int/float转换。沿用已有Python 3和编辑器，不安装库；手机可读，代码与终端输入需要电脑。",
+    "prerequisiteLinks": [
+      {
+        "title": "2.1 名称与当前值",
+        "href": "/learn/PY101/PY101-C02-L01#name-and-value",
+        "note": "复习读取名称需要本次已绑定值。"
+      },
+      {
+        "title": "2.3 计算与单位",
+        "href": "/learn/PY101/PY101-C02-L03#expression-to-value",
+        "note": "表达式回答的数量关系也要正确。"
+      },
+      {
+        "title": "2.4 相等边界",
+        "href": "/learn/PY101/PY101-C02-L04#boundary-runs",
+        "note": "<=包含刚好等于限制的情况。"
+      },
+      {
+        "title": "2.5 分步输入与转换",
+        "href": "/learn/PY101/PY101-C02-L05#main-example",
+        "note": "提示、键入回显、print结果分开记录。"
+      },
+      {
+        "title": "1.3 保存与重跑",
+        "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+        "note": "确认终端运行的是已保存文件。"
+      }
+    ],
+    "objectives": [
+      "把已绑定名称的值插入简单f-string，输出有实际含义和单位的文字，并区分普通字符串与格式化字符串",
+      "在自己创建的.py中组合输入、明确转换、数值计算、布尔比较与清楚输出，说明每一步的值来自哪里",
+      "为同一程序预测并真实运行新输入，验证低于、恰好等于、高于限制的结果与单位，解释真假判断的实际范围"
+    ],
+    "sections": [
+      {
+        "id": "bare-results",
+        "title": "数字算对了，别人能看懂吗？",
+        "navGroup": "meaning",
+        "navLabel": "输出含义",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "程序算出总质量6.0千克，又判断出它不超过10千克。下面都是已经学过的赋值和print。先预测两行，再另存bare_results.py完整运行，看看只收到结果的人能知道多少信息。"
+          },
+          {
+            "type": "code",
+            "code": "total_mass = 6.0\nwithin_limit = True\n\nprint(total_mass)\nprint(within_limit)",
+            "filename": "bare_results.py",
+            "language": "python"
+          },
+          {
+            "type": "code",
+            "code": "6.0\nTrue",
+            "filename": "裸值 · 预期两行",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "这两行可以是正确结果，但6.0没写单位，也没说是单件还是总量；True没写出判断问题。希望让使用者看到下面的说明。先指出增加了哪些信息："
+          },
+          {
+            "type": "code",
+            "code": "Total kg: 6.0\nWithin 10 kg: True",
+            "filename": "想要的显示 · 总质量与所判断的问题",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "Total kg表示总质量（千克），Within 10 kg在本例问是否不超过10千克。接下来先把一个已知值与说明放到同一行，之后再把输入和计算接回来。普通print仍可显示结果；本课增加的是让值与含义一起呈现的方法。"
+          }
+        ]
+      },
+      {
+        "id": "first-format",
+        "title": "f前缀告诉Python：这里要放入当前值",
+        "navGroup": "format",
+        "navLabel": "文字与名称",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "f-string在开头引号前加f。引号界定文字，Total kg:是说明，{total_mass}用花括号标出插入位置。"
+          },
+          {
+            "type": "paragraph",
+            "text": "执行到这里时，Python读total_mass当前值，组成字符串，再由print显示。先只将已绑定的简单名称放进花括号，f紧挨开头引号。"
+          },
+          {
+            "type": "paragraph",
+            "text": "新建insert_mass.py，先预测显示内容，再保存运行。Windows在文件目录用python insert_mass.py，macOS用python3；已验证py的环境可继续用py。源码仍放在.venv外。"
+          },
+          {
+            "type": "code",
+            "code": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")",
+            "filename": "insert_mass.py",
+            "language": "python"
+          },
+          {
+            "type": "code",
+            "code": "Total kg: 6.0",
+            "filename": "f-string · 预期print结果",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "对照另存literal_mass.py：去掉开头f，仍是合法Python普通字符串。先预测花括号会消失还是原样显示，再运行核对。"
+          },
+          {
+            "type": "code",
+            "code": "total_mass = 6.0\nprint(\"Total kg: {total_mass}\")",
+            "filename": "literal_mass.py",
+            "language": "python"
+          },
+          {
+            "type": "code",
+            "code": "Total kg: {total_mass}",
+            "filename": "普通字符串 · 预期print结果",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "去掉f后，花括号及total_mass会原样显示。如果你仍预测6.0，就是把普通文字里的花括号也当成了插入请求。"
+          },
+          {
+            "type": "paragraph",
+            "text": "在literal_mass.py副本只补回开头f再重跑，应看到当前数值。这两种写法都合法，差别是有没有插入值。"
+          }
+        ]
+      },
+      {
+        "id": "labels-and-units",
+        "title": "每一行都说清名称、数量或单位",
+        "navGroup": "format",
+        "navLabel": "文字与名称",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "再把三个已知值分别放进说明。item_name是物品名称，count是件数，total_mass是总千克数；三个花括号各读取自己的名称。先预测三行，再保存known_summary.py运行："
+          },
+          {
+            "type": "code",
+            "code": "item_name = \"Parcel\"\ncount = 4\ntotal_mass = 6.0\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")",
+            "filename": "known_summary.py",
+            "language": "python"
+          },
+          {
+            "type": "code",
+            "code": "Item: Parcel\nCount: 4\nTotal kg: 6.0",
+            "filename": "已知值摘要 · 预期print结果",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "每条print单独一行。Count在本例数的是件，Total kg明确总质量单位，不要在数值赋值后直接写kg；单位属于输出说明。中文说明同样合法，另存chinese_mass.py，先预测再运行下面两行："
+          },
+          {
+            "type": "code",
+            "code": "total_mass = 6.0\nprint(f\"总质量（千克）：{total_mass}\")",
+            "filename": "chinese_mass.py",
+            "language": "python"
+          },
+          {
+            "type": "code",
+            "code": "总质量（千克）：6.0",
+            "filename": "中文单位 · 预期print结果",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "英文标签不是唯一正确形式，关键是让别人分清每个值的含义。6.0是本次float普通显示，不是故障，本节也不要求补成6.00。float有表示精度边界，若自己的其他合法输入显示较长小数，保留真实结果并核对，不为排版改类型或伪造日志。"
+          }
+        ]
+      },
+      {
+        "id": "receive-values",
+        "title": "先收三项输入，暂时只观察提示",
+        "navGroup": "assembly",
+        "navLabel": "逐步组装",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "现在把已知值换成本次使用者输入。物品名、完整件数、单件质量是三项不同的数据，先按2.5分别保存原文字。另建receive_parcel.py，保存下方完整三行；先预测会出现几次等待，再启动。"
+          },
+          {
+            "type": "code",
+            "code": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")",
+            "filename": "receive_parcel.py",
+            "language": "python"
+          },
+          {
+            "type": "paragraph",
+            "text": "Item: 出现输入Parcel、Enter；Count: 出现输入4、Enter；Mass kg: 出现输入1.5、Enter。每项各占一行输入，不把三个值合成一行，也不在数值后附加单位。这版没有print，收齐三项后结束，尚不会显示计算结果。"
+          },
+          {
+            "type": "table",
+            "caption": "三份原输入的角色",
+            "columns": [
+              "名称",
+              "本次输入内容",
+              "此时的值类型/含义"
+            ],
+            "rows": [
+              [
+                "item_name",
+                "Parcel",
+                "str，物品名称"
+              ],
+              [
+                "count_text",
+                "4",
+                "str，待转换的件数文本"
+              ],
+              [
+                "mass_text",
+                "1.5",
+                "str，待转换的单件千克数文本"
+              ]
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "input提示属于程序stdout但无自动换行，终端通常回显你键入的字符；它们都不是print结果。自动stdin输入没有同样的键盘回显，这版捕获stdout只有下面三个连续提示。标注的示意、终端流和原始stdout要分开。"
+          },
+          {
+            "type": "code",
+            "code": "Item: Count: Mass kg: ",
+            "filename": "自动stdin捕获 · 无print、无键盘回显",
+            "language": "text"
+          }
+        ]
+      },
+      {
+        "id": "calculate-check",
+        "title": "把件数和单件质量变成总量，再比较",
+        "navGroup": "assembly",
+        "navLabel": "逐步组装",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "接下来int(count_text)得到整数件数count，float(mass_text)得到单件质量mass；原来的两个_text仍是字符串。count * mass用件数乘千克/件，得到总千克数，先保存为total_mass。"
+          },
+          {
+            "type": "paragraph",
+            "text": "本例规定总质量最多10千克，恰好10也满足。total_mass <= 10复用2.4的比较，先把True或False保存为within_limit。它只回答这个总质量问题，还没有执行批准或拒绝等行动。"
+          },
+          {
+            "type": "paragraph",
+            "text": "另存calculate_parcel.py，保存下面完整累计版。先手算Parcel/4/1.5，再依次输入运行；末尾两条print暂时核对总量和比较，仍用普通裸值显示。"
+          },
+          {
+            "type": "code",
+            "code": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(total_mass)\nprint(within_limit)",
+            "filename": "calculate_parcel.py",
+            "language": "python"
+          },
+          {
+            "type": "code",
+            "code": "6.0\nTrue",
+            "filename": "Parcel / 4 / 1.5 · 仅print结果",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "4件×1.5千克/件为6.0千克，6.0<=10为True。若此处与预测不同，先核对实际键入、转换后的名称和乘法；正确之后再整理文字，不靠改输出标签掩盖计算错误。"
+          }
+        ]
+      },
+      {
+        "id": "main-example",
+        "title": "最后接上四行可读摘要",
+        "navGroup": "summary",
+        "navLabel": "完整摘要",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "输入与计算都核对后，再用四条f-string替换裸值输出：分别读物品名、整数件数、总千克数和比较结果。"
+          },
+          {
+            "type": "paragraph",
+            "text": "最后一条明确问是否不超过10千克。比较先保存，花括号只负责取名称的值，不能用漂亮标签掩盖错误计算。"
+          },
+          {
+            "type": "paragraph",
+            "text": "新建parcel_summary.py，先写Parcel/4/1.5的四行预测，再保存完整主例。下面空行只是分组，每次从头执行。"
+          },
+          {
+            "type": "code",
+            "code": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")",
+            "filename": "parcel_summary.py",
+            "language": "python"
+          },
+          {
+            "type": "code",
+            "code": "python parcel_summary.py",
+            "filename": "Windows · PowerShell · 文件所在目录",
+            "language": "text"
+          },
+          {
+            "type": "code",
+            "code": "python3 parcel_summary.py",
+            "filename": "macOS · 终端 · 文件所在目录",
+            "language": "text"
+          },
+          {
+            "type": "code",
+            "code": "Item: Parcel\nCount: 4\nTotal kg: 6.0\nWithin 10 kg: True",
+            "filename": "Parcel / 4 / 1.5 · 仅四条print结果",
+            "language": "text"
+          },
+          {
+            "type": "paragraph",
+            "text": "这四行不是终端全部内容；input提示与键盘回显另行标记。自动stdin提供三行数据时，原始stdout的提示会紧邻第一条print，实际捕获形式如下，末尾有换行，不能补造三行回显："
+          },
+          {
+            "type": "code",
+            "code": "Item: Count: Mass kg: Item: Parcel\nCount: 4\nTotal kg: 6.0\nWithin 10 kg: True\n",
+            "filename": "自动stdin stdout · 提示与print连续",
+            "language": "text"
+          }
+        ]
+      },
+      {
+        "id": "boundary-runs",
+        "title": "源码不变，换低于、等于和高于上限的数据",
+        "navGroup": "summary",
+        "navLabel": "完整摘要",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "保留parcel_summary.py原样。第一轮Parcel/4/1.5已经是低于10；先保留自己的输入、预测与真实四行结果。第二轮先预测Crate B/4/2.5，重新执行同一命令，依次键入。手算4×2.5=10.0千克，最后一行该是真还是假？"
+          },
+          {
+            "type": "paragraph",
+            "text": "第三轮再先预测Crate C/4/3.0，完整重新启动并输入，手算总12.0千克。保留三轮命令、输入、源码和实际四行摘要，再按表核对，不用一次输出或抄表代替三次运行。"
+          },
+          {
+            "type": "table",
+            "caption": "完成三轮后核对总质量与同一比较",
+            "columns": [
+              "物品/件数/单件千克",
+              "总千克数",
+              "Within 10 kg"
+            ],
+            "rows": [
+              [
+                "Parcel / 4 / 1.5",
+                "6.0",
+                "True"
+              ],
+              [
+                "Crate B / 4 / 2.5",
+                "10.0",
+                "True"
+              ],
+              [
+                "Crate C / 4 / 3.0",
+                "12.0",
+                "False"
+              ]
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "等于10.0时<=仍为True，因为最多包括等值；超过时False。这个真假只报告本次总质量是否不超过10千克，没有检查包装或运输条件，也没有自动执行拒绝。输出说明必须对应实际比较，不能把它改写成“所有条件下都安全”。"
+          }
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "自己选择情境，交出可读结果与边界证据",
+        "navGroup": "practice",
+        "navLabel": "独立练习",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "先独立写程序，再按需展开提示。基本交付是本人源码和本题真实运行结果；同一会话的环境、文件位置和命令只记一次，后面可引用编号。预测可口述或记一行；边界、改值和恢复题按题干保留必要对照。"
+          },
+          {
+            "type": "exercise",
+            "id": "write-clear-summary",
+            "title": "自己的可读计算摘要",
+            "kind": "代码",
+            "prompt": "另选新测量情境、合法名称和三条提示，新.py用input收标签、整数件数、小数单件量，分步int/float后算总量。简单f-string显示标签、件数、总量及含义/单位。对同一源码选两组新合法输入，先预测再真运行。交源码、一张两组输入/预测/print摘要表和一次命令。用一句话或现场指认输入→转换→计算→显示；解释一条输出去掉f的差别，可另存副本自查。不用if/循环/函数/格式指定。",
+            "hints": [
+              "哪一项应保留为文字，哪两项要成为数值？单件测量乘件数后是什么单位？读者能从每行知道这是哪个量吗？",
+              "按输入、分步转换、计算、说明文字中的名称组织。花括号中先只放已经赋值的名称；自己确定主题、新数据和两轮预测。"
+            ],
+            "solution": [
+              "参考横幅材料，每片长度以米计。页尾material_summary.py给出完整路径，先独立完成再展开。第1–3行收材料名/片数文本/单片米数；第4–5行转成pieces整数和length浮点；第6行两者相乘存总米数。",
+              "第7–9行分别显示材料名、片数、Total m总米数。Banner A/6/0.75先预测Material: Banner A、Pieces: 6、Total m: 4.5，保存运行python material_summary.py（macOS用python3）。同源码第二轮Banner B/10/0.5先预测总5.0米，再实际重新启动输入。",
+              "前者6片×0.75米/片=4.5米，后者10片×0.5米/片=5.0米。f-string只读取已经取得的名称，不会替你转换或重算输入。去掉最后一条f会显示文字{total_length}；补回f才能插入当前总值。",
+              "常错是花括号内错拼名称、少f、用原文本计算、把单片质量/长度当总量或遗漏单位。按输入→转换→总量→文字逐项核对。接受其他新情境/名称、中文标签、成对单引号或先保存中间结果，但需真实两轮和清楚单位；参考预测不是本人运行证据。",
+              "交付按本题题干与rubric：源码可用一份加差异，运行记录用短表；相同命令、环境和版本引用会话卡，不重复誊写。"
+            ],
+            "rubric": [
+              "本人新程序三输入分步转换并真实计算，自选情境/名称/提示。",
+              "简单f-string读已绑定名称，含义及单位可辨，能区分去f的普通字符串。",
+              "两组新输入均有事前预测与真输出；一表/一次命令，数据流现场或短句说明，非长报告。"
+            ]
+          },
+          {
+            "type": "exercise",
+            "id": "verify-summary-boundary",
+            "title": "验证摘要边界，并解释真假回答了什么",
+            "kind": "代码",
+            "prompt": "自选新测量限制情境，如总长度最多若干米；可复用题一源码，另记新增比较/输出的差异。真实input及int/float求总量，固定新上限，总量<=上限保存真假，用简单f-string显示名称/件数/总量单位/比较问题。选低/等/高三组合法输入，各先预测再完整运行同一文件；用整数、0.5或0.25安排确实等值。交源码加差异、一张三组输入/预测/实际摘要表及一次命令。解释等值True、超限False的范围，False未自动拒绝。不重复提交整份阶段源码，不把一次运行算成三轮；不引入控制流程或精度算法。",
+            "hints": [
+              "分清单件测量、总量和限制。应该拿哪一项与上限比较，输出里的真假文字又在问哪个问题？",
+              "先确定能恰好达到的边界，再在同一固定上限下安排低/等/高三组输入，先预测再逐轮执行。保留你决定的数据、比较名称和完整代码。"
+            ],
+            "solution": [
+              "参考花坛围边，最多12米。页尾garden_boundary.py先收批次、段数和每段米数，转strips整数与strip_length浮点；length_limit固定12，total_length=strips * strip_length，within_limit保存总长<=上限。四条f-string分别显示批次、段数、总米数和Within 12 m问题。",
+              "同一文件Garden A/3/3先预测总9.0米/True，再运行python garden_boundary.py（macOS用python3）；Garden B/3/4先预测12.0米/True，重新输入运行；Garden C/3/5先预测15.0米/False，再完整重跑。每轮名称和段数也要和实际摘要对应，保留实际摘要的四行。",
+              "等值12.0满足最多12，<=包含相等；15.0超过所以False。True不证明其他条件都满足，False也没让程序拒绝输入，这段没有分支动作。输出Within {length_limit} m中的两个插入位置分别读取限制和真假值，花括号都只是简单名称。",
+              "常错是改了上限、比较单段而非总量、实际没到等值、三轮只抄参考或将False写成已拒绝。按实际输入重算，保留固定源码、预测和命令。接受其他合理新上限/数据/名称/中文问题；若复用题一，必须能看出新增比较与第三轮证据，不把题一一次运行算成三轮。",
+              "交付按本题题干与rubric：源码可用一份加差异，运行记录用短表；相同命令、环境和版本引用会话卡，不重复誊写。"
+            ],
+            "rubric": [
+              "本人输入/转换/计算/总量<=固定上限正确，单位与输出问题清楚。",
+              "低/等/高三组各有事前预测及完整真摘要，上限不改，源码一次加差异、命令一次。",
+              "等值True/超限False的范围正确，无自动拒绝；题一复用仍需独立三轮，非抄表或长报告。"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "reference-programs",
+        "title": "做完再核对：完整参考与名称错拼副本",
+        "navGroup": "reference",
+        "navLabel": "参考核对",
+        "tier": "verification",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "先完成两题再展开参考，另存新文件保留原作。前两份完整程序的行义、预测与命令在各题解答中，不将列表文字当连写源码。"
+          },
+          {
+            "type": "code",
+            "code": "material_name = input(\"Material: \")\npieces_text = input(\"Pieces: \")\nlength_text = input(\"Length m: \")\npieces = int(pieces_text)\nlength = float(length_text)\ntotal_length = pieces * length\nprint(f\"Material: {material_name}\")\nprint(f\"Pieces: {pieces}\")\nprint(f\"Total m: {total_length}\")",
+            "filename": "material_summary.py · 题一参考",
+            "language": "python"
+          },
+          {
+            "type": "code",
+            "code": "batch_name = input(\"Batch: \")\nstrips_text = input(\"Strips: \")\nstrip_text = input(\"Strip m: \")\nstrips = int(strips_text)\nstrip_length = float(strip_text)\nlength_limit = 12\ntotal_length = strips * strip_length\nwithin_limit = total_length <= length_limit\nprint(f\"Batch: {batch_name}\")\nprint(f\"Strips: {strips}\")\nprint(f\"Total m: {total_length}\")\nprint(f\"Within {length_limit} m: {within_limit}\")",
+            "filename": "garden_boundary.py · 题二参考",
+            "language": "python"
+          },
+          {
+            "type": "paragraph",
+            "text": "若想核对名称问题，在自己的field_copy.py副本先预测下面程序：花括号里的total_mas少一个s，本次没有绑定。按2.1检查名称，实际运行保留第2行NameError、相关回溯和退出状态；它与少f的合法字面输出原因不同。"
+          },
+          {
+            "type": "code",
+            "code": "total_mass = 6.0\nprint(f\"Total kg: {total_mas}\")",
+            "filename": "field_copy.py · 名称错拼副本",
+            "language": "python"
+          },
+          {
+            "type": "paragraph",
+            "text": "保留错误后，将同一副本只修为total_mass，先预测再保存完整重跑下面修复版，应显示Total kg: 6.0且正常结束。无需核心题故意造错，也不加入异常捕获。"
+          },
+          {
+            "type": "code",
+            "code": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")",
+            "filename": "field_copy.py · 名称修复副本",
+            "language": "python"
+          }
+        ]
+      },
+      {
+        "id": "chapter-end",
+        "title": "第二章收束：能说明结果，也知道还没学什么",
+        "navGroup": "finish",
+        "navLabel": "章末衔接",
+        "tier": "core",
+        "blocks": [
+          {
+            "type": "summary",
+            "points": [
+              "保存与更新变量，辨认基本类型，写有单位的数值表达式和比较。",
+              "从终端取得文字，明确int/float转换，再计算和保存判断。",
+              "用简单f-string把名称、数量、单位和比较问题一起显示，用真实低/等/高输入核对。"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "保留自己的程序和摘要，能换新数据、先预测并解释每行含义，就能核对值从哪里来、单位和限制是否一致。"
+          },
+          {
+            "type": "paragraph",
+            "text": "第二章把变量、类型、计算、比较和输入输出连成了短程序。下一章先用if让程序根据比较结果选择是否执行一段代码，循环与其他控制流程随后学习。先能独立完成本章的交互摘要，再继续这些新能力。第5章函数仍依赖第三、第四章的中间知识，不宜直接跳过。"
+          }
+        ]
+      }
+    ],
+    "resources": [],
+    "references": [
+      {
+        "title": "f-string教程",
+        "href": "https://docs.python.org/3.14/tutorial/inputoutput.html#formatted-string-literals",
+        "note": "先解释前缀与替换字段。"
+      },
+      {
+        "title": "f-string词法规则",
+        "href": "https://docs.python.org/3.14/reference/lexical_analysis.html#f-strings",
+        "note": "本课只用已绑定简单名称。"
+      },
+      {
+        "title": "print与input",
+        "href": "https://docs.python.org/3.14/library/functions.html#print",
+        "note": "提示、终端回显和print分开。"
+      },
+      {
+        "title": "int/float转换",
+        "href": "https://docs.python.org/3.14/library/functions.html#int",
+        "note": "输入文本明确转换再计算。"
+      },
+      {
+        "title": "数值比较",
+        "href": "https://docs.python.org/3.14/reference/expressions.html#value-comparisons",
+        "note": "结果只对应实际数量关系。"
+      }
+    ]
+  },
+  "beforeScope": {
+    "courseId": "PY101",
+    "lessonId": "PY101-C02-L06",
+    "contentVersion": 2,
+    "sectionIds": [
+      "bare-results",
+      "first-format",
+      "labels-and-units",
+      "receive-values",
+      "calculate-check",
+      "main-example",
+      "boundary-runs",
+      "practice",
+      "reference-programs",
+      "chapter-end"
+    ]
+  },
+  "afterScope": {
+    "courseId": "PY101",
+    "lessonId": "PY101-C02-L06",
+    "contentVersion": 2,
+    "sectionIds": [
+      "bare-results",
+      "first-format",
+      "labels-and-units",
+      "receive-values",
+      "calculate-check",
+      "main-example",
+      "boundary-runs",
+      "practice",
+      "reference-programs",
+      "chapter-end"
+    ]
+  },
+  "versionDecision": "Keep r2: only the transition paragraph changes; objectives, tasks, assessment, IDs and scope are identical."
+}

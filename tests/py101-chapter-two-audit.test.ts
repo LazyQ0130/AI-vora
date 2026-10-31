@@ -4,7 +4,7 @@ import {createHash} from "node:crypto";
 import {readFileSync} from "node:fs";
 import {lessonRegistry,getLearningCourse,getAdjacentLessons,resolveLesson} from "./helpers/py101-p14-view";
 import {publicationManifest} from "./helpers/py101-p14-view";
-import {courseOutline} from "../src/content/course-outline";
+import {courseOutline} from "./helpers/py101-p14-view";
 import {lessonProgressScope} from "../src/lib/use-learning-progress";
 import {createProgressStore,parseReadingProgress,progressKey} from "../src/lib/learning-progress";
 import {beforeApprovedPy101Object,beforeApprovedPy101Source} from "../scripts/py101-p1-compatibility";

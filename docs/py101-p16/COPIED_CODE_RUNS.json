@@ -1,0 +1,34 @@
+{
+  "python": "3.14.2",
+  "method": "Browser Copy button -> browser clipboard -> actual saved file -> independent Python process",
+  "rows": [
+    {
+      "file": "copied-main.py",
+      "command": [
+        "<PYTHON>",
+        "copied-main.py"
+      ],
+      "cwd": "<WORKSPACE>/docs/py101-p16",
+      "source": "count = 5\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n\nprint(\"Check finished\")",
+      "sha256": "4235f498620222d727fda2cc3c1989eec21513f5a5782da23f707d2b4143b724",
+      "prediction": "Within limit\nCheck finished\n",
+      "stdout": "Within limit\nCheck finished\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "file": "copied-repair.py",
+      "command": [
+        "<PYTHON>",
+        "copied-repair.py"
+      ],
+      "cwd": "<WORKSPACE>/docs/py101-p16",
+      "source": "packed = 8\ncapacity = 6\n\nif packed <= capacity:\n    print(\"Checking batch\")\n    print(\"Pack allowed\")\n\nprint(\"Check finished\")",
+      "sha256": "dd5ceca6e0e5313d9f5e6574c28214bd7dd6ac6a33d4d46e072e1e58f8dd5723",
+      "prediction": "Check finished\n",
+      "stdout": "Check finished\n",
+      "stderr": "",
+      "exitCode": 0
+    }
+  ]
+}

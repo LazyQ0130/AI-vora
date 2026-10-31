@@ -1,0 +1,30 @@
+{
+  "baseline": "3b06e11259d01f041ff9eb384b51d79626f6ebb5",
+  "lessonId": "PY101-C03-L01",
+  "contentVersion": 1,
+  "lessonSha256": "328312fe3d056eb32eb19a7543ee96e77d96a9677841a2d220bd2b797adb1e90",
+  "publicationSha256": "63a57570e1ddc9d5bbed480248d672bc7b6e2eab0c83555cb954fb6abe2f2bc2",
+  "files": [
+    {
+      "path": "src/content/lessons/py101/conditional-execution.ts",
+      "lfSha256": "1fd03867f1b45cbcc6bb2df13d13c83382ba655952cd750421594ab3ac971e4d"
+    },
+    {
+      "path": "src/content/resources/python-conditional-execution.ts",
+      "lfSha256": "794f7c8eae886333ead2e8961e036233393a4457575dbed9ccc93f89035ea09c"
+    },
+    {
+      "path": "docs/py101-p16/CHAPTER_3_BLUEPRINT.md",
+      "lfSha256": "e8680dac7338059e15a43a633c0db243361f4a4035143632dc2a49ee451fdb16"
+    },
+    {
+      "path": "docs/py101-p16/LESSON_3_1_EDITORIAL_BRIEF.md",
+      "lfSha256": "27c8d8ccb0ab648617ee15e60eee501590dd964de309aff02077a5d4fd1067b4"
+    }
+  ],
+  "technicalEvidence": "docs/py101-p16/TECHNICAL_REPORT.md",
+  "teacherReviewConducted": false,
+  "chineseEditorialReviewConducted": false,
+  "studentPilotConducted": false,
+  "macOSRuntimeVerified": false
+}

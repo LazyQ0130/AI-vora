@@ -1,3 +1,4 @@
+import { approvedPy101Additions } from "./helpers/py101-p14-view";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
@@ -8,7 +9,7 @@ const lesson=historicalLesson(p15CurrentLesson);
 import { lessonRegistry, getLearningCourse, getAdjacentLessons, resolveLesson } from "./helpers/py101-p14-view";
 import { publicationManifest } from "./helpers/py101-p14-view";
 import { isReadable } from "../src/content/models";
-import { beforeApprovedPy101Object, protectedPy101FileMatches, approvedPy101Additions } from "../scripts/py101-p1-compatibility";
+import { beforeApprovedPy101Object, protectedPy101FileMatches } from "../scripts/py101-p1-compatibility";
 import { assertRegisteredInventory, assertCourseAvailability } from "./helpers/registered-content";
 import { environmentProbe, venvCommands } from "../src/content/resources/python-venv";
 import { createProgressStore, parseReadingProgress, progressKey } from "../src/lib/learning-progress";

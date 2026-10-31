@@ -1,0 +1,305 @@
+{
+  "checkedAt": "2026-10-31T06:34:56.909Z",
+  "platform": "win32",
+  "node": "v24.16.0",
+  "python": {
+    "version": "3.14.2",
+    "executable": "<BASE-PYTHON>\\python.exe",
+    "prefix": "<BASE-PYTHON>"
+  },
+  "method": "Predictions precede execution; save .py, reread/hash bytes, start real independent CPython process; preserve stdout/stderr/exit/PID. Public copy redacts path prefixes only.",
+  "rows": [
+    {
+      "key": "before",
+      "id": "before-low",
+      "filename": "before_if.py",
+      "cwd": "<P16-LAB>",
+      "command": [
+        "python",
+        "<P16-LAB>\\before_if.py"
+      ],
+      "pid": 21036,
+      "savedSource": "count = 5\nlimit = 6\n\nprint(count <= limit)\nprint(\"Check finished\")\n",
+      "savedSha256": "1ed12df629cea40b8d415bd9686259a9db8d54bdeacc8e665eac060c47309dae",
+      "predictedStdout": "True\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "True\r\nCheck finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "before",
+      "id": "before-high",
+      "filename": "before_if.py",
+      "cwd": "<P16-LAB>",
+      "command": [
+        "python",
+        "<P16-LAB>\\before_if.py"
+      ],
+      "pid": 22888,
+      "savedSource": "count = 7\nlimit = 6\n\nprint(count <= limit)\nprint(\"Check finished\")\n",
+      "savedSha256": "8ed81481a1d0a2d2e328d6344ba9c43b89de1d85562a11f4212d8cfb477ade07",
+      "predictedStdout": "False\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "False\r\nCheck finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "main",
+      "id": "main-low",
+      "filename": "quantity_check.py",
+      "cwd": "<P16-LAB>",
+      "command": [
+        "python",
+        "<P16-LAB>\\quantity_check.py"
+      ],
+      "pid": 23468,
+      "savedSource": "count = 5\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "0e1742f0ecfbd4d4b98657233e09dec629198b36075c2a9f7568384b7f110190",
+      "predictedStdout": "Within limit\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Within limit\r\nCheck finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "main",
+      "id": "main-equal",
+      "filename": "quantity_check.py",
+      "cwd": "<P16-LAB>",
+      "command": [
+        "python",
+        "<P16-LAB>\\quantity_check.py"
+      ],
+      "pid": 2544,
+      "savedSource": "count = 6\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "7305abc264ec7885201752ba21b3d1d83a0aac565c481aa672a989b98fde3385",
+      "predictedStdout": "Within limit\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Within limit\r\nCheck finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "main",
+      "id": "main-high",
+      "filename": "quantity_check.py",
+      "cwd": "<P16-LAB>",
+      "command": [
+        "python",
+        "<P16-LAB>\\quantity_check.py"
+      ],
+      "pid": 23296,
+      "savedSource": "count = 7\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "38977ae3b10cedd0b9fa9bea1f8dbd2dc3ef5ae1e817be0338d4843287662e27",
+      "predictedStdout": "Check finished\n",
+      "exitCode": 0,
+      "stdout": "Check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "twoLines",
+      "id": "two-low",
+      "filename": "two_messages.py",
+      "cwd": "<P16-LAB>",
+      "command": [
+        "python",
+        "<P16-LAB>\\two_messages.py"
+      ],
+      "pid": 3592,
+      "savedSource": "count = 5\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n    print(\"Prepare labels\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "d8d3c2e1b79b8d0480992307af6219dbacc81219c8dfaf07ef1d29ee635f546c",
+      "predictedStdout": "Within limit\nPrepare labels\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Within limit\r\nPrepare labels\r\nCheck finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "twoLines",
+      "id": "two-high",
+      "filename": "two_messages.py",
+      "cwd": "<P16-LAB>",
+      "command": [
+        "python",
+        "<P16-LAB>\\two_messages.py"
+      ],
+      "pid": 10416,
+      "savedSource": "count = 7\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n    print(\"Prepare labels\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "07c7583cb0a9ef872cf0944520deda050caa599a1d28ff53cd03cfe696200d39",
+      "predictedStdout": "Check finished\n",
+      "exitCode": 0,
+      "stdout": "Check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "movedLine",
+      "id": "moved-high",
+      "filename": "moved_message.py",
+      "cwd": "<P16-LAB>",
+      "command": [
+        "python",
+        "<P16-LAB>\\moved_message.py"
+      ],
+      "pid": 22084,
+      "savedSource": "count = 7\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\nprint(\"Prepare labels\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "36de341dac7a377b3a7a5820f0c7a72e42e196acf9dfe91a3169bba440b5711d",
+      "predictedStdout": "Prepare labels\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Prepare labels\r\nCheck finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "broken",
+      "id": "broken-high",
+      "filename": "repair_if.py",
+      "cwd": "<P16-LAB>",
+      "command": [
+        "python",
+        "<P16-LAB>\\repair_if.py"
+      ],
+      "pid": 22736,
+      "savedSource": "packed = 8\ncapacity = 6\n\nif packed <= capacity:\n    print(\"Checking batch\")\nprint(\"Pack allowed\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "a701ce05224c73d2ebffe8d1c21bd2425395f5278c639a6a634d0f0461ac6b92",
+      "predictedStdout": "Pack allowed\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Pack allowed\r\nCheck finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "repaired",
+      "id": "repair-high",
+      "filename": "repair_if.py",
+      "cwd": "<P16-LAB>",
+      "command": [
+        "python",
+        "<P16-LAB>\\repair_if.py"
+      ],
+      "pid": 12592,
+      "savedSource": "packed = 8\ncapacity = 6\n\nif packed <= capacity:\n    print(\"Checking batch\")\n    print(\"Pack allowed\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "7a937e29855aac3d3e95759c687219a0a662e6eb440049095c9e62ef2dafb597",
+      "predictedStdout": "Check finished\n",
+      "exitCode": 0,
+      "stdout": "Check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "repaired",
+      "id": "repair-low",
+      "filename": "repair_if.py",
+      "cwd": "<P16-LAB>",
+      "command": [
+        "python",
+        "<P16-LAB>\\repair_if.py"
+      ],
+      "pid": 21688,
+      "savedSource": "packed = 4\ncapacity = 6\n\nif packed <= capacity:\n    print(\"Checking batch\")\n    print(\"Pack allowed\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "c617f41ee2640eaa7f445fb8b294ccc9c98456a582d49b60397604f5c48184cf",
+      "predictedStdout": "Checking batch\nPack allowed\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Checking batch\r\nPack allowed\r\nCheck finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "own",
+      "id": "reference-low",
+      "filename": "shelf_check.py",
+      "cwd": "<P16-LAB>",
+      "command": [
+        "python",
+        "<P16-LAB>\\shelf_check.py"
+      ],
+      "pid": 10820,
+      "savedSource": "books = 9\nshelf_capacity = 12\n\nif books <= shelf_capacity:\n    print(\"Books fit\")\n\nprint(\"Shelf check finished\")\n",
+      "savedSha256": "d1eb9429c0ad2af1f71658ee3cf77b5e523b87b6192422bbdfb9f058d1e9492e",
+      "predictedStdout": "Books fit\nShelf check finished\n",
+      "exitCode": 0,
+      "stdout": "Books fit\r\nShelf check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "own",
+      "id": "reference-equal",
+      "filename": "shelf_check.py",
+      "cwd": "<P16-LAB>",
+      "command": [
+        "python",
+        "<P16-LAB>\\shelf_check.py"
+      ],
+      "pid": 1084,
+      "savedSource": "books = 12\nshelf_capacity = 12\n\nif books <= shelf_capacity:\n    print(\"Books fit\")\n\nprint(\"Shelf check finished\")\n",
+      "savedSha256": "a5f789bfdf96bab6c5b19be15c64eef680a90ab071837e8e232e244ed2759169",
+      "predictedStdout": "Books fit\nShelf check finished\n",
+      "exitCode": 0,
+      "stdout": "Books fit\r\nShelf check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "own",
+      "id": "reference-high",
+      "filename": "shelf_check.py",
+      "cwd": "<P16-LAB>",
+      "command": [
+        "python",
+        "<P16-LAB>\\shelf_check.py"
+      ],
+      "pid": 6920,
+      "savedSource": "books = 15\nshelf_capacity = 12\n\nif books <= shelf_capacity:\n    print(\"Books fit\")\n\nprint(\"Shelf check finished\")\n",
+      "savedSha256": "0579c0e67bcba8eb0ca42c35ab9630520b48784f7eee51ad22a0f45b929047c6",
+      "predictedStdout": "Shelf check finished\n",
+      "exitCode": 0,
+      "stdout": "Shelf check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "own",
+      "id": "unseen-low",
+      "filename": "unseen.py",
+      "cwd": "<P16-LAB>",
+      "command": [
+        "python",
+        "<P16-LAB>\\unseen.py"
+      ],
+      "pid": 20688,
+      "savedSource": "height_cm = 16\nminimum_cm = 18\n\nif height_cm >= minimum_cm:\n    print(\"Height reached\")\n\nprint(\"Measurement finished\")\n",
+      "savedSha256": "375d1f6fe2c94c004b1d604494c989b6ce03bbf4b6f3f43568734fb6705e33ad",
+      "predictedStdout": "Measurement finished\n",
+      "exitCode": 0,
+      "stdout": "Measurement finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "own",
+      "id": "unseen-equal",
+      "filename": "unseen.py",
+      "cwd": "<P16-LAB>",
+      "command": [
+        "python",
+        "<P16-LAB>\\unseen.py"
+      ],
+      "pid": 6624,
+      "savedSource": "height_cm = 18\nminimum_cm = 18\n\nif height_cm >= minimum_cm:\n    print(\"Height reached\")\n\nprint(\"Measurement finished\")\n",
+      "savedSha256": "ad560394a9a78001c9ed5ec19183974ee3087e73f0928720604b732453030cd2",
+      "predictedStdout": "Height reached\nMeasurement finished\n",
+      "exitCode": 0,
+      "stdout": "Height reached\r\nMeasurement finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "own",
+      "id": "unseen-high",
+      "filename": "unseen.py",
+      "cwd": "<P16-LAB>",
+      "command": [
+        "python",
+        "<P16-LAB>\\unseen.py"
+      ],
+      "pid": 2504,
+      "savedSource": "height_cm = 21\nminimum_cm = 18\n\nif height_cm >= minimum_cm:\n    print(\"Height reached\")\n\nprint(\"Measurement finished\")\n",
+      "savedSha256": "a86bc8ce9a9905478f001c154d9619c4dab177e9d3d45befcf1d57b841420335",
+      "predictedStdout": "Height reached\nMeasurement finished\n",
+      "exitCode": 0,
+      "stdout": "Height reached\r\nMeasurement finished\r\n",
+      "stderr": ""
+    }
+  ],
+  "allAssertionsPassed": true,
+  "macOSRuntimeVerified": false,
+  "studentPilot": false
+}

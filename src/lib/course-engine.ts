@@ -47,6 +47,7 @@ import { pythonArithmeticExpressionsLesson } from "../content/lessons/py101/arit
 import { pythonNumericComparisonsLesson } from "../content/lessons/py101/numeric-comparisons";
 import { pythonInputAndConversionLesson } from "../content/lessons/py101/input-and-conversion";
 import { pythonReadableOutputLesson } from "../content/lessons/py101/readable-output";
+import { pythonConditionalExecutionLesson } from "../content/lessons/py101/conditional-execution";
 import {
   publicationManifest,
   readablePublications,
@@ -61,6 +62,7 @@ import {
 } from "../content/models";
 
 const contents: Lesson[] = [
+  pythonConditionalExecutionLesson,
   pythonReadableOutputLesson,
   pythonInputAndConversionLesson,
   pythonNumericComparisonsLesson,

@@ -119,7 +119,7 @@ export const pythonReadableOutputLesson=lessonSchema.parse({
   {id:"chapter-end",title:"第二章收束：能说明结果，也知道还没学什么",navGroup:"finish",navLabel:"章末衔接",blocks:[
    {type:"summary",points:["保存与更新变量，辨认基本类型，写有单位的数值表达式和比较。","从终端取得文字，明确int/float转换，再计算和保存判断。","用简单f-string把名称、数量、单位和比较问题一起显示，用真实低/等/高输入核对。"]},
    p("保留自己的程序和摘要，能换新数据、先预测并解释每行含义，就能核对值从哪里来、单位和限制是否一致。"),
-   p("第二章把变量、类型、计算、比较和输入输出连成了短程序。接下来学习第三章的控制流程，让程序依据条件选择动作或重复操作。先能独立完成本章的交互摘要，再学习这些新能力。第5章函数仍依赖第三、第四章的中间知识，不宜直接跳过。"),
+   p("第二章把变量、类型、计算、比较和输入输出连成了短程序。下一章先用if让程序根据比较结果选择是否执行一段代码，循环与其他控制流程随后学习。先能独立完成本章的交互摘要，再继续这些新能力。第5章函数仍依赖第三、第四章的中间知识，不宜直接跳过。"),
   ]},
  ],resources:[],references:[
   {title:"f-string教程",href:"https://docs.python.org/3.14/tutorial/inputoutput.html#formatted-string-literals",note:"先解释前缀与替换字段。"},

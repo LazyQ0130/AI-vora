@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-10-31T06:43:19.033Z",
+  "server": "next start / Webpack candidate",
+  "widths": [
+    {
+      "width": 1440,
+      "noPageOverflow": true,
+      "copiedMain": "count = 5\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n\nprint(\"Check finished\")",
+      "tasksExpanded": 2,
+      "rubricsVisible": true
+    },
+    {
+      "width": 768,
+      "noPageOverflow": true,
+      "tasksExpanded": 2
+    },
+    {
+      "width": 390,
+      "noPageOverflow": true,
+      "tasksExpanded": 2,
+      "copiedMainIdentical": true
+    },
+    {
+      "width": 320,
+      "noPageOverflow": true,
+      "tasksExpanded": 2,
+      "referenceAutoExpanded": true
+    }
+  ],
+  "progress": {
+    "oldLesson": "PY101-C02-L06",
+    "oldVersion": 2,
+    "oldCompletedAfterNewSave": true,
+    "newLesson": "PY101-C03-L01",
+    "newVersion": 1,
+    "newCompletedAfterReload": true,
+    "method": "Ordinary page buttons and navigation on isolated localhost:3006; test reading markers, not learning outcomes"
+  },
+  "wrongCourse404": true,
+  "planned32Still404": true,
+  "bytePreservationOf24HistoricalRecords": "unit tests, not browser storage injection",
+  "macOS": false,
+  "studentPilot": false
+}

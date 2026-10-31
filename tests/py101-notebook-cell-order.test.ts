@@ -1,3 +1,4 @@
+import { approvedPy101Additions } from "./helpers/py101-p14-view";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -9,7 +10,7 @@ import { lessonRegistry, resolveLesson, getLearningCourse, getAdjacentLessons } 
 import { publicationManifest } from "./helpers/py101-p14-view";
 import { isReadable } from "../src/content/models";
 import { notebookCode, notebookBlockNames, notebookCommands, notebookDocuments, notebookDownload } from "../src/content/resources/python-notebook";
-import { beforeApprovedPy101Object, protectedPy101FileMatches, approvedPy101Additions } from "../scripts/py101-p1-compatibility";
+import { beforeApprovedPy101Object, protectedPy101FileMatches } from "../scripts/py101-p1-compatibility";
 import { createProgressStore, progressKey, parseReadingProgress } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
 import { assertRegisteredInventory, assertCourseAvailability } from "./helpers/registered-content";

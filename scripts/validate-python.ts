@@ -12,6 +12,7 @@ import { runArithmeticExample } from "./validate-py101-arithmetic";
 import { runComparisonExample } from "./validate-py101-comparisons";
 import { runInputExample } from "./validate-py101-input";
 import { runReadableExample } from "./validate-py101-readable-output";
+import { runConditionalExample } from "./validate-py101-conditional";
 
 const python = process.env.AIVORA_PYTHON ?? "python";
 function run(args: string[]) {
@@ -46,6 +47,9 @@ const examples = [...lessonRegistry.values()].flatMap((lesson) =>
   lesson.sections.flatMap((section) =>
     section.blocks.flatMap<Record<string, unknown>>((block) => {
       if (block.type !== "code" || block.language !== "python") return [];
+      if (lesson.id === "PY101-C03-L01") {
+        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runConditionalExample(block.filename, block.code) }];
+      }
       if (lesson.id === "PY101-C02-L01") {
         return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runVariableExample(block.filename, block.code) }];
       }

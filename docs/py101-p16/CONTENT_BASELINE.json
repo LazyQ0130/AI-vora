@@ -1,0 +1,795 @@
+{
+  "head": "3b06e11259d01f041ff9eb384b51d79626f6ebb5",
+  "lessons": {
+    "PY101-C02-L06": "99fbc8c0768f04a16375c047f439b49ad3f16db53fc24a299e62cb96c370c526",
+    "PY101-C02-L05": "2b9714cf6ee5aa77df7e98cc96a74012b2021fe894164fe256d3c6b247f15456",
+    "PY101-C02-L04": "cf67ce18920c2961bc5310c73618aea6e2e992b727344ad3ab17fb7a39e623eb",
+    "PY101-C02-L03": "f80726b4912b5663c95a4b42e8acbbdc513f6d063677e873b1cc442403dbebe5",
+    "PY101-C02-L02": "73949b3fc4a98a489161b2e348874d4a32574924ccadf2155955cb36d0d2e670",
+    "PY101-C02-L01": "8820957dbe36c02db5dc39fad869d3689e091293181de21eafe61fc539c9d325",
+    "PY101-C01-L06": "8807b1d965b94ba8ffaed9181ce6c0842862ada3db205c01e432ec3911a6d934",
+    "PY101-C01-L02": "ec3568890789ab981e9f50732b40f9c020c948a76c6db40e8101ef3f365b71c4",
+    "PY101-C01-L03": "8989c2aa349cc2ebbfc3ab6cfb9aec29b0c6e5d92b2d88fa7d9dbc467b415380",
+    "PY101-C01-L04": "b7a6341505af0fd4a0172a5cc3b5056b3d2eb7852423a209544f156c8a3f7b44",
+    "PY101-C01-L05": "05886e06f842c3de2436d68325b56c4f341a80061cc6841dec72fbd61215dcff",
+    "PY101-C01-L01": "7654b50d1ab4f02a38c0e335685c26ff8d51f5eb6bb333ba3fcdfee4a32496bd",
+    "AI000-C01-L01": "b54ed519e222dfa1d6afb22a5130e2a7a89fdd63b461c516b5a9877a0b600d21",
+    "AI000-C01-L02": "9bc7e303099a1ffff86c49530c36f289ad9c2ac8a8af6ed52fc8cf0e23fbfcb5",
+    "AI000-C01-L03": "40660658b98b8d52de1229c1e477d2f34b0a6114944479d9a17df98ec6c88c4f",
+    "AI000-C02-L01": "b42bf7de8752817c3763d854d9d537962f90a7176bb764132cd727c35e8bb6bb",
+    "AI000-C02-L02": "69e6402a98a8419e15c9e34de96f341a5812fdbdea7451e97cd92c686d5bba48",
+    "AI000-C03-L01": "a425d7f5a9f1de93530461e12a2aa5029e133bf9d97e51ef0b1acdf6b2e1b8c0",
+    "AI000-C03-L02": "aa35407804c649879ea6ab892385f384c758b07b9449d1baa541f60646f4b4f8",
+    "AI000-C03-L03": "13da68be4b8c258b0faf8b851b93eb13c407877a6b86680c04b41c5a5e11c87d",
+    "AI000-C03-L04": "7d00e690328db87795c17ee9d533549a3235748915b0fb62cd7318104d90584c",
+    "AI000-C04-L01": "e08439af1430c994e26f149867df47d82fbf84708ae302d2b7a0d76e9a4243b6",
+    "AI000-C04-L02": "3113c34484d8c4fe4154cd105945b4fb64ae9288248834963e7ecc8e902cef30",
+    "AI000-C04-L03": "144fdc35778d64bb5bf474543575eab477e0c289ec229171348ecab4ada63ee9",
+    "AI000-C04-L04": "67e6ae10715f1a4c1b101bd4c9026d583532aea74f0a0080028b55e9a90d8685",
+    "AI000-C05-L01": "877e708d6be97f1a8f30ea652a5117dfd42a65b0196f8c6052a8cb5f6fc93556",
+    "AI000-C05-L02": "9da3339c8ca2d85efb5fb885359520117e351166a92bae635ef6dac648d4629f",
+    "AI000-C05-L03": "52486c75c158433c4107a58f1c8b780fafdcaedb04f00327128e8eee2234135c",
+    "AI000-C05-L04": "52cd5dfdbf2d19a06282ab10dd0e0b5a7bf6ed4a876e5fb0104f056478e5bd7a",
+    "AI000-C05-L05": "8efe0189d3dc8f4b4fa6232c97384b943feaf4168002e15e94ca7331fa5fd178",
+    "AI000-C06-L01": "c538b91c94ead2cdaaa1e3f301863b257c3e56636bd2f25cc153e95e27c8a9d1",
+    "AI000-C06-L02": "282f337be3f2dea72f959ea33947a81ca68f2c8796cdcdaacf887d0397cdabca",
+    "AI000-C06-L03": "592d72aee4cafe9f043e0464d76aa36b291e7ef687b80145cf2d7a213402bbbd",
+    "AI000-C07-L01": "474faef4f895471e2b172b462e2dcb1ddfb185f4424b52967783f6e0d620643e",
+    "AI000-C07-L02": "1cf66f16b883b68920ad18a06571fd21cbb7da579f78643c3b0ebc08f1b40b23",
+    "AI000-C07-L03": "e60e96f6c2b8dc93e50546e1700fe32533cac6951d3e971f70757deb740c4679",
+    "MA101-C02-L03": "e469e3e0ebb497e7a3831914d0d4d68bd0bc23b5c30557e4a8b235098d44428e",
+    "MA101-C02-L04": "4ed8fd14a580511106503adbbdad6241c24fef48663904c3016147ca0d5bde25",
+    "MA101-C02-L05": "2e710caf4345d49ec860bf2fe1c304e8cf6e0a4e1aa7b5eccf8b9fee35006095",
+    "MA101-C02-L06": "2fe1d35d3597fc62d049c700b484aa36982edfde813c408605f7d4e5d071cf38",
+    "ML201-C03-L01": "7675d8830b5432d1387fc18591883e7e43f55f73dc2d9e0afdfa45678b9e73e0",
+    "ML201-C03-L02": "53820bd813d01ba59a237d1218a1966f16d0c49f04ec4cd7b21b6016525b4530",
+    "ML201-C03-L03": "92091377137a4c3062d9c1d74f1825562c168526bd539efbf5dc01ff8b3889c0",
+    "ML201-C04-L02": "d9758378cb21e5786bd3c21b142c3f8063859bfc4d3f30a4f5efd4019f173f5d",
+    "ML201-C04-L03": "7675813c6dbf06e2eaae249f2468c6a632807208dc51d5857b072468e783efef",
+    "ML201-C04-L04": "5fa68ffaff83b64af0fcc4dff973dc3ab9976a4b5915f05fdc9e8f499da61c79",
+    "ML201-C04-L05": "e0547cd116e39acacceea45bd8cac6a1a2c13bc7df91066007db53fbe716287e",
+    "ML201-C04-L01": "60ff0636fa10563eef3fa1a16dc4935a63ac73ac524181d2902eefb1c917decf",
+    "PY101-C05-L01": "d052dd48c61d6741bdaccd49de80dac7338b3c9ec45386fc768f93be3993e218",
+    "PY101-C05-L02": "1efaabac8ba11a3ae26b554131c34e917fd4ce2536705ac4c610ec818bdc807d",
+    "PY101-C05-L03": "464401c5d3def09f82a43a764f47bba66bb5a7a1354b8e3b90c985c386669874",
+    "PY101-C05-L04": "0195e241298b62d9c690e9548b7882c29f47a08c72f84aa75989c5cf47f4e4ab",
+    "PY101-C05-L05": "4879e722b463c049da187e291284b7864fce427cfff7da5ea7f0091a2ff2c1bd",
+    "MA101-C02-L01": "0697e683df11d31942e05aa714adf6813f0bb62854cde24c900e36d4e0911734",
+    "MA101-C02-L02": "87e4ffe53218a1b2ef4d94f736fb42f414c1db0b2752a73d5b41d93bc274992f",
+    "MA101-C03-L01": "39410918d20e8cba4ff8a7f6fe49e072a54d4a10408af4514f8e906e3466a2c7",
+    "MA101-C03-L02": "0941f935abd9bd1dbe9a50e698eeaf70ef3da2d1bcb195d057be9f6ffda50b52",
+    "MA101-C03-L03": "66f4d7586db4f6ebf9d1b8474d9802965154e8c02a2bf8210959baf6d5d84585",
+    "PY101-C05-L06": "8ac18f1b83b6a6610a18493d80d0eac2fc6e447d4a70b24331a9eacd2eb3b7be"
+  },
+  "publications": {
+    "PY101-C02-L06": "fbb6532d6cb49558a9568f92f1255704f36933a699c630c175451e160a22ed8c",
+    "PY101-C02-L05": "3427a40407bebca0abc55367fc9673544dd4c9a36e5b7752a114fc64c6ed0a0e",
+    "PY101-C02-L04": "4ae0dd3960af89ff033ad9b5d64989361e4b057d8c1af9c678d6a6f1394d2acc",
+    "PY101-C02-L03": "003fd5e75067d0584433083687d1d1f3f9c0f4973966f05b01841ec4d6988113",
+    "PY101-C02-L02": "544f6c85a0d851cd3f40fefc6e6dd0f6ff90110c8633d3677cc4f07a28ed6d67",
+    "PY101-C02-L01": "1138459f1e1198748d6d0864592617e693fe5c2c40f996fc8c2a76141463bb31",
+    "PY101-C01-L06": "a21fdfbc59243a196a0f22adbd563d669ca13da1b46821819c0a64dbd1f53e0a",
+    "PY101-C01-L05": "f1f6e840fca350e9d7c74b229f88c04c4053b52784c3019bd925164c51c3572d",
+    "PY101-C01-L04": "d5956b28eb256abc2976189d93f8f5a2ef10a7ec0c40e984ce96698c6c23649f",
+    "PY101-C01-L03": "57848394acbd9ca16250b6faae3d229ac2d13b80f60eaa39cb7a68e2760c05a6",
+    "PY101-C01-L02": "b0dd2a74cef5da2d859a673427efcc8b30a7721d497d19556c53a9987cdecc99",
+    "PY101-C01-L01": "475215ae76648e5c6b013c1c7cc1386f88a990620fd7831955f148fb0331ebfc",
+    "AI000-C07-L03": "df7d487e3870c6a7d18a132ba846d8603599c8a3f036b7d6b863dbe75503da78",
+    "AI000-C07-L02": "dbe98f35077fe579bc61b1c6ff84719c9a43c7d80204aac59ca7122a07b9cb0e",
+    "AI000-C07-L01": "5b8b9accabcaac258d7202af40bd41df26625252d0f0c2e3f68558e02bb8c58e",
+    "AI000-C06-L03": "f9662b2cb43dfaf49d315c58d45eceade737c9db16b0504b428c298c2da59445",
+    "AI000-C06-L02": "3ad51b180720076094a0f479b4a3bf1eab24e702f5887a2c77aa1049a84e57c6",
+    "AI000-C06-L01": "3ab7dcc39fa0aa75481e41700e9f70419bb7de6bdd312bc0a42e14a6e49dc468",
+    "AI000-C05-L05": "e432f9bd7305ea536d38181864f2ed24f4e53a9d889d6469d61c4b3a223cfeef",
+    "AI000-C05-L03": "cde14b6f3dfd69577fd431227c8c119e85226b03cc507eac918906a9e10d8d9c",
+    "AI000-C05-L04": "79144a7b946e66b8a5d9ee00d92b760eae22d34ca56d101d2a561d6b9e1a8386",
+    "AI000-C05-L02": "5fee20815aab3b352dec12deb5b0f4e1a56ab23307c19ed0e83454d5a28df062",
+    "AI000-C05-L01": "a05702f453f61d710015293c73ef277e7d8c488a76a2184dbe659c3f16494775",
+    "AI000-C04-L04": "0406e29dac402e39bbca48106f3c2b89d6f7bc8ec9f74dd6ece89220a73314eb",
+    "AI000-C04-L03": "f90f1988592a92929269db65872bca653ca298d83e533a58f6899b0a41c06392",
+    "AI000-C04-L02": "8ad22eeaf7ee0f5acd209a64fbefca01c8e4c206cfd8a10ddb760e23c7ffe8e5",
+    "AI000-C04-L01": "a012ae41f6fd1a3a9b67978719d9fcf5e996db3e6dc738d2e76269a62669ea6a",
+    "AI000-C03-L04": "f643eb9f02037c51b93158914239a4ad075f619e305f5ed47e4e77d28c53708b",
+    "AI000-C03-L03": "dce9fe3a39c9c42a0cbe1d8a4222d4b49b8fb4bf01fb7d2985666b54c8aa6100",
+    "AI000-C03-L02": "cfe72bc20f8df4f6f57168b0f79e2cff103fae9a515bca8444ba9aeb7027de1a",
+    "AI000-C03-L01": "9d4b1e9f14dbf641729d30fd8f82a8cdc25742e749d4125e8d0afef84eb0681c",
+    "AI000-C01-L02": "94d6a567973ba6be887d46c538acf76f4bb4741f6fc6e82fbc01204641c3ecda",
+    "AI000-C01-L03": "edfb889e8be5da2f031889d1a29411eec1b6404c981357c2d77448ed86e4e0d4",
+    "AI000-C02-L02": "05234fcc51bbe0f2e42fe8995ad89face00b4d1a6353ae8b1b119700f42e8575",
+    "AI000-C02-L01": "93b2fda5f012eb318de7bf0d31f1ea253721760360470748f1db736bc46c98ff",
+    "AI000-C01-L01": "17e82b8624f892918b9d28afbe4a63f8cddfdf638abdb6003bdb47c0f46483f9",
+    "ML201-C03-L01": "0de24dcb1ff2d00082bba4cb91feb275e9c3101f37e6d5f05fc5af9b37d6a1a4",
+    "ML201-C03-L02": "26210000a012027b60cffe4f5c6c7f77a54f561763b827110539714f5907e95a",
+    "ML201-C03-L03": "89ea5672f516f4bed663bc949e13049d9661ed609dd7e0b47104b2783c1166c4",
+    "ML201-C04-L02": "192316b466cd59f5a2b3ead6fd966949f47161a9c0031802843bf169d1774fc3",
+    "ML201-C04-L03": "3ab384cb73e2e40648cad0d7f727cf6e0d3ad16fd93d230474d6d66c82d3e4c2",
+    "ML201-C04-L04": "14753e00727de91f31bbb132f8e39eaae3c5f430545a6b749dac966d32f1c8d4",
+    "ML201-C04-L05": "0272b0283eb20d8efdeab388c4a856d395b06e307be6e95bd2cfd202fb7a1873",
+    "PY101-C05-L01": "8e807c4232cdf6750b24fae803c677e0aa3dbd68eb7aae8ab2d34c4dd81a08d4",
+    "PY101-C05-L02": "c9f2000ecb9b22a4b7f2f2b62053b43c509d75281d387a7bcc454da884eed234",
+    "PY101-C05-L03": "ecda65af86b932199cc1f2d4e93f3f4cc8e0f01730eeaae5e80f2a06e6229cae",
+    "PY101-C05-L04": "367b1d459b1c0ab5435534184132df4f008904af1ebc7a63d7509d949112da2a",
+    "PY101-C05-L05": "eb30b435921ebd20ec8c4ac86c3f0e7bba95fcaba153dd3613887df628a0dcfc",
+    "PY101-C05-L06": "c64e2c1762ad0be0b56c9156ac28901a0e56576b806333f906e8672ffaec811f",
+    "MA101-C02-L03": "61cc24e838b8ba5103b1211bba151cc336cf43c08f06e6d923c52c5acf0597f0",
+    "MA101-C02-L04": "abf3c04ab5b11513aa793cd1cf1d4437fa65331af17776e10d91466588910c4e",
+    "MA101-C02-L05": "796a25e2cb4e291139f92c28a6bbcf3e4135a49761fe3c608d82f86b5b10f327",
+    "MA101-C02-L06": "1997a694ffa0dcda12b191e785ea1716c5f49e28aec73efa975183da6dded7b3",
+    "MA101-C02-L01": "0098aec0436f51f8c5cb396715cb3c01f38a0ca97d3ea3f45a33db45becb002c",
+    "MA101-C02-L02": "6a467c1dfdd7c5552ecf9f300168f7ed93070e5b67aa7ffe6ba2743a25a5df0b",
+    "MA101-C03-L01": "1dce65ebf7fb85d187b04eb80a81334c6051ba0e3ac4a46086a5f55ac4af7937",
+    "MA101-C03-L02": "0b2491f2c0366393ff8dbb667bcabdb1faf5569d2bc26e64f6eba0222bd8c35b",
+    "MA101-C03-L03": "26c3b1ce02ecda88f8db7999e714d187a4ba1e92a5f4df2bbd1f4539cc6e5ba3",
+    "ML201-C04-L01": "a934e09a7cc912d972854997c06e44e6e2ced1a7bc32eb947d0aeecc7a7c380e"
+  },
+  "amendmentBefore": {
+    "lesson": {
+      "id": "PY101-C02-L06",
+      "courseId": "PY101",
+      "chapterId": "PY101-C02",
+      "contentVersion": 2,
+      "title": "把输入和计算整理成清楚的输出",
+      "subtitle": "6.0是什么，True又回答了什么？把已算好的值放进说明文字，再用真实输入检验边界。",
+      "learningTime": {
+        "reading": [
+          12,
+          18
+        ],
+        "practice": [
+          8,
+          12
+        ],
+        "coding": [
+          22,
+          32
+        ],
+        "basis": "editorial-estimate"
+      },
+      "optionalLesson": false,
+      "assessmentMap": [
+        {
+          "objective": 1,
+          "exerciseIds": [
+            "write-clear-summary"
+          ]
+        },
+        {
+          "objective": 2,
+          "exerciseIds": [
+            "write-clear-summary",
+            "verify-summary-boundary"
+          ]
+        },
+        {
+          "objective": 3,
+          "exerciseIds": [
+            "verify-summary-boundary"
+          ]
+        }
+      ],
+      "prerequisites": "已完成第一章与2.1–2.5：会保存、终端完整运行.py，理解变量、str/int/float/bool、乘法与单位、<=比较及input后明确int/float转换。沿用已有Python 3和编辑器，不安装库；手机可读，代码与终端输入需要电脑。",
+      "prerequisiteLinks": [
+        {
+          "title": "2.1 名称与当前值",
+          "href": "/learn/PY101/PY101-C02-L01#name-and-value",
+          "note": "复习读取名称需要本次已绑定值。"
+        },
+        {
+          "title": "2.3 计算与单位",
+          "href": "/learn/PY101/PY101-C02-L03#expression-to-value",
+          "note": "表达式回答的数量关系也要正确。"
+        },
+        {
+          "title": "2.4 相等边界",
+          "href": "/learn/PY101/PY101-C02-L04#boundary-runs",
+          "note": "<=包含刚好等于限制的情况。"
+        },
+        {
+          "title": "2.5 分步输入与转换",
+          "href": "/learn/PY101/PY101-C02-L05#main-example",
+          "note": "提示、键入回显、print结果分开记录。"
+        },
+        {
+          "title": "1.3 保存与重跑",
+          "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+          "note": "确认终端运行的是已保存文件。"
+        }
+      ],
+      "objectives": [
+        "把已绑定名称的值插入简单f-string，输出有实际含义和单位的文字，并区分普通字符串与格式化字符串",
+        "在自己创建的.py中组合输入、明确转换、数值计算、布尔比较与清楚输出，说明每一步的值来自哪里",
+        "为同一程序预测并真实运行新输入，验证低于、恰好等于、高于限制的结果与单位，解释真假判断的实际范围"
+      ],
+      "sections": [
+        {
+          "id": "bare-results",
+          "title": "数字算对了，别人能看懂吗？",
+          "navGroup": "meaning",
+          "navLabel": "输出含义",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "程序算出总质量6.0千克，又判断出它不超过10千克。下面都是已经学过的赋值和print。先预测两行，再另存bare_results.py完整运行，看看只收到结果的人能知道多少信息。"
+            },
+            {
+              "type": "code",
+              "code": "total_mass = 6.0\nwithin_limit = True\n\nprint(total_mass)\nprint(within_limit)",
+              "filename": "bare_results.py",
+              "language": "python"
+            },
+            {
+              "type": "code",
+              "code": "6.0\nTrue",
+              "filename": "裸值 · 预期两行",
+              "language": "text"
+            },
+            {
+              "type": "paragraph",
+              "text": "这两行可以是正确结果，但6.0没写单位，也没说是单件还是总量；True没写出判断问题。希望让使用者看到下面的说明。先指出增加了哪些信息："
+            },
+            {
+              "type": "code",
+              "code": "Total kg: 6.0\nWithin 10 kg: True",
+              "filename": "想要的显示 · 总质量与所判断的问题",
+              "language": "text"
+            },
+            {
+              "type": "paragraph",
+              "text": "Total kg表示总质量（千克），Within 10 kg在本例问是否不超过10千克。接下来先把一个已知值与说明放到同一行，之后再把输入和计算接回来。普通print仍可显示结果；本课增加的是让值与含义一起呈现的方法。"
+            }
+          ]
+        },
+        {
+          "id": "first-format",
+          "title": "f前缀告诉Python：这里要放入当前值",
+          "navGroup": "format",
+          "navLabel": "文字与名称",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "f-string在开头引号前加f。引号界定文字，Total kg:是说明，{total_mass}用花括号标出插入位置。"
+            },
+            {
+              "type": "paragraph",
+              "text": "执行到这里时，Python读total_mass当前值，组成字符串，再由print显示。先只将已绑定的简单名称放进花括号，f紧挨开头引号。"
+            },
+            {
+              "type": "paragraph",
+              "text": "新建insert_mass.py，先预测显示内容，再保存运行。Windows在文件目录用python insert_mass.py，macOS用python3；已验证py的环境可继续用py。源码仍放在.venv外。"
+            },
+            {
+              "type": "code",
+              "code": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")",
+              "filename": "insert_mass.py",
+              "language": "python"
+            },
+            {
+              "type": "code",
+              "code": "Total kg: 6.0",
+              "filename": "f-string · 预期print结果",
+              "language": "text"
+            },
+            {
+              "type": "paragraph",
+              "text": "对照另存literal_mass.py：去掉开头f，仍是合法Python普通字符串。先预测花括号会消失还是原样显示，再运行核对。"
+            },
+            {
+              "type": "code",
+              "code": "total_mass = 6.0\nprint(\"Total kg: {total_mass}\")",
+              "filename": "literal_mass.py",
+              "language": "python"
+            },
+            {
+              "type": "code",
+              "code": "Total kg: {total_mass}",
+              "filename": "普通字符串 · 预期print结果",
+              "language": "text"
+            },
+            {
+              "type": "paragraph",
+              "text": "去掉f后，花括号及total_mass会原样显示。如果你仍预测6.0，就是把普通文字里的花括号也当成了插入请求。"
+            },
+            {
+              "type": "paragraph",
+              "text": "在literal_mass.py副本只补回开头f再重跑，应看到当前数值。这两种写法都合法，差别是有没有插入值。"
+            }
+          ]
+        },
+        {
+          "id": "labels-and-units",
+          "title": "每一行都说清名称、数量或单位",
+          "navGroup": "format",
+          "navLabel": "文字与名称",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "再把三个已知值分别放进说明。item_name是物品名称，count是件数，total_mass是总千克数；三个花括号各读取自己的名称。先预测三行，再保存known_summary.py运行："
+            },
+            {
+              "type": "code",
+              "code": "item_name = \"Parcel\"\ncount = 4\ntotal_mass = 6.0\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")",
+              "filename": "known_summary.py",
+              "language": "python"
+            },
+            {
+              "type": "code",
+              "code": "Item: Parcel\nCount: 4\nTotal kg: 6.0",
+              "filename": "已知值摘要 · 预期print结果",
+              "language": "text"
+            },
+            {
+              "type": "paragraph",
+              "text": "每条print单独一行。Count在本例数的是件，Total kg明确总质量单位，不要在数值赋值后直接写kg；单位属于输出说明。中文说明同样合法，另存chinese_mass.py，先预测再运行下面两行："
+            },
+            {
+              "type": "code",
+              "code": "total_mass = 6.0\nprint(f\"总质量（千克）：{total_mass}\")",
+              "filename": "chinese_mass.py",
+              "language": "python"
+            },
+            {
+              "type": "code",
+              "code": "总质量（千克）：6.0",
+              "filename": "中文单位 · 预期print结果",
+              "language": "text"
+            },
+            {
+              "type": "paragraph",
+              "text": "英文标签不是唯一正确形式，关键是让别人分清每个值的含义。6.0是本次float普通显示，不是故障，本节也不要求补成6.00。float有表示精度边界，若自己的其他合法输入显示较长小数，保留真实结果并核对，不为排版改类型或伪造日志。"
+            }
+          ]
+        },
+        {
+          "id": "receive-values",
+          "title": "先收三项输入，暂时只观察提示",
+          "navGroup": "assembly",
+          "navLabel": "逐步组装",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "现在把已知值换成本次使用者输入。物品名、完整件数、单件质量是三项不同的数据，先按2.5分别保存原文字。另建receive_parcel.py，保存下方完整三行；先预测会出现几次等待，再启动。"
+            },
+            {
+              "type": "code",
+              "code": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")",
+              "filename": "receive_parcel.py",
+              "language": "python"
+            },
+            {
+              "type": "paragraph",
+              "text": "Item: 出现输入Parcel、Enter；Count: 出现输入4、Enter；Mass kg: 出现输入1.5、Enter。每项各占一行输入，不把三个值合成一行，也不在数值后附加单位。这版没有print，收齐三项后结束，尚不会显示计算结果。"
+            },
+            {
+              "type": "table",
+              "caption": "三份原输入的角色",
+              "columns": [
+                "名称",
+                "本次输入内容",
+                "此时的值类型/含义"
+              ],
+              "rows": [
+                [
+                  "item_name",
+                  "Parcel",
+                  "str，物品名称"
+                ],
+                [
+                  "count_text",
+                  "4",
+                  "str，待转换的件数文本"
+                ],
+                [
+                  "mass_text",
+                  "1.5",
+                  "str，待转换的单件千克数文本"
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "input提示属于程序stdout但无自动换行，终端通常回显你键入的字符；它们都不是print结果。自动stdin输入没有同样的键盘回显，这版捕获stdout只有下面三个连续提示。标注的示意、终端流和原始stdout要分开。"
+            },
+            {
+              "type": "code",
+              "code": "Item: Count: Mass kg: ",
+              "filename": "自动stdin捕获 · 无print、无键盘回显",
+              "language": "text"
+            }
+          ]
+        },
+        {
+          "id": "calculate-check",
+          "title": "把件数和单件质量变成总量，再比较",
+          "navGroup": "assembly",
+          "navLabel": "逐步组装",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "接下来int(count_text)得到整数件数count，float(mass_text)得到单件质量mass；原来的两个_text仍是字符串。count * mass用件数乘千克/件，得到总千克数，先保存为total_mass。"
+            },
+            {
+              "type": "paragraph",
+              "text": "本例规定总质量最多10千克，恰好10也满足。total_mass <= 10复用2.4的比较，先把True或False保存为within_limit。它只回答这个总质量问题，还没有执行批准或拒绝等行动。"
+            },
+            {
+              "type": "paragraph",
+              "text": "另存calculate_parcel.py，保存下面完整累计版。先手算Parcel/4/1.5，再依次输入运行；末尾两条print暂时核对总量和比较，仍用普通裸值显示。"
+            },
+            {
+              "type": "code",
+              "code": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(total_mass)\nprint(within_limit)",
+              "filename": "calculate_parcel.py",
+              "language": "python"
+            },
+            {
+              "type": "code",
+              "code": "6.0\nTrue",
+              "filename": "Parcel / 4 / 1.5 · 仅print结果",
+              "language": "text"
+            },
+            {
+              "type": "paragraph",
+              "text": "4件×1.5千克/件为6.0千克，6.0<=10为True。若此处与预测不同，先核对实际键入、转换后的名称和乘法；正确之后再整理文字，不靠改输出标签掩盖计算错误。"
+            }
+          ]
+        },
+        {
+          "id": "main-example",
+          "title": "最后接上四行可读摘要",
+          "navGroup": "summary",
+          "navLabel": "完整摘要",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "输入与计算都核对后，再用四条f-string替换裸值输出：分别读物品名、整数件数、总千克数和比较结果。"
+            },
+            {
+              "type": "paragraph",
+              "text": "最后一条明确问是否不超过10千克。比较先保存，花括号只负责取名称的值，不能用漂亮标签掩盖错误计算。"
+            },
+            {
+              "type": "paragraph",
+              "text": "新建parcel_summary.py，先写Parcel/4/1.5的四行预测，再保存完整主例。下面空行只是分组，每次从头执行。"
+            },
+            {
+              "type": "code",
+              "code": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")",
+              "filename": "parcel_summary.py",
+              "language": "python"
+            },
+            {
+              "type": "code",
+              "code": "python parcel_summary.py",
+              "filename": "Windows · PowerShell · 文件所在目录",
+              "language": "text"
+            },
+            {
+              "type": "code",
+              "code": "python3 parcel_summary.py",
+              "filename": "macOS · 终端 · 文件所在目录",
+              "language": "text"
+            },
+            {
+              "type": "code",
+              "code": "Item: Parcel\nCount: 4\nTotal kg: 6.0\nWithin 10 kg: True",
+              "filename": "Parcel / 4 / 1.5 · 仅四条print结果",
+              "language": "text"
+            },
+            {
+              "type": "paragraph",
+              "text": "这四行不是终端全部内容；input提示与键盘回显另行标记。自动stdin提供三行数据时，原始stdout的提示会紧邻第一条print，实际捕获形式如下，末尾有换行，不能补造三行回显："
+            },
+            {
+              "type": "code",
+              "code": "Item: Count: Mass kg: Item: Parcel\nCount: 4\nTotal kg: 6.0\nWithin 10 kg: True\n",
+              "filename": "自动stdin stdout · 提示与print连续",
+              "language": "text"
+            }
+          ]
+        },
+        {
+          "id": "boundary-runs",
+          "title": "源码不变，换低于、等于和高于上限的数据",
+          "navGroup": "summary",
+          "navLabel": "完整摘要",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "保留parcel_summary.py原样。第一轮Parcel/4/1.5已经是低于10；先保留自己的输入、预测与真实四行结果。第二轮先预测Crate B/4/2.5，重新执行同一命令，依次键入。手算4×2.5=10.0千克，最后一行该是真还是假？"
+            },
+            {
+              "type": "paragraph",
+              "text": "第三轮再先预测Crate C/4/3.0，完整重新启动并输入，手算总12.0千克。保留三轮命令、输入、源码和实际四行摘要，再按表核对，不用一次输出或抄表代替三次运行。"
+            },
+            {
+              "type": "table",
+              "caption": "完成三轮后核对总质量与同一比较",
+              "columns": [
+                "物品/件数/单件千克",
+                "总千克数",
+                "Within 10 kg"
+              ],
+              "rows": [
+                [
+                  "Parcel / 4 / 1.5",
+                  "6.0",
+                  "True"
+                ],
+                [
+                  "Crate B / 4 / 2.5",
+                  "10.0",
+                  "True"
+                ],
+                [
+                  "Crate C / 4 / 3.0",
+                  "12.0",
+                  "False"
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "等于10.0时<=仍为True，因为最多包括等值；超过时False。这个真假只报告本次总质量是否不超过10千克，没有检查包装或运输条件，也没有自动执行拒绝。输出说明必须对应实际比较，不能把它改写成“所有条件下都安全”。"
+            }
+          ]
+        },
+        {
+          "id": "practice",
+          "title": "自己选择情境，交出可读结果与边界证据",
+          "navGroup": "practice",
+          "navLabel": "独立练习",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "先独立写程序，再按需展开提示。基本交付是本人源码和本题真实运行结果；同一会话的环境、文件位置和命令只记一次，后面可引用编号。预测可口述或记一行；边界、改值和恢复题按题干保留必要对照。"
+            },
+            {
+              "type": "exercise",
+              "id": "write-clear-summary",
+              "title": "自己的可读计算摘要",
+              "kind": "代码",
+              "prompt": "另选新测量情境、合法名称和三条提示，新.py用input收标签、整数件数、小数单件量，分步int/float后算总量。简单f-string显示标签、件数、总量及含义/单位。对同一源码选两组新合法输入，先预测再真运行。交源码、一张两组输入/预测/print摘要表和一次命令。用一句话或现场指认输入→转换→计算→显示；解释一条输出去掉f的差别，可另存副本自查。不用if/循环/函数/格式指定。",
+              "hints": [
+                "哪一项应保留为文字，哪两项要成为数值？单件测量乘件数后是什么单位？读者能从每行知道这是哪个量吗？",
+                "按输入、分步转换、计算、说明文字中的名称组织。花括号中先只放已经赋值的名称；自己确定主题、新数据和两轮预测。"
+              ],
+              "solution": [
+                "参考横幅材料，每片长度以米计。页尾material_summary.py给出完整路径，先独立完成再展开。第1–3行收材料名/片数文本/单片米数；第4–5行转成pieces整数和length浮点；第6行两者相乘存总米数。",
+                "第7–9行分别显示材料名、片数、Total m总米数。Banner A/6/0.75先预测Material: Banner A、Pieces: 6、Total m: 4.5，保存运行python material_summary.py（macOS用python3）。同源码第二轮Banner B/10/0.5先预测总5.0米，再实际重新启动输入。",
+                "前者6片×0.75米/片=4.5米，后者10片×0.5米/片=5.0米。f-string只读取已经取得的名称，不会替你转换或重算输入。去掉最后一条f会显示文字{total_length}；补回f才能插入当前总值。",
+                "常错是花括号内错拼名称、少f、用原文本计算、把单片质量/长度当总量或遗漏单位。按输入→转换→总量→文字逐项核对。接受其他新情境/名称、中文标签、成对单引号或先保存中间结果，但需真实两轮和清楚单位；参考预测不是本人运行证据。",
+                "交付按本题题干与rubric：源码可用一份加差异，运行记录用短表；相同命令、环境和版本引用会话卡，不重复誊写。"
+              ],
+              "rubric": [
+                "本人新程序三输入分步转换并真实计算，自选情境/名称/提示。",
+                "简单f-string读已绑定名称，含义及单位可辨，能区分去f的普通字符串。",
+                "两组新输入均有事前预测与真输出；一表/一次命令，数据流现场或短句说明，非长报告。"
+              ]
+            },
+            {
+              "type": "exercise",
+              "id": "verify-summary-boundary",
+              "title": "验证摘要边界，并解释真假回答了什么",
+              "kind": "代码",
+              "prompt": "自选新测量限制情境，如总长度最多若干米；可复用题一源码，另记新增比较/输出的差异。真实input及int/float求总量，固定新上限，总量<=上限保存真假，用简单f-string显示名称/件数/总量单位/比较问题。选低/等/高三组合法输入，各先预测再完整运行同一文件；用整数、0.5或0.25安排确实等值。交源码加差异、一张三组输入/预测/实际摘要表及一次命令。解释等值True、超限False的范围，False未自动拒绝。不重复提交整份阶段源码，不把一次运行算成三轮；不引入控制流程或精度算法。",
+              "hints": [
+                "分清单件测量、总量和限制。应该拿哪一项与上限比较，输出里的真假文字又在问哪个问题？",
+                "先确定能恰好达到的边界，再在同一固定上限下安排低/等/高三组输入，先预测再逐轮执行。保留你决定的数据、比较名称和完整代码。"
+              ],
+              "solution": [
+                "参考花坛围边，最多12米。页尾garden_boundary.py先收批次、段数和每段米数，转strips整数与strip_length浮点；length_limit固定12，total_length=strips * strip_length，within_limit保存总长<=上限。四条f-string分别显示批次、段数、总米数和Within 12 m问题。",
+                "同一文件Garden A/3/3先预测总9.0米/True，再运行python garden_boundary.py（macOS用python3）；Garden B/3/4先预测12.0米/True，重新输入运行；Garden C/3/5先预测15.0米/False，再完整重跑。每轮名称和段数也要和实际摘要对应，保留实际摘要的四行。",
+                "等值12.0满足最多12，<=包含相等；15.0超过所以False。True不证明其他条件都满足，False也没让程序拒绝输入，这段没有分支动作。输出Within {length_limit} m中的两个插入位置分别读取限制和真假值，花括号都只是简单名称。",
+                "常错是改了上限、比较单段而非总量、实际没到等值、三轮只抄参考或将False写成已拒绝。按实际输入重算，保留固定源码、预测和命令。接受其他合理新上限/数据/名称/中文问题；若复用题一，必须能看出新增比较与第三轮证据，不把题一一次运行算成三轮。",
+                "交付按本题题干与rubric：源码可用一份加差异，运行记录用短表；相同命令、环境和版本引用会话卡，不重复誊写。"
+              ],
+              "rubric": [
+                "本人输入/转换/计算/总量<=固定上限正确，单位与输出问题清楚。",
+                "低/等/高三组各有事前预测及完整真摘要，上限不改，源码一次加差异、命令一次。",
+                "等值True/超限False的范围正确，无自动拒绝；题一复用仍需独立三轮，非抄表或长报告。"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reference-programs",
+          "title": "做完再核对：完整参考与名称错拼副本",
+          "navGroup": "reference",
+          "navLabel": "参考核对",
+          "tier": "verification",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "先完成两题再展开参考，另存新文件保留原作。前两份完整程序的行义、预测与命令在各题解答中，不将列表文字当连写源码。"
+            },
+            {
+              "type": "code",
+              "code": "material_name = input(\"Material: \")\npieces_text = input(\"Pieces: \")\nlength_text = input(\"Length m: \")\npieces = int(pieces_text)\nlength = float(length_text)\ntotal_length = pieces * length\nprint(f\"Material: {material_name}\")\nprint(f\"Pieces: {pieces}\")\nprint(f\"Total m: {total_length}\")",
+              "filename": "material_summary.py · 题一参考",
+              "language": "python"
+            },
+            {
+              "type": "code",
+              "code": "batch_name = input(\"Batch: \")\nstrips_text = input(\"Strips: \")\nstrip_text = input(\"Strip m: \")\nstrips = int(strips_text)\nstrip_length = float(strip_text)\nlength_limit = 12\ntotal_length = strips * strip_length\nwithin_limit = total_length <= length_limit\nprint(f\"Batch: {batch_name}\")\nprint(f\"Strips: {strips}\")\nprint(f\"Total m: {total_length}\")\nprint(f\"Within {length_limit} m: {within_limit}\")",
+              "filename": "garden_boundary.py · 题二参考",
+              "language": "python"
+            },
+            {
+              "type": "paragraph",
+              "text": "若想核对名称问题，在自己的field_copy.py副本先预测下面程序：花括号里的total_mas少一个s，本次没有绑定。按2.1检查名称，实际运行保留第2行NameError、相关回溯和退出状态；它与少f的合法字面输出原因不同。"
+            },
+            {
+              "type": "code",
+              "code": "total_mass = 6.0\nprint(f\"Total kg: {total_mas}\")",
+              "filename": "field_copy.py · 名称错拼副本",
+              "language": "python"
+            },
+            {
+              "type": "paragraph",
+              "text": "保留错误后，将同一副本只修为total_mass，先预测再保存完整重跑下面修复版，应显示Total kg: 6.0且正常结束。无需核心题故意造错，也不加入异常捕获。"
+            },
+            {
+              "type": "code",
+              "code": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")",
+              "filename": "field_copy.py · 名称修复副本",
+              "language": "python"
+            }
+          ]
+        },
+        {
+          "id": "chapter-end",
+          "title": "第二章收束：能说明结果，也知道还没学什么",
+          "navGroup": "finish",
+          "navLabel": "章末衔接",
+          "tier": "core",
+          "blocks": [
+            {
+              "type": "summary",
+              "points": [
+                "保存与更新变量，辨认基本类型，写有单位的数值表达式和比较。",
+                "从终端取得文字，明确int/float转换，再计算和保存判断。",
+                "用简单f-string把名称、数量、单位和比较问题一起显示，用真实低/等/高输入核对。"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "保留自己的程序和摘要，能换新数据、先预测并解释每行含义，就能核对值从哪里来、单位和限制是否一致。"
+            },
+            {
+              "type": "paragraph",
+              "text": "第二章把变量、类型、计算、比较和输入输出连成了短程序。接下来学习第三章的控制流程，让程序依据条件选择动作或重复操作。先能独立完成本章的交互摘要，再学习这些新能力。第5章函数仍依赖第三、第四章的中间知识，不宜直接跳过。"
+            }
+          ]
+        }
+      ],
+      "resources": [],
+      "references": [
+        {
+          "title": "f-string教程",
+          "href": "https://docs.python.org/3.14/tutorial/inputoutput.html#formatted-string-literals",
+          "note": "先解释前缀与替换字段。"
+        },
+        {
+          "title": "f-string词法规则",
+          "href": "https://docs.python.org/3.14/reference/lexical_analysis.html#f-strings",
+          "note": "本课只用已绑定简单名称。"
+        },
+        {
+          "title": "print与input",
+          "href": "https://docs.python.org/3.14/library/functions.html#print",
+          "note": "提示、终端回显和print分开。"
+        },
+        {
+          "title": "int/float转换",
+          "href": "https://docs.python.org/3.14/library/functions.html#int",
+          "note": "输入文本明确转换再计算。"
+        },
+        {
+          "title": "数值比较",
+          "href": "https://docs.python.org/3.14/reference/expressions.html#value-comparisons",
+          "note": "结果只对应实际数量关系。"
+        }
+      ]
+    },
+    "publication": {
+      "lessonId": "PY101-C02-L06",
+      "courseId": "PY101",
+      "chapterId": "PY101-C02",
+      "title": "把输入和计算整理成清楚的输出",
+      "contentVersion": 2,
+      "order": 6,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/py101-p15/TECHNICAL_REPORT.md"
+    },
+    "scope": {
+      "courseId": "PY101",
+      "lessonId": "PY101-C02-L06",
+      "contentVersion": 2,
+      "sectionIds": [
+        "bare-results",
+        "first-format",
+        "labels-and-units",
+        "receive-values",
+        "calculate-check",
+        "main-example",
+        "boundary-runs",
+        "practice",
+        "reference-programs",
+        "chapter-end"
+      ]
+    }
+  },
+  "sources": [
+    {
+      "path": "src/content/course-outline.ts",
+      "before": "import { z } from \"zod\";\nimport { mathCourseOutline } from \"./math-outline\";\nimport { ai000ChapterLessons } from \"./ai000-outline\";\n\nconst slotSchema = z.object({\n  courseId: z.string().regex(/^[A-Z]+\\d{3}$/),\n  chapterId: z.string().regex(/^[A-Z]+\\d{3}-C\\d{2}$/),\n  lessonId: z.string().regex(/^[A-Z]+\\d{3}-C\\d{2}-L\\d{2}$/),\n  title: z.string().min(1),\n  order: z.number().int().positive(),\n});\nfunction chapterSlots(\n  courseId: string,\n  chapter: number,\n  lessons: [string, string][],\n) {\n  const chapterId = `${courseId}-C${String(chapter).padStart(2, \"0\")}`;\n  return lessons.map(([suffix, title], index) =>\n    slotSchema.parse({\n      courseId,\n      chapterId,\n      lessonId: `${chapterId}-${suffix}`,\n      title,\n      order: index + 1,\n    }),\n  );\n}\n// 节级编辑蓝图；不修改 V1.0 章级事实，也不表示这些课时已写完。\nexport const courseOutline = [\n  ...ai000ChapterLessons.flatMap((titles, index) => chapterSlots(\"AI000\", index + 1,\n    titles.map((title, order) => [`L${String(order + 1).padStart(2, \"0\")}`, title]))),\n  ...chapterSlots(\"ML201\", 1, [\n    [\"L01\", \"什么是机器学习\"],\n    [\"L02\", \"如何定义预测任务\"],\n    [\"L03\", \"数据、特征与标签\"],\n  ]),\n  ...chapterSlots(\"ML201\", 2, [\n    [\"L01\", \"训练集、验证集和测试集\"],\n    [\"L02\", \"数据泄漏是怎样发生的\"],\n  ]),\n  ...chapterSlots(\"ML201\", 3, [\n    [\"L01\", \"从现实问题认识回归\"],\n    [\"L02\", \"线性回归模型：权重与偏置\"],\n    [\"L03\", \"预测误差、MAE 与 MSE\"],\n    [\"L04\", \"最小二乘法的基本思想\"],\n  ]),\n  // L01 由旧综合试读占用；显示顺序独立于稳定 ID。\n  ...chapterSlots(\"ML201\", 4, [\n    [\"L02\", \"从导数理解优化方向\"],\n    [\"L03\", \"梯度下降的数学原理\"],\n    [\"L04\", \"手动计算一次参数更新\"],\n    [\"L05\", \"使用 NumPy 实现线性回归\"],\n    [\"L06\", \"学习率与收敛实验\"],\n    [\"L07\", \"综合练习与实验分析\"],\n  ]),\n  // 第一章节级蓝图；实际可读性由Publication门禁决定。\n  ...chapterSlots(\"PY101\", 1, [\n    [\"L01\", \"从零运行第一个Python程序\"],\n    [\"L02\", \"解释器怎样找到并执行脚本\"],\n    [\"L03\", \"用编辑器完成保存与重跑\"],\n    [\"L04\", \"为项目准备独立的虚拟环境\"],\n    [\"L05\", \"在Jupyter中按顺序运行单元格\"],\n    [\"L06\", \"让别人复现一次环境问题\"],\n  ]),\n  // 第二章六节已接入；第三章尚无正式节级制作。\n  ...chapterSlots(\"PY101\", 2, [\n    [\"L01\", \"用变量保留并更新程序里的值\"],\n    [\"L02\", \"分清文字、整数、小数和真假值\"],\n    [\"L03\", \"用表达式算出一个结果\"],\n    [\"L04\", \"让比较表达式给出真假结果\"],\n    [\"L05\", \"取得用户输入，再转成需要的数值\"],\n    [\"L06\", \"把输入和计算整理成清楚的输出\"],\n  ]),\n  ...chapterSlots(\"PY101\", 5, [\n    [\"L01\", \"Python 函数与参数\"],\n    [\"L02\", \"位置与关键字参数绑定\"],\n    [\"L03\", \"返回值与 print 的区别\"],\n    [\"L04\", \"函数内外的变量与作用域\"],\n    [\"L05\", \"简单默认参数\"],\n    [\"L06\", \"可选进阶：共享对象与接口陷阱\"],\n  ]),\n  ...mathCourseOutline,\n];\nif (\n  new Set(courseOutline.map((slot) => slot.lessonId)).size !==\n  courseOutline.length\n)\n  throw new Error(\"节级蓝图 ID 重复\");\nexport const mlV2LessonIds = [\n  \"ML201-C03-L01\",\n  \"ML201-C03-L02\",\n  \"ML201-C03-L03\",\n  \"ML201-C04-L02\",\n  \"ML201-C04-L03\",\n  \"ML201-C04-L04\",\n  \"ML201-C04-L05\",\n] as const;\n"
+    },
+    {
+      "path": "src/lib/course-engine.ts",
+      "before": "import { courses, getCourse } from \"./curriculum\";\nimport { getCourseDirectory } from \"./course-directory\";\nimport { courseOutline } from \"../content/course-outline\";\nimport { linearRegressionLesson } from \"../content/lessons/linear-regression\";\nimport { foundationLessons, pythonAdvancedLesson } from \"../content/lessons/foundations-v2-1\";\nimport { regressionTaskLesson } from \"../content/lessons/ml201/regression-task\";\nimport { linearModelLesson } from \"../content/lessons/ml201/linear-model\";\nimport { lossFunctionsLesson } from \"../content/lessons/ml201/loss-functions\";\nimport { derivativeDirectionLesson } from \"../content/lessons/ml201/derivative-direction\";\nimport { mseGradientLesson } from \"../content/lessons/ml201/mse-gradient\";\nimport { manualUpdateLesson } from \"../content/lessons/ml201/manual-update\";\nimport { numpyRegressionLesson } from \"../content/lessons/ml201/numpy-regression\";\nimport { maV22Lessons } from \"../content/lessons/ma101\";\nimport { whatIsAiLesson } from \"../content/lessons/ai000/what-is-ai\";\nimport { capabilitiesLesson } from \"../content/lessons/ai000/capabilities-and-errors\";\nimport { automationLesson } from \"../content/lessons/ai000/automation-and-ai\";\nimport { generativeLesson } from \"../content/lessons/ai000/generative-ai-and-llm\";\nimport { supervisedLearningLesson } from \"../content/lessons/ai000/supervised-learning\";\nimport { unsupervisedLearningLesson } from \"../content/lessons/ai000/unsupervised-learning\";\nimport { selfSupervisedLesson } from \"../content/lessons/ai000/self-supervised-learning\";\nimport { reinforcementLearningLesson } from \"../content/lessons/ai000/reinforcement-learning\";\nimport { dataFeaturesLabelsLesson } from \"../content/lessons/ai000/data-features-labels\";\nimport { modelsAndParametersLesson } from \"../content/lessons/ai000/models-and-parameters\";\nimport { usingFixedModelLesson } from \"../content/lessons/ai000/using-a-fixed-model\";\nimport { naturalLanguageLesson } from \"../content/lessons/ai000/natural-language-and-llm\";\nimport { computerVisionLesson } from \"../content/lessons/ai000/computer-vision\";\nimport { generativeWorkLesson } from \"../content/lessons/ai000/generative-work\";\nimport { rlApplicabilityLesson } from \"../content/lessons/ai000/rl-applicability\";\nimport { unreliableAnswersLesson } from \"../content/lessons/ai000/unreliable-answers\";\nimport { responsibleUseLesson } from \"../content/lessons/ai000/responsible-ai-use\";\nimport { whyFoundationsLesson } from \"../content/lessons/ai000/why-foundations\";\nimport { directionLearningRoutesLesson } from \"../content/lessons/ai000/direction-learning-routes\";\nimport { problemAnalysisCapstoneLesson } from \"../content/lessons/ai000/problem-analysis-capstone\";\nimport { privacyFairnessLesson } from \"../content/lessons/ai000/privacy-bias-fairness\";\nimport { multimodalLesson } from \"../content/lessons/ai000/multimodal-ai\";\nimport { trainingValidationTestLesson } from \"../content/lessons/ai000/training-validation-test\";\nimport { aiMlDlLesson } from \"../content/lessons/ai000/ai-ml-dl\";\nimport { pythonFirstRunLesson } from \"../content/lessons/py101/first-run\";\nimport { pythonScriptPathsLesson } from \"../content/lessons/py101/script-paths\";\nimport { pythonEditorRerunLesson } from \"../content/lessons/py101/editor-rerun\";\nimport { pythonProjectEnvironmentsLesson } from \"../content/lessons/py101/project-environments\";\nimport { pythonNotebookCellOrderLesson } from \"../content/lessons/py101/notebook-cell-order\";\nimport { pythonEnvironmentReproductionLesson } from \"../content/lessons/py101/environment-reproduction\";\nimport { pythonVariablesAndAssignmentLesson } from \"../content/lessons/py101/variables-and-assignment\";\nimport { pythonBasicValueTypesLesson } from \"../content/lessons/py101/basic-value-types\";\nimport { pythonArithmeticExpressionsLesson } from \"../content/lessons/py101/arithmetic-expressions\";\nimport { pythonNumericComparisonsLesson } from \"../content/lessons/py101/numeric-comparisons\";\nimport { pythonInputAndConversionLesson } from \"../content/lessons/py101/input-and-conversion\";\nimport { pythonReadableOutputLesson } from \"../content/lessons/py101/readable-output\";\nimport {\n  publicationManifest,\n  readablePublications,\n  lessonHref,\n} from \"../content/publication-manifest\";\nimport {\n  isReadable,\n  type Course,\n  type Lesson,\n  type LessonSummary,\n  type Publication,\n} from \"../content/models\";\n\nconst contents: Lesson[] = [\n  pythonReadableOutputLesson,\n  pythonInputAndConversionLesson,\n  pythonNumericComparisonsLesson,\n  pythonArithmeticExpressionsLesson,\n  pythonBasicValueTypesLesson,\n  pythonVariablesAndAssignmentLesson,\n  pythonEnvironmentReproductionLesson,\n  pythonScriptPathsLesson,\n  pythonEditorRerunLesson,\n  pythonProjectEnvironmentsLesson,\n  pythonNotebookCellOrderLesson,\n  pythonFirstRunLesson,\n  whatIsAiLesson,\n  capabilitiesLesson,\n  automationLesson,\n  aiMlDlLesson,\n  generativeLesson,\n  supervisedLearningLesson,\n  unsupervisedLearningLesson,\n  selfSupervisedLesson,\n  reinforcementLearningLesson,\n  dataFeaturesLabelsLesson,\n  modelsAndParametersLesson,\n  trainingValidationTestLesson,\n  usingFixedModelLesson,\n  naturalLanguageLesson,\n  computerVisionLesson,\n  multimodalLesson,\n  generativeWorkLesson,\n  rlApplicabilityLesson,\n  unreliableAnswersLesson,\n  privacyFairnessLesson,\n  responsibleUseLesson,\n  whyFoundationsLesson,\n  directionLearningRoutesLesson,\n  problemAnalysisCapstoneLesson,\n  ...maV22Lessons,\n  regressionTaskLesson,\n  linearModelLesson,\n  lossFunctionsLesson,\n  derivativeDirectionLesson,\n  mseGradientLesson,\n  manualUpdateLesson,\n  numpyRegressionLesson,\n  linearRegressionLesson,\n  ...foundationLessons,\n  pythonAdvancedLesson,\n];\nexport const lessonRegistry: ReadonlyMap<string, Lesson> = new Map(\n  contents.map((lesson) => [lesson.id, lesson]),\n);\n\nexport function validateRegistry(\n  entries: Publication[],\n  lessons: readonly Lesson[],\n) {\n  if (new Set(entries.map((e) => e.lessonId)).size !== entries.length)\n    throw new Error(\"发布清单课时 ID 重复\");\n  if (new Set(lessons.map((e) => e.id)).size !== lessons.length)\n    throw new Error(\"内容课时 ID 重复\");\n  if (\n    new Set(\n      entries\n        .filter((e) => e.catalogRole !== \"legacy\")\n        .map((e) => `${e.chapterId}:${e.order}`),\n    ).size !== entries.filter((e) => e.catalogRole !== \"legacy\").length\n  )\n    throw new Error(\"同章课时顺序重复\");\n  for (const entry of entries) {\n    const catalog = getCourse(entry.courseId);\n    const chapterIndex = catalog?.chapters.findIndex(\n      (_, index) =>\n        `${catalog.id}-C${String(index + 1).padStart(2, \"0\")}` ===\n        entry.chapterId,\n    );\n    if (\n      !catalog ||\n      chapterIndex === undefined ||\n      chapterIndex < 0 ||\n      !entry.lessonId.startsWith(`${entry.chapterId}-L`)\n    )\n      throw new Error(`发布清单引用无效课程或章节：${entry.lessonId}`);\n    if (entry.catalogRole !== \"legacy\") {\n      const slot = courseOutline.find((s) => s.lessonId === entry.lessonId);\n      if (\n        !slot ||\n        slot.chapterId !== entry.chapterId ||\n        slot.title !== entry.title ||\n        slot.order !== entry.order\n      )\n        throw new Error(`教材与节级蓝图不一致：${entry.lessonId}`);\n    }\n    const lesson = lessons.find((l) => l.id === entry.lessonId);\n    if (!lesson) throw new Error(`缺少教材：${entry.lessonId}`);\n    for (const key of [\n      \"courseId\",\n      \"chapterId\",\n      \"title\",\n      \"contentVersion\",\n    ] as const)\n      if (lesson[key] !== entry[key])\n        throw new Error(`教材与清单不一致：${entry.lessonId}.${key}`);\n  }\n  for (const lesson of lessons)\n    if (!entries.some((e) => e.lessonId === lesson.id))\n      throw new Error(`教材未登记：${lesson.id}`);\n}\nvalidateRegistry(publicationManifest, contents);\n\nexport function getLearningCourse(courseId: string): Course | undefined {\n  const catalog = getCourse(courseId);\n  if (!catalog) return undefined;\n  return getCourseDirectory(catalog);\n}\nexport function resolveLesson(courseId: string, lessonId: string) {\n  const publication = publicationManifest.find(\n    (e) => e.courseId === courseId && e.lessonId === lessonId,\n  );\n  if (!publication || !isReadable(publication)) return undefined;\n  const course = getLearningCourse(courseId);\n  const lesson = lessonRegistry.get(lessonId);\n  const chapter = course?.chapters.find((c) => c.id === publication.chapterId);\n  return course && lesson && chapter\n    ? { course, chapter, lesson, publication }\n    : undefined;\n}\nexport function getAdjacentLessons(course: Course, lessonId: string) {\n  const lessons = course.chapters\n    .flatMap((c) => c.lessons)\n    .filter((e) => e.catalogRole !== \"legacy\" && isReadable(e));\n  const index = lessons.findIndex((l) => l.lessonId === lessonId);\n  if (index < 0) return {};\n  return { previous: lessons[index - 1], next: lessons[index + 1] };\n}\nexport const lessonSummaries: LessonSummary[] = readablePublications.map(\n  (entry) => ({\n    ...entry,\n    href: lessonHref(entry),\n    courseName: getCourse(entry.courseId)!.name,\n    level: getCourse(entry.courseId)!.lvl,\n    displayNumber: getLearningCourse(entry.courseId)\n      ?.chapters.flatMap((ch) => ch.lessons)\n      .find((l) => l.lessonId === entry.lessonId)?.displayNumber,\n    sectionTitles: lessonRegistry\n      .get(entry.lessonId)!\n      .sections.map(({ id, title }) => ({ id, title })),\n  }),\n);\nexport const learningCourses = courses.map((c) => getLearningCourse(c.id)!);\n"
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "before": "import { isReadable, publicationSchema } from \"./models\";\nimport { legacyMathSlots, maV22LessonIds } from \"./math-outline\";\nimport { courseOutline, mlV2LessonIds } from \"./course-outline\";\n\nconst revisedCoreLessons: Record<string, number> = { \"MA101-C02-L03\": 2, \"PY101-C05-L01\": 2 };\n\n// 发布权限独立于原始课程规划。技术证据不替代人工审核。\nexport const publicationManifest = [\n  {lessonId:\"PY101-C02-L06\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"把输入和计算整理成清楚的输出\",contentVersion:2,order:6,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C02-L05\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"取得用户输入，再转成需要的数值\",contentVersion:2,order:5,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C02-L04\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"让比较表达式给出真假结果\",contentVersion:2,order:4,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C02-L03\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"用表达式算出一个结果\",contentVersion:2,order:3,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C02-L02\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"分清文字、整数、小数和真假值\",contentVersion:2,order:2,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C02-L01\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"用变量保留并更新程序里的值\",contentVersion:2,order:1,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L06\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"让别人复现一次环境问题\",contentVersion:2,order:6,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L05\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"在Jupyter中按顺序运行单元格\",contentVersion:2,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L04\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"为项目准备独立的虚拟环境\",contentVersion:2,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L03\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"用编辑器完成保存与重跑\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L02\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"解释器怎样找到并执行脚本\",contentVersion:2,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L01\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"从零运行第一个Python程序\",contentVersion:2,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"AI000-C07-L03\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"综合实践：分析 AI 问题并制定学习计划\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_3_AND_COURSE_REVIEW.md\"},\n  {lessonId:\"AI000-C07-L02\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"AI 不同技术方向需要哪些基础？\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_2_REVIEW.md\"},\n  {lessonId:\"AI000-C07-L01\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"为什么学习 Python、数学与数据分析？\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_1_REVIEW.md\"},\n  {lessonId:\"AI000-C06-L03\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"版权、误用与负责任地使用 AI\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C06-L02\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"数据隐私、偏差与公平性\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C06-L01\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"为什么 AI 会产生不可靠的回答？\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_6_1_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L05\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"强化学习适合哪些应用问题？\",contentVersion:1,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C05-L03\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"多模态 AI：连接文字、图片与声音\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L04\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"生成模型：从要求到可核对的作品\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L02\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"计算机视觉：让机器理解图像\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_5_2_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L01\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"自然语言处理与大语言模型\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L04\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"模型训练好以后，如何完成预测？\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L03\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"训练、验证与测试各有什么作用？\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L02\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"模型和参数是怎样得到的？\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_VISUAL_CONTENT_REFINEMENT.md\"},\n  {lessonId:\"AI000-C04-L01\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"数据、特征与标签\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_VISUAL_CONTENT_REFINEMENT.md\"},\n  {lessonId:\"AI000-C03-L04\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"强化学习：通过行动与反馈学习\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L03\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"自监督学习：怎样从数据本身构造学习任务？\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L02\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"无监督学习：没有标签也能发现规律吗？\",contentVersion:2,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L01\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"监督学习：从有答案的例子中学习\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  ...courseOutline.filter(slot => slot.courseId === \"AI000\" && [\"AI000-C01-L02\",\"AI000-C01-L03\",\"AI000-C02-L02\"].includes(slot.lessonId)).map(slot => ({...slot,contentVersion:slot.lessonId === \"AI000-C01-L02\" ? 2 : 1,status:\"pending-review\",access:\"preview\",technicalEvidence:slot.lessonId === \"AI000-C02-L02\" ? \"docs/AI000_R3_REFINEMENT_REPORT.md\" : \"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"})),\n  {\n    lessonId: \"AI000-C02-L01\",\n    courseId: \"AI000\",\n    chapterId: \"AI000-C02\",\n    title: \"AI、机器学习与深度学习，到底是什么关系？\",\n    contentVersion: 2,\n    order: 1,\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\",\n  },\n  {\n    lessonId: \"AI000-C01-L01\",\n    courseId: \"AI000\",\n    chapterId: \"AI000-C01\",\n    title: \"人工智能究竟是什么？\",\n    contentVersion: 2,\n    order: 1,\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\",\n  },\n  ...courseOutline\n    .filter((slot) => mlV2LessonIds.some((id) => id === slot.lessonId) || slot.chapterId === \"PY101-C05\" || maV22LessonIds.some((id) => id === slot.lessonId))\n    .map((slot) => ({\n      ...slot,\n      contentVersion: revisedCoreLessons[slot.lessonId] ?? 1,\n      optionalLesson: slot.lessonId === \"PY101-C05-L06\",\n      catalogRole: \"current\",\n      status: \"pending-review\",\n      access: \"preview\",\n      technicalEvidence: slot.lessonId === \"MA101-C02-L03\" || slot.lessonId === \"ML201-C04-L04\" || (slot.courseId === \"PY101\" && slot.lessonId !== \"PY101-C05-L06\")\n        ? \"docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md\"\n        : slot.courseId === \"MA101\" ? \"docs/MA101_EDITORIAL_REVIEW_V1.md\" : \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\",\n    })),\n  ...legacyMathSlots.map((slot) => ({ ...slot, catalogRole: \"legacy\", contentVersion: 1, status: \"pending-review\", access: \"preview\", technicalEvidence: \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\" })),\n  {\n    lessonId: \"ML201-C04-L01\",\n    courseId: \"ML201\",\n    chapterId: \"ML201-C04\",\n    title: \"线性回归与梯度下降\",\n    contentVersion: 1,\n    order: 1,\n    catalogRole: \"legacy\",\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence: \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\",\n  },\n].map((entry) => publicationSchema.parse(entry));\n\nexport const readablePublications = publicationManifest.filter(isReadable);\nexport const lessonHref = (entry: { courseId: string; lessonId: string }) =>\n  `/learn/${entry.courseId}/${entry.lessonId}`;\n"
+    },
+    {
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "before": "import {lessonSchema,type ContentBlock}from\"../../models\";\nimport {readableCode,readableBlockNames,type ReadableKey}from\"../../resources/python-readable-output\";\nconst p=(text:string):ContentBlock=>({type:\"paragraph\",text});\nconst output=(filename:string,code:string):ContentBlock=>({type:\"code\",language:\"text\",filename,code});\nconst sample=(key:ReadableKey):ContentBlock=>({type:\"code\",language:\"python\",filename:readableBlockNames[key],code:readableCode[key]});\n\n// 课前简报/独立预解/事实/真实运行证据：docs/py101-p13。复用现有Reader，无新下载。\nexport const pythonReadableOutputLesson=lessonSchema.parse({\n id:\"PY101-C02-L06\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"把输入和计算整理成清楚的输出\",contentVersion:2,optionalLesson:false,\n subtitle:\"6.0是什么，True又回答了什么？把已算好的值放进说明文字，再用真实输入检验边界。\",\n prerequisites:\"已完成第一章与2.1–2.5：会保存、终端完整运行.py，理解变量、str/int/float/bool、乘法与单位、<=比较及input后明确int/float转换。沿用已有Python 3和编辑器，不安装库；手机可读，代码与终端输入需要电脑。\",\n prerequisiteLinks:[\n  {title:\"2.1 名称与当前值\",href:\"/learn/PY101/PY101-C02-L01#name-and-value\",note:\"复习读取名称需要本次已绑定值。\"},\n  {title:\"2.3 计算与单位\",href:\"/learn/PY101/PY101-C02-L03#expression-to-value\",note:\"表达式回答的数量关系也要正确。\"},\n  {title:\"2.4 相等边界\",href:\"/learn/PY101/PY101-C02-L04#boundary-runs\",note:\"<=包含刚好等于限制的情况。\"},\n  {title:\"2.5 分步输入与转换\",href:\"/learn/PY101/PY101-C02-L05#main-example\",note:\"提示、键入回显、print结果分开记录。\"},\n  {title:\"1.3 保存与重跑\",href:\"/learn/PY101/PY101-C01-L03#save-rerun\",note:\"确认终端运行的是已保存文件。\"},\n ],\n objectives:[\n  \"把已绑定名称的值插入简单f-string，输出有实际含义和单位的文字，并区分普通字符串与格式化字符串\",\n  \"在自己创建的.py中组合输入、明确转换、数值计算、布尔比较与清楚输出，说明每一步的值来自哪里\",\n  \"为同一程序预测并真实运行新输入，验证低于、恰好等于、高于限制的结果与单位，解释真假判断的实际范围\",\n ],\n assessmentMap:[{objective:1,exerciseIds:[\"write-clear-summary\"]},{objective:2,exerciseIds:[\"write-clear-summary\",\"verify-summary-boundary\"]},{objective:3,exerciseIds:[\"verify-summary-boundary\"]}],\n learningTime:{reading:[12,18],practice:[8,12],coding:[22,32],basis:\"editorial-estimate\"},\n sections:[\n  {id:\"bare-results\",title:\"数字算对了，别人能看懂吗？\",navGroup:\"meaning\",navLabel:\"输出含义\",blocks:[\n   p(\"程序算出总质量6.0千克，又判断出它不超过10千克。下面都是已经学过的赋值和print。先预测两行，再另存bare_results.py完整运行，看看只收到结果的人能知道多少信息。\"),\n   sample(\"plain\"),output(\"裸值 · 预期两行\",\"6.0\\nTrue\"),\n   p(\"这两行可以是正确结果，但6.0没写单位，也没说是单件还是总量；True没写出判断问题。希望让使用者看到下面的说明。先指出增加了哪些信息：\"),\n   output(\"想要的显示 · 总质量与所判断的问题\",\"Total kg: 6.0\\nWithin 10 kg: True\"),\n   p(\"Total kg表示总质量（千克），Within 10 kg在本例问是否不超过10千克。接下来先把一个已知值与说明放到同一行，之后再把输入和计算接回来。普通print仍可显示结果；本课增加的是让值与含义一起呈现的方法。\"),\n  ]},\n  {id:\"first-format\",title:\"f前缀告诉Python：这里要放入当前值\",navGroup:\"format\",navLabel:\"文字与名称\",blocks:[\n   p(\"f-string在开头引号前加f。引号界定文字，Total kg:是说明，{total_mass}用花括号标出插入位置。\"),\n      p(\"执行到这里时，Python读total_mass当前值，组成字符串，再由print显示。先只将已绑定的简单名称放进花括号，f紧挨开头引号。\"),\n   p(\"新建insert_mass.py，先预测显示内容，再保存运行。Windows在文件目录用python insert_mass.py，macOS用python3；已验证py的环境可继续用py。源码仍放在.venv外。\"),\n   sample(\"insert\"),output(\"f-string · 预期print结果\",\"Total kg: 6.0\"),\n   p(\"对照另存literal_mass.py：去掉开头f，仍是合法Python普通字符串。先预测花括号会消失还是原样显示，再运行核对。\"),\n   sample(\"literal\"),output(\"普通字符串 · 预期print结果\",\"Total kg: {total_mass}\"),\n   p(\"去掉f后，花括号及total_mass会原样显示。如果你仍预测6.0，就是把普通文字里的花括号也当成了插入请求。\"),\n      p(\"在literal_mass.py副本只补回开头f再重跑，应看到当前数值。这两种写法都合法，差别是有没有插入值。\"),\n  ]},\n  {id:\"labels-and-units\",title:\"每一行都说清名称、数量或单位\",navGroup:\"format\",navLabel:\"文字与名称\",blocks:[\n   p(\"再把三个已知值分别放进说明。item_name是物品名称，count是件数，total_mass是总千克数；三个花括号各读取自己的名称。先预测三行，再保存known_summary.py运行：\"),\n   sample(\"labels\"),output(\"已知值摘要 · 预期print结果\",\"Item: Parcel\\nCount: 4\\nTotal kg: 6.0\"),\n   p(\"每条print单独一行。Count在本例数的是件，Total kg明确总质量单位，不要在数值赋值后直接写kg；单位属于输出说明。中文说明同样合法，另存chinese_mass.py，先预测再运行下面两行：\"),\n   sample(\"chinese\"),output(\"中文单位 · 预期print结果\",\"总质量（千克）：6.0\"),\n   p(\"英文标签不是唯一正确形式，关键是让别人分清每个值的含义。6.0是本次float普通显示，不是故障，本节也不要求补成6.00。float有表示精度边界，若自己的其他合法输入显示较长小数，保留真实结果并核对，不为排版改类型或伪造日志。\"),\n  ]},\n  {id:\"receive-values\",title:\"先收三项输入，暂时只观察提示\",navGroup:\"assembly\",navLabel:\"逐步组装\",blocks:[\n   p(\"现在把已知值换成本次使用者输入。物品名、完整件数、单件质量是三项不同的数据，先按2.5分别保存原文字。另建receive_parcel.py，保存下方完整三行；先预测会出现几次等待，再启动。\"),\n   sample(\"receive\"),\n   p(\"Item: 出现输入Parcel、Enter；Count: 出现输入4、Enter；Mass kg: 出现输入1.5、Enter。每项各占一行输入，不把三个值合成一行，也不在数值后附加单位。这版没有print，收齐三项后结束，尚不会显示计算结果。\"),\n   {type:\"table\",caption:\"三份原输入的角色\",columns:[\"名称\",\"本次输入内容\",\"此时的值类型/含义\"],rows:[[\"item_name\",\"Parcel\",\"str，物品名称\"],[\"count_text\",\"4\",\"str，待转换的件数文本\"],[\"mass_text\",\"1.5\",\"str，待转换的单件千克数文本\"]]},\n   p(\"input提示属于程序stdout但无自动换行，终端通常回显你键入的字符；它们都不是print结果。自动stdin输入没有同样的键盘回显，这版捕获stdout只有下面三个连续提示。标注的示意、终端流和原始stdout要分开。\"),\n   output(\"自动stdin捕获 · 无print、无键盘回显\",\"Item: Count: Mass kg: \"),\n  ]},\n  {id:\"calculate-check\",title:\"把件数和单件质量变成总量，再比较\",navGroup:\"assembly\",navLabel:\"逐步组装\",blocks:[\n   p(\"接下来int(count_text)得到整数件数count，float(mass_text)得到单件质量mass；原来的两个_text仍是字符串。count * mass用件数乘千克/件，得到总千克数，先保存为total_mass。\"),\n   p(\"本例规定总质量最多10千克，恰好10也满足。total_mass <= 10复用2.4的比较，先把True或False保存为within_limit。它只回答这个总质量问题，还没有执行批准或拒绝等行动。\"),\n   p(\"另存calculate_parcel.py，保存下面完整累计版。先手算Parcel/4/1.5，再依次输入运行；末尾两条print暂时核对总量和比较，仍用普通裸值显示。\"),\n   sample(\"calculate\"),output(\"Parcel / 4 / 1.5 · 仅print结果\",\"6.0\\nTrue\"),\n   p(\"4件×1.5千克/件为6.0千克，6.0<=10为True。若此处与预测不同，先核对实际键入、转换后的名称和乘法；正确之后再整理文字，不靠改输出标签掩盖计算错误。\"),\n  ]},\n  {id:\"main-example\",title:\"最后接上四行可读摘要\",navGroup:\"summary\",navLabel:\"完整摘要\",blocks:[\n   p(\"输入与计算都核对后，再用四条f-string替换裸值输出：分别读物品名、整数件数、总千克数和比较结果。\"),\n      p(\"最后一条明确问是否不超过10千克。比较先保存，花括号只负责取名称的值，不能用漂亮标签掩盖错误计算。\"),\n   p(\"新建parcel_summary.py，先写Parcel/4/1.5的四行预测，再保存完整主例。下面空行只是分组，每次从头执行。\"),\n   sample(\"main\"),output(\"Windows · PowerShell · 文件所在目录\",\"python parcel_summary.py\"),output(\"macOS · 终端 · 文件所在目录\",\"python3 parcel_summary.py\"),\n   output(\"Parcel / 4 / 1.5 · 仅四条print结果\",\"Item: Parcel\\nCount: 4\\nTotal kg: 6.0\\nWithin 10 kg: True\"),\n   p(\"这四行不是终端全部内容；input提示与键盘回显另行标记。自动stdin提供三行数据时，原始stdout的提示会紧邻第一条print，实际捕获形式如下，末尾有换行，不能补造三行回显：\"),\n   output(\"自动stdin stdout · 提示与print连续\",\"Item: Count: Mass kg: Item: Parcel\\nCount: 4\\nTotal kg: 6.0\\nWithin 10 kg: True\\n\"),\n  ]},\n  {id:\"boundary-runs\",title:\"源码不变，换低于、等于和高于上限的数据\",navGroup:\"summary\",navLabel:\"完整摘要\",blocks:[\n   p(\"保留parcel_summary.py原样。第一轮Parcel/4/1.5已经是低于10；先保留自己的输入、预测与真实四行结果。第二轮先预测Crate B/4/2.5，重新执行同一命令，依次键入。手算4×2.5=10.0千克，最后一行该是真还是假？\"),\n   p(\"第三轮再先预测Crate C/4/3.0，完整重新启动并输入，手算总12.0千克。保留三轮命令、输入、源码和实际四行摘要，再按表核对，不用一次输出或抄表代替三次运行。\"),\n   {type:\"table\",caption:\"完成三轮后核对总质量与同一比较\",columns:[\"物品/件数/单件千克\",\"总千克数\",\"Within 10 kg\"],rows:[[\"Parcel / 4 / 1.5\",\"6.0\",\"True\"],[\"Crate B / 4 / 2.5\",\"10.0\",\"True\"],[\"Crate C / 4 / 3.0\",\"12.0\",\"False\"]]},\n   p(\"等于10.0时<=仍为True，因为最多包括等值；超过时False。这个真假只报告本次总质量是否不超过10千克，没有检查包装或运输条件，也没有自动执行拒绝。输出说明必须对应实际比较，不能把它改写成“所有条件下都安全”。\"),\n  ]},\n  {id:\"practice\",title:\"自己选择情境，交出可读结果与边界证据\",navGroup:\"practice\",navLabel:\"独立练习\",blocks:[\n   p(\"先独立写程序，再按需展开提示。基本交付是本人源码和本题真实运行结果；同一会话的环境、文件位置和命令只记一次，后面可引用编号。预测可口述或记一行；边界、改值和恢复题按题干保留必要对照。\"),\n   {type:\"exercise\",id:\"write-clear-summary\",title:\"自己的可读计算摘要\",kind:\"代码\",\n    prompt:\"另选新测量情境、合法名称和三条提示，新.py用input收标签、整数件数、小数单件量，分步int/float后算总量。简单f-string显示标签、件数、总量及含义/单位。对同一源码选两组新合法输入，先预测再真运行。交源码、一张两组输入/预测/print摘要表和一次命令。用一句话或现场指认输入→转换→计算→显示；解释一条输出去掉f的差别，可另存副本自查。不用if/循环/函数/格式指定。\",\n    hints:[\"哪一项应保留为文字，哪两项要成为数值？单件测量乘件数后是什么单位？读者能从每行知道这是哪个量吗？\",\"按输入、分步转换、计算、说明文字中的名称组织。花括号中先只放已经赋值的名称；自己确定主题、新数据和两轮预测。\"],\n    solution:[\n  \"参考横幅材料，每片长度以米计。页尾material_summary.py给出完整路径，先独立完成再展开。第1–3行收材料名/片数文本/单片米数；第4–5行转成pieces整数和length浮点；第6行两者相乘存总米数。\",\n  \"第7–9行分别显示材料名、片数、Total m总米数。Banner A/6/0.75先预测Material: Banner A、Pieces: 6、Total m: 4.5，保存运行python material_summary.py（macOS用python3）。同源码第二轮Banner B/10/0.5先预测总5.0米，再实际重新启动输入。\",\n  \"前者6片×0.75米/片=4.5米，后者10片×0.5米/片=5.0米。f-string只读取已经取得的名称，不会替你转换或重算输入。去掉最后一条f会显示文字{total_length}；补回f才能插入当前总值。\",\n  \"常错是花括号内错拼名称、少f、用原文本计算、把单片质量/长度当总量或遗漏单位。按输入→转换→总量→文字逐项核对。接受其他新情境/名称、中文标签、成对单引号或先保存中间结果，但需真实两轮和清楚单位；参考预测不是本人运行证据。\",\n  \"交付按本题题干与rubric：源码可用一份加差异，运行记录用短表；相同命令、环境和版本引用会话卡，不重复誊写。\"\n],\n    rubric:[\n  \"本人新程序三输入分步转换并真实计算，自选情境/名称/提示。\",\n  \"简单f-string读已绑定名称，含义及单位可辨，能区分去f的普通字符串。\",\n  \"两组新输入均有事前预测与真输出；一表/一次命令，数据流现场或短句说明，非长报告。\"\n]},\n   {type:\"exercise\",id:\"verify-summary-boundary\",title:\"验证摘要边界，并解释真假回答了什么\",kind:\"代码\",\n    prompt:\"自选新测量限制情境，如总长度最多若干米；可复用题一源码，另记新增比较/输出的差异。真实input及int/float求总量，固定新上限，总量<=上限保存真假，用简单f-string显示名称/件数/总量单位/比较问题。选低/等/高三组合法输入，各先预测再完整运行同一文件；用整数、0.5或0.25安排确实等值。交源码加差异、一张三组输入/预测/实际摘要表及一次命令。解释等值True、超限False的范围，False未自动拒绝。不重复提交整份阶段源码，不把一次运行算成三轮；不引入控制流程或精度算法。\",\n    hints:[\"分清单件测量、总量和限制。应该拿哪一项与上限比较，输出里的真假文字又在问哪个问题？\",\"先确定能恰好达到的边界，再在同一固定上限下安排低/等/高三组输入，先预测再逐轮执行。保留你决定的数据、比较名称和完整代码。\"],\n    solution:[\n  \"参考花坛围边，最多12米。页尾garden_boundary.py先收批次、段数和每段米数，转strips整数与strip_length浮点；length_limit固定12，total_length=strips * strip_length，within_limit保存总长<=上限。四条f-string分别显示批次、段数、总米数和Within 12 m问题。\",\n  \"同一文件Garden A/3/3先预测总9.0米/True，再运行python garden_boundary.py（macOS用python3）；Garden B/3/4先预测12.0米/True，重新输入运行；Garden C/3/5先预测15.0米/False，再完整重跑。每轮名称和段数也要和实际摘要对应，保留实际摘要的四行。\",\n  \"等值12.0满足最多12，<=包含相等；15.0超过所以False。True不证明其他条件都满足，False也没让程序拒绝输入，这段没有分支动作。输出Within {length_limit} m中的两个插入位置分别读取限制和真假值，花括号都只是简单名称。\",\n  \"常错是改了上限、比较单段而非总量、实际没到等值、三轮只抄参考或将False写成已拒绝。按实际输入重算，保留固定源码、预测和命令。接受其他合理新上限/数据/名称/中文问题；若复用题一，必须能看出新增比较与第三轮证据，不把题一一次运行算成三轮。\",\n  \"交付按本题题干与rubric：源码可用一份加差异，运行记录用短表；相同命令、环境和版本引用会话卡，不重复誊写。\"\n],\n    rubric:[\n  \"本人输入/转换/计算/总量<=固定上限正确，单位与输出问题清楚。\",\n  \"低/等/高三组各有事前预测及完整真摘要，上限不改，源码一次加差异、命令一次。\",\n  \"等值True/超限False的范围正确，无自动拒绝；题一复用仍需独立三轮，非抄表或长报告。\"\n]},\n  ]},\n  {id:\"reference-programs\",title:\"做完再核对：完整参考与名称错拼副本\",navGroup:\"reference\",navLabel:\"参考核对\",tier:\"verification\",blocks:[\n   p(\"先完成两题再展开参考，另存新文件保留原作。前两份完整程序的行义、预测与命令在各题解答中，不将列表文字当连写源码。\"),sample(\"ownSummary\"),sample(\"ownBoundary\"),\n   p(\"若想核对名称问题，在自己的field_copy.py副本先预测下面程序：花括号里的total_mas少一个s，本次没有绑定。按2.1检查名称，实际运行保留第2行NameError、相关回溯和退出状态；它与少f的合法字面输出原因不同。\"),sample(\"nameError\"),\n   p(\"保留错误后，将同一副本只修为total_mass，先预测再保存完整重跑下面修复版，应显示Total kg: 6.0且正常结束。无需核心题故意造错，也不加入异常捕获。\"),sample(\"nameRepair\"),\n  ]},\n  {id:\"chapter-end\",title:\"第二章收束：能说明结果，也知道还没学什么\",navGroup:\"finish\",navLabel:\"章末衔接\",blocks:[\n   {type:\"summary\",points:[\"保存与更新变量，辨认基本类型，写有单位的数值表达式和比较。\",\"从终端取得文字，明确int/float转换，再计算和保存判断。\",\"用简单f-string把名称、数量、单位和比较问题一起显示，用真实低/等/高输入核对。\"]},\n   p(\"保留自己的程序和摘要，能换新数据、先预测并解释每行含义，就能核对值从哪里来、单位和限制是否一致。\"),\n   p(\"第二章把变量、类型、计算、比较和输入输出连成了短程序。接下来学习第三章的控制流程，让程序依据条件选择动作或重复操作。先能独立完成本章的交互摘要，再学习这些新能力。第5章函数仍依赖第三、第四章的中间知识，不宜直接跳过。\"),\n  ]},\n ],resources:[],references:[\n  {title:\"f-string教程\",href:\"https://docs.python.org/3.14/tutorial/inputoutput.html#formatted-string-literals\",note:\"先解释前缀与替换字段。\"},\n  {title:\"f-string词法规则\",href:\"https://docs.python.org/3.14/reference/lexical_analysis.html#f-strings\",note:\"本课只用已绑定简单名称。\"},\n  {title:\"print与input\",href:\"https://docs.python.org/3.14/library/functions.html#print\",note:\"提示、终端回显和print分开。\"},\n  {title:\"int/float转换\",href:\"https://docs.python.org/3.14/library/functions.html#int\",note:\"输入文本明确转换再计算。\"},\n  {title:\"数值比较\",href:\"https://docs.python.org/3.14/reference/expressions.html#value-comparisons\",note:\"结果只对应实际数量关系。\"},\n ],\n});\n"
+    },
+    {
+      "path": "scripts/validate-python.ts",
+      "before": "import { spawnSync } from \"node:child_process\";\nimport { writeFile } from \"node:fs/promises\";\nimport { evidencePath } from \"./evidence-path\";\nimport { lessonRegistry } from \"../src/lib/course-engine\";\nimport { corePrograms, regressionCoreCode } from \"../src/content/resources/core-programs\";\nimport { programs, gradientDescentCode } from \"../src/content/resources/programs\";\nimport { notebookCode, notebookBlockNames } from \"../src/content/resources/python-notebook\";\nimport { reproductionCode, reproductionBlockNames } from \"../src/content/resources/python-reproduction\";\nimport { runVariableExample } from \"./python-variable-checks\";\nimport { runValueTypeExample } from \"./validate-py101-value-types\";\nimport { runArithmeticExample } from \"./validate-py101-arithmetic\";\nimport { runComparisonExample } from \"./validate-py101-comparisons\";\nimport { runInputExample } from \"./validate-py101-input\";\nimport { runReadableExample } from \"./validate-py101-readable-output\";\n\nconst python = process.env.AIVORA_PYTHON ?? \"python\";\nfunction run(args: string[]) {\n  const result = spawnSync(python, args, {\n    encoding: \"utf8\",\n    env: { ...process.env, PYTHONIOENCODING: \"utf-8\" },\n    timeout: 30_000,\n  });\n  if (result.error || result.status !== 0)\n    throw new Error(`Python 校验失败：${result.error ?? result.stderr}`);\n  return {\n    exitCode: result.status,\n    stdout: result.stdout.replace(/\\r\\n/g, \"\\n\").trim(),\n    stderr: result.stderr.replace(/\\r\\n/g, \"\\n\").trim(),\n  };\n}\nconst environment = run([\n  \"-c\",\n  \"import sys,numpy; print(sys.version.split()[0]); print('NumPy',numpy.__version__)\",\n]);\nconst unit = run([\n  \"-m\",\n  \"unittest\",\n  \"discover\",\n  \"-s\",\n  \"tests\",\n  \"-p\",\n  \"test_*.py\",\n  \"-v\",\n]);\nconst examples = [...lessonRegistry.values()].flatMap((lesson) =>\n  lesson.sections.flatMap((section) =>\n    section.blocks.flatMap<Record<string, unknown>>((block) => {\n      if (block.type !== \"code\" || block.language !== \"python\") return [];\n      if (lesson.id === \"PY101-C02-L01\") {\n        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runVariableExample(block.filename, block.code) }];\n      }\n      if (lesson.id === \"PY101-C02-L02\") {\n        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runValueTypeExample(block.filename, block.code) }];\n      }\n      if (lesson.id === \"PY101-C02-L03\") {\n        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runArithmeticExample(block.filename, block.code) }];\n      }\n      if (lesson.id === \"PY101-C02-L04\") {\n        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runComparisonExample(block.filename, block.code) }];\n      }\n      if (lesson.id === \"PY101-C02-L05\") {\n        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runInputExample(block.filename, block.code) }];\n      }\n      if (lesson.id === \"PY101-C02-L06\") {\n        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runReadableExample(block.filename, block.code) }];\n      }\n      let setup = \"\";\n      if (lesson.id === \"PY101-C01-L06\") {\n        const key = (Object.keys(reproductionCode) as (keyof typeof reproductionCode)[]).find(key => reproductionBlockNames[key] === block.filename);\n        if (!key || block.code !== reproductionCode[key]) throw new Error(`未登记的复现课源码：${block.filename}`);\n        if (key === \"show\") setup = reproductionCode.assign;\n      }\n      if (lesson.id === \"PY101-C01-L05\") {\n        const key = (Object.keys(notebookCode) as (keyof typeof notebookCode)[]).find(key => notebookBlockNames[key] === block.filename);\n        if (!key || block.code !== notebookCode[key]) throw new Error(`未登记的Notebook单元格：${block.filename}`);\n        if (key === \"showMarker\") setup = notebookCode.setDraft;\n        if (key === \"showDelivery\") setup = notebookCode.setDelivery;\n      }\n      // Notebook使用前格上下文；仍实际执行每块。重启/旧状态/预期NameError另由真实内核专项检验。\n      const result = run([\"-c\", setup ? setup + \"\\n\" + block.code : block.code]);\n      if (lesson.id === \"PY101-C01-L06\") {\n        const expected: Record<string, string> = { [reproductionBlockNames.notice]: \"Notice N8\", [reproductionBlockNames.target]: \"Target R9\", [reproductionBlockNames.assign]: \"\", [reproductionBlockNames.show]: \"Checked F3\" };\n        if (block.filename in expected && result.stdout !== expected[block.filename]) throw new Error(`复现课输出不符：${block.filename}`);\n      }\n      if (lesson.id === \"PY101-C01-L05\") {\n        const expected: Record<string, string> = { [notebookBlockNames.setDraft]: \"\", [notebookBlockNames.setReady]: \"\", [notebookBlockNames.showMarker]: \"Draft A\", [notebookBlockNames.setDelivery]: \"\", [notebookBlockNames.showDelivery]: \"Packed C7\" };\n        if (block.filename in expected && result.stdout !== expected[block.filename]) throw new Error(`Notebook顺序输出不符：${block.filename}`);\n      }\n      if (lesson.id === \"PY101-C01-L04\") {\n        const independentExpected: Record<string, string> = { \"project-a/main.py\": \"Project A A4\", \"project-b/main.py\": \"Project B B6\" };\n        if (independentExpected[block.filename] !== undefined && result.stdout !== independentExpected[block.filename]) throw new Error(`虚拟环境课源码输出不符：${block.filename}`);\n        if (block.filename.startsWith(\"observe_env.py\")) {\n          for (const label of [\"Interpreter:\", \"Environment:\", \"Base Python:\", \"Version:\"]) if (!result.stdout.includes(label)) throw new Error(`诊断字段遗漏：${label}`);\n          // 全网页校验在当前基础Python执行；目标venv判据另由真实环境专项验证。\n        }\n      }\n      const expected = ({ \"第一条Python指令\": \"Hello, Aivora!\", \"first_run.py\": \"Hello, Aivora!\\nFile: first_run.py\", \"read_vector_components.py\": \"4 0 7\", \"add_two_vectors.py\": \"[2, 3]\", \"scale_vector.py\": \"[-6, -4]\", \"double_without_function.py\":\"6\", \"double_definition.py\":\"\", \"one_update.py\":\"-13.0 -8.0 1.3 0.8 1.685\", \"one_update_checks.py\":\"-13.0 -8.0 1.3 0.8 1.685\" } as Record<string,string>)[block.filename];\n      if (expected !== undefined && result.stdout !== expected)\n        throw new Error(`教材输出与预期不一致：${block.filename}`);\n      return [\n        {\n          lessonId: lesson.id,\n          sectionId: section.id,\n          filename: block.filename,\n          ...([\"PY101-C01-L05\", \"PY101-C01-L06\"].includes(lesson.id) ? { executionMode: setup ? \"ordered-cells\" : \"independent-cell\", setup } : {}),\n          ...(expected !== undefined ? { expected } : {}),\n          ...result,\n        },\n      ];\n    }),\n  ),\n);\nconst expectedOutputs: Record<keyof typeof corePrograms, string> = {\n  \"function-basics\": \"6\", \"function-binding\": \"12\\n12\", \"function-return\": \"4\\n4 None\",\n  \"function-scope\": \"5\\n10\", \"function-defaults\": \"6\\n12\", \"vector-basics\": \"[4, 3] [2, 4]\",\n  \"vector-dot\": \"5\", \"matrix-shape\": \"[[1, 4], [2, 5], [3, 6]]\",\n  \"matrix-product\": \"[[4 6]\\n [1 3]]\", \"numpy-shapes\": \"(2,) (2,)\\n(2, 1) (1, 2)\\n5\",\n};\nconst coreComparisons = Object.entries(corePrograms).map(([id, sample]) => {\n  const core = run([\"-c\", sample.core + \"\\n\" + sample.checks]);\n  const full = run([\"-c\", programs[id as keyof typeof corePrograms].code]);\n  if (core.stdout !== expectedOutputs[id as keyof typeof corePrograms] || core.stdout !== full.stdout)\n    throw new Error(`核心/完整版输出与预期不一致：${id}`);\n  return { id, expected: expectedOutputs[id as keyof typeof corePrograms], ...core, fullMatches: true };\n});\nconst trainingComparison = run([\"-c\", `import numpy as np\ncore, full = {}, {}\nexec(${JSON.stringify(regressionCoreCode)}, core)\nexec(${JSON.stringify(gradientDescentCode)}, full)\nnp.testing.assert_allclose([core['w'], core['b'], core['final_loss']], [full['w'], full['b'], full['final_loss']], atol=1e-12, rtol=0)\nnp.testing.assert_allclose([core['w'], core['b']], [2,1], atol=1e-7, rtol=0)\nassert core['final_loss'] < 1e-10\nprint('core/full training match; independent expected line y=2x+1')\n`]);\nconst report = {\n  checkedAt: new Date().toISOString(),\n  environment: environment.stdout,\n  unittest: unit,\n  examples,\n  coreComparisons,\n  trainingComparison,\n  note: \"技术校验通过；不代表人工内容审核、试学或正式发布。代码来自仓库静态教材，仅开发阶段执行。\",\n};\nconst reportPath = evidencePath(\"TEACHING_V2_3_PYTHON_RESULTS.json\");\nawait writeFile(\n  reportPath,\n  JSON.stringify(report, null, 2) + \"\\n\",\n);\nconsole.log(\n  `Python 单元测试通过，${examples.length} 个网页代码块按成功/受控错误契约实际执行通过，${coreComparisons.length} 组核心/完整版一致。证据：${reportPath}`,\n);\n"
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "before": "import { createHash } from \"node:crypto\";\nimport { readFileSync } from \"node:fs\";\n\ntype SourceChange = { path: string; before: string; afterSha256: string };\ntype ObjectChange = { id: string; before: unknown; afterSha256: string };\n// 使用同一个登记器按新到旧撤销已批准修订；不为每轮再嵌套一个专用兼容器。\ntype RevisionPlan = { baseline: string; sources: SourceChange[]; lessons: ObjectChange[]; publications: ObjectChange[]; addedLessonIds: string[]; workspaceOnly: { path: string; workspaceSha256: string; repositorySha256: string }[]; protectedText: { path: string; baselineSha256: string; lfSha256: string }[] };\nconst plans = [\"py101-p15\", \"py101-p14\", \"py101-p13\", \"py101-p12\", \"py101-p11\", \"py101-p10\", \"py101-p9\", \"py101-p8\", \"py101-p7\", \"py101-p6\", \"py101-p5\", \"py101-p4\", \"py101-p3\", \"py101-p2\"].map(round => JSON.parse(readFileSync(new URL(`../docs/${round}/APPROVED_CHANGES.json`, import.meta.url), \"utf8\")) as RevisionPlan);\nfunction revisions(throughBaseline?: string) {\n  const index = plans.findIndex(plan => plan.baseline === throughBaseline);\n  return index < 0 ? plans : plans.slice(0, index + 1);\n}\nconst sources = JSON.parse(readFileSync(new URL(\"../docs/py101-p1/SOURCE_CHANGES.json\", import.meta.url), \"utf8\")) as SourceChange[];\nconst sha = (source: string) => createHash(\"sha256\").update(source).digest(\"hex\");\nfunction undoSource(entries: SourceChange[], path: string, source: string) {\n  const entry = entries.find(row => row.path === path);\n  return entry && sha(source.replaceAll(\"\\r\\n\", \"\\n\")) === entry.afterSha256 ? entry.before : source;\n}\nexport const approvedPy101Additions = [...new Set(plans.flatMap(plan => plan.addedLessonIds))];\nexport function beforeApprovedPy101Source(path: string, source: string, throughBaseline?: string) {\n  return revisions(throughBaseline).reduce((value, plan) => undoSource(plan.sources, path, value), source);\n}\n// 自动回归允许原工作区与干净检出两种精确版本；工作区审计脚本仍严格要求原始指纹。\nexport function protectedPy101FileMatches(path: string, bytes: Buffer, expected: string, throughBaseline?: string) {\n  const digest = createHash(\"sha256\").update(bytes).digest(\"hex\");\n  if (digest === expected) return true;\n  const text = bytes.toString(\"utf8\");\n  // Git检出可转换文本换行；二进制仍逐字节比较，绝不以UTF-8解码后的图像作摘要。\n  const validText = !text.includes(\"\\0\") && Buffer.from(text).equals(bytes);\n  const variants = (value: string) => { const lf = value.replaceAll(\"\\r\\n\", \"\\n\"); return [lf, lf.replaceAll(\"\\n\", \"\\r\\n\")]; };\n  const matches = (value: string, target: string) => validText && variants(value).some(source => sha(source) === target);\n  if (matches(text, expected)) return true;\n  const relevant = revisions(throughBaseline);\n  const portable = relevant.flatMap(plan => plan.protectedText).find(row => row.path === path && row.baselineSha256 === expected);\n  if (portable && validText && sha(text.replaceAll(\"\\r\\n\", \"\\n\")) === portable.lfSha256) return true;\n  const local = relevant.flatMap(plan => plan.workspaceOnly).find(row => row.path === path && row.workspaceSha256 === expected);\n  if (local?.workspaceSha256 === expected && (local.repositorySha256 === digest || matches(text, local.repositorySha256))) return true;\n  return matches(beforeApprovedPy101Source(path, text, throughBaseline), expected);\n}\nexport function beforeApprovedPy101Object(kind: \"lessons\" | \"publications\", id: string, value: unknown, throughBaseline?: string) {\n  return revisions(throughBaseline).reduce((current, plan) => {\n    const entry = plan[kind].find(row => row.id === id);\n    return entry && sha(JSON.stringify(current)) === entry.afterSha256 ? entry.before : current;\n  }, value);\n}\n// 只有完整文件摘要命中才还原；未登记的任何附加修改必须继续暴露给旧保护测试。\nexport function beforePy101P1Source(path: string, source: string) {\n  return undoSource(sources, path, beforeApprovedPy101Source(path, source));\n}\n"
+    },
+    {
+      "path": "tests/helpers/py101-p14-view.ts",
+      "before": "// 旧P0–P14断言只看完整摘要认可后撤销P15的历史对象；当前r2另由P15专项直接验证。\nimport type {Lesson} from '../../src/content/models';\nimport {lessonRegistry as currentRegistry,getLearningCourse as currentCourse} from '../../src/lib/course-engine';\nimport {publicationManifest as currentManifest} from '../../src/content/publication-manifest';\nimport {beforeApprovedPy101Object} from '../../scripts/py101-p1-compatibility';\nexport {getAdjacentLessons,resolveLesson} from '../../src/lib/course-engine';\nconst baseline='cb3927fa0be59a8108a30cf183361aa1f7c8a318';\nexport const historicalLesson=(lesson:Lesson)=>beforeApprovedPy101Object('lessons',lesson.id,lesson,baseline) as Lesson;\nexport const lessonRegistry=new Map([...currentRegistry].map(([id,l])=>[id,historicalLesson(l)]));\nexport const publicationManifest=currentManifest.map(p=>beforeApprovedPy101Object('publications',p.lessonId,p,baseline) as typeof p);\nexport function getLearningCourse(id:string){\n const course=currentCourse(id);if(!course)return course;\n return {...course,chapters:course.chapters.map(c=>({...c,lessons:c.lessons.map(l=>({...l,contentVersion:publicationManifest.find(p=>p.lessonId===l.lessonId)?.contentVersion??l.contentVersion}))}))};\n}\n"
+    },
+    {
+      "path": "tests/py101-beginner-refinement.test.ts",
+      "before": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport {readFileSync} from 'node:fs';\nimport {createHash} from 'node:crypto';\nimport sharp from 'sharp';\nimport {lessonRegistry,getLearningCourse,getAdjacentLessons,resolveLesson} from '../src/lib/course-engine';\nimport {publicationManifest} from '../src/content/publication-manifest';\nimport {lessonProgressScope} from '../src/lib/use-learning-progress';\nimport {createProgressStore,progressKey,parseReadingProgress} from '../src/lib/learning-progress';\nimport {beforeApprovedPy101Object,beforeApprovedPy101Source} from '../scripts/py101-p1-compatibility';\nimport type {Lesson} from '../src/content/models';\nconst plan=JSON.parse(readFileSync('docs/py101-p15/APPROVED_CHANGES.json','utf8')) as {baseline:string;sources:{path:string;before:string;afterSha256:string}[];lessons:{id:string;before:Lesson;afterSha256:string}[];publications:{id:string;before:unknown;afterSha256:string}[];addedLessonIds:string[];workspaceOnly:unknown[];protectedText:unknown[]};\nconst baseline=JSON.parse(readFileSync('docs/py101-p15/BASELINE.json','utf8'));\nconst sha=(value:unknown)=>createHash('sha256').update(JSON.stringify(value)).digest('hex');\nconst blocks=(l:Lesson)=>l.sections.flatMap(s=>s.blocks);\n\ntest('P15真实12r2对象与Publication、稳定锚点/目标映射/先修一致；完整摘要拒绝未知附加改写',()=>{\n assert.equal(plan.lessons.length,12);assert.deepEqual([plan.addedLessonIds,plan.workspaceOnly,plan.protectedText],[[],[],[]]);\n for(const row of plan.lessons){\n  const l=lessonRegistry.get(row.id)!,p=publicationManifest.find(p=>p.lessonId===l.id)!;\n  assert.equal(sha(l),row.afterSha256);assert.equal(l.contentVersion,2);\n  assert.deepEqual([l.id,l.title,l.chapterId,l.prerequisites,l.prerequisiteLinks,l.objectives,l.assessmentMap],[row.before.id,row.before.title,row.before.chapterId,row.before.prerequisites,row.before.prerequisiteLinks,row.before.objectives,row.before.assessmentMap]);\n  assert.deepEqual(l.sections.map(s=>s.id),row.before.sections.map(s=>s.id));\n  for(const type of ['exercise','quiz']as const){const ids=(lesson:Lesson)=>blocks(lesson).flatMap(b=>(b.type==='exercise'||b.type==='quiz')&&b.type===type?[b.id]:[]);assert.deepEqual(ids(l),ids(row.before));}\n  assert.deepEqual([p.contentVersion,p.status,p.access,p.reviewEvidence,p.technicalEvidence],[2,'pending-review','preview',undefined,'docs/py101-p15/TECHNICAL_REPORT.md']);\n  assert.deepEqual(beforeApprovedPy101Object('lessons',l.id,l,plan.baseline),row.before);\n  const extra={...l,title:l.title+' 未登记'};assert.deepEqual(beforeApprovedPy101Object('lessons',l.id,extra,plan.baseline),extra);\n }\n for(const row of plan.sources){const source=readFileSync(row.path,'utf8');assert.equal(beforeApprovedPy101Source(row.path,source,plan.baseline),row.before);assert.equal(beforeApprovedPy101Source(row.path,source+'\\n// extra',plan.baseline),source+'\\n// extra');}\n for(const [id,hash]of Object.entries(baseline.lessons))if(!plan.lessons.some(r=>r.id===id))assert.equal(sha(lessonRegistry.get(id)),hash,id);\n for(const [id,hash]of Object.entries(baseline.publications))if(!plan.publications.some(r=>r.id===id))assert.equal(sha(publicationManifest.find(p=>p.lessonId===id)),hash,id);\n});\n\ntest('P15正式24题保留真实操作、两级提示和完整解释；减负未删去针对目标的运行',()=>{\n const requirements=[[/真实|实际/,/失败|错误/,/恢复|重跑/],[/三行表/,/只重跑/,/空格/],[/集成终端/,/真实输出/,/cwd/],[/Base/,/Interpreter/,/真实/],[/\\.ipynb/,/重启/,/全跑/],[/六项最小复现单/,/cwd/,/身份/,/顺序/],[/两轮/,/NameError/],[/四/,/type/,/两轮/],[/两轮/,/手算/,/修复/],[/三轮/,/等值/],[/两组/,/type/,/ValueError/,/重新启动/],[/两组/,/三组/,/False/]];\n plan.lessons.forEach((row,i)=>{\n  const l=lessonRegistry.get(row.id)!,tasks=blocks(l).filter(b=>b.type==='exercise'),old=blocks(row.before).filter(b=>b.type==='exercise');assert.equal(tasks.length,2);\n  tasks.forEach((t,j)=>{assert.notEqual(t.prompt,old[j].prompt);assert.notDeepEqual(t.rubric,old[j].rubric);assert.deepEqual(t.hints,old[j].hints);assert.equal(t.hints.length,2);assert.ok(t.solution.length>=4);assert.ok(t.rubric.length>=3);assert.match(t.prompt,/交|提交/);});\n  for(const re of requirements[i])assert.match(tasks.map(t=>t.prompt).join(''),re);\n  for(const map of l.assessmentMap)for(const id of map.exerciseIds)assert.ok(tasks.some(t=>t.id===id));\n });\n});\n\ntest('P15全部原网页代码与命令逐块保留；1.2正常成功先于受控失败',()=>{\n for(const row of plan.lessons){const codes=(l:Lesson)=>blocks(l).filter(b=>b.type==='code').map(b=>JSON.stringify(b)).sort();assert.deepEqual(codes(lessonRegistry.get(row.id)!),codes(row.before),row.id);}\n const first=lessonRegistry.get('PY101-C01-L02')!.sections[0].blocks.filter(b=>b.type==='code');\n assert.ok(first.findIndex(b=>b.code.includes('alpha\\\\run.py'))<first.findIndex(b=>b.code==='python run.py'));\n});\n\ntest('P15学生正文移去出版状态，保第五章先修与12课具体诊断验证',()=>{\n const markers=[/新标记/,/当前目录|相对路径/,/缓冲区|未保存/,/同.*版本|版本相同/,/旧值|旧状态/,/身份/,/先前|第一次print/,/类型相同|显示相同/,/2\\.0|同级/,/相等|最多/,/type.*int|int.*类型/,/去掉f|少.*f/];\n plan.lessons.forEach((row,i)=>{\n  const l=lessonRegistry.get(row.id)!,text=blocks(l).filter(b=>b.type==='paragraph'||b.type==='callout').map(b=>b.text).join('\\n');\n  assert.doesNotMatch(text,/待人工审核|整门PY101|已制作|尚未制作|技术制作|审核尚未|仍在筹备/);\n  assert.match(text,markers[i]);assert.match(text,/第5章/);\n });\n assert.equal(getLearningCourse('PY101')!.status,'planned');assert.equal(resolveLesson('PY101','PY101-C03-L01'),undefined);assert.equal(resolveLesson('AI000','PY101-C01-L04'),undefined);\n for(const chapter of getLearningCourse('PY101')!.chapters.slice(0,2))for(let i=0;i<5;i++)assert.equal(getAdjacentLessons(getLearningCourse('PY101')!,chapter.lessons[i].lessonId).next?.lessonId,chapter.lessons[i+1].lessonId);\n});\n\ntest('P15六道Quiz保ID，三个互异误解选项各有诊断解析，非核心操作替代',()=>{\n const quizzes=plan.lessons.flatMap(r=>blocks(lessonRegistry.get(r.id)!).filter(b=>b.type==='quiz'));assert.equal(quizzes.length,6);\n for(const q of quizzes){assert.equal(q.options.length,3);assert.equal(new Set(q.options).size,3);assert.equal(q.explanations.length,3);assert.ok(q.correct>=0&&q.correct<3);for(const e of q.explanations)assert.ok(e.length>20);}\n});\n\ntest('P15两图复用现有image，四资产尺寸吻合、窄屏替图与等价文字存在',async()=>{\n for(const id of ['PY101-C01-L04','PY101-C01-L05']){\n  const images=blocks(lessonRegistry.get(id)!).filter(b=>b.type==='image');assert.equal(images.length,1);\n  for(const img of images){assert.ok(img.alt.length>50);assert.ok(img.caption.length>20);assert.ok(img.mobile);for(const source of [img,img.mobile!]){const meta=await sharp('public'+source.src).metadata();assert.deepEqual([source.width,source.height],[meta.width,meta.height]);}}\n }\n assert.equal(blocks(lessonRegistry.get('PY101-C01-L05')!).some(b=>b.type==='table'&&b.caption==='把三种对象分开'),false);\n});\n\ntest('P15十二旧r1逐字保留，r2不继承完成；新位置重载及其他课/r2互不覆盖',()=>{\n const memory=new Map<string,string>(),storage={getItem:(k:string)=>memory.get(k)??null,setItem:(k:string,v:string)=>{memory.set(k,v);}},store=createProgressStore(()=>storage);\n for(const l of lessonRegistry.values()){const scope=lessonProgressScope(l);if(plan.lessons.some(r=>r.id===l.id))store.save({...scope,contentVersion:1},100,scope.sectionIds.at(-1)!,true);else{store.save(scope,100,scope.sectionIds[0],true);if(scope.contentVersion>1)store.save({...scope,contentVersion:1},75,scope.sectionIds[0]);}}\n const old=new Map(memory);\n for(const row of plan.lessons){const scope=lessonProgressScope(lessonRegistry.get(row.id)!);assert.notEqual(progressKey(scope),progressKey(lessonProgressScope(row.before)));assert.equal(store.getSnapshot(scope),null);store.save(scope,40,scope.sectionIds[1]);const restored=parseReadingProgress(createProgressStore(()=>storage).getSnapshot(scope),scope);assert.equal(restored?.completed,false);assert.equal(restored?.section,scope.sectionIds[1]);}\n for(const[k,v]of old)assert.equal(memory.get(k),v);\n});\n"
+    },
+    {
+      "path": "tests/py101-chapter-two-audit.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport {createHash} from \"node:crypto\";\nimport {readFileSync} from \"node:fs\";\nimport {lessonRegistry,getLearningCourse,getAdjacentLessons,resolveLesson} from \"./helpers/py101-p14-view\";\nimport {publicationManifest} from \"./helpers/py101-p14-view\";\nimport {courseOutline} from \"../src/content/course-outline\";\nimport {lessonProgressScope} from \"../src/lib/use-learning-progress\";\nimport {createProgressStore,parseReadingProgress,progressKey} from \"../src/lib/learning-progress\";\nimport {beforeApprovedPy101Object,beforeApprovedPy101Source} from \"../scripts/py101-p1-compatibility\";\nconst read=(name:string)=>JSON.parse(readFileSync(`docs/py101-p14/${name}.json`,\"utf8\"));\nconst sha=(value:unknown)=>createHash(\"sha256\").update(JSON.stringify(value)).digest(\"hex\");\n\ntest(\"[P0–P14历史契约] P14四处全对象仅替末段，依据指针/r1/scope精确登记，未批准附加改写仍拒绝\",()=>{\n const plan=read(\"APPROVED_CHANGES\"),changes=read(\"TRANSITION_AMENDMENTS\");\n assert.deepEqual(plan.addedLessonIds,[]);\n assert.deepEqual(plan.lessons.map((r:{id:string})=>r.id),[1,2,3,4].map(n=>`PY101-C02-L0${n}`));\n assert.equal(changes.records.length,plan.lessons.length);\n for(const row of plan.lessons){\n  const current=lessonRegistry.get(row.id)!,expected=structuredClone(row.before),record=changes.records.find((r:{lessonId:string})=>r.lessonId===row.id);\n  const oldSection=expected.sections.find((s:{id:string})=>s.id===record.sectionId);\n  assert.equal(oldSection.blocks[record.blockIndex].text,record.before);\n  oldSection.blocks[record.blockIndex].text=record.after;\n  assert.deepEqual(current,expected);assert.equal(sha(current),row.afterSha256);\n  assert.equal(current.contentVersion,1);assert.deepEqual(lessonProgressScope(current),lessonProgressScope(row.before));\n  const p=publicationManifest.find(p=>p.lessonId===row.id)!,old=plan.publications.find((r:{id:string})=>r.id===row.id);\n  assert.deepEqual(p,{...old.before,technicalEvidence:\"docs/py101-p14/TRANSITION_AMENDMENTS.md\"});\n  assert.deepEqual(beforeApprovedPy101Object(\"lessons\",row.id,current,plan.baseline),row.before);\n  const tampered=structuredClone(current);tampered.objectives[0]+=\" 未授权变化\";\n  assert.deepEqual(beforeApprovedPy101Object(\"lessons\",row.id,tampered,plan.baseline),tampered);\n  const changedPub={...p,contentVersion:2};assert.deepEqual(beforeApprovedPy101Object(\"publications\",row.id,changedPub,plan.baseline),changedPub);\n }\n for(const row of plan.sources){\n  const actual=readFileSync(row.path,\"utf8\");assert.equal(beforeApprovedPy101Source(row.path,actual,plan.baseline),row.before);\n  assert.equal(beforeApprovedPy101Source(row.path,actual+\"\\n// unapproved\",plan.baseline),actual+\"\\n// unapproved\");\n }\n});\n\ntest(\"[P0–P14历史契约] P14未新增或移除注册，所有非授权Lesson/Publication完整摘要及第二章映射保留\",()=>{\n const base=read(\"BASELINE\"),plan=read(\"APPROVED_CHANGES\"),inventory=read(\"INVENTORY\");\n assert.deepEqual([...lessonRegistry.keys()].sort(),Object.keys(base.lessons).sort());\n for(const [id,digest]of Object.entries(base.lessons))if(!plan.lessons.some((r:{id:string})=>r.id===id))assert.equal(sha(lessonRegistry.get(id)),digest,id);\n for(const [id,digest]of Object.entries(base.publications))if(!plan.publications.some((r:{id:string})=>r.id===id))assert.equal(sha(publicationManifest.find(p=>p.lessonId===id)),digest,id);\n const chapter=getLearningCourse(\"PY101\")!.chapters.find(c=>c.id===\"PY101-C02\")!;\n const lessons=chapter.lessons.map(e=>lessonRegistry.get(e.lessonId)!);\n assert.equal(inventory.objectiveCount,lessons.reduce((n,l)=>n+l.objectives.length,0));\n for(const l of lessons){\n  const core=l.sections.filter(s=>s.tier===\"core\").flatMap(s=>s.blocks).filter(b=>b.type===\"exercise\");\n  assert.deepEqual(l.assessmentMap,inventory.lessons.find((r:{id:string})=>r.id===l.id).assessmentMap);\n  for(const map of l.assessmentMap){assert.ok(l.objectives[map.objective-1]);for(const id of map.exerciseIds)assert.ok(core.some(e=>e.id===id));}\n }\n assert.equal(inventory.coreExerciseCount,lessons.reduce((n,l)=>n+l.sections.filter(s=>s.tier===\"core\").flatMap(s=>s.blocks).filter(b=>b.type===\"exercise\").length,0));\n});\n\ntest(\"[P0–P14历史契约] P14保持六节顺序/相邻导航/待审状态，第三章及2.7未注册，错误归属不可读\",()=>{\n const course=getLearningCourse(\"PY101\")!,chapter=course.chapters.find(c=>c.id===\"PY101-C02\")!;\n assert.equal(course.status,\"planned\");assert.deepEqual(chapter.lessons.map(l=>l.order),[1,2,3,4,5,6]);\n for(const [i,e]of chapter.lessons.entries()){\n  assert.deepEqual([e.contentVersion,e.status,e.access,e.optionalLesson,e.reviewEvidence],[1,\"pending-review\",\"preview\",false,undefined]);assert.ok(resolveLesson(\"PY101\",e.lessonId));\n  if(i<chapter.lessons.length-1)assert.equal(getAdjacentLessons(course,e.lessonId).next?.lessonId,chapter.lessons[i+1].lessonId);\n }\n assert.equal(getAdjacentLessons(course,chapter.lessons.at(-1)!.lessonId).next?.lessonId,\"PY101-C05-L01\");\n assert.equal(courseOutline.some(e=>e.chapterId===\"PY101-C03\"),false);assert.equal(publicationManifest.some(e=>e.chapterId===\"PY101-C03\"),false);\n assert.equal(resolveLesson(\"PY101\",\"PY101-C02-L07\"),undefined);assert.equal(resolveLesson(\"PY101\",\"PY101-C03-L01\"),undefined);assert.equal(resolveLesson(\"ML201\",chapter.lessons[0].lessonId),undefined);\n});\n\ntest(\"[P0–P14历史契约] P14四课旧完成记录按同一scope重载，其他课及所有旧修订不删除/覆盖\",()=>{\n const plan=read(\"APPROVED_CHANGES\"),memory=new Map<string,string>(),storage={getItem:(k:string)=>memory.get(k)??null,setItem:(k:string,v:string)=>{memory.set(k,v);}},store=createProgressStore(()=>storage);\n for(const lesson of lessonRegistry.values()){\n  const scope=lessonProgressScope(lesson);store.save(scope,100,scope.sectionIds.at(-1)!,true);\n  for(let r=1;r<scope.contentVersion;r++)store.save({...scope,contentVersion:r},100,scope.sectionIds[0],true);\n }\n const before=new Map(memory),reload=createProgressStore(()=>storage);\n for(const row of plan.lessons){const old=lessonProgressScope(row.before),now=lessonProgressScope(lessonRegistry.get(row.id)!);assert.equal(progressKey(old),progressKey(now));const restored=parseReadingProgress(reload.getSnapshot(now),now);assert.equal(restored?.completed,true);assert.equal(restored?.section,old.sectionIds.at(-1));}\n assert.deepEqual(memory,before);\n});\n"
+    },
+    {
+      "path": "tests/py101-editor-rerun.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { readFileSync } from \"node:fs\";\nimport { createHash } from \"node:crypto\";\nimport { pythonEditorRerunLesson as p15CurrentLesson } from \"../src/content/lessons/py101/editor-rerun\";\nimport {historicalLesson} from \"./helpers/py101-p14-view\";\nconst lesson=historicalLesson(p15CurrentLesson);\nimport { lessonRegistry, getLearningCourse, resolveLesson, getAdjacentLessons } from \"./helpers/py101-p14-view\";\nimport { publicationManifest } from \"./helpers/py101-p14-view\";\nimport { beforeApprovedPy101Object, beforeApprovedPy101Source, protectedPy101FileMatches, approvedPy101Additions } from \"../scripts/py101-p1-compatibility\";\nimport { createProgressStore, parseReadingProgress, progressKey } from \"../src/lib/learning-progress\";\nimport { lessonProgressScope } from \"../src/lib/use-learning-progress\";\nimport { editorFiles } from \"../src/content/resources/python-editor\";\nimport { assertRegisteredInventory, assertCourseAvailability } from \"./helpers/registered-content\";\n\ntest(\"[P0–P14历史契约] P2登记只增加1.3，49旧课与发布、历史文件仍通过完整摘要保护\", () => {\n  const base = JSON.parse(readFileSync(\"docs/py101-p2/BASELINE.json\", \"utf8\"));\n  const portablePath = \"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\";\n  const portableText = readFileSync(portablePath, \"utf8\").replaceAll(\"\\r\\n\", \"\\n\");\n  assert.equal(protectedPy101FileMatches(portablePath, Buffer.from(portableText), base.files[portablePath]), true);\n  assert.equal(protectedPy101FileMatches(portablePath, Buffer.from(portableText + \"未授权\"), base.files[portablePath]), false);\n  const sha = (s: string | Buffer) => createHash(\"sha256\").update(s).digest(\"hex\");\n  const laterAdditions = approvedPy101Additions.filter(id => id !== lesson.id && !(id in base.lessons));\n  assert.deepEqual([...lessonRegistry.keys()].sort(), [...Object.keys(base.lessons), lesson.id, ...laterAdditions].sort());\n  assert.deepEqual(publicationManifest.map(p => p.lessonId).sort(), [...Object.keys(base.publications), lesson.id, ...laterAdditions].sort());\n  for (const [id, hash] of Object.entries(base.lessons)) assert.equal(sha(JSON.stringify(beforeApprovedPy101Object(\"lessons\", id, lessonRegistry.get(id)))), hash, id);\n  for (const [id, hash] of Object.entries(base.publications)) assert.equal(sha(JSON.stringify(beforeApprovedPy101Object(\"publications\", id, publicationManifest.find(p => p.lessonId === id)))), hash, id);\n  for (const [path, hash] of Object.entries(base.files)) assert.ok(protectedPy101FileMatches(path, readFileSync(path), hash as string), path);\n  assertRegisteredInventory(); assertCourseAvailability(\"PY101\");\n});\n\ntest(\"[P0–P14历史契约] 1.1只改最终状态段，目标、考核与r1进度范围严格相同；额外修改不被撤销\", () => {\n  const old = JSON.parse(readFileSync(\"docs/py101-p2/BASELINE_LESSONS.json\", \"utf8\")).lesson;\n  const now = lessonRegistry.get(old.id)!;\n  const expected = structuredClone(old); const lastSection = expected.sections.at(-1); lastSection.blocks[lastSection.blocks.length - 1] = now.sections.at(-1)!.blocks.at(-1);\n  assert.deepEqual(now, expected); assert.equal(now.contentVersion, 1);\n  assert.deepEqual(lessonProgressScope(now), lessonProgressScope(old));\n  const extra = { ...now, title: now.title + \"未授权\" };\n  assert.deepEqual(beforeApprovedPy101Object(\"lessons\", old.id, extra), extra);\n  for (const path of [\"src/content/lessons/py101/first-run.ts\", \"src/lib/course-engine.ts\"]) {\n    const changed = readFileSync(path, \"utf8\") + \"\\n// undeclared\";\n    assert.equal(beforeApprovedPy101Source(path, changed), changed);\n  }\n  const base = JSON.parse(readFileSync(\"docs/py101-p2/BASELINE.json\", \"utf8\"));\n  for (const path of [\"next-env.d.ts\", \"scripts/ai000-r3-compatibility.ts\", \"src/components/lesson/reader.tsx\", \"tests/reading-experience.test.ts\"]) assert.equal(protectedPy101FileMatches(path, Buffer.concat([readFileSync(path), Buffer.from(\"\\n// undeclared\")]), base.files[path]), false, path);\n});\n\ntest(\"[P0–P14历史契约] 1.2接1.3，未制作课无正文与路由；错误归属不可读\", () => {\n  const course = getLearningCourse(\"PY101\")!;\n  assert.equal(course.status, \"planned\"); assert.equal(lesson.contentVersion, 1);\n  assert.equal(getAdjacentLessons(course, \"PY101-C01-L02\").next?.lessonId, lesson.id);\n  assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, \"PY101-C01-L02\");\n  for (const slot of course.chapters[0].lessons.filter(slot => slot.status === \"planned\")) { assert.equal(slot.href, undefined); assert.equal(lessonRegistry.has(slot.lessonId), false); assert.equal(resolveLesson(\"PY101\", slot.lessonId), undefined); }\n  assert.equal(resolveLesson(\"ML201\", lesson.id), undefined);\n});\n\ntest(\"[P0–P14历史契约] 1.3恢复自己的r1进度，保存不覆盖旧课、第五章r1/r2\", () => {\n  const values = new Map<string, string>();\n  const port = { getItem: (key: string) => values.get(key) ?? null, setItem: (key: string, value: string) => { values.set(key, value); } };\n  const store = createProgressStore(() => port);\n  for (const id of [\"PY101-C01-L01\", \"PY101-C01-L02\", \"PY101-C05-L01\"]) {\n    const scope = lessonProgressScope(lessonRegistry.get(id)!); store.save(scope, 100, scope.sectionIds.at(-1)!, true);\n    if (id === \"PY101-C05-L01\") store.save({ ...scope, contentVersion: 1 }, 100, scope.sectionIds[0], true);\n  }\n  const previous = new Map(values), scope = lessonProgressScope(lesson);\n  assert.equal(store.getSnapshot(scope), null);\n  assert.equal(progressKey(scope), \"aivora:learning:v2:PY101:PY101-C01-L03:r1\");\n  store.save(scope, 57, \"select-interpreter\");\n  assert.equal(parseReadingProgress(createProgressStore(() => port).getSnapshot(scope), scope)?.section, \"select-interpreter\");\n  for (const [key, value] of previous) assert.equal(values.get(key), value);\n});\n\ntest(\"[P0–P14历史契约] 目标映射实际开放练习，提示保留最终判断；所有Python块只含print与字符串\", () => {\n  const blocks = lesson.sections.flatMap(s => s.blocks), tasks = blocks.filter(b => b.type === \"exercise\");\n  assert.equal(tasks.length, 2);\n  assert.deepEqual(lesson.assessmentMap.map(m => m.objective), [1, 2, 3]);\n  for (const task of tasks) { assert.equal(task.hints.length, 2); assert.ok(task.solution.length >= 4); assert.ok(task.rubric.length >= 3); assert.doesNotMatch(task.hints[1], /python(?:3)?\\s|\\.\\.[\\\\/]|Ready B2|Saved copy/); }\n  for (const block of blocks) if (block.type === \"code\" && block.language === \"python\") { assert.ok(Object.values(editorFiles).some(source => source === block.code)); assert.match(block.code, /^(print\\(\"[^\\n]*\"\\)\\n)+$/); }\n  assert.match(tasks[1].prompt, /均已保存/); assert.match(tasks[1].prompt, /同一已验证解释器/);\n  const text = JSON.stringify(lesson);\n  assert.match(text, /独立外部终端/); assert.match(text, /某些运行命令会先自动保存/);\n  assert.doesNotMatch(text, /python -m venv|pip install|debugpy|git init/);\n});\n"
+    },
+    {
+      "path": "tests/py101-environment-reproduction.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { createHash } from \"node:crypto\";\nimport { readFileSync } from \"node:fs\";\nimport { pythonEnvironmentReproductionLesson as p15CurrentLesson } from \"../src/content/lessons/py101/environment-reproduction\";\nimport {historicalLesson} from \"./helpers/py101-p14-view\";\nconst lesson=historicalLesson(p15CurrentLesson);\nimport { lessonRegistry, getLearningCourse, getAdjacentLessons, resolveLesson } from \"./helpers/py101-p14-view\";\nimport { publicationManifest } from \"./helpers/py101-p14-view\";\nimport { isReadable } from \"../src/content/models\";\nimport { reproductionCode, reproductionCommands, reproductionBlockNames, reproductionNotebook } from \"../src/content/resources/python-reproduction\";\nimport { notebookDownload } from \"../src/content/resources/python-notebook\";\nimport { environmentProbe } from \"../src/content/resources/python-venv\";\nimport { beforeApprovedPy101Object, protectedPy101FileMatches, approvedPy101Additions } from \"../scripts/py101-p1-compatibility\";\nimport { createProgressStore, parseReadingProgress, progressKey } from \"../src/lib/learning-progress\";\nimport { lessonProgressScope } from \"../src/lib/use-learning-progress\";\nimport { assertRegisteredInventory, assertCourseAvailability } from \"./helpers/registered-content\";\nconst read = (name: string) => JSON.parse(readFileSync(`docs/py101-p5/${name}.json`, \"utf8\"));\n\ntest(\"[P0–P14历史契约] P5保护真实基线的全部旧文件/教材，1.5只改最后过渡段且保留r1范围\", () => {\n  const base = read(\"BASELINE\"), sha = (v: unknown) => createHash(\"sha256\").update(JSON.stringify(v)).digest(\"hex\");\n  const later = approvedPy101Additions.filter(id => id !== lesson.id && !(id in base.lessons));\n  assert.deepEqual([...lessonRegistry.keys()].sort(), [...Object.keys(base.lessons), lesson.id, ...later].sort());\n  for (const kind of [\"lessons\", \"publications\"] as const) for (const [id, hash] of Object.entries(base[kind])) {\n    const value = kind === \"lessons\" ? lessonRegistry.get(id) : publicationManifest.find(p => p.lessonId === id);\n    assert.equal(sha(beforeApprovedPy101Object(kind, id, value, base.head)), hash, id);\n  }\n  for (const [path, file] of Object.entries(base.files as Record<string, { sha256: string }>)) assert.ok(protectedPy101FileMatches(path, readFileSync(path), file.sha256, base.head), path);\n  // 先精确撤销后续批准修订，仍核对P5当时仅改末段的历史事实。\n  const current = beforeApprovedPy101Object(\"lessons\", \"PY101-C01-L05\", lessonRegistry.get(\"PY101-C01-L05\"), JSON.parse(readFileSync(\"docs/py101-p6/BASELINE.json\", \"utf8\")).head) as typeof lesson, expected = structuredClone(base.amendmentBefore);\n  expected.sections.at(-1).blocks[expected.sections.at(-1).blocks.length - 1] = current.sections.at(-1)!.blocks.at(-1);\n  assert.deepEqual(current, expected); assert.equal(current.contentVersion, 1); assert.deepEqual(lessonProgressScope(current), lessonProgressScope(base.amendmentBefore));\n  assert.equal(protectedPy101FileMatches(\"src/lib/course-engine.ts\", Buffer.concat([readFileSync(\"src/lib/course-engine.ts\"), Buffer.from(\"\\n// unauthorized\")]), base.files[\"src/lib/course-engine.ts\"].sha256, base.head), false);\n  assertRegisteredInventory(); assertCourseAvailability(\"PY101\");\n});\n\ntest(\"[P0–P14历史契约] 1.6注册r1和草稿门禁，首章六槽顺序与相邻导航，整课筹备且错误归属不可读\", () => {\n  const entry = publicationManifest.find(p => p.lessonId === lesson.id)!;\n  assert.deepEqual([entry.title, entry.order, entry.contentVersion], [lesson.title, 6, 1]);\n  assert.equal(isReadable({ ...entry, status: \"draft\", access: \"private\", technicalEvidence: undefined }), false);\n  const gate = read(\"DRAFT_GATE\"); assert.deepEqual([gate.status, gate.access, gate.readable], [\"draft\", \"private\", false]);\n  const course = getLearningCourse(\"PY101\")!; assert.equal(course.status, \"planned\"); assert.equal(course.chapters.length, 10);\n  assert.deepEqual(course.chapters[0].lessons.map(s => [s.lessonId, s.order]), Array.from({length: 6}, (_, i) => [`PY101-C01-L0${i+1}`, i+1]));\n  if (entry.status === \"draft\") { assert.equal(entry.access, \"private\"); assert.equal(resolveLesson(\"PY101\", lesson.id), undefined); }\n  else { assert.equal(entry.status, \"pending-review\"); assert.equal(entry.access, \"preview\"); const historical = beforeApprovedPy101Object(\"publications\", lesson.id, entry) as typeof entry; assert.ok(historical.technicalEvidence?.startsWith(\"docs/py101-p5/\")); assert.equal(entry.reviewEvidence, undefined); assert.equal(getAdjacentLessons(course, \"PY101-C01-L05\").next?.lessonId, lesson.id); assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, \"PY101-C01-L05\"); const readable = course.chapters.flatMap(c => c.lessons).filter(s => s.href); assert.equal(getAdjacentLessons(course, lesson.id).next?.lessonId, readable[readable.findIndex(s => s.lessonId === lesson.id) + 1]?.lessonId); }\n  assert.equal(resolveLesson(\"ML201\", lesson.id), undefined);\n  // 阅读顺序由order决定；发布清单按修订接入顺序存放，新增可读课时后仍应验证目录顺序。\n  assert.deepEqual(course.chapters[1].lessons.filter(s => s.href).map(s => s.lessonId), publicationManifest.filter(p => p.chapterId === \"PY101-C02\" && isReadable(p)).sort((a,b) => a.order - b.order).map(p => p.lessonId));\n});\n\ntest(\"[P0–P14历史契约] 三目标映射两项真实任务，提示分层且不泄露目标命令，保留答案与rubric\", () => {\n  const tasks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === \"exercise\");\n  assert.deepEqual(tasks.map(t => t.id), [\"reproduce-script-issue\", \"recover-notebook-record\"]);\n  assert.deepEqual(lesson.assessmentMap, [{ objective: 1, exerciseIds: [tasks[0].id] }, { objective: 2, exerciseIds: tasks.map(t => t.id) }, { objective: 3, exerciseIds: tasks.map(t => t.id) }]);\n  for (const task of tasks) { assert.equal(task.hints.length, 2); assert.ok(task.solution.length >= 4); assert.ok(task.rubric.length >= 3); assert.doesNotMatch(task.hints.join(\"\"), /Scripts\\\\python|bin\\/python|Checked F3|先运行.*赋值.*再运行.*显示/); }\n  assert.equal(lesson.learningTime.basis, \"editorial-estimate\");\n});\n\ntest(\"[P0–P14历史契约] Python核心只复用已教源码，观察工具同源；主例仅修脚本参数\", () => {\n  const blocks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === \"code\");\n  assert.deepEqual(blocks.filter(b => b.language === \"python\").map(b => [b.filename, b.code]).sort(), (Object.keys(reproductionCode) as (keyof typeof reproductionCode)[]).map(k => [reproductionBlockNames[k], reproductionCode[k]]).sort());\n  assert.equal(reproductionCode.environmentProbe, environmentProbe);\n  for (const key of [\"notice\", \"target\", \"assign\", \"show\"] as const) assert.doesNotMatch(reproductionCode[key], /\\b(import|def|for|while|try|except|if|open)\\b/);\n  for (const platform of [\"windows\", \"mac\"] as const) assert.equal(reproductionCommands.goodPath[platform].replace(platform === \"windows\" ? \".\\\\scripts\\\\notice.py\" : \"scripts/notice.py\", platform === \"windows\" ? \".\\\\notice.py\" : \"notice.py\"), reproductionCommands.badPath[platform]);\n});\n\ntest(\"[P0–P14历史契约] P5下载与单元格同源且无运行状态/机器路径，旧下载由基线保护\", () => {\n  const actual = JSON.parse(readFileSync(\"public/downloads/review-note.ipynb\", \"utf8\"));\n  assert.deepEqual(actual, notebookDownload(reproductionNotebook)); assert.equal(actual.nbformat, 4); assert.equal(actual.nbformat_minor, 5);\n  for (const cell of actual.cells) if (cell.cell_type === \"code\") { assert.equal(cell.execution_count, null); assert.deepEqual(cell.outputs, []); }\n  assert.doesNotMatch(JSON.stringify(actual), /C:\\\\\\\\Users|token=|kernel-[a-f0-9]+\\.json|aivora-p5-/);\n  assert.ok(lesson.resources.some(r => r.href === \"/downloads/review-note.ipynb\"));\n});\n\ntest(\"[P0–P14历史契约] 真实Shell和Jupyter证据包含已知故障、恢复、新会话、同源代码与安全结束\", () => {\n  const cli = read(\"CLI_RESULTS\"), kernel = read(\"NOTEBOOK_RESULTS\");\n  assert.equal(cli.allAssertionsPassed, true); assert.equal(new Set(cli.rows.map((r: {shellPid: number}) => r.shellPid)).size, cli.rows.length);\n  for (const session of [\"initial\", \"new-shell-replay\"]) {\n    const row = (suffix: string) => cli.rows.find((r: {label: string}) => r.label === `${session}:${suffix}`);\n    assert.notEqual(row(\"wrong-script-argument\").exitCode, 0); assert.match(row(\"wrong-script-argument\").stderr, /can't open file/);\n    assert.equal(row(\"correct-script-argument\").stdout.trim(), \"Notice N8\"); assert.equal(row(\"correct-script-argument\").exitCode, 0);\n    assert.equal(row(\"wrong-script-argument\").command, reproductionCommands.badPath.windows);\n    for (const phase of [\"wrong\", \"right\"]) { assert.equal(row(`${phase}-environment-program`).stdout.trim(), \"Target R9\"); assert.equal(row(`${phase}-environment-program`).exitCode, 0); assert.match(row(`${phase}-environment-diagnostic`).stdout, phase === \"wrong\" ? /other\\\\.venv/ : /target\\\\.venv/); }\n  }\n  assert.equal(kernel.kernelShutdown, true);\n  const failure = kernel.steps.find((s: {label?: string}) => s.label === \"first-display-real-error\");\n  assert.equal(failure.source, reproductionCode.show); assert.equal(failure.outputs[0].ename, \"NameError\"); assert.ok(failure.outputs[0].traceback.length > 1);\n  assert.equal(kernel.savedNotebook.cells[2].outputs[0].text, \"Checked F3\\n\"); assert.equal(kernel.savedNotebook.cells[1].source, reproductionCode.assign);\n  assert.ok(kernel.steps.some((s: {operation?: string}) => s.operation === \"reopen-saved-file\"));\n  assert.doesNotMatch(JSON.stringify([cli,kernel]), /C:\\\\\\\\Users\\\\\\\\QYF|token=|aivora-p5-[a-f0-9]/);\n});\n\ntest(\"[P0–P14历史契约] 1.6新r1进度重载且不写旧五课、第五章修订与其他课程记录\", () => {\n  const memory = new Map<string,string>(), storage = { getItem: (k: string) => memory.get(k) ?? null, setItem: (k: string,v: string) => {memory.set(k,v);} };\n  const store = createProgressStore(() => storage);\n  for (const id of [\"PY101-C01-L01\", \"PY101-C01-L02\", \"PY101-C01-L03\", \"PY101-C01-L04\", \"PY101-C01-L05\", \"PY101-C05-L01\", \"ML201-C04-L01\"]) { const scope = lessonProgressScope(lessonRegistry.get(id)!); store.save(scope,100,scope.sectionIds[0],true); if (scope.contentVersion > 1) store.save({...scope,contentVersion:1},100,scope.sectionIds[0],true); }\n  const old = new Map(memory), scope = lessonProgressScope(lesson); assert.equal(progressKey(scope), \"aivora:learning:v2:PY101:PY101-C01-L06:r1\"); assert.equal(store.getSnapshot(scope), null);\n  store.save(scope,46,\"minimal-record\"); assert.equal(parseReadingProgress(createProgressStore(() => storage).getSnapshot(scope),scope)?.section,\"minimal-record\");\n  for (const [k,v] of old) assert.equal(memory.get(k),v);\n});\n"
+    },
+    {
+      "path": "tests/py101-notebook-cell-order.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { readFileSync } from \"node:fs\";\nimport { createHash } from \"node:crypto\";\nimport { pythonNotebookCellOrderLesson as p15CurrentLesson } from \"../src/content/lessons/py101/notebook-cell-order\";\nimport {historicalLesson} from \"./helpers/py101-p14-view\";\nconst lesson=historicalLesson(p15CurrentLesson);\nimport { lessonRegistry, resolveLesson, getLearningCourse, getAdjacentLessons } from \"./helpers/py101-p14-view\";\nimport { publicationManifest } from \"./helpers/py101-p14-view\";\nimport { isReadable } from \"../src/content/models\";\nimport { notebookCode, notebookBlockNames, notebookCommands, notebookDocuments, notebookDownload } from \"../src/content/resources/python-notebook\";\nimport { beforeApprovedPy101Object, protectedPy101FileMatches, approvedPy101Additions } from \"../scripts/py101-p1-compatibility\";\nimport { createProgressStore, progressKey, parseReadingProgress } from \"../src/lib/learning-progress\";\nimport { lessonProgressScope } from \"../src/lib/use-learning-progress\";\nimport { assertRegisteredInventory, assertCourseAvailability } from \"./helpers/registered-content\";\n\ntest(\"[P0–P14历史契约] P4按真实基线保护旧教材/文件，1.4只勘误最后状态段，拒绝附加改动\", () => {\n  const base = JSON.parse(readFileSync(\"docs/py101-p4/BASELINE.json\", \"utf8\"));\n  const sha = (v: unknown) => createHash(\"sha256\").update(JSON.stringify(v)).digest(\"hex\");\n  const later = approvedPy101Additions.filter(id => id !== lesson.id && !(id in base.lessons));\n  assert.deepEqual([...lessonRegistry.keys()].sort(), [...Object.keys(base.lessons), lesson.id, ...later].sort());\n  for (const kind of [\"lessons\", \"publications\"] as const) for (const [id, hash] of Object.entries(base[kind])) {\n    const current = kind === \"lessons\" ? lessonRegistry.get(id) : publicationManifest.find(p => p.lessonId === id);\n    assert.equal(sha(beforeApprovedPy101Object(kind, id, current, base.head)), hash, id);\n  }\n  for (const [path, file] of Object.entries(base.files as Record<string, { sha256: string }>)) assert.ok(protectedPy101FileMatches(path, readFileSync(path), file.sha256, base.head), path);\n  const current = lessonRegistry.get(\"PY101-C01-L04\")!, expected = structuredClone(base.amendmentBefore);\n  expected.sections.at(-1).blocks[expected.sections.at(-1).blocks.length - 1] = current.sections.at(-1)!.blocks.at(-1);\n  assert.deepEqual(current, expected); assert.equal(current.contentVersion, 1);\n  assert.deepEqual(lessonProgressScope(current), lessonProgressScope(base.amendmentBefore));\n  assert.equal(protectedPy101FileMatches(\"src/lib/course-engine.ts\", Buffer.concat([readFileSync(\"src/lib/course-engine.ts\"), Buffer.from(\"\\n// unauthorized\")]), base.files[\"src/lib/course-engine.ts\"].sha256, base.head), false);\n  assertRegisteredInventory(); assertCourseAvailability(\"PY101\");\n});\n\ntest(\"[P0–P14历史契约] 新课r1身份与草稿门禁一致，接1.4，未制作与错误归属不可读\", () => {\n  const entry = publicationManifest.find(p => p.lessonId === lesson.id)!;\n  assert.equal(entry.title, lesson.title); assert.equal(entry.order, 5); assert.equal(entry.contentVersion, 1);\n  assert.equal(entry.optionalLesson, false); assert.equal(lesson.optionalLesson, false);\n  assert.equal(isReadable({ ...entry, status: \"draft\", access: \"private\", technicalEvidence: undefined }), false);\n  const course = getLearningCourse(\"PY101\")!; assert.equal(course.status, \"planned\");\n  if (entry.status === \"draft\") { assert.equal(entry.access, \"private\"); assert.equal(resolveLesson(\"PY101\", lesson.id), undefined); }\n  else { assert.equal(entry.status, \"pending-review\"); assert.equal(entry.access, \"preview\"); const historical = beforeApprovedPy101Object(\"publications\", lesson.id, entry) as typeof entry; assert.ok(historical.technicalEvidence?.startsWith(\"docs/py101-p4/\")); assert.equal(entry.reviewEvidence, undefined); assert.ok(resolveLesson(\"PY101\", lesson.id)); assert.equal(getAdjacentLessons(course, \"PY101-C01-L04\").next?.lessonId, lesson.id); assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, \"PY101-C01-L04\"); }\n  assert.equal(resolveLesson(\"ML201\", lesson.id), undefined);\n  for (const planned of course.chapters[0].lessons.filter(s => !lessonRegistry.has(s.lessonId))) {\n    assert.equal(planned.status, \"planned\"); assert.equal(planned.href, undefined); assert.equal(resolveLesson(\"PY101\", planned.lessonId), undefined);\n  }\n});\n\ntest(\"[P0–P14历史契约] 三目标由真实Notebook两题覆盖，提示不泄露完整顺序，答案要求干净复跑\", () => {\n  const tasks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === \"exercise\");\n  assert.deepEqual(tasks.map(t => t.id), [\"create-own-notebook\", \"recover-cell-order\"]);\n  assert.deepEqual(lesson.assessmentMap, [{ objective: 1, exerciseIds: [tasks[0].id] }, { objective: 2, exerciseIds: [tasks[1].id] }, { objective: 3, exerciseIds: tasks.map(t => t.id) }]);\n  for (const task of tasks) { assert.equal(task.hints.length, 2); assert.ok(task.solution.length >= 4); assert.ok(task.rubric.length >= 3); assert.doesNotMatch(task.hints.join(\"\"), /Packed C7|Ready B|先运行.*赋值.*再运行.*print/); }\n  assert.match(tasks[0].prompt, /自己新建/); assert.match(tasks[0].prompt, /不同/); assert.match(tasks[1].prompt, /真实错误/); assert.match(tasks[1].prompt, /暂不执行/); assert.match(tasks[1].prompt, /明确重启/);\n});\n\ntest(\"[P0–P14历史契约] 网页每个Python格均有明确同源身份；分平台安装命令不改全局安全配置\", () => {\n  const blocks = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === \"code\");\n  assert.deepEqual(blocks.filter(b => b.language === \"python\").map(b => [b.filename, b.code]).sort(), (Object.keys(notebookCode) as (keyof typeof notebookCode)[]).map(k => [notebookBlockNames[k], notebookCode[k]]).sort());\n  for (const pair of Object.values(notebookCommands)) for (const command of Object.values(pair)) assert.ok(blocks.some(b => b.code === command));\n  const text = JSON.stringify(lesson);\n  assert.doesNotMatch(text, /--ip[= ]0\\.0\\.0\\.0|token=''|Set-ExecutionPolicy|--trusted-host|ipykernel install --user|pip install (numpy|pandas|conda|uv)/);\n  assert.match(text, /只关闭网页不代表/); assert.match(text, /保存也只是写文件/); assert.match(text, /NameError/);\n});\n\ntest(\"[P0–P14历史契约] Notebook下载是有效4.5结构、源码同源、空输出无机器信息；旧资源另受摘要保护\", () => {\n  for (const document of notebookDocuments) {\n    const actual = JSON.parse(readFileSync(`public/downloads/${document.filename}.ipynb`, \"utf8\"));\n    assert.deepEqual(actual, notebookDownload(document));\n    assert.equal(actual.nbformat, 4); assert.equal(actual.nbformat_minor, 5);\n    assert.equal(new Set(actual.cells.map((c: { id: string }) => c.id)).size, actual.cells.length);\n    for (const c of actual.cells) if (c.cell_type === \"code\") { assert.equal(c.execution_count, null); assert.deepEqual(c.outputs, []); }\n    assert.doesNotMatch(JSON.stringify(actual), /C:\\\\\\\\Users|aivora-p4-notebook-|token=|kernel-[a-f0-9]+\\.json/);\n    assert.equal(\"version\" in actual.metadata.language_info, false);\n    assert.ok(lesson.resources.some(r => r.href === `/downloads/${document.filename}.ipynb` && r.format === \"Notebook\"));\n  }\n});\n\ntest(\"[P0–P14历史契约] 新1.5r1进度重载恢复，旧四课/第五章/其他课程和r1/r2保留\", () => {\n  const memory = new Map<string, string>(), storage = { getItem: (k: string) => memory.get(k) ?? null, setItem: (k: string, v: string) => { memory.set(k,v); } };\n  const store = createProgressStore(() => storage);\n  for (const id of [\"PY101-C01-L01\", \"PY101-C01-L02\", \"PY101-C01-L03\", \"PY101-C01-L04\", \"PY101-C05-L01\", \"ML201-C04-L01\"]) { const scope = lessonProgressScope(lessonRegistry.get(id)!); store.save(scope,100,scope.sectionIds[0],true); if (scope.contentVersion > 1) store.save({...scope,contentVersion:1},100,scope.sectionIds[0],true); }\n  const old = new Map(memory), scope = lessonProgressScope(lesson);\n  assert.equal(progressKey(scope), \"aivora:learning:v2:PY101:PY101-C01-L05:r1\"); assert.equal(store.getSnapshot(scope), null);\n  store.save(scope,48,\"stale-state\"); assert.equal(parseReadingProgress(createProgressStore(() => storage).getSnapshot(scope),scope)?.section,\"stale-state\");\n  for (const [k,v] of old) assert.equal(memory.get(k),v);\n});\n"
+    },
+    {
+      "path": "tests/py101-project-environments.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { createHash } from \"node:crypto\";\nimport { readFileSync } from \"node:fs\";\nimport { pythonProjectEnvironmentsLesson as p15CurrentLesson } from \"../src/content/lessons/py101/project-environments\";\nimport {historicalLesson} from \"./helpers/py101-p14-view\";\nconst lesson=historicalLesson(p15CurrentLesson);\nimport { lessonRegistry, getLearningCourse, getAdjacentLessons, resolveLesson } from \"./helpers/py101-p14-view\";\nimport { publicationManifest } from \"./helpers/py101-p14-view\";\nimport { isReadable } from \"../src/content/models\";\nimport { beforeApprovedPy101Object, protectedPy101FileMatches, approvedPy101Additions } from \"../scripts/py101-p1-compatibility\";\nimport { assertRegisteredInventory, assertCourseAvailability } from \"./helpers/registered-content\";\nimport { environmentProbe, venvCommands } from \"../src/content/resources/python-venv\";\nimport { createProgressStore, parseReadingProgress, progressKey } from \"../src/lib/learning-progress\";\nimport { lessonProgressScope } from \"../src/lib/use-learning-progress\";\n\ntest(\"[P0–P14历史契约] P3只接入指定新课，按本轮实际基线保护所有旧课、发布与文件\", () => {\n  const base = JSON.parse(readFileSync(\"docs/py101-p3/BASELINE.json\", \"utf8\"));\n  const sha = (value: unknown) => createHash(\"sha256\").update(JSON.stringify(value)).digest(\"hex\");\n  const later = approvedPy101Additions.filter(id => id !== lesson.id && !(id in base.lessons));\n  assert.deepEqual([...lessonRegistry.keys()].sort(), [...Object.keys(base.lessons), lesson.id, ...later].sort());\n  assert.deepEqual(publicationManifest.map(p => p.lessonId).sort(), [...Object.keys(base.publications), lesson.id, ...later].sort());\n  for (const [id, hash] of Object.entries(base.lessons)) assert.equal(sha(beforeApprovedPy101Object(\"lessons\", id, lessonRegistry.get(id), base.head)), hash, id);\n  for (const [id, hash] of Object.entries(base.publications)) assert.equal(sha(beforeApprovedPy101Object(\"publications\", id, publicationManifest.find(p => p.lessonId === id), base.head)), hash, id);\n  for (const [path, file] of Object.entries(base.files as Record<string, { sha256: string }>)) assert.ok(protectedPy101FileMatches(path, readFileSync(path), file.sha256, base.head), path);\n  assertRegisteredInventory(); assertCourseAvailability(\"PY101\");\n});\n\ntest(\"[P0–P14历史契约] 1.3仅状态过渡勘误，核心/锚点/r1范围不动，额外历史变化仍拒绝\", () => {\n  const base = JSON.parse(readFileSync(\"docs/py101-p3/BASELINE.json\", \"utf8\"));\n  const current = lessonRegistry.get(\"PY101-C01-L03\")!;\n  const expected = structuredClone(base.amendmentBefore), last = expected.sections.at(-1);\n  last.blocks[last.blocks.length - 1] = current.sections.at(-1)!.blocks.at(-1);\n  assert.deepEqual(current, expected); assert.equal(current.contentVersion, 1);\n  assert.deepEqual(lessonProgressScope(current), lessonProgressScope(base.amendmentBefore));\n  const changed = { ...current, objectives: [\"未授权目标\", ...current.objectives.slice(1)] };\n  assert.deepEqual(beforeApprovedPy101Object(\"lessons\", current.id, changed, base.head), changed);\n  for (const path of [\".gitignore\", \"src/lib/course-engine.ts\", \"src/content/lessons/py101/editor-rerun.ts\"]) assert.equal(protectedPy101FileMatches(path, Buffer.concat([readFileSync(path), Buffer.from(\"\\n# unauthorized\")]), base.files[path].sha256, base.head), false, path);\n});\n\ntest(\"[P0–P14历史契约] 1.4发布身份一致，私有草稿不能读，试读接1.3，未制作课继续不可读\", () => {\n  const base = JSON.parse(readFileSync(\"docs/py101-p3/BASELINE.json\", \"utf8\"));\n  const entry = beforeApprovedPy101Object(\"publications\", lesson.id, publicationManifest.find(p => p.lessonId === lesson.id)!, base.head) as (typeof publicationManifest)[number];\n  assert.equal(entry.title, lesson.title); assert.equal(entry.contentVersion, 1); assert.equal(entry.order, 4); assert.equal(entry.optionalLesson, false);\n  assert.equal(isReadable({ ...entry, status: \"draft\", access: \"private\", technicalEvidence: undefined }), false);\n  assert.equal(resolveLesson(\"ML201\", lesson.id), undefined);\n  const course = getLearningCourse(\"PY101\")!; assert.equal(course.status, \"planned\");\n  if (entry.status === \"draft\") { assert.equal(entry.access, \"private\"); assert.equal(resolveLesson(\"PY101\", lesson.id), undefined); }\n  else { assert.equal(entry.status, \"pending-review\"); assert.equal(entry.access, \"preview\"); assert.ok(entry.technicalEvidence?.startsWith(\"docs/py101-p3/\")); assert.equal(entry.reviewEvidence, undefined); assert.equal(getAdjacentLessons(course, \"PY101-C01-L03\").next?.lessonId, lesson.id); assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, \"PY101-C01-L03\"); }\n  for (const slot of course.chapters[0].lessons.filter(slot => slot.status === \"planned\")) { assert.equal(slot.href, undefined); assert.equal(lessonRegistry.has(slot.lessonId), false); assert.equal(resolveLesson(\"PY101\", slot.lessonId), undefined); }\n});\n\ntest(\"[P0–P14历史契约] 三目标由两个真实任务映射；诊断现成提供，提示二保留学生定位与执行\", () => {\n  const blocks = lesson.sections.flatMap(s => s.blocks), tasks = blocks.filter(b => b.type === \"exercise\");\n  assert.deepEqual(tasks.map(t => t.id), [\"create-project-envs\", \"repair-wrong-env\"]);\n  assert.deepEqual(lesson.assessmentMap, [{ objective: 1, exerciseIds: [tasks[0].id] }, { objective: 2, exerciseIds: [tasks[0].id] }, { objective: 3, exerciseIds: [tasks[1].id] }]);\n  for (const task of tasks) { assert.equal(task.hints.length, 2); assert.ok(task.solution.length >= 4); assert.ok(task.rubric.length >= 3); assert.doesNotMatch(task.hints[1], /python(?:3)?\\s|\\.\\.\\/[a-z]|Scripts\\\\python|bin\\/python|Report R8/); }\n  assert.match(tasks[0].prompt, /不复用正文/); assert.match(tasks[1].prompt, /均已保存/); assert.match(tasks[1].prompt, /脚本路径正确/); assert.match(tasks[1].prompt, /同一基础版本/);\n  assert.ok(blocks.some(b => b.type === \"code\" && b.language === \"python\" && b.code === environmentProbe));\n  assert.match(environmentProbe, /sys\\.executable/); assert.match(environmentProbe, /sys\\.prefix/); assert.match(environmentProbe, /sys\\.base_prefix/);\n});\n\ntest(\"[P0–P14历史契约] 分平台命令保持引号/反斜杠；核心不依赖包安装、激活或安全设置修改\", () => {\n  const codes = lesson.sections.flatMap(s => s.blocks).filter(b => b.type === \"code\").map(b => b.code);\n  for (const pair of Object.values(venvCommands)) { assert.ok(codes.includes(pair.windows)); assert.ok(codes.includes(pair.mac)); }\n  assert.equal(venvCommands.run.windows, '& \".\\\\.venv\\\\Scripts\\\\python.exe\" .\\\\main.py');\n  assert.equal(venvCommands.run.mac, './.venv/bin/python main.py');\n  const text = JSON.stringify(lesson);\n  assert.match(text, /若PowerShell提示策略阻止/); assert.match(text, /立即使用上一段直接调用/);\n  assert.doesNotMatch(text, /Set-ExecutionPolicy|ExecutionPolicy Bypass|--clear|pip install|requirements\\.txt|conda create|uv venv|jupyter notebook/);\n  assert.ok(readFileSync(\".gitignore\", \"utf8\").split(/\\r?\\n/).includes(\".venv/\"));\n});\n\ntest(\"[P0–P14历史契约] 新1.4r1进度独立，重载可恢复，不覆盖1.1–1.3、第五章和旧修订\", () => {\n  const memory = new Map<string, string>();\n  const port = { getItem: (key: string) => memory.get(key) ?? null, setItem: (key: string, value: string) => { memory.set(key, value); } };\n  const store = createProgressStore(() => port);\n  for (const id of [\"PY101-C01-L01\", \"PY101-C01-L02\", \"PY101-C01-L03\", \"PY101-C05-L01\", \"ML201-C04-L01\"]) { const scope = lessonProgressScope(lessonRegistry.get(id)!); store.save(scope, 100, scope.sectionIds[0], true); if (scope.contentVersion > 1) store.save({ ...scope, contentVersion: 1 }, 100, scope.sectionIds[0], true); }\n  const old = new Map(memory), scope = lessonProgressScope(lesson);\n  assert.equal(progressKey(scope), \"aivora:learning:v2:PY101:PY101-C01-L04:r1\"); assert.equal(store.getSnapshot(scope), null);\n  store.save(scope, 63, \"observe-env\");\n  assert.equal(parseReadingProgress(createProgressStore(() => port).getSnapshot(scope), scope)?.section, \"observe-env\");\n  for (const [key, value] of old) assert.equal(memory.get(key), value);\n});\n"
+    },
+    {
+      "path": "tests/py101-script-paths.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { readFileSync } from \"node:fs\";\nimport { createHash } from \"node:crypto\";\nimport { getAdjacentLessons, getLearningCourse, lessonRegistry, resolveLesson } from \"./helpers/py101-p14-view\";\nimport { publicationManifest } from \"./helpers/py101-p14-view\";\nimport { pythonScriptPathsLesson as p15CurrentLesson } from \"../src/content/lessons/py101/script-paths\";\nimport {historicalLesson} from \"./helpers/py101-p14-view\";\nconst lesson=historicalLesson(p15CurrentLesson);\nimport { pathFiles, pathCommands } from \"../src/content/resources/python-paths\";\nimport { beforePy101P1Source, beforeApprovedPy101Object, approvedPy101Additions, protectedPy101FileMatches } from \"../scripts/py101-p1-compatibility\";\nimport { createProgressStore, progressKey, parseReadingProgress } from \"../src/lib/learning-progress\";\nimport { lessonProgressScope } from \"../src/lib/use-learning-progress\";\n\ntest(\"[P0–P14历史契约] P1旧基线继续保护，后续只接纳登记的新增课与完整摘要匹配的授权修订\", () => {\n  const before = JSON.parse(readFileSync(\"docs/py101-p1/BASELINE.json\", \"utf8\")) as { lessons: Record<string, string>; publications: Record<string, string>; files: Record<string, string> };\n  const sha = (value: string | Buffer) => createHash(\"sha256\").update(value).digest(\"hex\");\n  assert.deepEqual([...lessonRegistry.keys()].sort(), [...Object.keys(before.lessons), lesson.id, ...approvedPy101Additions].sort());\n  assert.deepEqual(publicationManifest.map(p => p.lessonId).sort(), [...Object.keys(before.publications), lesson.id, ...approvedPy101Additions].sort());\n  for (const [id, hash] of Object.entries(before.lessons)) assert.equal(sha(JSON.stringify(beforeApprovedPy101Object(\"lessons\", id, lessonRegistry.get(id)))), hash, id);\n  for (const [id, hash] of Object.entries(before.publications)) assert.equal(sha(JSON.stringify(beforeApprovedPy101Object(\"publications\", id, publicationManifest.find(p => p.lessonId === id)))), hash, id);\n  for (const [path, hash] of Object.entries(before.files)) assert.ok(protectedPy101FileMatches(path, readFileSync(path), hash), path);\n});\n\ntest(\"[P0–P14历史契约] 1.1与1.2相邻，未接入课仍规划；错误课程不产生可读页面\", () => {\n  const course = getLearningCourse(\"PY101\")!;\n  assert.equal(course.status, \"planned\"); assert.equal(lesson.contentVersion, 1);\n  assert.equal(getAdjacentLessons(course, \"PY101-C01-L01\").next?.lessonId, lesson.id);\n  assert.equal(getAdjacentLessons(course, lesson.id).previous?.lessonId, \"PY101-C01-L01\");\n  for (const slot of course.chapters[0].lessons.filter(slot => slot.status === \"planned\")) assert.equal(resolveLesson(\"PY101\", slot.lessonId), undefined);\n  assert.equal(resolveLesson(\"ML201\", lesson.id), undefined);\n});\n\ntest(\"[P0–P14历史契约] 新课进度不继承1.1或第5章完成，新保存不会重写旧r1/r2\", () => {\n  const memory = new Map<string, string>();\n  const port = { getItem: (key: string) => memory.get(key) ?? null, setItem: (key: string, value: string) => { memory.set(key, value); } };\n  const store = createProgressStore(() => port);\n  for (const id of [\"PY101-C01-L01\", \"PY101-C05-L01\"]) {\n    const old = lessonProgressScope(lessonRegistry.get(id)!); store.save(old, 100, old.sectionIds.at(-1)!, true);\n    if (id.endsWith(\"C05-L01\")) store.save({ ...old, contentVersion: 1 }, 100, old.sectionIds[0], true);\n  }\n  const previous = new Map(memory), scope = lessonProgressScope(lesson);\n  assert.equal(store.getSnapshot(scope), null); assert.equal(progressKey(scope), \"aivora:learning:v2:PY101:PY101-C01-L02:r1\");\n  store.save(scope, 65, \"space-argument\");\n  assert.equal(parseReadingProgress(createProgressStore(() => port).getSnapshot(scope), scope)?.section, \"space-argument\");\n  for (const [key, value] of previous) assert.equal(memory.get(key), value);\n});\n\ntest(\"[P0–P14历史契约] 正文文件同源、命令分平台；核心提示不直接交出目标路径\", () => {\n  const blocks = lesson.sections.flatMap(s => s.blocks), tasks = blocks.filter(b => b.type === \"exercise\");\n  assert.equal(tasks.length, 2);\n  for (const block of blocks) if (block.type === \"code\" && block.language === \"python\") assert.equal(block.code, pathFiles[block.filename as keyof typeof pathFiles]);\n  for (const id of [\"root-alpha\", \"beta-alpha\", \"space-unquoted\", \"space-quoted\", \"absolute-root\"] as const) {\n    assert.ok(blocks.some(b => b.type === \"code\" && b.code === pathCommands[id].windows));\n    assert.ok(blocks.some(b => b.type === \"code\" && b.code === pathCommands[id].mac));\n  }\n  for (const task of tasks) {\n    assert.equal(task.hints.length, 2); assert.ok(task.solution.length >= 3); assert.ok(task.rubric.length >= 3);\n    assert.doesNotMatch(task.hints[1], /\\.\\.[\\\\/]|\\bpython(?:3)?\\s|East E4|West W5/);\n  }\n});\n\ntest(\"[P0–P14历史契约] P1兼容登记不吞额外源码修改，P0历史登记无需覆盖\", () => {\n  const sources = JSON.parse(readFileSync(\"docs/py101-p1/SOURCE_CHANGES.json\", \"utf8\")) as { path: string; before: string }[];\n  for (const entry of sources) {\n    const current = readFileSync(entry.path, \"utf8\");\n    assert.equal(beforePy101P1Source(entry.path, current), entry.before);\n    const extra = current + \"\\n// undeclared\";\n    assert.equal(beforePy101P1Source(entry.path, extra), extra);\n  }\n});\n"
+    },
+    {
+      "path": "tests/content.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { readFile, stat } from \"node:fs/promises\";\nimport { createHash } from \"node:crypto\";\nimport katex from \"katex\";\nimport sharp from \"sharp\";\nimport { lessonRegistry, resolveLesson } from \"../src/lib/course-engine\";\nimport { programs } from \"../src/content/resources/programs\";\nimport { readablePublications } from \"../src/content/publication-manifest\";\nimport { assertRegisteredInventory } from \"./helpers/registered-content\";\n\ntest(\"四门不同类型教材用同一模型，公式可严格解析，图片有正确尺寸和可读替代文字\", async () => {\n  assertRegisteredInventory();\n  for (const publication of readablePublications) {\n    const { lesson } = resolveLesson(\n      publication.courseId,\n      publication.lessonId,\n    )!;\n    const blocks = lesson.sections.flatMap((s) => s.blocks);\n    if (lesson.courseId === \"AI000\") {\n      assert.equal(blocks.filter((block) => block.type === \"exercise\").length, lesson.id === \"AI000-C01-L02\" ? 3 : 2);\n      // 不设每课配图门槛；原14幅精确图由兼容测试逐幅保护，5.1采用可回查表格。\n      assert.ok(blocks.some((block) => block.type === \"table\"));\n      // 结课页仅复用text块复制Markdown模板，不引入可执行课程代码。\n      assert.ok(blocks.every((block) => block.type !== \"experiment\" && (block.type !== \"code\" || (lesson.id === \"AI000-C07-L03\" && block.language === \"text\" && block.filename === \"AI000-final-report.md\"))));\n      assert.equal(blocks.filter(block => block.type === \"code\").length, lesson.id === \"AI000-C07-L03\" ? 1 : 0);\n      assert.equal(blocks.filter(block => block.type === \"math\").length, lesson.id === \"AI000-C05-L05\" ? 2 : 0);\n    } else if (lesson.courseId === \"MA101\" && publication.catalogRole !== \"legacy\") {\n      assert.ok(lesson.sections.filter((section) => section.tier === \"core\").flatMap((section) => section.blocks).filter((block) => block.type === \"exercise\").length >= 2);\n      assert.ok(blocks.some((block) => block.type === \"vector-figure\"));\n      assert.ok(lesson.sections.filter((section) => section.tier === \"core\").every((section) => !section.blocks.some((block) => block.type === \"code\")));\n    } else if (lesson.chapterId === \"PY101-C01\" || [\"PY101-C02-L01\", \"PY101-C02-L02\", \"PY101-C02-L03\", \"PY101-C02-L04\", \"PY101-C02-L05\", \"PY101-C02-L06\"].includes(lesson.id)) {\n      // 操作型首章及变量入门用目标对应的核心开放题验收；旧样章仍保留下面的Quiz契约。\n      const tasks = lesson.sections.filter(s => s.tier === \"core\").flatMap(s => s.blocks).filter(b => b.type === \"exercise\");\n      assert.ok(tasks.length > 0);\n      for (const row of lesson.assessmentMap) assert.ok(row.exerciseIds.every(id => tasks.some(task => task.id === id)));\n      assert.ok(blocks.some(b => b.type === \"code\" && b.language === \"python\"));\n    } else {\n      assert.ok(blocks.filter((b) => b.type === \"quiz\").length >= 2);\n      assert.ok(blocks.some((b) => b.type === \"code\"));\n    }\n    assert.equal(publication.status, \"pending-review\");\n    assert.equal(publication.reviewEvidence, undefined);\n    for (const block of blocks) {\n      if (block.type === \"math\")\n        assert.doesNotThrow(() =>\n          katex.renderToString(block.latex, {\n            throwOnError: true,\n            strict: \"error\",\n            trust: false,\n          }),\n        );\n      if (block.type === \"image\") {\n        const bytes = await readFile(`public${block.src}`);\n        const metadata = await sharp(bytes).metadata();\n        assert.equal(metadata.format, block.src.endsWith(\".webp\") ? \"webp\" : \"png\");\n        assert.equal(metadata.width, block.width);\n        assert.equal(metadata.height, block.height);\n        assert.ok(block.alt.length > 30);\n        if (block.mobile) {\n          const mobileBytes = await readFile(`public${block.mobile.src}`);\n          const mobileMetadata = await sharp(mobileBytes).metadata();\n          assert.equal(mobileMetadata.format, block.mobile.src.endsWith(\".webp\") ? \"webp\" : \"png\");\n          assert.equal(mobileMetadata.width, block.mobile.width);\n          assert.equal(mobileMetadata.height, block.mobile.height);\n        }\n      }\n    }\n    for (const resource of lesson.resources)\n      assert.ok((await stat(`public${resource.href}`)).size > 0);\n  }\n  assert.deepEqual(\n    [...new Set([...lessonRegistry.values()].map((l) => l.courseId))].sort(),\n    [\"AI000\", \"MA101\", \"ML201\", \"PY101\"],\n  );\n});\ntest(\"全部下载脚本、Notebook 和网页完整代码同源，Notebook 不伪造执行结果\", async () => {\n  const codeBlocks = [...lessonRegistry.values()]\n    .flatMap((l) => l.sections.flatMap((s) => s.blocks))\n    .filter((b) => b.type === \"code\");\n  for (const program of Object.values(programs)) {\n    assert.equal(\n      await readFile(`public/downloads/${program.filename}.py`, \"utf8\"),\n      program.code,\n    );\n    assert.ok(\n      codeBlocks.some(\n        (block) =>\n          block.code === program.code &&\n          block.filename === `${program.filename}.py`,\n      ),\n    );\n    const notebook = JSON.parse(\n      await readFile(`public/downloads/${program.filename}.ipynb`, \"utf8\"),\n    );\n    assert.equal(notebook.cells[1].source.join(\"\"), program.code);\n    assert.equal(notebook.cells[1].execution_count, null);\n    assert.deepEqual(notebook.cells[1].outputs, []);\n  }\n});\ntest(\"课程体系 V1.0 的原始 Markdown 和 JSON 字节未变\", async () => {\n  for (const [path, hash] of [\n    [\n      \"curriculum/AI技术课程体系_V1.0.md\",\n      \"b863f49f3da43225b009b7053dff79d6b5985bf8da9327f7701bc40c0c9d5a73\",\n    ],\n    [\n      \"curriculum/AI技术课程目录_V1.0.json\",\n      \"a7f5723c2ac659bfe271eeeffc050c2d96c46fd68e29391051c88f5db2812366\",\n    ],\n  ])\n    assert.equal(\n      createHash(\"sha256\")\n        .update(await readFile(path))\n        .digest(\"hex\"),\n      hash,\n    );\n});\n"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import { approvedPy101Additions } from "./helpers/py101-p14-view";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -7,7 +8,7 @@ import {historicalLesson} from "./helpers/py101-p14-view";
 const lesson=historicalLesson(p15CurrentLesson);
 import { lessonRegistry, getLearningCourse, resolveLesson, getAdjacentLessons } from "./helpers/py101-p14-view";
 import { publicationManifest } from "./helpers/py101-p14-view";
-import { beforeApprovedPy101Object, beforeApprovedPy101Source, protectedPy101FileMatches, approvedPy101Additions } from "../scripts/py101-p1-compatibility";
+import { beforeApprovedPy101Object, beforeApprovedPy101Source, protectedPy101FileMatches } from "../scripts/py101-p1-compatibility";
 import { createProgressStore, parseReadingProgress, progressKey } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
 import { editorFiles } from "../src/content/resources/python-editor";

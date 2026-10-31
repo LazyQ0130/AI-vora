@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-31T06:33:57.622Z",
+  "publication": {
+    "lessonId": "PY101-C03-L01",
+    "courseId": "PY101",
+    "chapterId": "PY101-C03",
+    "title": "让程序根据条件决定是否执行",
+    "contentVersion": 1,
+    "order": 1,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "draft",
+    "access": "private"
+  },
+  "readable": false,
+  "resolveUndefined": true,
+  "directoryHrefAbsent": true
+}

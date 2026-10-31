@@ -1,0 +1,126 @@
+{
+  "python": "3.14.2",
+  "independentExpectations": "Chapter blueprint predictions written before execution; only planning examples, no Lessons 3.2-3.8 registered.",
+  "rows": [
+    {
+      "plannedLesson": "3.1",
+      "source": "count = 5\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n\nprint(\"Check finished\")\n",
+      "sha256": "68cd5079aebde66e2c2030a1b1c482126cc659221798850c1af955980e0b3df6",
+      "cwd": "<BLUEPRINT-LAB>",
+      "command": [
+        "<PYTHON>",
+        "plan_3_1.py"
+      ],
+      "stdin": "",
+      "prediction": "Within limit\nCheck finished\n",
+      "stdout": "Within limit\nCheck finished\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "plannedLesson": "3.2",
+      "source": "count = 6\nlimit = 6\nif count < limit:\n    print(\"Room left\")\nelif count == limit:\n    print(\"At limit\")\nelse:\n    print(\"Over limit\")\nprint(\"Check finished\")\n",
+      "sha256": "f6c92fc3551d61deb1c716c894a3131300cb6a6d4c99bac72b7a1888a83a07ce",
+      "cwd": "<BLUEPRINT-LAB>",
+      "command": [
+        "<PYTHON>",
+        "plan_3_2.py"
+      ],
+      "stdin": "",
+      "prediction": "At limit\nCheck finished\n",
+      "stdout": "At limit\nCheck finished\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "plannedLesson": "3.3",
+      "source": "count = 5\nminimum = 3\nstock = 6\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\nprint(\"Check finished\")\n",
+      "sha256": "72f322eacbe437bcfb142a7b45ec9720429aaaeae1e5433267dd1844d21c017c",
+      "cwd": "<BLUEPRINT-LAB>",
+      "command": [
+        "<PYTHON>",
+        "plan_3_3.py"
+      ],
+      "stdin": "",
+      "prediction": "Quantity ready\nCheck finished\n",
+      "stdout": "Quantity ready\nCheck finished\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "plannedLesson": "3.4",
+      "source": "packed = 0\ntarget = 3\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\nprint(\"Packing finished\")\n",
+      "sha256": "9d8dd67d216c12d8a82212c005c1e39ecb4ffb01b4b47ea84a84bd2d39fe5e14",
+      "cwd": "<BLUEPRINT-LAB>",
+      "command": [
+        "<PYTHON>",
+        "plan_3_4.py"
+      ],
+      "stdin": "",
+      "prediction": "1\n2\n3\nPacking finished\n",
+      "stdout": "1\n2\n3\nPacking finished\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "plannedLesson": "3.5",
+      "source": "for batch in range(1, 4):\n    print(f\"Batch: {batch}\")\nprint(\"Check finished\")\n",
+      "sha256": "fa1a42c5292af197b0b8aa60eafd85fe9f797e2f1108b27f07491f6af82feeb7",
+      "cwd": "<BLUEPRINT-LAB>",
+      "command": [
+        "<PYTHON>",
+        "plan_3_5.py"
+      ],
+      "stdin": "",
+      "prediction": "Batch: 1\nBatch: 2\nBatch: 3\nCheck finished\n",
+      "stdout": "Batch: 1\nBatch: 2\nBatch: 3\nCheck finished\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "plannedLesson": "3.6",
+      "source": "for batch in range(1, 5):\n    if batch == 2:\n        continue\n    if batch == 4:\n        break\n    print(batch)\nprint(\"Check finished\")\n",
+      "sha256": "a8d7c86f90cfa479edcd92e5b768a1e8c37815e150c4b04dff413d1c9de6ff89",
+      "cwd": "<BLUEPRINT-LAB>",
+      "command": [
+        "<PYTHON>",
+        "plan_3_6.py"
+      ],
+      "stdin": "",
+      "prediction": "1\n3\nCheck finished\n",
+      "stdout": "1\n3\nCheck finished\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "plannedLesson": "3.7",
+      "source": "accepted = 0\ntotal = 0\nfor batch in range(1, 4):\n    count_text = input(\"Count: \")\n    count = int(count_text)\n    if (count < 0) or (count > 6):\n        print(\"Skip batch\")\n        continue\n    accepted = accepted + 1\n    total = total + count\nprint(f\"Accepted: {accepted}\")\nprint(f\"Total pieces: {total}\")\n",
+      "sha256": "ee0d921248365e228770b4006d113fe6ac801d42fe0ac11b76219f11cfcdf222",
+      "cwd": "<BLUEPRINT-LAB>",
+      "command": [
+        "<PYTHON>",
+        "plan_3_7.py"
+      ],
+      "stdin": "2\n9\n4\n",
+      "prediction": "Count: Count: Skip batch\nCount: Accepted: 2\nTotal pieces: 6\n",
+      "stdout": "Count: Count: Skip batch\nCount: Accepted: 2\nTotal pieces: 6\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "plannedLesson": "3.8",
+      "source": "counts = [2, 4, 6]\nprint(counts)\nfor count in counts:\n    print(count * 2)\nneeded = [count * 2 for count in counts]\nprint(needed)\nprint(counts)\n",
+      "sha256": "5d2a95749052a266d0dc446fbb8ed268809989cb1bad4397a659a80b21baaa0a",
+      "cwd": "<BLUEPRINT-LAB>",
+      "command": [
+        "<PYTHON>",
+        "plan_3_8.py"
+      ],
+      "stdin": "",
+      "prediction": "[2, 4, 6]\n4\n8\n12\n[4, 8, 12]\n[2, 4, 6]\n",
+      "stdout": "[2, 4, 6]\n4\n8\n12\n[4, 8, 12]\n[2, 4, 6]\n",
+      "stderr": "",
+      "exitCode": 0
+    }
+  ]
+}

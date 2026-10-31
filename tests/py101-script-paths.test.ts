@@ -1,3 +1,4 @@
+import { approvedPy101Additions } from "./helpers/py101-p14-view";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -8,7 +9,7 @@ import { pythonScriptPathsLesson as p15CurrentLesson } from "../src/content/less
 import {historicalLesson} from "./helpers/py101-p14-view";
 const lesson=historicalLesson(p15CurrentLesson);
 import { pathFiles, pathCommands } from "../src/content/resources/python-paths";
-import { beforePy101P1Source, beforeApprovedPy101Object, approvedPy101Additions, protectedPy101FileMatches } from "../scripts/py101-p1-compatibility";
+import { beforePy101P1Source, beforeApprovedPy101Object, protectedPy101FileMatches } from "../scripts/py101-p1-compatibility";
 import { createProgressStore, progressKey, parseReadingProgress } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
 

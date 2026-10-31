@@ -1,3 +1,4 @@
+import { approvedPy101Additions } from "./helpers/py101-p14-view";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
@@ -11,7 +12,7 @@ import { isReadable } from "../src/content/models";
 import { reproductionCode, reproductionCommands, reproductionBlockNames, reproductionNotebook } from "../src/content/resources/python-reproduction";
 import { notebookDownload } from "../src/content/resources/python-notebook";
 import { environmentProbe } from "../src/content/resources/python-venv";
-import { beforeApprovedPy101Object, protectedPy101FileMatches, approvedPy101Additions } from "../scripts/py101-p1-compatibility";
+import { beforeApprovedPy101Object, protectedPy101FileMatches } from "../scripts/py101-p1-compatibility";
 import { createProgressStore, parseReadingProgress, progressKey } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";
 import { assertRegisteredInventory, assertCourseAvailability } from "./helpers/registered-content";
