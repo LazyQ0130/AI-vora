@@ -1,0 +1,202 @@
+{
+  "head": "9c22ebdd19d1c7856bb19ecde404b2f19a678d47",
+  "prerequisites": [
+    {
+      "lessonId": "PY101-C01-L03",
+      "contentVersion": 2,
+      "anchor": "save-rerun",
+      "href": "/learn/PY101/PY101-C01-L03#save-rerun",
+      "readable": true,
+      "lessonSha256": "8989c2aa349cc2ebbfc3ab6cfb9aec29b0c6e5d92b2d88fa7d9dbc467b415380",
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C01-L03",
+        "contentVersion": 2,
+        "sectionIds": [
+          "four-roles",
+          "open-folder",
+          "save-rerun",
+          "integrated-terminal",
+          "select-interpreter",
+          "three-mismatches",
+          "practice",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "contentVersion": 2,
+      "anchor": "read-and-update",
+      "href": "/learn/PY101/PY101-C02-L01#read-and-update",
+      "readable": true,
+      "lessonSha256": "8820957dbe36c02db5dc39fad869d3689e091293181de21eafe61fc539c9d325",
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L01",
+        "contentVersion": 2,
+        "sectionIds": [
+          "changing-task",
+          "name-and-value",
+          "choose-name",
+          "read-and-update",
+          "predict-run",
+          "change-one-value",
+          "literal-or-name",
+          "fresh-script",
+          "first-read-error",
+          "practice",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "contentVersion": 2,
+      "anchor": "expression-to-value",
+      "href": "/learn/PY101/PY101-C02-L03#expression-to-value",
+      "readable": true,
+      "lessonSha256": "f80726b4912b5663c95a4b42e8acbbdc513f6d063677e873b1cc442403dbebe5",
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C02-L03",
+        "contentVersion": 2,
+        "sectionIds": [
+          "quantities-and-units",
+          "expression-to-value",
+          "take-some-away",
+          "order-and-grouping",
+          "divide-and-meaning",
+          "same-level-order",
+          "put-it-together",
+          "zero-divisor",
+          "practice",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "lessonId": "PY101-C03-L01",
+      "contentVersion": 1,
+      "anchor": "first-if",
+      "href": "/learn/PY101/PY101-C03-L01#first-if",
+      "readable": true,
+      "lessonSha256": "328312fe3d056eb32eb19a7543ee96e77d96a9677841a2d220bd2b797adb1e90",
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C03-L01",
+        "contentVersion": 1,
+        "sectionIds": [
+          "boolean-first",
+          "first-if",
+          "block-boundary",
+          "change-and-boundary",
+          "two-lines",
+          "practice",
+          "reference-programs",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "lessonId": "PY101-C03-L01",
+      "contentVersion": 1,
+      "anchor": "block-boundary",
+      "href": "/learn/PY101/PY101-C03-L01#block-boundary",
+      "readable": true,
+      "lessonSha256": "328312fe3d056eb32eb19a7543ee96e77d96a9677841a2d220bd2b797adb1e90",
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C03-L01",
+        "contentVersion": 1,
+        "sectionIds": [
+          "boolean-first",
+          "first-if",
+          "block-boundary",
+          "change-and-boundary",
+          "two-lines",
+          "practice",
+          "reference-programs",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "lessonId": "PY101-C03-L02",
+      "contentVersion": 1,
+      "anchor": "first-match",
+      "href": "/learn/PY101/PY101-C03-L02#first-match",
+      "readable": true,
+      "lessonSha256": "27198c10a1d2abfaa163596dfd27c80c43440e34e0fe02583e0c64375d5acf31",
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C03-L02",
+        "contentVersion": 1,
+        "sectionIds": [
+          "single-if",
+          "two-ways",
+          "three-ways",
+          "three-runs",
+          "first-match",
+          "independent-checks",
+          "practice",
+          "reference-programs",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "lessonId": "PY101-C03-L03",
+      "contentVersion": 1,
+      "anchor": "short-circuit",
+      "href": "/learn/PY101/PY101-C03-L03#short-circuit",
+      "readable": true,
+      "lessonSha256": "8c3849dd0e7100e4fc5dd89045ec759393e43f9bf68d8e24246bcc5654006ed0",
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C03-L03",
+        "contentVersion": 1,
+        "sectionIds": [
+          "separate-checks",
+          "both-required",
+          "five-values",
+          "review-or",
+          "reverse-result",
+          "short-circuit",
+          "practice",
+          "reference-programs",
+          "next-step"
+        ]
+      }
+    },
+    {
+      "lessonId": "PY101-C03-L03",
+      "contentVersion": 1,
+      "anchor": "next-step",
+      "href": "/learn/PY101/PY101-C03-L03#next-step",
+      "readable": true,
+      "lessonSha256": "8c3849dd0e7100e4fc5dd89045ec759393e43f9bf68d8e24246bcc5654006ed0",
+      "progressScope": {
+        "courseId": "PY101",
+        "lessonId": "PY101-C03-L03",
+        "contentVersion": 1,
+        "sectionIds": [
+          "separate-checks",
+          "both-required",
+          "five-values",
+          "review-or",
+          "reverse-result",
+          "short-circuit",
+          "practice",
+          "reference-programs",
+          "next-step"
+        ]
+      }
+    }
+  ],
+  "previousLessonFinalBlock": {
+    "type": "paragraph",
+    "text": "保留自己的范围程序与修复记录。现在条件会影响本次动作；如果材料还没数到目标，怎样让同一个动作自动再做一次，并在达到目标时停下？下一节从数量变化进入重复执行。"
+  },
+  "transitionDecision": "No amendment: 3.3 accurately introduces repetition as the next problem. 3.1, 3.2 and 3.3 r1 remain wholly identical."
+}

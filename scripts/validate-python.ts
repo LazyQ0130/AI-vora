@@ -15,6 +15,7 @@ import { runReadableExample } from "./validate-py101-readable-output";
 import { runConditionalExample } from "./validate-py101-conditional";
 import { runBranchExample } from "./validate-py101-branches";
 import { runBooleanExample } from "./validate-py101-boolean";
+import { runWhileExample } from "./validate-py101-while";
 
 const python = process.env.AIVORA_PYTHON ?? "python";
 function run(args: string[]) {
@@ -49,6 +50,9 @@ const examples = [...lessonRegistry.values()].flatMap((lesson) =>
   lesson.sections.flatMap((section) =>
     section.blocks.flatMap<Record<string, unknown>>((block) => {
       if (block.type !== "code" || block.language !== "python") return [];
+      if (lesson.id === "PY101-C03-L04") {
+        return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runWhileExample(block.filename, block.code) }];
+      }
       if (lesson.id === "PY101-C03-L03") {
         return [{ lessonId: lesson.id, sectionId: section.id, filename: block.filename, ...runBooleanExample(block.filename, block.code) }];
       }

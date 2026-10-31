@@ -1,0 +1,79 @@
+{
+  "checkedAt": "2026-10-31T09:37:27.188893+00:00",
+  "baseline": "9c22ebdd19d1c7856bb19ecde404b2f19a678d47",
+  "lessonId": "PY101-C03-L04",
+  "contentVersion": 1,
+  "publicationStatus": "draft",
+  "access": "private",
+  "releaseBlocked": true,
+  "blocker": "P1: existing 3.3/r1 stable-anchor SPA course return restores wrong section even after full reload; Reader unchanged under P19 scope.",
+  "objects": [
+    {
+      "id": "PY101-C03-L04",
+      "lessonSha256": "33f8ed8d3d9402e1a6ec890116303618358f5c6d31b9f209bb3a7abfce1366c0",
+      "publicationSha256": "8686c7badc673387bfcfec0ecad774e90f1f75357d560f7e3db9e96a5361f1d8"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "src/content/course-outline.ts",
+      "sha256LF": "760676cac200dfedc576e8b5981444d4ed114eff5aed06d9f024c8253c303098"
+    },
+    {
+      "path": "src/lib/course-engine.ts",
+      "sha256LF": "d2177360e13ad520d7facdef7d118dbb6d94ef2c8e0a10ffb1c4a25c87bf7c01"
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "sha256LF": "9711141691662158f4f9a919a6e9ff0bcd0cd606df0ce2b8dae2daf1324d3ee4"
+    },
+    {
+      "path": "scripts/validate-python.ts",
+      "sha256LF": "5165e823fd693b02e47a6cd134355a075315ea85e4db5a7303e7a6b852f9bc94"
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "sha256LF": "8b60a8bfa6a7546e283ccb1f82860c4705ea06d16de9bd9b9880903977c0b023"
+    },
+    {
+      "path": "tests/content.test.ts",
+      "sha256LF": "44f20147405333acec4b8291594661054b541ee2d0b4f53536245651ba174c8c"
+    },
+    {
+      "path": "tests/py101-boolean-combinations.test.ts",
+      "sha256LF": "82650437104ce7299fe77fb010e7f6e06109ee6a2aa3cca48bde2e1a211bfc0f"
+    },
+    {
+      "path": "scripts/review-py101-p19.ts",
+      "sha256LF": "72a3e46aab9c5a278746a54f6d634795baacb18b9d2b2e3c5ac4413112989048"
+    },
+    {
+      "path": "scripts/validate-py101-while-routes.ts",
+      "sha256LF": "6d932dd34e56ce18e318f92451b5ddd0ff9f2324ef0bc60539ef017ef0226b89"
+    },
+    {
+      "path": "scripts/validate-py101-while.ts",
+      "sha256LF": "1e0092643626aa71f3b57f2570a5dc2ce668699db13a49056eba27b95c252fca"
+    },
+    {
+      "path": "src/content/lessons/py101/while-repetition.ts",
+      "sha256LF": "8b75bb18f2f7da657c14d834158c2008edc5e305aae911a33b07f992fbd77d7d"
+    },
+    {
+      "path": "src/content/resources/python-while-repetition.ts",
+      "sha256LF": "dccf5e2e28d0f487f4c3175b7c9ebe402149582e909f0d0f2423766baf9f2e17"
+    },
+    {
+      "path": "tests/helpers/py101-p18-view.ts",
+      "sha256LF": "8f8a6d18ecd6cf8f42081608d4fcb889a823bf722e04103250bdcb3ef4845d62"
+    },
+    {
+      "path": "tests/py101-while-repetition.test.ts",
+      "sha256LF": "d2e81e490d5a1c8ac923bcf9a021c68cb3031da9cd9edde1caef2773b6e641a0"
+    }
+  ],
+  "humanTeacherReview": false,
+  "chineseEditorialReview": false,
+  "studentPilot": false,
+  "macOSRuntimeVerified": false
+}

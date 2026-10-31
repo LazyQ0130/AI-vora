@@ -1,0 +1,6 @@
+
+> aivora-web@0.1.0 typecheck
+> tsc --noEmit
+
+scripts/validate-py101-while.ts(104,311): error TS2339: Property 'code' does not exist on type 'Error'.
+scripts/validate-py101-while.ts(105,29): error TS2339: Property 'code' does not exist on type 'Error'.

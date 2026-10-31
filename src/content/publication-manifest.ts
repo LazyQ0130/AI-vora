@@ -6,6 +6,7 @@ const revisedCoreLessons: Record<string, number> = { "MA101-C02-L03": 2, "PY101-
 
 // 发布权限独立于原始课程规划。技术证据不替代人工审核。
 export const publicationManifest = [
+  {lessonId:"PY101-C03-L04",courseId:"PY101",chapterId:"PY101-C03",title:"让程序重复执行直到条件变化",contentVersion:1,order:4,optionalLesson:false,status:"draft",access:"private"},
   {lessonId:"PY101-C03-L03",courseId:"PY101",chapterId:"PY101-C03",title:"多个条件怎样共同决定结果",contentVersion:1,order:3,optionalLesson:false,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p18/TECHNICAL_REPORT.md"},
   {lessonId:"PY101-C03-L02",courseId:"PY101",chapterId:"PY101-C03",title:"条件不满足时怎么办",contentVersion:1,order:2,optionalLesson:false,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p17/TECHNICAL_REPORT.md"},
   {lessonId:"PY101-C03-L01",courseId:"PY101",chapterId:"PY101-C03",title:"让程序根据条件决定是否执行",contentVersion:1,order:1,optionalLesson:false,status:"pending-review",access:"preview",technicalEvidence:"docs/py101-p16/TECHNICAL_REPORT.md"},

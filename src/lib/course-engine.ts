@@ -50,6 +50,7 @@ import { pythonReadableOutputLesson } from "../content/lessons/py101/readable-ou
 import { pythonConditionalExecutionLesson } from "../content/lessons/py101/conditional-execution";
 import { pythonConditionalBranchesLesson } from "../content/lessons/py101/conditional-branches";
 import { pythonBooleanCombinationsLesson } from "../content/lessons/py101/boolean-combinations";
+import { pythonWhileRepetitionLesson } from "../content/lessons/py101/while-repetition";
 import {
   publicationManifest,
   readablePublications,
@@ -64,6 +65,7 @@ import {
 } from "../content/models";
 
 const contents: Lesson[] = [
+  pythonWhileRepetitionLesson,
   pythonBooleanCombinationsLesson,
   pythonConditionalBranchesLesson,
   pythonConditionalExecutionLesson,

@@ -1,0 +1,26 @@
+[
+  {
+    "code": "packed = 0\ntarget = 3\n\nif packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")",
+    "filename": "one_item.py"
+  },
+  {
+    "code": "packed = 0\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")",
+    "filename": "packing_loop.py"
+  },
+  {
+    "code": "packed = 0\ntarget = 3\n\nwhile packed < target:\n    print(packed)\n    packed = packed + 1\n\nprint(\"Packing finished\")",
+    "filename": "before_update.py"
+  },
+  {
+    "code": "packed = 0\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 2\n    print(packed)\n\nprint(\"Packing finished\")",
+    "filename": "repair_increment.py · 修复前"
+  },
+  {
+    "code": "labels_done = 2\nlabel_goal = 6\n\nwhile labels_done < label_goal:\n    labels_done = labels_done + 1\n    print(labels_done)\n\nprint(\"Label check finished\")",
+    "filename": "label_counter.py · 题一参考"
+  },
+  {
+    "code": "packed = 2\ntarget = 5\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")",
+    "filename": "repair_increment.py · 修复后的新数据参考"
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-10-31T09:41:07.290Z",
+  "trackedBaseline": 3281,
+  "authorizedChanged": [
+    "scripts/py101-p1-compatibility.ts",
+    "scripts/validate-python.ts",
+    "src/content/course-outline.ts",
+    "src/content/publication-manifest.ts",
+    "src/lib/course-engine.ts",
+    "tests/content.test.ts",
+    "tests/py101-boolean-combinations.test.ts"
+  ],
+  "untouchedTracked": 3274,
+  "originalModified": [
+    {
+      "path": "next-env.d.ts",
+      "bytes": 296,
+      "sha256": "0f70629890b72a0a82e91972cc032c04b658b26c265373cb711cf576bfbf8fcc"
+    },
+    {
+      "path": "scripts/ai000-r3-compatibility.ts",
+      "bytes": 2145,
+      "sha256": "96a7b6cc6c39aead9566c216f1ca885fdfcaf59b5ea8921f9dd996582d423174"
+    },
+    {
+      "path": "src/components/lesson/reader.tsx",
+      "bytes": 17510,
+      "sha256": "fa0fbf213d3f8dab8bffbfc607f036da184f1926d170b4cf3d4d6d86e0b1a293"
+    },
+    {
+      "path": "tests/reading-experience.test.ts",
+      "bytes": 6905,
+      "sha256": "072d10fefa6902dbaa2c03084eb7ac289eeb75e570a4a4067ffe23850ace19e0"
+    }
+  ],
+  "originalUntracked": [
+    {
+      "path": ".codex-remote-attachments/01a176db-beeb-7e41-a213-01ce2c08e64b/a3685fd7-85df-4646-9a08-c86fee7284d1/1-Aivora_课程内容编写与编辑规范_V1.0.md",
+      "bytes": 23552,
+      "sha256": "2c3c9e5583494c09cdabafc0e9f50297bc03878bc75e9189eb5a4ffb6bf07dd9"
+    },
+    {
+      "path": "ml31-interactions.yaml",
+      "bytes": 26155,
+      "sha256": "267519e584aa45083db7226ada33c47dd568edfb1cf00b494e064e37b0af0a9c"
+    },
+    {
+      "path": "ml31.png",
+      "bytes": 131288,
+      "sha256": "2fdf30d556348c7a21a39a88556ac7e9f40ff4a31668ff069a7ccc649a6f31fe"
+    },
+    {
+      "path": "ml31.yaml",
+      "bytes": 24763,
+      "sha256": "c03c467c06e734d9ce4f8d99c6868a1cb8c70107489839128c6eefa5d755d38f"
+    },
+    {
+      "path": "py101-desktop.png",
+      "bytes": 150862,
+      "sha256": "c4647b2a4aa069ed82447d7d845beef14ad21a1e744ae48ceb20182cc16017f9"
+    },
+    {
+      "path": "py101-mobile.png",
+      "bytes": 92190,
+      "sha256": "8f845f6e1636a49f63ae420a3921607b4f861fd4a93c51335fdb5714a5423801"
+    },
+    {
+      "path": "py101.yaml",
+      "bytes": 32222,
+      "sha256": "62f14674005e5d565df4cecb24905e844fc8cbe75ed7d4ef7960fb115b0d41fc"
+    }
+  ],
+  "originalFilesByteIdentical": true
+}

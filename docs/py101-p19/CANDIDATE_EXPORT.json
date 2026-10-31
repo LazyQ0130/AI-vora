@@ -1,0 +1,19 @@
+{
+  "baseline": "9c22ebdd19d1c7856bb19ecde404b2f19a678d47",
+  "method": "Isolated export of tracked working files/P19 additions; original four changes from HEAD, seven untracked excluded. No original checkout mutation or deletion. No old reports copied into P19 evidence.",
+  "fileCount": 3314,
+  "manifestSha256": "8eed32827af06359516fee5ad6428f8e23ffcd8ec32bdab35c11e01b79b924b6",
+  "excludedUserFiles": [
+    ".codex-remote-attachments/01a176db-beeb-7e41-a213-01ce2c08e64b/a3685fd7-85df-4646-9a08-c86fee7284d1/1-Aivora_课程内容编写与编辑规范_V1.0.md",
+    "ml31-interactions.yaml",
+    "ml31.png",
+    "ml31.yaml",
+    "next-env.d.ts",
+    "py101-desktop.png",
+    "py101-mobile.png",
+    "py101.yaml",
+    "scripts/ai000-r3-compatibility.ts",
+    "src/components/lesson/reader.tsx",
+    "tests/reading-experience.test.ts"
+  ]
+}

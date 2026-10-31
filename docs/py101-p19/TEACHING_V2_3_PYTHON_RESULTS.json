@@ -1,0 +1,4363 @@
+{
+  "checkedAt": "2026-10-31T09:12:39.464Z",
+  "environment": "3.14.2\nNumPy 2.5.2",
+  "unittest": {
+    "exitCode": 0,
+    "stdout": "initial MSE=17.000000\nfirst w=1.300, b=0.800, MSE=1.685000\nfinal w=2.000000, b=1.000000, MSE=0.0000000000\nw=2.000000, b=1.000000, MSE=0.00000000\nw=2.000000, b=1.000000, MSE=0.00000000\n6.0 13 5.0\nkeyword-only: TypeError (expected)\n['A'] ['B'] ['start', 'next'] ['start']\nshared default: ['A', 'B']\nshape mismatch: ValueError (expected)\nsum: [4 3] scaled: [2 4] dot: 5\nA @ B:\n [[4 6]\n [1 3]] \nB @ A:\n [[2 4]\n [1 5]]\nA * B:\n [[2 0]\n [0 3]] \nM @ N:\n [[4 5]\n [2 3]]\n6.0 13 5.0\nkeyword-only: TypeError (expected)\n['A'] ['B'] ['start', 'next'] ['start']\nshared default: ['A', 'B']\nshape mismatch: ValueError (expected)\nsum: [4 3] scaled: [2 4] dot: 5\nA @ B:\n [[4 6]\n [1 3]] \nB @ A:\n [[2 4]\n [1 5]]\nA * B:\n [[2 0]\n [0 3]] \nM @ N:\n [[4 5]\n [2 3]]\n6.0 13 5.0\nkeyword-only: TypeError (expected)\n['A'] ['B'] ['start', 'next'] ['start']\nshared default: ['A', 'B']",
+    "stderr": "test_addition_hand_exercises_and_units (test_math_v2_2.VectorLessonTests.test_addition_hand_exercises_and_units) ... ok\ntest_displacement_and_translation (test_math_v2_2.VectorLessonTests.test_displacement_and_translation) ... ok\ntest_one_scalar_and_distributivity (test_math_v2_2.VectorLessonTests.test_one_scalar_and_distributivity) ... ok\ntest_scalar_values_and_geometry (test_math_v2_2.VectorLessonTests.test_scalar_values_and_geometry) ... ok\ntest_complete_program_oracle_and_input_rejection (test_ml_v2.TeachingV2Tests.test_complete_program_oracle_and_input_rejection) ... ok\ntest_gradient_finite_difference (test_ml_v2.TeachingV2Tests.test_gradient_finite_difference) ... ok\ntest_hand_update_and_wrong_variants (test_ml_v2.TeachingV2Tests.test_hand_update_and_wrong_variants) ... ok\ntest_losses_exact (test_ml_v2.TeachingV2Tests.test_losses_exact) ... ok\ntest_new_downloads_match_notebooks (test_ml_v2.TeachingV2Tests.test_new_downloads_match_notebooks) ... ok\ntest_rate_experiment_fixed_budget (test_ml_v2.TeachingV2Tests.test_rate_experiment_fixed_budget) ... ok\ntest_scalar_direction (test_ml_v2.TeachingV2Tests.test_scalar_direction) ... ok\ntest_gradient_finite_difference (test_sample.SampleTests.test_gradient_finite_difference) ... ok\ntest_script_and_notebook (test_sample.SampleTests.test_script_and_notebook) ... ok\ntest_defaults_and_mutation_contract (test_teaching_samples.TeachingSampleTests.test_defaults_and_mutation_contract) ... ok\ntest_matrix_values_and_shapes (test_teaching_samples.TeachingSampleTests.test_matrix_values_and_shapes) ... ok\ntest_new_notebooks_execute_and_match_scripts (test_teaching_samples.TeachingSampleTests.test_new_notebooks_execute_and_match_scripts) ... ok\ntest_python_binding_and_return (test_teaching_samples.TeachingSampleTests.test_python_binding_and_return) ... ok\ntest_figure_numbers_and_downloads (test_teaching_v2_1.TeachingV21Tests.test_figure_numbers_and_downloads) ... ok\ntest_functions_on_unseen_inputs (test_teaching_v2_1.TeachingV21Tests.test_functions_on_unseen_inputs) ... ok\ntest_new_gradient_and_update_examples (test_teaching_v2_1.TeachingV21Tests.test_new_gradient_and_update_examples) ... ok\ntest_new_hand_exercises (test_teaching_v2_1.TeachingV21Tests.test_new_hand_exercises) ... ok\ntest_added_calculations_and_unit_conversion (test_teaching_v2_3.EditingMathTests.test_added_calculations_and_unit_conversion) ... ok\ntest_components_dimensions_and_directions (test_teaching_v2_3.EditingMathTests.test_components_dimensions_and_directions) ... ok\ntest_explicit_ordered_ratio_and_similar_triangle (test_teaching_v2_3.EditingMathTests.test_explicit_ordered_ratio_and_similar_triangle) ... ok\ntest_scaling_error_analysis_and_new_length_answer (test_teaching_v2_3.EditingMathTests.test_scaling_error_analysis_and_new_length_answer) ... ok\n\n----------------------------------------------------------------------\nRan 25 tests in 0.683s\n\nOK"
+  },
+  "examples": [
+    {
+      "lessonId": "PY101-C03-L04",
+      "sectionId": "once-or-repeat",
+      "filename": "one_item.py",
+      "key": "once",
+      "executionMode": "saved-file-real-process-with-explicit-identical-source-reuse",
+      "runs": [
+        {
+          "id": "if-once",
+          "filename": "if-once.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-BPweb0",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-BPweb0\\if-once.py"
+          ],
+          "pid": 24056,
+          "savedSource": "packed = 0\ntarget = 3\n\nif packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+          "savedSha256": "d2b60fcfbb28ad0e00a9d6f90b4f0118ca2fb387bc1f248f328f4877b71e0539",
+          "predictedStdout": "1\nPacking finished\n",
+          "exitCode": 0,
+          "stdout": "1\r\nPacking finished\r\n",
+          "stderr": "",
+          "executionId": "if-once",
+          "evidenceReused": false,
+          "timeoutMs": 10000
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L04",
+      "sectionId": "first-while",
+      "filename": "packing_loop.py",
+      "key": "main",
+      "executionMode": "saved-file-real-process-with-explicit-identical-source-reuse",
+      "runs": [
+        {
+          "id": "main-0-3",
+          "filename": "main-0-3.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-MYBVSY",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-MYBVSY\\main-0-3.py"
+          ],
+          "pid": 12884,
+          "savedSource": "packed = 0\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+          "savedSha256": "2ba23b140781cfb720846a8ff750537d836b03bb08448e3c0eed9e222b8013f5",
+          "predictedStdout": "1\n2\n3\nPacking finished\n",
+          "exitCode": 0,
+          "stdout": "1\r\n2\r\n3\r\nPacking finished\r\n",
+          "stderr": "",
+          "executionId": "main-0-3",
+          "evidenceReused": false,
+          "timeoutMs": 10000
+        },
+        {
+          "id": "main-3-3",
+          "filename": "main-3-3.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-MYBVSY",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-MYBVSY\\main-3-3.py"
+          ],
+          "pid": 22368,
+          "savedSource": "packed = 3\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+          "savedSha256": "dfe5b655a51382173f3b88e86565d6927a4b07e47fe8b0ac7ea56da0c8f508c6",
+          "predictedStdout": "Packing finished\n",
+          "exitCode": 0,
+          "stdout": "Packing finished\r\n",
+          "stderr": "",
+          "executionId": "main-3-3",
+          "evidenceReused": false,
+          "timeoutMs": 10000
+        },
+        {
+          "id": "main-4-3",
+          "filename": "main-4-3.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-MYBVSY",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-MYBVSY\\main-4-3.py"
+          ],
+          "pid": 9200,
+          "savedSource": "packed = 4\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+          "savedSha256": "779e2917abcff31fdd4e6988b0b370fc42a99e99bec91407ce75c97dbe90d864",
+          "predictedStdout": "Packing finished\n",
+          "exitCode": 0,
+          "stdout": "Packing finished\r\n",
+          "stderr": "",
+          "executionId": "main-4-3",
+          "evidenceReused": false,
+          "timeoutMs": 10000
+        },
+        {
+          "id": "main-2-5",
+          "filename": "main-2-5.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-MYBVSY",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-MYBVSY\\main-2-5.py"
+          ],
+          "pid": 6572,
+          "savedSource": "packed = 2\ntarget = 5\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+          "savedSha256": "ba6c4251f40a2a221a30d56c6692b71c367db95eb67878a328cc803bbd4417df",
+          "predictedStdout": "3\n4\n5\nPacking finished\n",
+          "exitCode": 0,
+          "stdout": "3\r\n4\r\n5\r\nPacking finished\r\n",
+          "stderr": "",
+          "executionId": "main-2-5",
+          "evidenceReused": false,
+          "timeoutMs": 10000
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L04",
+      "sectionId": "order-matters",
+      "filename": "before_update.py",
+      "key": "beforePrint",
+      "executionMode": "saved-file-real-process-with-explicit-identical-source-reuse",
+      "runs": [
+        {
+          "id": "print-before",
+          "filename": "print-before.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-s9sDIP",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-s9sDIP\\print-before.py"
+          ],
+          "pid": 23632,
+          "savedSource": "packed = 0\ntarget = 3\n\nwhile packed < target:\n    print(packed)\n    packed = packed + 1\n\nprint(\"Packing finished\")\n",
+          "savedSha256": "a8336820737fe963f0c836ea59501f93bdf1a91332fb82c12a6d48b04550235b",
+          "predictedStdout": "0\n1\n2\nPacking finished\n",
+          "exitCode": 0,
+          "stdout": "0\r\n1\r\n2\r\nPacking finished\r\n",
+          "stderr": "",
+          "executionId": "print-before",
+          "evidenceReused": false,
+          "timeoutMs": 10000
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L04",
+      "sectionId": "practice",
+      "filename": "repair_increment.py · 修复前",
+      "key": "fault",
+      "executionMode": "saved-file-real-process-with-explicit-identical-source-reuse",
+      "runs": [
+        {
+          "businessCorrect": false,
+          "id": "wrong-step-two",
+          "filename": "wrong-step-two.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-7KOisF",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-7KOisF\\wrong-step-two.py"
+          ],
+          "pid": 14904,
+          "savedSource": "packed = 0\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 2\n    print(packed)\n\nprint(\"Packing finished\")\n",
+          "savedSha256": "91526055c26dd056f98bc30a1178f2bdb0770330c3452591b2fb0502168b0a94",
+          "predictedStdout": "2\n4\nPacking finished\n",
+          "exitCode": 0,
+          "stdout": "2\r\n4\r\nPacking finished\r\n",
+          "stderr": "",
+          "executionId": "wrong-step-two",
+          "evidenceReused": false,
+          "timeoutMs": 10000
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L04",
+      "sectionId": "reference-programs",
+      "filename": "label_counter.py · 题一参考",
+      "key": "own",
+      "executionMode": "saved-file-real-process-with-explicit-identical-source-reuse",
+      "runs": [
+        {
+          "id": "own-multiple",
+          "filename": "own-multiple.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-Nuy0t8",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-Nuy0t8\\own-multiple.py"
+          ],
+          "pid": 22520,
+          "savedSource": "labels_done = 2\nlabel_goal = 6\n\nwhile labels_done < label_goal:\n    labels_done = labels_done + 1\n    print(labels_done)\n\nprint(\"Label check finished\")\n",
+          "savedSha256": "e56e8957e2b7bebc7c8e6549c4a12b887e902d5e4656b114ad90c422f11621aa",
+          "predictedStdout": "3\n4\n5\n6\nLabel check finished\n",
+          "exitCode": 0,
+          "stdout": "3\r\n4\r\n5\r\n6\r\nLabel check finished\r\n",
+          "stderr": "",
+          "executionId": "own-multiple",
+          "evidenceReused": false,
+          "timeoutMs": 10000
+        },
+        {
+          "id": "own-zero",
+          "filename": "own-zero.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-Nuy0t8",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-Nuy0t8\\own-zero.py"
+          ],
+          "pid": 16256,
+          "savedSource": "labels_done = 6\nlabel_goal = 6\n\nwhile labels_done < label_goal:\n    labels_done = labels_done + 1\n    print(labels_done)\n\nprint(\"Label check finished\")\n",
+          "savedSha256": "9611b56773cbc8a3a41fdb4a999f91914c956ca58925dd58addd68c83ebdc43e",
+          "predictedStdout": "Label check finished\n",
+          "exitCode": 0,
+          "stdout": "Label check finished\r\n",
+          "stderr": "",
+          "executionId": "own-zero",
+          "evidenceReused": false,
+          "timeoutMs": 10000
+        },
+        {
+          "id": "own-new",
+          "filename": "own-new.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-Nuy0t8",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-Nuy0t8\\own-new.py"
+          ],
+          "pid": 18960,
+          "savedSource": "labels_done = 4\nlabel_goal = 7\n\nwhile labels_done < label_goal:\n    labels_done = labels_done + 1\n    print(labels_done)\n\nprint(\"Label check finished\")\n",
+          "savedSha256": "ece5aee031d90927d10119c221d88a1483d921447c2840b02827b6d792b3b25c",
+          "predictedStdout": "5\n6\n7\nLabel check finished\n",
+          "exitCode": 0,
+          "stdout": "5\r\n6\r\n7\r\nLabel check finished\r\n",
+          "stderr": "",
+          "executionId": "own-new",
+          "evidenceReused": false,
+          "timeoutMs": 10000
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L04",
+      "sectionId": "reference-programs",
+      "filename": "repair_increment.py · 修复后的新数据参考",
+      "key": "fixed",
+      "executionMode": "saved-file-real-process-with-explicit-identical-source-reuse",
+      "runs": [
+        {
+          "businessCorrect": true,
+          "id": "repair-original",
+          "filename": "main-0-3.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-MYBVSY",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-MYBVSY\\main-0-3.py"
+          ],
+          "pid": 12884,
+          "savedSource": "packed = 0\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+          "savedSha256": "2ba23b140781cfb720846a8ff750537d836b03bb08448e3c0eed9e222b8013f5",
+          "predictedStdout": "1\n2\n3\nPacking finished\n",
+          "exitCode": 0,
+          "stdout": "1\r\n2\r\n3\r\nPacking finished\r\n",
+          "stderr": "",
+          "executionId": "main-0-3",
+          "evidenceReused": true,
+          "timeoutMs": 10000
+        },
+        {
+          "businessCorrect": true,
+          "id": "repair-new",
+          "filename": "main-2-5.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-MYBVSY",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-MYBVSY\\main-2-5.py"
+          ],
+          "pid": 6572,
+          "savedSource": "packed = 2\ntarget = 5\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+          "savedSha256": "ba6c4251f40a2a221a30d56c6692b71c367db95eb67878a328cc803bbd4417df",
+          "predictedStdout": "3\n4\n5\nPacking finished\n",
+          "exitCode": 0,
+          "stdout": "3\r\n4\r\n5\r\nPacking finished\r\n",
+          "stderr": "",
+          "executionId": "main-2-5",
+          "evidenceReused": true,
+          "timeoutMs": 10000
+        },
+        {
+          "businessCorrect": true,
+          "id": "repair-zero",
+          "filename": "main-3-3.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-MYBVSY",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p19-web-MYBVSY\\main-3-3.py"
+          ],
+          "pid": 22368,
+          "savedSource": "packed = 3\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+          "savedSha256": "dfe5b655a51382173f3b88e86565d6927a4b07e47fe8b0ac7ea56da0c8f508c6",
+          "predictedStdout": "Packing finished\n",
+          "exitCode": 0,
+          "stdout": "Packing finished\r\n",
+          "stderr": "",
+          "executionId": "main-3-3",
+          "evidenceReused": true,
+          "timeoutMs": 10000
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L03",
+      "sectionId": "separate-checks",
+      "filename": "quantity_parts.py",
+      "key": "named",
+      "executionMode": "saved-file-real-process-with-explicit-identical-source-reuse",
+      "runs": [
+        {
+          "key": "named",
+          "id": "named-2",
+          "filename": "named-2.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VjA7yO",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VjA7yO\\named-2.py"
+          ],
+          "pid": 20376,
+          "savedSource": "count = 2\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\n\nprint(enough)\nprint(within_stock)\n",
+          "savedSha256": "a171aa7b7459b109224f000a64d4a85619fb8e93ba75ef9e213e5c498b000aff",
+          "predictedStdout": "False\nTrue\n",
+          "exitCode": 0,
+          "stdout": "False\r\nTrue\r\n",
+          "stderr": "",
+          "executionId": "named-2",
+          "evidenceReused": false
+        },
+        {
+          "key": "named",
+          "id": "named-3",
+          "filename": "named-3.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VjA7yO",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VjA7yO\\named-3.py"
+          ],
+          "pid": 19184,
+          "savedSource": "count = 3\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\n\nprint(enough)\nprint(within_stock)\n",
+          "savedSha256": "3b6be36e0bf7378e30ca53e592f23e497ec5eb00ec0977dc590a2b8db88a1068",
+          "predictedStdout": "True\nTrue\n",
+          "exitCode": 0,
+          "stdout": "True\r\nTrue\r\n",
+          "stderr": "",
+          "executionId": "named-3",
+          "evidenceReused": false
+        },
+        {
+          "key": "named",
+          "id": "named-5",
+          "filename": "named-5.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VjA7yO",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VjA7yO\\named-5.py"
+          ],
+          "pid": 24444,
+          "savedSource": "count = 5\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\n\nprint(enough)\nprint(within_stock)\n",
+          "savedSha256": "f7e26fd6838dec9bc49aee35934906bda5bb3110f864861d11a9a8b60ac3ec2f",
+          "predictedStdout": "True\nTrue\n",
+          "exitCode": 0,
+          "stdout": "True\r\nTrue\r\n",
+          "stderr": "",
+          "executionId": "named-5",
+          "evidenceReused": false
+        },
+        {
+          "key": "named",
+          "id": "named-6",
+          "filename": "named-6.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VjA7yO",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VjA7yO\\named-6.py"
+          ],
+          "pid": 13944,
+          "savedSource": "count = 6\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\n\nprint(enough)\nprint(within_stock)\n",
+          "savedSha256": "5bd569cdd9561ae4711f9780e568f2ee044c1308e1d0a8183eb981b52aff6921",
+          "predictedStdout": "True\nTrue\n",
+          "exitCode": 0,
+          "stdout": "True\r\nTrue\r\n",
+          "stderr": "",
+          "executionId": "named-6",
+          "evidenceReused": false
+        },
+        {
+          "key": "named",
+          "id": "named-7",
+          "filename": "named-7.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VjA7yO",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VjA7yO\\named-7.py"
+          ],
+          "pid": 18604,
+          "savedSource": "count = 7\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\n\nprint(enough)\nprint(within_stock)\n",
+          "savedSha256": "cd2dc2d05be9fc0594909c8fe4eaa6fa41304db37decae5fb06c6d2c3000d16f",
+          "predictedStdout": "True\nFalse\n",
+          "exitCode": 0,
+          "stdout": "True\r\nFalse\r\n",
+          "stderr": "",
+          "executionId": "named-7",
+          "evidenceReused": false
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L03",
+      "sectionId": "both-required",
+      "filename": "combined_result.py",
+      "key": "andResult",
+      "executionMode": "saved-file-real-process-with-explicit-identical-source-reuse",
+      "runs": [
+        {
+          "key": "andResult",
+          "id": "and-result-2",
+          "filename": "and-result-2.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-5inxmJ",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-5inxmJ\\and-result-2.py"
+          ],
+          "pid": 22368,
+          "savedSource": "count = 2\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\nquantity_ready = enough and within_stock\n\nprint(quantity_ready)\n",
+          "savedSha256": "85def369ce9deebac7ddd66e6213405b0dde0ea16db3dc097732b4d581eb3eec",
+          "predictedStdout": "False\n",
+          "exitCode": 0,
+          "stdout": "False\r\n",
+          "stderr": "",
+          "executionId": "and-result-2",
+          "evidenceReused": false
+        },
+        {
+          "key": "andResult",
+          "id": "and-result-5",
+          "filename": "and-result-5.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-5inxmJ",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-5inxmJ\\and-result-5.py"
+          ],
+          "pid": 19276,
+          "savedSource": "count = 5\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\nquantity_ready = enough and within_stock\n\nprint(quantity_ready)\n",
+          "savedSha256": "8791753da3bc7134d7456769e06f689ff9d82a3173037761632bcf4487b9bcdb",
+          "predictedStdout": "True\n",
+          "exitCode": 0,
+          "stdout": "True\r\n",
+          "stderr": "",
+          "executionId": "and-result-5",
+          "evidenceReused": false
+        },
+        {
+          "key": "andResult",
+          "id": "and-result-7",
+          "filename": "and-result-7.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-5inxmJ",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-5inxmJ\\and-result-7.py"
+          ],
+          "pid": 1772,
+          "savedSource": "count = 7\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\nquantity_ready = enough and within_stock\n\nprint(quantity_ready)\n",
+          "savedSha256": "52701a8575844393a7d47d2f8cefa13754fbc4c95f89453445f11151af1690f2",
+          "predictedStdout": "False\n",
+          "exitCode": 0,
+          "stdout": "False\r\n",
+          "stderr": "",
+          "executionId": "and-result-7",
+          "evidenceReused": false
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L03",
+      "sectionId": "both-required",
+      "filename": "saved_condition.py",
+      "key": "andIf",
+      "executionMode": "saved-file-real-process-with-explicit-identical-source-reuse",
+      "runs": [
+        {
+          "key": "andIf",
+          "id": "saved-if",
+          "filename": "saved-if.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-hiv1ls",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-hiv1ls\\saved-if.py"
+          ],
+          "pid": 4292,
+          "savedSource": "count = 5\nminimum = 3\nstock = 6\n\nenough = count >= minimum\nwithin_stock = count <= stock\nquantity_ready = enough and within_stock\n\nif quantity_ready:\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "933e3035b95044dc44c16d633a1bcbc1d0d0b01cfcd400694c392606a1abe24f",
+          "predictedStdout": "Quantity ready\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Quantity ready\r\nCheck finished\r\n",
+          "stderr": "",
+          "executionId": "saved-if",
+          "evidenceReused": false
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L03",
+      "sectionId": "both-required",
+      "filename": "quantity_range.py",
+      "key": "main",
+      "executionMode": "saved-file-real-process-with-explicit-identical-source-reuse",
+      "runs": [
+        {
+          "key": "main",
+          "id": "main-2",
+          "filename": "main-2.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS\\main-2.py"
+          ],
+          "pid": 24612,
+          "savedSource": "count = 2\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "f40580ab900aded23b6cdf0b60d714e7bb528d09ee90c05588df82dfd2cd3d1c",
+          "predictedStdout": "Check finished\n",
+          "exitCode": 0,
+          "stdout": "Check finished\r\n",
+          "stderr": "",
+          "executionId": "main-2",
+          "evidenceReused": false
+        },
+        {
+          "key": "main",
+          "id": "main-3",
+          "filename": "main-3.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS\\main-3.py"
+          ],
+          "pid": 23232,
+          "savedSource": "count = 3\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "aee2305bfc2acdb4dd74a00707f15f318afac2a6d286baa5a9b21f09a085da46",
+          "predictedStdout": "Quantity ready\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Quantity ready\r\nCheck finished\r\n",
+          "stderr": "",
+          "executionId": "main-3",
+          "evidenceReused": false
+        },
+        {
+          "key": "main",
+          "id": "main-5",
+          "filename": "main-5.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS\\main-5.py"
+          ],
+          "pid": 12820,
+          "savedSource": "count = 5\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "6ae9b1bf34dca54d3cf771d255414dfaf21a45b45e3ac492c5bdf6648926058a",
+          "predictedStdout": "Quantity ready\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Quantity ready\r\nCheck finished\r\n",
+          "stderr": "",
+          "executionId": "main-5",
+          "evidenceReused": false
+        },
+        {
+          "key": "main",
+          "id": "main-6",
+          "filename": "main-6.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS\\main-6.py"
+          ],
+          "pid": 22632,
+          "savedSource": "count = 6\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "761afa89997e65b4a79116546181a454b72a4d88369f3a7130aae91232590256",
+          "predictedStdout": "Quantity ready\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Quantity ready\r\nCheck finished\r\n",
+          "stderr": "",
+          "executionId": "main-6",
+          "evidenceReused": false
+        },
+        {
+          "key": "main",
+          "id": "main-7",
+          "filename": "main-7.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS\\main-7.py"
+          ],
+          "pid": 16848,
+          "savedSource": "count = 7\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "dd8241e8dc41085c43d1a5623dd6dfa23a64d91e3c0b0b8100b171626790b9f0",
+          "predictedStdout": "Check finished\n",
+          "exitCode": 0,
+          "stdout": "Check finished\r\n",
+          "stderr": "",
+          "executionId": "main-7",
+          "evidenceReused": false
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L03",
+      "sectionId": "review-or",
+      "filename": "needs_review.py",
+      "key": "review",
+      "executionMode": "saved-file-real-process-with-explicit-identical-source-reuse",
+      "runs": [
+        {
+          "key": "review",
+          "id": "review-2",
+          "filename": "review-2.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VMnbij",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VMnbij\\review-2.py"
+          ],
+          "pid": 20400,
+          "savedSource": "count = 2\nminimum = 3\nstock = 6\n\ntoo_few = count < minimum\ntoo_many = count > stock\nneeds_review = too_few or too_many\n\nprint(needs_review)\n",
+          "savedSha256": "2de712df228e1c51d8f891dbe11dff4f39f9c40e8ad8979428e80f0a54a425e6",
+          "predictedStdout": "True\n",
+          "exitCode": 0,
+          "stdout": "True\r\n",
+          "stderr": "",
+          "executionId": "review-2",
+          "evidenceReused": false
+        },
+        {
+          "key": "review",
+          "id": "review-3",
+          "filename": "review-3.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VMnbij",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VMnbij\\review-3.py"
+          ],
+          "pid": 23336,
+          "savedSource": "count = 3\nminimum = 3\nstock = 6\n\ntoo_few = count < minimum\ntoo_many = count > stock\nneeds_review = too_few or too_many\n\nprint(needs_review)\n",
+          "savedSha256": "bc59cb1280e79a7d2b386c812a70832b65a4a4c60a0be2972e69dc55eca0ddfb",
+          "predictedStdout": "False\n",
+          "exitCode": 0,
+          "stdout": "False\r\n",
+          "stderr": "",
+          "executionId": "review-3",
+          "evidenceReused": false
+        },
+        {
+          "key": "review",
+          "id": "review-5",
+          "filename": "review-5.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VMnbij",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VMnbij\\review-5.py"
+          ],
+          "pid": 9344,
+          "savedSource": "count = 5\nminimum = 3\nstock = 6\n\ntoo_few = count < minimum\ntoo_many = count > stock\nneeds_review = too_few or too_many\n\nprint(needs_review)\n",
+          "savedSha256": "3669f9f4299b88d27d22e3a204b5beb189572b4414db15b76ef3ede24e57dc76",
+          "predictedStdout": "False\n",
+          "exitCode": 0,
+          "stdout": "False\r\n",
+          "stderr": "",
+          "executionId": "review-5",
+          "evidenceReused": false
+        },
+        {
+          "key": "review",
+          "id": "review-6",
+          "filename": "review-6.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VMnbij",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VMnbij\\review-6.py"
+          ],
+          "pid": 21928,
+          "savedSource": "count = 6\nminimum = 3\nstock = 6\n\ntoo_few = count < minimum\ntoo_many = count > stock\nneeds_review = too_few or too_many\n\nprint(needs_review)\n",
+          "savedSha256": "04e7af339b47a3a46a2786df6671715eb5c35f733cd4969db8e8b725e9b38fef",
+          "predictedStdout": "False\n",
+          "exitCode": 0,
+          "stdout": "False\r\n",
+          "stderr": "",
+          "executionId": "review-6",
+          "evidenceReused": false
+        },
+        {
+          "key": "review",
+          "id": "review-7",
+          "filename": "review-7.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VMnbij",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-VMnbij\\review-7.py"
+          ],
+          "pid": 16400,
+          "savedSource": "count = 7\nminimum = 3\nstock = 6\n\ntoo_few = count < minimum\ntoo_many = count > stock\nneeds_review = too_few or too_many\n\nprint(needs_review)\n",
+          "savedSha256": "454c59cab7e1e138431c9ee93dc8198d8cfc07fe1b4fa1d5a734bcc877191ae5",
+          "predictedStdout": "True\n",
+          "exitCode": 0,
+          "stdout": "True\r\n",
+          "stderr": "",
+          "executionId": "review-7",
+          "evidenceReused": false
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L03",
+      "sectionId": "reverse-result",
+      "filename": "reverse_bool.py",
+      "key": "notValue",
+      "executionMode": "saved-file-real-process-with-explicit-identical-source-reuse",
+      "runs": [
+        {
+          "key": "notValue",
+          "id": "not-true",
+          "filename": "not-true.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-QjhkYv",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-QjhkYv\\not-true.py"
+          ],
+          "pid": 596,
+          "savedSource": "quantity_ready = True\nprint(not quantity_ready)\n",
+          "savedSha256": "0581b537670c27c2fbe81e3f04dada0c43095e1835118478b205401bcc8ed1f8",
+          "predictedStdout": "False\n",
+          "exitCode": 0,
+          "stdout": "False\r\n",
+          "stderr": "",
+          "executionId": "not-true",
+          "evidenceReused": false
+        },
+        {
+          "key": "notValue",
+          "id": "not-false",
+          "filename": "not-false.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-QjhkYv",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-QjhkYv\\not-false.py"
+          ],
+          "pid": 22308,
+          "savedSource": "quantity_ready = False\nprint(not quantity_ready)\n",
+          "savedSha256": "1a3122c7992d975627dea746076f8ff236a3b269d3564bc24479db9628af3829",
+          "predictedStdout": "True\n",
+          "exitCode": 0,
+          "stdout": "True\r\n",
+          "stderr": "",
+          "executionId": "not-false",
+          "evidenceReused": false
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L03",
+      "sectionId": "reverse-result",
+      "filename": "reverse_ready.py",
+      "key": "notRange",
+      "executionMode": "saved-file-real-process-with-explicit-identical-source-reuse",
+      "runs": [
+        {
+          "key": "notRange",
+          "id": "not-range-2",
+          "filename": "not-range-2.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-XqYZbz",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-XqYZbz\\not-range-2.py"
+          ],
+          "pid": 23048,
+          "savedSource": "count = 2\nminimum = 3\nstock = 6\n\nquantity_ready = (count >= minimum) and (count <= stock)\n\nprint(quantity_ready)\nprint(not quantity_ready)\n",
+          "savedSha256": "0a2cb59502c4da3ee54170f11e763f8c1a316465a756c800db60076d49ff9c2a",
+          "predictedStdout": "False\nTrue\n",
+          "exitCode": 0,
+          "stdout": "False\r\nTrue\r\n",
+          "stderr": "",
+          "executionId": "not-range-2",
+          "evidenceReused": false
+        },
+        {
+          "key": "notRange",
+          "id": "not-range-3",
+          "filename": "not-range-3.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-XqYZbz",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-XqYZbz\\not-range-3.py"
+          ],
+          "pid": 23612,
+          "savedSource": "count = 3\nminimum = 3\nstock = 6\n\nquantity_ready = (count >= minimum) and (count <= stock)\n\nprint(quantity_ready)\nprint(not quantity_ready)\n",
+          "savedSha256": "6e9b4d72c0e8a634a124074d198541d4c4d09aa4967e56bae3069822c8fd4b39",
+          "predictedStdout": "True\nFalse\n",
+          "exitCode": 0,
+          "stdout": "True\r\nFalse\r\n",
+          "stderr": "",
+          "executionId": "not-range-3",
+          "evidenceReused": false
+        },
+        {
+          "key": "notRange",
+          "id": "not-range-5",
+          "filename": "not-range-5.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-XqYZbz",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-XqYZbz\\not-range-5.py"
+          ],
+          "pid": 20412,
+          "savedSource": "count = 5\nminimum = 3\nstock = 6\n\nquantity_ready = (count >= minimum) and (count <= stock)\n\nprint(quantity_ready)\nprint(not quantity_ready)\n",
+          "savedSha256": "10cfbd4c92eba3b8737ea31603b232e1fe33439f2875fcbd47eb3bcb6e51176c",
+          "predictedStdout": "True\nFalse\n",
+          "exitCode": 0,
+          "stdout": "True\r\nFalse\r\n",
+          "stderr": "",
+          "executionId": "not-range-5",
+          "evidenceReused": false
+        },
+        {
+          "key": "notRange",
+          "id": "not-range-6",
+          "filename": "not-range-6.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-XqYZbz",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-XqYZbz\\not-range-6.py"
+          ],
+          "pid": 18648,
+          "savedSource": "count = 6\nminimum = 3\nstock = 6\n\nquantity_ready = (count >= minimum) and (count <= stock)\n\nprint(quantity_ready)\nprint(not quantity_ready)\n",
+          "savedSha256": "e7b4d570163f86f581c8dc9ee3233fff55f2638488907ad7ff2013289297be99",
+          "predictedStdout": "True\nFalse\n",
+          "exitCode": 0,
+          "stdout": "True\r\nFalse\r\n",
+          "stderr": "",
+          "executionId": "not-range-6",
+          "evidenceReused": false
+        },
+        {
+          "key": "notRange",
+          "id": "not-range-7",
+          "filename": "not-range-7.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-XqYZbz",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-XqYZbz\\not-range-7.py"
+          ],
+          "pid": 5172,
+          "savedSource": "count = 7\nminimum = 3\nstock = 6\n\nquantity_ready = (count >= minimum) and (count <= stock)\n\nprint(quantity_ready)\nprint(not quantity_ready)\n",
+          "savedSha256": "c448958473059b8d8bc80f3adba3e38e020976786e8555da5c827673c7795034",
+          "predictedStdout": "False\nTrue\n",
+          "exitCode": 0,
+          "stdout": "False\r\nTrue\r\n",
+          "stderr": "",
+          "executionId": "not-range-7",
+          "evidenceReused": false
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L03",
+      "sectionId": "reverse-result",
+      "filename": "below_minimum.py",
+      "key": "notComparison",
+      "executionMode": "saved-file-real-process-with-explicit-identical-source-reuse",
+      "runs": [
+        {
+          "key": "notComparison",
+          "id": "not-comparison-2",
+          "filename": "not-comparison-2.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-rVLcIW",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-rVLcIW\\not-comparison-2.py"
+          ],
+          "pid": 23380,
+          "savedSource": "count = 2\nminimum = 3\n\nprint(not (count >= minimum))\n",
+          "savedSha256": "03260ee6dab9da6c79e277a556ca3c5a071941120ef4215315e823b2e8f0693a",
+          "predictedStdout": "True\n",
+          "exitCode": 0,
+          "stdout": "True\r\n",
+          "stderr": "",
+          "executionId": "not-comparison-2",
+          "evidenceReused": false
+        },
+        {
+          "key": "notComparison",
+          "id": "not-comparison-3",
+          "filename": "not-comparison-3.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-rVLcIW",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-rVLcIW\\not-comparison-3.py"
+          ],
+          "pid": 580,
+          "savedSource": "count = 3\nminimum = 3\n\nprint(not (count >= minimum))\n",
+          "savedSha256": "3b1a60011d49bf1b2c7602cfeeb3ecaa120ce80b001aefae39fd0aa0d85db5d4",
+          "predictedStdout": "False\n",
+          "exitCode": 0,
+          "stdout": "False\r\n",
+          "stderr": "",
+          "executionId": "not-comparison-3",
+          "evidenceReused": false
+        },
+        {
+          "key": "notComparison",
+          "id": "not-comparison-7",
+          "filename": "not-comparison-7.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-rVLcIW",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-rVLcIW\\not-comparison-7.py"
+          ],
+          "pid": 2588,
+          "savedSource": "count = 7\nminimum = 3\n\nprint(not (count >= minimum))\n",
+          "savedSha256": "b0c476fa5b8030055f8669ebeeddbb580a59a143fdf96ff5ed04707633152499",
+          "predictedStdout": "False\n",
+          "exitCode": 0,
+          "stdout": "False\r\n",
+          "stderr": "",
+          "executionId": "not-comparison-7",
+          "evidenceReused": false
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L03",
+      "sectionId": "practice",
+      "filename": "repair_connector.py · 修复前",
+      "key": "fault",
+      "executionMode": "saved-file-real-process-with-explicit-identical-source-reuse",
+      "runs": [
+        {
+          "key": "fault",
+          "businessCorrect": false,
+          "id": "fault-2",
+          "filename": "fault-2.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-wiEyUI",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-wiEyUI\\fault-2.py"
+          ],
+          "pid": 8200,
+          "savedSource": "count = 2\nminimum = 3\nstock = 6\n\nif (count >= minimum) or (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "eafacd7ea4d6f3ca1a757c526d41f5fcd58c16a4380a4929ddd48111fa5de36e",
+          "predictedStdout": "Quantity ready\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Quantity ready\r\nCheck finished\r\n",
+          "stderr": "",
+          "executionId": "fault-2",
+          "evidenceReused": false
+        },
+        {
+          "key": "fault",
+          "businessCorrect": true,
+          "id": "fault-3",
+          "filename": "fault-3.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-wiEyUI",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-wiEyUI\\fault-3.py"
+          ],
+          "pid": 22368,
+          "savedSource": "count = 3\nminimum = 3\nstock = 6\n\nif (count >= minimum) or (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "95f2ef21b6e255762794f1e2af79e715b08e166422b225e64d20cab41defe8f7",
+          "predictedStdout": "Quantity ready\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Quantity ready\r\nCheck finished\r\n",
+          "stderr": "",
+          "executionId": "fault-3",
+          "evidenceReused": false
+        },
+        {
+          "key": "fault",
+          "businessCorrect": true,
+          "id": "fault-5",
+          "filename": "fault-5.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-wiEyUI",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-wiEyUI\\fault-5.py"
+          ],
+          "pid": 2160,
+          "savedSource": "count = 5\nminimum = 3\nstock = 6\n\nif (count >= minimum) or (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "82bdfcd0e85f0cfba480c3ec63a5b292fe46ed34efd488b40b0972c31ec79166",
+          "predictedStdout": "Quantity ready\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Quantity ready\r\nCheck finished\r\n",
+          "stderr": "",
+          "executionId": "fault-5",
+          "evidenceReused": false
+        },
+        {
+          "key": "fault",
+          "businessCorrect": true,
+          "id": "fault-6",
+          "filename": "fault-6.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-wiEyUI",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-wiEyUI\\fault-6.py"
+          ],
+          "pid": 23412,
+          "savedSource": "count = 6\nminimum = 3\nstock = 6\n\nif (count >= minimum) or (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "76d1ba048d6278d9a36fd3dd5b9f2f2df1e944454b7683dfdb7a6ef12ff4bfd3",
+          "predictedStdout": "Quantity ready\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Quantity ready\r\nCheck finished\r\n",
+          "stderr": "",
+          "executionId": "fault-6",
+          "evidenceReused": false
+        },
+        {
+          "key": "fault",
+          "businessCorrect": false,
+          "id": "fault-7",
+          "filename": "fault-7.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-wiEyUI",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-wiEyUI\\fault-7.py"
+          ],
+          "pid": 1552,
+          "savedSource": "count = 7\nminimum = 3\nstock = 6\n\nif (count >= minimum) or (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "86ba66dcdb109558c9c202ea866ed1379bdc785e7cb1e0e48e17d01f570ba405",
+          "predictedStdout": "Quantity ready\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Quantity ready\r\nCheck finished\r\n",
+          "stderr": "",
+          "executionId": "fault-7",
+          "evidenceReused": false
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L03",
+      "sectionId": "reference-programs",
+      "filename": "book_range.py · 题一参考",
+      "key": "own",
+      "executionMode": "saved-file-real-process-with-explicit-identical-source-reuse",
+      "runs": [
+        {
+          "key": "own",
+          "id": "own-3",
+          "filename": "own-3.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-Gfz4zj",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-Gfz4zj\\own-3.py"
+          ],
+          "pid": 25164,
+          "savedSource": "books = 3\nminimum_books = 4\navailable_books = 9\n\nenough_books = books >= minimum_books\nwithin_available = books <= available_books\nready = enough_books and within_available\nneeds_check = (books < minimum_books) or (books > available_books)\n\nprint(enough_books)\nprint(within_available)\nprint(ready)\nprint(needs_check)\nprint(not ready)\n\nif ready:\n    print(\"Book batch ready\")\n\nprint(\"Book check finished\")\n",
+          "savedSha256": "3310db43631eb128cd954e9ed529c20d5da3e8387e0178dbfe8df6dbbb4a2fba",
+          "predictedStdout": "False\nTrue\nFalse\nTrue\nTrue\nBook check finished\n",
+          "exitCode": 0,
+          "stdout": "False\r\nTrue\r\nFalse\r\nTrue\r\nTrue\r\nBook check finished\r\n",
+          "stderr": "",
+          "executionId": "own-3",
+          "evidenceReused": false
+        },
+        {
+          "key": "own",
+          "id": "own-4",
+          "filename": "own-4.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-Gfz4zj",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-Gfz4zj\\own-4.py"
+          ],
+          "pid": 19300,
+          "savedSource": "books = 4\nminimum_books = 4\navailable_books = 9\n\nenough_books = books >= minimum_books\nwithin_available = books <= available_books\nready = enough_books and within_available\nneeds_check = (books < minimum_books) or (books > available_books)\n\nprint(enough_books)\nprint(within_available)\nprint(ready)\nprint(needs_check)\nprint(not ready)\n\nif ready:\n    print(\"Book batch ready\")\n\nprint(\"Book check finished\")\n",
+          "savedSha256": "7557c47f264841590599ded5073dea6eb2aba1a78f3b945189eb15b158d989af",
+          "predictedStdout": "True\nTrue\nTrue\nFalse\nFalse\nBook batch ready\nBook check finished\n",
+          "exitCode": 0,
+          "stdout": "True\r\nTrue\r\nTrue\r\nFalse\r\nFalse\r\nBook batch ready\r\nBook check finished\r\n",
+          "stderr": "",
+          "executionId": "own-4",
+          "evidenceReused": false
+        },
+        {
+          "key": "own",
+          "id": "own-6",
+          "filename": "own-6.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-Gfz4zj",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-Gfz4zj\\own-6.py"
+          ],
+          "pid": 17348,
+          "savedSource": "books = 6\nminimum_books = 4\navailable_books = 9\n\nenough_books = books >= minimum_books\nwithin_available = books <= available_books\nready = enough_books and within_available\nneeds_check = (books < minimum_books) or (books > available_books)\n\nprint(enough_books)\nprint(within_available)\nprint(ready)\nprint(needs_check)\nprint(not ready)\n\nif ready:\n    print(\"Book batch ready\")\n\nprint(\"Book check finished\")\n",
+          "savedSha256": "dfcfd6459231f99e1d64b5c7be36caf90481c86c0a03d076cddecd7515ceeabc",
+          "predictedStdout": "True\nTrue\nTrue\nFalse\nFalse\nBook batch ready\nBook check finished\n",
+          "exitCode": 0,
+          "stdout": "True\r\nTrue\r\nTrue\r\nFalse\r\nFalse\r\nBook batch ready\r\nBook check finished\r\n",
+          "stderr": "",
+          "executionId": "own-6",
+          "evidenceReused": false
+        },
+        {
+          "key": "own",
+          "id": "own-9",
+          "filename": "own-9.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-Gfz4zj",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-Gfz4zj\\own-9.py"
+          ],
+          "pid": 24400,
+          "savedSource": "books = 9\nminimum_books = 4\navailable_books = 9\n\nenough_books = books >= minimum_books\nwithin_available = books <= available_books\nready = enough_books and within_available\nneeds_check = (books < minimum_books) or (books > available_books)\n\nprint(enough_books)\nprint(within_available)\nprint(ready)\nprint(needs_check)\nprint(not ready)\n\nif ready:\n    print(\"Book batch ready\")\n\nprint(\"Book check finished\")\n",
+          "savedSha256": "4de0c584dc18c85a72f5652763a01be4847d23ce008b4e97b3b20523eb5e9236",
+          "predictedStdout": "True\nTrue\nTrue\nFalse\nFalse\nBook batch ready\nBook check finished\n",
+          "exitCode": 0,
+          "stdout": "True\r\nTrue\r\nTrue\r\nFalse\r\nFalse\r\nBook batch ready\r\nBook check finished\r\n",
+          "stderr": "",
+          "executionId": "own-9",
+          "evidenceReused": false
+        },
+        {
+          "key": "own",
+          "id": "own-10",
+          "filename": "own-10.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-Gfz4zj",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-Gfz4zj\\own-10.py"
+          ],
+          "pid": 24580,
+          "savedSource": "books = 10\nminimum_books = 4\navailable_books = 9\n\nenough_books = books >= minimum_books\nwithin_available = books <= available_books\nready = enough_books and within_available\nneeds_check = (books < minimum_books) or (books > available_books)\n\nprint(enough_books)\nprint(within_available)\nprint(ready)\nprint(needs_check)\nprint(not ready)\n\nif ready:\n    print(\"Book batch ready\")\n\nprint(\"Book check finished\")\n",
+          "savedSha256": "7239775afebda1395149e4f9f9fa32dab6c18053f1eb7a90fd388da2c491b63b",
+          "predictedStdout": "True\nFalse\nFalse\nTrue\nTrue\nBook check finished\n",
+          "exitCode": 0,
+          "stdout": "True\r\nFalse\r\nFalse\r\nTrue\r\nTrue\r\nBook check finished\r\n",
+          "stderr": "",
+          "executionId": "own-10",
+          "evidenceReused": false
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L03",
+      "sectionId": "reference-programs",
+      "filename": "repair_connector.py · 一词修复参考",
+      "key": "fixed",
+      "executionMode": "saved-file-real-process-with-explicit-identical-source-reuse",
+      "runs": [
+        {
+          "key": "fixed",
+          "businessCorrect": true,
+          "id": "fixed-2",
+          "filename": "main-2.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS\\main-2.py"
+          ],
+          "pid": 24612,
+          "savedSource": "count = 2\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "f40580ab900aded23b6cdf0b60d714e7bb528d09ee90c05588df82dfd2cd3d1c",
+          "predictedStdout": "Check finished\n",
+          "exitCode": 0,
+          "stdout": "Check finished\r\n",
+          "stderr": "",
+          "executionId": "main-2",
+          "evidenceReused": true
+        },
+        {
+          "key": "fixed",
+          "businessCorrect": true,
+          "id": "fixed-3",
+          "filename": "main-3.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS\\main-3.py"
+          ],
+          "pid": 23232,
+          "savedSource": "count = 3\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "aee2305bfc2acdb4dd74a00707f15f318afac2a6d286baa5a9b21f09a085da46",
+          "predictedStdout": "Quantity ready\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Quantity ready\r\nCheck finished\r\n",
+          "stderr": "",
+          "executionId": "main-3",
+          "evidenceReused": true
+        },
+        {
+          "key": "fixed",
+          "businessCorrect": true,
+          "id": "fixed-5",
+          "filename": "main-5.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS\\main-5.py"
+          ],
+          "pid": 12820,
+          "savedSource": "count = 5\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "6ae9b1bf34dca54d3cf771d255414dfaf21a45b45e3ac492c5bdf6648926058a",
+          "predictedStdout": "Quantity ready\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Quantity ready\r\nCheck finished\r\n",
+          "stderr": "",
+          "executionId": "main-5",
+          "evidenceReused": true
+        },
+        {
+          "key": "fixed",
+          "businessCorrect": true,
+          "id": "fixed-6",
+          "filename": "main-6.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS\\main-6.py"
+          ],
+          "pid": 22632,
+          "savedSource": "count = 6\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "761afa89997e65b4a79116546181a454b72a4d88369f3a7130aae91232590256",
+          "predictedStdout": "Quantity ready\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Quantity ready\r\nCheck finished\r\n",
+          "stderr": "",
+          "executionId": "main-6",
+          "evidenceReused": true
+        },
+        {
+          "key": "fixed",
+          "businessCorrect": true,
+          "id": "fixed-7",
+          "filename": "main-7.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p18-web-oJfQjS\\main-7.py"
+          ],
+          "pid": 16848,
+          "savedSource": "count = 7\nminimum = 3\nstock = 6\n\nif (count >= minimum) and (count <= stock):\n    print(\"Quantity ready\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "dd8241e8dc41085c43d1a5623dd6dfa23a64d91e3c0b0b8100b171626790b9f0",
+          "predictedStdout": "Check finished\n",
+          "exitCode": 0,
+          "stdout": "Check finished\r\n",
+          "stderr": "",
+          "executionId": "main-7",
+          "evidenceReused": true
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L02",
+      "sectionId": "single-if",
+      "filename": "previous_if.py",
+      "key": "previous",
+      "executionMode": "saved-file-real-process",
+      "runs": [
+        {
+          "id": "previous-low",
+          "filename": "previous_if.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-mgQ5TO",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-mgQ5TO\\previous_if.py"
+          ],
+          "pid": 25196,
+          "savedSource": "count = 5\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "0e1742f0ecfbd4d4b98657233e09dec629198b36075c2a9f7568384b7f110190",
+          "predictedStdout": "Within limit\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Within limit\r\nCheck finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "previous-high",
+          "filename": "previous_if.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-mgQ5TO",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-mgQ5TO\\previous_if.py"
+          ],
+          "pid": 19044,
+          "savedSource": "count = 7\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "38977ae3b10cedd0b9fa9bea1f8dbd2dc3ef5ae1e817be0338d4843287662e27",
+          "predictedStdout": "Check finished\n",
+          "exitCode": 0,
+          "stdout": "Check finished\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L02",
+      "sectionId": "two-ways",
+      "filename": "two_way_check.py",
+      "key": "twoWay",
+      "executionMode": "saved-file-real-process",
+      "runs": [
+        {
+          "id": "two-low",
+          "filename": "two_way_check.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-yoUs41",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-yoUs41\\two_way_check.py"
+          ],
+          "pid": 16256,
+          "savedSource": "count = 5\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\nelse:\n    print(\"Over limit\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "70a8345fbf9752b8c3ddffb5cc1d8c78920adf23e6e5b9c29adc346559607ad4",
+          "predictedStdout": "Within limit\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Within limit\r\nCheck finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "two-equal",
+          "filename": "two_way_check.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-yoUs41",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-yoUs41\\two_way_check.py"
+          ],
+          "pid": 20228,
+          "savedSource": "count = 6\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\nelse:\n    print(\"Over limit\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "bedbbe5603ada778bfd2483510d2f95b22fc91ea4d7a190d5097d01b60f2c21a",
+          "predictedStdout": "Within limit\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Within limit\r\nCheck finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "two-high",
+          "filename": "two_way_check.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-yoUs41",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-yoUs41\\two_way_check.py"
+          ],
+          "pid": 23208,
+          "savedSource": "count = 7\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\nelse:\n    print(\"Over limit\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "30d26d0d6f96f1897873b604e0c0d2a8be86a52b9c914d19f350190e6034d58b",
+          "predictedStdout": "Over limit\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Over limit\r\nCheck finished\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L02",
+      "sectionId": "three-ways",
+      "filename": "three_way_check.py",
+      "key": "threeWay",
+      "executionMode": "saved-file-real-process",
+      "runs": [
+        {
+          "id": "three-low",
+          "filename": "three_way_check.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-NEXAWY",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-NEXAWY\\three_way_check.py"
+          ],
+          "pid": 18996,
+          "savedSource": "count = 5\nlimit = 6\n\nif count < limit:\n    print(\"Room left\")\nelif count == limit:\n    print(\"At limit\")\nelse:\n    print(\"Over limit\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "d949e0c95aabe20e6d74216643012a434d83da9d723bc3b2a4a90ebb31db6b15",
+          "predictedStdout": "Room left\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Room left\r\nCheck finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "three-equal",
+          "filename": "three_way_check.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-NEXAWY",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-NEXAWY\\three_way_check.py"
+          ],
+          "pid": 12384,
+          "savedSource": "count = 6\nlimit = 6\n\nif count < limit:\n    print(\"Room left\")\nelif count == limit:\n    print(\"At limit\")\nelse:\n    print(\"Over limit\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "19405d61b7d2bf98409c1d95b75178370fba4bad251126317fc76d2236984950",
+          "predictedStdout": "At limit\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "At limit\r\nCheck finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "three-high",
+          "filename": "three_way_check.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-NEXAWY",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-NEXAWY\\three_way_check.py"
+          ],
+          "pid": 24472,
+          "savedSource": "count = 7\nlimit = 6\n\nif count < limit:\n    print(\"Room left\")\nelif count == limit:\n    print(\"At limit\")\nelse:\n    print(\"Over limit\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "4d438c9c7f5c8d93089552bbc6e1b89bd1e6ee9d2c5f486e9190af5719b1da11",
+          "predictedStdout": "Over limit\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Over limit\r\nCheck finished\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L02",
+      "sectionId": "first-match",
+      "filename": "overlap_choice.py · 重叠观察",
+      "key": "overlap",
+      "executionMode": "saved-file-real-process",
+      "runs": [
+        {
+          "id": "overlap-equal",
+          "filename": "overlap_choice.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-Zarf0z",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-Zarf0z\\overlap_choice.py"
+          ],
+          "pid": 9336,
+          "savedSource": "count = 6\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\nelif count == limit:\n    print(\"At limit\")\nelse:\n    print(\"Over limit\")\n",
+          "savedSha256": "e693fa584321eb5d9a8e62df9598c718ebfef40e7e6d1b0d581e752dabdf34b4",
+          "predictedStdout": "Within limit\n",
+          "exitCode": 0,
+          "stdout": "Within limit\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L02",
+      "sectionId": "first-match",
+      "filename": "overlap_choice.py · 只改第一项后",
+      "key": "orderRepair",
+      "executionMode": "saved-file-real-process",
+      "runs": [
+        {
+          "id": "order-repair-equal",
+          "filename": "overlap_choice.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-mQcklX",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-mQcklX\\overlap_choice.py"
+          ],
+          "pid": 2284,
+          "savedSource": "count = 6\nlimit = 6\n\nif count < limit:\n    print(\"Within limit\")\nelif count == limit:\n    print(\"At limit\")\nelse:\n    print(\"Over limit\")\n",
+          "savedSha256": "6b68a278fd11f856aa28bcc3ca0bbeb7ff737c920618ec676029592186764a4c",
+          "predictedStdout": "At limit\n",
+          "exitCode": 0,
+          "stdout": "At limit\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L02",
+      "sectionId": "independent-checks",
+      "filename": "independent_checks.py",
+      "key": "independent",
+      "executionMode": "saved-file-real-process",
+      "runs": [
+        {
+          "id": "independent-equal",
+          "filename": "independent_checks.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-vjccD6",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-vjccD6\\independent_checks.py"
+          ],
+          "pid": 25116,
+          "savedSource": "count = 6\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n\nif count == limit:\n    print(\"At limit\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "7400441e8c0c896d559723a143d31d904a00d4fe7e90ef45d3d2fd1286f9bab6",
+          "predictedStdout": "Within limit\nAt limit\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Within limit\r\nAt limit\r\nCheck finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "independent-high",
+          "filename": "independent_checks.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-vjccD6",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-vjccD6\\independent_checks.py"
+          ],
+          "pid": 20408,
+          "savedSource": "count = 7\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n\nif count == limit:\n    print(\"At limit\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "5f300db4bd99e871fe17c09dce4bceea5359d91ef80b0cce3b22b2aec32f20ae",
+          "predictedStdout": "Check finished\n",
+          "exitCode": 0,
+          "stdout": "Check finished\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L02",
+      "sectionId": "practice",
+      "filename": "repair_choice.py · 修复前",
+      "key": "fault",
+      "executionMode": "saved-file-real-process",
+      "runs": [
+        {
+          "id": "fault-equal",
+          "filename": "repair_choice.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-2XXfxz",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-2XXfxz\\repair_choice.py"
+          ],
+          "pid": 21256,
+          "savedSource": "kits = 10\nshelf_limit = 10\n\nif kits <= shelf_limit:\n    print(\"Within shelf limit\")\n\nif kits == shelf_limit:\n    print(\"At shelf limit\")\n\nprint(\"Shelf check finished\")\n",
+          "savedSha256": "c41dbb0c0a9acb5871e935ad3b3a77958b4dabce4aa3ba07cb62fb370ecbd0d7",
+          "predictedStdout": "Within shelf limit\nAt shelf limit\nShelf check finished\n",
+          "exitCode": 0,
+          "stdout": "Within shelf limit\r\nAt shelf limit\r\nShelf check finished\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L02",
+      "sectionId": "reference-programs",
+      "filename": "seat_check.py · 题一两路参考",
+      "key": "ownTwo",
+      "executionMode": "saved-file-real-process",
+      "runs": [
+        {
+          "id": "own-two-low",
+          "filename": "seat_check.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-rKG5Jg",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-rKG5Jg\\seat_check.py"
+          ],
+          "pid": 11196,
+          "savedSource": "people = 11\nseats = 14\n\nif people <= seats:\n    print(\"Enough seats\")\nelse:\n    print(\"Not enough seats\")\n\nprint(\"Seat check finished\")\n",
+          "savedSha256": "865b3cf63fde1c6916496f63e4293d6c7a1deb139b1c7486820fbf2d5f6cbe1b",
+          "predictedStdout": "Enough seats\nSeat check finished\n",
+          "exitCode": 0,
+          "stdout": "Enough seats\r\nSeat check finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "own-two-high",
+          "filename": "seat_check.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-rKG5Jg",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-rKG5Jg\\seat_check.py"
+          ],
+          "pid": 24060,
+          "savedSource": "people = 17\nseats = 14\n\nif people <= seats:\n    print(\"Enough seats\")\nelse:\n    print(\"Not enough seats\")\n\nprint(\"Seat check finished\")\n",
+          "savedSha256": "0ef7641d441a5a8659ec09013a2e3879ea1e134cd363906f60fec146f9d22681",
+          "predictedStdout": "Not enough seats\nSeat check finished\n",
+          "exitCode": 0,
+          "stdout": "Not enough seats\r\nSeat check finished\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L02",
+      "sectionId": "reference-programs",
+      "filename": "seat_check.py · 题一三档参考",
+      "key": "ownThree",
+      "executionMode": "saved-file-real-process",
+      "runs": [
+        {
+          "id": "own-three-low",
+          "filename": "seat_check.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-t5pcHI",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-t5pcHI\\seat_check.py"
+          ],
+          "pid": 15956,
+          "savedSource": "people = 11\nseats = 14\n\nif people < seats:\n    print(\"Spare seats\")\nelif people == seats:\n    print(\"All seats taken\")\nelse:\n    print(\"Need more seats\")\n\nprint(\"Seat check finished\")\n",
+          "savedSha256": "913a69b3c481bc27510de7c73525bf66c77c00ac8183f3d2007817e1511c6005",
+          "predictedStdout": "Spare seats\nSeat check finished\n",
+          "exitCode": 0,
+          "stdout": "Spare seats\r\nSeat check finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "own-three-equal",
+          "filename": "seat_check.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-t5pcHI",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-t5pcHI\\seat_check.py"
+          ],
+          "pid": 22424,
+          "savedSource": "people = 14\nseats = 14\n\nif people < seats:\n    print(\"Spare seats\")\nelif people == seats:\n    print(\"All seats taken\")\nelse:\n    print(\"Need more seats\")\n\nprint(\"Seat check finished\")\n",
+          "savedSha256": "4032f95c06cf0be5d1af8d9715b17e32bbbaeda0d41b759198b85b129801d51a",
+          "predictedStdout": "All seats taken\nSeat check finished\n",
+          "exitCode": 0,
+          "stdout": "All seats taken\r\nSeat check finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "own-three-high",
+          "filename": "seat_check.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-t5pcHI",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-t5pcHI\\seat_check.py"
+          ],
+          "pid": 19832,
+          "savedSource": "people = 17\nseats = 14\n\nif people < seats:\n    print(\"Spare seats\")\nelif people == seats:\n    print(\"All seats taken\")\nelse:\n    print(\"Need more seats\")\n\nprint(\"Seat check finished\")\n",
+          "savedSha256": "5270dd8653baa2dc038a20b8efa8eff2e3b28d2ae990f4ce5c04175127d0828a",
+          "predictedStdout": "Need more seats\nSeat check finished\n",
+          "exitCode": 0,
+          "stdout": "Need more seats\r\nSeat check finished\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L02",
+      "sectionId": "reference-programs",
+      "filename": "repair_choice.py · 三档修复参考",
+      "key": "fixed",
+      "executionMode": "saved-file-real-process",
+      "runs": [
+        {
+          "id": "fixed-low",
+          "filename": "repair_choice.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-dg6dVW",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-dg6dVW\\repair_choice.py"
+          ],
+          "pid": 22076,
+          "savedSource": "kits = 8\nshelf_limit = 10\n\nif kits < shelf_limit:\n    print(\"Below shelf limit\")\nelif kits == shelf_limit:\n    print(\"At shelf limit\")\nelse:\n    print(\"Over shelf limit\")\n\nprint(\"Shelf check finished\")\n",
+          "savedSha256": "e437befeeab208d08892a1fff36351f6d39be09571f313ad93763a1d465b5727",
+          "predictedStdout": "Below shelf limit\nShelf check finished\n",
+          "exitCode": 0,
+          "stdout": "Below shelf limit\r\nShelf check finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "fixed-equal",
+          "filename": "repair_choice.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-dg6dVW",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-dg6dVW\\repair_choice.py"
+          ],
+          "pid": 24716,
+          "savedSource": "kits = 10\nshelf_limit = 10\n\nif kits < shelf_limit:\n    print(\"Below shelf limit\")\nelif kits == shelf_limit:\n    print(\"At shelf limit\")\nelse:\n    print(\"Over shelf limit\")\n\nprint(\"Shelf check finished\")\n",
+          "savedSha256": "58acddb5606a9437fd6593ba3494f0f6b92f7707cf7e19f1e6bdc306ff5b38c4",
+          "predictedStdout": "At shelf limit\nShelf check finished\n",
+          "exitCode": 0,
+          "stdout": "At shelf limit\r\nShelf check finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "fixed-high",
+          "filename": "repair_choice.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-dg6dVW",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p17-web-dg6dVW\\repair_choice.py"
+          ],
+          "pid": 16668,
+          "savedSource": "kits = 13\nshelf_limit = 10\n\nif kits < shelf_limit:\n    print(\"Below shelf limit\")\nelif kits == shelf_limit:\n    print(\"At shelf limit\")\nelse:\n    print(\"Over shelf limit\")\n\nprint(\"Shelf check finished\")\n",
+          "savedSha256": "0e1f34961fffdafb37d726fee5d8e25d5784f5557d09fc3d6b8b5fe09062ccdd",
+          "predictedStdout": "Over shelf limit\nShelf check finished\n",
+          "exitCode": 0,
+          "stdout": "Over shelf limit\r\nShelf check finished\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L01",
+      "sectionId": "boolean-first",
+      "filename": "before_if.py",
+      "key": "before",
+      "executionMode": "saved-file-real-process",
+      "runs": [
+        {
+          "id": "before-low",
+          "filename": "before_if.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-L1qgnR",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-L1qgnR\\before_if.py"
+          ],
+          "pid": 21352,
+          "savedSource": "count = 5\nlimit = 6\n\nprint(count <= limit)\nprint(\"Check finished\")\n",
+          "savedSha256": "1ed12df629cea40b8d415bd9686259a9db8d54bdeacc8e665eac060c47309dae",
+          "predictedStdout": "True\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "True\r\nCheck finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "before-high",
+          "filename": "before_if.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-L1qgnR",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-L1qgnR\\before_if.py"
+          ],
+          "pid": 12160,
+          "savedSource": "count = 7\nlimit = 6\n\nprint(count <= limit)\nprint(\"Check finished\")\n",
+          "savedSha256": "8ed81481a1d0a2d2e328d6344ba9c43b89de1d85562a11f4212d8cfb477ade07",
+          "predictedStdout": "False\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "False\r\nCheck finished\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L01",
+      "sectionId": "first-if",
+      "filename": "quantity_check.py",
+      "key": "main",
+      "executionMode": "saved-file-real-process",
+      "runs": [
+        {
+          "id": "main-low",
+          "filename": "quantity_check.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-G28k2D",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-G28k2D\\quantity_check.py"
+          ],
+          "pid": 18836,
+          "savedSource": "count = 5\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "0e1742f0ecfbd4d4b98657233e09dec629198b36075c2a9f7568384b7f110190",
+          "predictedStdout": "Within limit\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Within limit\r\nCheck finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "main-equal",
+          "filename": "quantity_check.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-G28k2D",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-G28k2D\\quantity_check.py"
+          ],
+          "pid": 21660,
+          "savedSource": "count = 6\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "7305abc264ec7885201752ba21b3d1d83a0aac565c481aa672a989b98fde3385",
+          "predictedStdout": "Within limit\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Within limit\r\nCheck finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "main-high",
+          "filename": "quantity_check.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-G28k2D",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-G28k2D\\quantity_check.py"
+          ],
+          "pid": 24284,
+          "savedSource": "count = 7\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "38977ae3b10cedd0b9fa9bea1f8dbd2dc3ef5ae1e817be0338d4843287662e27",
+          "predictedStdout": "Check finished\n",
+          "exitCode": 0,
+          "stdout": "Check finished\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L01",
+      "sectionId": "two-lines",
+      "filename": "two_messages.py",
+      "key": "twoLines",
+      "executionMode": "saved-file-real-process",
+      "runs": [
+        {
+          "id": "two-low",
+          "filename": "two_messages.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-fzfxPv",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-fzfxPv\\two_messages.py"
+          ],
+          "pid": 7496,
+          "savedSource": "count = 5\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n    print(\"Prepare labels\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "d8d3c2e1b79b8d0480992307af6219dbacc81219c8dfaf07ef1d29ee635f546c",
+          "predictedStdout": "Within limit\nPrepare labels\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Within limit\r\nPrepare labels\r\nCheck finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "two-high",
+          "filename": "two_messages.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-fzfxPv",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-fzfxPv\\two_messages.py"
+          ],
+          "pid": 15244,
+          "savedSource": "count = 7\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n    print(\"Prepare labels\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "07c7583cb0a9ef872cf0944520deda050caa599a1d28ff53cd03cfe696200d39",
+          "predictedStdout": "Check finished\n",
+          "exitCode": 0,
+          "stdout": "Check finished\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L01",
+      "sectionId": "two-lines",
+      "filename": "moved_message.py",
+      "key": "movedLine",
+      "executionMode": "saved-file-real-process",
+      "runs": [
+        {
+          "id": "moved-high",
+          "filename": "moved_message.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-9QHw1n",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-9QHw1n\\moved_message.py"
+          ],
+          "pid": 20116,
+          "savedSource": "count = 7\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\nprint(\"Prepare labels\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "36de341dac7a377b3a7a5820f0c7a72e42e196acf9dfe91a3169bba440b5711d",
+          "predictedStdout": "Prepare labels\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Prepare labels\r\nCheck finished\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L01",
+      "sectionId": "practice",
+      "filename": "repair_if.py · 修复前",
+      "key": "broken",
+      "executionMode": "saved-file-real-process",
+      "runs": [
+        {
+          "id": "broken-high",
+          "filename": "repair_if.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-Kexb4P",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-Kexb4P\\repair_if.py"
+          ],
+          "pid": 11648,
+          "savedSource": "packed = 8\ncapacity = 6\n\nif packed <= capacity:\n    print(\"Checking batch\")\nprint(\"Pack allowed\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "a701ce05224c73d2ebffe8d1c21bd2425395f5278c639a6a634d0f0461ac6b92",
+          "predictedStdout": "Pack allowed\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Pack allowed\r\nCheck finished\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L01",
+      "sectionId": "reference-programs",
+      "filename": "shelf_check.py · 题一参考",
+      "key": "own",
+      "executionMode": "saved-file-real-process",
+      "runs": [
+        {
+          "id": "reference-low",
+          "filename": "shelf_check.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-9x3ka7",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-9x3ka7\\shelf_check.py"
+          ],
+          "pid": 22028,
+          "savedSource": "books = 9\nshelf_capacity = 12\n\nif books <= shelf_capacity:\n    print(\"Books fit\")\n\nprint(\"Shelf check finished\")\n",
+          "savedSha256": "d1eb9429c0ad2af1f71658ee3cf77b5e523b87b6192422bbdfb9f058d1e9492e",
+          "predictedStdout": "Books fit\nShelf check finished\n",
+          "exitCode": 0,
+          "stdout": "Books fit\r\nShelf check finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "reference-equal",
+          "filename": "shelf_check.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-9x3ka7",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-9x3ka7\\shelf_check.py"
+          ],
+          "pid": 5584,
+          "savedSource": "books = 12\nshelf_capacity = 12\n\nif books <= shelf_capacity:\n    print(\"Books fit\")\n\nprint(\"Shelf check finished\")\n",
+          "savedSha256": "a5f789bfdf96bab6c5b19be15c64eef680a90ab071837e8e232e244ed2759169",
+          "predictedStdout": "Books fit\nShelf check finished\n",
+          "exitCode": 0,
+          "stdout": "Books fit\r\nShelf check finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "reference-high",
+          "filename": "shelf_check.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-9x3ka7",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-9x3ka7\\shelf_check.py"
+          ],
+          "pid": 17828,
+          "savedSource": "books = 15\nshelf_capacity = 12\n\nif books <= shelf_capacity:\n    print(\"Books fit\")\n\nprint(\"Shelf check finished\")\n",
+          "savedSha256": "0579c0e67bcba8eb0ca42c35ab9630520b48784f7eee51ad22a0f45b929047c6",
+          "predictedStdout": "Shelf check finished\n",
+          "exitCode": 0,
+          "stdout": "Shelf check finished\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C03-L01",
+      "sectionId": "reference-programs",
+      "filename": "repair_if.py · 修复参考",
+      "key": "repaired",
+      "executionMode": "saved-file-real-process",
+      "runs": [
+        {
+          "id": "repair-high",
+          "filename": "repair_if.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-WGwfsu",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-WGwfsu\\repair_if.py"
+          ],
+          "pid": 19840,
+          "savedSource": "packed = 8\ncapacity = 6\n\nif packed <= capacity:\n    print(\"Checking batch\")\n    print(\"Pack allowed\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "7a937e29855aac3d3e95759c687219a0a662e6eb440049095c9e62ef2dafb597",
+          "predictedStdout": "Check finished\n",
+          "exitCode": 0,
+          "stdout": "Check finished\r\n",
+          "stderr": ""
+        },
+        {
+          "id": "repair-low",
+          "filename": "repair_if.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-WGwfsu",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p16-web-WGwfsu\\repair_if.py"
+          ],
+          "pid": 6024,
+          "savedSource": "packed = 4\ncapacity = 6\n\nif packed <= capacity:\n    print(\"Checking batch\")\n    print(\"Pack allowed\")\n\nprint(\"Check finished\")\n",
+          "savedSha256": "c617f41ee2640eaa7f445fb8b294ccc9c98456a582d49b60397604f5c48184cf",
+          "predictedStdout": "Checking batch\nPack allowed\nCheck finished\n",
+          "exitCode": 0,
+          "stdout": "Checking batch\r\nPack allowed\r\nCheck finished\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "bare-results",
+      "filename": "bare_results.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "plain",
+      "sourceSha256": "a87ed0db69c803d8c4a34827288ea86b24540a1037103bb3cf89fc8b3d70661b",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "plain",
+          "caseId": "bare",
+          "filename": "bare_results.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-BvXfon",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-BvXfon\\bare_results.py"
+          ],
+          "pid": 10024,
+          "stdin": "",
+          "savedSource": "total_mass = 6.0\nwithin_limit = True\n\nprint(total_mass)\nprint(within_limit)\n",
+          "savedSha256": "a87ed0db69c803d8c4a34827288ea86b24540a1037103bb3cf89fc8b3d70661b",
+          "expectedStdout": "6.0\nTrue\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "6.0\r\nTrue\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "first-format",
+      "filename": "insert_mass.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "insert",
+      "sourceSha256": "2635826f02c85f3f8233ae20065a36754b5e69ce336755842e7f8f8e8fda4629",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "insert",
+          "caseId": "insert",
+          "filename": "insert_mass.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-6WrG5N",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-6WrG5N\\insert_mass.py"
+          ],
+          "pid": 4732,
+          "stdin": "",
+          "savedSource": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")\n",
+          "savedSha256": "2635826f02c85f3f8233ae20065a36754b5e69ce336755842e7f8f8e8fda4629",
+          "expectedStdout": "Total kg: 6.0\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Total kg: 6.0\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "first-format",
+      "filename": "literal_mass.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "literal",
+      "sourceSha256": "d7bd446d506acb8beabb948e42b0a4c66aba9169bedd7b485ae3af3969c5809d",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "literal",
+          "caseId": "literal",
+          "filename": "literal_mass.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-7tE04Q",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-7tE04Q\\literal_mass.py"
+          ],
+          "pid": 10256,
+          "stdin": "",
+          "savedSource": "total_mass = 6.0\nprint(\"Total kg: {total_mass}\")\n",
+          "savedSha256": "d7bd446d506acb8beabb948e42b0a4c66aba9169bedd7b485ae3af3969c5809d",
+          "expectedStdout": "Total kg: {total_mass}\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Total kg: {total_mass}\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "labels-and-units",
+      "filename": "known_summary.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "labels",
+      "sourceSha256": "213089b50d9b114b0e520f730d64e51d2255a25f87cb9d6a467b9397dba64bdb",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "labels",
+          "caseId": "labels",
+          "filename": "known_summary.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-gf7BEi",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-gf7BEi\\known_summary.py"
+          ],
+          "pid": 3384,
+          "stdin": "",
+          "savedSource": "item_name = \"Parcel\"\ncount = 4\ntotal_mass = 6.0\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\n",
+          "savedSha256": "213089b50d9b114b0e520f730d64e51d2255a25f87cb9d6a467b9397dba64bdb",
+          "expectedStdout": "Item: Parcel\nCount: 4\nTotal kg: 6.0\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Item: Parcel\r\nCount: 4\r\nTotal kg: 6.0\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "labels-and-units",
+      "filename": "chinese_mass.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "chinese",
+      "sourceSha256": "77e9542ed1989b8ae96516ca8ba4a4580a20d8b824aebfa3ef17d8b4d85cd92f",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "chinese",
+          "caseId": "chinese",
+          "filename": "chinese_mass.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-uCGH3L",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-uCGH3L\\chinese_mass.py"
+          ],
+          "pid": 21860,
+          "stdin": "",
+          "savedSource": "total_mass = 6.0\nprint(f\"总质量（千克）：{total_mass}\")\n",
+          "savedSha256": "77e9542ed1989b8ae96516ca8ba4a4580a20d8b824aebfa3ef17d8b4d85cd92f",
+          "expectedStdout": "总质量（千克）：6.0\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "总质量（千克）：6.0\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "receive-values",
+      "filename": "receive_parcel.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "receive",
+      "sourceSha256": "f5357afdb62a7605314769b4b9d12444508c3490307e5b13aba932619c77336e",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "receive",
+          "caseId": "receive",
+          "filename": "receive_parcel.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-SpMM3J",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-SpMM3J\\receive_parcel.py"
+          ],
+          "pid": 16500,
+          "stdin": "Parcel\n4\n1.5\n",
+          "savedSource": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n",
+          "savedSha256": "f5357afdb62a7605314769b4b9d12444508c3490307e5b13aba932619c77336e",
+          "expectedStdout": "Item: Count: Mass kg: ",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Item: Count: Mass kg: ",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "calculate-check",
+      "filename": "calculate_parcel.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "calculate",
+      "sourceSha256": "a96f22ad0ab4b962d6a095e292162a26c061fe4521f7520d719badcf2b533f07",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "calculate",
+          "caseId": "calculate",
+          "filename": "calculate_parcel.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-QcMFZY",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-QcMFZY\\calculate_parcel.py"
+          ],
+          "pid": 12512,
+          "stdin": "Parcel\n4\n1.5\n",
+          "savedSource": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(total_mass)\nprint(within_limit)\n",
+          "savedSha256": "a96f22ad0ab4b962d6a095e292162a26c061fe4521f7520d719badcf2b533f07",
+          "expectedStdout": "Item: Count: Mass kg: 6.0\nTrue\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Item: Count: Mass kg: 6.0\r\nTrue\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "main-example",
+      "filename": "parcel_summary.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "main",
+      "sourceSha256": "92a7cdd2aaec813b40f739c756f2bbd06c82518f089bf76e0bf19f842fd4cb09",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "main",
+          "caseId": "parcel-low",
+          "filename": "parcel_summary.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-XNbQ1O",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-XNbQ1O\\parcel_summary.py"
+          ],
+          "pid": 10584,
+          "stdin": "Parcel\n4\n1.5\n",
+          "savedSource": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")\n",
+          "savedSha256": "92a7cdd2aaec813b40f739c756f2bbd06c82518f089bf76e0bf19f842fd4cb09",
+          "expectedStdout": "Item: Count: Mass kg: Item: Parcel\nCount: 4\nTotal kg: 6.0\nWithin 10 kg: True\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Item: Count: Mass kg: Item: Parcel\r\nCount: 4\r\nTotal kg: 6.0\r\nWithin 10 kg: True\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "main",
+          "caseId": "crate-equal",
+          "filename": "parcel_summary.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-XNbQ1O",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-XNbQ1O\\parcel_summary.py"
+          ],
+          "pid": 25544,
+          "stdin": "Crate B\n4\n2.5\n",
+          "savedSource": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")\n",
+          "savedSha256": "92a7cdd2aaec813b40f739c756f2bbd06c82518f089bf76e0bf19f842fd4cb09",
+          "expectedStdout": "Item: Count: Mass kg: Item: Crate B\nCount: 4\nTotal kg: 10.0\nWithin 10 kg: True\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Item: Count: Mass kg: Item: Crate B\r\nCount: 4\r\nTotal kg: 10.0\r\nWithin 10 kg: True\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "main",
+          "caseId": "crate-high",
+          "filename": "parcel_summary.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-XNbQ1O",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-XNbQ1O\\parcel_summary.py"
+          ],
+          "pid": 15044,
+          "stdin": "Crate C\n4\n3.0\n",
+          "savedSource": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")\n",
+          "savedSha256": "92a7cdd2aaec813b40f739c756f2bbd06c82518f089bf76e0bf19f842fd4cb09",
+          "expectedStdout": "Item: Count: Mass kg: Item: Crate C\nCount: 4\nTotal kg: 12.0\nWithin 10 kg: False\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Item: Count: Mass kg: Item: Crate C\r\nCount: 4\r\nTotal kg: 12.0\r\nWithin 10 kg: False\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "main",
+          "caseId": "unseen-parcel",
+          "filename": "parcel_summary.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-XNbQ1O",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-XNbQ1O\\parcel_summary.py"
+          ],
+          "pid": 4592,
+          "stdin": "Bundle D\n2\n2.25\n",
+          "savedSource": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")\n",
+          "savedSha256": "92a7cdd2aaec813b40f739c756f2bbd06c82518f089bf76e0bf19f842fd4cb09",
+          "expectedStdout": "Item: Count: Mass kg: Item: Bundle D\nCount: 2\nTotal kg: 4.5\nWithin 10 kg: True\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Item: Count: Mass kg: Item: Bundle D\r\nCount: 2\r\nTotal kg: 4.5\r\nWithin 10 kg: True\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "main",
+          "caseId": "bad-count",
+          "filename": "parcel_summary.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-XNbQ1O",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-XNbQ1O\\parcel_summary.py"
+          ],
+          "pid": 18160,
+          "stdin": "Parcel\n4.5\n1.5\n",
+          "savedSource": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")\n",
+          "savedSha256": "92a7cdd2aaec813b40f739c756f2bbd06c82518f089bf76e0bf19f842fd4cb09",
+          "expectedStdout": "Item: Count: Mass kg: ",
+          "expectedExitCode": 1,
+          "expectedError": {
+            "type": "ValueError",
+            "line": 5,
+            "message": "ValueError: invalid literal for int() with base 10: '4.5'"
+          },
+          "exitCode": 1,
+          "stdout": "Item: Count: Mass kg: ",
+          "stderr": "Traceback (most recent call last):\r\n  File \"<USER>\\AppData\\Local\\Temp\\aivora-p13-XNbQ1O\\parcel_summary.py\", line 5, in <module>\r\n    count = int(count_text)\r\nValueError: invalid literal for int() with base 10: '4.5'\r\n"
+        },
+        {
+          "key": "main",
+          "caseId": "restart-valid",
+          "filename": "parcel_summary.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-XNbQ1O",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-XNbQ1O\\parcel_summary.py"
+          ],
+          "pid": 21336,
+          "stdin": "Parcel\n4\n1.5\n",
+          "savedSource": "item_name = input(\"Item: \")\ncount_text = input(\"Count: \")\nmass_text = input(\"Mass kg: \")\n\ncount = int(count_text)\nmass = float(mass_text)\n\ntotal_mass = count * mass\nwithin_limit = total_mass <= 10\n\nprint(f\"Item: {item_name}\")\nprint(f\"Count: {count}\")\nprint(f\"Total kg: {total_mass}\")\nprint(f\"Within 10 kg: {within_limit}\")\n",
+          "savedSha256": "92a7cdd2aaec813b40f739c756f2bbd06c82518f089bf76e0bf19f842fd4cb09",
+          "expectedStdout": "Item: Count: Mass kg: Item: Parcel\nCount: 4\nTotal kg: 6.0\nWithin 10 kg: True\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Item: Count: Mass kg: Item: Parcel\r\nCount: 4\r\nTotal kg: 6.0\r\nWithin 10 kg: True\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "reference-programs",
+      "filename": "material_summary.py · 题一参考",
+      "executionMode": "saved-file-real-stdin",
+      "key": "ownSummary",
+      "sourceSha256": "6bd52c473cb8ff097563302b51c20c81b9b704d18e09001c8327075bce7e736a",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "ownSummary",
+          "caseId": "banner-a",
+          "filename": "material_summary.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-yd35PB",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-yd35PB\\material_summary.py"
+          ],
+          "pid": 1080,
+          "stdin": "Banner A\n6\n0.75\n",
+          "savedSource": "material_name = input(\"Material: \")\npieces_text = input(\"Pieces: \")\nlength_text = input(\"Length m: \")\npieces = int(pieces_text)\nlength = float(length_text)\ntotal_length = pieces * length\nprint(f\"Material: {material_name}\")\nprint(f\"Pieces: {pieces}\")\nprint(f\"Total m: {total_length}\")\n",
+          "savedSha256": "6bd52c473cb8ff097563302b51c20c81b9b704d18e09001c8327075bce7e736a",
+          "expectedStdout": "Material: Pieces: Length m: Material: Banner A\nPieces: 6\nTotal m: 4.5\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Material: Pieces: Length m: Material: Banner A\r\nPieces: 6\r\nTotal m: 4.5\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "ownSummary",
+          "caseId": "banner-b",
+          "filename": "material_summary.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-yd35PB",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-yd35PB\\material_summary.py"
+          ],
+          "pid": 10156,
+          "stdin": "Banner B\n10\n0.5\n",
+          "savedSource": "material_name = input(\"Material: \")\npieces_text = input(\"Pieces: \")\nlength_text = input(\"Length m: \")\npieces = int(pieces_text)\nlength = float(length_text)\ntotal_length = pieces * length\nprint(f\"Material: {material_name}\")\nprint(f\"Pieces: {pieces}\")\nprint(f\"Total m: {total_length}\")\n",
+          "savedSha256": "6bd52c473cb8ff097563302b51c20c81b9b704d18e09001c8327075bce7e736a",
+          "expectedStdout": "Material: Pieces: Length m: Material: Banner B\nPieces: 10\nTotal m: 5.0\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Material: Pieces: Length m: Material: Banner B\r\nPieces: 10\r\nTotal m: 5.0\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "ownSummary",
+          "caseId": "unseen-summary",
+          "filename": "material_summary.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-yd35PB",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-yd35PB\\material_summary.py"
+          ],
+          "pid": 5356,
+          "stdin": "Cable C\n3\n1.25\n",
+          "savedSource": "material_name = input(\"Material: \")\npieces_text = input(\"Pieces: \")\nlength_text = input(\"Length m: \")\npieces = int(pieces_text)\nlength = float(length_text)\ntotal_length = pieces * length\nprint(f\"Material: {material_name}\")\nprint(f\"Pieces: {pieces}\")\nprint(f\"Total m: {total_length}\")\n",
+          "savedSha256": "6bd52c473cb8ff097563302b51c20c81b9b704d18e09001c8327075bce7e736a",
+          "expectedStdout": "Material: Pieces: Length m: Material: Cable C\nPieces: 3\nTotal m: 3.75\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Material: Pieces: Length m: Material: Cable C\r\nPieces: 3\r\nTotal m: 3.75\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "reference-programs",
+      "filename": "garden_boundary.py · 题二参考",
+      "executionMode": "saved-file-real-stdin",
+      "key": "ownBoundary",
+      "sourceSha256": "e787dbd627f4a179000385ca1e4f3a6ab8a1525572cb5977e0228738a36bf259",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "ownBoundary",
+          "caseId": "garden-low",
+          "filename": "garden_boundary.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-EqJGva",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-EqJGva\\garden_boundary.py"
+          ],
+          "pid": 25000,
+          "stdin": "Garden A\n3\n3\n",
+          "savedSource": "batch_name = input(\"Batch: \")\nstrips_text = input(\"Strips: \")\nstrip_text = input(\"Strip m: \")\nstrips = int(strips_text)\nstrip_length = float(strip_text)\nlength_limit = 12\ntotal_length = strips * strip_length\nwithin_limit = total_length <= length_limit\nprint(f\"Batch: {batch_name}\")\nprint(f\"Strips: {strips}\")\nprint(f\"Total m: {total_length}\")\nprint(f\"Within {length_limit} m: {within_limit}\")\n",
+          "savedSha256": "e787dbd627f4a179000385ca1e4f3a6ab8a1525572cb5977e0228738a36bf259",
+          "expectedStdout": "Batch: Strips: Strip m: Batch: Garden A\nStrips: 3\nTotal m: 9.0\nWithin 12 m: True\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Batch: Strips: Strip m: Batch: Garden A\r\nStrips: 3\r\nTotal m: 9.0\r\nWithin 12 m: True\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "ownBoundary",
+          "caseId": "garden-equal",
+          "filename": "garden_boundary.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-EqJGva",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-EqJGva\\garden_boundary.py"
+          ],
+          "pid": 10060,
+          "stdin": "Garden B\n3\n4\n",
+          "savedSource": "batch_name = input(\"Batch: \")\nstrips_text = input(\"Strips: \")\nstrip_text = input(\"Strip m: \")\nstrips = int(strips_text)\nstrip_length = float(strip_text)\nlength_limit = 12\ntotal_length = strips * strip_length\nwithin_limit = total_length <= length_limit\nprint(f\"Batch: {batch_name}\")\nprint(f\"Strips: {strips}\")\nprint(f\"Total m: {total_length}\")\nprint(f\"Within {length_limit} m: {within_limit}\")\n",
+          "savedSha256": "e787dbd627f4a179000385ca1e4f3a6ab8a1525572cb5977e0228738a36bf259",
+          "expectedStdout": "Batch: Strips: Strip m: Batch: Garden B\nStrips: 3\nTotal m: 12.0\nWithin 12 m: True\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Batch: Strips: Strip m: Batch: Garden B\r\nStrips: 3\r\nTotal m: 12.0\r\nWithin 12 m: True\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "ownBoundary",
+          "caseId": "garden-high",
+          "filename": "garden_boundary.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-EqJGva",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-EqJGva\\garden_boundary.py"
+          ],
+          "pid": 22536,
+          "stdin": "Garden C\n3\n5\n",
+          "savedSource": "batch_name = input(\"Batch: \")\nstrips_text = input(\"Strips: \")\nstrip_text = input(\"Strip m: \")\nstrips = int(strips_text)\nstrip_length = float(strip_text)\nlength_limit = 12\ntotal_length = strips * strip_length\nwithin_limit = total_length <= length_limit\nprint(f\"Batch: {batch_name}\")\nprint(f\"Strips: {strips}\")\nprint(f\"Total m: {total_length}\")\nprint(f\"Within {length_limit} m: {within_limit}\")\n",
+          "savedSha256": "e787dbd627f4a179000385ca1e4f3a6ab8a1525572cb5977e0228738a36bf259",
+          "expectedStdout": "Batch: Strips: Strip m: Batch: Garden C\nStrips: 3\nTotal m: 15.0\nWithin 12 m: False\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Batch: Strips: Strip m: Batch: Garden C\r\nStrips: 3\r\nTotal m: 15.0\r\nWithin 12 m: False\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "ownBoundary",
+          "caseId": "unseen-boundary",
+          "filename": "garden_boundary.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-EqJGva",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-EqJGva\\garden_boundary.py"
+          ],
+          "pid": 8864,
+          "stdin": "Garden D\n4\n3\n",
+          "savedSource": "batch_name = input(\"Batch: \")\nstrips_text = input(\"Strips: \")\nstrip_text = input(\"Strip m: \")\nstrips = int(strips_text)\nstrip_length = float(strip_text)\nlength_limit = 12\ntotal_length = strips * strip_length\nwithin_limit = total_length <= length_limit\nprint(f\"Batch: {batch_name}\")\nprint(f\"Strips: {strips}\")\nprint(f\"Total m: {total_length}\")\nprint(f\"Within {length_limit} m: {within_limit}\")\n",
+          "savedSha256": "e787dbd627f4a179000385ca1e4f3a6ab8a1525572cb5977e0228738a36bf259",
+          "expectedStdout": "Batch: Strips: Strip m: Batch: Garden D\nStrips: 4\nTotal m: 12.0\nWithin 12 m: True\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Batch: Strips: Strip m: Batch: Garden D\r\nStrips: 4\r\nTotal m: 12.0\r\nWithin 12 m: True\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "reference-programs",
+      "filename": "field_copy.py · 名称错拼副本",
+      "executionMode": "saved-file-real-stdin",
+      "key": "nameError",
+      "sourceSha256": "7dd83e09752650f361db77d29c1e0f17e92cfc3700372eb52213f23b1d5c882d",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "nameError",
+          "caseId": "unbound-field",
+          "filename": "field_copy.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-iaL3uW",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-iaL3uW\\field_copy.py"
+          ],
+          "pid": 21900,
+          "stdin": "",
+          "savedSource": "total_mass = 6.0\nprint(f\"Total kg: {total_mas}\")\n",
+          "savedSha256": "7dd83e09752650f361db77d29c1e0f17e92cfc3700372eb52213f23b1d5c882d",
+          "expectedStdout": "",
+          "expectedExitCode": 1,
+          "expectedError": {
+            "type": "NameError",
+            "line": 2,
+            "message": "NameError: name 'total_mas' is not defined"
+          },
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\r\n  File \"<USER>\\AppData\\Local\\Temp\\aivora-p13-iaL3uW\\field_copy.py\", line 2, in <module>\r\n    print(f\"Total kg: {total_mas}\")\r\n                       ^^^^^^^^^\r\nNameError: name 'total_mas' is not defined. Did you mean: 'total_mass'?\r\n"
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "sectionId": "reference-programs",
+      "filename": "field_copy.py · 名称修复副本",
+      "executionMode": "saved-file-real-stdin",
+      "key": "nameRepair",
+      "sourceSha256": "2635826f02c85f3f8233ae20065a36754b5e69ce336755842e7f8f8e8fda4629",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "nameRepair",
+          "caseId": "field-repaired",
+          "filename": "field_copy.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p13-STgKpb",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p13-STgKpb\\field_copy.py"
+          ],
+          "pid": 19300,
+          "stdin": "",
+          "savedSource": "total_mass = 6.0\nprint(f\"Total kg: {total_mass}\")\n",
+          "savedSha256": "2635826f02c85f3f8233ae20065a36754b5e69ce336755842e7f8f8e8fda4629",
+          "expectedStdout": "Total kg: 6.0\n",
+          "expectedExitCode": 0,
+          "expectedError": null,
+          "exitCode": 0,
+          "stdout": "Total kg: 6.0\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "sectionId": "first-input",
+      "filename": "receive_label.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "label",
+      "sourceSha256": "02847205850ff01f9a8cfeb7d5d0faf66dc657c32beb8c5757bb37a196b2b691",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "label",
+          "caseId": "label",
+          "filename": "receive_label.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-1K2Xi1",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-1K2Xi1\\receive_label.py"
+          ],
+          "pid": 6608,
+          "stdin": "Box A\n",
+          "savedSource": "label = input(\"Label: \")\nprint(label)\n",
+          "savedSha256": "02847205850ff01f9a8cfeb7d5d0faf66dc657c32beb8c5757bb37a196b2b691",
+          "expectedStdout": "Label: Box A\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Label: Box A\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "sectionId": "raw-count",
+      "filename": "inspect_input.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "rawCount",
+      "sourceSha256": "88a27637221d28751955d815dfc19e87fe5ba477748675120e920b6ab259be3f",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "rawCount",
+          "caseId": "raw-four",
+          "filename": "inspect_input.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-1MprkR",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-1MprkR\\inspect_input.py"
+          ],
+          "pid": 4328,
+          "stdin": "4\n",
+          "savedSource": "count_text = input(\"Count: \")\nprint(count_text)\nprint(type(count_text))\n",
+          "savedSha256": "88a27637221d28751955d815dfc19e87fe5ba477748675120e920b6ab259be3f",
+          "expectedStdout": "Count: 4\n<class 'str'>\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Count: 4\r\n<class 'str'>\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "sectionId": "int-conversion",
+      "filename": "convert_count.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "convertInt",
+      "sourceSha256": "ab9c61812b4fff1b5ab60132a72f264bd6dd7d60f514f71768e13cea69708dc3",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "convertInt",
+          "caseId": "int-four",
+          "filename": "convert_count.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-thZ6gq",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-thZ6gq\\convert_count.py"
+          ],
+          "pid": 22460,
+          "stdin": "4\n",
+          "savedSource": "count_text = input(\"Count: \")\ncount = int(count_text)\nprint(count)\nprint(type(count))\n",
+          "savedSha256": "ab9c61812b4fff1b5ab60132a72f264bd6dd7d60f514f71768e13cea69708dc3",
+          "expectedStdout": "Count: 4\n<class 'int'>\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Count: 4\r\n<class 'int'>\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "sectionId": "int-conversion",
+      "filename": "observe_conversion.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "inspectInt",
+      "sourceSha256": "93d762282eb542775350ab00afeb7a1e3ac5cf7158acafcfa0f044958e446be0",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "inspectInt",
+          "caseId": "inspect-int",
+          "filename": "observe_conversion.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-O2WMpr",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-O2WMpr\\observe_conversion.py"
+          ],
+          "pid": 14016,
+          "stdin": "4\n",
+          "savedSource": "count_text = input(\"Count: \")\nprint(count_text)\nprint(type(count_text))\ncount = int(count_text)\nprint(count)\nprint(type(count))\n",
+          "savedSha256": "93d762282eb542775350ab00afeb7a1e3ac5cf7158acafcfa0f044958e446be0",
+          "expectedStdout": "Count: 4\n<class 'str'>\n4\n<class 'int'>\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Count: 4\r\n<class 'str'>\r\n4\r\n<class 'int'>\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "sectionId": "main-example",
+      "filename": "item_labels.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "main",
+      "sourceSha256": "bb89d2f401452e5a0f5b925bcb8e0958e4115854823c07e7f04b14ad42fab658",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "main",
+          "caseId": "box-four",
+          "filename": "item_labels.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-gfQbIj",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-gfQbIj\\item_labels.py"
+          ],
+          "pid": 17856,
+          "stdin": "Box A\n4\n",
+          "savedSource": "label = input(\"Label: \")\ncount_text = input(\"Count: \")\ncount = int(count_text)\n\nprint(label)\nprint(count * 3)\n",
+          "savedSha256": "bb89d2f401452e5a0f5b925bcb8e0958e4115854823c07e7f04b14ad42fab658",
+          "expectedStdout": "Label: Count: Box A\n12\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Label: Count: Box A\r\n12\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "main",
+          "caseId": "tool-two",
+          "filename": "item_labels.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-gfQbIj",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-gfQbIj\\item_labels.py"
+          ],
+          "pid": 13628,
+          "stdin": "Tool B\n2\n",
+          "savedSource": "label = input(\"Label: \")\ncount_text = input(\"Count: \")\ncount = int(count_text)\n\nprint(label)\nprint(count * 3)\n",
+          "savedSha256": "bb89d2f401452e5a0f5b925bcb8e0958e4115854823c07e7f04b14ad42fab658",
+          "expectedStdout": "Label: Count: Tool B\n6\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Label: Count: Tool B\r\n6\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "sectionId": "float-conversion",
+      "filename": "two_masses.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "mass",
+      "sourceSha256": "2109a3a2e66b29fdea8bc22f25f9a227531d7265ce390459d9514b73aab0cd39",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "mass",
+          "caseId": "mass-one",
+          "filename": "two_masses.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-eT7jKV",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-eT7jKV\\two_masses.py"
+          ],
+          "pid": 7512,
+          "stdin": "1.5\n",
+          "savedSource": "mass_text = input(\"Mass kg: \")\nmass = float(mass_text)\nprint(mass * 2)\n",
+          "savedSha256": "2109a3a2e66b29fdea8bc22f25f9a227531d7265ce390459d9514b73aab0cd39",
+          "expectedStdout": "Mass kg: 3.0\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Mass kg: 3.0\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "mass",
+          "caseId": "mass-two",
+          "filename": "two_masses.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-eT7jKV",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-eT7jKV\\two_masses.py"
+          ],
+          "pid": 20524,
+          "stdin": "2.25\n",
+          "savedSource": "mass_text = input(\"Mass kg: \")\nmass = float(mass_text)\nprint(mass * 2)\n",
+          "savedSha256": "2109a3a2e66b29fdea8bc22f25f9a227531d7265ce390459d9514b73aab0cd39",
+          "expectedStdout": "Mass kg: 4.5\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Mass kg: 4.5\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "sectionId": "float-conversion",
+      "filename": "observe_mass.py",
+      "executionMode": "saved-file-real-stdin",
+      "key": "inspectFloat",
+      "sourceSha256": "b2033e9f09aa3d5405d9da1d0d5f3bc00bd97b87d11db2d3fe23da55c7d5e0b0",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "inspectFloat",
+          "caseId": "inspect-float",
+          "filename": "observe_mass.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-SSuzJm",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-SSuzJm\\observe_mass.py"
+          ],
+          "pid": 24396,
+          "stdin": "1.5\n",
+          "savedSource": "mass_text = input(\"Mass kg: \")\nprint(mass_text)\nprint(type(mass_text))\nmass = float(mass_text)\nprint(mass)\nprint(type(mass))\n",
+          "savedSha256": "b2033e9f09aa3d5405d9da1d0d5f3bc00bd97b87d11db2d3fe23da55c7d5e0b0",
+          "expectedStdout": "Mass kg: 1.5\n<class 'str'>\n1.5\n<class 'float'>\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Mass kg: 1.5\r\n<class 'str'>\r\n1.5\r\n<class 'float'>\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "sectionId": "format-error",
+      "filename": "count_format_copy.py · 受控副本",
+      "executionMode": "saved-file-real-stdin",
+      "key": "integerError",
+      "sourceSha256": "bfc69d9a78559a237032ae12da50d33ed8c387dfcb79fd721e8cd62a8b2b3590",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "integerError",
+          "caseId": "word",
+          "filename": "count_format_copy.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-S172r6",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-S172r6\\count_format_copy.py"
+          ],
+          "pid": 5712,
+          "stdin": "four\n",
+          "savedSource": "count_text = input(\"Count: \")\ncount = int(count_text)\nprint(count)\n",
+          "savedSha256": "bfc69d9a78559a237032ae12da50d33ed8c387dfcb79fd721e8cd62a8b2b3590",
+          "expectedStdout": "Count: ",
+          "expectedExitCode": 1,
+          "expectedErrorLine": "ValueError: invalid literal for int() with base 10: 'four'",
+          "exitCode": 1,
+          "stdout": "Count: ",
+          "stderr": "Traceback (most recent call last):\r\n  File \"<USER>\\AppData\\Local\\Temp\\aivora-p12-S172r6\\count_format_copy.py\", line 2, in <module>\r\n    count = int(count_text)\r\nValueError: invalid literal for int() with base 10: 'four'\r\n"
+        },
+        {
+          "key": "integerError",
+          "caseId": "decimal-int",
+          "filename": "count_format_copy.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-S172r6",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-S172r6\\count_format_copy.py"
+          ],
+          "pid": 20864,
+          "stdin": "4.5\n",
+          "savedSource": "count_text = input(\"Count: \")\ncount = int(count_text)\nprint(count)\n",
+          "savedSha256": "bfc69d9a78559a237032ae12da50d33ed8c387dfcb79fd721e8cd62a8b2b3590",
+          "expectedStdout": "Count: ",
+          "expectedExitCode": 1,
+          "expectedErrorLine": "ValueError: invalid literal for int() with base 10: '4.5'",
+          "exitCode": 1,
+          "stdout": "Count: ",
+          "stderr": "Traceback (most recent call last):\r\n  File \"<USER>\\AppData\\Local\\Temp\\aivora-p12-S172r6\\count_format_copy.py\", line 2, in <module>\r\n    count = int(count_text)\r\nValueError: invalid literal for int() with base 10: '4.5'\r\n"
+        },
+        {
+          "key": "integerError",
+          "caseId": "int-restart",
+          "filename": "count_format_copy.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-S172r6",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-S172r6\\count_format_copy.py"
+          ],
+          "pid": 24940,
+          "stdin": "7\n",
+          "savedSource": "count_text = input(\"Count: \")\ncount = int(count_text)\nprint(count)\n",
+          "savedSha256": "bfc69d9a78559a237032ae12da50d33ed8c387dfcb79fd721e8cd62a8b2b3590",
+          "expectedStdout": "Count: 7\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Count: 7\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "sectionId": "format-error",
+      "filename": "mass_format_copy.py · 受控副本",
+      "executionMode": "saved-file-real-stdin",
+      "key": "floatError",
+      "sourceSha256": "2109a3a2e66b29fdea8bc22f25f9a227531d7265ce390459d9514b73aab0cd39",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "floatError",
+          "caseId": "bad-float",
+          "filename": "mass_format_copy.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-BbyJzD",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-BbyJzD\\mass_format_copy.py"
+          ],
+          "pid": 24300,
+          "stdin": "bad\n",
+          "savedSource": "mass_text = input(\"Mass kg: \")\nmass = float(mass_text)\nprint(mass * 2)\n",
+          "savedSha256": "2109a3a2e66b29fdea8bc22f25f9a227531d7265ce390459d9514b73aab0cd39",
+          "expectedStdout": "Mass kg: ",
+          "expectedExitCode": 1,
+          "expectedErrorLine": "ValueError: could not convert string to float: 'bad'",
+          "exitCode": 1,
+          "stdout": "Mass kg: ",
+          "stderr": "Traceback (most recent call last):\r\n  File \"<USER>\\AppData\\Local\\Temp\\aivora-p12-BbyJzD\\mass_format_copy.py\", line 2, in <module>\r\n    mass = float(mass_text)\r\nValueError: could not convert string to float: 'bad'\r\n"
+        },
+        {
+          "key": "floatError",
+          "caseId": "float-restart",
+          "filename": "mass_format_copy.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-BbyJzD",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-BbyJzD\\mass_format_copy.py"
+          ],
+          "pid": 13904,
+          "stdin": "1.75\n",
+          "savedSource": "mass_text = input(\"Mass kg: \")\nmass = float(mass_text)\nprint(mass * 2)\n",
+          "savedSha256": "2109a3a2e66b29fdea8bc22f25f9a227531d7265ce390459d9514b73aab0cd39",
+          "expectedStdout": "Mass kg: 3.5\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Mass kg: 3.5\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "sectionId": "reference-programs",
+      "filename": "event_badges.py · 参考程序",
+      "executionMode": "saved-file-real-stdin",
+      "key": "ownInteger",
+      "sourceSha256": "edad2e538d0f672ffb2bc122a9b0a4e757924d7f70cec4706228b31376e0081d",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "ownInteger",
+          "caseId": "hall-three",
+          "filename": "event_badges.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-7nJaQl",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-7nJaQl\\event_badges.py"
+          ],
+          "pid": 23040,
+          "stdin": "Hall C\n3\n",
+          "savedSource": "venue_name = input(\"Venue: \")\nteam_text = input(\"Teams: \")\nteams = int(team_text)\nprint(venue_name)\nprint(teams * 5)\n",
+          "savedSha256": "edad2e538d0f672ffb2bc122a9b0a4e757924d7f70cec4706228b31376e0081d",
+          "expectedStdout": "Venue: Teams: Hall C\n15\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Venue: Teams: Hall C\r\n15\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "ownInteger",
+          "caseId": "hall-six",
+          "filename": "event_badges.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-7nJaQl",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-7nJaQl\\event_badges.py"
+          ],
+          "pid": 24404,
+          "stdin": "Hall D\n6\n",
+          "savedSource": "venue_name = input(\"Venue: \")\nteam_text = input(\"Teams: \")\nteams = int(team_text)\nprint(venue_name)\nprint(teams * 5)\n",
+          "savedSha256": "edad2e538d0f672ffb2bc122a9b0a4e757924d7f70cec4706228b31376e0081d",
+          "expectedStdout": "Venue: Teams: Hall D\n30\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Venue: Teams: Hall D\r\n30\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "ownInteger",
+          "caseId": "unseen-int",
+          "filename": "event_badges.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-7nJaQl",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-7nJaQl\\event_badges.py"
+          ],
+          "pid": 1936,
+          "stdin": "Porch E\n7\n",
+          "savedSource": "venue_name = input(\"Venue: \")\nteam_text = input(\"Teams: \")\nteams = int(team_text)\nprint(venue_name)\nprint(teams * 5)\n",
+          "savedSha256": "edad2e538d0f672ffb2bc122a9b0a4e757924d7f70cec4706228b31376e0081d",
+          "expectedStdout": "Venue: Teams: Porch E\n35\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Venue: Teams: Porch E\r\n35\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "sectionId": "reference-programs",
+      "filename": "cord_lengths.py · 参考程序",
+      "executionMode": "saved-file-real-stdin",
+      "key": "ownMeasure",
+      "sourceSha256": "496eb96af5d455c637bddd7982d9acda880611663f3142f831e96e779332d698",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "ownMeasure",
+          "caseId": "length-one",
+          "filename": "cord_lengths.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-LHblYU",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-LHblYU\\cord_lengths.py"
+          ],
+          "pid": 13408,
+          "stdin": "1.25\n",
+          "savedSource": "length_text = input(\"Length m: \")\nlength = float(length_text)\nprint(length * 4)\n",
+          "savedSha256": "496eb96af5d455c637bddd7982d9acda880611663f3142f831e96e779332d698",
+          "expectedStdout": "Length m: 5.0\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Length m: 5.0\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "ownMeasure",
+          "caseId": "length-two",
+          "filename": "cord_lengths.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-LHblYU",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-LHblYU\\cord_lengths.py"
+          ],
+          "pid": 24060,
+          "stdin": "2.5\n",
+          "savedSource": "length_text = input(\"Length m: \")\nlength = float(length_text)\nprint(length * 4)\n",
+          "savedSha256": "496eb96af5d455c637bddd7982d9acda880611663f3142f831e96e779332d698",
+          "expectedStdout": "Length m: 10.0\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Length m: 10.0\r\n",
+          "stderr": ""
+        },
+        {
+          "key": "ownMeasure",
+          "caseId": "unseen-float",
+          "filename": "cord_lengths.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-LHblYU",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-LHblYU\\cord_lengths.py"
+          ],
+          "pid": 23812,
+          "stdin": "1.125\n",
+          "savedSource": "length_text = input(\"Length m: \")\nlength = float(length_text)\nprint(length * 4)\n",
+          "savedSha256": "496eb96af5d455c637bddd7982d9acda880611663f3142f831e96e779332d698",
+          "expectedStdout": "Length m: 4.5\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Length m: 4.5\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "sectionId": "reference-programs",
+      "filename": "cord_format_copy.py · 参考受控副本",
+      "executionMode": "saved-file-real-stdin",
+      "key": "measureError",
+      "sourceSha256": "496eb96af5d455c637bddd7982d9acda880611663f3142f831e96e779332d698",
+      "allRunsPassed": true,
+      "runs": [
+        {
+          "key": "measureError",
+          "caseId": "bad-length",
+          "filename": "cord_format_copy.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-P5iSe1",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-P5iSe1\\cord_format_copy.py"
+          ],
+          "pid": 17528,
+          "stdin": "oops\n",
+          "savedSource": "length_text = input(\"Length m: \")\nlength = float(length_text)\nprint(length * 4)\n",
+          "savedSha256": "496eb96af5d455c637bddd7982d9acda880611663f3142f831e96e779332d698",
+          "expectedStdout": "Length m: ",
+          "expectedExitCode": 1,
+          "expectedErrorLine": "ValueError: could not convert string to float: 'oops'",
+          "exitCode": 1,
+          "stdout": "Length m: ",
+          "stderr": "Traceback (most recent call last):\r\n  File \"<USER>\\AppData\\Local\\Temp\\aivora-p12-P5iSe1\\cord_format_copy.py\", line 2, in <module>\r\n    length = float(length_text)\r\nValueError: could not convert string to float: 'oops'\r\n"
+        },
+        {
+          "key": "measureError",
+          "caseId": "length-restart",
+          "filename": "cord_format_copy.py",
+          "cwd": "<USER>\\AppData\\Local\\Temp\\aivora-p12-P5iSe1",
+          "command": [
+            "python",
+            "<USER>\\AppData\\Local\\Temp\\aivora-p12-P5iSe1\\cord_format_copy.py"
+          ],
+          "pid": 19452,
+          "stdin": "0.75\n",
+          "savedSource": "length_text = input(\"Length m: \")\nlength = float(length_text)\nprint(length * 4)\n",
+          "savedSha256": "496eb96af5d455c637bddd7982d9acda880611663f3142f831e96e779332d698",
+          "expectedStdout": "Length m: 3.0\n",
+          "expectedExitCode": 0,
+          "expectedErrorLine": null,
+          "exitCode": 0,
+          "stdout": "Length m: 3.0\r\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "sectionId": "compare-limit",
+      "filename": "capacity_check.py · 首次比较",
+      "key": "basic",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "True\n",
+      "args": [
+        "-c",
+        "count = 5\nlimit = 6\nprint(count <= limit)"
+      ],
+      "exitCode": 0,
+      "stdout": "True\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "sectionId": "keep-result",
+      "filename": "追加片段 · capacity_check.py保存结果",
+      "key": "saveResult",
+      "executionMode": "ordered-fragment",
+      "setup": "count = 5\nlimit = 6",
+      "expectedStdout": "True\n",
+      "args": [
+        "-c",
+        "count = 5\nlimit = 6\nwithin_limit = count <= limit\nprint(within_limit)"
+      ],
+      "exitCode": 0,
+      "stdout": "True\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "sectionId": "equal-or-different",
+      "filename": "追加片段 · capacity_check.py相等与不等",
+      "key": "equalNot",
+      "executionMode": "ordered-fragment",
+      "setup": "count = 5\nlimit = 6",
+      "expectedStdout": "False\nTrue\n",
+      "args": [
+        "-c",
+        "count = 5\nlimit = 6\nprint(count == limit)\nprint(count != limit)"
+      ],
+      "exitCode": 0,
+      "stdout": "False\r\nTrue\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "sectionId": "equal-or-different",
+      "filename": "assignment_or_comparison.py",
+      "key": "assignCompare",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "False\nTrue\n",
+      "args": [
+        "-c",
+        "count = 5\nprint(count == 6)\ncount = 6\nprint(count == 6)"
+      ],
+      "exitCode": 0,
+      "stdout": "False\r\nTrue\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "sectionId": "above-limit",
+      "filename": "above_limit.py",
+      "key": "greater",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "True\nTrue\nFalse\n",
+      "args": [
+        "-c",
+        "count = 7\nlimit = 6\nprint(count > limit)\nprint(count >= limit)\nprint(count <= limit)"
+      ],
+      "exitCode": 0,
+      "stdout": "True\r\nTrue\r\nFalse\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "sectionId": "main-example",
+      "filename": "capacity_results.py",
+      "key": "main",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "True\nFalse\nTrue\n",
+      "args": [
+        "-c",
+        "count = 5\nlimit = 6\nwithin_limit = count <= limit\n\nprint(within_limit)\nprint(count == limit)\nprint(count != limit)"
+      ],
+      "exitCode": 0,
+      "stdout": "True\r\nFalse\r\nTrue\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "sectionId": "boundary-runs",
+      "filename": "boundary_values.py · 低于限制",
+      "key": "boundaryLow",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "True\nTrue\nFalse\n",
+      "args": [
+        "-c",
+        "count = 5\nlimit = 6\nprint(count < limit)\nprint(count <= limit)\nprint(count == limit)"
+      ],
+      "exitCode": 0,
+      "stdout": "True\r\nTrue\r\nFalse\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "sectionId": "boundary-runs",
+      "filename": "six_comparisons.py",
+      "key": "allAtCapacity",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "At capacity\nFalse\nTrue\nFalse\nTrue\nTrue\nFalse\n",
+      "args": [
+        "-c",
+        "count = 6\nlimit = 6\nprint(\"At capacity\")\nprint(count < limit)\nprint(count <= limit)\nprint(count > limit)\nprint(count >= limit)\nprint(count == limit)\nprint(count != limit)"
+      ],
+      "exitCode": 0,
+      "stdout": "At capacity\r\nFalse\r\nTrue\r\nFalse\r\nTrue\r\nTrue\r\nFalse\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "expression-to-value",
+      "filename": "boxes.py · 第一轮",
+      "key": "multiply",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "12\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nper_box = 3\nprint(box_count * per_box)"
+      ],
+      "exitCode": 0,
+      "stdout": "12\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "expression-to-value",
+      "filename": "boxes.py · 完整五行",
+      "key": "total",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "16\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\nprint(total)"
+      ],
+      "exitCode": 0,
+      "stdout": "16\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "take-some-away",
+      "filename": "追加片段 · boxes.py末尾",
+      "key": "subtract",
+      "executionMode": "ordered-fragment",
+      "setup": "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare",
+      "expectedStdout": "14\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\nremaining = total - 2\nprint(remaining)"
+      ],
+      "exitCode": 0,
+      "stdout": "14\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "order-and-grouping",
+      "filename": "order_boxes.py",
+      "key": "precedence",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "16\n16\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nper_box = 3\nspare = 4\nprint(box_count * per_box + spare)\nprint(spare + box_count * per_box)"
+      ],
+      "exitCode": 0,
+      "stdout": "16\r\n16\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "order-and-grouping",
+      "filename": "追加片段 · boxes.py末尾的分组对照",
+      "key": "grouping",
+      "executionMode": "ordered-fragment",
+      "setup": "box_count = 4\nper_box = 3\nspare = 4",
+      "expectedStdout": "24\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nper_box = 3\nspare = 4\nprint((box_count + spare) * per_box)"
+      ],
+      "exitCode": 0,
+      "stdout": "24\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "order-and-grouping",
+      "filename": "more_boxes.py",
+      "key": "moreBoxes",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "24\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nadded_boxes = 4\nper_box = 3\nprint((box_count + added_boxes) * per_box)"
+      ],
+      "exitCode": 0,
+      "stdout": "24\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "divide-and-meaning",
+      "filename": "追加片段 · boxes.py中的平均分配",
+      "key": "division",
+      "executionMode": "ordered-fragment",
+      "setup": "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare",
+      "expectedStdout": "4.0\n<class 'float'>\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\naverage = total / box_count\nprint(average)\nprint(type(average))"
+      ],
+      "exitCode": 0,
+      "stdout": "4.0\r\n<class 'float'>\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "divide-and-meaning",
+      "filename": "share_water.py",
+      "key": "nonIntegral",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "3.5\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "volume_l = 7\ncontainer_count = 2\nprint(volume_l / container_count)"
+      ],
+      "exitCode": 0,
+      "stdout": "3.5\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "same-level-order",
+      "filename": "same_level.py",
+      "key": "leftGrouping",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "8.0\n2.0\n9\n5\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "print(12 / 3 * 2)\nprint(12 / (3 * 2))\nprint(10 - 3 + 2)\nprint(10 - (3 + 2))"
+      ],
+      "exitCode": 0,
+      "stdout": "8.0\r\n2.0\r\n9\r\n5\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "put-it-together",
+      "filename": "box_relations.py",
+      "key": "main",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "16\n24\n4.0\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\n\nprint(total)\nprint((box_count + spare) * per_box)\nprint(total / box_count)"
+      ],
+      "exitCode": 0,
+      "stdout": "16\r\n24\r\n4.0\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "put-it-together",
+      "filename": "revise_boxes.py",
+      "key": "revise",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "16\n14\n4.0\n",
+      "expectedExitCode": 0,
+      "args": [
+        "-c",
+        "box_count = 4\nper_box = 3\nspare = 4\ntotal = box_count * per_box + spare\nremaining = total - 2\naverage = total / box_count\nprint(total)\nprint(remaining)\nprint(average)"
+      ],
+      "exitCode": 0,
+      "stdout": "16\r\n14\r\n4.0\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "sectionId": "zero-divisor",
+      "filename": "zero_divisor.py · 预期ZeroDivisionError",
+      "key": "zeroDivide",
+      "executionMode": "controlled-error",
+      "setup": "",
+      "expectedStdout": "",
+      "expectedExitCode": 1,
+      "expectedError": "ZeroDivisionError",
+      "args": [
+        "-c",
+        "print(8 / 0)"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\r\n  File \"<string>\", line 1, in <module>\r\n    print(8 / 0)\r\n          ~~^~~\r\nZeroDivisionError: division by zero\r\n"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "sectionId": "same-display",
+      "filename": "same_display.py",
+      "key": "sameDisplay",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "3\n3\n",
+      "args": [
+        "-c",
+        "item_count = 3\ncount_text = \"3\"\nprint(item_count)\nprint(count_text)"
+      ],
+      "exitCode": 0,
+      "stdout": "3\r\n3\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "sectionId": "add-measurement",
+      "filename": "measurement.py",
+      "key": "measurement",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "1.5\n",
+      "args": [
+        "-c",
+        "item_mass = 1.5\nprint(item_mass)"
+      ],
+      "exitCode": 0,
+      "stdout": "1.5\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "sectionId": "ready-state",
+      "filename": "ready_state.py",
+      "key": "booleanValues",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "True\nTrue\nFalse\n",
+      "args": [
+        "-c",
+        "is_ready = True\nready_text = \"True\"\nis_waiting = False\nprint(is_ready)\nprint(ready_text)\nprint(is_waiting)"
+      ],
+      "exitCode": 0,
+      "stdout": "True\r\nTrue\r\nFalse\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "sectionId": "inspect-type",
+      "filename": "类型观察片段 · 接在item_count赋值之后",
+      "key": "firstType",
+      "executionMode": "ordered-fragment",
+      "setup": "item_count = 3",
+      "expectedStdout": "<class 'int'>\n",
+      "args": [
+        "-c",
+        "item_count = 3\nprint(type(item_count))"
+      ],
+      "exitCode": 0,
+      "stdout": "<class 'int'>\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "sectionId": "inspect-type",
+      "filename": "inspect_pair.py",
+      "key": "pairTypes",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "<class 'int'>\n<class 'str'>\n",
+      "args": [
+        "-c",
+        "item_count = 3\ncount_text = \"3\"\nprint(type(item_count))\nprint(type(count_text))"
+      ],
+      "exitCode": 0,
+      "stdout": "<class 'int'>\r\n<class 'str'>\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "sectionId": "inspect-type",
+      "filename": "类型观察片段 · 接在ready_state.py的赋值之后",
+      "key": "booleanTypes",
+      "executionMode": "ordered-fragment",
+      "setup": "is_ready = True\nready_text = \"True\"\nis_waiting = False",
+      "expectedStdout": "<class 'bool'>\n<class 'str'>\n<class 'bool'>\n",
+      "args": [
+        "-c",
+        "is_ready = True\nready_text = \"True\"\nis_waiting = False\nprint(type(is_ready))\nprint(type(ready_text))\nprint(type(is_waiting))"
+      ],
+      "exitCode": 0,
+      "stdout": "<class 'bool'>\r\n<class 'str'>\r\n<class 'bool'>\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "sectionId": "four-types",
+      "filename": "four_values.py",
+      "key": "main",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "3\n3\n1.5\nTrue\n<class 'int'>\n<class 'str'>\n<class 'float'>\n<class 'bool'>\n",
+      "args": [
+        "-c",
+        "item_count = 3\ncount_text = \"3\"\nitem_mass = 1.5\nis_ready = True\n\nprint(item_count)\nprint(count_text)\nprint(item_mass)\nprint(is_ready)\n\nprint(type(item_count))\nprint(type(count_text))\nprint(type(item_mass))\nprint(type(is_ready))"
+      ],
+      "exitCode": 0,
+      "stdout": "3\r\n3\r\n1.5\r\nTrue\r\n<class 'int'>\r\n<class 'str'>\r\n<class 'float'>\r\n<class 'bool'>\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "sectionId": "same-name-new-type",
+      "filename": "changing_type.py",
+      "key": "rebind",
+      "executionMode": "complete-program",
+      "setup": "",
+      "expectedStdout": "8\n<class 'int'>\n8\n<class 'str'>\n",
+      "args": [
+        "-c",
+        "batch_count = 8\nprint(batch_count)\nprint(type(batch_count))\n\nbatch_count = \"8\"\nprint(batch_count)\nprint(type(batch_count))"
+      ],
+      "exitCode": 0,
+      "stdout": "8\r\n<class 'int'>\r\n8\r\n<class 'str'>\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "sectionId": "name-and-value",
+      "filename": "赋值片段 · 稍后组合",
+      "key": "assign",
+      "executionMode": "complete-or-independent",
+      "setup": "",
+      "expected": {
+        "stdout": ""
+      },
+      "args": [
+        "-c",
+        "task_name = \"Pack notebooks\""
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "sectionId": "read-and-update",
+      "filename": "读取片段 · 接在首次赋值之后",
+      "key": "read",
+      "executionMode": "ordered-fragment",
+      "setup": "task_name = \"Pack notebooks\"",
+      "expected": {
+        "stdout": "Pack notebooks\n",
+        "setup": "task_name = \"Pack notebooks\""
+      },
+      "args": [
+        "-c",
+        "task_name = \"Pack notebooks\"\nprint(task_name)"
+      ],
+      "exitCode": 0,
+      "stdout": "Pack notebooks\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "sectionId": "read-and-update",
+      "filename": "更新片段 · 接在首次读取之后",
+      "key": "update",
+      "executionMode": "ordered-fragment",
+      "setup": "task_name = \"Pack notebooks\"",
+      "expected": {
+        "stdout": "",
+        "setup": "task_name = \"Pack notebooks\""
+      },
+      "args": [
+        "-c",
+        "task_name = \"Pack notebooks\"\ntask_name = \"Check labels\""
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "sectionId": "predict-run",
+      "filename": "task_labels.py",
+      "key": "main",
+      "executionMode": "complete-or-independent",
+      "setup": "",
+      "expected": {
+        "stdout": "Pack notebooks\nCheck labels\n"
+      },
+      "args": [
+        "-c",
+        "task_name = \"Pack notebooks\"\nprint(task_name)\ntask_name = \"Check labels\"\nprint(task_name)"
+      ],
+      "exitCode": 0,
+      "stdout": "Pack notebooks\r\nCheck labels\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "sectionId": "literal-or-name",
+      "filename": "name_or_text.py",
+      "key": "literal",
+      "executionMode": "complete-or-independent",
+      "setup": "",
+      "expected": {
+        "stdout": "task_name\nReady\n"
+      },
+      "args": [
+        "-c",
+        "task_name = \"Ready\"\nprint(\"task_name\")\nprint(task_name)"
+      ],
+      "exitCode": 0,
+      "stdout": "task_name\r\nReady\r\n",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "sectionId": "first-read-error",
+      "filename": "dispatch_label.py · 预期出现NameError",
+      "key": "firstRead",
+      "executionMode": "expected-NameError",
+      "setup": "",
+      "expected": {
+        "stdout": "",
+        "errorName": "NameError"
+      },
+      "args": [
+        "-c",
+        "print(dispatch_label)\ndispatch_label = \"Packed T7\""
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\r\n  File \"<string>\", line 1, in <module>\r\n    print(dispatch_label)\r\n          ^^^^^^^^^^^^^^\r\nNameError: name 'dispatch_label' is not defined\r\n"
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "sectionId": "prepare-case",
+      "filename": "scripts/notice.py",
+      "executionMode": "independent-cell",
+      "setup": "",
+      "exitCode": 0,
+      "stdout": "Notice N8",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "sectionId": "script-handoff",
+      "filename": "target/run.py",
+      "executionMode": "independent-cell",
+      "setup": "",
+      "exitCode": 0,
+      "stdout": "Target R9",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "sectionId": "script-handoff",
+      "filename": "target/observe_env.py",
+      "executionMode": "independent-cell",
+      "setup": "",
+      "exitCode": 0,
+      "stdout": "Interpreter: D:\\Program Files\\python.exe\nEnvironment: D:\\Program Files\nBase Python: D:\\Program Files\nVersion: 3.14.2",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "sectionId": "notebook-handoff",
+      "filename": "review-note.ipynb · 提供名字格",
+      "executionMode": "independent-cell",
+      "setup": "",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "sectionId": "notebook-handoff",
+      "filename": "review-note.ipynb · 显示格",
+      "executionMode": "ordered-cells",
+      "setup": "batch_label = \"Checked F3\"",
+      "exitCode": 0,
+      "stdout": "Checked F3",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "sectionId": "notebook-handoff",
+      "filename": "现成内核观察格",
+      "executionMode": "independent-cell",
+      "setup": "",
+      "exitCode": 0,
+      "stdout": "D:\\Program Files\\python.exe",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "sectionId": "one-file",
+      "filename": "path-lab/alpha/run.py",
+      "exitCode": 0,
+      "stdout": "Alpha A1",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "sectionId": "same-name",
+      "filename": "path-lab/beta/run.py",
+      "exitCode": 0,
+      "stdout": "Beta B2",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "sectionId": "space-argument",
+      "filename": "path-lab/my scripts/run.py",
+      "exitCode": 0,
+      "stdout": "Space S3",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "sectionId": "practice",
+      "filename": "route-task/east/check.py",
+      "exitCode": 0,
+      "stdout": "East E4",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "sectionId": "practice",
+      "filename": "route-task/west/check.py",
+      "exitCode": 0,
+      "stdout": "West W5",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "sectionId": "practice",
+      "filename": "delivery-task/my notes/ready.py",
+      "exitCode": 0,
+      "stdout": "Target T6",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "sectionId": "open-folder",
+      "filename": "main.py · 初始内容",
+      "exitCode": 0,
+      "stdout": "Draft A1",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "sectionId": "open-folder",
+      "filename": "notes.py",
+      "exitCode": 0,
+      "stdout": "Notes N4",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "sectionId": "save-rerun",
+      "filename": "main.py · 修改后",
+      "exitCode": 0,
+      "stdout": "Ready B2\nSaved copy",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "sectionId": "three-mismatches",
+      "filename": "other/main.py",
+      "exitCode": 0,
+      "stdout": "Other folder C3",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "sectionId": "practice",
+      "filename": "练习一起始文件 · editor-lab/message.py",
+      "exitCode": 0,
+      "stdout": "Plan: read\nStep: start",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "sectionId": "two-projects",
+      "filename": "project-a/main.py",
+      "exitCode": 0,
+      "stdout": "Project A A4",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "sectionId": "two-projects",
+      "filename": "project-b/main.py",
+      "exitCode": 0,
+      "stdout": "Project B B6",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "sectionId": "observe-env",
+      "filename": "observe_env.py · 现成只读观察工具",
+      "exitCode": 0,
+      "stdout": "Interpreter: D:\\Program Files\\python.exe\nEnvironment: D:\\Program Files\nBase Python: D:\\Program Files\nVersion: 3.14.2",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "sectionId": "first-cells",
+      "filename": "first-notebook.ipynb · 代码格一",
+      "executionMode": "independent-cell",
+      "setup": "",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "sectionId": "first-cells",
+      "filename": "first-notebook.ipynb · 代码格二",
+      "executionMode": "ordered-cells",
+      "setup": "marker = \"Draft A\"",
+      "exitCode": 0,
+      "stdout": "Draft A",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "sectionId": "kernel-check",
+      "filename": "现成内核观察格",
+      "executionMode": "independent-cell",
+      "setup": "",
+      "exitCode": 0,
+      "stdout": "D:\\Program Files\\python.exe",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "sectionId": "stale-state",
+      "filename": "first-notebook.ipynb · 修改代码格一",
+      "executionMode": "independent-cell",
+      "setup": "",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "sectionId": "practice",
+      "filename": "dispatch-note.ipynb · 代码格一",
+      "executionMode": "independent-cell",
+      "setup": "",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "sectionId": "practice",
+      "filename": "dispatch-note.ipynb · 代码格二",
+      "executionMode": "ordered-cells",
+      "setup": "delivery_note = \"Packed C7\"",
+      "exitCode": 0,
+      "stdout": "Packed C7",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "sectionId": "first-output",
+      "filename": "第一条Python指令",
+      "expected": "Hello, Aivora!",
+      "exitCode": 0,
+      "stdout": "Hello, Aivora!",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "sectionId": "save-script",
+      "filename": "first_run.py",
+      "expected": "Hello, Aivora!\nFile: first_run.py",
+      "exitCode": 0,
+      "stdout": "Hello, Aivora!\nFile: first_run.py",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C02-L04",
+      "sectionId": "code",
+      "filename": "read_vector_components.py",
+      "expected": "4 0 7",
+      "exitCode": 0,
+      "stdout": "4 0 7",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C02-L05",
+      "sectionId": "code",
+      "filename": "add_two_vectors.py",
+      "expected": "[2, 3]",
+      "exitCode": 0,
+      "stdout": "[2, 3]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C02-L06",
+      "sectionId": "code",
+      "filename": "scale_vector.py",
+      "expected": "[-6, -4]",
+      "exitCode": 0,
+      "stdout": "[-6, -4]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C03-L01",
+      "sectionId": "practice",
+      "filename": "calibration_pairs.py",
+      "exitCode": 0,
+      "stdout": "1 0.0 1.0\n2 1.0 3.0\n3 2.0 5.0",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C03-L02",
+      "sectionId": "code",
+      "filename": "linear_prediction.py",
+      "exitCode": 0,
+      "stdout": "[1.0, 3.0, 5.0]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C03-L03",
+      "sectionId": "code",
+      "filename": "ml_losses.py",
+      "exitCode": 0,
+      "stdout": "errors: [1.0, -1.0, -3.0]\nMAE=1.666667, MSE=3.666667",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L02",
+      "sectionId": "code",
+      "filename": "scalar_descent.py",
+      "exitCode": 0,
+      "stdout": "0.1 0.4 2.56\n1.2 4.8 7.84",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L03",
+      "sectionId": "practice",
+      "filename": "mse_gradients.py",
+      "exitCode": 0,
+      "stdout": "-13.0 -8.0",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L04",
+      "sectionId": "code",
+      "filename": "one_update.py",
+      "expected": "-13.0 -8.0 1.3 0.8 1.685",
+      "exitCode": 0,
+      "stdout": "-13.0 -8.0 1.3 0.8 1.685",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L04",
+      "sectionId": "verification",
+      "filename": "one_update_checks.py",
+      "expected": "-13.0 -8.0 1.3 0.8 1.685",
+      "exitCode": 0,
+      "stdout": "-13.0 -8.0 1.3 0.8 1.685",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L05",
+      "sectionId": "environment",
+      "filename": "predict_arrays.py",
+      "exitCode": 0,
+      "stdout": "(2,) [0. 0.] [-3. -5.]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L05",
+      "sectionId": "training",
+      "filename": "train_core.py",
+      "exitCode": 0,
+      "stdout": "first w=1.300, b=0.800\nfinal w=2.000000, b=1.000000, MSE=0.0000000000",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L05",
+      "sectionId": "full-code",
+      "filename": "ml_gradient_descent.py",
+      "exitCode": 0,
+      "stdout": "initial MSE=17.000000\nfirst w=1.300, b=0.800, MSE=1.685000\nfinal w=2.000000, b=1.000000, MSE=0.0000000000",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L05",
+      "sectionId": "experiment",
+      "filename": "compare_rates.py",
+      "exitCode": 0,
+      "stdout": "rate=0.01, w=1.921161, b=1.127561, MSE=0.00164044\nrate=0.10, w=1.994416, b=1.009035, MSE=0.00000823",
+      "stderr": ""
+    },
+    {
+      "lessonId": "ML201-C04-L01",
+      "sectionId": "code",
+      "filename": "linear_regression.py",
+      "exitCode": 0,
+      "stdout": "w=2.000000, b=1.000000, MSE=0.00000000",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L01",
+      "sectionId": "concept",
+      "filename": "double_without_function.py",
+      "expected": "6",
+      "exitCode": 0,
+      "stdout": "6",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L01",
+      "sectionId": "concept",
+      "filename": "double_definition.py",
+      "expected": "",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L01",
+      "sectionId": "code",
+      "filename": "function_basics.py",
+      "exitCode": 0,
+      "stdout": "6",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L01",
+      "sectionId": "verification",
+      "filename": "function_basics.py",
+      "exitCode": 0,
+      "stdout": "6",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L02",
+      "sectionId": "code",
+      "filename": "function_binding.py",
+      "exitCode": 0,
+      "stdout": "12\n12",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L02",
+      "sectionId": "verification",
+      "filename": "function_binding.py",
+      "exitCode": 0,
+      "stdout": "12\n12",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L03",
+      "sectionId": "code",
+      "filename": "function_return.py",
+      "exitCode": 0,
+      "stdout": "4\n4 None",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L03",
+      "sectionId": "verification",
+      "filename": "function_return.py",
+      "exitCode": 0,
+      "stdout": "4\n4 None",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L04",
+      "sectionId": "code",
+      "filename": "function_scope.py",
+      "exitCode": 0,
+      "stdout": "5\n10",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L04",
+      "sectionId": "verification",
+      "filename": "function_scope.py",
+      "exitCode": 0,
+      "stdout": "5\n10",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L05",
+      "sectionId": "code",
+      "filename": "function_defaults.py",
+      "exitCode": 0,
+      "stdout": "6\n12",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L05",
+      "sectionId": "verification",
+      "filename": "function_defaults.py",
+      "exitCode": 0,
+      "stdout": "6\n12",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C02-L01",
+      "sectionId": "code",
+      "filename": "vector_basics.py",
+      "exitCode": 0,
+      "stdout": "[4, 3] [2, 4]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C02-L01",
+      "sectionId": "verification",
+      "filename": "vector_basics.py",
+      "exitCode": 0,
+      "stdout": "[4, 3] [2, 4]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C02-L02",
+      "sectionId": "code",
+      "filename": "vector_dot.py",
+      "exitCode": 0,
+      "stdout": "5",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C02-L02",
+      "sectionId": "verification",
+      "filename": "vector_dot.py",
+      "exitCode": 0,
+      "stdout": "5",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C03-L01",
+      "sectionId": "code",
+      "filename": "matrix_shape.py",
+      "exitCode": 0,
+      "stdout": "[[1, 4], [2, 5], [3, 6]]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C03-L01",
+      "sectionId": "verification",
+      "filename": "matrix_shape.py",
+      "exitCode": 0,
+      "stdout": "[[1, 4], [2, 5], [3, 6]]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C03-L02",
+      "sectionId": "code",
+      "filename": "matrix_product.py",
+      "exitCode": 0,
+      "stdout": "[[4 6]\n [1 3]]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C03-L02",
+      "sectionId": "verification",
+      "filename": "matrix_product.py",
+      "exitCode": 0,
+      "stdout": "[[4 6]\n [1 3]]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C03-L03",
+      "sectionId": "code",
+      "filename": "numpy_shapes.py",
+      "exitCode": 0,
+      "stdout": "(2,) (2,)\n(2, 1) (1, 2)\n5",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C03-L03",
+      "sectionId": "verification",
+      "filename": "numpy_shapes.py",
+      "exitCode": 0,
+      "stdout": "(2,) (2,)\n(2, 1) (1, 2)\n5",
+      "stderr": ""
+    },
+    {
+      "lessonId": "MA101-C03-L03",
+      "sectionId": "legacy-validation",
+      "filename": "vector_matrix.py",
+      "exitCode": 0,
+      "stdout": "shape mismatch: ValueError (expected)\nsum: [4 3] scaled: [2 4] dot: 5\nA @ B:\n [[4 6]\n [1 3]] \nB @ A:\n [[2 4]\n [1 5]]\nA * B:\n [[2 0]\n [0 3]] \nM @ N:\n [[4 5]\n [2 3]]",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L06",
+      "sectionId": "defaults",
+      "filename": "shared_default.py",
+      "exitCode": 0,
+      "stdout": "['A', 'B'] ['A', 'B'] True",
+      "stderr": ""
+    },
+    {
+      "lessonId": "PY101-C05-L06",
+      "sectionId": "code",
+      "filename": "python_functions.py",
+      "exitCode": 0,
+      "stdout": "6.0 13 5.0\nkeyword-only: TypeError (expected)\n['A'] ['B'] ['start', 'next'] ['start']\nshared default: ['A', 'B']",
+      "stderr": ""
+    }
+  ],
+  "coreComparisons": [
+    {
+      "id": "function-basics",
+      "expected": "6",
+      "exitCode": 0,
+      "stdout": "6",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "function-binding",
+      "expected": "12\n12",
+      "exitCode": 0,
+      "stdout": "12\n12",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "function-return",
+      "expected": "4\n4 None",
+      "exitCode": 0,
+      "stdout": "4\n4 None",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "function-scope",
+      "expected": "5\n10",
+      "exitCode": 0,
+      "stdout": "5\n10",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "function-defaults",
+      "expected": "6\n12",
+      "exitCode": 0,
+      "stdout": "6\n12",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "vector-basics",
+      "expected": "[4, 3] [2, 4]",
+      "exitCode": 0,
+      "stdout": "[4, 3] [2, 4]",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "vector-dot",
+      "expected": "5",
+      "exitCode": 0,
+      "stdout": "5",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "matrix-shape",
+      "expected": "[[1, 4], [2, 5], [3, 6]]",
+      "exitCode": 0,
+      "stdout": "[[1, 4], [2, 5], [3, 6]]",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "matrix-product",
+      "expected": "[[4 6]\n [1 3]]",
+      "exitCode": 0,
+      "stdout": "[[4 6]\n [1 3]]",
+      "stderr": "",
+      "fullMatches": true
+    },
+    {
+      "id": "numpy-shapes",
+      "expected": "(2,) (2,)\n(2, 1) (1, 2)\n5",
+      "exitCode": 0,
+      "stdout": "(2,) (2,)\n(2, 1) (1, 2)\n5",
+      "stderr": "",
+      "fullMatches": true
+    }
+  ],
+  "trainingComparison": {
+    "exitCode": 0,
+    "stdout": "first w=1.300, b=0.800\nfinal w=2.000000, b=1.000000, MSE=0.0000000000\ninitial MSE=17.000000\nfirst w=1.300, b=0.800, MSE=1.685000\nfinal w=2.000000, b=1.000000, MSE=0.0000000000\ncore/full training match; independent expected line y=2x+1",
+    "stderr": ""
+  },
+  "note": "技术校验通过；不代表人工内容审核、试学或正式发布。代码来自仓库静态教材，仅开发阶段执行。"
+}

@@ -1,0 +1,113 @@
+{
+  "widths": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "goals": [
+        "01根据新的起始数量和目标，独立写出包含初值、条件与体内更新的有限while程序，每处理一件显示完成量并正常结束",
+        "02运行前预测每轮检查值、更新值与输出，解释最后一次假检查和零轮执行，区分最后打印值与退出时变量值",
+        "03真实复现一处可终止的更新幅度错误，只修必要表达式并用新数据和零轮复验，说明漏更新不能保证停止的风险"
+      ],
+      "tasks": [
+        {
+          "open": 3,
+          "rubric": true,
+          "title": "从自己的起点，把数量推进到目标"
+        },
+        {
+          "open": 3,
+          "rubric": true,
+          "title": "为什么每次数到的不是下一件？"
+        }
+      ],
+      "layout": {
+        "headings": [
+          "if只做了一次，离3件还差多少？",
+          "while在每轮开始重新检查条件",
+          "打印3之后，还要再检查一次",
+          "第一次就不满足，可以一轮也不做",
+          "先显示还是先更新，报告的是不同时刻",
+          "是什么让下一次条件最终变成假？",
+          "独立计数，再修复一次更新幅度",
+          "做完再核对：有限循环的两题参考",
+          "用初值、条件和更新说明每一轮"
+        ],
+        "height": 1000,
+        "scrollWidth": 1425,
+        "width": 1440
+      }
+    },
+    {
+      "drawerClosed": true,
+      "focusTag": "H3",
+      "focusText": "为什么每次数到的不是下一件？",
+      "hash": "#exercise-repair-state-update",
+      "height": 1024,
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "height": 844,
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "focusTag": "H2",
+      "focusText": "打印3之后，还要再检查一次",
+      "hash": "#follow-states",
+      "height": 812,
+      "scrollWidth": 305,
+      "width": 320
+    }
+  ],
+  "copies": [
+    "copied-while-main.py",
+    "copied-while-repaired.py"
+  ],
+  "progress": {
+    "newCompletionNotInherited": true,
+    "scope": "aivora:learning:v2:PY101:PY101-C03-L04:r1",
+    "stableFullReturn": "#order-matters",
+    "stableFullReload": "#order-matters",
+    "oldCompletionPreserved": [
+      "PY101-C02-L04",
+      "PY101-C03-L01",
+      "PY101-C03-L02"
+    ]
+  },
+  "production": true,
+  "copyInitialStaleDetected": true,
+  "codeHorizontal": {
+    "clientWidth": 229,
+    "documentWidth": 305,
+    "scrollLeft": 67.33333587646484,
+    "scrollWidth": 296,
+    "width": 320
+  },
+  "consoleErrors": [],
+  "oldCompletionCreated": [
+    "PY101-C02-L04",
+    "PY101-C03-L01",
+    "PY101-C03-L02"
+  ],
+  "bookmarkRepro": {
+    "caseCount": 5,
+    "severity": "P1",
+    "blockedFlow": "PY101-C03-L03/r1 stable anchor -> SPA course -> return; wrong visible resume survives full reload",
+    "expected": "#short-circuit",
+    "actual": "#reverse-result",
+    "stable33Supported": true,
+    "stable34Supported": true,
+    "rapidImmediate33ObservedCorrect": true,
+    "rapidImmediate34ObservedCorrect": true,
+    "p18OriginalPathReproduced": true,
+    "rawSerializedStorageAvailable": false,
+    "otherOldRecordsLostConfirmed": false,
+    "readerSourceChanged": false,
+    "storageWritesOrClearAttempted": false
+  },
+  "adjacent33to34": true,
+  "wholeCoursePlanned": true,
+  "wrongCourse404": true,
+  "futureLesson404": true
+}

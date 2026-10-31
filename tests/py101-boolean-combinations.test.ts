@@ -6,8 +6,8 @@ import { pythonBooleanCombinationsLesson as lesson } from "../src/content/lesson
 import { booleanCode, booleanBlockNames } from "../src/content/resources/python-boolean-combinations";
 import { booleanCases, booleanKey, quantityPredictions, runBooleanExample } from "../scripts/validate-py101-boolean";
 import { checkConditionalResult } from "../scripts/validate-py101-conditional";
-import { lessonRegistry, getLearningCourse, getAdjacentLessons, resolveLesson } from "../src/lib/course-engine";
-import { publicationManifest } from "../src/content/publication-manifest";
+import { lessonRegistry, getLearningCourse, getAdjacentLessons, resolveLesson } from "./helpers/py101-p18-view";
+import { publicationManifest } from "./helpers/py101-p18-view";
 import { publicationSchema, isReadable, type ContentBlock } from "../src/content/models";
 import { createProgressStore, parseReadingProgress, progressKey, type ProgressScope } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";

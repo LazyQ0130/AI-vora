@@ -1,0 +1,72 @@
+{
+  "checkedAt": "2026-10-31T09:37:27.188893+00:00",
+  "method": "Only hashes/counts for isolated candidate global reports; do not duplicate historical reports into P19. Workspace fresh global reports retained separately.",
+  "sourceMatchCount": 355,
+  "unitDraft": 399,
+  "unitTemporaryPreview": 399,
+  "pythonWebExamples": 160,
+  "pythonGroups": 10,
+  "teachingLessons": 63,
+  "routesDraft": 114,
+  "routesTemporaryPreview": 114,
+  "routesFinalPrivate": 114,
+  "p19HttpGatesPerStage": 10,
+  "finalPrivateNewLessonStatus": 404,
+  "defaultTurbopack": "failed; external node_modules junction root resolution retained in log",
+  "webpackPages": {
+    "initialDraft": 89,
+    "temporaryPreview": 90,
+    "finalPrivate": 89
+  },
+  "reports": [
+    {
+      "stage": "candidate-checks",
+      "filename": "PREVIEW_HTTP_GATE.json",
+      "bytes": 1705,
+      "sha256": "e1b2c286f5f65f7e3385dff677cac8a0ca6ffc4a96faa088ea1800807bfc25e5",
+      "rows": 10
+    },
+    {
+      "stage": "candidate-checks",
+      "filename": "TEACHING_V2_3_CONTENT_MATRIX.json",
+      "bytes": 455874,
+      "sha256": "0f66f1436b3cc59020b445d3dc2a134916876341942fbd9b6cecdcc6edf16881",
+      "rows": 63
+    },
+    {
+      "stage": "candidate-checks",
+      "filename": "TEACHING_V2_3_MATH_EVIDENCE.json",
+      "bytes": 1237,
+      "sha256": "1eb25a37e8b076057ab58302d230c76cd3f4719744c3aef4b61a85cddee9f44e",
+      "rows": null
+    },
+    {
+      "stage": "candidate-checks",
+      "filename": "TEACHING_V2_3_PYTHON_RESULTS.json",
+      "bytes": 177447,
+      "sha256": "21945676ebe2a43b89343adab243b8ea2467a420b65ff5a0f84b5434025fc455",
+      "rows": 160
+    },
+    {
+      "stage": "candidate-checks",
+      "filename": "TEACHING_V2_3_ROUTE_RESULTS.json",
+      "bytes": 13667,
+      "sha256": "eb6e3177239680210e25f761ac375322cbc2e5fd015b8b7805dffc06fbd73350",
+      "rows": 114
+    },
+    {
+      "stage": "final-private",
+      "filename": "DRAFT_HTTP_GATE.json",
+      "bytes": 1633,
+      "sha256": "c5b34cc0825ff451ea7a13b4fc9910d9ad1245bedd634e70eadbb91e9b8489b1",
+      "rows": 10
+    },
+    {
+      "stage": "final-private",
+      "filename": "TEACHING_V2_3_ROUTE_RESULTS.json",
+      "bytes": 13667,
+      "sha256": "1d2f8a078a6e43ab08480331629bf1aec92144bd1e3052810f26af6ba003be11",
+      "rows": 114
+    }
+  ]
+}

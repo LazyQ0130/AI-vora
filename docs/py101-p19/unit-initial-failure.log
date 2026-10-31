@@ -1,0 +1,39 @@
+✔ P19 3.4/r1/order4, actual private gate, preview evidence, adjacent 3.3 and no 3.5–3.8 (1.8855ms)
+✖ P19 if-to-while teaching and two core tasks cover the three observable goals (3.4499ms)
+✔ P19 complete web Python is strictly shared and finite; unknown/dangerous/rewritten code cannot run (2.4623ms)
+✔ P19 actual saved-file results distinguish multiple/zero/new, print order and safe increment repair (0.7924ms)
+✔ P19 read-only line traces prove final false checks and separate final printed/exit values (0.3482ms)
+✔ P19 controlled WAIT timeout is rejected, reaped and never counted as a normal teaching program (0.9149ms)
+✔ P19 all 62 old Lesson/Publication/scopes including 3.1–3.3 r1 remain exact (5.875ms)
+✔ P19 exact historical authorization rejects unknown edits, independent r1 reload protects old strings/user fingerprints (3.3922ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 372.9019
+
+✖ failing tests:
+
+test at tests\py101-while-repetition.test.ts:33:1
+✖ P19 if-to-while teaching and two core tasks cover the three observable goals (3.4499ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(preceding.includes(concept))
+
+      at TestContext.<anonymous> (<WORKSPACE>\tests\py101-while-repetition.test.ts:41:71)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

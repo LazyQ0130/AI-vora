@@ -1,0 +1,688 @@
+{
+  "checkedAt": "2026-10-31T09:10:47.925Z",
+  "platform": "win32",
+  "node": "v24.16.0",
+  "python": {
+    "version": "3.14.2",
+    "executable": "<BASE-PYTHON>\\python.exe",
+    "prefix": "<BASE-PYTHON>"
+  },
+  "preSolutionsSha256": "e56680e378b273c0fc1dcb9d83ffb184e4331d58d09fbbf326f1aff74f39aa95",
+  "method": "Manual predictions; reuse existing 10s saved-file runner. State observer uses read-only line tracing of unmodified finite source. Identical sources explicitly reuse evidence. Separate finite sleep probe verifies timeout rejection and reaping; never execute missing-update source.",
+  "rows": [
+    {
+      "key": "once",
+      "id": "if-once",
+      "filename": "if-once.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\if-once.py"
+      ],
+      "pid": 20860,
+      "savedSource": "packed = 0\ntarget = 3\n\nif packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "d2b60fcfbb28ad0e00a9d6f90b4f0118ca2fb387bc1f248f328f4877b71e0539",
+      "predictedStdout": "1\nPacking finished\n",
+      "exitCode": 0,
+      "stdout": "1\r\nPacking finished\r\n",
+      "stderr": "",
+      "executionId": "if-once",
+      "evidenceReused": false,
+      "timeoutMs": 10000
+    },
+    {
+      "key": "main",
+      "id": "main-0-3",
+      "filename": "main-0-3.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\main-0-3.py"
+      ],
+      "pid": 13340,
+      "savedSource": "packed = 0\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "2ba23b140781cfb720846a8ff750537d836b03bb08448e3c0eed9e222b8013f5",
+      "predictedStdout": "1\n2\n3\nPacking finished\n",
+      "exitCode": 0,
+      "stdout": "1\r\n2\r\n3\r\nPacking finished\r\n",
+      "stderr": "",
+      "executionId": "main-0-3",
+      "evidenceReused": false,
+      "timeoutMs": 10000
+    },
+    {
+      "key": "main",
+      "id": "main-3-3",
+      "filename": "main-3-3.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\main-3-3.py"
+      ],
+      "pid": 15924,
+      "savedSource": "packed = 3\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "dfe5b655a51382173f3b88e86565d6927a4b07e47fe8b0ac7ea56da0c8f508c6",
+      "predictedStdout": "Packing finished\n",
+      "exitCode": 0,
+      "stdout": "Packing finished\r\n",
+      "stderr": "",
+      "executionId": "main-3-3",
+      "evidenceReused": false,
+      "timeoutMs": 10000
+    },
+    {
+      "key": "main",
+      "id": "main-4-3",
+      "filename": "main-4-3.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\main-4-3.py"
+      ],
+      "pid": 19520,
+      "savedSource": "packed = 4\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "779e2917abcff31fdd4e6988b0b370fc42a99e99bec91407ce75c97dbe90d864",
+      "predictedStdout": "Packing finished\n",
+      "exitCode": 0,
+      "stdout": "Packing finished\r\n",
+      "stderr": "",
+      "executionId": "main-4-3",
+      "evidenceReused": false,
+      "timeoutMs": 10000
+    },
+    {
+      "key": "main",
+      "id": "main-2-5",
+      "filename": "main-2-5.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\main-2-5.py"
+      ],
+      "pid": 24444,
+      "savedSource": "packed = 2\ntarget = 5\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "ba6c4251f40a2a221a30d56c6692b71c367db95eb67878a328cc803bbd4417df",
+      "predictedStdout": "3\n4\n5\nPacking finished\n",
+      "exitCode": 0,
+      "stdout": "3\r\n4\r\n5\r\nPacking finished\r\n",
+      "stderr": "",
+      "executionId": "main-2-5",
+      "evidenceReused": false,
+      "timeoutMs": 10000
+    },
+    {
+      "key": "zero",
+      "id": "zero-canonical",
+      "filename": "main-3-3.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\main-3-3.py"
+      ],
+      "pid": 15924,
+      "savedSource": "packed = 3\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "dfe5b655a51382173f3b88e86565d6927a4b07e47fe8b0ac7ea56da0c8f508c6",
+      "predictedStdout": "Packing finished\n",
+      "exitCode": 0,
+      "stdout": "Packing finished\r\n",
+      "stderr": "",
+      "executionId": "main-3-3",
+      "evidenceReused": true,
+      "timeoutMs": 10000
+    },
+    {
+      "key": "newStart",
+      "id": "new-start-canonical",
+      "filename": "main-2-5.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\main-2-5.py"
+      ],
+      "pid": 24444,
+      "savedSource": "packed = 2\ntarget = 5\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "ba6c4251f40a2a221a30d56c6692b71c367db95eb67878a328cc803bbd4417df",
+      "predictedStdout": "3\n4\n5\nPacking finished\n",
+      "exitCode": 0,
+      "stdout": "3\r\n4\r\n5\r\nPacking finished\r\n",
+      "stderr": "",
+      "executionId": "main-2-5",
+      "evidenceReused": true,
+      "timeoutMs": 10000
+    },
+    {
+      "key": "beforePrint",
+      "id": "print-before",
+      "filename": "print-before.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\print-before.py"
+      ],
+      "pid": 23140,
+      "savedSource": "packed = 0\ntarget = 3\n\nwhile packed < target:\n    print(packed)\n    packed = packed + 1\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "a8336820737fe963f0c836ea59501f93bdf1a91332fb82c12a6d48b04550235b",
+      "predictedStdout": "0\n1\n2\nPacking finished\n",
+      "exitCode": 0,
+      "stdout": "0\r\n1\r\n2\r\nPacking finished\r\n",
+      "stderr": "",
+      "executionId": "print-before",
+      "evidenceReused": false,
+      "timeoutMs": 10000
+    },
+    {
+      "key": "fault",
+      "businessCorrect": false,
+      "id": "wrong-step-two",
+      "filename": "wrong-step-two.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\wrong-step-two.py"
+      ],
+      "pid": 8768,
+      "savedSource": "packed = 0\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 2\n    print(packed)\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "91526055c26dd056f98bc30a1178f2bdb0770330c3452591b2fb0502168b0a94",
+      "predictedStdout": "2\n4\nPacking finished\n",
+      "exitCode": 0,
+      "stdout": "2\r\n4\r\nPacking finished\r\n",
+      "stderr": "",
+      "executionId": "wrong-step-two",
+      "evidenceReused": false,
+      "timeoutMs": 10000
+    },
+    {
+      "key": "fixed",
+      "businessCorrect": true,
+      "id": "repair-original",
+      "filename": "main-0-3.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\main-0-3.py"
+      ],
+      "pid": 13340,
+      "savedSource": "packed = 0\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "2ba23b140781cfb720846a8ff750537d836b03bb08448e3c0eed9e222b8013f5",
+      "predictedStdout": "1\n2\n3\nPacking finished\n",
+      "exitCode": 0,
+      "stdout": "1\r\n2\r\n3\r\nPacking finished\r\n",
+      "stderr": "",
+      "executionId": "main-0-3",
+      "evidenceReused": true,
+      "timeoutMs": 10000
+    },
+    {
+      "key": "fixed",
+      "businessCorrect": true,
+      "id": "repair-new",
+      "filename": "main-2-5.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\main-2-5.py"
+      ],
+      "pid": 24444,
+      "savedSource": "packed = 2\ntarget = 5\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "ba6c4251f40a2a221a30d56c6692b71c367db95eb67878a328cc803bbd4417df",
+      "predictedStdout": "3\n4\n5\nPacking finished\n",
+      "exitCode": 0,
+      "stdout": "3\r\n4\r\n5\r\nPacking finished\r\n",
+      "stderr": "",
+      "executionId": "main-2-5",
+      "evidenceReused": true,
+      "timeoutMs": 10000
+    },
+    {
+      "key": "fixed",
+      "businessCorrect": true,
+      "id": "repair-zero",
+      "filename": "main-3-3.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\main-3-3.py"
+      ],
+      "pid": 15924,
+      "savedSource": "packed = 3\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "dfe5b655a51382173f3b88e86565d6927a4b07e47fe8b0ac7ea56da0c8f508c6",
+      "predictedStdout": "Packing finished\n",
+      "exitCode": 0,
+      "stdout": "Packing finished\r\n",
+      "stderr": "",
+      "executionId": "main-3-3",
+      "evidenceReused": true,
+      "timeoutMs": 10000
+    },
+    {
+      "key": "own",
+      "id": "own-multiple",
+      "filename": "own-multiple.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\own-multiple.py"
+      ],
+      "pid": 10424,
+      "savedSource": "labels_done = 2\nlabel_goal = 6\n\nwhile labels_done < label_goal:\n    labels_done = labels_done + 1\n    print(labels_done)\n\nprint(\"Label check finished\")\n",
+      "savedSha256": "e56e8957e2b7bebc7c8e6549c4a12b887e902d5e4656b114ad90c422f11621aa",
+      "predictedStdout": "3\n4\n5\n6\nLabel check finished\n",
+      "exitCode": 0,
+      "stdout": "3\r\n4\r\n5\r\n6\r\nLabel check finished\r\n",
+      "stderr": "",
+      "executionId": "own-multiple",
+      "evidenceReused": false,
+      "timeoutMs": 10000
+    },
+    {
+      "key": "own",
+      "id": "own-zero",
+      "filename": "own-zero.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\own-zero.py"
+      ],
+      "pid": 23564,
+      "savedSource": "labels_done = 6\nlabel_goal = 6\n\nwhile labels_done < label_goal:\n    labels_done = labels_done + 1\n    print(labels_done)\n\nprint(\"Label check finished\")\n",
+      "savedSha256": "9611b56773cbc8a3a41fdb4a999f91914c956ca58925dd58addd68c83ebdc43e",
+      "predictedStdout": "Label check finished\n",
+      "exitCode": 0,
+      "stdout": "Label check finished\r\n",
+      "stderr": "",
+      "executionId": "own-zero",
+      "evidenceReused": false,
+      "timeoutMs": 10000
+    },
+    {
+      "key": "own",
+      "id": "own-new",
+      "filename": "own-new.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\own-new.py"
+      ],
+      "pid": 10912,
+      "savedSource": "labels_done = 4\nlabel_goal = 7\n\nwhile labels_done < label_goal:\n    labels_done = labels_done + 1\n    print(labels_done)\n\nprint(\"Label check finished\")\n",
+      "savedSha256": "ece5aee031d90927d10119c221d88a1483d921447c2840b02827b6d792b3b25c",
+      "predictedStdout": "5\n6\n7\nLabel check finished\n",
+      "exitCode": 0,
+      "stdout": "5\r\n6\r\n7\r\nLabel check finished\r\n",
+      "stderr": "",
+      "executionId": "own-new",
+      "evidenceReused": false,
+      "timeoutMs": 10000
+    },
+    {
+      "key": "unseen",
+      "businessCorrect": true,
+      "id": "unseen-1",
+      "filename": "unseen-1.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\unseen-1.py"
+      ],
+      "pid": 21244,
+      "savedSource": "checked = 1\nneeded = 5\n\nwhile checked < needed:\n    checked = checked + 1\n    print(checked)\n\nprint(\"Check done\")\n",
+      "savedSha256": "53524d4a8b551fe5ae9f3f6f5ddb8c6f783df8b405e1ecfe7fa7fcaaf8ff0a70",
+      "predictedStdout": "2\n3\n4\n5\nCheck done\n",
+      "exitCode": 0,
+      "stdout": "2\r\n3\r\n4\r\n5\r\nCheck done\r\n",
+      "stderr": "",
+      "executionId": "unseen-1",
+      "evidenceReused": false,
+      "timeoutMs": 10000
+    },
+    {
+      "key": "unseen",
+      "businessCorrect": true,
+      "id": "unseen-5",
+      "filename": "unseen-5.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\unseen-5.py"
+      ],
+      "pid": 3592,
+      "savedSource": "checked = 5\nneeded = 5\n\nwhile checked < needed:\n    checked = checked + 1\n    print(checked)\n\nprint(\"Check done\")\n",
+      "savedSha256": "06a6e95e5b9ecd329712cc43e8eab8c1de1c42f2d539b355e0e0627f6c72c70c",
+      "predictedStdout": "Check done\n",
+      "exitCode": 0,
+      "stdout": "Check done\r\n",
+      "stderr": "",
+      "executionId": "unseen-5",
+      "evidenceReused": false,
+      "timeoutMs": 10000
+    },
+    {
+      "key": "unseen",
+      "businessCorrect": true,
+      "id": "unseen-6",
+      "filename": "unseen-6.py",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "<P19-LAB>\\unseen-6.py"
+      ],
+      "pid": 11864,
+      "savedSource": "checked = 6\nneeded = 5\n\nwhile checked < needed:\n    checked = checked + 1\n    print(checked)\n\nprint(\"Check done\")\n",
+      "savedSha256": "ef628f739866bc6e208c05efe47b0ed77836272e4f4bbab5b9a6c02944263b69",
+      "predictedStdout": "Check done\n",
+      "exitCode": 0,
+      "stdout": "Check done\r\n",
+      "stderr": "",
+      "executionId": "unseen-6",
+      "evidenceReused": false,
+      "timeoutMs": 10000
+    }
+  ],
+  "uniqueProcessCount": 13,
+  "traces": [
+    {
+      "id": "if-once",
+      "filename": "trace-if-once.py",
+      "savedSource": "packed = 0\ntarget = 3\n\nif packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "d2b60fcfbb28ad0e00a9d6f90b4f0118ca2fb387bc1f248f328f4877b71e0539",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "observe_states.py",
+        "trace-if-once.py"
+      ],
+      "pid": 13536,
+      "timeoutMs": 10000,
+      "predictedChecks": [
+        0
+      ],
+      "predictedFinal": 1,
+      "predictedStdout": "1\nPacking finished\n",
+      "programSha256": "d2b60fcfbb28ad0e00a9d6f90b4f0118ca2fb387bc1f248f328f4877b71e0539",
+      "conditionLine": 4,
+      "checks": [
+        {
+          "packed": 0,
+          "target": 3
+        }
+      ],
+      "finalValue": 1,
+      "programStdout": "1\nPacking finished\n",
+      "stdout": "{\"programSha256\": \"d2b60fcfbb28ad0e00a9d6f90b4f0118ca2fb387bc1f248f328f4877b71e0539\", \"conditionLine\": 4, \"checks\": [{\"packed\": 0, \"target\": 3}], \"finalValue\": 1, \"programStdout\": \"1\\nPacking finished\\n\"}\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "id": "while-main",
+      "filename": "trace-while-main.py",
+      "savedSource": "packed = 0\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "2ba23b140781cfb720846a8ff750537d836b03bb08448e3c0eed9e222b8013f5",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "observe_states.py",
+        "trace-while-main.py"
+      ],
+      "pid": 14616,
+      "timeoutMs": 10000,
+      "predictedChecks": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "predictedFinal": 3,
+      "predictedStdout": "1\n2\n3\nPacking finished\n",
+      "programSha256": "2ba23b140781cfb720846a8ff750537d836b03bb08448e3c0eed9e222b8013f5",
+      "conditionLine": 4,
+      "checks": [
+        {
+          "packed": 0,
+          "target": 3
+        },
+        {
+          "packed": 1,
+          "target": 3
+        },
+        {
+          "packed": 2,
+          "target": 3
+        },
+        {
+          "packed": 3,
+          "target": 3
+        }
+      ],
+      "finalValue": 3,
+      "programStdout": "1\n2\n3\nPacking finished\n",
+      "stdout": "{\"programSha256\": \"2ba23b140781cfb720846a8ff750537d836b03bb08448e3c0eed9e222b8013f5\", \"conditionLine\": 4, \"checks\": [{\"packed\": 0, \"target\": 3}, {\"packed\": 1, \"target\": 3}, {\"packed\": 2, \"target\": 3}, {\"packed\": 3, \"target\": 3}], \"finalValue\": 3, \"programStdout\": \"1\\n2\\n3\\nPacking finished\\n\"}\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "id": "while-zero",
+      "filename": "trace-while-zero.py",
+      "savedSource": "packed = 3\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "dfe5b655a51382173f3b88e86565d6927a4b07e47fe8b0ac7ea56da0c8f508c6",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "observe_states.py",
+        "trace-while-zero.py"
+      ],
+      "pid": 7556,
+      "timeoutMs": 10000,
+      "predictedChecks": [
+        3
+      ],
+      "predictedFinal": 3,
+      "predictedStdout": "Packing finished\n",
+      "programSha256": "dfe5b655a51382173f3b88e86565d6927a4b07e47fe8b0ac7ea56da0c8f508c6",
+      "conditionLine": 4,
+      "checks": [
+        {
+          "packed": 3,
+          "target": 3
+        }
+      ],
+      "finalValue": 3,
+      "programStdout": "Packing finished\n",
+      "stdout": "{\"programSha256\": \"dfe5b655a51382173f3b88e86565d6927a4b07e47fe8b0ac7ea56da0c8f508c6\", \"conditionLine\": 4, \"checks\": [{\"packed\": 3, \"target\": 3}], \"finalValue\": 3, \"programStdout\": \"Packing finished\\n\"}\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "id": "while-above",
+      "filename": "trace-while-above.py",
+      "savedSource": "packed = 4\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "779e2917abcff31fdd4e6988b0b370fc42a99e99bec91407ce75c97dbe90d864",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "observe_states.py",
+        "trace-while-above.py"
+      ],
+      "pid": 20864,
+      "timeoutMs": 10000,
+      "predictedChecks": [
+        4
+      ],
+      "predictedFinal": 4,
+      "predictedStdout": "Packing finished\n",
+      "programSha256": "779e2917abcff31fdd4e6988b0b370fc42a99e99bec91407ce75c97dbe90d864",
+      "conditionLine": 4,
+      "checks": [
+        {
+          "packed": 4,
+          "target": 3
+        }
+      ],
+      "finalValue": 4,
+      "programStdout": "Packing finished\n",
+      "stdout": "{\"programSha256\": \"779e2917abcff31fdd4e6988b0b370fc42a99e99bec91407ce75c97dbe90d864\", \"conditionLine\": 4, \"checks\": [{\"packed\": 4, \"target\": 3}], \"finalValue\": 4, \"programStdout\": \"Packing finished\\n\"}\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "id": "while-new",
+      "filename": "trace-while-new.py",
+      "savedSource": "packed = 2\ntarget = 5\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "ba6c4251f40a2a221a30d56c6692b71c367db95eb67878a328cc803bbd4417df",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "observe_states.py",
+        "trace-while-new.py"
+      ],
+      "pid": 16492,
+      "timeoutMs": 10000,
+      "predictedChecks": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "predictedFinal": 5,
+      "predictedStdout": "3\n4\n5\nPacking finished\n",
+      "programSha256": "ba6c4251f40a2a221a30d56c6692b71c367db95eb67878a328cc803bbd4417df",
+      "conditionLine": 4,
+      "checks": [
+        {
+          "packed": 2,
+          "target": 5
+        },
+        {
+          "packed": 3,
+          "target": 5
+        },
+        {
+          "packed": 4,
+          "target": 5
+        },
+        {
+          "packed": 5,
+          "target": 5
+        }
+      ],
+      "finalValue": 5,
+      "programStdout": "3\n4\n5\nPacking finished\n",
+      "stdout": "{\"programSha256\": \"ba6c4251f40a2a221a30d56c6692b71c367db95eb67878a328cc803bbd4417df\", \"conditionLine\": 4, \"checks\": [{\"packed\": 2, \"target\": 5}, {\"packed\": 3, \"target\": 5}, {\"packed\": 4, \"target\": 5}, {\"packed\": 5, \"target\": 5}], \"finalValue\": 5, \"programStdout\": \"3\\n4\\n5\\nPacking finished\\n\"}\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "id": "print-before",
+      "filename": "trace-print-before.py",
+      "savedSource": "packed = 0\ntarget = 3\n\nwhile packed < target:\n    print(packed)\n    packed = packed + 1\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "a8336820737fe963f0c836ea59501f93bdf1a91332fb82c12a6d48b04550235b",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "observe_states.py",
+        "trace-print-before.py"
+      ],
+      "pid": 4036,
+      "timeoutMs": 10000,
+      "predictedChecks": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "predictedFinal": 3,
+      "predictedStdout": "0\n1\n2\nPacking finished\n",
+      "programSha256": "a8336820737fe963f0c836ea59501f93bdf1a91332fb82c12a6d48b04550235b",
+      "conditionLine": 4,
+      "checks": [
+        {
+          "packed": 0,
+          "target": 3
+        },
+        {
+          "packed": 1,
+          "target": 3
+        },
+        {
+          "packed": 2,
+          "target": 3
+        },
+        {
+          "packed": 3,
+          "target": 3
+        }
+      ],
+      "finalValue": 3,
+      "programStdout": "0\n1\n2\nPacking finished\n",
+      "stdout": "{\"programSha256\": \"a8336820737fe963f0c836ea59501f93bdf1a91332fb82c12a6d48b04550235b\", \"conditionLine\": 4, \"checks\": [{\"packed\": 0, \"target\": 3}, {\"packed\": 1, \"target\": 3}, {\"packed\": 2, \"target\": 3}, {\"packed\": 3, \"target\": 3}], \"finalValue\": 3, \"programStdout\": \"0\\n1\\n2\\nPacking finished\\n\"}\r\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "id": "step-two",
+      "filename": "trace-step-two.py",
+      "savedSource": "packed = 0\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 2\n    print(packed)\n\nprint(\"Packing finished\")\n",
+      "savedSha256": "91526055c26dd056f98bc30a1178f2bdb0770330c3452591b2fb0502168b0a94",
+      "cwd": "<P19-LAB>",
+      "command": [
+        "python",
+        "observe_states.py",
+        "trace-step-two.py"
+      ],
+      "pid": 24408,
+      "timeoutMs": 10000,
+      "predictedChecks": [
+        0,
+        2,
+        4
+      ],
+      "predictedFinal": 4,
+      "predictedStdout": "2\n4\nPacking finished\n",
+      "programSha256": "91526055c26dd056f98bc30a1178f2bdb0770330c3452591b2fb0502168b0a94",
+      "conditionLine": 4,
+      "checks": [
+        {
+          "packed": 0,
+          "target": 3
+        },
+        {
+          "packed": 2,
+          "target": 3
+        },
+        {
+          "packed": 4,
+          "target": 3
+        }
+      ],
+      "finalValue": 4,
+      "programStdout": "2\n4\nPacking finished\n",
+      "stdout": "{\"programSha256\": \"91526055c26dd056f98bc30a1178f2bdb0770330c3452591b2fb0502168b0a94\", \"conditionLine\": 4, \"checks\": [{\"packed\": 0, \"target\": 3}, {\"packed\": 2, \"target\": 3}, {\"packed\": 4, \"target\": 3}], \"finalValue\": 4, \"programStdout\": \"2\\n4\\nPacking finished\\n\"}\r\n",
+      "stderr": "",
+      "exitCode": 0
+    }
+  ],
+  "observerSource": "import contextlib, hashlib, io, json, pathlib, sys\ntarget = pathlib.Path(sys.argv[1]).resolve()\nsource = target.read_text(encoding=\"utf-8\")\ncondition_line = next(n for n, text in enumerate(source.splitlines(), 1) if text.startswith((\"while \", \"if \")))\nchecks = []\nfinal_value = None\ndef observe(frame, event, arg):\n    global final_value\n    if frame.f_code.co_filename != str(target):\n        return None\n    if event == \"line\" and frame.f_lineno == condition_line:\n        checks.append({\"packed\": frame.f_locals[\"packed\"], \"target\": frame.f_locals[\"target\"]})\n    elif event == \"return\":\n        final_value = frame.f_locals[\"packed\"]\n    return observe\nbuffer = io.StringIO()\nwith contextlib.redirect_stdout(buffer):\n    sys.settrace(observe)\n    try:\n        exec(compile(source, str(target), \"exec\"), {\"__name__\": \"__main__\"})\n    finally:\n        sys.settrace(None)\nprint(json.dumps({\"programSha256\": hashlib.sha256(target.read_bytes()).hexdigest(), \"conditionLine\": condition_line, \"checks\": checks, \"finalValue\": final_value, \"programStdout\": buffer.getvalue()}))\n",
+  "timeoutProbe": {
+    "filename": "finite_wait_probe.py",
+    "savedSource": "import time\ntime.sleep(2)\n",
+    "savedSha256": "21255e7ef49a8ddd4ad00b842c6acae94cbcfa26741aff7da80ce657dc6e5aee",
+    "command": [
+      "python",
+      "finite_wait_probe.py"
+    ],
+    "cwd": "<P19-LAB>",
+    "timeoutMs": 150,
+    "selfBoundSeconds": 2,
+    "pid": 25116,
+    "exitCode": null,
+    "signal": "SIGTERM",
+    "errorCode": "ETIMEDOUT",
+    "stdout": "",
+    "stderr": "",
+    "childAliveAfterReturn": false,
+    "normalResultRejected": true,
+    "programCompletedNormally": false
+  },
+  "allAssertionsPassed": true,
+  "studentPilot": false,
+  "macOSRuntimeVerified": false
+}

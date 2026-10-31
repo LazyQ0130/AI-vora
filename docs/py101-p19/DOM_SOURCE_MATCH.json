@@ -1,0 +1,41 @@
+{
+  "method": "Displayed token text; Prism empty-line placeholders restored; separate real Copy proof",
+  "rows": [
+    {
+      "key": "once",
+      "filename": "one_item.py",
+      "sha256": "9eed37aa857f4ada7293a2c506b39d15980dcbe7761c1c073cb2255cf362bf03",
+      "exactSource": true
+    },
+    {
+      "key": "main",
+      "filename": "packing_loop.py",
+      "sha256": "05a833f34c36e112e2cdda445dd003f8bf723f93d4b1fe3007d0a27bc6a591a2",
+      "exactSource": true
+    },
+    {
+      "key": "beforePrint",
+      "filename": "before_update.py",
+      "sha256": "6b1d99f0688faf90801d203671a15a4d6fe00b24811544d0764ae65745b29f5b",
+      "exactSource": true
+    },
+    {
+      "key": "fault",
+      "filename": "repair_increment.py · 修复前",
+      "sha256": "478e494a42d21a50cf7341ebb9c87001e080c1a6d97d375660f385f9aea6fd70",
+      "exactSource": true
+    },
+    {
+      "key": "own",
+      "filename": "label_counter.py · 题一参考",
+      "sha256": "e23c07c18beee8515c3abd98895f92dd3683ef56bbc54738b63a4afcf50eb364",
+      "exactSource": true
+    },
+    {
+      "key": "fixed",
+      "filename": "repair_increment.py · 修复后的新数据参考",
+      "sha256": "377bde4be41995c6c62b0e7aab12e6dfc9ab7c9d0250d7f793ed0f1a6fb1cbf9",
+      "exactSource": true
+    }
+  ]
+}
