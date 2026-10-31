@@ -1,0 +1,30 @@
+{
+  "baseline": "47a8b740d166fe5dcd2241fb2178891872ec5cf8",
+  "lessonId": "PY101-C03-L02",
+  "contentVersion": 1,
+  "lessonSha256": "27198c10a1d2abfaa163596dfd27c80c43440e34e0fe02583e0c64375d5acf31",
+  "publicationSha256": "a39aadc69688b8fa902e61cafe1bdcc089788b7a4a29e411593cafdb8d05ab02",
+  "files": [
+    {
+      "path": "src/content/lessons/py101/conditional-branches.ts",
+      "lfSha256": "4e48ddb344019fe381ec1a92a5f0b353758112f8bd1fc720a26d9df07c56d39f"
+    },
+    {
+      "path": "src/content/resources/python-conditional-branches.ts",
+      "lfSha256": "1fd6ecd8e01524be3febc370c5fbbcc224c5f85b3effd77fbeb3c28ed8773945"
+    },
+    {
+      "path": "docs/py101-p17/EDITORIAL_BRIEF.md",
+      "lfSha256": "fa2fd777ecf5d219f6fcc05baa57810bd1ec740dd40351b43b042d3ebbb6fde0"
+    },
+    {
+      "path": "docs/py101-p17/PRE_SOLUTIONS.md",
+      "lfSha256": "ce4adad5212472a0b34465cc4697b353b0edf32004875d5f3695d43b5a638610"
+    }
+  ],
+  "technicalEvidence": "docs/py101-p17/TECHNICAL_REPORT.md",
+  "teacherReviewConducted": false,
+  "chineseEditorialReviewConducted": false,
+  "studentPilotConducted": false,
+  "macOSRuntimeVerified": false
+}

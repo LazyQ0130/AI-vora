@@ -1,0 +1,36 @@
+{
+  "python": "3.14.2",
+  "method": "Real page Copy buttons -> browser clipboard -> saved .py bytes -> fresh CPython process, exact comparison with registered source",
+  "rows": [
+    {
+      "file": "copied-two-way.py",
+      "source": "count = 5\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\nelse:\n    print(\"Over limit\")\n\nprint(\"Check finished\")",
+      "sha256": "2f88c8494782dce3ac61de2bb0d5cc012b44b79631af2067f0ab140ecc5b8dde",
+      "canonicalSourceIdentical": true,
+      "cwd": "<WORKSPACE>/docs/py101-p17",
+      "command": [
+        "<PYTHON>",
+        "copied-two-way.py"
+      ],
+      "prediction": "Within limit\nCheck finished\n",
+      "stdout": "Within limit\nCheck finished\n",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "file": "copied-three-way.py",
+      "source": "count = 6\nlimit = 6\n\nif count < limit:\n    print(\"Room left\")\nelif count == limit:\n    print(\"At limit\")\nelse:\n    print(\"Over limit\")\n\nprint(\"Check finished\")",
+      "sha256": "83abc4bcca0556f162ba1dfc046ef9d7e1bc5ab711e08ddcd49aba38ea3e9780",
+      "canonicalSourceIdentical": true,
+      "cwd": "<WORKSPACE>/docs/py101-p17",
+      "command": [
+        "<PYTHON>",
+        "copied-three-way.py"
+      ],
+      "prediction": "At limit\nCheck finished\n",
+      "stdout": "At limit\nCheck finished\n",
+      "stderr": "",
+      "exitCode": 0
+    }
+  ]
+}

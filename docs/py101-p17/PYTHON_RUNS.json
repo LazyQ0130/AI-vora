@@ -1,0 +1,488 @@
+{
+  "checkedAt": "2026-10-31T07:09:35.068Z",
+  "platform": "win32",
+  "node": "v24.16.0",
+  "python": {
+    "version": "3.14.2",
+    "executable": "<BASE-PYTHON>\\python.exe",
+    "prefix": "<BASE-PYTHON>"
+  },
+  "method": "Predictions before execution; reuse saved-file runner; reread bytes/SHA then launch independent CPython processes. Author-only standard-library trace observes executed lines without adding student syntax.",
+  "rows": [
+    {
+      "key": "previous",
+      "id": "previous-low",
+      "filename": "previous_if.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\previous_if.py"
+      ],
+      "pid": 11668,
+      "savedSource": "count = 5\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "0e1742f0ecfbd4d4b98657233e09dec629198b36075c2a9f7568384b7f110190",
+      "predictedStdout": "Within limit\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Within limit\r\nCheck finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "previous",
+      "id": "previous-high",
+      "filename": "previous_if.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\previous_if.py"
+      ],
+      "pid": 24200,
+      "savedSource": "count = 7\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "38977ae3b10cedd0b9fa9bea1f8dbd2dc3ef5ae1e817be0338d4843287662e27",
+      "predictedStdout": "Check finished\n",
+      "exitCode": 0,
+      "stdout": "Check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "twoWay",
+      "id": "two-low",
+      "filename": "two_way_check.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\two_way_check.py"
+      ],
+      "pid": 22028,
+      "savedSource": "count = 5\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\nelse:\n    print(\"Over limit\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "70a8345fbf9752b8c3ddffb5cc1d8c78920adf23e6e5b9c29adc346559607ad4",
+      "predictedStdout": "Within limit\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Within limit\r\nCheck finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "twoWay",
+      "id": "two-equal",
+      "filename": "two_way_check.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\two_way_check.py"
+      ],
+      "pid": 23576,
+      "savedSource": "count = 6\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\nelse:\n    print(\"Over limit\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "bedbbe5603ada778bfd2483510d2f95b22fc91ea4d7a190d5097d01b60f2c21a",
+      "predictedStdout": "Within limit\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Within limit\r\nCheck finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "twoWay",
+      "id": "two-high",
+      "filename": "two_way_check.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\two_way_check.py"
+      ],
+      "pid": 24672,
+      "savedSource": "count = 7\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\nelse:\n    print(\"Over limit\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "30d26d0d6f96f1897873b604e0c0d2a8be86a52b9c914d19f350190e6034d58b",
+      "predictedStdout": "Over limit\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Over limit\r\nCheck finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "threeWay",
+      "id": "three-low",
+      "filename": "three_way_check.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\three_way_check.py"
+      ],
+      "pid": 7172,
+      "savedSource": "count = 5\nlimit = 6\n\nif count < limit:\n    print(\"Room left\")\nelif count == limit:\n    print(\"At limit\")\nelse:\n    print(\"Over limit\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "d949e0c95aabe20e6d74216643012a434d83da9d723bc3b2a4a90ebb31db6b15",
+      "predictedStdout": "Room left\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Room left\r\nCheck finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "threeWay",
+      "id": "three-equal",
+      "filename": "three_way_check.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\three_way_check.py"
+      ],
+      "pid": 22336,
+      "savedSource": "count = 6\nlimit = 6\n\nif count < limit:\n    print(\"Room left\")\nelif count == limit:\n    print(\"At limit\")\nelse:\n    print(\"Over limit\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "19405d61b7d2bf98409c1d95b75178370fba4bad251126317fc76d2236984950",
+      "predictedStdout": "At limit\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "At limit\r\nCheck finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "threeWay",
+      "id": "three-high",
+      "filename": "three_way_check.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\three_way_check.py"
+      ],
+      "pid": 11020,
+      "savedSource": "count = 7\nlimit = 6\n\nif count < limit:\n    print(\"Room left\")\nelif count == limit:\n    print(\"At limit\")\nelse:\n    print(\"Over limit\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "4d438c9c7f5c8d93089552bbc6e1b89bd1e6ee9d2c5f486e9190af5719b1da11",
+      "predictedStdout": "Over limit\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Over limit\r\nCheck finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "overlap",
+      "id": "overlap-equal",
+      "filename": "overlap_choice.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\overlap_choice.py"
+      ],
+      "pid": 23816,
+      "savedSource": "count = 6\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\nelif count == limit:\n    print(\"At limit\")\nelse:\n    print(\"Over limit\")\n",
+      "savedSha256": "e693fa584321eb5d9a8e62df9598c718ebfef40e7e6d1b0d581e752dabdf34b4",
+      "predictedStdout": "Within limit\n",
+      "exitCode": 0,
+      "stdout": "Within limit\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "orderRepair",
+      "id": "order-repair-equal",
+      "filename": "overlap_choice.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\overlap_choice.py"
+      ],
+      "pid": 3200,
+      "savedSource": "count = 6\nlimit = 6\n\nif count < limit:\n    print(\"Within limit\")\nelif count == limit:\n    print(\"At limit\")\nelse:\n    print(\"Over limit\")\n",
+      "savedSha256": "6b68a278fd11f856aa28bcc3ca0bbeb7ff737c920618ec676029592186764a4c",
+      "predictedStdout": "At limit\n",
+      "exitCode": 0,
+      "stdout": "At limit\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "independent",
+      "id": "independent-equal",
+      "filename": "independent_checks.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\independent_checks.py"
+      ],
+      "pid": 24128,
+      "savedSource": "count = 6\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n\nif count == limit:\n    print(\"At limit\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "7400441e8c0c896d559723a143d31d904a00d4fe7e90ef45d3d2fd1286f9bab6",
+      "predictedStdout": "Within limit\nAt limit\nCheck finished\n",
+      "exitCode": 0,
+      "stdout": "Within limit\r\nAt limit\r\nCheck finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "independent",
+      "id": "independent-high",
+      "filename": "independent_checks.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\independent_checks.py"
+      ],
+      "pid": 21640,
+      "savedSource": "count = 7\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\n\nif count == limit:\n    print(\"At limit\")\n\nprint(\"Check finished\")\n",
+      "savedSha256": "5f300db4bd99e871fe17c09dce4bceea5359d91ef80b0cce3b22b2aec32f20ae",
+      "predictedStdout": "Check finished\n",
+      "exitCode": 0,
+      "stdout": "Check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "fault",
+      "id": "fault-equal",
+      "filename": "repair_choice.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\repair_choice.py"
+      ],
+      "pid": 20160,
+      "savedSource": "kits = 10\nshelf_limit = 10\n\nif kits <= shelf_limit:\n    print(\"Within shelf limit\")\n\nif kits == shelf_limit:\n    print(\"At shelf limit\")\n\nprint(\"Shelf check finished\")\n",
+      "savedSha256": "c41dbb0c0a9acb5871e935ad3b3a77958b4dabce4aa3ba07cb62fb370ecbd0d7",
+      "predictedStdout": "Within shelf limit\nAt shelf limit\nShelf check finished\n",
+      "exitCode": 0,
+      "stdout": "Within shelf limit\r\nAt shelf limit\r\nShelf check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "fixed",
+      "id": "fixed-low",
+      "filename": "repair_choice.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\repair_choice.py"
+      ],
+      "pid": 11752,
+      "savedSource": "kits = 8\nshelf_limit = 10\n\nif kits < shelf_limit:\n    print(\"Below shelf limit\")\nelif kits == shelf_limit:\n    print(\"At shelf limit\")\nelse:\n    print(\"Over shelf limit\")\n\nprint(\"Shelf check finished\")\n",
+      "savedSha256": "e437befeeab208d08892a1fff36351f6d39be09571f313ad93763a1d465b5727",
+      "predictedStdout": "Below shelf limit\nShelf check finished\n",
+      "exitCode": 0,
+      "stdout": "Below shelf limit\r\nShelf check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "fixed",
+      "id": "fixed-equal",
+      "filename": "repair_choice.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\repair_choice.py"
+      ],
+      "pid": 24264,
+      "savedSource": "kits = 10\nshelf_limit = 10\n\nif kits < shelf_limit:\n    print(\"Below shelf limit\")\nelif kits == shelf_limit:\n    print(\"At shelf limit\")\nelse:\n    print(\"Over shelf limit\")\n\nprint(\"Shelf check finished\")\n",
+      "savedSha256": "58acddb5606a9437fd6593ba3494f0f6b92f7707cf7e19f1e6bdc306ff5b38c4",
+      "predictedStdout": "At shelf limit\nShelf check finished\n",
+      "exitCode": 0,
+      "stdout": "At shelf limit\r\nShelf check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "fixed",
+      "id": "fixed-high",
+      "filename": "repair_choice.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\repair_choice.py"
+      ],
+      "pid": 25468,
+      "savedSource": "kits = 13\nshelf_limit = 10\n\nif kits < shelf_limit:\n    print(\"Below shelf limit\")\nelif kits == shelf_limit:\n    print(\"At shelf limit\")\nelse:\n    print(\"Over shelf limit\")\n\nprint(\"Shelf check finished\")\n",
+      "savedSha256": "0e1f34961fffdafb37d726fee5d8e25d5784f5557d09fc3d6b8b5fe09062ccdd",
+      "predictedStdout": "Over shelf limit\nShelf check finished\n",
+      "exitCode": 0,
+      "stdout": "Over shelf limit\r\nShelf check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "ownTwo",
+      "id": "own-two-low",
+      "filename": "seat_check.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\seat_check.py"
+      ],
+      "pid": 17804,
+      "savedSource": "people = 11\nseats = 14\n\nif people <= seats:\n    print(\"Enough seats\")\nelse:\n    print(\"Not enough seats\")\n\nprint(\"Seat check finished\")\n",
+      "savedSha256": "865b3cf63fde1c6916496f63e4293d6c7a1deb139b1c7486820fbf2d5f6cbe1b",
+      "predictedStdout": "Enough seats\nSeat check finished\n",
+      "exitCode": 0,
+      "stdout": "Enough seats\r\nSeat check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "ownTwo",
+      "id": "own-two-high",
+      "filename": "seat_check.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\seat_check.py"
+      ],
+      "pid": 23120,
+      "savedSource": "people = 17\nseats = 14\n\nif people <= seats:\n    print(\"Enough seats\")\nelse:\n    print(\"Not enough seats\")\n\nprint(\"Seat check finished\")\n",
+      "savedSha256": "0ef7641d441a5a8659ec09013a2e3879ea1e134cd363906f60fec146f9d22681",
+      "predictedStdout": "Not enough seats\nSeat check finished\n",
+      "exitCode": 0,
+      "stdout": "Not enough seats\r\nSeat check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "ownThree",
+      "id": "own-three-low",
+      "filename": "seat_check.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\seat_check.py"
+      ],
+      "pid": 22844,
+      "savedSource": "people = 11\nseats = 14\n\nif people < seats:\n    print(\"Spare seats\")\nelif people == seats:\n    print(\"All seats taken\")\nelse:\n    print(\"Need more seats\")\n\nprint(\"Seat check finished\")\n",
+      "savedSha256": "913a69b3c481bc27510de7c73525bf66c77c00ac8183f3d2007817e1511c6005",
+      "predictedStdout": "Spare seats\nSeat check finished\n",
+      "exitCode": 0,
+      "stdout": "Spare seats\r\nSeat check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "ownThree",
+      "id": "own-three-equal",
+      "filename": "seat_check.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\seat_check.py"
+      ],
+      "pid": 5712,
+      "savedSource": "people = 14\nseats = 14\n\nif people < seats:\n    print(\"Spare seats\")\nelif people == seats:\n    print(\"All seats taken\")\nelse:\n    print(\"Need more seats\")\n\nprint(\"Seat check finished\")\n",
+      "savedSha256": "4032f95c06cf0be5d1af8d9715b17e32bbbaeda0d41b759198b85b129801d51a",
+      "predictedStdout": "All seats taken\nSeat check finished\n",
+      "exitCode": 0,
+      "stdout": "All seats taken\r\nSeat check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "ownThree",
+      "id": "own-three-high",
+      "filename": "seat_check.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\seat_check.py"
+      ],
+      "pid": 5100,
+      "savedSource": "people = 17\nseats = 14\n\nif people < seats:\n    print(\"Spare seats\")\nelif people == seats:\n    print(\"All seats taken\")\nelse:\n    print(\"Need more seats\")\n\nprint(\"Seat check finished\")\n",
+      "savedSha256": "5270dd8653baa2dc038a20b8efa8eff2e3b28d2ae990f4ce5c04175127d0828a",
+      "predictedStdout": "Need more seats\nSeat check finished\n",
+      "exitCode": 0,
+      "stdout": "Need more seats\r\nSeat check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "fixed",
+      "id": "unseen-low",
+      "filename": "unseen_gate.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\unseen_gate.py"
+      ],
+      "pid": 25096,
+      "savedSource": "tickets = 17\ngate_limit = 20\n\nif tickets > gate_limit:\n    print(\"Too many tickets\")\nelif tickets == gate_limit:\n    print(\"Gate full\")\nelse:\n    print(\"Room at gate\")\n\nprint(\"Gate check finished\")\n",
+      "savedSha256": "1138162b9e2fb562f5985d83f52241759e29fba6e45b61a34fd427a03ac1ccc6",
+      "predictedStdout": "Room at gate\nGate check finished\n",
+      "exitCode": 0,
+      "stdout": "Room at gate\r\nGate check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "fixed",
+      "id": "unseen-equal",
+      "filename": "unseen_gate.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\unseen_gate.py"
+      ],
+      "pid": 18704,
+      "savedSource": "tickets = 20\ngate_limit = 20\n\nif tickets > gate_limit:\n    print(\"Too many tickets\")\nelif tickets == gate_limit:\n    print(\"Gate full\")\nelse:\n    print(\"Room at gate\")\n\nprint(\"Gate check finished\")\n",
+      "savedSha256": "99c59464a8206e0a79739042431cfdc6f270d2a6cd0d32c03125a3ec47c75708",
+      "predictedStdout": "Gate full\nGate check finished\n",
+      "exitCode": 0,
+      "stdout": "Gate full\r\nGate check finished\r\n",
+      "stderr": ""
+    },
+    {
+      "key": "fixed",
+      "id": "unseen-high",
+      "filename": "unseen_gate.py",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "<P17-LAB>\\unseen_gate.py"
+      ],
+      "pid": 11896,
+      "savedSource": "tickets = 23\ngate_limit = 20\n\nif tickets > gate_limit:\n    print(\"Too many tickets\")\nelif tickets == gate_limit:\n    print(\"Gate full\")\nelse:\n    print(\"Room at gate\")\n\nprint(\"Gate check finished\")\n",
+      "savedSha256": "db5b435f924958f2a640661481be7e3990ac0bc2e1a9e682226d5df4e19b7c34",
+      "predictedStdout": "Too many tickets\nGate check finished\n",
+      "exitCode": 0,
+      "stdout": "Too many tickets\r\nGate check finished\r\n",
+      "stderr": ""
+    }
+  ],
+  "traces": [
+    {
+      "key": "overlap",
+      "filename": "overlap_choice.py",
+      "savedSource": "count = 6\nlimit = 6\n\nif count <= limit:\n    print(\"Within limit\")\nelif count == limit:\n    print(\"At limit\")\nelse:\n    print(\"Over limit\")\n",
+      "savedSha256": "e693fa584321eb5d9a8e62df9598c718ebfef40e7e6d1b0d581e752dabdf34b4",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "-m",
+        "trace",
+        "--trace",
+        "overlap_choice.py"
+      ],
+      "predictedLines": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "executedLines": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "stdout": " --- modulename: overlap_choice, funcname: <module>\r\noverlap_choice.py(1):  count = 6\r\noverlap_choice.py(2):  limit = 6\r\noverlap_choice.py(4):  if count <= limit:\r\noverlap_choice.py(5):      print(\"Within limit\")\r\nWithin limit\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 14360
+    },
+    {
+      "key": "orderRepair",
+      "filename": "overlap_choice.py",
+      "savedSource": "count = 6\nlimit = 6\n\nif count < limit:\n    print(\"Within limit\")\nelif count == limit:\n    print(\"At limit\")\nelse:\n    print(\"Over limit\")\n",
+      "savedSha256": "6b68a278fd11f856aa28bcc3ca0bbeb7ff737c920618ec676029592186764a4c",
+      "cwd": "<P17-LAB>",
+      "command": [
+        "python",
+        "-m",
+        "trace",
+        "--trace",
+        "overlap_choice.py"
+      ],
+      "predictedLines": [
+        1,
+        2,
+        4,
+        6,
+        7
+      ],
+      "executedLines": [
+        1,
+        2,
+        4,
+        6,
+        7
+      ],
+      "stdout": " --- modulename: overlap_choice, funcname: <module>\r\noverlap_choice.py(1):  count = 6\r\noverlap_choice.py(2):  limit = 6\r\noverlap_choice.py(4):  if count < limit:\r\noverlap_choice.py(6):  elif count == limit:\r\noverlap_choice.py(7):      print(\"At limit\")\r\nAt limit\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "pid": 19540
+    }
+  ],
+  "allAssertionsPassed": true,
+  "macOSRuntimeVerified": false,
+  "studentPilot": false
+}

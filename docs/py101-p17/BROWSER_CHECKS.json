@@ -1,0 +1,68 @@
+{
+  "server": "next start / Webpack isolated candidate",
+  "initialOld31Completed": true,
+  "initialNew32Completed": false,
+  "widths": [
+    {
+      "headings": [
+        "超过限制时，能否也给一条提醒？",
+        "else接住条件不满足的那条路",
+        "要单独说明刚好达到限制，增加elif",
+        "固定限制，亲自跑完少、等、超三档",
+        "一个比较能成立，不代表这次会检查它",
+        "两个独立if会各检查一次",
+        "独立分类，再修复重复提示",
+        "做完再核对：阶段稿与修复参考",
+        "按任务选择独立判断或唯一分类"
+      ],
+      "height": 1000,
+      "scrollWidth": 1425,
+      "width": 1440,
+      "noPageOverflow": true,
+      "twoTasksHintsAnswersRubrics": true
+    },
+    {
+      "height": 1024,
+      "scrollWidth": 768,
+      "width": 768,
+      "noPageOverflow": true,
+      "twoTasksHintsAnswersRubrics": true,
+      "drawer": true
+    },
+    {
+      "height": 844,
+      "openExerciseDetails": 6,
+      "scrollWidth": 375,
+      "width": 390,
+      "noPageOverflow": true,
+      "twoTasksHintsAnswersRubrics": true
+    },
+    {
+      "focus": "固定限制，亲自跑完少、等、超三档",
+      "hash": "#three-runs",
+      "height": 812,
+      "scrollWidth": 305,
+      "width": 320,
+      "noPageOverflow": true,
+      "articleTocNodes": 9,
+      "twoTasksHintsAnswersRubrics": true
+    }
+  ],
+  "copies": [
+    "copied-two-way.py",
+    "copied-three-way.py"
+  ],
+  "progress": {
+    "newKey": "aivora:learning:v2:PY101:PY101-C03-L02:r1",
+    "resumeHref": "#first-match",
+    "afterLeaveReturn": true,
+    "afterReload": true,
+    "newCompletionNotInherited": true,
+    "old31CompletionPreserved": true
+  },
+  "wrongCourse404": true,
+  "planned33Still404": true,
+  "referenceAutoExpanded": true,
+  "coursePlannedVisible": true,
+  "checkedAt": "2026-10-31T07:21:21.380Z"
+}

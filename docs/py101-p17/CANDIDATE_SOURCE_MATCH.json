@@ -1,0 +1,1370 @@
+{
+  "allMatch": true,
+  "comparison": "All tracked src/scripts/tests/curriculum except original user modifications, plus every new P17 source; LF normalized only. Original user protection separately compares raw bytes.",
+  "files": [
+    {
+      "path": "curriculum/AI技术课程体系_V1.0.md",
+      "lfSha256": "b863f49f3da43225b009b7053dff79d6b5985bf8da9327f7701bc40c0c9d5a73"
+    },
+    {
+      "path": "curriculum/AI技术课程目录_V1.0.json",
+      "lfSha256": "a7f5723c2ac659bfe271eeeffc050c2d96c46fd68e29391051c88f5db2812366"
+    },
+    {
+      "path": "scripts/add-ai000-illustrations.mjs",
+      "lfSha256": "417dd51e090faf3dc05a7d0eacc7ad30ca750f901d3dc2ce1999985083397e4f"
+    },
+    {
+      "path": "scripts/ai000-applicability-compatibility.ts",
+      "lfSha256": "4fad991b48fdcce52664f7263dafc3bb4e275a63f9a63db46d86ddfca60643b0"
+    },
+    {
+      "path": "scripts/ai000-capstone-compatibility.ts",
+      "lfSha256": "6f3d234c563226e9c0e654ce0c1547de328ee10475c3b787f756735a0ecd870b"
+    },
+    {
+      "path": "scripts/ai000-creative-compatibility.ts",
+      "lfSha256": "e04b25aa58c3560fa7b5bd3c1677ba3f974793461f713e0859d93b0ae9984245"
+    },
+    {
+      "path": "scripts/ai000-directions-compatibility.ts",
+      "lfSha256": "6df5204bdcdf34f2934b2e0f1c762b13234b970443491cf32bf16e44d03c889a"
+    },
+    {
+      "path": "scripts/ai000-editorial-compatibility.ts",
+      "lfSha256": "6d0bf7c53a1c592a40147237c8be603beea9b715b557d6be2a3d9af4a7af466b"
+    },
+    {
+      "path": "scripts/ai000-foundations-compatibility.ts",
+      "lfSha256": "9c8a40abd6e3dc1ef11c7a45b2cbcc2cd8434ec77d987cf33cc87f14795b0280"
+    },
+    {
+      "path": "scripts/ai000-illustration-compatibility.ts",
+      "lfSha256": "8577b6055bf64603e42555a19d5e61c28cae3c05f39f0f077e890d599c73f8e4"
+    },
+    {
+      "path": "scripts/ai000-multimodal-compatibility.ts",
+      "lfSha256": "fe901dcbcd174e530fb76a5f512209f60b11db572692a7d1a19605e51816159a"
+    },
+    {
+      "path": "scripts/ai000-privacy-compatibility.ts",
+      "lfSha256": "8241077c1b56c970f1b9888d48a850b2d1afceb9882773c65a58a1661a20d8c1"
+    },
+    {
+      "path": "scripts/ai000-quality-compatibility.ts",
+      "lfSha256": "ee21b8170dad613e852c65d1e545cfd642584735d9036df86d9c049f651089d2"
+    },
+    {
+      "path": "scripts/ai000-refinement-compatibility.ts",
+      "lfSha256": "54f2337e625b306eb69d46aa5b8732b7c75021e34c0eb42059dd0ccad2a86fc3"
+    },
+    {
+      "path": "scripts/ai000-reliability-compatibility.ts",
+      "lfSha256": "877e3d6b9dba976632ab996819bc8b96130ac7bb24ac3732661d3692b746e9a8"
+    },
+    {
+      "path": "scripts/ai000-responsible-compatibility.ts",
+      "lfSha256": "4de146ed6a4cf80e936bdfafaac6eaa4457289849b6e7b3606a5f2f6a903ebf9"
+    },
+    {
+      "path": "scripts/ai000-study-time-compatibility.ts",
+      "lfSha256": "e0ad5af6200e2a14a9204af3cdd105d378fa3df13534b91af7d648dbb74972aa"
+    },
+    {
+      "path": "scripts/ai000-vision-compatibility.ts",
+      "lfSha256": "c432486cb9650b88bd66743c261461fb421a9ae41372956219a751b02856bc88"
+    },
+    {
+      "path": "scripts/audit-py101-p3.ts",
+      "lfSha256": "eac8fd9e6321d7af402cdaa123ceeeadf0485679476de60211a0e72c397f8104"
+    },
+    {
+      "path": "scripts/check-ai000-content.ts",
+      "lfSha256": "e5fdbcf2cc32a1e452917bffcb0aaa05f649e54f4ceda60f9b28885c9eac0557"
+    },
+    {
+      "path": "scripts/check-ai000-relationships.ts",
+      "lfSha256": "7b3cf2a2fabff3312d93e872a3dd04e7b76640dff996af4c8fc3aceb128974fe"
+    },
+    {
+      "path": "scripts/check-reading-experience.ts",
+      "lfSha256": "9c3ab8b75f9dcb0d389c2e0e14965b497dca5e985f9f2d9a4a7c2904fce41d25"
+    },
+    {
+      "path": "scripts/evidence-path.ts",
+      "lfSha256": "a418217da3112df7380242b2d2f27887d30bdb87f788d268d43d2739ae5fd36d"
+    },
+    {
+      "path": "scripts/optimize-artwork.mjs",
+      "lfSha256": "421427ff7d679fd014e767376407b6bca3ada22e42f4ddfd851718aa9f4a1fb0"
+    },
+    {
+      "path": "scripts/prepare-ai000-illustrations.mjs",
+      "lfSha256": "9dab6d4d8666a09273609e03d364f7cef97fd6161904f37d758a74faacabb86d"
+    },
+    {
+      "path": "scripts/prepare-ai000-release-readiness.ts",
+      "lfSha256": "c562feafbb337c6f2159a608b674160dc076bf226cebefecfc28274dec608329"
+    },
+    {
+      "path": "scripts/prepare-course-covers.mjs",
+      "lfSha256": "95c4e0c64dfcc6972d6cfd5312d0ae802a59e08cc5b6db2df6476fd05b2c247c"
+    },
+    {
+      "path": "scripts/prepare-downloads.ts",
+      "lfSha256": "76a02b3f26b71eb0ec70a05e596f62543e6d737b9ed2beeb43559f2d8200bba2"
+    },
+    {
+      "path": "scripts/py101-p0-compatibility.ts",
+      "lfSha256": "62dc27e90258db68c0d95fee850c06dc759a9801be3233eae67547e6277c6cb2"
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "lfSha256": "f9aa184425152d1477989efa13135d040bccd589bb63c6e73bf58a9b404d331a"
+    },
+    {
+      "path": "scripts/python-variable-checks.ts",
+      "lfSha256": "d1ecc301338a3db644939f9b6c1006633af3d9e718393151de7167ce5dc9907c"
+    },
+    {
+      "path": "scripts/recheck-ai000-7-1.py",
+      "lfSha256": "fe4172190a1239228bf88ec8734135acb54f56a4d04e1b7279f0390fa001c432"
+    },
+    {
+      "path": "scripts/recheck-ai000-7-2.py",
+      "lfSha256": "050cec0f80986740dedf145aa71bc6a8681a1b07b6040276fca1b03b8a50dcd6"
+    },
+    {
+      "path": "scripts/recheck-ai000-7-3.py",
+      "lfSha256": "42b69f0e5fe15d335612961853b92e4268a7d07937dc17cf90c2b25f0988a490"
+    },
+    {
+      "path": "scripts/register-py101-p0-sources.ts",
+      "lfSha256": "e4bcb872fad58a3d7222d6ccc77010a76d04fae70759e5e15bb2a7b0a0bd48cf"
+    },
+    {
+      "path": "scripts/register-py101-p1-sources.ts",
+      "lfSha256": "539f59f8496b442f16c22fc0ca0299a553b6f8af82f61419c58aee5ab7725209"
+    },
+    {
+      "path": "scripts/register-py101-p2-changes.ts",
+      "lfSha256": "a72bb434a32400f200b09b32d8cf8be3dc4fe560f4690854d3a96316dfef5ac0"
+    },
+    {
+      "path": "scripts/render-lesson-diagrams.py",
+      "lfSha256": "e7d76e2f892882f0ea64918b50bedad99ec427401fc8352ceecf68b8e0a3a68e"
+    },
+    {
+      "path": "scripts/render-ml-v2-diagrams.py",
+      "lfSha256": "4b6dda89bf793875625bdee00f299154bd4b16c091c42c5cb18c309a16a1c108"
+    },
+    {
+      "path": "scripts/render-py101-runtime-diagrams.ts",
+      "lfSha256": "847131e4d9735a44f0d70ba7c4a1b53adc8d552f31b22d80b17719c3c1ef9ab5"
+    },
+    {
+      "path": "scripts/render-v2-1-diagrams.py",
+      "lfSha256": "3b53d8d21c12519b41804e819aaf013326fb1c54710c56c2796fc989aba63f1d"
+    },
+    {
+      "path": "scripts/review-ai000-3-1.ts",
+      "lfSha256": "1f71d2d5be4b243d4cd23b34b28e8044dbac7dbf4bd8f6ff91dbcffcf118d29f"
+    },
+    {
+      "path": "scripts/review-ai000-3-2.ts",
+      "lfSha256": "2649b40c387f7f13cda73b2548c8cb64ea4ce82297353957dbdf95db15c3b276"
+    },
+    {
+      "path": "scripts/review-ai000-3-3.ts",
+      "lfSha256": "58db7cdd901d7040055ce503e2b8ac9859b1281a81bf42308c8267e56a179d57"
+    },
+    {
+      "path": "scripts/review-ai000-3-4.ts",
+      "lfSha256": "094a69632cc4ce39903b79b1cdc8db5b7293b2abc5026466c4ff9065a7852cb3"
+    },
+    {
+      "path": "scripts/review-ai000-4-1.ts",
+      "lfSha256": "b213d3a3eb70c31f57aa52d1f3aede3461381f0b3d2fc48145387008ddccc61a"
+    },
+    {
+      "path": "scripts/review-ai000-4-2.ts",
+      "lfSha256": "47902478f5d74c19694d57d067bea616a74c3bc8579a498ed2e641fc3bc6f4e3"
+    },
+    {
+      "path": "scripts/review-ai000-4-3.ts",
+      "lfSha256": "ee27994d4445df06c4c3b77eabd2545df624f2852c93c319a9a4eb1773ba9e95"
+    },
+    {
+      "path": "scripts/review-ai000-4-4.ts",
+      "lfSha256": "f15fbbb559f1d3b2f33354c40229f706af16909ad47311cec24b1a00d48954ee"
+    },
+    {
+      "path": "scripts/review-ai000-5-1.ts",
+      "lfSha256": "55b7db8ad6de433096727011f5fa3a5f3c8400add8e24fca5c762d192dd66dda"
+    },
+    {
+      "path": "scripts/review-ai000-5-2.ts",
+      "lfSha256": "8552126602759e222019b542305848c03133162b971521e8e032e45470d35438"
+    },
+    {
+      "path": "scripts/review-ai000-5-3.ts",
+      "lfSha256": "d6bb81d167f11cfa4f6b651dae82962688d2acd52b540d0ee8b9c40f21f65ab8"
+    },
+    {
+      "path": "scripts/review-ai000-5-4.ts",
+      "lfSha256": "2793a60a8e1750d78af9fac1c8b0ddad9a25f893f637a94eef10a0d4b84b40e5"
+    },
+    {
+      "path": "scripts/review-ai000-5-5.ts",
+      "lfSha256": "e5a39581663117b6dd7799edf47fab328304bb49f288137bbc63b584f24422b8"
+    },
+    {
+      "path": "scripts/review-ai000-6-1.ts",
+      "lfSha256": "15d35c9c107500160fa7c800f3e77b2ae487f1e5a23b7a1da06859698feb2a47"
+    },
+    {
+      "path": "scripts/review-ai000-6-2.ts",
+      "lfSha256": "9b1889ef00ed710739b3bc41883d7ef9a32d74262801f5a266d76af29e3ae947"
+    },
+    {
+      "path": "scripts/review-ai000-6-3.ts",
+      "lfSha256": "60cbb30132e3b5a119c8cc8f3c5792b1df3c61ce740b10c4407af08a7f8ccbb4"
+    },
+    {
+      "path": "scripts/review-ai000-7-1.ts",
+      "lfSha256": "d55a3079fbacfadb13b9f71c050282c4cd54b6a9544bb5bb95233f0fe29251f1"
+    },
+    {
+      "path": "scripts/review-ai000-7-2.ts",
+      "lfSha256": "bac3ac742ee46212f7f4bde952f14a73b9c657e87c27e1a6dfab8e83aed015bd"
+    },
+    {
+      "path": "scripts/review-ai000-7-3.ts",
+      "lfSha256": "38a86c5bb17a0870d61d5b8edb3db3d2cd2e1efad6481ed4f7b2b155c1cfcc7f"
+    },
+    {
+      "path": "scripts/review-ai000-course.ts",
+      "lfSha256": "84de91b638ceba6ebabcc1240b7bdfe90a87951eb28c5915b0c4c240ea054a79"
+    },
+    {
+      "path": "scripts/review-ai000-quality.ts",
+      "lfSha256": "6125e255f9c81fa19387de3ce8f61afa67918a67f39fe0d3933ecc80b9353e1b"
+    },
+    {
+      "path": "scripts/review-ai000-r3.ts",
+      "lfSha256": "ca9307b13f2083860950d7c20daa3e1be419b8ba780ef5fd1bb4bed6e0745382"
+    },
+    {
+      "path": "scripts/review-ai000-v2.ts",
+      "lfSha256": "470a097e38ec95acf3ffd9fa62f8b8f8daddae59ead219117035f09f7cbf56cc"
+    },
+    {
+      "path": "scripts/review-ai000-visual-refinement.ts",
+      "lfSha256": "f775c67dfafc40c4362288665a22d389ae32add591ed6ba7e1ee69e7e115c1ce"
+    },
+    {
+      "path": "scripts/review-py101-p0.ts",
+      "lfSha256": "be3baddc70589bd0b03135fbea8ed066d1530694447afad1d120dde2e01ed5f2"
+    },
+    {
+      "path": "scripts/review-py101-p1.ts",
+      "lfSha256": "3dca0487041a617387295108994eaee46c0395b07186a8dee00a581ff72b2f4e"
+    },
+    {
+      "path": "scripts/review-py101-p16.ts",
+      "lfSha256": "0654c763bb2234c8a155a61b808cf23ea4a8469a4d47a38bdfc617ca85bf96bd"
+    },
+    {
+      "path": "scripts/review-py101-p2.ts",
+      "lfSha256": "8dc41278e1f4699113e20d7689d43bca6003dc89c9645a5cc94e1ce3c9f854bf"
+    },
+    {
+      "path": "scripts/review-py101-p8.ts",
+      "lfSha256": "08ce94ada6a5f4094887bc4025c04426a9c2b6d5d894a535b1f4272e3a032cf4"
+    },
+    {
+      "path": "scripts/review-teaching.ts",
+      "lfSha256": "aee5d3a9f3b484603603b193e4b3f078751d294675cf4cb220de26df056d6ae4"
+    },
+    {
+      "path": "scripts/review-v2-3.ts",
+      "lfSha256": "627ec8b2a8c52232026c3a5f06bb1b211f674552706008ace49eaa8629ae5a27"
+    },
+    {
+      "path": "scripts/validate-ai000-illustrations.mjs",
+      "lfSha256": "3c22c66447afe122f8e2398ae1e02537330e2c0f843f673c1fb934bd5784ca6c"
+    },
+    {
+      "path": "scripts/validate-notebook-state.py",
+      "lfSha256": "886d19a17fc0a74eb131b521c110d8ec3af60423baf9cf70904ac6fb51fe1fa7"
+    },
+    {
+      "path": "scripts/validate-py101-arithmetic.ts",
+      "lfSha256": "481bf40292b4f2e93cc514014d77cf192b504785c89d5bd355bb2209b4ecec55"
+    },
+    {
+      "path": "scripts/validate-py101-comparisons.ts",
+      "lfSha256": "ac5ac4c45f2c3e164adde52a6d4df776f0d53e90f09603fe3be5aaf2d547e27e"
+    },
+    {
+      "path": "scripts/validate-py101-conditional-routes.ts",
+      "lfSha256": "3fdb322200d1d4efad02c70437e4a3403c576fc69d413395f301d876e366cd1e"
+    },
+    {
+      "path": "scripts/validate-py101-conditional.ts",
+      "lfSha256": "7a4c2b2c9811ba3c3526535e92df730edb48f0c064a0fec6284d354efe02a2be"
+    },
+    {
+      "path": "scripts/validate-py101-editor.ts",
+      "lfSha256": "d409f8cd7ff1d422ba0c84ec2f78f96081849098838a336e3ed926d4d7f7590a"
+    },
+    {
+      "path": "scripts/validate-py101-input.ts",
+      "lfSha256": "1c938abe96aa64abde35e6504810d3cb838fa5eafbcdded7ca67de0cdf890090"
+    },
+    {
+      "path": "scripts/validate-py101-notebook.ts",
+      "lfSha256": "bc4b71d163dee349b76894708338ccb7a6b0250a759df38c0439246abccc1c2d"
+    },
+    {
+      "path": "scripts/validate-py101-p0.ts",
+      "lfSha256": "695d32403f0e099ebce7e7dfdecf93df15e91b70f462eadf369c287c6a0887ed"
+    },
+    {
+      "path": "scripts/validate-py101-p1.ts",
+      "lfSha256": "371bcf074ba7946216f029746facd810d3103f8b73d979fbc3307b079be56e33"
+    },
+    {
+      "path": "scripts/validate-py101-readable-output.ts",
+      "lfSha256": "c7e18a02553392a901211012563c4531e5d02327f62fd0704562b66c65eb0cc5"
+    },
+    {
+      "path": "scripts/validate-py101-reproduction-notebook.ts",
+      "lfSha256": "6119905b149b824ed03b432723df430931234608a41d2d9e5463dd106ee9a4b1"
+    },
+    {
+      "path": "scripts/validate-py101-reproduction.ts",
+      "lfSha256": "200317f90298c91d795e782ca0eb7541feb58c06e602e54e6e770edf5e9c58f5"
+    },
+    {
+      "path": "scripts/validate-py101-value-types.ts",
+      "lfSha256": "7fa3d4cf665fde42085a09d5ea1a71669099a6b96f64c146069bb6da1f289921"
+    },
+    {
+      "path": "scripts/validate-py101-variables.ts",
+      "lfSha256": "e617820f89cc2d26a67009c0e436b2184bce65a91dfd0a72ac5ed8fa0802e490"
+    },
+    {
+      "path": "scripts/validate-py101-venv.ts",
+      "lfSha256": "3b2818204f719100c960bf0b8a2d31811c8f85d54d0c430bc7b16a664215e80f"
+    },
+    {
+      "path": "scripts/validate-python.ts",
+      "lfSha256": "66e3e25c2488744a7f66354f997f105faaa9598a28242b6ca439a111ac52493c"
+    },
+    {
+      "path": "scripts/validate-reproduction-kernel.py",
+      "lfSha256": "4a04c29c834f1e271f5ede124cad1175fd0bc22f2a1e41d6299c6ee6c8d0ac59"
+    },
+    {
+      "path": "scripts/validate-routes.ts",
+      "lfSha256": "1b19055d4134be11baf632612ed9cfc54a6c7e2700983812643c01a937032a5c"
+    },
+    {
+      "path": "src/app/ai000-lesson.css",
+      "lfSha256": "1585d97b57a67317ef757fa01f1226c67a539f3e5c60ec9679cea5742b178880"
+    },
+    {
+      "path": "src/app/course-covers-v3.css",
+      "lfSha256": "eb192a97e2f50725ea0202ed6828dedc526b262076dd7f6446f38e2c87a91f00"
+    },
+    {
+      "path": "src/app/course-covers-v5.css",
+      "lfSha256": "51c8c217d94b48f42149145cb18d9921c082a1dfd04e236d103299da5ba8e1ce"
+    },
+    {
+      "path": "src/app/courses/[id]/page.tsx",
+      "lfSha256": "323b60eddd99253e33315ceeb73168abbc8f90904422ba3ab8a8d8fadac15ecc"
+    },
+    {
+      "path": "src/app/courses/page.tsx",
+      "lfSha256": "96ae17845cadd76a68d63ac2c53e7e29c95e049752cd759273ada06b2f9689fc"
+    },
+    {
+      "path": "src/app/dashboard/page.tsx",
+      "lfSha256": "64835600d87409726aec77b8a2c6f55aa31b4b54d05ca9538db3a0eb4f7f9e5f"
+    },
+    {
+      "path": "src/app/error.tsx",
+      "lfSha256": "2dca94c64e92cb85d023e2cbb205a922580d1478e79080f926a6862c74d0dc27"
+    },
+    {
+      "path": "src/app/globals.css",
+      "lfSha256": "24b15829b54f21189e636adf18d4b448eaaf2828de4f3ec1172d34b70ff936e5"
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "lfSha256": "4b158454f9500de7eb81f627c5f3219dd010757d591a81b508732ca39834d1ca"
+    },
+    {
+      "path": "src/app/learn/[courseId]/[lessonId]/page.tsx",
+      "lfSha256": "573c7020c4693e88adcc95cee41484d6d196f2589d7a6b95d59d0cdf0e571db9"
+    },
+    {
+      "path": "src/app/learning-system.css",
+      "lfSha256": "b420b741870b7180358545c6356e7966fded296243eb51f371712c42898b6bb5"
+    },
+    {
+      "path": "src/app/loading.tsx",
+      "lfSha256": "76bcbf4f8aea38850749928268819c576986fcf6ca4b8968553fbfa8a348f476"
+    },
+    {
+      "path": "src/app/not-found.tsx",
+      "lfSha256": "378cd881dd2a1cbe3ab26f7e86496685af1cf9aa85e1fddacaab99eeb8aebbc8"
+    },
+    {
+      "path": "src/app/page.tsx",
+      "lfSha256": "8ad9febf8ce2229947bb453c1b0caf63b01aba36884b3152d6841ecbbab62b01"
+    },
+    {
+      "path": "src/app/paths/page.tsx",
+      "lfSha256": "2f6a7f2de989dcaf74722259cacab602a40b12bb2b5097eebc7f8dfd6847f836"
+    },
+    {
+      "path": "src/app/projects/page.tsx",
+      "lfSha256": "16484be5a3e00a28a62b97726ab123405193f02ed8b9dee533b3e778a6874dc8"
+    },
+    {
+      "path": "src/app/reader.css",
+      "lfSha256": "44fcd476a3d88a42c97c5d35103d04ce440214f97bd091366f6e9de2fa71dd10"
+    },
+    {
+      "path": "src/app/teaching-v2-1.css",
+      "lfSha256": "41c366bcd06c4fbf1fdc78f8715c6f54c9d591117e8cc24bc4b397f08b9a48f9"
+    },
+    {
+      "path": "src/app/teaching-v2-2.css",
+      "lfSha256": "aa9c4e881700e2cd10e1ee89b55af275c25833e17b21ba145149ae56dc7011e2"
+    },
+    {
+      "path": "src/app/template.tsx",
+      "lfSha256": "c0ffa9554becb54279415496cef215bb426615d6e3e062abc15187edcebe9364"
+    },
+    {
+      "path": "src/app/usability.css",
+      "lfSha256": "014d0a8140e516fdf71255455a154e4fb693ced471c93965b6e656ae8369b110"
+    },
+    {
+      "path": "src/app/visual-v2.css",
+      "lfSha256": "2241e9d1d9bee8153961655da98b2f3dac2a9136a84ef3b0f4ce85f1e4e1d29a"
+    },
+    {
+      "path": "src/components/catalog.tsx",
+      "lfSha256": "72db981d6f10f7952e4638b4c0c54417a1e4ba84acae793e519643bb4ac7098d"
+    },
+    {
+      "path": "src/components/course-card.tsx",
+      "lfSha256": "0ca3fdcb0e956b6801591fe2c48a725f607b81a9bc34c8a5ef804336c2dee5f5"
+    },
+    {
+      "path": "src/components/dashboard.tsx",
+      "lfSha256": "a38b052d3dd96cef2a6f686a872662c3b5365e77317916275454c2ccf7fe24a0"
+    },
+    {
+      "path": "src/components/hero-art.tsx",
+      "lfSha256": "b1e89c7eb0081d4bb8beb4945f2d96dbfa096621c3cbe354be195bf7593e776f"
+    },
+    {
+      "path": "src/components/home.tsx",
+      "lfSha256": "1b83a984596046954c1be462819d61ba65fd58ae3bc9d5d4385df6865c95e44c"
+    },
+    {
+      "path": "src/components/lesson/ai-borrowing-figure.tsx",
+      "lfSha256": "2850e0c44910e9365626ee1445141cafa2d7013aeb746c4567cef29df99ad643"
+    },
+    {
+      "path": "src/components/lesson/ai-creative-figure.tsx",
+      "lfSha256": "0b6f76b41c87c1525539fcfbe516bff9636421bb2482987cff5f42b077938eab"
+    },
+    {
+      "path": "src/components/lesson/ai-data-use-figure.tsx",
+      "lfSha256": "5d4defff64a5b6be91480f717e1710a4bc022a3aa1305fb4c55cdfc68f4948aa"
+    },
+    {
+      "path": "src/components/lesson/ai-features-target-figure.tsx",
+      "lfSha256": "a1cee6b2dae802203a32303de8367da05f7be5c2d26d131a22833ac04036edfd"
+    },
+    {
+      "path": "src/components/lesson/ai-generation-figure.tsx",
+      "lfSha256": "98a0736e29a93dcb27243d65d34e81cca1080b544af09363e60d3b4113b40e8c"
+    },
+    {
+      "path": "src/components/lesson/ai-inference-figure.tsx",
+      "lfSha256": "f6d162b256ae49c073ca782d4ae4e18d16a8001ca5f67887ea12529e931539b0"
+    },
+    {
+      "path": "src/components/lesson/ai-knowledge-figure.tsx",
+      "lfSha256": "eb65f24740ed3a1a0ed237e2afd92277366ce930cd1bd1f5f33b375d43ecaa16"
+    },
+    {
+      "path": "src/components/lesson/ai-multimodal-figure.tsx",
+      "lfSha256": "25393cb663b8cb5bdfe16431ecffb57745dccbf158a6befe47ca497425a85efd"
+    },
+    {
+      "path": "src/components/lesson/ai-parameters-figure.tsx",
+      "lfSha256": "5bb4f6ce91d198eb746db4a26e289a3b645bf572aa8bfddd1a017d18ad089060"
+    },
+    {
+      "path": "src/components/lesson/ai-reinforcement-figure.tsx",
+      "lfSha256": "74602f13e9c5d2a5dbae3f105ca7562181bc2399e485c7ff8dae550e630a364c"
+    },
+    {
+      "path": "src/components/lesson/ai-relationship-figure.tsx",
+      "lfSha256": "2b9d823cff00ae5a8565be6be0d5c2a5286c7c3a58d1c5696fa155752c9d4a9b"
+    },
+    {
+      "path": "src/components/lesson/ai-self-supervised-figure.tsx",
+      "lfSha256": "0e52c49929bbd94d387acab10bf41272f3938116d71c570cc00c1d4eb60bc241"
+    },
+    {
+      "path": "src/components/lesson/ai-supervised-figure.tsx",
+      "lfSha256": "36f91e73d952a07b9c8848de21c26fa247e48e7601d232fd2075714e1b8f5d09"
+    },
+    {
+      "path": "src/components/lesson/ai-task-figure.tsx",
+      "lfSha256": "7e33851808b2c549a4a0d711a657af0a1ce4d9365f051ca576b1c1c94ee36021"
+    },
+    {
+      "path": "src/components/lesson/ai-vision-figure.tsx",
+      "lfSha256": "81d630c53681f8b3b10bc9d90116dbfe983b6c26a545c9702557d187a4546701"
+    },
+    {
+      "path": "src/components/lesson/article-contents.tsx",
+      "lfSha256": "ee97025346c2fd0460746ed954ebca885e61e2a839ad8f803c94e0de20eeebac"
+    },
+    {
+      "path": "src/components/lesson/blocks.tsx",
+      "lfSha256": "fc8d0c6e51f33bcfebd37b619a53ace0f4ec0d9f27bdbf15f07ca27010a82b66"
+    },
+    {
+      "path": "src/components/lesson/chapter-toc.tsx",
+      "lfSha256": "d4bf164024ede2d05ccfb9145970e5d069a9ed7c202c8a731943490f572572fa"
+    },
+    {
+      "path": "src/components/lesson/content-renderer.tsx",
+      "lfSha256": "02943d78fd238f3f08dea777a1a54f8398ffafcba63d9cd75992811d56e7866a"
+    },
+    {
+      "path": "src/components/lesson/course-contents.tsx",
+      "lfSha256": "c69190845bb979c5874dfeb0d60619207941a02a0e83e7052fbe3f3a47485e17"
+    },
+    {
+      "path": "src/components/lesson/guided-exercise.tsx",
+      "lfSha256": "338b1433f8fff357d2f0ae2f998b100744b56a775f69979bd952818afbec3b63"
+    },
+    {
+      "path": "src/components/lesson/learning-support.tsx",
+      "lfSha256": "8e0cdcc1d0eaca41b5e3ba8e421f25361d5fc80c1ecf932ff05dd10da8d689a6"
+    },
+    {
+      "path": "src/components/lesson/legacy-anchors.tsx",
+      "lfSha256": "44f2082ea09e4f9c00ca84d875876dae5edd54ac07bd7f9931e6755f862d83a9"
+    },
+    {
+      "path": "src/components/lesson/regression-experiment.tsx",
+      "lfSha256": "a76df14efcd3bc47609f3285572d9ccd54e2925bcdf0cf86b0f82a20e6a93d19"
+    },
+    {
+      "path": "src/components/lesson/teaching-section.tsx",
+      "lfSha256": "c38088de63bae844aa6578bd87de1a943dada74a34fa0cb4af74081d5b3eba94"
+    },
+    {
+      "path": "src/components/lesson/vector-figure.tsx",
+      "lfSha256": "b6311e5054857281e6c51a72cd949d9cf8332d94155ef76150ab590b310455e3"
+    },
+    {
+      "path": "src/components/paths-explorer.tsx",
+      "lfSha256": "126cbad7c2eb5c513cba1fa84228fd44eee9b16d371e0e3bfa153ac7639c88bc"
+    },
+    {
+      "path": "src/components/projects.tsx",
+      "lfSha256": "28771361f6df765d3ed96d8ce5070fec57e5b55416de1cbefc7f09815f7d4839"
+    },
+    {
+      "path": "src/components/site-shell.tsx",
+      "lfSha256": "186ecc4f75c1e53fd249eb932717928780c21a8854f83b52496e65159d263789"
+    },
+    {
+      "path": "src/components/ui.tsx",
+      "lfSha256": "c3d709d66a20b2e5e8f4f9116f4e610002dc9ebfae56250d494668a0a5314de6"
+    },
+    {
+      "path": "src/content/ai000-outline.ts",
+      "lfSha256": "c58394c4c619956bd17806e49bfacf2697e04c0f3a3637cbb180c178196ae2af"
+    },
+    {
+      "path": "src/content/ai000-study-time.ts",
+      "lfSha256": "cad2e2b197eb7224ff4f1a740a0cd01ef4c4583421b7f9787bdd0a4a7be747c7"
+    },
+    {
+      "path": "src/content/course-outline.ts",
+      "lfSha256": "06b2818c82626ce4a8de35502f8872808716fe364e69878e6a8c7e8fa0db1c08"
+    },
+    {
+      "path": "src/content/glossary.ts",
+      "lfSha256": "26a62cdd85d3da0c46307b0a78d4ba7629aa2ba69cd07d5bbca442f7d0b8309f"
+    },
+    {
+      "path": "src/content/lessons/ai000/ai-ml-dl.ts",
+      "lfSha256": "eb2e92c4aada08b94a8d9422ecf933266c95b33cca7efe284d12b53db8dda791"
+    },
+    {
+      "path": "src/content/lessons/ai000/automation-and-ai.ts",
+      "lfSha256": "6567b6c21468219883cab5288db2a811217f238ec7ecc394e965d53c332458d5"
+    },
+    {
+      "path": "src/content/lessons/ai000/borrowing-example.ts",
+      "lfSha256": "61b5e8afeb381cba08d1f63704734d22e90c521c5559434a4a48b14d508c8049"
+    },
+    {
+      "path": "src/content/lessons/ai000/capabilities-and-errors.ts",
+      "lfSha256": "bccf3146bedcd8aad9f4deb19cdfb9c447d126ef48cd344007fd7c14878df1b7"
+    },
+    {
+      "path": "src/content/lessons/ai000/capstone-example.ts",
+      "lfSha256": "f8116053098b5337eb6cacd6105eea0919ac8bc7a5ba54713c1e9f317ce3bac4"
+    },
+    {
+      "path": "src/content/lessons/ai000/computer-vision.ts",
+      "lfSha256": "d029eded00a7edadbee765bbfbc9a36702d7329eadac40423edadab5e726dc91"
+    },
+    {
+      "path": "src/content/lessons/ai000/creative-work-example.ts",
+      "lfSha256": "e0c6dc7a8e18ecf1e371a022df795d87cd2f55e41dcaf6fa377348baa1214ac9"
+    },
+    {
+      "path": "src/content/lessons/ai000/data-features-labels.ts",
+      "lfSha256": "2744b824a451be2f053fc4cc6ab80cff0cc2ec50129501f6da969f609e613bb5"
+    },
+    {
+      "path": "src/content/lessons/ai000/data-use-example.ts",
+      "lfSha256": "7af4f43d6044447f783f456ecea647e031dad94ff01ad845e62d6e7c96a139aa"
+    },
+    {
+      "path": "src/content/lessons/ai000/delivery-example.ts",
+      "lfSha256": "97af48c1cd389f408164167dace282d219bb23b3c9aa689e1ea1869e4222c777"
+    },
+    {
+      "path": "src/content/lessons/ai000/direction-learning-routes.ts",
+      "lfSha256": "1472a0cd2212e403cf0713491abfb3dd362f67fb51ba3f411d41611ec3236081"
+    },
+    {
+      "path": "src/content/lessons/ai000/direction-route-example.ts",
+      "lfSha256": "eef97a4d9650d365c81d8a4c45e2ae13d4083a0ca3301195ac9afdd85a1ea8ed"
+    },
+    {
+      "path": "src/content/lessons/ai000/fixed-model-example.ts",
+      "lfSha256": "56b595a6bfc3fcbd65e275ad73fba0a4db53b283b0a70c132dcfad1f4ff2262b"
+    },
+    {
+      "path": "src/content/lessons/ai000/foundations-example.ts",
+      "lfSha256": "e7bc4df740d7461bef34bc0c5ce6b7a663d7b5b4b4c738658788389d603aa389"
+    },
+    {
+      "path": "src/content/lessons/ai000/generative-ai-and-llm.ts",
+      "lfSha256": "2d02f9e1d426a8c2db4c3337bb8e17ab7f282fcde4fbeb6f306e0f6be69464a4"
+    },
+    {
+      "path": "src/content/lessons/ai000/generative-work.ts",
+      "lfSha256": "0bcee9938cfbc9358fa313eca527128e3efe2d539ab70013503155c450367ef1"
+    },
+    {
+      "path": "src/content/lessons/ai000/illustrations.ts",
+      "lfSha256": "4788629abbc59fca093d0e9abe56780b68ee50bdef911e36474d27717610fd4e"
+    },
+    {
+      "path": "src/content/lessons/ai000/language-service-example.ts",
+      "lfSha256": "6e7e937645c2a01bd4e6d82c47195274cd704e8fcda6f5257e5419fa3203f6e0"
+    },
+    {
+      "path": "src/content/lessons/ai000/mail-example.ts",
+      "lfSha256": "ed8446f3d4ab32fdf9f52f901b6ae597f7566b91952d268b117591c54b9eaa15"
+    },
+    {
+      "path": "src/content/lessons/ai000/model-parameter-example.ts",
+      "lfSha256": "d63d9f9ee217d05f7c8536b65271de8a5c9f2e389e93b700993c23db66feaafb"
+    },
+    {
+      "path": "src/content/lessons/ai000/models-and-parameters.ts",
+      "lfSha256": "43f6b6f53cc5973c105b0bdadd6f194a3564cf0553da28ae670aa5d29cccc404"
+    },
+    {
+      "path": "src/content/lessons/ai000/multimodal-ai.ts",
+      "lfSha256": "28cde19cd922d5c1130eee11a9586c03ef300f8af1d6087fd98fa54615250885"
+    },
+    {
+      "path": "src/content/lessons/ai000/multimodal-example.ts",
+      "lfSha256": "9af2230cac7b116e90ec5775900458421e2304f7d03cd064a58e1d211969539c"
+    },
+    {
+      "path": "src/content/lessons/ai000/natural-language-and-llm.ts",
+      "lfSha256": "75f52433e87b250550901da950608ad15955a802758343155263741854f8e4a9"
+    },
+    {
+      "path": "src/content/lessons/ai000/parcel-example.ts",
+      "lfSha256": "cc28b483035ba608afdd220c79ef55d3933d294ca0e5ef18adab0a996f915b55"
+    },
+    {
+      "path": "src/content/lessons/ai000/parcel-time-example.ts",
+      "lfSha256": "1d36640bed45559da9632ef87cc69c4d966ba39194598460daec8e8682f990cc"
+    },
+    {
+      "path": "src/content/lessons/ai000/privacy-bias-fairness.ts",
+      "lfSha256": "db699d82d2ea37b86ea2dc7805b52f949e686cf16b10e5cb80fc3749bc9b72af"
+    },
+    {
+      "path": "src/content/lessons/ai000/privacy-fairness-example.ts",
+      "lfSha256": "0baa00f7afd14b7813cabd10717ece530f4f0bad3cd4b49cb456c3519b0c09d5"
+    },
+    {
+      "path": "src/content/lessons/ai000/problem-analysis-capstone.ts",
+      "lfSha256": "8fb9a2b706953a0bb98285e38975001956014f70562c757747300f10fce30528"
+    },
+    {
+      "path": "src/content/lessons/ai000/reinforcement-learning.ts",
+      "lfSha256": "26f68bf17935e978dcfe76176a82f8303d6dc62de3b41b328cf82fe50ef8bda5"
+    },
+    {
+      "path": "src/content/lessons/ai000/reliability-example.ts",
+      "lfSha256": "612870fb6497561d796e58aec88e3c6a56c2c9e696d99d18d3d72f26c9c62764"
+    },
+    {
+      "path": "src/content/lessons/ai000/responsible-ai-use.ts",
+      "lfSha256": "b1a36d0c90859e8b7d8fa42b2cdb1adf92c3d1c71e1233991257ee7bb73c6355"
+    },
+    {
+      "path": "src/content/lessons/ai000/responsible-use-example.ts",
+      "lfSha256": "1a355c2296b37c05a65e2be270284316524e0ff904398d3b775d0bc3ea3994c0"
+    },
+    {
+      "path": "src/content/lessons/ai000/rl-applicability.ts",
+      "lfSha256": "265a8bed6cfd6063fe82adb0348f4596d14b1e3ad7106a42d70ce136e38ea99d"
+    },
+    {
+      "path": "src/content/lessons/ai000/rl-application-example.ts",
+      "lfSha256": "2b4cca5d8494895c7729c7ab6358f11b21805782611df91161fb83050dbb5b91"
+    },
+    {
+      "path": "src/content/lessons/ai000/self-supervised-example.ts",
+      "lfSha256": "add7a8057014dc27ca0311d6a8c0a884b9491251b058824451106449ec38bd53"
+    },
+    {
+      "path": "src/content/lessons/ai000/self-supervised-learning.ts",
+      "lfSha256": "7a6e2fcebb3c46bf8c4f4d1f75c8c02551c0bd8844b0d7ba2988cdc9c8726380"
+    },
+    {
+      "path": "src/content/lessons/ai000/shared.ts",
+      "lfSha256": "0b74b75ae08f1c96fca0814f96fbe1b5f1f2dad90bb51f75138897bb06eff0a2"
+    },
+    {
+      "path": "src/content/lessons/ai000/supervised-learning.ts",
+      "lfSha256": "f0331bf340146e590b11b830d6f4e97d9b1446ea538a05464c8a50279799e895"
+    },
+    {
+      "path": "src/content/lessons/ai000/training-validation-test.ts",
+      "lfSha256": "8c883db717724d2b99a7aa114ce83b75387da5ae6ca59c4390cc0c7c53a7951c"
+    },
+    {
+      "path": "src/content/lessons/ai000/unreliable-answers.ts",
+      "lfSha256": "b38969036d715243539a2f771fd42b0420e51c9e662e6b7a157f504426e14b7f"
+    },
+    {
+      "path": "src/content/lessons/ai000/unsupervised-learning.ts",
+      "lfSha256": "fc7ab2542068357464b8d650f0efb3ce8668bb87f234ee3fca15ed1954ebf24b"
+    },
+    {
+      "path": "src/content/lessons/ai000/using-a-fixed-model.ts",
+      "lfSha256": "571766e7299468bf45b65d750456f187807b9ea3af0604b8e68b7e014e5ab86e"
+    },
+    {
+      "path": "src/content/lessons/ai000/vision-example.ts",
+      "lfSha256": "162337ccf1ee8c6696369101c8b7c428e322755f479531e533c06b41fe2a04a2"
+    },
+    {
+      "path": "src/content/lessons/ai000/what-is-ai.ts",
+      "lfSha256": "05ff9073d2afb1d7322b03b69cb94a512713f29aa0be66528ae4f2dc1fd2d1e5"
+    },
+    {
+      "path": "src/content/lessons/ai000/why-foundations.ts",
+      "lfSha256": "94d521ab655cf6ac4fd56211f824cf0d3113cb2e31434fa3f1781aebe59cdcba"
+    },
+    {
+      "path": "src/content/lessons/foundations-v2-1.ts",
+      "lfSha256": "ee8fd4dd2c14fa0b5ab348a601cd1db229ec31286eb747b0c2c94bd629b85244"
+    },
+    {
+      "path": "src/content/lessons/linear-regression.ts",
+      "lfSha256": "fb4157c0533f47f560f32fe339afdb31b2f8823a5acc3fb5c266051bc9fcffa5"
+    },
+    {
+      "path": "src/content/lessons/ma101/index.ts",
+      "lfSha256": "40757dc7829f58aeb073fe9a6354e6485897a8896f2a81d58f58e6d4f0a83034"
+    },
+    {
+      "path": "src/content/lessons/ma101/shared.ts",
+      "lfSha256": "b6878c4eb72c52e5e263bab85881ecafa774885bb1b39fe515c76e75fa2e9d5a"
+    },
+    {
+      "path": "src/content/lessons/ma101/vector-addition.ts",
+      "lfSha256": "956f7cfbd39f97bfc81757303c9c50be877e27a3b3844f673b34ef30d023ecbb"
+    },
+    {
+      "path": "src/content/lessons/ma101/vector-meaning.ts",
+      "lfSha256": "8c2c20ba6e32c446a10235a841c27834f5ce7499d99d89fb11b639955181076d"
+    },
+    {
+      "path": "src/content/lessons/ma101/vector-representation.ts",
+      "lfSha256": "da169d2b38b10fdf2375b474a13a8467ae4aab28556c9e3f71f4624f05d35f9e"
+    },
+    {
+      "path": "src/content/lessons/ma101/vector-scaling.ts",
+      "lfSha256": "dc0ccd52dda63b948f09f7a904b87b6e01c455407b93c05db6ab8b8fc6d5337a"
+    },
+    {
+      "path": "src/content/lessons/ml201/core-assessments.ts",
+      "lfSha256": "6d8d09166f63296e7e45a8502f0802c1f6b68584648b64366cb0571451586b54"
+    },
+    {
+      "path": "src/content/lessons/ml201/derivative-direction.ts",
+      "lfSha256": "1c1f0d76ca8a8cfb3c055519101484bb119d2f17b952ea3541bd894d9044eebf"
+    },
+    {
+      "path": "src/content/lessons/ml201/linear-model.ts",
+      "lfSha256": "c6f19a719fad64e505d46c3e70df6243e8a45c2d7724274137099d5ea01e447f"
+    },
+    {
+      "path": "src/content/lessons/ml201/loss-functions.ts",
+      "lfSha256": "287131d25bba41b886aeab25a1f025dc7403b19fbc8deeb878cea29f548036bd"
+    },
+    {
+      "path": "src/content/lessons/ml201/manual-update.ts",
+      "lfSha256": "48e5372f4dc308e8a11e92b86e7f1594064741273d2233e70993e83a0245af2f"
+    },
+    {
+      "path": "src/content/lessons/ml201/mse-gradient.ts",
+      "lfSha256": "aa9e699d7cf6afde76fe30f8c9dc85decbe2b1794e849cdef135a3661b920b22"
+    },
+    {
+      "path": "src/content/lessons/ml201/numpy-regression.ts",
+      "lfSha256": "8883161c7323833a3bf2ef48aa58ea266db6bcdacb2587b0c9c71550d4658e20"
+    },
+    {
+      "path": "src/content/lessons/ml201/regression-task.ts",
+      "lfSha256": "63cfbc5f414763d7304348055138355ac4d05d57a5b2befd9abc5861839465df"
+    },
+    {
+      "path": "src/content/lessons/ml201/shared.ts",
+      "lfSha256": "97ae989412b7a926abcc2a924835ae3c21a3f164796589106cc35f0835c18829"
+    },
+    {
+      "path": "src/content/lessons/ml201/teaching-profiles.ts",
+      "lfSha256": "9fa594cdc72d73ebffcab3ea1fef1209ca85c763dff59ded6b9bc8f9649a3253"
+    },
+    {
+      "path": "src/content/lessons/py101/arithmetic-expressions.ts",
+      "lfSha256": "7c2413f65b81128248f9040e552f6a8209664f389cd744c521f2c458971dfa60"
+    },
+    {
+      "path": "src/content/lessons/py101/basic-value-types.ts",
+      "lfSha256": "22898afbb918441138f2f07c4dfac734a1502564d04f2abd53d3567ca2fd4600"
+    },
+    {
+      "path": "src/content/lessons/py101/conditional-execution.ts",
+      "lfSha256": "1fd03867f1b45cbcc6bb2df13d13c83382ba655952cd750421594ab3ac971e4d"
+    },
+    {
+      "path": "src/content/lessons/py101/editor-rerun.ts",
+      "lfSha256": "6e4d6198436216836db319349b16e2b391474d0b0794d5836663e519fb4aaf3b"
+    },
+    {
+      "path": "src/content/lessons/py101/environment-reproduction.ts",
+      "lfSha256": "19ea521b5b388ae85904796de6950fcfc0d83779ba1ea67c8c46f4ad0bd29e58"
+    },
+    {
+      "path": "src/content/lessons/py101/first-run.ts",
+      "lfSha256": "6b83ff16939ccbbc33d629fbd864abc8e4e3f9b0e2f00d2c8b82ab2ad127c14e"
+    },
+    {
+      "path": "src/content/lessons/py101/input-and-conversion.ts",
+      "lfSha256": "94eb712ce296f484ba4f58df12d68662a2cde616d305e245353e16c0495b7d40"
+    },
+    {
+      "path": "src/content/lessons/py101/notebook-cell-order.ts",
+      "lfSha256": "a7cf55f3b24307c8714e4138c34d7c65e425b491b5c54bdf07361dd006111ee3"
+    },
+    {
+      "path": "src/content/lessons/py101/numeric-comparisons.ts",
+      "lfSha256": "ddff4a9589d29f8ab4cf7460aac459ee412371790fd635a03743862b8145ed71"
+    },
+    {
+      "path": "src/content/lessons/py101/project-environments.ts",
+      "lfSha256": "62748640e051cf044633340233f36afbdbcb47f2f754384f396e86c447e1975f"
+    },
+    {
+      "path": "src/content/lessons/py101/readable-output.ts",
+      "lfSha256": "daf535e6932278790898e7faecc28f5322806ef0bc8246a7f16eb575b0cd1476"
+    },
+    {
+      "path": "src/content/lessons/py101/script-paths.ts",
+      "lfSha256": "568952e0cd41ff756dcfc7cbb7a41e62007858ff91f2b5e2e6e9d7b7f12a4d2f"
+    },
+    {
+      "path": "src/content/lessons/py101/variables-and-assignment.ts",
+      "lfSha256": "c729ceadcb6d1a699fbb400d01e6c55ebf3d4c5d258860e0adeb7cf214b27b5f"
+    },
+    {
+      "path": "src/content/lessons/python-functions.ts",
+      "lfSha256": "985a591253332f84d5230074e8d976f675c8e7fa8aaa4737c70ac7eaf9ba6475"
+    },
+    {
+      "path": "src/content/lessons/vector-matrix.ts",
+      "lfSha256": "7e9072630d9e1a71a7aa582ee60de01c81706039ea3205667a720b5023486ff6"
+    },
+    {
+      "path": "src/content/math-outline.ts",
+      "lfSha256": "15d11c64319e06da32c77c45641ae0c32101d2bff698477392806005b66938dc"
+    },
+    {
+      "path": "src/content/models.ts",
+      "lfSha256": "2a3a119bbe87d7898add6d5ba9ac9bcd84d38221987a092181386cd91ca09754"
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "lfSha256": "045f588d902ea7eb3040c06264f0710654e0c9b3dbb6636ebcf2eb2fd0c8ab41"
+    },
+    {
+      "path": "src/content/resources/core-programs.ts",
+      "lfSha256": "ad663ae97b9fe8989ec6df7a0f64d7237cda9c4e1d23fe3320436aa7ddbefc1f"
+    },
+    {
+      "path": "src/content/resources/programs.ts",
+      "lfSha256": "56aef68bdd4b5ef16d404407ab3c784aa1cda4ca91b1f6e4729aba65847e028f"
+    },
+    {
+      "path": "src/content/resources/python-arithmetic.ts",
+      "lfSha256": "d70eea66c7fd9f6d3df366522f8b8ed58479ad0d076bdca9c3bc6b99137a90b0"
+    },
+    {
+      "path": "src/content/resources/python-comparisons.ts",
+      "lfSha256": "fc3946d1c6c87ff1199b9608b5578b9740192b1a90a4ba95fb0ca93539eaab0d"
+    },
+    {
+      "path": "src/content/resources/python-conditional-execution.ts",
+      "lfSha256": "794f7c8eae886333ead2e8961e036233393a4457575dbed9ccc93f89035ea09c"
+    },
+    {
+      "path": "src/content/resources/python-editor.ts",
+      "lfSha256": "f3df0a157a7361c2e599f09c517b2230cbddb04954e76a2c6c91a0b8f3ef0bb9"
+    },
+    {
+      "path": "src/content/resources/python-input-conversion.ts",
+      "lfSha256": "3155d6031ae81e3531af89228471bd02bbda057a5748e008d6760ae3f86856d1"
+    },
+    {
+      "path": "src/content/resources/python-notebook.ts",
+      "lfSha256": "6377d5cf3d9dc798e6c4a41bada96c9fad1491c6bc12723ce251e1ee0c0535d2"
+    },
+    {
+      "path": "src/content/resources/python-paths.ts",
+      "lfSha256": "313a289cb86c7d0fa5759adf647415fb4369bcffbf2833c53785a44cfd75c655"
+    },
+    {
+      "path": "src/content/resources/python-readable-output.ts",
+      "lfSha256": "33e01bd003632723f3ff9f137bd165ce27a22e1436f29650afc3c02f46c618f0"
+    },
+    {
+      "path": "src/content/resources/python-reproduction.ts",
+      "lfSha256": "334dd9cb105268848c8decb7f44bfe08b763a4594873a8551dadc2bb39c9fd64"
+    },
+    {
+      "path": "src/content/resources/python-value-types.ts",
+      "lfSha256": "ceebf972bf0c3509cbea37eb72c091685b33c2d7df25df20656b430f78e6622d"
+    },
+    {
+      "path": "src/content/resources/python-variables.ts",
+      "lfSha256": "9430e4a114a1f0ce154e561daac1defc09d6905994891cef3cea5c1ba048d1e8"
+    },
+    {
+      "path": "src/content/resources/python-venv.ts",
+      "lfSha256": "80ae7e52c5b1c5eeae5352f230ef5304c83b08305db039d95e6dfbe690f280d8"
+    },
+    {
+      "path": "src/content/sample.ts",
+      "lfSha256": "3a1ed80bc9c489958ad5554ec367aebd141aa7d9dc143299a77826fbe3966610"
+    },
+    {
+      "path": "src/lib/artwork.ts",
+      "lfSha256": "ec8217b7dcf6c6cf32325ca08e23d8a03ad5bc598cad96ab1ba4ffd3d4a51e56"
+    },
+    {
+      "path": "src/lib/course-directory.ts",
+      "lfSha256": "24850ca19a9414e972c5fbb2d674d70ab65be58667dad794b1aa7198d51d0767"
+    },
+    {
+      "path": "src/lib/course-engine.ts",
+      "lfSha256": "74647141310586c0e35b7404177a7103dadf68cefc9a289468910cc55b45d569"
+    },
+    {
+      "path": "src/lib/course-labels.ts",
+      "lfSha256": "58ee28aaacf0128ade7d75de496a13d97679286f3e990fee6e0664ccdc0be943"
+    },
+    {
+      "path": "src/lib/course-learning-time.ts",
+      "lfSha256": "dffa493394b6620432e01d9e5c5514e877c1737ff4ad2b423fe3386afea27a69"
+    },
+    {
+      "path": "src/lib/course-numbering.ts",
+      "lfSha256": "84f8f324260d7fafb190ec3345ee8f784acd0ee9b2cea7793da614cf7305ea50"
+    },
+    {
+      "path": "src/lib/course-presentation.ts",
+      "lfSha256": "1b2f07eee6c333e11e8b0d726ea7502f333801a3803f4fec75e48bd7326f95a0"
+    },
+    {
+      "path": "src/lib/course-reading-summary.ts",
+      "lfSha256": "66b9eae8bdaf4d4db5210e52fe36d2fa1e58f2aa3a5126d8cda1cd90c7550c0d"
+    },
+    {
+      "path": "src/lib/course-search.ts",
+      "lfSha256": "2eeb8974176a53e30d47d83982fef29e6188b16cc6b681ba0eee6759943df2dc"
+    },
+    {
+      "path": "src/lib/curriculum.ts",
+      "lfSha256": "79d1329e5b86bc52826d1fa7acddef3d968f193e8575b930249ad1ad464abab0"
+    },
+    {
+      "path": "src/lib/learning-progress.ts",
+      "lfSha256": "47974dfb7fd344c086b685311d1207560ba344cd1d80cb5ffe3a3f9a85183070"
+    },
+    {
+      "path": "src/lib/lesson-exercises.ts",
+      "lfSha256": "179bf88d0cb4538cb2d3d541dd8e2aea7e04d906c217173da6342ddf5a5c63c9"
+    },
+    {
+      "path": "src/lib/paths.ts",
+      "lfSha256": "0696e596bda24199aa853938a8bd5eb8a85d42e764554f7c510ce08e6928d449"
+    },
+    {
+      "path": "src/lib/progress.ts",
+      "lfSha256": "ecc17cd7dee18145bbd8a3fa36477d39fc87c35818a517df26f7c0bc99e25031"
+    },
+    {
+      "path": "src/lib/regression.ts",
+      "lfSha256": "d27af2acac73db5771cef82fd61f2d1a11e2e4dfe32b271b06ae6e8a27b3591b"
+    },
+    {
+      "path": "src/lib/use-learning-progress.ts",
+      "lfSha256": "b634548ef94332333206d4022cb9705460595818ebb1f511591d553b9fb10778"
+    },
+    {
+      "path": "src/lib/use-progress.ts",
+      "lfSha256": "e9ec46108472148618cc9f471e9bfbe5a31e2efcc06652d8e43a6f2a27472162"
+    },
+    {
+      "path": "src/lib/vector-teaching.ts",
+      "lfSha256": "984d9c8ff8f26108d8b222494d46f039d8e85c97254cc07e06dde71a87c7b1a3"
+    },
+    {
+      "path": "tests/ai000-capstone.test.ts",
+      "lfSha256": "ea83dc52a9634e469b87edc8ca78ec4a9766a94fd9e7bec5b83cc627723c078c"
+    },
+    {
+      "path": "tests/ai000-creative.test.ts",
+      "lfSha256": "204a895f8bd5216f61eee9941e6504566bee58543e7ff9b1e7a93490038f9ec8"
+    },
+    {
+      "path": "tests/ai000-data-features.test.ts",
+      "lfSha256": "5f35cb3ef6cd4254b29b9cc01e69c99adadd48546044bf0ecd9fe13ee11276f4"
+    },
+    {
+      "path": "tests/ai000-data-use.test.ts",
+      "lfSha256": "014db4b556ff7e0b93e85951b991c70252aa3de323423e502a25730754759db7"
+    },
+    {
+      "path": "tests/ai000-directions.test.ts",
+      "lfSha256": "570e8c84f9251573f700b97f0bafbb030c84ef2f574bbce6ec7e54cafd8f3662"
+    },
+    {
+      "path": "tests/ai000-foundations.test.ts",
+      "lfSha256": "7c99b40afb0d191f3edbb049924ff61f3372226707e1eeba45c489762f72a552"
+    },
+    {
+      "path": "tests/ai000-illustrations.test.ts",
+      "lfSha256": "743999145c8b654d5ac774c5c74026fdf3ae86e0045480899e151d6fbbd5c030"
+    },
+    {
+      "path": "tests/ai000-inference.test.ts",
+      "lfSha256": "3dbe351fbc7744b8f3f1b3de836f0f7813e667edd3602061332cb8e49f685f99"
+    },
+    {
+      "path": "tests/ai000-lesson.test.ts",
+      "lfSha256": "e4bb32c3e00447176c681f4abddfd45d0b2bb6feb1d56a8254b8463294cdfde1"
+    },
+    {
+      "path": "tests/ai000-model-parameters.test.ts",
+      "lfSha256": "58d81cf241c08263354ca1671c0e7c758a2ef31c583aca39b8bcf46a315de601"
+    },
+    {
+      "path": "tests/ai000-multimodal.test.ts",
+      "lfSha256": "b5d80ccad30aa85a4e68a3e02ce52634c5740590260401573a5a806f6db5e600"
+    },
+    {
+      "path": "tests/ai000-nlp.test.ts",
+      "lfSha256": "f0ff3b8207398d354b6849cbbaf9726a498d7c286e453fac386f15391df96acc"
+    },
+    {
+      "path": "tests/ai000-privacy-fairness.test.ts",
+      "lfSha256": "29740b83b01ccb0871a5255b70b2aba152522c7790de738064d602e6f849deba"
+    },
+    {
+      "path": "tests/ai000-quality.test.ts",
+      "lfSha256": "bb2685221dbefb86e94f1ff43a6d847d845b6c9f638dd002bb818065aff7b1f8"
+    },
+    {
+      "path": "tests/ai000-r3.test.ts",
+      "lfSha256": "aa5d52fd8a49747fb57b34c8ed5446713b7589c42e586585db2449f7fe9039c1"
+    },
+    {
+      "path": "tests/ai000-reinforcement.test.ts",
+      "lfSha256": "9724620d06288f88d865885f28987af6ebb25f9b21bf5df68cbb5491c08c2a3e"
+    },
+    {
+      "path": "tests/ai000-relationships.test.ts",
+      "lfSha256": "7a30caa7da4e660c2de90bb2508ded01d38e7645c3570f5154d62a6f6fc08697"
+    },
+    {
+      "path": "tests/ai000-reliability.test.ts",
+      "lfSha256": "1deee71200153ec5301028cdfd5b3f76e8e589dd3caaa7115b83655daa16eba4"
+    },
+    {
+      "path": "tests/ai000-responsible-use.test.ts",
+      "lfSha256": "06e488e7789155537a97cadcd687dc6d4059f752ece023902a61ed01dbc2aa90"
+    },
+    {
+      "path": "tests/ai000-rl-applicability.test.ts",
+      "lfSha256": "a12213d7bdb71aa6f90f219558bcb23049646760055d83050efcb6a2b9dfbff3"
+    },
+    {
+      "path": "tests/ai000-self-supervised.test.ts",
+      "lfSha256": "3eef74f303c0a3e363fe1ce2b3d4cb799606294e8ee484810b3ef79ba2417058"
+    },
+    {
+      "path": "tests/ai000-supervised.test.ts",
+      "lfSha256": "87bae77ecc13f34e8498d0073997142ee78482b43f34c741eb4d37f084690bd2"
+    },
+    {
+      "path": "tests/ai000-unsupervised.test.ts",
+      "lfSha256": "ae600a606f25e5c1a42b5901249748aba5c072a2fc7c6fefadbbe1933843ac45"
+    },
+    {
+      "path": "tests/ai000-v2.test.ts",
+      "lfSha256": "e25158bfde913166f6d7c171bbed7e6ad65649fe5306b8fb86792e231644551d"
+    },
+    {
+      "path": "tests/ai000-vision.test.ts",
+      "lfSha256": "61245223ac84ba734d5312cde98e8c98715c2dbe3e7eb7375a1d2736bebfe49a"
+    },
+    {
+      "path": "tests/artwork.test.ts",
+      "lfSha256": "3f49839e52c025a50a683c7d372f9bf32d57544d44a42afddd67b9298cefc9d9"
+    },
+    {
+      "path": "tests/content.test.ts",
+      "lfSha256": "78585b0f501c759a6c63404f36e87fd260ee3ea553226a007291e58a9842945e"
+    },
+    {
+      "path": "tests/course-engine.test.ts",
+      "lfSha256": "8f41c7bad36afc757efd3893147346e242783e4b20140785655f862f8343ccf8"
+    },
+    {
+      "path": "tests/course-hierarchy.test.ts",
+      "lfSha256": "54ea6fc744f20f5dcdb333952c300a146447dff1c66e493c91dae001bf1b492a"
+    },
+    {
+      "path": "tests/course-presentation.test.ts",
+      "lfSha256": "4167860a773420f6293fdcbf628152258c9c000f40ef487ed38a34ca29079ba6"
+    },
+    {
+      "path": "tests/cross-discipline-editorial.test.ts",
+      "lfSha256": "fcb182193793d4a7d5a3c3737f370c060af6d941173dc04b46d9cc8c330db36d"
+    },
+    {
+      "path": "tests/curriculum.test.ts",
+      "lfSha256": "537e5bf1e6345b0aef6ba50516f3d518c9f72c537d15b04496abcd5ce51dfcbf"
+    },
+    {
+      "path": "tests/helpers/py101-historical-view.ts",
+      "lfSha256": "9217eb335a3ba42c24848e32d479b5165287a69c6a63751ac40c714d730e3d89"
+    },
+    {
+      "path": "tests/helpers/py101-p14-view.ts",
+      "lfSha256": "e38743366e5ddaed5c437c7342e5da38e1f916aa03603a0679db95c8caeb0d02"
+    },
+    {
+      "path": "tests/helpers/py101-p15-view.ts",
+      "lfSha256": "6baaae752ce83ad68fc9bd0d83ad5623b58d8464ef45cb9d199c5f4819cb62ea"
+    },
+    {
+      "path": "tests/helpers/registered-content.ts",
+      "lfSha256": "df48d41e7747b93e729cdbeeece5cc1eb346c351861876ec138723d9e7d55c91"
+    },
+    {
+      "path": "tests/learning-progress.test.ts",
+      "lfSha256": "e3202f91c80741c57cc78363ae5ab905ebbf148cdca2f46587ebc19d068c5eb2"
+    },
+    {
+      "path": "tests/ml-v2-compat.test.ts",
+      "lfSha256": "0aa36e2c059b23253ff4c07b4b9b1b7315e2a97884189df0c6dc7c18d3f6731b"
+    },
+    {
+      "path": "tests/progress.test.ts",
+      "lfSha256": "fbfac52eddb0770c790651b4385a2249c38b4d6922074811ee8a5b8bc864514e"
+    },
+    {
+      "path": "tests/py101-arithmetic-expressions.test.ts",
+      "lfSha256": "df95077c02fcc1e20d1c094f7c45c50ef2d70dfd1e6d274c61ae86099f422b74"
+    },
+    {
+      "path": "tests/py101-basic-value-types.test.ts",
+      "lfSha256": "25001db148a98bf48ee63bbd3ea0e4d3aecd5d5ab29354ea6ad20902f46b7cca"
+    },
+    {
+      "path": "tests/py101-beginner-refinement.test.ts",
+      "lfSha256": "6f20c0b27259853d265316892d21e129f2d7b9840363b2d23177dac6ef4e8543"
+    },
+    {
+      "path": "tests/py101-chapter-two-audit.test.ts",
+      "lfSha256": "d9d8d67d432b94d9ba8fe260aaef3f864eff412015d60d199f37344a0e9259c8"
+    },
+    {
+      "path": "tests/py101-conditional-execution.test.ts",
+      "lfSha256": "dbf8355c9b86a7c0ecd4e55d4ca4051e345ec2ef8fe760f96ae43a3dcc8fefd8"
+    },
+    {
+      "path": "tests/py101-editor-rerun.test.ts",
+      "lfSha256": "b7c5054af97dfa48966b9fbeb547e20a83e8cc0bc7292f35c87bca118a846022"
+    },
+    {
+      "path": "tests/py101-environment-reproduction.test.ts",
+      "lfSha256": "72fbee272f57433d9c5abebd92e1099a2d385f69c367fde28c489f3d29b70251"
+    },
+    {
+      "path": "tests/py101-first-run.test.ts",
+      "lfSha256": "55fe1139249c12757932020cef796040837fa43536c4c93fb42ebebd43bcce6e"
+    },
+    {
+      "path": "tests/py101-input-and-conversion.test.ts",
+      "lfSha256": "f7e81f45af02c559bd886d243f78997d023e2321a13356736dd155e314a285a5"
+    },
+    {
+      "path": "tests/py101-notebook-cell-order.test.ts",
+      "lfSha256": "1e667da2b2065d8379197cea21e46935e6ba7e37c9191429ceee3b0feea804c7"
+    },
+    {
+      "path": "tests/py101-numeric-comparisons.test.ts",
+      "lfSha256": "37fb52da1489ff6aee7368753fefb4d2100f6c7f57fed79b93fb2ee2e5354642"
+    },
+    {
+      "path": "tests/py101-project-environments.test.ts",
+      "lfSha256": "204c52bf0d462017fd1ebc5d19c7ef3bc3a851973b66f8ea9b5eae3061e41f5b"
+    },
+    {
+      "path": "tests/py101-readable-output.test.ts",
+      "lfSha256": "e99c912700bb13db159114aacd8fcbd156ee9ac8559df1a208590040e070d8b9"
+    },
+    {
+      "path": "tests/py101-script-paths.test.ts",
+      "lfSha256": "2a43897f46bd895664ccf40b6eea5b27a14820c9a3f0a16fc5117bc3d632b1fb"
+    },
+    {
+      "path": "tests/py101-variables-and-assignment.test.ts",
+      "lfSha256": "1f92bfd04e0a6083a9640d6366d5714402f4b1faf316dc4eb97d3e1819a93b19"
+    },
+    {
+      "path": "tests/regression.test.ts",
+      "lfSha256": "5c46d0c9bd35438b6243f5f91ce16153837ccce84dacc6997a22668299a872bd"
+    },
+    {
+      "path": "tests/storage.test.ts",
+      "lfSha256": "b8751936e8cec92567251ba94ea3c4670b930f9cb633bab76550042b3dd9b8b7"
+    },
+    {
+      "path": "tests/teaching-v2-1.test.ts",
+      "lfSha256": "cfc422551c996afe4be687a9eb8ecacc19baa31bf37bfa4e76c21bc9d8baf429"
+    },
+    {
+      "path": "tests/teaching-v2-2.test.ts",
+      "lfSha256": "1d16dd4831d676e529ea054f3d96d180140243f2a697c4175e9f59bc61ae4c04"
+    },
+    {
+      "path": "tests/teaching-v2-3.test.ts",
+      "lfSha256": "8300675aac804a69a8b9d9791924530ffca5cad76185e70f76998a0187562939"
+    },
+    {
+      "path": "tests/teaching-v2.test.ts",
+      "lfSha256": "440a716ec388e31c035de39151b834b6b5eae61ab596042644c6845015c4dca3"
+    },
+    {
+      "path": "tests/test_math_v2_2.py",
+      "lfSha256": "b9c6a004dad4b7bbbf903d5dbf7160b405034dfbe81044e069f14a26a6008d5a"
+    },
+    {
+      "path": "tests/test_ml_v2.py",
+      "lfSha256": "d0b7e016de882bee30ebace12522649b9e3f20347feba7584141b366330877da"
+    },
+    {
+      "path": "tests/test_sample.py",
+      "lfSha256": "0943b494419e2e32b843c66dc09a031f2c9eeff1555a31694b2ceb218a2345ea"
+    },
+    {
+      "path": "tests/test_teaching_samples.py",
+      "lfSha256": "4ab43f4a986eadfa16e015ac1cde22c44bb1a7fd60a8b41b4d2973c8c913e1f9"
+    },
+    {
+      "path": "tests/test_teaching_v2_1.py",
+      "lfSha256": "43197bca3c79a72c6d6fc3ca22ed2a9d12de8ece17762e53f2670a9380a58a96"
+    },
+    {
+      "path": "tests/test_teaching_v2_3.py",
+      "lfSha256": "7f01a18cef5abea9bcc4a21ef9f08ca8e0cc801b1980831c1a2d410609fb539d"
+    },
+    {
+      "path": "scripts/review-py101-p17.ts",
+      "lfSha256": "c7ca300636e4bf6b77ade83359ef3eab5e15de76f005a0798a16246ddd6b8ef3"
+    },
+    {
+      "path": "scripts/validate-py101-branches.ts",
+      "lfSha256": "685c1a0c476fc98ac88637934ae39cc9c3591fc388715a5b14de936472038a9d"
+    },
+    {
+      "path": "scripts/validate-py101-branches-routes.ts",
+      "lfSha256": "f7f13ecace79bc7253edb6cfca93a16e8fcef740299119905d46f6b3ad7be0e5"
+    },
+    {
+      "path": "src/content/lessons/py101/conditional-branches.ts",
+      "lfSha256": "4e48ddb344019fe381ec1a92a5f0b353758112f8bd1fc720a26d9df07c56d39f"
+    },
+    {
+      "path": "src/content/resources/python-conditional-branches.ts",
+      "lfSha256": "1fd6ecd8e01524be3febc370c5fbbcc224c5f85b3effd77fbeb3c28ed8773945"
+    },
+    {
+      "path": "tests/helpers/py101-p16-view.ts",
+      "lfSha256": "1c5e664756e8b5bc7ea29f45fd3a3f39b69c0fb6d4963c6c32317b0099e37414"
+    },
+    {
+      "path": "tests/py101-conditional-branches.test.ts",
+      "lfSha256": "ea15118394dec20e544d80f2ea539d83b2eec1014d927af1b7dd525fe4d941e9"
+    }
+  ]
+}

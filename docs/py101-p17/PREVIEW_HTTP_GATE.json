@@ -1,0 +1,79 @@
+{
+  "checkedAt": "2026-10-31T07:21:40.016Z",
+  "publication": {
+    "lessonId": "PY101-C03-L02",
+    "courseId": "PY101",
+    "chapterId": "PY101-C03",
+    "title": "条件不满足时怎么办",
+    "contentVersion": 1,
+    "order": 2,
+    "catalogRole": "current",
+    "optionalLesson": false,
+    "status": "pending-review",
+    "access": "preview",
+    "technicalEvidence": "docs/py101-p17/TECHNICAL_REPORT.md"
+  },
+  "productionServer": "next start",
+  "rows": [
+    {
+      "path": "/learn/PY101/PY101-C03-L02",
+      "expected": 200,
+      "actual": 200,
+      "passed": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C03-L01",
+      "expected": 200,
+      "actual": 200,
+      "passed": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C03-L03",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C03-L04",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C03-L05",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C03-L06",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C03-L07",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/learn/PY101/PY101-C03-L08",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/learn/ML201/PY101-C03-L02",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/learn/AI000/PY101-C03-L02",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    }
+  ]
+}
