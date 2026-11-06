@@ -1,0 +1,94 @@
+✖ saved section survives nonzero initial SPA geometry, cleanup and same-lesson remount (175.1005ms)
+✖ a genuine reading scroll flushes once before debounce; pagehide plus cleanup is idempotent (54.5706ms)
+✖ after debounce, route/reset geometry and cleanup cannot replace the accepted section (46.7499ms)
+✖ explicit smooth anchor owns the bookmark through intermediate sections and immediate departure (72.6761ms)
+✔ completed status and high-water percent survive subsequent accepted scrolls (36.7422ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 1
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2958.209
+
+✖ failing tests:
+
+test at tests\reader-bookmark-lifecycle.test.ts:5:1
+✖ saved section survives nonzero initial SPA geometry, cleanup and same-lesson remount (175.1005ms)
+  AssertionError [ERR_ASSERTION]: mount geometry is not a reading action
+  + actual - expected
+
+  + 'reverse-result'
+  - 'short-circuit'
+
+      at TestContext.<anonymous> (<WORKTREE>\tests\reader-bookmark-lifecycle.test.ts:8:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.start (node:internal/test_runner/test:1177:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'reverse-result',
+    expected: 'short-circuit',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\reader-bookmark-lifecycle.test.ts:14:1
+✖ a genuine reading scroll flushes once before debounce; pagehide plus cleanup is idempotent (54.5706ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  2 !== 1
+
+      at TestContext.<anonymous> (<WORKTREE>\tests\reader-bookmark-lifecycle.test.ts:17:99)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\reader-bookmark-lifecycle.test.ts:20:1
+✖ after debounce, route/reset geometry and cleanup cannot replace the accepted section (46.7499ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'reverse-result'
+  - 'five-values'
+
+      at TestContext.<anonymous> (<WORKTREE>\tests\reader-bookmark-lifecycle.test.ts:23:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'reverse-result',
+    expected: 'five-values',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\reader-bookmark-lifecycle.test.ts:25:1
+✖ explicit smooth anchor owns the bookmark through intermediate sections and immediate departure (72.6761ms)
+  TypeError: target.querySelector(...)?.setAttribute is not a function
+      at revealTarget (evalmachine.<anonymous>:180:54)
+      at navigate (evalmachine.<anonymous>:50:9)
+      at Object.onClick (evalmachine.<anonymous>:160:33)
+      at Object.anchor (<WORKTREE>\tests\helpers\reader-lifecycle.ts:86:448)
+      at TestContext.<anonymous> (<WORKTREE>\tests\reader-bookmark-lifecycle.test.ts:26:81)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)

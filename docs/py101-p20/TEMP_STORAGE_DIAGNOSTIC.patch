@@ -1,0 +1,20 @@
+diff --git a/src/lib/use-learning-progress.ts b/src/lib/use-learning-progress.ts
+index b7b8d3d..7ae2787 100644
+--- a/src/lib/use-learning-progress.ts
++++ b/src/lib/use-learning-progress.ts
+@@ -9,7 +9,14 @@ import type { Lesson, LessonSummary } from "../content/models";
+ 
+ const listeners = new Set<() => void>();
+ export const learningProgressStore = createProgressStore(
+-  () => window.localStorage,
++  () => ({
++    getItem: key => window.localStorage.getItem(key),
++    setItem: (key, value) => {
++      const before = window.localStorage.getItem(key);
++      window.localStorage.setItem(key, value);
++      console.info("P20_PROGRESS_WRITE " + JSON.stringify({ key, before, after: window.localStorage.getItem(key), at: Date.now(), pathname: window.location.pathname, hash: window.location.hash, scrollY: window.scrollY, heading: document.querySelector("h1")?.textContent, stack: new Error().stack }));
++    },
++  }),
+   () => listeners.forEach((callback) => callback()),
+ );
+ const onStorage = (event: StorageEvent) => {

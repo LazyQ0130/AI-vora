@@ -1,0 +1,45 @@
+✔ 按课程、课时、内容修订独立保存，完成标记与最高比例不会被滚动回退 (1.9072ms)
+✔ v1 只迁移原 ML 样章且幂等，不删除旧记录，合法 v2 优先 (0.4175ms)
+✔ 损坏、跨课程、非法段落和未来版本数据不会污染进度 (0.2142ms)
+✔ 写入被拒时使用各课时会话状态，外部事件不覆盖未落盘记录 (0.273ms)
+✔ 成功保存后外部标签的新记录和清除事件可被观察 (0.208ms)
+✔ 无订阅期间外部清除的键不会被已落盘内存缓存复活 (0.1422ms)
+✔ P19 3.4/r1/order4, actual private gate, preview evidence, adjacent 3.3 and no 3.5–3.8 (4.5916ms)
+✔ P19 if-to-while teaching and two core tasks cover the three observable goals (0.8695ms)
+✔ P19 complete web Python is strictly shared and finite; unknown/dangerous/rewritten code cannot run (4.0819ms)
+✔ P19 actual saved-file results distinguish multiple/zero/new, print order and safe increment repair (2.9062ms)
+✔ P19 read-only line traces prove final false checks and separate final printed/exit values (0.7105ms)
+✔ P19 controlled WAIT timeout is rejected, reaped and never counted as a normal teaching program (1.8218ms)
+✔ P19 all 62 old Lesson/Publication/scopes including 3.1–3.3 r1 remain exact (9.7708ms)
+✔ P19 exact historical authorization rejects unknown edits, independent r1 reload protects old strings/user fingerprints (7.6807ms)
+✔ saved section survives nonzero initial SPA geometry, cleanup and same-lesson remount (156.1208ms)
+✔ a genuine reading scroll flushes once before debounce; pagehide plus cleanup is idempotent (25.2445ms)
+✔ after debounce, route/reset geometry and cleanup cannot replace the accepted section (28.8054ms)
+✔ explicit smooth anchor owns the bookmark through intermediate sections and immediate departure (19.9183ms)
+✔ completed status and high-water percent survive subsequent accepted scrolls (20.7203ms)
+✔ continuous lesson switching never shares accepted points or timers across scopes (53.6841ms)
+✔ React reactivation resumes input saving without replaying stale geometry (21.8811ms)
+✔ denied persistent storage keeps accepted reading in the existing session fallback (16.3839ms)
+✔ keyboard and touch input persist ordinary reading, idle hover and layout scroll do not (15.7754ms)
+✔ click-to-leave closes an active reading gesture before route geometry can change (15.1077ms)
+✔ real completion button cancels pending save and ordinary reading cannot undo completion (15.1016ms)
+✔ a new 3.4 reading session leaves all other lesson/revision fixture strings byte-identical (22.733ms)
+✔ accepted scroll is captured before pending UI animation frame on scrollend (15.0107ms)
+✔ accepted scroll is captured before pending UI animation frame on pagehide (13.2224ms)
+✔ accepted scroll is captured before pending UI animation frame on unmount (14.9582ms)
+✔ P20 preserves all 63 Lesson objects/scopes and every other Publication (8.8638ms)
+✔ P20 compatibility accepts only whole registered source/object hashes, not extra edits (1.5191ms)
+✔ P20 leaves storage semantics and P19 finite-while source/validator byte-equivalent modulo Git line endings (375.1302ms)
+✔ 学习面板把 AI 两道达标题按正文顺序显示一次，保留一题对应多个目标 (15.4426ms)
+✔ 所有教材面板入口对应真实练习，核心与可选层级不混淆 (226.5771ms)
+✔ 目标短文案绑定正式原文，拒绝未知、重复及过期绑定 (17.7068ms)
+✔ 面板展示类型与正文相同，阅读比例与手动标记可独立呈现 (3.7761ms)
+✔ AI r2考核重编保留r1历史，迁出锚点有明确去向且不继承完成 (0.5625ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1651.4965

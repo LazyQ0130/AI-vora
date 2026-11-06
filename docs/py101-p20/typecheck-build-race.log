@@ -1,0 +1,25 @@
+
+> aivora-web@0.1.0 typecheck
+> tsc --noEmit
+
+error TS6053: File '<WORKTREE>/.next/types/app/courses/[id]/page.ts' not found.
+  The file is in the program because:
+    Matched by include pattern '.next/types/**/*.ts' in '<WORKTREE>/tsconfig.json'
+error TS6053: File '<WORKTREE>/.next/types/app/courses/page.ts' not found.
+  The file is in the program because:
+    Matched by include pattern '.next/types/**/*.ts' in '<WORKTREE>/tsconfig.json'
+error TS6053: File '<WORKTREE>/.next/types/app/dashboard/page.ts' not found.
+  The file is in the program because:
+    Matched by include pattern '.next/types/**/*.ts' in '<WORKTREE>/tsconfig.json'
+error TS6053: File '<WORKTREE>/.next/types/app/learn/[courseId]/[lessonId]/page.ts' not found.
+  The file is in the program because:
+    Matched by include pattern '.next/types/**/*.ts' in '<WORKTREE>/tsconfig.json'
+error TS6053: File '<WORKTREE>/.next/types/app/page.ts' not found.
+  The file is in the program because:
+    Matched by include pattern '.next/types/**/*.ts' in '<WORKTREE>/tsconfig.json'
+error TS6053: File '<WORKTREE>/.next/types/app/paths/page.ts' not found.
+  The file is in the program because:
+    Matched by include pattern '.next/types/**/*.ts' in '<WORKTREE>/tsconfig.json'
+error TS6053: File '<WORKTREE>/.next/types/app/projects/page.ts' not found.
+  The file is in the program because:
+    Matched by include pattern '.next/types/**/*.ts' in '<WORKTREE>/tsconfig.json'

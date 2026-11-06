@@ -5,7 +5,7 @@ type SourceChange = { path: string; before: string; afterSha256: string };
 type ObjectChange = { id: string; before: unknown; afterSha256: string };
 // 使用同一个登记器按新到旧撤销已批准修订；不为每轮再嵌套一个专用兼容器。
 type RevisionPlan = { baseline: string; sources: SourceChange[]; lessons: ObjectChange[]; publications: ObjectChange[]; addedLessonIds: string[]; addedContent?: { id: string; lessonSha256: string; publicationSha256: string }[]; workspaceOnly: { path: string; workspaceSha256: string; repositorySha256: string }[]; protectedText: { path: string; baselineSha256: string; lfSha256: string }[] };
-const plans = ["py101-p19", "py101-p18", "py101-p17", "py101-p16", "py101-p15", "py101-p14", "py101-p13", "py101-p12", "py101-p11", "py101-p10", "py101-p9", "py101-p8", "py101-p7", "py101-p6", "py101-p5", "py101-p4", "py101-p3", "py101-p2"].map(round => JSON.parse(readFileSync(new URL(`../docs/${round}/APPROVED_CHANGES.json`, import.meta.url), "utf8")) as RevisionPlan);
+const plans = ["py101-p20", "py101-p19", "py101-p18", "py101-p17", "py101-p16", "py101-p15", "py101-p14", "py101-p13", "py101-p12", "py101-p11", "py101-p10", "py101-p9", "py101-p8", "py101-p7", "py101-p6", "py101-p5", "py101-p4", "py101-p3", "py101-p2"].map(round => JSON.parse(readFileSync(new URL(`../docs/${round}/APPROVED_CHANGES.json`, import.meta.url), "utf8")) as RevisionPlan);
 function revisions(throughBaseline?: string) {
   const index = plans.findIndex(plan => plan.baseline === throughBaseline);
   return index < 0 ? plans : plans.slice(0, index + 1);
@@ -13,7 +13,9 @@ function revisions(throughBaseline?: string) {
 const sources = JSON.parse(readFileSync(new URL("../docs/py101-p1/SOURCE_CHANGES.json", import.meta.url), "utf8")) as SourceChange[];
 const sha = (source: string) => createHash("sha256").update(source).digest("hex");
 export function isApprovedPy101Addition(id: string, lesson: unknown, publication: unknown, throughBaseline: string) {
-  return revisions(throughBaseline).some(plan => plan.addedContent?.some(row => row.id === id && lesson !== undefined && publication !== undefined && sha(JSON.stringify(lesson)) === row.lessonSha256 && sha(JSON.stringify(publication)) === row.publicationSha256));
+  const previousLesson = beforeApprovedPy101Object("lessons", id, lesson, throughBaseline);
+  const previousPublication = beforeApprovedPy101Object("publications", id, publication, throughBaseline);
+  return revisions(throughBaseline).some(plan => plan.addedContent?.some(row => row.id === id && previousLesson !== undefined && previousPublication !== undefined && sha(JSON.stringify(previousLesson)) === row.lessonSha256 && sha(JSON.stringify(previousPublication)) === row.publicationSha256));
 }
 function undoSource(entries: SourceChange[], path: string, source: string) {
   const entry = entries.find(row => row.path === path);
@@ -38,7 +40,9 @@ export function protectedPy101FileMatches(path: string, bytes: Buffer, expected:
   if (portable && validText && sha(text.replaceAll("\r\n", "\n")) === portable.lfSha256) return true;
   const local = relevant.flatMap(plan => plan.workspaceOnly).find(row => row.path === path && row.workspaceSha256 === expected);
   if (local?.workspaceSha256 === expected && (local.repositorySha256 === digest || matches(text, local.repositorySha256))) return true;
-  return matches(beforeApprovedPy101Source(path, text, throughBaseline), expected);
+  const previous = beforeApprovedPy101Source(path, text, throughBaseline);
+  if (local && matches(previous, local.repositorySha256)) return true;
+  return matches(previous, expected);
 }
 export function beforeApprovedPy101Object(kind: "lessons" | "publications", id: string, value: unknown, throughBaseline?: string) {
   return revisions(throughBaseline).reduce((current, plan) => {

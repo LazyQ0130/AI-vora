@@ -1,0 +1,526 @@
+{
+  "kind": "Node injected storage and real Reader component harness; NOT browser localStorage",
+  "checkedAt": "2026-11-06T10:22:35.599Z",
+  "oldRecordCount": 83,
+  "oldRows": [
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C03-L03:r1",
+      "beforeSha256": "60edc9ff1478ba5f996ba86ce4f5958c890ad301be16d50e0129bb397b958c5e",
+      "afterSha256": "60edc9ff1478ba5f996ba86ce4f5958c890ad301be16d50e0129bb397b958c5e",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C03-L02:r1",
+      "beforeSha256": "fef4966f0c98e42c0ae406e9f3ed0ba4f5564a653eace3e3b9428a640dede38f",
+      "afterSha256": "fef4966f0c98e42c0ae406e9f3ed0ba4f5564a653eace3e3b9428a640dede38f",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C03-L01:r1",
+      "beforeSha256": "7e97283b66b938569a35b4aeaa284281cfa49a493c502c207cf563bfc5f39848",
+      "afterSha256": "7e97283b66b938569a35b4aeaa284281cfa49a493c502c207cf563bfc5f39848",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C02-L06:r1",
+      "beforeSha256": "fd6c3e9209a0a7c4ba13611de47c3edaa7cbbb1e96ff9d708b0572346763b4c0",
+      "afterSha256": "fd6c3e9209a0a7c4ba13611de47c3edaa7cbbb1e96ff9d708b0572346763b4c0",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C02-L06:r2",
+      "beforeSha256": "03219f2725a127c40aa53ab0c5fa66ab5338a1e87dbf911eec15c4235a55f32b",
+      "afterSha256": "03219f2725a127c40aa53ab0c5fa66ab5338a1e87dbf911eec15c4235a55f32b",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C02-L05:r1",
+      "beforeSha256": "8fc6a9f6645e63b3f69e298dd53dc1abd7b9e49e9a6149f79b99378134cb34cf",
+      "afterSha256": "8fc6a9f6645e63b3f69e298dd53dc1abd7b9e49e9a6149f79b99378134cb34cf",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C02-L05:r2",
+      "beforeSha256": "f4829a9fc8f7dd23d1708b0e994b9da52bc048541fe7fdf6f8f4045ad9e87a71",
+      "afterSha256": "f4829a9fc8f7dd23d1708b0e994b9da52bc048541fe7fdf6f8f4045ad9e87a71",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C02-L04:r1",
+      "beforeSha256": "5fc4ce72d18b76596396dd958782a370e6d5847baa0e491d3d1426d58b076e56",
+      "afterSha256": "5fc4ce72d18b76596396dd958782a370e6d5847baa0e491d3d1426d58b076e56",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C02-L04:r2",
+      "beforeSha256": "034e72198e53bdd87378e3d1e236193cc12149b7f7a72469a91eef69b74dc344",
+      "afterSha256": "034e72198e53bdd87378e3d1e236193cc12149b7f7a72469a91eef69b74dc344",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C02-L03:r1",
+      "beforeSha256": "0de87b6dbb0b4efc4ec7e4d29104bd7ad26c97cb1f6c37f9864a922d899321bf",
+      "afterSha256": "0de87b6dbb0b4efc4ec7e4d29104bd7ad26c97cb1f6c37f9864a922d899321bf",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C02-L03:r2",
+      "beforeSha256": "f71378ca7d65cc61861561a50736d7d73abd612023cb45955dbcf98c73969334",
+      "afterSha256": "f71378ca7d65cc61861561a50736d7d73abd612023cb45955dbcf98c73969334",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C02-L02:r1",
+      "beforeSha256": "518c38649cc3cec4e524c596889aef7ae1b75c21b695fc1c1eb59d51bcdeed3e",
+      "afterSha256": "518c38649cc3cec4e524c596889aef7ae1b75c21b695fc1c1eb59d51bcdeed3e",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C02-L02:r2",
+      "beforeSha256": "c719c4c677c821202ba7deb48139adeb1969875bcd36df833ee3e2db6eb7d5a2",
+      "afterSha256": "c719c4c677c821202ba7deb48139adeb1969875bcd36df833ee3e2db6eb7d5a2",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C02-L01:r1",
+      "beforeSha256": "93c64c63954c39cf48defd642041130fa9231a19eb4985e4cb44dc5a1ba0b70e",
+      "afterSha256": "93c64c63954c39cf48defd642041130fa9231a19eb4985e4cb44dc5a1ba0b70e",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C02-L01:r2",
+      "beforeSha256": "d126db6958b7f6b31f6c6b2175099394224943b3c59a426f9d84580f06991d66",
+      "afterSha256": "d126db6958b7f6b31f6c6b2175099394224943b3c59a426f9d84580f06991d66",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C01-L06:r1",
+      "beforeSha256": "151696b2810c9bb86b4b1196a57e67de5c73e7b6e00ce211445fc579a46036fe",
+      "afterSha256": "151696b2810c9bb86b4b1196a57e67de5c73e7b6e00ce211445fc579a46036fe",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C01-L06:r2",
+      "beforeSha256": "a45f7c370713ffeca84693ff66d72a404fa5eef2abfb2a5e9f17d453d856e127",
+      "afterSha256": "a45f7c370713ffeca84693ff66d72a404fa5eef2abfb2a5e9f17d453d856e127",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C01-L02:r1",
+      "beforeSha256": "e0e39dee4df548232a029282e8477e6177598ce4e5980bc0547c78306d403071",
+      "afterSha256": "e0e39dee4df548232a029282e8477e6177598ce4e5980bc0547c78306d403071",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C01-L02:r2",
+      "beforeSha256": "acb3749734fe94f45d605901d35edde85535c7f8132734a38cd6125dfabf3246",
+      "afterSha256": "acb3749734fe94f45d605901d35edde85535c7f8132734a38cd6125dfabf3246",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C01-L03:r1",
+      "beforeSha256": "4162d4e300bdca27678f2e9e0bc7640e7fb884f7e4cddbaee3e78ef824f33afe",
+      "afterSha256": "4162d4e300bdca27678f2e9e0bc7640e7fb884f7e4cddbaee3e78ef824f33afe",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C01-L03:r2",
+      "beforeSha256": "823644bce08b6a3654ead1fdf83453abb51c2bd112a803c461c588adff615d5a",
+      "afterSha256": "823644bce08b6a3654ead1fdf83453abb51c2bd112a803c461c588adff615d5a",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C01-L04:r1",
+      "beforeSha256": "8a1771093f181183f9453f7c3aab852cea3a462f5a7c209b91a825683ded449f",
+      "afterSha256": "8a1771093f181183f9453f7c3aab852cea3a462f5a7c209b91a825683ded449f",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C01-L04:r2",
+      "beforeSha256": "dc8a6b5ab8c15feb271e90f354a84e22d99e427720f4ef10fdb57be0b0d29349",
+      "afterSha256": "dc8a6b5ab8c15feb271e90f354a84e22d99e427720f4ef10fdb57be0b0d29349",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C01-L05:r1",
+      "beforeSha256": "15d35cfe6882ac114775abca6ebc452a520bba078aab8c23bf4a21c94cddf744",
+      "afterSha256": "15d35cfe6882ac114775abca6ebc452a520bba078aab8c23bf4a21c94cddf744",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C01-L05:r2",
+      "beforeSha256": "0ae04463f6311c904de8c2952f4e377df85e791ab0e8fdeafd18e4db6ed8ad77",
+      "afterSha256": "0ae04463f6311c904de8c2952f4e377df85e791ab0e8fdeafd18e4db6ed8ad77",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C01-L01:r1",
+      "beforeSha256": "7cdf8f6d81dd82c5e49cbd2804e4f9b21f94ce593dbdef726d84aa486e361ded",
+      "afterSha256": "7cdf8f6d81dd82c5e49cbd2804e4f9b21f94ce593dbdef726d84aa486e361ded",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C01-L01:r2",
+      "beforeSha256": "041d2f352c6aceb41ab0e3c89740e98d3b7ace9d2b7703f58296d825d6c2be11",
+      "afterSha256": "041d2f352c6aceb41ab0e3c89740e98d3b7ace9d2b7703f58296d825d6c2be11",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C01-L01:r1",
+      "beforeSha256": "76ea63614e0ca704142bf4cb17e1c56a6bcf27d4a65199e6119437829eb45048",
+      "afterSha256": "76ea63614e0ca704142bf4cb17e1c56a6bcf27d4a65199e6119437829eb45048",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C01-L01:r2",
+      "beforeSha256": "813e10dff28c806843a129abe093742e9a5bdcc8ae8a26776cb19b2ad10f36df",
+      "afterSha256": "813e10dff28c806843a129abe093742e9a5bdcc8ae8a26776cb19b2ad10f36df",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C01-L02:r1",
+      "beforeSha256": "09564b9deff0bb6c392d7ef7b3450a9776d449721adec78768d3bb8c54f147e6",
+      "afterSha256": "09564b9deff0bb6c392d7ef7b3450a9776d449721adec78768d3bb8c54f147e6",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C01-L02:r2",
+      "beforeSha256": "c8a0f99206fabf75f6013d6e0317c24550b951642b93e3fba2bb4d10fb18ce68",
+      "afterSha256": "c8a0f99206fabf75f6013d6e0317c24550b951642b93e3fba2bb4d10fb18ce68",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C01-L03:r1",
+      "beforeSha256": "a95d62e10073422c8487ad722293dd7f5faf06002b0f024f831573386c1a9262",
+      "afterSha256": "a95d62e10073422c8487ad722293dd7f5faf06002b0f024f831573386c1a9262",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C02-L01:r1",
+      "beforeSha256": "51cb41e51e8b7b46a906afee1fa61eb780b01e7ee529402ef39e2dc5dbd588e9",
+      "afterSha256": "51cb41e51e8b7b46a906afee1fa61eb780b01e7ee529402ef39e2dc5dbd588e9",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C02-L01:r2",
+      "beforeSha256": "97c77db8c94b0d9a36e68b641b1efd4660d89b57453d014b33813239aabc00e1",
+      "afterSha256": "97c77db8c94b0d9a36e68b641b1efd4660d89b57453d014b33813239aabc00e1",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C02-L02:r1",
+      "beforeSha256": "6a2318b335da573ee725443985fe690147c614febc9b2e851a2363bf79843761",
+      "afterSha256": "6a2318b335da573ee725443985fe690147c614febc9b2e851a2363bf79843761",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C03-L01:r1",
+      "beforeSha256": "1ecca201ee4c0fc757efd3fb8e37060a4a299c7c7eda2826dfe08c95c6f2c5cb",
+      "afterSha256": "1ecca201ee4c0fc757efd3fb8e37060a4a299c7c7eda2826dfe08c95c6f2c5cb",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C03-L02:r1",
+      "beforeSha256": "6cf65cf41313ce3dcf8d10f4d0855eafc4a8778b0936fbf9d4c14826a17eca11",
+      "afterSha256": "6cf65cf41313ce3dcf8d10f4d0855eafc4a8778b0936fbf9d4c14826a17eca11",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C03-L02:r2",
+      "beforeSha256": "3ada5c61eaa5a5ae37a961fc963cd4236fc6bcbe87c320c1065e1af46a5088c2",
+      "afterSha256": "3ada5c61eaa5a5ae37a961fc963cd4236fc6bcbe87c320c1065e1af46a5088c2",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C03-L03:r1",
+      "beforeSha256": "4c589af411938dbce10e2cd8413a149a87b743ae95d71a80ecd3a69bf1791e2a",
+      "afterSha256": "4c589af411938dbce10e2cd8413a149a87b743ae95d71a80ecd3a69bf1791e2a",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C03-L04:r1",
+      "beforeSha256": "2bda10f6874621af30d89e1acd284003ba4994de73b9f1c1d637a532b33c5a55",
+      "afterSha256": "2bda10f6874621af30d89e1acd284003ba4994de73b9f1c1d637a532b33c5a55",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C04-L01:r1",
+      "beforeSha256": "6180a238a477505f674fcbe56f219c29d33ad6aeb057701a121b1d4af90d5cc4",
+      "afterSha256": "6180a238a477505f674fcbe56f219c29d33ad6aeb057701a121b1d4af90d5cc4",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C04-L02:r1",
+      "beforeSha256": "10f305c6617df446928f018c5f55ce362b557b9d7ce22d2c96e0ef507df6a844",
+      "afterSha256": "10f305c6617df446928f018c5f55ce362b557b9d7ce22d2c96e0ef507df6a844",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C04-L03:r1",
+      "beforeSha256": "372e8a98536613310e2f80ca010d5afd5ba260a64c03437fba6380d99aa61b8e",
+      "afterSha256": "372e8a98536613310e2f80ca010d5afd5ba260a64c03437fba6380d99aa61b8e",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C04-L04:r1",
+      "beforeSha256": "9d20dfd05fde5e9ef3aab96007bacc0bb9f4f1fed385be8505b25c82dd6d24c4",
+      "afterSha256": "9d20dfd05fde5e9ef3aab96007bacc0bb9f4f1fed385be8505b25c82dd6d24c4",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C05-L01:r1",
+      "beforeSha256": "2c058d61264d10698f7df6284d609caadaaa7b34dec70382fb8139ff059a08c5",
+      "afterSha256": "2c058d61264d10698f7df6284d609caadaaa7b34dec70382fb8139ff059a08c5",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C05-L02:r1",
+      "beforeSha256": "960d0ce975d6ffc7913502be3e1e69c0f8ac48dfee20c9fee31955d1d0e70228",
+      "afterSha256": "960d0ce975d6ffc7913502be3e1e69c0f8ac48dfee20c9fee31955d1d0e70228",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C05-L03:r1",
+      "beforeSha256": "0e1b5a0f60b2c7bc4f8aae20e0918e692f997637430eefdcf14b0e435b02dc1f",
+      "afterSha256": "0e1b5a0f60b2c7bc4f8aae20e0918e692f997637430eefdcf14b0e435b02dc1f",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C05-L03:r2",
+      "beforeSha256": "861fcfe1c2c202dd1b3fc9211231912ad91dc136f420698f74bcef0458611acc",
+      "afterSha256": "861fcfe1c2c202dd1b3fc9211231912ad91dc136f420698f74bcef0458611acc",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C05-L04:r1",
+      "beforeSha256": "28ae67cdb28166b52dbb3857bf35cd74c25f0c8c6e7cc0389e19a3541afc13aa",
+      "afterSha256": "28ae67cdb28166b52dbb3857bf35cd74c25f0c8c6e7cc0389e19a3541afc13aa",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C05-L05:r1",
+      "beforeSha256": "f0867c638e78ccfacc3559bb92a36e2d8b135ff19f163f9e7933426612998f5a",
+      "afterSha256": "f0867c638e78ccfacc3559bb92a36e2d8b135ff19f163f9e7933426612998f5a",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C06-L01:r1",
+      "beforeSha256": "413ae44204f56378937cb60388945e7830a59f5e642e6bcbf51bfd747a309781",
+      "afterSha256": "413ae44204f56378937cb60388945e7830a59f5e642e6bcbf51bfd747a309781",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C06-L02:r1",
+      "beforeSha256": "fb8eb336104a7884d8dab573ade259b8f96aef8e39a6f38d6ec0e3e7706b3e9f",
+      "afterSha256": "fb8eb336104a7884d8dab573ade259b8f96aef8e39a6f38d6ec0e3e7706b3e9f",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C06-L03:r1",
+      "beforeSha256": "0dcc14bd8c26eafdfbd162e1e64642fd3d0bef04e977e8c7bec7c17ae7b3e228",
+      "afterSha256": "0dcc14bd8c26eafdfbd162e1e64642fd3d0bef04e977e8c7bec7c17ae7b3e228",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C06-L03:r2",
+      "beforeSha256": "598dc87cad33a7332e1359153fef77aa66602e18e58135fe5825688c1d12f1ce",
+      "afterSha256": "598dc87cad33a7332e1359153fef77aa66602e18e58135fe5825688c1d12f1ce",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C07-L01:r1",
+      "beforeSha256": "59ef7a0aead5abab13b8cb8bd92eb84d4d744a09fdc318b3abb8e95ff0fa5eff",
+      "afterSha256": "59ef7a0aead5abab13b8cb8bd92eb84d4d744a09fdc318b3abb8e95ff0fa5eff",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C07-L02:r1",
+      "beforeSha256": "cec49234d838de6e852c2a1c74d6c153fe94bf37ca145ae742bb09effa8ddf6b",
+      "afterSha256": "cec49234d838de6e852c2a1c74d6c153fe94bf37ca145ae742bb09effa8ddf6b",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:AI000:AI000-C07-L03:r1",
+      "beforeSha256": "692265c0e07a5701df03a62d65df822ecd2c6439fa8b12f0a1e8b29782871624",
+      "afterSha256": "692265c0e07a5701df03a62d65df822ecd2c6439fa8b12f0a1e8b29782871624",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:MA101:MA101-C02-L03:r1",
+      "beforeSha256": "fa4f4f0992a4994d1f0d837e926864e75ec170b1c5f06b70886f7ff647189283",
+      "afterSha256": "fa4f4f0992a4994d1f0d837e926864e75ec170b1c5f06b70886f7ff647189283",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:MA101:MA101-C02-L03:r2",
+      "beforeSha256": "1e1636112dd987c3f9ca484fb5a519021f6050e72465442703793ef8f0959dae",
+      "afterSha256": "1e1636112dd987c3f9ca484fb5a519021f6050e72465442703793ef8f0959dae",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:MA101:MA101-C02-L04:r1",
+      "beforeSha256": "38333315a1383dfcc83883259fae4345d3c1a546d9a819426719da79f7b6605e",
+      "afterSha256": "38333315a1383dfcc83883259fae4345d3c1a546d9a819426719da79f7b6605e",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:MA101:MA101-C02-L05:r1",
+      "beforeSha256": "b74902fa522fc573d561703c6c49d0c01a0b90c1658e2c7e2e6918e65b4eeeff",
+      "afterSha256": "b74902fa522fc573d561703c6c49d0c01a0b90c1658e2c7e2e6918e65b4eeeff",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:MA101:MA101-C02-L06:r1",
+      "beforeSha256": "78120f05562dfd1232c07af766fc846946f3a71786aae41d77e03d3208f25419",
+      "afterSha256": "78120f05562dfd1232c07af766fc846946f3a71786aae41d77e03d3208f25419",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:ML201:ML201-C03-L01:r1",
+      "beforeSha256": "283fb788a4b985f2f9f57f00506186840dd61eac329713c3ecbb07995ea032bb",
+      "afterSha256": "283fb788a4b985f2f9f57f00506186840dd61eac329713c3ecbb07995ea032bb",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:ML201:ML201-C03-L02:r1",
+      "beforeSha256": "e35ed6dda71c1fb5dd6a8f04e0165483def545756ec2561f7bae9b13598da19b",
+      "afterSha256": "e35ed6dda71c1fb5dd6a8f04e0165483def545756ec2561f7bae9b13598da19b",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:ML201:ML201-C03-L03:r1",
+      "beforeSha256": "ae72e12671495642e7cd6d906c3d143dca8932217ba3703225e9baced5187ded",
+      "afterSha256": "ae72e12671495642e7cd6d906c3d143dca8932217ba3703225e9baced5187ded",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:ML201:ML201-C04-L02:r1",
+      "beforeSha256": "2fce6954647df990cfcf873d5039b24fd4668d7e0d0a3d4327269252581dfb9e",
+      "afterSha256": "2fce6954647df990cfcf873d5039b24fd4668d7e0d0a3d4327269252581dfb9e",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:ML201:ML201-C04-L03:r1",
+      "beforeSha256": "cb0c866698280416c0005a47579fae1749cb018a790b83ffcb5d6c04216e5a86",
+      "afterSha256": "cb0c866698280416c0005a47579fae1749cb018a790b83ffcb5d6c04216e5a86",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:ML201:ML201-C04-L04:r1",
+      "beforeSha256": "3c7919ce539030bc15a6641a3992ed0a3097892b62efaa302a16ce7dd5d3a43f",
+      "afterSha256": "3c7919ce539030bc15a6641a3992ed0a3097892b62efaa302a16ce7dd5d3a43f",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:ML201:ML201-C04-L05:r1",
+      "beforeSha256": "4db418a430d15900f69debf95f6103e0125789bb6d3cd1924b8285e475e69c16",
+      "afterSha256": "4db418a430d15900f69debf95f6103e0125789bb6d3cd1924b8285e475e69c16",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:ML201:ML201-C04-L01:r1",
+      "beforeSha256": "c02b54f4add1cd8d5c781491b5295956c21fa3c7d89023fdc5f8499efc8a6969",
+      "afterSha256": "c02b54f4add1cd8d5c781491b5295956c21fa3c7d89023fdc5f8499efc8a6969",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C05-L01:r1",
+      "beforeSha256": "373933eb52b9e500004fdfb48e18e0d8be348aba00d52e6e52bdbae8f6b0b9aa",
+      "afterSha256": "373933eb52b9e500004fdfb48e18e0d8be348aba00d52e6e52bdbae8f6b0b9aa",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C05-L01:r2",
+      "beforeSha256": "318cfaa36712f7d78f79e0d4bfe57dcf53513057324619c726793924f48eb56a",
+      "afterSha256": "318cfaa36712f7d78f79e0d4bfe57dcf53513057324619c726793924f48eb56a",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C05-L02:r1",
+      "beforeSha256": "459b6587817b8b8f0cf7c7f8912696ff86a1c316a6a2b134a107b3981a3c9c8d",
+      "afterSha256": "459b6587817b8b8f0cf7c7f8912696ff86a1c316a6a2b134a107b3981a3c9c8d",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C05-L03:r1",
+      "beforeSha256": "8f1d4ba7592786f48e18322226015fb59e359a9a404eabd917df3d03c78099d9",
+      "afterSha256": "8f1d4ba7592786f48e18322226015fb59e359a9a404eabd917df3d03c78099d9",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C05-L04:r1",
+      "beforeSha256": "69d0779c791c2e55d9d8ab86a9ee34f14dc092b7e7c801211c8502778d11e59d",
+      "afterSha256": "69d0779c791c2e55d9d8ab86a9ee34f14dc092b7e7c801211c8502778d11e59d",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C05-L05:r1",
+      "beforeSha256": "53063b6d42f53f83000dfccff7480ca9658d85d0db84af80e0ad77a8ab90ae90",
+      "afterSha256": "53063b6d42f53f83000dfccff7480ca9658d85d0db84af80e0ad77a8ab90ae90",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:MA101:MA101-C02-L01:r1",
+      "beforeSha256": "ecaeb3ef501a48b6bf8b547414dc6671d78e8477d5d6093200cd57a627d99a55",
+      "afterSha256": "ecaeb3ef501a48b6bf8b547414dc6671d78e8477d5d6093200cd57a627d99a55",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:MA101:MA101-C02-L02:r1",
+      "beforeSha256": "58868e7e8d347c9a834643b3b57cf8db0341ce7de5948895dd903ca8fa210ac4",
+      "afterSha256": "58868e7e8d347c9a834643b3b57cf8db0341ce7de5948895dd903ca8fa210ac4",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:MA101:MA101-C03-L01:r1",
+      "beforeSha256": "a7a4ca9fd077dc95fda88f37ace67458db3a0fa853c050ce1cf876912cfb6bf1",
+      "afterSha256": "a7a4ca9fd077dc95fda88f37ace67458db3a0fa853c050ce1cf876912cfb6bf1",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:MA101:MA101-C03-L02:r1",
+      "beforeSha256": "2e1dd74ef00b45932dd562fa86fa93e4a45744faca45e2abe59af537f25347fa",
+      "afterSha256": "2e1dd74ef00b45932dd562fa86fa93e4a45744faca45e2abe59af537f25347fa",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:MA101:MA101-C03-L03:r1",
+      "beforeSha256": "abace072263f8cda5616e1b0cca88d4dbde15f6b7f85a50389cdaa217cff6b91",
+      "afterSha256": "abace072263f8cda5616e1b0cca88d4dbde15f6b7f85a50389cdaa217cff6b91",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v2:PY101:PY101-C05-L06:r1",
+      "beforeSha256": "e5abb65a6ffea96dd0b669790299e1dc0a3f66c941fad62033f8f80143fb6e16",
+      "afterSha256": "e5abb65a6ffea96dd0b669790299e1dc0a3f66c941fad62033f8f80143fb6e16",
+      "byteIdentical": true
+    },
+    {
+      "key": "aivora:learning:v1",
+      "beforeSha256": "fd5c31c1127f18045c5a535e24de3fa01f541cea52c751ece4277da27fb4fac5",
+      "afterSha256": "fd5c31c1127f18045c5a535e24de3fa01f541cea52c751ece4277da27fb4fac5",
+      "byteIdentical": true
+    }
+  ],
+  "newKey": "aivora:learning:v2:PY101:PY101-C03-L04:r1",
+  "newRecord": {
+    "version": 2,
+    "courseId": "PY101",
+    "lessonId": "PY101-C03-L04",
+    "contentVersion": 1,
+    "percent": 18,
+    "completed": false,
+    "section": "order-matters",
+    "updatedAt": 1793960555598
+  },
+  "writes": [
+    {
+      "time": 0,
+      "pathname": "/learn/PY101/PY101-C03-L04",
+      "key": "aivora:learning:v2:PY101:PY101-C03-L04:r1",
+      "before": null,
+      "after": "{\"version\":2,\"courseId\":\"PY101\",\"lessonId\":\"PY101-C03-L04\",\"contentVersion\":1,\"percent\":18,\"completed\":false,\"section\":\"order-matters\",\"updatedAt\":1793960555598}"
+    }
+  ],
+  "allOldStringsIdentical": true
+}

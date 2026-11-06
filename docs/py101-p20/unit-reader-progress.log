@@ -1,0 +1,27 @@
+✔ 按课程、课时、内容修订独立保存，完成标记与最高比例不会被滚动回退 (1.6268ms)
+✔ v1 只迁移原 ML 样章且幂等，不删除旧记录，合法 v2 优先 (0.2732ms)
+✔ 损坏、跨课程、非法段落和未来版本数据不会污染进度 (0.4668ms)
+✔ 写入被拒时使用各课时会话状态，外部事件不覆盖未落盘记录 (0.2278ms)
+✔ 成功保存后外部标签的新记录和清除事件可被观察 (0.1281ms)
+✔ 无订阅期间外部清除的键不会被已落盘内存缓存复活 (0.0799ms)
+✔ saved section survives nonzero initial SPA geometry, cleanup and same-lesson remount (168.977ms)
+✔ a genuine reading scroll flushes once before debounce; pagehide plus cleanup is idempotent (23.6253ms)
+✔ after debounce, route/reset geometry and cleanup cannot replace the accepted section (21.6124ms)
+✔ explicit smooth anchor owns the bookmark through intermediate sections and immediate departure (19.6271ms)
+✔ completed status and high-water percent survive subsequent accepted scrolls (17.5922ms)
+✔ continuous lesson switching never shares accepted points or timers across scopes (54.989ms)
+✔ React reactivation resumes input saving without replaying stale geometry (13.8761ms)
+✔ denied persistent storage keeps accepted reading in the existing session fallback (13.2312ms)
+✔ 学习面板把 AI 两道达标题按正文顺序显示一次，保留一题对应多个目标 (17.3937ms)
+✔ 所有教材面板入口对应真实练习，核心与可选层级不混淆 (229.4618ms)
+✔ 目标短文案绑定正式原文，拒绝未知、重复及过期绑定 (19.0006ms)
+✔ 面板展示类型与正文相同，阅读比例与手动标记可独立呈现 (3.8358ms)
+✔ AI r2考核重编保留r1历史，迁出锚点有明确去向且不继承完成 (0.7446ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1417.222

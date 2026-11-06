@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-11-06T10:18:49.616Z",
+  "python": "Python 3.14.2",
+  "node": "v24.16.0",
+  "method": "Actual webpage Copy -> clipboard -> original file bytes -> fresh CPython process; literal predictions, canonical source check before execution",
+  "rows": [
+    {
+      "file": "copied-while-main.py",
+      "key": "main",
+      "source": "packed = 0\ntarget = 3\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")",
+      "sha256": "05a833f34c36e112e2cdda445dd003f8bf723f93d4b1fe3007d0a27bc6a591a2",
+      "canonicalSourceIdentical": true,
+      "cwd": "<WORKTREE>/docs/py101-p20/",
+      "command": [
+        "python",
+        "copied-while-main.py"
+      ],
+      "pid": 27600,
+      "timeoutMs": 10000,
+      "predictedStdout": "1\n2\n3\nPacking finished\n",
+      "exitCode": 0,
+      "stdout": "1\r\n2\r\n3\r\nPacking finished\r\n",
+      "stderr": "",
+      "matched": true
+    },
+    {
+      "file": "copied-while-repaired.py",
+      "key": "fixed",
+      "source": "packed = 2\ntarget = 5\n\nwhile packed < target:\n    packed = packed + 1\n    print(packed)\n\nprint(\"Packing finished\")",
+      "sha256": "377bde4be41995c6c62b0e7aab12e6dfc9ab7c9d0250d7f793ed0f1a6fb1cbf9",
+      "canonicalSourceIdentical": true,
+      "cwd": "<WORKTREE>/docs/py101-p20/",
+      "command": [
+        "python",
+        "copied-while-repaired.py"
+      ],
+      "pid": 22464,
+      "timeoutMs": 10000,
+      "predictedStdout": "3\n4\n5\nPacking finished\n",
+      "exitCode": 0,
+      "stdout": "3\r\n4\r\n5\r\nPacking finished\r\n",
+      "stderr": "",
+      "matched": true
+    }
+  ]
+}

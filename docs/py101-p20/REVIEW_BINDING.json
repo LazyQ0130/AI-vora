@@ -1,0 +1,77 @@
+{
+  "checkedAt": "2026-11-06T10:27:43.048823+00:00",
+  "baseline": "d50d2a48b4919d6b387646982f5163ee276c8a7d",
+  "scope": "Reader repair plus PY101-C03-L04/r1 pending-review/preview",
+  "oldLessonCount": 63,
+  "oldScopesUnchanged": true,
+  "otherPublicationCountUnchanged": 62,
+  "publicationChanges": [
+    {
+      "id": "PY101-C03-L04",
+      "before": {
+        "lessonId": "PY101-C03-L04",
+        "courseId": "PY101",
+        "chapterId": "PY101-C03",
+        "title": "让程序重复执行直到条件变化",
+        "contentVersion": 1,
+        "order": 4,
+        "catalogRole": "current",
+        "optionalLesson": false,
+        "status": "draft",
+        "access": "private"
+      },
+      "afterSha256": "a9fec69b4abccce813fae16423181a6a7da1edec0f83fde39d05fb8814b483a5"
+    }
+  ],
+  "sources": [
+    {
+      "path": "src/components/lesson/reader.tsx",
+      "sha256LF": "ffb0bc6df33b6bf5c615683fe6ebdc912254af99b9ef35f7ef788a2cf8566cb0"
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "sha256LF": "5cc0f5f09b282e71b08b0cb9a63052b552a74b56fc80a97d05aa97737a8877d6"
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "sha256LF": "647d0c3099c2f6020a743f09d850c08dd860f5c2634d8e1799b6d671a35e7db3"
+    },
+    {
+      "path": "tests/py101-while-repetition.test.ts",
+      "sha256LF": "bbb0f07ddd506e71e9c668ea7d04d50221e17692571b0f39434a56b9ebce8c9e"
+    },
+    {
+      "path": "src/lib/reader-progress-session.ts",
+      "sha256LF": "49b0fa0a51054d5586d3d138125972206f6119ab379ee289aa9870d2310cb77f"
+    },
+    {
+      "path": "scripts/review-py101-p20.ts",
+      "sha256LF": "1353bd29e7be08fcda4ccdaab42596b8158a5c8bf57a36fd3425c43b6091f5fe"
+    },
+    {
+      "path": "tests/helpers/py101-p19-view.ts",
+      "sha256LF": "0620b739ea1cb66936ca75b4a45c7f7538bd1a0d4c75e1fdae69ec7536152146"
+    },
+    {
+      "path": "tests/helpers/reader-lifecycle.ts",
+      "sha256LF": "5c9fb0821655f86594842e4ddfea8176f38ee72f552a1feb7c381ef441c6f11d"
+    },
+    {
+      "path": "tests/reader-bookmark-lifecycle.test.ts",
+      "sha256LF": "ffb558b712a8bdedfe3c388bed58a8d1caeb839bffba6b22aa4e7c62fc432513"
+    },
+    {
+      "path": "tests/reader-publication-gate.test.ts",
+      "sha256LF": "dca0e52a64d3b55012c3b88d5d84dff5b173fa333a86d835164198d8205b333a"
+    }
+  ],
+  "artifactRunnerSha256": "15be83fa3bdc5b46191fc03ec5f91392758401011af9c3f23bccb8a299ec4118",
+  "nodeTests": 417,
+  "readerProgressPanelTests": 26,
+  "originalWorkspaceHeadRetained": "d50d2a48b4919d6b387646982f5163ee276c8a7d",
+  "humanTeacherReview": false,
+  "chineseEditorialReview": false,
+  "studentPilot": false,
+  "macOSRuntimeVerified": false,
+  "p1ClosedInRecordedProductionMatrix": true
+}

@@ -1,0 +1,94 @@
+✔ saved section survives nonzero initial SPA geometry, cleanup and same-lesson remount (152.6065ms)
+✔ a genuine reading scroll flushes once before debounce; pagehide plus cleanup is idempotent (22.442ms)
+✔ after debounce, route/reset geometry and cleanup cannot replace the accepted section (26.1696ms)
+✔ explicit smooth anchor owns the bookmark through intermediate sections and immediate departure (20.1394ms)
+✔ completed status and high-water percent survive subsequent accepted scrolls (19.652ms)
+✔ continuous lesson switching never shares accepted points or timers across scopes (53.7806ms)
+✔ React reactivation resumes input saving without replaying stale geometry (22.5759ms)
+✔ denied persistent storage keeps accepted reading in the existing session fallback (17.7616ms)
+✔ keyboard and touch input persist ordinary reading, idle hover and layout scroll do not (17.4241ms)
+✔ click-to-leave closes an active reading gesture before route geometry can change (15.2095ms)
+✔ real completion button cancels pending save and ordinary reading cannot undo completion (14.7565ms)
+✔ a new 3.4 reading session leaves all other lesson/revision fixture strings byte-identical (21.1743ms)
+✖ accepted scroll is captured before pending UI animation frame on scrollend (15.1569ms)
+✖ accepted scroll is captured before pending UI animation frame on pagehide (15.7835ms)
+✖ accepted scroll is captured before pending UI animation frame on unmount (15.6177ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 12
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1510.4726
+
+✖ failing tests:
+
+test at tests\reader-bookmark-lifecycle.test.ts:86:58
+✖ accepted scroll is captured before pending UI animation frame on scrollend (15.1569ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'short-circuit'
+  - 'five-values'
+
+      at TestContext.<anonymous> (<WORKTREE>\tests\reader-bookmark-lifecycle.test.ts:89:26)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'short-circuit',
+    expected: 'five-values',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\reader-bookmark-lifecycle.test.ts:86:58
+✖ accepted scroll is captured before pending UI animation frame on pagehide (15.7835ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'short-circuit'
+  - 'five-values'
+
+      at TestContext.<anonymous> (<WORKTREE>\tests\reader-bookmark-lifecycle.test.ts:89:26)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'short-circuit',
+    expected: 'five-values',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\reader-bookmark-lifecycle.test.ts:86:58
+✖ accepted scroll is captured before pending UI animation frame on unmount (15.6177ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'short-circuit'
+  - 'five-values'
+
+      at TestContext.<anonymous> (<WORKTREE>\tests\reader-bookmark-lifecycle.test.ts:89:26)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'short-circuit',
+    expected: 'five-values',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

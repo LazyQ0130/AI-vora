@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useReducedMotion } from "motion/react";
 import {
@@ -26,6 +26,7 @@ import {
   lessonProgressScope,
   useLessonProgress,
 } from "@/lib/use-learning-progress";
+import { createReaderProgressSession } from "@/lib/reader-progress-session";
 import {
   LessonNavigation,
 } from "./blocks";
@@ -71,7 +72,11 @@ export function Reader({
   const saved = useLessonProgress(scope);
   const completed = saved?.completed ?? false;
   const displayProgress = Math.max(progress, saved?.percent ?? 0);
-  const latest = useRef({ percent: 0, section: firstSection });
+  const reading = useMemo(() => createReaderProgressSession(
+    scope,
+    (...args) => learningProgressStore.save(...args),
+    { later: (callback, ms) => window.setTimeout(callback, ms), cancel: id => window.clearTimeout(id) },
+  ), [scope]);
   const [tocOpen, setTocOpen] = useState(false);
   const [articleOpen, setArticleOpen] = useState(false);
   const pendingSection = useRef<string | null>(null);
@@ -88,7 +93,60 @@ export function Reader({
   const quizCount = blocks.filter((b) => b.type === "quiz").length;
   const experimentCount = blocks.filter((b) => b.type === "experiment").length;
 
+  useEffect(() => {
+    reading.activate();
+    const path = `/learn/${scope.courseId}/${scope.lessonId}`;
+    const arm = () => { if (window.location.pathname === path) reading.arm(); };
+    const key = (event: KeyboardEvent) => {
+      const target = event.target as HTMLElement | null;
+      if (target?.isContentEditable || target?.matches?.("input, textarea, select")) return;
+      if (["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "].includes(event.key)) arm();
+    };
+    const pointer = (event: PointerEvent) => {
+      if ((event.type === "pointerdown" && event.button === 0) || event.buttons === 1) arm();
+    };
+    const leave = (event: MouseEvent) => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const link = (event.target as Element | null)?.closest?.<HTMLAnchorElement>("a[href]");
+      if (!link || link.download || (link.target && link.target !== "_self")) return;
+      const url = new URL(link.href, window.location.href);
+      if (url.origin !== window.location.origin || url.pathname !== path) reading.flush();
+    };
+    const flush = () => { reading.flush(); };
+    window.addEventListener("wheel", arm, { passive: true });
+    window.addEventListener("touchmove", arm, { passive: true });
+    window.addEventListener("keydown", key);
+    window.addEventListener("pointerdown", pointer);
+    window.addEventListener("pointermove", pointer);
+    document.addEventListener("click", leave, true);
+    window.addEventListener("popstate", flush);
+    window.addEventListener("pagehide", flush);
+    window.addEventListener("scrollend", flush);
+    return () => {
+      window.removeEventListener("wheel", arm);
+      window.removeEventListener("touchmove", arm);
+      window.removeEventListener("keydown", key);
+      window.removeEventListener("pointerdown", pointer);
+      window.removeEventListener("pointermove", pointer);
+      document.removeEventListener("click", leave, true);
+      window.removeEventListener("popstate", flush);
+      window.removeEventListener("pagehide", flush);
+      window.removeEventListener("scrollend", flush);
+      reading.dispose();
+    };
+  }, [reading, scope]);
+  const bookmarkTarget = useCallback((targetId: string) => {
+    const target = document.getElementById(targetId);
+    const section = target?.closest<HTMLElement>(".lesson-section");
+    const rect = article.current?.getBoundingClientRect();
+    if (!section || !rect) return;
+    reading.anchor({
+      section: section.id,
+      percent: ((section.getBoundingClientRect().top - rect.top - 75) / Math.max(rect.height - innerHeight + 130, 1)) * 100,
+    });
+  }, [reading]);
   function navigate(targetId: string) {
+    bookmarkTarget(targetId);
     window.history.replaceState(null, "", `#${targetId}`);
     const reduceMotion = reduce || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     revealTarget(targetId, reduceMotion ? "instant" : "smooth");
@@ -101,12 +159,13 @@ export function Reader({
         setArticleOpen(true);
         return;
       }
+      bookmarkTarget(hash);
       revealTarget(hash, "instant");
     };
     reveal();
     window.addEventListener("hashchange", reveal);
     return () => window.removeEventListener("hashchange", reveal);
-  }, [lesson.id]);
+  }, [lesson.id, bookmarkTarget]);
   useEffect(() => {
     const rail = sidebar.current?.querySelector<HTMLElement>(".chapter-toc");
     const current = rail?.querySelector<HTMLElement>(
@@ -127,47 +186,20 @@ export function Reader({
       });
   }, [lesson.id, reduce]);
   useEffect(() => {
-    latest.current = { percent: progress, section: active };
-    // 无 hash 重开页面时仍在标题区，不能把旧书签覆盖成首段。
-    if (progress === 0 && active === firstSection) return;
-    const timer = window.setTimeout(
-      () => learningProgressStore.save(scope, progress, active),
-      450,
-    );
-    return () => window.clearTimeout(timer);
-  }, [progress, active, firstSection, scope]);
-  useEffect(() => {
-    const flush = () => {
-      if (latest.current.percent === 0 && latest.current.section === firstSection) return;
-      learningProgressStore.save(
-        scope,
-        latest.current.percent,
-        latest.current.section,
-      );
-    };
-    window.addEventListener("pagehide", flush);
-    return () => {
-      window.removeEventListener("pagehide", flush);
-      flush();
-    };
-  }, [firstSection, scope]);
-  useEffect(() => {
     let frame = 0;
     const sections = Array.from(
       article.current?.querySelectorAll<HTMLElement>(".lesson-section") ?? [],
     );
-    const update = () => {
-      if (!article.current) return;
+    const measure = () => {
+      if (!article.current) return null;
       const rect = article.current.getBoundingClientRect();
       const available = rect.height - innerHeight + 130;
-      setProgress(
-        Math.round(
+      const percent = Math.round(
           Math.max(
             0,
             Math.min(100, ((-rect.top + 115) / Math.max(available, 1)) * 100),
           ),
-        ),
-      );
+        );
       const navigation = document.querySelector(".reader-section-nav");
       const checkpoint = navigation
         ? Math.max(190, navigation.getBoundingClientRect().bottom + 36)
@@ -175,10 +207,20 @@ export function Reader({
       const current = sections.findLast(
         (section) => section.getBoundingClientRect().top <= checkpoint,
       );
-      setActive(current?.id ?? firstSection);
+      return { percent, section: current?.id ?? firstSection };
+    };
+    const update = () => {
+      const point = measure();
+      if (point) { setProgress(point.percent); setActive(point.section); }
       frame = 0;
     };
-    const onScroll = () => {
+    const onScroll = (event: Event) => {
+      // scrollend/pagehide may precede the queued UI frame. Accept an eligible
+      // scroll's point now; routing/layout frames still only update the UI.
+      if (event.type === "scroll" && window.location.pathname === `/learn/${scope.courseId}/${scope.lessonId}`) {
+        const point = measure();
+        if (point) reading.observe(point);
+      }
       if (!frame) frame = requestAnimationFrame(update);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -192,7 +234,7 @@ export function Reader({
       currentArticle?.removeEventListener("toggle", onScroll, true);
       cancelAnimationFrame(frame);
     };
-  }, [firstSection]);
+  }, [firstSection, reading, scope]);
 
   return (
     <div className="reader-layout reader-v2">
@@ -390,12 +432,7 @@ export function Reader({
           <button
             className={`button ${completed ? "button-secondary" : "button-primary"}`}
             onClick={() => {
-              const persisted = learningProgressStore.save(
-                scope,
-                100,
-                active,
-                true,
-              );
+              const persisted = reading.complete({ percent: 100, section: active });
               toast(
                 persisted
                   ? "本节已读完，进度已保存在当前浏览器"

@@ -6,8 +6,7 @@ import { pythonWhileRepetitionLesson as lesson } from "../src/content/lessons/py
 import { whileCode, whileBlockNames, missingUpdateForPaper } from "../src/content/resources/python-while-repetition";
 import { whileCases, whileKey, assertFiniteCounter, runWhileExample } from "../scripts/validate-py101-while";
 import { checkConditionalResult } from "../scripts/validate-py101-conditional";
-import { lessonRegistry, getLearningCourse, getAdjacentLessons, resolveLesson } from "../src/lib/course-engine";
-import { publicationManifest } from "../src/content/publication-manifest";
+import { lessonRegistry, getLearningCourse, getAdjacentLessons, resolveLesson, publicationManifest } from "./helpers/py101-p19-view";
 import { publicationSchema, isReadable, type ContentBlock } from "../src/content/models";
 import { createProgressStore, parseReadingProgress, progressKey, type ProgressScope } from "../src/lib/learning-progress";
 import { lessonProgressScope } from "../src/lib/use-learning-progress";

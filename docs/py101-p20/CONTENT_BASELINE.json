@@ -1,0 +1,1879 @@
+{
+  "baseline": "d50d2a48b4919d6b387646982f5163ee276c8a7d",
+  "lessons": {
+    "PY101-C03-L04": "33f8ed8d3d9402e1a6ec890116303618358f5c6d31b9f209bb3a7abfce1366c0",
+    "PY101-C03-L03": "8c3849dd0e7100e4fc5dd89045ec759393e43f9bf68d8e24246bcc5654006ed0",
+    "PY101-C03-L02": "27198c10a1d2abfaa163596dfd27c80c43440e34e0fe02583e0c64375d5acf31",
+    "PY101-C03-L01": "328312fe3d056eb32eb19a7543ee96e77d96a9677841a2d220bd2b797adb1e90",
+    "PY101-C02-L06": "80c230fad64c8df45a5e0a02b6aa2233e8e9f16604df1b19b983c5d04afc1f94",
+    "PY101-C02-L05": "2b9714cf6ee5aa77df7e98cc96a74012b2021fe894164fe256d3c6b247f15456",
+    "PY101-C02-L04": "cf67ce18920c2961bc5310c73618aea6e2e992b727344ad3ab17fb7a39e623eb",
+    "PY101-C02-L03": "f80726b4912b5663c95a4b42e8acbbdc513f6d063677e873b1cc442403dbebe5",
+    "PY101-C02-L02": "73949b3fc4a98a489161b2e348874d4a32574924ccadf2155955cb36d0d2e670",
+    "PY101-C02-L01": "8820957dbe36c02db5dc39fad869d3689e091293181de21eafe61fc539c9d325",
+    "PY101-C01-L06": "8807b1d965b94ba8ffaed9181ce6c0842862ada3db205c01e432ec3911a6d934",
+    "PY101-C01-L02": "ec3568890789ab981e9f50732b40f9c020c948a76c6db40e8101ef3f365b71c4",
+    "PY101-C01-L03": "8989c2aa349cc2ebbfc3ab6cfb9aec29b0c6e5d92b2d88fa7d9dbc467b415380",
+    "PY101-C01-L04": "b7a6341505af0fd4a0172a5cc3b5056b3d2eb7852423a209544f156c8a3f7b44",
+    "PY101-C01-L05": "05886e06f842c3de2436d68325b56c4f341a80061cc6841dec72fbd61215dcff",
+    "PY101-C01-L01": "7654b50d1ab4f02a38c0e335685c26ff8d51f5eb6bb333ba3fcdfee4a32496bd",
+    "AI000-C01-L01": "b54ed519e222dfa1d6afb22a5130e2a7a89fdd63b461c516b5a9877a0b600d21",
+    "AI000-C01-L02": "9bc7e303099a1ffff86c49530c36f289ad9c2ac8a8af6ed52fc8cf0e23fbfcb5",
+    "AI000-C01-L03": "40660658b98b8d52de1229c1e477d2f34b0a6114944479d9a17df98ec6c88c4f",
+    "AI000-C02-L01": "b42bf7de8752817c3763d854d9d537962f90a7176bb764132cd727c35e8bb6bb",
+    "AI000-C02-L02": "69e6402a98a8419e15c9e34de96f341a5812fdbdea7451e97cd92c686d5bba48",
+    "AI000-C03-L01": "a425d7f5a9f1de93530461e12a2aa5029e133bf9d97e51ef0b1acdf6b2e1b8c0",
+    "AI000-C03-L02": "aa35407804c649879ea6ab892385f384c758b07b9449d1baa541f60646f4b4f8",
+    "AI000-C03-L03": "13da68be4b8c258b0faf8b851b93eb13c407877a6b86680c04b41c5a5e11c87d",
+    "AI000-C03-L04": "7d00e690328db87795c17ee9d533549a3235748915b0fb62cd7318104d90584c",
+    "AI000-C04-L01": "e08439af1430c994e26f149867df47d82fbf84708ae302d2b7a0d76e9a4243b6",
+    "AI000-C04-L02": "3113c34484d8c4fe4154cd105945b4fb64ae9288248834963e7ecc8e902cef30",
+    "AI000-C04-L03": "144fdc35778d64bb5bf474543575eab477e0c289ec229171348ecab4ada63ee9",
+    "AI000-C04-L04": "67e6ae10715f1a4c1b101bd4c9026d583532aea74f0a0080028b55e9a90d8685",
+    "AI000-C05-L01": "877e708d6be97f1a8f30ea652a5117dfd42a65b0196f8c6052a8cb5f6fc93556",
+    "AI000-C05-L02": "9da3339c8ca2d85efb5fb885359520117e351166a92bae635ef6dac648d4629f",
+    "AI000-C05-L03": "52486c75c158433c4107a58f1c8b780fafdcaedb04f00327128e8eee2234135c",
+    "AI000-C05-L04": "52cd5dfdbf2d19a06282ab10dd0e0b5a7bf6ed4a876e5fb0104f056478e5bd7a",
+    "AI000-C05-L05": "8efe0189d3dc8f4b4fa6232c97384b943feaf4168002e15e94ca7331fa5fd178",
+    "AI000-C06-L01": "c538b91c94ead2cdaaa1e3f301863b257c3e56636bd2f25cc153e95e27c8a9d1",
+    "AI000-C06-L02": "282f337be3f2dea72f959ea33947a81ca68f2c8796cdcdaacf887d0397cdabca",
+    "AI000-C06-L03": "592d72aee4cafe9f043e0464d76aa36b291e7ef687b80145cf2d7a213402bbbd",
+    "AI000-C07-L01": "474faef4f895471e2b172b462e2dcb1ddfb185f4424b52967783f6e0d620643e",
+    "AI000-C07-L02": "1cf66f16b883b68920ad18a06571fd21cbb7da579f78643c3b0ebc08f1b40b23",
+    "AI000-C07-L03": "e60e96f6c2b8dc93e50546e1700fe32533cac6951d3e971f70757deb740c4679",
+    "MA101-C02-L03": "e469e3e0ebb497e7a3831914d0d4d68bd0bc23b5c30557e4a8b235098d44428e",
+    "MA101-C02-L04": "4ed8fd14a580511106503adbbdad6241c24fef48663904c3016147ca0d5bde25",
+    "MA101-C02-L05": "2e710caf4345d49ec860bf2fe1c304e8cf6e0a4e1aa7b5eccf8b9fee35006095",
+    "MA101-C02-L06": "2fe1d35d3597fc62d049c700b484aa36982edfde813c408605f7d4e5d071cf38",
+    "ML201-C03-L01": "7675d8830b5432d1387fc18591883e7e43f55f73dc2d9e0afdfa45678b9e73e0",
+    "ML201-C03-L02": "53820bd813d01ba59a237d1218a1966f16d0c49f04ec4cd7b21b6016525b4530",
+    "ML201-C03-L03": "92091377137a4c3062d9c1d74f1825562c168526bd539efbf5dc01ff8b3889c0",
+    "ML201-C04-L02": "d9758378cb21e5786bd3c21b142c3f8063859bfc4d3f30a4f5efd4019f173f5d",
+    "ML201-C04-L03": "7675813c6dbf06e2eaae249f2468c6a632807208dc51d5857b072468e783efef",
+    "ML201-C04-L04": "5fa68ffaff83b64af0fcc4dff973dc3ab9976a4b5915f05fdc9e8f499da61c79",
+    "ML201-C04-L05": "e0547cd116e39acacceea45bd8cac6a1a2c13bc7df91066007db53fbe716287e",
+    "ML201-C04-L01": "60ff0636fa10563eef3fa1a16dc4935a63ac73ac524181d2902eefb1c917decf",
+    "PY101-C05-L01": "d052dd48c61d6741bdaccd49de80dac7338b3c9ec45386fc768f93be3993e218",
+    "PY101-C05-L02": "1efaabac8ba11a3ae26b554131c34e917fd4ce2536705ac4c610ec818bdc807d",
+    "PY101-C05-L03": "464401c5d3def09f82a43a764f47bba66bb5a7a1354b8e3b90c985c386669874",
+    "PY101-C05-L04": "0195e241298b62d9c690e9548b7882c29f47a08c72f84aa75989c5cf47f4e4ab",
+    "PY101-C05-L05": "4879e722b463c049da187e291284b7864fce427cfff7da5ea7f0091a2ff2c1bd",
+    "MA101-C02-L01": "0697e683df11d31942e05aa714adf6813f0bb62854cde24c900e36d4e0911734",
+    "MA101-C02-L02": "87e4ffe53218a1b2ef4d94f736fb42f414c1db0b2752a73d5b41d93bc274992f",
+    "MA101-C03-L01": "39410918d20e8cba4ff8a7f6fe49e072a54d4a10408af4514f8e906e3466a2c7",
+    "MA101-C03-L02": "0941f935abd9bd1dbe9a50e698eeaf70ef3da2d1bcb195d057be9f6ffda50b52",
+    "MA101-C03-L03": "66f4d7586db4f6ebf9d1b8474d9802965154e8c02a2bf8210959baf6d5d84585",
+    "PY101-C05-L06": "8ac18f1b83b6a6610a18493d80d0eac2fc6e447d4a70b24331a9eacd2eb3b7be"
+  },
+  "publications": [
+    {
+      "lessonId": "PY101-C03-L04",
+      "courseId": "PY101",
+      "chapterId": "PY101-C03",
+      "title": "让程序重复执行直到条件变化",
+      "contentVersion": 1,
+      "order": 4,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "draft",
+      "access": "private"
+    },
+    {
+      "lessonId": "PY101-C03-L03",
+      "courseId": "PY101",
+      "chapterId": "PY101-C03",
+      "title": "多个条件怎样共同决定结果",
+      "contentVersion": 1,
+      "order": 3,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/py101-p18/TECHNICAL_REPORT.md"
+    },
+    {
+      "lessonId": "PY101-C03-L02",
+      "courseId": "PY101",
+      "chapterId": "PY101-C03",
+      "title": "条件不满足时怎么办",
+      "contentVersion": 1,
+      "order": 2,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/py101-p17/TECHNICAL_REPORT.md"
+    },
+    {
+      "lessonId": "PY101-C03-L01",
+      "courseId": "PY101",
+      "chapterId": "PY101-C03",
+      "title": "让程序根据条件决定是否执行",
+      "contentVersion": 1,
+      "order": 1,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/py101-p16/TECHNICAL_REPORT.md"
+    },
+    {
+      "lessonId": "PY101-C02-L06",
+      "courseId": "PY101",
+      "chapterId": "PY101-C02",
+      "title": "把输入和计算整理成清楚的输出",
+      "contentVersion": 2,
+      "order": 6,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/py101-p15/TECHNICAL_REPORT.md"
+    },
+    {
+      "lessonId": "PY101-C02-L05",
+      "courseId": "PY101",
+      "chapterId": "PY101-C02",
+      "title": "取得用户输入，再转成需要的数值",
+      "contentVersion": 2,
+      "order": 5,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/py101-p15/TECHNICAL_REPORT.md"
+    },
+    {
+      "lessonId": "PY101-C02-L04",
+      "courseId": "PY101",
+      "chapterId": "PY101-C02",
+      "title": "让比较表达式给出真假结果",
+      "contentVersion": 2,
+      "order": 4,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/py101-p15/TECHNICAL_REPORT.md"
+    },
+    {
+      "lessonId": "PY101-C02-L03",
+      "courseId": "PY101",
+      "chapterId": "PY101-C02",
+      "title": "用表达式算出一个结果",
+      "contentVersion": 2,
+      "order": 3,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/py101-p15/TECHNICAL_REPORT.md"
+    },
+    {
+      "lessonId": "PY101-C02-L02",
+      "courseId": "PY101",
+      "chapterId": "PY101-C02",
+      "title": "分清文字、整数、小数和真假值",
+      "contentVersion": 2,
+      "order": 2,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/py101-p15/TECHNICAL_REPORT.md"
+    },
+    {
+      "lessonId": "PY101-C02-L01",
+      "courseId": "PY101",
+      "chapterId": "PY101-C02",
+      "title": "用变量保留并更新程序里的值",
+      "contentVersion": 2,
+      "order": 1,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/py101-p15/TECHNICAL_REPORT.md"
+    },
+    {
+      "lessonId": "PY101-C01-L06",
+      "courseId": "PY101",
+      "chapterId": "PY101-C01",
+      "title": "让别人复现一次环境问题",
+      "contentVersion": 2,
+      "order": 6,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/py101-p15/TECHNICAL_REPORT.md"
+    },
+    {
+      "lessonId": "PY101-C01-L05",
+      "courseId": "PY101",
+      "chapterId": "PY101-C01",
+      "title": "在Jupyter中按顺序运行单元格",
+      "contentVersion": 2,
+      "order": 5,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/py101-p15/TECHNICAL_REPORT.md"
+    },
+    {
+      "lessonId": "PY101-C01-L04",
+      "courseId": "PY101",
+      "chapterId": "PY101-C01",
+      "title": "为项目准备独立的虚拟环境",
+      "contentVersion": 2,
+      "order": 4,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/py101-p15/TECHNICAL_REPORT.md"
+    },
+    {
+      "lessonId": "PY101-C01-L03",
+      "courseId": "PY101",
+      "chapterId": "PY101-C01",
+      "title": "用编辑器完成保存与重跑",
+      "contentVersion": 2,
+      "order": 3,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/py101-p15/TECHNICAL_REPORT.md"
+    },
+    {
+      "lessonId": "PY101-C01-L02",
+      "courseId": "PY101",
+      "chapterId": "PY101-C01",
+      "title": "解释器怎样找到并执行脚本",
+      "contentVersion": 2,
+      "order": 2,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/py101-p15/TECHNICAL_REPORT.md"
+    },
+    {
+      "lessonId": "PY101-C01-L01",
+      "courseId": "PY101",
+      "chapterId": "PY101-C01",
+      "title": "从零运行第一个Python程序",
+      "contentVersion": 2,
+      "order": 1,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/py101-p15/TECHNICAL_REPORT.md"
+    },
+    {
+      "lessonId": "AI000-C07-L03",
+      "courseId": "AI000",
+      "chapterId": "AI000-C07",
+      "title": "综合实践：分析 AI 问题并制定学习计划",
+      "contentVersion": 1,
+      "order": 3,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_LESSON_7_3_AND_COURSE_REVIEW.md"
+    },
+    {
+      "lessonId": "AI000-C07-L02",
+      "courseId": "AI000",
+      "chapterId": "AI000-C07",
+      "title": "AI 不同技术方向需要哪些基础？",
+      "contentVersion": 1,
+      "order": 2,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_LESSON_7_2_REVIEW.md"
+    },
+    {
+      "lessonId": "AI000-C07-L01",
+      "courseId": "AI000",
+      "chapterId": "AI000-C07",
+      "title": "为什么学习 Python、数学与数据分析？",
+      "contentVersion": 1,
+      "order": 1,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_LESSON_7_1_REVIEW.md"
+    },
+    {
+      "lessonId": "AI000-C06-L03",
+      "courseId": "AI000",
+      "chapterId": "AI000-C06",
+      "title": "版权、误用与负责任地使用 AI",
+      "contentVersion": 2,
+      "order": 3,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_R3_REFINEMENT_REPORT.md"
+    },
+    {
+      "lessonId": "AI000-C06-L02",
+      "courseId": "AI000",
+      "chapterId": "AI000-C06",
+      "title": "数据隐私、偏差与公平性",
+      "contentVersion": 1,
+      "order": 2,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_R3_REFINEMENT_REPORT.md"
+    },
+    {
+      "lessonId": "AI000-C06-L01",
+      "courseId": "AI000",
+      "chapterId": "AI000-C06",
+      "title": "为什么 AI 会产生不可靠的回答？",
+      "contentVersion": 1,
+      "order": 1,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_LESSON_6_1_REVIEW.md"
+    },
+    {
+      "lessonId": "AI000-C05-L05",
+      "courseId": "AI000",
+      "chapterId": "AI000-C05",
+      "title": "强化学习适合哪些应用问题？",
+      "contentVersion": 1,
+      "order": 5,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_R3_REFINEMENT_REPORT.md"
+    },
+    {
+      "lessonId": "AI000-C05-L03",
+      "courseId": "AI000",
+      "chapterId": "AI000-C05",
+      "title": "多模态 AI：连接文字、图片与声音",
+      "contentVersion": 2,
+      "order": 3,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"
+    },
+    {
+      "lessonId": "AI000-C05-L04",
+      "courseId": "AI000",
+      "chapterId": "AI000-C05",
+      "title": "生成模型：从要求到可核对的作品",
+      "contentVersion": 1,
+      "order": 4,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"
+    },
+    {
+      "lessonId": "AI000-C05-L02",
+      "courseId": "AI000",
+      "chapterId": "AI000-C05",
+      "title": "计算机视觉：让机器理解图像",
+      "contentVersion": 1,
+      "order": 2,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_LESSON_5_2_REVIEW.md"
+    },
+    {
+      "lessonId": "AI000-C05-L01",
+      "courseId": "AI000",
+      "chapterId": "AI000-C05",
+      "title": "自然语言处理与大语言模型",
+      "contentVersion": 1,
+      "order": 1,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"
+    },
+    {
+      "lessonId": "AI000-C04-L04",
+      "courseId": "AI000",
+      "chapterId": "AI000-C04",
+      "title": "模型训练好以后，如何完成预测？",
+      "contentVersion": 1,
+      "order": 4,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"
+    },
+    {
+      "lessonId": "AI000-C04-L03",
+      "courseId": "AI000",
+      "chapterId": "AI000-C04",
+      "title": "训练、验证与测试各有什么作用？",
+      "contentVersion": 1,
+      "order": 3,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"
+    },
+    {
+      "lessonId": "AI000-C04-L02",
+      "courseId": "AI000",
+      "chapterId": "AI000-C04",
+      "title": "模型和参数是怎样得到的？",
+      "contentVersion": 1,
+      "order": 2,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_VISUAL_CONTENT_REFINEMENT.md"
+    },
+    {
+      "lessonId": "AI000-C04-L01",
+      "courseId": "AI000",
+      "chapterId": "AI000-C04",
+      "title": "数据、特征与标签",
+      "contentVersion": 1,
+      "order": 1,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_VISUAL_CONTENT_REFINEMENT.md"
+    },
+    {
+      "lessonId": "AI000-C03-L04",
+      "courseId": "AI000",
+      "chapterId": "AI000-C03",
+      "title": "强化学习：通过行动与反馈学习",
+      "contentVersion": 1,
+      "order": 4,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"
+    },
+    {
+      "lessonId": "AI000-C03-L03",
+      "courseId": "AI000",
+      "chapterId": "AI000-C03",
+      "title": "自监督学习：怎样从数据本身构造学习任务？",
+      "contentVersion": 1,
+      "order": 3,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"
+    },
+    {
+      "lessonId": "AI000-C03-L02",
+      "courseId": "AI000",
+      "chapterId": "AI000-C03",
+      "title": "无监督学习：没有标签也能发现规律吗？",
+      "contentVersion": 2,
+      "order": 2,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"
+    },
+    {
+      "lessonId": "AI000-C03-L01",
+      "courseId": "AI000",
+      "chapterId": "AI000-C03",
+      "title": "监督学习：从有答案的例子中学习",
+      "contentVersion": 1,
+      "order": 1,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"
+    },
+    {
+      "lessonId": "AI000-C01-L02",
+      "courseId": "AI000",
+      "chapterId": "AI000-C01",
+      "title": "AI 能做什么，为什么也会出错？",
+      "contentVersion": 2,
+      "order": 2,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"
+    },
+    {
+      "lessonId": "AI000-C01-L03",
+      "courseId": "AI000",
+      "chapterId": "AI000-C01",
+      "title": "普通自动化和 AI 有什么区别？",
+      "contentVersion": 1,
+      "order": 3,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"
+    },
+    {
+      "lessonId": "AI000-C02-L02",
+      "courseId": "AI000",
+      "chapterId": "AI000-C02",
+      "title": "生成式 AI 是什么？它和 LLM 有什么关系？",
+      "contentVersion": 1,
+      "order": 2,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_R3_REFINEMENT_REPORT.md"
+    },
+    {
+      "lessonId": "AI000-C02-L01",
+      "courseId": "AI000",
+      "chapterId": "AI000-C02",
+      "title": "AI、机器学习与深度学习，到底是什么关系？",
+      "contentVersion": 2,
+      "order": 1,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"
+    },
+    {
+      "lessonId": "AI000-C01-L01",
+      "courseId": "AI000",
+      "chapterId": "AI000-C01",
+      "title": "人工智能究竟是什么？",
+      "contentVersion": 2,
+      "order": 1,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md"
+    },
+    {
+      "lessonId": "ML201-C03-L01",
+      "courseId": "ML201",
+      "chapterId": "ML201-C03",
+      "title": "从现实问题认识回归",
+      "contentVersion": 1,
+      "order": 1,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/TEACHING_V2_1_PYTHON_RESULTS.json"
+    },
+    {
+      "lessonId": "ML201-C03-L02",
+      "courseId": "ML201",
+      "chapterId": "ML201-C03",
+      "title": "线性回归模型：权重与偏置",
+      "contentVersion": 1,
+      "order": 2,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/TEACHING_V2_1_PYTHON_RESULTS.json"
+    },
+    {
+      "lessonId": "ML201-C03-L03",
+      "courseId": "ML201",
+      "chapterId": "ML201-C03",
+      "title": "预测误差、MAE 与 MSE",
+      "contentVersion": 1,
+      "order": 3,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/TEACHING_V2_1_PYTHON_RESULTS.json"
+    },
+    {
+      "lessonId": "ML201-C04-L02",
+      "courseId": "ML201",
+      "chapterId": "ML201-C04",
+      "title": "从导数理解优化方向",
+      "contentVersion": 1,
+      "order": 1,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/TEACHING_V2_1_PYTHON_RESULTS.json"
+    },
+    {
+      "lessonId": "ML201-C04-L03",
+      "courseId": "ML201",
+      "chapterId": "ML201-C04",
+      "title": "梯度下降的数学原理",
+      "contentVersion": 1,
+      "order": 2,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/TEACHING_V2_1_PYTHON_RESULTS.json"
+    },
+    {
+      "lessonId": "ML201-C04-L04",
+      "courseId": "ML201",
+      "chapterId": "ML201-C04",
+      "title": "手动计算一次参数更新",
+      "contentVersion": 1,
+      "order": 3,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md"
+    },
+    {
+      "lessonId": "ML201-C04-L05",
+      "courseId": "ML201",
+      "chapterId": "ML201-C04",
+      "title": "使用 NumPy 实现线性回归",
+      "contentVersion": 1,
+      "order": 4,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/TEACHING_V2_1_PYTHON_RESULTS.json"
+    },
+    {
+      "lessonId": "PY101-C05-L01",
+      "courseId": "PY101",
+      "chapterId": "PY101-C05",
+      "title": "Python 函数与参数",
+      "contentVersion": 2,
+      "order": 1,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md"
+    },
+    {
+      "lessonId": "PY101-C05-L02",
+      "courseId": "PY101",
+      "chapterId": "PY101-C05",
+      "title": "位置与关键字参数绑定",
+      "contentVersion": 1,
+      "order": 2,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md"
+    },
+    {
+      "lessonId": "PY101-C05-L03",
+      "courseId": "PY101",
+      "chapterId": "PY101-C05",
+      "title": "返回值与 print 的区别",
+      "contentVersion": 1,
+      "order": 3,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md"
+    },
+    {
+      "lessonId": "PY101-C05-L04",
+      "courseId": "PY101",
+      "chapterId": "PY101-C05",
+      "title": "函数内外的变量与作用域",
+      "contentVersion": 1,
+      "order": 4,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md"
+    },
+    {
+      "lessonId": "PY101-C05-L05",
+      "courseId": "PY101",
+      "chapterId": "PY101-C05",
+      "title": "简单默认参数",
+      "contentVersion": 1,
+      "order": 5,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md"
+    },
+    {
+      "lessonId": "PY101-C05-L06",
+      "courseId": "PY101",
+      "chapterId": "PY101-C05",
+      "title": "可选进阶：共享对象与接口陷阱",
+      "contentVersion": 1,
+      "order": 6,
+      "catalogRole": "current",
+      "optionalLesson": true,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/TEACHING_V2_1_PYTHON_RESULTS.json"
+    },
+    {
+      "lessonId": "MA101-C02-L03",
+      "courseId": "MA101",
+      "chapterId": "MA101-C02",
+      "title": "什么是向量？",
+      "contentVersion": 2,
+      "order": 1,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md"
+    },
+    {
+      "lessonId": "MA101-C02-L04",
+      "courseId": "MA101",
+      "chapterId": "MA101-C02",
+      "title": "向量的表示、维度与分量",
+      "contentVersion": 1,
+      "order": 2,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/MA101_EDITORIAL_REVIEW_V1.md"
+    },
+    {
+      "lessonId": "MA101-C02-L05",
+      "courseId": "MA101",
+      "chapterId": "MA101-C02",
+      "title": "向量加法：计算方法与几何意义",
+      "contentVersion": 1,
+      "order": 3,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/MA101_EDITORIAL_REVIEW_V1.md"
+    },
+    {
+      "lessonId": "MA101-C02-L06",
+      "courseId": "MA101",
+      "chapterId": "MA101-C02",
+      "title": "向量数乘：长度与方向变化",
+      "contentVersion": 1,
+      "order": 4,
+      "catalogRole": "current",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/MA101_EDITORIAL_REVIEW_V1.md"
+    },
+    {
+      "lessonId": "MA101-C02-L01",
+      "courseId": "MA101",
+      "chapterId": "MA101-C02",
+      "title": "向量、加法与数乘",
+      "contentVersion": 1,
+      "order": 1,
+      "catalogRole": "legacy",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/TEACHING_V2_1_PYTHON_RESULTS.json"
+    },
+    {
+      "lessonId": "MA101-C02-L02",
+      "courseId": "MA101",
+      "chapterId": "MA101-C02",
+      "title": "内积与求和符号",
+      "contentVersion": 1,
+      "order": 2,
+      "catalogRole": "legacy",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/TEACHING_V2_1_PYTHON_RESULTS.json"
+    },
+    {
+      "lessonId": "MA101-C03-L01",
+      "courseId": "MA101",
+      "chapterId": "MA101-C03",
+      "title": "向量与矩阵的基本运算",
+      "contentVersion": 1,
+      "order": 1,
+      "catalogRole": "legacy",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/TEACHING_V2_1_PYTHON_RESULTS.json"
+    },
+    {
+      "lessonId": "MA101-C03-L02",
+      "courseId": "MA101",
+      "chapterId": "MA101-C03",
+      "title": "矩阵乘法：行与列的内积",
+      "contentVersion": 1,
+      "order": 2,
+      "catalogRole": "legacy",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/TEACHING_V2_1_PYTHON_RESULTS.json"
+    },
+    {
+      "lessonId": "MA101-C03-L03",
+      "courseId": "MA101",
+      "chapterId": "MA101-C03",
+      "title": "NumPy 表示与数组形状",
+      "contentVersion": 1,
+      "order": 3,
+      "catalogRole": "legacy",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/TEACHING_V2_1_PYTHON_RESULTS.json"
+    },
+    {
+      "lessonId": "ML201-C04-L01",
+      "courseId": "ML201",
+      "chapterId": "ML201-C04",
+      "title": "线性回归与梯度下降",
+      "contentVersion": 1,
+      "order": 1,
+      "catalogRole": "legacy",
+      "optionalLesson": false,
+      "status": "pending-review",
+      "access": "preview",
+      "technicalEvidence": "docs/TEACHING_V2_1_PYTHON_RESULTS.json"
+    }
+  ],
+  "progressScopes": [
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C03-L04",
+      "contentVersion": 1,
+      "sectionIds": [
+        "once-or-repeat",
+        "first-while",
+        "follow-states",
+        "zero-and-new",
+        "order-matters",
+        "stop-reason",
+        "practice",
+        "reference-programs",
+        "next-step"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C03-L03",
+      "contentVersion": 1,
+      "sectionIds": [
+        "separate-checks",
+        "both-required",
+        "five-values",
+        "review-or",
+        "reverse-result",
+        "short-circuit",
+        "practice",
+        "reference-programs",
+        "next-step"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C03-L02",
+      "contentVersion": 1,
+      "sectionIds": [
+        "single-if",
+        "two-ways",
+        "three-ways",
+        "three-runs",
+        "first-match",
+        "independent-checks",
+        "practice",
+        "reference-programs",
+        "next-step"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C03-L01",
+      "contentVersion": 1,
+      "sectionIds": [
+        "boolean-first",
+        "first-if",
+        "block-boundary",
+        "change-and-boundary",
+        "two-lines",
+        "practice",
+        "reference-programs",
+        "next-step"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C02-L06",
+      "contentVersion": 2,
+      "sectionIds": [
+        "bare-results",
+        "first-format",
+        "labels-and-units",
+        "receive-values",
+        "calculate-check",
+        "main-example",
+        "boundary-runs",
+        "practice",
+        "reference-programs",
+        "chapter-end"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C02-L05",
+      "contentVersion": 2,
+      "sectionIds": [
+        "first-input",
+        "raw-count",
+        "int-conversion",
+        "main-example",
+        "float-conversion",
+        "format-error",
+        "practice",
+        "reference-programs",
+        "next-step"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C02-L04",
+      "contentVersion": 2,
+      "sectionIds": [
+        "most-six",
+        "compare-limit",
+        "keep-result",
+        "equal-or-different",
+        "above-limit",
+        "main-example",
+        "boundary-runs",
+        "practice",
+        "next-step"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C02-L03",
+      "contentVersion": 2,
+      "sectionIds": [
+        "quantities-and-units",
+        "expression-to-value",
+        "take-some-away",
+        "order-and-grouping",
+        "divide-and-meaning",
+        "same-level-order",
+        "put-it-together",
+        "zero-divisor",
+        "practice",
+        "next-step"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C02-L02",
+      "contentVersion": 2,
+      "sectionIds": [
+        "same-display",
+        "add-measurement",
+        "ready-state",
+        "inspect-type",
+        "four-types",
+        "same-name-new-type",
+        "practice",
+        "next-step"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C02-L01",
+      "contentVersion": 2,
+      "sectionIds": [
+        "changing-task",
+        "name-and-value",
+        "choose-name",
+        "read-and-update",
+        "predict-run",
+        "change-one-value",
+        "literal-or-name",
+        "fresh-script",
+        "first-read-error",
+        "practice",
+        "next-step"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C01-L06",
+      "contentVersion": 2,
+      "sectionIds": [
+        "unclear-request",
+        "prepare-case",
+        "read-evidence",
+        "repair-replay",
+        "minimal-record",
+        "script-handoff",
+        "notebook-handoff",
+        "chapter-handoff"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C01-L02",
+      "contentVersion": 2,
+      "sectionIds": [
+        "one-file",
+        "relative-route",
+        "same-name",
+        "absolute-target",
+        "space-argument",
+        "script-and-cwd",
+        "check-path",
+        "practice",
+        "next-step"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C01-L03",
+      "contentVersion": 2,
+      "sectionIds": [
+        "four-roles",
+        "open-folder",
+        "save-rerun",
+        "integrated-terminal",
+        "select-interpreter",
+        "three-mismatches",
+        "practice",
+        "next-step"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C01-L04",
+      "contentVersion": 2,
+      "sectionIds": [
+        "two-projects",
+        "create-envs",
+        "direct-run",
+        "observe-env",
+        "activate-env",
+        "editor-env",
+        "recover-env",
+        "keep-source",
+        "practice",
+        "next-step"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C01-L05",
+      "contentVersion": 2,
+      "sectionIds": [
+        "why-notebook",
+        "local-start",
+        "first-cells",
+        "kernel-check",
+        "stale-state",
+        "restart-order",
+        "clean-run",
+        "save-stop",
+        "practice",
+        "next-step"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C01-L01",
+      "contentVersion": 2,
+      "sectionIds": [
+        "first-output",
+        "local-python",
+        "print-text",
+        "save-script",
+        "run-script",
+        "change-message",
+        "locate-errors",
+        "practice",
+        "next-step"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C01-L01",
+      "contentVersion": 2,
+      "sectionIds": [
+        "mail-task",
+        "rule-and-learning",
+        "ai-meaning",
+        "many-tasks",
+        "practice",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C01-L02",
+      "contentVersion": 2,
+      "sectionIds": [
+        "task-comparison",
+        "mistakes",
+        "why-errors",
+        "check-output",
+        "practice",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C01-L03",
+      "contentVersion": 1,
+      "sectionIds": [
+        "automation",
+        "knowledge",
+        "compare-methods",
+        "evidence",
+        "practice",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C02-L01",
+      "contentVersion": 2,
+      "sectionIds": [
+        "learning-from-mail",
+        "deep-learning",
+        "method-map",
+        "read-system",
+        "practice",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C02-L02",
+      "contentVersion": 1,
+      "sectionIds": [
+        "generation",
+        "generative-model",
+        "llm",
+        "product",
+        "practice",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C03-L01",
+      "contentVersion": 1,
+      "sectionIds": [
+        "parcel-examples",
+        "learning-and-prediction",
+        "name-the-method",
+        "sample-and-label",
+        "label-sources",
+        "number-target",
+        "data-preparation",
+        "practice",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C03-L02",
+      "contentVersion": 2,
+      "sectionIds": [
+        "borrowing-records",
+        "compare-records",
+        "uncertain-records",
+        "unsupervised",
+        "change-the-question",
+        "interpret-groups",
+        "practice",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C03-L03",
+      "contentVersion": 1,
+      "sectionIds": [
+        "hide-a-piece",
+        "four-roles",
+        "name-the-method",
+        "many-records",
+        "another-task",
+        "task-and-use",
+        "compare-arrangements",
+        "practice",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C03-L04",
+      "contentVersion": 1,
+      "sectionIds": [
+        "delivery-problem",
+        "follow-actions",
+        "compare-routes",
+        "reward-and-target",
+        "reward-design",
+        "experience",
+        "name-the-method",
+        "compare-tasks",
+        "watering-task",
+        "feedback-task",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C04-L01",
+      "contentVersion": 1,
+      "sectionIds": [
+        "parcel-records",
+        "rows-and-fields",
+        "features-and-target",
+        "new-record",
+        "choose-fields",
+        "check-records",
+        "print-task",
+        "library-task",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C04-L02",
+      "contentVersion": 1,
+      "sectionIds": [
+        "need-a-model",
+        "calculate-first",
+        "name-parameters",
+        "compare-one",
+        "compare-records",
+        "change-a-parameter",
+        "training",
+        "use-fixed-model",
+        "print-parameters-task",
+        "adjust-parameters-task",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C04-L03",
+      "contentVersion": 1,
+      "sectionIds": [
+        "familiar-records",
+        "new-history",
+        "assign-roles",
+        "training-records",
+        "validation-choice",
+        "test-records",
+        "data-use-flow",
+        "generalization",
+        "future-information",
+        "duplicate-records",
+        "test-feedback",
+        "print-evaluation-task",
+        "audit-evaluation-task",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C04-L04",
+      "contentVersion": 1,
+      "sectionIds": [
+        "new-arrival",
+        "one-prediction",
+        "calculate-n",
+        "inference-flow",
+        "name-inference",
+        "after-completion",
+        "check-inputs",
+        "print-use-task",
+        "input-audit-task",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C05-L01",
+      "contentVersion": 1,
+      "sectionIds": [
+        "read-messages",
+        "sort-messages",
+        "find-rules",
+        "compare-conditions",
+        "write-reply",
+        "keep-unknown",
+        "summarize-messages",
+        "task-outputs",
+        "nlp-and-llm",
+        "combine-steps",
+        "equipment-service-task",
+        "choose-language-task",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C05-L02",
+      "contentVersion": 1,
+      "sectionIds": [
+        "look-at-shelf",
+        "whole-image",
+        "find-each-box",
+        "mark-regions",
+        "regions-and-instances",
+        "check-visual-output",
+        "methods-and-targets",
+        "workbench-task",
+        "choose-vision-task",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C05-L03",
+      "contentVersion": 2,
+      "sectionIds": [
+        "see-exhibits",
+        "join-records",
+        "name-modalities",
+        "input-output",
+        "audio-and-transcript",
+        "check-links",
+        "system-and-model",
+        "lost-property-task",
+        "analyse-services",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C05-L04",
+      "contentVersion": 1,
+      "sectionIds": [
+        "a-vague-request",
+        "clear-requirements",
+        "compare-posters",
+        "name-constraints",
+        "revise-and-recheck",
+        "generation-in-a-system",
+        "read-the-script",
+        "tech-poster-task",
+        "gallery-voice-task",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C05-L05",
+      "contentVersion": 1,
+      "sectionIds": [
+        "warehouse-problem",
+        "first-choices",
+        "warehouse-task",
+        "score-and-requirements",
+        "obtain-feedback",
+        "simulation-check",
+        "compare-methods",
+        "compare-fairly",
+        "bike-dispatch-task",
+        "project-choice-task",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C06-L01",
+      "contentVersion": 1,
+      "sectionIds": [
+        "first-answer",
+        "original-sources",
+        "split-claims",
+        "check-conditions",
+        "evidence-review",
+        "why-unreliable",
+        "where-errors-enter",
+        "checking-workflow",
+        "revised-answer",
+        "submission-audit-task",
+        "venue-answer-task",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C06-L02",
+      "contentVersion": 1,
+      "sectionIds": [
+        "repair-task",
+        "purpose-first",
+        "personal-information",
+        "manage-data",
+        "coverage",
+        "check-records",
+        "compare-results",
+        "fairness",
+        "improve-service",
+        "event-data-task",
+        "library-results-task",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C06-L03",
+      "contentVersion": 2,
+      "sectionIds": [
+        "ready-to-publish",
+        "source-cards",
+        "name-permission",
+        "compare-licenses",
+        "asset-decisions",
+        "voice-and-rights",
+        "misleading-content",
+        "release-roles",
+        "before-and-after",
+        "handbook-task",
+        "lecture-task",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C07-L01",
+      "contentVersion": 1,
+      "sectionIds": [
+        "project-delivery",
+        "eight-records",
+        "python-work",
+        "minimum-python",
+        "math-use",
+        "math-depth",
+        "data-checks",
+        "check-denominator",
+        "ai-coding",
+        "dependency-table",
+        "small-loop",
+        "projects-task",
+        "plan-task",
+        "course-connections"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C07-L02",
+      "contentVersion": 1,
+      "sectionIds": [
+        "two-projects",
+        "four-questions",
+        "nlp-stages",
+        "cv-stages",
+        "compare-routes",
+        "milestones",
+        "dependencies",
+        "ai-assisted-stages",
+        "catalog-task",
+        "image-choice-task",
+        "course-connections",
+        "takeaways"
+      ]
+    },
+    {
+      "courseId": "AI000",
+      "lessonId": "AI000-C07-L03",
+      "contentVersion": 1,
+      "sectionIds": [
+        "capstone-delivery",
+        "capstone-notice-inputs",
+        "capstone-example-choices",
+        "capstone-example-analysis",
+        "capstone-example-map",
+        "capstone-example-route",
+        "capstone-example-conclusion",
+        "capstone-eight-questions",
+        "capstone-audit-task",
+        "capstone-personal-task",
+        "capstone-report-template",
+        "capstone-checklist",
+        "capstone-next-steps"
+      ]
+    },
+    {
+      "courseId": "MA101",
+      "lessonId": "MA101-C02-L03",
+      "contentVersion": 2,
+      "sectionIds": [
+        "scene",
+        "intuition",
+        "worked",
+        "definition",
+        "diagram",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "MA101",
+      "lessonId": "MA101-C02-L04",
+      "contentVersion": 1,
+      "sectionIds": [
+        "scene",
+        "intuition",
+        "worked",
+        "definition",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "MA101",
+      "lessonId": "MA101-C02-L05",
+      "contentVersion": 1,
+      "sectionIds": [
+        "scene",
+        "worked",
+        "diagram",
+        "definition",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "MA101",
+      "lessonId": "MA101-C02-L06",
+      "contentVersion": 1,
+      "sectionIds": [
+        "scene",
+        "worked",
+        "definition",
+        "diagram",
+        "application",
+        "mistakes",
+        "practice",
+        "challenge",
+        "code",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "ML201",
+      "lessonId": "ML201-C03-L01",
+      "contentVersion": 1,
+      "sectionIds": [
+        "problem",
+        "intuition",
+        "definition",
+        "practice",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "ML201",
+      "lessonId": "ML201-C03-L02",
+      "contentVersion": 1,
+      "sectionIds": [
+        "model",
+        "calculate",
+        "code",
+        "check",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "ML201",
+      "lessonId": "ML201-C03-L03",
+      "contentVersion": 1,
+      "sectionIds": [
+        "errors",
+        "calculate",
+        "choice",
+        "code",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "ML201",
+      "lessonId": "ML201-C04-L02",
+      "contentVersion": 1,
+      "sectionIds": [
+        "question",
+        "derive",
+        "step",
+        "boundaries",
+        "code"
+      ]
+    },
+    {
+      "courseId": "ML201",
+      "lessonId": "ML201-C04-L03",
+      "contentVersion": 1,
+      "sectionIds": [
+        "setup",
+        "weight",
+        "bias",
+        "update",
+        "practice"
+      ]
+    },
+    {
+      "courseId": "ML201",
+      "lessonId": "ML201-C04-L04",
+      "contentVersion": 1,
+      "sectionIds": [
+        "setup",
+        "gradients",
+        "verify",
+        "debug",
+        "code",
+        "verification"
+      ]
+    },
+    {
+      "courseId": "ML201",
+      "lessonId": "ML201-C04-L05",
+      "contentVersion": 1,
+      "sectionIds": [
+        "environment",
+        "shapes",
+        "training",
+        "full-code",
+        "experiment",
+        "review"
+      ]
+    },
+    {
+      "courseId": "ML201",
+      "lessonId": "ML201-C04-L01",
+      "contentVersion": 1,
+      "sectionIds": [
+        "intuition",
+        "loss",
+        "gradient",
+        "experiment",
+        "code",
+        "quiz",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C05-L01",
+      "contentVersion": 2,
+      "sectionIds": [
+        "concept",
+        "binding",
+        "defaults",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C05-L02",
+      "contentVersion": 1,
+      "sectionIds": [
+        "binding",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C05-L03",
+      "contentVersion": 1,
+      "sectionIds": [
+        "return",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C05-L04",
+      "contentVersion": 1,
+      "sectionIds": [
+        "scope",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C05-L05",
+      "contentVersion": 1,
+      "sectionIds": [
+        "defaults",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "MA101",
+      "lessonId": "MA101-C02-L01",
+      "contentVersion": 1,
+      "sectionIds": [
+        "vectors",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "MA101",
+      "lessonId": "MA101-C02-L02",
+      "contentVersion": 1,
+      "sectionIds": [
+        "dot",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "MA101",
+      "lessonId": "MA101-C03-L01",
+      "contentVersion": 1,
+      "sectionIds": [
+        "vectors",
+        "matrices",
+        "multiply",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "MA101",
+      "lessonId": "MA101-C03-L02",
+      "contentVersion": 1,
+      "sectionIds": [
+        "multiply",
+        "code",
+        "quiz",
+        "verification",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "MA101",
+      "lessonId": "MA101-C03-L03",
+      "contentVersion": 1,
+      "sectionIds": [
+        "shapes",
+        "code",
+        "quiz",
+        "verification",
+        "legacy-validation",
+        "summary"
+      ]
+    },
+    {
+      "courseId": "PY101",
+      "lessonId": "PY101-C05-L06",
+      "contentVersion": 1,
+      "sectionIds": [
+        "defaults",
+        "binding",
+        "code",
+        "quiz",
+        "summary"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "src/components/lesson/reader.tsx",
+      "before": "\"use client\";\nimport { useEffect, useMemo, useRef, useState } from \"react\";\nimport Link from \"next/link\";\nimport { useReducedMotion } from \"motion/react\";\nimport {\n  ArrowRight,\n  BookOpen,\n  ChevronRight,\n  ListTree,\n  Target,\n  CheckCircle2,\n  FlaskConical,\n} from \"lucide-react\";\nimport {\n  publicationLabel,\n  publicationNotice,\n  type Course,\n  type Chapter,\n  type Lesson,\n  type Publication,\n  type LessonSummary,\n} from \"@/content/models\";\nimport { Drawer, useToast } from \"../ui\";\nimport {\n  learningProgressStore,\n  lessonProgressScope,\n  useLessonProgress,\n} from \"@/lib/use-learning-progress\";\nimport {\n  LessonNavigation,\n} from \"./blocks\";\nimport { ArticleContents } from \"./article-contents\";\nimport { ChapterToc } from \"./chapter-toc\";\nimport { ResourceDownloads } from \"./content-renderer\";\nimport { TeachingSection } from \"./teaching-section\";\nimport { LegacyAnchors } from \"./legacy-anchors\";\nimport { LearningTime, LearningPanel, Glossary } from \"./learning-support\";\nimport \"katex/dist/katex.min.css\";\nimport {\n  chapterNumber,\n  lessonNumber,\n} from \"@/lib/course-numbering\";\n\ntype ReaderProps = {\n  course: Course;\n  chapter: Chapter;\n  lesson: Lesson;\n  publication: Publication;\n  progressLessons: LessonSummary[];\n  adjacent: {\n    previous?: Publication & { displayNumber?: string };\n    next?: Publication & { displayNumber?: string };\n  };\n};\nexport function Reader({\n  course,\n  chapter,\n  lesson,\n  publication,\n  adjacent,\n  progressLessons,\n}: ReaderProps) {\n  const firstSection = lesson.sections[0].id;\n  const legacy = publication.catalogRole === \"legacy\";\n  const displayNumber = legacy\n    ? undefined\n    : lessonNumber(chapter.order, publication.order);\n  const [active, setActive] = useState(firstSection);\n  const [progress, setProgress] = useState(0);\n  const scope = useMemo(() => lessonProgressScope(lesson), [lesson]);\n  const saved = useLessonProgress(scope);\n  const completed = saved?.completed ?? false;\n  const displayProgress = Math.max(progress, saved?.percent ?? 0);\n  const latest = useRef({ percent: 0, section: firstSection });\n  const [tocOpen, setTocOpen] = useState(false);\n  const [articleOpen, setArticleOpen] = useState(false);\n  const pendingSection = useRef<string | null>(null);\n  const article = useRef<HTMLElement>(null);\n  const sidebar = useRef<HTMLElement>(null);\n  const reduce = useReducedMotion();\n  const toast = useToast();\n  const activeGroup = lesson.sections.find((s) => s.id === active)?.navGroup;\n  const groups = lesson.sections.filter(\n    (section, index, sections) =>\n      sections.findIndex((s) => s.navGroup === section.navGroup) === index,\n  );\n  const blocks = lesson.sections.flatMap((s) => s.blocks);\n  const quizCount = blocks.filter((b) => b.type === \"quiz\").length;\n  const experimentCount = blocks.filter((b) => b.type === \"experiment\").length;\n\n  function navigate(targetId: string) {\n    window.history.replaceState(null, \"\", `#${targetId}`);\n    const reduceMotion = reduce || window.matchMedia(\"(prefers-reduced-motion: reduce)\").matches;\n    revealTarget(targetId, reduceMotion ? \"instant\" : \"smooth\");\n  }\n  useEffect(() => {\n    const reveal = () => {\n      let hash = window.location.hash.slice(1);\n      try { hash = decodeURIComponent(hash); } catch { return; }\n      if (hash === \"assessment-title\" && window.matchMedia(\"(max-width: 1399px)\").matches) {\n        setArticleOpen(true);\n        return;\n      }\n      revealTarget(hash, \"instant\");\n    };\n    reveal();\n    window.addEventListener(\"hashchange\", reveal);\n    return () => window.removeEventListener(\"hashchange\", reveal);\n  }, [lesson.id]);\n  useEffect(() => {\n    const rail = sidebar.current?.querySelector<HTMLElement>(\".chapter-toc\");\n    const current = rail?.querySelector<HTMLElement>(\n      '[aria-current=\"page\"]',\n    );\n    if (!rail || !current || rail.getBoundingClientRect().height === 0) return;\n    const railRect = rail.getBoundingClientRect(),\n      itemRect = current.getBoundingClientRect();\n    if (itemRect.bottom > railRect.bottom - 32)\n      rail.scrollTo({\n        top: rail.scrollTop + itemRect.bottom - railRect.bottom + 48,\n        behavior: reduce ? \"instant\" : \"smooth\",\n      });\n    else if (itemRect.top < railRect.top + 20)\n      rail.scrollTo({\n        top: rail.scrollTop + itemRect.top - railRect.top - 36,\n        behavior: reduce ? \"instant\" : \"smooth\",\n      });\n  }, [lesson.id, reduce]);\n  useEffect(() => {\n    latest.current = { percent: progress, section: active };\n    // 无 hash 重开页面时仍在标题区，不能把旧书签覆盖成首段。\n    if (progress === 0 && active === firstSection) return;\n    const timer = window.setTimeout(\n      () => learningProgressStore.save(scope, progress, active),\n      450,\n    );\n    return () => window.clearTimeout(timer);\n  }, [progress, active, firstSection, scope]);\n  useEffect(() => {\n    const flush = () => {\n      if (latest.current.percent === 0 && latest.current.section === firstSection) return;\n      learningProgressStore.save(\n        scope,\n        latest.current.percent,\n        latest.current.section,\n      );\n    };\n    window.addEventListener(\"pagehide\", flush);\n    return () => {\n      window.removeEventListener(\"pagehide\", flush);\n      flush();\n    };\n  }, [firstSection, scope]);\n  useEffect(() => {\n    let frame = 0;\n    const sections = Array.from(\n      article.current?.querySelectorAll<HTMLElement>(\".lesson-section\") ?? [],\n    );\n    const update = () => {\n      if (!article.current) return;\n      const rect = article.current.getBoundingClientRect();\n      const available = rect.height - innerHeight + 130;\n      setProgress(\n        Math.round(\n          Math.max(\n            0,\n            Math.min(100, ((-rect.top + 115) / Math.max(available, 1)) * 100),\n          ),\n        ),\n      );\n      const navigation = document.querySelector(\".reader-section-nav\");\n      const checkpoint = navigation\n        ? Math.max(190, navigation.getBoundingClientRect().bottom + 36)\n        : 190;\n      const current = sections.findLast(\n        (section) => section.getBoundingClientRect().top <= checkpoint,\n      );\n      setActive(current?.id ?? firstSection);\n      frame = 0;\n    };\n    const onScroll = () => {\n      if (!frame) frame = requestAnimationFrame(update);\n    };\n    window.addEventListener(\"scroll\", onScroll, { passive: true });\n    window.addEventListener(\"resize\", onScroll);\n    const currentArticle = article.current;\n    currentArticle?.addEventListener(\"toggle\", onScroll, true);\n    update();\n    return () => {\n      window.removeEventListener(\"scroll\", onScroll);\n      window.removeEventListener(\"resize\", onScroll);\n      currentArticle?.removeEventListener(\"toggle\", onScroll, true);\n      cancelAnimationFrame(frame);\n    };\n  }, [firstSection]);\n\n  return (\n    <div className=\"reader-layout reader-v2\">\n      <div className=\"reading-progress-track\" aria-hidden=\"true\">\n        <div style={{ transform: `scaleX(${progress / 100})` }} />\n      </div>\n      <div className=\"reader-contextbar\">\n        <div className=\"reader-breadcrumb\">\n          <Link href=\"/courses\">课程体系</Link>\n          <ChevronRight size={11} />\n          <Link href={`/courses/${course.id}`}>{course.name}</Link>\n          <ChevronRight size={11} />\n          <Link href={`/courses/${course.id}#${chapter.id}`}>\n            {chapterNumber(chapter.order)}\n          </Link>\n          <ChevronRight size={11} />\n          <span>{displayNumber ?? \"旧版试读\"}</span>\n        </div>\n      </div>\n      <aside className=\"reader-sidebar\" ref={sidebar}>\n        <ChapterToc\n          course={course}\n          lesson={lesson}\n          progressLessons={progressLessons}\n        />\n      </aside>\n      <div className=\"reader-main\">\n        <div className=\"reader-mobile-bar\">\n          <Drawer\n            title=\"课程章节与独立课时\"\n            open={tocOpen}\n            onOpenChange={setTocOpen}\n            onCloseAutoFocus={(event) => {\n              const sectionId = pendingSection.current;\n              if (!sectionId) return;\n              event.preventDefault();\n              pendingSection.current = null;\n              requestAnimationFrame(() => navigate(sectionId));\n            }}\n            trigger={\n              <button className=\"button button-small button-secondary\">\n                <ListTree size={15} />\n                章节目录\n              </button>\n            }\n          >\n            <ChapterToc course={course} lesson={lesson} progressLessons={progressLessons} />\n          </Drawer>\n          <Drawer\n            title=\"本节导航\"\n            className=\"reader-learning-drawer\"\n            open={articleOpen}\n            onOpenChange={setArticleOpen}\n            onCloseAutoFocus={(event) => {\n              const target = pendingSection.current;\n              if (!target) return;\n              event.preventDefault();\n              pendingSection.current = null;\n              requestAnimationFrame(() => navigate(target));\n            }}\n            trigger={\n              <button className=\"button button-small button-secondary\">\n                <Target size={15} />\n                本节导航\n              </button>\n            }\n          >\n            <div className=\"reader-drawer-scroll\">\n              <ArticleContents lesson={lesson} active={active} collapsible onNavigate={(id) => { pendingSection.current = id; setArticleOpen(false); }} />\n              <LearningPanel lesson={lesson} progress={displayProgress} completed={completed} onNavigate={(id) => { pendingSection.current = id; setArticleOpen(false); }} />\n            </div>\n          </Drawer>\n        </div>\n        <header className=\"reader-heading\">\n          <span className=\"eyebrow\">LEARN THROUGH UNDERSTANDING</span>\n          <div className=\"reader-chapter-line\">\n            <span>\n              {chapterNumber(chapter.order)}\n              {displayNumber ? ` · ${displayNumber}` : \" · 旧版试读\"}\n            </span>\n            <span>{chapter.title}</span>\n          </div>\n          <div className=\"reader-title-row\">\n            <h1>{lesson.title}</h1>\n          </div>\n          <p>{lesson.subtitle}</p>\n          <div className=\"reader-meta\">\n            <span>\n              <BookOpen size={14} />\n              图文教程\n            </span>\n            <span>\n              {course.lvl} · {course.direction}\n            </span>\n            <span className=\"sample-badge\">{publicationLabel(publication)}</span>\n            {quizCount > 0 && (\n              <span>\n                <CheckCircle2 size={14} />\n                {quizCount} 道自查题\n              </span>\n            )}\n            {experimentCount > 0 && (\n              <span>\n                <FlaskConical size={14} />\n                {experimentCount} 个交互实验\n              </span>\n            )}\n          </div>\n          <LearningTime time={lesson.learningTime} optional={lesson.optionalLesson} codingOptional={lesson.sections.some((s) => s.blocks.some((b) => b.type === \"code\")) && lesson.sections.filter((s) => s.blocks.some((b) => b.type === \"code\")).every((s) => s.tier !== \"core\")} />\n          {saved && saved.percent > 0 && (\n            <a\n              className=\"reader-resume text-link\"\n              href={`#${saved.section}`}\n              onClick={(event) => {\n                event.preventDefault();\n                navigate(saved.section);\n              }}\n            >\n              回到上次位置\n              <ArrowRight size={14} />\n            </a>\n          )}\n        </header>\n        <nav className=\"reader-section-nav\" aria-label=\"本节内容导航\">\n          {groups.map((section) => (\n            <a\n              key={section.navGroup}\n              href={`#${section.id}`}\n              className={activeGroup === section.navGroup ? \"active\" : \"\"}\n              aria-current={\n                activeGroup === section.navGroup ? \"location\" : undefined\n              }\n              onClick={(event) => {\n                event.preventDefault();\n                navigate(section.id);\n              }}\n            >\n              {section.navLabel}\n            </a>\n          ))}\n        </nav>\n        <div className=\"demo-content-note\">\n          {publicationNotice(publication)}\n        </div>\n        {lesson.optionalLesson && <p className=\"demo-content-note\">本节整体为可选进阶，不作为基础课程达标条件。</p>}\n        {!!lesson.legacyAnchors?.length && <p className=\"assessment-note\">本节已重编为 r{lesson.contentVersion}，旧版阅读记录保留，完成状态按修订分别记录。旧书签可从原位置找到内容去向。</p>}\n        {course.lvl !== \"L0\" && (lesson.courseId !== \"MA101\" || legacy) && <Glossary />}\n        {(lesson.id === \"PY101-C05-L01\" || lesson.id === \"MA101-C03-L01\") && <p className=\"assessment-note\">本节已按 V2.1 细分。既有书签与阅读历史保留；旧“已读完”不代表新增目标已达标，可从学习面板进入练习自查。</p>}\n        {legacy && (\n          <aside className=\"legacy-reading-note\">\n            <strong>旧版教材试读</strong>\n            <p>\n              本页保留原有正文、书签和阅读记录，文中节号沿用旧编排。新版使用独立课时与新 ID；这里的“已读完”不代表新版课时完成。\n            </p>\n            <Link\n              href={\n                course.chapters.flatMap((c) => c.lessons).find((l) => l.href)\n                  ?.href ?? `/courses/${course.id}`\n              }\n            >\n              从新版课程开始\n              <ArrowRight size={14} />\n            </Link>\n          </aside>\n        )}\n        <article ref={article} className=\"lesson-content\">\n          {lesson.sections.map((section) => (\n            <TeachingSection key={section.id} section={section} resources={lesson.resources} />\n          ))}\n          <LegacyAnchors lesson={lesson} />\n        </article>\n        <section\n          className=\"lesson-references\"\n          aria-labelledby=\"lesson-reference-title\"\n        >\n          <h2 id=\"lesson-reference-title\">参考与进一步阅读</h2>\n          <p>\n            正文、练习与示意图为原创教学材料。以下官方资料用于核对定义与行为。\n          </p>\n          <ul>\n            {lesson.references.map((reference) => (\n              <li key={reference.href}>\n                <a href={reference.href} target=\"_blank\" rel=\"noreferrer\">\n                  {reference.title}\n                  <ArrowRight size={14} />\n                </a>\n                <p>{reference.note}</p>\n              </li>\n            ))}\n          </ul>\n        </section>\n        <ResourceDownloads resources={lesson.resources} />\n        <div className=\"lesson-completion\">\n          <p>阅读比例帮助安排学习，不代表已经掌握。</p>\n          <button\n            className={`button ${completed ? \"button-secondary\" : \"button-primary\"}`}\n            onClick={() => {\n              const persisted = learningProgressStore.save(\n                scope,\n                100,\n                active,\n                true,\n              );\n              toast(\n                persisted\n                  ? \"本节已读完，进度已保存在当前浏览器\"\n                  : \"已标记读完；浏览器无法长期保存，记录仅保留在本次访问\",\n              );\n            }}\n          >\n            <CheckCircle2 size={16} />\n            {completed ? \"本节已读完\" : \"标记本节已读完\"}\n          </button>\n        </div>\n        <LessonNavigation {...adjacent} />\n        <div className=\"reader-end\">\n          <Link href={`/courses/${course.id}`}>\n            查看课程详情\n            <ArrowRight size={14} />\n          </Link>\n          <Link href=\"/dashboard\">\n            返回学习中心\n            <ArrowRight size={14} />\n          </Link>\n        </div>\n      </div>\n      <aside className=\"reader-right\" id=\"assessment-title\" aria-label=\"本节学习面板\">\n        <LearningPanel lesson={lesson} progress={displayProgress} completed={completed} onNavigate={navigate} />\n      </aside>\n    </div>\n  );\n}\n\n// 练习可能在可选折叠内；点击、Drawer 和旧书签共用同一路径。\nfunction revealTarget(targetId: string, behavior: ScrollBehavior) {\n  const target = document.getElementById(targetId);\n  if (!target) return;\n  let parent: HTMLElement | null = target;\n  while (parent) {\n    if (parent instanceof HTMLDetailsElement) parent.open = true;\n    parent = parent.parentElement;\n  }\n  target.querySelector<HTMLDetailsElement>(\"details.lesson-optional\")?.setAttribute(\"open\", \"\");\n  requestAnimationFrame(() => {\n    target.scrollIntoView({ block: \"start\", behavior });\n    const heading = target.matches(\"h2, h3\") ? target : target.querySelector<HTMLElement>(\"h2, h3\");\n    heading?.focus({ preventScroll: true });\n  });\n}\n"
+    },
+    {
+      "path": "src/content/publication-manifest.ts",
+      "before": "import { isReadable, publicationSchema } from \"./models\";\nimport { legacyMathSlots, maV22LessonIds } from \"./math-outline\";\nimport { courseOutline, mlV2LessonIds } from \"./course-outline\";\n\nconst revisedCoreLessons: Record<string, number> = { \"MA101-C02-L03\": 2, \"PY101-C05-L01\": 2 };\n\n// 发布权限独立于原始课程规划。技术证据不替代人工审核。\nexport const publicationManifest = [\n  {lessonId:\"PY101-C03-L04\",courseId:\"PY101\",chapterId:\"PY101-C03\",title:\"让程序重复执行直到条件变化\",contentVersion:1,order:4,optionalLesson:false,status:\"draft\",access:\"private\"},\n  {lessonId:\"PY101-C03-L03\",courseId:\"PY101\",chapterId:\"PY101-C03\",title:\"多个条件怎样共同决定结果\",contentVersion:1,order:3,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p18/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C03-L02\",courseId:\"PY101\",chapterId:\"PY101-C03\",title:\"条件不满足时怎么办\",contentVersion:1,order:2,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p17/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C03-L01\",courseId:\"PY101\",chapterId:\"PY101-C03\",title:\"让程序根据条件决定是否执行\",contentVersion:1,order:1,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p16/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C02-L06\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"把输入和计算整理成清楚的输出\",contentVersion:2,order:6,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C02-L05\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"取得用户输入，再转成需要的数值\",contentVersion:2,order:5,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C02-L04\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"让比较表达式给出真假结果\",contentVersion:2,order:4,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C02-L03\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"用表达式算出一个结果\",contentVersion:2,order:3,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C02-L02\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"分清文字、整数、小数和真假值\",contentVersion:2,order:2,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C02-L01\",courseId:\"PY101\",chapterId:\"PY101-C02\",title:\"用变量保留并更新程序里的值\",contentVersion:2,order:1,optionalLesson:false,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L06\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"让别人复现一次环境问题\",contentVersion:2,order:6,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L05\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"在Jupyter中按顺序运行单元格\",contentVersion:2,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L04\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"为项目准备独立的虚拟环境\",contentVersion:2,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L03\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"用编辑器完成保存与重跑\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L02\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"解释器怎样找到并执行脚本\",contentVersion:2,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"PY101-C01-L01\",courseId:\"PY101\",chapterId:\"PY101-C01\",title:\"从零运行第一个Python程序\",contentVersion:2,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/py101-p15/TECHNICAL_REPORT.md\"},\n  {lessonId:\"AI000-C07-L03\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"综合实践：分析 AI 问题并制定学习计划\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_3_AND_COURSE_REVIEW.md\"},\n  {lessonId:\"AI000-C07-L02\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"AI 不同技术方向需要哪些基础？\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_2_REVIEW.md\"},\n  {lessonId:\"AI000-C07-L01\",courseId:\"AI000\",chapterId:\"AI000-C07\",title:\"为什么学习 Python、数学与数据分析？\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_7_1_REVIEW.md\"},\n  {lessonId:\"AI000-C06-L03\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"版权、误用与负责任地使用 AI\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C06-L02\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"数据隐私、偏差与公平性\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C06-L01\",courseId:\"AI000\",chapterId:\"AI000-C06\",title:\"为什么 AI 会产生不可靠的回答？\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_6_1_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L05\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"强化学习适合哪些应用问题？\",contentVersion:1,order:5,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_R3_REFINEMENT_REPORT.md\"},\n  {lessonId:\"AI000-C05-L03\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"多模态 AI：连接文字、图片与声音\",contentVersion:2,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L04\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"生成模型：从要求到可核对的作品\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L02\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"计算机视觉：让机器理解图像\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_LESSON_5_2_REVIEW.md\"},\n  {lessonId:\"AI000-C05-L01\",courseId:\"AI000\",chapterId:\"AI000-C05\",title:\"自然语言处理与大语言模型\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L04\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"模型训练好以后，如何完成预测？\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L03\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"训练、验证与测试各有什么作用？\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C04-L02\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"模型和参数是怎样得到的？\",contentVersion:1,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_VISUAL_CONTENT_REFINEMENT.md\"},\n  {lessonId:\"AI000-C04-L01\",courseId:\"AI000\",chapterId:\"AI000-C04\",title:\"数据、特征与标签\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_VISUAL_CONTENT_REFINEMENT.md\"},\n  {lessonId:\"AI000-C03-L04\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"强化学习：通过行动与反馈学习\",contentVersion:1,order:4,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L03\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"自监督学习：怎样从数据本身构造学习任务？\",contentVersion:1,order:3,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L02\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"无监督学习：没有标签也能发现规律吗？\",contentVersion:2,order:2,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  {lessonId:\"AI000-C03-L01\",courseId:\"AI000\",chapterId:\"AI000-C03\",title:\"监督学习：从有答案的例子中学习\",contentVersion:1,order:1,status:\"pending-review\",access:\"preview\",technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"},\n  ...courseOutline.filter(slot => slot.courseId === \"AI000\" && [\"AI000-C01-L02\",\"AI000-C01-L03\",\"AI000-C02-L02\"].includes(slot.lessonId)).map(slot => ({...slot,contentVersion:slot.lessonId === \"AI000-C01-L02\" ? 2 : 1,status:\"pending-review\",access:\"preview\",technicalEvidence:slot.lessonId === \"AI000-C02-L02\" ? \"docs/AI000_R3_REFINEMENT_REPORT.md\" : \"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\"})),\n  {\n    lessonId: \"AI000-C02-L01\",\n    courseId: \"AI000\",\n    chapterId: \"AI000-C02\",\n    title: \"AI、机器学习与深度学习，到底是什么关系？\",\n    contentVersion: 2,\n    order: 1,\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\",\n  },\n  {\n    lessonId: \"AI000-C01-L01\",\n    courseId: \"AI000\",\n    chapterId: \"AI000-C01\",\n    title: \"人工智能究竟是什么？\",\n    contentVersion: 2,\n    order: 1,\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence:\"docs/AI000_CROSS_LESSON_QUALITY_REVIEW.md\",\n  },\n  ...courseOutline\n    .filter((slot) => mlV2LessonIds.some((id) => id === slot.lessonId) || slot.chapterId === \"PY101-C05\" || maV22LessonIds.some((id) => id === slot.lessonId))\n    .map((slot) => ({\n      ...slot,\n      contentVersion: revisedCoreLessons[slot.lessonId] ?? 1,\n      optionalLesson: slot.lessonId === \"PY101-C05-L06\",\n      catalogRole: \"current\",\n      status: \"pending-review\",\n      access: \"preview\",\n      technicalEvidence: slot.lessonId === \"MA101-C02-L03\" || slot.lessonId === \"ML201-C04-L04\" || (slot.courseId === \"PY101\" && slot.lessonId !== \"PY101-C05-L06\")\n        ? \"docs/CROSS_DISCIPLINE_EDITORIAL_VALIDATION_V1.md\"\n        : slot.courseId === \"MA101\" ? \"docs/MA101_EDITORIAL_REVIEW_V1.md\" : \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\",\n    })),\n  ...legacyMathSlots.map((slot) => ({ ...slot, catalogRole: \"legacy\", contentVersion: 1, status: \"pending-review\", access: \"preview\", technicalEvidence: \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\" })),\n  {\n    lessonId: \"ML201-C04-L01\",\n    courseId: \"ML201\",\n    chapterId: \"ML201-C04\",\n    title: \"线性回归与梯度下降\",\n    contentVersion: 1,\n    order: 1,\n    catalogRole: \"legacy\",\n    status: \"pending-review\",\n    access: \"preview\",\n    technicalEvidence: \"docs/TEACHING_V2_1_PYTHON_RESULTS.json\",\n  },\n].map((entry) => publicationSchema.parse(entry));\n\nexport const readablePublications = publicationManifest.filter(isReadable);\nexport const lessonHref = (entry: { courseId: string; lessonId: string }) =>\n  `/learn/${entry.courseId}/${entry.lessonId}`;\n"
+    },
+    {
+      "path": "scripts/py101-p1-compatibility.ts",
+      "before": "import { createHash } from \"node:crypto\";\nimport { readFileSync } from \"node:fs\";\n\ntype SourceChange = { path: string; before: string; afterSha256: string };\ntype ObjectChange = { id: string; before: unknown; afterSha256: string };\n// 使用同一个登记器按新到旧撤销已批准修订；不为每轮再嵌套一个专用兼容器。\ntype RevisionPlan = { baseline: string; sources: SourceChange[]; lessons: ObjectChange[]; publications: ObjectChange[]; addedLessonIds: string[]; addedContent?: { id: string; lessonSha256: string; publicationSha256: string }[]; workspaceOnly: { path: string; workspaceSha256: string; repositorySha256: string }[]; protectedText: { path: string; baselineSha256: string; lfSha256: string }[] };\nconst plans = [\"py101-p19\", \"py101-p18\", \"py101-p17\", \"py101-p16\", \"py101-p15\", \"py101-p14\", \"py101-p13\", \"py101-p12\", \"py101-p11\", \"py101-p10\", \"py101-p9\", \"py101-p8\", \"py101-p7\", \"py101-p6\", \"py101-p5\", \"py101-p4\", \"py101-p3\", \"py101-p2\"].map(round => JSON.parse(readFileSync(new URL(`../docs/${round}/APPROVED_CHANGES.json`, import.meta.url), \"utf8\")) as RevisionPlan);\nfunction revisions(throughBaseline?: string) {\n  const index = plans.findIndex(plan => plan.baseline === throughBaseline);\n  return index < 0 ? plans : plans.slice(0, index + 1);\n}\nconst sources = JSON.parse(readFileSync(new URL(\"../docs/py101-p1/SOURCE_CHANGES.json\", import.meta.url), \"utf8\")) as SourceChange[];\nconst sha = (source: string) => createHash(\"sha256\").update(source).digest(\"hex\");\nexport function isApprovedPy101Addition(id: string, lesson: unknown, publication: unknown, throughBaseline: string) {\n  return revisions(throughBaseline).some(plan => plan.addedContent?.some(row => row.id === id && lesson !== undefined && publication !== undefined && sha(JSON.stringify(lesson)) === row.lessonSha256 && sha(JSON.stringify(publication)) === row.publicationSha256));\n}\nfunction undoSource(entries: SourceChange[], path: string, source: string) {\n  const entry = entries.find(row => row.path === path);\n  return entry && sha(source.replaceAll(\"\\r\\n\", \"\\n\")) === entry.afterSha256 ? entry.before : source;\n}\nexport const approvedPy101Additions = [...new Set(plans.flatMap(plan => plan.addedLessonIds))];\nexport function beforeApprovedPy101Source(path: string, source: string, throughBaseline?: string) {\n  return revisions(throughBaseline).reduce((value, plan) => undoSource(plan.sources, path, value), source);\n}\n// 自动回归允许原工作区与干净检出两种精确版本；工作区审计脚本仍严格要求原始指纹。\nexport function protectedPy101FileMatches(path: string, bytes: Buffer, expected: string, throughBaseline?: string) {\n  const digest = createHash(\"sha256\").update(bytes).digest(\"hex\");\n  if (digest === expected) return true;\n  const text = bytes.toString(\"utf8\");\n  // Git检出可转换文本换行；二进制仍逐字节比较，绝不以UTF-8解码后的图像作摘要。\n  const validText = !text.includes(\"\\0\") && Buffer.from(text).equals(bytes);\n  const variants = (value: string) => { const lf = value.replaceAll(\"\\r\\n\", \"\\n\"); return [lf, lf.replaceAll(\"\\n\", \"\\r\\n\")]; };\n  const matches = (value: string, target: string) => validText && variants(value).some(source => sha(source) === target);\n  if (matches(text, expected)) return true;\n  const relevant = revisions(throughBaseline);\n  const portable = relevant.flatMap(plan => plan.protectedText).find(row => row.path === path && row.baselineSha256 === expected);\n  if (portable && validText && sha(text.replaceAll(\"\\r\\n\", \"\\n\")) === portable.lfSha256) return true;\n  const local = relevant.flatMap(plan => plan.workspaceOnly).find(row => row.path === path && row.workspaceSha256 === expected);\n  if (local?.workspaceSha256 === expected && (local.repositorySha256 === digest || matches(text, local.repositorySha256))) return true;\n  return matches(beforeApprovedPy101Source(path, text, throughBaseline), expected);\n}\nexport function beforeApprovedPy101Object(kind: \"lessons\" | \"publications\", id: string, value: unknown, throughBaseline?: string) {\n  return revisions(throughBaseline).reduce((current, plan) => {\n    const entry = plan[kind].find(row => row.id === id);\n    return entry && sha(JSON.stringify(current)) === entry.afterSha256 ? entry.before : current;\n  }, value);\n}\n// 只有完整文件摘要命中才还原；未登记的任何附加修改必须继续暴露给旧保护测试。\nexport function beforePy101P1Source(path: string, source: string) {\n  return undoSource(sources, path, beforeApprovedPy101Source(path, source));\n}\n"
+    },
+    {
+      "path": "tests/py101-while-repetition.test.ts",
+      "before": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { createHash } from \"node:crypto\";\nimport { readFileSync } from \"node:fs\";\nimport { pythonWhileRepetitionLesson as lesson } from \"../src/content/lessons/py101/while-repetition\";\nimport { whileCode, whileBlockNames, missingUpdateForPaper } from \"../src/content/resources/python-while-repetition\";\nimport { whileCases, whileKey, assertFiniteCounter, runWhileExample } from \"../scripts/validate-py101-while\";\nimport { checkConditionalResult } from \"../scripts/validate-py101-conditional\";\nimport { lessonRegistry, getLearningCourse, getAdjacentLessons, resolveLesson } from \"../src/lib/course-engine\";\nimport { publicationManifest } from \"../src/content/publication-manifest\";\nimport { publicationSchema, isReadable, type ContentBlock } from \"../src/content/models\";\nimport { createProgressStore, parseReadingProgress, progressKey, type ProgressScope } from \"../src/lib/learning-progress\";\nimport { lessonProgressScope } from \"../src/lib/use-learning-progress\";\nimport { beforeApprovedPy101Source, isApprovedPy101Addition } from \"../scripts/py101-p1-compatibility\";\nconst read = (name: string) => JSON.parse(readFileSync(`docs/py101-p19/${name}.json`, \"utf8\"));\nconst sha = (value: unknown) => createHash(\"sha256\").update(JSON.stringify(value)).digest(\"hex\");\nconst isPython = (b: ContentBlock): b is Extract<ContentBlock, { type: \"code\" }> => b.type === \"code\" && b.language === \"python\";\n\ntest(\"P19 3.4/r1/order4, actual private gate, preview evidence, adjacent 3.3 and no 3.5–3.8\", () => {\n  const p = publicationManifest.find(p => p.lessonId === lesson.id)!, g = read(\"DRAFT_GATE\"), c = getLearningCourse(\"PY101\")!;\n  assert.deepEqual([p.lessonId, p.courseId, p.chapterId, p.title, p.contentVersion, p.order, p.optionalLesson], [\"PY101-C03-L04\", \"PY101\", \"PY101-C03\", lesson.title, 1, 4, false]);\n  assert.deepEqual([g.publication.status, g.publication.access, g.readable, g.resolveUndefined, g.directoryHrefAbsent], [\"draft\", \"private\", false, true, true]);\n  assert.equal(p.reviewEvidence, undefined); assert.throws(() => publicationSchema.parse({ ...p, status: \"draft\", access: \"preview\" }));\n  assert.throws(() => publicationSchema.parse({ ...p, status: \"pending-review\", access: \"preview\", technicalEvidence: undefined }));\n  if (p.status === \"draft\") assert.equal(resolveLesson(\"PY101\", lesson.id), undefined);\n  else { assert.deepEqual([p.status, p.access, p.technicalEvidence], [\"pending-review\", \"preview\", \"docs/py101-p19/TECHNICAL_REPORT.md\"]); assert.equal(resolveLesson(\"PY101\", lesson.id)?.lesson, lesson); }\n  assert.equal(c.status, \"planned\"); assert.deepEqual(c.chapters[2].lessons.map(l => l.displayNumber), [\"3.1\", \"3.2\", \"3.3\", \"3.4\"]);\n  assert.equal([...lessonRegistry.keys()].filter(id => id.startsWith(\"PY101-C03-\")).length, 4);\n  for (let n = 5; n <= 8; n++) assert.equal(resolveLesson(\"PY101\", `PY101-C03-L0${n}`), undefined);\n  assert.equal(resolveLesson(\"ML201\", lesson.id), undefined);\n  if (isReadable(p)) { assert.equal(getAdjacentLessons(c, \"PY101-C03-L03\").next?.lessonId, lesson.id); assert.equal(getAdjacentLessons(c, lesson.id).previous?.lessonId, \"PY101-C03-L03\"); }\n});\ntest(\"P19 if-to-while teaching and two core tasks cover the three observable goals\", () => {\n  const tasks = lesson.sections.filter(s => s.tier === \"core\").flatMap(s => s.blocks).filter(b => b.type === \"exercise\");\n  assert.deepEqual(tasks.map(t => t.id), [\"count-to-target\", \"repair-state-update\"]);\n  assert.deepEqual(lesson.assessmentMap, [{ objective: 1, exerciseIds: [tasks[0].id] }, { objective: 2, exerciseIds: tasks.map(t => t.id) }, { objective: 3, exerciseIds: [tasks[1].id] }]);\n  for (const t of tasks) { assert.equal(t.kind, \"代码\"); assert.equal(t.hints.length, 2); assert.ok(t.solution.length >= 4); assert.ok(t.rubric.length >= 3); }\n  const first = lesson.sections[0].blocks.filter(isPython); assert.equal(first.length, 1); assert.match(first[0].code, /\\nif packed < target:/); assert.doesNotMatch(first[0].code, /\\bwhile\\b/);\n  const section = lesson.sections.find(s => s.id === \"first-while\")!, firstCode = section.blocks.findIndex(isPython);\n  assert.ok(firstCode > 0); const preceding = section.blocks.slice(0, firstCode).filter(b => b.type === \"paragraph\").map(b => b.text).join(\"\\n\");\n  for (const concept of [\"while\", \"循环体\", \"冒号\", \"4空格\"]) assert.ok(preceding.includes(concept));\n  assert.match(preceding, /回到条件(?:再次|重新)检查/);\n  assert.deepEqual(lesson.learningTime, { reading: [14, 20], practice: [10, 15], coding: [22, 34], basis: \"editorial-estimate\" }); assert.deepEqual(lesson.resources, []);\n});\ntest(\"P19 complete web Python is strictly shared and finite; unknown/dangerous/rewritten code cannot run\", () => {\n  const blocks = lesson.sections.flatMap(s => s.blocks).filter(isPython); assert.equal(blocks.length, 6);\n  for (const b of blocks) { const key = whileKey(b.filename, b.code); assert.ok(whileCases.some(c => c.key === key && c.code === b.code)); assertFiniteCounter(b.code); assert.doesNotMatch(b.code, /\\b(for|range|break|continue|def|try|except|import|else)\\b|[\\[\\]{}]/); }\n  for (const c of whileCases) assertFiniteCounter(c.code);\n  assert.throws(() => runWhileExample(\"unknown.py\", whileCode.main));\n  assert.throws(() => runWhileExample(whileBlockNames.main, missingUpdateForPaper));\n  assert.throws(() => whileKey(whileBlockNames.main, whileCode.main + \"\\nprint(True)\"));\n  for (const code of [missingUpdateForPaper, whileCode.main.replace(\"packed + 1\", \"packed - 1\"), whileCode.main.replace(\"target = 3\", \"target = 10000\")]) assert.throws(() => assertFiniteCounter(code));\n  assert.ok(!blocks.some(b => b.code === missingUpdateForPaper)); assert.ok(lesson.sections.find(s => s.id === \"stop-reason\")!.blocks.some(b => b.type === \"paragraph\" && b.text.includes(\"只作纸面诊断\")));\n});\ntest(\"P19 actual saved-file results distinguish multiple/zero/new, print order and safe increment repair\", () => {\n  const r = read(\"PYTHON_RUNS\"); assert.equal(r.rows.length, 18); assert.equal(r.uniqueProcessCount, 13); assert.equal(r.allAssertionsPassed, true);\n  for (const c of whileCases) { const row = r.rows.find((x: { id: string }) => x.id === c.id); assert.ok(row); assert.equal(row.savedSource, c.code + \"\\n\"); assert.equal(row.predictedStdout, c.expected); assert.equal(row.savedSha256, createHash(\"sha256\").update(row.savedSource).digest(\"hex\")); checkConditionalResult(c.expected, row); assert.equal(row.timeoutMs, 10_000); }\n  assert.equal(new Set(r.rows.map((x: { pid: number }) => x.pid)).size, 13); assert.equal(r.rows.filter((x: { evidenceReused: boolean }) => x.evidenceReused).length, 5);\n  assert.equal(r.rows.find((x: { id: string }) => x.id === \"wrong-step-two\").businessCorrect, false);\n  assert.equal(whileCode.fault.replace(\"packed + 2\", \"packed + 1\"), whileCode.main);\n  assert.equal(r.preSolutionsSha256, createHash(\"sha256\").update(readFileSync(\"docs/py101-p19/PRE_SOLUTIONS.md\")).digest(\"hex\"));\n  assert.equal(r.studentPilot, false); assert.equal(r.macOSRuntimeVerified, false);\n});\ntest(\"P19 read-only line traces prove final false checks and separate final printed/exit values\", () => {\n  const traces = read(\"PYTHON_RUNS\").traces;\n  assert.equal(traces.length, 7); assert.deepEqual(traces.map((t: { checks: { packed: number }[] }) => t.checks.map(c => c.packed)), [[0], [0, 1, 2, 3], [3], [4], [2, 3, 4, 5], [0, 1, 2, 3], [0, 2, 4]]);\n  assert.deepEqual(traces.map((t: { finalValue: number }) => t.finalValue), [1, 3, 3, 4, 5, 3, 4]);\n  for (const t of traces) { assert.equal(t.exitCode, 0); assert.equal(t.stderr, \"\"); assert.equal(t.finalValue, t.predictedFinal); assert.equal(t.programStdout, t.predictedStdout); assert.equal(t.programSha256, t.savedSha256); assert.equal(t.timeoutMs, 10_000); }\n});\ntest(\"P19 controlled WAIT timeout is rejected, reaped and never counted as a normal teaching program\", () => {\n  const p = read(\"PYTHON_RUNS\").timeoutProbe; assert.equal(p.timeoutMs, 150); assert.equal(p.selfBoundSeconds, 2); assert.equal(p.errorCode, \"ETIMEDOUT\"); assert.notEqual(p.exitCode, 0);\n  assert.equal(p.childAliveAfterReturn, false); assert.equal(p.programCompletedNormally, false); assert.equal(p.normalResultRejected, true); assert.equal(p.stdout, \"\");\n  assert.throws(() => checkConditionalResult(\"\", { exitCode: p.exitCode, stdout: p.stdout, stderr: p.stderr }));\n  assert.throws(() => checkConditionalResult(\"wrong prediction\\n\", { exitCode: 0, stdout: \"Packing finished\\n\", stderr: \"\" }));\n  assert.match(readFileSync(\"scripts/validate-py101-conditional.ts\", \"utf8\"), /timeout:\\s*10_000/);\n});\ntest(\"P19 all 62 old Lesson/Publication/scopes including 3.1–3.3 r1 remain exact\", () => {\n  const b = read(\"CONTENT_BASELINE\"); assert.equal(Object.keys(b.lessons).length, 62); assert.equal(Object.keys(b.publications).length, 62);\n  for (const [id, hash] of Object.entries(b.lessons)) assert.equal(sha(lessonRegistry.get(id)), hash, id);\n  for (const [id, hash] of Object.entries(b.publications)) assert.equal(sha(publicationManifest.find(p => p.lessonId === id)), hash, id);\n  for (const scope of b.progressScopes) assert.deepEqual(lessonProgressScope(lessonRegistry.get(scope.lessonId)!), scope);\n  const a = read(\"PREREQUISITE_AUDIT\"); for (const p of a.prerequisites) { const l = resolveLesson(\"PY101\", p.lessonId)!.lesson; assert.equal(l.contentVersion, p.contentVersion); assert.ok(l.sections.some(s => s.id === p.anchor)); }\n  assert.deepEqual(lessonRegistry.get(\"PY101-C03-L03\")!.sections.at(-1)!.blocks.at(-1), a.previousLessonFinalBlock); assert.equal(lessonRegistry.size, 63);\n});\ntest(\"P19 exact historical authorization rejects unknown edits, independent r1 reload protects old strings/user fingerprints\", () => {\n  const b = read(\"CONTENT_BASELINE\"), p = publicationManifest.find(p => p.lessonId === lesson.id)!;\n  assert.equal(isApprovedPy101Addition(lesson.id, lesson, p, b.head), true); assert.equal(isApprovedPy101Addition(lesson.id, { ...lesson, title: \"extra\" }, p, b.head), false); assert.equal(isApprovedPy101Addition(lesson.id, lesson, { ...p, order: 5 }, b.head), false); assert.equal(isApprovedPy101Addition(\"PY101-C03-L05\", lesson, p, b.head), false);\n  for (const row of b.sources) { const current = readFileSync(row.path, \"utf8\"); assert.equal(beforeApprovedPy101Source(row.path, current, b.head), row.before); assert.equal(beforeApprovedPy101Source(row.path, current + \"\\n// extra\", b.head), current + \"\\n// extra\"); }\n  const memory = new Map<string, string>(), port = { getItem: (k: string) => memory.get(k) ?? null, setItem: (k: string, v: string) => { memory.set(k, v); } }, store = createProgressStore(() => port);\n  for (const scope of b.progressScopes as ProgressScope[]) { store.save(scope, 100, scope.sectionIds[0], true); if (scope.contentVersion > 1) store.save({ ...scope, contentVersion: 1 }, 100, scope.sectionIds[0], true); }\n  const before = new Map(memory), scope = lessonProgressScope(lesson); assert.equal(progressKey(scope), \"aivora:learning:v2:PY101:PY101-C03-L04:r1\"); assert.equal(store.getSnapshot(scope), null);\n  store.save(scope, 55, \"order-matters\"); const restored = parseReadingProgress(createProgressStore(() => port).getSnapshot(scope), scope); assert.deepEqual([restored?.percent, restored?.section, restored?.completed], [55, \"order-matters\", false]);\n  for (const [k, v] of before) assert.equal(memory.get(k), v);\n  const audit = read(\"WORKSPACE_PROTECTION\"); assert.equal(audit.originalFilesByteIdentical, true); assert.equal(audit.originalModified.length + audit.originalUntracked.length, 11);\n});\n"
+    }
+  ]
+}

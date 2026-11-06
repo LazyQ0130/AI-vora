@@ -1,0 +1,83 @@
+[
+  {
+    "label": "final-normal-wheel",
+    "before": "#order-matters",
+    "returned": "#stop-reason",
+    "reload": "#stop-reason",
+    "passed": true
+  },
+  {
+    "label": "final-A33-1",
+    "before": "#short-circuit",
+    "returned": "#short-circuit",
+    "reload": "#short-circuit",
+    "passed": true
+  },
+  {
+    "label": "final-A33-2",
+    "before": "#short-circuit",
+    "returned": "#short-circuit",
+    "reload": "#short-circuit",
+    "passed": true
+  },
+  {
+    "label": "final-A33-3",
+    "before": "#short-circuit",
+    "returned": "#short-circuit",
+    "reload": "#short-circuit",
+    "passed": true
+  },
+  {
+    "label": "final-B33-five-values",
+    "before": "#five-values",
+    "returned": "#five-values",
+    "reload": "#five-values",
+    "passed": true
+  },
+  {
+    "label": "final-B33-reverse",
+    "passed": true,
+    "returned": "#reverse-result",
+    "reload": "#reverse-result"
+  },
+  {
+    "label": "final-C34-1",
+    "before": "#order-matters",
+    "returned": "#order-matters",
+    "reload": "#order-matters",
+    "passed": true
+  },
+  {
+    "label": "final-C34-2",
+    "before": "#order-matters",
+    "returned": "#order-matters",
+    "reload": "#order-matters",
+    "passed": true
+  },
+  {
+    "label": "final-C34-3",
+    "before": "#order-matters",
+    "returned": "#order-matters",
+    "reload": "#order-matters",
+    "passed": true
+  },
+  {
+    "label": "final-F34-rapid",
+    "leaveMs": 179,
+    "returned": "#follow-states",
+    "passed": true
+  },
+  {
+    "label": "final-F33-rapid",
+    "leaveMs": 285,
+    "returned": "#short-circuit",
+    "passed": true
+  },
+  {
+    "label": "final-F33-reduced",
+    "before": "#five-values",
+    "returned": "#five-values",
+    "reload": "#five-values",
+    "passed": true
+  }
+]

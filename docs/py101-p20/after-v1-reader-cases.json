@@ -1,0 +1,60 @@
+[
+  {
+    "label": "after-A33-1",
+    "before": "#short-circuit",
+    "returned": "#short-circuit",
+    "reload": "#short-circuit",
+    "passed": true,
+    "observation": "initial checker required scrollY<1 and timed out at stable 4.667; raw row retained; tolerance corrected without another navigation or app change"
+  },
+  {
+    "label": "after-A33-2",
+    "before": "#short-circuit",
+    "returned": "#short-circuit",
+    "reload": "#short-circuit",
+    "passed": true,
+    "observation": "trip helper retained old closure for <1px check; raw row retained; corrected helper binding, no navigation repeated"
+  },
+  {
+    "label": "after-A33-3",
+    "before": "#short-circuit",
+    "returned": "#short-circuit",
+    "reload": "#short-circuit",
+    "passed": true
+  },
+  {
+    "label": "after-B33-five-values",
+    "before": "#five-values",
+    "returned": "#five-values",
+    "reload": "#five-values",
+    "passed": true
+  },
+  {
+    "label": "after-B33-reverse-result",
+    "before": "#reverse-result",
+    "returned": "#reverse-result",
+    "reload": "#reverse-result",
+    "passed": true
+  },
+  {
+    "label": "after-C34-1",
+    "before": "#order-matters",
+    "returned": "#order-matters",
+    "reload": "#order-matters",
+    "passed": true
+  },
+  {
+    "label": "after-C34-2",
+    "before": "#order-matters",
+    "returned": "#order-matters",
+    "reload": "#order-matters",
+    "passed": true
+  },
+  {
+    "label": "after-C34-3",
+    "before": "#order-matters",
+    "returned": "#order-matters",
+    "reload": "#order-matters",
+    "passed": true
+  }
+]

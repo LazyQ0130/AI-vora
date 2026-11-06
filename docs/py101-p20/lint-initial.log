@@ -1,0 +1,9 @@
+
+> aivora-web@0.1.0 lint
+> eslint .
+
+
+<WORKTREE>\tests\helpers\reader-lifecycle.ts
+  54:3  error  Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable  @next/next/no-assign-module-variable
+
+✖ 1 problem (1 error, 0 warnings)

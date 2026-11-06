@@ -1,0 +1,63 @@
+{
+  "widths": [
+    {
+      "height": 1024,
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "height": 844,
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "height": 812,
+      "scrollWidth": 305,
+      "width": 320
+    },
+    {
+      "height": 1000,
+      "scrollWidth": 1425,
+      "width": 1440
+    }
+  ],
+  "production": true,
+  "knownP1ClosedInTestedMatrix": true,
+  "ordinaryWheelCorrected": true,
+  "planned": true,
+  "wrongCourse404": true,
+  "future404": true,
+  "copyMeta": [
+    {
+      "file": "copied-while-main.py",
+      "attempt": 1,
+      "matched": false,
+      "length": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "first clipboard read stale; unrelated contents not saved"
+    },
+    {
+      "file": "copied-while-main.py",
+      "attempt": 2,
+      "actualCopy": true,
+      "matched": true,
+      "length": 114
+    },
+    {
+      "file": "copied-while-repaired.py",
+      "attempt": 1,
+      "actualCopy": true,
+      "matched": true,
+      "length": 114
+    }
+  ],
+  "defaultSmoothTested": true,
+  "reducedMotionMediaObservedTrue": true,
+  "mediaOverrideRemoved": true,
+  "viewportOverrideReset": true,
+  "temporaryTabClosed": true,
+  "finalKnown33PathRuns": 3,
+  "final34PathRuns": 3,
+  "rawStorageDiagnostic": "real browser setItem wrapper, before and first fix; removed in final build",
+  "mobilePhysicalDevice": false
+}

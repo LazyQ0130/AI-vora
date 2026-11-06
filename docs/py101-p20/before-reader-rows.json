@@ -1,0 +1,247 @@
+{
+  "phase": "unchanged formal Reader",
+  "rows": [
+    {
+      "active": [],
+      "at": "2026-11-06T09:45:11.123Z",
+      "heading": "多个条件怎样共同决定结果",
+      "label": "before-1-click",
+      "percent": "已浏览 0%·尚未标记读完",
+      "resume": null,
+      "scrollY": 0,
+      "targetTop": 8019.9482421875,
+      "url": "http://127.0.0.1:3010/learn/PY101/PY101-C03-L03#short-circuit"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:45:41.389Z",
+      "heading": "多个条件怎样共同决定结果",
+      "label": "before-1-stable",
+      "percent": "已浏览 74%·尚未标记读完",
+      "resume": "#reverse-result",
+      "scrollY": 7844,
+      "targetTop": 231.9479217529297,
+      "url": "http://127.0.0.1:3010/learn/PY101/PY101-C03-L03#short-circuit"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:45:42.516Z",
+      "heading": "多个条件怎样共同决定结果",
+      "label": "before-1-course",
+      "percent": "已浏览 74%·尚未标记读完",
+      "resume": "#reverse-result",
+      "scrollY": 7388,
+      "targetTop": 687.9479370117188,
+      "url": "http://127.0.0.1:3010/learn/PY101/PY101-C03-L03#short-circuit"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:46:11.220Z",
+      "heading": "多个条件怎样共同决定结果",
+      "label": "before-1-reestablish-anchor",
+      "percent": "已浏览 74%·尚未标记读完",
+      "resume": "#separate-checks",
+      "scrollY": 1012.6666870117188,
+      "targetTop": 7068.224609375,
+      "url": "http://127.0.0.1:3010/learn/PY101/PY101-C03-L03#short-circuit"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:46:21.975Z",
+      "heading": "多个条件怎样共同决定结果",
+      "label": "before-1-stable-saved",
+      "percent": "已浏览 74%·尚未标记读完",
+      "resume": "#short-circuit",
+      "scrollY": 7900.66650390625,
+      "targetTop": 175.28125,
+      "url": "http://127.0.0.1:3010/learn/PY101/PY101-C03-L03#short-circuit"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:46:23.142Z",
+      "heading": "Python 编程与工程入门",
+      "label": "before-1-course-ready",
+      "percent": null,
+      "resume": null,
+      "scrollY": 2431.333251953125,
+      "targetTop": null,
+      "url": "http://127.0.0.1:3010/courses/PY101"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:46:24.238Z",
+      "heading": "多个条件怎样共同决定结果",
+      "label": "before-1-return",
+      "percent": "已浏览 74%·尚未标记读完",
+      "resume": "#reverse-result",
+      "scrollY": 1475.3333740234375,
+      "targetTop": 6605.61474609375,
+      "url": "http://127.0.0.1:3010/learn/PY101/PY101-C03-L03"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:46:38.641Z",
+      "heading": "多个条件怎样共同决定结果",
+      "label": "before-1-return-stable",
+      "percent": "已浏览 74%·尚未标记读完",
+      "resume": "#reverse-result",
+      "scrollY": 0,
+      "targetTop": 8075.9482421875,
+      "url": "http://127.0.0.1:3010/learn/PY101/PY101-C03-L03"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:46:39.037Z",
+      "heading": "多个条件怎样共同决定结果",
+      "label": "before-1-reload",
+      "percent": "已浏览 0%·尚未标记读完",
+      "resume": null,
+      "scrollY": 5.333333492279053,
+      "targetTop": 8019.53076171875,
+      "url": "http://127.0.0.1:3010/learn/PY101/PY101-C03-L03"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:46:40.150Z",
+      "heading": "多个条件怎样共同决定结果",
+      "label": "before-2-click",
+      "percent": "已浏览 74%·尚未标记读完",
+      "resume": "#reverse-result",
+      "scrollY": 0,
+      "targetTop": 8075.9482421875,
+      "url": "http://127.0.0.1:3010/learn/PY101/PY101-C03-L03#short-circuit"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:46:49.259Z",
+      "heading": "多个条件怎样共同决定结果",
+      "label": "before-2-stable-saved",
+      "percent": "已浏览 74%·尚未标记读完",
+      "resume": "#short-circuit",
+      "scrollY": 7900,
+      "targetTop": 175.9479217529297,
+      "url": "http://127.0.0.1:3010/learn/PY101/PY101-C03-L03#short-circuit"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:46:49.862Z",
+      "heading": "Python 编程与工程入门",
+      "label": "before-2-course-ready",
+      "percent": null,
+      "resume": null,
+      "scrollY": 2431.333251953125,
+      "targetTop": null,
+      "url": "http://127.0.0.1:3010/courses/PY101"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:48:17.549Z",
+      "heading": "Python 编程与工程入门",
+      "label": "before-2-course-settled",
+      "percent": null,
+      "resume": null,
+      "scrollY": 0,
+      "targetTop": null,
+      "url": "http://127.0.0.1:3010/courses/PY101"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:48:18.782Z",
+      "heading": "多个条件怎样共同决定结果",
+      "label": "before-2-return",
+      "percent": "已浏览 74%·尚未标记读完",
+      "resume": "#reverse-result",
+      "scrollY": 1470.6666259765625,
+      "targetTop": 6610.28125,
+      "url": "http://127.0.0.1:3010/learn/PY101/PY101-C03-L03"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:48:19.279Z",
+      "heading": "多个条件怎样共同决定结果",
+      "label": "before-2-reload",
+      "percent": "已浏览 74%·尚未标记读完",
+      "resume": "#separate-checks",
+      "scrollY": 1470.6666259765625,
+      "targetTop": 6609.4033203125,
+      "url": "http://127.0.0.1:3010/learn/PY101/PY101-C03-L03"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:48:20.243Z",
+      "heading": "多个条件怎样共同决定结果",
+      "label": "before-3-click",
+      "percent": "已浏览 74%·尚未标记读完",
+      "resume": "#separate-checks",
+      "scrollY": 1011.3333129882812,
+      "targetTop": 7064.61474609375,
+      "url": "http://127.0.0.1:3010/learn/PY101/PY101-C03-L03#short-circuit"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:49:39.393Z",
+      "heading": "多个条件怎样共同决定结果",
+      "label": "before-3-stable-saved",
+      "percent": "已浏览 74%·尚未标记读完",
+      "resume": "#short-circuit",
+      "scrollY": 7900,
+      "targetTop": 175.9479217529297,
+      "url": "http://127.0.0.1:3010/learn/PY101/PY101-C03-L03#short-circuit"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:49:40.573Z",
+      "heading": "Python 编程与工程入门",
+      "label": "before-3-course-ready",
+      "percent": null,
+      "resume": null,
+      "scrollY": 2431.333251953125,
+      "targetTop": null,
+      "url": "http://127.0.0.1:3010/courses/PY101"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:50:09.772Z",
+      "heading": "Python 编程与工程入门",
+      "label": "before-3-course-settled",
+      "percent": null,
+      "resume": null,
+      "scrollY": 0,
+      "targetTop": null,
+      "url": "http://127.0.0.1:3010/courses/PY101"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:50:11.044Z",
+      "heading": "多个条件怎样共同决定结果",
+      "label": "before-3-return",
+      "percent": "已浏览 74%·尚未标记读完",
+      "resume": "#reverse-result",
+      "scrollY": 1470.6666259765625,
+      "targetTop": 6610.28125,
+      "url": "http://127.0.0.1:3010/learn/PY101/PY101-C03-L03"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:50:51.184Z",
+      "heading": "多个条件怎样共同决定结果",
+      "label": "before-3-return-settled",
+      "percent": "已浏览 74%·尚未标记读完",
+      "resume": "#separate-checks",
+      "scrollY": 0,
+      "targetTop": 8075.9482421875,
+      "url": "http://127.0.0.1:3010/learn/PY101/PY101-C03-L03"
+    },
+    {
+      "active": [],
+      "at": "2026-11-06T09:50:51.503Z",
+      "heading": "多个条件怎样共同决定结果",
+      "label": "before-3-reload-hydrated",
+      "percent": "已浏览 74%·尚未标记读完",
+      "resume": "#separate-checks",
+      "scrollY": 5.333333492279053,
+      "targetTop": 8072.20849609375,
+      "url": "http://127.0.0.1:3010/learn/PY101/PY101-C03-L03"
+    }
+  ]
+}
